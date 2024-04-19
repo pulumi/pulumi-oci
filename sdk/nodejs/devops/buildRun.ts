@@ -18,23 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuildRun = new oci.devops.BuildRun("testBuildRun", {
- *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
+ * const testBuildRun = new oci.devops.BuildRun("test_build_run", {
+ *     buildPipelineId: testBuildPipeline.id,
  *     buildRunArguments: {
  *         items: [{
- *             name: _var.build_run_build_run_arguments_items_name,
- *             value: _var.build_run_build_run_arguments_items_value,
+ *             name: buildRunBuildRunArgumentsItemsName,
+ *             value: buildRunBuildRunArgumentsItemsValue,
  *         }],
  *     },
  *     commitInfo: {
- *         commitHash: _var.build_run_commit_info_commit_hash,
- *         repositoryBranch: _var.build_run_commit_info_repository_branch,
- *         repositoryUrl: _var.build_run_commit_info_repository_url,
+ *         commitHash: buildRunCommitInfoCommitHash,
+ *         repositoryBranch: buildRunCommitInfoRepositoryBranch,
+ *         repositoryUrl: buildRunCommitInfoRepositoryUrl,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.build_run_display_name,
+ *     displayName: buildRunDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

@@ -31,21 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Bastion.NewBastion(ctx, "testBastion", &Bastion.BastionArgs{
-//				BastionType:               pulumi.Any(_var.Bastion_bastion_type),
-//				CompartmentId:             pulumi.Any(_var.Compartment_id),
-//				TargetSubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				ClientCidrBlockAllowLists: pulumi.Any(_var.Bastion_client_cidr_block_allow_list),
+//			_, err := Bastion.NewBastion(ctx, "test_bastion", &Bastion.BastionArgs{
+//				BastionType:               pulumi.Any(bastionBastionType),
+//				CompartmentId:             pulumi.Any(compartmentId),
+//				TargetSubnetId:            pulumi.Any(testSubnet.Id),
+//				ClientCidrBlockAllowLists: pulumi.Any(bastionClientCidrBlockAllowList),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DnsProxyStatus: pulumi.Any(_var.Bastion_dns_proxy_status),
+//				DnsProxyStatus: pulumi.Any(bastionDnsProxyStatus),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				MaxSessionTtlInSeconds:    pulumi.Any(_var.Bastion_max_session_ttl_in_seconds),
-//				PhoneBookEntry:            pulumi.Any(_var.Bastion_phone_book_entry),
-//				StaticJumpHostIpAddresses: pulumi.Any(_var.Bastion_static_jump_host_ip_addresses),
+//				MaxSessionTtlInSeconds:    pulumi.Any(bastionMaxSessionTtlInSeconds),
+//				Name:                      pulumi.Any(bastionName),
+//				PhoneBookEntry:            pulumi.Any(bastionPhoneBookEntry),
+//				StaticJumpHostIpAddresses: pulumi.Any(bastionStaticJumpHostIpAddresses),
 //			})
 //			if err != nil {
 //				return err

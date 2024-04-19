@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := NetworkLoadBalancer.GetNetworkLoadBalancers(ctx, &networkloadbalancer.GetNetworkLoadBalancersArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Network_load_balancer_display_name),
-//				State:         pulumi.StringRef(_var.Network_load_balancer_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(networkLoadBalancerDisplayName),
+//				State:         pulumi.StringRef(networkLoadBalancerState),
 //			}, nil)
 //			if err != nil {
 //				return err

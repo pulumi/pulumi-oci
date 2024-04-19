@@ -156,12 +156,12 @@ def get_metric_extensions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=var["compartment_id"],
-        enabled_on_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-        name=var["metric_extension_name"],
-        resource_type=var["metric_extension_resource_type"],
-        state=var["metric_extension_state"],
-        status=var["metric_extension_status"])
+    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=compartment_id,
+        enabled_on_resource_id=test_resource["id"],
+        name=metric_extension_name,
+        resource_type=metric_extension_resource_type,
+        state=metric_extension_state,
+        status=metric_extension_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -217,12 +217,12 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=var["compartment_id"],
-        enabled_on_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-        name=var["metric_extension_name"],
-        resource_type=var["metric_extension_resource_type"],
-        state=var["metric_extension_state"],
-        status=var["metric_extension_status"])
+    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=compartment_id,
+        enabled_on_resource_id=test_resource["id"],
+        name=metric_extension_name,
+        resource_type=metric_extension_resource_type,
+        state=metric_extension_state,
+        status=metric_extension_status)
     ```
     <!--End PulumiCodeChooser -->
 

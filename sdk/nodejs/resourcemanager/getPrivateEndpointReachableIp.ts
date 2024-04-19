@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpointReachableIp = oci.ResourceManager.getPrivateEndpointReachableIp({
- *     privateEndpointId: oci_resourcemanager_private_endpoint.test_private_endpoint.id,
- *     privateIp: _var.private_endpoint_reachable_ip_private_ip,
+ *     privateEndpointId: testPrivateEndpoint.id,
+ *     privateIp: privateEndpointReachableIpPrivateIp,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -74,8 +74,8 @@ export interface GetPrivateEndpointReachableIpResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpointReachableIp = oci.ResourceManager.getPrivateEndpointReachableIp({
- *     privateEndpointId: oci_resourcemanager_private_endpoint.test_private_endpoint.id,
- *     privateIp: _var.private_endpoint_reachable_ip_private_ip,
+ *     privateEndpointId: testPrivateEndpoint.id,
+ *     privateIp: privateEndpointReachableIpPrivateIp,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

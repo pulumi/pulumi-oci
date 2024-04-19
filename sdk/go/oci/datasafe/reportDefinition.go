@@ -31,49 +31,49 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewReportDefinition(ctx, "testReportDefinition", &DataSafe.ReportDefinitionArgs{
+//			_, err := DataSafe.NewReportDefinition(ctx, "test_report_definition", &DataSafe.ReportDefinitionArgs{
 //				ColumnFilters: datasafe.ReportDefinitionColumnFilterArray{
 //					&datasafe.ReportDefinitionColumnFilterArgs{
-//						Expressions: pulumi.Any(_var.Report_definition_column_filters_expressions),
-//						FieldName:   pulumi.Any(_var.Report_definition_column_filters_field_name),
-//						IsEnabled:   pulumi.Any(_var.Report_definition_column_filters_is_enabled),
-//						IsHidden:    pulumi.Any(_var.Report_definition_column_filters_is_hidden),
-//						Operator:    pulumi.Any(_var.Report_definition_column_filters_operator),
+//						Expressions: pulumi.Any(reportDefinitionColumnFiltersExpressions),
+//						FieldName:   pulumi.Any(reportDefinitionColumnFiltersFieldName),
+//						IsEnabled:   pulumi.Any(reportDefinitionColumnFiltersIsEnabled),
+//						IsHidden:    pulumi.Any(reportDefinitionColumnFiltersIsHidden),
+//						Operator:    pulumi.Any(reportDefinitionColumnFiltersOperator),
 //					},
 //				},
 //				ColumnInfos: datasafe.ReportDefinitionColumnInfoArray{
 //					&datasafe.ReportDefinitionColumnInfoArgs{
-//						DisplayName:  pulumi.Any(_var.Report_definition_column_info_display_name),
-//						DisplayOrder: pulumi.Any(_var.Report_definition_column_info_display_order),
-//						FieldName:    pulumi.Any(_var.Report_definition_column_info_field_name),
-//						IsHidden:     pulumi.Any(_var.Report_definition_column_info_is_hidden),
-//						DataType:     pulumi.Any(_var.Report_definition_column_info_data_type),
+//						DisplayName:  pulumi.Any(reportDefinitionColumnInfoDisplayName),
+//						DisplayOrder: pulumi.Any(reportDefinitionColumnInfoDisplayOrder),
+//						FieldName:    pulumi.Any(reportDefinitionColumnInfoFieldName),
+//						IsHidden:     pulumi.Any(reportDefinitionColumnInfoIsHidden),
+//						DataType:     pulumi.Any(reportDefinitionColumnInfoDataType),
 //					},
 //				},
 //				ColumnSortings: datasafe.ReportDefinitionColumnSortingArray{
 //					&datasafe.ReportDefinitionColumnSortingArgs{
-//						FieldName:    pulumi.Any(_var.Report_definition_column_sortings_field_name),
-//						IsAscending:  pulumi.Any(_var.Report_definition_column_sortings_is_ascending),
-//						SortingOrder: pulumi.Any(_var.Report_definition_column_sortings_sorting_order),
+//						FieldName:    pulumi.Any(reportDefinitionColumnSortingsFieldName),
+//						IsAscending:  pulumi.Any(reportDefinitionColumnSortingsIsAscending),
+//						SortingOrder: pulumi.Any(reportDefinitionColumnSortingsSortingOrder),
 //					},
 //				},
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Report_definition_display_name),
-//				ParentId:      pulumi.Any(oci_data_safe_parent.Test_parent.Id),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(reportDefinitionDisplayName),
+//				ParentId:      pulumi.Any(testParent.Id),
 //				Summaries: datasafe.ReportDefinitionSummaryArray{
 //					&datasafe.ReportDefinitionSummaryArgs{
-//						DisplayOrder:     pulumi.Any(_var.Report_definition_summary_display_order),
-//						Name:             pulumi.Any(_var.Report_definition_summary_name),
-//						CountOf:          pulumi.Any(_var.Report_definition_summary_count_of),
-//						GroupByFieldName: pulumi.Any(_var.Report_definition_summary_group_by_field_name),
-//						IsHidden:         pulumi.Any(_var.Report_definition_summary_is_hidden),
-//						ScimFilter:       pulumi.Any(_var.Report_definition_summary_scim_filter),
+//						DisplayOrder:     pulumi.Any(reportDefinitionSummaryDisplayOrder),
+//						Name:             pulumi.Any(reportDefinitionSummaryName),
+//						CountOf:          pulumi.Any(reportDefinitionSummaryCountOf),
+//						GroupByFieldName: pulumi.Any(reportDefinitionSummaryGroupByFieldName),
+//						IsHidden:         pulumi.Any(reportDefinitionSummaryIsHidden),
+//						ScimFilter:       pulumi.Any(reportDefinitionSummaryScimFilter),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Report_definition_description),
+//				Description: pulumi.Any(reportDefinitionDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

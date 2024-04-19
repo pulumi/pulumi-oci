@@ -509,21 +509,21 @@ class Replica(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replica = oci.mysql.Replica("testReplica",
-            db_system_id=oci_mysql_mysql_db_system["test_mysql_db_system"]["id"],
+        test_replica = oci.mysql.Replica("test_replica",
+            db_system_id=test_mysql_db_system["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["replica_description"],
-            display_name=var["replica_display_name"],
+            description=replica_description,
+            display_name=replica_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            is_delete_protected=var["replica_is_delete_protected"],
+            is_delete_protected=replica_is_delete_protected,
             replica_overrides=oci.mysql.ReplicaReplicaOverridesArgs(
-                configuration_id=oci_mysql_mysql_configuration["test_mysql_configuration"]["id"],
-                mysql_version=var["replica_replica_overrides_mysql_version"],
-                shape_name=oci_mysql_shape["test_shape"]["name"],
+                configuration_id=test_mysql_configuration["id"],
+                mysql_version=replica_replica_overrides_mysql_version,
+                shape_name=test_shape["name"],
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -564,21 +564,21 @@ class Replica(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replica = oci.mysql.Replica("testReplica",
-            db_system_id=oci_mysql_mysql_db_system["test_mysql_db_system"]["id"],
+        test_replica = oci.mysql.Replica("test_replica",
+            db_system_id=test_mysql_db_system["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["replica_description"],
-            display_name=var["replica_display_name"],
+            description=replica_description,
+            display_name=replica_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            is_delete_protected=var["replica_is_delete_protected"],
+            is_delete_protected=replica_is_delete_protected,
             replica_overrides=oci.mysql.ReplicaReplicaOverridesArgs(
-                configuration_id=oci_mysql_mysql_configuration["test_mysql_configuration"]["id"],
-                mysql_version=var["replica_replica_overrides_mysql_version"],
-                shape_name=oci_mysql_shape["test_shape"]["name"],
+                configuration_id=test_mysql_configuration["id"],
+                mysql_version=replica_replica_overrides_mysql_version,
+                shape_name=test_shape["name"],
             ))
         ```
         <!--End PulumiCodeChooser -->

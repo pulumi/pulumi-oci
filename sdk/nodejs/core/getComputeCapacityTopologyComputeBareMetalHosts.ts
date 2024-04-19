@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityTopologyComputeBareMetalHosts = oci.Core.getComputeCapacityTopologyComputeBareMetalHosts({
- *     computeCapacityTopologyId: oci_core_compute_capacity_topology.test_compute_capacity_topology.id,
- *     availabilityDomain: _var.compute_capacity_topology_compute_bare_metal_host_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     computeHpcIslandId: oci_core_compute_hpc_island.test_compute_hpc_island.id,
- *     computeLocalBlockId: oci_core_compute_local_block.test_compute_local_block.id,
- *     computeNetworkBlockId: oci_core_compute_network_block.test_compute_network_block.id,
+ *     computeCapacityTopologyId: testComputeCapacityTopology.id,
+ *     availabilityDomain: computeCapacityTopologyComputeBareMetalHostAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     computeHpcIslandId: testComputeHpcIsland.id,
+ *     computeLocalBlockId: testComputeLocalBlock.id,
+ *     computeNetworkBlockId: testComputeNetworkBlock.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetComputeCapacityTopologyComputeBareMetalHostsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityTopologyComputeBareMetalHosts = oci.Core.getComputeCapacityTopologyComputeBareMetalHosts({
- *     computeCapacityTopologyId: oci_core_compute_capacity_topology.test_compute_capacity_topology.id,
- *     availabilityDomain: _var.compute_capacity_topology_compute_bare_metal_host_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     computeHpcIslandId: oci_core_compute_hpc_island.test_compute_hpc_island.id,
- *     computeLocalBlockId: oci_core_compute_local_block.test_compute_local_block.id,
- *     computeNetworkBlockId: oci_core_compute_network_block.test_compute_network_block.id,
+ *     computeCapacityTopologyId: testComputeCapacityTopology.id,
+ *     availabilityDomain: computeCapacityTopologyComputeBareMetalHostAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     computeHpcIslandId: testComputeHpcIsland.id,
+ *     computeLocalBlockId: testComputeLocalBlock.id,
+ *     computeNetworkBlockId: testComputeNetworkBlock.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

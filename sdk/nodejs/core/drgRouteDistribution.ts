@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteDistribution = new oci.core.DrgRouteDistribution("testDrgRouteDistribution", {
- *     distributionType: _var.drg_route_distribution_distribution_type,
- *     drgId: oci_core_drg.test_drg.id,
+ * const testDrgRouteDistribution = new oci.core.DrgRouteDistribution("test_drg_route_distribution", {
+ *     distributionType: drgRouteDistributionDistributionType,
+ *     drgId: testDrg.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.drg_route_distribution_display_name,
+ *     displayName: drgRouteDistributionDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

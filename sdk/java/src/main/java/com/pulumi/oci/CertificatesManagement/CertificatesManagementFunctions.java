@@ -77,7 +77,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
-     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
      *             .build());
      * 
      *     }
@@ -119,7 +119,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
-     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
      *             .build());
      * 
      *     }
@@ -161,7 +161,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
-     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
      *             .build());
      * 
      *     }
@@ -203,7 +203,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
-     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationId(testAssociationOciCertificatesManagementAssociation.id())
      *             .build());
      * 
      *     }
@@ -246,12 +246,12 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
-     *             .associationId(oci_certificates_management_association.test_association().id())
-     *             .associationType(var_.association_association_type())
-     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.association_name())
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associationId(testAssociation.id())
+     *             .associationType(associationAssociationType)
+     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .compartmentId(compartmentId)
+     *             .name(associationName)
      *             .build());
      * 
      *     }
@@ -294,12 +294,12 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
-     *             .associationId(oci_certificates_management_association.test_association().id())
-     *             .associationType(var_.association_association_type())
-     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.association_name())
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associationId(testAssociation.id())
+     *             .associationType(associationAssociationType)
+     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .compartmentId(compartmentId)
+     *             .name(associationName)
      *             .build());
      * 
      *     }
@@ -342,12 +342,12 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
-     *             .associationId(oci_certificates_management_association.test_association().id())
-     *             .associationType(var_.association_association_type())
-     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.association_name())
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associationId(testAssociation.id())
+     *             .associationType(associationAssociationType)
+     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .compartmentId(compartmentId)
+     *             .name(associationName)
      *             .build());
      * 
      *     }
@@ -390,12 +390,12 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
-     *             .associationId(oci_certificates_management_association.test_association().id())
-     *             .associationType(var_.association_association_type())
-     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.association_name())
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associationId(testAssociation.id())
+     *             .associationType(associationAssociationType)
+     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .compartmentId(compartmentId)
+     *             .name(associationName)
      *             .build());
      * 
      *     }
@@ -438,12 +438,12 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
-     *             .associationId(oci_certificates_management_association.test_association().id())
-     *             .associationType(var_.association_association_type())
-     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.association_name())
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associationId(testAssociation.id())
+     *             .associationType(associationAssociationType)
+     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .compartmentId(compartmentId)
+     *             .name(associationName)
      *             .build());
      * 
      *     }
@@ -486,12 +486,12 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
-     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
-     *             .associationId(oci_certificates_management_association.test_association().id())
-     *             .associationType(var_.association_association_type())
-     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.association_name())
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .associationId(testAssociation.id())
+     *             .associationType(associationAssociationType)
+     *             .certificatesResourceId(testCertificatesResource.id())
+     *             .compartmentId(compartmentId)
+     *             .name(associationName)
      *             .build());
      * 
      *     }
@@ -533,7 +533,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
      *             .build());
      * 
      *     }
@@ -575,7 +575,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
      *             .build());
      * 
      *     }
@@ -617,7 +617,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
      *             .build());
      * 
      *     }
@@ -659,7 +659,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .caBundleId(testCaBundleOciCertificatesManagementCaBundle.id())
      *             .build());
      * 
      *     }
@@ -702,10 +702,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.ca_bundle_name())
-     *             .state(var_.ca_bundle_state())
+     *             .caBundleId(testCaBundle.id())
+     *             .compartmentId(compartmentId)
+     *             .name(caBundleName)
+     *             .state(caBundleState)
      *             .build());
      * 
      *     }
@@ -748,10 +748,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.ca_bundle_name())
-     *             .state(var_.ca_bundle_state())
+     *             .caBundleId(testCaBundle.id())
+     *             .compartmentId(compartmentId)
+     *             .name(caBundleName)
+     *             .state(caBundleState)
      *             .build());
      * 
      *     }
@@ -794,10 +794,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.ca_bundle_name())
-     *             .state(var_.ca_bundle_state())
+     *             .caBundleId(testCaBundle.id())
+     *             .compartmentId(compartmentId)
+     *             .name(caBundleName)
+     *             .state(caBundleState)
      *             .build());
      * 
      *     }
@@ -840,10 +840,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.ca_bundle_name())
-     *             .state(var_.ca_bundle_state())
+     *             .caBundleId(testCaBundle.id())
+     *             .compartmentId(compartmentId)
+     *             .name(caBundleName)
+     *             .state(caBundleState)
      *             .build());
      * 
      *     }
@@ -886,10 +886,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.ca_bundle_name())
-     *             .state(var_.ca_bundle_state())
+     *             .caBundleId(testCaBundle.id())
+     *             .compartmentId(compartmentId)
+     *             .name(caBundleName)
+     *             .state(caBundleState)
      *             .build());
      * 
      *     }
@@ -932,10 +932,10 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
-     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.ca_bundle_name())
-     *             .state(var_.ca_bundle_state())
+     *             .caBundleId(testCaBundle.id())
+     *             .compartmentId(compartmentId)
+     *             .name(caBundleName)
+     *             .state(caBundleState)
      *             .build());
      * 
      *     }
@@ -977,7 +977,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
      *             .build());
      * 
      *     }
@@ -1019,7 +1019,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
      *             .build());
      * 
      *     }
@@ -1061,7 +1061,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
      *             .build());
      * 
      *     }
@@ -1103,7 +1103,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciCertificatesManagementCertificate.id())
      *             .build());
      * 
      *     }
@@ -1146,11 +1146,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_authority_name())
-     *             .state(var_.certificate_authority_state())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateAuthorityName)
+     *             .state(certificateAuthorityState)
      *             .build());
      * 
      *     }
@@ -1193,11 +1193,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_authority_name())
-     *             .state(var_.certificate_authority_state())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateAuthorityName)
+     *             .state(certificateAuthorityState)
      *             .build());
      * 
      *     }
@@ -1240,11 +1240,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_authority_name())
-     *             .state(var_.certificate_authority_state())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateAuthorityName)
+     *             .state(certificateAuthorityState)
      *             .build());
      * 
      *     }
@@ -1287,11 +1287,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_authority_name())
-     *             .state(var_.certificate_authority_state())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateAuthorityName)
+     *             .state(certificateAuthorityState)
      *             .build());
      * 
      *     }
@@ -1334,11 +1334,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_authority_name())
-     *             .state(var_.certificate_authority_state())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateAuthorityName)
+     *             .state(certificateAuthorityState)
      *             .build());
      * 
      *     }
@@ -1381,11 +1381,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_authority_name())
-     *             .state(var_.certificate_authority_state())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateAuthorityName)
+     *             .state(certificateAuthorityState)
      *             .build());
      * 
      *     }
@@ -1427,7 +1427,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
      *             .build());
      * 
      *     }
@@ -1469,7 +1469,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
      *             .build());
      * 
      *     }
@@ -1511,7 +1511,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
      *             .build());
      * 
      *     }
@@ -1553,7 +1553,7 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .certificateAuthorityId(testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id())
      *             .build());
      * 
      *     }
@@ -1596,8 +1596,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -1640,8 +1640,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -1684,8 +1684,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -1728,8 +1728,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -1772,8 +1772,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -1816,8 +1816,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -1860,8 +1860,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -1904,8 +1904,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
-     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .certificateAuthorityId(testCertificateAuthority.id())
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -1947,8 +1947,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .certificateVersionNumber(var_.certificate_version_certificate_version_number())
+     *             .certificateId(testCertificate.id())
+     *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
      *             .build());
      * 
      *     }
@@ -1990,8 +1990,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .certificateVersionNumber(var_.certificate_version_certificate_version_number())
+     *             .certificateId(testCertificate.id())
+     *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
      *             .build());
      * 
      *     }
@@ -2033,8 +2033,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .certificateVersionNumber(var_.certificate_version_certificate_version_number())
+     *             .certificateId(testCertificate.id())
+     *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
      *             .build());
      * 
      *     }
@@ -2076,8 +2076,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .certificateVersionNumber(var_.certificate_version_certificate_version_number())
+     *             .certificateId(testCertificate.id())
+     *             .certificateVersionNumber(certificateVersionCertificateVersionNumber)
      *             .build());
      * 
      *     }
@@ -2120,8 +2120,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .versionNumber(var_.certificate_version_version_number())
+     *             .certificateId(testCertificate.id())
+     *             .versionNumber(certificateVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -2164,8 +2164,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .versionNumber(var_.certificate_version_version_number())
+     *             .certificateId(testCertificate.id())
+     *             .versionNumber(certificateVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -2208,8 +2208,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .versionNumber(var_.certificate_version_version_number())
+     *             .certificateId(testCertificate.id())
+     *             .versionNumber(certificateVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -2252,8 +2252,8 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .versionNumber(var_.certificate_version_version_number())
+     *             .certificateId(testCertificate.id())
+     *             .versionNumber(certificateVersionVersionNumber)
      *             .build());
      * 
      *     }
@@ -2296,11 +2296,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_name())
-     *             .state(var_.certificate_state())
+     *             .certificateId(testCertificate.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }
@@ -2343,11 +2343,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_name())
-     *             .state(var_.certificate_state())
+     *             .certificateId(testCertificate.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }
@@ -2390,11 +2390,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_name())
-     *             .state(var_.certificate_state())
+     *             .certificateId(testCertificate.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }
@@ -2437,11 +2437,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_name())
-     *             .state(var_.certificate_state())
+     *             .certificateId(testCertificate.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }
@@ -2484,11 +2484,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_name())
-     *             .state(var_.certificate_state())
+     *             .certificateId(testCertificate.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }
@@ -2531,11 +2531,11 @@ public final class CertificatesManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
-     *             .name(var_.certificate_name())
-     *             .state(var_.certificate_state())
+     *             .certificateId(testCertificate.id())
+     *             .compartmentId(compartmentId)
+     *             .issuerCertificateAuthorityId(testCertificateAuthority.id())
+     *             .name(certificateName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }

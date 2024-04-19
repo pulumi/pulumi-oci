@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityPropagationTrusts = Oci.Identity.GetDomainsIdentityPropagationTrusts.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentityPropagationTrustCount = @var.Identity_propagation_trust_identity_propagation_trust_count,
-        ///         IdentityPropagationTrustFilter = @var.Identity_propagation_trust_identity_propagation_trust_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityPropagationTrustCount = identityPropagationTrustIdentityPropagationTrustCount,
+        ///         IdentityPropagationTrustFilter = identityPropagationTrustIdentityPropagationTrustFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_propagation_trust_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_propagation_trust_resource_type_schema_version,
-        ///         StartIndex = @var.Identity_propagation_trust_start_index,
+        ///         Authorization = identityPropagationTrustAuthorization,
+        ///         ResourceTypeSchemaVersion = identityPropagationTrustResourceTypeSchemaVersion,
+        ///         StartIndex = identityPropagationTrustStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityPropagationTrusts = Oci.Identity.GetDomainsIdentityPropagationTrusts.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentityPropagationTrustCount = @var.Identity_propagation_trust_identity_propagation_trust_count,
-        ///         IdentityPropagationTrustFilter = @var.Identity_propagation_trust_identity_propagation_trust_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityPropagationTrustCount = identityPropagationTrustIdentityPropagationTrustCount,
+        ///         IdentityPropagationTrustFilter = identityPropagationTrustIdentityPropagationTrustFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_propagation_trust_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_propagation_trust_resource_type_schema_version,
-        ///         StartIndex = @var.Identity_propagation_trust_start_index,
+        ///         Authorization = identityPropagationTrustAuthorization,
+        ///         ResourceTypeSchemaVersion = identityPropagationTrustResourceTypeSchemaVersion,
+        ///         StartIndex = identityPropagationTrustStartIndex,
         ///     });
         /// 
         /// });

@@ -30,14 +30,14 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testInvokeRuns = Oci.DataFlow.GetInvokeRuns.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         DisplayName = @var.Invoke_run_display_name,
-        ///         DisplayNameStartsWith = @var.Invoke_run_display_name_starts_with,
-        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///         PoolId = oci_dataflow_pool.Test_pool.Id,
-        ///         State = @var.Invoke_run_state,
-        ///         TimeCreatedGreaterThan = @var.Invoke_run_time_created_greater_than,
+        ///         CompartmentId = compartmentId,
+        ///         ApplicationId = testApplication.Id,
+        ///         DisplayName = invokeRunDisplayName,
+        ///         DisplayNameStartsWith = invokeRunDisplayNameStartsWith,
+        ///         OwnerPrincipalId = testOwnerPrincipal.Id,
+        ///         PoolId = testPool.Id,
+        ///         State = invokeRunState,
+        ///         TimeCreatedGreaterThan = invokeRunTimeCreatedGreaterThan,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testInvokeRuns = Oci.DataFlow.GetInvokeRuns.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         DisplayName = @var.Invoke_run_display_name,
-        ///         DisplayNameStartsWith = @var.Invoke_run_display_name_starts_with,
-        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///         PoolId = oci_dataflow_pool.Test_pool.Id,
-        ///         State = @var.Invoke_run_state,
-        ///         TimeCreatedGreaterThan = @var.Invoke_run_time_created_greater_than,
+        ///         CompartmentId = compartmentId,
+        ///         ApplicationId = testApplication.Id,
+        ///         DisplayName = invokeRunDisplayName,
+        ///         DisplayNameStartsWith = invokeRunDisplayNameStartsWith,
+        ///         OwnerPrincipalId = testOwnerPrincipal.Id,
+        ///         PoolId = testPool.Id,
+        ///         State = invokeRunState,
+        ///         TimeCreatedGreaterThan = invokeRunTimeCreatedGreaterThan,
         ///     });
         /// 
         /// });

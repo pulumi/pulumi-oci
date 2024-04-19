@@ -698,34 +698,35 @@ class WorkspaceApplication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_application = oci.data_integration.WorkspaceApplication("testWorkspaceApplication",
-            identifier=var["workspace_application_identifier"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            model_type=var["workspace_application_model_type"],
+        test_workspace_application = oci.data_integration.WorkspaceApplication("test_workspace_application",
+            identifier=workspace_application_identifier,
+            name=workspace_application_name,
+            workspace_id=test_workspace["id"],
+            model_type=workspace_application_model_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["workspace_application_description"],
-            display_name=var["workspace_application_display_name"],
+            description=workspace_application_description,
+            display_name=workspace_application_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            key=var["workspace_application_key"],
-            model_version=var["workspace_application_model_version"],
-            object_status=var["workspace_application_object_status"],
+            key=workspace_application_key,
+            model_version=workspace_application_model_version,
+            object_status=workspace_application_object_status,
             registry_metadata=oci.data_integration.WorkspaceApplicationRegistryMetadataArgs(
-                aggregator_key=var["workspace_application_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_application_registry_metadata_is_favorite"],
-                key=var["workspace_application_registry_metadata_key"],
-                labels=var["workspace_application_registry_metadata_labels"],
-                registry_version=var["workspace_application_registry_metadata_registry_version"],
+                aggregator_key=workspace_application_registry_metadata_aggregator_key,
+                is_favorite=workspace_application_registry_metadata_is_favorite,
+                key=workspace_application_registry_metadata_key,
+                labels=workspace_application_registry_metadata_labels,
+                registry_version=workspace_application_registry_metadata_registry_version,
             ),
             source_application_info=oci.data_integration.WorkspaceApplicationSourceApplicationInfoArgs(
-                application_key=var["workspace_application_source_application_info_application_key"],
-                copy_type=var["workspace_application_source_application_info_copy_type"],
-                workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
+                application_key=workspace_application_source_application_info_application_key,
+                copy_type=workspace_application_source_application_info_copy_type,
+                workspace_id=test_workspace["id"],
             ),
-            state=var["workspace_application_state"])
+            state=workspace_application_state)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -776,34 +777,35 @@ class WorkspaceApplication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_application = oci.data_integration.WorkspaceApplication("testWorkspaceApplication",
-            identifier=var["workspace_application_identifier"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            model_type=var["workspace_application_model_type"],
+        test_workspace_application = oci.data_integration.WorkspaceApplication("test_workspace_application",
+            identifier=workspace_application_identifier,
+            name=workspace_application_name,
+            workspace_id=test_workspace["id"],
+            model_type=workspace_application_model_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["workspace_application_description"],
-            display_name=var["workspace_application_display_name"],
+            description=workspace_application_description,
+            display_name=workspace_application_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            key=var["workspace_application_key"],
-            model_version=var["workspace_application_model_version"],
-            object_status=var["workspace_application_object_status"],
+            key=workspace_application_key,
+            model_version=workspace_application_model_version,
+            object_status=workspace_application_object_status,
             registry_metadata=oci.data_integration.WorkspaceApplicationRegistryMetadataArgs(
-                aggregator_key=var["workspace_application_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_application_registry_metadata_is_favorite"],
-                key=var["workspace_application_registry_metadata_key"],
-                labels=var["workspace_application_registry_metadata_labels"],
-                registry_version=var["workspace_application_registry_metadata_registry_version"],
+                aggregator_key=workspace_application_registry_metadata_aggregator_key,
+                is_favorite=workspace_application_registry_metadata_is_favorite,
+                key=workspace_application_registry_metadata_key,
+                labels=workspace_application_registry_metadata_labels,
+                registry_version=workspace_application_registry_metadata_registry_version,
             ),
             source_application_info=oci.data_integration.WorkspaceApplicationSourceApplicationInfoArgs(
-                application_key=var["workspace_application_source_application_info_application_key"],
-                copy_type=var["workspace_application_source_application_info_copy_type"],
-                workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
+                application_key=workspace_application_source_application_info_application_key,
+                copy_type=workspace_application_source_application_info_copy_type,
+                workspace_id=test_workspace["id"],
             ),
-            state=var["workspace_application_state"])
+            state=workspace_application_state)
         ```
         <!--End PulumiCodeChooser -->
 

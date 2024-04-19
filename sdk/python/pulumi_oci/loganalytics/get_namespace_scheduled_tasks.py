@@ -140,11 +140,11 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=var["compartment_id"],
-        namespace=var["namespace_scheduled_task_namespace"],
-        display_name=var["namespace_scheduled_task_display_name"],
-        target_service=var["namespace_scheduled_task_target_service"],
-        task_type=var["namespace_scheduled_task_task_type"])
+    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=compartment_id,
+        namespace=namespace_scheduled_task_namespace,
+        display_name=namespace_scheduled_task_display_name,
+        target_service=namespace_scheduled_task_target_service,
+        task_type=namespace_scheduled_task_task_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=var["compartment_id"],
-        namespace=var["namespace_scheduled_task_namespace"],
-        display_name=var["namespace_scheduled_task_display_name"],
-        target_service=var["namespace_scheduled_task_target_service"],
-        task_type=var["namespace_scheduled_task_task_type"])
+    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=compartment_id,
+        namespace=namespace_scheduled_task_namespace,
+        display_name=namespace_scheduled_task_display_name,
+        target_service=namespace_scheduled_task_target_service,
+        task_type=namespace_scheduled_task_task_type)
     ```
     <!--End PulumiCodeChooser -->
 

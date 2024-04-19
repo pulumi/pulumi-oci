@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPublicationPackages = oci.Marketplace.getPublicationPackages({
- *     publicationId: oci_marketplace_publication.test_publication.id,
- *     packageType: _var.publication_package_package_type,
- *     packageVersion: _var.publication_package_package_version,
+ *     publicationId: testPublication.id,
+ *     packageType: publicationPackagePackageType,
+ *     packageVersion: publicationPackagePackageVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetPublicationPackagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPublicationPackages = oci.Marketplace.getPublicationPackages({
- *     publicationId: oci_marketplace_publication.test_publication.id,
- *     packageType: _var.publication_package_package_type,
- *     packageVersion: _var.publication_package_package_version,
+ *     publicationId: testPublication.id,
+ *     packageType: publicationPackagePackageType,
+ *     packageVersion: publicationPackagePackageVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

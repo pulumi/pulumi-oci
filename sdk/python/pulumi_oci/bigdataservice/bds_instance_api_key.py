@@ -302,12 +302,12 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bds_instance_api_key = oci.big_data_service.BdsInstanceApiKey("testBdsInstanceApiKey",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            key_alias=var["bds_instance_api_key_key_alias"],
-            passphrase=var["bds_instance_api_key_passphrase"],
-            user_id=oci_identity_user["test_user"]["id"],
-            default_region=var["bds_instance_api_key_default_region"])
+        test_bds_instance_api_key = oci.big_data_service.BdsInstanceApiKey("test_bds_instance_api_key",
+            bds_instance_id=test_bds_instance["id"],
+            key_alias=bds_instance_api_key_key_alias,
+            passphrase=bds_instance_api_key_passphrase,
+            user_id=test_user["id"],
+            default_region=bds_instance_api_key_default_region)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -349,12 +349,12 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bds_instance_api_key = oci.big_data_service.BdsInstanceApiKey("testBdsInstanceApiKey",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            key_alias=var["bds_instance_api_key_key_alias"],
-            passphrase=var["bds_instance_api_key_passphrase"],
-            user_id=oci_identity_user["test_user"]["id"],
-            default_region=var["bds_instance_api_key_default_region"])
+        test_bds_instance_api_key = oci.big_data_service.BdsInstanceApiKey("test_bds_instance_api_key",
+            bds_instance_id=test_bds_instance["id"],
+            key_alias=bds_instance_api_key_key_alias,
+            passphrase=bds_instance_api_key_passphrase,
+            user_id=test_user["id"],
+            default_region=bds_instance_api_key_default_region)
         ```
         <!--End PulumiCodeChooser -->
 

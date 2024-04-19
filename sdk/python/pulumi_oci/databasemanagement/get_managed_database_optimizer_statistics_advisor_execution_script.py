@@ -99,9 +99,9 @@ def get_managed_database_optimizer_statistics_advisor_execution_script(execution
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_execution_script = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution_script(execution_name=var["managed_database_optimizer_statistics_advisor_execution_script_execution_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        task_name=var["managed_database_optimizer_statistics_advisor_execution_script_task_name"])
+    test_managed_database_optimizer_statistics_advisor_execution_script = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution_script(execution_name=managed_database_optimizer_statistics_advisor_execution_script_execution_name,
+        managed_database_id=test_managed_database["id"],
+        task_name=managed_database_optimizer_statistics_advisor_execution_script_task_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,9 +142,9 @@ def get_managed_database_optimizer_statistics_advisor_execution_script_output(ex
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_execution_script = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution_script(execution_name=var["managed_database_optimizer_statistics_advisor_execution_script_execution_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        task_name=var["managed_database_optimizer_statistics_advisor_execution_script_task_name"])
+    test_managed_database_optimizer_statistics_advisor_execution_script = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution_script(execution_name=managed_database_optimizer_statistics_advisor_execution_script_execution_name,
+        managed_database_id=test_managed_database["id"],
+        task_name=managed_database_optimizer_statistics_advisor_execution_script_task_name)
     ```
     <!--End PulumiCodeChooser -->
 

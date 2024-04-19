@@ -122,9 +122,9 @@ def get_network_sources(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_sources = oci.Identity.get_network_sources(compartment_id=var["tenancy_ocid"],
-        name=var["network_source_name"],
-        state=var["network_source_state"])
+    test_network_sources = oci.Identity.get_network_sources(compartment_id=tenancy_ocid,
+        name=network_source_name,
+        state=network_source_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -170,9 +170,9 @@ def get_network_sources_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_network_sources = oci.Identity.get_network_sources(compartment_id=var["tenancy_ocid"],
-        name=var["network_source_name"],
-        state=var["network_source_state"])
+    test_network_sources = oci.Identity.get_network_sources(compartment_id=tenancy_ocid,
+        name=network_source_name,
+        state=network_source_state)
     ```
     <!--End PulumiCodeChooser -->
 

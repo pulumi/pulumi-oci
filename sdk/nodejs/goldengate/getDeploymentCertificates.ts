@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentCertificates = oci.GoldenGate.getDeploymentCertificates({
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     state: _var.deployment_certificate_state,
+ *     deploymentId: testDeployment.id,
+ *     state: deploymentCertificateState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetDeploymentCertificatesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentCertificates = oci.GoldenGate.getDeploymentCertificates({
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     state: _var.deployment_certificate_state,
+ *     deploymentId: testDeployment.id,
+ *     state: deploymentCertificateState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

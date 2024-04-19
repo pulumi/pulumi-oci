@@ -49,30 +49,30 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewCrossConnect(ctx, "testCrossConnect", &Core.CrossConnectArgs{
-//				CompartmentId:         pulumi.Any(_var.Compartment_id),
-//				LocationName:          pulumi.Any(_var.Cross_connect_location_name),
-//				PortSpeedShapeName:    pulumi.Any(_var.Cross_connect_port_speed_shape_name),
-//				CrossConnectGroupId:   pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
-//				CustomerReferenceName: pulumi.Any(_var.Cross_connect_customer_reference_name),
+//			_, err := Core.NewCrossConnect(ctx, "test_cross_connect", &Core.CrossConnectArgs{
+//				CompartmentId:         pulumi.Any(compartmentId),
+//				LocationName:          pulumi.Any(crossConnectLocationName),
+//				PortSpeedShapeName:    pulumi.Any(crossConnectPortSpeedShapeName),
+//				CrossConnectGroupId:   pulumi.Any(testCrossConnectGroup.Id),
+//				CustomerReferenceName: pulumi.Any(crossConnectCustomerReferenceName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName:                          pulumi.Any(_var.Cross_connect_display_name),
-//				FarCrossConnectOrCrossConnectGroupId: pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
+//				DisplayName:                          pulumi.Any(crossConnectDisplayName),
+//				FarCrossConnectOrCrossConnectGroupId: pulumi.Any(testCrossConnectGroup.Id),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				MacsecProperties: &core.CrossConnectMacsecPropertiesArgs{
-//					State:                       pulumi.Any(_var.Cross_connect_macsec_properties_state),
-//					EncryptionCipher:            pulumi.Any(_var.Cross_connect_macsec_properties_encryption_cipher),
-//					IsUnprotectedTrafficAllowed: pulumi.Any(_var.Cross_connect_macsec_properties_is_unprotected_traffic_allowed),
+//					State:                       pulumi.Any(crossConnectMacsecPropertiesState),
+//					EncryptionCipher:            pulumi.Any(crossConnectMacsecPropertiesEncryptionCipher),
+//					IsUnprotectedTrafficAllowed: pulumi.Any(crossConnectMacsecPropertiesIsUnprotectedTrafficAllowed),
 //					PrimaryKey: &core.CrossConnectMacsecPropertiesPrimaryKeyArgs{
-//						ConnectivityAssociationKeySecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-//						ConnectivityAssociationNameSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//						ConnectivityAssociationKeySecretId:  pulumi.Any(testSecret.Id),
+//						ConnectivityAssociationNameSecretId: pulumi.Any(testSecret.Id),
 //					},
 //				},
-//				NearCrossConnectOrCrossConnectGroupId: pulumi.Any(oci_core_cross_connect_group.Test_cross_connect_group.Id),
+//				NearCrossConnectOrCrossConnectGroupId: pulumi.Any(testCrossConnectGroup.Id),
 //			})
 //			if err != nil {
 //				return err

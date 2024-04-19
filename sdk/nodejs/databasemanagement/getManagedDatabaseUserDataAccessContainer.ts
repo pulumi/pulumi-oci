@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUserDataAccessContainer = oci.DatabaseManagement.getManagedDatabaseUserDataAccessContainer({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_database_user_data_access_container_name,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabaseUserDataAccessContainerName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,9 +86,9 @@ export interface GetManagedDatabaseUserDataAccessContainerResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUserDataAccessContainer = oci.DatabaseManagement.getManagedDatabaseUserDataAccessContainer({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_database_user_data_access_container_name,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabaseUserDataAccessContainerName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

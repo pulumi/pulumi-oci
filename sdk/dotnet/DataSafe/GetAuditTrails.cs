@@ -43,14 +43,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditTrails = Oci.DataSafe.GetAuditTrails.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_trail_access_level,
-        ///         AuditTrailId = oci_data_safe_audit_trail.Test_audit_trail.Id,
-        ///         CompartmentIdInSubtree = @var.Audit_trail_compartment_id_in_subtree,
-        ///         DisplayName = @var.Audit_trail_display_name,
-        ///         State = @var.Audit_trail_state,
-        ///         Status = @var.Audit_trail_status,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditTrailAccessLevel,
+        ///         AuditTrailId = testAuditTrail.Id,
+        ///         CompartmentIdInSubtree = auditTrailCompartmentIdInSubtree,
+        ///         DisplayName = auditTrailDisplayName,
+        ///         State = auditTrailState,
+        ///         Status = auditTrailStatus,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -92,14 +92,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditTrails = Oci.DataSafe.GetAuditTrails.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_trail_access_level,
-        ///         AuditTrailId = oci_data_safe_audit_trail.Test_audit_trail.Id,
-        ///         CompartmentIdInSubtree = @var.Audit_trail_compartment_id_in_subtree,
-        ///         DisplayName = @var.Audit_trail_display_name,
-        ///         State = @var.Audit_trail_state,
-        ///         Status = @var.Audit_trail_status,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditTrailAccessLevel,
+        ///         AuditTrailId = testAuditTrail.Id,
+        ///         CompartmentIdInSubtree = auditTrailCompartmentIdInSubtree,
+        ///         DisplayName = auditTrailDisplayName,
+        ///         State = auditTrailState,
+        ///         Status = auditTrailStatus,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });

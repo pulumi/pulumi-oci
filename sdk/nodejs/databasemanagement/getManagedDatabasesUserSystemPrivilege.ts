@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasesUserSystemPrivilege = oci.DatabaseManagement.getManagedDatabasesUserSystemPrivilege({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_databases_user_system_privilege_name,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabasesUserSystemPrivilegeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,9 +86,9 @@ export interface GetManagedDatabasesUserSystemPrivilegeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasesUserSystemPrivilege = oci.DatabaseManagement.getManagedDatabasesUserSystemPrivilege({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_databases_user_system_privilege_name,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabasesUserSystemPrivilegeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

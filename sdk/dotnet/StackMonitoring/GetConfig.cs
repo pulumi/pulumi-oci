@@ -29,7 +29,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testConfig = Oci.StackMonitoring.GetConfig.Invoke(new()
         ///     {
-        ///         ConfigId = oci_stack_monitoring_config.Test_config.Id,
+        ///         ConfigId = testConfigOciStackMonitoringConfig.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testConfig = Oci.StackMonitoring.GetConfig.Invoke(new()
         ///     {
-        ///         ConfigId = oci_stack_monitoring_config.Test_config.Id,
+        ///         ConfigId = testConfigOciStackMonitoringConfig.Id,
         ///     });
         /// 
         /// });

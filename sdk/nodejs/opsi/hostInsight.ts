@@ -16,21 +16,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHostInsight = new oci.opsi.HostInsight("testHostInsight", {
- *     compartmentId: _var.compartment_id,
- *     entitySource: _var.host_insight_entity_source,
- *     computeId: oci_opsi_compute.test_compute.id,
+ * const testHostInsight = new oci.opsi.HostInsight("test_host_insight", {
+ *     compartmentId: compartmentId,
+ *     entitySource: hostInsightEntitySource,
+ *     computeId: testCompute.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
- *     enterpriseManagerEntityIdentifier: _var.host_insight_enterprise_manager_entity_identifier,
- *     enterpriseManagerIdentifier: _var.host_insight_enterprise_manager_identifier,
- *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
+ *     enterpriseManagerEntityIdentifier: hostInsightEnterpriseManagerEntityIdentifier,
+ *     enterpriseManagerIdentifier: hostInsightEnterpriseManagerIdentifier,
+ *     exadataInsightId: testExadataInsight.id,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
+ *     managementAgentId: testManagementAgent.id,
  *     status: "DISABLED",
  * });
  * ```

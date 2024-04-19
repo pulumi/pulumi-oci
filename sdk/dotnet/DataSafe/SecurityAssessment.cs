@@ -27,21 +27,21 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSecurityAssessment = new Oci.DataSafe.SecurityAssessment("testSecurityAssessment", new()
+    ///     var testSecurityAssessment = new Oci.DataSafe.SecurityAssessment("test_security_assessment", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         CompartmentId = compartmentId,
+    ///         TargetId = testTarget.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Security_assessment_description,
-    ///         DisplayName = @var.Security_assessment_display_name,
+    ///         Description = securityAssessmentDescription,
+    ///         DisplayName = securityAssessmentDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Schedule = @var.Security_assessment_schedule,
+    ///         Schedule = securityAssessmentSchedule,
     ///     });
     /// 
     /// });

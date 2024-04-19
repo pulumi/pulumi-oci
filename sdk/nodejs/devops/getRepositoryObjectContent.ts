@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryObjectContent = oci.DevOps.getRepositoryObjectContent({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     sha: _var.repository_object_content_sha,
- *     filePath: _var.repository_object_content_file_path,
+ *     repositoryId: testRepository.id,
+ *     sha: repositoryObjectContentSha,
+ *     filePath: repositoryObjectContentFilePath,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,9 +77,9 @@ export interface GetRepositoryObjectContentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryObjectContent = oci.DevOps.getRepositoryObjectContent({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     sha: _var.repository_object_content_sha,
- *     filePath: _var.repository_object_content_file_path,
+ *     repositoryId: testRepository.id,
+ *     sha: repositoryObjectContentSha,
+ *     filePath: repositoryObjectContentFilePath,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

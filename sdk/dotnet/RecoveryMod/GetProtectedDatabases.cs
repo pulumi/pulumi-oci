@@ -30,12 +30,12 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testProtectedDatabases = Oci.RecoveryMod.GetProtectedDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Protected_database_display_name,
-        ///         Id = @var.Protected_database_id,
-        ///         ProtectionPolicyId = oci_recovery_protection_policy.Test_protection_policy.Id,
-        ///         RecoveryServiceSubnetId = oci_recovery_recovery_service_subnet.Test_recovery_service_subnet.Id,
-        ///         State = @var.Protected_database_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectedDatabaseDisplayName,
+        ///         Id = protectedDatabaseId,
+        ///         ProtectionPolicyId = testProtectionPolicy.Id,
+        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
+        ///         State = protectedDatabaseState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testProtectedDatabases = Oci.RecoveryMod.GetProtectedDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Protected_database_display_name,
-        ///         Id = @var.Protected_database_id,
-        ///         ProtectionPolicyId = oci_recovery_protection_policy.Test_protection_policy.Id,
-        ///         RecoveryServiceSubnetId = oci_recovery_recovery_service_subnet.Test_recovery_service_subnet.Id,
-        ///         State = @var.Protected_database_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectedDatabaseDisplayName,
+        ///         Id = protectedDatabaseId,
+        ///         ProtectionPolicyId = testProtectionPolicy.Id,
+        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
+        ///         State = protectedDatabaseState,
         ///     });
         /// 
         /// });

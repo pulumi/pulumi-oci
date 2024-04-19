@@ -31,7 +31,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDatabaseRegistration = Oci.GoldenGate.GetDatabaseRegistration.Invoke(new()
         ///     {
-        ///         DatabaseRegistrationId = oci_golden_gate_database_registration.Test_database_registration.Id,
+        ///         DatabaseRegistrationId = testDatabaseRegistrationOciGoldenGateDatabaseRegistration.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDatabaseRegistration = Oci.GoldenGate.GetDatabaseRegistration.Invoke(new()
         ///     {
-        ///         DatabaseRegistrationId = oci_golden_gate_database_registration.Test_database_registration.Id,
+        ///         DatabaseRegistrationId = testDatabaseRegistrationOciGoldenGateDatabaseRegistration.Id,
         ///     });
         /// 
         /// });

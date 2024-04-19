@@ -18,33 +18,33 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceIngestTimeRule = new oci.loganalytics.NamespaceIngestTimeRule("testNamespaceIngestTimeRule", {
+ * const testNamespaceIngestTimeRule = new oci.loganalytics.NamespaceIngestTimeRule("test_namespace_ingest_time_rule", {
  *     actions: [{
- *         compartmentId: _var.compartment_id,
- *         metricName: oci_monitoring_metric.test_metric.name,
- *         namespace: _var.namespace_ingest_time_rule_actions_namespace,
- *         type: _var.namespace_ingest_time_rule_actions_type,
- *         dimensions: _var.namespace_ingest_time_rule_actions_dimensions,
- *         resourceGroup: _var.namespace_ingest_time_rule_actions_resource_group,
+ *         compartmentId: compartmentId,
+ *         metricName: testMetric.name,
+ *         namespace: namespaceIngestTimeRuleActionsNamespace,
+ *         type: namespaceIngestTimeRuleActionsType,
+ *         dimensions: namespaceIngestTimeRuleActionsDimensions,
+ *         resourceGroup: namespaceIngestTimeRuleActionsResourceGroup,
  *     }],
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  *     conditions: {
- *         fieldName: _var.namespace_ingest_time_rule_conditions_field_name,
- *         fieldOperator: _var.namespace_ingest_time_rule_conditions_field_operator,
- *         fieldValue: _var.namespace_ingest_time_rule_conditions_field_value,
- *         kind: _var.namespace_ingest_time_rule_conditions_kind,
+ *         fieldName: namespaceIngestTimeRuleConditionsFieldName,
+ *         fieldOperator: namespaceIngestTimeRuleConditionsFieldOperator,
+ *         fieldValue: namespaceIngestTimeRuleConditionsFieldValue,
+ *         kind: namespaceIngestTimeRuleConditionsKind,
  *         additionalConditions: [{
- *             conditionField: _var.namespace_ingest_time_rule_conditions_additional_conditions_condition_field,
- *             conditionOperator: _var.namespace_ingest_time_rule_conditions_additional_conditions_condition_operator,
- *             conditionValue: _var.namespace_ingest_time_rule_conditions_additional_conditions_condition_value,
+ *             conditionField: namespaceIngestTimeRuleConditionsAdditionalConditionsConditionField,
+ *             conditionOperator: namespaceIngestTimeRuleConditionsAdditionalConditionsConditionOperator,
+ *             conditionValue: namespaceIngestTimeRuleConditionsAdditionalConditionsConditionValue,
  *         }],
  *     },
- *     displayName: _var.namespace_ingest_time_rule_display_name,
- *     namespace: _var.namespace_ingest_time_rule_namespace,
+ *     displayName: namespaceIngestTimeRuleDisplayName,
+ *     namespace: namespaceIngestTimeRuleNamespace,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.namespace_ingest_time_rule_description,
+ *     description: namespaceIngestTimeRuleDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

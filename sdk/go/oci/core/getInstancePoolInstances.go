@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetInstancePoolInstances(ctx, &core.GetInstancePoolInstancesArgs{
-//				CompartmentId:  _var.Compartment_id,
-//				InstancePoolId: oci_core_instance_pool.Test_instance_pool.Id,
-//				DisplayName:    pulumi.StringRef(_var.Instance_pool_instance_display_name),
+//				CompartmentId:  compartmentId,
+//				InstancePoolId: testInstancePool.Id,
+//				DisplayName:    pulumi.StringRef(instancePoolInstanceDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

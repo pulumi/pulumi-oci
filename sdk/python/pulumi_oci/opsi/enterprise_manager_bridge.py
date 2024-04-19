@@ -368,14 +368,14 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_enterprise_manager_bridge = oci.opsi.EnterpriseManagerBridge("testEnterpriseManagerBridge",
-            compartment_id=var["compartment_id"],
-            display_name=var["enterprise_manager_bridge_display_name"],
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
+        test_enterprise_manager_bridge = oci.opsi.EnterpriseManagerBridge("test_enterprise_manager_bridge",
+            compartment_id=compartment_id,
+            display_name=enterprise_manager_bridge_display_name,
+            object_storage_bucket_name=test_bucket["name"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["enterprise_manager_bridge_description"],
+            description=enterprise_manager_bridge_description,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -421,14 +421,14 @@ class EnterpriseManagerBridge(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_enterprise_manager_bridge = oci.opsi.EnterpriseManagerBridge("testEnterpriseManagerBridge",
-            compartment_id=var["compartment_id"],
-            display_name=var["enterprise_manager_bridge_display_name"],
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
+        test_enterprise_manager_bridge = oci.opsi.EnterpriseManagerBridge("test_enterprise_manager_bridge",
+            compartment_id=compartment_id,
+            display_name=enterprise_manager_bridge_display_name,
+            object_storage_bucket_name=test_bucket["name"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["enterprise_manager_bridge_description"],
+            description=enterprise_manager_bridge_description,
             freeform_tags={
                 "bar-key": "value",
             })

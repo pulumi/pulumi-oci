@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetApplication(ctx, &functions.GetApplicationArgs{
-//				ApplicationId: oci_functions_application.Test_application.Id,
+//				ApplicationId: testApplicationOciFunctionsApplication.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

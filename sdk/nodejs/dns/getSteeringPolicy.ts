@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSteeringPolicy = oci.Dns.getSteeringPolicy({
- *     steeringPolicyId: oci_dns_steering_policy.test_steering_policy.id,
+ *     steeringPolicyId: testSteeringPolicyOciDnsSteeringPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetSteeringPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSteeringPolicy = oci.Dns.getSteeringPolicy({
- *     steeringPolicyId: oci_dns_steering_policy.test_steering_policy.id,
+ *     steeringPolicyId: testSteeringPolicyOciDnsSteeringPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

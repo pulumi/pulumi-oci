@@ -31,15 +31,15 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testHistories = Oci.Optimizer.GetHistories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.History_compartment_id_in_subtree,
-        ///         IncludeResourceMetadata = @var.History_include_resource_metadata,
-        ///         Name = @var.History_name,
-        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         ResourceType = @var.History_resource_type,
-        ///         State = @var.History_state,
-        ///         Status = @var.History_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = historyCompartmentIdInSubtree,
+        ///         IncludeResourceMetadata = historyIncludeResourceMetadata,
+        ///         Name = historyName,
+        ///         RecommendationId = testRecommendation.Id,
+        ///         RecommendationName = testRecommendation.Name,
+        ///         ResourceType = historyResourceType,
+        ///         State = historyState,
+        ///         Status = historyStatus,
         ///     });
         /// 
         /// });
@@ -69,15 +69,15 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testHistories = Oci.Optimizer.GetHistories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.History_compartment_id_in_subtree,
-        ///         IncludeResourceMetadata = @var.History_include_resource_metadata,
-        ///         Name = @var.History_name,
-        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         ResourceType = @var.History_resource_type,
-        ///         State = @var.History_state,
-        ///         Status = @var.History_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = historyCompartmentIdInSubtree,
+        ///         IncludeResourceMetadata = historyIncludeResourceMetadata,
+        ///         Name = historyName,
+        ///         RecommendationId = testRecommendation.Id,
+        ///         RecommendationName = testRecommendation.Name,
+        ///         ResourceType = historyResourceType,
+        ///         State = historyState,
+        ///         Status = historyStatus,
         ///     });
         /// 
         /// });

@@ -9,27 +9,6 @@ import * as utilities from "../utilities";
  *
  * Creates a migration asset.
  *
- * ## Example Usage
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testMigrationAsset = new oci.cloudmigrations.MigrationAsset("testMigrationAsset", {
- *     availabilityDomain: _var.migration_asset_availability_domain,
- *     inventoryAssetId: oci_cloud_migrations_inventory_asset.test_inventory_asset.id,
- *     migrationId: oci_cloud_migrations_migration.test_migration.id,
- *     replicationCompartmentId: oci_identity_compartment.test_compartment.id,
- *     snapShotBucketName: oci_objectstorage_bucket.test_bucket.name,
- *     displayName: _var.migration_asset_display_name,
- *     replicationScheduleId: oci_cloud_migrations_replication_schedule.test_replication_schedule.id,
- * }, {
- *     dependsOn: _var.migration_asset_depends_on,
- * });
- * ```
- * <!--End PulumiCodeChooser -->
- *
  * ## Import
  *
  * MigrationAssets can be imported using the `id`, e.g.

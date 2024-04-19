@@ -453,30 +453,30 @@ class Pool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pool = oci.data_flow.Pool("testPool",
-            compartment_id=var["compartment_id"],
+        test_pool = oci.data_flow.Pool("test_pool",
+            compartment_id=compartment_id,
             configurations=[oci.data_flow.PoolConfigurationArgs(
-                max=var["pool_configurations_max"],
-                min=var["pool_configurations_min"],
-                shape=var["pool_configurations_shape"],
+                max=pool_configurations_max,
+                min=pool_configurations_min,
+                shape=pool_configurations_shape,
                 shape_config=oci.data_flow.PoolConfigurationShapeConfigArgs(
-                    memory_in_gbs=var["pool_configurations_shape_config_memory_in_gbs"],
-                    ocpus=var["pool_configurations_shape_config_ocpus"],
+                    memory_in_gbs=pool_configurations_shape_config_memory_in_gbs,
+                    ocpus=pool_configurations_shape_config_ocpus,
                 ),
             )],
-            display_name=var["pool_display_name"],
+            display_name=pool_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["pool_description"],
+            description=pool_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            idle_timeout_in_minutes=var["pool_idle_timeout_in_minutes"],
+            idle_timeout_in_minutes=pool_idle_timeout_in_minutes,
             schedules=[oci.data_flow.PoolScheduleArgs(
-                day_of_week=var["pool_schedules_day_of_week"],
-                start_time=var["pool_schedules_start_time"],
-                stop_time=var["pool_schedules_stop_time"],
+                day_of_week=pool_schedules_day_of_week,
+                start_time=pool_schedules_start_time,
+                stop_time=pool_schedules_stop_time,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -523,30 +523,30 @@ class Pool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pool = oci.data_flow.Pool("testPool",
-            compartment_id=var["compartment_id"],
+        test_pool = oci.data_flow.Pool("test_pool",
+            compartment_id=compartment_id,
             configurations=[oci.data_flow.PoolConfigurationArgs(
-                max=var["pool_configurations_max"],
-                min=var["pool_configurations_min"],
-                shape=var["pool_configurations_shape"],
+                max=pool_configurations_max,
+                min=pool_configurations_min,
+                shape=pool_configurations_shape,
                 shape_config=oci.data_flow.PoolConfigurationShapeConfigArgs(
-                    memory_in_gbs=var["pool_configurations_shape_config_memory_in_gbs"],
-                    ocpus=var["pool_configurations_shape_config_ocpus"],
+                    memory_in_gbs=pool_configurations_shape_config_memory_in_gbs,
+                    ocpus=pool_configurations_shape_config_ocpus,
                 ),
             )],
-            display_name=var["pool_display_name"],
+            display_name=pool_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["pool_description"],
+            description=pool_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            idle_timeout_in_minutes=var["pool_idle_timeout_in_minutes"],
+            idle_timeout_in_minutes=pool_idle_timeout_in_minutes,
             schedules=[oci.data_flow.PoolScheduleArgs(
-                day_of_week=var["pool_schedules_day_of_week"],
-                start_time=var["pool_schedules_start_time"],
-                stop_time=var["pool_schedules_stop_time"],
+                day_of_week=pool_schedules_day_of_week,
+                start_time=pool_schedules_start_time,
+                stop_time=pool_schedules_stop_time,
             )])
         ```
         <!--End PulumiCodeChooser -->

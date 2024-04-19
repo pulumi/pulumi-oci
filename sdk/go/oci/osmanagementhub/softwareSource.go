@@ -31,49 +31,49 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewSoftwareSource(ctx, "testSoftwareSource", &OsManagementHub.SoftwareSourceArgs{
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				DisplayName:        pulumi.Any(_var.Software_source_display_name),
-//				SoftwareSourceType: pulumi.Any(_var.Software_source_software_source_type),
+//			_, err := OsManagementHub.NewSoftwareSource(ctx, "test_software_source", &OsManagementHub.SoftwareSourceArgs{
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				DisplayName:        pulumi.Any(softwareSourceDisplayName),
+//				SoftwareSourceType: pulumi.Any(softwareSourceSoftwareSourceType),
 //				VendorSoftwareSources: osmanagementhub.SoftwareSourceVendorSoftwareSourceArray{
 //					&osmanagementhub.SoftwareSourceVendorSoftwareSourceArgs{
-//						DisplayName: pulumi.Any(_var.Software_source_vendor_software_sources_display_name),
-//						Id:          pulumi.Any(_var.Software_source_vendor_software_sources_id),
+//						DisplayName: pulumi.Any(softwareSourceVendorSoftwareSourcesDisplayName),
+//						Id:          pulumi.Any(softwareSourceVendorSoftwareSourcesId),
 //					},
 //				},
 //				CustomSoftwareSourceFilter: &osmanagementhub.SoftwareSourceCustomSoftwareSourceFilterArgs{
 //					ModuleStreamProfileFilters: osmanagementhub.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArray{
 //						&osmanagementhub.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs{
-//							FilterType:  pulumi.Any(_var.Software_source_custom_software_source_filter_module_stream_profile_filters_filter_type),
-//							ModuleName:  pulumi.Any(_var.Software_source_custom_software_source_filter_module_stream_profile_filters_module_name),
-//							ProfileName: pulumi.Any(oci_os_management_hub_profile.Test_profile.Name),
-//							StreamName:  pulumi.Any(oci_streaming_stream.Test_stream.Name),
+//							FilterType:  pulumi.Any(softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersFilterType),
+//							ModuleName:  pulumi.Any(softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersModuleName),
+//							ProfileName: pulumi.Any(testProfile.Name),
+//							StreamName:  pulumi.Any(testStream.Name),
 //						},
 //					},
 //					PackageFilters: osmanagementhub.SoftwareSourceCustomSoftwareSourceFilterPackageFilterArray{
 //						&osmanagementhub.SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs{
-//							FilterType:         pulumi.Any(_var.Software_source_custom_software_source_filter_package_filters_filter_type),
-//							PackageName:        pulumi.Any(_var.Software_source_custom_software_source_filter_package_filters_package_name),
-//							PackageNamePattern: pulumi.Any(_var.Software_source_custom_software_source_filter_package_filters_package_name_pattern),
-//							PackageVersion:     pulumi.Any(_var.Software_source_custom_software_source_filter_package_filters_package_version),
+//							FilterType:         pulumi.Any(softwareSourceCustomSoftwareSourceFilterPackageFiltersFilterType),
+//							PackageName:        pulumi.Any(softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageName),
+//							PackageNamePattern: pulumi.Any(softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageNamePattern),
+//							PackageVersion:     pulumi.Any(softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageVersion),
 //						},
 //					},
 //					PackageGroupFilters: osmanagementhub.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArray{
 //						&osmanagementhub.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs{
-//							FilterType:    pulumi.Any(_var.Software_source_custom_software_source_filter_package_group_filters_filter_type),
-//							PackageGroups: pulumi.Any(_var.Software_source_custom_software_source_filter_package_group_filters_package_groups),
+//							FilterType:    pulumi.Any(softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersFilterType),
+//							PackageGroups: pulumi.Any(softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersPackageGroups),
 //						},
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Software_source_description),
+//				Description: pulumi.Any(softwareSourceDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsAutomaticallyUpdated: pulumi.Any(_var.Software_source_is_automatically_updated),
-//				SoftwareSourceVersion:  pulumi.Any(_var.Software_source_software_source_version),
+//				IsAutomaticallyUpdated: pulumi.Any(softwareSourceIsAutomaticallyUpdated),
+//				SoftwareSourceVersion:  pulumi.Any(softwareSourceSoftwareSourceVersion),
 //			})
 //			if err != nil {
 //				return err

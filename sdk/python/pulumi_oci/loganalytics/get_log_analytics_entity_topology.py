@@ -113,10 +113,10 @@ def get_log_analytics_entity_topology(log_analytics_entity_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        namespace=var["log_analytics_entity_topology_namespace"],
-        metadata_equals=var["log_analytics_entity_topology_metadata_equals"],
-        state=var["log_analytics_entity_topology_state"])
+    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
+        namespace=log_analytics_entity_topology_namespace,
+        metadata_equals=log_analytics_entity_topology_metadata_equals,
+        state=log_analytics_entity_topology_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -161,10 +161,10 @@ def get_log_analytics_entity_topology_output(log_analytics_entity_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        namespace=var["log_analytics_entity_topology_namespace"],
-        metadata_equals=var["log_analytics_entity_topology_metadata_equals"],
-        state=var["log_analytics_entity_topology_state"])
+    test_log_analytics_entity_topology = oci.LogAnalytics.get_log_analytics_entity_topology(log_analytics_entity_id=test_log_analytics_entity["id"],
+        namespace=log_analytics_entity_topology_namespace,
+        metadata_equals=log_analytics_entity_topology_metadata_equals,
+        state=log_analytics_entity_topology_state)
     ```
     <!--End PulumiCodeChooser -->
 

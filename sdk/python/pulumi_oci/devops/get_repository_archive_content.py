@@ -87,9 +87,9 @@ def get_repository_archive_content(format: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=oci_devops_repository["test_repository"]["id"],
-        format=var["repository_archive_content_format"],
-        ref_name=var["repository_archive_content_ref_name"])
+    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=test_repository["id"],
+        format=repository_archive_content_format,
+        ref_name=repository_archive_content_ref_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -129,9 +129,9 @@ def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=oci_devops_repository["test_repository"]["id"],
-        format=var["repository_archive_content_format"],
-        ref_name=var["repository_archive_content_ref_name"])
+    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=test_repository["id"],
+        format=repository_archive_content_format,
+        ref_name=repository_archive_content_ref_name)
     ```
     <!--End PulumiCodeChooser -->
 

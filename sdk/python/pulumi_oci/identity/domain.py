@@ -664,25 +664,25 @@ class Domain(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_domain = oci.identity.Domain("testDomain",
-            compartment_id=var["compartment_id"],
-            description=var["domain_description"],
-            display_name=var["domain_display_name"],
-            home_region=var["domain_home_region"],
-            license_type=var["domain_license_type"],
-            admin_email=var["domain_admin_email"],
-            admin_first_name=var["domain_admin_first_name"],
-            admin_last_name=var["domain_admin_last_name"],
-            admin_user_name=oci_identity_user["test_user"]["name"],
+        test_domain = oci.identity.Domain("test_domain",
+            compartment_id=compartment_id,
+            description=domain_description,
+            display_name=domain_display_name,
+            home_region=domain_home_region,
+            license_type=domain_license_type,
+            admin_email=domain_admin_email,
+            admin_first_name=domain_admin_first_name,
+            admin_last_name=domain_admin_last_name,
+            admin_user_name=test_user["name"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            is_hidden_on_login=var["domain_is_hidden_on_login"],
-            is_notification_bypassed=var["domain_is_notification_bypassed"],
-            is_primary_email_required=var["domain_is_primary_email_required"])
+            is_hidden_on_login=domain_is_hidden_on_login,
+            is_notification_bypassed=domain_is_notification_bypassed,
+            is_primary_email_required=domain_is_primary_email_required)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -749,25 +749,25 @@ class Domain(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_domain = oci.identity.Domain("testDomain",
-            compartment_id=var["compartment_id"],
-            description=var["domain_description"],
-            display_name=var["domain_display_name"],
-            home_region=var["domain_home_region"],
-            license_type=var["domain_license_type"],
-            admin_email=var["domain_admin_email"],
-            admin_first_name=var["domain_admin_first_name"],
-            admin_last_name=var["domain_admin_last_name"],
-            admin_user_name=oci_identity_user["test_user"]["name"],
+        test_domain = oci.identity.Domain("test_domain",
+            compartment_id=compartment_id,
+            description=domain_description,
+            display_name=domain_display_name,
+            home_region=domain_home_region,
+            license_type=domain_license_type,
+            admin_email=domain_admin_email,
+            admin_first_name=domain_admin_first_name,
+            admin_last_name=domain_admin_last_name,
+            admin_user_name=test_user["name"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            is_hidden_on_login=var["domain_is_hidden_on_login"],
-            is_notification_bypassed=var["domain_is_notification_bypassed"],
-            is_primary_email_required=var["domain_is_primary_email_required"])
+            is_hidden_on_login=domain_is_hidden_on_login,
+            is_notification_bypassed=domain_is_notification_bypassed,
+            is_primary_email_required=domain_is_primary_email_required)
         ```
         <!--End PulumiCodeChooser -->
 

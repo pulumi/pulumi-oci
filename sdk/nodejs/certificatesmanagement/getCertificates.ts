@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificates = oci.CertificatesManagement.getCertificates({
- *     certificateId: oci_certificates_management_certificate.test_certificate.id,
- *     compartmentId: _var.compartment_id,
- *     issuerCertificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
- *     name: _var.certificate_name,
- *     state: _var.certificate_state,
+ *     certificateId: testCertificate.id,
+ *     compartmentId: compartmentId,
+ *     issuerCertificateAuthorityId: testCertificateAuthority.id,
+ *     name: certificateName,
+ *     state: certificateState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,11 +118,11 @@ export interface GetCertificatesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificates = oci.CertificatesManagement.getCertificates({
- *     certificateId: oci_certificates_management_certificate.test_certificate.id,
- *     compartmentId: _var.compartment_id,
- *     issuerCertificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
- *     name: _var.certificate_name,
- *     state: _var.certificate_state,
+ *     certificateId: testCertificate.id,
+ *     compartmentId: compartmentId,
+ *     issuerCertificateAuthorityId: testCertificateAuthority.id,
+ *     name: certificateName,
+ *     state: certificateState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

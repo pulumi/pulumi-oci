@@ -166,13 +166,13 @@ def get_operations_insights_private_endpoints(compartment_id: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_private_endpoints = oci.Opsi.get_operations_insights_private_endpoints(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["operations_insights_private_endpoint_compartment_id_in_subtree"],
-        display_name=var["operations_insights_private_endpoint_display_name"],
-        is_used_for_rac_dbs=var["operations_insights_private_endpoint_is_used_for_rac_dbs"],
-        opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-        states=var["operations_insights_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_operations_insights_private_endpoints = oci.Opsi.get_operations_insights_private_endpoints(compartment_id=compartment_id,
+        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree,
+        display_name=operations_insights_private_endpoint_display_name,
+        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
+        opsi_private_endpoint_id=test_private_endpoint["id"],
+        states=operations_insights_private_endpoint_state,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -232,13 +232,13 @@ def get_operations_insights_private_endpoints_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_private_endpoints = oci.Opsi.get_operations_insights_private_endpoints(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["operations_insights_private_endpoint_compartment_id_in_subtree"],
-        display_name=var["operations_insights_private_endpoint_display_name"],
-        is_used_for_rac_dbs=var["operations_insights_private_endpoint_is_used_for_rac_dbs"],
-        opsi_private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-        states=var["operations_insights_private_endpoint_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_operations_insights_private_endpoints = oci.Opsi.get_operations_insights_private_endpoints(compartment_id=compartment_id,
+        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree,
+        display_name=operations_insights_private_endpoint_display_name,
+        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
+        opsi_private_endpoint_id=test_private_endpoint["id"],
+        states=operations_insights_private_endpoint_state,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 

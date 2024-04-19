@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflowStep = Oci.Identity.GetDomainsApprovalWorkflowStep.Invoke(new()
         ///     {
-        ///         ApprovalWorkflowStepId = oci_identity_domains_approval_workflow_step.Test_approval_workflow_step.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         ApprovalWorkflowStepId = testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_step_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_step_resource_type_schema_version,
+        ///         Authorization = approvalWorkflowStepAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowStepResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflowStep = Oci.Identity.GetDomainsApprovalWorkflowStep.Invoke(new()
         ///     {
-        ///         ApprovalWorkflowStepId = oci_identity_domains_approval_workflow_step.Test_approval_workflow_step.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         ApprovalWorkflowStepId = testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_step_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_step_resource_type_schema_version,
+        ///         Authorization = approvalWorkflowStepAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowStepResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

@@ -25,17 +25,17 @@ namespace Pulumi.Oci.DatabaseTools
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDatabaseToolsPrivateEndpoint = new Oci.DatabaseTools.DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint", new()
+    ///     var testDatabaseToolsPrivateEndpoint = new Oci.DatabaseTools.DatabaseToolsPrivateEndpoint("test_database_tools_private_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Database_tools_private_endpoint_display_name,
-    ///         EndpointServiceId = oci_core_service.Test_service.Id,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = databaseToolsPrivateEndpointDisplayName,
+    ///         EndpointServiceId = testService.Id,
+    ///         SubnetId = testSubnet.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Database_tools_private_endpoint_description,
+    ///         Description = databaseToolsPrivateEndpointDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
@@ -44,14 +44,14 @@ namespace Pulumi.Oci.DatabaseTools
     ///         {
     ///             new Oci.DatabaseTools.Inputs.DatabaseToolsPrivateEndpointLockArgs
     ///             {
-    ///                 Type = @var.Database_tools_private_endpoint_locks_type,
-    ///                 Message = @var.Database_tools_private_endpoint_locks_message,
-    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
-    ///                 TimeCreated = @var.Database_tools_private_endpoint_locks_time_created,
+    ///                 Type = databaseToolsPrivateEndpointLocksType,
+    ///                 Message = databaseToolsPrivateEndpointLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = databaseToolsPrivateEndpointLocksTimeCreated,
     ///             },
     ///         },
-    ///         NsgIds = @var.Database_tools_private_endpoint_nsg_ids,
-    ///         PrivateEndpointIp = @var.Database_tools_private_endpoint_private_endpoint_ip,
+    ///         NsgIds = databaseToolsPrivateEndpointNsgIds,
+    ///         PrivateEndpointIp = databaseToolsPrivateEndpointPrivateEndpointIp,
     ///     });
     /// 
     /// });

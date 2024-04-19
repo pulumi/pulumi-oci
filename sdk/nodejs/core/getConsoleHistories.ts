@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConsoleHistories = oci.Core.getConsoleHistories({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.console_history_availability_domain,
- *     instanceId: oci_core_instance.test_instance.id,
- *     state: _var.console_history_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: consoleHistoryAvailabilityDomain,
+ *     instanceId: testInstance.id,
+ *     state: consoleHistoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetConsoleHistoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConsoleHistories = oci.Core.getConsoleHistories({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.console_history_availability_domain,
- *     instanceId: oci_core_instance.test_instance.id,
- *     state: _var.console_history_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: consoleHistoryAvailabilityDomain,
+ *     instanceId: testInstance.id,
+ *     state: consoleHistoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

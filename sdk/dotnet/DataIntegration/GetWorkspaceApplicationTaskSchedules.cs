@@ -30,13 +30,13 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceApplicationTaskSchedules = Oci.DataIntegration.GetWorkspaceApplicationTaskSchedules.Invoke(new()
         ///     {
-        ///         ApplicationKey = @var.Workspace_application_task_schedule_application_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         Identifiers = @var.Workspace_application_task_schedule_identifier,
-        ///         IsEnabled = @var.Workspace_application_task_schedule_is_enabled,
-        ///         Keys = @var.Workspace_application_task_schedule_key,
-        ///         Name = @var.Workspace_application_task_schedule_name,
-        ///         Types = @var.Workspace_application_task_schedule_type,
+        ///         ApplicationKey = workspaceApplicationTaskScheduleApplicationKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Identifiers = workspaceApplicationTaskScheduleIdentifier,
+        ///         IsEnabled = workspaceApplicationTaskScheduleIsEnabled,
+        ///         Keys = workspaceApplicationTaskScheduleKey,
+        ///         Name = workspaceApplicationTaskScheduleName,
+        ///         Types = workspaceApplicationTaskScheduleType,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceApplicationTaskSchedules = Oci.DataIntegration.GetWorkspaceApplicationTaskSchedules.Invoke(new()
         ///     {
-        ///         ApplicationKey = @var.Workspace_application_task_schedule_application_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         Identifiers = @var.Workspace_application_task_schedule_identifier,
-        ///         IsEnabled = @var.Workspace_application_task_schedule_is_enabled,
-        ///         Keys = @var.Workspace_application_task_schedule_key,
-        ///         Name = @var.Workspace_application_task_schedule_name,
-        ///         Types = @var.Workspace_application_task_schedule_type,
+        ///         ApplicationKey = workspaceApplicationTaskScheduleApplicationKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Identifiers = workspaceApplicationTaskScheduleIdentifier,
+        ///         IsEnabled = workspaceApplicationTaskScheduleIsEnabled,
+        ///         Keys = workspaceApplicationTaskScheduleKey,
+        ///         Name = workspaceApplicationTaskScheduleName,
+        ///         Types = workspaceApplicationTaskScheduleType,
         ///     });
         /// 
         /// });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalExadataStorageGrid(ctx, &databasemanagement.GetExternalExadataStorageGridArgs{
-//				ExternalExadataStorageGridId: oci_database_management_external_exadata_storage_grid.Test_external_exadata_storage_grid.Id,
+//				ExternalExadataStorageGridId: testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,29 +31,29 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Psql.NewConfiguration(ctx, "testConfiguration", &Psql.ConfigurationArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Psql.NewConfiguration(ctx, "test_configuration", &Psql.ConfigurationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DbConfigurationOverrides: &psql.ConfigurationDbConfigurationOverridesArgs{
 //					Items: psql.ConfigurationDbConfigurationOverridesItemArray{
 //						&psql.ConfigurationDbConfigurationOverridesItemArgs{
-//							ConfigKey:            pulumi.Any(_var.Configuration_db_configuration_overrides_items_config_key),
-//							OverridenConfigValue: pulumi.Any(_var.Configuration_db_configuration_overrides_items_overriden_config_value),
+//							ConfigKey:            pulumi.Any(configurationDbConfigurationOverridesItemsConfigKey),
+//							OverridenConfigValue: pulumi.Any(configurationDbConfigurationOverridesItemsOverridenConfigValue),
 //						},
 //					},
 //				},
-//				DbVersion:               pulumi.Any(_var.Configuration_db_version),
-//				DisplayName:             pulumi.Any(_var.Configuration_display_name),
-//				InstanceMemorySizeInGbs: pulumi.Any(_var.Configuration_instance_memory_size_in_gbs),
-//				InstanceOcpuCount:       pulumi.Any(_var.Configuration_instance_ocpu_count),
-//				Shape:                   pulumi.Any(_var.Configuration_shape),
+//				DbVersion:               pulumi.Any(configurationDbVersion),
+//				DisplayName:             pulumi.Any(configurationDisplayName),
+//				InstanceMemorySizeInGbs: pulumi.Any(configurationInstanceMemorySizeInGbs),
+//				InstanceOcpuCount:       pulumi.Any(configurationInstanceOcpuCount),
+//				Shape:                   pulumi.Any(configurationShape),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Configuration_description),
+//				Description: pulumi.Any(configurationDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				SystemTags: pulumi.Any(_var.Configuration_system_tags),
+//				SystemTags: pulumi.Any(configurationSystemTags),
 //			})
 //			if err != nil {
 //				return err

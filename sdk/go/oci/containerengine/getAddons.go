@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetAddons(ctx, &containerengine.GetAddonsArgs{
-//				ClusterId: oci_containerengine_cluster.Test_cluster.Id,
+//				ClusterId: testCluster.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

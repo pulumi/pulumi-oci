@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testPools = Oci.DataFlow.GetPools.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Pool_display_name,
-        ///         DisplayNameStartsWith = @var.Pool_display_name_starts_with,
-        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///         State = @var.Pool_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = poolDisplayName,
+        ///         DisplayNameStartsWith = poolDisplayNameStartsWith,
+        ///         OwnerPrincipalId = testOwnerPrincipal.Id,
+        ///         State = poolState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testPools = Oci.DataFlow.GetPools.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Pool_display_name,
-        ///         DisplayNameStartsWith = @var.Pool_display_name_starts_with,
-        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///         State = @var.Pool_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = poolDisplayName,
+        ///         DisplayNameStartsWith = poolDisplayNameStartsWith,
+        ///         OwnerPrincipalId = testOwnerPrincipal.Id,
+        ///         State = poolState,
         ///     });
         /// 
         /// });

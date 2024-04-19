@@ -23,10 +23,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeAttachments = oci.Core.getVolumeAttachments({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.volume_attachment_availability_domain,
- *     instanceId: oci_core_instance.test_instance.id,
- *     volumeId: oci_core_volume.test_volume.id,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: volumeAttachmentAvailabilityDomain,
+ *     instanceId: testInstance.id,
+ *     volumeId: testVolume.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,10 +113,10 @@ export interface GetVolumeAttachmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeAttachments = oci.Core.getVolumeAttachments({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.volume_attachment_availability_domain,
- *     instanceId: oci_core_instance.test_instance.id,
- *     volumeId: oci_core_volume.test_volume.id,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: volumeAttachmentAvailabilityDomain,
+ *     instanceId: testInstance.id,
+ *     volumeId: testVolume.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

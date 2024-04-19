@@ -45,26 +45,26 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancer = new oci.loadbalancer.LoadBalancer("testLoadBalancer", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.load_balancer_display_name,
- *     shape: _var.load_balancer_shape,
- *     subnetIds: _var.load_balancer_subnet_ids,
+ * const testLoadBalancer = new oci.loadbalancer.LoadBalancer("test_load_balancer", {
+ *     compartmentId: compartmentId,
+ *     displayName: loadBalancerDisplayName,
+ *     shape: loadBalancerShape,
+ *     subnetIds: loadBalancerSubnetIds,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     ipMode: _var.load_balancer_ip_mode,
- *     isPrivate: _var.load_balancer_is_private,
- *     networkSecurityGroupIds: _var.load_balancer_network_security_group_ids,
+ *     ipMode: loadBalancerIpMode,
+ *     isPrivate: loadBalancerIsPrivate,
+ *     networkSecurityGroupIds: loadBalancerNetworkSecurityGroupIds,
  *     reservedIps: [{
- *         id: _var.load_balancer_reserved_ips_id,
+ *         id: loadBalancerReservedIpsId,
  *     }],
  *     shapeDetails: {
- *         maximumBandwidthInMbps: _var.load_balancer_shape_details_maximum_bandwidth_in_mbps,
- *         minimumBandwidthInMbps: _var.load_balancer_shape_details_minimum_bandwidth_in_mbps,
+ *         maximumBandwidthInMbps: loadBalancerShapeDetailsMaximumBandwidthInMbps,
+ *         minimumBandwidthInMbps: loadBalancerShapeDetailsMinimumBandwidthInMbps,
  *     },
  * });
  * ```

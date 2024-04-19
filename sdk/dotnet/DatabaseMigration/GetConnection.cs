@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {
         ///     var testConnection = Oci.DatabaseMigration.GetConnection.Invoke(new()
         ///     {
-        ///         ConnectionId = oci_database_migration_connection.Test_connection.Id,
+        ///         ConnectionId = testConnectionOciDatabaseMigrationConnection.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {
         ///     var testConnection = Oci.DatabaseMigration.GetConnection.Invoke(new()
         ///     {
-        ///         ConnectionId = oci_database_migration_connection.Test_connection.Id,
+        ///         ConnectionId = testConnectionOciDatabaseMigrationConnection.Id,
         ///     });
         /// 
         /// });

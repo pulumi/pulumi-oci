@@ -18,22 +18,22 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystem = new oci.databasemanagement.ExternalDbSystem("testExternalDbSystem", {
- *     compartmentId: _var.compartment_id,
- *     dbSystemDiscoveryId: oci_database_management_db_system_discovery.test_db_system_discovery.id,
+ * const testExternalDbSystem = new oci.databasemanagement.ExternalDbSystem("test_external_db_system", {
+ *     compartmentId: compartmentId,
+ *     dbSystemDiscoveryId: testDbSystemDiscovery.id,
  *     databaseManagementConfig: {
- *         licenseModel: _var.external_db_system_database_management_config_license_model,
+ *         licenseModel: externalDbSystemDatabaseManagementConfigLicenseModel,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.external_db_system_display_name,
+ *     displayName: externalDbSystemDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     stackMonitoringConfig: {
- *         isEnabled: _var.external_db_system_stack_monitoring_config_is_enabled,
- *         metadata: _var.external_db_system_stack_monitoring_config_metadata,
+ *         isEnabled: externalDbSystemStackMonitoringConfigIsEnabled,
+ *         metadata: externalDbSystemStackMonitoringConfigMetadata,
  *     },
  * });
  * ```

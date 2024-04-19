@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubAwrSnapshots = oci.Opsi.getAwrHubAwrSnapshots({
- *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
- *     awrSourceDatabaseIdentifier: _var.awr_hub_awr_snapshot_awr_source_database_identifier,
- *     timeGreaterThanOrEqualTo: _var.awr_hub_awr_snapshot_time_greater_than_or_equal_to,
- *     timeLessThanOrEqualTo: _var.awr_hub_awr_snapshot_time_less_than_or_equal_to,
+ *     awrHubId: testAwrHub.id,
+ *     awrSourceDatabaseIdentifier: awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
+ *     timeGreaterThanOrEqualTo: awrHubAwrSnapshotTimeGreaterThanOrEqualTo,
+ *     timeLessThanOrEqualTo: awrHubAwrSnapshotTimeLessThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,10 +95,10 @@ export interface GetAwrHubAwrSnapshotsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubAwrSnapshots = oci.Opsi.getAwrHubAwrSnapshots({
- *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
- *     awrSourceDatabaseIdentifier: _var.awr_hub_awr_snapshot_awr_source_database_identifier,
- *     timeGreaterThanOrEqualTo: _var.awr_hub_awr_snapshot_time_greater_than_or_equal_to,
- *     timeLessThanOrEqualTo: _var.awr_hub_awr_snapshot_time_less_than_or_equal_to,
+ *     awrHubId: testAwrHub.id,
+ *     awrSourceDatabaseIdentifier: awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
+ *     timeGreaterThanOrEqualTo: awrHubAwrSnapshotTimeGreaterThanOrEqualTo,
+ *     timeLessThanOrEqualTo: awrHubAwrSnapshotTimeLessThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

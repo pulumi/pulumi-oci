@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetMediaWorkflowConfigurations(ctx, &mediaservices.GetMediaWorkflowConfigurationsArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Media_workflow_configuration_display_name),
-//				Id:            pulumi.StringRef(_var.Media_workflow_configuration_id),
-//				State:         pulumi.StringRef(_var.Media_workflow_configuration_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(mediaWorkflowConfigurationDisplayName),
+//				Id:            pulumi.StringRef(mediaWorkflowConfigurationId),
+//				State:         pulumi.StringRef(mediaWorkflowConfigurationState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -77,7 +77,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
      *             .build());
      * 
      *     }
@@ -119,7 +119,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
      *             .build());
      * 
      *     }
@@ -161,7 +161,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
      *             .build());
      * 
      *     }
@@ -203,7 +203,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
      *             .build());
      * 
      *     }
@@ -245,7 +245,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
      *             .build());
      * 
      *     }
@@ -287,7 +287,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
      *             .build());
      * 
      *     }
@@ -329,7 +329,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
      *             .build());
      * 
      *     }
@@ -371,7 +371,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
      *             .build());
      * 
      *     }
@@ -413,10 +413,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
-     *             .displayName(var_.migration_asset_display_name())
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_asset_state())
+     *             .displayName(migrationAssetDisplayName)
+     *             .migrationAssetId(testMigrationAsset.id())
+     *             .migrationId(testMigration.id())
+     *             .state(migrationAssetState)
      *             .build());
      * 
      *     }
@@ -458,10 +458,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
-     *             .displayName(var_.migration_asset_display_name())
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_asset_state())
+     *             .displayName(migrationAssetDisplayName)
+     *             .migrationAssetId(testMigrationAsset.id())
+     *             .migrationId(testMigration.id())
+     *             .state(migrationAssetState)
      *             .build());
      * 
      *     }
@@ -503,10 +503,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
-     *             .displayName(var_.migration_asset_display_name())
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_asset_state())
+     *             .displayName(migrationAssetDisplayName)
+     *             .migrationAssetId(testMigrationAsset.id())
+     *             .migrationId(testMigration.id())
+     *             .state(migrationAssetState)
      *             .build());
      * 
      *     }
@@ -548,10 +548,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
-     *             .displayName(var_.migration_asset_display_name())
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_asset_state())
+     *             .displayName(migrationAssetDisplayName)
+     *             .migrationAssetId(testMigrationAsset.id())
+     *             .migrationId(testMigration.id())
+     *             .state(migrationAssetState)
      *             .build());
      * 
      *     }
@@ -593,10 +593,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
-     *             .displayName(var_.migration_asset_display_name())
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_asset_state())
+     *             .displayName(migrationAssetDisplayName)
+     *             .migrationAssetId(testMigrationAsset.id())
+     *             .migrationId(testMigration.id())
+     *             .state(migrationAssetState)
      *             .build());
      * 
      *     }
@@ -638,10 +638,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
-     *             .displayName(var_.migration_asset_display_name())
-     *             .migrationAssetId(oci_cloud_migrations_migration_asset.test_migration_asset().id())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_asset_state())
+     *             .displayName(migrationAssetDisplayName)
+     *             .migrationAssetId(testMigrationAsset.id())
+     *             .migrationId(testMigration.id())
+     *             .state(migrationAssetState)
      *             .build());
      * 
      *     }
@@ -683,7 +683,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
      *             .build());
      * 
      *     }
@@ -725,7 +725,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
      *             .build());
      * 
      *     }
@@ -767,7 +767,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
      *             .build());
      * 
      *     }
@@ -809,7 +809,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
      *             .build());
      * 
      *     }
@@ -851,11 +851,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .availabilityDomain(var_.migration_plan_available_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .dvhHostId(oci_cloud_migrations_dvh_host.test_dvh_host().id())
-     *             .reservedCapacityId(oci_cloud_migrations_reserved_capacity.test_reserved_capacity().id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
      *             .build());
      * 
      *     }
@@ -897,11 +897,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .availabilityDomain(var_.migration_plan_available_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .dvhHostId(oci_cloud_migrations_dvh_host.test_dvh_host().id())
-     *             .reservedCapacityId(oci_cloud_migrations_reserved_capacity.test_reserved_capacity().id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
      *             .build());
      * 
      *     }
@@ -943,11 +943,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .availabilityDomain(var_.migration_plan_available_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .dvhHostId(oci_cloud_migrations_dvh_host.test_dvh_host().id())
-     *             .reservedCapacityId(oci_cloud_migrations_reserved_capacity.test_reserved_capacity().id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
      *             .build());
      * 
      *     }
@@ -989,11 +989,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .availabilityDomain(var_.migration_plan_available_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .dvhHostId(oci_cloud_migrations_dvh_host.test_dvh_host().id())
-     *             .reservedCapacityId(oci_cloud_migrations_reserved_capacity.test_reserved_capacity().id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
      *             .build());
      * 
      *     }
@@ -1035,11 +1035,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .availabilityDomain(var_.migration_plan_available_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .dvhHostId(oci_cloud_migrations_dvh_host.test_dvh_host().id())
-     *             .reservedCapacityId(oci_cloud_migrations_reserved_capacity.test_reserved_capacity().id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
      *             .build());
      * 
      *     }
@@ -1081,11 +1081,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .availabilityDomain(var_.migration_plan_available_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .dvhHostId(oci_cloud_migrations_dvh_host.test_dvh_host().id())
-     *             .reservedCapacityId(oci_cloud_migrations_reserved_capacity.test_reserved_capacity().id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
      *             .build());
      * 
      *     }
@@ -1127,11 +1127,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .availabilityDomain(var_.migration_plan_available_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .dvhHostId(oci_cloud_migrations_dvh_host.test_dvh_host().id())
-     *             .reservedCapacityId(oci_cloud_migrations_reserved_capacity.test_reserved_capacity().id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
      *             .build());
      * 
      *     }
@@ -1173,11 +1173,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .availabilityDomain(var_.migration_plan_available_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .dvhHostId(oci_cloud_migrations_dvh_host.test_dvh_host().id())
-     *             .reservedCapacityId(oci_cloud_migrations_reserved_capacity.test_reserved_capacity().id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .dvhHostId(testDvhHost.id())
+     *             .reservedCapacityId(testReservedCapacity.id())
      *             .build());
      * 
      *     }
@@ -1219,11 +1219,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_plan_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.migration_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationPlanDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(migrationPlanState)
      *             .build());
      * 
      *     }
@@ -1265,11 +1265,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_plan_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.migration_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationPlanDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(migrationPlanState)
      *             .build());
      * 
      *     }
@@ -1311,11 +1311,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_plan_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.migration_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationPlanDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(migrationPlanState)
      *             .build());
      * 
      *     }
@@ -1357,11 +1357,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_plan_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.migration_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationPlanDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(migrationPlanState)
      *             .build());
      * 
      *     }
@@ -1403,11 +1403,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_plan_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.migration_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationPlanDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(migrationPlanState)
      *             .build());
      * 
      *     }
@@ -1449,11 +1449,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_plan_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.migration_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationPlanDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(migrationPlanState)
      *             .build());
      * 
      *     }
@@ -1495,10 +1495,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .state(migrationState)
      *             .build());
      * 
      *     }
@@ -1540,10 +1540,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .state(migrationState)
      *             .build());
      * 
      *     }
@@ -1585,10 +1585,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .state(migrationState)
      *             .build());
      * 
      *     }
@@ -1630,10 +1630,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .state(migrationState)
      *             .build());
      * 
      *     }
@@ -1675,10 +1675,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .state(migrationState)
      *             .build());
      * 
      *     }
@@ -1720,10 +1720,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .migrationId(testMigration.id())
+     *             .state(migrationState)
      *             .build());
      * 
      *     }
@@ -1765,7 +1765,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
      *             .build());
      * 
      *     }
@@ -1807,7 +1807,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
      *             .build());
      * 
      *     }
@@ -1849,7 +1849,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
      *             .build());
      * 
      *     }
@@ -1891,7 +1891,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
      *             .build());
      * 
      *     }
@@ -1933,10 +1933,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.replication_schedule_display_name())
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
-     *             .state(var_.replication_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(replicationScheduleDisplayName)
+     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .state(replicationScheduleState)
      *             .build());
      * 
      *     }
@@ -1978,10 +1978,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.replication_schedule_display_name())
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
-     *             .state(var_.replication_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(replicationScheduleDisplayName)
+     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .state(replicationScheduleState)
      *             .build());
      * 
      *     }
@@ -2023,10 +2023,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.replication_schedule_display_name())
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
-     *             .state(var_.replication_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(replicationScheduleDisplayName)
+     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .state(replicationScheduleState)
      *             .build());
      * 
      *     }
@@ -2068,10 +2068,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.replication_schedule_display_name())
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
-     *             .state(var_.replication_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(replicationScheduleDisplayName)
+     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .state(replicationScheduleState)
      *             .build());
      * 
      *     }
@@ -2113,10 +2113,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.replication_schedule_display_name())
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
-     *             .state(var_.replication_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(replicationScheduleDisplayName)
+     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .state(replicationScheduleState)
      *             .build());
      * 
      *     }
@@ -2158,10 +2158,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.replication_schedule_display_name())
-     *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
-     *             .state(var_.replication_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(replicationScheduleDisplayName)
+     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .state(replicationScheduleState)
      *             .build());
      * 
      *     }
@@ -2203,7 +2203,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
      *             .build());
      * 
      *     }
@@ -2245,7 +2245,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
      *             .build());
      * 
      *     }
@@ -2287,7 +2287,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
      *             .build());
      * 
      *     }
@@ -2329,7 +2329,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
      *             .build());
      * 
      *     }
@@ -2371,10 +2371,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
-     *             .displayName(var_.target_asset_display_name())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.target_asset_state())
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .displayName(targetAssetDisplayName)
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(targetAssetState)
+     *             .targetAssetId(testTargetAsset.id())
      *             .build());
      * 
      *     }
@@ -2416,10 +2416,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
-     *             .displayName(var_.target_asset_display_name())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.target_asset_state())
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .displayName(targetAssetDisplayName)
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(targetAssetState)
+     *             .targetAssetId(testTargetAsset.id())
      *             .build());
      * 
      *     }
@@ -2461,10 +2461,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
-     *             .displayName(var_.target_asset_display_name())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.target_asset_state())
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .displayName(targetAssetDisplayName)
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(targetAssetState)
+     *             .targetAssetId(testTargetAsset.id())
      *             .build());
      * 
      *     }
@@ -2506,10 +2506,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
-     *             .displayName(var_.target_asset_display_name())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.target_asset_state())
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .displayName(targetAssetDisplayName)
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(targetAssetState)
+     *             .targetAssetId(testTargetAsset.id())
      *             .build());
      * 
      *     }
@@ -2551,10 +2551,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
-     *             .displayName(var_.target_asset_display_name())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.target_asset_state())
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .displayName(targetAssetDisplayName)
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(targetAssetState)
+     *             .targetAssetId(testTargetAsset.id())
      *             .build());
      * 
      *     }
@@ -2596,10 +2596,10 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
-     *             .displayName(var_.target_asset_display_name())
-     *             .migrationPlanId(oci_cloud_migrations_migration_plan.test_migration_plan().id())
-     *             .state(var_.target_asset_state())
-     *             .targetAssetId(oci_cloud_migrations_target_asset.test_target_asset().id())
+     *             .displayName(targetAssetDisplayName)
+     *             .migrationPlanId(testMigrationPlan.id())
+     *             .state(targetAssetState)
+     *             .targetAssetId(testTargetAsset.id())
      *             .build());
      * 
      *     }

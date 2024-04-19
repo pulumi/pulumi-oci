@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGateMappings = oci.Identity.getDomainsCloudGateMappings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     cloudGateMappingCount: _var.cloud_gate_mapping_cloud_gate_mapping_count,
- *     cloudGateMappingFilter: _var.cloud_gate_mapping_cloud_gate_mapping_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     cloudGateMappingCount: cloudGateMappingCloudGateMappingCount,
+ *     cloudGateMappingFilter: cloudGateMappingCloudGateMappingFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.cloud_gate_mapping_authorization,
- *     resourceTypeSchemaVersion: _var.cloud_gate_mapping_resource_type_schema_version,
- *     startIndex: _var.cloud_gate_mapping_start_index,
+ *     authorization: cloudGateMappingAuthorization,
+ *     resourceTypeSchemaVersion: cloudGateMappingResourceTypeSchemaVersion,
+ *     startIndex: cloudGateMappingStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsCloudGateMappingsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGateMappings = oci.Identity.getDomainsCloudGateMappings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     cloudGateMappingCount: _var.cloud_gate_mapping_cloud_gate_mapping_count,
- *     cloudGateMappingFilter: _var.cloud_gate_mapping_cloud_gate_mapping_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     cloudGateMappingCount: cloudGateMappingCloudGateMappingCount,
+ *     cloudGateMappingFilter: cloudGateMappingCloudGateMappingFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.cloud_gate_mapping_authorization,
- *     resourceTypeSchemaVersion: _var.cloud_gate_mapping_resource_type_schema_version,
- *     startIndex: _var.cloud_gate_mapping_start_index,
+ *     authorization: cloudGateMappingAuthorization,
+ *     resourceTypeSchemaVersion: cloudGateMappingResourceTypeSchemaVersion,
+ *     startIndex: cloudGateMappingStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

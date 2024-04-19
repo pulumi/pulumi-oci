@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveDataModelSensitiveObjects = oci.DataSafe.getSensitiveDataModelSensitiveObjects({
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     objects: _var.sensitive_data_model_sensitive_object_object,
- *     objectTypes: _var.sensitive_data_model_sensitive_object_object_type,
- *     schemaNames: _var.sensitive_data_model_sensitive_object_schema_name,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     objects: sensitiveDataModelSensitiveObjectObject,
+ *     objectTypes: sensitiveDataModelSensitiveObjectObjectType,
+ *     schemaNames: sensitiveDataModelSensitiveObjectSchemaName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetSensitiveDataModelSensitiveObjectsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveDataModelSensitiveObjects = oci.DataSafe.getSensitiveDataModelSensitiveObjects({
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     objects: _var.sensitive_data_model_sensitive_object_object,
- *     objectTypes: _var.sensitive_data_model_sensitive_object_object_type,
- *     schemaNames: _var.sensitive_data_model_sensitive_object_schema_name,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     objects: sensitiveDataModelSensitiveObjectObject,
+ *     objectTypes: sensitiveDataModelSensitiveObjectObjectType,
+ *     schemaNames: sensitiveDataModelSensitiveObjectSchemaName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

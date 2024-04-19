@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetastore = new oci.datacatalog.Metastore("testMetastore", {
- *     compartmentId: _var.compartment_id,
- *     defaultExternalTableLocation: _var.metastore_default_external_table_location,
- *     defaultManagedTableLocation: _var.metastore_default_managed_table_location,
+ * const testMetastore = new oci.datacatalog.Metastore("test_metastore", {
+ *     compartmentId: compartmentId,
+ *     defaultExternalTableLocation: metastoreDefaultExternalTableLocation,
+ *     defaultManagedTableLocation: metastoreDefaultManagedTableLocation,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.metastore_display_name,
+ *     displayName: metastoreDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

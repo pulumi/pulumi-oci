@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPasswordPolicies = oci.Identity.getDomainsPasswordPolicies({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     passwordPolicyCount: _var.password_policy_password_policy_count,
- *     passwordPolicyFilter: _var.password_policy_password_policy_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     passwordPolicyCount: passwordPolicyPasswordPolicyCount,
+ *     passwordPolicyFilter: passwordPolicyPasswordPolicyFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.password_policy_authorization,
- *     resourceTypeSchemaVersion: _var.password_policy_resource_type_schema_version,
- *     startIndex: _var.password_policy_start_index,
+ *     authorization: passwordPolicyAuthorization,
+ *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
+ *     startIndex: passwordPolicyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsPasswordPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPasswordPolicies = oci.Identity.getDomainsPasswordPolicies({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     passwordPolicyCount: _var.password_policy_password_policy_count,
- *     passwordPolicyFilter: _var.password_policy_password_policy_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     passwordPolicyCount: passwordPolicyPasswordPolicyCount,
+ *     passwordPolicyFilter: passwordPolicyPasswordPolicyFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.password_policy_authorization,
- *     resourceTypeSchemaVersion: _var.password_policy_resource_type_schema_version,
- *     startIndex: _var.password_policy_start_index,
+ *     authorization: passwordPolicyAuthorization,
+ *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
+ *     startIndex: passwordPolicyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

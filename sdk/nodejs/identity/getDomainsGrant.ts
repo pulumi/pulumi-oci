@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testGrant = oci.Identity.getDomainsGrant({
- *     grantId: oci_identity_domains_grant.test_grant.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     grantId: testGrantOciIdentityDomainsGrant.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.grant_authorization,
- *     resourceTypeSchemaVersion: _var.grant_resource_type_schema_version,
+ *     authorization: grantAuthorization,
+ *     resourceTypeSchemaVersion: grantResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -187,12 +187,12 @@ export interface GetDomainsGrantResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testGrant = oci.Identity.getDomainsGrant({
- *     grantId: oci_identity_domains_grant.test_grant.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     grantId: testGrantOciIdentityDomainsGrant.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.grant_authorization,
- *     resourceTypeSchemaVersion: _var.grant_resource_type_schema_version,
+ *     authorization: grantAuthorization,
+ *     resourceTypeSchemaVersion: grantResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

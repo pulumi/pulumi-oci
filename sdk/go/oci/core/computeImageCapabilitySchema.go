@@ -31,22 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewComputeImageCapabilitySchema(ctx, "testComputeImageCapabilitySchema", &Core.ComputeImageCapabilitySchemaArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ComputeGlobalImageCapabilitySchemaVersionName: pulumi.Any(_var.Compute_image_capability_schema_compute_global_image_capability_schema_version_name),
-//				ImageId: pulumi.Any(oci_core_image.Test_image.Id),
+//			_, err := Core.NewComputeImageCapabilitySchema(ctx, "test_compute_image_capability_schema", &Core.ComputeImageCapabilitySchemaArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ComputeGlobalImageCapabilitySchemaVersionName: pulumi.Any(computeImageCapabilitySchemaComputeGlobalImageCapabilitySchemaVersionName),
+//				ImageId: pulumi.Any(testImage.Id),
 //				SchemaData: pulumi.Map{
 //					pulumi.Any(map[string]interface{}{
-//						"descriptorType": _var.Compute_image_capability_schema_schema_data_descriptor_type,
-//						"source":         _var.Compute_image_capability_schema_schema_data_source,
-//						"defaultValue":   _var.Compute_image_capability_schema_schema_data_default_value,
-//						"values":         _var.Compute_image_capability_schema_schema_data_values,
+//						"descriptorType": computeImageCapabilitySchemaSchemaDataDescriptorType,
+//						"source":         computeImageCapabilitySchemaSchemaDataSource,
+//						"defaultValue":   computeImageCapabilitySchemaSchemaDataDefaultValue,
+//						"values":         computeImageCapabilitySchemaSchemaDataValues,
 //					}),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Compute_image_capability_schema_display_name),
+//				DisplayName: pulumi.Any(computeImageCapabilitySchemaDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

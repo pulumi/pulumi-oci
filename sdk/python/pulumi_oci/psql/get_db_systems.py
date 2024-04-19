@@ -121,10 +121,10 @@ def get_db_systems(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Psql.get_db_systems(compartment_id=var["compartment_id"],
-        display_name=var["db_system_display_name"],
-        id=var["db_system_id"],
-        state=var["db_system_state"])
+    test_db_systems = oci.Psql.get_db_systems(compartment_id=compartment_id,
+        display_name=db_system_display_name,
+        id=db_system_id,
+        state=db_system_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_db_systems_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Psql.get_db_systems(compartment_id=var["compartment_id"],
-        display_name=var["db_system_display_name"],
-        id=var["db_system_id"],
-        state=var["db_system_state"])
+    test_db_systems = oci.Psql.get_db_systems(compartment_id=compartment_id,
+        display_name=db_system_display_name,
+        id=db_system_id,
+        state=db_system_state)
     ```
     <!--End PulumiCodeChooser -->
 

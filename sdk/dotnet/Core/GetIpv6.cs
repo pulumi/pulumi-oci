@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpv6 = Oci.Core.GetIpv6.Invoke(new()
         ///     {
-        ///         Ipv6id = oci_core_ipv6.Test_ipv6.Id,
+        ///         Ipv6id = testIpv6OciCoreIpv6.Id,
         ///     });
         /// 
         /// });
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpv6 = Oci.Core.GetIpv6.Invoke(new()
         ///     {
-        ///         Ipv6id = oci_core_ipv6.Test_ipv6.Id,
+        ///         Ipv6id = testIpv6OciCoreIpv6.Id,
         ///     });
         /// 
         /// });

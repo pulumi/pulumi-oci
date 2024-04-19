@@ -16,13 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaBundle = new oci.certificatesmanagement.CaBundle("testCaBundle", {
- *     caBundlePem: _var.ca_bundle_ca_bundle_pem,
- *     compartmentId: _var.compartment_id,
+ * const testCaBundle = new oci.certificatesmanagement.CaBundle("test_ca_bundle", {
+ *     caBundlePem: caBundleCaBundlePem,
+ *     compartmentId: compartmentId,
+ *     name: caBundleName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.ca_bundle_description,
+ *     description: caBundleDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

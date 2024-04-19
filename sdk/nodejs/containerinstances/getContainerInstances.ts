@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerInstances = oci.ContainerInstances.getContainerInstances({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.container_instance_availability_domain,
- *     displayName: _var.container_instance_display_name,
- *     state: _var.container_instance_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: containerInstanceAvailabilityDomain,
+ *     displayName: containerInstanceDisplayName,
+ *     state: containerInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetContainerInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerInstances = oci.ContainerInstances.getContainerInstances({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.container_instance_availability_domain,
- *     displayName: _var.container_instance_display_name,
- *     state: _var.container_instance_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: containerInstanceAvailabilityDomain,
+ *     displayName: containerInstanceDisplayName,
+ *     state: containerInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

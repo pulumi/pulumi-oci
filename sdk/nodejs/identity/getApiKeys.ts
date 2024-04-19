@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApiKeys = oci.Identity.getApiKeys({
- *     userId: oci_identity_user.test_user.id,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -81,7 +81,7 @@ export interface GetApiKeysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApiKeys = oci.Identity.getApiKeys({
- *     userId: oci_identity_user.test_user.id,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

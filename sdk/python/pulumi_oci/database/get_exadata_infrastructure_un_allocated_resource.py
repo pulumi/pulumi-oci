@@ -150,8 +150,8 @@ def get_exadata_infrastructure_un_allocated_resource(db_servers: Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_infrastructure_un_allocated_resource = oci.Database.get_exadata_infrastructure_un_allocated_resource(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        db_servers=var["exadata_infrastructure_un_allocated_resource_db_servers"])
+    test_exadata_infrastructure_un_allocated_resource = oci.Database.get_exadata_infrastructure_un_allocated_resource(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+        db_servers=exadata_infrastructure_un_allocated_resource_db_servers)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -193,8 +193,8 @@ def get_exadata_infrastructure_un_allocated_resource_output(db_servers: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_infrastructure_un_allocated_resource = oci.Database.get_exadata_infrastructure_un_allocated_resource(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        db_servers=var["exadata_infrastructure_un_allocated_resource_db_servers"])
+    test_exadata_infrastructure_un_allocated_resource = oci.Database.get_exadata_infrastructure_un_allocated_resource(exadata_infrastructure_id=test_exadata_infrastructure["id"],
+        db_servers=exadata_infrastructure_un_allocated_resource_db_servers)
     ```
     <!--End PulumiCodeChooser -->
 

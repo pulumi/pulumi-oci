@@ -31,7 +31,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewDiscoveryJobsResult(ctx, "testDiscoveryJobsResult", nil)
+//			_, err := DataSafe.NewDiscoveryJobsResult(ctx, "test_discovery_jobs_result", nil)
 //			if err != nil {
 //				return err
 //			}

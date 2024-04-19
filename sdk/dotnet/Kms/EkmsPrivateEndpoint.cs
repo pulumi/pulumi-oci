@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Kms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testEkmsPrivateEndpoint = new Oci.Kms.EkmsPrivateEndpoint("testEkmsPrivateEndpoint", new()
+    ///     var testEkmsPrivateEndpoint = new Oci.Kms.EkmsPrivateEndpoint("test_ekms_private_endpoint", new()
     ///     {
-    ///         CaBundle = @var.Ekms_private_endpoint_ca_bundle,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Ekms_private_endpoint_display_name,
-    ///         ExternalKeyManagerIp = @var.Ekms_private_endpoint_external_key_manager_ip,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CaBundle = ekmsPrivateEndpointCaBundle,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = ekmsPrivateEndpointDisplayName,
+    ///         ExternalKeyManagerIp = ekmsPrivateEndpointExternalKeyManagerIp,
+    ///         SubnetId = testSubnet.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Kms
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Port = @var.Ekms_private_endpoint_port,
+    ///         Port = ekmsPrivateEndpointPort,
     ///     });
     /// 
     /// });

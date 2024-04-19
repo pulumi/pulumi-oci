@@ -383,30 +383,30 @@ class ComputeCapacityReservation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_capacity_reservation = oci.core.ComputeCapacityReservation("testComputeCapacityReservation",
-            availability_domain=var["compute_capacity_reservation_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_compute_capacity_reservation = oci.core.ComputeCapacityReservation("test_compute_capacity_reservation",
+            availability_domain=compute_capacity_reservation_availability_domain,
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["compute_capacity_reservation_display_name"],
+            display_name=compute_capacity_reservation_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             instance_reservation_configs=[oci.core.ComputeCapacityReservationInstanceReservationConfigArgs(
-                instance_shape=var["compute_capacity_reservation_instance_reservation_configs_instance_shape"],
-                reserved_count=var["compute_capacity_reservation_instance_reservation_configs_reserved_count"],
+                instance_shape=compute_capacity_reservation_instance_reservation_configs_instance_shape,
+                reserved_count=compute_capacity_reservation_instance_reservation_configs_reserved_count,
                 cluster_config=oci.core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs(
-                    hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
-                    network_block_ids=var["compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids"],
+                    hpc_island_id=test_hpc_island["id"],
+                    network_block_ids=compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids,
                 ),
-                fault_domain=var["compute_capacity_reservation_instance_reservation_configs_fault_domain"],
+                fault_domain=compute_capacity_reservation_instance_reservation_configs_fault_domain,
                 instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
-                    memory_in_gbs=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs"],
-                    ocpus=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus"],
+                    memory_in_gbs=compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs,
+                    ocpus=compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus,
                 ),
             )],
-            is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])
+            is_default_reservation=compute_capacity_reservation_is_default_reservation)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -456,30 +456,30 @@ class ComputeCapacityReservation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_capacity_reservation = oci.core.ComputeCapacityReservation("testComputeCapacityReservation",
-            availability_domain=var["compute_capacity_reservation_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_compute_capacity_reservation = oci.core.ComputeCapacityReservation("test_compute_capacity_reservation",
+            availability_domain=compute_capacity_reservation_availability_domain,
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["compute_capacity_reservation_display_name"],
+            display_name=compute_capacity_reservation_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             instance_reservation_configs=[oci.core.ComputeCapacityReservationInstanceReservationConfigArgs(
-                instance_shape=var["compute_capacity_reservation_instance_reservation_configs_instance_shape"],
-                reserved_count=var["compute_capacity_reservation_instance_reservation_configs_reserved_count"],
+                instance_shape=compute_capacity_reservation_instance_reservation_configs_instance_shape,
+                reserved_count=compute_capacity_reservation_instance_reservation_configs_reserved_count,
                 cluster_config=oci.core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs(
-                    hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
-                    network_block_ids=var["compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids"],
+                    hpc_island_id=test_hpc_island["id"],
+                    network_block_ids=compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids,
                 ),
-                fault_domain=var["compute_capacity_reservation_instance_reservation_configs_fault_domain"],
+                fault_domain=compute_capacity_reservation_instance_reservation_configs_fault_domain,
                 instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
-                    memory_in_gbs=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs"],
-                    ocpus=var["compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus"],
+                    memory_in_gbs=compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs,
+                    ocpus=compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus,
                 ),
             )],
-            is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])
+            is_default_reservation=compute_capacity_reservation_is_default_reservation)
         ```
         <!--End PulumiCodeChooser -->
 

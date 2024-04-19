@@ -31,12 +31,12 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testPbfListings = Oci.Functions.GetPbfListings.Invoke(new()
         ///     {
-        ///         Name = @var.Pbf_listing_name,
-        ///         NameContains = @var.Pbf_listing_name_contains,
-        ///         NameStartsWith = @var.Pbf_listing_name_starts_with,
-        ///         PbfListingId = oci_functions_pbf_listing.Test_pbf_listing.Id,
-        ///         State = @var.Pbf_listing_state,
-        ///         Triggers = @var.Pbf_listing_trigger,
+        ///         Name = pbfListingName,
+        ///         NameContains = pbfListingNameContains,
+        ///         NameStartsWith = pbfListingNameStartsWith,
+        ///         PbfListingId = testPbfListing.Id,
+        ///         State = pbfListingState,
+        ///         Triggers = pbfListingTrigger,
         ///     });
         /// 
         /// });
@@ -66,12 +66,12 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testPbfListings = Oci.Functions.GetPbfListings.Invoke(new()
         ///     {
-        ///         Name = @var.Pbf_listing_name,
-        ///         NameContains = @var.Pbf_listing_name_contains,
-        ///         NameStartsWith = @var.Pbf_listing_name_starts_with,
-        ///         PbfListingId = oci_functions_pbf_listing.Test_pbf_listing.Id,
-        ///         State = @var.Pbf_listing_state,
-        ///         Triggers = @var.Pbf_listing_trigger,
+        ///         Name = pbfListingName,
+        ///         NameContains = pbfListingNameContains,
+        ///         NameStartsWith = pbfListingNameStartsWith,
+        ///         PbfListingId = testPbfListing.Id,
+        ///         State = pbfListingState,
+        ///         Triggers = pbfListingTrigger,
         ///     });
         /// 
         /// });

@@ -293,7 +293,7 @@ def get_occ_capacity_request(occ_capacity_request_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_capacity_request = oci.CapacityManagement.get_occ_capacity_request(occ_capacity_request_id=oci_capacity_management_occ_capacity_request["test_occ_capacity_request"]["id"])
+    test_occ_capacity_request = oci.CapacityManagement.get_occ_capacity_request(occ_capacity_request_id=test_occ_capacity_request_oci_capacity_management_occ_capacity_request["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -344,7 +344,7 @@ def get_occ_capacity_request_output(occ_capacity_request_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_capacity_request = oci.CapacityManagement.get_occ_capacity_request(occ_capacity_request_id=oci_capacity_management_occ_capacity_request["test_occ_capacity_request"]["id"])
+    test_occ_capacity_request = oci.CapacityManagement.get_occ_capacity_request(occ_capacity_request_id=test_occ_capacity_request_oci_capacity_management_occ_capacity_request["id"])
     ```
     <!--End PulumiCodeChooser -->
 

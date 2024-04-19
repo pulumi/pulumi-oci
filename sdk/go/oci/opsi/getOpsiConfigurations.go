@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetOpsiConfigurations(ctx, &opsi.GetOpsiConfigurationsArgs{
-//				CompartmentId:   _var.Compartment_id,
-//				DisplayName:     pulumi.StringRef(_var.Opsi_configuration_display_name),
-//				OpsiConfigTypes: _var.Opsi_configuration_opsi_config_type,
-//				States:          _var.Opsi_configuration_state,
+//				CompartmentId:   compartmentId,
+//				DisplayName:     pulumi.StringRef(opsiConfigurationDisplayName),
+//				OpsiConfigTypes: opsiConfigurationOpsiConfigType,
+//				States:          opsiConfigurationState,
 //			}, nil)
 //			if err != nil {
 //				return err

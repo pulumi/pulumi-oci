@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetProblemEntities(ctx, &cloudguard.GetProblemEntitiesArgs{
-//				ProblemId: oci_cloud_guard_problem.Test_problem.Id,
+//				ProblemId: testProblem.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

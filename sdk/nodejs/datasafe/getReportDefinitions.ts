@@ -21,14 +21,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReportDefinitions = oci.DataSafe.getReportDefinitions({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.report_definition_access_level,
- *     category: _var.report_definition_category,
- *     compartmentIdInSubtree: _var.report_definition_compartment_id_in_subtree,
- *     dataSource: _var.report_definition_data_source,
- *     displayName: _var.report_definition_display_name,
- *     isSeeded: _var.report_definition_is_seeded,
- *     state: _var.report_definition_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: reportDefinitionAccessLevel,
+ *     category: reportDefinitionCategory,
+ *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree,
+ *     dataSource: reportDefinitionDataSource,
+ *     displayName: reportDefinitionDisplayName,
+ *     isSeeded: reportDefinitionIsSeeded,
+ *     state: reportDefinitionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -143,14 +143,14 @@ export interface GetReportDefinitionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReportDefinitions = oci.DataSafe.getReportDefinitions({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.report_definition_access_level,
- *     category: _var.report_definition_category,
- *     compartmentIdInSubtree: _var.report_definition_compartment_id_in_subtree,
- *     dataSource: _var.report_definition_data_source,
- *     displayName: _var.report_definition_display_name,
- *     isSeeded: _var.report_definition_is_seeded,
- *     state: _var.report_definition_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: reportDefinitionAccessLevel,
+ *     category: reportDefinitionCategory,
+ *     compartmentIdInSubtree: reportDefinitionCompartmentIdInSubtree,
+ *     dataSource: reportDefinitionDataSource,
+ *     displayName: reportDefinitionDisplayName,
+ *     isSeeded: reportDefinitionIsSeeded,
+ *     state: reportDefinitionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

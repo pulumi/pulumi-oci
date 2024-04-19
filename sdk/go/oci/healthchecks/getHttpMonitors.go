@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := HealthChecks.GetHttpMonitors(ctx, &healthchecks.GetHttpMonitorsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Http_monitor_display_name),
-//				HomeRegion:    pulumi.StringRef(_var.Http_monitor_home_region),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(httpMonitorDisplayName),
+//				HomeRegion:    pulumi.StringRef(httpMonitorHomeRegion),
 //			}, nil)
 //			if err != nil {
 //				return err

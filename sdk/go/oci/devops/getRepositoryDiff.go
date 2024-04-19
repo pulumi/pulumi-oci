@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepositoryDiff(ctx, &devops.GetRepositoryDiffArgs{
-//				BaseVersion:               _var.Repository_diff_base_version,
-//				FilePath:                  _var.Repository_diff_file_path,
-//				RepositoryId:              oci_devops_repository.Test_repository.Id,
-//				TargetVersion:             _var.Repository_diff_target_version,
-//				IsComparisonFromMergeBase: pulumi.BoolRef(_var.Repository_diff_is_comparison_from_merge_base),
+//				BaseVersion:               repositoryDiffBaseVersion,
+//				FilePath:                  repositoryDiffFilePath,
+//				RepositoryId:              testRepository.Id,
+//				TargetVersion:             repositoryDiffTargetVersion,
+//				IsComparisonFromMergeBase: pulumi.BoolRef(repositoryDiffIsComparisonFromMergeBase),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -34,35 +34,35 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsMyRequest(ctx, "testMyRequest", &Identity.DomainsMyRequestArgs{
-//				IdcsEndpoint:  pulumi.Any(data.Oci_identity_domain.Test_domain.Url),
-//				Justification: pulumi.Any(_var.My_request_justification),
+//			_, err := Identity.NewDomainsMyRequest(ctx, "test_my_request", &Identity.DomainsMyRequestArgs{
+//				ApprovalDetails: identity.DomainsMyRequestApprovalDetailArray{
+//					nil,
+//				},
+//				IdcsEndpoint:  pulumi.Any(testDomain.Url),
+//				Justification: pulumi.Any(myRequestJustification),
 //				Requesting: &identity.DomainsMyRequestRequestingArgs{
-//					Type:        pulumi.Any(_var.My_request_requesting_type),
-//					Value:       pulumi.Any(oci_identity_domains_group.Group_to_request.Id),
-//					Description: pulumi.Any(_var.My_request_requesting_description),
+//					Type:        pulumi.Any(myRequestRequestingType),
+//					Value:       pulumi.Any(groupToRequest.Id),
+//					Description: pulumi.Any(myRequestRequestingDescription),
 //				},
 //				Schemas: pulumi.StringArray{
 //					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:Request"),
 //				},
-//				Action: pulumi.Any(_var.My_request_action),
-//				ApprovalDetails: identity.DomainsMyRequestApprovalDetailArray{
-//					nil,
-//				},
+//				Action: pulumi.Any(myRequestAction),
 //				AttributeSets: pulumi.StringArray{
 //					pulumi.String("all"),
 //				},
 //				Attributes:    pulumi.String(""),
-//				Authorization: pulumi.Any(_var.My_request_authorization),
-//				Ocid:          pulumi.Any(_var.My_request_ocid),
+//				Authorization: pulumi.Any(myRequestAuthorization),
+//				Ocid:          pulumi.Any(myRequestOcid),
 //				Requestor: &identity.DomainsMyRequestRequestorArgs{
-//					Value: pulumi.Any(_var.My_request_requestor_value),
+//					Value: pulumi.Any(myRequestRequestorValue),
 //				},
-//				ResourceTypeSchemaVersion: pulumi.Any(_var.My_request_resource_type_schema_version),
+//				ResourceTypeSchemaVersion: pulumi.Any(myRequestResourceTypeSchemaVersion),
 //				Tags: identity.DomainsMyRequestTagArray{
 //					&identity.DomainsMyRequestTagArgs{
-//						Key:   pulumi.Any(_var.My_request_tags_key),
-//						Value: pulumi.Any(_var.My_request_tags_value),
+//						Key:   pulumi.Any(myRequestTagsKey),
+//						Value: pulumi.Any(myRequestTagsValue),
 //					},
 //				},
 //			})

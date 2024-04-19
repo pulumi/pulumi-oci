@@ -47,13 +47,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAuditArchiveRetrieval = new AuditArchiveRetrieval(&#34;testAuditArchiveRetrieval&#34;, AuditArchiveRetrievalArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .endDate(var_.audit_archive_retrieval_end_date())
- *             .startDate(var_.audit_archive_retrieval_start_date())
- *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .compartmentId(compartmentId)
+ *             .endDate(auditArchiveRetrievalEndDate)
+ *             .startDate(auditArchiveRetrievalStartDate)
+ *             .targetId(testTarget.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.audit_archive_retrieval_description())
- *             .displayName(var_.audit_archive_retrieval_display_name())
+ *             .description(auditArchiveRetrievalDescription)
+ *             .displayName(auditArchiveRetrievalDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

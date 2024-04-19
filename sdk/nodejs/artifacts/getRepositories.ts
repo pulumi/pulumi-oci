@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositories = oci.Artifacts.getRepositories({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.repository_display_name,
- *     id: _var.repository_id,
- *     isImmutable: _var.repository_is_immutable,
- *     state: _var.repository_state,
+ *     compartmentId: compartmentId,
+ *     displayName: repositoryDisplayName,
+ *     id: repositoryId,
+ *     isImmutable: repositoryIsImmutable,
+ *     state: repositoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetRepositoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositories = oci.Artifacts.getRepositories({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.repository_display_name,
- *     id: _var.repository_id,
- *     isImmutable: _var.repository_is_immutable,
- *     state: _var.repository_state,
+ *     compartmentId: compartmentId,
+ *     displayName: repositoryDisplayName,
+ *     id: repositoryId,
+ *     isImmutable: repositoryIsImmutable,
+ *     state: repositoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,8 +31,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewOperationsInsightsWarehouseRotateWarehouseWallet(ctx, "testOperationsInsightsWarehouseRotateWarehouseWallet", &Opsi.OperationsInsightsWarehouseRotateWarehouseWalletArgs{
-//				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
+//			_, err := Opsi.NewOperationsInsightsWarehouseRotateWarehouseWallet(ctx, "test_operations_insights_warehouse_rotate_warehouse_wallet", &Opsi.OperationsInsightsWarehouseRotateWarehouseWalletArgs{
+//				OperationsInsightsWarehouseId: pulumi.Any(testOperationsInsightsWarehouse.Id),
 //			})
 //			if err != nil {
 //				return err

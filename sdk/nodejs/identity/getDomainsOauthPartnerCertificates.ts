@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOauthPartnerCertificates = oci.Identity.getDomainsOauthPartnerCertificates({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     oauthPartnerCertificateCount: _var.oauth_partner_certificate_oauth_partner_certificate_count,
- *     oauthPartnerCertificateFilter: _var.oauth_partner_certificate_oauth_partner_certificate_filter,
- *     authorization: _var.oauth_partner_certificate_authorization,
- *     resourceTypeSchemaVersion: _var.oauth_partner_certificate_resource_type_schema_version,
- *     startIndex: _var.oauth_partner_certificate_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     oauthPartnerCertificateCount: oauthPartnerCertificateOauthPartnerCertificateCount,
+ *     oauthPartnerCertificateFilter: oauthPartnerCertificateOauthPartnerCertificateFilter,
+ *     authorization: oauthPartnerCertificateAuthorization,
+ *     resourceTypeSchemaVersion: oauthPartnerCertificateResourceTypeSchemaVersion,
+ *     startIndex: oauthPartnerCertificateStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetDomainsOauthPartnerCertificatesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOauthPartnerCertificates = oci.Identity.getDomainsOauthPartnerCertificates({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     oauthPartnerCertificateCount: _var.oauth_partner_certificate_oauth_partner_certificate_count,
- *     oauthPartnerCertificateFilter: _var.oauth_partner_certificate_oauth_partner_certificate_filter,
- *     authorization: _var.oauth_partner_certificate_authorization,
- *     resourceTypeSchemaVersion: _var.oauth_partner_certificate_resource_type_schema_version,
- *     startIndex: _var.oauth_partner_certificate_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     oauthPartnerCertificateCount: oauthPartnerCertificateOauthPartnerCertificateCount,
+ *     oauthPartnerCertificateFilter: oauthPartnerCertificateOauthPartnerCertificateFilter,
+ *     authorization: oauthPartnerCertificateAuthorization,
+ *     resourceTypeSchemaVersion: oauthPartnerCertificateResourceTypeSchemaVersion,
+ *     startIndex: oauthPartnerCertificateStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

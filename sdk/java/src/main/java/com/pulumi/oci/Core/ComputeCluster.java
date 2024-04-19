@@ -57,10 +57,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testComputeCluster = new ComputeCluster(&#34;testComputeCluster&#34;, ComputeClusterArgs.builder()        
- *             .availabilityDomain(var_.compute_cluster_availability_domain())
- *             .compartmentId(var_.compartment_id())
+ *             .availabilityDomain(computeClusterAvailabilityDomain)
+ *             .compartmentId(compartmentId)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.compute_cluster_display_name())
+ *             .displayName(computeClusterDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsResourceTypeSchemaAttributes(ctx, &identity.GetDomainsResourceTypeSchemaAttributesArgs{
-//				IdcsEndpoint:                      data.Oci_identity_domain.Test_domain.Url,
-//				ResourceTypeSchemaAttributeCount:  pulumi.IntRef(_var.Resource_type_schema_attribute_resource_type_schema_attribute_count),
-//				ResourceTypeSchemaAttributeFilter: pulumi.StringRef(_var.Resource_type_schema_attribute_resource_type_schema_attribute_filter),
+//				IdcsEndpoint:                      testDomain.Url,
+//				ResourceTypeSchemaAttributeCount:  pulumi.IntRef(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount),
+//				ResourceTypeSchemaAttributeFilter: pulumi.StringRef(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter),
 //				AttributeSets: []string{
 //					"all",
 //				},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Resource_type_schema_attribute_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Resource_type_schema_attribute_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.Resource_type_schema_attribute_start_index),
+//				Authorization:             pulumi.StringRef(resourceTypeSchemaAttributeAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(resourceTypeSchemaAttributeResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(resourceTypeSchemaAttributeStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

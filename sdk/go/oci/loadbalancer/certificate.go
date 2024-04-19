@@ -14,37 +14,6 @@ import (
 
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/LoadBalancer"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewCertificate(ctx, "testCertificate", &LoadBalancer.CertificateArgs{
-//				CertificateName:   pulumi.Any(_var.Certificate_certificate_name),
-//				LoadBalancerId:    pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-//				CaCertificate:     pulumi.Any(_var.Certificate_ca_certificate),
-//				Passphrase:        pulumi.Any(_var.Certificate_passphrase),
-//				PrivateKey:        pulumi.Any(_var.Certificate_private_key),
-//				PublicCertificate: pulumi.Any(_var.Certificate_public_certificate),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// <!--End PulumiCodeChooser -->
-//
 // ## Import
 //
 // Certificates can be imported using the `id`, e.g.

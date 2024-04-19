@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetConsoleHistories(ctx, &core.GetConsoleHistoriesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Console_history_availability_domain),
-//				InstanceId:         pulumi.StringRef(oci_core_instance.Test_instance.Id),
-//				State:              pulumi.StringRef(_var.Console_history_state),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(consoleHistoryAvailabilityDomain),
+//				InstanceId:         pulumi.StringRef(testInstance.Id),
+//				State:              pulumi.StringRef(consoleHistoryState),
 //			}, nil)
 //			if err != nil {
 //				return err

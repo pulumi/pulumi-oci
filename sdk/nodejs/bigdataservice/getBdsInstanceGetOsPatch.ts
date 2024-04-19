@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstanceGetOsPatch = oci.BigDataService.getBdsInstanceGetOsPatch({
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     osPatchVersion: _var.bds_instance_get_os_patch_os_patch_version,
+ *     bdsInstanceId: testBdsInstance.id,
+ *     osPatchVersion: bdsInstanceGetOsPatchOsPatchVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -98,8 +98,8 @@ export interface GetBdsInstanceGetOsPatchResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstanceGetOsPatch = oci.BigDataService.getBdsInstanceGetOsPatch({
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     osPatchVersion: _var.bds_instance_get_os_patch_os_patch_version,
+ *     bdsInstanceId: testBdsInstance.id,
+ *     osPatchVersion: bdsInstanceGetOsPatchOsPatchVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

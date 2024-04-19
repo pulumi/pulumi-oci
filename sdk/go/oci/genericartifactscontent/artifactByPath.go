@@ -34,11 +34,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenericArtifactsContent.NewArtifactByPath(ctx, "testArtifactByPath", &GenericArtifactsContent.ArtifactByPathArgs{
-//				ArtifactPath: pulumi.Any(_var.Artifact_path),
-//				RepositoryId: pulumi.Any(oci_artifacts_repository.Test_repository.Id),
-//				Version:      pulumi.Any(_var.Version),
-//				Source:       pulumi.Any(_var.Source),
+//			_, err := GenericArtifactsContent.NewArtifactByPath(ctx, "test_artifact_by_path", &GenericArtifactsContent.ArtifactByPathArgs{
+//				ArtifactPath: pulumi.Any(artifactPath),
+//				RepositoryId: pulumi.Any(testRepository.Id),
+//				Version:      pulumi.Any(version),
+//				Source:       pulumi.Any(source),
 //			})
 //			if err != nil {
 //				return err

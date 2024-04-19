@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Vbs.GetInstVbsInstances(ctx, &vbs.GetInstVbsInstancesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Vbs_instance_id),
-//				Name:          pulumi.StringRef(_var.Vbs_instance_name),
-//				State:         pulumi.StringRef(_var.Vbs_instance_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(vbsInstanceId),
+//				Name:          pulumi.StringRef(vbsInstanceName),
+//				State:         pulumi.StringRef(vbsInstanceState),
 //			}, nil)
 //			if err != nil {
 //				return err

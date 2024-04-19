@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceManagerProxy.GetServiceEnvironment(ctx, &servicemanagerproxy.GetServiceEnvironmentArgs{
-//				CompartmentId:        _var.Compartment_id,
-//				ServiceEnvironmentId: oci_service_manager_proxy_service_environment.Test_service_environment.Id,
+//				CompartmentId:        compartmentId,
+//				ServiceEnvironmentId: testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

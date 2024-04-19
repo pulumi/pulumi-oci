@@ -42,11 +42,11 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testSoftwareSourceStreamProfiles = Oci.OsManagement.GetSoftwareSourceStreamProfile.Invoke(new()
         ///     {
-        ///         SoftwareSourceId = @var.Software_source.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ModuleName = @var.Software_source_module_name,
-        ///         ProfileName = @var.Software_source_module_stream_profile_name,
-        ///         StreamName = @var.Software_source_module_stream_name,
+        ///         SoftwareSourceId = softwareSource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ModuleName = softwareSourceModuleName,
+        ///         ProfileName = softwareSourceModuleStreamProfileName,
+        ///         StreamName = softwareSourceModuleStreamName,
         ///     });
         /// 
         /// });
@@ -87,11 +87,11 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testSoftwareSourceStreamProfiles = Oci.OsManagement.GetSoftwareSourceStreamProfile.Invoke(new()
         ///     {
-        ///         SoftwareSourceId = @var.Software_source.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ModuleName = @var.Software_source_module_name,
-        ///         ProfileName = @var.Software_source_module_stream_profile_name,
-        ///         StreamName = @var.Software_source_module_stream_name,
+        ///         SoftwareSourceId = softwareSource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ModuleName = softwareSourceModuleName,
+        ///         ProfileName = softwareSourceModuleStreamProfileName,
+        ///         StreamName = softwareSourceModuleStreamName,
         ///     });
         /// 
         /// });

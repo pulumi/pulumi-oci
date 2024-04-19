@@ -31,9 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewSslCipherSuite(ctx, "testSslCipherSuite", &LoadBalancer.SslCipherSuiteArgs{
-//				Ciphers:        pulumi.Any(_var.Ssl_cipher_suite_ciphers),
-//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//			_, err := LoadBalancer.NewSslCipherSuite(ctx, "test_ssl_cipher_suite", &LoadBalancer.SslCipherSuiteArgs{
+//				Ciphers:        pulumi.Any(sslCipherSuiteCiphers),
+//				LoadBalancerId: pulumi.Any(testLoadBalancer.Id),
+//				Name:           pulumi.Any(sslCipherSuiteName),
 //			})
 //			if err != nil {
 //				return err

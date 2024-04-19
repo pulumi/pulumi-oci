@@ -46,11 +46,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAiPrivateEndpoint = new AiPrivateEndpoint(&#34;testAiPrivateEndpoint&#34;, AiPrivateEndpointArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dnsZones(var_.ai_private_endpoint_dns_zones())
- *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .compartmentId(compartmentId)
+ *             .dnsZones(aiPrivateEndpointDnsZones)
+ *             .subnetId(testSubnet.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.ai_private_endpoint_display_name())
+ *             .displayName(aiPrivateEndpointDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

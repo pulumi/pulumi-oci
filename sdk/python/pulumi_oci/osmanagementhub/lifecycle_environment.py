@@ -434,14 +434,14 @@ class LifecycleEnvironment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_lifecycle_environment = oci.os_management_hub.LifecycleEnvironment("testLifecycleEnvironment",
-            arch_type=var["lifecycle_environment_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["lifecycle_environment_display_name"],
-            os_family=var["lifecycle_environment_os_family"],
+        test_lifecycle_environment = oci.os_management_hub.LifecycleEnvironment("test_lifecycle_environment",
+            arch_type=lifecycle_environment_arch_type,
+            compartment_id=compartment_id,
+            display_name=lifecycle_environment_display_name,
+            os_family=lifecycle_environment_os_family,
             stages=[oci.os_management_hub.LifecycleEnvironmentStageArgs(
-                display_name=var["lifecycle_environment_stages_display_name"],
-                rank=var["lifecycle_environment_stages_rank"],
+                display_name=lifecycle_environment_stages_display_name,
+                rank=lifecycle_environment_stages_rank,
                 defined_tags={
                     "Operations.CostCenter": "42",
                 },
@@ -449,11 +449,11 @@ class LifecycleEnvironment(pulumi.CustomResource):
                     "Department": "Finance",
                 },
             )],
-            vendor_name=var["lifecycle_environment_vendor_name"],
+            vendor_name=lifecycle_environment_vendor_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["lifecycle_environment_description"],
+            description=lifecycle_environment_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -502,14 +502,14 @@ class LifecycleEnvironment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_lifecycle_environment = oci.os_management_hub.LifecycleEnvironment("testLifecycleEnvironment",
-            arch_type=var["lifecycle_environment_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["lifecycle_environment_display_name"],
-            os_family=var["lifecycle_environment_os_family"],
+        test_lifecycle_environment = oci.os_management_hub.LifecycleEnvironment("test_lifecycle_environment",
+            arch_type=lifecycle_environment_arch_type,
+            compartment_id=compartment_id,
+            display_name=lifecycle_environment_display_name,
+            os_family=lifecycle_environment_os_family,
             stages=[oci.os_management_hub.LifecycleEnvironmentStageArgs(
-                display_name=var["lifecycle_environment_stages_display_name"],
-                rank=var["lifecycle_environment_stages_rank"],
+                display_name=lifecycle_environment_stages_display_name,
+                rank=lifecycle_environment_stages_rank,
                 defined_tags={
                     "Operations.CostCenter": "42",
                 },
@@ -517,11 +517,11 @@ class LifecycleEnvironment(pulumi.CustomResource):
                     "Department": "Finance",
                 },
             )],
-            vendor_name=var["lifecycle_environment_vendor_name"],
+            vendor_name=lifecycle_environment_vendor_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["lifecycle_environment_description"],
+            description=lifecycle_environment_description,
             freeform_tags={
                 "Department": "Finance",
             })

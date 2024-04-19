@@ -33,9 +33,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDynamicGroups(ctx, &identity.GetDynamicGroupsArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				Name:          pulumi.StringRef(_var.Dynamic_group_name),
-//				State:         pulumi.StringRef(_var.Dynamic_group_state),
+//				CompartmentId: tenancyOcid,
+//				Name:          pulumi.StringRef(dynamicGroupName),
+//				State:         pulumi.StringRef(dynamicGroupState),
 //			}, nil)
 //			if err != nil {
 //				return err

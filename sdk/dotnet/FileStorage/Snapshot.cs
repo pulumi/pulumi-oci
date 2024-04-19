@@ -26,14 +26,15 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSnapshot = new Oci.FileStorage.Snapshot("testSnapshot", new()
+    ///     var testSnapshot = new Oci.FileStorage.Snapshot("test_snapshot", new()
     ///     {
-    ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+    ///         FileSystemId = testFileSystem.Id,
+    ///         Name = snapshotName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         ExpirationTime = @var.Snapshot_expiration_time,
+    ///         ExpirationTime = snapshotExpirationTime,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

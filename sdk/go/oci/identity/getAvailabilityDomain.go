@@ -29,9 +29,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetAvailabilityDomain(ctx, &identity.GetAvailabilityDomainArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				Id:            pulumi.StringRef(_var.Id),
-//				AdNumber:      pulumi.IntRef(_var.Ad_number),
+//				CompartmentId: tenancyOcid,
+//				Id:            pulumi.StringRef(id),
+//				AdNumber:      pulumi.IntRef(adNumber),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnouncements = oci.Jms.getAnnouncements({
- *     summaryContains: _var.announcement_summary_contains,
- *     timeEnd: _var.announcement_time_end,
- *     timeStart: _var.announcement_time_start,
+ *     summaryContains: announcementSummaryContains,
+ *     timeEnd: announcementTimeEnd,
+ *     timeStart: announcementTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -87,9 +87,9 @@ export interface GetAnnouncementsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnouncements = oci.Jms.getAnnouncements({
- *     summaryContains: _var.announcement_summary_contains,
- *     timeEnd: _var.announcement_time_end,
- *     timeStart: _var.announcement_time_start,
+ *     summaryContains: announcementSummaryContains,
+ *     timeEnd: announcementTimeEnd,
+ *     timeStart: announcementTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

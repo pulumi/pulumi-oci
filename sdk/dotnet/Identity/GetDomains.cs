@@ -31,15 +31,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testDomains = Oci.Identity.GetDomains.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Domain_display_name,
-        ///         HomeRegionUrl = @var.Domain_home_region_url,
-        ///         IsHiddenOnLogin = @var.Domain_is_hidden_on_login,
-        ///         LicenseType = @var.Domain_license_type,
-        ///         Name = @var.Domain_name,
-        ///         State = @var.Domain_state,
-        ///         Type = @var.Domain_type,
-        ///         Url = @var.Domain_url,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = domainDisplayName,
+        ///         HomeRegionUrl = domainHomeRegionUrl,
+        ///         IsHiddenOnLogin = domainIsHiddenOnLogin,
+        ///         LicenseType = domainLicenseType,
+        ///         Name = domainName,
+        ///         State = domainState,
+        ///         Type = domainType,
+        ///         Url = domainUrl,
         ///     });
         /// 
         /// });
@@ -69,15 +69,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testDomains = Oci.Identity.GetDomains.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Domain_display_name,
-        ///         HomeRegionUrl = @var.Domain_home_region_url,
-        ///         IsHiddenOnLogin = @var.Domain_is_hidden_on_login,
-        ///         LicenseType = @var.Domain_license_type,
-        ///         Name = @var.Domain_name,
-        ///         State = @var.Domain_state,
-        ///         Type = @var.Domain_type,
-        ///         Url = @var.Domain_url,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = domainDisplayName,
+        ///         HomeRegionUrl = domainHomeRegionUrl,
+        ///         IsHiddenOnLogin = domainIsHiddenOnLogin,
+        ///         LicenseType = domainLicenseType,
+        ///         Name = domainName,
+        ///         State = domainState,
+        ///         Type = domainType,
+        ///         Url = domainUrl,
         ///     });
         /// 
         /// });

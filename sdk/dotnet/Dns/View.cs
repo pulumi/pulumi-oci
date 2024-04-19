@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Dns
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testView = new Oci.Dns.View("testView", new()
+    ///     var testView = new Oci.Dns.View("test_view", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Scope = "PRIVATE",
-    ///         DefinedTags = @var.View_defined_tags,
-    ///         DisplayName = @var.View_display_name,
-    ///         FreeformTags = @var.View_freeform_tags,
+    ///         DefinedTags = viewDefinedTags,
+    ///         DisplayName = viewDisplayName,
+    ///         FreeformTags = viewFreeformTags,
     ///     });
     /// 
     /// });

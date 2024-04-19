@@ -30,10 +30,10 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testSubscriptionRedemptions = Oci.UsageProxy.GetSubscriptionRedemptions.Invoke(new()
         ///     {
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///         TimeRedeemedGreaterThanOrEqualTo = @var.Subscription_redemption_time_redeemed_greater_than_or_equal_to,
-        ///         TimeRedeemedLessThan = @var.Subscription_redemption_time_redeemed_less_than,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
+        ///         TimeRedeemedGreaterThanOrEqualTo = subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo,
+        ///         TimeRedeemedLessThan = subscriptionRedemptionTimeRedeemedLessThan,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testSubscriptionRedemptions = Oci.UsageProxy.GetSubscriptionRedemptions.Invoke(new()
         ///     {
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///         TimeRedeemedGreaterThanOrEqualTo = @var.Subscription_redemption_time_redeemed_greater_than_or_equal_to,
-        ///         TimeRedeemedLessThan = @var.Subscription_redemption_time_redeemed_less_than,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
+        ///         TimeRedeemedGreaterThanOrEqualTo = subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo,
+        ///         TimeRedeemedLessThan = subscriptionRedemptionTimeRedeemedLessThan,
         ///     });
         /// 
         /// });

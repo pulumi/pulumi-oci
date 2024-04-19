@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetConnectionAssignments(ctx, &goldengate.GetConnectionAssignmentsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				ConnectionId:  pulumi.StringRef(oci_golden_gate_connection.Test_connection.Id),
-//				DeploymentId:  pulumi.StringRef(oci_golden_gate_deployment.Test_deployment.Id),
-//				Name:          pulumi.StringRef(_var.Connection_assignment_name),
-//				State:         pulumi.StringRef(_var.Connection_assignment_state),
+//				CompartmentId: compartmentId,
+//				ConnectionId:  pulumi.StringRef(testConnection.Id),
+//				DeploymentId:  pulumi.StringRef(testDeployment.Id),
+//				Name:          pulumi.StringRef(connectionAssignmentName),
+//				State:         pulumi.StringRef(connectionAssignmentState),
 //			}, nil)
 //			if err != nil {
 //				return err

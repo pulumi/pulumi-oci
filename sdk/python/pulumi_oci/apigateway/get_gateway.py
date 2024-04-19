@@ -260,7 +260,7 @@ def get_gateway(gateway_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_gateway = oci.ApiGateway.get_gateway(gateway_id=oci_apigateway_gateway["test_gateway"]["id"])
+    test_gateway = oci.ApiGateway.get_gateway(gateway_id=test_gateway_oci_apigateway_gateway["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -308,7 +308,7 @@ def get_gateway_output(gateway_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_gateway = oci.ApiGateway.get_gateway(gateway_id=oci_apigateway_gateway["test_gateway"]["id"])
+    test_gateway = oci.ApiGateway.get_gateway(gateway_id=test_gateway_oci_apigateway_gateway["id"])
     ```
     <!--End PulumiCodeChooser -->
 

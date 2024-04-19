@@ -36,10 +36,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetIdentityProviders(ctx, &identity.GetIdentityProvidersArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				Protocol:      _var.Identity_provider_protocol,
-//				Name:          pulumi.StringRef(_var.Identity_provider_name),
-//				State:         pulumi.StringRef(_var.Identity_provider_state),
+//				CompartmentId: tenancyOcid,
+//				Protocol:      identityProviderProtocol,
+//				Name:          pulumi.StringRef(identityProviderName),
+//				State:         pulumi.StringRef(identityProviderState),
 //			}, nil)
 //			if err != nil {
 //				return err

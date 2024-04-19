@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testCustomProtectionRules = Oci.Waas.GetCustomProtectionRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Custom_protection_rule_display_names,
-        ///         Ids = @var.Custom_protection_rule_ids,
-        ///         States = @var.Custom_protection_rule_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Custom_protection_rule_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Custom_protection_rule_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = customProtectionRuleDisplayNames,
+        ///         Ids = customProtectionRuleIds,
+        ///         States = customProtectionRuleStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = customProtectionRuleTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = customProtectionRuleTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testCustomProtectionRules = Oci.Waas.GetCustomProtectionRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Custom_protection_rule_display_names,
-        ///         Ids = @var.Custom_protection_rule_ids,
-        ///         States = @var.Custom_protection_rule_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Custom_protection_rule_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Custom_protection_rule_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = customProtectionRuleDisplayNames,
+        ///         Ids = customProtectionRuleIds,
+        ///         States = customProtectionRuleStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = customProtectionRuleTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = customProtectionRuleTimeCreatedLessThan,
         ///     });
         /// 
         /// });

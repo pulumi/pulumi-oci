@@ -39,8 +39,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExportSet = new ExportSet(&#34;testExportSet&#34;, ExportSetArgs.builder()        
- *             .mountTargetId(oci_file_storage_mount_target.test_mount_target().id())
- *             .displayName(var_.export_set_name())
+ *             .mountTargetId(testMountTarget.id())
+ *             .displayName(exportSetName)
  *             .maxFsStatBytes(23843202333)
  *             .maxFsStatFiles(223442)
  *             .build());

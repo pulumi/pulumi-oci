@@ -199,7 +199,7 @@ def get_generic_artifact(artifact_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifact = oci.Artifacts.get_generic_artifact(artifact_id=oci_artifacts_artifact["test_artifact"]["id"])
+    test_generic_artifact = oci.Artifacts.get_generic_artifact(artifact_id=test_artifact["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -242,7 +242,7 @@ def get_generic_artifact_output(artifact_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifact = oci.Artifacts.get_generic_artifact(artifact_id=oci_artifacts_artifact["test_artifact"]["id"])
+    test_generic_artifact = oci.Artifacts.get_generic_artifact(artifact_id=test_artifact["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFinding(ctx, &databasemanagement.GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs{
-//				ManagedDatabaseId:      oci_database_management_managed_database.Test_managed_database.Id,
-//				SqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-//				BeginExecId:            pulumi.StringRef(oci_database_management_begin_exec.Test_begin_exec.Id),
-//				EndExecId:              pulumi.StringRef(oci_database_management_end_exec.Test_end_exec.Id),
-//				FindingFilter:          pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter),
-//				IndexHashFilter:        pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter),
-//				SearchPeriod:           pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_finding_search_period),
-//				StatsHashFilter:        pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter),
+//				ManagedDatabaseId:      testManagedDatabase.Id,
+//				SqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.Id,
+//				BeginExecId:            pulumi.StringRef(testBeginExec.Id),
+//				EndExecId:              pulumi.StringRef(testEndExec.Id),
+//				FindingFilter:          pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter),
+//				IndexHashFilter:        pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter),
+//				SearchPeriod:           pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod),
+//				StatsHashFilter:        pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter),
 //			}, nil)
 //			if err != nil {
 //				return err

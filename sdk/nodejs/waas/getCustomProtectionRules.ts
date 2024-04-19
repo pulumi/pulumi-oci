@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCustomProtectionRules = oci.Waas.getCustomProtectionRules({
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.custom_protection_rule_display_names,
- *     ids: _var.custom_protection_rule_ids,
- *     states: _var.custom_protection_rule_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.custom_protection_rule_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.custom_protection_rule_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayNames: customProtectionRuleDisplayNames,
+ *     ids: customProtectionRuleIds,
+ *     states: customProtectionRuleStates,
+ *     timeCreatedGreaterThanOrEqualTo: customProtectionRuleTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: customProtectionRuleTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,12 +110,12 @@ export interface GetCustomProtectionRulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCustomProtectionRules = oci.Waas.getCustomProtectionRules({
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.custom_protection_rule_display_names,
- *     ids: _var.custom_protection_rule_ids,
- *     states: _var.custom_protection_rule_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.custom_protection_rule_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.custom_protection_rule_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayNames: customProtectionRuleDisplayNames,
+ *     ids: customProtectionRuleIds,
+ *     states: customProtectionRuleStates,
+ *     timeCreatedGreaterThanOrEqualTo: customProtectionRuleTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: customProtectionRuleTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

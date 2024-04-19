@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsUnprocessedDataBucketManagement = new oci.loganalytics.LogAnalyticsUnprocessedDataBucketManagement("testLogAnalyticsUnprocessedDataBucketManagement", {
- *     bucket: _var.log_analytics_unprocessed_data_bucket_management_bucket,
- *     namespace: _var.log_analytics_unprocessed_data_bucket_management_namespace,
+ * const testLogAnalyticsUnprocessedDataBucketManagement = new oci.loganalytics.LogAnalyticsUnprocessedDataBucketManagement("test_log_analytics_unprocessed_data_bucket_management", {
+ *     bucket: logAnalyticsUnprocessedDataBucketManagementBucket,
+ *     namespace: logAnalyticsUnprocessedDataBucketManagementNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

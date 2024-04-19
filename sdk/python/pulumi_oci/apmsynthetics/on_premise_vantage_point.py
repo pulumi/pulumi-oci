@@ -324,16 +324,17 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_on_premise_vantage_point = oci.apm_synthetics.OnPremiseVantagePoint("testOnPremiseVantagePoint",
-            apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
+        test_on_premise_vantage_point = oci.apm_synthetics.OnPremiseVantagePoint("test_on_premise_vantage_point",
+            apm_domain_id=test_apm_domain["id"],
+            name=on_premise_vantage_point_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["on_premise_vantage_point_description"],
+            description=on_premise_vantage_point_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            type=var["on_premise_vantage_point_type"])
+            type=on_premise_vantage_point_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -376,16 +377,17 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_on_premise_vantage_point = oci.apm_synthetics.OnPremiseVantagePoint("testOnPremiseVantagePoint",
-            apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
+        test_on_premise_vantage_point = oci.apm_synthetics.OnPremiseVantagePoint("test_on_premise_vantage_point",
+            apm_domain_id=test_apm_domain["id"],
+            name=on_premise_vantage_point_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["on_premise_vantage_point_description"],
+            description=on_premise_vantage_point_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            type=var["on_premise_vantage_point_type"])
+            type=on_premise_vantage_point_type)
         ```
         <!--End PulumiCodeChooser -->
 

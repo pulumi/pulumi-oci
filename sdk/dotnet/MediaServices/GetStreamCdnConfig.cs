@@ -29,7 +29,7 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testStreamCdnConfig = Oci.MediaServices.GetStreamCdnConfig.Invoke(new()
         ///     {
-        ///         StreamCdnConfigId = oci_media_services_stream_cdn_config.Test_stream_cdn_config.Id,
+        ///         StreamCdnConfigId = testStreamCdnConfigOciMediaServicesStreamCdnConfig.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testStreamCdnConfig = Oci.MediaServices.GetStreamCdnConfig.Invoke(new()
         ///     {
-        ///         StreamCdnConfigId = oci_media_services_stream_cdn_config.Test_stream_cdn_config.Id,
+        ///         StreamCdnConfigId = testStreamCdnConfigOciMediaServicesStreamCdnConfig.Id,
         ///     });
         /// 
         /// });

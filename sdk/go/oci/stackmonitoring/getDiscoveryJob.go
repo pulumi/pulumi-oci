@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetDiscoveryJob(ctx, &stackmonitoring.GetDiscoveryJobArgs{
-//				DiscoveryJobId: oci_stack_monitoring_discovery_job.Test_discovery_job.Id,
+//				DiscoveryJobId: testDiscoveryJobOciStackMonitoringDiscoveryJob.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

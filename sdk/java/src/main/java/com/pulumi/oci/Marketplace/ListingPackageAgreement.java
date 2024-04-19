@@ -44,10 +44,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testListingPackageAgreement = new ListingPackageAgreement(&#34;testListingPackageAgreement&#34;, ListingPackageAgreementArgs.builder()        
- *             .agreementId(oci_marketplace_agreement.test_agreement().id())
- *             .listingId(oci_marketplace_listing.test_listing().id())
- *             .packageVersion(var_.listing_package_agreement_package_version())
- *             .compartmentId(var_.compartment_id())
+ *             .agreementId(testAgreement.id())
+ *             .listingId(testListing.id())
+ *             .packageVersion(listingPackageAgreementPackageVersion)
+ *             .compartmentId(compartmentId)
  *             .build());
  * 
  *     }

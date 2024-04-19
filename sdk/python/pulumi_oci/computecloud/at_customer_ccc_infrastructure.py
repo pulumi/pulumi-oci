@@ -534,17 +534,17 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ccc_infrastructure = oci.compute_cloud.AtCustomerCccInfrastructure("testCccInfrastructure",
-            compartment_id=var["compartment_id"],
-            display_name=var["ccc_infrastructure_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            ccc_upgrade_schedule_id=oci_compute_cloud_at_customer_ccc_upgrade_schedule["test_ccc_upgrade_schedule"]["id"],
-            connection_details=var["ccc_infrastructure_connection_details"],
-            connection_state=var["ccc_infrastructure_connection_state"],
+        test_ccc_infrastructure = oci.compute_cloud.AtCustomerCccInfrastructure("test_ccc_infrastructure",
+            compartment_id=compartment_id,
+            display_name=ccc_infrastructure_display_name,
+            subnet_id=test_subnet["id"],
+            ccc_upgrade_schedule_id=test_ccc_upgrade_schedule["id"],
+            connection_details=ccc_infrastructure_connection_details,
+            connection_state=ccc_infrastructure_connection_state,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["ccc_infrastructure_description"],
+            description=ccc_infrastructure_description,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -594,17 +594,17 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ccc_infrastructure = oci.compute_cloud.AtCustomerCccInfrastructure("testCccInfrastructure",
-            compartment_id=var["compartment_id"],
-            display_name=var["ccc_infrastructure_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            ccc_upgrade_schedule_id=oci_compute_cloud_at_customer_ccc_upgrade_schedule["test_ccc_upgrade_schedule"]["id"],
-            connection_details=var["ccc_infrastructure_connection_details"],
-            connection_state=var["ccc_infrastructure_connection_state"],
+        test_ccc_infrastructure = oci.compute_cloud.AtCustomerCccInfrastructure("test_ccc_infrastructure",
+            compartment_id=compartment_id,
+            display_name=ccc_infrastructure_display_name,
+            subnet_id=test_subnet["id"],
+            ccc_upgrade_schedule_id=test_ccc_upgrade_schedule["id"],
+            connection_details=ccc_infrastructure_connection_details,
+            connection_state=ccc_infrastructure_connection_state,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["ccc_infrastructure_description"],
+            description=ccc_infrastructure_description,
             freeform_tags={
                 "bar-key": "value",
             })

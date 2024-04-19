@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaPrivateEndpointAttachment = oci.Oda.getOdaPrivateEndpointAttachment({
- *     odaPrivateEndpointAttachmentId: oci_oda_oda_private_endpoint_attachment.test_oda_private_endpoint_attachment.id,
+ *     odaPrivateEndpointAttachmentId: testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -87,7 +87,7 @@ export interface GetOdaPrivateEndpointAttachmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaPrivateEndpointAttachment = oci.Oda.getOdaPrivateEndpointAttachment({
- *     odaPrivateEndpointAttachmentId: oci_oda_oda_private_endpoint_attachment.test_oda_private_endpoint_attachment.id,
+ *     odaPrivateEndpointAttachmentId: testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

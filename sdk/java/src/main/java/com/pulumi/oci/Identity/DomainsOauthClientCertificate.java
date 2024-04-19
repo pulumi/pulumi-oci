@@ -50,13 +50,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOauthClientCertificate = new DomainsOauthClientCertificate(&#34;testOauthClientCertificate&#34;, DomainsOauthClientCertificateArgs.builder()        
- *             .certificateAlias(var_.oauth_client_certificate_certificate_alias())
- *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+ *             .certificateAlias(oauthClientCertificateCertificateAlias)
+ *             .idcsEndpoint(testDomain.url())
  *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate&#34;)
- *             .x509base64certificate(var_.oauth_client_certificate_x509base64certificate())
- *             .authorization(var_.oauth_client_certificate_authorization())
+ *             .x509base64certificate(oauthClientCertificateX509base64certificate)
+ *             .authorization(oauthClientCertificateAuthorization)
  *             .externalId(&#34;externalId&#34;)
- *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+ *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
  *             .build());
  * 
  *     }

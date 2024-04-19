@@ -44,9 +44,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testClusterCompleteCredentialRotationManagement = new ClusterCompleteCredentialRotationManagement(&#34;testClusterCompleteCredentialRotationManagement&#34;, ClusterCompleteCredentialRotationManagementArgs.builder()        
- *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+ *             .clusterId(testCluster.id())
  *             .build(), CustomResourceOptions.builder()
- *                 .dependsOn(oci_containerengine_cluster_start_credential_rotation_management.test_cluster_start_credential_rotation_management())
+ *                 .dependsOn(testClusterStartCredentialRotationManagement)
  *                 .build());
  * 
  *     }

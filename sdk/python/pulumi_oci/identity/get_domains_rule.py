@@ -382,12 +382,12 @@ def get_domains_rule(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Identity.get_domains_rule(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        rule_id=oci_events_rule["test_rule"]["id"],
+    test_rule = oci.Identity.get_domains_rule(idcs_endpoint=test_domain["url"],
+        rule_id=test_rule_oci_events_rule["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["rule_authorization"],
-        resource_type_schema_version=var["rule_resource_type_schema_version"])
+        authorization=rule_authorization,
+        resource_type_schema_version=rule_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -461,12 +461,12 @@ def get_domains_rule_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Identity.get_domains_rule(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        rule_id=oci_events_rule["test_rule"]["id"],
+    test_rule = oci.Identity.get_domains_rule(idcs_endpoint=test_domain["url"],
+        rule_id=test_rule_oci_events_rule["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["rule_authorization"],
-        resource_type_schema_version=var["rule_resource_type_schema_version"])
+        authorization=rule_authorization,
+        resource_type_schema_version=rule_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

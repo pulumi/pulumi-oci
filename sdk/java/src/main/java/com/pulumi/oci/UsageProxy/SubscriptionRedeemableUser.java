@@ -46,14 +46,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSubscriptionRedeemableUser = new SubscriptionRedeemableUser(&#34;testSubscriptionRedeemableUser&#34;, SubscriptionRedeemableUserArgs.builder()        
- *             .subscriptionId(oci_ons_subscription.test_subscription().id())
- *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+ *             .subscriptionId(testSubscription.id())
+ *             .tenancyId(testTenancy.id())
  *             .items(SubscriptionRedeemableUserItemArgs.builder()
- *                 .emailId(oci_usage_proxy_email.test_email().id())
- *                 .firstName(var_.subscription_redeemable_user_items_first_name())
- *                 .lastName(var_.subscription_redeemable_user_items_last_name())
+ *                 .emailId(testEmail.id())
+ *                 .firstName(subscriptionRedeemableUserItemsFirstName)
+ *                 .lastName(subscriptionRedeemableUserItemsLastName)
  *                 .build())
- *             .userId(oci_identity_user.test_user().id())
+ *             .userId(testUser.id())
  *             .build());
  * 
  *     }

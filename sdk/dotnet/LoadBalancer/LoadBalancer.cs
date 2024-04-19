@@ -52,12 +52,12 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLoadBalancer = new Oci.LoadBalancer.LoadBalancer("testLoadBalancer", new()
+    ///     var testLoadBalancer = new Oci.LoadBalancer.LoadBalancer("test_load_balancer", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Load_balancer_display_name,
-    ///         Shape = @var.Load_balancer_shape,
-    ///         SubnetIds = @var.Load_balancer_subnet_ids,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = loadBalancerDisplayName,
+    ///         Shape = loadBalancerShape,
+    ///         SubnetIds = loadBalancerSubnetIds,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -66,20 +66,20 @@ namespace Pulumi.Oci.LoadBalancer
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IpMode = @var.Load_balancer_ip_mode,
-    ///         IsPrivate = @var.Load_balancer_is_private,
-    ///         NetworkSecurityGroupIds = @var.Load_balancer_network_security_group_ids,
+    ///         IpMode = loadBalancerIpMode,
+    ///         IsPrivate = loadBalancerIsPrivate,
+    ///         NetworkSecurityGroupIds = loadBalancerNetworkSecurityGroupIds,
     ///         ReservedIps = new[]
     ///         {
     ///             new Oci.LoadBalancer.Inputs.LoadBalancerReservedIpArgs
     ///             {
-    ///                 Id = @var.Load_balancer_reserved_ips_id,
+    ///                 Id = loadBalancerReservedIpsId,
     ///             },
     ///         },
     ///         ShapeDetails = new Oci.LoadBalancer.Inputs.LoadBalancerShapeDetailsArgs
     ///         {
-    ///             MaximumBandwidthInMbps = @var.Load_balancer_shape_details_maximum_bandwidth_in_mbps,
-    ///             MinimumBandwidthInMbps = @var.Load_balancer_shape_details_minimum_bandwidth_in_mbps,
+    ///             MaximumBandwidthInMbps = loadBalancerShapeDetailsMaximumBandwidthInMbps,
+    ///             MinimumBandwidthInMbps = loadBalancerShapeDetailsMinimumBandwidthInMbps,
     ///         },
     ///     });
     /// 

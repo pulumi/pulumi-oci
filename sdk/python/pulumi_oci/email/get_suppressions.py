@@ -129,10 +129,10 @@ def get_suppressions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_suppressions = oci.Email.get_suppressions(compartment_id=var["tenancy_ocid"],
-        email_address=var["suppression_email_address"],
-        time_created_greater_than_or_equal_to=var["suppression_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["suppression_time_created_less_than"])
+    test_suppressions = oci.Email.get_suppressions(compartment_id=tenancy_ocid,
+        email_address=suppression_email_address,
+        time_created_greater_than_or_equal_to=suppression_time_created_greater_than_or_equal_to,
+        time_created_less_than=suppression_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -186,10 +186,10 @@ def get_suppressions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_suppressions = oci.Email.get_suppressions(compartment_id=var["tenancy_ocid"],
-        email_address=var["suppression_email_address"],
-        time_created_greater_than_or_equal_to=var["suppression_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["suppression_time_created_less_than"])
+    test_suppressions = oci.Email.get_suppressions(compartment_id=tenancy_ocid,
+        email_address=suppression_email_address,
+        time_created_greater_than_or_equal_to=suppression_time_created_greater_than_or_equal_to,
+        time_created_less_than=suppression_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

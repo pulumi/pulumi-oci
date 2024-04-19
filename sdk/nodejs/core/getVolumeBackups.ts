@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeBackups = oci.Core.getVolumeBackups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.volume_backup_display_name,
- *     sourceVolumeBackupId: oci_core_volume_backup.test_volume_backup.id,
- *     state: _var.volume_backup_state,
- *     volumeId: oci_core_volume.test_volume.id,
+ *     compartmentId: compartmentId,
+ *     displayName: volumeBackupDisplayName,
+ *     sourceVolumeBackupId: testVolumeBackup.id,
+ *     state: volumeBackupState,
+ *     volumeId: testVolume.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetVolumeBackupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeBackups = oci.Core.getVolumeBackups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.volume_backup_display_name,
- *     sourceVolumeBackupId: oci_core_volume_backup.test_volume_backup.id,
- *     state: _var.volume_backup_state,
- *     volumeId: oci_core_volume.test_volume.id,
+ *     compartmentId: compartmentId,
+ *     displayName: volumeBackupDisplayName,
+ *     sourceVolumeBackupId: testVolumeBackup.id,
+ *     state: volumeBackupState,
+ *     volumeId: testVolume.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

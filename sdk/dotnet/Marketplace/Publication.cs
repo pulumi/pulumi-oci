@@ -25,38 +25,39 @@ namespace Pulumi.Oci.Marketplace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPublication = new Oci.Marketplace.Publication("testPublication", new()
+    ///     var testPublication = new Oci.Marketplace.Publication("test_publication", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IsAgreementAcknowledged = @var.Publication_is_agreement_acknowledged,
-    ///         ListingType = @var.Publication_listing_type,
+    ///         CompartmentId = compartmentId,
+    ///         IsAgreementAcknowledged = publicationIsAgreementAcknowledged,
+    ///         ListingType = publicationListingType,
+    ///         Name = publicationName,
     ///         PackageDetails = new Oci.Marketplace.Inputs.PublicationPackageDetailsArgs
     ///         {
     ///             Eulas = new[]
     ///             {
     ///                 new Oci.Marketplace.Inputs.PublicationPackageDetailsEulaArgs
     ///                 {
-    ///                     EulaType = @var.Publication_package_details_eula_eula_type,
-    ///                     LicenseText = @var.Publication_package_details_eula_license_text,
+    ///                     EulaType = publicationPackageDetailsEulaEulaType,
+    ///                     LicenseText = publicationPackageDetailsEulaLicenseText,
     ///                 },
     ///             },
     ///             OperatingSystem = new Oci.Marketplace.Inputs.PublicationPackageDetailsOperatingSystemArgs
     ///             {
-    ///                 Name = @var.Publication_package_details_operating_system_name,
+    ///                 Name = publicationPackageDetailsOperatingSystemName,
     ///             },
-    ///             PackageType = @var.Publication_package_details_package_type,
-    ///             PackageVersion = @var.Publication_package_details_package_version,
-    ///             ImageId = oci_core_image.Test_image.Id,
+    ///             PackageType = publicationPackageDetailsPackageType,
+    ///             PackageVersion = publicationPackageDetailsPackageVersion,
+    ///             ImageId = testImage.Id,
     ///         },
-    ///         ShortDescription = @var.Publication_short_description,
+    ///         ShortDescription = publicationShortDescription,
     ///         SupportContacts = new[]
     ///         {
     ///             new Oci.Marketplace.Inputs.PublicationSupportContactArgs
     ///             {
-    ///                 Email = @var.Publication_support_contacts_email,
-    ///                 Name = @var.Publication_support_contacts_name,
-    ///                 Phone = @var.Publication_support_contacts_phone,
-    ///                 Subject = @var.Publication_support_contacts_subject,
+    ///                 Email = publicationSupportContactsEmail,
+    ///                 Name = publicationSupportContactsName,
+    ///                 Phone = publicationSupportContactsPhone,
+    ///                 Subject = publicationSupportContactsSubject,
     ///             },
     ///         },
     ///         DefinedTags = 
@@ -67,7 +68,7 @@ namespace Pulumi.Oci.Marketplace
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         LongDescription = @var.Publication_long_description,
+    ///         LongDescription = publicationLongDescription,
     ///     });
     /// 
     /// });

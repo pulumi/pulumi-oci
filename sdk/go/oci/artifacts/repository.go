@@ -31,15 +31,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.NewRepository(ctx, "testRepository", &Artifacts.RepositoryArgs{
-//				CompartmentId:  pulumi.Any(_var.Compartment_id),
-//				IsImmutable:    pulumi.Any(_var.Repository_is_immutable),
-//				RepositoryType: pulumi.Any(_var.Repository_repository_type),
+//			_, err := Artifacts.NewRepository(ctx, "test_repository", &Artifacts.RepositoryArgs{
+//				CompartmentId:  pulumi.Any(compartmentId),
+//				IsImmutable:    pulumi.Any(repositoryIsImmutable),
+//				RepositoryType: pulumi.Any(repositoryRepositoryType),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Repository_description),
-//				DisplayName: pulumi.Any(_var.Repository_display_name),
+//				Description: pulumi.Any(repositoryDescription),
+//				DisplayName: pulumi.Any(repositoryDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

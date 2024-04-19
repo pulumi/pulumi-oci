@@ -46,11 +46,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSecurityRecipe = new SecurityRecipe(&#34;testSecurityRecipe&#34;, SecurityRecipeArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.security_recipe_display_name())
- *             .securityPolicies(var_.security_recipe_security_policies())
+ *             .compartmentId(compartmentId)
+ *             .displayName(securityRecipeDisplayName)
+ *             .securityPolicies(securityRecipeSecurityPolicies)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.security_recipe_description())
+ *             .description(securityRecipeDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

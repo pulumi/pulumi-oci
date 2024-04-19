@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeBackupPolicies = Oci.Core.GetVolumeBackupPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeBackupPolicies = Oci.Core.GetVolumeBackupPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

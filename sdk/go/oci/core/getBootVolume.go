@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetBootVolume(ctx, &core.GetBootVolumeArgs{
-//				BootVolumeId: oci_core_boot_volume.Test_boot_volume.Id,
+//				BootVolumeId: testBootVolumeOciCoreBootVolume.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

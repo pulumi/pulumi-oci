@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlVersions = oci.Mysql.getMysqlVersion({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -76,7 +76,7 @@ export interface GetMysqlVersionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlVersions = oci.Mysql.getMysqlVersion({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

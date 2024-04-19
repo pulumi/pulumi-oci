@@ -62,7 +62,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabase = RecoveryModFunctions.getProtectedDatabase(GetProtectedDatabaseArgs.builder()
-     *             .protectedDatabaseId(oci_recovery_protected_database.test_protected_database().id())
+     *             .protectedDatabaseId(testProtectedDatabaseOciRecoveryProtectedDatabase.id())
      *             .build());
      * 
      *     }
@@ -104,7 +104,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabase = RecoveryModFunctions.getProtectedDatabase(GetProtectedDatabaseArgs.builder()
-     *             .protectedDatabaseId(oci_recovery_protected_database.test_protected_database().id())
+     *             .protectedDatabaseId(testProtectedDatabaseOciRecoveryProtectedDatabase.id())
      *             .build());
      * 
      *     }
@@ -146,7 +146,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabase = RecoveryModFunctions.getProtectedDatabase(GetProtectedDatabaseArgs.builder()
-     *             .protectedDatabaseId(oci_recovery_protected_database.test_protected_database().id())
+     *             .protectedDatabaseId(testProtectedDatabaseOciRecoveryProtectedDatabase.id())
      *             .build());
      * 
      *     }
@@ -188,7 +188,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabase = RecoveryModFunctions.getProtectedDatabase(GetProtectedDatabaseArgs.builder()
-     *             .protectedDatabaseId(oci_recovery_protected_database.test_protected_database().id())
+     *             .protectedDatabaseId(testProtectedDatabaseOciRecoveryProtectedDatabase.id())
      *             .build());
      * 
      *     }
@@ -230,9 +230,9 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabaseFetchConfiguration = RecoveryModFunctions.getProtectedDatabaseFetchConfiguration(GetProtectedDatabaseFetchConfigurationArgs.builder()
-     *             .protectedDatabaseId(oci_recovery_protected_database.test_protected_database().id())
+     *             .protectedDatabaseId(testProtectedDatabase.id())
      *             .base64EncodeContent(true)
-     *             .configurationType(var_.protected_database_fetch_configuration_configuration_type())
+     *             .configurationType(protectedDatabaseFetchConfigurationConfigurationType)
      *             .build());
      * 
      *     }
@@ -274,9 +274,9 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabaseFetchConfiguration = RecoveryModFunctions.getProtectedDatabaseFetchConfiguration(GetProtectedDatabaseFetchConfigurationArgs.builder()
-     *             .protectedDatabaseId(oci_recovery_protected_database.test_protected_database().id())
+     *             .protectedDatabaseId(testProtectedDatabase.id())
      *             .base64EncodeContent(true)
-     *             .configurationType(var_.protected_database_fetch_configuration_configuration_type())
+     *             .configurationType(protectedDatabaseFetchConfigurationConfigurationType)
      *             .build());
      * 
      *     }
@@ -318,9 +318,9 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabaseFetchConfiguration = RecoveryModFunctions.getProtectedDatabaseFetchConfiguration(GetProtectedDatabaseFetchConfigurationArgs.builder()
-     *             .protectedDatabaseId(oci_recovery_protected_database.test_protected_database().id())
+     *             .protectedDatabaseId(testProtectedDatabase.id())
      *             .base64EncodeContent(true)
-     *             .configurationType(var_.protected_database_fetch_configuration_configuration_type())
+     *             .configurationType(protectedDatabaseFetchConfigurationConfigurationType)
      *             .build());
      * 
      *     }
@@ -362,9 +362,9 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabaseFetchConfiguration = RecoveryModFunctions.getProtectedDatabaseFetchConfiguration(GetProtectedDatabaseFetchConfigurationArgs.builder()
-     *             .protectedDatabaseId(oci_recovery_protected_database.test_protected_database().id())
+     *             .protectedDatabaseId(testProtectedDatabase.id())
      *             .base64EncodeContent(true)
-     *             .configurationType(var_.protected_database_fetch_configuration_configuration_type())
+     *             .configurationType(protectedDatabaseFetchConfigurationConfigurationType)
      *             .build());
      * 
      *     }
@@ -406,12 +406,12 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabases = RecoveryModFunctions.getProtectedDatabases(GetProtectedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protected_database_display_name())
-     *             .id(var_.protected_database_id())
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
-     *             .recoveryServiceSubnetId(oci_recovery_recovery_service_subnet.test_recovery_service_subnet().id())
-     *             .state(var_.protected_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectedDatabaseDisplayName)
+     *             .id(protectedDatabaseId)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnet.id())
+     *             .state(protectedDatabaseState)
      *             .build());
      * 
      *     }
@@ -453,12 +453,12 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabases = RecoveryModFunctions.getProtectedDatabases(GetProtectedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protected_database_display_name())
-     *             .id(var_.protected_database_id())
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
-     *             .recoveryServiceSubnetId(oci_recovery_recovery_service_subnet.test_recovery_service_subnet().id())
-     *             .state(var_.protected_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectedDatabaseDisplayName)
+     *             .id(protectedDatabaseId)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnet.id())
+     *             .state(protectedDatabaseState)
      *             .build());
      * 
      *     }
@@ -500,12 +500,12 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabases = RecoveryModFunctions.getProtectedDatabases(GetProtectedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protected_database_display_name())
-     *             .id(var_.protected_database_id())
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
-     *             .recoveryServiceSubnetId(oci_recovery_recovery_service_subnet.test_recovery_service_subnet().id())
-     *             .state(var_.protected_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectedDatabaseDisplayName)
+     *             .id(protectedDatabaseId)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnet.id())
+     *             .state(protectedDatabaseState)
      *             .build());
      * 
      *     }
@@ -547,12 +547,12 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectedDatabases = RecoveryModFunctions.getProtectedDatabases(GetProtectedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protected_database_display_name())
-     *             .id(var_.protected_database_id())
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
-     *             .recoveryServiceSubnetId(oci_recovery_recovery_service_subnet.test_recovery_service_subnet().id())
-     *             .state(var_.protected_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectedDatabaseDisplayName)
+     *             .id(protectedDatabaseId)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnet.id())
+     *             .state(protectedDatabaseState)
      *             .build());
      * 
      *     }
@@ -594,11 +594,11 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionPolicies = RecoveryModFunctions.getProtectionPolicies(GetProtectionPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protection_policy_display_name())
-     *             .owner(var_.protection_policy_owner())
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
-     *             .state(var_.protection_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionPolicyDisplayName)
+     *             .owner(protectionPolicyOwner)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .state(protectionPolicyState)
      *             .build());
      * 
      *     }
@@ -640,11 +640,11 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionPolicies = RecoveryModFunctions.getProtectionPolicies(GetProtectionPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protection_policy_display_name())
-     *             .owner(var_.protection_policy_owner())
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
-     *             .state(var_.protection_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionPolicyDisplayName)
+     *             .owner(protectionPolicyOwner)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .state(protectionPolicyState)
      *             .build());
      * 
      *     }
@@ -686,11 +686,11 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionPolicies = RecoveryModFunctions.getProtectionPolicies(GetProtectionPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protection_policy_display_name())
-     *             .owner(var_.protection_policy_owner())
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
-     *             .state(var_.protection_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionPolicyDisplayName)
+     *             .owner(protectionPolicyOwner)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .state(protectionPolicyState)
      *             .build());
      * 
      *     }
@@ -732,11 +732,11 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionPolicies = RecoveryModFunctions.getProtectionPolicies(GetProtectionPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protection_policy_display_name())
-     *             .owner(var_.protection_policy_owner())
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
-     *             .state(var_.protection_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionPolicyDisplayName)
+     *             .owner(protectionPolicyOwner)
+     *             .protectionPolicyId(testProtectionPolicy.id())
+     *             .state(protectionPolicyState)
      *             .build());
      * 
      *     }
@@ -778,7 +778,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionPolicy = RecoveryModFunctions.getProtectionPolicy(GetProtectionPolicyArgs.builder()
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
+     *             .protectionPolicyId(testProtectionPolicyOciRecoveryProtectionPolicy.id())
      *             .build());
      * 
      *     }
@@ -820,7 +820,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionPolicy = RecoveryModFunctions.getProtectionPolicy(GetProtectionPolicyArgs.builder()
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
+     *             .protectionPolicyId(testProtectionPolicyOciRecoveryProtectionPolicy.id())
      *             .build());
      * 
      *     }
@@ -862,7 +862,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionPolicy = RecoveryModFunctions.getProtectionPolicy(GetProtectionPolicyArgs.builder()
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
+     *             .protectionPolicyId(testProtectionPolicyOciRecoveryProtectionPolicy.id())
      *             .build());
      * 
      *     }
@@ -904,7 +904,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionPolicy = RecoveryModFunctions.getProtectionPolicy(GetProtectionPolicyArgs.builder()
-     *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
+     *             .protectionPolicyId(testProtectionPolicyOciRecoveryProtectionPolicy.id())
      *             .build());
      * 
      *     }
@@ -946,7 +946,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecoveryServiceSubnet = RecoveryModFunctions.getRecoveryServiceSubnet(GetRecoveryServiceSubnetArgs.builder()
-     *             .recoveryServiceSubnetId(oci_recovery_recovery_service_subnet.test_recovery_service_subnet().id())
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.id())
      *             .build());
      * 
      *     }
@@ -988,7 +988,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecoveryServiceSubnet = RecoveryModFunctions.getRecoveryServiceSubnet(GetRecoveryServiceSubnetArgs.builder()
-     *             .recoveryServiceSubnetId(oci_recovery_recovery_service_subnet.test_recovery_service_subnet().id())
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.id())
      *             .build());
      * 
      *     }
@@ -1030,7 +1030,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecoveryServiceSubnet = RecoveryModFunctions.getRecoveryServiceSubnet(GetRecoveryServiceSubnetArgs.builder()
-     *             .recoveryServiceSubnetId(oci_recovery_recovery_service_subnet.test_recovery_service_subnet().id())
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.id())
      *             .build());
      * 
      *     }
@@ -1072,7 +1072,7 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecoveryServiceSubnet = RecoveryModFunctions.getRecoveryServiceSubnet(GetRecoveryServiceSubnetArgs.builder()
-     *             .recoveryServiceSubnetId(oci_recovery_recovery_service_subnet.test_recovery_service_subnet().id())
+     *             .recoveryServiceSubnetId(testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.id())
      *             .build());
      * 
      *     }
@@ -1114,11 +1114,11 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecoveryServiceSubnets = RecoveryModFunctions.getRecoveryServiceSubnets(GetRecoveryServiceSubnetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.recovery_service_subnet_display_name())
-     *             .id(var_.recovery_service_subnet_id())
-     *             .state(var_.recovery_service_subnet_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(recoveryServiceSubnetDisplayName)
+     *             .id(recoveryServiceSubnetId)
+     *             .state(recoveryServiceSubnetState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -1160,11 +1160,11 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecoveryServiceSubnets = RecoveryModFunctions.getRecoveryServiceSubnets(GetRecoveryServiceSubnetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.recovery_service_subnet_display_name())
-     *             .id(var_.recovery_service_subnet_id())
-     *             .state(var_.recovery_service_subnet_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(recoveryServiceSubnetDisplayName)
+     *             .id(recoveryServiceSubnetId)
+     *             .state(recoveryServiceSubnetState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -1206,11 +1206,11 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecoveryServiceSubnets = RecoveryModFunctions.getRecoveryServiceSubnets(GetRecoveryServiceSubnetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.recovery_service_subnet_display_name())
-     *             .id(var_.recovery_service_subnet_id())
-     *             .state(var_.recovery_service_subnet_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(recoveryServiceSubnetDisplayName)
+     *             .id(recoveryServiceSubnetId)
+     *             .state(recoveryServiceSubnetState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -1252,11 +1252,11 @@ public final class RecoveryModFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecoveryServiceSubnets = RecoveryModFunctions.getRecoveryServiceSubnets(GetRecoveryServiceSubnetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.recovery_service_subnet_display_name())
-     *             .id(var_.recovery_service_subnet_id())
-     *             .state(var_.recovery_service_subnet_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(recoveryServiceSubnetDisplayName)
+     *             .id(recoveryServiceSubnetId)
+     *             .state(recoveryServiceSubnetState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }

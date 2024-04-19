@@ -53,7 +53,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnotationFormat = DataLabellingServiceFunctions.getAnnotationFormat(GetAnnotationFormatArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -95,7 +95,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnotationFormat = DataLabellingServiceFunctions.getAnnotationFormat(GetAnnotationFormatArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -137,7 +137,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnotationFormat = DataLabellingServiceFunctions.getAnnotationFormat(GetAnnotationFormatArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -179,7 +179,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnotationFormat = DataLabellingServiceFunctions.getAnnotationFormat(GetAnnotationFormatArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -221,7 +221,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnotationFormats = DataLabellingServiceFunctions.getAnnotationFormats(GetAnnotationFormatsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -263,7 +263,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnotationFormats = DataLabellingServiceFunctions.getAnnotationFormats(GetAnnotationFormatsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -305,7 +305,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnotationFormats = DataLabellingServiceFunctions.getAnnotationFormats(GetAnnotationFormatsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -347,7 +347,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnotationFormats = DataLabellingServiceFunctions.getAnnotationFormats(GetAnnotationFormatsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -389,7 +389,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
-     *             .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
      *             .build());
      * 
      *     }
@@ -431,7 +431,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
-     *             .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
      *             .build());
      * 
      *     }
@@ -473,7 +473,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
-     *             .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
      *             .build());
      * 
      *     }
@@ -515,7 +515,7 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataset = DataLabellingServiceFunctions.getDataset(GetDatasetArgs.builder()
-     *             .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+     *             .datasetId(testDatasetOciDataLabelingServiceDataset.id())
      *             .build());
      * 
      *     }
@@ -557,11 +557,11 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatasets = DataLabellingServiceFunctions.getDatasets(GetDatasetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .annotationFormat(var_.dataset_annotation_format())
-     *             .displayName(var_.dataset_display_name())
-     *             .id(var_.dataset_id())
-     *             .state(var_.dataset_state())
+     *             .compartmentId(compartmentId)
+     *             .annotationFormat(datasetAnnotationFormat)
+     *             .displayName(datasetDisplayName)
+     *             .id(datasetId)
+     *             .state(datasetState)
      *             .build());
      * 
      *     }
@@ -603,11 +603,11 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatasets = DataLabellingServiceFunctions.getDatasets(GetDatasetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .annotationFormat(var_.dataset_annotation_format())
-     *             .displayName(var_.dataset_display_name())
-     *             .id(var_.dataset_id())
-     *             .state(var_.dataset_state())
+     *             .compartmentId(compartmentId)
+     *             .annotationFormat(datasetAnnotationFormat)
+     *             .displayName(datasetDisplayName)
+     *             .id(datasetId)
+     *             .state(datasetState)
      *             .build());
      * 
      *     }
@@ -649,11 +649,11 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatasets = DataLabellingServiceFunctions.getDatasets(GetDatasetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .annotationFormat(var_.dataset_annotation_format())
-     *             .displayName(var_.dataset_display_name())
-     *             .id(var_.dataset_id())
-     *             .state(var_.dataset_state())
+     *             .compartmentId(compartmentId)
+     *             .annotationFormat(datasetAnnotationFormat)
+     *             .displayName(datasetDisplayName)
+     *             .id(datasetId)
+     *             .state(datasetState)
      *             .build());
      * 
      *     }
@@ -695,11 +695,11 @@ public final class DataLabellingServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatasets = DataLabellingServiceFunctions.getDatasets(GetDatasetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .annotationFormat(var_.dataset_annotation_format())
-     *             .displayName(var_.dataset_display_name())
-     *             .id(var_.dataset_id())
-     *             .state(var_.dataset_state())
+     *             .compartmentId(compartmentId)
+     *             .annotationFormat(datasetAnnotationFormat)
+     *             .displayName(datasetDisplayName)
+     *             .id(datasetId)
+     *             .state(datasetState)
      *             .build());
      * 
      *     }

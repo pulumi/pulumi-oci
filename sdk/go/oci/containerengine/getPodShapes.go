@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetPodShapes(ctx, &containerengine.GetPodShapesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Pod_shape_availability_domain),
-//				Name:               pulumi.StringRef(_var.Pod_shape_name),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(podShapeAvailabilityDomain),
+//				Name:               pulumi.StringRef(podShapeName),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -24,15 +24,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditEventAnalytic = oci.DataSafe.getAuditEventAnalytic({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_event_analytic_access_level,
- *     compartmentIdInSubtree: _var.audit_event_analytic_compartment_id_in_subtree,
- *     groupBies: _var.audit_event_analytic_group_by,
- *     queryTimeZone: _var.audit_event_analytic_query_time_zone,
- *     scimQuery: _var.audit_event_analytic_scim_query,
- *     summaryFields: _var.audit_event_analytic_summary_field,
- *     timeEnded: _var.audit_event_analytic_time_ended,
- *     timeStarted: _var.audit_event_analytic_time_started,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditEventAnalyticAccessLevel,
+ *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree,
+ *     groupBies: auditEventAnalyticGroupBy,
+ *     queryTimeZone: auditEventAnalyticQueryTimeZone,
+ *     scimQuery: auditEventAnalyticScimQuery,
+ *     summaryFields: auditEventAnalyticSummaryField,
+ *     timeEnded: auditEventAnalyticTimeEnded,
+ *     timeStarted: auditEventAnalyticTimeStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -143,15 +143,15 @@ export interface GetAuditEventAnalyticResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditEventAnalytic = oci.DataSafe.getAuditEventAnalytic({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_event_analytic_access_level,
- *     compartmentIdInSubtree: _var.audit_event_analytic_compartment_id_in_subtree,
- *     groupBies: _var.audit_event_analytic_group_by,
- *     queryTimeZone: _var.audit_event_analytic_query_time_zone,
- *     scimQuery: _var.audit_event_analytic_scim_query,
- *     summaryFields: _var.audit_event_analytic_summary_field,
- *     timeEnded: _var.audit_event_analytic_time_ended,
- *     timeStarted: _var.audit_event_analytic_time_started,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditEventAnalyticAccessLevel,
+ *     compartmentIdInSubtree: auditEventAnalyticCompartmentIdInSubtree,
+ *     groupBies: auditEventAnalyticGroupBy,
+ *     queryTimeZone: auditEventAnalyticQueryTimeZone,
+ *     scimQuery: auditEventAnalyticScimQuery,
+ *     summaryFields: auditEventAnalyticSummaryField,
+ *     timeEnded: auditEventAnalyticTimeEnded,
+ *     timeStarted: auditEventAnalyticTimeStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

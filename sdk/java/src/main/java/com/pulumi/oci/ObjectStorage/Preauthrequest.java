@@ -43,12 +43,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPreauthenticatedRequest = new Preauthrequest(&#34;testPreauthenticatedRequest&#34;, PreauthrequestArgs.builder()        
- *             .accessType(var_.preauthenticated_request_access_type())
- *             .bucket(var_.preauthenticated_request_bucket())
- *             .namespace(var_.preauthenticated_request_namespace())
- *             .timeExpires(var_.preauthenticated_request_time_expires())
- *             .bucketListingAction(var_.preauthenticated_request_bucket_listing_action())
- *             .object(var_.preauthenticated_request_object())
+ *             .accessType(preauthenticatedRequestAccessType)
+ *             .bucket(preauthenticatedRequestBucket)
+ *             .name(preauthenticatedRequestName)
+ *             .namespace(preauthenticatedRequestNamespace)
+ *             .timeExpires(preauthenticatedRequestTimeExpires)
+ *             .bucketListingAction(preauthenticatedRequestBucketListingAction)
+ *             .object(preauthenticatedRequestObject)
  *             .build());
  * 
  *     }

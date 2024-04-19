@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceGroupAvailablePackages = oci.OsManagementHub.getManagedInstanceGroupAvailablePackages({
- *     managedInstanceGroupId: oci_os_management_hub_managed_instance_group.test_managed_instance_group.id,
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.managed_instance_group_available_package_display_name,
- *     displayNameContains: _var.managed_instance_group_available_package_display_name_contains,
- *     isLatest: _var.managed_instance_group_available_package_is_latest,
+ *     managedInstanceGroupId: testManagedInstanceGroup.id,
+ *     compartmentId: compartmentId,
+ *     displayNames: managedInstanceGroupAvailablePackageDisplayName,
+ *     displayNameContains: managedInstanceGroupAvailablePackageDisplayNameContains,
+ *     isLatest: managedInstanceGroupAvailablePackageIsLatest,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -108,11 +108,11 @@ export interface GetManagedInstanceGroupAvailablePackagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceGroupAvailablePackages = oci.OsManagementHub.getManagedInstanceGroupAvailablePackages({
- *     managedInstanceGroupId: oci_os_management_hub_managed_instance_group.test_managed_instance_group.id,
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.managed_instance_group_available_package_display_name,
- *     displayNameContains: _var.managed_instance_group_available_package_display_name_contains,
- *     isLatest: _var.managed_instance_group_available_package_is_latest,
+ *     managedInstanceGroupId: testManagedInstanceGroup.id,
+ *     compartmentId: compartmentId,
+ *     displayNames: managedInstanceGroupAvailablePackageDisplayName,
+ *     displayNameContains: managedInstanceGroupAvailablePackageDisplayNameContains,
+ *     isLatest: managedInstanceGroupAvailablePackageIsLatest,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

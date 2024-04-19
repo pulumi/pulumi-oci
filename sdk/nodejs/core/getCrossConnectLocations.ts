@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCrossConnectLocations = oci.Core.getCrossConnectLocations({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -74,7 +74,7 @@ export interface GetCrossConnectLocationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCrossConnectLocations = oci.Core.getCrossConnectLocations({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPeer = new oci.blockchain.Peer("testPeer", {
- *     ad: _var.peer_ad,
- *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
+ * const testPeer = new oci.blockchain.Peer("test_peer", {
+ *     ad: peerAd,
+ *     blockchainPlatformId: testBlockchainPlatform.id,
  *     ocpuAllocationParam: {
- *         ocpuAllocationNumber: _var.peer_ocpu_allocation_param_ocpu_allocation_number,
+ *         ocpuAllocationNumber: peerOcpuAllocationParamOcpuAllocationNumber,
  *     },
- *     role: _var.peer_role,
- *     alias: _var.peer_alias,
+ *     role: peerRole,
+ *     alias: peerAlias,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -272,14 +272,14 @@ class Peer(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_peer = oci.blockchain.Peer("testPeer",
-            ad=var["peer_ad"],
-            blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
+        test_peer = oci.blockchain.Peer("test_peer",
+            ad=peer_ad,
+            blockchain_platform_id=test_blockchain_platform["id"],
             ocpu_allocation_param=oci.blockchain.PeerOcpuAllocationParamArgs(
-                ocpu_allocation_number=var["peer_ocpu_allocation_param_ocpu_allocation_number"],
+                ocpu_allocation_number=peer_ocpu_allocation_param_ocpu_allocation_number,
             ),
-            role=var["peer_role"],
-            alias=var["peer_alias"])
+            role=peer_role,
+            alias=peer_alias)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -321,14 +321,14 @@ class Peer(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_peer = oci.blockchain.Peer("testPeer",
-            ad=var["peer_ad"],
-            blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
+        test_peer = oci.blockchain.Peer("test_peer",
+            ad=peer_ad,
+            blockchain_platform_id=test_blockchain_platform["id"],
             ocpu_allocation_param=oci.blockchain.PeerOcpuAllocationParamArgs(
-                ocpu_allocation_number=var["peer_ocpu_allocation_param_ocpu_allocation_number"],
+                ocpu_allocation_number=peer_ocpu_allocation_param_ocpu_allocation_number,
             ),
-            role=var["peer_role"],
-            alias=var["peer_alias"])
+            role=peer_role,
+            alias=peer_alias)
         ```
         <!--End PulumiCodeChooser -->
 

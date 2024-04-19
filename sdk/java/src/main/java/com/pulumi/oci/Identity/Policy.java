@@ -58,12 +58,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPolicy = new Policy(&#34;testPolicy&#34;, PolicyArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
- *             .description(var_.policy_description())
- *             .statements(var_.policy_statements())
+ *             .compartmentId(tenancyOcid)
+ *             .description(policyDescription)
+ *             .name(policyName)
+ *             .statements(policyStatements)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .versionDate(var_.policy_version_date())
+ *             .versionDate(policyVersionDate)
  *             .build());
  * 
  *     }

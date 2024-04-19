@@ -47,14 +47,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNatGateway = new NatGateway(&#34;testNatGateway&#34;, NatGatewayArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .vcnId(oci_core_vcn.test_vcn().id())
- *             .blockTraffic(var_.nat_gateway_block_traffic())
+ *             .compartmentId(compartmentId)
+ *             .vcnId(testVcn.id())
+ *             .blockTraffic(natGatewayBlockTraffic)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.nat_gateway_display_name())
+ *             .displayName(natGatewayDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .publicIpId(oci_core_public_ip.test_public_ip().id())
- *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .publicIpId(testPublicIp.id())
+ *             .routeTableId(testRouteTable.id())
  *             .build());
  * 
  *     }

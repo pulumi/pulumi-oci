@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepoFileLine = oci.DevOps.getRepoFileLine({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     revision: _var.repo_file_line_revision,
- *     filePath: _var.repo_file_line_file_path,
- *     startLineNumber: _var.repo_file_line_start_line_number,
+ *     repositoryId: testRepository.id,
+ *     revision: repoFileLineRevision,
+ *     filePath: repoFileLineFilePath,
+ *     startLineNumber: repoFileLineStartLineNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -90,10 +90,10 @@ export interface GetRepoFileLineResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepoFileLine = oci.DevOps.getRepoFileLine({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     revision: _var.repo_file_line_revision,
- *     filePath: _var.repo_file_line_file_path,
- *     startLineNumber: _var.repo_file_line_start_line_number,
+ *     repositoryId: testRepository.id,
+ *     revision: repoFileLineRevision,
+ *     filePath: repoFileLineFilePath,
+ *     startLineNumber: repoFileLineStartLineNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

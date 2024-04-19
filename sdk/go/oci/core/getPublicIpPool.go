@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetPublicIpPool(ctx, &core.GetPublicIpPoolArgs{
-//				PublicIpPoolId: oci_core_public_ip_pool.Test_public_ip_pool.Id,
+//				PublicIpPoolId: testPublicIpPoolOciCorePublicIpPool.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

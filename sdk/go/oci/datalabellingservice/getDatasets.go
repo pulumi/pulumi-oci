@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataLabellingService.GetDatasets(ctx, &datalabellingservice.GetDatasetsArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				AnnotationFormat: pulumi.StringRef(_var.Dataset_annotation_format),
-//				DisplayName:      pulumi.StringRef(_var.Dataset_display_name),
-//				Id:               pulumi.StringRef(_var.Dataset_id),
-//				State:            pulumi.StringRef(_var.Dataset_state),
+//				CompartmentId:    compartmentId,
+//				AnnotationFormat: pulumi.StringRef(datasetAnnotationFormat),
+//				DisplayName:      pulumi.StringRef(datasetDisplayName),
+//				Id:               pulumi.StringRef(datasetId),
+//				State:            pulumi.StringRef(datasetState),
 //			}, nil)
 //			if err != nil {
 //				return err

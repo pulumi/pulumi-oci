@@ -25,9 +25,9 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDeployPipeline = new Oci.DevOps.DeployPipeline("testDeployPipeline", new()
+    ///     var testDeployPipeline = new Oci.DevOps.DeployPipeline("test_deploy_pipeline", new()
     ///     {
-    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         ProjectId = testProject.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -38,14 +38,14 @@ namespace Pulumi.Oci.DevOps
     ///             {
     ///                 new Oci.DevOps.Inputs.DeployPipelineDeployPipelineParametersItemArgs
     ///                 {
-    ///                     Name = @var.Deploy_pipeline_deploy_pipeline_parameters_items_name,
-    ///                     DefaultValue = @var.Deploy_pipeline_deploy_pipeline_parameters_items_default_value,
-    ///                     Description = @var.Deploy_pipeline_deploy_pipeline_parameters_items_description,
+    ///                     Name = deployPipelineDeployPipelineParametersItemsName,
+    ///                     DefaultValue = deployPipelineDeployPipelineParametersItemsDefaultValue,
+    ///                     Description = deployPipelineDeployPipelineParametersItemsDescription,
     ///                 },
     ///             },
     ///         },
-    ///         Description = @var.Deploy_pipeline_description,
-    ///         DisplayName = @var.Deploy_pipeline_display_name,
+    ///         Description = deployPipelineDescription,
+    ///         DisplayName = deployPipelineDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

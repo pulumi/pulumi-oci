@@ -29,7 +29,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {
         ///     var testLicenseRecord = Oci.LicenseManager.GetLicenseRecord.Invoke(new()
         ///     {
-        ///         LicenseRecordId = oci_license_manager_license_record.Test_license_record.Id,
+        ///         LicenseRecordId = testLicenseRecordOciLicenseManagerLicenseRecord.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {
         ///     var testLicenseRecord = Oci.LicenseManager.GetLicenseRecord.Invoke(new()
         ///     {
-        ///         LicenseRecordId = oci_license_manager_license_record.Test_license_record.Id,
+        ///         LicenseRecordId = testLicenseRecordOciLicenseManagerLicenseRecord.Id,
         ///     });
         /// 
         /// });

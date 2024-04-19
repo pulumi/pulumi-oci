@@ -211,7 +211,7 @@ def get_external_db_home(external_db_home_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_home = oci.DatabaseManagement.get_external_db_home(external_db_home_id=oci_database_management_external_db_home["test_external_db_home"]["id"])
+    test_external_db_home = oci.DatabaseManagement.get_external_db_home(external_db_home_id=test_external_db_home_oci_database_management_external_db_home["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -255,7 +255,7 @@ def get_external_db_home_output(external_db_home_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_home = oci.DatabaseManagement.get_external_db_home(external_db_home_id=oci_database_management_external_db_home["test_external_db_home"]["id"])
+    test_external_db_home = oci.DatabaseManagement.get_external_db_home(external_db_home_id=test_external_db_home_oci_database_management_external_db_home["id"])
     ```
     <!--End PulumiCodeChooser -->
 

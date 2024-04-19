@@ -20,17 +20,17 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseInsights = oci.Opsi.getDatabaseInsights({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.database_insight_compartment_id_in_subtree,
- *     databaseIds: oci_database_database.test_database.id,
- *     databaseTypes: _var.database_insight_database_type,
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
- *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
- *     fields: _var.database_insight_fields,
- *     id: _var.database_insight_id,
- *     opsiPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
- *     states: _var.database_insight_state,
- *     statuses: _var.database_insight_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree,
+ *     databaseIds: testDatabase.id,
+ *     databaseTypes: databaseInsightDatabaseType,
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
+ *     exadataInsightId: testExadataInsight.id,
+ *     fields: databaseInsightFields,
+ *     id: databaseInsightId,
+ *     opsiPrivateEndpointId: testPrivateEndpoint.id,
+ *     states: databaseInsightState,
+ *     statuses: databaseInsightStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -168,17 +168,17 @@ export interface GetDatabaseInsightsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseInsights = oci.Opsi.getDatabaseInsights({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.database_insight_compartment_id_in_subtree,
- *     databaseIds: oci_database_database.test_database.id,
- *     databaseTypes: _var.database_insight_database_type,
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
- *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
- *     fields: _var.database_insight_fields,
- *     id: _var.database_insight_id,
- *     opsiPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
- *     states: _var.database_insight_state,
- *     statuses: _var.database_insight_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree,
+ *     databaseIds: testDatabase.id,
+ *     databaseTypes: databaseInsightDatabaseType,
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
+ *     exadataInsightId: testExadataInsight.id,
+ *     fields: databaseInsightFields,
+ *     id: databaseInsightId,
+ *     opsiPrivateEndpointId: testPrivateEndpoint.id,
+ *     states: databaseInsightState,
+ *     statuses: databaseInsightStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -35,10 +35,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LoadBalancer.GetLoadBalancers(ctx, &loadbalancer.GetLoadBalancersArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Detail:        pulumi.StringRef(_var.Load_balancer_detail),
-//				DisplayName:   pulumi.StringRef(_var.Load_balancer_display_name),
-//				State:         pulumi.StringRef(_var.Load_balancer_state),
+//				CompartmentId: compartmentId,
+//				Detail:        pulumi.StringRef(loadBalancerDetail),
+//				DisplayName:   pulumi.StringRef(loadBalancerDisplayName),
+//				State:         pulumi.StringRef(loadBalancerState),
 //			}, nil)
 //			if err != nil {
 //				return err

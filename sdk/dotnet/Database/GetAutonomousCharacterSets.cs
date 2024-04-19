@@ -29,9 +29,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousDatabaseCharacterSets = Oci.Database.GetAutonomousCharacterSets.Invoke(new()
         ///     {
-        ///         CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
-        ///         IsDedicated = @var.Autonomous_database_character_set_is_dedicated,
-        ///         IsShared = @var.Autonomous_database_character_set_is_shared,
+        ///         CharacterSetType = autonomousDatabaseCharacterSetCharacterSetType,
+        ///         IsDedicated = autonomousDatabaseCharacterSetIsDedicated,
+        ///         IsShared = autonomousDatabaseCharacterSetIsShared,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousDatabaseCharacterSets = Oci.Database.GetAutonomousCharacterSets.Invoke(new()
         ///     {
-        ///         CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
-        ///         IsDedicated = @var.Autonomous_database_character_set_is_dedicated,
-        ///         IsShared = @var.Autonomous_database_character_set_is_shared,
+        ///         CharacterSetType = autonomousDatabaseCharacterSetCharacterSetType,
+        ///         IsDedicated = autonomousDatabaseCharacterSetIsDedicated,
+        ///         IsShared = autonomousDatabaseCharacterSetIsShared,
         ///     });
         /// 
         /// });

@@ -159,9 +159,9 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_regional_wallet_management = oci.database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement",
-            grace_period=var["autonomous_database_regional_wallet_management_grace_period"],
-            should_rotate=var["autonomous_database_regional_wallet_management_should_rotate"])
+        test_autonomous_database_regional_wallet_management = oci.database.AutonomousDatabaseRegionalWalletManagement("test_autonomous_database_regional_wallet_management",
+            grace_period=autonomous_database_regional_wallet_management_grace_period,
+            should_rotate=autonomous_database_regional_wallet_management_should_rotate)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -196,9 +196,9 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_regional_wallet_management = oci.database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement",
-            grace_period=var["autonomous_database_regional_wallet_management_grace_period"],
-            should_rotate=var["autonomous_database_regional_wallet_management_should_rotate"])
+        test_autonomous_database_regional_wallet_management = oci.database.AutonomousDatabaseRegionalWalletManagement("test_autonomous_database_regional_wallet_management",
+            grace_period=autonomous_database_regional_wallet_management_grace_period,
+            should_rotate=autonomous_database_regional_wallet_management_should_rotate)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -50,7 +50,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
-     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
      *             .build());
      * 
      *     }
@@ -92,7 +92,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
-     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
      *             .build());
      * 
      *     }
@@ -134,7 +134,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
-     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
      *             .build());
      * 
      *     }
@@ -176,7 +176,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
-     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
      *             .build());
      * 
      *     }
@@ -218,7 +218,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
-     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .vbInstanceId(testVbInstance.id())
      *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
      *             .build());
      * 
@@ -261,7 +261,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
-     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .vbInstanceId(testVbInstance.id())
      *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
      *             .build());
      * 
@@ -304,7 +304,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
-     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .vbInstanceId(testVbInstance.id())
      *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
      *             .build());
      * 
@@ -347,7 +347,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
-     *             .vbInstanceId(oci_visual_builder_vb_instance.test_vb_instance().id())
+     *             .vbInstanceId(testVbInstance.id())
      *             .idcsOpenId(&#34;idcs_open_id_value&#34;)
      *             .build());
      * 
@@ -390,9 +390,9 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstances = VisualBuilderFunctions.getVbInstances(GetVbInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vb_instance_display_name())
-     *             .state(var_.vb_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vbInstanceDisplayName)
+     *             .state(vbInstanceState)
      *             .build());
      * 
      *     }
@@ -434,9 +434,9 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstances = VisualBuilderFunctions.getVbInstances(GetVbInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vb_instance_display_name())
-     *             .state(var_.vb_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vbInstanceDisplayName)
+     *             .state(vbInstanceState)
      *             .build());
      * 
      *     }
@@ -478,9 +478,9 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstances = VisualBuilderFunctions.getVbInstances(GetVbInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vb_instance_display_name())
-     *             .state(var_.vb_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vbInstanceDisplayName)
+     *             .state(vbInstanceState)
      *             .build());
      * 
      *     }
@@ -522,9 +522,9 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstances = VisualBuilderFunctions.getVbInstances(GetVbInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vb_instance_display_name())
-     *             .state(var_.vb_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vbInstanceDisplayName)
+     *             .state(vbInstanceState)
      *             .build());
      * 
      *     }

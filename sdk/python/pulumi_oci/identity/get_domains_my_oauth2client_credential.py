@@ -326,10 +326,10 @@ def get_domains_my_oauth2client_credential(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_oauth2client_credential = oci.Identity.get_domains_my_oauth2client_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_oauth2client_credential_id=oci_identity_domains_my_oauth2client_credential["test_my_oauth2client_credential"]["id"],
-        authorization=var["my_oauth2client_credential_authorization"],
-        resource_type_schema_version=var["my_oauth2client_credential_resource_type_schema_version"])
+    test_my_oauth2client_credential = oci.Identity.get_domains_my_oauth2client_credential(idcs_endpoint=test_domain["url"],
+        my_oauth2client_credential_id=test_my_oauth2client_credential_oci_identity_domains_my_oauth2client_credential["id"],
+        authorization=my_oauth2client_credential_authorization,
+        resource_type_schema_version=my_oauth2client_credential_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -392,10 +392,10 @@ def get_domains_my_oauth2client_credential_output(authorization: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_my_oauth2client_credential = oci.Identity.get_domains_my_oauth2client_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_oauth2client_credential_id=oci_identity_domains_my_oauth2client_credential["test_my_oauth2client_credential"]["id"],
-        authorization=var["my_oauth2client_credential_authorization"],
-        resource_type_schema_version=var["my_oauth2client_credential_resource_type_schema_version"])
+    test_my_oauth2client_credential = oci.Identity.get_domains_my_oauth2client_credential(idcs_endpoint=test_domain["url"],
+        my_oauth2client_credential_id=test_my_oauth2client_credential_oci_identity_domains_my_oauth2client_credential["id"],
+        authorization=my_oauth2client_credential_authorization,
+        resource_type_schema_version=my_oauth2client_credential_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

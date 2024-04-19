@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVnicAttachments = oci.Core.getVnicAttachments({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.vnic_attachment_availability_domain,
- *     instanceId: oci_core_instance.test_instance.id,
- *     vnicId: oci_core_vnic.test_vnic.id,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: vnicAttachmentAvailabilityDomain,
+ *     instanceId: testInstance.id,
+ *     vnicId: testVnic.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,10 +109,10 @@ export interface GetVnicAttachmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVnicAttachments = oci.Core.getVnicAttachments({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.vnic_attachment_availability_domain,
- *     instanceId: oci_core_instance.test_instance.id,
- *     vnicId: oci_core_vnic.test_vnic.id,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: vnicAttachmentAvailabilityDomain,
+ *     instanceId: testInstance.id,
+ *     vnicId: testVnic.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

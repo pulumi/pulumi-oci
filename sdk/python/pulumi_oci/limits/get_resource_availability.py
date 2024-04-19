@@ -160,10 +160,10 @@ def get_resource_availability(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_availability = oci.Limits.get_resource_availability(compartment_id=var["tenancy_ocid"],
-        limit_name=var["resource_availability_limit_name"],
-        service_name=oci_limits_service["test_service"]["name"],
-        availability_domain=var["resource_availability_availability_domain"])
+    test_resource_availability = oci.Limits.get_resource_availability(compartment_id=tenancy_ocid,
+        limit_name=resource_availability_limit_name,
+        service_name=test_service["name"],
+        availability_domain=resource_availability_availability_domain)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -215,10 +215,10 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_availability = oci.Limits.get_resource_availability(compartment_id=var["tenancy_ocid"],
-        limit_name=var["resource_availability_limit_name"],
-        service_name=oci_limits_service["test_service"]["name"],
-        availability_domain=var["resource_availability_availability_domain"])
+    test_resource_availability = oci.Limits.get_resource_availability(compartment_id=tenancy_ocid,
+        limit_name=resource_availability_limit_name,
+        service_name=test_service["name"],
+        availability_domain=resource_availability_availability_domain)
     ```
     <!--End PulumiCodeChooser -->
 

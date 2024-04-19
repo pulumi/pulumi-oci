@@ -31,16 +31,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsOauthClientCertificate(ctx, "testOauthClientCertificate", &Identity.DomainsOauthClientCertificateArgs{
-//				CertificateAlias: pulumi.Any(_var.Oauth_client_certificate_certificate_alias),
-//				IdcsEndpoint:     pulumi.Any(data.Oci_identity_domain.Test_domain.Url),
+//			_, err := Identity.NewDomainsOauthClientCertificate(ctx, "test_oauth_client_certificate", &Identity.DomainsOauthClientCertificateArgs{
+//				CertificateAlias: pulumi.Any(oauthClientCertificateCertificateAlias),
+//				IdcsEndpoint:     pulumi.Any(testDomain.Url),
 //				Schemas: pulumi.StringArray{
 //					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate"),
 //				},
-//				X509base64certificate:     pulumi.Any(_var.Oauth_client_certificate_x509base64certificate),
-//				Authorization:             pulumi.Any(_var.Oauth_client_certificate_authorization),
+//				X509base64certificate:     pulumi.Any(oauthClientCertificateX509base64certificate),
+//				Authorization:             pulumi.Any(oauthClientCertificateAuthorization),
 //				ExternalId:                pulumi.String("externalId"),
-//				ResourceTypeSchemaVersion: pulumi.Any(_var.Oauth_client_certificate_resource_type_schema_version),
+//				ResourceTypeSchemaVersion: pulumi.Any(oauthClientCertificateResourceTypeSchemaVersion),
 //			})
 //			if err != nil {
 //				return err

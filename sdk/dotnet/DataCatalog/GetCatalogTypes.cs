@@ -29,15 +29,15 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testCatalogTypes = Oci.DataCatalog.GetCatalogTypes.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         ExternalTypeName = @var.Catalog_type_external_type_name,
-        ///         Fields = @var.Catalog_type_fields,
-        ///         IsApproved = @var.Catalog_type_is_approved,
-        ///         IsInternal = @var.Catalog_type_is_internal,
-        ///         IsTag = @var.Catalog_type_is_tag,
-        ///         Name = @var.Catalog_type_name,
-        ///         State = @var.Catalog_type_state,
-        ///         TypeCategory = @var.Catalog_type_type_category,
+        ///         CatalogId = testCatalog.Id,
+        ///         ExternalTypeName = catalogTypeExternalTypeName,
+        ///         Fields = catalogTypeFields,
+        ///         IsApproved = catalogTypeIsApproved,
+        ///         IsInternal = catalogTypeIsInternal,
+        ///         IsTag = catalogTypeIsTag,
+        ///         Name = catalogTypeName,
+        ///         State = catalogTypeState,
+        ///         TypeCategory = catalogTypeTypeCategory,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testCatalogTypes = Oci.DataCatalog.GetCatalogTypes.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         ExternalTypeName = @var.Catalog_type_external_type_name,
-        ///         Fields = @var.Catalog_type_fields,
-        ///         IsApproved = @var.Catalog_type_is_approved,
-        ///         IsInternal = @var.Catalog_type_is_internal,
-        ///         IsTag = @var.Catalog_type_is_tag,
-        ///         Name = @var.Catalog_type_name,
-        ///         State = @var.Catalog_type_state,
-        ///         TypeCategory = @var.Catalog_type_type_category,
+        ///         CatalogId = testCatalog.Id,
+        ///         ExternalTypeName = catalogTypeExternalTypeName,
+        ///         Fields = catalogTypeFields,
+        ///         IsApproved = catalogTypeIsApproved,
+        ///         IsInternal = catalogTypeIsInternal,
+        ///         IsTag = catalogTypeIsTag,
+        ///         Name = catalogTypeName,
+        ///         State = catalogTypeState,
+        ///         TypeCategory = catalogTypeTypeCategory,
         ///     });
         /// 
         /// });

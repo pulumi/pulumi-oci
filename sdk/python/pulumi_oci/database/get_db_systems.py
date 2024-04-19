@@ -147,11 +147,11 @@ def get_db_systems(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Database.get_db_systems(compartment_id=var["compartment_id"],
-        availability_domain=var["db_system_availability_domain"],
-        backup_id=oci_database_backup["test_backup"]["id"],
-        display_name=var["db_system_display_name"],
-        state=var["db_system_state"])
+    test_db_systems = oci.Database.get_db_systems(compartment_id=compartment_id,
+        availability_domain=db_system_availability_domain,
+        backup_id=test_backup["id"],
+        display_name=db_system_display_name,
+        state=db_system_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,11 +207,11 @@ def get_db_systems_output(availability_domain: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_db_systems = oci.Database.get_db_systems(compartment_id=var["compartment_id"],
-        availability_domain=var["db_system_availability_domain"],
-        backup_id=oci_database_backup["test_backup"]["id"],
-        display_name=var["db_system_display_name"],
-        state=var["db_system_state"])
+    test_db_systems = oci.Database.get_db_systems(compartment_id=compartment_id,
+        availability_domain=db_system_availability_domain,
+        backup_id=test_backup["id"],
+        display_name=db_system_display_name,
+        state=db_system_state)
     ```
     <!--End PulumiCodeChooser -->
 

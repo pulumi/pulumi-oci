@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMeshes = oci.ServiceMesh.getMeshes({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.mesh_display_name,
- *     id: _var.mesh_id,
- *     state: _var.mesh_state,
+ *     compartmentId: compartmentId,
+ *     displayName: meshDisplayName,
+ *     id: meshId,
+ *     state: meshState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetMeshesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMeshes = oci.ServiceMesh.getMeshes({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.mesh_display_name,
- *     id: _var.mesh_id,
- *     state: _var.mesh_state,
+ *     compartmentId: compartmentId,
+ *     displayName: meshDisplayName,
+ *     id: meshId,
+ *     state: meshState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -199,7 +199,7 @@ def get_security_policy_report(security_policy_report_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report = oci.DataSafe.get_security_policy_report(security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"])
+    test_security_policy_report = oci.DataSafe.get_security_policy_report(security_policy_report_id=test_security_policy_report_oci_data_safe_security_policy_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -242,7 +242,7 @@ def get_security_policy_report_output(security_policy_report_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report = oci.DataSafe.get_security_policy_report(security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"])
+    test_security_policy_report = oci.DataSafe.get_security_policy_report(security_policy_report_id=test_security_policy_report_oci_data_safe_security_policy_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 

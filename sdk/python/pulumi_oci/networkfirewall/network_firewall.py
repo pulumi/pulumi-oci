@@ -468,21 +468,21 @@ class NetworkFirewall(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall = oci.network_firewall.NetworkFirewall("testNetworkFirewall",
-            compartment_id=var["compartment_id"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            availability_domain=var["network_firewall_availability_domain"],
+        test_network_firewall = oci.network_firewall.NetworkFirewall("test_network_firewall",
+            compartment_id=compartment_id,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            subnet_id=test_subnet["id"],
+            availability_domain=network_firewall_availability_domain,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["network_firewall_display_name"],
+            display_name=network_firewall_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            ipv4address=var["network_firewall_ipv4address"],
-            ipv6address=var["network_firewall_ipv6address"],
-            network_security_group_ids=var["network_firewall_network_security_group_ids"])
+            ipv4address=network_firewall_ipv4address,
+            ipv6address=network_firewall_ipv6address,
+            network_security_group_ids=network_firewall_network_security_group_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -529,21 +529,21 @@ class NetworkFirewall(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall = oci.network_firewall.NetworkFirewall("testNetworkFirewall",
-            compartment_id=var["compartment_id"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            availability_domain=var["network_firewall_availability_domain"],
+        test_network_firewall = oci.network_firewall.NetworkFirewall("test_network_firewall",
+            compartment_id=compartment_id,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            subnet_id=test_subnet["id"],
+            availability_domain=network_firewall_availability_domain,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["network_firewall_display_name"],
+            display_name=network_firewall_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            ipv4address=var["network_firewall_ipv4address"],
-            ipv6address=var["network_firewall_ipv6address"],
-            network_security_group_ids=var["network_firewall_network_security_group_ids"])
+            ipv4address=network_firewall_ipv4address,
+            ipv6address=network_firewall_ipv6address,
+            network_security_group_ids=network_firewall_network_security_group_ids)
         ```
         <!--End PulumiCodeChooser -->
 

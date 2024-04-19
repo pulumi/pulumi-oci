@@ -102,8 +102,8 @@ def get_data_keys(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_keys = oci.Apm.get_data_keys(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        data_key_type=var["data_key_data_key_type"])
+    test_data_keys = oci.Apm.get_data_keys(apm_domain_id=test_apm_domain["id"],
+        data_key_type=data_key_data_key_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -144,8 +144,8 @@ def get_data_keys_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_keys = oci.Apm.get_data_keys(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        data_key_type=var["data_key_data_key_type"])
+    test_data_keys = oci.Apm.get_data_keys(apm_domain_id=test_apm_domain["id"],
+        data_key_type=data_key_data_key_type)
     ```
     <!--End PulumiCodeChooser -->
 

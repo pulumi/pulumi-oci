@@ -34,13 +34,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewMaintenanceRun(ctx, "testMaintenanceRun", &Database.MaintenanceRunArgs{
-//				PatchType:              pulumi.Any(_var.Maintenance_run_patch_type),
-//				TargetResourceId:       pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
-//				TimeScheduled:          pulumi.Any(_var.Maintenance_run_time_scheduled),
-//				CompartmentId:          pulumi.Any(_var.Compartment_id),
-//				IsDstFileUpdateEnabled: pulumi.Any(_var.Maintenance_run_is_dst_file_update_enabled),
-//				PatchingMode:           pulumi.Any(_var.Maintenance_run_patching_mode),
+//			_, err := Database.NewMaintenanceRun(ctx, "test_maintenance_run", &Database.MaintenanceRunArgs{
+//				PatchType:              pulumi.Any(maintenanceRunPatchType),
+//				TargetResourceId:       pulumi.Any(testResource.Id),
+//				TimeScheduled:          pulumi.Any(maintenanceRunTimeScheduled),
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				IsDstFileUpdateEnabled: pulumi.Any(maintenanceRunIsDstFileUpdateEnabled),
+//				PatchingMode:           pulumi.Any(maintenanceRunPatchingMode),
 //			})
 //			if err != nil {
 //				return err

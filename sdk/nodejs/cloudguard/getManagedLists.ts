@@ -32,13 +32,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedLists = oci.CloudGuard.getManagedLists({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.managed_list_access_level,
- *     compartmentIdInSubtree: _var.managed_list_compartment_id_in_subtree,
- *     displayName: _var.managed_list_display_name,
- *     listType: _var.managed_list_list_type,
- *     resourceMetadataOnly: _var.managed_list_resource_metadata_only,
- *     state: _var.managed_list_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: managedListAccessLevel,
+ *     compartmentIdInSubtree: managedListCompartmentIdInSubtree,
+ *     displayName: managedListDisplayName,
+ *     listType: managedListListType,
+ *     resourceMetadataOnly: managedListResourceMetadataOnly,
+ *     state: managedListState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -152,13 +152,13 @@ export interface GetManagedListsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedLists = oci.CloudGuard.getManagedLists({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.managed_list_access_level,
- *     compartmentIdInSubtree: _var.managed_list_compartment_id_in_subtree,
- *     displayName: _var.managed_list_display_name,
- *     listType: _var.managed_list_list_type,
- *     resourceMetadataOnly: _var.managed_list_resource_metadata_only,
- *     state: _var.managed_list_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: managedListAccessLevel,
+ *     compartmentIdInSubtree: managedListCompartmentIdInSubtree,
+ *     displayName: managedListDisplayName,
+ *     listType: managedListListType,
+ *     resourceMetadataOnly: managedListResourceMetadataOnly,
+ *     state: managedListState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

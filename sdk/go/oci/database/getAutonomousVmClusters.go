@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousVmClusters(ctx, &database.GetAutonomousVmClustersArgs{
-//				CompartmentId:           _var.Compartment_id,
-//				DisplayName:             pulumi.StringRef(_var.Autonomous_vm_cluster_display_name),
-//				ExadataInfrastructureId: pulumi.StringRef(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
-//				State:                   pulumi.StringRef(_var.Autonomous_vm_cluster_state),
+//				CompartmentId:           compartmentId,
+//				DisplayName:             pulumi.StringRef(autonomousVmClusterDisplayName),
+//				ExadataInfrastructureId: pulumi.StringRef(testExadataInfrastructure.Id),
+//				State:                   pulumi.StringRef(autonomousVmClusterState),
 //			}, nil)
 //			if err != nil {
 //				return err

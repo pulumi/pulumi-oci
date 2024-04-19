@@ -37,11 +37,12 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPolicy = new Oci.Identity.Policy("testPolicy", new()
+    ///     var testPolicy = new Oci.Identity.Policy("test_policy", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         Description = @var.Policy_description,
-    ///         Statements = @var.Policy_statements,
+    ///         CompartmentId = tenancyOcid,
+    ///         Description = policyDescription,
+    ///         Name = policyName,
+    ///         Statements = policyStatements,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -50,7 +51,7 @@ namespace Pulumi.Oci.Identity
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         VersionDate = @var.Policy_version_date,
+    ///         VersionDate = policyVersionDate,
     ///     });
     /// 
     /// });

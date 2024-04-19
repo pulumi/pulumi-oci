@@ -25,11 +25,11 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNamespaceIngestTimeRulesManagement = new Oci.LogAnalytics.NamespaceIngestTimeRulesManagement("testNamespaceIngestTimeRulesManagement", new()
+    ///     var testNamespaceIngestTimeRulesManagement = new Oci.LogAnalytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management", new()
     ///     {
-    ///         IngestTimeRuleId = oci_events_rule.Test_rule.Id,
-    ///         Namespace = @var.Namespace_ingest_time_rules_management_namespace,
-    ///         EnableIngestTimeRule = @var.Enable_ingest_time_rule,
+    ///         IngestTimeRuleId = testRule.Id,
+    ///         Namespace = namespaceIngestTimeRulesManagementNamespace,
+    ///         EnableIngestTimeRule = enableIngestTimeRule,
     ///     });
     /// 
     /// });

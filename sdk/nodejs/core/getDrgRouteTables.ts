@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDrgRouteTables = oci.Core.getDrgRouteTables({
- *     drgId: oci_core_drg.test_drg.id,
- *     displayName: _var.drg_route_table_display_name,
- *     importDrgRouteDistributionId: oci_core_drg_route_distribution.test_drg_route_distribution.id,
- *     state: _var.drg_route_table_state,
+ *     drgId: testDrg.id,
+ *     displayName: drgRouteTableDisplayName,
+ *     importDrgRouteDistributionId: testDrgRouteDistribution.id,
+ *     state: drgRouteTableState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,10 +109,10 @@ export interface GetDrgRouteTablesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDrgRouteTables = oci.Core.getDrgRouteTables({
- *     drgId: oci_core_drg.test_drg.id,
- *     displayName: _var.drg_route_table_display_name,
- *     importDrgRouteDistributionId: oci_core_drg_route_distribution.test_drg_route_distribution.id,
- *     state: _var.drg_route_table_state,
+ *     drgId: testDrg.id,
+ *     displayName: drgRouteTableDisplayName,
+ *     importDrgRouteDistributionId: testDrgRouteDistribution.id,
+ *     state: drgRouteTableState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

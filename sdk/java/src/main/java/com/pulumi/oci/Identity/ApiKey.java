@@ -54,8 +54,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testApiKey = new ApiKey(&#34;testApiKey&#34;, ApiKeyArgs.builder()        
- *             .keyValue(var_.api_key_key_value())
- *             .userId(oci_identity_user.test_user().id())
+ *             .keyValue(apiKeyKeyValue)
+ *             .userId(testUser.id())
  *             .build());
  * 
  *     }

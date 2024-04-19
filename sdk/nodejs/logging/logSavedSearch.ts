@@ -16,13 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogSavedSearch = new oci.logging.LogSavedSearch("testLogSavedSearch", {
- *     compartmentId: _var.compartment_id,
- *     query: _var.log_saved_search_query,
+ * const testLogSavedSearch = new oci.logging.LogSavedSearch("test_log_saved_search", {
+ *     compartmentId: compartmentId,
+ *     name: logSavedSearchName,
+ *     query: logSavedSearchQuery,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.log_saved_search_description,
+ *     description: logSavedSearchDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

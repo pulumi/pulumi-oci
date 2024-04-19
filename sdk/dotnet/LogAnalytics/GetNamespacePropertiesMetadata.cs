@@ -30,11 +30,11 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespacePropertiesMetadata = Oci.LogAnalytics.GetNamespacePropertiesMetadata.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_properties_metadata_namespace,
-        ///         Constraints = @var.Namespace_properties_metadata_constraints,
-        ///         DisplayText = @var.Namespace_properties_metadata_display_text,
-        ///         Level = @var.Namespace_properties_metadata_level,
-        ///         Name = @var.Namespace_properties_metadata_name,
+        ///         Namespace = namespacePropertiesMetadataNamespace,
+        ///         Constraints = namespacePropertiesMetadataConstraints,
+        ///         DisplayText = namespacePropertiesMetadataDisplayText,
+        ///         Level = namespacePropertiesMetadataLevel,
+        ///         Name = namespacePropertiesMetadataName,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespacePropertiesMetadata = Oci.LogAnalytics.GetNamespacePropertiesMetadata.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_properties_metadata_namespace,
-        ///         Constraints = @var.Namespace_properties_metadata_constraints,
-        ///         DisplayText = @var.Namespace_properties_metadata_display_text,
-        ///         Level = @var.Namespace_properties_metadata_level,
-        ///         Name = @var.Namespace_properties_metadata_name,
+        ///         Namespace = namespacePropertiesMetadataNamespace,
+        ///         Constraints = namespacePropertiesMetadataConstraints,
+        ///         DisplayText = namespacePropertiesMetadataDisplayText,
+        ///         Level = namespacePropertiesMetadataLevel,
+        ///         Name = namespacePropertiesMetadataName,
         ///     });
         /// 
         /// });

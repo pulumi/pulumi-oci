@@ -38,30 +38,30 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousContainerDatabaseDataguardAssociation(ctx, "testAutonomousContainerDatabaseDataguardAssociation", &Database.AutonomousContainerDatabaseDataguardAssociationArgs{
-//				AutonomousContainerDatabaseId:              pulumi.Any(oci_database_autonomous_container_database.Test_autonomous_container_database.Id),
-//				PeerAutonomousContainerDatabaseDisplayName: pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name),
-//				ProtectionMode:                             pulumi.Any(_var.Autonomous_container_database_dataguard_association_protection_mode),
-//				FastStartFailOverLagLimitInSeconds:         pulumi.Any(_var.Autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds),
-//				IsAutomaticFailoverEnabled:                 pulumi.Any(_var.Autonomous_container_database_dataguard_association_is_automatic_failover_enabled),
+//			_, err := Database.NewAutonomousContainerDatabaseDataguardAssociation(ctx, "test_autonomous_container_database_dataguard_association", &Database.AutonomousContainerDatabaseDataguardAssociationArgs{
+//				AutonomousContainerDatabaseId:              pulumi.Any(testAutonomousContainerDatabase.Id),
+//				PeerAutonomousContainerDatabaseDisplayName: pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseDisplayName),
+//				ProtectionMode:                             pulumi.Any(autonomousContainerDatabaseDataguardAssociationProtectionMode),
+//				FastStartFailOverLagLimitInSeconds:         pulumi.Any(autonomousContainerDatabaseDataguardAssociationFastStartFailOverLagLimitInSeconds),
+//				IsAutomaticFailoverEnabled:                 pulumi.Any(autonomousContainerDatabaseDataguardAssociationIsAutomaticFailoverEnabled),
 //				PeerAutonomousContainerDatabaseBackupConfig: &database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs{
 //					BackupDestinationDetails: database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{
 //						&database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{
-//							Type:          pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type),
-//							DbrsPolicyId:  pulumi.Any(oci_identity_policy.Test_policy.Id),
-//							Id:            pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id),
-//							InternetProxy: pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy),
-//							VpcPassword:   pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password),
-//							VpcUser:       pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user),
+//							Type:          pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType),
+//							DbrsPolicyId:  pulumi.Any(testPolicy.Id),
+//							Id:            pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId),
+//							InternetProxy: pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy),
+//							VpcPassword:   pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword),
+//							VpcUser:       pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser),
 //						},
 //					},
-//					RecoveryWindowInDays: pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days),
+//					RecoveryWindowInDays: pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
 //				},
-//				PeerAutonomousContainerDatabaseCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//				PeerAutonomousVmClusterId:                    pulumi.Any(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
-//				PeerCloudAutonomousVmClusterId:               pulumi.Any(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
-//				PeerDbUniqueName:                             pulumi.Any(_var.Autonomous_container_database_dataguard_association_peer_db_unique_name),
-//				StandbyMaintenanceBufferInDays:               pulumi.Any(_var.Autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days),
+//				PeerAutonomousContainerDatabaseCompartmentId: pulumi.Any(testCompartment.Id),
+//				PeerAutonomousVmClusterId:                    pulumi.Any(testAutonomousVmCluster.Id),
+//				PeerCloudAutonomousVmClusterId:               pulumi.Any(testCloudAutonomousVmCluster.Id),
+//				PeerDbUniqueName:                             pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerDbUniqueName),
+//				StandbyMaintenanceBufferInDays:               pulumi.Any(autonomousContainerDatabaseDataguardAssociationStandbyMaintenanceBufferInDays),
 //			})
 //			if err != nil {
 //				return err

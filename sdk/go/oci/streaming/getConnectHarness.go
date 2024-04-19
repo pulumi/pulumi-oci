@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Streaming.GetConnectHarness(ctx, &streaming.GetConnectHarnessArgs{
-//				ConnectHarnessId: oci_streaming_connect_harnes.Test_connect_harnes.Id,
+//				ConnectHarnessId: testConnectHarnes.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

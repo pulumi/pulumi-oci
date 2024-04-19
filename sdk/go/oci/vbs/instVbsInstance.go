@@ -31,18 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Vbs.NewInstVbsInstance(ctx, "testVbsInstance", &Vbs.InstVbsInstanceArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Vbs_instance_display_name),
+//			_, err := Vbs.NewInstVbsInstance(ctx, "test_vbs_instance", &Vbs.InstVbsInstanceArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(vbsInstanceDisplayName),
+//				Name:          pulumi.Any(vbsInstanceName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IdcsAccessToken:                 pulumi.Any(_var.Vbs_instance_idcs_access_token),
-//				IsResourceUsageAgreementGranted: pulumi.Any(_var.Vbs_instance_is_resource_usage_agreement_granted),
-//				ResourceCompartmentId:           pulumi.Any(_var.Resource_compartment_id),
+//				IdcsAccessToken:                 pulumi.Any(vbsInstanceIdcsAccessToken),
+//				IsResourceUsageAgreementGranted: pulumi.Any(vbsInstanceIsResourceUsageAgreementGranted),
+//				ResourceCompartmentId:           pulumi.Any(resourceCompartmentId),
 //			})
 //			if err != nil {
 //				return err

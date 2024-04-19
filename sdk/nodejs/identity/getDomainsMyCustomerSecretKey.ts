@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyCustomerSecretKey = oci.Identity.getDomainsMyCustomerSecretKey({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myCustomerSecretKeyId: oci_identity_customer_secret_key.test_customer_secret_key.id,
- *     authorization: _var.my_customer_secret_key_authorization,
- *     resourceTypeSchemaVersion: _var.my_customer_secret_key_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myCustomerSecretKeyId: testCustomerSecretKey.id,
+ *     authorization: myCustomerSecretKeyAuthorization,
+ *     resourceTypeSchemaVersion: myCustomerSecretKeyResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -158,10 +158,10 @@ export interface GetDomainsMyCustomerSecretKeyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyCustomerSecretKey = oci.Identity.getDomainsMyCustomerSecretKey({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myCustomerSecretKeyId: oci_identity_customer_secret_key.test_customer_secret_key.id,
- *     authorization: _var.my_customer_secret_key_authorization,
- *     resourceTypeSchemaVersion: _var.my_customer_secret_key_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myCustomerSecretKeyId: testCustomerSecretKey.id,
+ *     authorization: myCustomerSecretKeyAuthorization,
+ *     resourceTypeSchemaVersion: myCustomerSecretKeyResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

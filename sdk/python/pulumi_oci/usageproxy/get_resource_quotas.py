@@ -112,9 +112,9 @@ def get_resource_quotas(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_quotas = oci.UsageProxy.get_resource_quotas(compartment_id=var["compartment_id"],
-        service_name=oci_core_service["test_service"]["name"],
-        service_entitlement=var["resource_quota_service_entitlement"])
+    test_resource_quotas = oci.UsageProxy.get_resource_quotas(compartment_id=compartment_id,
+        service_name=test_service["name"],
+        service_entitlement=resource_quota_service_entitlement)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -159,9 +159,9 @@ def get_resource_quotas_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_quotas = oci.UsageProxy.get_resource_quotas(compartment_id=var["compartment_id"],
-        service_name=oci_core_service["test_service"]["name"],
-        service_entitlement=var["resource_quota_service_entitlement"])
+    test_resource_quotas = oci.UsageProxy.get_resource_quotas(compartment_id=compartment_id,
+        service_name=test_service["name"],
+        service_entitlement=resource_quota_service_entitlement)
     ```
     <!--End PulumiCodeChooser -->
 

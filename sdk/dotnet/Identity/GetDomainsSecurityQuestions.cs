@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSecurityQuestions = Oci.Identity.GetDomainsSecurityQuestions.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SecurityQuestionCount = @var.Security_question_security_question_count,
-        ///         SecurityQuestionFilter = @var.Security_question_security_question_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SecurityQuestionCount = securityQuestionSecurityQuestionCount,
+        ///         SecurityQuestionFilter = securityQuestionSecurityQuestionFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Security_question_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Security_question_resource_type_schema_version,
-        ///         StartIndex = @var.Security_question_start_index,
+        ///         Authorization = securityQuestionAuthorization,
+        ///         ResourceTypeSchemaVersion = securityQuestionResourceTypeSchemaVersion,
+        ///         StartIndex = securityQuestionStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSecurityQuestions = Oci.Identity.GetDomainsSecurityQuestions.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SecurityQuestionCount = @var.Security_question_security_question_count,
-        ///         SecurityQuestionFilter = @var.Security_question_security_question_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SecurityQuestionCount = securityQuestionSecurityQuestionCount,
+        ///         SecurityQuestionFilter = securityQuestionSecurityQuestionFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Security_question_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Security_question_resource_type_schema_version,
-        ///         StartIndex = @var.Security_question_start_index,
+        ///         Authorization = securityQuestionAuthorization,
+        ///         ResourceTypeSchemaVersion = securityQuestionResourceTypeSchemaVersion,
+        ///         StartIndex = securityQuestionStartIndex,
         ///     });
         /// 
         /// });

@@ -31,19 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waf.NewAppFirewall(ctx, "testWebAppFirewall", &Waf.AppFirewallArgs{
-//				BackendType:            pulumi.Any(_var.Web_app_firewall_backend_type),
-//				CompartmentId:          pulumi.Any(_var.Compartment_id),
-//				LoadBalancerId:         pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-//				WebAppFirewallPolicyId: pulumi.Any(oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id),
+//			_, err := Waf.NewAppFirewall(ctx, "test_web_app_firewall", &Waf.AppFirewallArgs{
+//				BackendType:            pulumi.Any(webAppFirewallBackendType),
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				LoadBalancerId:         pulumi.Any(testLoadBalancer.Id),
+//				WebAppFirewallPolicyId: pulumi.Any(testWebAppFirewallPolicy.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Web_app_firewall_display_name),
+//				DisplayName: pulumi.Any(webAppFirewallDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				SystemTags: pulumi.Any(_var.Web_app_firewall_system_tags),
+//				SystemTags: pulumi.Any(webAppFirewallSystemTags),
 //			})
 //			if err != nil {
 //				return err

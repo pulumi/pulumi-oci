@@ -45,21 +45,21 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetUserAssessmentUserAnalytics(ctx, &datasafe.GetUserAssessmentUserAnalyticsArgs{
-//				UserAssessmentId:                  oci_data_safe_user_assessment.Test_user_assessment.Id,
-//				AccessLevel:                       pulumi.StringRef(_var.User_assessment_user_analytic_access_level),
-//				AccountStatus:                     pulumi.StringRef(_var.User_assessment_user_analytic_account_status),
-//				AuthenticationType:                pulumi.StringRef(_var.User_assessment_user_analytic_authentication_type),
-//				CompartmentIdInSubtree:            pulumi.BoolRef(_var.User_assessment_user_analytic_compartment_id_in_subtree),
-//				TargetId:                          pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-//				TimeLastLoginGreaterThanOrEqualTo: pulumi.StringRef(_var.User_assessment_user_analytic_time_last_login_greater_than_or_equal_to),
-//				TimeLastLoginLessThan:             pulumi.StringRef(_var.User_assessment_user_analytic_time_last_login_less_than),
-//				TimePasswordLastChangedGreaterThanOrEqualTo: pulumi.StringRef(_var.User_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to),
-//				TimePasswordLastChangedLessThan:             pulumi.StringRef(_var.User_assessment_user_analytic_time_password_last_changed_less_than),
-//				TimeUserCreatedGreaterThanOrEqualTo:         pulumi.StringRef(_var.User_assessment_user_analytic_time_user_created_greater_than_or_equal_to),
-//				TimeUserCreatedLessThan:                     pulumi.StringRef(_var.User_assessment_user_analytic_time_user_created_less_than),
-//				UserCategory:                                pulumi.StringRef(_var.User_assessment_user_analytic_user_category),
-//				UserKey:                                     pulumi.StringRef(_var.User_assessment_user_analytic_user_key),
-//				UserName:                                    pulumi.StringRef(oci_identity_user.Test_user.Name),
+//				UserAssessmentId:                  testUserAssessment.Id,
+//				AccessLevel:                       pulumi.StringRef(userAssessmentUserAnalyticAccessLevel),
+//				AccountStatus:                     pulumi.StringRef(userAssessmentUserAnalyticAccountStatus),
+//				AuthenticationType:                pulumi.StringRef(userAssessmentUserAnalyticAuthenticationType),
+//				CompartmentIdInSubtree:            pulumi.BoolRef(userAssessmentUserAnalyticCompartmentIdInSubtree),
+//				TargetId:                          pulumi.StringRef(testTarget.Id),
+//				TimeLastLoginGreaterThanOrEqualTo: pulumi.StringRef(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo),
+//				TimeLastLoginLessThan:             pulumi.StringRef(userAssessmentUserAnalyticTimeLastLoginLessThan),
+//				TimePasswordLastChangedGreaterThanOrEqualTo: pulumi.StringRef(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo),
+//				TimePasswordLastChangedLessThan:             pulumi.StringRef(userAssessmentUserAnalyticTimePasswordLastChangedLessThan),
+//				TimeUserCreatedGreaterThanOrEqualTo:         pulumi.StringRef(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo),
+//				TimeUserCreatedLessThan:                     pulumi.StringRef(userAssessmentUserAnalyticTimeUserCreatedLessThan),
+//				UserCategory:                                pulumi.StringRef(userAssessmentUserAnalyticUserCategory),
+//				UserKey:                                     pulumi.StringRef(userAssessmentUserAnalyticUserKey),
+//				UserName:                                    pulumi.StringRef(testUser.Name),
 //			}, nil)
 //			if err != nil {
 //				return err

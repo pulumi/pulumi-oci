@@ -25,16 +25,16 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAuditPolicyManagement = new Oci.DataSafe.AuditPolicyManagement("testAuditPolicyManagement", new()
+    ///     var testAuditPolicyManagement = new Oci.DataSafe.AuditPolicyManagement("test_audit_policy_management", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         TargetId = oci_data_safe_target_database.Test_target_database.Id,
+    ///         CompartmentId = compartmentId,
+    ///         TargetId = testTargetDatabase.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Audit_policy_management_description,
-    ///         DisplayName = @var.Audit_policy_management_display_name,
+    ///         Description = auditPolicyManagementDescription,
+    ///         DisplayName = auditPolicyManagementDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

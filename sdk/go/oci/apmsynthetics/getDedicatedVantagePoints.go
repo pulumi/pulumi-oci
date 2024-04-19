@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmSynthetics.GetDedicatedVantagePoints(ctx, &apmsynthetics.GetDedicatedVantagePointsArgs{
-//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-//				DisplayName: pulumi.StringRef(_var.Dedicated_vantage_point_display_name),
-//				Name:        pulumi.StringRef(_var.Dedicated_vantage_point_name),
-//				Status:      pulumi.StringRef(_var.Dedicated_vantage_point_status),
+//				ApmDomainId: testApmDomain.Id,
+//				DisplayName: pulumi.StringRef(dedicatedVantagePointDisplayName),
+//				Name:        pulumi.StringRef(dedicatedVantagePointName),
+//				Status:      pulumi.StringRef(dedicatedVantagePointStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

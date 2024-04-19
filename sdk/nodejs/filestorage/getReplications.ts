@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReplications = oci.FileStorage.getReplications({
- *     availabilityDomain: _var.replication_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.replication_display_name,
- *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
- *     id: _var.replication_id,
- *     state: _var.replication_state,
+ *     availabilityDomain: replicationAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: replicationDisplayName,
+ *     fileSystemId: testFileSystem.id,
+ *     id: replicationId,
+ *     state: replicationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,12 +118,12 @@ export interface GetReplicationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReplications = oci.FileStorage.getReplications({
- *     availabilityDomain: _var.replication_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.replication_display_name,
- *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
- *     id: _var.replication_id,
- *     state: _var.replication_state,
+ *     availabilityDomain: replicationAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: replicationDisplayName,
+ *     fileSystemId: testFileSystem.id,
+ *     id: replicationId,
+ *     state: replicationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogAnalyticsLogGroups(ctx, &loganalytics.GetLogAnalyticsLogGroupsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Namespace:     _var.Log_analytics_log_group_namespace,
-//				DisplayName:   pulumi.StringRef(_var.Log_analytics_log_group_display_name),
+//				CompartmentId: compartmentId,
+//				Namespace:     logAnalyticsLogGroupNamespace,
+//				DisplayName:   pulumi.StringRef(logAnalyticsLogGroupDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

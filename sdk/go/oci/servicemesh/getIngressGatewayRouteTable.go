@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.GetIngressGatewayRouteTable(ctx, &servicemesh.GetIngressGatewayRouteTableArgs{
-//				IngressGatewayRouteTableId: oci_service_mesh_ingress_gateway_route_table.Test_ingress_gateway_route_table.Id,
+//				IngressGatewayRouteTableId: testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

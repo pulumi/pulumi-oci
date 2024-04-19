@@ -18,34 +18,35 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplication = new oci.dataintegration.WorkspaceApplication("testWorkspaceApplication", {
- *     identifier: _var.workspace_application_identifier,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     modelType: _var.workspace_application_model_type,
+ * const testWorkspaceApplication = new oci.dataintegration.WorkspaceApplication("test_workspace_application", {
+ *     identifier: workspaceApplicationIdentifier,
+ *     name: workspaceApplicationName,
+ *     workspaceId: testWorkspace.id,
+ *     modelType: workspaceApplicationModelType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.workspace_application_description,
- *     displayName: _var.workspace_application_display_name,
+ *     description: workspaceApplicationDescription,
+ *     displayName: workspaceApplicationDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     key: _var.workspace_application_key,
- *     modelVersion: _var.workspace_application_model_version,
- *     objectStatus: _var.workspace_application_object_status,
+ *     key: workspaceApplicationKey,
+ *     modelVersion: workspaceApplicationModelVersion,
+ *     objectStatus: workspaceApplicationObjectStatus,
  *     registryMetadata: {
- *         aggregatorKey: _var.workspace_application_registry_metadata_aggregator_key,
- *         isFavorite: _var.workspace_application_registry_metadata_is_favorite,
- *         key: _var.workspace_application_registry_metadata_key,
- *         labels: _var.workspace_application_registry_metadata_labels,
- *         registryVersion: _var.workspace_application_registry_metadata_registry_version,
+ *         aggregatorKey: workspaceApplicationRegistryMetadataAggregatorKey,
+ *         isFavorite: workspaceApplicationRegistryMetadataIsFavorite,
+ *         key: workspaceApplicationRegistryMetadataKey,
+ *         labels: workspaceApplicationRegistryMetadataLabels,
+ *         registryVersion: workspaceApplicationRegistryMetadataRegistryVersion,
  *     },
  *     sourceApplicationInfo: {
- *         applicationKey: _var.workspace_application_source_application_info_application_key,
- *         copyType: _var.workspace_application_source_application_info_copy_type,
- *         workspaceId: oci_dataintegration_workspace.test_workspace.id,
+ *         applicationKey: workspaceApplicationSourceApplicationInfoApplicationKey,
+ *         copyType: workspaceApplicationSourceApplicationInfoCopyType,
+ *         workspaceId: testWorkspace.id,
  *     },
- *     state: _var.workspace_application_state,
+ *     state: workspaceApplicationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -157,9 +157,9 @@ class Configuration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_configuration = oci.license_manager.Configuration("testConfiguration",
-            compartment_id=var["compartment_id"],
-            email_ids=var["configuration_email_ids"])
+        test_configuration = oci.license_manager.Configuration("test_configuration",
+            compartment_id=compartment_id,
+            email_ids=configuration_email_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -198,9 +198,9 @@ class Configuration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_configuration = oci.license_manager.Configuration("testConfiguration",
-            compartment_id=var["compartment_id"],
-            email_ids=var["configuration_email_ids"])
+        test_configuration = oci.license_manager.Configuration("test_configuration",
+            compartment_id=compartment_id,
+            email_ids=configuration_email_ids)
         ```
         <!--End PulumiCodeChooser -->
 

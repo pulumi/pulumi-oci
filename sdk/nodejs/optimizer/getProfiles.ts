@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProfiles = oci.Optimizer.getProfiles({
- *     compartmentId: _var.compartment_id,
- *     name: _var.profile_name,
- *     state: _var.profile_state,
+ *     compartmentId: compartmentId,
+ *     name: profileName,
+ *     state: profileState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetProfilesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProfiles = oci.Optimizer.getProfiles({
- *     compartmentId: _var.compartment_id,
- *     name: _var.profile_name,
- *     state: _var.profile_state,
+ *     compartmentId: compartmentId,
+ *     name: profileName,
+ *     state: profileState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

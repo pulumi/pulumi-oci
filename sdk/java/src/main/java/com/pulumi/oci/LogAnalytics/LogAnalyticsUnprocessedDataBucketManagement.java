@@ -46,8 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLogAnalyticsUnprocessedDataBucketManagement = new LogAnalyticsUnprocessedDataBucketManagement(&#34;testLogAnalyticsUnprocessedDataBucketManagement&#34;, LogAnalyticsUnprocessedDataBucketManagementArgs.builder()        
- *             .bucket(var_.log_analytics_unprocessed_data_bucket_management_bucket())
- *             .namespace(var_.log_analytics_unprocessed_data_bucket_management_namespace())
+ *             .bucket(logAnalyticsUnprocessedDataBucketManagementBucket)
+ *             .namespace(logAnalyticsUnprocessedDataBucketManagementNamespace)
  *             .build());
  * 
  *     }

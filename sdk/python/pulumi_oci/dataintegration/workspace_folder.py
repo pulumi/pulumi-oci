@@ -463,21 +463,22 @@ class WorkspaceFolder(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_folder = oci.data_integration.WorkspaceFolder("testWorkspaceFolder",
-            identifier=var["workspace_folder_identifier"],
+        test_workspace_folder = oci.data_integration.WorkspaceFolder("test_workspace_folder",
+            identifier=workspace_folder_identifier,
+            name=workspace_folder_name,
             registry_metadata=oci.data_integration.WorkspaceFolderRegistryMetadataArgs(
-                aggregator_key=var["workspace_folder_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_folder_registry_metadata_is_favorite"],
-                key=var["workspace_folder_registry_metadata_key"],
-                labels=var["workspace_folder_registry_metadata_labels"],
-                registry_version=var["workspace_folder_registry_metadata_registry_version"],
+                aggregator_key=workspace_folder_registry_metadata_aggregator_key,
+                is_favorite=workspace_folder_registry_metadata_is_favorite,
+                key=workspace_folder_registry_metadata_key,
+                labels=workspace_folder_registry_metadata_labels,
+                registry_version=workspace_folder_registry_metadata_registry_version,
             ),
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            category_name=oci_marketplace_category["test_category"]["name"],
-            description=var["workspace_folder_description"],
-            key=var["workspace_folder_key"],
-            model_version=var["workspace_folder_model_version"],
-            object_status=var["workspace_folder_object_status"])
+            workspace_id=test_workspace["id"],
+            category_name=test_category["name"],
+            description=workspace_folder_description,
+            key=workspace_folder_key,
+            model_version=workspace_folder_model_version,
+            object_status=workspace_folder_object_status)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -524,21 +525,22 @@ class WorkspaceFolder(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_folder = oci.data_integration.WorkspaceFolder("testWorkspaceFolder",
-            identifier=var["workspace_folder_identifier"],
+        test_workspace_folder = oci.data_integration.WorkspaceFolder("test_workspace_folder",
+            identifier=workspace_folder_identifier,
+            name=workspace_folder_name,
             registry_metadata=oci.data_integration.WorkspaceFolderRegistryMetadataArgs(
-                aggregator_key=var["workspace_folder_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_folder_registry_metadata_is_favorite"],
-                key=var["workspace_folder_registry_metadata_key"],
-                labels=var["workspace_folder_registry_metadata_labels"],
-                registry_version=var["workspace_folder_registry_metadata_registry_version"],
+                aggregator_key=workspace_folder_registry_metadata_aggregator_key,
+                is_favorite=workspace_folder_registry_metadata_is_favorite,
+                key=workspace_folder_registry_metadata_key,
+                labels=workspace_folder_registry_metadata_labels,
+                registry_version=workspace_folder_registry_metadata_registry_version,
             ),
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            category_name=oci_marketplace_category["test_category"]["name"],
-            description=var["workspace_folder_description"],
-            key=var["workspace_folder_key"],
-            model_version=var["workspace_folder_model_version"],
-            object_status=var["workspace_folder_object_status"])
+            workspace_id=test_workspace["id"],
+            category_name=test_category["name"],
+            description=workspace_folder_description,
+            key=workspace_folder_key,
+            model_version=workspace_folder_model_version,
+            object_status=workspace_folder_object_status)
         ```
         <!--End PulumiCodeChooser -->
 

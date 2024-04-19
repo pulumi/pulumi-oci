@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testGiVersions = Oci.Database.GetGiVersions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Shape = @var.Gi_version_shape,
+        ///         CompartmentId = compartmentId,
+        ///         Shape = giVersionShape,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testGiVersions = Oci.Database.GetGiVersions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Shape = @var.Gi_version_shape,
+        ///         CompartmentId = compartmentId,
+        ///         Shape = giVersionShape,
         ///     });
         /// 
         /// });

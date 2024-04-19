@@ -33,9 +33,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetIdentityProviderGroups(ctx, &identity.GetIdentityProviderGroupsArgs{
-//				IdentityProviderId: oci_identity_identity_provider.Test_identity_provider.Id,
-//				Name:               pulumi.StringRef(_var.Identity_provider_group_name),
-//				State:              pulumi.StringRef(_var.Identity_provider_group_state),
+//				IdentityProviderId: testIdentityProvider.Id,
+//				Name:               pulumi.StringRef(identityProviderGroupName),
+//				State:              pulumi.StringRef(identityProviderGroupState),
 //			}, nil)
 //			if err != nil {
 //				return err

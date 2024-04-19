@@ -33,14 +33,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetReportDefinitions(ctx, &datasafe.GetReportDefinitionsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Report_definition_access_level),
-//				Category:               pulumi.StringRef(_var.Report_definition_category),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Report_definition_compartment_id_in_subtree),
-//				DataSource:             pulumi.StringRef(_var.Report_definition_data_source),
-//				DisplayName:            pulumi.StringRef(_var.Report_definition_display_name),
-//				IsSeeded:               pulumi.BoolRef(_var.Report_definition_is_seeded),
-//				State:                  pulumi.StringRef(_var.Report_definition_state),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(reportDefinitionAccessLevel),
+//				Category:               pulumi.StringRef(reportDefinitionCategory),
+//				CompartmentIdInSubtree: pulumi.BoolRef(reportDefinitionCompartmentIdInSubtree),
+//				DataSource:             pulumi.StringRef(reportDefinitionDataSource),
+//				DisplayName:            pulumi.StringRef(reportDefinitionDisplayName),
+//				IsSeeded:               pulumi.BoolRef(reportDefinitionIsSeeded),
+//				State:                  pulumi.StringRef(reportDefinitionState),
 //			}, nil)
 //			if err != nil {
 //				return err

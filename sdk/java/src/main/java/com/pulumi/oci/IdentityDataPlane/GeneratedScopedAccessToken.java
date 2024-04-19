@@ -43,8 +43,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testGenerateScopedAccessToken = new GeneratedScopedAccessToken(&#34;testGenerateScopedAccessToken&#34;, GeneratedScopedAccessTokenArgs.builder()        
- *             .publicKey(var_.generate_scoped_access_token_public_key())
- *             .scope(var_.generate_scoped_access_token_scope())
+ *             .publicKey(generateScopedAccessTokenPublicKey)
+ *             .scope(generateScopedAccessTokenScope)
  *             .build());
  * 
  *     }

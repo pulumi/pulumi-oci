@@ -45,10 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testModelVersionSet = new ModelVersionSet(&#34;testModelVersionSet&#34;, ModelVersionSetArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .projectId(oci_datascience_project.test_project().id())
+ *             .compartmentId(compartmentId)
+ *             .name(modelVersionSetName)
+ *             .projectId(testProject.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.model_version_set_description())
+ *             .description(modelVersionSetDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

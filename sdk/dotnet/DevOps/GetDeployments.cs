@@ -29,14 +29,14 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testDeployments = Oci.DevOps.GetDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeployPipelineId = oci_devops_deploy_pipeline.Test_deploy_pipeline.Id,
-        ///         DisplayName = @var.Deployment_display_name,
-        ///         Id = @var.Deployment_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Deployment_state,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Deployment_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Deployment_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DeployPipelineId = testDeployPipeline.Id,
+        ///         DisplayName = deploymentDisplayName,
+        ///         Id = deploymentId,
+        ///         ProjectId = testProject.Id,
+        ///         State = deploymentState,
+        ///         TimeCreatedGreaterThanOrEqualTo = deploymentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = deploymentTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testDeployments = Oci.DevOps.GetDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeployPipelineId = oci_devops_deploy_pipeline.Test_deploy_pipeline.Id,
-        ///         DisplayName = @var.Deployment_display_name,
-        ///         Id = @var.Deployment_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Deployment_state,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Deployment_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Deployment_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DeployPipelineId = testDeployPipeline.Id,
+        ///         DisplayName = deploymentDisplayName,
+        ///         Id = deploymentId,
+        ///         ProjectId = testProject.Id,
+        ///         State = deploymentState,
+        ///         TimeCreatedGreaterThanOrEqualTo = deploymentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = deploymentTimeCreatedLessThan,
         ///     });
         /// 
         /// });

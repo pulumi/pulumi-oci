@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testWebAppFirewallPolicy = Oci.Waf.GetWebAppFirewallPolicy.Invoke(new()
         ///     {
-        ///         WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+        ///         WebAppFirewallPolicyId = testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testWebAppFirewallPolicy = Oci.Waf.GetWebAppFirewallPolicy.Invoke(new()
         ///     {
-        ///         WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+        ///         WebAppFirewallPolicyId = testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.Id,
         ///     });
         /// 
         /// });

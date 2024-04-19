@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetAgentPlugin(ctx, &cloudbridge.GetAgentPluginArgs{
-//				AgentId:    oci_cloud_bridge_agent.Test_agent.Id,
-//				PluginName: _var.Agent_plugin_plugin_name,
+//				AgentId:    testAgent.Id,
+//				PluginName: agentPluginPluginName,
 //			}, nil)
 //			if err != nil {
 //				return err

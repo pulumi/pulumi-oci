@@ -166,13 +166,13 @@ def get_workspace_tasks(fields: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_tasks = oci.DataIntegration.get_workspace_tasks(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_task_fields"],
-        folder_id=oci_dataintegration_folder["test_folder"]["id"],
-        identifiers=var["workspace_task_identifier"],
-        keys=var["workspace_task_key"],
-        name=var["workspace_task_name"],
-        types=var["workspace_task_type"])
+    test_workspace_tasks = oci.DataIntegration.get_workspace_tasks(workspace_id=test_workspace["id"],
+        fields=workspace_task_fields,
+        folder_id=test_folder["id"],
+        identifiers=workspace_task_identifier,
+        keys=workspace_task_key,
+        name=workspace_task_name,
+        types=workspace_task_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -232,13 +232,13 @@ def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[s
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_tasks = oci.DataIntegration.get_workspace_tasks(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_task_fields"],
-        folder_id=oci_dataintegration_folder["test_folder"]["id"],
-        identifiers=var["workspace_task_identifier"],
-        keys=var["workspace_task_key"],
-        name=var["workspace_task_name"],
-        types=var["workspace_task_type"])
+    test_workspace_tasks = oci.DataIntegration.get_workspace_tasks(workspace_id=test_workspace["id"],
+        fields=workspace_task_fields,
+        folder_id=test_folder["id"],
+        identifiers=workspace_task_identifier,
+        keys=workspace_task_key,
+        name=workspace_task_name,
+        types=workspace_task_type)
     ```
     <!--End PulumiCodeChooser -->
 

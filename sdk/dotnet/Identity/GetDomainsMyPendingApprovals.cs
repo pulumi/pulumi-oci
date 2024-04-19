@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyPendingApprovals = Oci.Identity.GetDomainsMyPendingApprovals.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyPendingApprovalCount = @var.My_pending_approval_my_pending_approval_count,
-        ///         MyPendingApprovalFilter = @var.My_pending_approval_my_pending_approval_filter,
-        ///         Authorization = @var.My_pending_approval_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_pending_approval_resource_type_schema_version,
-        ///         StartIndex = @var.My_pending_approval_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyPendingApprovalCount = myPendingApprovalMyPendingApprovalCount,
+        ///         MyPendingApprovalFilter = myPendingApprovalMyPendingApprovalFilter,
+        ///         Authorization = myPendingApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myPendingApprovalResourceTypeSchemaVersion,
+        ///         StartIndex = myPendingApprovalStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyPendingApprovals = Oci.Identity.GetDomainsMyPendingApprovals.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyPendingApprovalCount = @var.My_pending_approval_my_pending_approval_count,
-        ///         MyPendingApprovalFilter = @var.My_pending_approval_my_pending_approval_filter,
-        ///         Authorization = @var.My_pending_approval_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_pending_approval_resource_type_schema_version,
-        ///         StartIndex = @var.My_pending_approval_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyPendingApprovalCount = myPendingApprovalMyPendingApprovalCount,
+        ///         MyPendingApprovalFilter = myPendingApprovalMyPendingApprovalFilter,
+        ///         Authorization = myPendingApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myPendingApprovalResourceTypeSchemaVersion,
+        ///         StartIndex = myPendingApprovalStartIndex,
         ///     });
         /// 
         /// });

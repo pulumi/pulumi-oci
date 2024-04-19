@@ -120,9 +120,9 @@ def get_rules(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rules = oci.Events.get_rules(compartment_id=var["compartment_id"],
-        display_name=var["rule_display_name"],
-        state=var["rule_state"])
+    test_rules = oci.Events.get_rules(compartment_id=compartment_id,
+        display_name=rule_display_name,
+        state=rule_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_rules_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rules = oci.Events.get_rules(compartment_id=var["compartment_id"],
-        display_name=var["rule_display_name"],
-        state=var["rule_state"])
+    test_rules = oci.Events.get_rules(compartment_id=compartment_id,
+        display_name=rule_display_name,
+        state=rule_state)
     ```
     <!--End PulumiCodeChooser -->
 

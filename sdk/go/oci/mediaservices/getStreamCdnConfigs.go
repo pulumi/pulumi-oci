@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetStreamCdnConfigs(ctx, &mediaservices.GetStreamCdnConfigsArgs{
-//				DistributionChannelId: oci_mysql_channel.Test_channel.Id,
-//				DisplayName:           pulumi.StringRef(_var.Stream_cdn_config_display_name),
-//				Id:                    pulumi.StringRef(_var.Stream_cdn_config_id),
-//				State:                 pulumi.StringRef(_var.Stream_cdn_config_state),
+//				DistributionChannelId: testChannel.Id,
+//				DisplayName:           pulumi.StringRef(streamCdnConfigDisplayName),
+//				Id:                    pulumi.StringRef(streamCdnConfigId),
+//				State:                 pulumi.StringRef(streamCdnConfigState),
 //			}, nil)
 //			if err != nil {
 //				return err

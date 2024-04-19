@@ -133,10 +133,10 @@ def get_detection_models(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiAnomalyDetection.get_detection_models(compartment_id=var["compartment_id"],
-        display_name=var["model_display_name"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["model_state"])
+    test_models = oci.AiAnomalyDetection.get_detection_models(compartment_id=compartment_id,
+        display_name=model_display_name,
+        project_id=test_project["id"],
+        state=model_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_detection_models_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiAnomalyDetection.get_detection_models(compartment_id=var["compartment_id"],
-        display_name=var["model_display_name"],
-        project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
-        state=var["model_state"])
+    test_models = oci.AiAnomalyDetection.get_detection_models(compartment_id=compartment_id,
+        display_name=model_display_name,
+        project_id=test_project["id"],
+        state=model_state)
     ```
     <!--End PulumiCodeChooser -->
 

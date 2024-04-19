@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testUnifiedAgentConfigurations = Oci.Logging.GetUnifiedAgentConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Unified_agent_configuration_display_name,
-        ///         GroupId = oci_identity_group.Test_group.Id,
-        ///         IsCompartmentIdInSubtree = @var.Unified_agent_configuration_is_compartment_id_in_subtree,
-        ///         LogId = oci_logging_log.Test_log.Id,
-        ///         State = @var.Unified_agent_configuration_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = unifiedAgentConfigurationDisplayName,
+        ///         GroupId = testGroup.Id,
+        ///         IsCompartmentIdInSubtree = unifiedAgentConfigurationIsCompartmentIdInSubtree,
+        ///         LogId = testLog.Id,
+        ///         State = unifiedAgentConfigurationState,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testUnifiedAgentConfigurations = Oci.Logging.GetUnifiedAgentConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Unified_agent_configuration_display_name,
-        ///         GroupId = oci_identity_group.Test_group.Id,
-        ///         IsCompartmentIdInSubtree = @var.Unified_agent_configuration_is_compartment_id_in_subtree,
-        ///         LogId = oci_logging_log.Test_log.Id,
-        ///         State = @var.Unified_agent_configuration_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = unifiedAgentConfigurationDisplayName,
+        ///         GroupId = testGroup.Id,
+        ///         IsCompartmentIdInSubtree = unifiedAgentConfigurationIsCompartmentIdInSubtree,
+        ///         LogId = testLog.Id,
+        ///         State = unifiedAgentConfigurationState,
         ///     });
         /// 
         /// });

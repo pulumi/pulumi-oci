@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DataLabellingService
         /// {
         ///     var testDatasets = Oci.DataLabellingService.GetDatasets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AnnotationFormat = @var.Dataset_annotation_format,
-        ///         DisplayName = @var.Dataset_display_name,
-        ///         Id = @var.Dataset_id,
-        ///         State = @var.Dataset_state,
+        ///         CompartmentId = compartmentId,
+        ///         AnnotationFormat = datasetAnnotationFormat,
+        ///         DisplayName = datasetDisplayName,
+        ///         Id = datasetId,
+        ///         State = datasetState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DataLabellingService
         /// {
         ///     var testDatasets = Oci.DataLabellingService.GetDatasets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AnnotationFormat = @var.Dataset_annotation_format,
-        ///         DisplayName = @var.Dataset_display_name,
-        ///         Id = @var.Dataset_id,
-        ///         State = @var.Dataset_state,
+        ///         CompartmentId = compartmentId,
+        ///         AnnotationFormat = datasetAnnotationFormat,
+        ///         DisplayName = datasetDisplayName,
+        ///         Id = datasetId,
+        ///         State = datasetState,
         ///     });
         /// 
         /// });

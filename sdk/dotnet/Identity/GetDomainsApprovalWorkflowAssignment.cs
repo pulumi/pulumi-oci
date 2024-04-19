@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflowAssignment = Oci.Identity.GetDomainsApprovalWorkflowAssignment.Invoke(new()
         ///     {
-        ///         ApprovalWorkflowAssignmentId = oci_identity_domains_approval_workflow_assignment.Test_approval_workflow_assignment.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         ApprovalWorkflowAssignmentId = testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_assignment_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_assignment_resource_type_schema_version,
+        ///         Authorization = approvalWorkflowAssignmentAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowAssignmentResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflowAssignment = Oci.Identity.GetDomainsApprovalWorkflowAssignment.Invoke(new()
         ///     {
-        ///         ApprovalWorkflowAssignmentId = oci_identity_domains_approval_workflow_assignment.Test_approval_workflow_assignment.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         ApprovalWorkflowAssignmentId = testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_assignment_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_assignment_resource_type_schema_version,
+        ///         Authorization = approvalWorkflowAssignmentAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowAssignmentResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

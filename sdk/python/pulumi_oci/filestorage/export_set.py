@@ -264,9 +264,9 @@ class ExportSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_export_set = oci.file_storage.ExportSet("testExportSet",
-            mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-            display_name=var["export_set_name"],
+        test_export_set = oci.file_storage.ExportSet("test_export_set",
+            mount_target_id=test_mount_target["id"],
+            display_name=export_set_name,
             max_fs_stat_bytes="23843202333",
             max_fs_stat_files="223442")
         ```
@@ -304,9 +304,9 @@ class ExportSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_export_set = oci.file_storage.ExportSet("testExportSet",
-            mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-            display_name=var["export_set_name"],
+        test_export_set = oci.file_storage.ExportSet("test_export_set",
+            mount_target_id=test_mount_target["id"],
+            display_name=export_set_name,
             max_fs_stat_bytes="23843202333",
             max_fs_stat_files="223442")
         ```

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MeteringComputation.GetConfiguration(ctx, &meteringcomputation.GetConfigurationArgs{
-//				TenantId: oci_metering_computation_tenant.Test_tenant.Id,
+//				TenantId: testTenant.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

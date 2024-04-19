@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.GetPreauthrequest(ctx, &objectstorage.GetPreauthrequestArgs{
-//				Bucket:    _var.Preauthenticated_request_bucket,
-//				Namespace: _var.Preauthenticated_request_namespace,
-//				ParId:     oci_objectstorage_preauthrequest.Test_par.Id,
+//				Bucket:    preauthenticatedRequestBucket,
+//				Namespace: preauthenticatedRequestNamespace,
+//				ParId:     testPar.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

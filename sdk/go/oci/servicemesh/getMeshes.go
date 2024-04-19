@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.GetMeshes(ctx, &servicemesh.GetMeshesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Mesh_display_name),
-//				Id:            pulumi.StringRef(_var.Mesh_id),
-//				State:         pulumi.StringRef(_var.Mesh_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(meshDisplayName),
+//				Id:            pulumi.StringRef(meshId),
+//				State:         pulumi.StringRef(meshState),
 //			}, nil)
 //			if err != nil {
 //				return err

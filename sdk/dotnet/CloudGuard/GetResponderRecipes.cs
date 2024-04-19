@@ -43,12 +43,12 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testResponderRecipes = Oci.CloudGuard.GetResponderRecipes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Responder_recipe_access_level,
-        ///         CompartmentIdInSubtree = @var.Responder_recipe_compartment_id_in_subtree,
-        ///         DisplayName = @var.Responder_recipe_display_name,
-        ///         ResourceMetadataOnly = @var.Responder_recipe_resource_metadata_only,
-        ///         State = @var.Responder_recipe_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = responderRecipeAccessLevel,
+        ///         CompartmentIdInSubtree = responderRecipeCompartmentIdInSubtree,
+        ///         DisplayName = responderRecipeDisplayName,
+        ///         ResourceMetadataOnly = responderRecipeResourceMetadataOnly,
+        ///         State = responderRecipeState,
         ///     });
         /// 
         /// });
@@ -90,12 +90,12 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testResponderRecipes = Oci.CloudGuard.GetResponderRecipes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Responder_recipe_access_level,
-        ///         CompartmentIdInSubtree = @var.Responder_recipe_compartment_id_in_subtree,
-        ///         DisplayName = @var.Responder_recipe_display_name,
-        ///         ResourceMetadataOnly = @var.Responder_recipe_resource_metadata_only,
-        ///         State = @var.Responder_recipe_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = responderRecipeAccessLevel,
+        ///         CompartmentIdInSubtree = responderRecipeCompartmentIdInSubtree,
+        ///         DisplayName = responderRecipeDisplayName,
+        ///         ResourceMetadataOnly = responderRecipeResourceMetadataOnly,
+        ///         State = responderRecipeState,
         ///     });
         /// 
         /// });

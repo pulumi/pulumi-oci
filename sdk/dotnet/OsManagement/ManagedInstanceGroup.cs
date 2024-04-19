@@ -27,21 +27,21 @@ namespace Pulumi.Oci.OsManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagedInstanceGroup = new Oci.OsManagement.ManagedInstanceGroup("testManagedInstanceGroup", new()
+    ///     var testManagedInstanceGroup = new Oci.OsManagement.ManagedInstanceGroup("test_managed_instance_group", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Managed_instance_group_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = managedInstanceGroupDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Managed_instance_group_description,
+    ///         Description = managedInstanceGroupDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         OsFamily = @var.Managed_instance_group_os_family,
-    ///         ManagedInstanceIds = @var.Managed_instance_group_managed_instance_ids,
+    ///         OsFamily = managedInstanceGroupOsFamily,
+    ///         ManagedInstanceIds = managedInstanceGroupManagedInstanceIds,
     ///     });
     /// 
     /// });

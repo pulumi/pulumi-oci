@@ -29,16 +29,16 @@ namespace Pulumi.Oci.OspGateway
         /// {
         ///     var testInvoices = Oci.OspGateway.GetInvoices.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         OspHomeRegion = @var.Invoice_osp_home_region,
-        ///         InvoiceId = oci_osp_gateway_invoice.Test_invoice.Id,
-        ///         SearchText = @var.Invoice_search_text,
-        ///         Statuses = @var.Invoice_status,
-        ///         TimeInvoiceEnd = @var.Invoice_time_invoice_end,
-        ///         TimeInvoiceStart = @var.Invoice_time_invoice_start,
-        ///         TimePaymentEnd = @var.Invoice_time_payment_end,
-        ///         TimePaymentStart = @var.Invoice_time_payment_start,
-        ///         Types = @var.Invoice_type,
+        ///         CompartmentId = compartmentId,
+        ///         OspHomeRegion = invoiceOspHomeRegion,
+        ///         InvoiceId = testInvoice.Id,
+        ///         SearchText = invoiceSearchText,
+        ///         Statuses = invoiceStatus,
+        ///         TimeInvoiceEnd = invoiceTimeInvoiceEnd,
+        ///         TimeInvoiceStart = invoiceTimeInvoiceStart,
+        ///         TimePaymentEnd = invoiceTimePaymentEnd,
+        ///         TimePaymentStart = invoiceTimePaymentStart,
+        ///         Types = invoiceType,
         ///     });
         /// 
         /// });
@@ -66,16 +66,16 @@ namespace Pulumi.Oci.OspGateway
         /// {
         ///     var testInvoices = Oci.OspGateway.GetInvoices.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         OspHomeRegion = @var.Invoice_osp_home_region,
-        ///         InvoiceId = oci_osp_gateway_invoice.Test_invoice.Id,
-        ///         SearchText = @var.Invoice_search_text,
-        ///         Statuses = @var.Invoice_status,
-        ///         TimeInvoiceEnd = @var.Invoice_time_invoice_end,
-        ///         TimeInvoiceStart = @var.Invoice_time_invoice_start,
-        ///         TimePaymentEnd = @var.Invoice_time_payment_end,
-        ///         TimePaymentStart = @var.Invoice_time_payment_start,
-        ///         Types = @var.Invoice_type,
+        ///         CompartmentId = compartmentId,
+        ///         OspHomeRegion = invoiceOspHomeRegion,
+        ///         InvoiceId = testInvoice.Id,
+        ///         SearchText = invoiceSearchText,
+        ///         Statuses = invoiceStatus,
+        ///         TimeInvoiceEnd = invoiceTimeInvoiceEnd,
+        ///         TimeInvoiceStart = invoiceTimeInvoiceStart,
+        ///         TimePaymentEnd = invoiceTimePaymentEnd,
+        ///         TimePaymentStart = invoiceTimePaymentStart,
+        ///         Types = invoiceType,
         ///     });
         /// 
         /// });

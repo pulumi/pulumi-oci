@@ -30,10 +30,10 @@ namespace Pulumi.Oci.ManagementDashboard
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagementDashboardsImport = new Oci.ManagementDashboard.ManagementDashboardsImport("testManagementDashboardsImport", new()
+    ///     var testManagementDashboardsImport = new Oci.ManagementDashboard.ManagementDashboardsImport("test_management_dashboards_import", new()
     ///     {
-    ///         ImportDetails = @var.Sample_import_details,
-    ///         ImportDetailsFile = @var.Sample_import_details_file_path,
+    ///         ImportDetails = sampleImportDetails,
+    ///         ImportDetailsFile = sampleImportDetailsFilePath,
     ///     });
     /// 
     /// });

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSuppression = new oci.email.Suppression("testSuppression", {
- *     compartmentId: _var.tenancy_ocid,
- *     emailAddress: _var.suppression_email_address,
+ * const testSuppression = new oci.email.Suppression("test_suppression", {
+ *     compartmentId: tenancyOcid,
+ *     emailAddress: suppressionEmailAddress,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -32,14 +32,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Analytics.NewAnalyticsInstanceVanityUrl(ctx, "testAnalyticsInstanceVanityUrl", &Analytics.AnalyticsInstanceVanityUrlArgs{
-//				AnalyticsInstanceId: pulumi.Any(oci_analytics_analytics_instance.Test_analytics_instance.Id),
-//				CaCertificate:       pulumi.Any(_var.Analytics_instance_vanity_url_ca_certificate),
-//				Hosts:               pulumi.Any(_var.Analytics_instance_vanity_url_hosts),
-//				PrivateKey:          pulumi.Any(_var.Analytics_instance_vanity_url_private_key),
-//				PublicCertificate:   pulumi.Any(_var.Analytics_instance_vanity_url_public_certificate),
-//				Description:         pulumi.Any(_var.Analytics_instance_vanity_url_description),
-//				Passphrase:          pulumi.Any(_var.Analytics_instance_vanity_url_passphrase),
+//			_, err := Analytics.NewAnalyticsInstanceVanityUrl(ctx, "test_analytics_instance_vanity_url", &Analytics.AnalyticsInstanceVanityUrlArgs{
+//				AnalyticsInstanceId: pulumi.Any(testAnalyticsInstance.Id),
+//				CaCertificate:       pulumi.Any(analyticsInstanceVanityUrlCaCertificate),
+//				Hosts:               pulumi.Any(analyticsInstanceVanityUrlHosts),
+//				PrivateKey:          pulumi.Any(analyticsInstanceVanityUrlPrivateKey),
+//				PublicCertificate:   pulumi.Any(analyticsInstanceVanityUrlPublicCertificate),
+//				Description:         pulumi.Any(analyticsInstanceVanityUrlDescription),
+//				Passphrase:          pulumi.Any(analyticsInstanceVanityUrlPassphrase),
 //			})
 //			if err != nil {
 //				return err

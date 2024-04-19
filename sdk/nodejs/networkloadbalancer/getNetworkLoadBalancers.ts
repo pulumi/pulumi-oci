@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkLoadBalancers = oci.NetworkLoadBalancer.getNetworkLoadBalancers({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.network_load_balancer_display_name,
- *     state: _var.network_load_balancer_state,
+ *     compartmentId: compartmentId,
+ *     displayName: networkLoadBalancerDisplayName,
+ *     state: networkLoadBalancerState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetNetworkLoadBalancersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkLoadBalancers = oci.NetworkLoadBalancer.getNetworkLoadBalancers({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.network_load_balancer_display_name,
- *     state: _var.network_load_balancer_state,
+ *     compartmentId: compartmentId,
+ *     displayName: networkLoadBalancerDisplayName,
+ *     state: networkLoadBalancerState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

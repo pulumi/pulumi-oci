@@ -49,16 +49,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testGeneratedKey = new GeneratedKey(&#34;testGeneratedKey&#34;, GeneratedKeyArgs.builder()        
- *             .cryptoEndpoint(var_.generated_key_crypto_endpoint())
- *             .includePlaintextKey(var_.generated_key_include_plaintext_key())
- *             .keyId(oci_kms_key.test_key().id())
+ *             .cryptoEndpoint(generatedKeyCryptoEndpoint)
+ *             .includePlaintextKey(generatedKeyIncludePlaintextKey)
+ *             .keyId(testKey.id())
  *             .keyShape(GeneratedKeyKeyShapeArgs.builder()
- *                 .algorithm(var_.generated_key_key_shape_algorithm())
- *                 .length(var_.generated_key_key_shape_length())
- *                 .curveId(oci_kms_curve.test_curve().id())
+ *                 .algorithm(generatedKeyKeyShapeAlgorithm)
+ *                 .length(generatedKeyKeyShapeLength)
+ *                 .curveId(testCurve.id())
  *                 .build())
- *             .associatedData(var_.generated_key_associated_data())
- *             .loggingContext(var_.generated_key_logging_context())
+ *             .associatedData(generatedKeyAssociatedData)
+ *             .loggingContext(generatedKeyLoggingContext)
  *             .build());
  * 
  *     }

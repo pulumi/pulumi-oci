@@ -30,10 +30,10 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentTypes = Oci.GoldenGate.GetDeploymentTypes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeploymentType = @var.Deployment_type_deployment_type,
-        ///         DisplayName = @var.Deployment_type_display_name,
-        ///         OggVersion = @var.Deployment_type_ogg_version,
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentType = deploymentTypeDeploymentType,
+        ///         DisplayName = deploymentTypeDisplayName,
+        ///         OggVersion = deploymentTypeOggVersion,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentTypes = Oci.GoldenGate.GetDeploymentTypes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeploymentType = @var.Deployment_type_deployment_type,
-        ///         DisplayName = @var.Deployment_type_display_name,
-        ///         OggVersion = @var.Deployment_type_ogg_version,
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentType = deploymentTypeDeploymentType,
+        ///         DisplayName = deploymentTypeDisplayName,
+        ///         OggVersion = deploymentTypeOggVersion,
         ///     });
         /// 
         /// });

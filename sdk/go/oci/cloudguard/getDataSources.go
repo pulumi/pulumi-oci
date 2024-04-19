@@ -45,13 +45,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetDataSources(ctx, &cloudguard.GetDataSourcesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Data_source_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Data_source_compartment_id_in_subtree),
-//				DataSourceFeedProvider: pulumi.StringRef(_var.Data_source_data_source_feed_provider),
-//				DisplayName:            pulumi.StringRef(_var.Data_source_display_name),
-//				LoggingQueryType:       pulumi.StringRef(_var.Data_source_logging_query_type),
-//				State:                  pulumi.StringRef(_var.Data_source_state),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(dataSourceAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(dataSourceCompartmentIdInSubtree),
+//				DataSourceFeedProvider: pulumi.StringRef(dataSourceDataSourceFeedProvider),
+//				DisplayName:            pulumi.StringRef(dataSourceDisplayName),
+//				LoggingQueryType:       pulumi.StringRef(dataSourceLoggingQueryType),
+//				State:                  pulumi.StringRef(dataSourceState),
 //			}, nil)
 //			if err != nil {
 //				return err

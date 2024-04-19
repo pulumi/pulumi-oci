@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetAssets(ctx, &cloudbridge.GetAssetsArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				AssetId:          pulumi.StringRef(oci_cloud_bridge_asset.Test_asset.Id),
-//				AssetType:        pulumi.StringRef(_var.Asset_asset_type),
-//				DisplayName:      pulumi.StringRef(_var.Asset_display_name),
-//				ExternalAssetKey: pulumi.StringRef(_var.Asset_external_asset_key),
-//				InventoryId:      pulumi.StringRef(oci_cloud_bridge_inventory.Test_inventory.Id),
-//				SourceKey:        pulumi.StringRef(_var.Asset_source_key),
-//				State:            pulumi.StringRef(_var.Asset_state),
+//				CompartmentId:    compartmentId,
+//				AssetId:          pulumi.StringRef(testAsset.Id),
+//				AssetType:        pulumi.StringRef(assetAssetType),
+//				DisplayName:      pulumi.StringRef(assetDisplayName),
+//				ExternalAssetKey: pulumi.StringRef(assetExternalAssetKey),
+//				InventoryId:      pulumi.StringRef(testInventory.Id),
+//				SourceKey:        pulumi.StringRef(assetSourceKey),
+//				State:            pulumi.StringRef(assetState),
 //			}, nil)
 //			if err != nil {
 //				return err

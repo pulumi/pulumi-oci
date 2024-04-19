@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPublicIpPool = oci.Core.getPublicIpPool({
- *     publicIpPoolId: oci_core_public_ip_pool.test_public_ip_pool.id,
+ *     publicIpPoolId: testPublicIpPoolOciCorePublicIpPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,7 +91,7 @@ export interface GetPublicIpPoolResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPublicIpPool = oci.Core.getPublicIpPool({
- *     publicIpPoolId: oci_core_public_ip_pool.test_public_ip_pool.id,
+ *     publicIpPoolId: testPublicIpPoolOciCorePublicIpPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

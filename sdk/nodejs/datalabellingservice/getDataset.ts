@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataset = oci.DataLabellingService.getDataset({
- *     datasetId: oci_data_labeling_service_dataset.test_dataset.id,
+ *     datasetId: testDatasetOciDataLabelingServiceDataset.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetDatasetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataset = oci.DataLabellingService.getDataset({
- *     datasetId: oci_data_labeling_service_dataset.test_dataset.id,
+ *     datasetId: testDatasetOciDataLabelingServiceDataset.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -289,9 +289,10 @@ class Group(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_group = oci.identity.Group("testGroup",
-            compartment_id=var["tenancy_ocid"],
-            description=var["group_description"],
+        test_group = oci.identity.Group("test_group",
+            compartment_id=tenancy_ocid,
+            description=group_description,
+            name=group_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -355,9 +356,10 @@ class Group(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_group = oci.identity.Group("testGroup",
-            compartment_id=var["tenancy_ocid"],
-            description=var["group_description"],
+        test_group = oci.identity.Group("test_group",
+            compartment_id=tenancy_ocid,
+            description=group_description,
+            name=group_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

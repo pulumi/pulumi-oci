@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Queue
         /// {
         ///     var testQueue = Oci.Queue.GetQueue.Invoke(new()
         ///     {
-        ///         QueueId = oci_queue_queue.Test_queue.Id,
+        ///         QueueId = testQueueOciQueueQueue.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Queue
         /// {
         ///     var testQueue = Oci.Queue.GetQueue.Invoke(new()
         ///     {
-        ///         QueueId = oci_queue_queue.Test_queue.Id,
+        ///         QueueId = testQueueOciQueueQueue.Id,
         ///     });
         /// 
         /// });

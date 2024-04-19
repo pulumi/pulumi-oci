@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAsset = Oci.CloudBridge.GetAsset.Invoke(new()
         ///     {
-        ///         AssetId = oci_cloud_bridge_asset.Test_asset.Id,
+        ///         AssetId = testAssetOciCloudBridgeAsset.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAsset = Oci.CloudBridge.GetAsset.Invoke(new()
         ///     {
-        ///         AssetId = oci_cloud_bridge_asset.Test_asset.Id,
+        ///         AssetId = testAssetOciCloudBridgeAsset.Id,
         ///     });
         /// 
         /// });

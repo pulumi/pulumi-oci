@@ -18,9 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectHarness = new oci.streaming.ConnectHarness("testConnectHarness", {
- *     compartmentId: _var.compartment_id,
- *     definedTags: _var.connect_harness_defined_tags,
+ * const testConnectHarness = new oci.streaming.ConnectHarness("test_connect_harness", {
+ *     compartmentId: compartmentId,
+ *     name: connectHarnessName,
+ *     definedTags: connectHarnessDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

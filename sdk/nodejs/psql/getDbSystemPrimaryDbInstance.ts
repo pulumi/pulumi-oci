@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemPrimaryDbInstance = oci.Psql.getDbSystemPrimaryDbInstance({
- *     dbSystemId: oci_psql_db_system.test_db_system.id,
+ *     dbSystemId: testDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -67,7 +67,7 @@ export interface GetDbSystemPrimaryDbInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemPrimaryDbInstance = oci.Psql.getDbSystemPrimaryDbInstance({
- *     dbSystemId: oci_psql_db_system.test_db_system.id,
+ *     dbSystemId: testDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

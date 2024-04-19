@@ -153,12 +153,12 @@ def get_workspace_application_schedules(application_key: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_schedules = oci.DataIntegration.get_workspace_application_schedules(application_key=var["workspace_application_schedule_application_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        identifiers=var["workspace_application_schedule_identifier"],
-        keys=var["workspace_application_schedule_key"],
-        name=var["workspace_application_schedule_name"],
-        types=var["workspace_application_schedule_type"])
+    test_workspace_application_schedules = oci.DataIntegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
+        workspace_id=test_workspace["id"],
+        identifiers=workspace_application_schedule_identifier,
+        keys=workspace_application_schedule_key,
+        name=workspace_application_schedule_name,
+        types=workspace_application_schedule_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -214,12 +214,12 @@ def get_workspace_application_schedules_output(application_key: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_schedules = oci.DataIntegration.get_workspace_application_schedules(application_key=var["workspace_application_schedule_application_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        identifiers=var["workspace_application_schedule_identifier"],
-        keys=var["workspace_application_schedule_key"],
-        name=var["workspace_application_schedule_name"],
-        types=var["workspace_application_schedule_type"])
+    test_workspace_application_schedules = oci.DataIntegration.get_workspace_application_schedules(application_key=workspace_application_schedule_application_key,
+        workspace_id=test_workspace["id"],
+        identifiers=workspace_application_schedule_identifier,
+        keys=workspace_application_schedule_key,
+        name=workspace_application_schedule_name,
+        types=workspace_application_schedule_type)
     ```
     <!--End PulumiCodeChooser -->
 

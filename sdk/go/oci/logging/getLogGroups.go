@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Logging.GetLogGroups(ctx, &logging.GetLogGroupsArgs{
-//				CompartmentId:            _var.Compartment_id,
-//				DisplayName:              pulumi.StringRef(_var.Log_group_display_name),
-//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Log_group_is_compartment_id_in_subtree),
+//				CompartmentId:            compartmentId,
+//				DisplayName:              pulumi.StringRef(logGroupDisplayName),
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(logGroupIsCompartmentIdInSubtree),
 //			}, nil)
 //			if err != nil {
 //				return err

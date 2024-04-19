@@ -34,10 +34,10 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAuthToken = new Oci.Identity.AuthToken("testAuthToken", new()
+    ///     var testAuthToken = new Oci.Identity.AuthToken("test_auth_token", new()
     ///     {
-    ///         Description = @var.Auth_token_description,
-    ///         UserId = oci_identity_user.Test_user.Id,
+    ///         Description = authTokenDescription,
+    ///         UserId = testUser.Id,
     ///     });
     /// 
     /// });

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProjects = oci.AiDocument.getProjects({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.project_display_name,
- *     id: _var.project_id,
- *     state: _var.project_state,
+ *     compartmentId: compartmentId,
+ *     displayName: projectDisplayName,
+ *     id: projectId,
+ *     state: projectState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetProjectsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProjects = oci.AiDocument.getProjects({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.project_display_name,
- *     id: _var.project_id,
- *     state: _var.project_state,
+ *     compartmentId: compartmentId,
+ *     displayName: projectDisplayName,
+ *     id: projectId,
+ *     state: projectState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

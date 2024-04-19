@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowConfiguration = new oci.mediaservices.MediaWorkflowConfiguration("testMediaWorkflowConfiguration", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.media_workflow_configuration_display_name,
- *     parameters: _var.media_workflow_configuration_parameters,
+ * const testMediaWorkflowConfiguration = new oci.mediaservices.MediaWorkflowConfiguration("test_media_workflow_configuration", {
+ *     compartmentId: compartmentId,
+ *     displayName: mediaWorkflowConfigurationDisplayName,
+ *     parameters: mediaWorkflowConfigurationParameters,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -29,11 +29,11 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     locks: [{
- *         compartmentId: _var.compartment_id,
- *         type: _var.media_workflow_configuration_locks_type,
- *         message: _var.media_workflow_configuration_locks_message,
- *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
- *         timeCreated: _var.media_workflow_configuration_locks_time_created,
+ *         compartmentId: compartmentId,
+ *         type: mediaWorkflowConfigurationLocksType,
+ *         message: mediaWorkflowConfigurationLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: mediaWorkflowConfigurationLocksTimeCreated,
  *     }],
  * });
  * ```

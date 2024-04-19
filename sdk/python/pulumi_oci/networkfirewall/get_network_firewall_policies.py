@@ -121,10 +121,10 @@ def get_network_firewall_policies(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policies = oci.NetworkFirewall.get_network_firewall_policies(compartment_id=var["compartment_id"],
-        display_name=var["network_firewall_policy_display_name"],
-        id=var["network_firewall_policy_id"],
-        state=var["network_firewall_policy_state"])
+    test_network_firewall_policies = oci.NetworkFirewall.get_network_firewall_policies(compartment_id=compartment_id,
+        display_name=network_firewall_policy_display_name,
+        id=network_firewall_policy_id,
+        state=network_firewall_policy_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_network_firewall_policies_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policies = oci.NetworkFirewall.get_network_firewall_policies(compartment_id=var["compartment_id"],
-        display_name=var["network_firewall_policy_display_name"],
-        id=var["network_firewall_policy_id"],
-        state=var["network_firewall_policy_state"])
+    test_network_firewall_policies = oci.NetworkFirewall.get_network_firewall_policies(compartment_id=compartment_id,
+        display_name=network_firewall_policy_display_name,
+        id=network_firewall_policy_id,
+        state=network_firewall_policy_state)
     ```
     <!--End PulumiCodeChooser -->
 

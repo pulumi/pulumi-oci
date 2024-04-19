@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Streaming.GetStreamPool(ctx, &streaming.GetStreamPoolArgs{
-//				StreamPoolId: oci_streaming_stream_pool.Test_stream_pool.Id,
+//				StreamPoolId: testStreamPoolOciStreamingStreamPool.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

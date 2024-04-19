@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogSetsCount(ctx, &loganalytics.GetLogSetsCountArgs{
-//				Namespace: _var.Log_sets_count_namespace,
+//				Namespace: logSetsCountNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

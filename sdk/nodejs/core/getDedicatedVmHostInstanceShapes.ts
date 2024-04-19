@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedVmHostInstanceShapes = oci.Core.getDedicatedVmHostInstanceShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.dedicated_vm_host_instance_shape_availability_domain,
- *     dedicatedVmHostShape: _var.dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: dedicatedVmHostInstanceShapeAvailabilityDomain,
+ *     dedicatedVmHostShape: dedicatedVmHostInstanceShapeDedicatedVmHostShape,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,9 +91,9 @@ export interface GetDedicatedVmHostInstanceShapesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedVmHostInstanceShapes = oci.Core.getDedicatedVmHostInstanceShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.dedicated_vm_host_instance_shape_availability_domain,
- *     dedicatedVmHostShape: _var.dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: dedicatedVmHostInstanceShapeAvailabilityDomain,
+ *     dedicatedVmHostShape: dedicatedVmHostInstanceShapeDedicatedVmHostShape,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

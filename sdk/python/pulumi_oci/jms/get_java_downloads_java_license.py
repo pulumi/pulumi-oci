@@ -94,7 +94,7 @@ def get_java_downloads_java_license(license_type: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license = oci.Jms.get_java_downloads_java_license(license_type=var["java_license_license_type"])
+    test_java_license = oci.Jms.get_java_downloads_java_license(license_type=java_license_license_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -128,7 +128,7 @@ def get_java_downloads_java_license_output(license_type: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license = oci.Jms.get_java_downloads_java_license(license_type=var["java_license_license_type"])
+    test_java_license = oci.Jms.get_java_downloads_java_license(license_type=java_license_license_type)
     ```
     <!--End PulumiCodeChooser -->
 

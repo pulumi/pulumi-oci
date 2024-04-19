@@ -37,7 +37,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetNetworkSecurityGroup(ctx, &core.GetNetworkSecurityGroupArgs{
-//				NetworkSecurityGroupId: oci_core_network_security_group.Test_network_security_group.Id,
+//				NetworkSecurityGroupId: testNetworkSecurityGroupOciCoreNetworkSecurityGroup.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConfig = oci.StackMonitoring.getConfig({
- *     configId: oci_stack_monitoring_config.test_config.id,
+ *     configId: testConfigOciStackMonitoringConfig.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,7 +111,7 @@ export interface GetConfigResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConfig = oci.StackMonitoring.getConfig({
- *     configId: oci_stack_monitoring_config.test_config.id,
+ *     configId: testConfigOciStackMonitoringConfig.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

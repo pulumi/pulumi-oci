@@ -139,10 +139,10 @@ def get_budgets(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_budgets = oci.Budget.get_budgets(compartment_id=var["tenancy_ocid"],
-        display_name=var["budget_display_name"],
-        state=var["budget_state"],
-        target_type=var["budget_target_type"])
+    test_budgets = oci.Budget.get_budgets(compartment_id=tenancy_ocid,
+        display_name=budget_display_name,
+        state=budget_state,
+        target_type=budget_target_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -199,10 +199,10 @@ def get_budgets_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_budgets = oci.Budget.get_budgets(compartment_id=var["tenancy_ocid"],
-        display_name=var["budget_display_name"],
-        state=var["budget_state"],
-        target_type=var["budget_target_type"])
+    test_budgets = oci.Budget.get_budgets(compartment_id=tenancy_ocid,
+        display_name=budget_display_name,
+        state=budget_state,
+        target_type=budget_target_type)
     ```
     <!--End PulumiCodeChooser -->
 

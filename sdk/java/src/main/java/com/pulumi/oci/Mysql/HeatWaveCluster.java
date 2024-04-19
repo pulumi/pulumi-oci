@@ -47,10 +47,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testHeatWaveCluster = new HeatWaveCluster(&#34;testHeatWaveCluster&#34;, HeatWaveClusterArgs.builder()        
- *             .dbSystemId(oci_database_db_system.test_db_system().id())
- *             .clusterSize(var_.heat_wave_cluster_cluster_size())
- *             .isLakehouseEnabled(var_.heat_wave_cluster_is_lakehouse_enabled())
- *             .shapeName(oci_mysql_shape.test_shape().name())
+ *             .dbSystemId(testDbSystem.id())
+ *             .clusterSize(heatWaveClusterClusterSize)
+ *             .isLakehouseEnabled(heatWaveClusterIsLakehouseEnabled)
+ *             .shapeName(testShape.name())
  *             .build());
  * 
  *     }

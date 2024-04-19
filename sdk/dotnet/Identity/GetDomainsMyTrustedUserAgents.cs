@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyTrustedUserAgents = Oci.Identity.GetDomainsMyTrustedUserAgents.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyTrustedUserAgentCount = @var.My_trusted_user_agent_my_trusted_user_agent_count,
-        ///         MyTrustedUserAgentFilter = @var.My_trusted_user_agent_my_trusted_user_agent_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyTrustedUserAgentCount = myTrustedUserAgentMyTrustedUserAgentCount,
+        ///         MyTrustedUserAgentFilter = myTrustedUserAgentMyTrustedUserAgentFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_trusted_user_agent_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_trusted_user_agent_resource_type_schema_version,
-        ///         StartIndex = @var.My_trusted_user_agent_start_index,
+        ///         Authorization = myTrustedUserAgentAuthorization,
+        ///         ResourceTypeSchemaVersion = myTrustedUserAgentResourceTypeSchemaVersion,
+        ///         StartIndex = myTrustedUserAgentStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyTrustedUserAgents = Oci.Identity.GetDomainsMyTrustedUserAgents.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyTrustedUserAgentCount = @var.My_trusted_user_agent_my_trusted_user_agent_count,
-        ///         MyTrustedUserAgentFilter = @var.My_trusted_user_agent_my_trusted_user_agent_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyTrustedUserAgentCount = myTrustedUserAgentMyTrustedUserAgentCount,
+        ///         MyTrustedUserAgentFilter = myTrustedUserAgentMyTrustedUserAgentFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_trusted_user_agent_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_trusted_user_agent_resource_type_schema_version,
-        ///         StartIndex = @var.My_trusted_user_agent_start_index,
+        ///         Authorization = myTrustedUserAgentAuthorization,
+        ///         ResourceTypeSchemaVersion = myTrustedUserAgentResourceTypeSchemaVersion,
+        ///         StartIndex = myTrustedUserAgentStartIndex,
         ///     });
         /// 
         /// });

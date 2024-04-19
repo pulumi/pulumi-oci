@@ -40,14 +40,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityAssessmentFindingAnalytics(ctx, &datasafe.GetSecurityAssessmentFindingAnalyticsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Security_assessment_finding_analytic_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Security_assessment_finding_analytic_compartment_id_in_subtree),
-//				FindingKey:             pulumi.StringRef(_var.Security_assessment_finding_analytic_finding_key),
-//				GroupBy:                pulumi.StringRef(_var.Security_assessment_finding_analytic_group_by),
-//				IsTopFinding:           pulumi.BoolRef(_var.Security_assessment_finding_analytic_is_top_finding),
-//				Severity:               pulumi.StringRef(_var.Security_assessment_finding_analytic_severity),
-//				TopFindingStatus:       pulumi.StringRef(_var.Security_assessment_finding_analytic_top_finding_status),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(securityAssessmentFindingAnalyticAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(securityAssessmentFindingAnalyticCompartmentIdInSubtree),
+//				FindingKey:             pulumi.StringRef(securityAssessmentFindingAnalyticFindingKey),
+//				GroupBy:                pulumi.StringRef(securityAssessmentFindingAnalyticGroupBy),
+//				IsTopFinding:           pulumi.BoolRef(securityAssessmentFindingAnalyticIsTopFinding),
+//				Severity:               pulumi.StringRef(securityAssessmentFindingAnalyticSeverity),
+//				TopFindingStatus:       pulumi.StringRef(securityAssessmentFindingAnalyticTopFindingStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

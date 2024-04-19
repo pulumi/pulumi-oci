@@ -471,18 +471,19 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_decryption_profile = oci.network_firewall.NetworkFirewallPolicyDecryptionProfile("testNetworkFirewallPolicyDecryptionProfile",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_decryption_profile_type"],
-            are_certificate_extensions_restricted=var["network_firewall_policy_decryption_profile_are_certificate_extensions_restricted"],
-            is_auto_include_alt_name=var["network_firewall_policy_decryption_profile_is_auto_include_alt_name"],
-            is_expired_certificate_blocked=var["network_firewall_policy_decryption_profile_is_expired_certificate_blocked"],
-            is_out_of_capacity_blocked=var["network_firewall_policy_decryption_profile_is_out_of_capacity_blocked"],
-            is_revocation_status_timeout_blocked=var["network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked"],
-            is_unknown_revocation_status_blocked=var["network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked"],
-            is_unsupported_cipher_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked"],
-            is_unsupported_version_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_version_blocked"],
-            is_untrusted_issuer_blocked=var["network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked"])
+        test_network_firewall_policy_decryption_profile = oci.network_firewall.NetworkFirewallPolicyDecryptionProfile("test_network_firewall_policy_decryption_profile",
+            name=network_firewall_policy_decryption_profile_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            type=network_firewall_policy_decryption_profile_type,
+            are_certificate_extensions_restricted=network_firewall_policy_decryption_profile_are_certificate_extensions_restricted,
+            is_auto_include_alt_name=network_firewall_policy_decryption_profile_is_auto_include_alt_name,
+            is_expired_certificate_blocked=network_firewall_policy_decryption_profile_is_expired_certificate_blocked,
+            is_out_of_capacity_blocked=network_firewall_policy_decryption_profile_is_out_of_capacity_blocked,
+            is_revocation_status_timeout_blocked=network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked,
+            is_unknown_revocation_status_blocked=network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked,
+            is_unsupported_cipher_blocked=network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked,
+            is_unsupported_version_blocked=network_firewall_policy_decryption_profile_is_unsupported_version_blocked,
+            is_untrusted_issuer_blocked=network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -531,18 +532,19 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_decryption_profile = oci.network_firewall.NetworkFirewallPolicyDecryptionProfile("testNetworkFirewallPolicyDecryptionProfile",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_decryption_profile_type"],
-            are_certificate_extensions_restricted=var["network_firewall_policy_decryption_profile_are_certificate_extensions_restricted"],
-            is_auto_include_alt_name=var["network_firewall_policy_decryption_profile_is_auto_include_alt_name"],
-            is_expired_certificate_blocked=var["network_firewall_policy_decryption_profile_is_expired_certificate_blocked"],
-            is_out_of_capacity_blocked=var["network_firewall_policy_decryption_profile_is_out_of_capacity_blocked"],
-            is_revocation_status_timeout_blocked=var["network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked"],
-            is_unknown_revocation_status_blocked=var["network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked"],
-            is_unsupported_cipher_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked"],
-            is_unsupported_version_blocked=var["network_firewall_policy_decryption_profile_is_unsupported_version_blocked"],
-            is_untrusted_issuer_blocked=var["network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked"])
+        test_network_firewall_policy_decryption_profile = oci.network_firewall.NetworkFirewallPolicyDecryptionProfile("test_network_firewall_policy_decryption_profile",
+            name=network_firewall_policy_decryption_profile_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            type=network_firewall_policy_decryption_profile_type,
+            are_certificate_extensions_restricted=network_firewall_policy_decryption_profile_are_certificate_extensions_restricted,
+            is_auto_include_alt_name=network_firewall_policy_decryption_profile_is_auto_include_alt_name,
+            is_expired_certificate_blocked=network_firewall_policy_decryption_profile_is_expired_certificate_blocked,
+            is_out_of_capacity_blocked=network_firewall_policy_decryption_profile_is_out_of_capacity_blocked,
+            is_revocation_status_timeout_blocked=network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked,
+            is_unknown_revocation_status_blocked=network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked,
+            is_unsupported_cipher_blocked=network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked,
+            is_unsupported_version_blocked=network_firewall_policy_decryption_profile_is_unsupported_version_blocked,
+            is_untrusted_issuer_blocked=network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked)
         ```
         <!--End PulumiCodeChooser -->
 

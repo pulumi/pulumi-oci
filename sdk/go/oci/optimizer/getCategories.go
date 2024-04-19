@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetCategories(ctx, &optimizer.GetCategoriesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: _var.Category_compartment_id_in_subtree,
-//				ChildTenancyIds:        _var.Category_child_tenancy_ids,
-//				IncludeOrganization:    pulumi.BoolRef(_var.Category_include_organization),
-//				Name:                   pulumi.StringRef(_var.Category_name),
-//				State:                  pulumi.StringRef(_var.Category_state),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: categoryCompartmentIdInSubtree,
+//				ChildTenancyIds:        categoryChildTenancyIds,
+//				IncludeOrganization:    pulumi.BoolRef(categoryIncludeOrganization),
+//				Name:                   pulumi.StringRef(categoryName),
+//				State:                  pulumi.StringRef(categoryState),
 //			}, nil)
 //			if err != nil {
 //				return err

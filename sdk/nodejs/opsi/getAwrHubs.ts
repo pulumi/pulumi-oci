@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubs = oci.Opsi.getAwrHubs({
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.awr_hub_display_name,
- *     id: _var.awr_hub_id,
- *     states: _var.awr_hub_state,
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
+ *     compartmentId: compartmentId,
+ *     displayName: awrHubDisplayName,
+ *     id: awrHubId,
+ *     states: awrHubState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetAwrHubsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubs = oci.Opsi.getAwrHubs({
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.awr_hub_display_name,
- *     id: _var.awr_hub_id,
- *     states: _var.awr_hub_state,
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
+ *     compartmentId: compartmentId,
+ *     displayName: awrHubDisplayName,
+ *     id: awrHubId,
+ *     states: awrHubState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

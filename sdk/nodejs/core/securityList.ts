@@ -33,37 +33,37 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityList = new oci.core.SecurityList("testSecurityList", {
- *     compartmentId: _var.compartment_id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ * const testSecurityList = new oci.core.SecurityList("test_security_list", {
+ *     compartmentId: compartmentId,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.security_list_display_name,
+ *     displayName: securityListDisplayName,
  *     egressSecurityRules: [{
- *         destination: _var.security_list_egress_security_rules_destination,
- *         protocol: _var.security_list_egress_security_rules_protocol,
- *         description: _var.security_list_egress_security_rules_description,
- *         destinationType: _var.security_list_egress_security_rules_destination_type,
+ *         destination: securityListEgressSecurityRulesDestination,
+ *         protocol: securityListEgressSecurityRulesProtocol,
+ *         description: securityListEgressSecurityRulesDescription,
+ *         destinationType: securityListEgressSecurityRulesDestinationType,
  *         icmpOptions: {
- *             type: _var.security_list_egress_security_rules_icmp_options_type,
- *             code: _var.security_list_egress_security_rules_icmp_options_code,
+ *             type: securityListEgressSecurityRulesIcmpOptionsType,
+ *             code: securityListEgressSecurityRulesIcmpOptionsCode,
  *         },
- *         stateless: _var.security_list_egress_security_rules_stateless,
+ *         stateless: securityListEgressSecurityRulesStateless,
  *         tcpOptions: {
- *             max: _var.security_list_egress_security_rules_tcp_options_destination_port_range_max,
- *             min: _var.security_list_egress_security_rules_tcp_options_destination_port_range_min,
+ *             max: securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMax,
+ *             min: securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMin,
  *             sourcePortRange: {
- *                 max: _var.security_list_egress_security_rules_tcp_options_source_port_range_max,
- *                 min: _var.security_list_egress_security_rules_tcp_options_source_port_range_min,
+ *                 max: securityListEgressSecurityRulesTcpOptionsSourcePortRangeMax,
+ *                 min: securityListEgressSecurityRulesTcpOptionsSourcePortRangeMin,
  *             },
  *         },
  *         udpOptions: {
- *             max: _var.security_list_egress_security_rules_udp_options_destination_port_range_max,
- *             min: _var.security_list_egress_security_rules_udp_options_destination_port_range_min,
+ *             max: securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMax,
+ *             min: securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMin,
  *             sourcePortRange: {
- *                 max: _var.security_list_egress_security_rules_udp_options_source_port_range_max,
- *                 min: _var.security_list_egress_security_rules_udp_options_source_port_range_min,
+ *                 max: securityListEgressSecurityRulesUdpOptionsSourcePortRangeMax,
+ *                 min: securityListEgressSecurityRulesUdpOptionsSourcePortRangeMin,
  *             },
  *         },
  *     }],
@@ -71,29 +71,29 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     ingressSecurityRules: [{
- *         protocol: _var.security_list_ingress_security_rules_protocol,
- *         source: _var.security_list_ingress_security_rules_source,
- *         description: _var.security_list_ingress_security_rules_description,
+ *         protocol: securityListIngressSecurityRulesProtocol,
+ *         source: securityListIngressSecurityRulesSource,
+ *         description: securityListIngressSecurityRulesDescription,
  *         icmpOptions: {
- *             type: _var.security_list_ingress_security_rules_icmp_options_type,
- *             code: _var.security_list_ingress_security_rules_icmp_options_code,
+ *             type: securityListIngressSecurityRulesIcmpOptionsType,
+ *             code: securityListIngressSecurityRulesIcmpOptionsCode,
  *         },
- *         sourceType: _var.security_list_ingress_security_rules_source_type,
- *         stateless: _var.security_list_ingress_security_rules_stateless,
+ *         sourceType: securityListIngressSecurityRulesSourceType,
+ *         stateless: securityListIngressSecurityRulesStateless,
  *         tcpOptions: {
- *             max: _var.security_list_ingress_security_rules_tcp_options_destination_port_range_max,
- *             min: _var.security_list_ingress_security_rules_tcp_options_destination_port_range_min,
+ *             max: securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMax,
+ *             min: securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMin,
  *             sourcePortRange: {
- *                 max: _var.security_list_ingress_security_rules_tcp_options_source_port_range_max,
- *                 min: _var.security_list_ingress_security_rules_tcp_options_source_port_range_min,
+ *                 max: securityListIngressSecurityRulesTcpOptionsSourcePortRangeMax,
+ *                 min: securityListIngressSecurityRulesTcpOptionsSourcePortRangeMin,
  *             },
  *         },
  *         udpOptions: {
- *             max: _var.security_list_ingress_security_rules_udp_options_destination_port_range_max,
- *             min: _var.security_list_ingress_security_rules_udp_options_destination_port_range_min,
+ *             max: securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMax,
+ *             min: securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMin,
  *             sourcePortRange: {
- *                 max: _var.security_list_ingress_security_rules_udp_options_source_port_range_max,
- *                 min: _var.security_list_ingress_security_rules_udp_options_source_port_range_min,
+ *                 max: securityListIngressSecurityRulesUdpOptionsSourcePortRangeMax,
+ *                 min: securityListIngressSecurityRulesUdpOptionsSourcePortRangeMin,
  *             },
  *         },
  *     }],

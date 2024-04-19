@@ -46,19 +46,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFileSystem = new oci.filestorage.FileSystem("testFileSystem", {
- *     availabilityDomain: _var.file_system_availability_domain,
- *     compartmentId: _var.compartment_id,
+ * const testFileSystem = new oci.filestorage.FileSystem("test_file_system", {
+ *     availabilityDomain: fileSystemAvailabilityDomain,
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.file_system_display_name,
- *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
+ *     displayName: fileSystemDisplayName,
+ *     filesystemSnapshotPolicyId: testFilesystemSnapshotPolicy.id,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     kmsKeyId: oci_kms_key.test_key.id,
- *     sourceSnapshotId: oci_file_storage_snapshot.test_snapshot.id,
+ *     kmsKeyId: testKey.id,
+ *     sourceSnapshotId: testSnapshot.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -206,9 +206,9 @@ class UserGroupMembership(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_user_group_membership = oci.identity.UserGroupMembership("testUserGroupMembership",
-            group_id=oci_identity_group["test_group"]["id"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_user_group_membership = oci.identity.UserGroupMembership("test_user_group_membership",
+            group_id=test_group["id"],
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -248,9 +248,9 @@ class UserGroupMembership(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_user_group_membership = oci.identity.UserGroupMembership("testUserGroupMembership",
-            group_id=oci_identity_group["test_group"]["id"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_user_group_membership = oci.identity.UserGroupMembership("test_user_group_membership",
+            group_id=test_group["id"],
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 

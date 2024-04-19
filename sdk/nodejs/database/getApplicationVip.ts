@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApplicationVip = oci.Database.getApplicationVip({
- *     applicationVipId: oci_database_application_vip.test_application_vip.id,
+ *     applicationVipId: testApplicationVipOciDatabaseApplicationVip.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -104,7 +104,7 @@ export interface GetApplicationVipResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApplicationVip = oci.Database.getApplicationVip({
- *     applicationVipId: oci_database_application_vip.test_application_vip.id,
+ *     applicationVipId: testApplicationVipOciDatabaseApplicationVip.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

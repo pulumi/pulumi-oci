@@ -35,13 +35,13 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testMonitoredResourceTypes = Oci.StackMonitoring.GetMonitoredResourceTypes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ExcludeFields = @var.Monitored_resource_type_exclude_fields,
-        ///         Fields = @var.Monitored_resource_type_fields,
-        ///         IsExcludeSystemTypes = @var.Monitored_resource_type_is_exclude_system_types,
-        ///         MetricNamespace = @var.Monitored_resource_type_metric_namespace,
-        ///         Name = @var.Monitored_resource_type_name,
-        ///         Status = @var.Monitored_resource_type_status,
+        ///         CompartmentId = compartmentId,
+        ///         ExcludeFields = monitoredResourceTypeExcludeFields,
+        ///         Fields = monitoredResourceTypeFields,
+        ///         IsExcludeSystemTypes = monitoredResourceTypeIsExcludeSystemTypes,
+        ///         MetricNamespace = monitoredResourceTypeMetricNamespace,
+        ///         Name = monitoredResourceTypeName,
+        ///         Status = monitoredResourceTypeStatus,
         ///     });
         /// 
         /// });
@@ -75,13 +75,13 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testMonitoredResourceTypes = Oci.StackMonitoring.GetMonitoredResourceTypes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ExcludeFields = @var.Monitored_resource_type_exclude_fields,
-        ///         Fields = @var.Monitored_resource_type_fields,
-        ///         IsExcludeSystemTypes = @var.Monitored_resource_type_is_exclude_system_types,
-        ///         MetricNamespace = @var.Monitored_resource_type_metric_namespace,
-        ///         Name = @var.Monitored_resource_type_name,
-        ///         Status = @var.Monitored_resource_type_status,
+        ///         CompartmentId = compartmentId,
+        ///         ExcludeFields = monitoredResourceTypeExcludeFields,
+        ///         Fields = monitoredResourceTypeFields,
+        ///         IsExcludeSystemTypes = monitoredResourceTypeIsExcludeSystemTypes,
+        ///         MetricNamespace = monitoredResourceTypeMetricNamespace,
+        ///         Name = monitoredResourceTypeName,
+        ///         Status = monitoredResourceTypeStatus,
         ///     });
         /// 
         /// });

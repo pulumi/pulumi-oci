@@ -180,13 +180,13 @@ def get_data_sources(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=var["compartment_id"],
-        access_level=var["data_source_access_level"],
-        compartment_id_in_subtree=var["data_source_compartment_id_in_subtree"],
-        data_source_feed_provider=var["data_source_data_source_feed_provider"],
-        display_name=var["data_source_display_name"],
-        logging_query_type=var["data_source_logging_query_type"],
-        state=var["data_source_state"])
+    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=compartment_id,
+        access_level=data_source_access_level,
+        compartment_id_in_subtree=data_source_compartment_id_in_subtree,
+        data_source_feed_provider=data_source_data_source_feed_provider,
+        display_name=data_source_display_name,
+        logging_query_type=data_source_logging_query_type,
+        state=data_source_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -260,13 +260,13 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=var["compartment_id"],
-        access_level=var["data_source_access_level"],
-        compartment_id_in_subtree=var["data_source_compartment_id_in_subtree"],
-        data_source_feed_provider=var["data_source_data_source_feed_provider"],
-        display_name=var["data_source_display_name"],
-        logging_query_type=var["data_source_logging_query_type"],
-        state=var["data_source_state"])
+    test_data_sources = oci.CloudGuard.get_data_sources(compartment_id=compartment_id,
+        access_level=data_source_access_level,
+        compartment_id_in_subtree=data_source_compartment_id_in_subtree,
+        data_source_feed_provider=data_source_data_source_feed_provider,
+        display_name=data_source_display_name,
+        logging_query_type=data_source_logging_query_type,
+        state=data_source_state)
     ```
     <!--End PulumiCodeChooser -->
 

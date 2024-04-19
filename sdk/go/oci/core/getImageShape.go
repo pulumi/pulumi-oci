@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetImageShape(ctx, &core.GetImageShapeArgs{
-//				ImageId:   oci_core_image.Test_image.Id,
-//				ShapeName: oci_core_shape.Test_shape.Name,
+//				ImageId:   testImage.Id,
+//				ShapeName: testShape.Name,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -45,11 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRepositoryRef = new RepositoryRef(&#34;testRepositoryRef&#34;, RepositoryRefArgs.builder()        
- *             .refName(var_.repository_ref_ref_name())
- *             .refType(var_.repository_ref_ref_type())
- *             .repositoryId(oci_devops_repository.test_repository().id())
- *             .commitId(oci_devops_commit.test_commit().id())
- *             .objectId(oci_objectstorage_object.test_object().id())
+ *             .refName(repositoryRefRefName)
+ *             .refType(repositoryRefRefType)
+ *             .repositoryId(testRepository.id())
+ *             .commitId(testCommit.id())
+ *             .objectId(testObject.id())
  *             .build());
  * 
  *     }

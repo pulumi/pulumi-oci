@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DatabaseTools
         /// {
         ///     var testDatabaseToolsPrivateEndpoints = Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Database_tools_private_endpoint_display_name,
-        ///         EndpointServiceId = oci_core_service.Test_service.Id,
-        ///         State = @var.Database_tools_private_endpoint_state,
-        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseToolsPrivateEndpointDisplayName,
+        ///         EndpointServiceId = testService.Id,
+        ///         State = databaseToolsPrivateEndpointState,
+        ///         SubnetId = testSubnet.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DatabaseTools
         /// {
         ///     var testDatabaseToolsPrivateEndpoints = Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Database_tools_private_endpoint_display_name,
-        ///         EndpointServiceId = oci_core_service.Test_service.Id,
-        ///         State = @var.Database_tools_private_endpoint_state,
-        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseToolsPrivateEndpointDisplayName,
+        ///         EndpointServiceId = testService.Id,
+        ///         State = databaseToolsPrivateEndpointState,
+        ///         SubnetId = testSubnet.Id,
         ///     });
         /// 
         /// });

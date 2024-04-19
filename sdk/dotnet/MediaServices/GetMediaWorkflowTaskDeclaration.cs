@@ -30,10 +30,10 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testMediaWorkflowTaskDeclaration = Oci.MediaServices.GetMediaWorkflowTaskDeclaration.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IsCurrent = @var.Media_workflow_task_declaration_is_current,
-        ///         Name = @var.Media_workflow_task_declaration_name,
-        ///         Version = @var.Media_workflow_task_declaration_version,
+        ///         CompartmentId = compartmentId,
+        ///         IsCurrent = mediaWorkflowTaskDeclarationIsCurrent,
+        ///         Name = mediaWorkflowTaskDeclarationName,
+        ///         Version = mediaWorkflowTaskDeclarationVersion,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testMediaWorkflowTaskDeclaration = Oci.MediaServices.GetMediaWorkflowTaskDeclaration.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IsCurrent = @var.Media_workflow_task_declaration_is_current,
-        ///         Name = @var.Media_workflow_task_declaration_name,
-        ///         Version = @var.Media_workflow_task_declaration_version,
+        ///         CompartmentId = compartmentId,
+        ///         IsCurrent = mediaWorkflowTaskDeclarationIsCurrent,
+        ///         Name = mediaWorkflowTaskDeclarationName,
+        ///         Version = mediaWorkflowTaskDeclarationVersion,
         ///     });
         /// 
         /// });

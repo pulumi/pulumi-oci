@@ -31,13 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := BigDataService.NewBdsInstanceMetastoreConfig(ctx, "testBdsInstanceMetastoreConfig", &BigDataService.BdsInstanceMetastoreConfigArgs{
-//				BdsApiKeyId:          pulumi.Any(oci_identity_api_key.Test_api_key.Id),
-//				BdsApiKeyPassphrase:  pulumi.Any(_var.Bds_instance_metastore_config_bds_api_key_passphrase),
-//				BdsInstanceId:        pulumi.Any(oci_bds_bds_instance.Test_bds_instance.Id),
-//				ClusterAdminPassword: pulumi.Any(_var.Bds_instance_metastore_config_cluster_admin_password),
-//				MetastoreId:          pulumi.Any(oci_datacatalog_metastore.Test_metastore.Id),
-//				DisplayName:          pulumi.Any(_var.Bds_instance_metastore_config_display_name),
+//			_, err := BigDataService.NewBdsInstanceMetastoreConfig(ctx, "test_bds_instance_metastore_config", &BigDataService.BdsInstanceMetastoreConfigArgs{
+//				BdsApiKeyId:          pulumi.Any(testApiKey.Id),
+//				BdsApiKeyPassphrase:  pulumi.Any(bdsInstanceMetastoreConfigBdsApiKeyPassphrase),
+//				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
+//				ClusterAdminPassword: pulumi.Any(bdsInstanceMetastoreConfigClusterAdminPassword),
+//				MetastoreId:          pulumi.Any(testMetastore.Id),
+//				DisplayName:          pulumi.Any(bdsInstanceMetastoreConfigDisplayName),
 //			})
 //			if err != nil {
 //				return err

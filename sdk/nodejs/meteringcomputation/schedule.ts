@@ -18,44 +18,45 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedule = new oci.meteringcomputation.Schedule("testSchedule", {
- *     compartmentId: _var.compartment_id,
+ * const testSchedule = new oci.meteringcomputation.Schedule("test_schedule", {
+ *     compartmentId: compartmentId,
+ *     name: scheduleName,
  *     resultLocation: {
- *         bucket: _var.schedule_result_location_bucket,
- *         locationType: _var.schedule_result_location_location_type,
- *         namespace: _var.schedule_result_location_namespace,
- *         region: _var.schedule_result_location_region,
+ *         bucket: scheduleResultLocationBucket,
+ *         locationType: scheduleResultLocationLocationType,
+ *         namespace: scheduleResultLocationNamespace,
+ *         region: scheduleResultLocationRegion,
  *     },
- *     scheduleRecurrences: _var.schedule_schedule_recurrences,
- *     timeScheduled: _var.schedule_time_scheduled,
+ *     scheduleRecurrences: scheduleScheduleRecurrences,
+ *     timeScheduled: scheduleTimeScheduled,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.schedule_description,
+ *     description: scheduleDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     outputFileFormat: _var.schedule_output_file_format,
+ *     outputFileFormat: scheduleOutputFileFormat,
  *     queryProperties: {
  *         dateRange: {
- *             dateRangeType: _var.schedule_query_properties_date_range_date_range_type,
- *             dynamicDateRangeType: _var.schedule_query_properties_date_range_dynamic_date_range_type,
- *             timeUsageEnded: _var.schedule_query_properties_date_range_time_usage_ended,
- *             timeUsageStarted: _var.schedule_query_properties_date_range_time_usage_started,
+ *             dateRangeType: scheduleQueryPropertiesDateRangeDateRangeType,
+ *             dynamicDateRangeType: scheduleQueryPropertiesDateRangeDynamicDateRangeType,
+ *             timeUsageEnded: scheduleQueryPropertiesDateRangeTimeUsageEnded,
+ *             timeUsageStarted: scheduleQueryPropertiesDateRangeTimeUsageStarted,
  *         },
- *         granularity: _var.schedule_query_properties_granularity,
- *         compartmentDepth: _var.schedule_query_properties_compartment_depth,
- *         filter: _var.schedule_query_properties_filter,
- *         groupBies: _var.schedule_query_properties_group_by,
+ *         granularity: scheduleQueryPropertiesGranularity,
+ *         compartmentDepth: scheduleQueryPropertiesCompartmentDepth,
+ *         filter: scheduleQueryPropertiesFilter,
+ *         groupBies: scheduleQueryPropertiesGroupBy,
  *         groupByTags: [{
- *             key: _var.schedule_query_properties_group_by_tag_key,
- *             namespace: _var.schedule_query_properties_group_by_tag_namespace,
- *             value: _var.schedule_query_properties_group_by_tag_value,
+ *             key: scheduleQueryPropertiesGroupByTagKey,
+ *             namespace: scheduleQueryPropertiesGroupByTagNamespace,
+ *             value: scheduleQueryPropertiesGroupByTagValue,
  *         }],
- *         isAggregateByTime: _var.schedule_query_properties_is_aggregate_by_time,
- *         queryType: _var.schedule_query_properties_query_type,
+ *         isAggregateByTime: scheduleQueryPropertiesIsAggregateByTime,
+ *         queryType: scheduleQueryPropertiesQueryType,
  *     },
- *     savedReportId: oci_data_safe_report.test_report.id,
+ *     savedReportId: testReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

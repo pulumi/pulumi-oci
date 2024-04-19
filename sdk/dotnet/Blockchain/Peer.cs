@@ -25,16 +25,16 @@ namespace Pulumi.Oci.Blockchain
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPeer = new Oci.Blockchain.Peer("testPeer", new()
+    ///     var testPeer = new Oci.Blockchain.Peer("test_peer", new()
     ///     {
-    ///         Ad = @var.Peer_ad,
-    ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+    ///         Ad = peerAd,
+    ///         BlockchainPlatformId = testBlockchainPlatform.Id,
     ///         OcpuAllocationParam = new Oci.Blockchain.Inputs.PeerOcpuAllocationParamArgs
     ///         {
-    ///             OcpuAllocationNumber = @var.Peer_ocpu_allocation_param_ocpu_allocation_number,
+    ///             OcpuAllocationNumber = peerOcpuAllocationParamOcpuAllocationNumber,
     ///         },
-    ///         Role = @var.Peer_role,
-    ///         Alias = @var.Peer_alias,
+    ///         Role = peerRole,
+    ///         Alias = peerAlias,
     ///     });
     /// 
     /// });

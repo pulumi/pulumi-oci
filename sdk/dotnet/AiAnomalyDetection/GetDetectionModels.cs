@@ -30,10 +30,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {
         ///     var testModels = Oci.AiAnomalyDetection.GetDetectionModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Model_display_name,
-        ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
-        ///         State = @var.Model_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = modelDisplayName,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {
         ///     var testModels = Oci.AiAnomalyDetection.GetDetectionModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Model_display_name,
-        ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
-        ///         State = @var.Model_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = modelDisplayName,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelState,
         ///     });
         /// 
         /// });

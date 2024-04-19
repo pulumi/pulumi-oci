@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModel = oci.DataScience.getModel({
- *     modelId: oci_datascience_model.test_model.id,
+ *     modelId: testModelOciDatascienceModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -123,7 +123,7 @@ export interface GetModelResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModel = oci.DataScience.getModel({
- *     modelId: oci_datascience_model.test_model.id,
+ *     modelId: testModelOciDatascienceModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

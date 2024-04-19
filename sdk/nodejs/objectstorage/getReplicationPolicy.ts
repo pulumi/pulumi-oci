@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationPolicy = oci.ObjectStorage.getReplicationPolicy({
- *     bucket: _var.replication_policy_bucket,
- *     namespace: _var.replication_policy_namespace,
- *     replicationId: oci_objectstorage_replication.test_replication.id,
+ *     bucket: replicationPolicyBucket,
+ *     namespace: replicationPolicyNamespace,
+ *     replicationId: testReplication.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,9 +109,9 @@ export interface GetReplicationPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationPolicy = oci.ObjectStorage.getReplicationPolicy({
- *     bucket: _var.replication_policy_bucket,
- *     namespace: _var.replication_policy_namespace,
- *     replicationId: oci_objectstorage_replication.test_replication.id,
+ *     bucket: replicationPolicyBucket,
+ *     namespace: replicationPolicyNamespace,
+ *     replicationId: testReplication.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

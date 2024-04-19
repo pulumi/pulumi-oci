@@ -44,10 +44,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCloudGuardConfiguration = new CloudGuardConfiguration(&#34;testCloudGuardConfiguration&#34;, CloudGuardConfigurationArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .reportingRegion(var_.cloud_guard_configuration_reporting_region())
- *             .status(var_.cloud_guard_configuration_status())
- *             .selfManageResources(var_.cloud_guard_configuration_self_manage_resources())
+ *             .compartmentId(compartmentId)
+ *             .reportingRegion(cloudGuardConfigurationReportingRegion)
+ *             .status(cloudGuardConfigurationStatus)
+ *             .selfManageResources(cloudGuardConfigurationSelfManageResources)
  *             .build());
  * 
  *     }

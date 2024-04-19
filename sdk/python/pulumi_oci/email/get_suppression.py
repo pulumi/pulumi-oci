@@ -164,7 +164,7 @@ def get_suppression(suppression_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_suppression = oci.Email.get_suppression(suppression_id=oci_email_suppression["test_suppression"]["id"])
+    test_suppression = oci.Email.get_suppression(suppression_id=test_suppression_oci_email_suppression["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -205,7 +205,7 @@ def get_suppression_output(suppression_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_suppression = oci.Email.get_suppression(suppression_id=oci_email_suppression["test_suppression"]["id"])
+    test_suppression = oci.Email.get_suppression(suppression_id=test_suppression_oci_email_suppression["id"])
     ```
     <!--End PulumiCodeChooser -->
 

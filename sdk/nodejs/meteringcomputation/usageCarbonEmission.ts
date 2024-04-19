@@ -18,19 +18,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsageCarbonEmission = new oci.meteringcomputation.UsageCarbonEmission("testUsageCarbonEmission", {
- *     tenantId: oci_metering_computation_tenant.test_tenant.id,
- *     timeUsageEnded: _var.usage_carbon_emission_time_usage_ended,
- *     timeUsageStarted: _var.usage_carbon_emission_time_usage_started,
- *     compartmentDepth: _var.usage_carbon_emission_compartment_depth,
- *     groupBies: _var.usage_carbon_emission_group_by,
+ * const testUsageCarbonEmission = new oci.meteringcomputation.UsageCarbonEmission("test_usage_carbon_emission", {
+ *     tenantId: testTenant.id,
+ *     timeUsageEnded: usageCarbonEmissionTimeUsageEnded,
+ *     timeUsageStarted: usageCarbonEmissionTimeUsageStarted,
+ *     compartmentDepth: usageCarbonEmissionCompartmentDepth,
+ *     groupBies: usageCarbonEmissionGroupBy,
  *     groupByTags: [{
- *         key: _var.usage_carbon_emission_group_by_tag_key,
- *         namespace: _var.usage_carbon_emission_group_by_tag_namespace,
- *         value: _var.usage_carbon_emission_group_by_tag_value,
+ *         key: usageCarbonEmissionGroupByTagKey,
+ *         namespace: usageCarbonEmissionGroupByTagNamespace,
+ *         value: usageCarbonEmissionGroupByTagValue,
  *     }],
- *     isAggregateByTime: _var.usage_carbon_emission_is_aggregate_by_time,
- *     usageCarbonEmissionFilter: _var.usage_carbon_emission_usage_carbon_emission_filter,
+ *     isAggregateByTime: usageCarbonEmissionIsAggregateByTime,
+ *     usageCarbonEmissionFilter: usageCarbonEmissionUsageCarbonEmissionFilter,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

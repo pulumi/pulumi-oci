@@ -122,9 +122,9 @@ def get_dynamic_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_groups = oci.Identity.get_dynamic_groups(compartment_id=var["tenancy_ocid"],
-        name=var["dynamic_group_name"],
-        state=var["dynamic_group_state"])
+    test_dynamic_groups = oci.Identity.get_dynamic_groups(compartment_id=tenancy_ocid,
+        name=dynamic_group_name,
+        state=dynamic_group_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -170,9 +170,9 @@ def get_dynamic_groups_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_groups = oci.Identity.get_dynamic_groups(compartment_id=var["tenancy_ocid"],
-        name=var["dynamic_group_name"],
-        state=var["dynamic_group_state"])
+    test_dynamic_groups = oci.Identity.get_dynamic_groups(compartment_id=tenancy_ocid,
+        name=dynamic_group_name,
+        state=dynamic_group_state)
     ```
     <!--End PulumiCodeChooser -->
 

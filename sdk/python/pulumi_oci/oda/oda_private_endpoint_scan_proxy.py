@@ -226,15 +226,15 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oda_private_endpoint_scan_proxy = oci.oda.OdaPrivateEndpointScanProxy("testOdaPrivateEndpointScanProxy",
-            oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-            protocol=var["oda_private_endpoint_scan_proxy_protocol"],
+        test_oda_private_endpoint_scan_proxy = oci.oda.OdaPrivateEndpointScanProxy("test_oda_private_endpoint_scan_proxy",
+            oda_private_endpoint_id=test_oda_private_endpoint["id"],
+            protocol=oda_private_endpoint_scan_proxy_protocol,
             scan_listener_infos=[oci.oda.OdaPrivateEndpointScanProxyScanListenerInfoArgs(
-                scan_listener_fqdn=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn"],
-                scan_listener_ip=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip"],
-                scan_listener_port=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port"],
+                scan_listener_fqdn=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
+                scan_listener_ip=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
+                scan_listener_port=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
             )],
-            scan_listener_type=var["oda_private_endpoint_scan_proxy_scan_listener_type"])
+            scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -278,15 +278,15 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oda_private_endpoint_scan_proxy = oci.oda.OdaPrivateEndpointScanProxy("testOdaPrivateEndpointScanProxy",
-            oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
-            protocol=var["oda_private_endpoint_scan_proxy_protocol"],
+        test_oda_private_endpoint_scan_proxy = oci.oda.OdaPrivateEndpointScanProxy("test_oda_private_endpoint_scan_proxy",
+            oda_private_endpoint_id=test_oda_private_endpoint["id"],
+            protocol=oda_private_endpoint_scan_proxy_protocol,
             scan_listener_infos=[oci.oda.OdaPrivateEndpointScanProxyScanListenerInfoArgs(
-                scan_listener_fqdn=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn"],
-                scan_listener_ip=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip"],
-                scan_listener_port=var["oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port"],
+                scan_listener_fqdn=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
+                scan_listener_ip=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
+                scan_listener_port=oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
             )],
-            scan_listener_type=var["oda_private_endpoint_scan_proxy_scan_listener_type"])
+            scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```
         <!--End PulumiCodeChooser -->
 

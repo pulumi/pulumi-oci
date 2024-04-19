@@ -48,15 +48,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOperationsInsightsPrivateEndpoint = new OperationsInsightsPrivateEndpoint(&#34;testOperationsInsightsPrivateEndpoint&#34;, OperationsInsightsPrivateEndpointArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.operations_insights_private_endpoint_display_name())
- *             .isUsedForRacDbs(var_.operations_insights_private_endpoint_is_used_for_rac_dbs())
- *             .subnetId(oci_core_subnet.test_subnet().id())
- *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .compartmentId(compartmentId)
+ *             .displayName(operationsInsightsPrivateEndpointDisplayName)
+ *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)
+ *             .subnetId(testSubnet.id())
+ *             .vcnId(testVcn.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.operations_insights_private_endpoint_description())
+ *             .description(operationsInsightsPrivateEndpointDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .nsgIds(var_.operations_insights_private_endpoint_nsg_ids())
+ *             .nsgIds(operationsInsightsPrivateEndpointNsgIds)
  *             .build());
  * 
  *     }

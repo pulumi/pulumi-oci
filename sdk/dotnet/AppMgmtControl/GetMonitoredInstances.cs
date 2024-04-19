@@ -30,8 +30,8 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {
         ///     var testMonitoredInstances = Oci.AppMgmtControl.GetMonitoredInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Monitored_instance_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = monitoredInstanceDisplayName,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {
         ///     var testMonitoredInstances = Oci.AppMgmtControl.GetMonitoredInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Monitored_instance_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = monitoredInstanceDisplayName,
         ///     });
         /// 
         /// });

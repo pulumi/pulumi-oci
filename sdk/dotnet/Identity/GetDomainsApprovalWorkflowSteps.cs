@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflowSteps = Oci.Identity.GetDomainsApprovalWorkflowSteps.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ApprovalWorkflowStepCount = @var.Approval_workflow_step_approval_workflow_step_count,
-        ///         ApprovalWorkflowStepFilter = @var.Approval_workflow_step_approval_workflow_step_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApprovalWorkflowStepCount = approvalWorkflowStepApprovalWorkflowStepCount,
+        ///         ApprovalWorkflowStepFilter = approvalWorkflowStepApprovalWorkflowStepFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_step_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_step_resource_type_schema_version,
-        ///         StartIndex = @var.Approval_workflow_step_start_index,
+        ///         Authorization = approvalWorkflowStepAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowStepResourceTypeSchemaVersion,
+        ///         StartIndex = approvalWorkflowStepStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflowSteps = Oci.Identity.GetDomainsApprovalWorkflowSteps.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ApprovalWorkflowStepCount = @var.Approval_workflow_step_approval_workflow_step_count,
-        ///         ApprovalWorkflowStepFilter = @var.Approval_workflow_step_approval_workflow_step_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApprovalWorkflowStepCount = approvalWorkflowStepApprovalWorkflowStepCount,
+        ///         ApprovalWorkflowStepFilter = approvalWorkflowStepApprovalWorkflowStepFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_step_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_step_resource_type_schema_version,
-        ///         StartIndex = @var.Approval_workflow_step_start_index,
+        ///         Authorization = approvalWorkflowStepAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowStepResourceTypeSchemaVersion,
+        ///         StartIndex = approvalWorkflowStepStartIndex,
         ///     });
         /// 
         /// });

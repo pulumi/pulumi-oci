@@ -187,7 +187,7 @@ def get_tsig_key(tsig_key_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"])
+    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=test_tsig_key_oci_dns_tsig_key["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -229,7 +229,7 @@ def get_tsig_key_output(tsig_key_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"])
+    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=test_tsig_key_oci_dns_tsig_key["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -49,13 +49,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOneoffPatch = new OneoffPatch(&#34;testOneoffPatch&#34;, OneoffPatchArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dbVersion(var_.oneoff_patch_db_version())
- *             .displayName(var_.oneoff_patch_display_name())
- *             .releaseUpdate(var_.oneoff_patch_release_update())
- *             .definedTags(var_.oneoff_patch_defined_tags())
+ *             .compartmentId(compartmentId)
+ *             .dbVersion(oneoffPatchDbVersion)
+ *             .displayName(oneoffPatchDisplayName)
+ *             .releaseUpdate(oneoffPatchReleaseUpdate)
+ *             .definedTags(oneoffPatchDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .oneOffPatches(var_.oneoff_patch_one_off_patches())
+ *             .oneOffPatches(oneoffPatchOneOffPatches)
  *             .build());
  * 
  *     }

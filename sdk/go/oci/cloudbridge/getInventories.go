@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetInventories(ctx, &cloudbridge.GetInventoriesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				State:         pulumi.StringRef(_var.Inventory_state),
+//				CompartmentId: compartmentId,
+//				State:         pulumi.StringRef(inventoryState),
 //			}, nil)
 //			if err != nil {
 //				return err

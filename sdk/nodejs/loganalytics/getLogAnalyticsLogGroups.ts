@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsLogGroups = oci.LogAnalytics.getLogAnalyticsLogGroups({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.log_analytics_log_group_namespace,
- *     displayName: _var.log_analytics_log_group_display_name,
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsLogGroupNamespace,
+ *     displayName: logAnalyticsLogGroupDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetLogAnalyticsLogGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsLogGroups = oci.LogAnalytics.getLogAnalyticsLogGroups({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.log_analytics_log_group_namespace,
- *     displayName: _var.log_analytics_log_group_display_name,
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsLogGroupNamespace,
+ *     displayName: logAnalyticsLogGroupDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

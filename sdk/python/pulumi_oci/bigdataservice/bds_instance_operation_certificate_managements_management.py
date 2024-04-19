@@ -322,19 +322,19 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
         import pulumi
         import pulumi_oci as oci
 
-        test_bds_instance_operation_certificate_managements_management = oci.big_data_service.BdsInstanceOperationCertificateManagementsManagement("testBdsInstanceOperationCertificateManagementsManagement",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["bds_instance_operation_certificate_managements_management_cluster_admin_password"],
-            services=var["bds_instance_operation_certificate_managements_management_services"],
-            enable_operation_certificate_management=var["enable_operation_certificate_management"],
-            renew_operation_certificate_management=var["renew_operation_certificate_management"],
+        test_bds_instance_operation_certificate_managements_management = oci.big_data_service.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management",
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
+            services=bds_instance_operation_certificate_managements_management_services,
+            enable_operation_certificate_management=enable_operation_certificate_management,
+            renew_operation_certificate_management=renew_operation_certificate_management,
             host_cert_details=[oci.big_data_service.BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs(
-                certificate=var["bds_instance_operation_certificate_managements_management_host_cert_details_certificate"],
-                host_name=var["bds_instance_operation_certificate_managements_management_host_cert_details_host_name"],
-                private_key=var["bds_instance_operation_certificate_managements_management_host_cert_details_private_key"],
+                certificate=bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
+                host_name=bds_instance_operation_certificate_managements_management_host_cert_details_host_name,
+                private_key=bds_instance_operation_certificate_managements_management_host_cert_details_private_key,
             )],
-            root_certificate=var["bds_instance_operation_certificate_managements_management_root_certificate"],
-            server_key_password=var["bds_instance_operation_certificate_managements_management_server_key_password"])
+            root_certificate=bds_instance_operation_certificate_managements_management_root_certificate,
+            server_key_password=bds_instance_operation_certificate_managements_management_server_key_password)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -371,19 +371,19 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
         import pulumi
         import pulumi_oci as oci
 
-        test_bds_instance_operation_certificate_managements_management = oci.big_data_service.BdsInstanceOperationCertificateManagementsManagement("testBdsInstanceOperationCertificateManagementsManagement",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["bds_instance_operation_certificate_managements_management_cluster_admin_password"],
-            services=var["bds_instance_operation_certificate_managements_management_services"],
-            enable_operation_certificate_management=var["enable_operation_certificate_management"],
-            renew_operation_certificate_management=var["renew_operation_certificate_management"],
+        test_bds_instance_operation_certificate_managements_management = oci.big_data_service.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management",
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
+            services=bds_instance_operation_certificate_managements_management_services,
+            enable_operation_certificate_management=enable_operation_certificate_management,
+            renew_operation_certificate_management=renew_operation_certificate_management,
             host_cert_details=[oci.big_data_service.BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs(
-                certificate=var["bds_instance_operation_certificate_managements_management_host_cert_details_certificate"],
-                host_name=var["bds_instance_operation_certificate_managements_management_host_cert_details_host_name"],
-                private_key=var["bds_instance_operation_certificate_managements_management_host_cert_details_private_key"],
+                certificate=bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
+                host_name=bds_instance_operation_certificate_managements_management_host_cert_details_host_name,
+                private_key=bds_instance_operation_certificate_managements_management_host_cert_details_private_key,
             )],
-            root_certificate=var["bds_instance_operation_certificate_managements_management_root_certificate"],
-            server_key_password=var["bds_instance_operation_certificate_managements_management_server_key_password"])
+            root_certificate=bds_instance_operation_certificate_managements_management_root_certificate,
+            server_key_password=bds_instance_operation_certificate_managements_management_server_key_password)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkAddressList = oci.Waf.getNetworkAddressList({
- *     networkAddressListId: oci_waf_network_address_list.test_network_address_list.id,
+ *     networkAddressListId: testNetworkAddressListOciWafNetworkAddressList.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetNetworkAddressListResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkAddressList = oci.Waf.getNetworkAddressList({
- *     networkAddressListId: oci_waf_network_address_list.test_network_address_list.id,
+ *     networkAddressListId: testNetworkAddressListOciWafNetworkAddressList.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataGuardAssociation = oci.Database.getDataGuardAssociation({
- *     dataGuardAssociationId: oci_database_data_guard_association.test_data_guard_association.id,
- *     databaseId: oci_database_database.test_database.id,
+ *     dataGuardAssociationId: testDataGuardAssociationOciDatabaseDataGuardAssociation.id,
+ *     databaseId: testDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -158,8 +158,8 @@ export interface GetDataGuardAssociationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataGuardAssociation = oci.Database.getDataGuardAssociation({
- *     dataGuardAssociationId: oci_database_data_guard_association.test_data_guard_association.id,
- *     databaseId: oci_database_database.test_database.id,
+ *     dataGuardAssociationId: testDataGuardAssociationOciDatabaseDataGuardAssociation.id,
+ *     databaseId: testDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,8 +30,8 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataSourceEvents = Oci.CloudGuard.GetDataSourceEvents.Invoke(new()
         ///     {
-        ///         DataSourceId = oci_cloud_guard_data_source.Test_data_source.Id,
-        ///         Region = @var.Data_source_event_region,
+        ///         DataSourceId = testDataSource.Id,
+        ///         Region = dataSourceEventRegion,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataSourceEvents = Oci.CloudGuard.GetDataSourceEvents.Invoke(new()
         ///     {
-        ///         DataSourceId = oci_cloud_guard_data_source.Test_data_source.Id,
-        ///         Region = @var.Data_source_event_region,
+        ///         DataSourceId = testDataSource.Id,
+        ///         Region = dataSourceEventRegion,
         ///     });
         /// 
         /// });

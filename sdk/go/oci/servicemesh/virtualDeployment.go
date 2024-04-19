@@ -31,30 +31,31 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.NewVirtualDeployment(ctx, "testVirtualDeployment", &ServiceMesh.VirtualDeploymentArgs{
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
-//				VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//			_, err := ServiceMesh.NewVirtualDeployment(ctx, "test_virtual_deployment", &ServiceMesh.VirtualDeploymentArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				Name:             pulumi.Any(virtualDeploymentName),
+//				VirtualServiceId: pulumi.Any(testVirtualService.Id),
 //				AccessLogging: &servicemesh.VirtualDeploymentAccessLoggingArgs{
-//					IsEnabled: pulumi.Any(_var.Virtual_deployment_access_logging_is_enabled),
+//					IsEnabled: pulumi.Any(virtualDeploymentAccessLoggingIsEnabled),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Virtual_deployment_description),
+//				Description: pulumi.Any(virtualDeploymentDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Listeners: servicemesh.VirtualDeploymentListenerArray{
 //					&servicemesh.VirtualDeploymentListenerArgs{
-//						Port:               pulumi.Any(_var.Virtual_deployment_listeners_port),
-//						Protocol:           pulumi.Any(_var.Virtual_deployment_listeners_protocol),
-//						IdleTimeoutInMs:    pulumi.Any(_var.Virtual_deployment_listeners_idle_timeout_in_ms),
-//						RequestTimeoutInMs: pulumi.Any(_var.Virtual_deployment_listeners_request_timeout_in_ms),
+//						Port:               pulumi.Any(virtualDeploymentListenersPort),
+//						Protocol:           pulumi.Any(virtualDeploymentListenersProtocol),
+//						IdleTimeoutInMs:    pulumi.Any(virtualDeploymentListenersIdleTimeoutInMs),
+//						RequestTimeoutInMs: pulumi.Any(virtualDeploymentListenersRequestTimeoutInMs),
 //					},
 //				},
 //				ServiceDiscovery: &servicemesh.VirtualDeploymentServiceDiscoveryArgs{
-//					Type:     pulumi.Any(_var.Virtual_deployment_service_discovery_type),
-//					Hostname: pulumi.Any(_var.Virtual_deployment_service_discovery_hostname),
+//					Type:     pulumi.Any(virtualDeploymentServiceDiscoveryType),
+//					Hostname: pulumi.Any(virtualDeploymentServiceDiscoveryHostname),
 //				},
 //			})
 //			if err != nil {

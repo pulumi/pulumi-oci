@@ -17,19 +17,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsWarehouseUser = new oci.opsi.OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser", {
- *     compartmentId: _var.compartment_id,
- *     connectionPassword: _var.operations_insights_warehouse_user_connection_password,
- *     isAwrDataAccess: _var.operations_insights_warehouse_user_is_awr_data_access,
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
+ * const testOperationsInsightsWarehouseUser = new oci.opsi.OperationsInsightsWarehouseUser("test_operations_insights_warehouse_user", {
+ *     compartmentId: compartmentId,
+ *     connectionPassword: operationsInsightsWarehouseUserConnectionPassword,
+ *     isAwrDataAccess: operationsInsightsWarehouseUserIsAwrDataAccess,
+ *     name: operationsInsightsWarehouseUserName,
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEmDataAccess: _var.operations_insights_warehouse_user_is_em_data_access,
- *     isOpsiDataAccess: _var.operations_insights_warehouse_user_is_opsi_data_access,
+ *     isEmDataAccess: operationsInsightsWarehouseUserIsEmDataAccess,
+ *     isOpsiDataAccess: operationsInsightsWarehouseUserIsOpsiDataAccess,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

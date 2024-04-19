@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ComputeCloud.GetAtCustomerCccInfrastructure(ctx, &computecloud.GetAtCustomerCccInfrastructureArgs{
-//				CccInfrastructureId: oci_compute_cloud_at_customer_ccc_infrastructure.Test_ccc_infrastructure.Id,
+//				CccInfrastructureId: testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

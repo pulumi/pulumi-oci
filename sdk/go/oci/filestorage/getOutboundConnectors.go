@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetOutboundConnectors(ctx, &filestorage.GetOutboundConnectorsArgs{
-//				AvailabilityDomain: _var.Outbound_connector_availability_domain,
-//				CompartmentId:      _var.Compartment_id,
-//				DisplayName:        pulumi.StringRef(_var.Outbound_connector_display_name),
-//				Id:                 pulumi.StringRef(_var.Outbound_connector_id),
-//				State:              pulumi.StringRef(_var.Outbound_connector_state),
+//				AvailabilityDomain: outboundConnectorAvailabilityDomain,
+//				CompartmentId:      compartmentId,
+//				DisplayName:        pulumi.StringRef(outboundConnectorDisplayName),
+//				Id:                 pulumi.StringRef(outboundConnectorId),
+//				State:              pulumi.StringRef(outboundConnectorState),
 //			}, nil)
 //			if err != nil {
 //				return err

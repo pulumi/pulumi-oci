@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIngressGatewayRouteTables = oci.ServiceMesh.getIngressGatewayRouteTables({
- *     compartmentId: _var.compartment_id,
- *     id: _var.ingress_gateway_route_table_id,
- *     ingressGatewayId: oci_service_mesh_ingress_gateway.test_ingress_gateway.id,
- *     name: _var.ingress_gateway_route_table_name,
- *     state: _var.ingress_gateway_route_table_state,
+ *     compartmentId: compartmentId,
+ *     id: ingressGatewayRouteTableId,
+ *     ingressGatewayId: testIngressGateway.id,
+ *     name: ingressGatewayRouteTableName,
+ *     state: ingressGatewayRouteTableState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetIngressGatewayRouteTablesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIngressGatewayRouteTables = oci.ServiceMesh.getIngressGatewayRouteTables({
- *     compartmentId: _var.compartment_id,
- *     id: _var.ingress_gateway_route_table_id,
- *     ingressGatewayId: oci_service_mesh_ingress_gateway.test_ingress_gateway.id,
- *     name: _var.ingress_gateway_route_table_name,
- *     state: _var.ingress_gateway_route_table_state,
+ *     compartmentId: compartmentId,
+ *     id: ingressGatewayRouteTableId,
+ *     ingressGatewayId: testIngressGateway.id,
+ *     name: ingressGatewayRouteTableName,
+ *     state: ingressGatewayRouteTableState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -18,23 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateApplication = new oci.servicecatalog.PrivateApplication("testPrivateApplication", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.private_application_display_name,
+ * const testPrivateApplication = new oci.servicecatalog.PrivateApplication("test_private_application", {
+ *     compartmentId: compartmentId,
+ *     displayName: privateApplicationDisplayName,
  *     packageDetails: {
- *         packageType: _var.private_application_package_details_package_type,
- *         version: _var.private_application_package_details_version,
- *         zipFileBase64encoded: _var.private_application_package_details_zip_file_base64encoded,
+ *         packageType: privateApplicationPackageDetailsPackageType,
+ *         version: privateApplicationPackageDetailsVersion,
+ *         zipFileBase64encoded: privateApplicationPackageDetailsZipFileBase64encoded,
  *     },
- *     shortDescription: _var.private_application_short_description,
+ *     shortDescription: privateApplicationShortDescription,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     logoFileBase64encoded: _var.private_application_logo_file_base64encoded,
- *     longDescription: _var.private_application_long_description,
+ *     logoFileBase64encoded: privateApplicationLogoFileBase64encoded,
+ *     longDescription: privateApplicationLongDescription,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

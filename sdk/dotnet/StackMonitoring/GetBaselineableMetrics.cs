@@ -29,11 +29,11 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testBaselineableMetrics = Oci.StackMonitoring.GetBaselineableMetrics.Invoke(new()
         ///     {
-        ///         BaselineableMetricId = oci_stack_monitoring_baselineable_metric.Test_baselineable_metric.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         MetricNamespace = @var.Baselineable_metric_metric_namespace,
-        ///         Name = @var.Baselineable_metric_name,
-        ///         ResourceGroup = @var.Baselineable_metric_resource_group,
+        ///         BaselineableMetricId = testBaselineableMetric.Id,
+        ///         CompartmentId = compartmentId,
+        ///         MetricNamespace = baselineableMetricMetricNamespace,
+        ///         Name = baselineableMetricName,
+        ///         ResourceGroup = baselineableMetricResourceGroup,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testBaselineableMetrics = Oci.StackMonitoring.GetBaselineableMetrics.Invoke(new()
         ///     {
-        ///         BaselineableMetricId = oci_stack_monitoring_baselineable_metric.Test_baselineable_metric.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         MetricNamespace = @var.Baselineable_metric_metric_namespace,
-        ///         Name = @var.Baselineable_metric_name,
-        ///         ResourceGroup = @var.Baselineable_metric_resource_group,
+        ///         BaselineableMetricId = testBaselineableMetric.Id,
+        ///         CompartmentId = compartmentId,
+        ///         MetricNamespace = baselineableMetricMetricNamespace,
+        ///         Name = baselineableMetricName,
+        ///         ResourceGroup = baselineableMetricResourceGroup,
         ///     });
         /// 
         /// });

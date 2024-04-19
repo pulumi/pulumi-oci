@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectedDatabaseFetchConfiguration = oci.RecoveryMod.getProtectedDatabaseFetchConfiguration({
- *     protectedDatabaseId: oci_recovery_protected_database.test_protected_database.id,
+ *     protectedDatabaseId: testProtectedDatabase.id,
  *     base64EncodeContent: true,
- *     configurationType: _var.protected_database_fetch_configuration_configuration_type,
+ *     configurationType: protectedDatabaseFetchConfigurationConfigurationType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -78,9 +78,9 @@ export interface GetProtectedDatabaseFetchConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectedDatabaseFetchConfiguration = oci.RecoveryMod.getProtectedDatabaseFetchConfiguration({
- *     protectedDatabaseId: oci_recovery_protected_database.test_protected_database.id,
+ *     protectedDatabaseId: testProtectedDatabase.id,
  *     base64EncodeContent: true,
- *     configurationType: _var.protected_database_fetch_configuration_configuration_type,
+ *     configurationType: protectedDatabaseFetchConfigurationConfigurationType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -18,20 +18,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadToken = new oci.jms.JavaDownloadsJavaDownloadToken("testJavaDownloadToken", {
- *     compartmentId: _var.tenancy_ocid,
- *     description: _var.java_download_token_description,
- *     displayName: _var.java_download_token_display_name,
- *     javaVersion: _var.java_download_token_java_version,
- *     licenseTypes: _var.java_download_token_license_type,
- *     timeExpires: _var.java_download_token_time_expires,
+ * const testJavaDownloadToken = new oci.jms.JavaDownloadsJavaDownloadToken("test_java_download_token", {
+ *     compartmentId: tenancyOcid,
+ *     description: javaDownloadTokenDescription,
+ *     displayName: javaDownloadTokenDisplayName,
+ *     javaVersion: javaDownloadTokenJavaVersion,
+ *     licenseTypes: javaDownloadTokenLicenseType,
+ *     timeExpires: javaDownloadTokenTimeExpires,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isDefault: _var.java_download_token_is_default,
+ *     isDefault: javaDownloadTokenIsDefault,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -134,11 +134,11 @@ def get_models(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiDocument.get_models(compartment_id=var["compartment_id"],
-        display_name=var["model_display_name"],
-        id=var["model_id"],
-        project_id=oci_ai_document_project["test_project"]["id"],
-        state=var["model_state"])
+    test_models = oci.AiDocument.get_models(compartment_id=compartment_id,
+        display_name=model_display_name,
+        id=model_id,
+        project_id=test_project["id"],
+        state=model_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_models_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.AiDocument.get_models(compartment_id=var["compartment_id"],
-        display_name=var["model_display_name"],
-        id=var["model_id"],
-        project_id=oci_ai_document_project["test_project"]["id"],
-        state=var["model_state"])
+    test_models = oci.AiDocument.get_models(compartment_id=compartment_id,
+        display_name=model_display_name,
+        id=model_id,
+        project_id=test_project["id"],
+        state=model_state)
     ```
     <!--End PulumiCodeChooser -->
 

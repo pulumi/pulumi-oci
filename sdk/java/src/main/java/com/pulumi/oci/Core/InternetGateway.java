@@ -66,13 +66,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testInternetGateway = new InternetGateway(&#34;testInternetGateway&#34;, InternetGatewayArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .vcnId(oci_core_vcn.test_vcn().id())
- *             .enabled(var_.internet_gateway_enabled())
+ *             .compartmentId(compartmentId)
+ *             .vcnId(testVcn.id())
+ *             .enabled(internetGatewayEnabled)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.internet_gateway_display_name())
+ *             .displayName(internetGatewayDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .routeTableId(testRouteTable.id())
  *             .build());
  * 
  *     }

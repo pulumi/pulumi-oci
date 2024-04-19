@@ -224,9 +224,9 @@ class SmtpCredential(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_smtp_credential = oci.identity.SmtpCredential("testSmtpCredential",
-            description=var["smtp_credential_description"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_smtp_credential = oci.identity.SmtpCredential("test_smtp_credential",
+            description=smtp_credential_description,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -268,9 +268,9 @@ class SmtpCredential(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_smtp_credential = oci.identity.SmtpCredential("testSmtpCredential",
-            description=var["smtp_credential_description"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_smtp_credential = oci.identity.SmtpCredential("test_smtp_credential",
+            description=smtp_credential_description,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 

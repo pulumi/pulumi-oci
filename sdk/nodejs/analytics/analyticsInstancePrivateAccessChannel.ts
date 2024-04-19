@@ -19,20 +19,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstancePrivateAccessChannel = new oci.analytics.AnalyticsInstancePrivateAccessChannel("testAnalyticsInstancePrivateAccessChannel", {
- *     analyticsInstanceId: oci_analytics_analytics_instance.test_analytics_instance.id,
- *     displayName: _var.analytics_instance_private_access_channel_display_name,
+ * const testAnalyticsInstancePrivateAccessChannel = new oci.analytics.AnalyticsInstancePrivateAccessChannel("test_analytics_instance_private_access_channel", {
+ *     analyticsInstanceId: testAnalyticsInstance.id,
+ *     displayName: analyticsInstancePrivateAccessChannelDisplayName,
  *     privateSourceDnsZones: [{
- *         dnsZone: _var.analytics_instance_private_access_channel_private_source_dns_zones_dns_zone,
- *         description: _var.analytics_instance_private_access_channel_private_source_dns_zones_description,
+ *         dnsZone: analyticsInstancePrivateAccessChannelPrivateSourceDnsZonesDnsZone,
+ *         description: analyticsInstancePrivateAccessChannelPrivateSourceDnsZonesDescription,
  *     }],
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vcnId: oci_core_vcn.test_vcn.id,
- *     networkSecurityGroupIds: _var.analytics_instance_private_access_channel_network_security_group_ids,
+ *     subnetId: testSubnet.id,
+ *     vcnId: testVcn.id,
+ *     networkSecurityGroupIds: analyticsInstancePrivateAccessChannelNetworkSecurityGroupIds,
  *     privateSourceScanHosts: [{
- *         scanHostname: _var.analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname,
- *         scanPort: _var.analytics_instance_private_access_channel_private_source_scan_hosts_scan_port,
- *         description: _var.analytics_instance_private_access_channel_private_source_scan_hosts_description,
+ *         scanHostname: analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanHostname,
+ *         scanPort: analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanPort,
+ *         description: analyticsInstancePrivateAccessChannelPrivateSourceScanHostsDescription,
  *     }],
  * });
  * ```

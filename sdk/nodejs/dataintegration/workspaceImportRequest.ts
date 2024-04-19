@@ -18,19 +18,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceImportRequest = new oci.dataintegration.WorkspaceImportRequest("testWorkspaceImportRequest", {
- *     bucket: _var.workspace_import_request_bucket,
- *     fileName: _var.workspace_import_request_file_name,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     areDataAssetReferencesIncluded: _var.workspace_import_request_are_data_asset_references_included,
+ * const testWorkspaceImportRequest = new oci.dataintegration.WorkspaceImportRequest("test_workspace_import_request", {
+ *     bucket: workspaceImportRequestBucket,
+ *     fileName: workspaceImportRequestFileName,
+ *     workspaceId: testWorkspace.id,
+ *     areDataAssetReferencesIncluded: workspaceImportRequestAreDataAssetReferencesIncluded,
  *     importConflictResolution: {
- *         importConflictResolutionType: _var.workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
- *         duplicatePrefix: _var.workspace_import_request_import_conflict_resolution_duplicate_prefix,
- *         duplicateSuffix: _var.workspace_import_request_import_conflict_resolution_duplicate_suffix,
+ *         importConflictResolutionType: workspaceImportRequestImportConflictResolutionImportConflictResolutionType,
+ *         duplicatePrefix: workspaceImportRequestImportConflictResolutionDuplicatePrefix,
+ *         duplicateSuffix: workspaceImportRequestImportConflictResolutionDuplicateSuffix,
  *     },
- *     objectKeyForImport: _var.workspace_import_request_object_key_for_import,
- *     objectStorageRegion: _var.workspace_import_request_object_storage_region,
- *     objectStorageTenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     objectKeyForImport: workspaceImportRequestObjectKeyForImport,
+ *     objectStorageRegion: workspaceImportRequestObjectStorageRegion,
+ *     objectStorageTenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

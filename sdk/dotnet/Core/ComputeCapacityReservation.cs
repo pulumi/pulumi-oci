@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testComputeCapacityReservation = new Oci.Core.ComputeCapacityReservation("testComputeCapacityReservation", new()
+    ///     var testComputeCapacityReservation = new Oci.Core.ComputeCapacityReservation("test_compute_capacity_reservation", new()
     ///     {
-    ///         AvailabilityDomain = @var.Compute_capacity_reservation_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AvailabilityDomain = computeCapacityReservationAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Compute_capacity_reservation_display_name,
+    ///         DisplayName = computeCapacityReservationDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -46,22 +46,22 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigArgs
     ///             {
-    ///                 InstanceShape = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape,
-    ///                 ReservedCount = @var.Compute_capacity_reservation_instance_reservation_configs_reserved_count,
+    ///                 InstanceShape = computeCapacityReservationInstanceReservationConfigsInstanceShape,
+    ///                 ReservedCount = computeCapacityReservationInstanceReservationConfigsReservedCount,
     ///                 ClusterConfig = new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs
     ///                 {
-    ///                     HpcIslandId = oci_core_hpc_island.Test_hpc_island.Id,
-    ///                     NetworkBlockIds = @var.Compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids,
+    ///                     HpcIslandId = testHpcIsland.Id,
+    ///                     NetworkBlockIds = computeCapacityReservationInstanceReservationConfigsClusterConfigNetworkBlockIds,
     ///                 },
-    ///                 FaultDomain = @var.Compute_capacity_reservation_instance_reservation_configs_fault_domain,
+    ///                 FaultDomain = computeCapacityReservationInstanceReservationConfigsFaultDomain,
     ///                 InstanceShapeConfig = new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     ///                 {
-    ///                     MemoryInGbs = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs,
-    ///                     Ocpus = @var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus,
+    ///                     MemoryInGbs = computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigMemoryInGbs,
+    ///                     Ocpus = computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigOcpus,
     ///                 },
     ///             },
     ///         },
-    ///         IsDefaultReservation = @var.Compute_capacity_reservation_is_default_reservation,
+    ///         IsDefaultReservation = computeCapacityReservationIsDefaultReservation,
     ///     });
     /// 
     /// });

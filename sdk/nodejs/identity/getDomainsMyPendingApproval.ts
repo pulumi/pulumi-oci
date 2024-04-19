@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyPendingApproval = oci.Identity.getDomainsMyPendingApproval({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myPendingApprovalId: oci_identity_domains_my_pending_approval.test_my_pending_approval.id,
- *     authorization: _var.my_pending_approval_authorization,
- *     resourceTypeSchemaVersion: _var.my_pending_approval_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myPendingApprovalId: testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id,
+ *     authorization: myPendingApprovalAuthorization,
+ *     resourceTypeSchemaVersion: myPendingApprovalResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -174,10 +174,10 @@ export interface GetDomainsMyPendingApprovalResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyPendingApproval = oci.Identity.getDomainsMyPendingApproval({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myPendingApprovalId: oci_identity_domains_my_pending_approval.test_my_pending_approval.id,
- *     authorization: _var.my_pending_approval_authorization,
- *     resourceTypeSchemaVersion: _var.my_pending_approval_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myPendingApprovalId: testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id,
+ *     authorization: myPendingApprovalAuthorization,
+ *     resourceTypeSchemaVersion: myPendingApprovalResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

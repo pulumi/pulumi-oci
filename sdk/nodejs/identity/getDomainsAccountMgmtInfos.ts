@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAccountMgmtInfos = oci.Identity.getDomainsAccountMgmtInfos({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     accountMgmtInfoCount: _var.account_mgmt_info_account_mgmt_info_count,
- *     accountMgmtInfoFilter: _var.account_mgmt_info_account_mgmt_info_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     accountMgmtInfoCount: accountMgmtInfoAccountMgmtInfoCount,
+ *     accountMgmtInfoFilter: accountMgmtInfoAccountMgmtInfoFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.account_mgmt_info_authorization,
- *     resourceTypeSchemaVersion: _var.account_mgmt_info_resource_type_schema_version,
- *     startIndex: _var.account_mgmt_info_start_index,
+ *     authorization: accountMgmtInfoAuthorization,
+ *     resourceTypeSchemaVersion: accountMgmtInfoResourceTypeSchemaVersion,
+ *     startIndex: accountMgmtInfoStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsAccountMgmtInfosResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAccountMgmtInfos = oci.Identity.getDomainsAccountMgmtInfos({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     accountMgmtInfoCount: _var.account_mgmt_info_account_mgmt_info_count,
- *     accountMgmtInfoFilter: _var.account_mgmt_info_account_mgmt_info_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     accountMgmtInfoCount: accountMgmtInfoAccountMgmtInfoCount,
+ *     accountMgmtInfoFilter: accountMgmtInfoAccountMgmtInfoFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.account_mgmt_info_authorization,
- *     resourceTypeSchemaVersion: _var.account_mgmt_info_resource_type_schema_version,
- *     startIndex: _var.account_mgmt_info_start_index,
+ *     authorization: accountMgmtInfoAuthorization,
+ *     resourceTypeSchemaVersion: accountMgmtInfoResourceTypeSchemaVersion,
+ *     startIndex: accountMgmtInfoStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

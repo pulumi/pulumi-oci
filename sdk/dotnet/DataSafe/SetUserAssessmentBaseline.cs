@@ -25,10 +25,10 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSetUserAssessmentBaseline = new Oci.DataSafe.SetUserAssessmentBaseline("testSetUserAssessmentBaseline", new()
+    ///     var testSetUserAssessmentBaseline = new Oci.DataSafe.SetUserAssessmentBaseline("test_set_user_assessment_baseline", new()
     ///     {
-    ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-    ///         AssessmentIds = @var.Set_user_assessment_baseline_assessment_ids,
+    ///         UserAssessmentId = testUserAssessment.Id,
+    ///         AssessmentIds = setUserAssessmentBaselineAssessmentIds,
     ///     });
     /// 
     /// });

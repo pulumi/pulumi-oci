@@ -29,9 +29,9 @@ namespace Pulumi.Oci.EmWarehouse
         /// {
         ///     var testEmWarehouseEtlRun = Oci.EmWarehouse.GetEtlRun.Invoke(new()
         ///     {
-        ///         EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Em_warehouse_etl_run_display_name,
+        ///         EmWarehouseId = testEmWarehouse.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = emWarehouseEtlRunDisplayName,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.EmWarehouse
         /// {
         ///     var testEmWarehouseEtlRun = Oci.EmWarehouse.GetEtlRun.Invoke(new()
         ///     {
-        ///         EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Em_warehouse_etl_run_display_name,
+        ///         EmWarehouseId = testEmWarehouse.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = emWarehouseEtlRunDisplayName,
         ///     });
         /// 
         /// });

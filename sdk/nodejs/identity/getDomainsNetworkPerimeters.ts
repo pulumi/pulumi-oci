@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkPerimeters = oci.Identity.getDomainsNetworkPerimeters({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     networkPerimeterCount: _var.network_perimeter_network_perimeter_count,
- *     networkPerimeterFilter: _var.network_perimeter_network_perimeter_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     networkPerimeterCount: networkPerimeterNetworkPerimeterCount,
+ *     networkPerimeterFilter: networkPerimeterNetworkPerimeterFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.network_perimeter_authorization,
- *     resourceTypeSchemaVersion: _var.network_perimeter_resource_type_schema_version,
- *     startIndex: _var.network_perimeter_start_index,
+ *     authorization: networkPerimeterAuthorization,
+ *     resourceTypeSchemaVersion: networkPerimeterResourceTypeSchemaVersion,
+ *     startIndex: networkPerimeterStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsNetworkPerimetersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkPerimeters = oci.Identity.getDomainsNetworkPerimeters({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     networkPerimeterCount: _var.network_perimeter_network_perimeter_count,
- *     networkPerimeterFilter: _var.network_perimeter_network_perimeter_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     networkPerimeterCount: networkPerimeterNetworkPerimeterCount,
+ *     networkPerimeterFilter: networkPerimeterNetworkPerimeterFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.network_perimeter_authorization,
- *     resourceTypeSchemaVersion: _var.network_perimeter_resource_type_schema_version,
- *     startIndex: _var.network_perimeter_start_index,
+ *     authorization: networkPerimeterAuthorization,
+ *     resourceTypeSchemaVersion: networkPerimeterResourceTypeSchemaVersion,
+ *     startIndex: networkPerimeterStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

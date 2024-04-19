@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetManagementStation(ctx, &osmanagementhub.GetManagementStationArgs{
-//				ManagementStationId: oci_os_management_hub_management_station.Test_management_station.Id,
+//				ManagementStationId: testManagementStationOciOsManagementHubManagementStation.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

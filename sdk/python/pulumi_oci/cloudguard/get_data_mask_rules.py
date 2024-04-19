@@ -176,14 +176,14 @@ def get_data_mask_rules(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=var["compartment_id"],
-        access_level=var["data_mask_rule_access_level"],
-        data_mask_rule_status=var["data_mask_rule_data_mask_rule_status"],
-        display_name=var["data_mask_rule_display_name"],
-        iam_group_id=oci_identity_group["test_group"]["id"],
-        state=var["data_mask_rule_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        target_type=var["data_mask_rule_target_type"])
+    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=compartment_id,
+        access_level=data_mask_rule_access_level,
+        data_mask_rule_status=data_mask_rule_data_mask_rule_status,
+        display_name=data_mask_rule_display_name,
+        iam_group_id=test_group["id"],
+        state=data_mask_rule_state,
+        target_id=test_target["id"],
+        target_type=data_mask_rule_target_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -247,14 +247,14 @@ def get_data_mask_rules_output(access_level: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=var["compartment_id"],
-        access_level=var["data_mask_rule_access_level"],
-        data_mask_rule_status=var["data_mask_rule_data_mask_rule_status"],
-        display_name=var["data_mask_rule_display_name"],
-        iam_group_id=oci_identity_group["test_group"]["id"],
-        state=var["data_mask_rule_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        target_type=var["data_mask_rule_target_type"])
+    test_data_mask_rules = oci.CloudGuard.get_data_mask_rules(compartment_id=compartment_id,
+        access_level=data_mask_rule_access_level,
+        data_mask_rule_status=data_mask_rule_data_mask_rule_status,
+        display_name=data_mask_rule_display_name,
+        iam_group_id=test_group["id"],
+        state=data_mask_rule_state,
+        target_id=test_target["id"],
+        target_type=data_mask_rule_target_type)
     ```
     <!--End PulumiCodeChooser -->
 

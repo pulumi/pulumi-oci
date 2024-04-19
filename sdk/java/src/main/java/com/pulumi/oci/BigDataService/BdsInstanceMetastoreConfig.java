@@ -46,12 +46,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceMetastoreConfig = new BdsInstanceMetastoreConfig(&#34;testBdsInstanceMetastoreConfig&#34;, BdsInstanceMetastoreConfigArgs.builder()        
- *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
- *             .bdsApiKeyPassphrase(var_.bds_instance_metastore_config_bds_api_key_passphrase())
- *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
- *             .clusterAdminPassword(var_.bds_instance_metastore_config_cluster_admin_password())
- *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
- *             .displayName(var_.bds_instance_metastore_config_display_name())
+ *             .bdsApiKeyId(testApiKey.id())
+ *             .bdsApiKeyPassphrase(bdsInstanceMetastoreConfigBdsApiKeyPassphrase)
+ *             .bdsInstanceId(testBdsInstance.id())
+ *             .clusterAdminPassword(bdsInstanceMetastoreConfigClusterAdminPassword)
+ *             .metastoreId(testMetastore.id())
+ *             .displayName(bdsInstanceMetastoreConfigDisplayName)
  *             .build());
  * 
  *     }

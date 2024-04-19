@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDbVersions = oci.Database.getAutonomousDbVersions({
- *     compartmentId: _var.compartment_id,
- *     dbWorkload: _var.autonomous_db_version_db_workload,
+ *     compartmentId: compartmentId,
+ *     dbWorkload: autonomousDbVersionDbWorkload,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,8 +86,8 @@ export interface GetAutonomousDbVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDbVersions = oci.Database.getAutonomousDbVersions({
- *     compartmentId: _var.compartment_id,
- *     dbWorkload: _var.autonomous_db_version_db_workload,
+ *     compartmentId: compartmentId,
+ *     dbWorkload: autonomousDbVersionDbWorkload,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

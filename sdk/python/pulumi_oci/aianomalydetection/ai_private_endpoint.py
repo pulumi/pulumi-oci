@@ -352,14 +352,14 @@ class AiPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ai_private_endpoint = oci.ai_anomaly_detection.AiPrivateEndpoint("testAiPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            dns_zones=var["ai_private_endpoint_dns_zones"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_ai_private_endpoint = oci.ai_anomaly_detection.AiPrivateEndpoint("test_ai_private_endpoint",
+            compartment_id=compartment_id,
+            dns_zones=ai_private_endpoint_dns_zones,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["ai_private_endpoint_display_name"],
+            display_name=ai_private_endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -405,14 +405,14 @@ class AiPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ai_private_endpoint = oci.ai_anomaly_detection.AiPrivateEndpoint("testAiPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            dns_zones=var["ai_private_endpoint_dns_zones"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_ai_private_endpoint = oci.ai_anomaly_detection.AiPrivateEndpoint("test_ai_private_endpoint",
+            compartment_id=compartment_id,
+            dns_zones=ai_private_endpoint_dns_zones,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["ai_private_endpoint_display_name"],
+            display_name=ai_private_endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

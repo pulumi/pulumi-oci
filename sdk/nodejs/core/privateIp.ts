@@ -18,18 +18,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateIp = new oci.core.PrivateIp("testPrivateIp", {
+ * const testPrivateIp = new oci.core.PrivateIp("test_private_ip", {
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.private_ip_display_name,
+ *     displayName: privateIpDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     hostnameLabel: _var.private_ip_hostname_label,
- *     ipAddress: _var.private_ip_ip_address,
- *     vlanId: oci_core_vlan.test_vlan.id,
- *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.vnic_id,
+ *     hostnameLabel: privateIpHostnameLabel,
+ *     ipAddress: privateIpIpAddress,
+ *     vlanId: testVlan.id,
+ *     vnicId: testVnicAttachment.vnicId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

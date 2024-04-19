@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentPlugins = oci.ManagementAgent.getManagementAgentPlugins({
- *     compartmentId: _var.compartment_id,
- *     agentId: _var.management_agent_id,
- *     displayName: _var.management_agent_plugin_display_name,
- *     platformTypes: _var.management_agent_plugin_platform_type,
- *     state: _var.management_agent_plugin_state,
+ *     compartmentId: compartmentId,
+ *     agentId: managementAgentId,
+ *     displayName: managementAgentPluginDisplayName,
+ *     platformTypes: managementAgentPluginPlatformType,
+ *     state: managementAgentPluginState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,11 +106,11 @@ export interface GetManagementAgentPluginsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentPlugins = oci.ManagementAgent.getManagementAgentPlugins({
- *     compartmentId: _var.compartment_id,
- *     agentId: _var.management_agent_id,
- *     displayName: _var.management_agent_plugin_display_name,
- *     platformTypes: _var.management_agent_plugin_platform_type,
- *     state: _var.management_agent_plugin_state,
+ *     compartmentId: compartmentId,
+ *     agentId: managementAgentId,
+ *     displayName: managementAgentPluginDisplayName,
+ *     platformTypes: managementAgentPluginPlatformType,
+ *     state: managementAgentPluginState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

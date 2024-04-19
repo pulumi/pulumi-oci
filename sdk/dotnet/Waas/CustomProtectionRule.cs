@@ -27,16 +27,16 @@ namespace Pulumi.Oci.Waas
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCustomProtectionRule = new Oci.Waas.CustomProtectionRule("testCustomProtectionRule", new()
+    ///     var testCustomProtectionRule = new Oci.Waas.CustomProtectionRule("test_custom_protection_rule", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Custom_protection_rule_display_name,
-    ///         Template = @var.Custom_protection_rule_template,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = customProtectionRuleDisplayName,
+    ///         Template = customProtectionRuleTemplate,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Custom_protection_rule_description,
+    ///         Description = customProtectionRuleDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

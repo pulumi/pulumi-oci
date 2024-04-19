@@ -32,21 +32,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.NewWorkspaceFolder(ctx, "testWorkspaceFolder", &DataIntegration.WorkspaceFolderArgs{
-//				Identifier: pulumi.Any(_var.Workspace_folder_identifier),
+//			_, err := DataIntegration.NewWorkspaceFolder(ctx, "test_workspace_folder", &DataIntegration.WorkspaceFolderArgs{
+//				Identifier: pulumi.Any(workspaceFolderIdentifier),
+//				Name:       pulumi.Any(workspaceFolderName),
 //				RegistryMetadata: &dataintegration.WorkspaceFolderRegistryMetadataArgs{
-//					AggregatorKey:   pulumi.Any(_var.Workspace_folder_registry_metadata_aggregator_key),
-//					IsFavorite:      pulumi.Any(_var.Workspace_folder_registry_metadata_is_favorite),
-//					Key:             pulumi.Any(_var.Workspace_folder_registry_metadata_key),
-//					Labels:          pulumi.Any(_var.Workspace_folder_registry_metadata_labels),
-//					RegistryVersion: pulumi.Any(_var.Workspace_folder_registry_metadata_registry_version),
+//					AggregatorKey:   pulumi.Any(workspaceFolderRegistryMetadataAggregatorKey),
+//					IsFavorite:      pulumi.Any(workspaceFolderRegistryMetadataIsFavorite),
+//					Key:             pulumi.Any(workspaceFolderRegistryMetadataKey),
+//					Labels:          pulumi.Any(workspaceFolderRegistryMetadataLabels),
+//					RegistryVersion: pulumi.Any(workspaceFolderRegistryMetadataRegistryVersion),
 //				},
-//				WorkspaceId:  pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
-//				CategoryName: pulumi.Any(oci_marketplace_category.Test_category.Name),
-//				Description:  pulumi.Any(_var.Workspace_folder_description),
-//				Key:          pulumi.Any(_var.Workspace_folder_key),
-//				ModelVersion: pulumi.Any(_var.Workspace_folder_model_version),
-//				ObjectStatus: pulumi.Any(_var.Workspace_folder_object_status),
+//				WorkspaceId:  pulumi.Any(testWorkspace.Id),
+//				CategoryName: pulumi.Any(testCategory.Name),
+//				Description:  pulumi.Any(workspaceFolderDescription),
+//				Key:          pulumi.Any(workspaceFolderKey),
+//				ModelVersion: pulumi.Any(workspaceFolderModelVersion),
+//				ObjectStatus: pulumi.Any(workspaceFolderObjectStatus),
 //			})
 //			if err != nil {
 //				return err

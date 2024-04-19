@@ -318,10 +318,11 @@ class DynamicGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dynamic_group = oci.identity.DynamicGroup("testDynamicGroup",
-            compartment_id=var["tenancy_ocid"],
-            description=var["dynamic_group_description"],
-            matching_rule=var["dynamic_group_matching_rule"],
+        test_dynamic_group = oci.identity.DynamicGroup("test_dynamic_group",
+            compartment_id=tenancy_ocid,
+            description=dynamic_group_description,
+            matching_rule=dynamic_group_matching_rule,
+            name=dynamic_group_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -384,10 +385,11 @@ class DynamicGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dynamic_group = oci.identity.DynamicGroup("testDynamicGroup",
-            compartment_id=var["tenancy_ocid"],
-            description=var["dynamic_group_description"],
-            matching_rule=var["dynamic_group_matching_rule"],
+        test_dynamic_group = oci.identity.DynamicGroup("test_dynamic_group",
+            compartment_id=tenancy_ocid,
+            description=dynamic_group_description,
+            matching_rule=dynamic_group_matching_rule,
+            name=dynamic_group_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

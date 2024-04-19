@@ -337,13 +337,13 @@ class Api(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_api = oci.api_gateway.Api("testApi",
-            compartment_id=var["compartment_id"],
-            content=var["api_content"],
+        test_api = oci.api_gateway.Api("test_api",
+            compartment_id=compartment_id,
+            content=api_content,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["api_display_name"],
+            display_name=api_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -388,13 +388,13 @@ class Api(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_api = oci.api_gateway.Api("testApi",
-            compartment_id=var["compartment_id"],
-            content=var["api_content"],
+        test_api = oci.api_gateway.Api("test_api",
+            compartment_id=compartment_id,
+            content=api_content,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["api_display_name"],
+            display_name=api_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

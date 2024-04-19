@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeGroups = oci.Core.getVolumeGroups({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.volume_group_availability_domain,
- *     displayName: _var.volume_group_display_name,
- *     state: _var.volume_group_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: volumeGroupAvailabilityDomain,
+ *     displayName: volumeGroupDisplayName,
+ *     state: volumeGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetVolumeGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeGroups = oci.Core.getVolumeGroups({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.volume_group_availability_domain,
- *     displayName: _var.volume_group_display_name,
- *     state: _var.volume_group_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: volumeGroupAvailabilityDomain,
+ *     displayName: volumeGroupDisplayName,
+ *     state: volumeGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetCryptoAnalysisResults = oci.Jms.getFleetCryptoAnalysisResults({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     aggregationMode: _var.fleet_crypto_analysis_result_aggregation_mode,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     timeEnd: _var.fleet_crypto_analysis_result_time_end,
- *     timeStart: _var.fleet_crypto_analysis_result_time_start,
+ *     fleetId: testFleet.id,
+ *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
+ *     managedInstanceId: testManagedInstance.id,
+ *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
+ *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetFleetCryptoAnalysisResultsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetCryptoAnalysisResults = oci.Jms.getFleetCryptoAnalysisResults({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     aggregationMode: _var.fleet_crypto_analysis_result_aggregation_mode,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     timeEnd: _var.fleet_crypto_analysis_result_time_end,
- *     timeStart: _var.fleet_crypto_analysis_result_time_start,
+ *     fleetId: testFleet.id,
+ *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
+ *     managedInstanceId: testManagedInstance.id,
+ *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
+ *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

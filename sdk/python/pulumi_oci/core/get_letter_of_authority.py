@@ -142,7 +142,7 @@ def get_letter_of_authority(cross_connect_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_letter_of_authority = oci.Core.get_letter_of_authority(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
+    test_letter_of_authority = oci.Core.get_letter_of_authority(cross_connect_id=test_cross_connect["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -180,7 +180,7 @@ def get_letter_of_authority_output(cross_connect_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_letter_of_authority = oci.Core.get_letter_of_authority(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
+    test_letter_of_authority = oci.Core.get_letter_of_authority(cross_connect_id=test_cross_connect["id"])
     ```
     <!--End PulumiCodeChooser -->
 

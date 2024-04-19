@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAiPrivateEndpoints = oci.AiAnomalyDetection.getAiPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.ai_private_endpoint_display_name,
- *     id: _var.ai_private_endpoint_id,
- *     state: _var.ai_private_endpoint_state,
+ *     compartmentId: compartmentId,
+ *     displayName: aiPrivateEndpointDisplayName,
+ *     id: aiPrivateEndpointId,
+ *     state: aiPrivateEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetAiPrivateEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAiPrivateEndpoints = oci.AiAnomalyDetection.getAiPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.ai_private_endpoint_display_name,
- *     id: _var.ai_private_endpoint_id,
- *     state: _var.ai_private_endpoint_state,
+ *     compartmentId: compartmentId,
+ *     displayName: aiPrivateEndpointDisplayName,
+ *     id: aiPrivateEndpointId,
+ *     state: aiPrivateEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

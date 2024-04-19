@@ -29,12 +29,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotificationTopic = new oci.ons.NotificationTopic("testNotificationTopic", {
- *     compartmentId: _var.compartment_id,
+ * const testNotificationTopic = new oci.ons.NotificationTopic("test_notification_topic", {
+ *     compartmentId: compartmentId,
+ *     name: notificationTopicName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.notification_topic_description,
+ *     description: notificationTopicDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstanceMetastoreConfigs = oci.BigDataService.getBdsInstanceMetastoreConfigs({
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     bdsApiKeyId: oci_identity_api_key.test_api_key.id,
- *     displayName: _var.bds_instance_metastore_config_display_name,
- *     metastoreId: oci_datacatalog_metastore.test_metastore.id,
- *     metastoreType: _var.bds_instance_metastore_config_metastore_type,
- *     state: _var.bds_instance_metastore_config_state,
+ *     bdsInstanceId: testBdsInstance.id,
+ *     bdsApiKeyId: testApiKey.id,
+ *     displayName: bdsInstanceMetastoreConfigDisplayName,
+ *     metastoreId: testMetastore.id,
+ *     metastoreType: bdsInstanceMetastoreConfigMetastoreType,
+ *     state: bdsInstanceMetastoreConfigState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetBdsInstanceMetastoreConfigsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstanceMetastoreConfigs = oci.BigDataService.getBdsInstanceMetastoreConfigs({
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     bdsApiKeyId: oci_identity_api_key.test_api_key.id,
- *     displayName: _var.bds_instance_metastore_config_display_name,
- *     metastoreId: oci_datacatalog_metastore.test_metastore.id,
- *     metastoreType: _var.bds_instance_metastore_config_metastore_type,
- *     state: _var.bds_instance_metastore_config_state,
+ *     bdsInstanceId: testBdsInstance.id,
+ *     bdsApiKeyId: testApiKey.id,
+ *     displayName: bdsInstanceMetastoreConfigDisplayName,
+ *     metastoreId: testMetastore.id,
+ *     metastoreType: bdsInstanceMetastoreConfigMetastoreType,
+ *     state: bdsInstanceMetastoreConfigState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

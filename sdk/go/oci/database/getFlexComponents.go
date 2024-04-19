@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetFlexComponents(ctx, &database.GetFlexComponentsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Flex_component_name),
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(flexComponentName),
 //			}, nil)
 //			if err != nil {
 //				return err

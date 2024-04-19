@@ -33,8 +33,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ons.GetSubscriptions(ctx, &ons.GetSubscriptionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				TopicId:       pulumi.StringRef(oci_ons_notification_topic.Test_notification_topic.Id),
+//				CompartmentId: compartmentId,
+//				TopicId:       pulumi.StringRef(testNotificationTopic.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityLists = oci.Core.getSecurityLists({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.security_list_display_name,
- *     state: _var.security_list_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: securityListDisplayName,
+ *     state: securityListState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetSecurityListsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityLists = oci.Core.getSecurityLists({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.security_list_display_name,
- *     state: _var.security_list_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: securityListDisplayName,
+ *     state: securityListState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

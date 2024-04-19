@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDynamicResourceGroups = oci.Identity.getDomainsDynamicResourceGroups({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     dynamicResourceGroupCount: _var.dynamic_resource_group_dynamic_resource_group_count,
- *     dynamicResourceGroupFilter: _var.dynamic_resource_group_dynamic_resource_group_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     dynamicResourceGroupCount: dynamicResourceGroupDynamicResourceGroupCount,
+ *     dynamicResourceGroupFilter: dynamicResourceGroupDynamicResourceGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.dynamic_resource_group_authorization,
- *     resourceTypeSchemaVersion: _var.dynamic_resource_group_resource_type_schema_version,
- *     startIndex: _var.dynamic_resource_group_start_index,
+ *     authorization: dynamicResourceGroupAuthorization,
+ *     resourceTypeSchemaVersion: dynamicResourceGroupResourceTypeSchemaVersion,
+ *     startIndex: dynamicResourceGroupStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsDynamicResourceGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDynamicResourceGroups = oci.Identity.getDomainsDynamicResourceGroups({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     dynamicResourceGroupCount: _var.dynamic_resource_group_dynamic_resource_group_count,
- *     dynamicResourceGroupFilter: _var.dynamic_resource_group_dynamic_resource_group_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     dynamicResourceGroupCount: dynamicResourceGroupDynamicResourceGroupCount,
+ *     dynamicResourceGroupFilter: dynamicResourceGroupDynamicResourceGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.dynamic_resource_group_authorization,
- *     resourceTypeSchemaVersion: _var.dynamic_resource_group_resource_type_schema_version,
- *     startIndex: _var.dynamic_resource_group_start_index,
+ *     authorization: dynamicResourceGroupAuthorization,
+ *     resourceTypeSchemaVersion: dynamicResourceGroupResourceTypeSchemaVersion,
+ *     startIndex: dynamicResourceGroupStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

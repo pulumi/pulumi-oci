@@ -304,36 +304,36 @@ class ProcessorJob(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_processor_job = oci.ai_document.ProcessorJob("testProcessorJob",
-            compartment_id=var["compartment_id"],
+        test_processor_job = oci.ai_document.ProcessorJob("test_processor_job",
+            compartment_id=compartment_id,
             input_location=oci.ai_document.ProcessorJobInputLocationArgs(
-                source_type=var["processor_job_input_location_source_type"],
-                data=var["processor_job_input_location_data"],
+                source_type=processor_job_input_location_source_type,
+                data=processor_job_input_location_data,
                 object_locations=[oci.ai_document.ProcessorJobInputLocationObjectLocationArgs(
-                    bucket=var["processor_job_input_location_object_locations_bucket"],
-                    namespace=var["processor_job_input_location_object_locations_namespace"],
-                    object=var["processor_job_input_location_object_locations_object"],
+                    bucket=processor_job_input_location_object_locations_bucket,
+                    namespace=processor_job_input_location_object_locations_namespace,
+                    object=processor_job_input_location_object_locations_object,
                 )],
             ),
             output_location=oci.ai_document.ProcessorJobOutputLocationArgs(
-                bucket=var["processor_job_output_location_bucket"],
-                namespace=var["processor_job_output_location_namespace"],
-                prefix=var["processor_job_output_location_prefix"],
+                bucket=processor_job_output_location_bucket,
+                namespace=processor_job_output_location_namespace,
+                prefix=processor_job_output_location_prefix,
             ),
             processor_config=oci.ai_document.ProcessorJobProcessorConfigArgs(
                 features=[oci.ai_document.ProcessorJobProcessorConfigFeatureArgs(
-                    feature_type=var["processor_job_processor_config_features_feature_type"],
-                    generate_searchable_pdf=var["processor_job_processor_config_features_generate_searchable_pdf"],
-                    max_results=var["processor_job_processor_config_features_max_results"],
-                    model_id=oci_ai_document_model["test_model"]["id"],
-                    tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
+                    feature_type=processor_job_processor_config_features_feature_type,
+                    generate_searchable_pdf=processor_job_processor_config_features_generate_searchable_pdf,
+                    max_results=processor_job_processor_config_features_max_results,
+                    model_id=test_model["id"],
+                    tenancy_id=test_tenancy["id"],
                 )],
-                processor_type=var["processor_job_processor_config_processor_type"],
-                document_type=var["processor_job_processor_config_document_type"],
-                is_zip_output_enabled=var["processor_job_processor_config_is_zip_output_enabled"],
-                language=var["processor_job_processor_config_language"],
+                processor_type=processor_job_processor_config_processor_type,
+                document_type=processor_job_processor_config_document_type,
+                is_zip_output_enabled=processor_job_processor_config_is_zip_output_enabled,
+                language=processor_job_processor_config_language,
             ),
-            display_name=var["processor_job_display_name"])
+            display_name=processor_job_display_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -371,36 +371,36 @@ class ProcessorJob(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_processor_job = oci.ai_document.ProcessorJob("testProcessorJob",
-            compartment_id=var["compartment_id"],
+        test_processor_job = oci.ai_document.ProcessorJob("test_processor_job",
+            compartment_id=compartment_id,
             input_location=oci.ai_document.ProcessorJobInputLocationArgs(
-                source_type=var["processor_job_input_location_source_type"],
-                data=var["processor_job_input_location_data"],
+                source_type=processor_job_input_location_source_type,
+                data=processor_job_input_location_data,
                 object_locations=[oci.ai_document.ProcessorJobInputLocationObjectLocationArgs(
-                    bucket=var["processor_job_input_location_object_locations_bucket"],
-                    namespace=var["processor_job_input_location_object_locations_namespace"],
-                    object=var["processor_job_input_location_object_locations_object"],
+                    bucket=processor_job_input_location_object_locations_bucket,
+                    namespace=processor_job_input_location_object_locations_namespace,
+                    object=processor_job_input_location_object_locations_object,
                 )],
             ),
             output_location=oci.ai_document.ProcessorJobOutputLocationArgs(
-                bucket=var["processor_job_output_location_bucket"],
-                namespace=var["processor_job_output_location_namespace"],
-                prefix=var["processor_job_output_location_prefix"],
+                bucket=processor_job_output_location_bucket,
+                namespace=processor_job_output_location_namespace,
+                prefix=processor_job_output_location_prefix,
             ),
             processor_config=oci.ai_document.ProcessorJobProcessorConfigArgs(
                 features=[oci.ai_document.ProcessorJobProcessorConfigFeatureArgs(
-                    feature_type=var["processor_job_processor_config_features_feature_type"],
-                    generate_searchable_pdf=var["processor_job_processor_config_features_generate_searchable_pdf"],
-                    max_results=var["processor_job_processor_config_features_max_results"],
-                    model_id=oci_ai_document_model["test_model"]["id"],
-                    tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
+                    feature_type=processor_job_processor_config_features_feature_type,
+                    generate_searchable_pdf=processor_job_processor_config_features_generate_searchable_pdf,
+                    max_results=processor_job_processor_config_features_max_results,
+                    model_id=test_model["id"],
+                    tenancy_id=test_tenancy["id"],
                 )],
-                processor_type=var["processor_job_processor_config_processor_type"],
-                document_type=var["processor_job_processor_config_document_type"],
-                is_zip_output_enabled=var["processor_job_processor_config_is_zip_output_enabled"],
-                language=var["processor_job_processor_config_language"],
+                processor_type=processor_job_processor_config_processor_type,
+                document_type=processor_job_processor_config_document_type,
+                is_zip_output_enabled=processor_job_processor_config_is_zip_output_enabled,
+                language=processor_job_processor_config_language,
             ),
-            display_name=var["processor_job_display_name"])
+            display_name=processor_job_display_name)
         ```
         <!--End PulumiCodeChooser -->
 

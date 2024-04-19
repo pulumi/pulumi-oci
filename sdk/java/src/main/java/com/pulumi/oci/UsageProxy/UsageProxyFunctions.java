@@ -75,9 +75,9 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .serviceEntitlement(var_.resource_quota_service_entitlement())
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .serviceEntitlement(resourceQuotaServiceEntitlement)
      *             .build());
      * 
      *     }
@@ -120,9 +120,9 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .serviceEntitlement(var_.resource_quota_service_entitlement())
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .serviceEntitlement(resourceQuotaServiceEntitlement)
      *             .build());
      * 
      *     }
@@ -165,9 +165,9 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .serviceEntitlement(var_.resource_quota_service_entitlement())
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .serviceEntitlement(resourceQuotaServiceEntitlement)
      *             .build());
      * 
      *     }
@@ -210,9 +210,9 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceQuotas = UsageProxyFunctions.getResourceQuotas(GetResourceQuotasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .serviceEntitlement(var_.resource_quota_service_entitlement())
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .serviceEntitlement(resourceQuotaServiceEntitlement)
      *             .build());
      * 
      *     }
@@ -255,9 +255,9 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .entitlementId(oci_usage_proxy_entitlement.test_entitlement().id())
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .entitlementId(testEntitlement.id())
      *             .build());
      * 
      *     }
@@ -300,9 +300,9 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .entitlementId(oci_usage_proxy_entitlement.test_entitlement().id())
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .entitlementId(testEntitlement.id())
      *             .build());
      * 
      *     }
@@ -345,9 +345,9 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .entitlementId(oci_usage_proxy_entitlement.test_entitlement().id())
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .entitlementId(testEntitlement.id())
      *             .build());
      * 
      *     }
@@ -390,9 +390,9 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResources = UsageProxyFunctions.getResources(GetResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .entitlementId(oci_usage_proxy_entitlement.test_entitlement().id())
+     *             .compartmentId(compartmentId)
+     *             .serviceName(testService.name())
+     *             .entitlementId(testEntitlement.id())
      *             .build());
      * 
      *     }
@@ -434,10 +434,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
-     *             .producttype(var_.subscription_product_producttype())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
      *             .build());
      * 
      *     }
@@ -479,10 +479,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
-     *             .producttype(var_.subscription_product_producttype())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
      *             .build());
      * 
      *     }
@@ -524,10 +524,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
-     *             .producttype(var_.subscription_product_producttype())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
      *             .build());
      * 
      *     }
@@ -569,10 +569,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
-     *             .producttype(var_.subscription_product_producttype())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
      *             .build());
      * 
      *     }
@@ -614,10 +614,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
-     *             .producttype(var_.subscription_product_producttype())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
      *             .build());
      * 
      *     }
@@ -659,10 +659,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
-     *             .producttype(var_.subscription_product_producttype())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
      *             .build());
      * 
      *     }
@@ -704,10 +704,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
-     *             .producttype(var_.subscription_product_producttype())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
      *             .build());
      * 
      *     }
@@ -749,10 +749,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
-     *             .producttype(var_.subscription_product_producttype())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .usagePeriodKey(subscriptionProductUsagePeriodKey)
+     *             .producttype(subscriptionProductProducttype)
      *             .build());
      * 
      *     }
@@ -794,8 +794,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -837,8 +837,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -880,8 +880,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -923,8 +923,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -966,8 +966,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1009,8 +1009,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1052,8 +1052,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1095,8 +1095,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1138,10 +1138,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
-     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
      * 
      *     }
@@ -1183,10 +1183,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
-     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
      * 
      *     }
@@ -1228,10 +1228,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
-     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
      * 
      *     }
@@ -1273,10 +1273,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemption = UsageProxyFunctions.getSubscriptionRedemption(GetSubscriptionRedemptionArgs.builder()
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
-     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
      * 
      *     }
@@ -1318,10 +1318,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
-     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
      * 
      *     }
@@ -1363,10 +1363,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
-     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
      * 
      *     }
@@ -1408,10 +1408,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
-     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
      * 
      *     }
@@ -1453,10 +1453,10 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRedemptions = UsageProxyFunctions.getSubscriptionRedemptions(GetSubscriptionRedemptionsArgs.builder()
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
-     *             .timeRedeemedGreaterThanOrEqualTo(var_.subscription_redemption_time_redeemed_greater_than_or_equal_to())
-     *             .timeRedeemedLessThan(var_.subscription_redemption_time_redeemed_less_than())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
+     *             .timeRedeemedGreaterThanOrEqualTo(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo)
+     *             .timeRedeemedLessThan(subscriptionRedemptionTimeRedeemedLessThan)
      *             .build());
      * 
      *     }
@@ -1498,8 +1498,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1541,8 +1541,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1584,8 +1584,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1627,8 +1627,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1670,8 +1670,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1713,8 +1713,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1756,8 +1756,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1799,8 +1799,8 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .subscriptionId(testSubscription.id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -1842,11 +1842,11 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .limitType(var_.usagelimit_limit_type())
-     *             .resourceType(var_.usagelimit_resource_type())
-     *             .serviceType(var_.usagelimit_service_type())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .limitType(usagelimitLimitType)
+     *             .resourceType(usagelimitResourceType)
+     *             .serviceType(usagelimitServiceType)
      *             .build());
      * 
      *     }
@@ -1888,11 +1888,11 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .limitType(var_.usagelimit_limit_type())
-     *             .resourceType(var_.usagelimit_resource_type())
-     *             .serviceType(var_.usagelimit_service_type())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .limitType(usagelimitLimitType)
+     *             .resourceType(usagelimitResourceType)
+     *             .serviceType(usagelimitServiceType)
      *             .build());
      * 
      *     }
@@ -1934,11 +1934,11 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .limitType(var_.usagelimit_limit_type())
-     *             .resourceType(var_.usagelimit_resource_type())
-     *             .serviceType(var_.usagelimit_service_type())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .limitType(usagelimitLimitType)
+     *             .resourceType(usagelimitResourceType)
+     *             .serviceType(usagelimitServiceType)
      *             .build());
      * 
      *     }
@@ -1980,11 +1980,11 @@ public final class UsageProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagelimits = UsageProxyFunctions.getUsagelimits(GetUsagelimitsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .limitType(var_.usagelimit_limit_type())
-     *             .resourceType(var_.usagelimit_resource_type())
-     *             .serviceType(var_.usagelimit_service_type())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .limitType(usagelimitLimitType)
+     *             .resourceType(usagelimitResourceType)
+     *             .serviceType(usagelimitServiceType)
      *             .build());
      * 
      *     }

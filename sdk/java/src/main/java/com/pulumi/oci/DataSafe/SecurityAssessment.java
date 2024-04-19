@@ -50,13 +50,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSecurityAssessment = new SecurityAssessment(&#34;testSecurityAssessment&#34;, SecurityAssessmentArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .compartmentId(compartmentId)
+ *             .targetId(testTarget.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.security_assessment_description())
- *             .displayName(var_.security_assessment_display_name())
+ *             .description(securityAssessmentDescription)
+ *             .displayName(securityAssessmentDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .schedule(var_.security_assessment_schedule())
+ *             .schedule(securityAssessmentSchedule)
  *             .build());
  * 
  *     }

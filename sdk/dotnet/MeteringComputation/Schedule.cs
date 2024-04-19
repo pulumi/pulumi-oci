@@ -25,54 +25,55 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSchedule = new Oci.MeteringComputation.Schedule("testSchedule", new()
+    ///     var testSchedule = new Oci.MeteringComputation.Schedule("test_schedule", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = scheduleName,
     ///         ResultLocation = new Oci.MeteringComputation.Inputs.ScheduleResultLocationArgs
     ///         {
-    ///             Bucket = @var.Schedule_result_location_bucket,
-    ///             LocationType = @var.Schedule_result_location_location_type,
-    ///             Namespace = @var.Schedule_result_location_namespace,
-    ///             Region = @var.Schedule_result_location_region,
+    ///             Bucket = scheduleResultLocationBucket,
+    ///             LocationType = scheduleResultLocationLocationType,
+    ///             Namespace = scheduleResultLocationNamespace,
+    ///             Region = scheduleResultLocationRegion,
     ///         },
-    ///         ScheduleRecurrences = @var.Schedule_schedule_recurrences,
-    ///         TimeScheduled = @var.Schedule_time_scheduled,
+    ///         ScheduleRecurrences = scheduleScheduleRecurrences,
+    ///         TimeScheduled = scheduleTimeScheduled,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Schedule_description,
+    ///         Description = scheduleDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         OutputFileFormat = @var.Schedule_output_file_format,
+    ///         OutputFileFormat = scheduleOutputFileFormat,
     ///         QueryProperties = new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesArgs
     ///         {
     ///             DateRange = new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesDateRangeArgs
     ///             {
-    ///                 DateRangeType = @var.Schedule_query_properties_date_range_date_range_type,
-    ///                 DynamicDateRangeType = @var.Schedule_query_properties_date_range_dynamic_date_range_type,
-    ///                 TimeUsageEnded = @var.Schedule_query_properties_date_range_time_usage_ended,
-    ///                 TimeUsageStarted = @var.Schedule_query_properties_date_range_time_usage_started,
+    ///                 DateRangeType = scheduleQueryPropertiesDateRangeDateRangeType,
+    ///                 DynamicDateRangeType = scheduleQueryPropertiesDateRangeDynamicDateRangeType,
+    ///                 TimeUsageEnded = scheduleQueryPropertiesDateRangeTimeUsageEnded,
+    ///                 TimeUsageStarted = scheduleQueryPropertiesDateRangeTimeUsageStarted,
     ///             },
-    ///             Granularity = @var.Schedule_query_properties_granularity,
-    ///             CompartmentDepth = @var.Schedule_query_properties_compartment_depth,
-    ///             Filter = @var.Schedule_query_properties_filter,
-    ///             GroupBies = @var.Schedule_query_properties_group_by,
+    ///             Granularity = scheduleQueryPropertiesGranularity,
+    ///             CompartmentDepth = scheduleQueryPropertiesCompartmentDepth,
+    ///             Filter = scheduleQueryPropertiesFilter,
+    ///             GroupBies = scheduleQueryPropertiesGroupBy,
     ///             GroupByTags = new[]
     ///             {
     ///                 new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesGroupByTagArgs
     ///                 {
-    ///                     Key = @var.Schedule_query_properties_group_by_tag_key,
-    ///                     Namespace = @var.Schedule_query_properties_group_by_tag_namespace,
-    ///                     Value = @var.Schedule_query_properties_group_by_tag_value,
+    ///                     Key = scheduleQueryPropertiesGroupByTagKey,
+    ///                     Namespace = scheduleQueryPropertiesGroupByTagNamespace,
+    ///                     Value = scheduleQueryPropertiesGroupByTagValue,
     ///                 },
     ///             },
-    ///             IsAggregateByTime = @var.Schedule_query_properties_is_aggregate_by_time,
-    ///             QueryType = @var.Schedule_query_properties_query_type,
+    ///             IsAggregateByTime = scheduleQueryPropertiesIsAggregateByTime,
+    ///             QueryType = scheduleQueryPropertiesQueryType,
     ///         },
-    ///         SavedReportId = oci_data_safe_report.Test_report.Id,
+    ///         SavedReportId = testReport.Id,
     ///     });
     /// 
     /// });

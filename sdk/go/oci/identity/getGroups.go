@@ -33,9 +33,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetGroups(ctx, &identity.GetGroupsArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				Name:          pulumi.StringRef(_var.Group_name),
-//				State:         pulumi.StringRef(_var.Group_state),
+//				CompartmentId: tenancyOcid,
+//				Name:          pulumi.StringRef(groupName),
+//				State:         pulumi.StringRef(groupState),
 //			}, nil)
 //			if err != nil {
 //				return err

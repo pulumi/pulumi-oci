@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsApprovalWorkflowAssignments(ctx, &identity.GetDomainsApprovalWorkflowAssignmentsArgs{
-//				IdcsEndpoint:                     data.Oci_identity_domain.Test_domain.Url,
-//				ApprovalWorkflowAssignmentCount:  pulumi.IntRef(_var.Approval_workflow_assignment_approval_workflow_assignment_count),
-//				ApprovalWorkflowAssignmentFilter: pulumi.StringRef(_var.Approval_workflow_assignment_approval_workflow_assignment_filter),
+//				IdcsEndpoint:                     testDomain.Url,
+//				ApprovalWorkflowAssignmentCount:  pulumi.IntRef(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount),
+//				ApprovalWorkflowAssignmentFilter: pulumi.StringRef(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter),
 //				AttributeSets: []string{
 //					"all",
 //				},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Approval_workflow_assignment_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Approval_workflow_assignment_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.Approval_workflow_assignment_start_index),
+//				Authorization:             pulumi.StringRef(approvalWorkflowAssignmentAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(approvalWorkflowAssignmentResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(approvalWorkflowAssignmentStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

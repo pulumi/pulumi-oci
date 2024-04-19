@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceCatalogAssociation = oci.ServiceCatalog.getServiceCatalogAssociation({
- *     serviceCatalogAssociationId: oci_service_catalog_service_catalog_association.test_service_catalog_association.id,
+ *     serviceCatalogAssociationId: testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,7 +79,7 @@ export interface GetServiceCatalogAssociationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceCatalogAssociation = oci.ServiceCatalog.getServiceCatalogAssociation({
- *     serviceCatalogAssociationId: oci_service_catalog_service_catalog_association.test_service_catalog_association.id,
+ *     serviceCatalogAssociationId: testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

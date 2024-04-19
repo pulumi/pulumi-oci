@@ -30,14 +30,14 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAssets = Oci.CloudBridge.GetAssets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssetId = oci_cloud_bridge_asset.Test_asset.Id,
-        ///         AssetType = @var.Asset_asset_type,
-        ///         DisplayName = @var.Asset_display_name,
-        ///         ExternalAssetKey = @var.Asset_external_asset_key,
-        ///         InventoryId = oci_cloud_bridge_inventory.Test_inventory.Id,
-        ///         SourceKey = @var.Asset_source_key,
-        ///         State = @var.Asset_state,
+        ///         CompartmentId = compartmentId,
+        ///         AssetId = testAsset.Id,
+        ///         AssetType = assetAssetType,
+        ///         DisplayName = assetDisplayName,
+        ///         ExternalAssetKey = assetExternalAssetKey,
+        ///         InventoryId = testInventory.Id,
+        ///         SourceKey = assetSourceKey,
+        ///         State = assetState,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAssets = Oci.CloudBridge.GetAssets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssetId = oci_cloud_bridge_asset.Test_asset.Id,
-        ///         AssetType = @var.Asset_asset_type,
-        ///         DisplayName = @var.Asset_display_name,
-        ///         ExternalAssetKey = @var.Asset_external_asset_key,
-        ///         InventoryId = oci_cloud_bridge_inventory.Test_inventory.Id,
-        ///         SourceKey = @var.Asset_source_key,
-        ///         State = @var.Asset_state,
+        ///         CompartmentId = compartmentId,
+        ///         AssetId = testAsset.Id,
+        ///         AssetType = assetAssetType,
+        ///         DisplayName = assetDisplayName,
+        ///         ExternalAssetKey = assetExternalAssetKey,
+        ///         InventoryId = testInventory.Id,
+        ///         SourceKey = assetSourceKey,
+        ///         State = assetState,
         ///     });
         /// 
         /// });

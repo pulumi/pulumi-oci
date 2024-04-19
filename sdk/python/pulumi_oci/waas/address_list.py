@@ -271,10 +271,10 @@ class AddressList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_address_list = oci.waas.AddressList("testAddressList",
-            addresses=var["address_list_addresses"],
-            compartment_id=var["compartment_id"],
-            display_name=var["address_list_display_name"],
+        test_address_list = oci.waas.AddressList("test_address_list",
+            addresses=address_list_addresses,
+            compartment_id=compartment_id,
+            display_name=address_list_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -322,10 +322,10 @@ class AddressList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_address_list = oci.waas.AddressList("testAddressList",
-            addresses=var["address_list_addresses"],
-            compartment_id=var["compartment_id"],
-            display_name=var["address_list_display_name"],
+        test_address_list = oci.waas.AddressList("test_address_list",
+            addresses=address_list_addresses,
+            compartment_id=compartment_id,
+            display_name=address_list_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

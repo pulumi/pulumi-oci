@@ -32,13 +32,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetExadataInsights(ctx, &opsi.GetExadataInsightsArgs{
-//				CompartmentId:             pulumi.StringRef(_var.Compartment_id),
-//				CompartmentIdInSubtree:    pulumi.BoolRef(_var.Exadata_insight_compartment_id_in_subtree),
-//				EnterpriseManagerBridgeId: pulumi.StringRef(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
-//				ExadataTypes:              _var.Exadata_insight_exadata_type,
-//				Id:                        pulumi.StringRef(_var.Exadata_insight_id),
-//				States:                    _var.Exadata_insight_state,
-//				Statuses:                  _var.Exadata_insight_status,
+//				CompartmentId:             pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree:    pulumi.BoolRef(exadataInsightCompartmentIdInSubtree),
+//				EnterpriseManagerBridgeId: pulumi.StringRef(testEnterpriseManagerBridge.Id),
+//				ExadataTypes:              exadataInsightExadataType,
+//				Id:                        pulumi.StringRef(exadataInsightId),
+//				States:                    exadataInsightState,
+//				Statuses:                  exadataInsightStatus,
 //			}, nil)
 //			if err != nil {
 //				return err

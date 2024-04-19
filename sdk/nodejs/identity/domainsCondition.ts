@@ -18,23 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCondition = new oci.identity.DomainsCondition("testCondition", {
- *     attributeName: _var.condition_attribute_name,
- *     attributeValue: _var.condition_attribute_value,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     operator: _var.condition_operator,
+ * const testCondition = new oci.identity.DomainsCondition("test_condition", {
+ *     attributeName: conditionAttributeName,
+ *     attributeValue: conditionAttributeValue,
+ *     idcsEndpoint: testDomain.url,
+ *     name: conditionName,
+ *     operator: conditionOperator,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Condition"],
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.condition_authorization,
- *     description: _var.condition_description,
- *     evaluateConditionIf: _var.condition_evaluate_condition_if,
+ *     authorization: conditionAuthorization,
+ *     description: conditionDescription,
+ *     evaluateConditionIf: conditionEvaluateConditionIf,
  *     externalId: "externalId",
- *     ocid: _var.condition_ocid,
- *     resourceTypeSchemaVersion: _var.condition_resource_type_schema_version,
+ *     ocid: conditionOcid,
+ *     resourceTypeSchemaVersion: conditionResourceTypeSchemaVersion,
  *     tags: [{
- *         key: _var.condition_tags_key,
- *         value: _var.condition_tags_value,
+ *         key: conditionTagsKey,
+ *         value: conditionTagsValue,
  *     }],
  * });
  * ```

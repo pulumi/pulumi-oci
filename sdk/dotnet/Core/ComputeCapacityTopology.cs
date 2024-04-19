@@ -30,20 +30,20 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testComputeCapacityTopology = new Oci.Core.ComputeCapacityTopology("testComputeCapacityTopology", new()
+    ///     var testComputeCapacityTopology = new Oci.Core.ComputeCapacityTopology("test_compute_capacity_topology", new()
     ///     {
-    ///         AvailabilityDomain = @var.Compute_capacity_topology_availability_domain,
+    ///         AvailabilityDomain = computeCapacityTopologyAvailabilityDomain,
     ///         CapacitySource = new Oci.Core.Inputs.ComputeCapacityTopologyCapacitySourceArgs
     ///         {
-    ///             CapacityType = @var.Compute_capacity_topology_capacity_source_capacity_type,
-    ///             CompartmentId = @var.Compartment_id,
+    ///             CapacityType = computeCapacityTopologyCapacitySourceCapacityType,
+    ///             CompartmentId = compartmentId,
     ///         },
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Compute_capacity_topology_display_name,
+    ///         DisplayName = computeCapacityTopologyDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppFirewalls = oci.Waf.getFirewalls({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.web_app_firewall_display_name,
- *     id: _var.web_app_firewall_id,
- *     states: _var.web_app_firewall_state,
- *     webAppFirewallPolicyId: oci_waf_web_app_firewall_policy.test_web_app_firewall_policy.id,
+ *     compartmentId: compartmentId,
+ *     displayName: webAppFirewallDisplayName,
+ *     id: webAppFirewallId,
+ *     states: webAppFirewallState,
+ *     webAppFirewallPolicyId: testWebAppFirewallPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetFirewallsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppFirewalls = oci.Waf.getFirewalls({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.web_app_firewall_display_name,
- *     id: _var.web_app_firewall_id,
- *     states: _var.web_app_firewall_state,
- *     webAppFirewallPolicyId: oci_waf_web_app_firewall_policy.test_web_app_firewall_policy.id,
+ *     compartmentId: compartmentId,
+ *     displayName: webAppFirewallDisplayName,
+ *     id: webAppFirewallId,
+ *     states: webAppFirewallState,
+ *     webAppFirewallPolicyId: testWebAppFirewallPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

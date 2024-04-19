@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetTrailSequence(ctx, &goldengate.GetTrailSequenceArgs{
-//				DeploymentId:    oci_golden_gate_deployment.Test_deployment.Id,
-//				TrailFileId:     oci_golden_gate_trail_file.Test_trail_file.Id,
-//				DisplayName:     _var.Trail_sequence_display_name,
-//				TrailSequenceId: oci_golden_gate_trail_sequence.Test_trail_sequence.Id,
+//				DeploymentId:    testDeployment.Id,
+//				TrailFileId:     testTrailFile.Id,
+//				DisplayName:     trailSequenceDisplayName,
+//				TrailSequenceId: testTrailSequenceOciGoldenGateTrailSequence.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

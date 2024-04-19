@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalCluster(ctx, &databasemanagement.GetExternalClusterArgs{
-//				ExternalClusterId: oci_database_management_external_cluster.Test_external_cluster.Id,
+//				ExternalClusterId: testExternalClusterOciDatabaseManagementExternalCluster.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

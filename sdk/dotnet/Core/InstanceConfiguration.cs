@@ -26,34 +26,34 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testInstanceConfiguration = new Oci.Core.InstanceConfiguration("testInstanceConfiguration", new()
+    ///     var testInstanceConfiguration = new Oci.Core.InstanceConfiguration("test_instance_configuration", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Instance_configuration_display_name,
+    ///         DisplayName = instanceConfigurationDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         InstanceDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsArgs
     ///         {
-    ///             InstanceType = @var.Instance_configuration_instance_details_instance_type,
+    ///             InstanceType = instanceConfigurationInstanceDetailsInstanceType,
     ///             BlockVolumes = new[]
     ///             {
     ///                 new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeArgs
     ///                 {
     ///                     AttachDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs
     ///                     {
-    ///                         Type = @var.Instance_configuration_instance_details_block_volumes_attach_details_type,
-    ///                         Device = @var.Instance_configuration_instance_details_block_volumes_attach_details_device,
-    ///                         DisplayName = @var.Instance_configuration_instance_details_block_volumes_attach_details_display_name,
-    ///                         IsPvEncryptionInTransitEnabled = @var.Instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled,
-    ///                         IsReadOnly = @var.Instance_configuration_instance_details_block_volumes_attach_details_is_read_only,
-    ///                         IsShareable = @var.Instance_configuration_instance_details_block_volumes_attach_details_is_shareable,
-    ///                         UseChap = @var.Instance_configuration_instance_details_block_volumes_attach_details_use_chap,
+    ///                         Type = instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsType,
+    ///                         Device = instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsDevice,
+    ///                         DisplayName = instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsDisplayName,
+    ///                         IsPvEncryptionInTransitEnabled = instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsPvEncryptionInTransitEnabled,
+    ///                         IsReadOnly = instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsReadOnly,
+    ///                         IsShareable = instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsShareable,
+    ///                         UseChap = instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsUseChap,
     ///                     },
     ///                     CreateDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs
     ///                     {
@@ -61,168 +61,168 @@ namespace Pulumi.Oci.Core
     ///                         {
     ///                             new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs
     ///                             {
-    ///                                 AutotuneType = @var.Instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type,
-    ///                                 MaxVpusPerGb = @var.Instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb,
+    ///                                 AutotuneType = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePoliciesAutotuneType,
+    ///                                 MaxVpusPerGb = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePoliciesMaxVpusPerGb,
     ///                             },
     ///                         },
-    ///                         AvailabilityDomain = @var.Instance_configuration_instance_details_block_volumes_create_details_availability_domain,
-    ///                         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
+    ///                         AvailabilityDomain = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAvailabilityDomain,
+    ///                         BackupPolicyId = testVolumeBackupPolicies.VolumeBackupPolicies[0].Id,
     ///                         BlockVolumeReplicas = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs
     ///                         {
-    ///                             AvailabilityDomain = @var.Instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain,
-    ///                             DisplayName = @var.Instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name,
+    ///                             AvailabilityDomain = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasAvailabilityDomain,
+    ///                             DisplayName = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasDisplayName,
     ///                         },
-    ///                         CompartmentId = @var.Compartment_id,
+    ///                         CompartmentId = compartmentId,
     ///                         DefinedTags = 
     ///                         {
     ///                             { "Operations.CostCenter", "42" },
     ///                         },
-    ///                         DisplayName = @var.Instance_configuration_instance_details_block_volumes_create_details_display_name,
+    ///                         DisplayName = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsDisplayName,
     ///                         FreeformTags = 
     ///                         {
     ///                             { "Department", "Finance" },
     ///                         },
-    ///                         IsAutoTuneEnabled = @var.Instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled,
-    ///                         KmsKeyId = oci_kms_key.Test_key.Id,
-    ///                         SizeInGbs = @var.Instance_configuration_instance_details_block_volumes_create_details_size_in_gbs,
+    ///                         IsAutoTuneEnabled = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsIsAutoTuneEnabled,
+    ///                         KmsKeyId = testKey.Id,
+    ///                         SizeInGbs = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSizeInGbs,
     ///                         SourceDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs
     ///                         {
-    ///                             Type = @var.Instance_configuration_instance_details_block_volumes_create_details_source_details_type,
-    ///                             Id = @var.Instance_configuration_instance_details_block_volumes_create_details_source_details_id,
+    ///                             Type = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsType,
+    ///                             Id = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsId,
     ///                         },
-    ///                         VpusPerGb = @var.Instance_configuration_instance_details_block_volumes_create_details_vpus_per_gb,
+    ///                         VpusPerGb = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsVpusPerGb,
     ///                     },
-    ///                     VolumeId = oci_core_volume.Test_volume.Id,
+    ///                     VolumeId = testVolume.Id,
     ///                 },
     ///             },
     ///             LaunchDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsArgs
     ///             {
     ///                 AgentConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs
     ///                 {
-    ///                     AreAllPluginsDisabled = @var.Instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled,
-    ///                     IsManagementDisabled = @var.Instance_configuration_instance_details_launch_details_agent_config_is_management_disabled,
-    ///                     IsMonitoringDisabled = @var.Instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled,
+    ///                     AreAllPluginsDisabled = instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigAreAllPluginsDisabled,
+    ///                     IsManagementDisabled = instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigIsManagementDisabled,
+    ///                     IsMonitoringDisabled = instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigIsMonitoringDisabled,
     ///                     PluginsConfigs = new[]
     ///                     {
     ///                         new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs
     ///                         {
-    ///                             DesiredState = @var.Instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state,
-    ///                             Name = @var.Instance_configuration_instance_details_launch_details_agent_config_plugins_config_name,
+    ///                             DesiredState = instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigDesiredState,
+    ///                             Name = instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigName,
     ///                         },
     ///                     },
     ///                 },
     ///                 AvailabilityConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs
     ///                 {
-    ///                     IsLiveMigrationPreferred = @var.Instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred,
-    ///                     RecoveryAction = @var.Instance_configuration_instance_details_launch_details_availability_config_recovery_action,
+    ///                     IsLiveMigrationPreferred = instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigIsLiveMigrationPreferred,
+    ///                     RecoveryAction = instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigRecoveryAction,
     ///                 },
-    ///                 AvailabilityDomain = @var.Instance_configuration_instance_details_launch_details_availability_domain,
-    ///                 CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
-    ///                 CompartmentId = @var.Compartment_id,
+    ///                 AvailabilityDomain = instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityDomain,
+    ///                 CapacityReservationId = testCapacityReservation.Id,
+    ///                 CompartmentId = compartmentId,
     ///                 CreateVnicDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs
     ///                 {
-    ///                     AssignIpv6ip = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
-    ///                     AssignPrivateDnsRecord = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record,
-    ///                     AssignPublicIp = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip,
+    ///                     AssignIpv6ip = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip,
+    ///                     AssignPrivateDnsRecord = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord,
+    ///                     AssignPublicIp = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPublicIp,
     ///                     DefinedTags = 
     ///                     {
     ///                         { "Operations.CostCenter", "42" },
     ///                     },
-    ///                     DisplayName = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_display_name,
+    ///                     DisplayName = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsDisplayName,
     ///                     FreeformTags = 
     ///                     {
     ///                         { "Department", "Finance" },
     ///                     },
-    ///                     HostnameLabel = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label,
+    ///                     HostnameLabel = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsHostnameLabel,
     ///                     Ipv6addressIpv6subnetCidrPairDetails = new[]
     ///                     {
     ///                         new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
     ///                         {
-    ///                             Ipv6address = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-    ///                             Ipv6subnetCidr = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                             Ipv6address = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                             Ipv6subnetCidr = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                         },
     ///                     },
-    ///                     NsgIds = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids,
-    ///                     PrivateIp = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_private_ip,
-    ///                     SkipSourceDestCheck = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check,
-    ///                     SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                     NsgIds = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsNsgIds,
+    ///                     PrivateIp = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsPrivateIp,
+    ///                     SkipSourceDestCheck = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck,
+    ///                     SubnetId = testSubnet.Id,
     ///                 },
-    ///                 DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
+    ///                 DedicatedVmHostId = testDedicatedVmHost.Id,
     ///                 DefinedTags = 
     ///                 {
     ///                     { "Operations.CostCenter", "42" },
     ///                 },
-    ///                 DisplayName = @var.Instance_configuration_instance_details_launch_details_display_name,
-    ///                 ExtendedMetadata = @var.Instance_configuration_instance_details_launch_details_extended_metadata,
-    ///                 FaultDomain = @var.Instance_configuration_instance_details_launch_details_fault_domain,
+    ///                 DisplayName = instanceConfigurationInstanceDetailsLaunchDetailsDisplayName,
+    ///                 ExtendedMetadata = instanceConfigurationInstanceDetailsLaunchDetailsExtendedMetadata,
+    ///                 FaultDomain = instanceConfigurationInstanceDetailsLaunchDetailsFaultDomain,
     ///                 FreeformTags = 
     ///                 {
     ///                     { "Department", "Finance" },
     ///                 },
     ///                 InstanceOptions = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs
     ///                 {
-    ///                     AreLegacyImdsEndpointsDisabled = @var.Instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
+    ///                     AreLegacyImdsEndpointsDisabled = instanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled,
     ///                 },
-    ///                 IpxeScript = @var.Instance_configuration_instance_details_launch_details_ipxe_script,
-    ///                 IsPvEncryptionInTransitEnabled = @var.Instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled,
-    ///                 LaunchMode = @var.Instance_configuration_instance_details_launch_details_launch_mode,
+    ///                 IpxeScript = instanceConfigurationInstanceDetailsLaunchDetailsIpxeScript,
+    ///                 IsPvEncryptionInTransitEnabled = instanceConfigurationInstanceDetailsLaunchDetailsIsPvEncryptionInTransitEnabled,
+    ///                 LaunchMode = instanceConfigurationInstanceDetailsLaunchDetailsLaunchMode,
     ///                 LaunchOptions = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs
     ///                 {
-    ///                     BootVolumeType = @var.Instance_configuration_instance_details_launch_details_launch_options_boot_volume_type,
-    ///                     Firmware = @var.Instance_configuration_instance_details_launch_details_launch_options_firmware,
-    ///                     IsConsistentVolumeNamingEnabled = @var.Instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled,
-    ///                     IsPvEncryptionInTransitEnabled = @var.Instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled,
-    ///                     NetworkType = @var.Instance_configuration_instance_details_launch_details_launch_options_network_type,
-    ///                     RemoteDataVolumeType = @var.Instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type,
+    ///                     BootVolumeType = instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsBootVolumeType,
+    ///                     Firmware = instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsFirmware,
+    ///                     IsConsistentVolumeNamingEnabled = instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsIsConsistentVolumeNamingEnabled,
+    ///                     IsPvEncryptionInTransitEnabled = instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled,
+    ///                     NetworkType = instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsNetworkType,
+    ///                     RemoteDataVolumeType = instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsRemoteDataVolumeType,
     ///                 },
-    ///                 Metadata = @var.Instance_configuration_instance_details_launch_details_metadata,
+    ///                 Metadata = instanceConfigurationInstanceDetailsLaunchDetailsMetadata,
     ///                 PlatformConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs
     ///                 {
-    ///                     Type = @var.Instance_configuration_instance_details_launch_details_platform_config_type,
-    ///                     AreVirtualInstructionsEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled,
-    ///                     ConfigMap = @var.Instance_configuration_instance_details_launch_details_platform_config_config_map,
-    ///                     IsAccessControlServiceEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled,
-    ///                     IsInputOutputMemoryManagementUnitEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
-    ///                     IsMeasuredBootEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled,
-    ///                     IsMemoryEncryptionEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled,
-    ///                     IsSecureBootEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled,
-    ///                     IsSymmetricMultiThreadingEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled,
-    ///                     IsTrustedPlatformModuleEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled,
-    ///                     NumaNodesPerSocket = @var.Instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket,
-    ///                     PercentageOfCoresEnabled = @var.Instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled,
+    ///                     Type = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigType,
+    ///                     AreVirtualInstructionsEnabled = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigAreVirtualInstructionsEnabled,
+    ///                     ConfigMap = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigConfigMap,
+    ///                     IsAccessControlServiceEnabled = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsAccessControlServiceEnabled,
+    ///                     IsInputOutputMemoryManagementUnitEnabled = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsInputOutputMemoryManagementUnitEnabled,
+    ///                     IsMeasuredBootEnabled = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsMeasuredBootEnabled,
+    ///                     IsMemoryEncryptionEnabled = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsMemoryEncryptionEnabled,
+    ///                     IsSecureBootEnabled = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsSecureBootEnabled,
+    ///                     IsSymmetricMultiThreadingEnabled = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsSymmetricMultiThreadingEnabled,
+    ///                     IsTrustedPlatformModuleEnabled = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsTrustedPlatformModuleEnabled,
+    ///                     NumaNodesPerSocket = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigNumaNodesPerSocket,
+    ///                     PercentageOfCoresEnabled = instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigPercentageOfCoresEnabled,
     ///                 },
     ///                 PreemptibleInstanceConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs
     ///                 {
     ///                     PreemptionAction = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs
     ///                     {
-    ///                         Type = @var.Instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type,
-    ///                         PreserveBootVolume = @var.Instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume,
+    ///                         Type = instanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionType,
+    ///                         PreserveBootVolume = instanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionPreserveBootVolume,
     ///                     },
     ///                 },
-    ///                 PreferredMaintenanceAction = @var.Instance_configuration_instance_details_launch_details_preferred_maintenance_action,
-    ///                 Shape = @var.Instance_configuration_instance_details_launch_details_shape,
+    ///                 PreferredMaintenanceAction = instanceConfigurationInstanceDetailsLaunchDetailsPreferredMaintenanceAction,
+    ///                 Shape = instanceConfigurationInstanceDetailsLaunchDetailsShape,
     ///                 ShapeConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs
     ///                 {
-    ///                     BaselineOcpuUtilization = @var.Instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization,
-    ///                     MemoryInGbs = @var.Instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs,
-    ///                     Nvmes = @var.Instance_configuration_instance_details_launch_details_shape_config_nvmes,
-    ///                     Ocpus = @var.Instance_configuration_instance_details_launch_details_shape_config_ocpus,
-    ///                     Vcpus = @var.Instance_configuration_instance_details_launch_details_shape_config_vcpus,
+    ///                     BaselineOcpuUtilization = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigBaselineOcpuUtilization,
+    ///                     MemoryInGbs = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigMemoryInGbs,
+    ///                     Nvmes = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigNvmes,
+    ///                     Ocpus = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigOcpus,
+    ///                     Vcpus = instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigVcpus,
     ///                 },
     ///                 SourceDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs
     ///                 {
-    ///                     SourceType = @var.Instance_configuration_instance_details_launch_details_source_details_source_type,
-    ///                     BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-    ///                     BootVolumeSizeInGbs = @var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs,
-    ///                     BootVolumeVpusPerGb = @var.Instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb,
-    ///                     ImageId = oci_core_image.Test_image.Id,
-    ///                     KmsKeyId = oci_kms_key.Test_key.Id,
+    ///                     SourceType = instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsSourceType,
+    ///                     BootVolumeId = testBootVolume.Id,
+    ///                     BootVolumeSizeInGbs = instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsBootVolumeSizeInGbs,
+    ///                     BootVolumeVpusPerGb = instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsBootVolumeVpusPerGb,
+    ///                     ImageId = testImage.Id,
+    ///                     KmsKeyId = testKey.Id,
     ///                     InstanceSourceImageFilterDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs
     ///                     {
-    ///                         CompartmentId = @var.Compartment_id,
-    ///                         DefinedTagsFilter = @var.Instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter,
-    ///                         OperatingSystem = @var.Instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system,
-    ///                         OperatingSystemVersion = @var.Instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system_version,
+    ///                         CompartmentId = compartmentId,
+    ///                         DefinedTagsFilter = instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsDefinedTagsFilter,
+    ///                         OperatingSystem = instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOperatingSystem,
+    ///                         OperatingSystemVersion = instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOperatingSystemVersion,
     ///                     },
     ///                 },
     ///             },
@@ -236,13 +236,13 @@ namespace Pulumi.Oci.Core
     ///                         {
     ///                             AttachDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs
     ///                             {
-    ///                                 Type = @var.Instance_configuration_instance_details_options_block_volumes_attach_details_type,
-    ///                                 Device = @var.Instance_configuration_instance_details_options_block_volumes_attach_details_device,
-    ///                                 DisplayName = @var.Instance_configuration_instance_details_options_block_volumes_attach_details_display_name,
-    ///                                 IsPvEncryptionInTransitEnabled = @var.Instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled,
-    ///                                 IsReadOnly = @var.Instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only,
-    ///                                 IsShareable = @var.Instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable,
-    ///                                 UseChap = @var.Instance_configuration_instance_details_options_block_volumes_attach_details_use_chap,
+    ///                                 Type = instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsType,
+    ///                                 Device = instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsDevice,
+    ///                                 DisplayName = instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsDisplayName,
+    ///                                 IsPvEncryptionInTransitEnabled = instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsPvEncryptionInTransitEnabled,
+    ///                                 IsReadOnly = instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsReadOnly,
+    ///                                 IsShareable = instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsShareable,
+    ///                                 UseChap = instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsUseChap,
     ///                             },
     ///                             CreateDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs
     ///                             {
@@ -250,159 +250,159 @@ namespace Pulumi.Oci.Core
     ///                                 {
     ///                                     new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs
     ///                                     {
-    ///                                         AutotuneType = @var.Instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_autotune_type,
-    ///                                         MaxVpusPerGb = @var.Instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_max_vpus_per_gb,
+    ///                                         AutotuneType = instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePoliciesAutotuneType,
+    ///                                         MaxVpusPerGb = instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePoliciesMaxVpusPerGb,
     ///                                     },
     ///                                 },
-    ///                                 AvailabilityDomain = @var.Instance_configuration_instance_details_options_block_volumes_create_details_availability_domain,
-    ///                                 BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
-    ///                                 CompartmentId = @var.Compartment_id,
+    ///                                 AvailabilityDomain = instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAvailabilityDomain,
+    ///                                 BackupPolicyId = testVolumeBackupPolicies.VolumeBackupPolicies[0].Id,
+    ///                                 CompartmentId = compartmentId,
     ///                                 DefinedTags = 
     ///                                 {
     ///                                     { "Operations.CostCenter", "42" },
     ///                                 },
-    ///                                 DisplayName = @var.Instance_configuration_instance_details_options_block_volumes_create_details_display_name,
+    ///                                 DisplayName = instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsDisplayName,
     ///                                 FreeformTags = 
     ///                                 {
     ///                                     { "Department", "Finance" },
     ///                                 },
-    ///                                 KmsKeyId = oci_kms_key.Test_key.Id,
-    ///                                 SizeInGbs = @var.Instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs,
+    ///                                 KmsKeyId = testKey.Id,
+    ///                                 SizeInGbs = instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSizeInGbs,
     ///                                 SourceDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs
     ///                                 {
-    ///                                     Type = @var.Instance_configuration_instance_details_options_block_volumes_create_details_source_details_type,
-    ///                                     Id = @var.Instance_configuration_instance_details_options_block_volumes_create_details_source_details_id,
+    ///                                     Type = instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsType,
+    ///                                     Id = instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsId,
     ///                                 },
-    ///                                 VpusPerGb = @var.Instance_configuration_instance_details_options_block_volumes_create_details_vpus_per_gb,
+    ///                                 VpusPerGb = instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsVpusPerGb,
     ///                             },
-    ///                             VolumeId = oci_core_volume.Test_volume.Id,
+    ///                             VolumeId = testVolume.Id,
     ///                         },
     ///                     },
     ///                     LaunchDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs
     ///                     {
     ///                         AgentConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs
     ///                         {
-    ///                             AreAllPluginsDisabled = @var.Instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled,
-    ///                             IsManagementDisabled = @var.Instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled,
-    ///                             IsMonitoringDisabled = @var.Instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled,
+    ///                             AreAllPluginsDisabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigAreAllPluginsDisabled,
+    ///                             IsManagementDisabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigIsManagementDisabled,
+    ///                             IsMonitoringDisabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigIsMonitoringDisabled,
     ///                             PluginsConfigs = new[]
     ///                             {
     ///                                 new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs
     ///                                 {
-    ///                                     DesiredState = @var.Instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_desired_state,
-    ///                                     Name = @var.Instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_name,
+    ///                                     DesiredState = instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigDesiredState,
+    ///                                     Name = instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigName,
     ///                                 },
     ///                             },
     ///                         },
     ///                         AvailabilityConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs
     ///                         {
-    ///                             RecoveryAction = @var.Instance_configuration_instance_details_options_launch_details_availability_config_recovery_action,
+    ///                             RecoveryAction = instanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityConfigRecoveryAction,
     ///                         },
-    ///                         AvailabilityDomain = @var.Instance_configuration_instance_details_options_launch_details_availability_domain,
-    ///                         CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
-    ///                         CompartmentId = @var.Compartment_id,
+    ///                         AvailabilityDomain = instanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityDomain,
+    ///                         CapacityReservationId = testCapacityReservation.Id,
+    ///                         CompartmentId = compartmentId,
     ///                         CreateVnicDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs
     ///                         {
-    ///                             AssignIpv6ip = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
-    ///                             AssignPrivateDnsRecord = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record,
-    ///                             AssignPublicIp = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip,
+    ///                             AssignIpv6ip = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip,
+    ///                             AssignPrivateDnsRecord = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord,
+    ///                             AssignPublicIp = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPublicIp,
     ///                             DefinedTags = 
     ///                             {
     ///                                 { "Operations.CostCenter", "42" },
     ///                             },
-    ///                             DisplayName = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_display_name,
+    ///                             DisplayName = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsDisplayName,
     ///                             FreeformTags = 
     ///                             {
     ///                                 { "Department", "Finance" },
     ///                             },
-    ///                             HostnameLabel = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label,
+    ///                             HostnameLabel = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsHostnameLabel,
     ///                             Ipv6addressIpv6subnetCidrPairDetails = new[]
     ///                             {
     ///                                 new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
     ///                                 {
-    ///                                     Ipv6address = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-    ///                                     Ipv6subnetCidr = @var.Instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                                     Ipv6address = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                                     Ipv6subnetCidr = instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                                 },
     ///                             },
-    ///                             NsgIds = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids,
-    ///                             PrivateIp = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip,
-    ///                             SkipSourceDestCheck = @var.Instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check,
-    ///                             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                             NsgIds = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsNsgIds,
+    ///                             PrivateIp = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsPrivateIp,
+    ///                             SkipSourceDestCheck = instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck,
+    ///                             SubnetId = testSubnet.Id,
     ///                         },
-    ///                         DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
+    ///                         DedicatedVmHostId = testDedicatedVmHost.Id,
     ///                         DefinedTags = 
     ///                         {
     ///                             { "Operations.CostCenter", "42" },
     ///                         },
-    ///                         DisplayName = @var.Instance_configuration_instance_details_options_launch_details_display_name,
-    ///                         ExtendedMetadata = @var.Instance_configuration_instance_details_options_launch_details_extended_metadata,
-    ///                         FaultDomain = @var.Instance_configuration_instance_details_options_launch_details_fault_domain,
+    ///                         DisplayName = instanceConfigurationInstanceDetailsOptionsLaunchDetailsDisplayName,
+    ///                         ExtendedMetadata = instanceConfigurationInstanceDetailsOptionsLaunchDetailsExtendedMetadata,
+    ///                         FaultDomain = instanceConfigurationInstanceDetailsOptionsLaunchDetailsFaultDomain,
     ///                         FreeformTags = 
     ///                         {
     ///                             { "Department", "Finance" },
     ///                         },
     ///                         InstanceOptions = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs
     ///                         {
-    ///                             AreLegacyImdsEndpointsDisabled = @var.Instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled,
+    ///                             AreLegacyImdsEndpointsDisabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled,
     ///                         },
-    ///                         IpxeScript = @var.Instance_configuration_instance_details_options_launch_details_ipxe_script,
-    ///                         IsPvEncryptionInTransitEnabled = @var.Instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled,
-    ///                         LaunchMode = @var.Instance_configuration_instance_details_options_launch_details_launch_mode,
+    ///                         IpxeScript = instanceConfigurationInstanceDetailsOptionsLaunchDetailsIpxeScript,
+    ///                         IsPvEncryptionInTransitEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsIsPvEncryptionInTransitEnabled,
+    ///                         LaunchMode = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchMode,
     ///                         LaunchOptions = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs
     ///                         {
-    ///                             BootVolumeType = @var.Instance_configuration_instance_details_options_launch_details_launch_options_boot_volume_type,
-    ///                             Firmware = @var.Instance_configuration_instance_details_options_launch_details_launch_options_firmware,
-    ///                             IsConsistentVolumeNamingEnabled = @var.Instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled,
-    ///                             IsPvEncryptionInTransitEnabled = @var.Instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled,
-    ///                             NetworkType = @var.Instance_configuration_instance_details_options_launch_details_launch_options_network_type,
-    ///                             RemoteDataVolumeType = @var.Instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type,
+    ///                             BootVolumeType = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsBootVolumeType,
+    ///                             Firmware = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsFirmware,
+    ///                             IsConsistentVolumeNamingEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsConsistentVolumeNamingEnabled,
+    ///                             IsPvEncryptionInTransitEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled,
+    ///                             NetworkType = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsNetworkType,
+    ///                             RemoteDataVolumeType = instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsRemoteDataVolumeType,
     ///                         },
-    ///                         Metadata = @var.Instance_configuration_instance_details_options_launch_details_metadata,
+    ///                         Metadata = instanceConfigurationInstanceDetailsOptionsLaunchDetailsMetadata,
     ///                         PlatformConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs
     ///                         {
-    ///                             Type = @var.Instance_configuration_instance_details_options_launch_details_platform_config_type,
-    ///                             AreVirtualInstructionsEnabled = @var.Instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled,
-    ///                             IsAccessControlServiceEnabled = @var.Instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled,
-    ///                             IsInputOutputMemoryManagementUnitEnabled = @var.Instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled,
-    ///                             IsMeasuredBootEnabled = @var.Instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled,
-    ///                             IsMemoryEncryptionEnabled = @var.Instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled,
-    ///                             IsSecureBootEnabled = @var.Instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled,
-    ///                             IsSymmetricMultiThreadingEnabled = @var.Instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled,
-    ///                             IsTrustedPlatformModuleEnabled = @var.Instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled,
-    ///                             NumaNodesPerSocket = @var.Instance_configuration_instance_details_options_launch_details_platform_config_numa_nodes_per_socket,
-    ///                             PercentageOfCoresEnabled = @var.Instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled,
+    ///                             Type = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigType,
+    ///                             AreVirtualInstructionsEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigAreVirtualInstructionsEnabled,
+    ///                             IsAccessControlServiceEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsAccessControlServiceEnabled,
+    ///                             IsInputOutputMemoryManagementUnitEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsInputOutputMemoryManagementUnitEnabled,
+    ///                             IsMeasuredBootEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsMeasuredBootEnabled,
+    ///                             IsMemoryEncryptionEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsMemoryEncryptionEnabled,
+    ///                             IsSecureBootEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsSecureBootEnabled,
+    ///                             IsSymmetricMultiThreadingEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsSymmetricMultiThreadingEnabled,
+    ///                             IsTrustedPlatformModuleEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsTrustedPlatformModuleEnabled,
+    ///                             NumaNodesPerSocket = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigNumaNodesPerSocket,
+    ///                             PercentageOfCoresEnabled = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigPercentageOfCoresEnabled,
     ///                         },
     ///                         PreemptibleInstanceConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs
     ///                         {
     ///                             PreemptionAction = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs
     ///                             {
-    ///                                 Type = @var.Instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_type,
-    ///                                 PreserveBootVolume = @var.Instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume,
+    ///                                 Type = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionType,
+    ///                                 PreserveBootVolume = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionPreserveBootVolume,
     ///                             },
     ///                         },
-    ///                         PreferredMaintenanceAction = @var.Instance_configuration_instance_details_options_launch_details_preferred_maintenance_action,
-    ///                         Shape = @var.Instance_configuration_instance_details_options_launch_details_shape,
+    ///                         PreferredMaintenanceAction = instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreferredMaintenanceAction,
+    ///                         Shape = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShape,
     ///                         ShapeConfig = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs
     ///                         {
-    ///                             BaselineOcpuUtilization = @var.Instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization,
-    ///                             MemoryInGbs = @var.Instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs,
-    ///                             Nvmes = @var.Instance_configuration_instance_details_options_launch_details_shape_config_nvmes,
-    ///                             Ocpus = @var.Instance_configuration_instance_details_options_launch_details_shape_config_ocpus,
-    ///                             Vcpus = @var.Instance_configuration_instance_details_options_launch_details_shape_config_vcpus,
+    ///                             BaselineOcpuUtilization = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigBaselineOcpuUtilization,
+    ///                             MemoryInGbs = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigMemoryInGbs,
+    ///                             Nvmes = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigNvmes,
+    ///                             Ocpus = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigOcpus,
+    ///                             Vcpus = instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigVcpus,
     ///                         },
     ///                         SourceDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs
     ///                         {
-    ///                             SourceType = @var.Instance_configuration_instance_details_options_launch_details_source_details_source_type,
-    ///                             BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-    ///                             BootVolumeSizeInGbs = @var.Instance_configuration_instance_details_options_launch_details_source_details_boot_volume_size_in_gbs,
-    ///                             BootVolumeVpusPerGb = @var.Instance_configuration_instance_details_options_launch_details_source_details_boot_volume_vpus_per_gb,
-    ///                             ImageId = oci_core_image.Test_image.Id,
+    ///                             SourceType = instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsSourceType,
+    ///                             BootVolumeId = testBootVolume.Id,
+    ///                             BootVolumeSizeInGbs = instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsBootVolumeSizeInGbs,
+    ///                             BootVolumeVpusPerGb = instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsBootVolumeVpusPerGb,
+    ///                             ImageId = testImage.Id,
     ///                             InstanceSourceImageFilterDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs
     ///                             {
-    ///                                 CompartmentId = @var.Compartment_id,
-    ///                                 DefinedTagsFilter = @var.Instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter,
-    ///                                 OperatingSystem = @var.Instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system,
-    ///                                 OperatingSystemVersion = @var.Instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system_version,
+    ///                                 CompartmentId = compartmentId,
+    ///                                 DefinedTagsFilter = instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsDefinedTagsFilter,
+    ///                                 OperatingSystem = instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOperatingSystem,
+    ///                                 OperatingSystemVersion = instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOperatingSystemVersion,
     ///                             },
     ///                         },
     ///                     },
@@ -412,34 +412,34 @@ namespace Pulumi.Oci.Core
     ///                         {
     ///                             CreateVnicDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs
     ///                             {
-    ///                                 AssignIpv6ip = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip,
-    ///                                 AssignPrivateDnsRecord = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record,
-    ///                                 AssignPublicIp = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip,
+    ///                                 AssignIpv6ip = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignIpv6ip,
+    ///                                 AssignPrivateDnsRecord = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord,
+    ///                                 AssignPublicIp = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPublicIp,
     ///                                 DefinedTags = 
     ///                                 {
     ///                                     { "Operations.CostCenter", "42" },
     ///                                 },
-    ///                                 DisplayName = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_display_name,
+    ///                                 DisplayName = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsDisplayName,
     ///                                 FreeformTags = 
     ///                                 {
     ///                                     { "Department", "Finance" },
     ///                                 },
-    ///                                 HostnameLabel = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label,
+    ///                                 HostnameLabel = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsHostnameLabel,
     ///                                 Ipv6addressIpv6subnetCidrPairDetails = new[]
     ///                                 {
     ///                                     new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs
     ///                                     {
-    ///                                         Ipv6address = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-    ///                                         Ipv6subnetCidr = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                                         Ipv6address = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
+    ///                                         Ipv6subnetCidr = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                                     },
     ///                                 },
-    ///                                 NsgIds = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids,
-    ///                                 PrivateIp = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip,
-    ///                                 SkipSourceDestCheck = @var.Instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check,
-    ///                                 SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                                 NsgIds = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsNsgIds,
+    ///                                 PrivateIp = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsPrivateIp,
+    ///                                 SkipSourceDestCheck = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
+    ///                                 SubnetId = testSubnet.Id,
     ///                             },
-    ///                             DisplayName = @var.Instance_configuration_instance_details_options_secondary_vnics_display_name,
-    ///                             NicIndex = @var.Instance_configuration_instance_details_options_secondary_vnics_nic_index,
+    ///                             DisplayName = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsDisplayName,
+    ///                             NicIndex = instanceConfigurationInstanceDetailsOptionsSecondaryVnicsNicIndex,
     ///                         },
     ///                     },
     ///                 },
@@ -450,30 +450,30 @@ namespace Pulumi.Oci.Core
     ///                 {
     ///                     CreateVnicDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs
     ///                     {
-    ///                         AssignPrivateDnsRecord = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record,
-    ///                         AssignPublicIp = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip,
+    ///                         AssignPrivateDnsRecord = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord,
+    ///                         AssignPublicIp = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPublicIp,
     ///                         DefinedTags = 
     ///                         {
     ///                             { "Operations.CostCenter", "42" },
     ///                         },
-    ///                         DisplayName = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name,
+    ///                         DisplayName = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsDisplayName,
     ///                         FreeformTags = 
     ///                         {
     ///                             { "Department", "Finance" },
     ///                         },
-    ///                         HostnameLabel = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label,
-    ///                         NsgIds = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids,
-    ///                         PrivateIp = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip,
-    ///                         SkipSourceDestCheck = @var.Instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check,
-    ///                         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                         HostnameLabel = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsHostnameLabel,
+    ///                         NsgIds = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsNsgIds,
+    ///                         PrivateIp = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsPrivateIp,
+    ///                         SkipSourceDestCheck = instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
+    ///                         SubnetId = testSubnet.Id,
     ///                     },
-    ///                     DisplayName = @var.Instance_configuration_instance_details_secondary_vnics_display_name,
-    ///                     NicIndex = @var.Instance_configuration_instance_details_secondary_vnics_nic_index,
+    ///                     DisplayName = instanceConfigurationInstanceDetailsSecondaryVnicsDisplayName,
+    ///                     NicIndex = instanceConfigurationInstanceDetailsSecondaryVnicsNicIndex,
     ///                 },
     ///             },
     ///         },
-    ///         InstanceId = oci_core_instance.Test_instance.Id,
-    ///         Source = @var.Instance_configuration_source,
+    ///         InstanceId = testInstance.Id,
+    ///         Source = instanceConfigurationSource,
     ///     });
     /// 
     /// });

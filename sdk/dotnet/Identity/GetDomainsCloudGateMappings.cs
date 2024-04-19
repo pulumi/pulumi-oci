@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGateMappings = Oci.Identity.GetDomainsCloudGateMappings.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         CloudGateMappingCount = @var.Cloud_gate_mapping_cloud_gate_mapping_count,
-        ///         CloudGateMappingFilter = @var.Cloud_gate_mapping_cloud_gate_mapping_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CloudGateMappingCount = cloudGateMappingCloudGateMappingCount,
+        ///         CloudGateMappingFilter = cloudGateMappingCloudGateMappingFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_mapping_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_mapping_resource_type_schema_version,
-        ///         StartIndex = @var.Cloud_gate_mapping_start_index,
+        ///         Authorization = cloudGateMappingAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateMappingResourceTypeSchemaVersion,
+        ///         StartIndex = cloudGateMappingStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGateMappings = Oci.Identity.GetDomainsCloudGateMappings.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         CloudGateMappingCount = @var.Cloud_gate_mapping_cloud_gate_mapping_count,
-        ///         CloudGateMappingFilter = @var.Cloud_gate_mapping_cloud_gate_mapping_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CloudGateMappingCount = cloudGateMappingCloudGateMappingCount,
+        ///         CloudGateMappingFilter = cloudGateMappingCloudGateMappingFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_mapping_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_mapping_resource_type_schema_version,
-        ///         StartIndex = @var.Cloud_gate_mapping_start_index,
+        ///         Authorization = cloudGateMappingAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateMappingResourceTypeSchemaVersion,
+        ///         StartIndex = cloudGateMappingStartIndex,
         ///     });
         /// 
         /// });

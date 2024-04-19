@@ -147,12 +147,12 @@ def get_network_firewalls(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewalls = oci.NetworkFirewall.get_network_firewalls(compartment_id=var["compartment_id"],
-        availability_domain=var["network_firewall_availability_domain"],
-        display_name=var["network_firewall_display_name"],
-        id=var["network_firewall_id"],
-        network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        state=var["network_firewall_state"])
+    test_network_firewalls = oci.NetworkFirewall.get_network_firewalls(compartment_id=compartment_id,
+        availability_domain=network_firewall_availability_domain,
+        display_name=network_firewall_display_name,
+        id=network_firewall_id,
+        network_firewall_policy_id=test_network_firewall_policy["id"],
+        state=network_firewall_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,12 +207,12 @@ def get_network_firewalls_output(availability_domain: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewalls = oci.NetworkFirewall.get_network_firewalls(compartment_id=var["compartment_id"],
-        availability_domain=var["network_firewall_availability_domain"],
-        display_name=var["network_firewall_display_name"],
-        id=var["network_firewall_id"],
-        network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        state=var["network_firewall_state"])
+    test_network_firewalls = oci.NetworkFirewall.get_network_firewalls(compartment_id=compartment_id,
+        availability_domain=network_firewall_availability_domain,
+        display_name=network_firewall_display_name,
+        id=network_firewall_id,
+        network_firewall_policy_id=test_network_firewall_policy["id"],
+        state=network_firewall_state)
     ```
     <!--End PulumiCodeChooser -->
 

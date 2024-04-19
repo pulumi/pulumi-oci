@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOceInstances = oci.Oce.getOceInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.oce_instance_display_name,
- *     state: _var.oce_instance_state,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     compartmentId: compartmentId,
+ *     displayName: oceInstanceDisplayName,
+ *     state: oceInstanceState,
+ *     tenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetOceInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOceInstances = oci.Oce.getOceInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.oce_instance_display_name,
- *     state: _var.oce_instance_state,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     compartmentId: compartmentId,
+ *     displayName: oceInstanceDisplayName,
+ *     state: oceInstanceState,
+ *     tenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

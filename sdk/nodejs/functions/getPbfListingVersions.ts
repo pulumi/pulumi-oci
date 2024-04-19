@@ -23,11 +23,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPbfListingVersions = oci.Functions.getPbfListingVersions({
- *     pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
- *     isCurrentVersion: _var.pbf_listing_version_is_current_version,
- *     name: _var.pbf_listing_version_name,
- *     pbfListingVersionId: oci_functions_pbf_listing_version.test_pbf_listing_version.id,
- *     state: _var.pbf_listing_version_state,
+ *     pbfListingId: testPbfListing.id,
+ *     isCurrentVersion: pbfListingVersionIsCurrentVersion,
+ *     name: pbfListingVersionName,
+ *     pbfListingVersionId: testPbfListingVersion.id,
+ *     state: pbfListingVersionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,11 +117,11 @@ export interface GetPbfListingVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPbfListingVersions = oci.Functions.getPbfListingVersions({
- *     pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
- *     isCurrentVersion: _var.pbf_listing_version_is_current_version,
- *     name: _var.pbf_listing_version_name,
- *     pbfListingVersionId: oci_functions_pbf_listing_version.test_pbf_listing_version.id,
- *     state: _var.pbf_listing_version_state,
+ *     pbfListingId: testPbfListing.id,
+ *     isCurrentVersion: pbfListingVersionIsCurrentVersion,
+ *     name: pbfListingVersionName,
+ *     pbfListingVersionId: testPbfListingVersion.id,
+ *     state: pbfListingVersionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

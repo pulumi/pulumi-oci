@@ -25,20 +25,20 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrPlanExecution = new Oci.DisasterRecovery.DrPlanExecution("testDrPlanExecution", new()
+    ///     var testDrPlanExecution = new Oci.DisasterRecovery.DrPlanExecution("test_dr_plan_execution", new()
     ///     {
     ///         ExecutionOptions = new Oci.DisasterRecovery.Inputs.DrPlanExecutionExecutionOptionsArgs
     ///         {
-    ///             PlanExecutionType = @var.Dr_plan_execution_execution_options_plan_execution_type,
-    ///             ArePrechecksEnabled = @var.Dr_plan_execution_execution_options_are_prechecks_enabled,
-    ///             AreWarningsIgnored = @var.Dr_plan_execution_execution_options_are_warnings_ignored,
+    ///             PlanExecutionType = drPlanExecutionExecutionOptionsPlanExecutionType,
+    ///             ArePrechecksEnabled = drPlanExecutionExecutionOptionsArePrechecksEnabled,
+    ///             AreWarningsIgnored = drPlanExecutionExecutionOptionsAreWarningsIgnored,
     ///         },
-    ///         PlanId = oci_disaster_recovery_plan.Test_plan.Id,
+    ///         PlanId = testPlan.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Dr_plan_execution_display_name,
+    ///         DisplayName = drPlanExecutionDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

@@ -137,11 +137,11 @@ def get_workspace_projects(fields: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_project_fields"],
-        identifiers=var["workspace_project_identifier"],
-        name=var["workspace_project_name"],
-        name_contains=var["workspace_project_name_contains"])
+    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=test_workspace["id"],
+        fields=workspace_project_fields,
+        identifiers=workspace_project_identifier,
+        name=workspace_project_name,
+        name_contains=workspace_project_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -193,11 +193,11 @@ def get_workspace_projects_output(fields: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_project_fields"],
-        identifiers=var["workspace_project_identifier"],
-        name=var["workspace_project_name"],
-        name_contains=var["workspace_project_name_contains"])
+    test_workspace_projects = oci.DataIntegration.get_workspace_projects(workspace_id=test_workspace["id"],
+        fields=workspace_project_fields,
+        identifiers=workspace_project_identifier,
+        name=workspace_project_name,
+        name_contains=workspace_project_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 

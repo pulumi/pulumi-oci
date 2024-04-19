@@ -302,10 +302,10 @@ class AgentPlugin(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_agent_plugin = oci.cloud_bridge.AgentPlugin("testAgentPlugin",
-            agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-            plugin_name=var["agent_plugin_plugin_name"],
-            desired_state=var["agent_plugin_desired_state"])
+        test_agent_plugin = oci.cloud_bridge.AgentPlugin("test_agent_plugin",
+            agent_id=test_agent["id"],
+            plugin_name=agent_plugin_plugin_name,
+            desired_state=agent_plugin_desired_state)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -345,10 +345,10 @@ class AgentPlugin(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_agent_plugin = oci.cloud_bridge.AgentPlugin("testAgentPlugin",
-            agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-            plugin_name=var["agent_plugin_plugin_name"],
-            desired_state=var["agent_plugin_desired_state"])
+        test_agent_plugin = oci.cloud_bridge.AgentPlugin("test_agent_plugin",
+            agent_id=test_agent["id"],
+            plugin_name=agent_plugin_plugin_name,
+            desired_state=agent_plugin_desired_state)
         ```
         <!--End PulumiCodeChooser -->
 

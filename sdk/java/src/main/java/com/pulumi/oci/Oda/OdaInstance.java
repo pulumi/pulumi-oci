@@ -52,14 +52,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOdaInstance = new OdaInstance(&#34;testOdaInstance&#34;, OdaInstanceArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .shapeName(&#34;DEVELOPMENT&#34;)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.oda_instance_description())
- *             .displayName(var_.oda_instance_display_name())
+ *             .description(odaInstanceDescription)
+ *             .displayName(odaInstanceDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .identityDomain(var_.oda_instance_identity_domain())
- *             .isRoleBasedAccess(var_.oda_instance_is_role_based_access())
+ *             .identityDomain(odaInstanceIdentityDomain)
+ *             .isRoleBasedAccess(odaInstanceIsRoleBasedAccess)
  *             .build());
  * 
  *     }

@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testShapes = Oci.Core.GetShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Shape_availability_domain,
-        ///         ImageId = oci_core_image.Test_image.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = shapeAvailabilityDomain,
+        ///         ImageId = testImage.Id,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testShapes = Oci.Core.GetShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Shape_availability_domain,
-        ///         ImageId = oci_core_image.Test_image.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = shapeAvailabilityDomain,
+        ///         ImageId = testImage.Id,
         ///     });
         /// 
         /// });

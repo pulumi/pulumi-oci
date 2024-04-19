@@ -25,25 +25,25 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAgentDependency = new Oci.CloudBridge.AgentDependency("testAgentDependency", new()
+    ///     var testAgentDependency = new Oci.CloudBridge.AgentDependency("test_agent_dependency", new()
     ///     {
-    ///         Bucket = @var.Agent_dependency_bucket,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DependencyName = @var.Agent_dependency_dependency_name,
-    ///         DisplayName = @var.Agent_dependency_display_name,
-    ///         Namespace = @var.Agent_dependency_namespace,
-    ///         Object = @var.Agent_dependency_object,
+    ///         Bucket = agentDependencyBucket,
+    ///         CompartmentId = compartmentId,
+    ///         DependencyName = agentDependencyDependencyName,
+    ///         DisplayName = agentDependencyDisplayName,
+    ///         Namespace = agentDependencyNamespace,
+    ///         Object = agentDependencyObject,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DependencyVersion = @var.Agent_dependency_dependency_version,
-    ///         Description = @var.Agent_dependency_description,
+    ///         DependencyVersion = agentDependencyDependencyVersion,
+    ///         Description = agentDependencyDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         SystemTags = @var.Agent_dependency_system_tags,
+    ///         SystemTags = agentDependencySystemTags,
     ///     });
     /// 
     /// });

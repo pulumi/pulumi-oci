@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflows = Oci.Identity.GetDomainsApprovalWorkflows.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ApprovalWorkflowCount = @var.Approval_workflow_approval_workflow_count,
-        ///         ApprovalWorkflowFilter = @var.Approval_workflow_approval_workflow_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApprovalWorkflowCount = approvalWorkflowApprovalWorkflowCount,
+        ///         ApprovalWorkflowFilter = approvalWorkflowApprovalWorkflowFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_resource_type_schema_version,
-        ///         StartIndex = @var.Approval_workflow_start_index,
+        ///         Authorization = approvalWorkflowAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowResourceTypeSchemaVersion,
+        ///         StartIndex = approvalWorkflowStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflows = Oci.Identity.GetDomainsApprovalWorkflows.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ApprovalWorkflowCount = @var.Approval_workflow_approval_workflow_count,
-        ///         ApprovalWorkflowFilter = @var.Approval_workflow_approval_workflow_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApprovalWorkflowCount = approvalWorkflowApprovalWorkflowCount,
+        ///         ApprovalWorkflowFilter = approvalWorkflowApprovalWorkflowFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_resource_type_schema_version,
-        ///         StartIndex = @var.Approval_workflow_start_index,
+        ///         Authorization = approvalWorkflowAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowResourceTypeSchemaVersion,
+        ///         StartIndex = approvalWorkflowStartIndex,
         ///     });
         /// 
         /// });

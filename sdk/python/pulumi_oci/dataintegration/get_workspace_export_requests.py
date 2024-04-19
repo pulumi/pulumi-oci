@@ -150,12 +150,12 @@ def get_workspace_export_requests(export_status: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_export_requests = oci.DataIntegration.get_workspace_export_requests(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        export_status=var["workspace_export_request_export_status"],
-        name=var["workspace_export_request_name"],
-        projection=var["workspace_export_request_projection"],
-        time_ended_in_millis=var["workspace_export_request_time_ended_in_millis"],
-        time_started_in_millis=var["workspace_export_request_time_started_in_millis"])
+    test_workspace_export_requests = oci.DataIntegration.get_workspace_export_requests(workspace_id=test_workspace["id"],
+        export_status=workspace_export_request_export_status,
+        name=workspace_export_request_name,
+        projection=workspace_export_request_projection,
+        time_ended_in_millis=workspace_export_request_time_ended_in_millis,
+        time_started_in_millis=workspace_export_request_time_started_in_millis)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -211,12 +211,12 @@ def get_workspace_export_requests_output(export_status: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_export_requests = oci.DataIntegration.get_workspace_export_requests(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        export_status=var["workspace_export_request_export_status"],
-        name=var["workspace_export_request_name"],
-        projection=var["workspace_export_request_projection"],
-        time_ended_in_millis=var["workspace_export_request_time_ended_in_millis"],
-        time_started_in_millis=var["workspace_export_request_time_started_in_millis"])
+    test_workspace_export_requests = oci.DataIntegration.get_workspace_export_requests(workspace_id=test_workspace["id"],
+        export_status=workspace_export_request_export_status,
+        name=workspace_export_request_name,
+        projection=workspace_export_request_projection,
+        time_ended_in_millis=workspace_export_request_time_ended_in_millis,
+        time_started_in_millis=workspace_export_request_time_started_in_millis)
     ```
     <!--End PulumiCodeChooser -->
 

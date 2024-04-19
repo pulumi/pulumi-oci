@@ -29,8 +29,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyReportDatabaseTableAccessEntry = Oci.DataSafe.GetSecurityPolicyReportDatabaseTableAccessEntry.Invoke(new()
         ///     {
-        ///         DatabaseTableAccessEntryKey = @var.Security_policy_report_database_table_access_entry_database_table_access_entry_key,
-        ///         SecurityPolicyReportId = oci_data_safe_security_policy_report.Test_security_policy_report.Id,
+        ///         DatabaseTableAccessEntryKey = securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey,
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyReportDatabaseTableAccessEntry = Oci.DataSafe.GetSecurityPolicyReportDatabaseTableAccessEntry.Invoke(new()
         ///     {
-        ///         DatabaseTableAccessEntryKey = @var.Security_policy_report_database_table_access_entry_database_table_access_entry_key,
-        ///         SecurityPolicyReportId = oci_data_safe_security_policy_report.Test_security_policy_report.Id,
+        ///         DatabaseTableAccessEntryKey = securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey,
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
         ///     });
         /// 
         /// });

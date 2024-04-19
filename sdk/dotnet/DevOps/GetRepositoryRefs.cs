@@ -30,10 +30,10 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryRefs = Oci.DevOps.GetRepositoryRefs.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         CommitId = oci_devops_commit.Test_commit.Id,
-        ///         RefName = @var.Repository_ref_ref_name,
-        ///         RefType = @var.Repository_ref_ref_type,
+        ///         RepositoryId = testRepository.Id,
+        ///         CommitId = testCommit.Id,
+        ///         RefName = repositoryRefRefName,
+        ///         RefType = repositoryRefRefType,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryRefs = Oci.DevOps.GetRepositoryRefs.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         CommitId = oci_devops_commit.Test_commit.Id,
-        ///         RefName = @var.Repository_ref_ref_name,
-        ///         RefType = @var.Repository_ref_ref_type,
+        ///         RepositoryId = testRepository.Id,
+        ///         CommitId = testCommit.Id,
+        ///         RefName = repositoryRefRefName,
+        ///         RefType = repositoryRefRefType,
         ///     });
         /// 
         /// });

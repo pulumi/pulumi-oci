@@ -42,13 +42,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Monitoring.GetAlarmStatuses(ctx, &monitoring.GetAlarmStatusesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Alarm_status_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Alarm_status_display_name),
-//				EntityId:               pulumi.StringRef(oci_monitoring_entity.Test_entity.Id),
-//				ResourceId:             pulumi.StringRef(oci_monitoring_resource.Test_resource.Id),
-//				ServiceName:            pulumi.StringRef(oci_core_service.Test_service.Name),
-//				Status:                 pulumi.StringRef(_var.Alarm_status_status),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: pulumi.BoolRef(alarmStatusCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(alarmStatusDisplayName),
+//				EntityId:               pulumi.StringRef(testEntity.Id),
+//				ResourceId:             pulumi.StringRef(testResource.Id),
+//				ServiceName:            pulumi.StringRef(testService.Name),
+//				Status:                 pulumi.StringRef(alarmStatusStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

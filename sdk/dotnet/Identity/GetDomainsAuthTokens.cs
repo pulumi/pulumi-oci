@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAuthTokens = Oci.Identity.GetDomainsAuthTokens.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AuthTokenCount = @var.Auth_token_auth_token_count,
-        ///         AuthTokenFilter = @var.Auth_token_auth_token_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AuthTokenCount = authTokenAuthTokenCount,
+        ///         AuthTokenFilter = authTokenAuthTokenFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Auth_token_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Auth_token_resource_type_schema_version,
-        ///         StartIndex = @var.Auth_token_start_index,
+        ///         Authorization = authTokenAuthorization,
+        ///         ResourceTypeSchemaVersion = authTokenResourceTypeSchemaVersion,
+        ///         StartIndex = authTokenStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAuthTokens = Oci.Identity.GetDomainsAuthTokens.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AuthTokenCount = @var.Auth_token_auth_token_count,
-        ///         AuthTokenFilter = @var.Auth_token_auth_token_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AuthTokenCount = authTokenAuthTokenCount,
+        ///         AuthTokenFilter = authTokenAuthTokenFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Auth_token_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Auth_token_resource_type_schema_version,
-        ///         StartIndex = @var.Auth_token_start_index,
+        ///         Authorization = authTokenAuthorization,
+        ///         ResourceTypeSchemaVersion = authTokenResourceTypeSchemaVersion,
+        ///         StartIndex = authTokenStartIndex,
         ///     });
         /// 
         /// });

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyDeployment = oci.DataSafe.getSecurityPolicyDeployment({
- *     securityPolicyDeploymentId: oci_data_safe_security_policy_deployment.test_security_policy_deployment.id,
+ *     securityPolicyDeploymentId: testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,7 +111,7 @@ export interface GetSecurityPolicyDeploymentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyDeployment = oci.DataSafe.getSecurityPolicyDeployment({
- *     securityPolicyDeploymentId: oci_data_safe_security_policy_deployment.test_security_policy_deployment.id,
+ *     securityPolicyDeploymentId: testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

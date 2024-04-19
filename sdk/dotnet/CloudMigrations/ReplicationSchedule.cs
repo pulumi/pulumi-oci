@@ -25,11 +25,11 @@ namespace Pulumi.Oci.CloudMigrations
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testReplicationSchedule = new Oci.CloudMigrations.ReplicationSchedule("testReplicationSchedule", new()
+    ///     var testReplicationSchedule = new Oci.CloudMigrations.ReplicationSchedule("test_replication_schedule", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Replication_schedule_display_name,
-    ///         ExecutionRecurrences = @var.Replication_schedule_execution_recurrences,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = replicationScheduleDisplayName,
+    ///         ExecutionRecurrences = replicationScheduleExecutionRecurrences,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },

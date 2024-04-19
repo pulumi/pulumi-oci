@@ -92,7 +92,7 @@ def get_cross_connect_locations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=var["compartment_id"])
+    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -129,7 +129,7 @@ def get_cross_connect_locations_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=var["compartment_id"])
+    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

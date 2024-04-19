@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPbfListingTriggers = oci.Functions.getPbfListingTriggers({
- *     name: _var.pbf_listing_trigger_name,
+ *     name: pbfListingTriggerName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -76,7 +76,7 @@ export interface GetPbfListingTriggersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPbfListingTriggers = oci.Functions.getPbfListingTriggers({
- *     name: _var.pbf_listing_trigger_name,
+ *     name: pbfListingTriggerName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

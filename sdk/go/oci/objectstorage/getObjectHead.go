@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.GetObjectHead(ctx, &objectstorage.GetObjectHeadArgs{
-//				Bucket:    _var.Object_bucket,
-//				Namespace: _var.Object_namespace,
-//				Object:    _var.Object_object,
+//				Bucket:    objectBucket,
+//				Namespace: objectNamespace,
+//				Object:    objectObject,
 //			}, nil)
 //			if err != nil {
 //				return err

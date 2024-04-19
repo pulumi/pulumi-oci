@@ -219,14 +219,14 @@ def get_domains_my_requests(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requests = oci.Identity.get_domains_my_requests(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_request_count=var["my_request_my_request_count"],
-        my_request_filter=var["my_request_my_request_filter"],
+    test_my_requests = oci.Identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
+        my_request_count=my_request_my_request_count,
+        my_request_filter=my_request_my_request_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["my_request_authorization"],
-        resource_type_schema_version=var["my_request_resource_type_schema_version"],
-        start_index=var["my_request_start_index"])
+        authorization=my_request_authorization,
+        resource_type_schema_version=my_request_resource_type_schema_version,
+        start_index=my_request_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -299,14 +299,14 @@ def get_domains_my_requests_output(attribute_sets: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requests = oci.Identity.get_domains_my_requests(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_request_count=var["my_request_my_request_count"],
-        my_request_filter=var["my_request_my_request_filter"],
+    test_my_requests = oci.Identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
+        my_request_count=my_request_my_request_count,
+        my_request_filter=my_request_my_request_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["my_request_authorization"],
-        resource_type_schema_version=var["my_request_resource_type_schema_version"],
-        start_index=var["my_request_start_index"])
+        authorization=my_request_authorization,
+        resource_type_schema_version=my_request_resource_type_schema_version,
+        start_index=my_request_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

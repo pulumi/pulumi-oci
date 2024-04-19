@@ -236,7 +236,7 @@ def get_model_deployment(model_deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment = oci.DataScience.get_model_deployment(model_deployment_id=oci_datascience_model_deployment["test_model_deployment"]["id"])
+    test_model_deployment = oci.DataScience.get_model_deployment(model_deployment_id=test_model_deployment_oci_datascience_model_deployment["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -282,7 +282,7 @@ def get_model_deployment_output(model_deployment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment = oci.DataScience.get_model_deployment(model_deployment_id=oci_datascience_model_deployment["test_model_deployment"]["id"])
+    test_model_deployment = oci.DataScience.get_model_deployment(model_deployment_id=test_model_deployment_oci_datascience_model_deployment["id"])
     ```
     <!--End PulumiCodeChooser -->
 

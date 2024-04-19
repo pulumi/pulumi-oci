@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInventories = oci.CloudBridge.getInventories({
- *     compartmentId: _var.compartment_id,
- *     state: _var.inventory_state,
+ *     compartmentId: compartmentId,
+ *     state: inventoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetInventoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInventories = oci.CloudBridge.getInventories({
- *     compartmentId: _var.compartment_id,
- *     state: _var.inventory_state,
+ *     compartmentId: compartmentId,
+ *     state: inventoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

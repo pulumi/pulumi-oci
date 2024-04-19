@@ -223,7 +223,7 @@ def get_enterprise_manager_bridge(enterprise_manager_bridge_id: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"])
+    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=test_enterprise_manager_bridge_oci_opsi_enterprise_manager_bridge["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -268,7 +268,7 @@ def get_enterprise_manager_bridge_output(enterprise_manager_bridge_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"])
+    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=test_enterprise_manager_bridge_oci_opsi_enterprise_manager_bridge["id"])
     ```
     <!--End PulumiCodeChooser -->
 

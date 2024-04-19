@@ -46,8 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseRegionalWalletManagement = new AutonomousDatabaseRegionalWalletManagement(&#34;testAutonomousDatabaseRegionalWalletManagement&#34;, AutonomousDatabaseRegionalWalletManagementArgs.builder()        
- *             .gracePeriod(var_.autonomous_database_regional_wallet_management_grace_period())
- *             .shouldRotate(var_.autonomous_database_regional_wallet_management_should_rotate())
+ *             .gracePeriod(autonomousDatabaseRegionalWalletManagementGracePeriod)
+ *             .shouldRotate(autonomousDatabaseRegionalWalletManagementShouldRotate)
  *             .build());
  * 
  *     }

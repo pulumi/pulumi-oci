@@ -25,10 +25,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBudgets = oci.Budget.getBudgets({
- *     compartmentId: _var.tenancy_ocid,
- *     displayName: _var.budget_display_name,
- *     state: _var.budget_state,
- *     targetType: _var.budget_target_type,
+ *     compartmentId: tenancyOcid,
+ *     displayName: budgetDisplayName,
+ *     state: budgetState,
+ *     targetType: budgetTargetType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -120,10 +120,10 @@ export interface GetBudgetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBudgets = oci.Budget.getBudgets({
- *     compartmentId: _var.tenancy_ocid,
- *     displayName: _var.budget_display_name,
- *     state: _var.budget_state,
- *     targetType: _var.budget_target_type,
+ *     compartmentId: tenancyOcid,
+ *     displayName: budgetDisplayName,
+ *     state: budgetState,
+ *     targetType: budgetTargetType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

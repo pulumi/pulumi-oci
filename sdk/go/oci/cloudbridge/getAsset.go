@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetAsset(ctx, &cloudbridge.GetAssetArgs{
-//				AssetId: oci_cloud_bridge_asset.Test_asset.Id,
+//				AssetId: testAssetOciCloudBridgeAsset.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

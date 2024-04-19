@@ -45,11 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLogAnalyticsLogGroup = new LogAnalyticsLogGroup(&#34;testLogAnalyticsLogGroup&#34;, LogAnalyticsLogGroupArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.log_analytics_log_group_display_name())
- *             .namespace(var_.log_analytics_log_group_namespace())
+ *             .compartmentId(compartmentId)
+ *             .displayName(logAnalyticsLogGroupDisplayName)
+ *             .namespace(logAnalyticsLogGroupNamespace)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.log_analytics_log_group_description())
+ *             .description(logAnalyticsLogGroupDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

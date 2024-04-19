@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testChannel = Oci.Mysql.GetChannel.Invoke(new()
         ///     {
-        ///         ChannelId = oci_mysql_channel.Test_channel.Id,
+        ///         ChannelId = testChannelOciMysqlChannel.Id,
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testChannel = Oci.Mysql.GetChannel.Invoke(new()
         ///     {
-        ///         ChannelId = oci_mysql_channel.Test_channel.Id,
+        ///         ChannelId = testChannelOciMysqlChannel.Id,
         ///     });
         /// 
         /// });

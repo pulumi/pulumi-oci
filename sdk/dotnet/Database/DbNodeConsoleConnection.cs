@@ -27,11 +27,11 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDbNodeConsoleConnection = new Oci.Database.DbNodeConsoleConnection("testDbNodeConsoleConnection", new()
+    ///     var testDbNodeConsoleConnection = new Oci.Database.DbNodeConsoleConnection("test_db_node_console_connection", new()
     ///     {
-    ///         DbNodeId = oci_database_db_node.Test_db_node.Id,
-    ///         PublicKey = @var.Db_node_console_connection_public_key,
-    ///         DefinedTags = @var.Db_node_console_connection_defined_tags,
+    ///         DbNodeId = testDbNode.Id,
+    ///         PublicKey = dbNodeConsoleConnectionPublicKey,
+    ///         DefinedTags = dbNodeConsoleConnectionDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

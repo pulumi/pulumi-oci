@@ -159,10 +159,10 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_db_system_database_managements_management = oci.database_management.ExternalDbSystemDatabaseManagementsManagement("testExternalDbSystemDatabaseManagementsManagement",
-            external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
-            enable_database_management=var["enable_database_management"],
-            license_model=var["external_db_system_database_managements_management_license_model"])
+        test_external_db_system_database_managements_management = oci.database_management.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management",
+            external_db_system_id=test_external_db_system["id"],
+            enable_database_management=enable_database_management,
+            license_model=external_db_system_database_managements_management_license_model)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -195,10 +195,10 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_db_system_database_managements_management = oci.database_management.ExternalDbSystemDatabaseManagementsManagement("testExternalDbSystemDatabaseManagementsManagement",
-            external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
-            enable_database_management=var["enable_database_management"],
-            license_model=var["external_db_system_database_managements_management_license_model"])
+        test_external_db_system_database_managements_management = oci.database_management.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management",
+            external_db_system_id=test_external_db_system["id"],
+            enable_database_management=enable_database_management,
+            license_model=external_db_system_database_managements_management_license_model)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -25,29 +25,30 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMonitoredResourcesSearch = new Oci.StackMonitoring.MonitoredResourcesSearch("testMonitoredResourcesSearch", new()
+    ///     var testMonitoredResourcesSearch = new Oci.StackMonitoring.MonitoredResourcesSearch("test_monitored_resources_search", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         CompartmentIds = @var.Monitored_resources_search_compartment_ids,
-    ///         ExcludeFields = @var.Monitored_resources_search_exclude_fields,
-    ///         ExternalId = oci_stack_monitoring_external.Test_external.Id,
-    ///         Fields = @var.Monitored_resources_search_fields,
-    ///         HostName = @var.Monitored_resources_search_host_name,
-    ///         HostNameContains = @var.Monitored_resources_search_host_name_contains,
-    ///         License = @var.Monitored_resources_search_license,
-    ///         LifecycleStates = @var.Monitored_resources_search_lifecycle_states,
-    ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-    ///         NameContains = @var.Monitored_resources_search_name_contains,
-    ///         PropertyEquals = @var.Monitored_resources_search_property_equals,
-    ///         ResourceCategory = @var.Monitored_resources_search_resource_category,
-    ///         ResourceTimeZone = @var.Monitored_resources_search_resource_time_zone,
-    ///         SourceType = @var.Monitored_resources_search_source_type,
-    ///         State = @var.Monitored_resources_search_state,
-    ///         TimeCreatedGreaterThanOrEqualTo = @var.Monitored_resources_search_time_created_greater_than_or_equal_to,
-    ///         TimeCreatedLessThan = @var.Monitored_resources_search_time_created_less_than,
-    ///         TimeUpdatedGreaterThanOrEqualTo = @var.Monitored_resources_search_time_updated_greater_than_or_equal_to,
-    ///         TimeUpdatedLessThan = @var.Monitored_resources_search_time_updated_less_than,
-    ///         Type = @var.Monitored_resources_search_type,
+    ///         CompartmentId = compartmentId,
+    ///         CompartmentIds = monitoredResourcesSearchCompartmentIds,
+    ///         ExcludeFields = monitoredResourcesSearchExcludeFields,
+    ///         ExternalId = testExternal.Id,
+    ///         Fields = monitoredResourcesSearchFields,
+    ///         HostName = monitoredResourcesSearchHostName,
+    ///         HostNameContains = monitoredResourcesSearchHostNameContains,
+    ///         License = monitoredResourcesSearchLicense,
+    ///         LifecycleStates = monitoredResourcesSearchLifecycleStates,
+    ///         ManagementAgentId = testManagementAgent.Id,
+    ///         Name = monitoredResourcesSearchName,
+    ///         NameContains = monitoredResourcesSearchNameContains,
+    ///         PropertyEquals = monitoredResourcesSearchPropertyEquals,
+    ///         ResourceCategory = monitoredResourcesSearchResourceCategory,
+    ///         ResourceTimeZone = monitoredResourcesSearchResourceTimeZone,
+    ///         SourceType = monitoredResourcesSearchSourceType,
+    ///         State = monitoredResourcesSearchState,
+    ///         TimeCreatedGreaterThanOrEqualTo = monitoredResourcesSearchTimeCreatedGreaterThanOrEqualTo,
+    ///         TimeCreatedLessThan = monitoredResourcesSearchTimeCreatedLessThan,
+    ///         TimeUpdatedGreaterThanOrEqualTo = monitoredResourcesSearchTimeUpdatedGreaterThanOrEqualTo,
+    ///         TimeUpdatedLessThan = monitoredResourcesSearchTimeUpdatedLessThan,
+    ///         Type = monitoredResourcesSearchType,
     ///     });
     /// 
     /// });

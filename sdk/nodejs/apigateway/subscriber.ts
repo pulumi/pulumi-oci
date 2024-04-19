@@ -18,17 +18,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriber = new oci.apigateway.Subscriber("testSubscriber", {
+ * const testSubscriber = new oci.apigateway.Subscriber("test_subscriber", {
  *     clients: [{
- *         name: _var.subscriber_clients_name,
- *         token: _var.subscriber_clients_token,
+ *         name: subscriberClientsName,
+ *         token: subscriberClientsToken,
  *     }],
- *     compartmentId: _var.compartment_id,
- *     usagePlans: _var.subscriber_usage_plans,
+ *     compartmentId: compartmentId,
+ *     usagePlans: subscriberUsagePlans,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.subscriber_display_name,
+ *     displayName: subscriberDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

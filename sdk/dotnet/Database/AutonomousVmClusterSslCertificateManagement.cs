@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAutonomousVmClusterSslCertificateManagement = new Oci.Database.AutonomousVmClusterSslCertificateManagement("testAutonomousVmClusterSslCertificateManagement", new()
+    ///     var testAutonomousVmClusterSslCertificateManagement = new Oci.Database.AutonomousVmClusterSslCertificateManagement("test_autonomous_vm_cluster_ssl_certificate_management", new()
     ///     {
-    ///         AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-    ///         CertificateGenerationType = @var.Autonomous_vm_cluster_ssl_certificate_management_certificate_generation_type,
-    ///         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-    ///         CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-    ///         CertificateId = oci_apigateway_certificate.Test_certificate.Id,
+    ///         AutonomousVmClusterId = testAutonomousVmCluster.Id,
+    ///         CertificateGenerationType = autonomousVmClusterSslCertificateManagementCertificateGenerationType,
+    ///         CaBundleId = testCaBundle.Id,
+    ///         CertificateAuthorityId = testCertificateAuthority.Id,
+    ///         CertificateId = testCertificate.Id,
     ///     });
     /// 
     /// });

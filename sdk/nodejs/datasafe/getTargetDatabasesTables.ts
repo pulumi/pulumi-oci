@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabasesTables = oci.DataSafe.getTargetDatabasesTables({
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     schemaNames: _var.target_databases_table_schema_name,
- *     schemaNameContains: _var.target_databases_table_schema_name_contains,
- *     tableNames: oci_nosql_table.test_table.name,
- *     tableNameContains: _var.target_databases_table_table_name_contains,
+ *     targetDatabaseId: testTargetDatabase.id,
+ *     schemaNames: targetDatabasesTableSchemaName,
+ *     schemaNameContains: targetDatabasesTableSchemaNameContains,
+ *     tableNames: testTable.name,
+ *     tableNameContains: targetDatabasesTableTableNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,11 +106,11 @@ export interface GetTargetDatabasesTablesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabasesTables = oci.DataSafe.getTargetDatabasesTables({
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     schemaNames: _var.target_databases_table_schema_name,
- *     schemaNameContains: _var.target_databases_table_schema_name_contains,
- *     tableNames: oci_nosql_table.test_table.name,
- *     tableNameContains: _var.target_databases_table_table_name_contains,
+ *     targetDatabaseId: testTargetDatabase.id,
+ *     schemaNames: targetDatabasesTableSchemaName,
+ *     schemaNameContains: targetDatabasesTableSchemaNameContains,
+ *     tableNames: testTable.name,
+ *     tableNameContains: targetDatabasesTableTableNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

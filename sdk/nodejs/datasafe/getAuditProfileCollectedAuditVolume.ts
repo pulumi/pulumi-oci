@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditProfileCollectedAuditVolume = oci.DataSafe.getAuditProfileCollectedAuditVolume({
- *     auditProfileId: oci_data_safe_audit_profile.test_audit_profile.id,
- *     workRequestId: oci_containerengine_work_request.test_work_request.id,
- *     monthInConsiderationGreaterThan: _var.audit_profile_collected_audit_volume_month_in_consideration_greater_than,
- *     monthInConsiderationLessThan: _var.audit_profile_collected_audit_volume_month_in_consideration_less_than,
+ *     auditProfileId: testAuditProfile.id,
+ *     workRequestId: testWorkRequest.id,
+ *     monthInConsiderationGreaterThan: auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan,
+ *     monthInConsiderationLessThan: auditProfileCollectedAuditVolumeMonthInConsiderationLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,10 +97,10 @@ export interface GetAuditProfileCollectedAuditVolumeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditProfileCollectedAuditVolume = oci.DataSafe.getAuditProfileCollectedAuditVolume({
- *     auditProfileId: oci_data_safe_audit_profile.test_audit_profile.id,
- *     workRequestId: oci_containerengine_work_request.test_work_request.id,
- *     monthInConsiderationGreaterThan: _var.audit_profile_collected_audit_volume_month_in_consideration_greater_than,
- *     monthInConsiderationLessThan: _var.audit_profile_collected_audit_volume_month_in_consideration_less_than,
+ *     auditProfileId: testAuditProfile.id,
+ *     workRequestId: testWorkRequest.id,
+ *     monthInConsiderationGreaterThan: auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan,
+ *     monthInConsiderationLessThan: auditProfileCollectedAuditVolumeMonthInConsiderationLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -44,8 +44,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAwrHubSourceAwrhubsourcesManagement = new AwrHubSourceAwrhubsourcesManagement(&#34;testAwrHubSourceAwrhubsourcesManagement&#34;, AwrHubSourceAwrhubsourcesManagementArgs.builder()        
- *             .awrHubSourceId(oci_opsi_awr_hub_source.test_awr_hub_source().id())
- *             .enableAwrhubsource(var_.enable_awrhubsource())
+ *             .awrHubSourceId(testAwrHubSource.id())
+ *             .enableAwrhubsource(enableAwrhubsource)
  *             .build());
  * 
  *     }

@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsSettings(ctx, &identity.GetDomainsSettingsArgs{
-//				IdcsEndpoint: data.Oci_identity_domain.Test_domain.Url,
+//				IdcsEndpoint: testDomain.Url,
 //				AttributeSets: []string{
 //					"all",
 //				},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Setting_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Setting_resource_type_schema_version),
+//				Authorization:             pulumi.StringRef(settingAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(settingResourceTypeSchemaVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

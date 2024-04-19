@@ -51,18 +51,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewPublicIp(ctx, "testPublicIp", &Core.PublicIpArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Lifetime:      pulumi.Any(_var.Public_ip_lifetime),
+//			_, err := Core.NewPublicIp(ctx, "test_public_ip", &Core.PublicIpArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Lifetime:      pulumi.Any(publicIpLifetime),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Public_ip_display_name),
+//				DisplayName: pulumi.Any(publicIpDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				PrivateIpId:    pulumi.Any(oci_core_private_ip.Test_private_ip.Id),
-//				PublicIpPoolId: pulumi.Any(oci_core_public_ip_pool.Test_public_ip_pool.Id),
+//				PrivateIpId:    pulumi.Any(testPrivateIp.Id),
+//				PublicIpPoolId: pulumi.Any(testPublicIpPool.Id),
 //			})
 //			if err != nil {
 //				return err

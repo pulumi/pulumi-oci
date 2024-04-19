@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Waa
         /// {
         ///     var testWebAppAccelerationPolicies = Oci.Waa.GetAppAccelerationPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Web_app_acceleration_policy_display_name,
-        ///         Id = @var.Web_app_acceleration_policy_id,
-        ///         States = @var.Web_app_acceleration_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = webAppAccelerationPolicyDisplayName,
+        ///         Id = webAppAccelerationPolicyId,
+        ///         States = webAppAccelerationPolicyState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Waa
         /// {
         ///     var testWebAppAccelerationPolicies = Oci.Waa.GetAppAccelerationPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Web_app_acceleration_policy_display_name,
-        ///         Id = @var.Web_app_acceleration_policy_id,
-        ///         States = @var.Web_app_acceleration_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = webAppAccelerationPolicyDisplayName,
+        ///         Id = webAppAccelerationPolicyId,
+        ///         States = webAppAccelerationPolicyState,
         ///     });
         /// 
         /// });

@@ -296,7 +296,7 @@ def get_model(model_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.GenerativeAi.get_model(model_id=oci_generative_ai_model["test_model"]["id"])
+    test_model = oci.GenerativeAi.get_model(model_id=test_model_oci_generative_ai_model["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -347,7 +347,7 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model = oci.GenerativeAi.get_model(model_id=oci_generative_ai_model["test_model"]["id"])
+    test_model = oci.GenerativeAi.get_model(model_id=test_model_oci_generative_ai_model["id"])
     ```
     <!--End PulumiCodeChooser -->
 

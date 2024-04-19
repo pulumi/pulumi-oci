@@ -18,37 +18,37 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudExadataInfrastructure = new oci.database.CloudExadataInfrastructure("testCloudExadataInfrastructure", {
- *     availabilityDomain: _var.cloud_exadata_infrastructure_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.cloud_exadata_infrastructure_display_name,
- *     shape: _var.cloud_exadata_infrastructure_shape,
- *     clusterPlacementGroupId: _var.cloud_exadata_infrastructure_cluster_placement_group_id,
- *     computeCount: _var.cloud_exadata_infrastructure_compute_count,
+ * const testCloudExadataInfrastructure = new oci.database.CloudExadataInfrastructure("test_cloud_exadata_infrastructure", {
+ *     availabilityDomain: cloudExadataInfrastructureAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: cloudExadataInfrastructureDisplayName,
+ *     shape: cloudExadataInfrastructureShape,
+ *     clusterPlacementGroupId: cloudExadataInfrastructureClusterPlacementGroupId,
+ *     computeCount: cloudExadataInfrastructureComputeCount,
  *     customerContacts: [{
- *         email: _var.cloud_exadata_infrastructure_customer_contacts_email,
+ *         email: cloudExadataInfrastructureCustomerContactsEmail,
  *     }],
- *     definedTags: _var.cloud_exadata_infrastructure_defined_tags,
+ *     definedTags: cloudExadataInfrastructureDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     maintenanceWindow: {
- *         customActionTimeoutInMins: _var.cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
+ *         customActionTimeoutInMins: cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins,
  *         daysOfWeeks: [{
- *             name: _var.cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
+ *             name: cloudExadataInfrastructureMaintenanceWindowDaysOfWeekName,
  *         }],
- *         hoursOfDays: _var.cloud_exadata_infrastructure_maintenance_window_hours_of_day,
- *         isCustomActionTimeoutEnabled: _var.cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
- *         isMonthlyPatchingEnabled: _var.cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
- *         leadTimeInWeeks: _var.cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
+ *         hoursOfDays: cloudExadataInfrastructureMaintenanceWindowHoursOfDay,
+ *         isCustomActionTimeoutEnabled: cloudExadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled,
+ *         isMonthlyPatchingEnabled: cloudExadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled,
+ *         leadTimeInWeeks: cloudExadataInfrastructureMaintenanceWindowLeadTimeInWeeks,
  *         months: [{
- *             name: _var.cloud_exadata_infrastructure_maintenance_window_months_name,
+ *             name: cloudExadataInfrastructureMaintenanceWindowMonthsName,
  *         }],
- *         patchingMode: _var.cloud_exadata_infrastructure_maintenance_window_patching_mode,
- *         preference: _var.cloud_exadata_infrastructure_maintenance_window_preference,
- *         weeksOfMonths: _var.cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
+ *         patchingMode: cloudExadataInfrastructureMaintenanceWindowPatchingMode,
+ *         preference: cloudExadataInfrastructureMaintenanceWindowPreference,
+ *         weeksOfMonths: cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth,
  *     },
- *     storageCount: _var.cloud_exadata_infrastructure_storage_count,
+ *     storageCount: cloudExadataInfrastructureStorageCount,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Vault
         /// {
         ///     var testSecrets = Oci.Vault.GetSecrets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Secret_name,
-        ///         State = @var.Secret_state,
-        ///         VaultId = oci_kms_vault.Test_vault.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = secretName,
+        ///         State = secretState,
+        ///         VaultId = testVault.Id,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Vault
         /// {
         ///     var testSecrets = Oci.Vault.GetSecrets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Secret_name,
-        ///         State = @var.Secret_state,
-        ///         VaultId = oci_kms_vault.Test_vault.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = secretName,
+        ///         State = secretState,
+        ///         VaultId = testVault.Id,
         ///     });
         /// 
         /// });

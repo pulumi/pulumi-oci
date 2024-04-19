@@ -121,10 +121,10 @@ def get_meshes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_meshes = oci.ServiceMesh.get_meshes(compartment_id=var["compartment_id"],
-        display_name=var["mesh_display_name"],
-        id=var["mesh_id"],
-        state=var["mesh_state"])
+    test_meshes = oci.ServiceMesh.get_meshes(compartment_id=compartment_id,
+        display_name=mesh_display_name,
+        id=mesh_id,
+        state=mesh_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_meshes_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_meshes = oci.ServiceMesh.get_meshes(compartment_id=var["compartment_id"],
-        display_name=var["mesh_display_name"],
-        id=var["mesh_id"],
-        state=var["mesh_state"])
+    test_meshes = oci.ServiceMesh.get_meshes(compartment_id=compartment_id,
+        display_name=mesh_display_name,
+        id=mesh_id,
+        state=mesh_state)
     ```
     <!--End PulumiCodeChooser -->
 

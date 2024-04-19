@@ -30,14 +30,14 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryCommits = Oci.DevOps.GetRepositoryCommits.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         AuthorName = @var.Repository_commit_author_name,
-        ///         CommitMessage = @var.Repository_commit_commit_message,
-        ///         ExcludeRefName = @var.Repository_commit_exclude_ref_name,
-        ///         FilePath = @var.Repository_commit_file_path,
-        ///         RefName = @var.Repository_commit_ref_name,
-        ///         TimestampGreaterThanOrEqualTo = @var.Repository_commit_timestamp_greater_than_or_equal_to,
-        ///         TimestampLessThanOrEqualTo = @var.Repository_commit_timestamp_less_than_or_equal_to,
+        ///         RepositoryId = testRepository.Id,
+        ///         AuthorName = repositoryCommitAuthorName,
+        ///         CommitMessage = repositoryCommitCommitMessage,
+        ///         ExcludeRefName = repositoryCommitExcludeRefName,
+        ///         FilePath = repositoryCommitFilePath,
+        ///         RefName = repositoryCommitRefName,
+        ///         TimestampGreaterThanOrEqualTo = repositoryCommitTimestampGreaterThanOrEqualTo,
+        ///         TimestampLessThanOrEqualTo = repositoryCommitTimestampLessThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryCommits = Oci.DevOps.GetRepositoryCommits.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         AuthorName = @var.Repository_commit_author_name,
-        ///         CommitMessage = @var.Repository_commit_commit_message,
-        ///         ExcludeRefName = @var.Repository_commit_exclude_ref_name,
-        ///         FilePath = @var.Repository_commit_file_path,
-        ///         RefName = @var.Repository_commit_ref_name,
-        ///         TimestampGreaterThanOrEqualTo = @var.Repository_commit_timestamp_greater_than_or_equal_to,
-        ///         TimestampLessThanOrEqualTo = @var.Repository_commit_timestamp_less_than_or_equal_to,
+        ///         RepositoryId = testRepository.Id,
+        ///         AuthorName = repositoryCommitAuthorName,
+        ///         CommitMessage = repositoryCommitCommitMessage,
+        ///         ExcludeRefName = repositoryCommitExcludeRefName,
+        ///         FilePath = repositoryCommitFilePath,
+        ///         RefName = repositoryCommitRefName,
+        ///         TimestampGreaterThanOrEqualTo = repositoryCommitTimestampGreaterThanOrEqualTo,
+        ///         TimestampLessThanOrEqualTo = repositoryCommitTimestampLessThanOrEqualTo,
         ///     });
         /// 
         /// });

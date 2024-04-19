@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetPerformanceTuningAnalysisResults(ctx, &jms.GetFleetPerformanceTuningAnalysisResultsArgs{
-//				FleetId:           oci_jms_fleet.Test_fleet.Id,
-//				ApplicationId:     pulumi.StringRef(oci_dataflow_application.Test_application.Id),
-//				ManagedInstanceId: pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
-//				TimeEnd:           pulumi.StringRef(_var.Fleet_performance_tuning_analysis_result_time_end),
-//				TimeStart:         pulumi.StringRef(_var.Fleet_performance_tuning_analysis_result_time_start),
+//				FleetId:           testFleet.Id,
+//				ApplicationId:     pulumi.StringRef(testApplication.Id),
+//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
+//				TimeEnd:           pulumi.StringRef(fleetPerformanceTuningAnalysisResultTimeEnd),
+//				TimeStart:         pulumi.StringRef(fleetPerformanceTuningAnalysisResultTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err

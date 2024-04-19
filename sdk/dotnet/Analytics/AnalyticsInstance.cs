@@ -26,42 +26,43 @@ namespace Pulumi.Oci.Analytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAnalyticsInstance = new Oci.Analytics.AnalyticsInstance("testAnalyticsInstance", new()
+    ///     var testAnalyticsInstance = new Oci.Analytics.AnalyticsInstance("test_analytics_instance", new()
     ///     {
     ///         Capacity = new Oci.Analytics.Inputs.AnalyticsInstanceCapacityArgs
     ///         {
-    ///             CapacityType = @var.Analytics_instance_capacity_capacity_type,
-    ///             CapacityValue = @var.Analytics_instance_capacity_capacity_value,
+    ///             CapacityType = analyticsInstanceCapacityCapacityType,
+    ///             CapacityValue = analyticsInstanceCapacityCapacityValue,
     ///         },
-    ///         CompartmentId = @var.Compartment_id,
-    ///         FeatureSet = @var.Analytics_instance_feature_set,
-    ///         IdcsAccessToken = @var.Analytics_instance_idcs_access_token,
-    ///         LicenseType = @var.Analytics_instance_license_type,
+    ///         CompartmentId = compartmentId,
+    ///         FeatureSet = analyticsInstanceFeatureSet,
+    ///         IdcsAccessToken = analyticsInstanceIdcsAccessToken,
+    ///         LicenseType = analyticsInstanceLicenseType,
+    ///         Name = analyticsInstanceName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Analytics_instance_description,
-    ///         EmailNotification = @var.Analytics_instance_email_notification,
+    ///         Description = analyticsInstanceDescription,
+    ///         EmailNotification = analyticsInstanceEmailNotification,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         KmsKeyId = testKey.Id,
     ///         NetworkEndpointDetails = new Oci.Analytics.Inputs.AnalyticsInstanceNetworkEndpointDetailsArgs
     ///         {
-    ///             NetworkEndpointType = @var.Analytics_instance_network_endpoint_details_network_endpoint_type,
-    ///             NetworkSecurityGroupIds = @var.Analytics_instance_network_endpoint_details_network_security_group_ids,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             WhitelistedIps = @var.Analytics_instance_network_endpoint_details_whitelisted_ips,
-    ///             WhitelistedServices = @var.Analytics_instance_network_endpoint_details_whitelisted_services,
+    ///             NetworkEndpointType = analyticsInstanceNetworkEndpointDetailsNetworkEndpointType,
+    ///             NetworkSecurityGroupIds = analyticsInstanceNetworkEndpointDetailsNetworkSecurityGroupIds,
+    ///             SubnetId = testSubnet.Id,
+    ///             VcnId = testVcn.Id,
+    ///             WhitelistedIps = analyticsInstanceNetworkEndpointDetailsWhitelistedIps,
+    ///             WhitelistedServices = analyticsInstanceNetworkEndpointDetailsWhitelistedServices,
     ///             WhitelistedVcns = new[]
     ///             {
     ///                 new Oci.Analytics.Inputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs
     ///                 {
-    ///                     Id = @var.Analytics_instance_network_endpoint_details_whitelisted_vcns_id,
-    ///                     WhitelistedIps = @var.Analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
+    ///                     Id = analyticsInstanceNetworkEndpointDetailsWhitelistedVcnsId,
+    ///                     WhitelistedIps = analyticsInstanceNetworkEndpointDetailsWhitelistedVcnsWhitelistedIps,
     ///                 },
     ///             },
     ///         },

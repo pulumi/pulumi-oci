@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentRefreshActivity = oci.Functions.getFusionEnvironmentRefreshActivity({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     refreshActivityId: oci_fusion_apps_refresh_activity.test_refresh_activity.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     refreshActivityId: testRefreshActivity.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,8 +116,8 @@ export interface GetFusionEnvironmentRefreshActivityResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentRefreshActivity = oci.Functions.getFusionEnvironmentRefreshActivity({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     refreshActivityId: oci_fusion_apps_refresh_activity.test_refresh_activity.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     refreshActivityId: testRefreshActivity.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

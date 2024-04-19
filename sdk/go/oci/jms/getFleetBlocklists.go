@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetBlocklists(ctx, &jms.GetFleetBlocklistsArgs{
-//				FleetId:           oci_jms_fleet.Test_fleet.Id,
-//				ManagedInstanceId: pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
-//				Operation:         pulumi.StringRef(_var.Fleet_blocklist_operation),
+//				FleetId:           testFleet.Id,
+//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
+//				Operation:         pulumi.StringRef(fleetBlocklistOperation),
 //			}, nil)
 //			if err != nil {
 //				return err

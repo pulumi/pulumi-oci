@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceApplicationSchedule = oci.DataIntegration.getWorkspaceApplicationSchedule({
- *     applicationKey: _var.workspace_application_schedule_application_key,
- *     scheduleKey: _var.workspace_application_schedule_schedule_key,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
+ *     applicationKey: workspaceApplicationScheduleApplicationKey,
+ *     scheduleKey: workspaceApplicationScheduleScheduleKey,
+ *     workspaceId: testWorkspace.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,9 +129,9 @@ export interface GetWorkspaceApplicationScheduleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceApplicationSchedule = oci.DataIntegration.getWorkspaceApplicationSchedule({
- *     applicationKey: _var.workspace_application_schedule_application_key,
- *     scheduleKey: _var.workspace_application_schedule_schedule_key,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
+ *     applicationKey: workspaceApplicationScheduleApplicationKey,
+ *     scheduleKey: workspaceApplicationScheduleScheduleKey,
+ *     workspaceId: testWorkspace.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

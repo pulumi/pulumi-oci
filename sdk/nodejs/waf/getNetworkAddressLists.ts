@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkAddressLists = oci.Waf.getNetworkAddressLists({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.network_address_list_display_name,
- *     id: _var.network_address_list_id,
- *     states: _var.network_address_list_state,
+ *     compartmentId: compartmentId,
+ *     displayName: networkAddressListDisplayName,
+ *     id: networkAddressListId,
+ *     states: networkAddressListState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetNetworkAddressListsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkAddressLists = oci.Waf.getNetworkAddressLists({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.network_address_list_display_name,
- *     id: _var.network_address_list_id,
- *     states: _var.network_address_list_state,
+ *     compartmentId: compartmentId,
+ *     displayName: networkAddressListDisplayName,
+ *     id: networkAddressListId,
+ *     states: networkAddressListState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

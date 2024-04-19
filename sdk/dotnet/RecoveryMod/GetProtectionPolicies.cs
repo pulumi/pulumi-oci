@@ -30,11 +30,11 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testProtectionPolicies = Oci.RecoveryMod.GetProtectionPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Protection_policy_display_name,
-        ///         Owner = @var.Protection_policy_owner,
-        ///         ProtectionPolicyId = oci_recovery_protection_policy.Test_protection_policy.Id,
-        ///         State = @var.Protection_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectionPolicyDisplayName,
+        ///         Owner = protectionPolicyOwner,
+        ///         ProtectionPolicyId = testProtectionPolicy.Id,
+        ///         State = protectionPolicyState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testProtectionPolicies = Oci.RecoveryMod.GetProtectionPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Protection_policy_display_name,
-        ///         Owner = @var.Protection_policy_owner,
-        ///         ProtectionPolicyId = oci_recovery_protection_policy.Test_protection_policy.Id,
-        ///         State = @var.Protection_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectionPolicyDisplayName,
+        ///         Owner = protectionPolicyOwner,
+        ///         ProtectionPolicyId = testProtectionPolicy.Id,
+        ///         State = protectionPolicyState,
         ///     });
         /// 
         /// });

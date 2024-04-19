@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := NetworkFirewall.GetNetworkFirewallPolicies(ctx, &networkfirewall.GetNetworkFirewallPoliciesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Network_firewall_policy_display_name),
-//				Id:            pulumi.StringRef(_var.Network_firewall_policy_id),
-//				State:         pulumi.StringRef(_var.Network_firewall_policy_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(networkFirewallPolicyDisplayName),
+//				Id:            pulumi.StringRef(networkFirewallPolicyId),
+//				State:         pulumi.StringRef(networkFirewallPolicyState),
 //			}, nil)
 //			if err != nil {
 //				return err

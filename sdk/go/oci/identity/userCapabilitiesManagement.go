@@ -33,8 +33,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewUserCapabilitiesManagement(ctx, "testUserCapabilitiesManagement", &Identity.UserCapabilitiesManagementArgs{
-//				UserId:                   pulumi.Any(oci_identity_user.User1.Id),
+//			_, err := Identity.NewUserCapabilitiesManagement(ctx, "test_user_capabilities_management", &Identity.UserCapabilitiesManagementArgs{
+//				UserId:                   pulumi.Any(user1.Id),
 //				CanUseApiKeys:            pulumi.Bool(true),
 //				CanUseAuthTokens:         pulumi.Bool(true),
 //				CanUseConsolePassword:    pulumi.Bool(false),

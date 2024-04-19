@@ -31,38 +31,38 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewNetworkSecurityGroupSecurityRule(ctx, "testNetworkSecurityGroupSecurityRule", &Core.NetworkSecurityGroupSecurityRuleArgs{
-//				NetworkSecurityGroupId: pulumi.Any(oci_core_network_security_group.Test_network_security_group.Id),
-//				Direction:              pulumi.Any(_var.Network_security_group_security_rule_direction),
-//				Protocol:               pulumi.Any(_var.Network_security_group_security_rule_protocol),
-//				Description:            pulumi.Any(_var.Network_security_group_security_rule_description),
-//				Destination:            pulumi.Any(_var.Network_security_group_security_rule_destination),
-//				DestinationType:        pulumi.Any(_var.Network_security_group_security_rule_destination_type),
+//			_, err := Core.NewNetworkSecurityGroupSecurityRule(ctx, "test_network_security_group_security_rule", &Core.NetworkSecurityGroupSecurityRuleArgs{
+//				NetworkSecurityGroupId: pulumi.Any(testNetworkSecurityGroup.Id),
+//				Direction:              pulumi.Any(networkSecurityGroupSecurityRuleDirection),
+//				Protocol:               pulumi.Any(networkSecurityGroupSecurityRuleProtocol),
+//				Description:            pulumi.Any(networkSecurityGroupSecurityRuleDescription),
+//				Destination:            pulumi.Any(networkSecurityGroupSecurityRuleDestination),
+//				DestinationType:        pulumi.Any(networkSecurityGroupSecurityRuleDestinationType),
 //				IcmpOptions: &core.NetworkSecurityGroupSecurityRuleIcmpOptionsArgs{
-//					Type: pulumi.Any(_var.Network_security_group_security_rule_icmp_options_type),
-//					Code: pulumi.Any(_var.Network_security_group_security_rule_icmp_options_code),
+//					Type: pulumi.Any(networkSecurityGroupSecurityRuleIcmpOptionsType),
+//					Code: pulumi.Any(networkSecurityGroupSecurityRuleIcmpOptionsCode),
 //				},
-//				Source:     pulumi.Any(_var.Network_security_group_security_rule_source),
-//				SourceType: pulumi.Any(_var.Network_security_group_security_rule_source_type),
-//				Stateless:  pulumi.Any(_var.Network_security_group_security_rule_stateless),
+//				Source:     pulumi.Any(networkSecurityGroupSecurityRuleSource),
+//				SourceType: pulumi.Any(networkSecurityGroupSecurityRuleSourceType),
+//				Stateless:  pulumi.Any(networkSecurityGroupSecurityRuleStateless),
 //				TcpOptions: &core.NetworkSecurityGroupSecurityRuleTcpOptionsArgs{
 //					DestinationPortRange: &core.NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs{
-//						Max: pulumi.Any(_var.Network_security_group_security_rule_tcp_options_destination_port_range_max),
-//						Min: pulumi.Any(_var.Network_security_group_security_rule_tcp_options_destination_port_range_min),
+//						Max: pulumi.Any(networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMax),
+//						Min: pulumi.Any(networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMin),
 //					},
 //					SourcePortRange: &core.NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs{
-//						Max: pulumi.Any(_var.Network_security_group_security_rule_tcp_options_source_port_range_max),
-//						Min: pulumi.Any(_var.Network_security_group_security_rule_tcp_options_source_port_range_min),
+//						Max: pulumi.Any(networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMax),
+//						Min: pulumi.Any(networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMin),
 //					},
 //				},
 //				UdpOptions: &core.NetworkSecurityGroupSecurityRuleUdpOptionsArgs{
 //					DestinationPortRange: &core.NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs{
-//						Max: pulumi.Any(_var.Network_security_group_security_rule_udp_options_destination_port_range_max),
-//						Min: pulumi.Any(_var.Network_security_group_security_rule_udp_options_destination_port_range_min),
+//						Max: pulumi.Any(networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMax),
+//						Min: pulumi.Any(networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMin),
 //					},
 //					SourcePortRange: &core.NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs{
-//						Max: pulumi.Any(_var.Network_security_group_security_rule_udp_options_source_port_range_max),
-//						Min: pulumi.Any(_var.Network_security_group_security_rule_udp_options_source_port_range_min),
+//						Max: pulumi.Any(networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMax),
+//						Min: pulumi.Any(networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMin),
 //					},
 //				},
 //			})

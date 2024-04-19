@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModelDeployment = oci.DataScience.getModelDeployment({
- *     modelDeploymentId: oci_datascience_model_deployment.test_model_deployment.id,
+ *     modelDeploymentId: testModelDeploymentOciDatascienceModelDeployment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetModelDeploymentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModelDeployment = oci.DataScience.getModelDeployment({
- *     modelDeploymentId: oci_datascience_model_deployment.test_model_deployment.id,
+ *     modelDeploymentId: testModelDeploymentOciDatascienceModelDeployment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

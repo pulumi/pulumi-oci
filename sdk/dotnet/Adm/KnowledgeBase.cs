@@ -25,14 +25,14 @@ namespace Pulumi.Oci.Adm
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testKnowledgeBase = new Oci.Adm.KnowledgeBase("testKnowledgeBase", new()
+    ///     var testKnowledgeBase = new Oci.Adm.KnowledgeBase("test_knowledge_base", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Knowledge_base_display_name,
+    ///         DisplayName = knowledgeBaseDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

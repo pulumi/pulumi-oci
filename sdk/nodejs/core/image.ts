@@ -41,14 +41,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImage = new oci.core.Image("testImage", {
- *     compartmentId: _var.compartment_id,
- *     instanceId: oci_core_instance.test_instance.id,
+ * const testImage = new oci.core.Image("test_image", {
+ *     compartmentId: compartmentId,
+ *     instanceId: testInstance.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.image_display_name,
- *     launchMode: _var.image_launch_mode,
+ *     displayName: imageDisplayName,
+ *     launchMode: imageLaunchMode,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -62,18 +62,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImage = new oci.core.Image("testImage", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.image_display_name,
- *     launchMode: _var.image_launch_mode,
+ * const testImage = new oci.core.Image("test_image", {
+ *     compartmentId: compartmentId,
+ *     displayName: imageDisplayName,
+ *     launchMode: imageLaunchMode,
  *     imageSourceDetails: {
  *         sourceType: "objectStorageTuple",
- *         bucketName: _var.bucket_name,
- *         namespaceName: _var.namespace,
- *         objectName: _var.object_name,
- *         operatingSystem: _var.image_image_source_details_operating_system,
- *         operatingSystemVersion: _var.image_image_source_details_operating_system_version,
- *         sourceImageType: _var.source_image_type,
+ *         bucketName: bucketName,
+ *         namespaceName: namespace,
+ *         objectName: objectName,
+ *         operatingSystem: imageImageSourceDetailsOperatingSystem,
+ *         operatingSystemVersion: imageImageSourceDetailsOperatingSystemVersion,
+ *         sourceImageType: sourceImageType,
  *     },
  * });
  * ```
@@ -85,16 +85,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImage = new oci.core.Image("testImage", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.image_display_name,
- *     launchMode: _var.image_launch_mode,
+ * const testImage = new oci.core.Image("test_image", {
+ *     compartmentId: compartmentId,
+ *     displayName: imageDisplayName,
+ *     launchMode: imageLaunchMode,
  *     imageSourceDetails: {
  *         sourceType: "objectStorageUri",
- *         sourceUri: _var.source_uri,
- *         operatingSystem: _var.image_image_source_details_operating_system,
- *         operatingSystemVersion: _var.image_image_source_details_operating_system_version,
- *         sourceImageType: _var.source_image_type,
+ *         sourceUri: sourceUri,
+ *         operatingSystem: imageImageSourceDetailsOperatingSystem,
+ *         operatingSystemVersion: imageImageSourceDetailsOperatingSystemVersion,
+ *         sourceImageType: sourceImageType,
  *     },
  * });
  * ```

@@ -16,17 +16,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpv6 = new oci.core.Ipv6("testIpv6", {
- *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
+ * const testIpv6 = new oci.core.Ipv6("test_ipv6", {
+ *     vnicId: testVnicAttachment.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.ipv6_display_name,
+ *     displayName: ipv6DisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     ipAddress: _var.ipv6_ip_address,
- *     ipv6subnetCidr: _var.ipv6_ipv6subnet_cidr,
+ *     ipAddress: ipv6IpAddress,
+ *     ipv6subnetCidr: ipv6Ipv6subnetCidr,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

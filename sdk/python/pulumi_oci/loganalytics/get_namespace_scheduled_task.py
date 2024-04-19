@@ -261,8 +261,8 @@ def get_namespace_scheduled_task(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_task = oci.LogAnalytics.get_namespace_scheduled_task(namespace=var["namespace_scheduled_task_namespace"],
-        scheduled_task_id=oci_log_analytics_scheduled_task["test_scheduled_task"]["id"])
+    test_namespace_scheduled_task = oci.LogAnalytics.get_namespace_scheduled_task(namespace=namespace_scheduled_task_namespace,
+        scheduled_task_id=test_scheduled_task["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -313,8 +313,8 @@ def get_namespace_scheduled_task_output(namespace: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_task = oci.LogAnalytics.get_namespace_scheduled_task(namespace=var["namespace_scheduled_task_namespace"],
-        scheduled_task_id=oci_log_analytics_scheduled_task["test_scheduled_task"]["id"])
+    test_namespace_scheduled_task = oci.LogAnalytics.get_namespace_scheduled_task(namespace=namespace_scheduled_task_namespace,
+        scheduled_task_id=test_scheduled_task["id"])
     ```
     <!--End PulumiCodeChooser -->
 

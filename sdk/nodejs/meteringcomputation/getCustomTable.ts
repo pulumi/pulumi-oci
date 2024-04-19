@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCustomTable = oci.MeteringComputation.getCustomTable({
- *     customTableId: oci_metering_computation_custom_table.test_custom_table.id,
+ *     customTableId: testCustomTableOciMeteringComputationCustomTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,7 +77,7 @@ export interface GetCustomTableResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCustomTable = oci.MeteringComputation.getCustomTable({
- *     customTableId: oci_metering_computation_custom_table.test_custom_table.id,
+ *     customTableId: testCustomTableOciMeteringComputationCustomTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

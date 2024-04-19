@@ -25,21 +25,21 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMysqlBackup = new Oci.Mysql.MysqlBackup("testMysqlBackup", new()
+    ///     var testMysqlBackup = new Oci.Mysql.MysqlBackup("test_mysql_backup", new()
     ///     {
-    ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-    ///         BackupType = @var.Mysql_backup_backup_type,
+    ///         DbSystemId = testDbSystem.Id,
+    ///         BackupType = mysqlBackupBackupType,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Mysql_backup_description,
-    ///         DisplayName = @var.Mysql_backup_display_name,
+    ///         Description = mysqlBackupDescription,
+    ///         DisplayName = mysqlBackupDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         RetentionInDays = @var.Mysql_backup_retention_in_days,
+    ///         RetentionInDays = mysqlBackupRetentionInDays,
     ///     });
     /// 
     /// });

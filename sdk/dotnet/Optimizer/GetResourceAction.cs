@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testResourceAction = Oci.Optimizer.GetResourceAction.Invoke(new()
         ///     {
-        ///         ResourceActionId = oci_optimizer_resource_action.Test_resource_action.Id,
-        ///         IncludeResourceMetadata = @var.Resource_action_include_resource_metadata,
+        ///         ResourceActionId = testResourceActionOciOptimizerResourceAction.Id,
+        ///         IncludeResourceMetadata = resourceActionIncludeResourceMetadata,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testResourceAction = Oci.Optimizer.GetResourceAction.Invoke(new()
         ///     {
-        ///         ResourceActionId = oci_optimizer_resource_action.Test_resource_action.Id,
-        ///         IncludeResourceMetadata = @var.Resource_action_include_resource_metadata,
+        ///         ResourceActionId = testResourceActionOciOptimizerResourceAction.Id,
+        ///         IncludeResourceMetadata = resourceActionIncludeResourceMetadata,
         ///     });
         /// 
         /// });

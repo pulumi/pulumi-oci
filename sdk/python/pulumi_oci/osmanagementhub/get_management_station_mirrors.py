@@ -124,10 +124,10 @@ def get_management_station_mirrors(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=oci_os_management_hub_management_station["test_management_station"]["id"],
-        display_name=var["management_station_mirror_display_name"],
-        display_name_contains=var["management_station_mirror_display_name_contains"],
-        mirror_states=var["management_station_mirror_mirror_states"])
+    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=test_management_station["id"],
+        display_name=management_station_mirror_display_name,
+        display_name_contains=management_station_mirror_display_name_contains,
+        mirror_states=management_station_mirror_mirror_states)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -175,10 +175,10 @@ def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=oci_os_management_hub_management_station["test_management_station"]["id"],
-        display_name=var["management_station_mirror_display_name"],
-        display_name_contains=var["management_station_mirror_display_name_contains"],
-        mirror_states=var["management_station_mirror_mirror_states"])
+    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=test_management_station["id"],
+        display_name=management_station_mirror_display_name,
+        display_name_contains=management_station_mirror_display_name_contains,
+        mirror_states=management_station_mirror_mirror_states)
     ```
     <!--End PulumiCodeChooser -->
 

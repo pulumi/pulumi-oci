@@ -35,18 +35,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternetGateway = new oci.core.InternetGateway("testInternetGateway", {
- *     compartmentId: _var.compartment_id,
- *     vcnId: oci_core_vcn.test_vcn.id,
- *     enabled: _var.internet_gateway_enabled,
+ * const testInternetGateway = new oci.core.InternetGateway("test_internet_gateway", {
+ *     compartmentId: compartmentId,
+ *     vcnId: testVcn.id,
+ *     enabled: internetGatewayEnabled,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.internet_gateway_display_name,
+ *     displayName: internetGatewayDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     routeTableId: oci_core_route_table.test_route_table.id,
+ *     routeTableId: testRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -101,8 +101,8 @@ def get_managed_databases_asm_properties(filters: Optional[Sequence[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_asm_properties = oci.DatabaseManagement.get_managed_databases_asm_properties(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_databases_asm_property_name"])
+    test_managed_databases_asm_properties = oci.DatabaseManagement.get_managed_databases_asm_properties(managed_database_id=test_managed_database["id"],
+        name=managed_databases_asm_property_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,8 +142,8 @@ def get_managed_databases_asm_properties_output(filters: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_asm_properties = oci.DatabaseManagement.get_managed_databases_asm_properties(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_databases_asm_property_name"])
+    test_managed_databases_asm_properties = oci.DatabaseManagement.get_managed_databases_asm_properties(managed_database_id=test_managed_database["id"],
+        name=managed_databases_asm_property_name)
     ```
     <!--End PulumiCodeChooser -->
 

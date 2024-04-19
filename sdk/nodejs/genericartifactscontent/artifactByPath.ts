@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testArtifactByPath = new oci.genericartifactscontent.ArtifactByPath("testArtifactByPath", {
- *     artifactPath: _var.artifact_path,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     version: _var.version,
- *     source: _var.source,
+ * const testArtifactByPath = new oci.genericartifactscontent.ArtifactByPath("test_artifact_by_path", {
+ *     artifactPath: artifactPath,
+ *     repositoryId: testRepository.id,
+ *     version: version,
+ *     source: source,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

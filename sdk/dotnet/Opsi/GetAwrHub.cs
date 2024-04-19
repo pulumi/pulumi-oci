@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHub = Oci.Opsi.GetAwrHub.Invoke(new()
         ///     {
-        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
+        ///         AwrHubId = testAwrHubOciOpsiAwrHub.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHub = Oci.Opsi.GetAwrHub.Invoke(new()
         ///     {
-        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
+        ///         AwrHubId = testAwrHubOciOpsiAwrHub.Id,
         ///     });
         /// 
         /// });

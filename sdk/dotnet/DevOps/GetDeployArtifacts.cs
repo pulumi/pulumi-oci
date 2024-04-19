@@ -29,11 +29,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testDeployArtifacts = Oci.DevOps.GetDeployArtifacts.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Deploy_artifact_display_name,
-        ///         Id = @var.Deploy_artifact_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Deploy_artifact_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = deployArtifactDisplayName,
+        ///         Id = deployArtifactId,
+        ///         ProjectId = testProject.Id,
+        ///         State = deployArtifactState,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testDeployArtifacts = Oci.DevOps.GetDeployArtifacts.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Deploy_artifact_display_name,
-        ///         Id = @var.Deploy_artifact_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Deploy_artifact_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = deployArtifactDisplayName,
+        ///         Id = deployArtifactId,
+        ///         ProjectId = testProject.Id,
+        ///         State = deployArtifactState,
         ///     });
         /// 
         /// });

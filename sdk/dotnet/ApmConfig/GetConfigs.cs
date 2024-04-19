@@ -29,14 +29,14 @@ namespace Pulumi.Oci.ApmConfig
         /// {
         ///     var testConfigs = Oci.ApmConfig.GetConfigs.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         ConfigType = @var.Config_config_type,
-        ///         DefinedTagEquals = @var.Config_defined_tag_equals,
-        ///         DefinedTagExists = @var.Config_defined_tag_exists,
-        ///         DisplayName = @var.Config_display_name,
-        ///         FreeformTagEquals = @var.Config_freeform_tag_equals,
-        ///         FreeformTagExists = @var.Config_freeform_tag_exists,
-        ///         OptionsGroup = @var.Config_options_group,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ConfigType = configConfigType,
+        ///         DefinedTagEquals = configDefinedTagEquals,
+        ///         DefinedTagExists = configDefinedTagExists,
+        ///         DisplayName = configDisplayName,
+        ///         FreeformTagEquals = configFreeformTagEquals,
+        ///         FreeformTagExists = configFreeformTagExists,
+        ///         OptionsGroup = configOptionsGroup,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.ApmConfig
         /// {
         ///     var testConfigs = Oci.ApmConfig.GetConfigs.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         ConfigType = @var.Config_config_type,
-        ///         DefinedTagEquals = @var.Config_defined_tag_equals,
-        ///         DefinedTagExists = @var.Config_defined_tag_exists,
-        ///         DisplayName = @var.Config_display_name,
-        ///         FreeformTagEquals = @var.Config_freeform_tag_equals,
-        ///         FreeformTagExists = @var.Config_freeform_tag_exists,
-        ///         OptionsGroup = @var.Config_options_group,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ConfigType = configConfigType,
+        ///         DefinedTagEquals = configDefinedTagEquals,
+        ///         DefinedTagExists = configDefinedTagExists,
+        ///         DisplayName = configDisplayName,
+        ///         FreeformTagEquals = configFreeformTagEquals,
+        ///         FreeformTagExists = configFreeformTagExists,
+        ///         OptionsGroup = configOptionsGroup,
         ///     });
         /// 
         /// });

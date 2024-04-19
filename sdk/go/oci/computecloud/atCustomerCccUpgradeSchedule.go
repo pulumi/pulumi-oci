@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ComputeCloud.NewAtCustomerCccUpgradeSchedule(ctx, "testCccUpgradeSchedule", &ComputeCloud.AtCustomerCccUpgradeScheduleArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Ccc_upgrade_schedule_display_name),
+//			_, err := ComputeCloud.NewAtCustomerCccUpgradeSchedule(ctx, "test_ccc_upgrade_schedule", &ComputeCloud.AtCustomerCccUpgradeScheduleArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(cccUpgradeScheduleDisplayName),
 //				Events: computecloud.AtCustomerCccUpgradeScheduleEventArray{
 //					&computecloud.AtCustomerCccUpgradeScheduleEventArgs{
-//						Description:              pulumi.Any(_var.Ccc_upgrade_schedule_events_description),
-//						ScheduleEventDuration:    pulumi.Any(_var.Ccc_upgrade_schedule_events_schedule_event_duration),
-//						TimeStart:                pulumi.Any(_var.Ccc_upgrade_schedule_events_time_start),
-//						ScheduleEventRecurrences: pulumi.Any(_var.Ccc_upgrade_schedule_events_schedule_event_recurrences),
+//						Description:              pulumi.Any(cccUpgradeScheduleEventsDescription),
+//						ScheduleEventDuration:    pulumi.Any(cccUpgradeScheduleEventsScheduleEventDuration),
+//						TimeStart:                pulumi.Any(cccUpgradeScheduleEventsTimeStart),
+//						ScheduleEventRecurrences: pulumi.Any(cccUpgradeScheduleEventsScheduleEventRecurrences),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Ccc_upgrade_schedule_description),
+//				Description: pulumi.Any(cccUpgradeScheduleDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

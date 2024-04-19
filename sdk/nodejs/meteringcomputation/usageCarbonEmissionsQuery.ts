@@ -18,30 +18,30 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsageCarbonEmissionsQuery = new oci.meteringcomputation.UsageCarbonEmissionsQuery("testUsageCarbonEmissionsQuery", {
- *     compartmentId: _var.compartment_id,
+ * const testUsageCarbonEmissionsQuery = new oci.meteringcomputation.UsageCarbonEmissionsQuery("test_usage_carbon_emissions_query", {
+ *     compartmentId: compartmentId,
  *     queryDefinition: {
  *         costAnalysisUi: {
- *             graph: _var.usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
- *             isCumulativeGraph: _var.usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
+ *             graph: usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiGraph,
+ *             isCumulativeGraph: usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiIsCumulativeGraph,
  *         },
- *         displayName: _var.usage_carbon_emissions_query_query_definition_display_name,
+ *         displayName: usageCarbonEmissionsQueryQueryDefinitionDisplayName,
  *         reportQuery: {
- *             tenantId: oci_metering_computation_tenant.test_tenant.id,
- *             compartmentDepth: _var.usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
- *             dateRangeName: _var.usage_carbon_emissions_query_query_definition_report_query_date_range_name,
- *             groupBies: _var.usage_carbon_emissions_query_query_definition_report_query_group_by,
+ *             tenantId: testTenant.id,
+ *             compartmentDepth: usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth,
+ *             dateRangeName: usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName,
+ *             groupBies: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupBy,
  *             groupByTags: [{
- *                 key: _var.usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,
- *                 namespace: _var.usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
- *                 value: _var.usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
+ *                 key: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagKey,
+ *                 namespace: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagNamespace,
+ *                 value: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagValue,
  *             }],
- *             isAggregateByTime: _var.usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
- *             timeUsageEnded: _var.usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
- *             timeUsageStarted: _var.usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
- *             usageCarbonEmissionsQueryFilter: _var.usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
+ *             isAggregateByTime: usageCarbonEmissionsQueryQueryDefinitionReportQueryIsAggregateByTime,
+ *             timeUsageEnded: usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageEnded,
+ *             timeUsageStarted: usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageStarted,
+ *             usageCarbonEmissionsQueryFilter: usageCarbonEmissionsQueryQueryDefinitionReportQueryUsageCarbonEmissionsQueryFilter,
  *         },
- *         version: _var.usage_carbon_emissions_query_query_definition_version,
+ *         version: usageCarbonEmissionsQueryQueryDefinitionVersion,
  *     },
  * });
  * ```

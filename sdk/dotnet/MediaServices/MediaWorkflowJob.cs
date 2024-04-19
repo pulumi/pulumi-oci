@@ -25,15 +25,15 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMediaWorkflowJob = new Oci.MediaServices.MediaWorkflowJob("testMediaWorkflowJob", new()
+    ///     var testMediaWorkflowJob = new Oci.MediaServices.MediaWorkflowJob("test_media_workflow_job", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         WorkflowIdentifierType = @var.Media_workflow_job_workflow_identifier_type,
+    ///         CompartmentId = compartmentId,
+    ///         WorkflowIdentifierType = mediaWorkflowJobWorkflowIdentifierType,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Media_workflow_job_display_name,
+    ///         DisplayName = mediaWorkflowJobDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
@@ -42,17 +42,17 @@ namespace Pulumi.Oci.MediaServices
     ///         {
     ///             new Oci.MediaServices.Inputs.MediaWorkflowJobLockArgs
     ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 Type = @var.Media_workflow_job_locks_type,
-    ///                 Message = @var.Media_workflow_job_locks_message,
-    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
-    ///                 TimeCreated = @var.Media_workflow_job_locks_time_created,
+    ///                 CompartmentId = compartmentId,
+    ///                 Type = mediaWorkflowJobLocksType,
+    ///                 Message = mediaWorkflowJobLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = mediaWorkflowJobLocksTimeCreated,
     ///             },
     ///         },
-    ///         MediaWorkflowConfigurationIds = @var.Media_workflow_job_media_workflow_configuration_ids,
-    ///         MediaWorkflowId = oci_media_services_media_workflow.Test_media_workflow.Id,
-    ///         MediaWorkflowName = oci_media_services_media_workflow.Test_media_workflow.Name,
-    ///         Parameters = @var.Media_workflow_job_parameters,
+    ///         MediaWorkflowConfigurationIds = mediaWorkflowJobMediaWorkflowConfigurationIds,
+    ///         MediaWorkflowId = testMediaWorkflow.Id,
+    ///         MediaWorkflowName = testMediaWorkflow.Name,
+    ///         Parameters = mediaWorkflowJobParameters,
     ///     });
     /// 
     /// });

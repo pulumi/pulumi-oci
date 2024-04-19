@@ -857,25 +857,25 @@ class OperatorControlAssignment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operator_control_assignment = oci.operator_access_control.OperatorControlAssignment("testOperatorControlAssignment",
-            compartment_id=var["compartment_id"],
-            is_enforced_always=var["operator_control_assignment_is_enforced_always"],
-            operator_control_id=oci_operator_access_control_operator_control["test_operator_control"]["id"],
-            resource_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            resource_id=oci_operator_access_control_resource["test_resource"]["id"],
-            resource_name_=var["operator_control_assignment_resource_name"],
-            resource_type=var["operator_control_assignment_resource_type"],
-            comment=var["operator_control_assignment_comment"],
-            defined_tags=var["operator_control_assignment_defined_tags"],
-            freeform_tags=var["operator_control_assignment_freeform_tags"],
-            is_auto_approve_during_maintenance=var["operator_control_assignment_is_auto_approve_during_maintenance"],
-            is_hypervisor_log_forwarded=var["operator_control_assignment_is_hypervisor_log_forwarded"],
-            is_log_forwarded=var["operator_control_assignment_is_log_forwarded"],
-            remote_syslog_server_address=var["operator_control_assignment_remote_syslog_server_address"],
-            remote_syslog_server_ca_cert=var["operator_control_assignment_remote_syslog_server_ca_cert"],
-            remote_syslog_server_port=var["operator_control_assignment_remote_syslog_server_port"],
-            time_assignment_from=var["operator_control_assignment_time_assignment_from"],
-            time_assignment_to=var["operator_control_assignment_time_assignment_to"])
+        test_operator_control_assignment = oci.operator_access_control.OperatorControlAssignment("test_operator_control_assignment",
+            compartment_id=compartment_id,
+            is_enforced_always=operator_control_assignment_is_enforced_always,
+            operator_control_id=test_operator_control["id"],
+            resource_compartment_id=test_compartment["id"],
+            resource_id=test_resource["id"],
+            resource_name_=operator_control_assignment_resource_name,
+            resource_type=operator_control_assignment_resource_type,
+            comment=operator_control_assignment_comment,
+            defined_tags=operator_control_assignment_defined_tags,
+            freeform_tags=operator_control_assignment_freeform_tags,
+            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance,
+            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded,
+            is_log_forwarded=operator_control_assignment_is_log_forwarded,
+            remote_syslog_server_address=operator_control_assignment_remote_syslog_server_address,
+            remote_syslog_server_ca_cert=operator_control_assignment_remote_syslog_server_ca_cert,
+            remote_syslog_server_port=operator_control_assignment_remote_syslog_server_port,
+            time_assignment_from=operator_control_assignment_time_assignment_from,
+            time_assignment_to=operator_control_assignment_time_assignment_to)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -931,25 +931,25 @@ class OperatorControlAssignment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operator_control_assignment = oci.operator_access_control.OperatorControlAssignment("testOperatorControlAssignment",
-            compartment_id=var["compartment_id"],
-            is_enforced_always=var["operator_control_assignment_is_enforced_always"],
-            operator_control_id=oci_operator_access_control_operator_control["test_operator_control"]["id"],
-            resource_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            resource_id=oci_operator_access_control_resource["test_resource"]["id"],
-            resource_name_=var["operator_control_assignment_resource_name"],
-            resource_type=var["operator_control_assignment_resource_type"],
-            comment=var["operator_control_assignment_comment"],
-            defined_tags=var["operator_control_assignment_defined_tags"],
-            freeform_tags=var["operator_control_assignment_freeform_tags"],
-            is_auto_approve_during_maintenance=var["operator_control_assignment_is_auto_approve_during_maintenance"],
-            is_hypervisor_log_forwarded=var["operator_control_assignment_is_hypervisor_log_forwarded"],
-            is_log_forwarded=var["operator_control_assignment_is_log_forwarded"],
-            remote_syslog_server_address=var["operator_control_assignment_remote_syslog_server_address"],
-            remote_syslog_server_ca_cert=var["operator_control_assignment_remote_syslog_server_ca_cert"],
-            remote_syslog_server_port=var["operator_control_assignment_remote_syslog_server_port"],
-            time_assignment_from=var["operator_control_assignment_time_assignment_from"],
-            time_assignment_to=var["operator_control_assignment_time_assignment_to"])
+        test_operator_control_assignment = oci.operator_access_control.OperatorControlAssignment("test_operator_control_assignment",
+            compartment_id=compartment_id,
+            is_enforced_always=operator_control_assignment_is_enforced_always,
+            operator_control_id=test_operator_control["id"],
+            resource_compartment_id=test_compartment["id"],
+            resource_id=test_resource["id"],
+            resource_name_=operator_control_assignment_resource_name,
+            resource_type=operator_control_assignment_resource_type,
+            comment=operator_control_assignment_comment,
+            defined_tags=operator_control_assignment_defined_tags,
+            freeform_tags=operator_control_assignment_freeform_tags,
+            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance,
+            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded,
+            is_log_forwarded=operator_control_assignment_is_log_forwarded,
+            remote_syslog_server_address=operator_control_assignment_remote_syslog_server_address,
+            remote_syslog_server_ca_cert=operator_control_assignment_remote_syslog_server_ca_cert,
+            remote_syslog_server_port=operator_control_assignment_remote_syslog_server_port,
+            time_assignment_from=operator_control_assignment_time_assignment_from,
+            time_assignment_to=operator_control_assignment_time_assignment_to)
         ```
         <!--End PulumiCodeChooser -->
 

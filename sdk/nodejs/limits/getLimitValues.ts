@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLimitValues = oci.Limits.getLimitValues({
- *     compartmentId: _var.tenancy_ocid,
- *     serviceName: oci_limits_service.test_service.name,
- *     availabilityDomain: _var.limit_value_availability_domain,
- *     name: _var.limit_value_name,
- *     scopeType: _var.limit_value_scope_type,
+ *     compartmentId: tenancyOcid,
+ *     serviceName: testService.name,
+ *     availabilityDomain: limitValueAvailabilityDomain,
+ *     name: limitValueName,
+ *     scopeType: limitValueScopeType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetLimitValuesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLimitValues = oci.Limits.getLimitValues({
- *     compartmentId: _var.tenancy_ocid,
- *     serviceName: oci_limits_service.test_service.name,
- *     availabilityDomain: _var.limit_value_availability_domain,
- *     name: _var.limit_value_name,
- *     scopeType: _var.limit_value_scope_type,
+ *     compartmentId: tenancyOcid,
+ *     serviceName: testService.name,
+ *     availabilityDomain: limitValueAvailabilityDomain,
+ *     name: limitValueName,
+ *     scopeType: limitValueScopeType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

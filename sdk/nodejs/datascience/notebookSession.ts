@@ -18,53 +18,53 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotebookSession = new oci.datascience.NotebookSession("testNotebookSession", {
- *     compartmentId: _var.compartment_id,
- *     projectId: oci_datascience_project.test_project.id,
+ * const testNotebookSession = new oci.datascience.NotebookSession("test_notebook_session", {
+ *     compartmentId: compartmentId,
+ *     projectId: testProject.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.notebook_session_display_name,
+ *     displayName: notebookSessionDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     notebookSessionConfigDetails: {
- *         shape: _var.notebook_session_notebook_session_config_details_shape,
- *         blockStorageSizeInGbs: _var.notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
+ *         shape: notebookSessionNotebookSessionConfigDetailsShape,
+ *         blockStorageSizeInGbs: notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs,
  *         notebookSessionShapeConfigDetails: {
- *             memoryInGbs: _var.notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
- *             ocpus: _var.notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
+ *             memoryInGbs: notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
+ *             ocpus: notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOcpus,
  *         },
- *         privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
- *         subnetId: oci_core_subnet.test_subnet.id,
+ *         privateEndpointId: testPrivateEndpoint.id,
+ *         subnetId: testSubnet.id,
  *     },
  *     notebookSessionConfigurationDetails: {
- *         shape: _var.notebook_session_notebook_session_configuration_details_shape,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         blockStorageSizeInGbs: _var.notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
+ *         shape: notebookSessionNotebookSessionConfigurationDetailsShape,
+ *         subnetId: testSubnet.id,
+ *         blockStorageSizeInGbs: notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs,
  *         notebookSessionShapeConfigDetails: {
- *             memoryInGbs: _var.notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
- *             ocpus: _var.notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
+ *             memoryInGbs: notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
+ *             ocpus: notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOcpus,
  *         },
- *         privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *         privateEndpointId: testPrivateEndpoint.id,
  *     },
  *     notebookSessionRuntimeConfigDetails: {
- *         customEnvironmentVariables: _var.notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
+ *         customEnvironmentVariables: notebookSessionNotebookSessionRuntimeConfigDetailsCustomEnvironmentVariables,
  *         notebookSessionGitConfigDetails: {
  *             notebookSessionGitRepoConfigCollections: [{
- *                 url: _var.notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
+ *                 url: notebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionUrl,
  *             }],
  *         },
  *     },
  *     notebookSessionStorageMountConfigurationDetailsLists: [{
- *         destinationDirectoryName: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
- *         storageType: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
- *         bucket: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
- *         destinationPath: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
- *         exportId: oci_file_storage_export.test_export.id,
- *         mountTargetId: oci_file_storage_mount_target.test_mount_target.id,
- *         namespace: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
- *         prefix: _var.notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
+ *         destinationDirectoryName: notebookSessionNotebookSessionStorageMountConfigurationDetailsListDestinationDirectoryName,
+ *         storageType: notebookSessionNotebookSessionStorageMountConfigurationDetailsListStorageType,
+ *         bucket: notebookSessionNotebookSessionStorageMountConfigurationDetailsListBucket,
+ *         destinationPath: notebookSessionNotebookSessionStorageMountConfigurationDetailsListDestinationPath,
+ *         exportId: testExport.id,
+ *         mountTargetId: testMountTarget.id,
+ *         namespace: notebookSessionNotebookSessionStorageMountConfigurationDetailsListNamespace,
+ *         prefix: notebookSessionNotebookSessionStorageMountConfigurationDetailsListPrefix,
  *     }],
  * });
  * ```

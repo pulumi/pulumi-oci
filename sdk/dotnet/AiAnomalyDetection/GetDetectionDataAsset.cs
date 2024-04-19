@@ -29,7 +29,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {
         ///     var testDataAsset = Oci.AiAnomalyDetection.GetDetectionDataAsset.Invoke(new()
         ///     {
-        ///         DataAssetId = oci_ai_anomaly_detection_data_asset.Test_data_asset.Id,
+        ///         DataAssetId = testDataAssetOciAiAnomalyDetectionDataAsset.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {
         ///     var testDataAsset = Oci.AiAnomalyDetection.GetDetectionDataAsset.Invoke(new()
         ///     {
-        ///         DataAssetId = oci_ai_anomaly_detection_data_asset.Test_data_asset.Id,
+        ///         DataAssetId = testDataAssetOciAiAnomalyDetectionDataAsset.Id,
         ///     });
         /// 
         /// });

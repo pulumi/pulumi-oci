@@ -18,22 +18,22 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingMonitor = new oci.healthchecks.PingMonitor("testPingMonitor", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.ping_monitor_display_name,
- *     intervalInSeconds: _var.ping_monitor_interval_in_seconds,
- *     protocol: _var.ping_monitor_protocol,
- *     targets: _var.ping_monitor_targets,
+ * const testPingMonitor = new oci.healthchecks.PingMonitor("test_ping_monitor", {
+ *     compartmentId: compartmentId,
+ *     displayName: pingMonitorDisplayName,
+ *     intervalInSeconds: pingMonitorIntervalInSeconds,
+ *     protocol: pingMonitorProtocol,
+ *     targets: pingMonitorTargets,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: _var.ping_monitor_is_enabled,
- *     port: _var.ping_monitor_port,
- *     timeoutInSeconds: _var.ping_monitor_timeout_in_seconds,
- *     vantagePointNames: _var.ping_monitor_vantage_point_names,
+ *     isEnabled: pingMonitorIsEnabled,
+ *     port: pingMonitorPort,
+ *     timeoutInSeconds: pingMonitorTimeoutInSeconds,
+ *     vantagePointNames: pingMonitorVantagePointNames,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

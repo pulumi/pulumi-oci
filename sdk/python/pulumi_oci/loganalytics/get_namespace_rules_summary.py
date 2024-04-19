@@ -113,8 +113,8 @@ def get_namespace_rules_summary(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules_summary = oci.LogAnalytics.get_namespace_rules_summary(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rules_summary_namespace"])
+    test_namespace_rules_summary = oci.LogAnalytics.get_namespace_rules_summary(compartment_id=compartment_id,
+        namespace=namespace_rules_summary_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -153,8 +153,8 @@ def get_namespace_rules_summary_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules_summary = oci.LogAnalytics.get_namespace_rules_summary(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rules_summary_namespace"])
+    test_namespace_rules_summary = oci.LogAnalytics.get_namespace_rules_summary(compartment_id=compartment_id,
+        namespace=namespace_rules_summary_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

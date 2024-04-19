@@ -26,9 +26,9 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUnsetSecurityAssessmentBaseline = new Oci.DataSafe.UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", new()
+    ///     var testUnsetSecurityAssessmentBaseline = new Oci.DataSafe.UnsetSecurityAssessmentBaseline("test_unset_security_assessment_baseline", new()
     ///     {
-    ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
+    ///         SecurityAssessmentId = testSecurityAssessment.Id,
     ///     });
     /// 
     /// });

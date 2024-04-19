@@ -25,11 +25,11 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrPlan = new Oci.DisasterRecovery.DrPlan("testDrPlan", new()
+    ///     var testDrPlan = new Oci.DisasterRecovery.DrPlan("test_dr_plan", new()
     ///     {
-    ///         DisplayName = @var.Dr_plan_display_name,
-    ///         DrProtectionGroupId = oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
-    ///         Type = @var.Dr_plan_type,
+    ///         DisplayName = drPlanDisplayName,
+    ///         DrProtectionGroupId = testDrProtectionGroup.Id,
+    ///         Type = drPlanType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

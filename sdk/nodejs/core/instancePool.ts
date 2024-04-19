@@ -22,44 +22,44 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstancePool = new oci.core.InstancePool("testInstancePool", {
- *     compartmentId: _var.compartment_id,
- *     instanceConfigurationId: oci_core_instance_configuration.test_instance_configuration.id,
+ * const testInstancePool = new oci.core.InstancePool("test_instance_pool", {
+ *     compartmentId: compartmentId,
+ *     instanceConfigurationId: testInstanceConfiguration.id,
  *     placementConfigurations: [{
- *         availabilityDomain: _var.instance_pool_placement_configurations_availability_domain,
- *         faultDomains: _var.instance_pool_placement_configurations_fault_domains,
- *         primarySubnetId: oci_core_subnet.test_subnet.id,
+ *         availabilityDomain: instancePoolPlacementConfigurationsAvailabilityDomain,
+ *         faultDomains: instancePoolPlacementConfigurationsFaultDomains,
+ *         primarySubnetId: testSubnet.id,
  *         primaryVnicSubnets: {
- *             subnetId: oci_core_subnet.test_subnet.id,
+ *             subnetId: testSubnet.id,
  *             ipv6addressIpv6subnetCidrPairDetails: [{
- *                 ipv6subnetCidr: _var.instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *                 ipv6subnetCidr: instancePoolPlacementConfigurationsPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: _var.instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
+ *             isAssignIpv6ip: instancePoolPlacementConfigurationsPrimaryVnicSubnetsIsAssignIpv6ip,
  *         },
  *         secondaryVnicSubnets: [{
- *             subnetId: oci_core_subnet.test_subnet.id,
- *             displayName: _var.instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
+ *             subnetId: testSubnet.id,
+ *             displayName: instancePoolPlacementConfigurationsSecondaryVnicSubnetsDisplayName,
  *             ipv6addressIpv6subnetCidrPairDetails: [{
- *                 ipv6subnetCidr: _var.instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *                 ipv6subnetCidr: instancePoolPlacementConfigurationsSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: _var.instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
+ *             isAssignIpv6ip: instancePoolPlacementConfigurationsSecondaryVnicSubnetsIsAssignIpv6ip,
  *         }],
  *     }],
- *     size: _var.instance_pool_size,
+ *     size: instancePoolSize,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.instance_pool_display_name,
+ *     displayName: instancePoolDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     instanceDisplayNameFormatter: _var.instance_pool_instance_display_name_formatter,
- *     instanceHostnameFormatter: _var.instance_pool_instance_hostname_formatter,
+ *     instanceDisplayNameFormatter: instancePoolInstanceDisplayNameFormatter,
+ *     instanceHostnameFormatter: instancePoolInstanceHostnameFormatter,
  *     loadBalancers: [{
- *         backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
- *         loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *         port: _var.instance_pool_load_balancers_port,
- *         vnicSelection: _var.instance_pool_load_balancers_vnic_selection,
+ *         backendSetName: testBackendSet.name,
+ *         loadBalancerId: testLoadBalancer.id,
+ *         port: instancePoolLoadBalancersPort,
+ *         vnicSelection: instancePoolLoadBalancersVnicSelection,
  *     }],
  * });
  * ```

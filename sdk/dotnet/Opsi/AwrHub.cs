@@ -26,11 +26,11 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAwrHub = new Oci.Opsi.AwrHub("testAwrHub", new()
+    ///     var testAwrHub = new Oci.Opsi.AwrHub("test_awr_hub", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Awr_hub_display_name,
-    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = awrHubDisplayName,
+    ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Opsi
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         ObjectStorageBucketName = oci_objectstorage_bucket.Test_bucket.Name,
+    ///         ObjectStorageBucketName = testBucket.Name,
     ///     });
     /// 
     /// });

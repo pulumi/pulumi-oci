@@ -110,10 +110,10 @@ def get_repo_file_line(file_path: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repo_file_line = oci.DevOps.get_repo_file_line(repository_id=oci_devops_repository["test_repository"]["id"],
-        revision=var["repo_file_line_revision"],
-        file_path=var["repo_file_line_file_path"],
-        start_line_number=var["repo_file_line_start_line_number"])
+    test_repo_file_line = oci.DevOps.get_repo_file_line(repository_id=test_repository["id"],
+        revision=repo_file_line_revision,
+        file_path=repo_file_line_file_path,
+        start_line_number=repo_file_line_start_line_number)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -158,10 +158,10 @@ def get_repo_file_line_output(file_path: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repo_file_line = oci.DevOps.get_repo_file_line(repository_id=oci_devops_repository["test_repository"]["id"],
-        revision=var["repo_file_line_revision"],
-        file_path=var["repo_file_line_file_path"],
-        start_line_number=var["repo_file_line_start_line_number"])
+    test_repo_file_line = oci.DevOps.get_repo_file_line(repository_id=test_repository["id"],
+        revision=repo_file_line_revision,
+        file_path=repo_file_line_file_path,
+        start_line_number=repo_file_line_start_line_number)
     ```
     <!--End PulumiCodeChooser -->
 

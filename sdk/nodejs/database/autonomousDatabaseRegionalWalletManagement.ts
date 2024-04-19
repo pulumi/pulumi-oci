@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseRegionalWalletManagement = new oci.database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement", {
- *     gracePeriod: _var.autonomous_database_regional_wallet_management_grace_period,
- *     shouldRotate: _var.autonomous_database_regional_wallet_management_should_rotate,
+ * const testAutonomousDatabaseRegionalWalletManagement = new oci.database.AutonomousDatabaseRegionalWalletManagement("test_autonomous_database_regional_wallet_management", {
+ *     gracePeriod: autonomousDatabaseRegionalWalletManagementGracePeriod,
+ *     shouldRotate: autonomousDatabaseRegionalWalletManagementShouldRotate,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVlans = Oci.Core.GetVlans.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vlan_display_name,
-        ///         State = @var.Vlan_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vlanDisplayName,
+        ///         State = vlanState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVlans = Oci.Core.GetVlans.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vlan_display_name,
-        ///         State = @var.Vlan_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vlanDisplayName,
+        ///         State = vlanState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

@@ -31,19 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waa.NewAppAcceleration(ctx, "testWebAppAcceleration", &Waa.AppAccelerationArgs{
-//				BackendType:                pulumi.Any(_var.Web_app_acceleration_backend_type),
-//				CompartmentId:              pulumi.Any(_var.Compartment_id),
-//				LoadBalancerId:             pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-//				WebAppAccelerationPolicyId: pulumi.Any(oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id),
+//			_, err := Waa.NewAppAcceleration(ctx, "test_web_app_acceleration", &Waa.AppAccelerationArgs{
+//				BackendType:                pulumi.Any(webAppAccelerationBackendType),
+//				CompartmentId:              pulumi.Any(compartmentId),
+//				LoadBalancerId:             pulumi.Any(testLoadBalancer.Id),
+//				WebAppAccelerationPolicyId: pulumi.Any(testWebAppAccelerationPolicy.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Web_app_acceleration_display_name),
+//				DisplayName: pulumi.Any(webAppAccelerationDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				SystemTags: pulumi.Any(_var.Web_app_acceleration_system_tags),
+//				SystemTags: pulumi.Any(webAppAccelerationSystemTags),
 //			})
 //			if err != nil {
 //				return err

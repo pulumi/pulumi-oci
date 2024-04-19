@@ -95,14 +95,14 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
-     *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .domain(var_.record_domain())
-     *             .domainContains(var_.record_domain_contains())
-     *             .rtype(var_.record_rtype())
-     *             .scope(var_.record_scope())
-     *             .viewId(oci_dns_view.test_view().id())
-     *             .zoneVersion(var_.record_zone_version())
+     *             .zoneNameOrId(testZoneNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .domain(recordDomain)
+     *             .domainContains(recordDomainContains)
+     *             .rtype(recordRtype)
+     *             .scope(recordScope)
+     *             .viewId(testView.id())
+     *             .zoneVersion(recordZoneVersion)
      *             .build());
      * 
      *     }
@@ -150,14 +150,14 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
-     *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .domain(var_.record_domain())
-     *             .domainContains(var_.record_domain_contains())
-     *             .rtype(var_.record_rtype())
-     *             .scope(var_.record_scope())
-     *             .viewId(oci_dns_view.test_view().id())
-     *             .zoneVersion(var_.record_zone_version())
+     *             .zoneNameOrId(testZoneNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .domain(recordDomain)
+     *             .domainContains(recordDomainContains)
+     *             .rtype(recordRtype)
+     *             .scope(recordScope)
+     *             .viewId(testView.id())
+     *             .zoneVersion(recordZoneVersion)
      *             .build());
      * 
      *     }
@@ -205,14 +205,14 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
-     *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .domain(var_.record_domain())
-     *             .domainContains(var_.record_domain_contains())
-     *             .rtype(var_.record_rtype())
-     *             .scope(var_.record_scope())
-     *             .viewId(oci_dns_view.test_view().id())
-     *             .zoneVersion(var_.record_zone_version())
+     *             .zoneNameOrId(testZoneNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .domain(recordDomain)
+     *             .domainContains(recordDomainContains)
+     *             .rtype(recordRtype)
+     *             .scope(recordScope)
+     *             .viewId(testView.id())
+     *             .zoneVersion(recordZoneVersion)
      *             .build());
      * 
      *     }
@@ -260,14 +260,14 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
-     *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .domain(var_.record_domain())
-     *             .domainContains(var_.record_domain_contains())
-     *             .rtype(var_.record_rtype())
-     *             .scope(var_.record_scope())
-     *             .viewId(oci_dns_view.test_view().id())
-     *             .zoneVersion(var_.record_zone_version())
+     *             .zoneNameOrId(testZoneNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .domain(recordDomain)
+     *             .domainContains(recordDomainContains)
+     *             .rtype(recordRtype)
+     *             .scope(recordScope)
+     *             .viewId(testView.id())
+     *             .zoneVersion(recordZoneVersion)
      *             .build());
      * 
      *     }
@@ -311,7 +311,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverId(testResolverOciDnsResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -356,7 +356,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverId(testResolverOciDnsResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -401,7 +401,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverId(testResolverOciDnsResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -446,7 +446,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverId(testResolverOciDnsResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -491,8 +491,8 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
-     *             .resolverEndpointName(oci_dns_resolver_endpoint.test_resolver_endpoint().name())
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
+     *             .resolverId(testResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -537,8 +537,8 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
-     *             .resolverEndpointName(oci_dns_resolver_endpoint.test_resolver_endpoint().name())
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
+     *             .resolverId(testResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -583,8 +583,8 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
-     *             .resolverEndpointName(oci_dns_resolver_endpoint.test_resolver_endpoint().name())
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
+     *             .resolverId(testResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -629,8 +629,8 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
-     *             .resolverEndpointName(oci_dns_resolver_endpoint.test_resolver_endpoint().name())
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverEndpointName(testResolverEndpointOciDnsResolverEndpoint.name())
+     *             .resolverId(testResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -676,10 +676,10 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverId(testResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
-     *             .name(var_.resolver_endpoint_name())
-     *             .state(var_.resolver_endpoint_state())
+     *             .name(resolverEndpointName)
+     *             .state(resolverEndpointState)
      *             .build());
      * 
      *     }
@@ -724,10 +724,10 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverId(testResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
-     *             .name(var_.resolver_endpoint_name())
-     *             .state(var_.resolver_endpoint_state())
+     *             .name(resolverEndpointName)
+     *             .state(resolverEndpointState)
      *             .build());
      * 
      *     }
@@ -772,10 +772,10 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverId(testResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
-     *             .name(var_.resolver_endpoint_name())
-     *             .state(var_.resolver_endpoint_state())
+     *             .name(resolverEndpointName)
+     *             .state(resolverEndpointState)
      *             .build());
      * 
      *     }
@@ -820,10 +820,10 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
-     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .resolverId(testResolver.id())
      *             .scope(&#34;PRIVATE&#34;)
-     *             .name(var_.resolver_endpoint_name())
-     *             .state(var_.resolver_endpoint_state())
+     *             .name(resolverEndpointName)
+     *             .state(resolverEndpointState)
      *             .build());
      * 
      *     }
@@ -870,11 +870,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .scope(&#34;PRIVATE&#34;)
-     *             .displayName(var_.resolver_display_name())
-     *             .id(var_.resolver_id())
-     *             .state(var_.resolver_state())
+     *             .displayName(resolverDisplayName)
+     *             .id(resolverId)
+     *             .state(resolverState)
      *             .build());
      * 
      *     }
@@ -921,11 +921,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .scope(&#34;PRIVATE&#34;)
-     *             .displayName(var_.resolver_display_name())
-     *             .id(var_.resolver_id())
-     *             .state(var_.resolver_state())
+     *             .displayName(resolverDisplayName)
+     *             .id(resolverId)
+     *             .state(resolverState)
      *             .build());
      * 
      *     }
@@ -972,11 +972,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .scope(&#34;PRIVATE&#34;)
-     *             .displayName(var_.resolver_display_name())
-     *             .id(var_.resolver_id())
-     *             .state(var_.resolver_state())
+     *             .displayName(resolverDisplayName)
+     *             .id(resolverId)
+     *             .state(resolverState)
      *             .build());
      * 
      *     }
@@ -1023,11 +1023,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .scope(&#34;PRIVATE&#34;)
-     *             .displayName(var_.resolver_display_name())
-     *             .id(var_.resolver_id())
-     *             .state(var_.resolver_state())
+     *             .displayName(resolverDisplayName)
+     *             .id(resolverId)
+     *             .state(resolverState)
      *             .build());
      * 
      *     }
@@ -1072,12 +1072,12 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
-     *             .domain(var_.rrset_domain())
-     *             .rtype(var_.rrset_rtype())
-     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .scope(var_.rrset_scope())
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .domain(rrsetDomain)
+     *             .rtype(rrsetRtype)
+     *             .zoneNameOrId(testZone.id())
+     *             .compartmentId(compartmentId)
+     *             .scope(rrsetScope)
+     *             .viewId(testView.id())
      *             .build());
      * 
      *     }
@@ -1122,12 +1122,12 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
-     *             .domain(var_.rrset_domain())
-     *             .rtype(var_.rrset_rtype())
-     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .scope(var_.rrset_scope())
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .domain(rrsetDomain)
+     *             .rtype(rrsetRtype)
+     *             .zoneNameOrId(testZone.id())
+     *             .compartmentId(compartmentId)
+     *             .scope(rrsetScope)
+     *             .viewId(testView.id())
      *             .build());
      * 
      *     }
@@ -1172,12 +1172,12 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
-     *             .domain(var_.rrset_domain())
-     *             .rtype(var_.rrset_rtype())
-     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .scope(var_.rrset_scope())
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .domain(rrsetDomain)
+     *             .rtype(rrsetRtype)
+     *             .zoneNameOrId(testZone.id())
+     *             .compartmentId(compartmentId)
+     *             .scope(rrsetScope)
+     *             .viewId(testView.id())
      *             .build());
      * 
      *     }
@@ -1222,12 +1222,12 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
-     *             .domain(var_.rrset_domain())
-     *             .rtype(var_.rrset_rtype())
-     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .scope(var_.rrset_scope())
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .domain(rrsetDomain)
+     *             .rtype(rrsetRtype)
+     *             .zoneNameOrId(testZone.id())
+     *             .compartmentId(compartmentId)
+     *             .scope(rrsetScope)
+     *             .viewId(testView.id())
      *             .build());
      * 
      *     }
@@ -1272,12 +1272,12 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
-     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
-     *             .domain(var_.rrset_domain())
-     *             .domainContains(var_.rrset_domain())
-     *             .rtype(var_.rrset_rtype())
-     *             .scope(var_.rrset_scope())
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneNameOrId(testZone.id())
+     *             .domain(rrsetDomain)
+     *             .domainContains(rrsetDomain)
+     *             .rtype(rrsetRtype)
+     *             .scope(rrsetScope)
+     *             .viewId(testView.id())
      *             .build());
      * 
      *     }
@@ -1322,12 +1322,12 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
-     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
-     *             .domain(var_.rrset_domain())
-     *             .domainContains(var_.rrset_domain())
-     *             .rtype(var_.rrset_rtype())
-     *             .scope(var_.rrset_scope())
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneNameOrId(testZone.id())
+     *             .domain(rrsetDomain)
+     *             .domainContains(rrsetDomain)
+     *             .rtype(rrsetRtype)
+     *             .scope(rrsetScope)
+     *             .viewId(testView.id())
      *             .build());
      * 
      *     }
@@ -1372,12 +1372,12 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
-     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
-     *             .domain(var_.rrset_domain())
-     *             .domainContains(var_.rrset_domain())
-     *             .rtype(var_.rrset_rtype())
-     *             .scope(var_.rrset_scope())
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneNameOrId(testZone.id())
+     *             .domain(rrsetDomain)
+     *             .domainContains(rrsetDomain)
+     *             .rtype(rrsetRtype)
+     *             .scope(rrsetScope)
+     *             .viewId(testView.id())
      *             .build());
      * 
      *     }
@@ -1422,12 +1422,12 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRrsets = DnsFunctions.getRrsets(GetRrsetsArgs.builder()
-     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
-     *             .domain(var_.rrset_domain())
-     *             .domainContains(var_.rrset_domain())
-     *             .rtype(var_.rrset_rtype())
-     *             .scope(var_.rrset_scope())
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneNameOrId(testZone.id())
+     *             .domain(rrsetDomain)
+     *             .domainContains(rrsetDomain)
+     *             .rtype(rrsetRtype)
+     *             .scope(rrsetScope)
+     *             .viewId(testView.id())
      *             .build());
      * 
      *     }
@@ -1469,15 +1469,15 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicies = DnsFunctions.getSteeringPolicies(GetSteeringPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.steering_policy_display_name())
-     *             .displayNameContains(var_.steering_policy_display_name_contains())
-     *             .healthCheckMonitorId(oci_health_checks_http_monitor.test_http_monitor().id())
-     *             .id(var_.steering_policy_id())
-     *             .state(var_.steering_policy_state())
-     *             .template(var_.steering_policy_template())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.steering_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayName(steeringPolicyDisplayName)
+     *             .displayNameContains(steeringPolicyDisplayNameContains)
+     *             .healthCheckMonitorId(testHttpMonitor.id())
+     *             .id(steeringPolicyId)
+     *             .state(steeringPolicyState)
+     *             .template(steeringPolicyTemplate)
+     *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(steeringPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1519,15 +1519,15 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicies = DnsFunctions.getSteeringPolicies(GetSteeringPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.steering_policy_display_name())
-     *             .displayNameContains(var_.steering_policy_display_name_contains())
-     *             .healthCheckMonitorId(oci_health_checks_http_monitor.test_http_monitor().id())
-     *             .id(var_.steering_policy_id())
-     *             .state(var_.steering_policy_state())
-     *             .template(var_.steering_policy_template())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.steering_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayName(steeringPolicyDisplayName)
+     *             .displayNameContains(steeringPolicyDisplayNameContains)
+     *             .healthCheckMonitorId(testHttpMonitor.id())
+     *             .id(steeringPolicyId)
+     *             .state(steeringPolicyState)
+     *             .template(steeringPolicyTemplate)
+     *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(steeringPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1569,15 +1569,15 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicies = DnsFunctions.getSteeringPolicies(GetSteeringPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.steering_policy_display_name())
-     *             .displayNameContains(var_.steering_policy_display_name_contains())
-     *             .healthCheckMonitorId(oci_health_checks_http_monitor.test_http_monitor().id())
-     *             .id(var_.steering_policy_id())
-     *             .state(var_.steering_policy_state())
-     *             .template(var_.steering_policy_template())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.steering_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayName(steeringPolicyDisplayName)
+     *             .displayNameContains(steeringPolicyDisplayNameContains)
+     *             .healthCheckMonitorId(testHttpMonitor.id())
+     *             .id(steeringPolicyId)
+     *             .state(steeringPolicyState)
+     *             .template(steeringPolicyTemplate)
+     *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(steeringPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1619,15 +1619,15 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicies = DnsFunctions.getSteeringPolicies(GetSteeringPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.steering_policy_display_name())
-     *             .displayNameContains(var_.steering_policy_display_name_contains())
-     *             .healthCheckMonitorId(oci_health_checks_http_monitor.test_http_monitor().id())
-     *             .id(var_.steering_policy_id())
-     *             .state(var_.steering_policy_state())
-     *             .template(var_.steering_policy_template())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.steering_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayName(steeringPolicyDisplayName)
+     *             .displayNameContains(steeringPolicyDisplayNameContains)
+     *             .healthCheckMonitorId(testHttpMonitor.id())
+     *             .id(steeringPolicyId)
+     *             .state(steeringPolicyState)
+     *             .template(steeringPolicyTemplate)
+     *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(steeringPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1669,7 +1669,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
-     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.id())
      *             .build());
      * 
      *     }
@@ -1711,7 +1711,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
-     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.id())
      *             .build());
      * 
      *     }
@@ -1753,7 +1753,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
-     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.id())
      *             .build());
      * 
      *     }
@@ -1795,7 +1795,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
-     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .steeringPolicyId(testSteeringPolicyOciDnsSteeringPolicy.id())
      *             .build());
      * 
      *     }
@@ -1837,7 +1837,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
-     *             .steeringPolicyAttachmentId(oci_dns_steering_policy_attachment.test_steering_policy_attachment().id())
+     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.id())
      *             .build());
      * 
      *     }
@@ -1879,7 +1879,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
-     *             .steeringPolicyAttachmentId(oci_dns_steering_policy_attachment.test_steering_policy_attachment().id())
+     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.id())
      *             .build());
      * 
      *     }
@@ -1921,7 +1921,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
-     *             .steeringPolicyAttachmentId(oci_dns_steering_policy_attachment.test_steering_policy_attachment().id())
+     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.id())
      *             .build());
      * 
      *     }
@@ -1963,7 +1963,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
-     *             .steeringPolicyAttachmentId(oci_dns_steering_policy_attachment.test_steering_policy_attachment().id())
+     *             .steeringPolicyAttachmentId(testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.id())
      *             .build());
      * 
      *     }
@@ -2005,16 +2005,16 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachments = DnsFunctions.getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.steering_policy_attachment_display_name())
-     *             .domain(var_.steering_policy_attachment_domain())
-     *             .domainContains(var_.steering_policy_attachment_domain_contains())
-     *             .id(var_.steering_policy_attachment_id())
-     *             .state(var_.steering_policy_attachment_state())
-     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_attachment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.steering_policy_attachment_time_created_less_than())
-     *             .zoneId(oci_dns_zone.test_zone().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(steeringPolicyAttachmentDisplayName)
+     *             .domain(steeringPolicyAttachmentDomain)
+     *             .domainContains(steeringPolicyAttachmentDomainContains)
+     *             .id(steeringPolicyAttachmentId)
+     *             .state(steeringPolicyAttachmentState)
+     *             .steeringPolicyId(testSteeringPolicy.id())
+     *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(steeringPolicyAttachmentTimeCreatedLessThan)
+     *             .zoneId(testZone.id())
      *             .build());
      * 
      *     }
@@ -2056,16 +2056,16 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachments = DnsFunctions.getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.steering_policy_attachment_display_name())
-     *             .domain(var_.steering_policy_attachment_domain())
-     *             .domainContains(var_.steering_policy_attachment_domain_contains())
-     *             .id(var_.steering_policy_attachment_id())
-     *             .state(var_.steering_policy_attachment_state())
-     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_attachment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.steering_policy_attachment_time_created_less_than())
-     *             .zoneId(oci_dns_zone.test_zone().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(steeringPolicyAttachmentDisplayName)
+     *             .domain(steeringPolicyAttachmentDomain)
+     *             .domainContains(steeringPolicyAttachmentDomainContains)
+     *             .id(steeringPolicyAttachmentId)
+     *             .state(steeringPolicyAttachmentState)
+     *             .steeringPolicyId(testSteeringPolicy.id())
+     *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(steeringPolicyAttachmentTimeCreatedLessThan)
+     *             .zoneId(testZone.id())
      *             .build());
      * 
      *     }
@@ -2107,16 +2107,16 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachments = DnsFunctions.getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.steering_policy_attachment_display_name())
-     *             .domain(var_.steering_policy_attachment_domain())
-     *             .domainContains(var_.steering_policy_attachment_domain_contains())
-     *             .id(var_.steering_policy_attachment_id())
-     *             .state(var_.steering_policy_attachment_state())
-     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_attachment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.steering_policy_attachment_time_created_less_than())
-     *             .zoneId(oci_dns_zone.test_zone().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(steeringPolicyAttachmentDisplayName)
+     *             .domain(steeringPolicyAttachmentDomain)
+     *             .domainContains(steeringPolicyAttachmentDomainContains)
+     *             .id(steeringPolicyAttachmentId)
+     *             .state(steeringPolicyAttachmentState)
+     *             .steeringPolicyId(testSteeringPolicy.id())
+     *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(steeringPolicyAttachmentTimeCreatedLessThan)
+     *             .zoneId(testZone.id())
      *             .build());
      * 
      *     }
@@ -2158,16 +2158,16 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSteeringPolicyAttachments = DnsFunctions.getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.steering_policy_attachment_display_name())
-     *             .domain(var_.steering_policy_attachment_domain())
-     *             .domainContains(var_.steering_policy_attachment_domain_contains())
-     *             .id(var_.steering_policy_attachment_id())
-     *             .state(var_.steering_policy_attachment_state())
-     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_attachment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.steering_policy_attachment_time_created_less_than())
-     *             .zoneId(oci_dns_zone.test_zone().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(steeringPolicyAttachmentDisplayName)
+     *             .domain(steeringPolicyAttachmentDomain)
+     *             .domainContains(steeringPolicyAttachmentDomainContains)
+     *             .id(steeringPolicyAttachmentId)
+     *             .state(steeringPolicyAttachmentState)
+     *             .steeringPolicyId(testSteeringPolicy.id())
+     *             .timeCreatedGreaterThanOrEqualTo(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(steeringPolicyAttachmentTimeCreatedLessThan)
+     *             .zoneId(testZone.id())
      *             .build());
      * 
      *     }
@@ -2209,7 +2209,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
-     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.id())
      *             .build());
      * 
      *     }
@@ -2251,7 +2251,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
-     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.id())
      *             .build());
      * 
      *     }
@@ -2293,7 +2293,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
-     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.id())
      *             .build());
      * 
      *     }
@@ -2335,7 +2335,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
-     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .tsigKeyId(testTsigKeyOciDnsTsigKey.id())
      *             .build());
      * 
      *     }
@@ -2377,10 +2377,10 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKeys = DnsFunctions.getTsigKeys(GetTsigKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tsig_key_id())
-     *             .name(var_.tsig_key_name())
-     *             .state(var_.tsig_key_state())
+     *             .compartmentId(compartmentId)
+     *             .id(tsigKeyId)
+     *             .name(tsigKeyName)
+     *             .state(tsigKeyState)
      *             .build());
      * 
      *     }
@@ -2422,10 +2422,10 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKeys = DnsFunctions.getTsigKeys(GetTsigKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tsig_key_id())
-     *             .name(var_.tsig_key_name())
-     *             .state(var_.tsig_key_state())
+     *             .compartmentId(compartmentId)
+     *             .id(tsigKeyId)
+     *             .name(tsigKeyName)
+     *             .state(tsigKeyState)
      *             .build());
      * 
      *     }
@@ -2467,10 +2467,10 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKeys = DnsFunctions.getTsigKeys(GetTsigKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tsig_key_id())
-     *             .name(var_.tsig_key_name())
-     *             .state(var_.tsig_key_state())
+     *             .compartmentId(compartmentId)
+     *             .id(tsigKeyId)
+     *             .name(tsigKeyName)
+     *             .state(tsigKeyState)
      *             .build());
      * 
      *     }
@@ -2512,10 +2512,10 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTsigKeys = DnsFunctions.getTsigKeys(GetTsigKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tsig_key_id())
-     *             .name(var_.tsig_key_name())
-     *             .state(var_.tsig_key_state())
+     *             .compartmentId(compartmentId)
+     *             .id(tsigKeyId)
+     *             .name(tsigKeyName)
+     *             .state(tsigKeyState)
      *             .build());
      * 
      *     }
@@ -2559,7 +2559,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .viewId(testViewOciDnsView.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -2604,7 +2604,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .viewId(testViewOciDnsView.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -2649,7 +2649,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .viewId(testViewOciDnsView.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -2694,7 +2694,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .viewId(testViewOciDnsView.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -2739,7 +2739,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .viewId(testViewOciDnsView.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -2784,7 +2784,7 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
-     *             .viewId(oci_dns_view.test_view().id())
+     *             .viewId(testViewOciDnsView.id())
      *             .scope(&#34;PRIVATE&#34;)
      *             .build());
      * 
@@ -2832,11 +2832,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .scope(&#34;PRIVATE&#34;)
-     *             .displayName(var_.view_display_name())
-     *             .id(var_.view_id())
-     *             .state(var_.view_state())
+     *             .displayName(viewDisplayName)
+     *             .id(viewId)
+     *             .state(viewState)
      *             .build());
      * 
      *     }
@@ -2883,11 +2883,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .scope(&#34;PRIVATE&#34;)
-     *             .displayName(var_.view_display_name())
-     *             .id(var_.view_id())
-     *             .state(var_.view_state())
+     *             .displayName(viewDisplayName)
+     *             .id(viewId)
+     *             .state(viewState)
      *             .build());
      * 
      *     }
@@ -2934,11 +2934,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .scope(&#34;PRIVATE&#34;)
-     *             .displayName(var_.view_display_name())
-     *             .id(var_.view_id())
-     *             .state(var_.view_state())
+     *             .displayName(viewDisplayName)
+     *             .id(viewId)
+     *             .state(viewState)
      *             .build());
      * 
      *     }
@@ -2985,11 +2985,11 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .scope(&#34;PRIVATE&#34;)
-     *             .displayName(var_.view_display_name())
-     *             .id(var_.view_id())
-     *             .state(var_.view_state())
+     *             .displayName(viewDisplayName)
+     *             .id(viewId)
+     *             .state(viewState)
      *             .build());
      * 
      *     }
@@ -3034,16 +3034,16 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.zone_name())
-     *             .nameContains(var_.zone_name_contains())
-     *             .scope(var_.zone_scope())
-     *             .state(var_.zone_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.zone_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.zone_time_created_less_than())
-     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
-     *             .viewId(oci_dns_view.test_view().id())
-     *             .zoneType(var_.zone_zone_type())
+     *             .compartmentId(compartmentId)
+     *             .name(zoneName)
+     *             .nameContains(zoneNameContains)
+     *             .scope(zoneScope)
+     *             .state(zoneState)
+     *             .timeCreatedGreaterThanOrEqualTo(zoneTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(zoneTimeCreatedLessThan)
+     *             .tsigKeyId(testTsigKey.id())
+     *             .viewId(testView.id())
+     *             .zoneType(zoneZoneType)
      *             .build());
      * 
      *     }
@@ -3088,16 +3088,16 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.zone_name())
-     *             .nameContains(var_.zone_name_contains())
-     *             .scope(var_.zone_scope())
-     *             .state(var_.zone_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.zone_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.zone_time_created_less_than())
-     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
-     *             .viewId(oci_dns_view.test_view().id())
-     *             .zoneType(var_.zone_zone_type())
+     *             .compartmentId(compartmentId)
+     *             .name(zoneName)
+     *             .nameContains(zoneNameContains)
+     *             .scope(zoneScope)
+     *             .state(zoneState)
+     *             .timeCreatedGreaterThanOrEqualTo(zoneTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(zoneTimeCreatedLessThan)
+     *             .tsigKeyId(testTsigKey.id())
+     *             .viewId(testView.id())
+     *             .zoneType(zoneZoneType)
      *             .build());
      * 
      *     }
@@ -3142,16 +3142,16 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.zone_name())
-     *             .nameContains(var_.zone_name_contains())
-     *             .scope(var_.zone_scope())
-     *             .state(var_.zone_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.zone_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.zone_time_created_less_than())
-     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
-     *             .viewId(oci_dns_view.test_view().id())
-     *             .zoneType(var_.zone_zone_type())
+     *             .compartmentId(compartmentId)
+     *             .name(zoneName)
+     *             .nameContains(zoneNameContains)
+     *             .scope(zoneScope)
+     *             .state(zoneState)
+     *             .timeCreatedGreaterThanOrEqualTo(zoneTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(zoneTimeCreatedLessThan)
+     *             .tsigKeyId(testTsigKey.id())
+     *             .viewId(testView.id())
+     *             .zoneType(zoneZoneType)
      *             .build());
      * 
      *     }
@@ -3196,16 +3196,16 @@ public final class DnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.zone_name())
-     *             .nameContains(var_.zone_name_contains())
-     *             .scope(var_.zone_scope())
-     *             .state(var_.zone_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.zone_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.zone_time_created_less_than())
-     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
-     *             .viewId(oci_dns_view.test_view().id())
-     *             .zoneType(var_.zone_zone_type())
+     *             .compartmentId(compartmentId)
+     *             .name(zoneName)
+     *             .nameContains(zoneNameContains)
+     *             .scope(zoneScope)
+     *             .state(zoneState)
+     *             .timeCreatedGreaterThanOrEqualTo(zoneTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(zoneTimeCreatedLessThan)
+     *             .tsigKeyId(testTsigKey.id())
+     *             .viewId(testView.id())
+     *             .zoneType(zoneZoneType)
      *             .build());
      * 
      *     }

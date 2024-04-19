@@ -278,23 +278,23 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        column_group=var["sensitive_data_models_sensitive_column_column_group"],
-        column_names=var["sensitive_data_models_sensitive_column_column_name"],
-        data_types=var["sensitive_data_models_sensitive_column_data_type"],
-        is_case_in_sensitive=var["sensitive_data_models_sensitive_column_is_case_in_sensitive"],
-        objects=var["sensitive_data_models_sensitive_column_object"],
-        object_types=var["sensitive_data_models_sensitive_column_object_type"],
-        parent_column_keys=var["sensitive_data_models_sensitive_column_parent_column_key"],
-        relation_types=var["sensitive_data_models_sensitive_column_relation_type"],
-        schema_names=var["sensitive_data_models_sensitive_column_schema_name"],
-        sensitive_column_lifecycle_state=var["sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state"],
-        sensitive_type_ids=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        statuses=var["sensitive_data_models_sensitive_column_status"],
-        time_created_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_data_models_sensitive_column_time_created_less_than"],
-        time_updated_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["sensitive_data_models_sensitive_column_time_updated_less_than"])
+    test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=test_sensitive_data_model["id"],
+        column_group=sensitive_data_models_sensitive_column_column_group,
+        column_names=sensitive_data_models_sensitive_column_column_name,
+        data_types=sensitive_data_models_sensitive_column_data_type,
+        is_case_in_sensitive=sensitive_data_models_sensitive_column_is_case_in_sensitive,
+        objects=sensitive_data_models_sensitive_column_object,
+        object_types=sensitive_data_models_sensitive_column_object_type,
+        parent_column_keys=sensitive_data_models_sensitive_column_parent_column_key,
+        relation_types=sensitive_data_models_sensitive_column_relation_type,
+        schema_names=sensitive_data_models_sensitive_column_schema_name,
+        sensitive_column_lifecycle_state=sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state,
+        sensitive_type_ids=test_sensitive_type["id"],
+        statuses=sensitive_data_models_sensitive_column_status,
+        time_created_greater_than_or_equal_to=sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to,
+        time_created_less_than=sensitive_data_models_sensitive_column_time_created_less_than,
+        time_updated_greater_than_or_equal_to=sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to,
+        time_updated_less_than=sensitive_data_models_sensitive_column_time_updated_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -398,23 +398,23 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        column_group=var["sensitive_data_models_sensitive_column_column_group"],
-        column_names=var["sensitive_data_models_sensitive_column_column_name"],
-        data_types=var["sensitive_data_models_sensitive_column_data_type"],
-        is_case_in_sensitive=var["sensitive_data_models_sensitive_column_is_case_in_sensitive"],
-        objects=var["sensitive_data_models_sensitive_column_object"],
-        object_types=var["sensitive_data_models_sensitive_column_object_type"],
-        parent_column_keys=var["sensitive_data_models_sensitive_column_parent_column_key"],
-        relation_types=var["sensitive_data_models_sensitive_column_relation_type"],
-        schema_names=var["sensitive_data_models_sensitive_column_schema_name"],
-        sensitive_column_lifecycle_state=var["sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state"],
-        sensitive_type_ids=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        statuses=var["sensitive_data_models_sensitive_column_status"],
-        time_created_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["sensitive_data_models_sensitive_column_time_created_less_than"],
-        time_updated_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["sensitive_data_models_sensitive_column_time_updated_less_than"])
+    test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=test_sensitive_data_model["id"],
+        column_group=sensitive_data_models_sensitive_column_column_group,
+        column_names=sensitive_data_models_sensitive_column_column_name,
+        data_types=sensitive_data_models_sensitive_column_data_type,
+        is_case_in_sensitive=sensitive_data_models_sensitive_column_is_case_in_sensitive,
+        objects=sensitive_data_models_sensitive_column_object,
+        object_types=sensitive_data_models_sensitive_column_object_type,
+        parent_column_keys=sensitive_data_models_sensitive_column_parent_column_key,
+        relation_types=sensitive_data_models_sensitive_column_relation_type,
+        schema_names=sensitive_data_models_sensitive_column_schema_name,
+        sensitive_column_lifecycle_state=sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state,
+        sensitive_type_ids=test_sensitive_type["id"],
+        statuses=sensitive_data_models_sensitive_column_status,
+        time_created_greater_than_or_equal_to=sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to,
+        time_created_less_than=sensitive_data_models_sensitive_column_time_created_less_than,
+        time_updated_greater_than_or_equal_to=sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to,
+        time_updated_less_than=sensitive_data_models_sensitive_column_time_updated_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

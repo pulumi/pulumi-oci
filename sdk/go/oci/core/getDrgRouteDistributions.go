@@ -34,9 +34,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetDrgRouteDistributions(ctx, &core.GetDrgRouteDistributionsArgs{
-//				DrgId:       oci_core_drg.Test_drg.Id,
-//				DisplayName: pulumi.StringRef(_var.Drg_route_distribution_display_name),
-//				State:       pulumi.StringRef(_var.Drg_route_distribution_state),
+//				DrgId:       testDrg.Id,
+//				DisplayName: pulumi.StringRef(drgRouteDistributionDisplayName),
+//				State:       pulumi.StringRef(drgRouteDistributionState),
 //			}, nil)
 //			if err != nil {
 //				return err

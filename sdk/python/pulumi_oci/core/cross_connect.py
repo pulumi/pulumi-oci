@@ -554,30 +554,30 @@ class CrossConnect(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cross_connect = oci.core.CrossConnect("testCrossConnect",
-            compartment_id=var["compartment_id"],
-            location_name=var["cross_connect_location_name"],
-            port_speed_shape_name=var["cross_connect_port_speed_shape_name"],
-            cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
-            customer_reference_name=var["cross_connect_customer_reference_name"],
+        test_cross_connect = oci.core.CrossConnect("test_cross_connect",
+            compartment_id=compartment_id,
+            location_name=cross_connect_location_name,
+            port_speed_shape_name=cross_connect_port_speed_shape_name,
+            cross_connect_group_id=test_cross_connect_group["id"],
+            customer_reference_name=cross_connect_customer_reference_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["cross_connect_display_name"],
-            far_cross_connect_or_cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
+            display_name=cross_connect_display_name,
+            far_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"],
             freeform_tags={
                 "Department": "Finance",
             },
             macsec_properties=oci.core.CrossConnectMacsecPropertiesArgs(
-                state=var["cross_connect_macsec_properties_state"],
-                encryption_cipher=var["cross_connect_macsec_properties_encryption_cipher"],
-                is_unprotected_traffic_allowed=var["cross_connect_macsec_properties_is_unprotected_traffic_allowed"],
+                state=cross_connect_macsec_properties_state,
+                encryption_cipher=cross_connect_macsec_properties_encryption_cipher,
+                is_unprotected_traffic_allowed=cross_connect_macsec_properties_is_unprotected_traffic_allowed,
                 primary_key=oci.core.CrossConnectMacsecPropertiesPrimaryKeyArgs(
-                    connectivity_association_key_secret_id=oci_vault_secret["test_secret"]["id"],
-                    connectivity_association_name_secret_id=oci_vault_secret["test_secret"]["id"],
+                    connectivity_association_key_secret_id=test_secret["id"],
+                    connectivity_association_name_secret_id=test_secret["id"],
                 ),
             ),
-            near_cross_connect_or_cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
+            near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -644,30 +644,30 @@ class CrossConnect(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cross_connect = oci.core.CrossConnect("testCrossConnect",
-            compartment_id=var["compartment_id"],
-            location_name=var["cross_connect_location_name"],
-            port_speed_shape_name=var["cross_connect_port_speed_shape_name"],
-            cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
-            customer_reference_name=var["cross_connect_customer_reference_name"],
+        test_cross_connect = oci.core.CrossConnect("test_cross_connect",
+            compartment_id=compartment_id,
+            location_name=cross_connect_location_name,
+            port_speed_shape_name=cross_connect_port_speed_shape_name,
+            cross_connect_group_id=test_cross_connect_group["id"],
+            customer_reference_name=cross_connect_customer_reference_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["cross_connect_display_name"],
-            far_cross_connect_or_cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
+            display_name=cross_connect_display_name,
+            far_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"],
             freeform_tags={
                 "Department": "Finance",
             },
             macsec_properties=oci.core.CrossConnectMacsecPropertiesArgs(
-                state=var["cross_connect_macsec_properties_state"],
-                encryption_cipher=var["cross_connect_macsec_properties_encryption_cipher"],
-                is_unprotected_traffic_allowed=var["cross_connect_macsec_properties_is_unprotected_traffic_allowed"],
+                state=cross_connect_macsec_properties_state,
+                encryption_cipher=cross_connect_macsec_properties_encryption_cipher,
+                is_unprotected_traffic_allowed=cross_connect_macsec_properties_is_unprotected_traffic_allowed,
                 primary_key=oci.core.CrossConnectMacsecPropertiesPrimaryKeyArgs(
-                    connectivity_association_key_secret_id=oci_vault_secret["test_secret"]["id"],
-                    connectivity_association_name_secret_id=oci_vault_secret["test_secret"]["id"],
+                    connectivity_association_key_secret_id=test_secret["id"],
+                    connectivity_association_name_secret_id=test_secret["id"],
                 ),
             ),
-            near_cross_connect_or_cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
+            near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"])
         ```
         <!--End PulumiCodeChooser -->
 

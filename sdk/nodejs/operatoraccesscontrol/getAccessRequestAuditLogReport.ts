@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAccessRequestAuditLogReport = oci.OperatorAccessControl.getAccessRequestAuditLogReport({
- *     accessRequestId: oci_operator_access_control_access_request.test_access_request.id,
- *     enableProcessTree: _var.access_request_audit_log_report_enable_process_tree,
+ *     accessRequestId: testAccessRequest.id,
+ *     enableProcessTree: accessRequestAuditLogReportEnableProcessTree,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,8 +86,8 @@ export interface GetAccessRequestAuditLogReportResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAccessRequestAuditLogReport = oci.OperatorAccessControl.getAccessRequestAuditLogReport({
- *     accessRequestId: oci_operator_access_control_access_request.test_access_request.id,
- *     enableProcessTree: _var.access_request_audit_log_report_enable_process_tree,
+ *     accessRequestId: testAccessRequest.id,
+ *     enableProcessTree: accessRequestAuditLogReportEnableProcessTree,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

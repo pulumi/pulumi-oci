@@ -18,22 +18,22 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSession = new oci.bastion.Session("testSession", {
- *     bastionId: oci_bastion_bastion.test_bastion.id,
+ * const testSession = new oci.bastion.Session("test_session", {
+ *     bastionId: testBastion.id,
  *     keyDetails: {
- *         publicKeyContent: _var.session_key_details_public_key_content,
+ *         publicKeyContent: sessionKeyDetailsPublicKeyContent,
  *     },
  *     targetResourceDetails: {
- *         sessionType: _var.session_target_resource_details_session_type,
- *         targetResourceFqdn: _var.session_target_resource_details_target_resource_fqdn,
- *         targetResourceId: oci_bastion_target_resource.test_target_resource.id,
- *         targetResourceOperatingSystemUserName: oci_identity_user.test_user.name,
- *         targetResourcePort: _var.session_target_resource_details_target_resource_port,
- *         targetResourcePrivateIpAddress: _var.session_target_resource_details_target_resource_private_ip_address,
+ *         sessionType: sessionTargetResourceDetailsSessionType,
+ *         targetResourceFqdn: sessionTargetResourceDetailsTargetResourceFqdn,
+ *         targetResourceId: testTargetResource.id,
+ *         targetResourceOperatingSystemUserName: testUser.name,
+ *         targetResourcePort: sessionTargetResourceDetailsTargetResourcePort,
+ *         targetResourcePrivateIpAddress: sessionTargetResourceDetailsTargetResourcePrivateIpAddress,
  *     },
- *     displayName: _var.session_display_name,
- *     keyType: _var.session_key_type,
- *     sessionTtlInSeconds: _var.session_session_ttl_in_seconds,
+ *     displayName: sessionDisplayName,
+ *     keyType: sessionKeyType,
+ *     sessionTtlInSeconds: sessionSessionTtlInSeconds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

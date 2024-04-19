@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSession = oci.Bastion.getSession({
- *     sessionId: oci_bastion_session.test_session.id,
+ *     sessionId: testSessionOciBastionSession.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetSessionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSession = oci.Bastion.getSession({
- *     sessionId: oci_bastion_session.test_session.id,
+ *     sessionId: testSessionOciBastionSession.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

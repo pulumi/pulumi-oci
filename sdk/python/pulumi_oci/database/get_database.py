@@ -473,7 +473,7 @@ def get_database(database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database = oci.Database.get_database(database_id=var["database_id"])
+    test_database = oci.Database.get_database(database_id=database_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -540,7 +540,7 @@ def get_database_output(database_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database = oci.Database.get_database(database_id=var["database_id"])
+    test_database = oci.Database.get_database(database_id=database_id)
     ```
     <!--End PulumiCodeChooser -->
 

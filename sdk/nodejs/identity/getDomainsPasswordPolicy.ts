@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPasswordPolicy = oci.Identity.getDomainsPasswordPolicy({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     passwordPolicyId: oci_identity_policy.test_policy.id,
+ *     idcsEndpoint: testDomain.url,
+ *     passwordPolicyId: testPolicy.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.password_policy_authorization,
- *     resourceTypeSchemaVersion: _var.password_policy_resource_type_schema_version,
+ *     authorization: passwordPolicyAuthorization,
+ *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -300,12 +300,12 @@ export interface GetDomainsPasswordPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPasswordPolicy = oci.Identity.getDomainsPasswordPolicy({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     passwordPolicyId: oci_identity_policy.test_policy.id,
+ *     idcsEndpoint: testDomain.url,
+ *     passwordPolicyId: testPolicy.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.password_policy_authorization,
- *     resourceTypeSchemaVersion: _var.password_policy_resource_type_schema_version,
+ *     authorization: passwordPolicyAuthorization,
+ *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

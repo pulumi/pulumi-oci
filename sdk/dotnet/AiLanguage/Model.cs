@@ -25,69 +25,69 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testModel = new Oci.AiLanguage.Model("testModel", new()
+    ///     var testModel = new Oci.AiLanguage.Model("test_model", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         ModelDetails = new Oci.AiLanguage.Inputs.ModelModelDetailsArgs
     ///         {
-    ///             ModelType = @var.Model_model_details_model_type,
+    ///             ModelType = modelModelDetailsModelType,
     ///             ClassificationMode = new Oci.AiLanguage.Inputs.ModelModelDetailsClassificationModeArgs
     ///             {
-    ///                 ClassificationMode = @var.Model_model_details_classification_mode_classification_mode,
-    ///                 Version = @var.Model_model_details_classification_mode_version,
+    ///                 ClassificationMode = modelModelDetailsClassificationModeClassificationMode,
+    ///                 Version = modelModelDetailsClassificationModeVersion,
     ///             },
-    ///             LanguageCode = @var.Model_model_details_language_code,
-    ///             Version = @var.Model_model_details_version,
+    ///             LanguageCode = modelModelDetailsLanguageCode,
+    ///             Version = modelModelDetailsVersion,
     ///         },
-    ///         ProjectId = oci_ai_language_project.Test_project.Id,
+    ///         ProjectId = testProject.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Model_description,
-    ///         DisplayName = @var.Model_display_name,
+    ///         Description = modelDescription,
+    ///         DisplayName = modelDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
     ///         TestStrategy = new Oci.AiLanguage.Inputs.ModelTestStrategyArgs
     ///         {
-    ///             StrategyType = @var.Model_test_strategy_strategy_type,
+    ///             StrategyType = modelTestStrategyStrategyType,
     ///             TestingDataset = new Oci.AiLanguage.Inputs.ModelTestStrategyTestingDatasetArgs
     ///             {
-    ///                 DatasetType = @var.Model_test_strategy_testing_dataset_dataset_type,
-    ///                 DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+    ///                 DatasetType = modelTestStrategyTestingDatasetDatasetType,
+    ///                 DatasetId = testDataset.Id,
     ///                 LocationDetails = new Oci.AiLanguage.Inputs.ModelTestStrategyTestingDatasetLocationDetailsArgs
     ///                 {
-    ///                     Bucket = @var.Model_test_strategy_testing_dataset_location_details_bucket,
-    ///                     LocationType = @var.Model_test_strategy_testing_dataset_location_details_location_type,
-    ///                     Namespace = @var.Model_test_strategy_testing_dataset_location_details_namespace,
-    ///                     ObjectNames = @var.Model_test_strategy_testing_dataset_location_details_object_names,
+    ///                     Bucket = modelTestStrategyTestingDatasetLocationDetailsBucket,
+    ///                     LocationType = modelTestStrategyTestingDatasetLocationDetailsLocationType,
+    ///                     Namespace = modelTestStrategyTestingDatasetLocationDetailsNamespace,
+    ///                     ObjectNames = modelTestStrategyTestingDatasetLocationDetailsObjectNames,
     ///                 },
     ///             },
     ///             ValidationDataset = new Oci.AiLanguage.Inputs.ModelTestStrategyValidationDatasetArgs
     ///             {
-    ///                 DatasetType = @var.Model_test_strategy_validation_dataset_dataset_type,
-    ///                 DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+    ///                 DatasetType = modelTestStrategyValidationDatasetDatasetType,
+    ///                 DatasetId = testDataset.Id,
     ///                 LocationDetails = new Oci.AiLanguage.Inputs.ModelTestStrategyValidationDatasetLocationDetailsArgs
     ///                 {
-    ///                     Bucket = @var.Model_test_strategy_validation_dataset_location_details_bucket,
-    ///                     LocationType = @var.Model_test_strategy_validation_dataset_location_details_location_type,
-    ///                     Namespace = @var.Model_test_strategy_validation_dataset_location_details_namespace,
-    ///                     ObjectNames = @var.Model_test_strategy_validation_dataset_location_details_object_names,
+    ///                     Bucket = modelTestStrategyValidationDatasetLocationDetailsBucket,
+    ///                     LocationType = modelTestStrategyValidationDatasetLocationDetailsLocationType,
+    ///                     Namespace = modelTestStrategyValidationDatasetLocationDetailsNamespace,
+    ///                     ObjectNames = modelTestStrategyValidationDatasetLocationDetailsObjectNames,
     ///                 },
     ///             },
     ///         },
     ///         TrainingDataset = new Oci.AiLanguage.Inputs.ModelTrainingDatasetArgs
     ///         {
-    ///             DatasetType = @var.Model_training_dataset_dataset_type,
-    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+    ///             DatasetType = modelTrainingDatasetDatasetType,
+    ///             DatasetId = testDataset.Id,
     ///             LocationDetails = new Oci.AiLanguage.Inputs.ModelTrainingDatasetLocationDetailsArgs
     ///             {
-    ///                 Bucket = @var.Model_training_dataset_location_details_bucket,
-    ///                 LocationType = @var.Model_training_dataset_location_details_location_type,
-    ///                 Namespace = @var.Model_training_dataset_location_details_namespace,
-    ///                 ObjectNames = @var.Model_training_dataset_location_details_object_names,
+    ///                 Bucket = modelTrainingDatasetLocationDetailsBucket,
+    ///                 LocationType = modelTrainingDatasetLocationDetailsLocationType,
+    ///                 Namespace = modelTrainingDatasetLocationDetailsNamespace,
+    ///                 ObjectNames = modelTrainingDatasetLocationDetailsObjectNames,
     ///             },
     ///         },
     ///     });

@@ -30,14 +30,14 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testConnections = Oci.GoldenGate.GetConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssignableDeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         AssignableDeploymentType = @var.Connection_assignable_deployment_type,
-        ///         AssignedDeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         ConnectionTypes = @var.Connection_connection_type,
-        ///         DisplayName = @var.Connection_display_name,
-        ///         State = @var.Connection_state,
-        ///         TechnologyTypes = @var.Connection_technology_type,
+        ///         CompartmentId = compartmentId,
+        ///         AssignableDeploymentId = testDeployment.Id,
+        ///         AssignableDeploymentType = connectionAssignableDeploymentType,
+        ///         AssignedDeploymentId = testDeployment.Id,
+        ///         ConnectionTypes = connectionConnectionType,
+        ///         DisplayName = connectionDisplayName,
+        ///         State = connectionState,
+        ///         TechnologyTypes = connectionTechnologyType,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testConnections = Oci.GoldenGate.GetConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssignableDeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         AssignableDeploymentType = @var.Connection_assignable_deployment_type,
-        ///         AssignedDeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         ConnectionTypes = @var.Connection_connection_type,
-        ///         DisplayName = @var.Connection_display_name,
-        ///         State = @var.Connection_state,
-        ///         TechnologyTypes = @var.Connection_technology_type,
+        ///         CompartmentId = compartmentId,
+        ///         AssignableDeploymentId = testDeployment.Id,
+        ///         AssignableDeploymentType = connectionAssignableDeploymentType,
+        ///         AssignedDeploymentId = testDeployment.Id,
+        ///         ConnectionTypes = connectionConnectionType,
+        ///         DisplayName = connectionDisplayName,
+        ///         State = connectionState,
+        ///         TechnologyTypes = connectionTechnologyType,
         ///     });
         /// 
         /// });

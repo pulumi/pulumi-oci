@@ -26,20 +26,20 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVolumeGroupBackup = new Oci.Core.VolumeGroupBackup("testVolumeGroupBackup", new()
+    ///     var testVolumeGroupBackup = new Oci.Core.VolumeGroupBackup("test_volume_group_backup", new()
     ///     {
-    ///         VolumeGroupId = oci_core_volume_group.Test_volume_group.Id,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         VolumeGroupId = testVolumeGroup.Id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Volume_group_backup_display_name,
+    ///         DisplayName = volumeGroupBackupDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Type = @var.Volume_group_backup_type,
+    ///         Type = volumeGroupBackupType,
     ///     });
     /// 
     /// });

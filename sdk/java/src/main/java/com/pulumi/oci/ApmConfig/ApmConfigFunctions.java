@@ -47,8 +47,8 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .configId(oci_apm_config_config.test_config().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .configId(testConfigOciApmConfigConfig.id())
      *             .build());
      * 
      *     }
@@ -90,8 +90,8 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .configId(oci_apm_config_config.test_config().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .configId(testConfigOciApmConfigConfig.id())
      *             .build());
      * 
      *     }
@@ -133,8 +133,8 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .configId(oci_apm_config_config.test_config().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .configId(testConfigOciApmConfigConfig.id())
      *             .build());
      * 
      *     }
@@ -176,8 +176,8 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = ApmConfigFunctions.getConfig(GetConfigArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .configId(oci_apm_config_config.test_config().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .configId(testConfigOciApmConfigConfig.id())
      *             .build());
      * 
      *     }
@@ -219,14 +219,14 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .configType(var_.config_config_type())
-     *             .definedTagEquals(var_.config_defined_tag_equals())
-     *             .definedTagExists(var_.config_defined_tag_exists())
-     *             .displayName(var_.config_display_name())
-     *             .freeformTagEquals(var_.config_freeform_tag_equals())
-     *             .freeformTagExists(var_.config_freeform_tag_exists())
-     *             .optionsGroup(var_.config_options_group())
+     *             .apmDomainId(testApmDomain.id())
+     *             .configType(configConfigType)
+     *             .definedTagEquals(configDefinedTagEquals)
+     *             .definedTagExists(configDefinedTagExists)
+     *             .displayName(configDisplayName)
+     *             .freeformTagEquals(configFreeformTagEquals)
+     *             .freeformTagExists(configFreeformTagExists)
+     *             .optionsGroup(configOptionsGroup)
      *             .build());
      * 
      *     }
@@ -268,14 +268,14 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .configType(var_.config_config_type())
-     *             .definedTagEquals(var_.config_defined_tag_equals())
-     *             .definedTagExists(var_.config_defined_tag_exists())
-     *             .displayName(var_.config_display_name())
-     *             .freeformTagEquals(var_.config_freeform_tag_equals())
-     *             .freeformTagExists(var_.config_freeform_tag_exists())
-     *             .optionsGroup(var_.config_options_group())
+     *             .apmDomainId(testApmDomain.id())
+     *             .configType(configConfigType)
+     *             .definedTagEquals(configDefinedTagEquals)
+     *             .definedTagExists(configDefinedTagExists)
+     *             .displayName(configDisplayName)
+     *             .freeformTagEquals(configFreeformTagEquals)
+     *             .freeformTagExists(configFreeformTagExists)
+     *             .optionsGroup(configOptionsGroup)
      *             .build());
      * 
      *     }
@@ -317,14 +317,14 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .configType(var_.config_config_type())
-     *             .definedTagEquals(var_.config_defined_tag_equals())
-     *             .definedTagExists(var_.config_defined_tag_exists())
-     *             .displayName(var_.config_display_name())
-     *             .freeformTagEquals(var_.config_freeform_tag_equals())
-     *             .freeformTagExists(var_.config_freeform_tag_exists())
-     *             .optionsGroup(var_.config_options_group())
+     *             .apmDomainId(testApmDomain.id())
+     *             .configType(configConfigType)
+     *             .definedTagEquals(configDefinedTagEquals)
+     *             .definedTagExists(configDefinedTagExists)
+     *             .displayName(configDisplayName)
+     *             .freeformTagEquals(configFreeformTagEquals)
+     *             .freeformTagExists(configFreeformTagExists)
+     *             .optionsGroup(configOptionsGroup)
      *             .build());
      * 
      *     }
@@ -366,14 +366,14 @@ public final class ApmConfigFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = ApmConfigFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .configType(var_.config_config_type())
-     *             .definedTagEquals(var_.config_defined_tag_equals())
-     *             .definedTagExists(var_.config_defined_tag_exists())
-     *             .displayName(var_.config_display_name())
-     *             .freeformTagEquals(var_.config_freeform_tag_equals())
-     *             .freeformTagExists(var_.config_freeform_tag_exists())
-     *             .optionsGroup(var_.config_options_group())
+     *             .apmDomainId(testApmDomain.id())
+     *             .configType(configConfigType)
+     *             .definedTagEquals(configDefinedTagEquals)
+     *             .definedTagExists(configDefinedTagExists)
+     *             .displayName(configDisplayName)
+     *             .freeformTagEquals(configFreeformTagEquals)
+     *             .freeformTagExists(configFreeformTagExists)
+     *             .optionsGroup(configOptionsGroup)
      *             .build());
      * 
      *     }

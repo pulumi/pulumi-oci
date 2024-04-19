@@ -137,11 +137,11 @@ def get_triggers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_triggers = oci.DevOps.get_triggers(compartment_id=var["compartment_id"],
-        display_name=var["trigger_display_name"],
-        id=var["trigger_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["trigger_state"])
+    test_triggers = oci.DevOps.get_triggers(compartment_id=compartment_id,
+        display_name=trigger_display_name,
+        id=trigger_id,
+        project_id=test_project["id"],
+        state=trigger_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -193,11 +193,11 @@ def get_triggers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_triggers = oci.DevOps.get_triggers(compartment_id=var["compartment_id"],
-        display_name=var["trigger_display_name"],
-        id=var["trigger_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["trigger_state"])
+    test_triggers = oci.DevOps.get_triggers(compartment_id=compartment_id,
+        display_name=trigger_display_name,
+        id=trigger_id,
+        project_id=test_project["id"],
+        state=trigger_state)
     ```
     <!--End PulumiCodeChooser -->
 

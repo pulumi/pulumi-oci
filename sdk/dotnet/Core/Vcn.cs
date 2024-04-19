@@ -64,32 +64,32 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVcn = new Oci.Core.Vcn("testVcn", new()
+    ///     var testVcn = new Oci.Core.Vcn("test_vcn", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Byoipv6cidrDetails = new[]
     ///         {
     ///             new Oci.Core.Inputs.VcnByoipv6cidrDetailArgs
     ///             {
-    ///                 Byoipv6rangeId = oci_core_byoipv6range.Test_byoipv6range.Id,
-    ///                 Ipv6cidrBlock = @var.Vcn_byoipv6cidr_details_ipv6cidr_block,
+    ///                 Byoipv6rangeId = testByoipv6range.Id,
+    ///                 Ipv6cidrBlock = vcnByoipv6cidrDetailsIpv6cidrBlock,
     ///             },
     ///         },
-    ///         CidrBlock = @var.Vcn_cidr_block,
-    ///         CidrBlocks = @var.Vcn_cidr_blocks,
+    ///         CidrBlock = vcnCidrBlock,
+    ///         CidrBlocks = vcnCidrBlocks,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Vcn_display_name,
-    ///         DnsLabel = @var.Vcn_dns_label,
+    ///         DisplayName = vcnDisplayName,
+    ///         DnsLabel = vcnDnsLabel,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Ipv6privateCidrBlocks = @var.Vcn_ipv6private_cidr_blocks,
-    ///         IsIpv6enabled = @var.Vcn_is_ipv6enabled,
-    ///         IsOracleGuaAllocationEnabled = @var.Vcn_is_oracle_gua_allocation_enabled,
+    ///         Ipv6privateCidrBlocks = vcnIpv6privateCidrBlocks,
+    ///         IsIpv6enabled = vcnIsIpv6enabled,
+    ///         IsOracleGuaAllocationEnabled = vcnIsOracleGuaAllocationEnabled,
     ///     });
     /// 
     /// });

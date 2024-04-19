@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testApplicationVips = Oci.Database.GetApplicationVips.Invoke(new()
         ///     {
-        ///         CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         State = @var.Application_vip_state,
+        ///         CloudVmClusterId = testCloudVmCluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///         State = applicationVipState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testApplicationVips = Oci.Database.GetApplicationVips.Invoke(new()
         ///     {
-        ///         CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         State = @var.Application_vip_state,
+        ///         CloudVmClusterId = testCloudVmCluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///         State = applicationVipState,
         ///     });
         /// 
         /// });

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPublishers = oci.Marketplace.getPublishers({
- *     compartmentId: _var.compartment_id,
- *     publisherId: oci_marketplace_publisher.test_publisher.id,
+ *     compartmentId: compartmentId,
+ *     publisherId: testPublisher.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -80,8 +80,8 @@ export interface GetPublishersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPublishers = oci.Marketplace.getPublishers({
- *     compartmentId: _var.compartment_id,
- *     publisherId: oci_marketplace_publisher.test_publisher.id,
+ *     compartmentId: compartmentId,
+ *     publisherId: testPublisher.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

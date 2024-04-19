@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlBackup = Oci.Mysql.GetMysqlBackup.Invoke(new()
         ///     {
-        ///         BackupId = oci_mysql_mysql_backup.Test_backup.Id,
+        ///         BackupId = testBackup.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlBackup = Oci.Mysql.GetMysqlBackup.Invoke(new()
         ///     {
-        ///         BackupId = oci_mysql_mysql_backup.Test_backup.Id,
+        ///         BackupId = testBackup.Id,
         ///     });
         /// 
         /// });

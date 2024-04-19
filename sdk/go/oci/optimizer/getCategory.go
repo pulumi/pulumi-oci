@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetCategory(ctx, &optimizer.GetCategoryArgs{
-//				CategoryId: oci_optimizer_category.Test_category.Id,
+//				CategoryId: testCategoryOciOptimizerCategory.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

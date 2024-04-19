@@ -39,14 +39,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Monitoring.GetMetricData(ctx, &monitoring.GetMetricDataArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				Namespace:              _var.Metric_data_namespace,
-//				Query:                  _var.Metric_data_query,
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Metric_data_compartment_id_in_subtree),
-//				EndTime:                pulumi.StringRef(_var.Metric_data_end_time),
-//				Resolution:             pulumi.StringRef(_var.Metric_data_resolution),
-//				ResourceGroup:          pulumi.StringRef(_var.Metric_data_resource_group),
-//				StartTime:              pulumi.StringRef(_var.Metric_data_start_time),
+//				CompartmentId:          compartmentId,
+//				Namespace:              metricDataNamespace,
+//				Query:                  metricDataQuery,
+//				CompartmentIdInSubtree: pulumi.BoolRef(metricDataCompartmentIdInSubtree),
+//				EndTime:                pulumi.StringRef(metricDataEndTime),
+//				Resolution:             pulumi.StringRef(metricDataResolution),
+//				ResourceGroup:          pulumi.StringRef(metricDataResourceGroup),
+//				StartTime:              pulumi.StringRef(metricDataStartTime),
 //			}, nil)
 //			if err != nil {
 //				return err

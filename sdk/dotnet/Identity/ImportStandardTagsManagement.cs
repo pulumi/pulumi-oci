@@ -26,10 +26,10 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testImportStandardTagsManagement = new Oci.Identity.ImportStandardTagsManagement("testImportStandardTagsManagement", new()
+    ///     var testImportStandardTagsManagement = new Oci.Identity.ImportStandardTagsManagement("test_import_standard_tags_management", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         StandardTagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
+    ///         CompartmentId = compartmentId,
+    ///         StandardTagNamespaceName = testTagNamespace.Name,
     ///     });
     /// 
     /// });

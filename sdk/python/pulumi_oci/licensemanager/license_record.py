@@ -499,21 +499,21 @@ class LicenseRecord(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_license_record = oci.license_manager.LicenseRecord("testLicenseRecord",
-            display_name=var["license_record_display_name"],
-            is_perpetual=var["license_record_is_perpetual"],
-            is_unlimited=var["license_record_is_unlimited"],
-            product_license_id=oci_license_manager_product_license["test_product_license"]["id"],
+        test_license_record = oci.license_manager.LicenseRecord("test_license_record",
+            display_name=license_record_display_name,
+            is_perpetual=license_record_is_perpetual,
+            is_unlimited=license_record_is_unlimited,
+            product_license_id=test_product_license["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            expiration_date=var["license_record_expiration_date"],
+            expiration_date=license_record_expiration_date,
             freeform_tags={
                 "bar-key": "value",
             },
-            license_count=var["license_record_license_count"],
-            product_id=oci_license_manager_product["test_product"]["id"],
-            support_end_date=var["license_record_support_end_date"])
+            license_count=license_record_license_count,
+            product_id=test_product["id"],
+            support_end_date=license_record_support_end_date)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -560,21 +560,21 @@ class LicenseRecord(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_license_record = oci.license_manager.LicenseRecord("testLicenseRecord",
-            display_name=var["license_record_display_name"],
-            is_perpetual=var["license_record_is_perpetual"],
-            is_unlimited=var["license_record_is_unlimited"],
-            product_license_id=oci_license_manager_product_license["test_product_license"]["id"],
+        test_license_record = oci.license_manager.LicenseRecord("test_license_record",
+            display_name=license_record_display_name,
+            is_perpetual=license_record_is_perpetual,
+            is_unlimited=license_record_is_unlimited,
+            product_license_id=test_product_license["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            expiration_date=var["license_record_expiration_date"],
+            expiration_date=license_record_expiration_date,
             freeform_tags={
                 "bar-key": "value",
             },
-            license_count=var["license_record_license_count"],
-            product_id=oci_license_manager_product["test_product"]["id"],
-            support_end_date=var["license_record_support_end_date"])
+            license_count=license_record_license_count,
+            product_id=test_product["id"],
+            support_end_date=license_record_support_end_date)
         ```
         <!--End PulumiCodeChooser -->
 

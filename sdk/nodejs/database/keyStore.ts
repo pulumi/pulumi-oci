@@ -18,17 +18,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeyStore = new oci.database.KeyStore("testKeyStore", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.key_store_display_name,
+ * const testKeyStore = new oci.database.KeyStore("test_key_store", {
+ *     compartmentId: compartmentId,
+ *     displayName: keyStoreDisplayName,
  *     typeDetails: {
- *         adminUsername: _var.key_store_type_details_admin_username,
- *         connectionIps: _var.key_store_type_details_connection_ips,
- *         secretId: oci_vault_secret.test_secret.id,
- *         type: _var.key_store_type_details_type,
- *         vaultId: oci_kms_vault.test_vault.id,
+ *         adminUsername: keyStoreTypeDetailsAdminUsername,
+ *         connectionIps: keyStoreTypeDetailsConnectionIps,
+ *         secretId: testSecret.id,
+ *         type: keyStoreTypeDetailsType,
+ *         vaultId: testVault.id,
  *     },
- *     definedTags: _var.key_store_defined_tags,
+ *     definedTags: keyStoreDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

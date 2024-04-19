@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataCatalog.NewDataAsset(ctx, "testDataAsset", &DataCatalog.DataAssetArgs{
-//				CatalogId:   pulumi.Any(oci_datacatalog_catalog.Test_catalog.Id),
-//				DisplayName: pulumi.Any(_var.Data_asset_display_name),
-//				TypeKey:     pulumi.Any(_var.Data_asset_type_key),
-//				Description: pulumi.Any(_var.Data_asset_description),
-//				Properties:  pulumi.Any(_var.Data_asset_properties),
+//			_, err := DataCatalog.NewDataAsset(ctx, "test_data_asset", &DataCatalog.DataAssetArgs{
+//				CatalogId:   pulumi.Any(testCatalog.Id),
+//				DisplayName: pulumi.Any(dataAssetDisplayName),
+//				TypeKey:     pulumi.Any(dataAssetTypeKey),
+//				Description: pulumi.Any(dataAssetDescription),
+//				Properties:  pulumi.Any(dataAssetProperties),
 //			})
 //			if err != nil {
 //				return err

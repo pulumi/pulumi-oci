@@ -57,25 +57,25 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVcn = new oci.core.Vcn("testVcn", {
- *     compartmentId: _var.compartment_id,
+ * const testVcn = new oci.core.Vcn("test_vcn", {
+ *     compartmentId: compartmentId,
  *     byoipv6cidrDetails: [{
- *         byoipv6rangeId: oci_core_byoipv6range.test_byoipv6range.id,
- *         ipv6cidrBlock: _var.vcn_byoipv6cidr_details_ipv6cidr_block,
+ *         byoipv6rangeId: testByoipv6range.id,
+ *         ipv6cidrBlock: vcnByoipv6cidrDetailsIpv6cidrBlock,
  *     }],
- *     cidrBlock: _var.vcn_cidr_block,
- *     cidrBlocks: _var.vcn_cidr_blocks,
+ *     cidrBlock: vcnCidrBlock,
+ *     cidrBlocks: vcnCidrBlocks,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.vcn_display_name,
- *     dnsLabel: _var.vcn_dns_label,
+ *     displayName: vcnDisplayName,
+ *     dnsLabel: vcnDnsLabel,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     ipv6privateCidrBlocks: _var.vcn_ipv6private_cidr_blocks,
- *     isIpv6enabled: _var.vcn_is_ipv6enabled,
- *     isOracleGuaAllocationEnabled: _var.vcn_is_oracle_gua_allocation_enabled,
+ *     ipv6privateCidrBlocks: vcnIpv6privateCidrBlocks,
+ *     isIpv6enabled: vcnIsIpv6enabled,
+ *     isOracleGuaAllocationEnabled: vcnIsOracleGuaAllocationEnabled,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

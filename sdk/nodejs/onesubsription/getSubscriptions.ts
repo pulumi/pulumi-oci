@@ -22,11 +22,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptions = oci.OneSubsription.getSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     buyerEmail: _var.subscription_buyer_email,
- *     isCommitInfoRequired: _var.subscription_is_commit_info_required,
- *     planNumber: _var.subscription_plan_number,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
+ *     compartmentId: compartmentId,
+ *     buyerEmail: subscriptionBuyerEmail,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     planNumber: subscriptionPlanNumber,
+ *     subscriptionId: testSubscription.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,11 +106,11 @@ export interface GetSubscriptionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptions = oci.OneSubsription.getSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     buyerEmail: _var.subscription_buyer_email,
- *     isCommitInfoRequired: _var.subscription_is_commit_info_required,
- *     planNumber: _var.subscription_plan_number,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
+ *     compartmentId: compartmentId,
+ *     buyerEmail: subscriptionBuyerEmail,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     planNumber: subscriptionPlanNumber,
+ *     subscriptionId: testSubscription.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

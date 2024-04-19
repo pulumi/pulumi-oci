@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewAppCatalogSubscription(ctx, "testAppCatalogSubscription", &Core.AppCatalogSubscriptionArgs{
-//				CompartmentId:          pulumi.Any(_var.Compartment_id),
-//				ListingId:              pulumi.Any(data.Oci_core_app_catalog_listing.Test_listing.Id),
-//				ListingResourceVersion: pulumi.Any(_var.App_catalog_subscription_listing_resource_version),
-//				OracleTermsOfUseLink:   pulumi.Any(_var.App_catalog_subscription_oracle_terms_of_use_link),
-//				Signature:              pulumi.Any(_var.App_catalog_subscription_signature),
-//				TimeRetrieved:          pulumi.Any(_var.App_catalog_subscription_time_retrieved),
-//				EulaLink:               pulumi.Any(_var.App_catalog_subscription_eula_link),
+//			_, err := Core.NewAppCatalogSubscription(ctx, "test_app_catalog_subscription", &Core.AppCatalogSubscriptionArgs{
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				ListingId:              pulumi.Any(testListing.Id),
+//				ListingResourceVersion: pulumi.Any(appCatalogSubscriptionListingResourceVersion),
+//				OracleTermsOfUseLink:   pulumi.Any(appCatalogSubscriptionOracleTermsOfUseLink),
+//				Signature:              pulumi.Any(appCatalogSubscriptionSignature),
+//				TimeRetrieved:          pulumi.Any(appCatalogSubscriptionTimeRetrieved),
+//				EulaLink:               pulumi.Any(appCatalogSubscriptionEulaLink),
 //			})
 //			if err != nil {
 //				return err

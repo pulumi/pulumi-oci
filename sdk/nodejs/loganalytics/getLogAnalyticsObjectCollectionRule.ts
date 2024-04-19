@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsObjectCollectionRule = oci.LogAnalytics.getLogAnalyticsObjectCollectionRule({
- *     logAnalyticsObjectCollectionRuleId: oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule.id,
- *     namespace: _var.log_analytics_object_collection_rule_namespace,
+ *     logAnalyticsObjectCollectionRuleId: testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id,
+ *     namespace: logAnalyticsObjectCollectionRuleNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -180,8 +180,8 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsObjectCollectionRule = oci.LogAnalytics.getLogAnalyticsObjectCollectionRule({
- *     logAnalyticsObjectCollectionRuleId: oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule.id,
- *     namespace: _var.log_analytics_object_collection_rule_namespace,
+ *     logAnalyticsObjectCollectionRuleId: testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id,
+ *     namespace: logAnalyticsObjectCollectionRuleNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

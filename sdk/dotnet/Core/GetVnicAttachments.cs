@@ -32,10 +32,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVnicAttachments = Oci.Core.GetVnicAttachments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Vnic_attachment_availability_domain,
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
-        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = vnicAttachmentAvailabilityDomain,
+        ///         InstanceId = testInstance.Id,
+        ///         VnicId = testVnic.Id,
         ///     });
         /// 
         /// });
@@ -66,10 +66,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVnicAttachments = Oci.Core.GetVnicAttachments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Vnic_attachment_availability_domain,
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
-        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = vnicAttachmentAvailabilityDomain,
+        ///         InstanceId = testInstance.Id,
+        ///         VnicId = testVnic.Id,
         ///     });
         /// 
         /// });

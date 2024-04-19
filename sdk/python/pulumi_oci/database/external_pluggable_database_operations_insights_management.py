@@ -154,9 +154,9 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
         import pulumi
         import pulumi_oci as oci
 
-        test_external_pluggable_database_operations_insights_management = oci.database.ExternalPluggableDatabaseOperationsInsightsManagement("testExternalPluggableDatabaseOperationsInsightsManagement",
-            external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"],
-            external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"],
+        test_external_pluggable_database_operations_insights_management = oci.database.ExternalPluggableDatabaseOperationsInsightsManagement("test_external_pluggable_database_operations_insights_management",
+            external_database_connector_id=test_external_database_connector["id"],
+            external_pluggable_database_id=test_external_pluggable_database["id"],
             enable_operations_insights=True)
         ```
         <!--End PulumiCodeChooser -->
@@ -193,9 +193,9 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
         import pulumi
         import pulumi_oci as oci
 
-        test_external_pluggable_database_operations_insights_management = oci.database.ExternalPluggableDatabaseOperationsInsightsManagement("testExternalPluggableDatabaseOperationsInsightsManagement",
-            external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"],
-            external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"],
+        test_external_pluggable_database_operations_insights_management = oci.database.ExternalPluggableDatabaseOperationsInsightsManagement("test_external_pluggable_database_operations_insights_management",
+            external_database_connector_id=test_external_database_connector["id"],
+            external_pluggable_database_id=test_external_pluggable_database["id"],
             enable_operations_insights=True)
         ```
         <!--End PulumiCodeChooser -->

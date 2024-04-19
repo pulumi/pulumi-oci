@@ -47,9 +47,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewGroup(ctx, "testGroup", &Identity.GroupArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-//				Description:   pulumi.Any(_var.Group_description),
+//			_, err := Identity.NewGroup(ctx, "test_group", &Identity.GroupArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
+//				Description:   pulumi.Any(groupDescription),
+//				Name:          pulumi.Any(groupName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testProfileLevels = Oci.Optimizer.GetProfileLevels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Profile_level_compartment_id_in_subtree,
-        ///         Name = @var.Profile_level_name,
-        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = profileLevelCompartmentIdInSubtree,
+        ///         Name = profileLevelName,
+        ///         RecommendationName = testRecommendation.Name,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testProfileLevels = Oci.Optimizer.GetProfileLevels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Profile_level_compartment_id_in_subtree,
-        ///         Name = @var.Profile_level_name,
-        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = profileLevelCompartmentIdInSubtree,
+        ///         Name = profileLevelName,
+        ///         RecommendationName = testRecommendation.Name,
         ///     });
         /// 
         /// });

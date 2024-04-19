@@ -115,9 +115,9 @@ def get_events(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.Audit.get_events(compartment_id=var["compartment_id"],
-        end_time=var["audit_event_end_time"],
-        start_time=var["audit_event_start_time"])
+    test_audit_events = oci.Audit.get_events(compartment_id=compartment_id,
+        end_time=audit_event_end_time,
+        start_time=audit_event_start_time)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.Audit.get_events(compartment_id=var["compartment_id"],
-        end_time=var["audit_event_end_time"],
-        start_time=var["audit_event_start_time"])
+    test_audit_events = oci.Audit.get_events(compartment_id=compartment_id,
+        end_time=audit_event_end_time,
+        start_time=audit_event_start_time)
     ```
     <!--End PulumiCodeChooser -->
 

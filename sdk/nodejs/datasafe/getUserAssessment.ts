@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessment = oci.DataSafe.getUserAssessment({
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     userAssessmentId: testUserAssessmentOciDataSafeUserAssessment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -154,7 +154,7 @@ export interface GetUserAssessmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessment = oci.DataSafe.getUserAssessment({
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     userAssessmentId: testUserAssessmentOciDataSafeUserAssessment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

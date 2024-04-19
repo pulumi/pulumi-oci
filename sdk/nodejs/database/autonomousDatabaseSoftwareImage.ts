@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseSoftwareImage = new oci.database.AutonomousDatabaseSoftwareImage("testAutonomousDatabaseSoftwareImage", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.autonomous_database_software_image_display_name,
- *     imageShapeFamily: _var.autonomous_database_software_image_image_shape_family,
- *     sourceCdbId: oci_database_source_cdb.test_source_cdb.id,
- *     definedTags: _var.autonomous_database_software_image_defined_tags,
+ * const testAutonomousDatabaseSoftwareImage = new oci.database.AutonomousDatabaseSoftwareImage("test_autonomous_database_software_image", {
+ *     compartmentId: compartmentId,
+ *     displayName: autonomousDatabaseSoftwareImageDisplayName,
+ *     imageShapeFamily: autonomousDatabaseSoftwareImageImageShapeFamily,
+ *     sourceCdbId: testSourceCdb.id,
+ *     definedTags: autonomousDatabaseSoftwareImageDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

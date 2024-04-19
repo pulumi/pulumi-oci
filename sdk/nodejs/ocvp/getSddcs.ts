@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSddcs = oci.Ocvp.getSddcs({
- *     compartmentId: _var.compartment_id,
- *     computeAvailabilityDomain: _var.sddc_compute_availability_domain,
- *     displayName: _var.sddc_display_name,
- *     state: _var.sddc_state,
+ *     compartmentId: compartmentId,
+ *     computeAvailabilityDomain: sddcComputeAvailabilityDomain,
+ *     displayName: sddcDisplayName,
+ *     state: sddcState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetSddcsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSddcs = oci.Ocvp.getSddcs({
- *     compartmentId: _var.compartment_id,
- *     computeAvailabilityDomain: _var.sddc_compute_availability_domain,
- *     displayName: _var.sddc_display_name,
- *     state: _var.sddc_state,
+ *     compartmentId: compartmentId,
+ *     computeAvailabilityDomain: sddcComputeAvailabilityDomain,
+ *     displayName: sddcDisplayName,
+ *     state: sddcState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

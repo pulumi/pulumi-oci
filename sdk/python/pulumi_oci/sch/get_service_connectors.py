@@ -122,9 +122,9 @@ def get_service_connectors(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_connectors = oci.Sch.get_service_connectors(compartment_id=var["compartment_id"],
-        display_name=var["service_connector_display_name"],
-        state=var["service_connector_state"])
+    test_service_connectors = oci.Sch.get_service_connectors(compartment_id=compartment_id,
+        display_name=service_connector_display_name,
+        state=service_connector_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -170,9 +170,9 @@ def get_service_connectors_output(compartment_id: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_service_connectors = oci.Sch.get_service_connectors(compartment_id=var["compartment_id"],
-        display_name=var["service_connector_display_name"],
-        state=var["service_connector_state"])
+    test_service_connectors = oci.Sch.get_service_connectors(compartment_id=compartment_id,
+        display_name=service_connector_display_name,
+        state=service_connector_state)
     ```
     <!--End PulumiCodeChooser -->
 

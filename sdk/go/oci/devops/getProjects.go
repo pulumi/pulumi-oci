@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetProjects(ctx, &devops.GetProjectsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Project_id),
-//				Name:          pulumi.StringRef(_var.Project_name),
-//				State:         pulumi.StringRef(_var.Project_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(projectId),
+//				Name:          pulumi.StringRef(projectName),
+//				State:         pulumi.StringRef(projectState),
 //			}, nil)
 //			if err != nil {
 //				return err

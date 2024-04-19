@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetDataSource(ctx, &cloudguard.GetDataSourceArgs{
-//				DataSourceId: oci_cloud_guard_data_source.Test_data_source.Id,
+//				DataSourceId: testDataSourceOciCloudGuardDataSource.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

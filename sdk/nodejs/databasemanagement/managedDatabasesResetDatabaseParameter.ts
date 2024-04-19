@@ -18,23 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesResetDatabaseParameter = new oci.databasemanagement.ManagedDatabasesResetDatabaseParameter("testManagedDatabasesResetDatabaseParameter", {
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     parameters: _var.managed_databases_reset_database_parameter_parameters,
- *     scope: _var.managed_databases_reset_database_parameter_scope,
+ * const testManagedDatabasesResetDatabaseParameter = new oci.databasemanagement.ManagedDatabasesResetDatabaseParameter("test_managed_databases_reset_database_parameter", {
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     parameters: managedDatabasesResetDatabaseParameterParameters,
+ *     scope: managedDatabasesResetDatabaseParameterScope,
  *     credentials: {
- *         password: _var.managed_databases_reset_database_parameter_credentials_password,
- *         role: _var.managed_databases_reset_database_parameter_credentials_role,
- *         secretId: oci_vault_secret.test_secret.id,
- *         userName: oci_identity_user.test_user.name,
+ *         password: managedDatabasesResetDatabaseParameterCredentialsPassword,
+ *         role: managedDatabasesResetDatabaseParameterCredentialsRole,
+ *         secretId: testSecret.id,
+ *         userName: testUser.name,
  *     },
  *     databaseCredential: {
- *         credentialType: _var.managed_databases_reset_database_parameter_database_credential_credential_type,
- *         namedCredentialId: oci_database_management_named_credential.test_named_credential.id,
- *         password: _var.managed_databases_reset_database_parameter_database_credential_password,
- *         passwordSecretId: oci_vault_secret.test_secret.id,
- *         role: _var.managed_databases_reset_database_parameter_database_credential_role,
- *         username: _var.managed_databases_reset_database_parameter_database_credential_username,
+ *         credentialType: managedDatabasesResetDatabaseParameterDatabaseCredentialCredentialType,
+ *         namedCredentialId: testNamedCredential.id,
+ *         password: managedDatabasesResetDatabaseParameterDatabaseCredentialPassword,
+ *         passwordSecretId: testSecret.id,
+ *         role: managedDatabasesResetDatabaseParameterDatabaseCredentialRole,
+ *         username: managedDatabasesResetDatabaseParameterDatabaseCredentialUsername,
  *     },
  * });
  * ```

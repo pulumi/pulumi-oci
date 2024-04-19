@@ -30,8 +30,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourceSoftwarePackage = Oci.OsManagementHub.GetSoftwareSourceSoftwarePackage.Invoke(new()
         ///     {
-        ///         SoftwarePackageName = @var.Software_source_software_package_software_package_name,
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
+        ///         SoftwarePackageName = softwareSourceSoftwarePackageSoftwarePackageName,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourceSoftwarePackage = Oci.OsManagementHub.GetSoftwareSourceSoftwarePackage.Invoke(new()
         ///     {
-        ///         SoftwarePackageName = @var.Software_source_software_package_software_package_name,
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
+        ///         SoftwarePackageName = softwareSourceSoftwarePackageSoftwarePackageName,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
         ///     });
         /// 
         /// });

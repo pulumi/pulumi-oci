@@ -300,19 +300,19 @@ class Rrset(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_rrset = oci.dns.Rrset("testRrset",
-            domain=var["rrset_domain"],
-            rtype=var["rrset_rtype"],
-            zone_name_or_id=oci_dns_zone["test_zone"]["id"],
-            compartment_id=var["compartment_id"],
+        test_rrset = oci.dns.Rrset("test_rrset",
+            domain=rrset_domain,
+            rtype=rrset_rtype,
+            zone_name_or_id=test_zone["id"],
+            compartment_id=compartment_id,
             items=[oci.dns.RrsetItemArgs(
-                domain=var["rrset_items_domain"],
-                rdata=var["rrset_items_rdata"],
-                rtype=var["rrset_items_rtype"],
-                ttl=var["rrset_items_ttl"],
+                domain=rrset_items_domain,
+                rdata=rrset_items_rdata,
+                rtype=rrset_items_rtype,
+                ttl=rrset_items_ttl,
             )],
-            scope=var["rrset_scope"],
-            view_id=oci_dns_view["test_view"]["id"])
+            scope=rrset_scope,
+            view_id=test_view["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -365,19 +365,19 @@ class Rrset(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_rrset = oci.dns.Rrset("testRrset",
-            domain=var["rrset_domain"],
-            rtype=var["rrset_rtype"],
-            zone_name_or_id=oci_dns_zone["test_zone"]["id"],
-            compartment_id=var["compartment_id"],
+        test_rrset = oci.dns.Rrset("test_rrset",
+            domain=rrset_domain,
+            rtype=rrset_rtype,
+            zone_name_or_id=test_zone["id"],
+            compartment_id=compartment_id,
             items=[oci.dns.RrsetItemArgs(
-                domain=var["rrset_items_domain"],
-                rdata=var["rrset_items_rdata"],
-                rtype=var["rrset_items_rtype"],
-                ttl=var["rrset_items_ttl"],
+                domain=rrset_items_domain,
+                rdata=rrset_items_rdata,
+                rtype=rrset_items_rtype,
+                ttl=rrset_items_ttl,
             )],
-            scope=var["rrset_scope"],
-            view_id=oci_dns_view["test_view"]["id"])
+            scope=rrset_scope,
+            view_id=test_view["id"])
         ```
         <!--End PulumiCodeChooser -->
 

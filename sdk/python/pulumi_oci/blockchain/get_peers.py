@@ -101,8 +101,8 @@ def get_peers(blockchain_platform_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_peers = oci.Blockchain.get_peers(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        display_name=var["peer_display_name"])
+    test_peers = oci.Blockchain.get_peers(blockchain_platform_id=test_blockchain_platform["id"],
+        display_name=peer_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,8 +142,8 @@ def get_peers_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_peers = oci.Blockchain.get_peers(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        display_name=var["peer_display_name"])
+    test_peers = oci.Blockchain.get_peers(blockchain_platform_id=test_blockchain_platform["id"],
+        display_name=peer_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

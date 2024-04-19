@@ -30,15 +30,15 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testSteeringPolicies = Oci.Dns.GetSteeringPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Steering_policy_display_name,
-        ///         DisplayNameContains = @var.Steering_policy_display_name_contains,
-        ///         HealthCheckMonitorId = oci_health_checks_http_monitor.Test_http_monitor.Id,
-        ///         Id = @var.Steering_policy_id,
-        ///         State = @var.Steering_policy_state,
-        ///         Template = @var.Steering_policy_template,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Steering_policy_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Steering_policy_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = steeringPolicyDisplayName,
+        ///         DisplayNameContains = steeringPolicyDisplayNameContains,
+        ///         HealthCheckMonitorId = testHttpMonitor.Id,
+        ///         Id = steeringPolicyId,
+        ///         State = steeringPolicyState,
+        ///         Template = steeringPolicyTemplate,
+        ///         TimeCreatedGreaterThanOrEqualTo = steeringPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = steeringPolicyTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -67,15 +67,15 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testSteeringPolicies = Oci.Dns.GetSteeringPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Steering_policy_display_name,
-        ///         DisplayNameContains = @var.Steering_policy_display_name_contains,
-        ///         HealthCheckMonitorId = oci_health_checks_http_monitor.Test_http_monitor.Id,
-        ///         Id = @var.Steering_policy_id,
-        ///         State = @var.Steering_policy_state,
-        ///         Template = @var.Steering_policy_template,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Steering_policy_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Steering_policy_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = steeringPolicyDisplayName,
+        ///         DisplayNameContains = steeringPolicyDisplayNameContains,
+        ///         HealthCheckMonitorId = testHttpMonitor.Id,
+        ///         Id = steeringPolicyId,
+        ///         State = steeringPolicyState,
+        ///         Template = steeringPolicyTemplate,
+        ///         TimeCreatedGreaterThanOrEqualTo = steeringPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = steeringPolicyTimeCreatedLessThan,
         ///     });
         /// 
         /// });

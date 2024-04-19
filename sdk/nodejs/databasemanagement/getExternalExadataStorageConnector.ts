@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataStorageConnector = oci.DatabaseManagement.getExternalExadataStorageConnector({
- *     externalExadataStorageConnectorId: oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector.id,
+ *     externalExadataStorageConnectorId: testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -127,7 +127,7 @@ export interface GetExternalExadataStorageConnectorResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataStorageConnector = oci.DatabaseManagement.getExternalExadataStorageConnector({
- *     externalExadataStorageConnectorId: oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector.id,
+ *     externalExadataStorageConnectorId: testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

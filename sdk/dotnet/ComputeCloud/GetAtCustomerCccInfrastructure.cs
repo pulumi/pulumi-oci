@@ -31,7 +31,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// {
         ///     var testCccInfrastructure = Oci.ComputeCloud.GetAtCustomerCccInfrastructure.Invoke(new()
         ///     {
-        ///         CccInfrastructureId = oci_compute_cloud_at_customer_ccc_infrastructure.Test_ccc_infrastructure.Id,
+        ///         CccInfrastructureId = testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// {
         ///     var testCccInfrastructure = Oci.ComputeCloud.GetAtCustomerCccInfrastructure.Invoke(new()
         ///     {
-        ///         CccInfrastructureId = oci_compute_cloud_at_customer_ccc_infrastructure.Test_ccc_infrastructure.Id,
+        ///         CccInfrastructureId = testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.Id,
         ///     });
         /// 
         /// });

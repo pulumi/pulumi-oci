@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeClusters = oci.Core.getComputeClusters({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.compute_cluster_availability_domain,
- *     displayName: _var.compute_cluster_display_name,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: computeClusterAvailabilityDomain,
+ *     displayName: computeClusterDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,9 +97,9 @@ export interface GetComputeClustersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeClusters = oci.Core.getComputeClusters({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.compute_cluster_availability_domain,
- *     displayName: _var.compute_cluster_display_name,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: computeClusterAvailabilityDomain,
+ *     displayName: computeClusterDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Autoscaling
         /// {
         ///     var testAutoScalingConfiguration = Oci.Autoscaling.GetAutoScalingConfiguration.Invoke(new()
         ///     {
-        ///         AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
+        ///         AutoScalingConfigurationId = testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Autoscaling
         /// {
         ///     var testAutoScalingConfiguration = Oci.Autoscaling.GetAutoScalingConfiguration.Invoke(new()
         ///     {
-        ///         AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
+        ///         AutoScalingConfigurationId = testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.Id,
         ///     });
         /// 
         /// });

@@ -98,8 +98,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
-     *             .addonName(oci_containerengine_addon.test_addon().name())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .addonName(testAddonOciContainerengineAddon.name())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -141,8 +141,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
-     *             .addonName(oci_containerengine_addon.test_addon().name())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .addonName(testAddonOciContainerengineAddon.name())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -184,8 +184,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
-     *             .addonName(oci_containerengine_addon.test_addon().name())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .addonName(testAddonOciContainerengineAddon.name())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -227,8 +227,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
-     *             .addonName(oci_containerengine_addon.test_addon().name())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .addonName(testAddonOciContainerengineAddon.name())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -270,8 +270,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
-     *             .kubernetesVersion(var_.addon_option_kubernetes_version())
-     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .kubernetesVersion(addonOptionKubernetesVersion)
+     *             .addonName(testAddon.name())
      *             .build());
      * 
      *     }
@@ -313,8 +313,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
-     *             .kubernetesVersion(var_.addon_option_kubernetes_version())
-     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .kubernetesVersion(addonOptionKubernetesVersion)
+     *             .addonName(testAddon.name())
      *             .build());
      * 
      *     }
@@ -356,8 +356,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
-     *             .kubernetesVersion(var_.addon_option_kubernetes_version())
-     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .kubernetesVersion(addonOptionKubernetesVersion)
+     *             .addonName(testAddon.name())
      *             .build());
      * 
      *     }
@@ -399,8 +399,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
-     *             .kubernetesVersion(var_.addon_option_kubernetes_version())
-     *             .addonName(oci_containerengine_addon.test_addon().name())
+     *             .kubernetesVersion(addonOptionKubernetesVersion)
+     *             .addonName(testAddon.name())
      *             .build());
      * 
      *     }
@@ -442,7 +442,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -484,7 +484,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -526,7 +526,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -568,7 +568,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -610,7 +610,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -652,7 +652,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -694,7 +694,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -736,7 +736,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -778,10 +778,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .endpoint(var_.cluster_kube_config_endpoint())
-     *             .expiration(var_.cluster_kube_config_expiration())
-     *             .tokenVersion(var_.cluster_kube_config_token_version())
+     *             .clusterId(testCluster.id())
+     *             .endpoint(clusterKubeConfigEndpoint)
+     *             .expiration(clusterKubeConfigExpiration)
+     *             .tokenVersion(clusterKubeConfigTokenVersion)
      *             .build());
      * 
      *     }
@@ -823,10 +823,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .endpoint(var_.cluster_kube_config_endpoint())
-     *             .expiration(var_.cluster_kube_config_expiration())
-     *             .tokenVersion(var_.cluster_kube_config_token_version())
+     *             .clusterId(testCluster.id())
+     *             .endpoint(clusterKubeConfigEndpoint)
+     *             .expiration(clusterKubeConfigExpiration)
+     *             .tokenVersion(clusterKubeConfigTokenVersion)
      *             .build());
      * 
      *     }
@@ -868,10 +868,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .endpoint(var_.cluster_kube_config_endpoint())
-     *             .expiration(var_.cluster_kube_config_expiration())
-     *             .tokenVersion(var_.cluster_kube_config_token_version())
+     *             .clusterId(testCluster.id())
+     *             .endpoint(clusterKubeConfigEndpoint)
+     *             .expiration(clusterKubeConfigExpiration)
+     *             .tokenVersion(clusterKubeConfigTokenVersion)
      *             .build());
      * 
      *     }
@@ -913,10 +913,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .endpoint(var_.cluster_kube_config_endpoint())
-     *             .expiration(var_.cluster_kube_config_expiration())
-     *             .tokenVersion(var_.cluster_kube_config_token_version())
+     *             .clusterId(testCluster.id())
+     *             .endpoint(clusterKubeConfigEndpoint)
+     *             .expiration(clusterKubeConfigExpiration)
+     *             .tokenVersion(clusterKubeConfigTokenVersion)
      *             .build());
      * 
      *     }
@@ -958,8 +958,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
-     *             .clusterOptionId(oci_containerengine_cluster_option.test_cluster_option().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1001,8 +1001,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
-     *             .clusterOptionId(oci_containerengine_cluster_option.test_cluster_option().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1044,8 +1044,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
-     *             .clusterOptionId(oci_containerengine_cluster_option.test_cluster_option().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1087,8 +1087,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
-     *             .clusterOptionId(oci_containerengine_cluster_option.test_cluster_option().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1130,8 +1130,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .workloadMappingId(oci_containerengine_workload_mapping.test_workload_mapping().id())
+     *             .clusterId(testCluster.id())
+     *             .workloadMappingId(testWorkloadMapping.id())
      *             .build());
      * 
      *     }
@@ -1173,8 +1173,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .workloadMappingId(oci_containerengine_workload_mapping.test_workload_mapping().id())
+     *             .clusterId(testCluster.id())
+     *             .workloadMappingId(testWorkloadMapping.id())
      *             .build());
      * 
      *     }
@@ -1216,8 +1216,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .workloadMappingId(oci_containerengine_workload_mapping.test_workload_mapping().id())
+     *             .clusterId(testCluster.id())
+     *             .workloadMappingId(testWorkloadMapping.id())
      *             .build());
      * 
      *     }
@@ -1259,8 +1259,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .workloadMappingId(oci_containerengine_workload_mapping.test_workload_mapping().id())
+     *             .clusterId(testCluster.id())
+     *             .workloadMappingId(testWorkloadMapping.id())
      *             .build());
      * 
      *     }
@@ -1302,7 +1302,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -1344,7 +1344,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -1386,7 +1386,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -1428,7 +1428,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .clusterId(testCluster.id())
      *             .build());
      * 
      *     }
@@ -1470,9 +1470,9 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = ContainerEngineFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.cluster_name())
-     *             .states(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .name(clusterName)
+     *             .states(clusterState)
      *             .build());
      * 
      *     }
@@ -1514,9 +1514,9 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = ContainerEngineFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.cluster_name())
-     *             .states(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .name(clusterName)
+     *             .states(clusterState)
      *             .build());
      * 
      *     }
@@ -1558,9 +1558,9 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = ContainerEngineFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.cluster_name())
-     *             .states(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .name(clusterName)
+     *             .states(clusterState)
      *             .build());
      * 
      *     }
@@ -1602,9 +1602,9 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = ContainerEngineFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.cluster_name())
-     *             .states(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .name(clusterName)
+     *             .states(clusterState)
      *             .build());
      * 
      *     }
@@ -1658,7 +1658,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
-     *             .nodePoolId(oci_containerengine_node_pool.test_node_pool().id())
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
      *             .build());
      * 
      *     }
@@ -1700,7 +1700,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
-     *             .nodePoolId(oci_containerengine_node_pool.test_node_pool().id())
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
      *             .build());
      * 
      *     }
@@ -1742,7 +1742,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
-     *             .nodePoolId(oci_containerengine_node_pool.test_node_pool().id())
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
      *             .build());
      * 
      *     }
@@ -1784,7 +1784,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
-     *             .nodePoolId(oci_containerengine_node_pool.test_node_pool().id())
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
      *             .build());
      * 
      *     }
@@ -1826,8 +1826,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
-     *             .nodePoolOptionId(oci_containerengine_node_pool_option.test_node_pool_option().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1869,8 +1869,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
-     *             .nodePoolOptionId(oci_containerengine_node_pool_option.test_node_pool_option().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1912,8 +1912,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
-     *             .nodePoolOptionId(oci_containerengine_node_pool_option.test_node_pool_option().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1955,8 +1955,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
-     *             .nodePoolOptionId(oci_containerengine_node_pool_option.test_node_pool_option().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1998,10 +1998,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .name(var_.node_pool_name())
-     *             .states(var_.node_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(nodePoolName)
+     *             .states(nodePoolState)
      *             .build());
      * 
      *     }
@@ -2043,10 +2043,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .name(var_.node_pool_name())
-     *             .states(var_.node_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(nodePoolName)
+     *             .states(nodePoolState)
      *             .build());
      * 
      *     }
@@ -2088,10 +2088,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .name(var_.node_pool_name())
-     *             .states(var_.node_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(nodePoolName)
+     *             .states(nodePoolState)
      *             .build());
      * 
      *     }
@@ -2133,10 +2133,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .name(var_.node_pool_name())
-     *             .states(var_.node_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(nodePoolName)
+     *             .states(nodePoolState)
      *             .build());
      * 
      *     }
@@ -2178,9 +2178,9 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPodShapes = ContainerEngineFunctions.getPodShapes(GetPodShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.pod_shape_availability_domain())
-     *             .name(var_.pod_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(podShapeAvailabilityDomain)
+     *             .name(podShapeName)
      *             .build());
      * 
      *     }
@@ -2222,9 +2222,9 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPodShapes = ContainerEngineFunctions.getPodShapes(GetPodShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.pod_shape_availability_domain())
-     *             .name(var_.pod_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(podShapeAvailabilityDomain)
+     *             .name(podShapeName)
      *             .build());
      * 
      *     }
@@ -2266,9 +2266,9 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPodShapes = ContainerEngineFunctions.getPodShapes(GetPodShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.pod_shape_availability_domain())
-     *             .name(var_.pod_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(podShapeAvailabilityDomain)
+     *             .name(podShapeName)
      *             .build());
      * 
      *     }
@@ -2310,9 +2310,9 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPodShapes = ContainerEngineFunctions.getPodShapes(GetPodShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.pod_shape_availability_domain())
-     *             .name(var_.pod_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(podShapeAvailabilityDomain)
+     *             .name(podShapeName)
      *             .build());
      * 
      *     }
@@ -2354,7 +2354,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
-     *             .virtualNodePoolId(oci_containerengine_virtual_node_pool.test_virtual_node_pool().id())
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
      *             .build());
      * 
      *     }
@@ -2396,7 +2396,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
-     *             .virtualNodePoolId(oci_containerengine_virtual_node_pool.test_virtual_node_pool().id())
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
      *             .build());
      * 
      *     }
@@ -2438,7 +2438,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
-     *             .virtualNodePoolId(oci_containerengine_virtual_node_pool.test_virtual_node_pool().id())
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
      *             .build());
      * 
      *     }
@@ -2480,7 +2480,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
-     *             .virtualNodePoolId(oci_containerengine_virtual_node_pool.test_virtual_node_pool().id())
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
      *             .build());
      * 
      *     }
@@ -2522,10 +2522,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .name(var_.virtual_node_pool_name())
-     *             .states(var_.virtual_node_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
      *             .build());
      * 
      *     }
@@ -2567,10 +2567,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .name(var_.virtual_node_pool_name())
-     *             .states(var_.virtual_node_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
      *             .build());
      * 
      *     }
@@ -2612,10 +2612,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .name(var_.virtual_node_pool_name())
-     *             .states(var_.virtual_node_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
      *             .build());
      * 
      *     }
@@ -2657,10 +2657,10 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .name(var_.virtual_node_pool_name())
-     *             .states(var_.virtual_node_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
      *             .build());
      * 
      *     }
@@ -2702,8 +2702,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -2745,8 +2745,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -2788,8 +2788,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -2831,8 +2831,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -2874,8 +2874,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -2917,8 +2917,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -2960,8 +2960,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -3003,8 +3003,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -3046,11 +3046,11 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .resourceId(oci_containerengine_resource.test_resource().id())
-     *             .resourceType(var_.work_request_resource_type())
-     *             .statuses(var_.work_request_status())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .resourceId(testResource.id())
+     *             .resourceType(workRequestResourceType)
+     *             .statuses(workRequestStatus)
      *             .build());
      * 
      *     }
@@ -3092,11 +3092,11 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .resourceId(oci_containerengine_resource.test_resource().id())
-     *             .resourceType(var_.work_request_resource_type())
-     *             .statuses(var_.work_request_status())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .resourceId(testResource.id())
+     *             .resourceType(workRequestResourceType)
+     *             .statuses(workRequestStatus)
      *             .build());
      * 
      *     }
@@ -3138,11 +3138,11 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .resourceId(oci_containerengine_resource.test_resource().id())
-     *             .resourceType(var_.work_request_resource_type())
-     *             .statuses(var_.work_request_status())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .resourceId(testResource.id())
+     *             .resourceType(workRequestResourceType)
+     *             .statuses(workRequestStatus)
      *             .build());
      * 
      *     }
@@ -3184,11 +3184,11 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
-     *             .resourceId(oci_containerengine_resource.test_resource().id())
-     *             .resourceType(var_.work_request_resource_type())
-     *             .statuses(var_.work_request_status())
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .resourceId(testResource.id())
+     *             .resourceType(workRequestResourceType)
+     *             .statuses(workRequestStatus)
      *             .build());
      * 
      *     }

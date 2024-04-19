@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsNetworkPerimeter(ctx, &identity.GetDomainsNetworkPerimeterArgs{
-//				IdcsEndpoint:       data.Oci_identity_domain.Test_domain.Url,
-//				NetworkPerimeterId: oci_identity_domains_network_perimeter.Test_network_perimeter.Id,
+//				IdcsEndpoint:       testDomain.Url,
+//				NetworkPerimeterId: testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.Id,
 //				AttributeSets: []string{
 //					"all",
 //				},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Network_perimeter_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Network_perimeter_resource_type_schema_version),
+//				Authorization:             pulumi.StringRef(networkPerimeterAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(networkPerimeterResourceTypeSchemaVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

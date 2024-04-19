@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExternalContainerDatabase(ctx, "testExternalContainerDatabase", &Database.ExternalContainerDatabaseArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.External_container_database_display_name),
-//				DefinedTags:   pulumi.Any(_var.External_container_database_defined_tags),
+//			_, err := Database.NewExternalContainerDatabase(ctx, "test_external_container_database", &Database.ExternalContainerDatabaseArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(externalContainerDatabaseDisplayName),
+//				DefinedTags:   pulumi.Any(externalContainerDatabaseDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

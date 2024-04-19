@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Logging.GetUnifiedAgentConfiguration(ctx, &logging.GetUnifiedAgentConfigurationArgs{
-//				UnifiedAgentConfigurationId: oci_logging_unified_agent_configuration.Test_unified_agent_configuration.Id,
+//				UnifiedAgentConfigurationId: testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

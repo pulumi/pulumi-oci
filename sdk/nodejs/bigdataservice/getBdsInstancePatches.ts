@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstancePatches = oci.BigDataService.getBdsInstancePatches({
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
+ *     bdsInstanceId: testBdsInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetBdsInstancePatchesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstancePatches = oci.BigDataService.getBdsInstancePatches({
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
+ *     bdsInstanceId: testBdsInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

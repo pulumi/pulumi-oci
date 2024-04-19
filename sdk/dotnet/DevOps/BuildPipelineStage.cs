@@ -25,25 +25,25 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBuildPipelineStage = new Oci.DevOps.BuildPipelineStage("testBuildPipelineStage", new()
+    ///     var testBuildPipelineStage = new Oci.DevOps.BuildPipelineStage("test_build_pipeline_stage", new()
     ///     {
-    ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+    ///         BuildPipelineId = testBuildPipeline.Id,
     ///         BuildPipelineStagePredecessorCollection = new Oci.DevOps.Inputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs
     ///         {
     ///             Items = new[]
     ///             {
     ///                 new Oci.DevOps.Inputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs
     ///                 {
-    ///                     Id = @var.Build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id,
+    ///                     Id = buildPipelineStageBuildPipelineStagePredecessorCollectionItemsId,
     ///                 },
     ///             },
     ///         },
-    ///         BuildPipelineStageType = @var.Build_pipeline_stage_build_pipeline_stage_type,
+    ///         BuildPipelineStageType = buildPipelineStageBuildPipelineStageType,
     ///         BuildRunnerShapeConfig = new Oci.DevOps.Inputs.BuildPipelineStageBuildRunnerShapeConfigArgs
     ///         {
-    ///             BuildRunnerType = @var.Build_pipeline_stage_build_runner_shape_config_build_runner_type,
-    ///             MemoryInGbs = @var.Build_pipeline_stage_build_runner_shape_config_memory_in_gbs,
-    ///             Ocpus = @var.Build_pipeline_stage_build_runner_shape_config_ocpus,
+    ///             BuildRunnerType = buildPipelineStageBuildRunnerShapeConfigBuildRunnerType,
+    ///             MemoryInGbs = buildPipelineStageBuildRunnerShapeConfigMemoryInGbs,
+    ///             Ocpus = buildPipelineStageBuildRunnerShapeConfigOcpus,
     ///         },
     ///         BuildSourceCollection = new Oci.DevOps.Inputs.BuildPipelineStageBuildSourceCollectionArgs
     ///         {
@@ -51,16 +51,16 @@ namespace Pulumi.Oci.DevOps
     ///             {
     ///                 new Oci.DevOps.Inputs.BuildPipelineStageBuildSourceCollectionItemArgs
     ///                 {
-    ///                     ConnectionType = @var.Build_pipeline_stage_build_source_collection_items_connection_type,
-    ///                     Branch = @var.Build_pipeline_stage_build_source_collection_items_branch,
-    ///                     ConnectionId = oci_devops_connection.Test_connection.Id,
-    ///                     Name = @var.Build_pipeline_stage_build_source_collection_items_name,
-    ///                     RepositoryId = oci_artifacts_repository.Test_repository.Id,
-    ///                     RepositoryUrl = @var.Build_pipeline_stage_build_source_collection_items_repository_url,
+    ///                     ConnectionType = buildPipelineStageBuildSourceCollectionItemsConnectionType,
+    ///                     Branch = buildPipelineStageBuildSourceCollectionItemsBranch,
+    ///                     ConnectionId = testConnection.Id,
+    ///                     Name = buildPipelineStageBuildSourceCollectionItemsName,
+    ///                     RepositoryId = testRepository.Id,
+    ///                     RepositoryUrl = buildPipelineStageBuildSourceCollectionItemsRepositoryUrl,
     ///                 },
     ///             },
     ///         },
-    ///         BuildSpecFile = @var.Build_pipeline_stage_build_spec_file,
+    ///         BuildSpecFile = buildPipelineStageBuildSpecFile,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -71,32 +71,32 @@ namespace Pulumi.Oci.DevOps
     ///             {
     ///                 new Oci.DevOps.Inputs.BuildPipelineStageDeliverArtifactCollectionItemArgs
     ///                 {
-    ///                     ArtifactId = oci_devops_artifact.Test_artifact.Id,
-    ///                     ArtifactName = @var.Build_pipeline_stage_deliver_artifact_collection_items_artifact_name,
+    ///                     ArtifactId = testArtifact.Id,
+    ///                     ArtifactName = buildPipelineStageDeliverArtifactCollectionItemsArtifactName,
     ///                 },
     ///             },
     ///         },
-    ///         DeployPipelineId = oci_devops_deploy_pipeline.Test_deploy_pipeline.Id,
-    ///         Description = @var.Build_pipeline_stage_description,
-    ///         DisplayName = @var.Build_pipeline_stage_display_name,
+    ///         DeployPipelineId = testDeployPipeline.Id,
+    ///         Description = buildPipelineStageDescription,
+    ///         DisplayName = buildPipelineStageDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Image = @var.Build_pipeline_stage_image,
-    ///         IsPassAllParametersEnabled = @var.Build_pipeline_stage_is_pass_all_parameters_enabled,
-    ///         PrimaryBuildSource = @var.Build_pipeline_stage_primary_build_source,
+    ///         Image = buildPipelineStageImage,
+    ///         IsPassAllParametersEnabled = buildPipelineStageIsPassAllParametersEnabled,
+    ///         PrimaryBuildSource = buildPipelineStagePrimaryBuildSource,
     ///         PrivateAccessConfig = new Oci.DevOps.Inputs.BuildPipelineStagePrivateAccessConfigArgs
     ///         {
-    ///             NetworkChannelType = @var.Build_pipeline_stage_private_access_config_network_channel_type,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NsgIds = @var.Build_pipeline_stage_private_access_config_nsg_ids,
+    ///             NetworkChannelType = buildPipelineStagePrivateAccessConfigNetworkChannelType,
+    ///             SubnetId = testSubnet.Id,
+    ///             NsgIds = buildPipelineStagePrivateAccessConfigNsgIds,
     ///         },
-    ///         StageExecutionTimeoutInSeconds = @var.Build_pipeline_stage_stage_execution_timeout_in_seconds,
+    ///         StageExecutionTimeoutInSeconds = buildPipelineStageStageExecutionTimeoutInSeconds,
     ///         WaitCriteria = new Oci.DevOps.Inputs.BuildPipelineStageWaitCriteriaArgs
     ///         {
-    ///             WaitDuration = @var.Build_pipeline_stage_wait_criteria_wait_duration,
-    ///             WaitType = @var.Build_pipeline_stage_wait_criteria_wait_type,
+    ///             WaitDuration = buildPipelineStageWaitCriteriaWaitDuration,
+    ///             WaitType = buildPipelineStageWaitCriteriaWaitType,
     ///         },
     ///     });
     /// 

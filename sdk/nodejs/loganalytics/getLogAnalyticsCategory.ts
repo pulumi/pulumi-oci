@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsCategory = oci.LogAnalytics.getLogAnalyticsCategory({
- *     name: _var.log_analytics_category_name,
- *     namespace: _var.log_analytics_category_namespace,
+ *     name: logAnalyticsCategoryName,
+ *     namespace: logAnalyticsCategoryNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,8 +89,8 @@ export interface GetLogAnalyticsCategoryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsCategory = oci.LogAnalytics.getLogAnalyticsCategory({
- *     name: _var.log_analytics_category_name,
- *     namespace: _var.log_analytics_category_namespace,
+ *     name: logAnalyticsCategoryName,
+ *     namespace: logAnalyticsCategoryNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

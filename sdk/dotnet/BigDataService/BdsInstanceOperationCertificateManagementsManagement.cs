@@ -25,24 +25,24 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBdsInstanceOperationCertificateManagementsManagement = new Oci.BigDataService.BdsInstanceOperationCertificateManagementsManagement("testBdsInstanceOperationCertificateManagementsManagement", new()
+    ///     var testBdsInstanceOperationCertificateManagementsManagement = new Oci.BigDataService.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management", new()
     ///     {
-    ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-    ///         ClusterAdminPassword = @var.Bds_instance_operation_certificate_managements_management_cluster_admin_password,
-    ///         Services = @var.Bds_instance_operation_certificate_managements_management_services,
-    ///         EnableOperationCertificateManagement = @var.Enable_operation_certificate_management,
-    ///         RenewOperationCertificateManagement = @var.Renew_operation_certificate_management,
+    ///         BdsInstanceId = testBdsInstance.Id,
+    ///         ClusterAdminPassword = bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword,
+    ///         Services = bdsInstanceOperationCertificateManagementsManagementServices,
+    ///         EnableOperationCertificateManagement = enableOperationCertificateManagement,
+    ///         RenewOperationCertificateManagement = renewOperationCertificateManagement,
     ///         HostCertDetails = new[]
     ///         {
     ///             new Oci.BigDataService.Inputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs
     ///             {
-    ///                 Certificate = @var.Bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
-    ///                 HostName = @var.Bds_instance_operation_certificate_managements_management_host_cert_details_host_name,
-    ///                 PrivateKey = @var.Bds_instance_operation_certificate_managements_management_host_cert_details_private_key,
+    ///                 Certificate = bdsInstanceOperationCertificateManagementsManagementHostCertDetailsCertificate,
+    ///                 HostName = bdsInstanceOperationCertificateManagementsManagementHostCertDetailsHostName,
+    ///                 PrivateKey = bdsInstanceOperationCertificateManagementsManagementHostCertDetailsPrivateKey,
     ///             },
     ///         },
-    ///         RootCertificate = @var.Bds_instance_operation_certificate_managements_management_root_certificate,
-    ///         ServerKeyPassword = @var.Bds_instance_operation_certificate_managements_management_server_key_password,
+    ///         RootCertificate = bdsInstanceOperationCertificateManagementsManagementRootCertificate,
+    ///         ServerKeyPassword = bdsInstanceOperationCertificateManagementsManagementServerKeyPassword,
     ///     });
     /// 
     /// });

@@ -25,28 +25,28 @@ namespace Pulumi.Oci.Waas
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testHttpRedirect = new Oci.Waas.HttpRedirect("testHttpRedirect", new()
+    ///     var testHttpRedirect = new Oci.Waas.HttpRedirect("test_http_redirect", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Domain = @var.Http_redirect_domain,
+    ///         CompartmentId = compartmentId,
+    ///         Domain = httpRedirectDomain,
     ///         Target = new Oci.Waas.Inputs.HttpRedirectTargetArgs
     ///         {
-    ///             Host = @var.Http_redirect_target_host,
-    ///             Path = @var.Http_redirect_target_path,
-    ///             Protocol = @var.Http_redirect_target_protocol,
-    ///             Query = @var.Http_redirect_target_query,
-    ///             Port = @var.Http_redirect_target_port,
+    ///             Host = httpRedirectTargetHost,
+    ///             Path = httpRedirectTargetPath,
+    ///             Protocol = httpRedirectTargetProtocol,
+    ///             Query = httpRedirectTargetQuery,
+    ///             Port = httpRedirectTargetPort,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Http_redirect_display_name,
+    ///         DisplayName = httpRedirectDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         ResponseCode = @var.Http_redirect_response_code,
+    ///         ResponseCode = httpRedirectResponseCode,
     ///     });
     /// 
     /// });

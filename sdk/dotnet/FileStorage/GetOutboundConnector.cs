@@ -29,7 +29,7 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testOutboundConnector = Oci.FileStorage.GetOutboundConnector.Invoke(new()
         ///     {
-        ///         OutboundConnectorId = oci_file_storage_outbound_connector.Test_outbound_connector.Id,
+        ///         OutboundConnectorId = testOutboundConnectorOciFileStorageOutboundConnector.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testOutboundConnector = Oci.FileStorage.GetOutboundConnector.Invoke(new()
         ///     {
-        ///         OutboundConnectorId = oci_file_storage_outbound_connector.Test_outbound_connector.Id,
+        ///         OutboundConnectorId = testOutboundConnectorOciFileStorageOutboundConnector.Id,
         ///     });
         /// 
         /// });

@@ -45,9 +45,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyAddressList = new NetworkFirewallPolicyAddressList(&#34;testNetworkFirewallPolicyAddressList&#34;, NetworkFirewallPolicyAddressListArgs.builder()        
- *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
- *             .type(var_.network_firewall_policy_address_list_type())
- *             .addresses(var_.network_firewall_policy_address_list_addresses())
+ *             .name(networkFirewallPolicyAddressListName)
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .type(networkFirewallPolicyAddressListType)
+ *             .addresses(networkFirewallPolicyAddressListAddresses)
  *             .build());
  * 
  *     }

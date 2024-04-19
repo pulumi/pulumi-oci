@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaLicenseAcceptanceRecord = new oci.jms.JavaDownloadsJavaLicenseAcceptanceRecord("testJavaLicenseAcceptanceRecord", {
- *     compartmentId: _var.tenancy_ocid,
- *     licenseAcceptanceStatus: _var.java_license_acceptance_record_license_acceptance_status,
- *     licenseType: _var.java_license_acceptance_record_license_type,
+ * const testJavaLicenseAcceptanceRecord = new oci.jms.JavaDownloadsJavaLicenseAcceptanceRecord("test_java_license_acceptance_record", {
+ *     compartmentId: tenancyOcid,
+ *     licenseAcceptanceStatus: javaLicenseAcceptanceRecordLicenseAcceptanceStatus,
+ *     licenseType: javaLicenseAcceptanceRecordLicenseType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

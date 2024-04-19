@@ -514,20 +514,20 @@ class RedisCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_redis_cluster = oci.redis.RedisCluster("testRedisCluster",
-            compartment_id=var["compartment_id"],
-            display_name=var["redis_cluster_display_name"],
-            node_count=var["redis_cluster_node_count"],
-            node_memory_in_gbs=var["redis_cluster_node_memory_in_gbs"],
-            software_version=var["redis_cluster_software_version"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_redis_cluster = oci.redis.RedisCluster("test_redis_cluster",
+            compartment_id=compartment_id,
+            display_name=redis_cluster_display_name,
+            node_count=redis_cluster_node_count,
+            node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
+            software_version=redis_cluster_software_version,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=var["redis_cluster_nsg_ids"])
+            nsg_ids=redis_cluster_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -573,20 +573,20 @@ class RedisCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_redis_cluster = oci.redis.RedisCluster("testRedisCluster",
-            compartment_id=var["compartment_id"],
-            display_name=var["redis_cluster_display_name"],
-            node_count=var["redis_cluster_node_count"],
-            node_memory_in_gbs=var["redis_cluster_node_memory_in_gbs"],
-            software_version=var["redis_cluster_software_version"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_redis_cluster = oci.redis.RedisCluster("test_redis_cluster",
+            compartment_id=compartment_id,
+            display_name=redis_cluster_display_name,
+            node_count=redis_cluster_node_count,
+            node_memory_in_gbs=redis_cluster_node_memory_in_gbs,
+            software_version=redis_cluster_software_version,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=var["redis_cluster_nsg_ids"])
+            nsg_ids=redis_cluster_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOnPremiseVantagePointWorkers = oci.ApmSynthetics.getOnPremiseVantagePointWorkers({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     onPremiseVantagePointId: oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point.id,
- *     capability: _var.on_premise_vantage_point_worker_capability,
- *     displayName: _var.on_premise_vantage_point_worker_display_name,
- *     name: _var.on_premise_vantage_point_worker_name,
- *     status: _var.on_premise_vantage_point_worker_status,
+ *     apmDomainId: testApmDomain.id,
+ *     onPremiseVantagePointId: testOnPremiseVantagePoint.id,
+ *     capability: onPremiseVantagePointWorkerCapability,
+ *     displayName: onPremiseVantagePointWorkerDisplayName,
+ *     name: onPremiseVantagePointWorkerName,
+ *     status: onPremiseVantagePointWorkerStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,12 +116,12 @@ export interface GetOnPremiseVantagePointWorkersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOnPremiseVantagePointWorkers = oci.ApmSynthetics.getOnPremiseVantagePointWorkers({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     onPremiseVantagePointId: oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point.id,
- *     capability: _var.on_premise_vantage_point_worker_capability,
- *     displayName: _var.on_premise_vantage_point_worker_display_name,
- *     name: _var.on_premise_vantage_point_worker_name,
- *     status: _var.on_premise_vantage_point_worker_status,
+ *     apmDomainId: testApmDomain.id,
+ *     onPremiseVantagePointId: testOnPremiseVantagePoint.id,
+ *     capability: onPremiseVantagePointWorkerCapability,
+ *     displayName: onPremiseVantagePointWorkerDisplayName,
+ *     name: onPremiseVantagePointWorkerName,
+ *     status: onPremiseVantagePointWorkerStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

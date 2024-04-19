@@ -486,18 +486,18 @@ class MysqlBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_mysql_backup = oci.mysql.MysqlBackup("testMysqlBackup",
-            db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-            backup_type=var["mysql_backup_backup_type"],
+        test_mysql_backup = oci.mysql.MysqlBackup("test_mysql_backup",
+            db_system_id=test_db_system["id"],
+            backup_type=mysql_backup_backup_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["mysql_backup_description"],
-            display_name=var["mysql_backup_display_name"],
+            description=mysql_backup_description,
+            display_name=mysql_backup_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_days=var["mysql_backup_retention_in_days"])
+            retention_in_days=mysql_backup_retention_in_days)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -542,18 +542,18 @@ class MysqlBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_mysql_backup = oci.mysql.MysqlBackup("testMysqlBackup",
-            db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-            backup_type=var["mysql_backup_backup_type"],
+        test_mysql_backup = oci.mysql.MysqlBackup("test_mysql_backup",
+            db_system_id=test_db_system["id"],
+            backup_type=mysql_backup_backup_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["mysql_backup_description"],
-            display_name=var["mysql_backup_display_name"],
+            description=mysql_backup_description,
+            display_name=mysql_backup_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_days=var["mysql_backup_retention_in_days"])
+            retention_in_days=mysql_backup_retention_in_days)
         ```
         <!--End PulumiCodeChooser -->
 

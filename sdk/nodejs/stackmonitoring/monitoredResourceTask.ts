@@ -18,24 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourceTask = new oci.stackmonitoring.MonitoredResourceTask("testMonitoredResourceTask", {
- *     compartmentId: _var.compartment_id,
+ * const testMonitoredResourceTask = new oci.stackmonitoring.MonitoredResourceTask("test_monitored_resource_task", {
+ *     compartmentId: compartmentId,
  *     taskDetails: {
- *         namespace: _var.monitored_resource_task_task_details_namespace,
- *         source: _var.monitored_resource_task_task_details_source,
- *         type: _var.monitored_resource_task_task_details_type,
- *         availabilityProxyMetricCollectionInterval: _var.monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
- *         availabilityProxyMetrics: _var.monitored_resource_task_task_details_availability_proxy_metrics,
- *         consolePathPrefix: _var.monitored_resource_task_task_details_console_path_prefix,
- *         externalIdMapping: _var.monitored_resource_task_task_details_external_id_mapping,
- *         lifecycleStatusMappingsForUpStatuses: _var.monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
- *         resourceGroup: _var.monitored_resource_task_task_details_resource_group,
- *         resourceNameFilter: _var.monitored_resource_task_task_details_resource_name_filter,
- *         resourceNameMapping: _var.monitored_resource_task_task_details_resource_name_mapping,
- *         resourceTypeFilter: _var.monitored_resource_task_task_details_resource_type_filter,
- *         resourceTypeMapping: _var.monitored_resource_task_task_details_resource_type_mapping,
- *         serviceBaseUrl: _var.monitored_resource_task_task_details_service_base_url,
- *         shouldUseMetricsFlowForStatus: _var.monitored_resource_task_task_details_should_use_metrics_flow_for_status,
+ *         namespace: monitoredResourceTaskTaskDetailsNamespace,
+ *         source: monitoredResourceTaskTaskDetailsSource,
+ *         type: monitoredResourceTaskTaskDetailsType,
+ *         availabilityProxyMetricCollectionInterval: monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval,
+ *         availabilityProxyMetrics: monitoredResourceTaskTaskDetailsAvailabilityProxyMetrics,
+ *         consolePathPrefix: monitoredResourceTaskTaskDetailsConsolePathPrefix,
+ *         externalIdMapping: monitoredResourceTaskTaskDetailsExternalIdMapping,
+ *         lifecycleStatusMappingsForUpStatuses: monitoredResourceTaskTaskDetailsLifecycleStatusMappingsForUpStatus,
+ *         resourceGroup: monitoredResourceTaskTaskDetailsResourceGroup,
+ *         resourceNameFilter: monitoredResourceTaskTaskDetailsResourceNameFilter,
+ *         resourceNameMapping: monitoredResourceTaskTaskDetailsResourceNameMapping,
+ *         resourceTypeFilter: monitoredResourceTaskTaskDetailsResourceTypeFilter,
+ *         resourceTypeMapping: monitoredResourceTaskTaskDetailsResourceTypeMapping,
+ *         serviceBaseUrl: monitoredResourceTaskTaskDetailsServiceBaseUrl,
+ *         shouldUseMetricsFlowForStatus: monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -43,6 +43,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     name: monitoredResourceTaskName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

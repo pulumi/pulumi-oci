@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPipelines = oci.DataScience.getPipelines({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.pipeline_created_by,
- *     displayName: _var.pipeline_display_name,
- *     id: _var.pipeline_id,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.pipeline_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: pipelineCreatedBy,
+ *     displayName: pipelineDisplayName,
+ *     id: pipelineId,
+ *     projectId: testProject.id,
+ *     state: pipelineState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetPipelinesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPipelines = oci.DataScience.getPipelines({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.pipeline_created_by,
- *     displayName: _var.pipeline_display_name,
- *     id: _var.pipeline_id,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.pipeline_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: pipelineCreatedBy,
+ *     displayName: pipelineDisplayName,
+ *     id: pipelineId,
+ *     projectId: testProject.id,
+ *     state: pipelineState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

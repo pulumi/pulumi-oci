@@ -36,13 +36,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetMonitoredResourceTypes(ctx, &stackmonitoring.GetMonitoredResourceTypesArgs{
-//				CompartmentId:        _var.Compartment_id,
-//				ExcludeFields:        _var.Monitored_resource_type_exclude_fields,
-//				Fields:               _var.Monitored_resource_type_fields,
-//				IsExcludeSystemTypes: pulumi.BoolRef(_var.Monitored_resource_type_is_exclude_system_types),
-//				MetricNamespace:      pulumi.StringRef(_var.Monitored_resource_type_metric_namespace),
-//				Name:                 pulumi.StringRef(_var.Monitored_resource_type_name),
-//				Status:               pulumi.StringRef(_var.Monitored_resource_type_status),
+//				CompartmentId:        compartmentId,
+//				ExcludeFields:        monitoredResourceTypeExcludeFields,
+//				Fields:               monitoredResourceTypeFields,
+//				IsExcludeSystemTypes: pulumi.BoolRef(monitoredResourceTypeIsExcludeSystemTypes),
+//				MetricNamespace:      pulumi.StringRef(monitoredResourceTypeMetricNamespace),
+//				Name:                 pulumi.StringRef(monitoredResourceTypeName),
+//				Status:               pulumi.StringRef(monitoredResourceTypeStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

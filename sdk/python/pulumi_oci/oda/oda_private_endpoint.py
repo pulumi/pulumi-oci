@@ -341,18 +341,18 @@ class OdaPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oda_private_endpoint = oci.oda.OdaPrivateEndpoint("testOdaPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_oda_private_endpoint = oci.oda.OdaPrivateEndpoint("test_oda_private_endpoint",
+            compartment_id=compartment_id,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["oda_private_endpoint_description"],
-            display_name=var["oda_private_endpoint_display_name"],
+            description=oda_private_endpoint_description,
+            display_name=oda_private_endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=var["oda_private_endpoint_nsg_ids"])
+            nsg_ids=oda_private_endpoint_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -399,18 +399,18 @@ class OdaPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oda_private_endpoint = oci.oda.OdaPrivateEndpoint("testOdaPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_oda_private_endpoint = oci.oda.OdaPrivateEndpoint("test_oda_private_endpoint",
+            compartment_id=compartment_id,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["oda_private_endpoint_description"],
-            display_name=var["oda_private_endpoint_display_name"],
+            description=oda_private_endpoint_description,
+            display_name=oda_private_endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=var["oda_private_endpoint_nsg_ids"])
+            nsg_ids=oda_private_endpoint_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 

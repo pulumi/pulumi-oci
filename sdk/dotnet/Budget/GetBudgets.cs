@@ -36,10 +36,10 @@ namespace Pulumi.Oci.Budget
         /// {
         ///     var testBudgets = Oci.Budget.GetBudgets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         DisplayName = @var.Budget_display_name,
-        ///         State = @var.Budget_state,
-        ///         TargetType = @var.Budget_target_type,
+        ///         CompartmentId = tenancyOcid,
+        ///         DisplayName = budgetDisplayName,
+        ///         State = budgetState,
+        ///         TargetType = budgetTargetType,
         ///     });
         /// 
         /// });
@@ -74,10 +74,10 @@ namespace Pulumi.Oci.Budget
         /// {
         ///     var testBudgets = Oci.Budget.GetBudgets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         DisplayName = @var.Budget_display_name,
-        ///         State = @var.Budget_state,
-        ///         TargetType = @var.Budget_target_type,
+        ///         CompartmentId = tenancyOcid,
+        ///         DisplayName = budgetDisplayName,
+        ///         State = budgetState,
+        ///         TargetType = budgetTargetType,
         ///     });
         /// 
         /// });

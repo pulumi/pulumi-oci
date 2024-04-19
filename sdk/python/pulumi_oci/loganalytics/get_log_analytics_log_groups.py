@@ -117,9 +117,9 @@ def get_log_analytics_log_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_log_group_namespace"],
-        display_name=var["log_analytics_log_group_display_name"])
+    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
+        namespace=log_analytics_log_group_namespace,
+        display_name=log_analytics_log_group_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_log_analytics_log_groups_output(compartment_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_log_group_namespace"],
-        display_name=var["log_analytics_log_group_display_name"])
+    test_log_analytics_log_groups = oci.LogAnalytics.get_log_analytics_log_groups(compartment_id=compartment_id,
+        namespace=log_analytics_log_group_namespace,
+        display_name=log_analytics_log_group_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceImportRequest = oci.DataIntegration.getWorkspaceImportRequest({
- *     importRequestKey: _var.workspace_import_request_import_request_key,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
+ *     importRequestKey: workspaceImportRequestImportRequestKey,
+ *     workspaceId: testWorkspace.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,8 +133,8 @@ export interface GetWorkspaceImportRequestResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceImportRequest = oci.DataIntegration.getWorkspaceImportRequest({
- *     importRequestKey: _var.workspace_import_request_import_request_key,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
+ *     importRequestKey: workspaceImportRequestImportRequestKey,
+ *     workspaceId: testWorkspace.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

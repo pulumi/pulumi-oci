@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Opensearch
         /// {
         ///     var testOpensearchCluster = Oci.Opensearch.GetOpensearchCluster.Invoke(new()
         ///     {
-        ///         OpensearchClusterId = oci_opensearch_opensearch_cluster.Test_opensearch_cluster.Id,
+        ///         OpensearchClusterId = testOpensearchClusterOciOpensearchOpensearchCluster.Id,
         ///     });
         /// 
         /// });
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Opensearch
         /// {
         ///     var testOpensearchCluster = Oci.Opensearch.GetOpensearchCluster.Invoke(new()
         ///     {
-        ///         OpensearchClusterId = oci_opensearch_opensearch_cluster.Test_opensearch_cluster.Id,
+        ///         OpensearchClusterId = testOpensearchClusterOciOpensearchOpensearchCluster.Id,
         ///     });
         /// 
         /// });

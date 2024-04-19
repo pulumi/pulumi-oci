@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetDedicatedVmHostInstances(ctx, &core.GetDedicatedVmHostInstancesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				DedicatedVmHostId:  oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Dedicated_vm_hosts_instance_availability_domain),
+//				CompartmentId:      compartmentId,
+//				DedicatedVmHostId:  testDedicatedVmHost.Id,
+//				AvailabilityDomain: pulumi.StringRef(dedicatedVmHostsInstanceAvailabilityDomain),
 //			}, nil)
 //			if err != nil {
 //				return err

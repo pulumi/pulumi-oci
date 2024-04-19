@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJobs = oci.DataScience.getJobs({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.job_created_by,
- *     displayName: _var.job_display_name,
- *     id: _var.job_id,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.job_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: jobCreatedBy,
+ *     displayName: jobDisplayName,
+ *     id: jobId,
+ *     projectId: testProject.id,
+ *     state: jobState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetJobsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJobs = oci.DataScience.getJobs({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.job_created_by,
- *     displayName: _var.job_display_name,
- *     id: _var.job_id,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.job_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: jobCreatedBy,
+ *     displayName: jobDisplayName,
+ *     id: jobId,
+ *     projectId: testProject.id,
+ *     state: jobState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

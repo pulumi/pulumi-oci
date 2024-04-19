@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyApiKeys = oci.Identity.getDomainsMyApiKeys({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myApiKeyCount: _var.my_api_key_my_api_key_count,
- *     myApiKeyFilter: _var.my_api_key_my_api_key_filter,
- *     authorization: _var.my_api_key_authorization,
- *     resourceTypeSchemaVersion: _var.my_api_key_resource_type_schema_version,
- *     startIndex: _var.my_api_key_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myApiKeyCount: myApiKeyMyApiKeyCount,
+ *     myApiKeyFilter: myApiKeyMyApiKeyFilter,
+ *     authorization: myApiKeyAuthorization,
+ *     resourceTypeSchemaVersion: myApiKeyResourceTypeSchemaVersion,
+ *     startIndex: myApiKeyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetDomainsMyApiKeysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyApiKeys = oci.Identity.getDomainsMyApiKeys({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myApiKeyCount: _var.my_api_key_my_api_key_count,
- *     myApiKeyFilter: _var.my_api_key_my_api_key_filter,
- *     authorization: _var.my_api_key_authorization,
- *     resourceTypeSchemaVersion: _var.my_api_key_resource_type_schema_version,
- *     startIndex: _var.my_api_key_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myApiKeyCount: myApiKeyMyApiKeyCount,
+ *     myApiKeyFilter: myApiKeyMyApiKeyFilter,
+ *     authorization: myApiKeyAuthorization,
+ *     resourceTypeSchemaVersion: myApiKeyResourceTypeSchemaVersion,
+ *     startIndex: myApiKeyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

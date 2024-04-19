@@ -19,18 +19,18 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetInstallationSite = oci.Jms.getInstallationSite({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     applicationId: oci_dataflow_application.test_application.id,
- *     installationPath: _var.fleet_installation_site_installation_path,
- *     jreDistribution: _var.fleet_installation_site_jre_distribution,
- *     jreSecurityStatus: _var.fleet_installation_site_jre_security_status,
- *     jreVendor: _var.fleet_installation_site_jre_vendor,
- *     jreVersion: _var.fleet_installation_site_jre_version,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     osFamilies: _var.fleet_installation_site_os_family,
- *     pathContains: _var.fleet_installation_site_path_contains,
- *     timeEnd: _var.fleet_installation_site_time_end,
- *     timeStart: _var.fleet_installation_site_time_start,
+ *     fleetId: testFleet.id,
+ *     applicationId: testApplication.id,
+ *     installationPath: fleetInstallationSiteInstallationPath,
+ *     jreDistribution: fleetInstallationSiteJreDistribution,
+ *     jreSecurityStatus: fleetInstallationSiteJreSecurityStatus,
+ *     jreVendor: fleetInstallationSiteJreVendor,
+ *     jreVersion: fleetInstallationSiteJreVersion,
+ *     managedInstanceId: testManagedInstance.id,
+ *     osFamilies: fleetInstallationSiteOsFamily,
+ *     pathContains: fleetInstallationSitePathContains,
+ *     timeEnd: fleetInstallationSiteTimeEnd,
+ *     timeStart: fleetInstallationSiteTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -149,18 +149,18 @@ export interface GetInstallationSiteResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetInstallationSite = oci.Jms.getInstallationSite({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     applicationId: oci_dataflow_application.test_application.id,
- *     installationPath: _var.fleet_installation_site_installation_path,
- *     jreDistribution: _var.fleet_installation_site_jre_distribution,
- *     jreSecurityStatus: _var.fleet_installation_site_jre_security_status,
- *     jreVendor: _var.fleet_installation_site_jre_vendor,
- *     jreVersion: _var.fleet_installation_site_jre_version,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     osFamilies: _var.fleet_installation_site_os_family,
- *     pathContains: _var.fleet_installation_site_path_contains,
- *     timeEnd: _var.fleet_installation_site_time_end,
- *     timeStart: _var.fleet_installation_site_time_start,
+ *     fleetId: testFleet.id,
+ *     applicationId: testApplication.id,
+ *     installationPath: fleetInstallationSiteInstallationPath,
+ *     jreDistribution: fleetInstallationSiteJreDistribution,
+ *     jreSecurityStatus: fleetInstallationSiteJreSecurityStatus,
+ *     jreVendor: fleetInstallationSiteJreVendor,
+ *     jreVersion: fleetInstallationSiteJreVersion,
+ *     managedInstanceId: testManagedInstance.id,
+ *     osFamilies: fleetInstallationSiteOsFamily,
+ *     pathContains: fleetInstallationSitePathContains,
+ *     timeEnd: fleetInstallationSiteTimeEnd,
+ *     timeStart: fleetInstallationSiteTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

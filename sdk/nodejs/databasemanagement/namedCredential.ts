@@ -18,22 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamedCredential = new oci.databasemanagement.NamedCredential("testNamedCredential", {
- *     compartmentId: _var.compartment_id,
+ * const testNamedCredential = new oci.databasemanagement.NamedCredential("test_named_credential", {
+ *     compartmentId: compartmentId,
  *     content: {
- *         credentialType: _var.named_credential_content_credential_type,
- *         passwordSecretAccessMode: _var.named_credential_content_password_secret_access_mode,
- *         passwordSecretId: oci_vault_secret.test_secret.id,
- *         role: _var.named_credential_content_role,
- *         userName: oci_identity_user.test_user.name,
+ *         credentialType: namedCredentialContentCredentialType,
+ *         passwordSecretAccessMode: namedCredentialContentPasswordSecretAccessMode,
+ *         passwordSecretId: testSecret.id,
+ *         role: namedCredentialContentRole,
+ *         userName: testUser.name,
  *     },
- *     scope: _var.named_credential_scope,
- *     type: _var.named_credential_type,
- *     associatedResource: _var.named_credential_associated_resource,
+ *     name: namedCredentialName,
+ *     scope: namedCredentialScope,
+ *     type: namedCredentialType,
+ *     associatedResource: namedCredentialAssociatedResource,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.named_credential_description,
+ *     description: namedCredentialDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

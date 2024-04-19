@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetPrivateEndpoint(ctx, &datascience.GetPrivateEndpointArgs{
-//				DataSciencePrivateEndpointId: oci_datascience_private_endpoint.Test_data_science_private_endpoint.Id,
+//				DataSciencePrivateEndpointId: testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

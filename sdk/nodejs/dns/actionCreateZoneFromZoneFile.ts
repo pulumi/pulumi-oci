@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testActionCreateZoneFromZoneFile = new oci.dns.ActionCreateZoneFromZoneFile("testActionCreateZoneFromZoneFile", {
- *     createZoneFromZoneFileDetails: _var.action_create_zone_from_zone_file_create_zone_from_zone_file_details,
- *     compartmentId: _var.compartment_id,
- *     scope: _var.action_create_zone_from_zone_file_scope,
- *     viewId: oci_dns_view.test_view.id,
+ * const testActionCreateZoneFromZoneFile = new oci.dns.ActionCreateZoneFromZoneFile("test_action_create_zone_from_zone_file", {
+ *     createZoneFromZoneFileDetails: actionCreateZoneFromZoneFileCreateZoneFromZoneFileDetails,
+ *     compartmentId: compartmentId,
+ *     scope: actionCreateZoneFromZoneFileScope,
+ *     viewId: testView.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

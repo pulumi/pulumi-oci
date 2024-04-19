@@ -260,7 +260,7 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint = oci.DataFlow.get_private_endpoint(private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"])
+    test_private_endpoint = oci.DataFlow.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_dataflow_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -308,7 +308,7 @@ def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint = oci.DataFlow.get_private_endpoint(private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"])
+    test_private_endpoint = oci.DataFlow.get_private_endpoint(private_endpoint_id=test_private_endpoint_oci_dataflow_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 

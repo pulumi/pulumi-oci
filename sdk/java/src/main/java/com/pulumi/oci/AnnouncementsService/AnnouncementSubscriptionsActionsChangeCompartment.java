@@ -45,8 +45,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAnnouncementSubscriptionsActionsChangeCompartment = new AnnouncementSubscriptionsActionsChangeCompartment(&#34;testAnnouncementSubscriptionsActionsChangeCompartment&#34;, AnnouncementSubscriptionsActionsChangeCompartmentArgs.builder()        
- *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
- *             .compartmentId(var_.compartment_id())
+ *             .announcementSubscriptionId(testAnnouncementSubscription.id())
+ *             .compartmentId(compartmentId)
  *             .build());
  * 
  *     }

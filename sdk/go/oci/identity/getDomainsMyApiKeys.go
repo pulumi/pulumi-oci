@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsMyApiKeys(ctx, &identity.GetDomainsMyApiKeysArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
-//				MyApiKeyCount:             pulumi.IntRef(_var.My_api_key_my_api_key_count),
-//				MyApiKeyFilter:            pulumi.StringRef(_var.My_api_key_my_api_key_filter),
-//				Authorization:             pulumi.StringRef(_var.My_api_key_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.My_api_key_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.My_api_key_start_index),
+//				IdcsEndpoint:              testDomain.Url,
+//				MyApiKeyCount:             pulumi.IntRef(myApiKeyMyApiKeyCount),
+//				MyApiKeyFilter:            pulumi.StringRef(myApiKeyMyApiKeyFilter),
+//				Authorization:             pulumi.StringRef(myApiKeyAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(myApiKeyResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(myApiKeyStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

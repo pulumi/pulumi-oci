@@ -77,8 +77,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfiguration = BigDataServiceFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
-     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -120,8 +120,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfiguration = BigDataServiceFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
-     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -163,8 +163,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfiguration = BigDataServiceFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
-     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -206,8 +206,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfiguration = BigDataServiceFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
-     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -261,7 +261,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstance = BigDataServiceFunctions.getBdsInstance(GetBdsInstanceArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstanceOciBdsBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -303,7 +303,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstance = BigDataServiceFunctions.getBdsInstance(GetBdsInstanceArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstanceOciBdsBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -345,7 +345,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstance = BigDataServiceFunctions.getBdsInstance(GetBdsInstanceArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstanceOciBdsBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -387,7 +387,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstance = BigDataServiceFunctions.getBdsInstance(GetBdsInstanceArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstanceOciBdsBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -429,8 +429,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -472,8 +472,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -515,8 +515,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -558,8 +558,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -601,8 +601,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -644,8 +644,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -687,8 +687,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -730,8 +730,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceApiKey = BigDataServiceFunctions.getBdsInstanceApiKey(GetBdsInstanceApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .apiKeyId(testApiKey.id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -773,8 +773,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceGetOsPatch = BigDataServiceFunctions.getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .osPatchVersion(var_.bds_instance_get_os_patch_os_patch_version())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .osPatchVersion(bdsInstanceGetOsPatchOsPatchVersion)
      *             .build());
      * 
      *     }
@@ -816,8 +816,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceGetOsPatch = BigDataServiceFunctions.getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .osPatchVersion(var_.bds_instance_get_os_patch_os_patch_version())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .osPatchVersion(bdsInstanceGetOsPatchOsPatchVersion)
      *             .build());
      * 
      *     }
@@ -859,8 +859,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceGetOsPatch = BigDataServiceFunctions.getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .osPatchVersion(var_.bds_instance_get_os_patch_os_patch_version())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .osPatchVersion(bdsInstanceGetOsPatchOsPatchVersion)
      *             .build());
      * 
      *     }
@@ -902,8 +902,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceGetOsPatch = BigDataServiceFunctions.getBdsInstanceGetOsPatch(GetBdsInstanceGetOsPatchArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .osPatchVersion(var_.bds_instance_get_os_patch_os_patch_version())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .osPatchVersion(bdsInstanceGetOsPatchOsPatchVersion)
      *             .build());
      * 
      *     }
@@ -945,7 +945,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceListOsPatches = BigDataServiceFunctions.getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -987,7 +987,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceListOsPatches = BigDataServiceFunctions.getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -1029,7 +1029,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceListOsPatches = BigDataServiceFunctions.getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -1071,7 +1071,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceListOsPatches = BigDataServiceFunctions.getBdsInstanceListOsPatches(GetBdsInstanceListOsPatchesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -1113,8 +1113,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceMetastoreConfig = BigDataServiceFunctions.getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .metastoreConfigId(oci_apm_config_config.test_config().id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .metastoreConfigId(testConfig.id())
      *             .build());
      * 
      *     }
@@ -1156,8 +1156,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceMetastoreConfig = BigDataServiceFunctions.getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .metastoreConfigId(oci_apm_config_config.test_config().id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .metastoreConfigId(testConfig.id())
      *             .build());
      * 
      *     }
@@ -1199,8 +1199,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceMetastoreConfig = BigDataServiceFunctions.getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .metastoreConfigId(oci_apm_config_config.test_config().id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .metastoreConfigId(testConfig.id())
      *             .build());
      * 
      *     }
@@ -1242,8 +1242,8 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceMetastoreConfig = BigDataServiceFunctions.getBdsInstanceMetastoreConfig(GetBdsInstanceMetastoreConfigArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .metastoreConfigId(oci_apm_config_config.test_config().id())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .metastoreConfigId(testConfig.id())
      *             .build());
      * 
      *     }
@@ -1285,12 +1285,12 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceMetastoreConfigs = BigDataServiceFunctions.getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .displayName(var_.bds_instance_metastore_config_display_name())
-     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
-     *             .metastoreType(var_.bds_instance_metastore_config_metastore_type())
-     *             .state(var_.bds_instance_metastore_config_state())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .bdsApiKeyId(testApiKey.id())
+     *             .displayName(bdsInstanceMetastoreConfigDisplayName)
+     *             .metastoreId(testMetastore.id())
+     *             .metastoreType(bdsInstanceMetastoreConfigMetastoreType)
+     *             .state(bdsInstanceMetastoreConfigState)
      *             .build());
      * 
      *     }
@@ -1332,12 +1332,12 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceMetastoreConfigs = BigDataServiceFunctions.getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .displayName(var_.bds_instance_metastore_config_display_name())
-     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
-     *             .metastoreType(var_.bds_instance_metastore_config_metastore_type())
-     *             .state(var_.bds_instance_metastore_config_state())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .bdsApiKeyId(testApiKey.id())
+     *             .displayName(bdsInstanceMetastoreConfigDisplayName)
+     *             .metastoreId(testMetastore.id())
+     *             .metastoreType(bdsInstanceMetastoreConfigMetastoreType)
+     *             .state(bdsInstanceMetastoreConfigState)
      *             .build());
      * 
      *     }
@@ -1379,12 +1379,12 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceMetastoreConfigs = BigDataServiceFunctions.getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .displayName(var_.bds_instance_metastore_config_display_name())
-     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
-     *             .metastoreType(var_.bds_instance_metastore_config_metastore_type())
-     *             .state(var_.bds_instance_metastore_config_state())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .bdsApiKeyId(testApiKey.id())
+     *             .displayName(bdsInstanceMetastoreConfigDisplayName)
+     *             .metastoreId(testMetastore.id())
+     *             .metastoreType(bdsInstanceMetastoreConfigMetastoreType)
+     *             .state(bdsInstanceMetastoreConfigState)
      *             .build());
      * 
      *     }
@@ -1426,12 +1426,12 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstanceMetastoreConfigs = BigDataServiceFunctions.getBdsInstanceMetastoreConfigs(GetBdsInstanceMetastoreConfigsArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .bdsApiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .displayName(var_.bds_instance_metastore_config_display_name())
-     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
-     *             .metastoreType(var_.bds_instance_metastore_config_metastore_type())
-     *             .state(var_.bds_instance_metastore_config_state())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .bdsApiKeyId(testApiKey.id())
+     *             .displayName(bdsInstanceMetastoreConfigDisplayName)
+     *             .metastoreId(testMetastore.id())
+     *             .metastoreType(bdsInstanceMetastoreConfigMetastoreType)
+     *             .state(bdsInstanceMetastoreConfigState)
      *             .build());
      * 
      *     }
@@ -1473,10 +1473,10 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .patchType(var_.bds_instance_patch_history_patch_type())
-     *             .patchVersion(var_.bds_instance_patch_history_patch_version())
-     *             .state(var_.bds_instance_patch_history_state())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .patchType(bdsInstancePatchHistoryPatchType)
+     *             .patchVersion(bdsInstancePatchHistoryPatchVersion)
+     *             .state(bdsInstancePatchHistoryState)
      *             .build());
      * 
      *     }
@@ -1518,10 +1518,10 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .patchType(var_.bds_instance_patch_history_patch_type())
-     *             .patchVersion(var_.bds_instance_patch_history_patch_version())
-     *             .state(var_.bds_instance_patch_history_state())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .patchType(bdsInstancePatchHistoryPatchType)
+     *             .patchVersion(bdsInstancePatchHistoryPatchVersion)
+     *             .state(bdsInstancePatchHistoryState)
      *             .build());
      * 
      *     }
@@ -1563,10 +1563,10 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .patchType(var_.bds_instance_patch_history_patch_type())
-     *             .patchVersion(var_.bds_instance_patch_history_patch_version())
-     *             .state(var_.bds_instance_patch_history_state())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .patchType(bdsInstancePatchHistoryPatchType)
+     *             .patchVersion(bdsInstancePatchHistoryPatchVersion)
+     *             .state(bdsInstancePatchHistoryState)
      *             .build());
      * 
      *     }
@@ -1608,10 +1608,10 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatchHistories = BigDataServiceFunctions.getBdsInstancePatchHistories(GetBdsInstancePatchHistoriesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
-     *             .patchType(var_.bds_instance_patch_history_patch_type())
-     *             .patchVersion(var_.bds_instance_patch_history_patch_version())
-     *             .state(var_.bds_instance_patch_history_state())
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .patchType(bdsInstancePatchHistoryPatchType)
+     *             .patchVersion(bdsInstancePatchHistoryPatchVersion)
+     *             .state(bdsInstancePatchHistoryState)
      *             .build());
      * 
      *     }
@@ -1653,7 +1653,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatches = BigDataServiceFunctions.getBdsInstancePatches(GetBdsInstancePatchesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -1695,7 +1695,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatches = BigDataServiceFunctions.getBdsInstancePatches(GetBdsInstancePatchesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -1737,7 +1737,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatches = BigDataServiceFunctions.getBdsInstancePatches(GetBdsInstancePatchesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -1779,7 +1779,7 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstancePatches = BigDataServiceFunctions.getBdsInstancePatches(GetBdsInstancePatchesArgs.builder()
-     *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+     *             .bdsInstanceId(testBdsInstance.id())
      *             .build());
      * 
      *     }
@@ -1821,9 +1821,9 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstances = BigDataServiceFunctions.getBdsInstances(GetBdsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.bds_instance_display_name())
-     *             .state(var_.bds_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsInstanceDisplayName)
+     *             .state(bdsInstanceState)
      *             .build());
      * 
      *     }
@@ -1865,9 +1865,9 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstances = BigDataServiceFunctions.getBdsInstances(GetBdsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.bds_instance_display_name())
-     *             .state(var_.bds_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsInstanceDisplayName)
+     *             .state(bdsInstanceState)
      *             .build());
      * 
      *     }
@@ -1909,9 +1909,9 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstances = BigDataServiceFunctions.getBdsInstances(GetBdsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.bds_instance_display_name())
-     *             .state(var_.bds_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsInstanceDisplayName)
+     *             .state(bdsInstanceState)
      *             .build());
      * 
      *     }
@@ -1953,9 +1953,9 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBdsInstances = BigDataServiceFunctions.getBdsInstances(GetBdsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.bds_instance_display_name())
-     *             .state(var_.bds_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(bdsInstanceDisplayName)
+     *             .state(bdsInstanceState)
      *             .build());
      * 
      *     }

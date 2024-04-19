@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNotebookSessions = oci.DataScience.getNotebookSessions({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.notebook_session_created_by,
- *     displayName: _var.notebook_session_display_name,
- *     id: _var.notebook_session_id,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.notebook_session_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: notebookSessionCreatedBy,
+ *     displayName: notebookSessionDisplayName,
+ *     id: notebookSessionId,
+ *     projectId: testProject.id,
+ *     state: notebookSessionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetNotebookSessionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNotebookSessions = oci.DataScience.getNotebookSessions({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.notebook_session_created_by,
- *     displayName: _var.notebook_session_display_name,
- *     id: _var.notebook_session_id,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.notebook_session_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: notebookSessionCreatedBy,
+ *     displayName: notebookSessionDisplayName,
+ *     id: notebookSessionId,
+ *     projectId: testProject.id,
+ *     state: notebookSessionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

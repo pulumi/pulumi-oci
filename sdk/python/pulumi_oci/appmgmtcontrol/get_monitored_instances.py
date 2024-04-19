@@ -107,8 +107,8 @@ def get_monitored_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=var["compartment_id"],
-        display_name=var["monitored_instance_display_name"])
+    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=compartment_id,
+        display_name=monitored_instance_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -148,8 +148,8 @@ def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=var["compartment_id"],
-        display_name=var["monitored_instance_display_name"])
+    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=compartment_id,
+        display_name=monitored_instance_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

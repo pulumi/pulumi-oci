@@ -26,12 +26,12 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalDbSystemStackMonitoringsManagement = new Oci.DatabaseManagement.ExternalDbSystemStackMonitoringsManagement("testExternalDbSystemStackMonitoringsManagement", new()
+    ///     var testExternalDbSystemStackMonitoringsManagement = new Oci.DatabaseManagement.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management", new()
     ///     {
-    ///         ExternalDbSystemId = oci_database_management_external_db_system.Test_external_db_system.Id,
-    ///         EnableStackMonitoring = @var.Enable_stack_monitoring,
-    ///         IsEnabled = @var.External_db_system_stack_monitorings_management_is_enabled,
-    ///         Metadata = @var.External_db_system_stack_monitorings_management_metadata,
+    ///         ExternalDbSystemId = testExternalDbSystem.Id,
+    ///         EnableStackMonitoring = enableStackMonitoring,
+    ///         IsEnabled = externalDbSystemStackMonitoringsManagementIsEnabled,
+    ///         Metadata = externalDbSystemStackMonitoringsManagementMetadata,
     ///     });
     /// 
     /// });

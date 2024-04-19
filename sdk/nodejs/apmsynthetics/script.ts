@@ -18,12 +18,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScript = new oci.apmsynthetics.Script("testScript", {
- *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
- *     content: _var.script_content,
- *     contentType: _var.script_content_type,
- *     displayName: _var.script_display_name,
- *     contentFileName: _var.script_content_file_name,
+ * const testScript = new oci.apmsynthetics.Script("test_script", {
+ *     apmDomainId: testApmDomain.id,
+ *     content: scriptContent,
+ *     contentType: scriptContentType,
+ *     displayName: scriptDisplayName,
+ *     contentFileName: scriptContentFileName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -31,9 +31,9 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     parameters: [{
- *         paramName: _var.script_parameters_param_name,
- *         isSecret: _var.script_parameters_is_secret,
- *         paramValue: _var.script_parameters_param_value,
+ *         paramName: scriptParametersParamName,
+ *         isSecret: scriptParametersIsSecret,
+ *         paramValue: scriptParametersParamValue,
  *     }],
  * });
  * ```

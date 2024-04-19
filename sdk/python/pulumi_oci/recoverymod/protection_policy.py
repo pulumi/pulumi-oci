@@ -331,10 +331,10 @@ class ProtectionPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_protection_policy = oci.recovery_mod.ProtectionPolicy("testProtectionPolicy",
-            backup_retention_period_in_days=var["protection_policy_backup_retention_period_in_days"],
-            compartment_id=var["compartment_id"],
-            display_name=var["protection_policy_display_name"],
+        test_protection_policy = oci.recovery_mod.ProtectionPolicy("test_protection_policy",
+            backup_retention_period_in_days=protection_policy_backup_retention_period_in_days,
+            compartment_id=compartment_id,
+            display_name=protection_policy_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -382,10 +382,10 @@ class ProtectionPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_protection_policy = oci.recovery_mod.ProtectionPolicy("testProtectionPolicy",
-            backup_retention_period_in_days=var["protection_policy_backup_retention_period_in_days"],
-            compartment_id=var["compartment_id"],
-            display_name=var["protection_policy_display_name"],
+        test_protection_policy = oci.recovery_mod.ProtectionPolicy("test_protection_policy",
+            backup_retention_period_in_days=protection_policy_backup_retention_period_in_days,
+            compartment_id=compartment_id,
+            display_name=protection_policy_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },

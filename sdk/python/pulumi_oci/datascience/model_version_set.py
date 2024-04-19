@@ -337,13 +337,14 @@ class ModelVersionSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model_version_set = oci.data_science.ModelVersionSet("testModelVersionSet",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
+        test_model_version_set = oci.data_science.ModelVersionSet("test_model_version_set",
+            compartment_id=compartment_id,
+            name=model_version_set_name,
+            project_id=test_project["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["model_version_set_description"],
+            description=model_version_set_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -389,13 +390,14 @@ class ModelVersionSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model_version_set = oci.data_science.ModelVersionSet("testModelVersionSet",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
+        test_model_version_set = oci.data_science.ModelVersionSet("test_model_version_set",
+            compartment_id=compartment_id,
+            name=model_version_set_name,
+            project_id=test_project["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["model_version_set_description"],
+            description=model_version_set_description,
             freeform_tags={
                 "Department": "Finance",
             })

@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LicenseManager.GetLicenseMetric(ctx, &licensemanager.GetLicenseMetricArgs{
-//				CompartmentId:            _var.Compartment_id,
-//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.License_metric_is_compartment_id_in_subtree),
+//				CompartmentId:            compartmentId,
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(licenseMetricIsCompartmentIdInSubtree),
 //			}, nil)
 //			if err != nil {
 //				return err

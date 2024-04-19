@@ -25,10 +25,10 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMediaWorkflow = new Oci.MediaServices.MediaWorkflow("testMediaWorkflow", new()
+    ///     var testMediaWorkflow = new Oci.MediaServices.MediaWorkflow("test_media_workflow", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Media_workflow_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = mediaWorkflowDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -41,26 +41,26 @@ namespace Pulumi.Oci.MediaServices
     ///         {
     ///             new Oci.MediaServices.Inputs.MediaWorkflowLockArgs
     ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 Type = @var.Media_workflow_locks_type,
-    ///                 Message = @var.Media_workflow_locks_message,
-    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
-    ///                 TimeCreated = @var.Media_workflow_locks_time_created,
+    ///                 CompartmentId = compartmentId,
+    ///                 Type = mediaWorkflowLocksType,
+    ///                 Message = mediaWorkflowLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = mediaWorkflowLocksTimeCreated,
     ///             },
     ///         },
-    ///         MediaWorkflowConfigurationIds = @var.Media_workflow_media_workflow_configuration_ids,
-    ///         Parameters = @var.Media_workflow_parameters,
+    ///         MediaWorkflowConfigurationIds = mediaWorkflowMediaWorkflowConfigurationIds,
+    ///         Parameters = mediaWorkflowParameters,
     ///         Tasks = new[]
     ///         {
     ///             new Oci.MediaServices.Inputs.MediaWorkflowTaskArgs
     ///             {
-    ///                 Key = @var.Media_workflow_tasks_key,
-    ///                 Parameters = @var.Media_workflow_tasks_parameters,
-    ///                 Type = @var.Media_workflow_tasks_type,
-    ///                 Version = @var.Media_workflow_tasks_version,
-    ///                 EnableParameterReference = @var.Media_workflow_tasks_enable_parameter_reference,
-    ///                 EnableWhenReferencedParameterEquals = @var.Media_workflow_tasks_enable_when_referenced_parameter_equals,
-    ///                 Prerequisites = @var.Media_workflow_tasks_prerequisites,
+    ///                 Key = mediaWorkflowTasksKey,
+    ///                 Parameters = mediaWorkflowTasksParameters,
+    ///                 Type = mediaWorkflowTasksType,
+    ///                 Version = mediaWorkflowTasksVersion,
+    ///                 EnableParameterReference = mediaWorkflowTasksEnableParameterReference,
+    ///                 EnableWhenReferencedParameterEquals = mediaWorkflowTasksEnableWhenReferencedParameterEquals,
+    ///                 Prerequisites = mediaWorkflowTasksPrerequisites,
     ///             },
     ///         },
     ///     });

@@ -33,9 +33,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewLogAnalyticsUnprocessedDataBucketManagement(ctx, "testLogAnalyticsUnprocessedDataBucketManagement", &LogAnalytics.LogAnalyticsUnprocessedDataBucketManagementArgs{
-//				Bucket:    pulumi.Any(_var.Log_analytics_unprocessed_data_bucket_management_bucket),
-//				Namespace: pulumi.Any(_var.Log_analytics_unprocessed_data_bucket_management_namespace),
+//			_, err := LogAnalytics.NewLogAnalyticsUnprocessedDataBucketManagement(ctx, "test_log_analytics_unprocessed_data_bucket_management", &LogAnalytics.LogAnalyticsUnprocessedDataBucketManagementArgs{
+//				Bucket:    pulumi.Any(logAnalyticsUnprocessedDataBucketManagementBucket),
+//				Namespace: pulumi.Any(logAnalyticsUnprocessedDataBucketManagementNamespace),
 //			})
 //			if err != nil {
 //				return err

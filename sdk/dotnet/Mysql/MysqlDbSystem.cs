@@ -25,14 +25,14 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMysqlDbSystem = new Oci.Mysql.MysqlDbSystem("testMysqlDbSystem", new()
+    ///     var testMysqlDbSystem = new Oci.Mysql.MysqlDbSystem("test_mysql_db_system", new()
     ///     {
-    ///         AvailabilityDomain = @var.Mysql_db_system_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ShapeName = @var.Mysql_shape_name,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         AdminPassword = @var.Mysql_db_system_admin_password,
-    ///         AdminUsername = @var.Mysql_db_system_admin_username,
+    ///         AvailabilityDomain = mysqlDbSystemAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
+    ///         ShapeName = mysqlShapeName,
+    ///         SubnetId = testSubnet.Id,
+    ///         AdminPassword = mysqlDbSystemAdminPassword,
+    ///         AdminUsername = mysqlDbSystemAdminUsername,
     ///         BackupPolicy = new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyArgs
     ///         {
     ///             DefinedTags = 
@@ -43,18 +43,18 @@ namespace Pulumi.Oci.Mysql
     ///             {
     ///                 { "bar-key", "value" },
     ///             },
-    ///             IsEnabled = @var.Mysql_db_system_backup_policy_is_enabled,
+    ///             IsEnabled = mysqlDbSystemBackupPolicyIsEnabled,
     ///             PitrPolicy = new Oci.Mysql.Inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs
     ///             {
-    ///                 IsEnabled = @var.Mysql_db_system_backup_policy_pitr_policy_is_enabled,
+    ///                 IsEnabled = mysqlDbSystemBackupPolicyPitrPolicyIsEnabled,
     ///             },
-    ///             RetentionInDays = @var.Mysql_db_system_backup_policy_retention_in_days,
-    ///             WindowStartTime = @var.Mysql_db_system_backup_policy_window_start_time,
+    ///             RetentionInDays = mysqlDbSystemBackupPolicyRetentionInDays,
+    ///             WindowStartTime = mysqlDbSystemBackupPolicyWindowStartTime,
     ///         },
-    ///         ConfigurationId = oci_audit_configuration.Test_configuration.Id,
-    ///         CrashRecovery = @var.Mysql_db_system_crash_recovery,
-    ///         DataStorageSizeInGb = @var.Mysql_db_system_data_storage_size_in_gb,
-    ///         DatabaseManagement = @var.Mysql_db_system_database_management,
+    ///         ConfigurationId = testConfiguration.Id,
+    ///         CrashRecovery = mysqlDbSystemCrashRecovery,
+    ///         DataStorageSizeInGb = mysqlDbSystemDataStorageSizeInGb,
+    ///         DatabaseManagement = mysqlDbSystemDatabaseManagement,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -63,36 +63,36 @@ namespace Pulumi.Oci.Mysql
     ///         {
     ///             new Oci.Mysql.Inputs.MysqlDbSystemDeletionPolicyArgs
     ///             {
-    ///                 AutomaticBackupRetention = @var.Mysql_db_system_deletion_policy_automatic_backup_retention,
-    ///                 FinalBackup = @var.Mysql_db_system_deletion_policy_final_backup,
-    ///                 IsDeleteProtected = @var.Mysql_db_system_deletion_policy_is_delete_protected,
+    ///                 AutomaticBackupRetention = mysqlDbSystemDeletionPolicyAutomaticBackupRetention,
+    ///                 FinalBackup = mysqlDbSystemDeletionPolicyFinalBackup,
+    ///                 IsDeleteProtected = mysqlDbSystemDeletionPolicyIsDeleteProtected,
     ///             },
     ///         },
-    ///         Description = @var.Mysql_db_system_description,
-    ///         DisplayName = @var.Mysql_db_system_display_name,
-    ///         FaultDomain = @var.Mysql_db_system_fault_domain,
+    ///         Description = mysqlDbSystemDescription,
+    ///         DisplayName = mysqlDbSystemDisplayName,
+    ///         FaultDomain = mysqlDbSystemFaultDomain,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         HostnameLabel = @var.Mysql_db_system_hostname_label,
-    ///         IpAddress = @var.Mysql_db_system_ip_address,
-    ///         IsHighlyAvailable = @var.Mysql_db_system_is_highly_available,
+    ///         HostnameLabel = mysqlDbSystemHostnameLabel,
+    ///         IpAddress = mysqlDbSystemIpAddress,
+    ///         IsHighlyAvailable = mysqlDbSystemIsHighlyAvailable,
     ///         Maintenance = new Oci.Mysql.Inputs.MysqlDbSystemMaintenanceArgs
     ///         {
-    ///             WindowStartTime = @var.Mysql_db_system_maintenance_window_start_time,
+    ///             WindowStartTime = mysqlDbSystemMaintenanceWindowStartTime,
     ///         },
-    ///         Port = @var.Mysql_db_system_port,
-    ///         PortX = @var.Mysql_db_system_port_x,
+    ///         Port = mysqlDbSystemPort,
+    ///         PortX = mysqlDbSystemPortX,
     ///         SecureConnections = new Oci.Mysql.Inputs.MysqlDbSystemSecureConnectionsArgs
     ///         {
-    ///             CertificateGenerationType = @var.Mysql_db_system_secure_connections_certificate_generation_type,
-    ///             CertificateId = oci_apigateway_certificate.Test_certificate.Id,
+    ///             CertificateGenerationType = mysqlDbSystemSecureConnectionsCertificateGenerationType,
+    ///             CertificateId = testCertificate.Id,
     ///         },
     ///         Source = new Oci.Mysql.Inputs.MysqlDbSystemSourceArgs
     ///         {
-    ///             SourceType = @var.Mysql_db_system_source_source_type,
-    ///             BackupId = oci_mysql_mysql_backup.Test_backup.Id,
+    ///             SourceType = mysqlDbSystemSourceSourceType,
+    ///             BackupId = testBackup.Id,
     ///         },
     ///     });
     /// 

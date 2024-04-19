@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEnterpriseManagerBridge = oci.Opsi.getEnterpriseManagerBridge({
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,7 +115,7 @@ export interface GetEnterpriseManagerBridgeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEnterpriseManagerBridge = oci.Opsi.getEnterpriseManagerBridge({
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

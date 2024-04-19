@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetClusterNetworks(ctx, &core.GetClusterNetworksArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Cluster_network_display_name),
-//				State:         pulumi.StringRef(_var.Cluster_network_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(clusterNetworkDisplayName),
+//				State:         pulumi.StringRef(clusterNetworkState),
 //			}, nil)
 //			if err != nil {
 //				return err

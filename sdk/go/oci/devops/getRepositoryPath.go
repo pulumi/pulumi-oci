@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepositoryPath(ctx, &devops.GetRepositoryPathArgs{
-//				RepositoryId:   oci_devops_repository.Test_repository.Id,
-//				DisplayName:    pulumi.StringRef(_var.Repository_path_display_name),
-//				FolderPath:     pulumi.StringRef(_var.Repository_path_folder_path),
-//				PathsInSubtree: pulumi.BoolRef(_var.Repository_path_paths_in_subtree),
-//				Ref:            pulumi.StringRef(_var.Repository_path_ref),
+//				RepositoryId:   testRepository.Id,
+//				DisplayName:    pulumi.StringRef(repositoryPathDisplayName),
+//				FolderPath:     pulumi.StringRef(repositoryPathFolderPath),
+//				PathsInSubtree: pulumi.BoolRef(repositoryPathPathsInSubtree),
+//				Ref:            pulumi.StringRef(repositoryPathRef),
 //			}, nil)
 //			if err != nil {
 //				return err

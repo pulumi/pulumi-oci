@@ -31,22 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewDeployPipeline(ctx, "testDeployPipeline", &DevOps.DeployPipelineArgs{
-//				ProjectId: pulumi.Any(oci_devops_project.Test_project.Id),
+//			_, err := DevOps.NewDeployPipeline(ctx, "test_deploy_pipeline", &DevOps.DeployPipelineArgs{
+//				ProjectId: pulumi.Any(testProject.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DeployPipelineParameters: &devops.DeployPipelineDeployPipelineParametersArgs{
 //					Items: devops.DeployPipelineDeployPipelineParametersItemArray{
 //						&devops.DeployPipelineDeployPipelineParametersItemArgs{
-//							Name:         pulumi.Any(_var.Deploy_pipeline_deploy_pipeline_parameters_items_name),
-//							DefaultValue: pulumi.Any(_var.Deploy_pipeline_deploy_pipeline_parameters_items_default_value),
-//							Description:  pulumi.Any(_var.Deploy_pipeline_deploy_pipeline_parameters_items_description),
+//							Name:         pulumi.Any(deployPipelineDeployPipelineParametersItemsName),
+//							DefaultValue: pulumi.Any(deployPipelineDeployPipelineParametersItemsDefaultValue),
+//							Description:  pulumi.Any(deployPipelineDeployPipelineParametersItemsDescription),
 //						},
 //					},
 //				},
-//				Description: pulumi.Any(_var.Deploy_pipeline_description),
-//				DisplayName: pulumi.Any(_var.Deploy_pipeline_display_name),
+//				Description: pulumi.Any(deployPipelineDescription),
+//				DisplayName: pulumi.Any(deployPipelineDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

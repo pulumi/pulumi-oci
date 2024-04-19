@@ -49,10 +49,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testArtifactByPath = new ArtifactByPath(&#34;testArtifactByPath&#34;, ArtifactByPathArgs.builder()        
- *             .artifactPath(var_.artifact_path())
- *             .repositoryId(oci_artifacts_repository.test_repository().id())
- *             .version(var_.version())
- *             .source(var_.source())
+ *             .artifactPath(artifactPath)
+ *             .repositoryId(testRepository.id())
+ *             .version(version)
+ *             .source(source)
  *             .build());
  * 
  *     }

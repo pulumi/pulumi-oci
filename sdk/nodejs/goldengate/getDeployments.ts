@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployments = oci.GoldenGate.getDeployments({
- *     compartmentId: _var.compartment_id,
- *     assignableConnectionId: oci_golden_gate_connection.test_connection.id,
- *     assignedConnectionId: oci_golden_gate_connection.test_connection.id,
- *     displayName: _var.deployment_display_name,
- *     fqdn: _var.deployment_fqdn,
- *     lifecycleSubState: _var.deployment_lifecycle_sub_state,
- *     state: _var.deployment_state,
- *     supportedConnectionType: _var.deployment_supported_connection_type,
+ *     compartmentId: compartmentId,
+ *     assignableConnectionId: testConnection.id,
+ *     assignedConnectionId: testConnection.id,
+ *     displayName: deploymentDisplayName,
+ *     fqdn: deploymentFqdn,
+ *     lifecycleSubState: deploymentLifecycleSubState,
+ *     state: deploymentState,
+ *     supportedConnectionType: deploymentSupportedConnectionType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -136,14 +136,14 @@ export interface GetDeploymentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployments = oci.GoldenGate.getDeployments({
- *     compartmentId: _var.compartment_id,
- *     assignableConnectionId: oci_golden_gate_connection.test_connection.id,
- *     assignedConnectionId: oci_golden_gate_connection.test_connection.id,
- *     displayName: _var.deployment_display_name,
- *     fqdn: _var.deployment_fqdn,
- *     lifecycleSubState: _var.deployment_lifecycle_sub_state,
- *     state: _var.deployment_state,
- *     supportedConnectionType: _var.deployment_supported_connection_type,
+ *     compartmentId: compartmentId,
+ *     assignableConnectionId: testConnection.id,
+ *     assignedConnectionId: testConnection.id,
+ *     displayName: deploymentDisplayName,
+ *     fqdn: deploymentFqdn,
+ *     lifecycleSubState: deploymentLifecycleSubState,
+ *     state: deploymentState,
+ *     supportedConnectionType: deploymentSupportedConnectionType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

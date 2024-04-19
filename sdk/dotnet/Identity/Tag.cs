@@ -46,10 +46,11 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTag = new Oci.Identity.Tag("testTag", new()
+    ///     var testTag = new Oci.Identity.Tag("test_tag", new()
     ///     {
-    ///         Description = @var.Tag_description,
-    ///         TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
+    ///         Description = tagDescription,
+    ///         Name = tagName,
+    ///         TagNamespaceId = testTagNamespace.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -58,11 +59,11 @@ namespace Pulumi.Oci.Identity
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsCostTracking = @var.Tag_is_cost_tracking,
+    ///         IsCostTracking = tagIsCostTracking,
     ///         Validator = new Oci.Identity.Inputs.TagValidatorArgs
     ///         {
-    ///             ValidatorType = @var.Tag_validator_validator_type,
-    ///             Values = @var.Tag_validator_values,
+    ///             ValidatorType = tagValidatorValidatorType,
+    ///             Values = tagValidatorValues,
     ///         },
     ///         IsRetired = false,
     ///     });

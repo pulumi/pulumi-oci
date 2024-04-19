@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAssetSources = oci.CloudBridge.getAssetSources({
- *     compartmentId: _var.compartment_id,
- *     assetSourceId: oci_cloud_bridge_asset_source.test_asset_source.id,
- *     displayName: _var.asset_source_display_name,
- *     state: _var.asset_source_state,
+ *     compartmentId: compartmentId,
+ *     assetSourceId: testAssetSource.id,
+ *     displayName: assetSourceDisplayName,
+ *     state: assetSourceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetAssetSourcesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAssetSources = oci.CloudBridge.getAssetSources({
- *     compartmentId: _var.compartment_id,
- *     assetSourceId: oci_cloud_bridge_asset_source.test_asset_source.id,
- *     displayName: _var.asset_source_display_name,
- *     state: _var.asset_source_state,
+ *     compartmentId: compartmentId,
+ *     assetSourceId: testAssetSource.id,
+ *     displayName: assetSourceDisplayName,
+ *     state: assetSourceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

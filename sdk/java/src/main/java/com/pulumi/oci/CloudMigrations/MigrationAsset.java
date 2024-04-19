@@ -21,48 +21,6 @@ import javax.annotation.Nullable;
  * 
  * Creates a migration asset.
  * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.CloudMigrations.MigrationAsset;
- * import com.pulumi.oci.CloudMigrations.MigrationAssetArgs;
- * import com.pulumi.resources.CustomResourceOptions;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testMigrationAsset = new MigrationAsset(&#34;testMigrationAsset&#34;, MigrationAssetArgs.builder()        
- *             .availabilityDomain(var_.migration_asset_availability_domain())
- *             .inventoryAssetId(oci_cloud_migrations_inventory_asset.test_inventory_asset().id())
- *             .migrationId(oci_cloud_migrations_migration.test_migration().id())
- *             .replicationCompartmentId(oci_identity_compartment.test_compartment().id())
- *             .snapShotBucketName(oci_objectstorage_bucket.test_bucket().name())
- *             .displayName(var_.migration_asset_display_name())
- *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
- *             .build(), CustomResourceOptions.builder()
- *                 .dependsOn(var_.migration_asset_depends_on())
- *                 .build());
- * 
- *     }
- * }
- * ```
- * &lt;!--End PulumiCodeChooser --&gt;
- * 
  * ## Import
  * 
  * MigrationAssets can be imported using the `id`, e.g.

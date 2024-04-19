@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseSoftwareImage = oci.Database.getAutonomousDatabaseSoftwareImage({
- *     autonomousDatabaseSoftwareImageId: oci_database_autonomous_database_software_image.test_autonomous_database_software_image.id,
+ *     autonomousDatabaseSoftwareImageId: testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -108,7 +108,7 @@ export interface GetAutonomousDatabaseSoftwareImageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseSoftwareImage = oci.Database.getAutonomousDatabaseSoftwareImage({
- *     autonomousDatabaseSoftwareImageId: oci_database_autonomous_database_software_image.test_autonomous_database_software_image.id,
+ *     autonomousDatabaseSoftwareImageId: testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

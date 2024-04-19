@@ -29,9 +29,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewAppCatalogListingResourceVersionAgreement(ctx, "testAppCatalogListingResourceVersionAgreement", &Core.AppCatalogListingResourceVersionAgreementArgs{
-//				ListingId:              pulumi.Any(data.Oci_core_app_catalog_listing.Test_listing.Id),
-//				ListingResourceVersion: pulumi.Any(_var.App_catalog_listing_resource_version_agreement_listing_resource_version),
+//			_, err := Core.NewAppCatalogListingResourceVersionAgreement(ctx, "test_app_catalog_listing_resource_version_agreement", &Core.AppCatalogListingResourceVersionAgreementArgs{
+//				ListingId:              pulumi.Any(testListing.Id),
+//				ListingResourceVersion: pulumi.Any(appCatalogListingResourceVersionAgreementListingResourceVersion),
 //			})
 //			if err != nil {
 //				return err

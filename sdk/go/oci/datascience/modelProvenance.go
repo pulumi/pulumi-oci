@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewModelProvenance(ctx, "testModelProvenance", &DataScience.ModelProvenanceArgs{
-//				ModelId:        pulumi.Any(oci_datascience_model.Test_model.Id),
-//				GitBranch:      pulumi.Any(_var.Model_provenance_git_branch),
-//				GitCommit:      pulumi.Any(_var.Model_provenance_git_commit),
-//				RepositoryUrl:  pulumi.Any(_var.Model_provenance_repository_url),
-//				ScriptDir:      pulumi.Any(_var.Model_provenance_script_dir),
-//				TrainingId:     pulumi.Any(oci_datascience_training.Test_training.Id),
-//				TrainingScript: pulumi.Any(_var.Model_provenance_training_script),
+//			_, err := DataScience.NewModelProvenance(ctx, "test_model_provenance", &DataScience.ModelProvenanceArgs{
+//				ModelId:        pulumi.Any(testModel.Id),
+//				GitBranch:      pulumi.Any(modelProvenanceGitBranch),
+//				GitCommit:      pulumi.Any(modelProvenanceGitCommit),
+//				RepositoryUrl:  pulumi.Any(modelProvenanceRepositoryUrl),
+//				ScriptDir:      pulumi.Any(modelProvenanceScriptDir),
+//				TrainingId:     pulumi.Any(testTraining.Id),
+//				TrainingScript: pulumi.Any(modelProvenanceTrainingScript),
 //			})
 //			if err != nil {
 //				return err

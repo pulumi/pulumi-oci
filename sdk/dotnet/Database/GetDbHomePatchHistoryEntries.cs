@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbHomePatchHistoryEntries = Oci.Database.GetDbHomePatchHistoryEntries.Invoke(new()
         ///     {
-        ///         DbHomeId = oci_database_db_home.Test_db_home.Id,
+        ///         DbHomeId = testDbHome.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbHomePatchHistoryEntries = Oci.Database.GetDbHomePatchHistoryEntries.Invoke(new()
         ///     {
-        ///         DbHomeId = oci_database_db_home.Test_db_home.Id,
+        ///         DbHomeId = testDbHome.Id,
         ///     });
         /// 
         /// });

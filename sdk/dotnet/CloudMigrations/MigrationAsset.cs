@@ -14,35 +14,6 @@ namespace Pulumi.Oci.CloudMigrations
     /// 
     /// Creates a migration asset.
     /// 
-    /// ## Example Usage
-    /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testMigrationAsset = new Oci.CloudMigrations.MigrationAsset("testMigrationAsset", new()
-    ///     {
-    ///         AvailabilityDomain = @var.Migration_asset_availability_domain,
-    ///         InventoryAssetId = oci_cloud_migrations_inventory_asset.Test_inventory_asset.Id,
-    ///         MigrationId = oci_cloud_migrations_migration.Test_migration.Id,
-    ///         ReplicationCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         SnapShotBucketName = oci_objectstorage_bucket.Test_bucket.Name,
-    ///         DisplayName = @var.Migration_asset_display_name,
-    ///         ReplicationScheduleId = oci_cloud_migrations_replication_schedule.Test_replication_schedule.Id,
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         DependsOn = @var.Migration_asset_depends_on,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
-    /// 
     /// ## Import
     /// 
     /// MigrationAssets can be imported using the `id`, e.g.

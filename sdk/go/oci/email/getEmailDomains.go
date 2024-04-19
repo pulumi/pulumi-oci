@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Email.GetEmailDomains(ctx, &email.GetEmailDomainsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Email_domain_id),
-//				Name:          pulumi.StringRef(_var.Email_domain_name),
-//				State:         pulumi.StringRef(_var.Email_domain_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(emailDomainId),
+//				Name:          pulumi.StringRef(emailDomainName),
+//				State:         pulumi.StringRef(emailDomainState),
 //			}, nil)
 //			if err != nil {
 //				return err

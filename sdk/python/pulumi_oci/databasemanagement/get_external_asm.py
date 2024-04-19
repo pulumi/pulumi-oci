@@ -272,7 +272,7 @@ def get_external_asm(external_asm_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm = oci.DatabaseManagement.get_external_asm(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
+    test_external_asm = oci.DatabaseManagement.get_external_asm(external_asm_id=test_external_asm_oci_database_management_external_asm["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -321,7 +321,7 @@ def get_external_asm_output(external_asm_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm = oci.DatabaseManagement.get_external_asm(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
+    test_external_asm = oci.DatabaseManagement.get_external_asm(external_asm_id=test_external_asm_oci_database_management_external_asm["id"])
     ```
     <!--End PulumiCodeChooser -->
 

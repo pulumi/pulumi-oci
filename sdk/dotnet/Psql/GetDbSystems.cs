@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testDbSystems = Oci.Psql.GetDbSystems.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Db_system_display_name,
-        ///         Id = @var.Db_system_id,
-        ///         State = @var.Db_system_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = dbSystemDisplayName,
+        ///         Id = dbSystemId,
+        ///         State = dbSystemState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testDbSystems = Oci.Psql.GetDbSystems.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Db_system_display_name,
-        ///         Id = @var.Db_system_id,
-        ///         State = @var.Db_system_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = dbSystemDisplayName,
+        ///         Id = dbSystemId,
+        ///         State = dbSystemState,
         ///     });
         /// 
         /// });

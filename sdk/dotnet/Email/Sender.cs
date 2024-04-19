@@ -25,10 +25,10 @@ namespace Pulumi.Oci.Email
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSender = new Oci.Email.Sender("testSender", new()
+    ///     var testSender = new Oci.Email.Sender("test_sender", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         EmailAddress = @var.Sender_email_address,
+    ///         CompartmentId = compartmentId,
+    ///         EmailAddress = senderEmailAddress,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

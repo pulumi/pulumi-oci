@@ -44,14 +44,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditTrails(ctx, &datasafe.GetAuditTrailsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Audit_trail_access_level),
-//				AuditTrailId:           pulumi.StringRef(oci_data_safe_audit_trail.Test_audit_trail.Id),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_trail_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Audit_trail_display_name),
-//				State:                  pulumi.StringRef(_var.Audit_trail_state),
-//				Status:                 pulumi.StringRef(_var.Audit_trail_status),
-//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(auditTrailAccessLevel),
+//				AuditTrailId:           pulumi.StringRef(testAuditTrail.Id),
+//				CompartmentIdInSubtree: pulumi.BoolRef(auditTrailCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(auditTrailDisplayName),
+//				State:                  pulumi.StringRef(auditTrailState),
+//				Status:                 pulumi.StringRef(auditTrailStatus),
+//				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

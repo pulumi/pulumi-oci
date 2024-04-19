@@ -18,21 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccAvailabilityCatalog = new oci.capacitymanagement.OccAvailabilityCatalog("testOccAvailabilityCatalog", {
- *     base64encodedCatalogDetails: _var.occ_availability_catalog_base64encoded_catalog_details,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.occ_availability_catalog_display_name,
- *     namespace: _var.occ_availability_catalog_namespace,
- *     occCustomerGroupId: oci_capacity_management_occ_customer_group.test_occ_customer_group.id,
+ * const testOccAvailabilityCatalog = new oci.capacitymanagement.OccAvailabilityCatalog("test_occ_availability_catalog", {
+ *     base64encodedCatalogDetails: occAvailabilityCatalogBase64encodedCatalogDetails,
+ *     compartmentId: compartmentId,
+ *     displayName: occAvailabilityCatalogDisplayName,
+ *     namespace: occAvailabilityCatalogNamespace,
+ *     occCustomerGroupId: testOccCustomerGroup.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.occ_availability_catalog_description,
+ *     description: occAvailabilityCatalogDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     metadataDetails: {
- *         formatVersion: _var.occ_availability_catalog_metadata_details_format_version,
+ *         formatVersion: occAvailabilityCatalogMetadataDetailsFormatVersion,
  *     },
  * });
  * ```

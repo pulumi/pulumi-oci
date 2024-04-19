@@ -31,12 +31,12 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testAssociations = Oci.CertificatesManagement.GetAssociations.Invoke(new()
         ///     {
-        ///         AssociatedResourceId = oci_certificates_management_associated_resource.Test_associated_resource.Id,
-        ///         AssociationId = oci_certificates_management_association.Test_association.Id,
-        ///         AssociationType = @var.Association_association_type,
-        ///         CertificatesResourceId = oci_certificates_management_certificates_resource.Test_certificates_resource.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Association_name,
+        ///         AssociatedResourceId = testAssociatedResource.Id,
+        ///         AssociationId = testAssociation.Id,
+        ///         AssociationType = associationAssociationType,
+        ///         CertificatesResourceId = testCertificatesResource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = associationName,
         ///     });
         /// 
         /// });
@@ -66,12 +66,12 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testAssociations = Oci.CertificatesManagement.GetAssociations.Invoke(new()
         ///     {
-        ///         AssociatedResourceId = oci_certificates_management_associated_resource.Test_associated_resource.Id,
-        ///         AssociationId = oci_certificates_management_association.Test_association.Id,
-        ///         AssociationType = @var.Association_association_type,
-        ///         CertificatesResourceId = oci_certificates_management_certificates_resource.Test_certificates_resource.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Association_name,
+        ///         AssociatedResourceId = testAssociatedResource.Id,
+        ///         AssociationId = testAssociation.Id,
+        ///         AssociationType = associationAssociationType,
+        ///         CertificatesResourceId = testCertificatesResource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = associationName,
         ///     });
         /// 
         /// });

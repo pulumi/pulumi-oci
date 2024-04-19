@@ -469,31 +469,31 @@ class Trigger(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_trigger = oci.dev_ops.Trigger("testTrigger",
+        test_trigger = oci.dev_ops.Trigger("test_trigger",
             actions=[oci.dev_ops.TriggerActionArgs(
-                build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
-                type=var["trigger_actions_type"],
+                build_pipeline_id=test_build_pipeline["id"],
+                type=trigger_actions_type,
                 filter=oci.dev_ops.TriggerActionFilterArgs(
-                    trigger_source=var["trigger_actions_filter_trigger_source"],
-                    events=var["trigger_actions_filter_events"],
+                    trigger_source=trigger_actions_filter_trigger_source,
+                    events=trigger_actions_filter_events,
                     include=oci.dev_ops.TriggerActionFilterIncludeArgs(
-                        base_ref=var["trigger_actions_filter_include_base_ref"],
-                        head_ref=var["trigger_actions_filter_include_head_ref"],
-                        repository_name=oci_devops_repository["test_repository"]["name"],
+                        base_ref=trigger_actions_filter_include_base_ref,
+                        head_ref=trigger_actions_filter_include_head_ref,
+                        repository_name=test_repository["name"],
                     ),
                 ),
             )],
-            project_id=oci_devops_project["test_project"]["id"],
-            trigger_source=var["trigger_trigger_source"],
+            project_id=test_project["id"],
+            trigger_source=trigger_trigger_source,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["trigger_description"],
-            display_name=var["trigger_display_name"],
+            description=trigger_description,
+            display_name=trigger_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            repository_id=oci_artifacts_repository["test_repository"]["id"])
+            repository_id=test_repository_oci_artifacts_repository["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -539,31 +539,31 @@ class Trigger(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_trigger = oci.dev_ops.Trigger("testTrigger",
+        test_trigger = oci.dev_ops.Trigger("test_trigger",
             actions=[oci.dev_ops.TriggerActionArgs(
-                build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
-                type=var["trigger_actions_type"],
+                build_pipeline_id=test_build_pipeline["id"],
+                type=trigger_actions_type,
                 filter=oci.dev_ops.TriggerActionFilterArgs(
-                    trigger_source=var["trigger_actions_filter_trigger_source"],
-                    events=var["trigger_actions_filter_events"],
+                    trigger_source=trigger_actions_filter_trigger_source,
+                    events=trigger_actions_filter_events,
                     include=oci.dev_ops.TriggerActionFilterIncludeArgs(
-                        base_ref=var["trigger_actions_filter_include_base_ref"],
-                        head_ref=var["trigger_actions_filter_include_head_ref"],
-                        repository_name=oci_devops_repository["test_repository"]["name"],
+                        base_ref=trigger_actions_filter_include_base_ref,
+                        head_ref=trigger_actions_filter_include_head_ref,
+                        repository_name=test_repository["name"],
                     ),
                 ),
             )],
-            project_id=oci_devops_project["test_project"]["id"],
-            trigger_source=var["trigger_trigger_source"],
+            project_id=test_project["id"],
+            trigger_source=trigger_trigger_source,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["trigger_description"],
-            display_name=var["trigger_display_name"],
+            description=trigger_description,
+            display_name=trigger_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            repository_id=oci_artifacts_repository["test_repository"]["id"])
+            repository_id=test_repository_oci_artifacts_repository["id"])
         ```
         <!--End PulumiCodeChooser -->
 

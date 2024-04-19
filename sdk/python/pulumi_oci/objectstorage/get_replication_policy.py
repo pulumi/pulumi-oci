@@ -183,9 +183,9 @@ def get_replication_policy(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=var["replication_policy_bucket"],
-        namespace=var["replication_policy_namespace"],
-        replication_id=oci_objectstorage_replication["test_replication"]["id"])
+    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=replication_policy_bucket,
+        namespace=replication_policy_namespace,
+        replication_id=test_replication["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -233,9 +233,9 @@ def get_replication_policy_output(bucket: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=var["replication_policy_bucket"],
-        namespace=var["replication_policy_namespace"],
-        replication_id=oci_objectstorage_replication["test_replication"]["id"])
+    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=replication_policy_bucket,
+        namespace=replication_policy_namespace,
+        replication_id=test_replication["id"])
     ```
     <!--End PulumiCodeChooser -->
 

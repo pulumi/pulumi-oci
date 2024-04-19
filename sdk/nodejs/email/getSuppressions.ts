@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSuppressions = oci.Email.getSuppressions({
- *     compartmentId: _var.tenancy_ocid,
- *     emailAddress: _var.suppression_email_address,
- *     timeCreatedGreaterThanOrEqualTo: _var.suppression_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.suppression_time_created_less_than,
+ *     compartmentId: tenancyOcid,
+ *     emailAddress: suppressionEmailAddress,
+ *     timeCreatedGreaterThanOrEqualTo: suppressionTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: suppressionTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetSuppressionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSuppressions = oci.Email.getSuppressions({
- *     compartmentId: _var.tenancy_ocid,
- *     emailAddress: _var.suppression_email_address,
- *     timeCreatedGreaterThanOrEqualTo: _var.suppression_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.suppression_time_created_less_than,
+ *     compartmentId: tenancyOcid,
+ *     emailAddress: suppressionEmailAddress,
+ *     timeCreatedGreaterThanOrEqualTo: suppressionTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: suppressionTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

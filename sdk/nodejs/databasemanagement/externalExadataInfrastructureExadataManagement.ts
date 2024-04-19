@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataInfrastructureExadataManagement = new oci.databasemanagement.ExternalExadataInfrastructureExadataManagement("testExternalExadataInfrastructureExadataManagement", {
- *     externalExadataInfrastructureId: oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure.id,
- *     enableExadata: _var.enable_exadata,
- *     licenseModel: _var.external_exadata_infrastructure_exadata_management_license_model,
+ * const testExternalExadataInfrastructureExadataManagement = new oci.databasemanagement.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management", {
+ *     externalExadataInfrastructureId: testExternalExadataInfrastructure.id,
+ *     enableExadata: enableExadata,
+ *     licenseModel: externalExadataInfrastructureExadataManagementLicenseModel,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

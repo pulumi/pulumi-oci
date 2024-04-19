@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityTopologyComputeHpcIslands = oci.Core.getComputeCapacityTopologyComputeHpcIslands({
- *     computeCapacityTopologyId: oci_core_compute_capacity_topology.test_compute_capacity_topology.id,
- *     availabilityDomain: _var.compute_capacity_topology_compute_hpc_island_availability_domain,
- *     compartmentId: _var.compartment_id,
+ *     computeCapacityTopologyId: testComputeCapacityTopology.id,
+ *     availabilityDomain: computeCapacityTopologyComputeHpcIslandAvailabilityDomain,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetComputeCapacityTopologyComputeHpcIslandsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityTopologyComputeHpcIslands = oci.Core.getComputeCapacityTopologyComputeHpcIslands({
- *     computeCapacityTopologyId: oci_core_compute_capacity_topology.test_compute_capacity_topology.id,
- *     availabilityDomain: _var.compute_capacity_topology_compute_hpc_island_availability_domain,
- *     compartmentId: _var.compartment_id,
+ *     computeCapacityTopologyId: testComputeCapacityTopology.id,
+ *     availabilityDomain: computeCapacityTopologyComputeHpcIslandAvailabilityDomain,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

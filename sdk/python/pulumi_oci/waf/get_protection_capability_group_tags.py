@@ -114,9 +114,9 @@ def get_protection_capability_group_tags(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=var["compartment_id"],
-        name=var["protection_capability_group_tag_name"],
-        type=var["protection_capability_group_tag_type"])
+    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=compartment_id,
+        name=protection_capability_group_tag_name,
+        type=protection_capability_group_tag_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -160,9 +160,9 @@ def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=var["compartment_id"],
-        name=var["protection_capability_group_tag_name"],
-        type=var["protection_capability_group_tag_type"])
+    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=compartment_id,
+        name=protection_capability_group_tag_name,
+        type=protection_capability_group_tag_type)
     ```
     <!--End PulumiCodeChooser -->
 

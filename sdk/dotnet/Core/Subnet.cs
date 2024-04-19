@@ -55,29 +55,29 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSubnet = new Oci.Core.Subnet("testSubnet", new()
+    ///     var testSubnet = new Oci.Core.Subnet("test_subnet", new()
     ///     {
-    ///         CidrBlock = @var.Subnet_cidr_block,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
-    ///         AvailabilityDomain = @var.Subnet_availability_domain,
+    ///         CidrBlock = subnetCidrBlock,
+    ///         CompartmentId = compartmentId,
+    ///         VcnId = testVcn.Id,
+    ///         AvailabilityDomain = subnetAvailabilityDomain,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DhcpOptionsId = oci_core_dhcp_options.Test_dhcp_options.Id,
-    ///         DisplayName = @var.Subnet_display_name,
-    ///         DnsLabel = @var.Subnet_dns_label,
+    ///         DhcpOptionsId = testDhcpOptions.Id,
+    ///         DisplayName = subnetDisplayName,
+    ///         DnsLabel = subnetDnsLabel,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Ipv6cidrBlock = @var.Subnet_ipv6cidr_block,
-    ///         Ipv6cidrBlocks = @var.Subnet_ipv6cidr_blocks,
-    ///         ProhibitInternetIngress = @var.Subnet_prohibit_internet_ingress,
-    ///         ProhibitPublicIpOnVnic = @var.Subnet_prohibit_public_ip_on_vnic,
-    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///         SecurityListIds = @var.Subnet_security_list_ids,
+    ///         Ipv6cidrBlock = subnetIpv6cidrBlock,
+    ///         Ipv6cidrBlocks = subnetIpv6cidrBlocks,
+    ///         ProhibitInternetIngress = subnetProhibitInternetIngress,
+    ///         ProhibitPublicIpOnVnic = subnetProhibitPublicIpOnVnic,
+    ///         RouteTableId = testRouteTable.Id,
+    ///         SecurityListIds = subnetSecurityListIds,
     ///     });
     /// 
     /// });

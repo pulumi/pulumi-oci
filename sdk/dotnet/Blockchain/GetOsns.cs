@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Blockchain
         /// {
         ///     var testOsns = Oci.Blockchain.GetOsns.Invoke(new()
         ///     {
-        ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-        ///         DisplayName = @var.Osn_display_name,
+        ///         BlockchainPlatformId = testBlockchainPlatform.Id,
+        ///         DisplayName = osnDisplayName,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Blockchain
         /// {
         ///     var testOsns = Oci.Blockchain.GetOsns.Invoke(new()
         ///     {
-        ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-        ///         DisplayName = @var.Osn_display_name,
+        ///         BlockchainPlatformId = testBlockchainPlatform.Id,
+        ///         DisplayName = osnDisplayName,
         ///     });
         /// 
         /// });

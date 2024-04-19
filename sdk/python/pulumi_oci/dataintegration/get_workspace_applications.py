@@ -140,11 +140,11 @@ def get_workspace_applications(fields: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_applications = oci.DataIntegration.get_workspace_applications(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_application_fields"],
-        identifiers=var["workspace_application_identifier"],
-        name=var["workspace_application_name"],
-        name_contains=var["workspace_application_name_contains"])
+    test_workspace_applications = oci.DataIntegration.get_workspace_applications(workspace_id=test_workspace["id"],
+        fields=workspace_application_fields,
+        identifiers=workspace_application_identifier,
+        name=workspace_application_name,
+        name_contains=workspace_application_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_workspace_applications_output(fields: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_applications = oci.DataIntegration.get_workspace_applications(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_application_fields"],
-        identifiers=var["workspace_application_identifier"],
-        name=var["workspace_application_name"],
-        name_contains=var["workspace_application_name_contains"])
+    test_workspace_applications = oci.DataIntegration.get_workspace_applications(workspace_id=test_workspace["id"],
+        fields=workspace_application_fields,
+        identifiers=workspace_application_identifier,
+        name=workspace_application_name,
+        name_contains=workspace_application_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 

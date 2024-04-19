@@ -59,7 +59,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
-     *             .databaseToolsConnectionId(oci_database_tools_database_tools_connection.test_database_tools_connection().id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
      *             .build());
      * 
      *     }
@@ -101,7 +101,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
-     *             .databaseToolsConnectionId(oci_database_tools_database_tools_connection.test_database_tools_connection().id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
      *             .build());
      * 
      *     }
@@ -143,7 +143,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
-     *             .databaseToolsConnectionId(oci_database_tools_database_tools_connection.test_database_tools_connection().id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
      *             .build());
      * 
      *     }
@@ -185,7 +185,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnection = DatabaseToolsFunctions.getDatabaseToolsConnection(GetDatabaseToolsConnectionArgs.builder()
-     *             .databaseToolsConnectionId(oci_database_tools_database_tools_connection.test_database_tools_connection().id())
+     *             .databaseToolsConnectionId(testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id())
      *             .build());
      * 
      *     }
@@ -227,12 +227,12 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_connection_display_name())
-     *             .relatedResourceIdentifier(var_.database_tools_connection_related_resource_identifier())
-     *             .runtimeSupports(var_.database_tools_connection_runtime_support())
-     *             .state(var_.database_tools_connection_state())
-     *             .types(var_.database_tools_connection_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsConnectionDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
+     *             .state(databaseToolsConnectionState)
+     *             .types(databaseToolsConnectionType)
      *             .build());
      * 
      *     }
@@ -274,12 +274,12 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_connection_display_name())
-     *             .relatedResourceIdentifier(var_.database_tools_connection_related_resource_identifier())
-     *             .runtimeSupports(var_.database_tools_connection_runtime_support())
-     *             .state(var_.database_tools_connection_state())
-     *             .types(var_.database_tools_connection_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsConnectionDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
+     *             .state(databaseToolsConnectionState)
+     *             .types(databaseToolsConnectionType)
      *             .build());
      * 
      *     }
@@ -321,12 +321,12 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_connection_display_name())
-     *             .relatedResourceIdentifier(var_.database_tools_connection_related_resource_identifier())
-     *             .runtimeSupports(var_.database_tools_connection_runtime_support())
-     *             .state(var_.database_tools_connection_state())
-     *             .types(var_.database_tools_connection_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsConnectionDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
+     *             .state(databaseToolsConnectionState)
+     *             .types(databaseToolsConnectionType)
      *             .build());
      * 
      *     }
@@ -368,12 +368,12 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_connection_display_name())
-     *             .relatedResourceIdentifier(var_.database_tools_connection_related_resource_identifier())
-     *             .runtimeSupports(var_.database_tools_connection_runtime_support())
-     *             .state(var_.database_tools_connection_state())
-     *             .types(var_.database_tools_connection_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsConnectionDisplayName)
+     *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
+     *             .state(databaseToolsConnectionState)
+     *             .types(databaseToolsConnectionType)
      *             .build());
      * 
      *     }
@@ -415,7 +415,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
-     *             .databaseToolsEndpointServiceId(oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service().id())
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
      *             .build());
      * 
      *     }
@@ -457,7 +457,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
-     *             .databaseToolsEndpointServiceId(oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service().id())
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
      *             .build());
      * 
      *     }
@@ -499,7 +499,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
-     *             .databaseToolsEndpointServiceId(oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service().id())
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
      *             .build());
      * 
      *     }
@@ -541,7 +541,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointService = DatabaseToolsFunctions.getDatabaseToolsEndpointService(GetDatabaseToolsEndpointServiceArgs.builder()
-     *             .databaseToolsEndpointServiceId(oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service().id())
+     *             .databaseToolsEndpointServiceId(testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id())
      *             .build());
      * 
      *     }
@@ -583,10 +583,10 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointServices = DatabaseToolsFunctions.getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_endpoint_service_display_name())
-     *             .name(var_.database_tools_endpoint_service_name())
-     *             .state(var_.database_tools_endpoint_service_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsEndpointServiceDisplayName)
+     *             .name(databaseToolsEndpointServiceName)
+     *             .state(databaseToolsEndpointServiceState)
      *             .build());
      * 
      *     }
@@ -628,10 +628,10 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointServices = DatabaseToolsFunctions.getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_endpoint_service_display_name())
-     *             .name(var_.database_tools_endpoint_service_name())
-     *             .state(var_.database_tools_endpoint_service_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsEndpointServiceDisplayName)
+     *             .name(databaseToolsEndpointServiceName)
+     *             .state(databaseToolsEndpointServiceState)
      *             .build());
      * 
      *     }
@@ -673,10 +673,10 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointServices = DatabaseToolsFunctions.getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_endpoint_service_display_name())
-     *             .name(var_.database_tools_endpoint_service_name())
-     *             .state(var_.database_tools_endpoint_service_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsEndpointServiceDisplayName)
+     *             .name(databaseToolsEndpointServiceName)
+     *             .state(databaseToolsEndpointServiceState)
      *             .build());
      * 
      *     }
@@ -718,10 +718,10 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsEndpointServices = DatabaseToolsFunctions.getDatabaseToolsEndpointServices(GetDatabaseToolsEndpointServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_endpoint_service_display_name())
-     *             .name(var_.database_tools_endpoint_service_name())
-     *             .state(var_.database_tools_endpoint_service_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsEndpointServiceDisplayName)
+     *             .name(databaseToolsEndpointServiceName)
+     *             .state(databaseToolsEndpointServiceState)
      *             .build());
      * 
      *     }
@@ -763,7 +763,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
-     *             .databaseToolsPrivateEndpointId(oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint().id())
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -805,7 +805,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
-     *             .databaseToolsPrivateEndpointId(oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint().id())
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -847,7 +847,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
-     *             .databaseToolsPrivateEndpointId(oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint().id())
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -889,7 +889,7 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoint = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoint(GetDatabaseToolsPrivateEndpointArgs.builder()
-     *             .databaseToolsPrivateEndpointId(oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint().id())
+     *             .databaseToolsPrivateEndpointId(testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -931,11 +931,11 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_private_endpoint_display_name())
-     *             .endpointServiceId(oci_core_service.test_service().id())
-     *             .state(var_.database_tools_private_endpoint_state())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsPrivateEndpointDisplayName)
+     *             .endpointServiceId(testService.id())
+     *             .state(databaseToolsPrivateEndpointState)
+     *             .subnetId(testSubnet.id())
      *             .build());
      * 
      *     }
@@ -977,11 +977,11 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_private_endpoint_display_name())
-     *             .endpointServiceId(oci_core_service.test_service().id())
-     *             .state(var_.database_tools_private_endpoint_state())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsPrivateEndpointDisplayName)
+     *             .endpointServiceId(testService.id())
+     *             .state(databaseToolsPrivateEndpointState)
+     *             .subnetId(testSubnet.id())
      *             .build());
      * 
      *     }
@@ -1023,11 +1023,11 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_private_endpoint_display_name())
-     *             .endpointServiceId(oci_core_service.test_service().id())
-     *             .state(var_.database_tools_private_endpoint_state())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsPrivateEndpointDisplayName)
+     *             .endpointServiceId(testService.id())
+     *             .state(databaseToolsPrivateEndpointState)
+     *             .subnetId(testSubnet.id())
      *             .build());
      * 
      *     }
@@ -1069,11 +1069,11 @@ public final class DatabaseToolsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseToolsPrivateEndpoints = DatabaseToolsFunctions.getDatabaseToolsPrivateEndpoints(GetDatabaseToolsPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_tools_private_endpoint_display_name())
-     *             .endpointServiceId(oci_core_service.test_service().id())
-     *             .state(var_.database_tools_private_endpoint_state())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseToolsPrivateEndpointDisplayName)
+     *             .endpointServiceId(testService.id())
+     *             .state(databaseToolsPrivateEndpointState)
+     *             .subnetId(testSubnet.id())
      *             .build());
      * 
      *     }

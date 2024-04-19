@@ -155,7 +155,7 @@ def get_java_family(family_version: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_family = oci.Jms.get_java_family(family_version=var["java_family_family_version"])
+    test_java_family = oci.Jms.get_java_family(family_version=java_family_family_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -194,7 +194,7 @@ def get_java_family_output(family_version: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_family = oci.Jms.get_java_family(family_version=var["java_family_family_version"])
+    test_java_family = oci.Jms.get_java_family(family_version=java_family_family_version)
     ```
     <!--End PulumiCodeChooser -->
 

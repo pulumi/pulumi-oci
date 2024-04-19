@@ -157,13 +157,14 @@ class PathRouteSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_path_route_set = oci.load_balancer.PathRouteSet("testPathRouteSet",
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+        test_path_route_set = oci.load_balancer.PathRouteSet("test_path_route_set",
+            load_balancer_id=test_load_balancer["id"],
+            name=path_route_set_name,
             path_routes=[oci.load_balancer.PathRouteSetPathRouteArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                path=var["path_route_set_path_routes_path"],
+                backend_set_name=test_backend_set["name"],
+                path=path_route_set_path_routes_path,
                 path_match_type=oci.load_balancer.PathRouteSetPathRoutePathMatchTypeArgs(
-                    match_type=var["path_route_set_path_routes_path_match_type_match_type"],
+                    match_type=path_route_set_path_routes_path_match_type_match_type,
                 ),
             )])
         ```
@@ -202,13 +203,14 @@ class PathRouteSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_path_route_set = oci.load_balancer.PathRouteSet("testPathRouteSet",
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+        test_path_route_set = oci.load_balancer.PathRouteSet("test_path_route_set",
+            load_balancer_id=test_load_balancer["id"],
+            name=path_route_set_name,
             path_routes=[oci.load_balancer.PathRouteSetPathRouteArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                path=var["path_route_set_path_routes_path"],
+                backend_set_name=test_backend_set["name"],
+                path=path_route_set_path_routes_path,
                 path_match_type=oci.load_balancer.PathRouteSetPathRoutePathMatchTypeArgs(
-                    match_type=var["path_route_set_path_routes_path_match_type_match_type"],
+                    match_type=path_route_set_path_routes_path_match_type_match_type,
                 ),
             )])
         ```

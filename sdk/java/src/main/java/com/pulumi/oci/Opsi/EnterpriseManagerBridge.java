@@ -45,11 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testEnterpriseManagerBridge = new EnterpriseManagerBridge(&#34;testEnterpriseManagerBridge&#34;, EnterpriseManagerBridgeArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.enterprise_manager_bridge_display_name())
- *             .objectStorageBucketName(oci_objectstorage_bucket.test_bucket().name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(enterpriseManagerBridgeDisplayName)
+ *             .objectStorageBucketName(testBucket.name())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.enterprise_manager_bridge_description())
+ *             .description(enterpriseManagerBridgeDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

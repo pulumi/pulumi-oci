@@ -30,8 +30,8 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceRulesSummary = Oci.LogAnalytics.GetNamespaceRulesSummary.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Namespace_rules_summary_namespace,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceRulesSummaryNamespace,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceRulesSummary = Oci.LogAnalytics.GetNamespaceRulesSummary.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Namespace_rules_summary_namespace,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceRulesSummaryNamespace,
         ///     });
         /// 
         /// });

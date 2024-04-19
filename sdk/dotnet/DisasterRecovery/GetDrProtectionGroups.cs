@@ -29,12 +29,12 @@ namespace Pulumi.Oci.DisasterRecovery
         /// {
         ///     var testDrProtectionGroups = Oci.DisasterRecovery.GetDrProtectionGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Dr_protection_group_display_name,
-        ///         DrProtectionGroupId = oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
-        ///         LifecycleSubState = @var.Dr_protection_group_lifecycle_sub_state,
-        ///         Role = @var.Dr_protection_group_role,
-        ///         State = @var.Dr_protection_group_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = drProtectionGroupDisplayName,
+        ///         DrProtectionGroupId = testDrProtectionGroup.Id,
+        ///         LifecycleSubState = drProtectionGroupLifecycleSubState,
+        ///         Role = drProtectionGroupRole,
+        ///         State = drProtectionGroupState,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.DisasterRecovery
         /// {
         ///     var testDrProtectionGroups = Oci.DisasterRecovery.GetDrProtectionGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Dr_protection_group_display_name,
-        ///         DrProtectionGroupId = oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
-        ///         LifecycleSubState = @var.Dr_protection_group_lifecycle_sub_state,
-        ///         Role = @var.Dr_protection_group_role,
-        ///         State = @var.Dr_protection_group_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = drProtectionGroupDisplayName,
+        ///         DrProtectionGroupId = testDrProtectionGroup.Id,
+        ///         LifecycleSubState = drProtectionGroupLifecycleSubState,
+        ///         Role = drProtectionGroupRole,
+        ///         State = drProtectionGroupState,
         ///     });
         /// 
         /// });

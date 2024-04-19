@@ -44,11 +44,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testListener = new Listener(&#34;testListener&#34;, ListenerArgs.builder()        
- *             .defaultBackendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
- *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
- *             .port(var_.listener_port())
- *             .protocol(var_.listener_protocol())
- *             .ipVersion(var_.listener_ip_version())
+ *             .defaultBackendSetName(testBackendSet.name())
+ *             .name(listenerName)
+ *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+ *             .port(listenerPort)
+ *             .protocol(listenerProtocol)
+ *             .ipVersion(listenerIpVersion)
  *             .build());
  * 
  *     }

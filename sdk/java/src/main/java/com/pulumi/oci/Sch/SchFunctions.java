@@ -53,7 +53,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
-     *             .connectorPluginName(oci_sch_connector_plugin.test_connector_plugin().name())
+     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.name())
      *             .build());
      * 
      *     }
@@ -95,7 +95,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
-     *             .connectorPluginName(oci_sch_connector_plugin.test_connector_plugin().name())
+     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.name())
      *             .build());
      * 
      *     }
@@ -137,7 +137,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
-     *             .connectorPluginName(oci_sch_connector_plugin.test_connector_plugin().name())
+     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.name())
      *             .build());
      * 
      *     }
@@ -179,7 +179,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugin = SchFunctions.getConnectorPlugin(GetConnectorPluginArgs.builder()
-     *             .connectorPluginName(oci_sch_connector_plugin.test_connector_plugin().name())
+     *             .connectorPluginName(testConnectorPluginOciSchConnectorPlugin.name())
      *             .build());
      * 
      *     }
@@ -221,9 +221,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
-     *             .displayName(var_.connector_plugin_display_name())
-     *             .name(var_.connector_plugin_name())
-     *             .state(var_.connector_plugin_state())
+     *             .displayName(connectorPluginDisplayName)
+     *             .name(connectorPluginName)
+     *             .state(connectorPluginState)
      *             .build());
      * 
      *     }
@@ -265,9 +265,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
-     *             .displayName(var_.connector_plugin_display_name())
-     *             .name(var_.connector_plugin_name())
-     *             .state(var_.connector_plugin_state())
+     *             .displayName(connectorPluginDisplayName)
+     *             .name(connectorPluginName)
+     *             .state(connectorPluginState)
      *             .build());
      * 
      *     }
@@ -309,9 +309,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
-     *             .displayName(var_.connector_plugin_display_name())
-     *             .name(var_.connector_plugin_name())
-     *             .state(var_.connector_plugin_state())
+     *             .displayName(connectorPluginDisplayName)
+     *             .name(connectorPluginName)
+     *             .state(connectorPluginState)
      *             .build());
      * 
      *     }
@@ -353,9 +353,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
-     *             .displayName(var_.connector_plugin_display_name())
-     *             .name(var_.connector_plugin_name())
-     *             .state(var_.connector_plugin_state())
+     *             .displayName(connectorPluginDisplayName)
+     *             .name(connectorPluginName)
+     *             .state(connectorPluginState)
      *             .build());
      * 
      *     }
@@ -397,9 +397,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
-     *             .displayName(var_.connector_plugin_display_name())
-     *             .name(var_.connector_plugin_name())
-     *             .state(var_.connector_plugin_state())
+     *             .displayName(connectorPluginDisplayName)
+     *             .name(connectorPluginName)
+     *             .state(connectorPluginState)
      *             .build());
      * 
      *     }
@@ -441,9 +441,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectorPlugins = SchFunctions.getConnectorPlugins(GetConnectorPluginsArgs.builder()
-     *             .displayName(var_.connector_plugin_display_name())
-     *             .name(var_.connector_plugin_name())
-     *             .state(var_.connector_plugin_state())
+     *             .displayName(connectorPluginDisplayName)
+     *             .name(connectorPluginName)
+     *             .state(connectorPluginState)
      *             .build());
      * 
      *     }
@@ -487,7 +487,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
-     *             .serviceConnectorId(oci_sch_service_connector.test_service_connector().id())
+     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.id())
      *             .build());
      * 
      *     }
@@ -531,7 +531,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
-     *             .serviceConnectorId(oci_sch_service_connector.test_service_connector().id())
+     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.id())
      *             .build());
      * 
      *     }
@@ -575,7 +575,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
-     *             .serviceConnectorId(oci_sch_service_connector.test_service_connector().id())
+     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.id())
      *             .build());
      * 
      *     }
@@ -619,7 +619,7 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnector = SchFunctions.getServiceConnector(GetServiceConnectorArgs.builder()
-     *             .serviceConnectorId(oci_sch_service_connector.test_service_connector().id())
+     *             .serviceConnectorId(testServiceConnectorOciSchServiceConnector.id())
      *             .build());
      * 
      *     }
@@ -663,9 +663,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnectors = SchFunctions.getServiceConnectors(GetServiceConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_connector_display_name())
-     *             .state(var_.service_connector_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceConnectorDisplayName)
+     *             .state(serviceConnectorState)
      *             .build());
      * 
      *     }
@@ -709,9 +709,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnectors = SchFunctions.getServiceConnectors(GetServiceConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_connector_display_name())
-     *             .state(var_.service_connector_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceConnectorDisplayName)
+     *             .state(serviceConnectorState)
      *             .build());
      * 
      *     }
@@ -755,9 +755,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnectors = SchFunctions.getServiceConnectors(GetServiceConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_connector_display_name())
-     *             .state(var_.service_connector_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceConnectorDisplayName)
+     *             .state(serviceConnectorState)
      *             .build());
      * 
      *     }
@@ -801,9 +801,9 @@ public final class SchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceConnectors = SchFunctions.getServiceConnectors(GetServiceConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_connector_display_name())
-     *             .state(var_.service_connector_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceConnectorDisplayName)
+     *             .state(serviceConnectorState)
      *             .build());
      * 
      *     }

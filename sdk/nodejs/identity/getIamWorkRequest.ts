@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIamWorkRequest = oci.Identity.getIamWorkRequest({
- *     iamWorkRequestId: oci_identity_iam_work_request.test_iam_work_request.id,
+ *     iamWorkRequestId: testIamWorkRequestOciIdentityIamWorkRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,7 +105,7 @@ export interface GetIamWorkRequestResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIamWorkRequest = oci.Identity.getIamWorkRequest({
- *     iamWorkRequestId: oci_identity_iam_work_request.test_iam_work_request.id,
+ *     iamWorkRequestId: testIamWorkRequestOciIdentityIamWorkRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

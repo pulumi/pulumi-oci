@@ -31,9 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.NewNetworkFirewallPolicyServiceList(ctx, "testNetworkFirewallPolicyServiceList", &NetworkFirewall.NetworkFirewallPolicyServiceListArgs{
-//				NetworkFirewallPolicyId: pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
-//				Services:                pulumi.Any(_var.Network_firewall_policy_service_list_services),
+//			_, err := NetworkFirewall.NewNetworkFirewallPolicyServiceList(ctx, "test_network_firewall_policy_service_list", &NetworkFirewall.NetworkFirewallPolicyServiceListArgs{
+//				Name:                    pulumi.Any(networkFirewallPolicyServiceListName),
+//				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
+//				Services:                pulumi.Any(networkFirewallPolicyServiceListServices),
 //			})
 //			if err != nil {
 //				return err

@@ -39,11 +39,12 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDynamicGroup = new Oci.Identity.DynamicGroup("testDynamicGroup", new()
+    ///     var testDynamicGroup = new Oci.Identity.DynamicGroup("test_dynamic_group", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         Description = @var.Dynamic_group_description,
-    ///         MatchingRule = @var.Dynamic_group_matching_rule,
+    ///         CompartmentId = tenancyOcid,
+    ///         Description = dynamicGroupDescription,
+    ///         MatchingRule = dynamicGroupMatchingRule,
+    ///         Name = dynamicGroupName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

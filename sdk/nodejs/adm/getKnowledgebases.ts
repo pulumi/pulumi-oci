@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testKnowledgeBases = oci.Adm.getKnowledgebases({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.knowledge_base_display_name,
- *     id: _var.knowledge_base_id,
- *     state: _var.knowledge_base_state,
+ *     compartmentId: compartmentId,
+ *     displayName: knowledgeBaseDisplayName,
+ *     id: knowledgeBaseId,
+ *     state: knowledgeBaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -104,10 +104,10 @@ export interface GetKnowledgebasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testKnowledgeBases = oci.Adm.getKnowledgebases({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.knowledge_base_display_name,
- *     id: _var.knowledge_base_id,
- *     state: _var.knowledge_base_state,
+ *     compartmentId: compartmentId,
+ *     displayName: knowledgeBaseDisplayName,
+ *     id: knowledgeBaseId,
+ *     state: knowledgeBaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecrets = oci.Vault.getSecrets({
- *     compartmentId: _var.compartment_id,
- *     name: _var.secret_name,
- *     state: _var.secret_state,
- *     vaultId: oci_kms_vault.test_vault.id,
+ *     compartmentId: compartmentId,
+ *     name: secretName,
+ *     state: secretState,
+ *     vaultId: testVault.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetSecretsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecrets = oci.Vault.getSecrets({
- *     compartmentId: _var.compartment_id,
- *     name: _var.secret_name,
- *     state: _var.secret_state,
- *     vaultId: oci_kms_vault.test_vault.id,
+ *     compartmentId: compartmentId,
+ *     name: secretName,
+ *     state: secretState,
+ *     vaultId: testVault.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

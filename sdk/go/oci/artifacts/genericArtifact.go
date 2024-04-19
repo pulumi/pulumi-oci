@@ -29,8 +29,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.NewGenericArtifact(ctx, "testGenericArtifact", &Artifacts.GenericArtifactArgs{
-//				ArtifactId: pulumi.Any(oci_artifacts_artifact.Test_artifact.Id),
+//			_, err := Artifacts.NewGenericArtifact(ctx, "test_generic_artifact", &Artifacts.GenericArtifactArgs{
+//				ArtifactId: pulumi.Any(testArtifact.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

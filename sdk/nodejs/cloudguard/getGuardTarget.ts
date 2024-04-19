@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTarget = oci.CloudGuard.getGuardTarget({
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     targetId: testTargetOciCloudGuardTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,7 +133,7 @@ export interface GetGuardTargetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTarget = oci.CloudGuard.getGuardTarget({
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     targetId: testTargetOciCloudGuardTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

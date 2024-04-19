@@ -51,19 +51,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var test = new CloudDatabaseManagement(&#34;test&#34;, CloudDatabaseManagementArgs.builder()        
- *             .databaseId(oci_database_database.test_database().id())
- *             .managementType(var_.database_cloud_database_management_details_management_type())
- *             .privateEndPointId(var_.database_cloud_database_management_details_private_end_point_id())
- *             .serviceName(var_.database_cloud_database_management_details_service_name())
+ *             .databaseId(testDatabase.id())
+ *             .managementType(databaseCloudDatabaseManagementDetailsManagementType)
+ *             .privateEndPointId(databaseCloudDatabaseManagementDetailsPrivateEndPointId)
+ *             .serviceName(databaseCloudDatabaseManagementDetailsServiceName)
  *             .credentialdetails(CloudDatabaseManagementCredentialdetailsArgs.builder()
- *                 .userName(var_.database_cloud_database_management_details_user_name())
- *                 .passwordSecretId(var_.database_cloud_database_management_details_password_secret_id())
+ *                 .userName(databaseCloudDatabaseManagementDetailsUserName)
+ *                 .passwordSecretId(databaseCloudDatabaseManagementDetailsPasswordSecretId)
  *                 .build())
- *             .enableManagement(var_.database_cloud_database_management_details_enable_management())
- *             .port(var_.cloud_database_management_port())
- *             .protocol(var_.cloud_database_management_protocol())
- *             .role(var_.cloud_database_management_role())
- *             .sslSecretId(oci_vault_secret.test_secret().id())
+ *             .enableManagement(databaseCloudDatabaseManagementDetailsEnableManagement)
+ *             .port(cloudDatabaseManagementPort)
+ *             .protocol(cloudDatabaseManagementProtocol)
+ *             .role(cloudDatabaseManagementRole)
+ *             .sslSecretId(testSecret.id())
  *             .build());
  * 
  *     }

@@ -25,15 +25,15 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkSecurityGroup = new Oci.Core.NetworkSecurityGroup("testNetworkSecurityGroup", new()
+    ///     var testNetworkSecurityGroup = new Oci.Core.NetworkSecurityGroup("test_network_security_group", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         CompartmentId = compartmentId,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Network_security_group_display_name,
+    ///         DisplayName = networkSecurityGroupDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

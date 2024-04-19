@@ -18,29 +18,29 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsagePlan = new oci.apigateway.UsagePlan("testUsagePlan", {
- *     compartmentId: _var.compartment_id,
+ * const testUsagePlan = new oci.apigateway.UsagePlan("test_usage_plan", {
+ *     compartmentId: compartmentId,
  *     entitlements: [{
- *         name: _var.usage_plan_entitlements_name,
- *         description: _var.usage_plan_entitlements_description,
+ *         name: usagePlanEntitlementsName,
+ *         description: usagePlanEntitlementsDescription,
  *         quota: {
- *             operationOnBreach: _var.usage_plan_entitlements_quota_operation_on_breach,
- *             resetPolicy: _var.usage_plan_entitlements_quota_reset_policy,
- *             unit: _var.usage_plan_entitlements_quota_unit,
- *             value: _var.usage_plan_entitlements_quota_value,
+ *             operationOnBreach: usagePlanEntitlementsQuotaOperationOnBreach,
+ *             resetPolicy: usagePlanEntitlementsQuotaResetPolicy,
+ *             unit: usagePlanEntitlementsQuotaUnit,
+ *             value: usagePlanEntitlementsQuotaValue,
  *         },
  *         rateLimit: {
- *             unit: _var.usage_plan_entitlements_rate_limit_unit,
- *             value: _var.usage_plan_entitlements_rate_limit_value,
+ *             unit: usagePlanEntitlementsRateLimitUnit,
+ *             value: usagePlanEntitlementsRateLimitValue,
  *         },
  *         targets: [{
- *             deploymentId: oci_apigateway_deployment.test_deployment.id,
+ *             deploymentId: testDeployment.id,
  *         }],
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.usage_plan_display_name,
+ *     displayName: usagePlanDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

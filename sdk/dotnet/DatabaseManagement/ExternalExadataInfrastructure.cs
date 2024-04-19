@@ -30,22 +30,22 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalExadataInfrastructure = new Oci.DatabaseManagement.ExternalExadataInfrastructure("testExternalExadataInfrastructure", new()
+    ///     var testExternalExadataInfrastructure = new Oci.DatabaseManagement.ExternalExadataInfrastructure("test_external_exadata_infrastructure", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DbSystemIds = @var.External_exadata_infrastructure_db_system_ids,
-    ///         DisplayName = @var.External_exadata_infrastructure_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DbSystemIds = externalExadataInfrastructureDbSystemIds,
+    ///         DisplayName = externalExadataInfrastructureDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DiscoveryKey = @var.External_exadata_infrastructure_discovery_key,
+    ///         DiscoveryKey = externalExadataInfrastructureDiscoveryKey,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         LicenseModel = @var.External_exadata_infrastructure_license_model,
-    ///         StorageServerNames = @var.External_exadata_infrastructure_storage_server_names,
+    ///         LicenseModel = externalExadataInfrastructureLicenseModel,
+    ///         StorageServerNames = externalExadataInfrastructureStorageServerNames,
     ///     });
     /// 
     /// });

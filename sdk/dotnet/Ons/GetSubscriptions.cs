@@ -32,8 +32,8 @@ namespace Pulumi.Oci.Ons
         /// {
         ///     var testSubscriptions = Oci.Ons.GetSubscriptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+        ///         CompartmentId = compartmentId,
+        ///         TopicId = testNotificationTopic.Id,
         ///     });
         /// 
         /// });
@@ -64,8 +64,8 @@ namespace Pulumi.Oci.Ons
         /// {
         ///     var testSubscriptions = Oci.Ons.GetSubscriptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+        ///         CompartmentId = compartmentId,
+        ///         TopicId = testNotificationTopic.Id,
         ///     });
         /// 
         /// });

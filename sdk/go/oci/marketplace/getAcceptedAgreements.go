@@ -32,11 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetAcceptedAgreements(ctx, &marketplace.GetAcceptedAgreementsArgs{
-//				CompartmentId:       _var.Compartment_id,
-//				AcceptedAgreementId: pulumi.StringRef(oci_marketplace_accepted_agreement.Test_accepted_agreement.Id),
-//				DisplayName:         pulumi.StringRef(_var.Accepted_agreement_display_name),
-//				ListingId:           pulumi.StringRef(oci_marketplace_listing.Test_listing.Id),
-//				PackageVersion:      pulumi.StringRef(_var.Accepted_agreement_package_version),
+//				CompartmentId:       compartmentId,
+//				AcceptedAgreementId: pulumi.StringRef(testAcceptedAgreement.Id),
+//				DisplayName:         pulumi.StringRef(acceptedAgreementDisplayName),
+//				ListingId:           pulumi.StringRef(testListing.Id),
+//				PackageVersion:      pulumi.StringRef(acceptedAgreementPackageVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

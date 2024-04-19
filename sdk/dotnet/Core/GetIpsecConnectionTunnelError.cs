@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpsecConnectionTunnelError = Oci.Core.GetIpsecConnectionTunnelError.Invoke(new()
         ///     {
-        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
+        ///         IpsecId = testIpsec.Id,
+        ///         TunnelId = testTunnel.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpsecConnectionTunnelError = Oci.Core.GetIpsecConnectionTunnelError.Invoke(new()
         ///     {
-        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
+        ///         IpsecId = testIpsec.Id,
+        ///         TunnelId = testTunnel.Id,
         ///     });
         /// 
         /// });

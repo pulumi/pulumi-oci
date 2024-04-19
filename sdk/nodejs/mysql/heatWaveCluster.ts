@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHeatWaveCluster = new oci.mysql.HeatWaveCluster("testHeatWaveCluster", {
- *     dbSystemId: oci_database_db_system.test_db_system.id,
- *     clusterSize: _var.heat_wave_cluster_cluster_size,
- *     isLakehouseEnabled: _var.heat_wave_cluster_is_lakehouse_enabled,
- *     shapeName: oci_mysql_shape.test_shape.name,
+ * const testHeatWaveCluster = new oci.mysql.HeatWaveCluster("test_heat_wave_cluster", {
+ *     dbSystemId: testDbSystem.id,
+ *     clusterSize: heatWaveClusterClusterSize,
+ *     isLakehouseEnabled: heatWaveClusterIsLakehouseEnabled,
+ *     shapeName: testShape.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

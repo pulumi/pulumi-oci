@@ -120,9 +120,9 @@ def get_oneoff_patches(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oneoff_patches = oci.Database.get_oneoff_patches(compartment_id=var["compartment_id"],
-        display_name=var["oneoff_patch_display_name"],
-        state=var["oneoff_patch_state"])
+    test_oneoff_patches = oci.Database.get_oneoff_patches(compartment_id=compartment_id,
+        display_name=oneoff_patch_display_name,
+        state=oneoff_patch_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_oneoff_patches_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_oneoff_patches = oci.Database.get_oneoff_patches(compartment_id=var["compartment_id"],
-        display_name=var["oneoff_patch_display_name"],
-        state=var["oneoff_patch_state"])
+    test_oneoff_patches = oci.Database.get_oneoff_patches(compartment_id=compartment_id,
+        display_name=oneoff_patch_display_name,
+        state=oneoff_patch_state)
     ```
     <!--End PulumiCodeChooser -->
 

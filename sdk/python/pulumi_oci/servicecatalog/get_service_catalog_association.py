@@ -115,7 +115,7 @@ def get_service_catalog_association(service_catalog_association_id: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"])
+    test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=test_service_catalog_association_oci_service_catalog_service_catalog_association["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -151,7 +151,7 @@ def get_service_catalog_association_output(service_catalog_association_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"])
+    test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=test_service_catalog_association_oci_service_catalog_service_catalog_association["id"])
     ```
     <!--End PulumiCodeChooser -->
 

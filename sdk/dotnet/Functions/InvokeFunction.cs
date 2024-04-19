@@ -25,12 +25,12 @@ namespace Pulumi.Oci.Functions
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testInvokeFunction = new Oci.Functions.InvokeFunction("testInvokeFunction", new()
+    ///     var testInvokeFunction = new Oci.Functions.InvokeFunction("test_invoke_function", new()
     ///     {
-    ///         FunctionId = oci_functions_function.Test_function.Id,
-    ///         InvokeFunctionBody = @var.Invoke_function_invoke_function_body,
-    ///         FnIntent = @var.Invoke_function_fn_intent,
-    ///         FnInvokeType = @var.Invoke_function_fn_invoke_type,
+    ///         FunctionId = testFunction.Id,
+    ///         InvokeFunctionBody = invokeFunctionInvokeFunctionBody,
+    ///         FnIntent = invokeFunctionFnIntent,
+    ///         FnInvokeType = invokeFunctionFnInvokeType,
     ///         Base64EncodeContent = false,
     ///     });
     /// 

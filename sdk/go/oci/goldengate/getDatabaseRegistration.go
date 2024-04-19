@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetDatabaseRegistration(ctx, &goldengate.GetDatabaseRegistrationArgs{
-//				DatabaseRegistrationId: oci_golden_gate_database_registration.Test_database_registration.Id,
+//				DatabaseRegistrationId: testDatabaseRegistrationOciGoldenGateDatabaseRegistration.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

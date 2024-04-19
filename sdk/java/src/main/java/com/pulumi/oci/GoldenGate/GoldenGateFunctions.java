@@ -110,7 +110,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = GoldenGateFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(oci_golden_gate_connection.test_connection().id())
+     *             .connectionId(testConnectionOciGoldenGateConnection.id())
      *             .build());
      * 
      *     }
@@ -152,7 +152,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = GoldenGateFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(oci_golden_gate_connection.test_connection().id())
+     *             .connectionId(testConnectionOciGoldenGateConnection.id())
      *             .build());
      * 
      *     }
@@ -194,7 +194,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = GoldenGateFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(oci_golden_gate_connection.test_connection().id())
+     *             .connectionId(testConnectionOciGoldenGateConnection.id())
      *             .build());
      * 
      *     }
@@ -236,7 +236,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = GoldenGateFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(oci_golden_gate_connection.test_connection().id())
+     *             .connectionId(testConnectionOciGoldenGateConnection.id())
      *             .build());
      * 
      *     }
@@ -278,7 +278,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
-     *             .connectionAssignmentId(oci_golden_gate_connection_assignment.test_connection_assignment().id())
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
      *             .build());
      * 
      *     }
@@ -320,7 +320,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
-     *             .connectionAssignmentId(oci_golden_gate_connection_assignment.test_connection_assignment().id())
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
      *             .build());
      * 
      *     }
@@ -362,7 +362,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
-     *             .connectionAssignmentId(oci_golden_gate_connection_assignment.test_connection_assignment().id())
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
      *             .build());
      * 
      *     }
@@ -404,7 +404,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignment = GoldenGateFunctions.getConnectionAssignment(GetConnectionAssignmentArgs.builder()
-     *             .connectionAssignmentId(oci_golden_gate_connection_assignment.test_connection_assignment().id())
+     *             .connectionAssignmentId(testConnectionAssignmentOciGoldenGateConnectionAssignment.id())
      *             .build());
      * 
      *     }
@@ -446,11 +446,11 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .connectionId(oci_golden_gate_connection.test_connection().id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .name(var_.connection_assignment_name())
-     *             .state(var_.connection_assignment_state())
+     *             .compartmentId(compartmentId)
+     *             .connectionId(testConnection.id())
+     *             .deploymentId(testDeployment.id())
+     *             .name(connectionAssignmentName)
+     *             .state(connectionAssignmentState)
      *             .build());
      * 
      *     }
@@ -492,11 +492,11 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .connectionId(oci_golden_gate_connection.test_connection().id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .name(var_.connection_assignment_name())
-     *             .state(var_.connection_assignment_state())
+     *             .compartmentId(compartmentId)
+     *             .connectionId(testConnection.id())
+     *             .deploymentId(testDeployment.id())
+     *             .name(connectionAssignmentName)
+     *             .state(connectionAssignmentState)
      *             .build());
      * 
      *     }
@@ -538,11 +538,11 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .connectionId(oci_golden_gate_connection.test_connection().id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .name(var_.connection_assignment_name())
-     *             .state(var_.connection_assignment_state())
+     *             .compartmentId(compartmentId)
+     *             .connectionId(testConnection.id())
+     *             .deploymentId(testDeployment.id())
+     *             .name(connectionAssignmentName)
+     *             .state(connectionAssignmentState)
      *             .build());
      * 
      *     }
@@ -584,11 +584,11 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .connectionId(oci_golden_gate_connection.test_connection().id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .name(var_.connection_assignment_name())
-     *             .state(var_.connection_assignment_state())
+     *             .compartmentId(compartmentId)
+     *             .connectionId(testConnection.id())
+     *             .deploymentId(testDeployment.id())
+     *             .name(connectionAssignmentName)
+     *             .state(connectionAssignmentState)
      *             .build());
      * 
      *     }
@@ -630,14 +630,14 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assignableDeploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .assignableDeploymentType(var_.connection_assignable_deployment_type())
-     *             .assignedDeploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .connectionTypes(var_.connection_connection_type())
-     *             .displayName(var_.connection_display_name())
-     *             .state(var_.connection_state())
-     *             .technologyTypes(var_.connection_technology_type())
+     *             .compartmentId(compartmentId)
+     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentType(connectionAssignableDeploymentType)
+     *             .assignedDeploymentId(testDeployment.id())
+     *             .connectionTypes(connectionConnectionType)
+     *             .displayName(connectionDisplayName)
+     *             .state(connectionState)
+     *             .technologyTypes(connectionTechnologyType)
      *             .build());
      * 
      *     }
@@ -679,14 +679,14 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assignableDeploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .assignableDeploymentType(var_.connection_assignable_deployment_type())
-     *             .assignedDeploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .connectionTypes(var_.connection_connection_type())
-     *             .displayName(var_.connection_display_name())
-     *             .state(var_.connection_state())
-     *             .technologyTypes(var_.connection_technology_type())
+     *             .compartmentId(compartmentId)
+     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentType(connectionAssignableDeploymentType)
+     *             .assignedDeploymentId(testDeployment.id())
+     *             .connectionTypes(connectionConnectionType)
+     *             .displayName(connectionDisplayName)
+     *             .state(connectionState)
+     *             .technologyTypes(connectionTechnologyType)
      *             .build());
      * 
      *     }
@@ -728,14 +728,14 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assignableDeploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .assignableDeploymentType(var_.connection_assignable_deployment_type())
-     *             .assignedDeploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .connectionTypes(var_.connection_connection_type())
-     *             .displayName(var_.connection_display_name())
-     *             .state(var_.connection_state())
-     *             .technologyTypes(var_.connection_technology_type())
+     *             .compartmentId(compartmentId)
+     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentType(connectionAssignableDeploymentType)
+     *             .assignedDeploymentId(testDeployment.id())
+     *             .connectionTypes(connectionConnectionType)
+     *             .displayName(connectionDisplayName)
+     *             .state(connectionState)
+     *             .technologyTypes(connectionTechnologyType)
      *             .build());
      * 
      *     }
@@ -777,14 +777,14 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = GoldenGateFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assignableDeploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .assignableDeploymentType(var_.connection_assignable_deployment_type())
-     *             .assignedDeploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .connectionTypes(var_.connection_connection_type())
-     *             .displayName(var_.connection_display_name())
-     *             .state(var_.connection_state())
-     *             .technologyTypes(var_.connection_technology_type())
+     *             .compartmentId(compartmentId)
+     *             .assignableDeploymentId(testDeployment.id())
+     *             .assignableDeploymentType(connectionAssignableDeploymentType)
+     *             .assignedDeploymentId(testDeployment.id())
+     *             .connectionTypes(connectionConnectionType)
+     *             .displayName(connectionDisplayName)
+     *             .state(connectionState)
+     *             .technologyTypes(connectionTechnologyType)
      *             .build());
      * 
      *     }
@@ -827,7 +827,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
-     *             .databaseRegistrationId(oci_golden_gate_database_registration.test_database_registration().id())
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
      *             .build());
      * 
      *     }
@@ -870,7 +870,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
-     *             .databaseRegistrationId(oci_golden_gate_database_registration.test_database_registration().id())
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
      *             .build());
      * 
      *     }
@@ -913,7 +913,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
-     *             .databaseRegistrationId(oci_golden_gate_database_registration.test_database_registration().id())
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
      *             .build());
      * 
      *     }
@@ -956,7 +956,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
-     *             .databaseRegistrationId(oci_golden_gate_database_registration.test_database_registration().id())
+     *             .databaseRegistrationId(testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id())
      *             .build());
      * 
      *     }
@@ -999,9 +999,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistrations = GoldenGateFunctions.getDatabaseRegistrations(GetDatabaseRegistrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_registration_display_name())
-     *             .state(var_.database_registration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseRegistrationDisplayName)
+     *             .state(databaseRegistrationState)
      *             .build());
      * 
      *     }
@@ -1044,9 +1044,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistrations = GoldenGateFunctions.getDatabaseRegistrations(GetDatabaseRegistrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_registration_display_name())
-     *             .state(var_.database_registration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseRegistrationDisplayName)
+     *             .state(databaseRegistrationState)
      *             .build());
      * 
      *     }
@@ -1089,9 +1089,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistrations = GoldenGateFunctions.getDatabaseRegistrations(GetDatabaseRegistrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_registration_display_name())
-     *             .state(var_.database_registration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseRegistrationDisplayName)
+     *             .state(databaseRegistrationState)
      *             .build());
      * 
      *     }
@@ -1134,9 +1134,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseRegistrations = GoldenGateFunctions.getDatabaseRegistrations(GetDatabaseRegistrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_registration_display_name())
-     *             .state(var_.database_registration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseRegistrationDisplayName)
+     *             .state(databaseRegistrationState)
      *             .build());
      * 
      *     }
@@ -1178,7 +1178,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
      *             .build());
      * 
      *     }
@@ -1220,7 +1220,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
      *             .build());
      * 
      *     }
@@ -1262,7 +1262,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
      *             .build());
      * 
      *     }
@@ -1304,7 +1304,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeploymentOciGoldenGateDeployment.id())
      *             .build());
      * 
      *     }
@@ -1346,7 +1346,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
-     *             .deploymentBackupId(oci_golden_gate_deployment_backup.test_deployment_backup().id())
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
      *             .build());
      * 
      *     }
@@ -1388,7 +1388,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
-     *             .deploymentBackupId(oci_golden_gate_deployment_backup.test_deployment_backup().id())
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
      *             .build());
      * 
      *     }
@@ -1430,7 +1430,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
-     *             .deploymentBackupId(oci_golden_gate_deployment_backup.test_deployment_backup().id())
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
      *             .build());
      * 
      *     }
@@ -1472,7 +1472,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
-     *             .deploymentBackupId(oci_golden_gate_deployment_backup.test_deployment_backup().id())
+     *             .deploymentBackupId(testDeploymentBackupOciGoldenGateDeploymentBackup.id())
      *             .build());
      * 
      *     }
@@ -1514,10 +1514,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .displayName(var_.deployment_backup_display_name())
-     *             .state(var_.deployment_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentBackupDisplayName)
+     *             .state(deploymentBackupState)
      *             .build());
      * 
      *     }
@@ -1559,10 +1559,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .displayName(var_.deployment_backup_display_name())
-     *             .state(var_.deployment_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentBackupDisplayName)
+     *             .state(deploymentBackupState)
      *             .build());
      * 
      *     }
@@ -1604,10 +1604,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .displayName(var_.deployment_backup_display_name())
-     *             .state(var_.deployment_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentBackupDisplayName)
+     *             .state(deploymentBackupState)
      *             .build());
      * 
      *     }
@@ -1649,10 +1649,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .displayName(var_.deployment_backup_display_name())
-     *             .state(var_.deployment_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentBackupDisplayName)
+     *             .state(deploymentBackupState)
      *             .build());
      * 
      *     }
@@ -1694,8 +1694,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
-     *             .certificateKey(var_.deployment_certificate_certificate_key())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .certificateKey(deploymentCertificateCertificateKey)
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -1737,8 +1737,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
-     *             .certificateKey(var_.deployment_certificate_certificate_key())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .certificateKey(deploymentCertificateCertificateKey)
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -1780,8 +1780,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
-     *             .certificateKey(var_.deployment_certificate_certificate_key())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .certificateKey(deploymentCertificateCertificateKey)
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -1823,8 +1823,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
-     *             .certificateKey(var_.deployment_certificate_certificate_key())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .certificateKey(deploymentCertificateCertificateKey)
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -1866,8 +1866,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .state(var_.deployment_certificate_state())
+     *             .deploymentId(testDeployment.id())
+     *             .state(deploymentCertificateState)
      *             .build());
      * 
      *     }
@@ -1909,8 +1909,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .state(var_.deployment_certificate_state())
+     *             .deploymentId(testDeployment.id())
+     *             .state(deploymentCertificateState)
      *             .build());
      * 
      *     }
@@ -1952,8 +1952,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .state(var_.deployment_certificate_state())
+     *             .deploymentId(testDeployment.id())
+     *             .state(deploymentCertificateState)
      *             .build());
      * 
      *     }
@@ -1995,8 +1995,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .state(var_.deployment_certificate_state())
+     *             .deploymentId(testDeployment.id())
+     *             .state(deploymentCertificateState)
      *             .build());
      * 
      *     }
@@ -2038,8 +2038,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentType = GoldenGateFunctions.getDeploymentType(GetDeploymentTypeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.deployment_type_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentTypeDisplayName)
      *             .build());
      * 
      *     }
@@ -2081,8 +2081,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentType = GoldenGateFunctions.getDeploymentType(GetDeploymentTypeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.deployment_type_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentTypeDisplayName)
      *             .build());
      * 
      *     }
@@ -2124,8 +2124,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentType = GoldenGateFunctions.getDeploymentType(GetDeploymentTypeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.deployment_type_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentTypeDisplayName)
      *             .build());
      * 
      *     }
@@ -2167,8 +2167,8 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentType = GoldenGateFunctions.getDeploymentType(GetDeploymentTypeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.deployment_type_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentTypeDisplayName)
      *             .build());
      * 
      *     }
@@ -2210,10 +2210,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentTypes = GoldenGateFunctions.getDeploymentTypes(GetDeploymentTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentType(var_.deployment_type_deployment_type())
-     *             .displayName(var_.deployment_type_display_name())
-     *             .oggVersion(var_.deployment_type_ogg_version())
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(deploymentTypeDeploymentType)
+     *             .displayName(deploymentTypeDisplayName)
+     *             .oggVersion(deploymentTypeOggVersion)
      *             .build());
      * 
      *     }
@@ -2255,10 +2255,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentTypes = GoldenGateFunctions.getDeploymentTypes(GetDeploymentTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentType(var_.deployment_type_deployment_type())
-     *             .displayName(var_.deployment_type_display_name())
-     *             .oggVersion(var_.deployment_type_ogg_version())
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(deploymentTypeDeploymentType)
+     *             .displayName(deploymentTypeDisplayName)
+     *             .oggVersion(deploymentTypeOggVersion)
      *             .build());
      * 
      *     }
@@ -2300,10 +2300,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentTypes = GoldenGateFunctions.getDeploymentTypes(GetDeploymentTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentType(var_.deployment_type_deployment_type())
-     *             .displayName(var_.deployment_type_display_name())
-     *             .oggVersion(var_.deployment_type_ogg_version())
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(deploymentTypeDeploymentType)
+     *             .displayName(deploymentTypeDisplayName)
+     *             .oggVersion(deploymentTypeOggVersion)
      *             .build());
      * 
      *     }
@@ -2345,10 +2345,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentTypes = GoldenGateFunctions.getDeploymentTypes(GetDeploymentTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentType(var_.deployment_type_deployment_type())
-     *             .displayName(var_.deployment_type_display_name())
-     *             .oggVersion(var_.deployment_type_ogg_version())
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(deploymentTypeDeploymentType)
+     *             .displayName(deploymentTypeDisplayName)
+     *             .oggVersion(deploymentTypeOggVersion)
      *             .build());
      * 
      *     }
@@ -2390,7 +2390,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
-     *             .deploymentUpgradeId(oci_golden_gate_deployment_upgrade.test_deployment_upgrade().id())
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
      *             .build());
      * 
      *     }
@@ -2432,7 +2432,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
-     *             .deploymentUpgradeId(oci_golden_gate_deployment_upgrade.test_deployment_upgrade().id())
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
      *             .build());
      * 
      *     }
@@ -2474,7 +2474,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
-     *             .deploymentUpgradeId(oci_golden_gate_deployment_upgrade.test_deployment_upgrade().id())
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
      *             .build());
      * 
      *     }
@@ -2516,7 +2516,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
-     *             .deploymentUpgradeId(oci_golden_gate_deployment_upgrade.test_deployment_upgrade().id())
+     *             .deploymentUpgradeId(testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id())
      *             .build());
      * 
      *     }
@@ -2558,10 +2558,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .displayName(var_.deployment_upgrade_display_name())
-     *             .state(var_.deployment_upgrade_state())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentUpgradeDisplayName)
+     *             .state(deploymentUpgradeState)
      *             .build());
      * 
      *     }
@@ -2603,10 +2603,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .displayName(var_.deployment_upgrade_display_name())
-     *             .state(var_.deployment_upgrade_state())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentUpgradeDisplayName)
+     *             .state(deploymentUpgradeState)
      *             .build());
      * 
      *     }
@@ -2648,10 +2648,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .displayName(var_.deployment_upgrade_display_name())
-     *             .state(var_.deployment_upgrade_state())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentUpgradeDisplayName)
+     *             .state(deploymentUpgradeState)
      *             .build());
      * 
      *     }
@@ -2693,10 +2693,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .displayName(var_.deployment_upgrade_display_name())
-     *             .state(var_.deployment_upgrade_state())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .displayName(deploymentUpgradeDisplayName)
+     *             .state(deploymentUpgradeState)
      *             .build());
      * 
      *     }
@@ -2738,9 +2738,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .deploymentType(var_.deployment_version_deployment_type())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .deploymentType(deploymentVersionDeploymentType)
      *             .build());
      * 
      *     }
@@ -2782,9 +2782,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .deploymentType(var_.deployment_version_deployment_type())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .deploymentType(deploymentVersionDeploymentType)
      *             .build());
      * 
      *     }
@@ -2826,9 +2826,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .deploymentType(var_.deployment_version_deployment_type())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .deploymentType(deploymentVersionDeploymentType)
      *             .build());
      * 
      *     }
@@ -2870,9 +2870,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeploymentVersions = GoldenGateFunctions.getDeploymentVersions(GetDeploymentVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .deploymentType(var_.deployment_version_deployment_type())
+     *             .compartmentId(compartmentId)
+     *             .deploymentId(testDeployment.id())
+     *             .deploymentType(deploymentVersionDeploymentType)
      *             .build());
      * 
      *     }
@@ -2914,14 +2914,14 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assignableConnectionId(oci_golden_gate_connection.test_connection().id())
-     *             .assignedConnectionId(oci_golden_gate_connection.test_connection().id())
-     *             .displayName(var_.deployment_display_name())
-     *             .fqdn(var_.deployment_fqdn())
-     *             .lifecycleSubState(var_.deployment_lifecycle_sub_state())
-     *             .state(var_.deployment_state())
-     *             .supportedConnectionType(var_.deployment_supported_connection_type())
+     *             .compartmentId(compartmentId)
+     *             .assignableConnectionId(testConnection.id())
+     *             .assignedConnectionId(testConnection.id())
+     *             .displayName(deploymentDisplayName)
+     *             .fqdn(deploymentFqdn)
+     *             .lifecycleSubState(deploymentLifecycleSubState)
+     *             .state(deploymentState)
+     *             .supportedConnectionType(deploymentSupportedConnectionType)
      *             .build());
      * 
      *     }
@@ -2963,14 +2963,14 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assignableConnectionId(oci_golden_gate_connection.test_connection().id())
-     *             .assignedConnectionId(oci_golden_gate_connection.test_connection().id())
-     *             .displayName(var_.deployment_display_name())
-     *             .fqdn(var_.deployment_fqdn())
-     *             .lifecycleSubState(var_.deployment_lifecycle_sub_state())
-     *             .state(var_.deployment_state())
-     *             .supportedConnectionType(var_.deployment_supported_connection_type())
+     *             .compartmentId(compartmentId)
+     *             .assignableConnectionId(testConnection.id())
+     *             .assignedConnectionId(testConnection.id())
+     *             .displayName(deploymentDisplayName)
+     *             .fqdn(deploymentFqdn)
+     *             .lifecycleSubState(deploymentLifecycleSubState)
+     *             .state(deploymentState)
+     *             .supportedConnectionType(deploymentSupportedConnectionType)
      *             .build());
      * 
      *     }
@@ -3012,14 +3012,14 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assignableConnectionId(oci_golden_gate_connection.test_connection().id())
-     *             .assignedConnectionId(oci_golden_gate_connection.test_connection().id())
-     *             .displayName(var_.deployment_display_name())
-     *             .fqdn(var_.deployment_fqdn())
-     *             .lifecycleSubState(var_.deployment_lifecycle_sub_state())
-     *             .state(var_.deployment_state())
-     *             .supportedConnectionType(var_.deployment_supported_connection_type())
+     *             .compartmentId(compartmentId)
+     *             .assignableConnectionId(testConnection.id())
+     *             .assignedConnectionId(testConnection.id())
+     *             .displayName(deploymentDisplayName)
+     *             .fqdn(deploymentFqdn)
+     *             .lifecycleSubState(deploymentLifecycleSubState)
+     *             .state(deploymentState)
+     *             .supportedConnectionType(deploymentSupportedConnectionType)
      *             .build());
      * 
      *     }
@@ -3061,14 +3061,14 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assignableConnectionId(oci_golden_gate_connection.test_connection().id())
-     *             .assignedConnectionId(oci_golden_gate_connection.test_connection().id())
-     *             .displayName(var_.deployment_display_name())
-     *             .fqdn(var_.deployment_fqdn())
-     *             .lifecycleSubState(var_.deployment_lifecycle_sub_state())
-     *             .state(var_.deployment_state())
-     *             .supportedConnectionType(var_.deployment_supported_connection_type())
+     *             .compartmentId(compartmentId)
+     *             .assignableConnectionId(testConnection.id())
+     *             .assignedConnectionId(testConnection.id())
+     *             .displayName(deploymentDisplayName)
+     *             .fqdn(deploymentFqdn)
+     *             .lifecycleSubState(deploymentLifecycleSubState)
+     *             .state(deploymentState)
+     *             .supportedConnectionType(deploymentSupportedConnectionType)
      *             .build());
      * 
      *     }
@@ -3110,7 +3110,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -3152,7 +3152,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -3194,7 +3194,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -3236,7 +3236,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessage = GoldenGateFunctions.getMessage(GetMessageArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -3278,7 +3278,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -3320,7 +3320,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -3362,7 +3362,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -3404,7 +3404,7 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMessages = GoldenGateFunctions.getMessages(GetMessagesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .deploymentId(testDeployment.id())
      *             .build());
      * 
      *     }
@@ -3446,9 +3446,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_file_display_name())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .displayName(trailFileDisplayName)
      *             .build());
      * 
      *     }
@@ -3490,9 +3490,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_file_display_name())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .displayName(trailFileDisplayName)
      *             .build());
      * 
      *     }
@@ -3534,9 +3534,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_file_display_name())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .displayName(trailFileDisplayName)
      *             .build());
      * 
      *     }
@@ -3578,9 +3578,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFile = GoldenGateFunctions.getTrailFile(GetTrailFileArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_file_display_name())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFileOciGoldenGateTrailFile.id())
+     *             .displayName(trailFileDisplayName)
      *             .build());
      * 
      *     }
@@ -3622,9 +3622,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_file_display_name())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailFileDisplayName)
      *             .build());
      * 
      *     }
@@ -3666,9 +3666,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_file_display_name())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailFileDisplayName)
      *             .build());
      * 
      *     }
@@ -3710,9 +3710,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_file_display_name())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailFileDisplayName)
      *             .build());
      * 
      *     }
@@ -3754,9 +3754,9 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailFiles = GoldenGateFunctions.getTrailFiles(GetTrailFilesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_file_display_name())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailFileDisplayName)
      *             .build());
      * 
      *     }
@@ -3798,10 +3798,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_sequence_display_name())
-     *             .trailSequenceId(oci_golden_gate_trail_sequence.test_trail_sequence().id())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
      *             .build());
      * 
      *     }
@@ -3843,10 +3843,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_sequence_display_name())
-     *             .trailSequenceId(oci_golden_gate_trail_sequence.test_trail_sequence().id())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
      *             .build());
      * 
      *     }
@@ -3888,10 +3888,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_sequence_display_name())
-     *             .trailSequenceId(oci_golden_gate_trail_sequence.test_trail_sequence().id())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
      *             .build());
      * 
      *     }
@@ -3933,10 +3933,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequence = GoldenGateFunctions.getTrailSequence(GetTrailSequenceArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_sequence_display_name())
-     *             .trailSequenceId(oci_golden_gate_trail_sequence.test_trail_sequence().id())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequenceOciGoldenGateTrailSequence.id())
      *             .build());
      * 
      *     }
@@ -3978,10 +3978,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_sequence_display_name())
-     *             .trailSequenceId(oci_golden_gate_trail_sequence.test_trail_sequence().id())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequence.id())
      *             .build());
      * 
      *     }
@@ -4023,10 +4023,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_sequence_display_name())
-     *             .trailSequenceId(oci_golden_gate_trail_sequence.test_trail_sequence().id())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequence.id())
      *             .build());
      * 
      *     }
@@ -4068,10 +4068,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_sequence_display_name())
-     *             .trailSequenceId(oci_golden_gate_trail_sequence.test_trail_sequence().id())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequence.id())
      *             .build());
      * 
      *     }
@@ -4113,10 +4113,10 @@ public final class GoldenGateFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrailSequences = GoldenGateFunctions.getTrailSequences(GetTrailSequencesArgs.builder()
-     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
-     *             .trailFileId(oci_golden_gate_trail_file.test_trail_file().id())
-     *             .displayName(var_.trail_sequence_display_name())
-     *             .trailSequenceId(oci_golden_gate_trail_sequence.test_trail_sequence().id())
+     *             .deploymentId(testDeployment.id())
+     *             .trailFileId(testTrailFile.id())
+     *             .displayName(trailSequenceDisplayName)
+     *             .trailSequenceId(testTrailSequence.id())
      *             .build());
      * 
      *     }

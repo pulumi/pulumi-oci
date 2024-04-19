@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespace = oci.LogAnalytics.getNamespace({
- *     namespace: _var.namespace_namespace,
+ *     namespace: namespaceNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -74,7 +74,7 @@ export interface GetNamespaceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespace = oci.LogAnalytics.getNamespace({
- *     namespace: _var.namespace_namespace,
+ *     namespace: namespaceNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

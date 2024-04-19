@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.NewContainerImageSignature(ctx, "testContainerImageSignature", &Artifacts.ContainerImageSignatureArgs{
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
-//				ImageId:          pulumi.Any(oci_core_image.Test_image.Id),
-//				KmsKeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
-//				KmsKeyVersionId:  pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-//				Message:          pulumi.Any(_var.Container_image_signature_message),
-//				Signature:        pulumi.Any(_var.Container_image_signature_signature),
-//				SigningAlgorithm: pulumi.Any(_var.Container_image_signature_signing_algorithm),
+//			_, err := Artifacts.NewContainerImageSignature(ctx, "test_container_image_signature", &Artifacts.ContainerImageSignatureArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				ImageId:          pulumi.Any(testImage.Id),
+//				KmsKeyId:         pulumi.Any(testKey.Id),
+//				KmsKeyVersionId:  pulumi.Any(testKeyVersion.Id),
+//				Message:          pulumi.Any(containerImageSignatureMessage),
+//				Signature:        pulumi.Any(containerImageSignatureSignature),
+//				SigningAlgorithm: pulumi.Any(containerImageSignatureSigningAlgorithm),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

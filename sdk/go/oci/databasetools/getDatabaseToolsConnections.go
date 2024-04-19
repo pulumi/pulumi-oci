@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseTools.GetDatabaseToolsConnections(ctx, &databasetools.GetDatabaseToolsConnectionsArgs{
-//				CompartmentId:             _var.Compartment_id,
-//				DisplayName:               pulumi.StringRef(_var.Database_tools_connection_display_name),
-//				RelatedResourceIdentifier: pulumi.StringRef(_var.Database_tools_connection_related_resource_identifier),
-//				RuntimeSupports:           _var.Database_tools_connection_runtime_support,
-//				State:                     pulumi.StringRef(_var.Database_tools_connection_state),
-//				Types:                     _var.Database_tools_connection_type,
+//				CompartmentId:             compartmentId,
+//				DisplayName:               pulumi.StringRef(databaseToolsConnectionDisplayName),
+//				RelatedResourceIdentifier: pulumi.StringRef(databaseToolsConnectionRelatedResourceIdentifier),
+//				RuntimeSupports:           databaseToolsConnectionRuntimeSupport,
+//				State:                     pulumi.StringRef(databaseToolsConnectionState),
+//				Types:                     databaseToolsConnectionType,
 //			}, nil)
 //			if err != nil {
 //				return err

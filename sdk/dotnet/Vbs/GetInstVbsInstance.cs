@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Vbs
         /// {
         ///     var testVbsInstance = Oci.Vbs.GetInstVbsInstance.Invoke(new()
         ///     {
-        ///         VbsInstanceId = oci_vbs_inst_vbs_instance.Test_vbs_instance.Id,
+        ///         VbsInstanceId = testVbsInstanceOciVbsInstVbsInstance.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Vbs
         /// {
         ///     var testVbsInstance = Oci.Vbs.GetInstVbsInstance.Invoke(new()
         ///     {
-        ///         VbsInstanceId = oci_vbs_inst_vbs_instance.Test_vbs_instance.Id,
+        ///         VbsInstanceId = testVbsInstanceOciVbsInstVbsInstance.Id,
         ///     });
         /// 
         /// });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetFusionEnvironmentTimeAvailableForRefreshs(ctx, &functions.GetFusionEnvironmentTimeAvailableForRefreshsArgs{
-//				FusionEnvironmentId: oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
+//				FusionEnvironmentId: testFusionEnvironment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

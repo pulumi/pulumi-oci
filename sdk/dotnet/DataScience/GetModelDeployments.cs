@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testModelDeployments = Oci.DataScience.GetModelDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Model_deployment_created_by,
-        ///         DisplayName = @var.Model_deployment_display_name,
-        ///         Id = @var.Model_deployment_id,
-        ///         ProjectId = oci_datascience_project.Test_project.Id,
-        ///         State = @var.Model_deployment_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = modelDeploymentCreatedBy,
+        ///         DisplayName = modelDeploymentDisplayName,
+        ///         Id = modelDeploymentId,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelDeploymentState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testModelDeployments = Oci.DataScience.GetModelDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Model_deployment_created_by,
-        ///         DisplayName = @var.Model_deployment_display_name,
-        ///         Id = @var.Model_deployment_id,
-        ///         ProjectId = oci_datascience_project.Test_project.Id,
-        ///         State = @var.Model_deployment_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = modelDeploymentCreatedBy,
+        ///         DisplayName = modelDeploymentDisplayName,
+        ///         Id = modelDeploymentId,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelDeploymentState,
         ///     });
         /// 
         /// });

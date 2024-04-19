@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBackendSets = oci.LoadBalancer.getBackendSets({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -80,7 +80,7 @@ export interface GetBackendSetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBackendSets = oci.LoadBalancer.getBackendSets({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

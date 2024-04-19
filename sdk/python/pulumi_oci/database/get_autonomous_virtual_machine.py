@@ -211,7 +211,7 @@ def get_autonomous_virtual_machine(autonomous_virtual_machine_id: Optional[str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=oci_database_autonomous_virtual_machine["test_autonomous_virtual_machine"]["id"])
+    test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=test_autonomous_virtual_machine_oci_database_autonomous_virtual_machine["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -255,7 +255,7 @@ def get_autonomous_virtual_machine_output(autonomous_virtual_machine_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=oci_database_autonomous_virtual_machine["test_autonomous_virtual_machine"]["id"])
+    test_autonomous_virtual_machine = oci.Database.get_autonomous_virtual_machine(autonomous_virtual_machine_id=test_autonomous_virtual_machine_oci_database_autonomous_virtual_machine["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -30,9 +30,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousDatabaseRegionalWalletManagement(ctx, "testAutonomousDatabaseRegionalWalletManagement", &Database.AutonomousDatabaseRegionalWalletManagementArgs{
-//				GracePeriod:  pulumi.Any(_var.Autonomous_database_regional_wallet_management_grace_period),
-//				ShouldRotate: pulumi.Any(_var.Autonomous_database_regional_wallet_management_should_rotate),
+//			_, err := Database.NewAutonomousDatabaseRegionalWalletManagement(ctx, "test_autonomous_database_regional_wallet_management", &Database.AutonomousDatabaseRegionalWalletManagementArgs{
+//				GracePeriod:  pulumi.Any(autonomousDatabaseRegionalWalletManagementGracePeriod),
+//				ShouldRotate: pulumi.Any(autonomousDatabaseRegionalWalletManagementShouldRotate),
 //			})
 //			if err != nil {
 //				return err

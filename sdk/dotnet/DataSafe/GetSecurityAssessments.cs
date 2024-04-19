@@ -44,19 +44,19 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessments = Oci.DataSafe.GetSecurityAssessments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_assessment_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_compartment_id_in_subtree,
-        ///         DisplayName = @var.Security_assessment_display_name,
-        ///         IsBaseline = @var.Security_assessment_is_baseline,
-        ///         IsScheduleAssessment = @var.Security_assessment_is_schedule_assessment,
-        ///         ScheduleAssessmentId = oci_data_safe_schedule_assessment.Test_schedule_assessment.Id,
-        ///         State = @var.Security_assessment_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Security_assessment_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Security_assessment_time_created_less_than,
-        ///         TriggeredBy = @var.Security_assessment_triggered_by,
-        ///         Type = @var.Security_assessment_type,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentCompartmentIdInSubtree,
+        ///         DisplayName = securityAssessmentDisplayName,
+        ///         IsBaseline = securityAssessmentIsBaseline,
+        ///         IsScheduleAssessment = securityAssessmentIsScheduleAssessment,
+        ///         ScheduleAssessmentId = testScheduleAssessment.Id,
+        ///         State = securityAssessmentState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = securityAssessmentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = securityAssessmentTimeCreatedLessThan,
+        ///         TriggeredBy = securityAssessmentTriggeredBy,
+        ///         Type = securityAssessmentType,
         ///     });
         /// 
         /// });
@@ -99,19 +99,19 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessments = Oci.DataSafe.GetSecurityAssessments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_assessment_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_compartment_id_in_subtree,
-        ///         DisplayName = @var.Security_assessment_display_name,
-        ///         IsBaseline = @var.Security_assessment_is_baseline,
-        ///         IsScheduleAssessment = @var.Security_assessment_is_schedule_assessment,
-        ///         ScheduleAssessmentId = oci_data_safe_schedule_assessment.Test_schedule_assessment.Id,
-        ///         State = @var.Security_assessment_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Security_assessment_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Security_assessment_time_created_less_than,
-        ///         TriggeredBy = @var.Security_assessment_triggered_by,
-        ///         Type = @var.Security_assessment_type,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentCompartmentIdInSubtree,
+        ///         DisplayName = securityAssessmentDisplayName,
+        ///         IsBaseline = securityAssessmentIsBaseline,
+        ///         IsScheduleAssessment = securityAssessmentIsScheduleAssessment,
+        ///         ScheduleAssessmentId = testScheduleAssessment.Id,
+        ///         State = securityAssessmentState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = securityAssessmentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = securityAssessmentTimeCreatedLessThan,
+        ///         TriggeredBy = securityAssessmentTriggeredBy,
+        ///         Type = securityAssessmentType,
         ///     });
         /// 
         /// });

@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsubSubscription.GetCommitments(ctx, &osubsubscription.GetCommitmentsArgs{
-//				CompartmentId:             _var.Compartment_id,
-//				SubscribedServiceId:       oci_core_service.Test_service.Id,
-//				XOneGatewaySubscriptionId: pulumi.StringRef(_var.Commitment_x_one_gateway_subscription_id),
-//				XOneOriginRegion:          pulumi.StringRef(_var.Commitment_x_one_origin_region),
+//				CompartmentId:             compartmentId,
+//				SubscribedServiceId:       testService.Id,
+//				XOneGatewaySubscriptionId: pulumi.StringRef(commitmentXOneGatewaySubscriptionId),
+//				XOneOriginRegion:          pulumi.StringRef(commitmentXOneOriginRegion),
 //			}, nil)
 //			if err != nil {
 //				return err

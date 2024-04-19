@@ -29,9 +29,9 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testProtectedDatabaseFetchConfiguration = Oci.RecoveryMod.GetProtectedDatabaseFetchConfiguration.Invoke(new()
         ///     {
-        ///         ProtectedDatabaseId = oci_recovery_protected_database.Test_protected_database.Id,
+        ///         ProtectedDatabaseId = testProtectedDatabase.Id,
         ///         Base64EncodeContent = true,
-        ///         ConfigurationType = @var.Protected_database_fetch_configuration_configuration_type,
+        ///         ConfigurationType = protectedDatabaseFetchConfigurationConfigurationType,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testProtectedDatabaseFetchConfiguration = Oci.RecoveryMod.GetProtectedDatabaseFetchConfiguration.Invoke(new()
         ///     {
-        ///         ProtectedDatabaseId = oci_recovery_protected_database.Test_protected_database.Id,
+        ///         ProtectedDatabaseId = testProtectedDatabase.Id,
         ///         Base64EncodeContent = true,
-        ///         ConfigurationType = @var.Protected_database_fetch_configuration_configuration_type,
+        ///         ConfigurationType = protectedDatabaseFetchConfigurationConfigurationType,
         ///     });
         /// 
         /// });

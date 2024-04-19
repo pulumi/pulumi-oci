@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseUser(ctx, &databasemanagement.GetManagedDatabaseUserArgs{
-//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
-//				UserName:             oci_identity_user.Test_user.Name,
-//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_user_opc_named_credential_id),
+//				ManagedDatabaseId:    testManagedDatabase.Id,
+//				UserName:             testUser.Name,
+//				OpcNamedCredentialId: pulumi.StringRef(managedDatabaseUserOpcNamedCredentialId),
 //			}, nil)
 //			if err != nil {
 //				return err

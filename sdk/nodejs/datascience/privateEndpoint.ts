@@ -16,20 +16,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSciencePrivateEndpoint = new oci.datascience.PrivateEndpoint("testDataSciencePrivateEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     dataScienceResourceType: _var.data_science_private_endpoint_data_science_resource_type,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testDataSciencePrivateEndpoint = new oci.datascience.PrivateEndpoint("test_data_science_private_endpoint", {
+ *     compartmentId: compartmentId,
+ *     dataScienceResourceType: dataSciencePrivateEndpointDataScienceResourceType,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.data_science_private_endpoint_description,
- *     displayName: _var.data_science_private_endpoint_display_name,
+ *     description: dataSciencePrivateEndpointDescription,
+ *     displayName: dataSciencePrivateEndpointDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     nsgIds: _var.data_science_private_endpoint_nsg_ids,
- *     subDomain: _var.data_science_private_endpoint_sub_domain,
+ *     nsgIds: dataSciencePrivateEndpointNsgIds,
+ *     subDomain: dataSciencePrivateEndpointSubDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

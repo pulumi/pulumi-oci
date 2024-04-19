@@ -267,8 +267,8 @@ def get_workspace_import_request(import_request_key: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_request = oci.DataIntegration.get_workspace_import_request(import_request_key=var["workspace_import_request_import_request_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
+    test_workspace_import_request = oci.DataIntegration.get_workspace_import_request(import_request_key=workspace_import_request_import_request_key,
+        workspace_id=test_workspace["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -320,8 +320,8 @@ def get_workspace_import_request_output(import_request_key: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_request = oci.DataIntegration.get_workspace_import_request(import_request_key=var["workspace_import_request_import_request_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
+    test_workspace_import_request = oci.DataIntegration.get_workspace_import_request(import_request_key=workspace_import_request_import_request_key,
+        workspace_id=test_workspace["id"])
     ```
     <!--End PulumiCodeChooser -->
 

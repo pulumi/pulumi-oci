@@ -25,54 +25,54 @@ namespace Pulumi.Oci.Adm
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRemediationRecipe = new Oci.Adm.RemediationRecipe("testRemediationRecipe", new()
+    ///     var testRemediationRecipe = new Oci.Adm.RemediationRecipe("test_remediation_recipe", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DetectConfiguration = new Oci.Adm.Inputs.RemediationRecipeDetectConfigurationArgs
     ///         {
-    ///             Exclusions = @var.Remediation_recipe_detect_configuration_exclusions,
-    ///             MaxPermissibleCvssV2score = @var.Remediation_recipe_detect_configuration_max_permissible_cvss_v2score,
-    ///             MaxPermissibleCvssV3score = @var.Remediation_recipe_detect_configuration_max_permissible_cvss_v3score,
-    ///             MaxPermissibleSeverity = @var.Remediation_recipe_detect_configuration_max_permissible_severity,
-    ///             UpgradePolicy = @var.Remediation_recipe_detect_configuration_upgrade_policy,
+    ///             Exclusions = remediationRecipeDetectConfigurationExclusions,
+    ///             MaxPermissibleCvssV2score = remediationRecipeDetectConfigurationMaxPermissibleCvssV2score,
+    ///             MaxPermissibleCvssV3score = remediationRecipeDetectConfigurationMaxPermissibleCvssV3score,
+    ///             MaxPermissibleSeverity = remediationRecipeDetectConfigurationMaxPermissibleSeverity,
+    ///             UpgradePolicy = remediationRecipeDetectConfigurationUpgradePolicy,
     ///         },
-    ///         IsRunTriggeredOnKbChange = @var.Remediation_recipe_is_run_triggered_on_kb_change,
-    ///         KnowledgeBaseId = oci_adm_knowledge_base.Test_knowledge_base.Id,
+    ///         IsRunTriggeredOnKbChange = remediationRecipeIsRunTriggeredOnKbChange,
+    ///         KnowledgeBaseId = testKnowledgeBase.Id,
     ///         NetworkConfiguration = new Oci.Adm.Inputs.RemediationRecipeNetworkConfigurationArgs
     ///         {
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NsgIds = @var.Remediation_recipe_network_configuration_nsg_ids,
+    ///             SubnetId = testSubnet.Id,
+    ///             NsgIds = remediationRecipeNetworkConfigurationNsgIds,
     ///         },
     ///         ScmConfiguration = new Oci.Adm.Inputs.RemediationRecipeScmConfigurationArgs
     ///         {
-    ///             Branch = @var.Remediation_recipe_scm_configuration_branch,
-    ///             IsAutomergeEnabled = @var.Remediation_recipe_scm_configuration_is_automerge_enabled,
-    ///             ScmType = @var.Remediation_recipe_scm_configuration_scm_type,
-    ///             BuildFileLocation = @var.Remediation_recipe_scm_configuration_build_file_location,
-    ///             ExternalScmType = @var.Remediation_recipe_scm_configuration_external_scm_type,
-    ///             OciCodeRepositoryId = oci_artifacts_repository.Test_repository.Id,
-    ///             PatSecretId = oci_vault_secret.Test_secret.Id,
-    ///             RepositoryUrl = @var.Remediation_recipe_scm_configuration_repository_url,
-    ///             Username = @var.Remediation_recipe_scm_configuration_username,
+    ///             Branch = remediationRecipeScmConfigurationBranch,
+    ///             IsAutomergeEnabled = remediationRecipeScmConfigurationIsAutomergeEnabled,
+    ///             ScmType = remediationRecipeScmConfigurationScmType,
+    ///             BuildFileLocation = remediationRecipeScmConfigurationBuildFileLocation,
+    ///             ExternalScmType = remediationRecipeScmConfigurationExternalScmType,
+    ///             OciCodeRepositoryId = testRepository.Id,
+    ///             PatSecretId = testSecret.Id,
+    ///             RepositoryUrl = remediationRecipeScmConfigurationRepositoryUrl,
+    ///             Username = remediationRecipeScmConfigurationUsername,
     ///         },
     ///         VerifyConfiguration = new Oci.Adm.Inputs.RemediationRecipeVerifyConfigurationArgs
     ///         {
-    ///             BuildServiceType = @var.Remediation_recipe_verify_configuration_build_service_type,
-    ///             AdditionalParameters = @var.Remediation_recipe_verify_configuration_additional_parameters,
-    ///             JenkinsUrl = @var.Remediation_recipe_verify_configuration_jenkins_url,
-    ///             JobName = oci_database_migration_job.Test_job.Name,
-    ///             PatSecretId = oci_vault_secret.Test_secret.Id,
-    ///             PipelineId = oci_datascience_pipeline.Test_pipeline.Id,
-    ///             RepositoryUrl = @var.Remediation_recipe_verify_configuration_repository_url,
-    ///             TriggerSecretId = oci_vault_secret.Test_secret.Id,
-    ///             Username = @var.Remediation_recipe_verify_configuration_username,
-    ///             WorkflowName = @var.Remediation_recipe_verify_configuration_workflow_name,
+    ///             BuildServiceType = remediationRecipeVerifyConfigurationBuildServiceType,
+    ///             AdditionalParameters = remediationRecipeVerifyConfigurationAdditionalParameters,
+    ///             JenkinsUrl = remediationRecipeVerifyConfigurationJenkinsUrl,
+    ///             JobName = testJob.Name,
+    ///             PatSecretId = testSecret.Id,
+    ///             PipelineId = testPipeline.Id,
+    ///             RepositoryUrl = remediationRecipeVerifyConfigurationRepositoryUrl,
+    ///             TriggerSecretId = testSecret.Id,
+    ///             Username = remediationRecipeVerifyConfigurationUsername,
+    ///             WorkflowName = remediationRecipeVerifyConfigurationWorkflowName,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Remediation_recipe_display_name,
+    ///         DisplayName = remediationRecipeDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

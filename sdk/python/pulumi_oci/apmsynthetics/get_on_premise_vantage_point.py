@@ -186,8 +186,8 @@ def get_on_premise_vantage_point(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point = oci.ApmSynthetics.get_on_premise_vantage_point(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        on_premise_vantage_point_id=oci_apm_synthetics_on_premise_vantage_point["test_on_premise_vantage_point"]["id"])
+    test_on_premise_vantage_point = oci.ApmSynthetics.get_on_premise_vantage_point(apm_domain_id=test_apm_domain["id"],
+        on_premise_vantage_point_id=test_on_premise_vantage_point_oci_apm_synthetics_on_premise_vantage_point["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -232,8 +232,8 @@ def get_on_premise_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point = oci.ApmSynthetics.get_on_premise_vantage_point(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        on_premise_vantage_point_id=oci_apm_synthetics_on_premise_vantage_point["test_on_premise_vantage_point"]["id"])
+    test_on_premise_vantage_point = oci.ApmSynthetics.get_on_premise_vantage_point(apm_domain_id=test_apm_domain["id"],
+        on_premise_vantage_point_id=test_on_premise_vantage_point_oci_apm_synthetics_on_premise_vantage_point["id"])
     ```
     <!--End PulumiCodeChooser -->
 

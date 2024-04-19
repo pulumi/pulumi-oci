@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaLicenseAcceptanceRecords = Oci.Jms.GetJavaDownloadsJavaLicenseAcceptanceRecords.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Id = @var.Java_license_acceptance_record_id,
-        ///         LicenseType = @var.Java_license_acceptance_record_license_type,
-        ///         SearchByUser = @var.Java_license_acceptance_record_search_by_user,
-        ///         Status = @var.Java_license_acceptance_record_status,
+        ///         CompartmentId = tenancyOcid,
+        ///         Id = javaLicenseAcceptanceRecordId,
+        ///         LicenseType = javaLicenseAcceptanceRecordLicenseType,
+        ///         SearchByUser = javaLicenseAcceptanceRecordSearchByUser,
+        ///         Status = javaLicenseAcceptanceRecordStatus,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaLicenseAcceptanceRecords = Oci.Jms.GetJavaDownloadsJavaLicenseAcceptanceRecords.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Id = @var.Java_license_acceptance_record_id,
-        ///         LicenseType = @var.Java_license_acceptance_record_license_type,
-        ///         SearchByUser = @var.Java_license_acceptance_record_search_by_user,
-        ///         Status = @var.Java_license_acceptance_record_status,
+        ///         CompartmentId = tenancyOcid,
+        ///         Id = javaLicenseAcceptanceRecordId,
+        ///         LicenseType = javaLicenseAcceptanceRecordLicenseType,
+        ///         SearchByUser = javaLicenseAcceptanceRecordSearchByUser,
+        ///         Status = javaLicenseAcceptanceRecordStatus,
         ///     });
         /// 
         /// });

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApprovalWorkflowAssignment = oci.Identity.getDomainsApprovalWorkflowAssignment({
- *     approvalWorkflowAssignmentId: oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     approvalWorkflowAssignmentId: testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.approval_workflow_assignment_authorization,
- *     resourceTypeSchemaVersion: _var.approval_workflow_assignment_resource_type_schema_version,
+ *     authorization: approvalWorkflowAssignmentAuthorization,
+ *     resourceTypeSchemaVersion: approvalWorkflowAssignmentResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -160,12 +160,12 @@ export interface GetDomainsApprovalWorkflowAssignmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApprovalWorkflowAssignment = oci.Identity.getDomainsApprovalWorkflowAssignment({
- *     approvalWorkflowAssignmentId: oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     approvalWorkflowAssignmentId: testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.approval_workflow_assignment_authorization,
- *     resourceTypeSchemaVersion: _var.approval_workflow_assignment_resource_type_schema_version,
+ *     authorization: approvalWorkflowAssignmentAuthorization,
+ *     resourceTypeSchemaVersion: approvalWorkflowAssignmentResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

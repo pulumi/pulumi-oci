@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOrganizationSubscriptions = oci.OsubOrganizationSubscription.getOrganizationSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     subscriptionIds: _var.organization_subscription_subscription_ids,
- *     xOneOriginRegion: _var.organization_subscription_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     subscriptionIds: organizationSubscriptionSubscriptionIds,
+ *     xOneOriginRegion: organizationSubscriptionXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,9 +86,9 @@ export interface GetOrganizationSubscriptionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOrganizationSubscriptions = oci.OsubOrganizationSubscription.getOrganizationSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     subscriptionIds: _var.organization_subscription_subscription_ids,
- *     xOneOriginRegion: _var.organization_subscription_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     subscriptionIds: organizationSubscriptionSubscriptionIds,
+ *     xOneOriginRegion: organizationSubscriptionXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

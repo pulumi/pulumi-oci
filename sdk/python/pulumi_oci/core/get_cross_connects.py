@@ -134,10 +134,10 @@ def get_cross_connects(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connects = oci.Core.get_cross_connects(compartment_id=var["compartment_id"],
-        cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
-        display_name=var["cross_connect_display_name"],
-        state=var["cross_connect_state"])
+    test_cross_connects = oci.Core.get_cross_connects(compartment_id=compartment_id,
+        cross_connect_group_id=test_cross_connect_group["id"],
+        display_name=cross_connect_display_name,
+        state=cross_connect_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -186,10 +186,10 @@ def get_cross_connects_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connects = oci.Core.get_cross_connects(compartment_id=var["compartment_id"],
-        cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"],
-        display_name=var["cross_connect_display_name"],
-        state=var["cross_connect_state"])
+    test_cross_connects = oci.Core.get_cross_connects(compartment_id=compartment_id,
+        cross_connect_group_id=test_cross_connect_group["id"],
+        display_name=cross_connect_display_name,
+        state=cross_connect_state)
     ```
     <!--End PulumiCodeChooser -->
 

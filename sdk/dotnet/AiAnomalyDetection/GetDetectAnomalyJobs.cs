@@ -30,12 +30,12 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {
         ///     var testDetectAnomalyJobs = Oci.AiAnomalyDetection.GetDetectAnomalyJobs.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DetectAnomalyJobId = oci_ai_anomaly_detection_detect_anomaly_job.Test_detect_anomaly_job.Id,
-        ///         DisplayName = @var.Detect_anomaly_job_display_name,
-        ///         ModelId = oci_ai_anomaly_detection_model.Test_model.Id,
-        ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
-        ///         State = @var.Detect_anomaly_job_state,
+        ///         CompartmentId = compartmentId,
+        ///         DetectAnomalyJobId = testDetectAnomalyJob.Id,
+        ///         DisplayName = detectAnomalyJobDisplayName,
+        ///         ModelId = testModel.Id,
+        ///         ProjectId = testProject.Id,
+        ///         State = detectAnomalyJobState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {
         ///     var testDetectAnomalyJobs = Oci.AiAnomalyDetection.GetDetectAnomalyJobs.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DetectAnomalyJobId = oci_ai_anomaly_detection_detect_anomaly_job.Test_detect_anomaly_job.Id,
-        ///         DisplayName = @var.Detect_anomaly_job_display_name,
-        ///         ModelId = oci_ai_anomaly_detection_model.Test_model.Id,
-        ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
-        ///         State = @var.Detect_anomaly_job_state,
+        ///         CompartmentId = compartmentId,
+        ///         DetectAnomalyJobId = testDetectAnomalyJob.Id,
+        ///         DisplayName = detectAnomalyJobDisplayName,
+        ///         ModelId = testModel.Id,
+        ///         ProjectId = testProject.Id,
+        ///         State = detectAnomalyJobState,
         ///     });
         /// 
         /// });

@@ -290,29 +290,29 @@ class UsagePlan(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage_plan = oci.api_gateway.UsagePlan("testUsagePlan",
-            compartment_id=var["compartment_id"],
+        test_usage_plan = oci.api_gateway.UsagePlan("test_usage_plan",
+            compartment_id=compartment_id,
             entitlements=[oci.api_gateway.UsagePlanEntitlementArgs(
-                name=var["usage_plan_entitlements_name"],
-                description=var["usage_plan_entitlements_description"],
+                name=usage_plan_entitlements_name,
+                description=usage_plan_entitlements_description,
                 quota=oci.api_gateway.UsagePlanEntitlementQuotaArgs(
-                    operation_on_breach=var["usage_plan_entitlements_quota_operation_on_breach"],
-                    reset_policy=var["usage_plan_entitlements_quota_reset_policy"],
-                    unit=var["usage_plan_entitlements_quota_unit"],
-                    value=var["usage_plan_entitlements_quota_value"],
+                    operation_on_breach=usage_plan_entitlements_quota_operation_on_breach,
+                    reset_policy=usage_plan_entitlements_quota_reset_policy,
+                    unit=usage_plan_entitlements_quota_unit,
+                    value=usage_plan_entitlements_quota_value,
                 ),
                 rate_limit=oci.api_gateway.UsagePlanEntitlementRateLimitArgs(
-                    unit=var["usage_plan_entitlements_rate_limit_unit"],
-                    value=var["usage_plan_entitlements_rate_limit_value"],
+                    unit=usage_plan_entitlements_rate_limit_unit,
+                    value=usage_plan_entitlements_rate_limit_value,
                 ),
                 targets=[oci.api_gateway.UsagePlanEntitlementTargetArgs(
-                    deployment_id=oci_apigateway_deployment["test_deployment"]["id"],
+                    deployment_id=test_deployment["id"],
                 )],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["usage_plan_display_name"],
+            display_name=usage_plan_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -357,29 +357,29 @@ class UsagePlan(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage_plan = oci.api_gateway.UsagePlan("testUsagePlan",
-            compartment_id=var["compartment_id"],
+        test_usage_plan = oci.api_gateway.UsagePlan("test_usage_plan",
+            compartment_id=compartment_id,
             entitlements=[oci.api_gateway.UsagePlanEntitlementArgs(
-                name=var["usage_plan_entitlements_name"],
-                description=var["usage_plan_entitlements_description"],
+                name=usage_plan_entitlements_name,
+                description=usage_plan_entitlements_description,
                 quota=oci.api_gateway.UsagePlanEntitlementQuotaArgs(
-                    operation_on_breach=var["usage_plan_entitlements_quota_operation_on_breach"],
-                    reset_policy=var["usage_plan_entitlements_quota_reset_policy"],
-                    unit=var["usage_plan_entitlements_quota_unit"],
-                    value=var["usage_plan_entitlements_quota_value"],
+                    operation_on_breach=usage_plan_entitlements_quota_operation_on_breach,
+                    reset_policy=usage_plan_entitlements_quota_reset_policy,
+                    unit=usage_plan_entitlements_quota_unit,
+                    value=usage_plan_entitlements_quota_value,
                 ),
                 rate_limit=oci.api_gateway.UsagePlanEntitlementRateLimitArgs(
-                    unit=var["usage_plan_entitlements_rate_limit_unit"],
-                    value=var["usage_plan_entitlements_rate_limit_value"],
+                    unit=usage_plan_entitlements_rate_limit_unit,
+                    value=usage_plan_entitlements_rate_limit_value,
                 ),
                 targets=[oci.api_gateway.UsagePlanEntitlementTargetArgs(
-                    deployment_id=oci_apigateway_deployment["test_deployment"]["id"],
+                    deployment_id=test_deployment["id"],
                 )],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["usage_plan_display_name"],
+            display_name=usage_plan_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

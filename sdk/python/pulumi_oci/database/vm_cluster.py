@@ -857,32 +857,32 @@ class VmCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vm_cluster = oci.database.VmCluster("testVmCluster",
-            compartment_id=var["compartment_id"],
-            cpu_core_count=var["vm_cluster_cpu_core_count"],
-            display_name=var["vm_cluster_display_name"],
-            exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-            gi_version=var["vm_cluster_gi_version"],
-            ssh_public_keys=var["vm_cluster_ssh_public_keys"],
-            vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
+        test_vm_cluster = oci.database.VmCluster("test_vm_cluster",
+            compartment_id=compartment_id,
+            cpu_core_count=vm_cluster_cpu_core_count,
+            display_name=vm_cluster_display_name,
+            exadata_infrastructure_id=test_exadata_infrastructure["id"],
+            gi_version=vm_cluster_gi_version,
+            ssh_public_keys=vm_cluster_ssh_public_keys,
+            vm_cluster_network_id=test_vm_cluster_network["id"],
             data_collection_options=oci.database.VmClusterDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=var["vm_cluster_data_collection_options_is_diagnostics_events_enabled"],
-                is_health_monitoring_enabled=var["vm_cluster_data_collection_options_is_health_monitoring_enabled"],
-                is_incident_logs_enabled=var["vm_cluster_data_collection_options_is_incident_logs_enabled"],
+                is_diagnostics_events_enabled=vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+                is_health_monitoring_enabled=vm_cluster_data_collection_options_is_health_monitoring_enabled,
+                is_incident_logs_enabled=vm_cluster_data_collection_options_is_incident_logs_enabled,
             ),
-            data_storage_size_in_tbs=var["vm_cluster_data_storage_size_in_tbs"],
-            db_node_storage_size_in_gbs=var["vm_cluster_db_node_storage_size_in_gbs"],
-            db_servers=var["vm_cluster_db_servers"],
-            defined_tags=var["vm_cluster_defined_tags"],
+            data_storage_size_in_tbs=vm_cluster_data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=vm_cluster_db_node_storage_size_in_gbs,
+            db_servers=vm_cluster_db_servers,
+            defined_tags=vm_cluster_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_local_backup_enabled=var["vm_cluster_is_local_backup_enabled"],
-            is_sparse_diskgroup_enabled=var["vm_cluster_is_sparse_diskgroup_enabled"],
-            license_model=var["vm_cluster_license_model"],
-            memory_size_in_gbs=var["vm_cluster_memory_size_in_gbs"],
-            system_version=var["vm_cluster_system_version"],
-            time_zone=var["vm_cluster_time_zone"])
+            is_local_backup_enabled=vm_cluster_is_local_backup_enabled,
+            is_sparse_diskgroup_enabled=vm_cluster_is_sparse_diskgroup_enabled,
+            license_model=vm_cluster_license_model,
+            memory_size_in_gbs=vm_cluster_memory_size_in_gbs,
+            system_version=vm_cluster_system_version,
+            time_zone=vm_cluster_time_zone)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -938,32 +938,32 @@ class VmCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vm_cluster = oci.database.VmCluster("testVmCluster",
-            compartment_id=var["compartment_id"],
-            cpu_core_count=var["vm_cluster_cpu_core_count"],
-            display_name=var["vm_cluster_display_name"],
-            exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-            gi_version=var["vm_cluster_gi_version"],
-            ssh_public_keys=var["vm_cluster_ssh_public_keys"],
-            vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
+        test_vm_cluster = oci.database.VmCluster("test_vm_cluster",
+            compartment_id=compartment_id,
+            cpu_core_count=vm_cluster_cpu_core_count,
+            display_name=vm_cluster_display_name,
+            exadata_infrastructure_id=test_exadata_infrastructure["id"],
+            gi_version=vm_cluster_gi_version,
+            ssh_public_keys=vm_cluster_ssh_public_keys,
+            vm_cluster_network_id=test_vm_cluster_network["id"],
             data_collection_options=oci.database.VmClusterDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=var["vm_cluster_data_collection_options_is_diagnostics_events_enabled"],
-                is_health_monitoring_enabled=var["vm_cluster_data_collection_options_is_health_monitoring_enabled"],
-                is_incident_logs_enabled=var["vm_cluster_data_collection_options_is_incident_logs_enabled"],
+                is_diagnostics_events_enabled=vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+                is_health_monitoring_enabled=vm_cluster_data_collection_options_is_health_monitoring_enabled,
+                is_incident_logs_enabled=vm_cluster_data_collection_options_is_incident_logs_enabled,
             ),
-            data_storage_size_in_tbs=var["vm_cluster_data_storage_size_in_tbs"],
-            db_node_storage_size_in_gbs=var["vm_cluster_db_node_storage_size_in_gbs"],
-            db_servers=var["vm_cluster_db_servers"],
-            defined_tags=var["vm_cluster_defined_tags"],
+            data_storage_size_in_tbs=vm_cluster_data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=vm_cluster_db_node_storage_size_in_gbs,
+            db_servers=vm_cluster_db_servers,
+            defined_tags=vm_cluster_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_local_backup_enabled=var["vm_cluster_is_local_backup_enabled"],
-            is_sparse_diskgroup_enabled=var["vm_cluster_is_sparse_diskgroup_enabled"],
-            license_model=var["vm_cluster_license_model"],
-            memory_size_in_gbs=var["vm_cluster_memory_size_in_gbs"],
-            system_version=var["vm_cluster_system_version"],
-            time_zone=var["vm_cluster_time_zone"])
+            is_local_backup_enabled=vm_cluster_is_local_backup_enabled,
+            is_sparse_diskgroup_enabled=vm_cluster_is_sparse_diskgroup_enabled,
+            license_model=vm_cluster_license_model,
+            memory_size_in_gbs=vm_cluster_memory_size_in_gbs,
+            system_version=vm_cluster_system_version,
+            time_zone=vm_cluster_time_zone)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -319,12 +319,12 @@ class ApplicationVip(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_application_vip = oci.database.ApplicationVip("testApplicationVip",
-            cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
-            hostname_label=var["application_vip_hostname_label"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            db_node_id=oci_database_db_node["test_db_node"]["id"],
-            ip_address=var["application_vip_ip_address"])
+        test_application_vip = oci.database.ApplicationVip("test_application_vip",
+            cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
+            hostname_label=application_vip_hostname_label,
+            subnet_id=test_subnet["id"],
+            db_node_id=test_db_node["id"],
+            ip_address=application_vip_ip_address)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -366,12 +366,12 @@ class ApplicationVip(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_application_vip = oci.database.ApplicationVip("testApplicationVip",
-            cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
-            hostname_label=var["application_vip_hostname_label"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            db_node_id=oci_database_db_node["test_db_node"]["id"],
-            ip_address=var["application_vip_ip_address"])
+        test_application_vip = oci.database.ApplicationVip("test_application_vip",
+            cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
+            hostname_label=application_vip_hostname_label,
+            subnet_id=test_subnet["id"],
+            db_node_id=test_db_node["id"],
+            ip_address=application_vip_ip_address)
         ```
         <!--End PulumiCodeChooser -->
 

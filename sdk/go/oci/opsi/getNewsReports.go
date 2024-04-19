@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetNewsReports(ctx, &opsi.GetNewsReportsArgs{
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.News_report_compartment_id_in_subtree),
-//				NewsReportId:           pulumi.StringRef(oci_opsi_news_report.Test_news_report.Id),
-//				States:                 _var.News_report_state,
-//				Statuses:               _var.News_report_status,
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree: pulumi.BoolRef(newsReportCompartmentIdInSubtree),
+//				NewsReportId:           pulumi.StringRef(testNewsReport.Id),
+//				States:                 newsReportState,
+//				Statuses:               newsReportStatus,
 //			}, nil)
 //			if err != nil {
 //				return err

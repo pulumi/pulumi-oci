@@ -31,25 +31,25 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Budget.NewBudget(ctx, "testBudget", &Budget.BudgetArgs{
-//				Amount:                            pulumi.Any(_var.Budget_amount),
-//				CompartmentId:                     pulumi.Any(_var.Tenancy_ocid),
-//				ResetPeriod:                       pulumi.Any(_var.Budget_reset_period),
-//				BudgetProcessingPeriodStartOffset: pulumi.Any(_var.Budget_budget_processing_period_start_offset),
+//			_, err := Budget.NewBudget(ctx, "test_budget", &Budget.BudgetArgs{
+//				Amount:                            pulumi.Any(budgetAmount),
+//				CompartmentId:                     pulumi.Any(tenancyOcid),
+//				ResetPeriod:                       pulumi.Any(budgetResetPeriod),
+//				BudgetProcessingPeriodStartOffset: pulumi.Any(budgetBudgetProcessingPeriodStartOffset),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Budget_description),
-//				DisplayName: pulumi.Any(_var.Budget_display_name),
-//				EndDate:     pulumi.Any(_var.Budget_end_date),
+//				Description: pulumi.Any(budgetDescription),
+//				DisplayName: pulumi.Any(budgetDisplayName),
+//				EndDate:     pulumi.Any(budgetEndDate),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				ProcessingPeriodType: pulumi.Any(_var.Budget_processing_period_type),
-//				StartDate:            pulumi.Any(_var.Budget_start_date),
-//				TargetCompartmentId:  pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//				TargetType:           pulumi.Any(_var.Budget_target_type),
-//				Targets:              pulumi.Any(_var.Budget_targets),
+//				ProcessingPeriodType: pulumi.Any(budgetProcessingPeriodType),
+//				StartDate:            pulumi.Any(budgetStartDate),
+//				TargetCompartmentId:  pulumi.Any(testCompartment.Id),
+//				TargetType:           pulumi.Any(budgetTargetType),
+//				Targets:              pulumi.Any(budgetTargets),
 //			})
 //			if err != nil {
 //				return err

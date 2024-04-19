@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OperatorAccessControl.GetAccessRequests(ctx, &operatoraccesscontrol.GetAccessRequestsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				ResourceName:  pulumi.StringRef(_var.Access_request_resource_name),
-//				ResourceType:  pulumi.StringRef(_var.Access_request_resource_type),
-//				State:         pulumi.StringRef(_var.Access_request_state),
-//				TimeEnd:       pulumi.StringRef(_var.Access_request_time_end),
-//				TimeStart:     pulumi.StringRef(_var.Access_request_time_start),
+//				CompartmentId: compartmentId,
+//				ResourceName:  pulumi.StringRef(accessRequestResourceName),
+//				ResourceType:  pulumi.StringRef(accessRequestResourceType),
+//				State:         pulumi.StringRef(accessRequestState),
+//				TimeEnd:       pulumi.StringRef(accessRequestTimeEnd),
+//				TimeStart:     pulumi.StringRef(accessRequestTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err

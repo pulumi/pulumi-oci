@@ -45,14 +45,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testWebAppAcceleration = new AppAcceleration(&#34;testWebAppAcceleration&#34;, AppAccelerationArgs.builder()        
- *             .backendType(var_.web_app_acceleration_backend_type())
- *             .compartmentId(var_.compartment_id())
- *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
- *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+ *             .backendType(webAppAccelerationBackendType)
+ *             .compartmentId(compartmentId)
+ *             .loadBalancerId(testLoadBalancer.id())
+ *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicy.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.web_app_acceleration_display_name())
+ *             .displayName(webAppAccelerationDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .systemTags(var_.web_app_acceleration_system_tags())
+ *             .systemTags(webAppAccelerationSystemTags)
  *             .build());
  * 
  *     }

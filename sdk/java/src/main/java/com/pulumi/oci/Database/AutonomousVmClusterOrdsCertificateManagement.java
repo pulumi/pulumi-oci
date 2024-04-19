@@ -43,11 +43,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousVmClusterOrdsCertificateManagement = new AutonomousVmClusterOrdsCertificateManagement(&#34;testAutonomousVmClusterOrdsCertificateManagement&#34;, AutonomousVmClusterOrdsCertificateManagementArgs.builder()        
- *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
- *             .certificateGenerationType(var_.autonomous_vm_cluster_ords_certificate_management_certificate_generation_type())
- *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
- *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
- *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+ *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+ *             .certificateGenerationType(autonomousVmClusterOrdsCertificateManagementCertificateGenerationType)
+ *             .caBundleId(testCaBundle.id())
+ *             .certificateAuthorityId(testCertificateAuthority.id())
+ *             .certificateId(testCertificate.id())
  *             .build());
  * 
  *     }

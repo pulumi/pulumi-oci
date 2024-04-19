@@ -25,12 +25,12 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAutonomousDatabaseBackup = new Oci.Database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup", new()
+    ///     var testAutonomousDatabaseBackup = new Oci.Database.AutonomousDatabaseBackup("test_autonomous_database_backup", new()
     ///     {
-    ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-    ///         DisplayName = @var.Autonomous_database_backup_display_name,
-    ///         IsLongTermBackup = @var.Autonomous_database_backup_is_long_term_backup,
-    ///         RetentionPeriodInDays = @var.Autonomous_database_backup_retention_period_in_days,
+    ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+    ///         DisplayName = autonomousDatabaseBackupDisplayName,
+    ///         IsLongTermBackup = autonomousDatabaseBackupIsLongTermBackup,
+    ///         RetentionPeriodInDays = autonomousDatabaseBackupRetentionPeriodInDays,
     ///     });
     /// 
     /// });

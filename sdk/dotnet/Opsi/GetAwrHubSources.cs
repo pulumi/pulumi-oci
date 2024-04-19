@@ -29,13 +29,13 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHubSources = Oci.Opsi.GetAwrHubSources.Invoke(new()
         ///     {
-        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///         AwrHubSourceId = oci_opsi_awr_hub_source.Test_awr_hub_source.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Awr_hub_source_name,
-        ///         SourceTypes = @var.Awr_hub_source_source_type,
-        ///         States = @var.Awr_hub_source_state,
-        ///         Statuses = @var.Awr_hub_source_status,
+        ///         AwrHubId = testAwrHub.Id,
+        ///         AwrHubSourceId = testAwrHubSource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = awrHubSourceName,
+        ///         SourceTypes = awrHubSourceSourceType,
+        ///         States = awrHubSourceState,
+        ///         Statuses = awrHubSourceStatus,
         ///     });
         /// 
         /// });
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHubSources = Oci.Opsi.GetAwrHubSources.Invoke(new()
         ///     {
-        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///         AwrHubSourceId = oci_opsi_awr_hub_source.Test_awr_hub_source.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Awr_hub_source_name,
-        ///         SourceTypes = @var.Awr_hub_source_source_type,
-        ///         States = @var.Awr_hub_source_state,
-        ///         Statuses = @var.Awr_hub_source_status,
+        ///         AwrHubId = testAwrHub.Id,
+        ///         AwrHubSourceId = testAwrHubSource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = awrHubSourceName,
+        ///         SourceTypes = awrHubSourceSourceType,
+        ///         States = awrHubSourceState,
+        ///         Statuses = awrHubSourceStatus,
         ///     });
         /// 
         /// });

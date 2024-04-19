@@ -176,8 +176,8 @@ def get_repository_commit(commit_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=oci_devops_commit["test_commit"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
+    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=test_commit["id"],
+        repository_id=test_repository["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -221,8 +221,8 @@ def get_repository_commit_output(commit_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=oci_devops_commit["test_commit"]["id"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
+    test_repository_commit = oci.DevOps.get_repository_commit(commit_id=test_commit["id"],
+        repository_id=test_repository["id"])
     ```
     <!--End PulumiCodeChooser -->
 

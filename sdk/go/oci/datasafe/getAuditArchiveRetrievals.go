@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditArchiveRetrievals(ctx, &datasafe.GetAuditArchiveRetrievalsArgs{
-//				CompartmentId:           _var.Compartment_id,
-//				AccessLevel:             pulumi.StringRef(_var.Audit_archive_retrieval_access_level),
-//				AuditArchiveRetrievalId: pulumi.StringRef(oci_data_safe_audit_archive_retrieval.Test_audit_archive_retrieval.Id),
-//				CompartmentIdInSubtree:  pulumi.BoolRef(_var.Audit_archive_retrieval_compartment_id_in_subtree),
-//				DisplayName:             pulumi.StringRef(_var.Audit_archive_retrieval_display_name),
-//				State:                   pulumi.StringRef(_var.Audit_archive_retrieval_state),
-//				TargetId:                pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-//				TimeOfExpiry:            pulumi.StringRef(_var.Audit_archive_retrieval_time_of_expiry),
+//				CompartmentId:           compartmentId,
+//				AccessLevel:             pulumi.StringRef(auditArchiveRetrievalAccessLevel),
+//				AuditArchiveRetrievalId: pulumi.StringRef(testAuditArchiveRetrieval.Id),
+//				CompartmentIdInSubtree:  pulumi.BoolRef(auditArchiveRetrievalCompartmentIdInSubtree),
+//				DisplayName:             pulumi.StringRef(auditArchiveRetrievalDisplayName),
+//				State:                   pulumi.StringRef(auditArchiveRetrievalState),
+//				TargetId:                pulumi.StringRef(testTarget.Id),
+//				TimeOfExpiry:            pulumi.StringRef(auditArchiveRetrievalTimeOfExpiry),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,63 +31,63 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewBuildPipelineStage(ctx, "testBuildPipelineStage", &DevOps.BuildPipelineStageArgs{
-//				BuildPipelineId: pulumi.Any(oci_devops_build_pipeline.Test_build_pipeline.Id),
+//			_, err := DevOps.NewBuildPipelineStage(ctx, "test_build_pipeline_stage", &DevOps.BuildPipelineStageArgs{
+//				BuildPipelineId: pulumi.Any(testBuildPipeline.Id),
 //				BuildPipelineStagePredecessorCollection: &devops.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs{
 //					Items: devops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArray{
 //						&devops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs{
-//							Id: pulumi.Any(_var.Build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id),
+//							Id: pulumi.Any(buildPipelineStageBuildPipelineStagePredecessorCollectionItemsId),
 //						},
 //					},
 //				},
-//				BuildPipelineStageType: pulumi.Any(_var.Build_pipeline_stage_build_pipeline_stage_type),
+//				BuildPipelineStageType: pulumi.Any(buildPipelineStageBuildPipelineStageType),
 //				BuildRunnerShapeConfig: &devops.BuildPipelineStageBuildRunnerShapeConfigArgs{
-//					BuildRunnerType: pulumi.Any(_var.Build_pipeline_stage_build_runner_shape_config_build_runner_type),
-//					MemoryInGbs:     pulumi.Any(_var.Build_pipeline_stage_build_runner_shape_config_memory_in_gbs),
-//					Ocpus:           pulumi.Any(_var.Build_pipeline_stage_build_runner_shape_config_ocpus),
+//					BuildRunnerType: pulumi.Any(buildPipelineStageBuildRunnerShapeConfigBuildRunnerType),
+//					MemoryInGbs:     pulumi.Any(buildPipelineStageBuildRunnerShapeConfigMemoryInGbs),
+//					Ocpus:           pulumi.Any(buildPipelineStageBuildRunnerShapeConfigOcpus),
 //				},
 //				BuildSourceCollection: &devops.BuildPipelineStageBuildSourceCollectionArgs{
 //					Items: devops.BuildPipelineStageBuildSourceCollectionItemArray{
 //						&devops.BuildPipelineStageBuildSourceCollectionItemArgs{
-//							ConnectionType: pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_connection_type),
-//							Branch:         pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_branch),
-//							ConnectionId:   pulumi.Any(oci_devops_connection.Test_connection.Id),
-//							Name:           pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_name),
-//							RepositoryId:   pulumi.Any(oci_artifacts_repository.Test_repository.Id),
-//							RepositoryUrl:  pulumi.Any(_var.Build_pipeline_stage_build_source_collection_items_repository_url),
+//							ConnectionType: pulumi.Any(buildPipelineStageBuildSourceCollectionItemsConnectionType),
+//							Branch:         pulumi.Any(buildPipelineStageBuildSourceCollectionItemsBranch),
+//							ConnectionId:   pulumi.Any(testConnection.Id),
+//							Name:           pulumi.Any(buildPipelineStageBuildSourceCollectionItemsName),
+//							RepositoryId:   pulumi.Any(testRepository.Id),
+//							RepositoryUrl:  pulumi.Any(buildPipelineStageBuildSourceCollectionItemsRepositoryUrl),
 //						},
 //					},
 //				},
-//				BuildSpecFile: pulumi.Any(_var.Build_pipeline_stage_build_spec_file),
+//				BuildSpecFile: pulumi.Any(buildPipelineStageBuildSpecFile),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				DeliverArtifactCollection: &devops.BuildPipelineStageDeliverArtifactCollectionArgs{
 //					Items: devops.BuildPipelineStageDeliverArtifactCollectionItemArray{
 //						&devops.BuildPipelineStageDeliverArtifactCollectionItemArgs{
-//							ArtifactId:   pulumi.Any(oci_devops_artifact.Test_artifact.Id),
-//							ArtifactName: pulumi.Any(_var.Build_pipeline_stage_deliver_artifact_collection_items_artifact_name),
+//							ArtifactId:   pulumi.Any(testArtifact.Id),
+//							ArtifactName: pulumi.Any(buildPipelineStageDeliverArtifactCollectionItemsArtifactName),
 //						},
 //					},
 //				},
-//				DeployPipelineId: pulumi.Any(oci_devops_deploy_pipeline.Test_deploy_pipeline.Id),
-//				Description:      pulumi.Any(_var.Build_pipeline_stage_description),
-//				DisplayName:      pulumi.Any(_var.Build_pipeline_stage_display_name),
+//				DeployPipelineId: pulumi.Any(testDeployPipeline.Id),
+//				Description:      pulumi.Any(buildPipelineStageDescription),
+//				DisplayName:      pulumi.Any(buildPipelineStageDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Image:                      pulumi.Any(_var.Build_pipeline_stage_image),
-//				IsPassAllParametersEnabled: pulumi.Any(_var.Build_pipeline_stage_is_pass_all_parameters_enabled),
-//				PrimaryBuildSource:         pulumi.Any(_var.Build_pipeline_stage_primary_build_source),
+//				Image:                      pulumi.Any(buildPipelineStageImage),
+//				IsPassAllParametersEnabled: pulumi.Any(buildPipelineStageIsPassAllParametersEnabled),
+//				PrimaryBuildSource:         pulumi.Any(buildPipelineStagePrimaryBuildSource),
 //				PrivateAccessConfig: &devops.BuildPipelineStagePrivateAccessConfigArgs{
-//					NetworkChannelType: pulumi.Any(_var.Build_pipeline_stage_private_access_config_network_channel_type),
-//					SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					NsgIds:             pulumi.Any(_var.Build_pipeline_stage_private_access_config_nsg_ids),
+//					NetworkChannelType: pulumi.Any(buildPipelineStagePrivateAccessConfigNetworkChannelType),
+//					SubnetId:           pulumi.Any(testSubnet.Id),
+//					NsgIds:             pulumi.Any(buildPipelineStagePrivateAccessConfigNsgIds),
 //				},
-//				StageExecutionTimeoutInSeconds: pulumi.Any(_var.Build_pipeline_stage_stage_execution_timeout_in_seconds),
+//				StageExecutionTimeoutInSeconds: pulumi.Any(buildPipelineStageStageExecutionTimeoutInSeconds),
 //				WaitCriteria: &devops.BuildPipelineStageWaitCriteriaArgs{
-//					WaitDuration: pulumi.Any(_var.Build_pipeline_stage_wait_criteria_wait_duration),
-//					WaitType:     pulumi.Any(_var.Build_pipeline_stage_wait_criteria_wait_type),
+//					WaitDuration: pulumi.Any(buildPipelineStageWaitCriteriaWaitDuration),
+//					WaitType:     pulumi.Any(buildPipelineStageWaitCriteriaWaitType),
 //				},
 //			})
 //			if err != nil {

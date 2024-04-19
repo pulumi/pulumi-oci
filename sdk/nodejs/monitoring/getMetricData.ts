@@ -27,14 +27,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMetricData = oci.Monitoring.getMetricData({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.metric_data_namespace,
- *     query: _var.metric_data_query,
- *     compartmentIdInSubtree: _var.metric_data_compartment_id_in_subtree,
- *     endTime: _var.metric_data_end_time,
- *     resolution: _var.metric_data_resolution,
- *     resourceGroup: _var.metric_data_resource_group,
- *     startTime: _var.metric_data_start_time,
+ *     compartmentId: compartmentId,
+ *     namespace: metricDataNamespace,
+ *     query: metricDataQuery,
+ *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree,
+ *     endTime: metricDataEndTime,
+ *     resolution: metricDataResolution,
+ *     resourceGroup: metricDataResourceGroup,
+ *     startTime: metricDataStartTime,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -157,14 +157,14 @@ export interface GetMetricDataResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMetricData = oci.Monitoring.getMetricData({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.metric_data_namespace,
- *     query: _var.metric_data_query,
- *     compartmentIdInSubtree: _var.metric_data_compartment_id_in_subtree,
- *     endTime: _var.metric_data_end_time,
- *     resolution: _var.metric_data_resolution,
- *     resourceGroup: _var.metric_data_resource_group,
- *     startTime: _var.metric_data_start_time,
+ *     compartmentId: compartmentId,
+ *     namespace: metricDataNamespace,
+ *     query: metricDataQuery,
+ *     compartmentIdInSubtree: metricDataCompartmentIdInSubtree,
+ *     endTime: metricDataEndTime,
+ *     resolution: metricDataResolution,
+ *     resourceGroup: metricDataResourceGroup,
+ *     startTime: metricDataStartTime,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

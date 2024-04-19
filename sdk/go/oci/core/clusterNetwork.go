@@ -45,53 +45,53 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewClusterNetwork(ctx, "testClusterNetwork", &Core.ClusterNetworkArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewClusterNetwork(ctx, "test_cluster_network", &Core.ClusterNetworkArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				InstancePools: core.ClusterNetworkInstancePoolArray{
 //					&core.ClusterNetworkInstancePoolArgs{
-//						InstanceConfigurationId: pulumi.Any(oci_core_instance_configuration.Test_instance_configuration.Id),
-//						Size:                    pulumi.Any(_var.Cluster_network_instance_pools_size),
+//						InstanceConfigurationId: pulumi.Any(testInstanceConfiguration.Id),
+//						Size:                    pulumi.Any(clusterNetworkInstancePoolsSize),
 //						DefinedTags: pulumi.Map{
 //							"Operations.CostCenter": pulumi.Any("42"),
 //						},
-//						DisplayName: pulumi.Any(_var.Cluster_network_instance_pools_display_name),
+//						DisplayName: pulumi.Any(clusterNetworkInstancePoolsDisplayName),
 //						FreeformTags: pulumi.Map{
 //							"Department": pulumi.Any("Finance"),
 //						},
 //					},
 //				},
 //				PlacementConfiguration: &core.ClusterNetworkPlacementConfigurationArgs{
-//					AvailabilityDomain: pulumi.Any(_var.Cluster_network_placement_configuration_availability_domain),
+//					AvailabilityDomain: pulumi.Any(clusterNetworkPlacementConfigurationAvailabilityDomain),
 //					PrimaryVnicSubnets: &core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs{
-//						SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//						SubnetId: pulumi.Any(testSubnet.Id),
 //						Ipv6addressIpv6subnetCidrPairDetails: core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArray{
 //							&core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs{
-//								Ipv6subnetCidr: pulumi.Any(_var.Cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//								Ipv6subnetCidr: pulumi.Any(clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
 //							},
 //						},
-//						IsAssignIpv6ip: pulumi.Any(_var.Cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip),
+//						IsAssignIpv6ip: pulumi.Any(clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIsAssignIpv6ip),
 //					},
 //					SecondaryVnicSubnets: core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArray{
 //						&core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs{
-//							SubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//							DisplayName: pulumi.Any(_var.Cluster_network_placement_configuration_secondary_vnic_subnets_display_name),
+//							SubnetId:    pulumi.Any(testSubnet.Id),
+//							DisplayName: pulumi.Any(clusterNetworkPlacementConfigurationSecondaryVnicSubnetsDisplayName),
 //							Ipv6addressIpv6subnetCidrPairDetails: core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{
 //								&core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{
-//									Ipv6subnetCidr: pulumi.Any(_var.Cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//									Ipv6subnetCidr: pulumi.Any(clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
 //								},
 //							},
-//							IsAssignIpv6ip: pulumi.Any(_var.Cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip),
+//							IsAssignIpv6ip: pulumi.Any(clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIsAssignIpv6ip),
 //						},
 //					},
 //				},
 //				ClusterConfiguration: &core.ClusterNetworkClusterConfigurationArgs{
-//					HpcIslandId:     pulumi.Any(oci_core_hpc_island.Test_hpc_island.Id),
-//					NetworkBlockIds: pulumi.Any(_var.Cluster_network_cluster_configuration_network_block_ids),
+//					HpcIslandId:     pulumi.Any(testHpcIsland.Id),
+//					NetworkBlockIds: pulumi.Any(clusterNetworkClusterConfigurationNetworkBlockIds),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Cluster_network_display_name),
+//				DisplayName: pulumi.Any(clusterNetworkDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

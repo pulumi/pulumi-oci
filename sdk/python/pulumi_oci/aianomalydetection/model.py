@@ -387,21 +387,21 @@ class Model(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model = oci.ai_anomaly_detection.Model("testModel",
-            compartment_id=var["compartment_id"],
+        test_model = oci.ai_anomaly_detection.Model("test_model",
+            compartment_id=compartment_id,
             model_training_details=oci.ai_anomaly_detection.ModelModelTrainingDetailsArgs(
-                data_asset_ids=var["model_model_training_details_data_asset_ids"],
-                algorithm_hint=var["model_model_training_details_algorithm_hint"],
-                target_fap=var["model_model_training_details_target_fap"],
-                training_fraction=var["model_model_training_details_training_fraction"],
-                window_size=var["model_model_training_details_window_size"],
+                data_asset_ids=model_model_training_details_data_asset_ids,
+                algorithm_hint=model_model_training_details_algorithm_hint,
+                target_fap=model_model_training_details_target_fap,
+                training_fraction=model_model_training_details_training_fraction,
+                window_size=model_model_training_details_window_size,
             ),
-            project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
+            project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["model_description"],
-            display_name=var["model_display_name"],
+            description=model_description,
+            display_name=model_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -448,21 +448,21 @@ class Model(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model = oci.ai_anomaly_detection.Model("testModel",
-            compartment_id=var["compartment_id"],
+        test_model = oci.ai_anomaly_detection.Model("test_model",
+            compartment_id=compartment_id,
             model_training_details=oci.ai_anomaly_detection.ModelModelTrainingDetailsArgs(
-                data_asset_ids=var["model_model_training_details_data_asset_ids"],
-                algorithm_hint=var["model_model_training_details_algorithm_hint"],
-                target_fap=var["model_model_training_details_target_fap"],
-                training_fraction=var["model_model_training_details_training_fraction"],
-                window_size=var["model_model_training_details_window_size"],
+                data_asset_ids=model_model_training_details_data_asset_ids,
+                algorithm_hint=model_model_training_details_algorithm_hint,
+                target_fap=model_model_training_details_target_fap,
+                training_fraction=model_model_training_details_training_fraction,
+                window_size=model_model_training_details_window_size,
             ),
-            project_id=oci_ai_anomaly_detection_project["test_project"]["id"],
+            project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["model_description"],
-            display_name=var["model_display_name"],
+            description=model_description,
+            display_name=model_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

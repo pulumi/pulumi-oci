@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabases = oci.DataSafe.getTargetDatabases({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.target_database_access_level,
- *     associatedResourceId: oci_data_safe_associated_resource.test_associated_resource.id,
- *     compartmentIdInSubtree: _var.target_database_compartment_id_in_subtree,
- *     databaseType: _var.target_database_database_type,
- *     displayName: _var.target_database_display_name,
- *     infrastructureType: _var.target_database_infrastructure_type,
- *     state: _var.target_database_state,
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: targetDatabaseAccessLevel,
+ *     associatedResourceId: testAssociatedResource.id,
+ *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree,
+ *     databaseType: targetDatabaseDatabaseType,
+ *     displayName: targetDatabaseDisplayName,
+ *     infrastructureType: targetDatabaseInfrastructureType,
+ *     state: targetDatabaseState,
+ *     targetDatabaseId: testTargetDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -143,15 +143,15 @@ export interface GetTargetDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabases = oci.DataSafe.getTargetDatabases({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.target_database_access_level,
- *     associatedResourceId: oci_data_safe_associated_resource.test_associated_resource.id,
- *     compartmentIdInSubtree: _var.target_database_compartment_id_in_subtree,
- *     databaseType: _var.target_database_database_type,
- *     displayName: _var.target_database_display_name,
- *     infrastructureType: _var.target_database_infrastructure_type,
- *     state: _var.target_database_state,
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: targetDatabaseAccessLevel,
+ *     associatedResourceId: testAssociatedResource.id,
+ *     compartmentIdInSubtree: targetDatabaseCompartmentIdInSubtree,
+ *     databaseType: targetDatabaseDatabaseType,
+ *     displayName: targetDatabaseDisplayName,
+ *     infrastructureType: targetDatabaseInfrastructureType,
+ *     state: targetDatabaseState,
+ *     targetDatabaseId: testTargetDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

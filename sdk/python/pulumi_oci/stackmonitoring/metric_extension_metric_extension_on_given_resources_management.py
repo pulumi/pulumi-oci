@@ -157,10 +157,10 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         import pulumi
         import pulumi_oci as oci
 
-        test_metric_extension_metric_extension_on_given_resources_management = oci.stack_monitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("testMetricExtensionMetricExtensionOnGivenResourcesManagement",
-            metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
-            resource_ids=var["metric_extension_metric_extension_on_given_resources_management_resource_ids"],
-            enable_metric_extension_on_given_resources=var["enable_metric_extension_on_given_resources"])
+        test_metric_extension_metric_extension_on_given_resources_management = oci.stack_monitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management",
+            metric_extension_id=test_metric_extension["id"],
+            resource_ids=metric_extension_metric_extension_on_given_resources_management_resource_ids[0],
+            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -192,10 +192,10 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         import pulumi
         import pulumi_oci as oci
 
-        test_metric_extension_metric_extension_on_given_resources_management = oci.stack_monitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("testMetricExtensionMetricExtensionOnGivenResourcesManagement",
-            metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
-            resource_ids=var["metric_extension_metric_extension_on_given_resources_management_resource_ids"],
-            enable_metric_extension_on_given_resources=var["enable_metric_extension_on_given_resources"])
+        test_metric_extension_metric_extension_on_given_resources_management = oci.stack_monitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management",
+            metric_extension_id=test_metric_extension["id"],
+            resource_ids=metric_extension_metric_extension_on_given_resources_management_resource_ids[0],
+            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
         ```
         <!--End PulumiCodeChooser -->
 

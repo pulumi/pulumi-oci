@@ -128,10 +128,10 @@ def get_software_source_software_packages(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_software_packages = oci.OsManagementHub.get_software_source_software_packages(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        display_name=var["software_source_software_package_display_name"],
-        display_name_contains=var["software_source_software_package_display_name_contains"],
-        is_latest=var["software_source_software_package_is_latest"])
+    test_software_source_software_packages = oci.OsManagementHub.get_software_source_software_packages(software_source_id=test_software_source["id"],
+        display_name=software_source_software_package_display_name,
+        display_name_contains=software_source_software_package_display_name_contains,
+        is_latest=software_source_software_package_is_latest)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -180,10 +180,10 @@ def get_software_source_software_packages_output(display_name: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_software_packages = oci.OsManagementHub.get_software_source_software_packages(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        display_name=var["software_source_software_package_display_name"],
-        display_name_contains=var["software_source_software_package_display_name_contains"],
-        is_latest=var["software_source_software_package_is_latest"])
+    test_software_source_software_packages = oci.OsManagementHub.get_software_source_software_packages(software_source_id=test_software_source["id"],
+        display_name=software_source_software_package_display_name,
+        display_name_contains=software_source_software_package_display_name_contains,
+        is_latest=software_source_software_package_is_latest)
     ```
     <!--End PulumiCodeChooser -->
 

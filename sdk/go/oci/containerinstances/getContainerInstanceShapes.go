@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerInstances.GetContainerInstanceShapes(ctx, &containerinstances.GetContainerInstanceShapesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Container_instance_shape_availability_domain),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(containerInstanceShapeAvailabilityDomain),
 //			}, nil)
 //			if err != nil {
 //				return err

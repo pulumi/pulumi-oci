@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalAsm = oci.DatabaseManagement.getExternalAsm({
- *     externalAsmId: oci_database_management_external_asm.test_external_asm.id,
+ *     externalAsmId: testExternalAsmOciDatabaseManagementExternalAsm.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,7 +133,7 @@ export interface GetExternalAsmResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalAsm = oci.DatabaseManagement.getExternalAsm({
- *     externalAsmId: oci_database_management_external_asm.test_external_asm.id,
+ *     externalAsmId: testExternalAsmOciDatabaseManagementExternalAsm.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

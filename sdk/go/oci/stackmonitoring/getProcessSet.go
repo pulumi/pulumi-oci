@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetProcessSet(ctx, &stackmonitoring.GetProcessSetArgs{
-//				ProcessSetId: oci_stack_monitoring_process_set.Test_process_set.Id,
+//				ProcessSetId: testProcessSetOciStackMonitoringProcessSet.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

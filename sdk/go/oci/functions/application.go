@@ -27,31 +27,31 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Functions.NewApplication(ctx, "testApplication", &Functions.ApplicationArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Application_display_name),
-//				SubnetIds:     pulumi.Any(_var.Application_subnet_ids),
-//				Config:        pulumi.Any(_var.Application_config),
+//			_, err := Functions.NewApplication(ctx, "test_application", &Functions.ApplicationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(applicationDisplayName),
+//				SubnetIds:     pulumi.Any(applicationSubnetIds),
+//				Config:        pulumi.Any(applicationConfig),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				NetworkSecurityGroupIds: pulumi.Any(_var.Application_network_security_group_ids),
+//				NetworkSecurityGroupIds: pulumi.Any(applicationNetworkSecurityGroupIds),
 //				ImagePolicyConfig: &functions.ApplicationImagePolicyConfigArgs{
-//					IsPolicyEnabled: pulumi.Any(_var.Application_image_policy_config_is_policy_enabled),
+//					IsPolicyEnabled: pulumi.Any(applicationImagePolicyConfigIsPolicyEnabled),
 //					KeyDetails: functions.ApplicationImagePolicyConfigKeyDetailArray{
 //						&functions.ApplicationImagePolicyConfigKeyDetailArgs{
-//							KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
+//							KmsKeyId: pulumi.Any(testKey.Id),
 //						},
 //					},
 //				},
-//				Shape:     pulumi.Any(_var.Application_shape),
-//				SyslogUrl: pulumi.Any(_var.Application_syslog_url),
+//				Shape:     pulumi.Any(applicationShape),
+//				SyslogUrl: pulumi.Any(applicationSyslogUrl),
 //				TraceConfig: &functions.ApplicationTraceConfigArgs{
-//					DomainId:  pulumi.Any(oci_functions_domain.Test_domain.Id),
-//					IsEnabled: pulumi.Any(_var.Application_trace_config_is_enabled),
+//					DomainId:  pulumi.Any(testDomain.Id),
+//					IsEnabled: pulumi.Any(applicationTraceConfigIsEnabled),
 //				},
 //			})
 //			if err != nil {

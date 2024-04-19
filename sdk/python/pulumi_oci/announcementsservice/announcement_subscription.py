@@ -439,25 +439,25 @@ class AnnouncementSubscription(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_announcement_subscription = oci.announcements_service.AnnouncementSubscription("testAnnouncementSubscription",
-            compartment_id=var["compartment_id"],
-            display_name=var["announcement_subscription_display_name"],
-            ons_topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
+        test_announcement_subscription = oci.announcements_service.AnnouncementSubscription("test_announcement_subscription",
+            compartment_id=compartment_id,
+            display_name=announcement_subscription_display_name,
+            ons_topic_id=test_notification_topic["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["announcement_subscription_description"],
+            description=announcement_subscription_description,
             filter_groups=oci.announcements_service.AnnouncementSubscriptionFilterGroupsArgs(
                 filters=[oci.announcements_service.AnnouncementSubscriptionFilterGroupsFilterArgs(
-                    type=var["announcement_subscription_filter_groups_filters_type"],
-                    value=var["announcement_subscription_filter_groups_filters_value"],
+                    type=announcement_subscription_filter_groups_filters_type,
+                    value=announcement_subscription_filter_groups_filters_value,
                 )],
             ),
             freeform_tags={
                 "bar-key": "value",
             },
-            preferred_language=var["announcement_subscription_preferred_language"],
-            preferred_time_zone=var["announcement_subscription_preferred_time_zone"])
+            preferred_language=announcement_subscription_preferred_language,
+            preferred_time_zone=announcement_subscription_preferred_time_zone)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -505,25 +505,25 @@ class AnnouncementSubscription(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_announcement_subscription = oci.announcements_service.AnnouncementSubscription("testAnnouncementSubscription",
-            compartment_id=var["compartment_id"],
-            display_name=var["announcement_subscription_display_name"],
-            ons_topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
+        test_announcement_subscription = oci.announcements_service.AnnouncementSubscription("test_announcement_subscription",
+            compartment_id=compartment_id,
+            display_name=announcement_subscription_display_name,
+            ons_topic_id=test_notification_topic["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["announcement_subscription_description"],
+            description=announcement_subscription_description,
             filter_groups=oci.announcements_service.AnnouncementSubscriptionFilterGroupsArgs(
                 filters=[oci.announcements_service.AnnouncementSubscriptionFilterGroupsFilterArgs(
-                    type=var["announcement_subscription_filter_groups_filters_type"],
-                    value=var["announcement_subscription_filter_groups_filters_value"],
+                    type=announcement_subscription_filter_groups_filters_type,
+                    value=announcement_subscription_filter_groups_filters_value,
                 )],
             ),
             freeform_tags={
                 "bar-key": "value",
             },
-            preferred_language=var["announcement_subscription_preferred_language"],
-            preferred_time_zone=var["announcement_subscription_preferred_time_zone"])
+            preferred_language=announcement_subscription_preferred_language,
+            preferred_time_zone=announcement_subscription_preferred_time_zone)
         ```
         <!--End PulumiCodeChooser -->
 

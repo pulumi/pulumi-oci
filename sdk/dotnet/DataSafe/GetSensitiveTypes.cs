@@ -30,19 +30,19 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveTypes = Oci.DataSafe.GetSensitiveTypes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Sensitive_type_access_level,
-        ///         CompartmentIdInSubtree = @var.Sensitive_type_compartment_id_in_subtree,
-        ///         DefaultMaskingFormatId = oci_data_safe_default_masking_format.Test_default_masking_format.Id,
-        ///         DisplayName = @var.Sensitive_type_display_name,
-        ///         EntityType = @var.Sensitive_type_entity_type,
-        ///         IsCommon = @var.Sensitive_type_is_common,
-        ///         ParentCategoryId = oci_marketplace_category.Test_category.Id,
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         SensitiveTypeSource = @var.Sensitive_type_sensitive_type_source,
-        ///         State = @var.Sensitive_type_state,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_type_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Sensitive_type_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sensitiveTypeAccessLevel,
+        ///         CompartmentIdInSubtree = sensitiveTypeCompartmentIdInSubtree,
+        ///         DefaultMaskingFormatId = testDefaultMaskingFormat.Id,
+        ///         DisplayName = sensitiveTypeDisplayName,
+        ///         EntityType = sensitiveTypeEntityType,
+        ///         IsCommon = sensitiveTypeIsCommon,
+        ///         ParentCategoryId = testCategory.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         SensitiveTypeSource = sensitiveTypeSensitiveTypeSource,
+        ///         State = sensitiveTypeState,
+        ///         TimeCreatedGreaterThanOrEqualTo = sensitiveTypeTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = sensitiveTypeTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -71,19 +71,19 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveTypes = Oci.DataSafe.GetSensitiveTypes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Sensitive_type_access_level,
-        ///         CompartmentIdInSubtree = @var.Sensitive_type_compartment_id_in_subtree,
-        ///         DefaultMaskingFormatId = oci_data_safe_default_masking_format.Test_default_masking_format.Id,
-        ///         DisplayName = @var.Sensitive_type_display_name,
-        ///         EntityType = @var.Sensitive_type_entity_type,
-        ///         IsCommon = @var.Sensitive_type_is_common,
-        ///         ParentCategoryId = oci_marketplace_category.Test_category.Id,
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         SensitiveTypeSource = @var.Sensitive_type_sensitive_type_source,
-        ///         State = @var.Sensitive_type_state,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_type_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Sensitive_type_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sensitiveTypeAccessLevel,
+        ///         CompartmentIdInSubtree = sensitiveTypeCompartmentIdInSubtree,
+        ///         DefaultMaskingFormatId = testDefaultMaskingFormat.Id,
+        ///         DisplayName = sensitiveTypeDisplayName,
+        ///         EntityType = sensitiveTypeEntityType,
+        ///         IsCommon = sensitiveTypeIsCommon,
+        ///         ParentCategoryId = testCategory.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         SensitiveTypeSource = sensitiveTypeSensitiveTypeSource,
+        ///         State = sensitiveTypeState,
+        ///         TimeCreatedGreaterThanOrEqualTo = sensitiveTypeTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = sensitiveTypeTimeCreatedLessThan,
         ///     });
         /// 
         /// });

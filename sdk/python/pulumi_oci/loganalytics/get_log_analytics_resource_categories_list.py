@@ -122,10 +122,10 @@ def get_log_analytics_resource_categories_list(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=var["log_analytics_resource_categories_list_namespace"],
-        resource_ids=var["log_analytics_resource_categories_list_resource_ids"],
-        resource_types=var["log_analytics_resource_categories_list_resource_types"],
-        resource_categories=var["log_analytics_resource_categories_list_resource_categories"])
+    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
+        resource_ids=log_analytics_resource_categories_list_resource_ids,
+        resource_types=log_analytics_resource_categories_list_resource_types,
+        resource_categories=log_analytics_resource_categories_list_resource_categories)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_log_analytics_resource_categories_list_output(namespace: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=var["log_analytics_resource_categories_list_namespace"],
-        resource_ids=var["log_analytics_resource_categories_list_resource_ids"],
-        resource_types=var["log_analytics_resource_categories_list_resource_types"],
-        resource_categories=var["log_analytics_resource_categories_list_resource_categories"])
+    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
+        resource_ids=log_analytics_resource_categories_list_resource_ids,
+        resource_types=log_analytics_resource_categories_list_resource_types,
+        resource_categories=log_analytics_resource_categories_list_resource_categories)
     ```
     <!--End PulumiCodeChooser -->
 

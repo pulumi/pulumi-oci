@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventory = new oci.cloudbridge.Inventory("testInventory", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.inventory_display_name,
+ * const testInventory = new oci.cloudbridge.Inventory("test_inventory", {
+ *     compartmentId: compartmentId,
+ *     displayName: inventoryDisplayName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

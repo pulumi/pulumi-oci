@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVtap = Oci.Core.GetVtap.Invoke(new()
         ///     {
-        ///         VtapId = oci_core_vtap.Test_vtap.Id,
+        ///         VtapId = testVtapOciCoreVtap.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVtap = Oci.Core.GetVtap.Invoke(new()
         ///     {
-        ///         VtapId = oci_core_vtap.Test_vtap.Id,
+        ///         VtapId = testVtapOciCoreVtap.Id,
         ///     });
         /// 
         /// });

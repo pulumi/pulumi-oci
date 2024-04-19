@@ -30,10 +30,10 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testBdsInstancePatchHistories = Oci.BigDataService.GetBdsInstancePatchHistories.Invoke(new()
         ///     {
-        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         PatchType = @var.Bds_instance_patch_history_patch_type,
-        ///         PatchVersion = @var.Bds_instance_patch_history_patch_version,
-        ///         State = @var.Bds_instance_patch_history_state,
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///         PatchType = bdsInstancePatchHistoryPatchType,
+        ///         PatchVersion = bdsInstancePatchHistoryPatchVersion,
+        ///         State = bdsInstancePatchHistoryState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testBdsInstancePatchHistories = Oci.BigDataService.GetBdsInstancePatchHistories.Invoke(new()
         ///     {
-        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         PatchType = @var.Bds_instance_patch_history_patch_type,
-        ///         PatchVersion = @var.Bds_instance_patch_history_patch_version,
-        ///         State = @var.Bds_instance_patch_history_state,
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///         PatchType = bdsInstancePatchHistoryPatchType,
+        ///         PatchVersion = bdsInstancePatchHistoryPatchVersion,
+        ///         State = bdsInstancePatchHistoryState,
         ///     });
         /// 
         /// });

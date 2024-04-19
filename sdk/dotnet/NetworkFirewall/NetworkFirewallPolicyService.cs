@@ -25,18 +25,19 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkFirewallPolicyService = new Oci.NetworkFirewall.NetworkFirewallPolicyService("testNetworkFirewallPolicyService", new()
+    ///     var testNetworkFirewallPolicyService = new Oci.NetworkFirewall.NetworkFirewallPolicyService("test_network_firewall_policy_service", new()
     ///     {
-    ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
+    ///         Name = networkFirewallPolicyServiceName,
+    ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
     ///         PortRanges = new[]
     ///         {
     ///             new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicyServicePortRangeArgs
     ///             {
-    ///                 MinimumPort = @var.Network_firewall_policy_service_port_ranges_minimum_port,
-    ///                 MaximumPort = @var.Network_firewall_policy_service_port_ranges_maximum_port,
+    ///                 MinimumPort = networkFirewallPolicyServicePortRangesMinimumPort,
+    ///                 MaximumPort = networkFirewallPolicyServicePortRangesMaximumPort,
     ///             },
     ///         },
-    ///         Type = @var.Network_firewall_policy_service_type,
+    ///         Type = networkFirewallPolicyServiceType,
     ///     });
     /// 
     /// });

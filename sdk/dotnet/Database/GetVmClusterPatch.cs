@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testVmClusterPatch = Oci.Database.GetVmClusterPatch.Invoke(new()
         ///     {
-        ///         PatchId = oci_database_patch.Test_patch.Id,
-        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///         PatchId = testPatch.Id,
+        ///         VmClusterId = testVmCluster.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testVmClusterPatch = Oci.Database.GetVmClusterPatch.Invoke(new()
         ///     {
-        ///         PatchId = oci_database_patch.Test_patch.Id,
-        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///         PatchId = testPatch.Id,
+        ///         VmClusterId = testVmCluster.Id,
         ///     });
         /// 
         /// });

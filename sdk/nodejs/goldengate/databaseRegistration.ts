@@ -17,29 +17,29 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseRegistration = new oci.goldengate.DatabaseRegistration("testDatabaseRegistration", {
- *     aliasName: _var.database_registration_alias_name,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_registration_display_name,
- *     fqdn: _var.database_registration_fqdn,
- *     password: _var.database_registration_password,
- *     username: _var.database_registration_username,
- *     connectionString: _var.database_registration_connection_string,
- *     databaseId: oci_database_database.test_database.id,
+ * const testDatabaseRegistration = new oci.goldengate.DatabaseRegistration("test_database_registration", {
+ *     aliasName: databaseRegistrationAliasName,
+ *     compartmentId: compartmentId,
+ *     displayName: databaseRegistrationDisplayName,
+ *     fqdn: databaseRegistrationFqdn,
+ *     password: databaseRegistrationPassword,
+ *     username: databaseRegistrationUsername,
+ *     connectionString: databaseRegistrationConnectionString,
+ *     databaseId: testDatabase.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.database_registration_description,
+ *     description: databaseRegistrationDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     ipAddress: _var.database_registration_ip_address,
- *     keyId: oci_kms_key.test_key.id,
- *     secretCompartmentId: oci_identity_compartment.test_compartment.id,
- *     sessionMode: _var.database_registration_session_mode,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vaultId: oci_kms_vault.test_vault.id,
- *     wallet: _var.database_registration_wallet,
+ *     ipAddress: databaseRegistrationIpAddress,
+ *     keyId: testKey.id,
+ *     secretCompartmentId: testCompartment.id,
+ *     sessionMode: databaseRegistrationSessionMode,
+ *     subnetId: testSubnet.id,
+ *     vaultId: testVault.id,
+ *     wallet: databaseRegistrationWallet,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

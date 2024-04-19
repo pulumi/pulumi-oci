@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEmailDomains = oci.Email.getEmailDomains({
- *     compartmentId: _var.compartment_id,
- *     id: _var.email_domain_id,
- *     name: _var.email_domain_name,
- *     state: _var.email_domain_state,
+ *     compartmentId: compartmentId,
+ *     id: emailDomainId,
+ *     name: emailDomainName,
+ *     state: emailDomainState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetEmailDomainsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEmailDomains = oci.Email.getEmailDomains({
- *     compartmentId: _var.compartment_id,
- *     id: _var.email_domain_id,
- *     name: _var.email_domain_name,
- *     state: _var.email_domain_state,
+ *     compartmentId: compartmentId,
+ *     id: emailDomainId,
+ *     name: emailDomainName,
+ *     state: emailDomainState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

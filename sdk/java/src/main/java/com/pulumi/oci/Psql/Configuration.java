@@ -50,22 +50,22 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConfiguration = new Configuration(&#34;testConfiguration&#34;, ConfigurationArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .dbConfigurationOverrides(ConfigurationDbConfigurationOverridesArgs.builder()
  *                 .items(ConfigurationDbConfigurationOverridesItemArgs.builder()
- *                     .configKey(var_.configuration_db_configuration_overrides_items_config_key())
- *                     .overridenConfigValue(var_.configuration_db_configuration_overrides_items_overriden_config_value())
+ *                     .configKey(configurationDbConfigurationOverridesItemsConfigKey)
+ *                     .overridenConfigValue(configurationDbConfigurationOverridesItemsOverridenConfigValue)
  *                     .build())
  *                 .build())
- *             .dbVersion(var_.configuration_db_version())
- *             .displayName(var_.configuration_display_name())
- *             .instanceMemorySizeInGbs(var_.configuration_instance_memory_size_in_gbs())
- *             .instanceOcpuCount(var_.configuration_instance_ocpu_count())
- *             .shape(var_.configuration_shape())
+ *             .dbVersion(configurationDbVersion)
+ *             .displayName(configurationDisplayName)
+ *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
+ *             .instanceOcpuCount(configurationInstanceOcpuCount)
+ *             .shape(configurationShape)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.configuration_description())
+ *             .description(configurationDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .systemTags(var_.configuration_system_tags())
+ *             .systemTags(configurationSystemTags)
  *             .build());
  * 
  *     }

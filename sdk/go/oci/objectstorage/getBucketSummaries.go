@@ -39,8 +39,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.GetBucketSummaries(ctx, &objectstorage.GetBucketSummariesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Namespace:     _var.Bucket_namespace,
+//				CompartmentId: compartmentId,
+//				Namespace:     bucketNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

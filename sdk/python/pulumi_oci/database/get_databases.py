@@ -143,11 +143,11 @@ def get_databases(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_databases = oci.Database.get_databases(compartment_id=var["compartment_id"],
-        db_home_id=oci_database_db_home["test_db_home"]["id"],
-        db_name=var["database_db_name"],
-        state=var["database_state"],
-        system_id=oci_database_system["test_system"]["id"])
+    test_databases = oci.Database.get_databases(compartment_id=compartment_id,
+        db_home_id=test_db_home["id"],
+        db_name=database_db_name,
+        state=database_state,
+        system_id=test_system["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -199,11 +199,11 @@ def get_databases_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_databases = oci.Database.get_databases(compartment_id=var["compartment_id"],
-        db_home_id=oci_database_db_home["test_db_home"]["id"],
-        db_name=var["database_db_name"],
-        state=var["database_state"],
-        system_id=oci_database_system["test_system"]["id"])
+    test_databases = oci.Database.get_databases(compartment_id=compartment_id,
+        db_home_id=test_db_home["id"],
+        db_name=database_db_name,
+        state=database_state,
+        system_id=test_system["id"])
     ```
     <!--End PulumiCodeChooser -->
 

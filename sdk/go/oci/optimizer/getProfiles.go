@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetProfiles(ctx, &optimizer.GetProfilesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Profile_name),
-//				State:         pulumi.StringRef(_var.Profile_state),
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(profileName),
+//				State:         pulumi.StringRef(profileState),
 //			}, nil)
 //			if err != nil {
 //				return err

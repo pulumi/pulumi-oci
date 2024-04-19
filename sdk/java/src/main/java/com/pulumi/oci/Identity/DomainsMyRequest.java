@@ -42,8 +42,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Identity.DomainsMyRequest;
  * import com.pulumi.oci.Identity.DomainsMyRequestArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsMyRequestRequestingArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsMyRequestApprovalDetailArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsMyRequestRequestingArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsMyRequestRequestorArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsMyRequestTagArgs;
  * import java.util.List;
@@ -60,27 +60,27 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMyRequest = new DomainsMyRequest(&#34;testMyRequest&#34;, DomainsMyRequestArgs.builder()        
- *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
- *             .justification(var_.my_request_justification())
+ *             .approvalDetails()
+ *             .idcsEndpoint(testDomain.url())
+ *             .justification(myRequestJustification)
  *             .requesting(DomainsMyRequestRequestingArgs.builder()
- *                 .type(var_.my_request_requesting_type())
- *                 .value(oci_identity_domains_group.group_to_request().id())
- *                 .description(var_.my_request_requesting_description())
+ *                 .type(myRequestRequestingType)
+ *                 .value(groupToRequest.id())
+ *                 .description(myRequestRequestingDescription)
  *                 .build())
  *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:Request&#34;)
- *             .action(var_.my_request_action())
- *             .approvalDetails()
+ *             .action(myRequestAction)
  *             .attributeSets(&#34;all&#34;)
  *             .attributes(&#34;&#34;)
- *             .authorization(var_.my_request_authorization())
- *             .ocid(var_.my_request_ocid())
+ *             .authorization(myRequestAuthorization)
+ *             .ocid(myRequestOcid)
  *             .requestor(DomainsMyRequestRequestorArgs.builder()
- *                 .value(var_.my_request_requestor_value())
+ *                 .value(myRequestRequestorValue)
  *                 .build())
- *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
+ *             .resourceTypeSchemaVersion(myRequestResourceTypeSchemaVersion)
  *             .tags(DomainsMyRequestTagArgs.builder()
- *                 .key(var_.my_request_tags_key())
- *                 .value(var_.my_request_tags_value())
+ *                 .key(myRequestTagsKey)
+ *                 .value(myRequestTagsValue)
  *                 .build())
  *             .build());
  * 

@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingReportsMaskedColumns = oci.DataSafe.getMaskingReportMaskedColumns({
- *     maskingReportId: oci_data_safe_masking_report.test_masking_report.id,
- *     columnNames: _var.masking_reports_masked_column_column_name,
- *     maskingColumnGroups: _var.masking_reports_masked_column_masking_column_group,
- *     objects: _var.masking_reports_masked_column_object,
- *     objectTypes: _var.masking_reports_masked_column_object_type,
- *     schemaNames: _var.masking_reports_masked_column_schema_name,
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
+ *     maskingReportId: testMaskingReport.id,
+ *     columnNames: maskingReportsMaskedColumnColumnName,
+ *     maskingColumnGroups: maskingReportsMaskedColumnMaskingColumnGroup,
+ *     objects: maskingReportsMaskedColumnObject,
+ *     objectTypes: maskingReportsMaskedColumnObjectType,
+ *     schemaNames: maskingReportsMaskedColumnSchemaName,
+ *     sensitiveTypeId: testSensitiveType.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -132,13 +132,13 @@ export interface GetMaskingReportMaskedColumnsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingReportsMaskedColumns = oci.DataSafe.getMaskingReportMaskedColumns({
- *     maskingReportId: oci_data_safe_masking_report.test_masking_report.id,
- *     columnNames: _var.masking_reports_masked_column_column_name,
- *     maskingColumnGroups: _var.masking_reports_masked_column_masking_column_group,
- *     objects: _var.masking_reports_masked_column_object,
- *     objectTypes: _var.masking_reports_masked_column_object_type,
- *     schemaNames: _var.masking_reports_masked_column_schema_name,
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
+ *     maskingReportId: testMaskingReport.id,
+ *     columnNames: maskingReportsMaskedColumnColumnName,
+ *     maskingColumnGroups: maskingReportsMaskedColumnMaskingColumnGroup,
+ *     objects: maskingReportsMaskedColumnObject,
+ *     objectTypes: maskingReportsMaskedColumnObjectType,
+ *     schemaNames: maskingReportsMaskedColumnSchemaName,
+ *     sensitiveTypeId: testSensitiveType.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

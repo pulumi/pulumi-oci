@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetFusionEnvironmentServiceAttachment(ctx, &functions.GetFusionEnvironmentServiceAttachmentArgs{
-//				FusionEnvironmentId: oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-//				ServiceAttachmentId: oci_fusion_apps_service_attachment.Test_service_attachment.Id,
+//				FusionEnvironmentId: testFusionEnvironment.Id,
+//				ServiceAttachmentId: testServiceAttachment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

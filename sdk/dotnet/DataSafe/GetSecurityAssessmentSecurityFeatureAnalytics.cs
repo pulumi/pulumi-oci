@@ -37,10 +37,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessmentSecurityFeatureAnalytics = Oci.DataSafe.GetSecurityAssessmentSecurityFeatureAnalytics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_assessment_security_feature_analytic_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_security_feature_analytic_compartment_id_in_subtree,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentSecurityFeatureAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -76,10 +76,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessmentSecurityFeatureAnalytics = Oci.DataSafe.GetSecurityAssessmentSecurityFeatureAnalytics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_assessment_security_feature_analytic_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_security_feature_analytic_compartment_id_in_subtree,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentSecurityFeatureAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });

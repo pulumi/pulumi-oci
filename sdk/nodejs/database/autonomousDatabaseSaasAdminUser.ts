@@ -14,11 +14,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseSaasAdminUser = new oci.database.AutonomousDatabaseSaasAdminUser("testAutonomousDatabaseSaasAdminUser", {
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     password: _var.autonomous_database_saas_admin_user_password,
- *     accessType: _var.autonomous_database_saas_admin_user_access_type,
- *     duration: _var.autonomous_database_saas_admin_user_duration,
+ * const testAutonomousDatabaseSaasAdminUser = new oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user", {
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     password: autonomousDatabaseSaasAdminUserPassword,
+ *     accessType: autonomousDatabaseSaasAdminUserAccessType,
+ *     duration: autonomousDatabaseSaasAdminUserDuration,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

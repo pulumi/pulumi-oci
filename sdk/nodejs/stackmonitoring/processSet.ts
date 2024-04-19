@@ -18,15 +18,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProcessSet = new oci.stackmonitoring.ProcessSet("testProcessSet", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.process_set_display_name,
+ * const testProcessSet = new oci.stackmonitoring.ProcessSet("test_process_set", {
+ *     compartmentId: compartmentId,
+ *     displayName: processSetDisplayName,
  *     specification: {
  *         items: [{
- *             label: _var.process_set_specification_items_label,
- *             processCommand: _var.process_set_specification_items_process_command,
- *             processLineRegexPattern: _var.process_set_specification_items_process_line_regex_pattern,
- *             processUser: _var.process_set_specification_items_process_user,
+ *             label: processSetSpecificationItemsLabel,
+ *             processCommand: processSetSpecificationItemsProcessCommand,
+ *             processLineRegexPattern: processSetSpecificationItemsProcessLineRegexPattern,
+ *             processUser: processSetSpecificationItemsProcessUser,
  *         }],
  *     },
  *     definedTags: {

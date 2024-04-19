@@ -32,8 +32,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceConsoleConnections = Oci.Core.GetInstanceConsoleConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         CompartmentId = compartmentId,
+        ///         InstanceId = testInstance.Id,
         ///     });
         /// 
         /// });
@@ -64,8 +64,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceConsoleConnections = Oci.Core.GetInstanceConsoleConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         CompartmentId = compartmentId,
+        ///         InstanceId = testInstance.Id,
         ///     });
         /// 
         /// });

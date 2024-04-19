@@ -25,15 +25,15 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testModelProvenance = new Oci.DataScience.ModelProvenance("testModelProvenance", new()
+    ///     var testModelProvenance = new Oci.DataScience.ModelProvenance("test_model_provenance", new()
     ///     {
-    ///         ModelId = oci_datascience_model.Test_model.Id,
-    ///         GitBranch = @var.Model_provenance_git_branch,
-    ///         GitCommit = @var.Model_provenance_git_commit,
-    ///         RepositoryUrl = @var.Model_provenance_repository_url,
-    ///         ScriptDir = @var.Model_provenance_script_dir,
-    ///         TrainingId = oci_datascience_training.Test_training.Id,
-    ///         TrainingScript = @var.Model_provenance_training_script,
+    ///         ModelId = testModel.Id,
+    ///         GitBranch = modelProvenanceGitBranch,
+    ///         GitCommit = modelProvenanceGitCommit,
+    ///         RepositoryUrl = modelProvenanceRepositoryUrl,
+    ///         ScriptDir = modelProvenanceScriptDir,
+    ///         TrainingId = testTraining.Id,
+    ///         TrainingScript = modelProvenanceTrainingScript,
     ///     });
     /// 
     /// });

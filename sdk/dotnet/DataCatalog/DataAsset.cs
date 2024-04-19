@@ -25,13 +25,13 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDataAsset = new Oci.DataCatalog.DataAsset("testDataAsset", new()
+    ///     var testDataAsset = new Oci.DataCatalog.DataAsset("test_data_asset", new()
     ///     {
-    ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-    ///         DisplayName = @var.Data_asset_display_name,
-    ///         TypeKey = @var.Data_asset_type_key,
-    ///         Description = @var.Data_asset_description,
-    ///         Properties = @var.Data_asset_properties,
+    ///         CatalogId = testCatalog.Id,
+    ///         DisplayName = dataAssetDisplayName,
+    ///         TypeKey = dataAssetTypeKey,
+    ///         Description = dataAssetDescription,
+    ///         Properties = dataAssetProperties,
     ///     });
     /// 
     /// });

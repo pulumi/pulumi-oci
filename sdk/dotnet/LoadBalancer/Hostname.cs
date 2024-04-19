@@ -12,25 +12,6 @@ namespace Pulumi.Oci.LoadBalancer
     /// <summary>
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testHostname = new Oci.LoadBalancer.Hostname("testHostname", new()
-    ///     {
-    ///         VirtualHostname = @var.Hostname_hostname,
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
-    /// 
     /// ## Import
     /// 
     /// Hostnames can be imported using the `id`, e.g.

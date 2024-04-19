@@ -19,30 +19,31 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBucket = new oci.objectstorage.Bucket("testBucket", {
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.bucket_namespace,
- *     accessType: _var.bucket_access_type,
- *     autoTiering: _var.bucket_auto_tiering,
+ * const testBucket = new oci.objectstorage.Bucket("test_bucket", {
+ *     compartmentId: compartmentId,
+ *     name: bucketName,
+ *     namespace: bucketNamespace,
+ *     accessType: bucketAccessType,
+ *     autoTiering: bucketAutoTiering,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     kmsKeyId: oci_kms_key.test_key.id,
- *     metadata: _var.bucket_metadata,
- *     objectEventsEnabled: _var.bucket_object_events_enabled,
- *     storageTier: _var.bucket_storage_tier,
+ *     kmsKeyId: testKey.id,
+ *     metadata: bucketMetadata,
+ *     objectEventsEnabled: bucketObjectEventsEnabled,
+ *     storageTier: bucketStorageTier,
  *     retentionRules: [{
- *         displayName: _var.retention_rule_display_name,
+ *         displayName: retentionRuleDisplayName,
  *         duration: {
- *             timeAmount: _var.retention_rule_duration_time_amount,
- *             timeUnit: _var.retention_rule_duration_time_unit,
+ *             timeAmount: retentionRuleDurationTimeAmount,
+ *             timeUnit: retentionRuleDurationTimeUnit,
  *         },
- *         timeRuleLocked: _var.retention_rule_time_rule_locked,
+ *         timeRuleLocked: retentionRuleTimeRuleLocked,
  *     }],
- *     versioning: _var.bucket_versioning,
+ *     versioning: bucketVersioning,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

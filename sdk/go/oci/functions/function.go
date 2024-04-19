@@ -31,30 +31,30 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Functions.NewFunction(ctx, "testFunction", &Functions.FunctionArgs{
-//				ApplicationId: pulumi.Any(oci_functions_application.Test_application.Id),
-//				DisplayName:   pulumi.Any(_var.Function_display_name),
-//				MemoryInMbs:   pulumi.Any(_var.Function_memory_in_mbs),
-//				Config:        pulumi.Any(_var.Function_config),
+//			_, err := Functions.NewFunction(ctx, "test_function", &Functions.FunctionArgs{
+//				ApplicationId: pulumi.Any(testApplication.Id),
+//				DisplayName:   pulumi.Any(functionDisplayName),
+//				MemoryInMbs:   pulumi.Any(functionMemoryInMbs),
+//				Config:        pulumi.Any(functionConfig),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Image:       pulumi.Any(_var.Function_image),
-//				ImageDigest: pulumi.Any(_var.Function_image_digest),
+//				Image:       pulumi.Any(functionImage),
+//				ImageDigest: pulumi.Any(functionImageDigest),
 //				ProvisionedConcurrencyConfig: &functions.FunctionProvisionedConcurrencyConfigArgs{
-//					Strategy: pulumi.Any(_var.Function_provisioned_concurrency_config_strategy),
-//					Count:    pulumi.Any(_var.Function_provisioned_concurrency_config_count),
+//					Strategy: pulumi.Any(functionProvisionedConcurrencyConfigStrategy),
+//					Count:    pulumi.Any(functionProvisionedConcurrencyConfigCount),
 //				},
 //				SourceDetails: &functions.FunctionSourceDetailsArgs{
-//					PbfListingId: pulumi.Any(oci_functions_pbf_listing.Test_pbf_listing.Id),
-//					SourceType:   pulumi.Any(_var.Function_source_details_source_type),
+//					PbfListingId: pulumi.Any(testPbfListing.Id),
+//					SourceType:   pulumi.Any(functionSourceDetailsSourceType),
 //				},
-//				TimeoutInSeconds: pulumi.Any(_var.Function_timeout_in_seconds),
+//				TimeoutInSeconds: pulumi.Any(functionTimeoutInSeconds),
 //				TraceConfig: &functions.FunctionTraceConfigArgs{
-//					IsEnabled: pulumi.Any(_var.Function_trace_config_is_enabled),
+//					IsEnabled: pulumi.Any(functionTraceConfigIsEnabled),
 //				},
 //			})
 //			if err != nil {

@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIpPool = new oci.core.PublicIpPool("testPublicIpPool", {
- *     compartmentId: _var.compartment_id,
+ * const testPublicIpPool = new oci.core.PublicIpPool("test_public_ip_pool", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.public_ip_pool_display_name,
+ *     displayName: publicIpPoolDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

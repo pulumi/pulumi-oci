@@ -45,8 +45,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Filter on Subnet OCID
 //			_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
-//				SubnetId: pulumi.StringRef(_var.Private_ip_subnet_id),
+//				SubnetId: pulumi.StringRef(privateIpSubnetId),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -70,8 +71,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Filter on VNIC OCID
 //			_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
-//				VnicId: pulumi.StringRef(oci_core_vnic.Test_vnic.Id),
+//				VnicId: pulumi.StringRef(testVnic.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -95,11 +97,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// Filter on private IP address and Subnet OCID
 //			_, err := Core.GetPrivateIps(ctx, &core.GetPrivateIpsArgs{
-//				IpAddress: pulumi.StringRef(_var.Private_ip_ip_address),
-//				SubnetId:  pulumi.StringRef(oci_core_subnet.Test_subnet.Id),
-//				VlanId:    pulumi.StringRef(oci_core_vlan.Test_vlan.Id),
-//				VnicId:    pulumi.StringRef(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//				IpAddress: pulumi.StringRef(privateIpIpAddress),
+//				SubnetId:  pulumi.StringRef(testSubnet.Id),
+//				VlanId:    pulumi.StringRef(testVlan.Id),
+//				VnicId:    pulumi.StringRef(testVnicAttachment.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

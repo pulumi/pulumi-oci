@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AppMgmtControl.GetMonitoredInstances(ctx, &appmgmtcontrol.GetMonitoredInstancesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Monitored_instance_display_name),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(monitoredInstanceDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

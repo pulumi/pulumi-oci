@@ -30,9 +30,9 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {
         ///     var testNetworkLoadBalancers = Oci.NetworkLoadBalancer.GetNetworkLoadBalancers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Network_load_balancer_display_name,
-        ///         State = @var.Network_load_balancer_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = networkLoadBalancerDisplayName,
+        ///         State = networkLoadBalancerState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {
         ///     var testNetworkLoadBalancers = Oci.NetworkLoadBalancer.GetNetworkLoadBalancers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Network_load_balancer_display_name,
-        ///         State = @var.Network_load_balancer_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = networkLoadBalancerDisplayName,
+        ///         State = networkLoadBalancerState,
         ///     });
         /// 
         /// });

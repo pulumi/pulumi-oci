@@ -31,23 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewBackupDestination(ctx, "testBackupDestination", &Database.BackupDestinationArgs{
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
-//				DisplayName:      pulumi.Any(_var.Backup_destination_display_name),
-//				Type:             pulumi.Any(_var.Backup_destination_type),
-//				ConnectionString: pulumi.Any(_var.Backup_destination_connection_string),
-//				DefinedTags:      pulumi.Any(_var.Backup_destination_defined_tags),
+//			_, err := Database.NewBackupDestination(ctx, "test_backup_destination", &Database.BackupDestinationArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				DisplayName:      pulumi.Any(backupDestinationDisplayName),
+//				Type:             pulumi.Any(backupDestinationType),
+//				ConnectionString: pulumi.Any(backupDestinationConnectionString),
+//				DefinedTags:      pulumi.Any(backupDestinationDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				LocalMountPointPath: pulumi.Any(_var.Backup_destination_local_mount_point_path),
+//				LocalMountPointPath: pulumi.Any(backupDestinationLocalMountPointPath),
 //				MountTypeDetails: &database.BackupDestinationMountTypeDetailsArgs{
-//					MountType:           pulumi.Any(_var.Backup_destination_mount_type_details_mount_type),
-//					LocalMountPointPath: pulumi.Any(_var.Backup_destination_mount_type_details_local_mount_point_path),
-//					NfsServers:          pulumi.Any(_var.Backup_destination_mount_type_details_nfs_server),
-//					NfsServerExport:     pulumi.Any(_var.Backup_destination_mount_type_details_nfs_server_export),
+//					MountType:           pulumi.Any(backupDestinationMountTypeDetailsMountType),
+//					LocalMountPointPath: pulumi.Any(backupDestinationMountTypeDetailsLocalMountPointPath),
+//					NfsServers:          pulumi.Any(backupDestinationMountTypeDetailsNfsServer),
+//					NfsServerExport:     pulumi.Any(backupDestinationMountTypeDetailsNfsServerExport),
 //				},
-//				VpcUsers: pulumi.Any(_var.Backup_destination_vpc_users),
+//				VpcUsers: pulumi.Any(backupDestinationVpcUsers),
 //			})
 //			if err != nil {
 //				return err

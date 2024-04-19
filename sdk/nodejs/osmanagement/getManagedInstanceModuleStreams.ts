@@ -39,11 +39,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceModuleStreams = oci.OsManagement.getManagedInstanceModuleStreams({
- *     managedInstanceId: _var.managed_instance_id,
- *     compartmentId: _var.compartment_id,
- *     moduleName: _var.managed_instance_module_name,
- *     streamName: _var.managed_instance_module_stream_name,
- *     streamStatus: _var.managed_instance_module_stream_status,
+ *     managedInstanceId: managedInstanceId,
+ *     compartmentId: compartmentId,
+ *     moduleName: managedInstanceModuleName,
+ *     streamName: managedInstanceModuleStreamName,
+ *     streamStatus: managedInstanceModuleStreamStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -152,11 +152,11 @@ export interface GetManagedInstanceModuleStreamsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceModuleStreams = oci.OsManagement.getManagedInstanceModuleStreams({
- *     managedInstanceId: _var.managed_instance_id,
- *     compartmentId: _var.compartment_id,
- *     moduleName: _var.managed_instance_module_name,
- *     streamName: _var.managed_instance_module_stream_name,
- *     streamStatus: _var.managed_instance_module_stream_status,
+ *     managedInstanceId: managedInstanceId,
+ *     compartmentId: compartmentId,
+ *     moduleName: managedInstanceModuleName,
+ *     streamName: managedInstanceModuleStreamName,
+ *     streamStatus: managedInstanceModuleStreamStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

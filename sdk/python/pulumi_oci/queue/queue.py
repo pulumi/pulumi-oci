@@ -519,21 +519,21 @@ class Queue(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_queue = oci.queue.Queue("testQueue",
-            compartment_id=var["compartment_id"],
-            display_name=var["queue_display_name"],
-            channel_consumption_limit=var["queue_channel_consumption_limit"],
-            custom_encryption_key_id=oci_kms_key["test_key"]["id"],
-            dead_letter_queue_delivery_count=var["queue_dead_letter_queue_delivery_count"],
+        test_queue = oci.queue.Queue("test_queue",
+            compartment_id=compartment_id,
+            display_name=queue_display_name,
+            channel_consumption_limit=queue_channel_consumption_limit,
+            custom_encryption_key_id=test_key["id"],
+            dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_seconds=var["queue_retention_in_seconds"],
-            timeout_in_seconds=var["queue_timeout_in_seconds"],
-            visibility_in_seconds=var["queue_visibility_in_seconds"])
+            retention_in_seconds=queue_retention_in_seconds,
+            timeout_in_seconds=queue_timeout_in_seconds,
+            visibility_in_seconds=queue_visibility_in_seconds)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -576,21 +576,21 @@ class Queue(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_queue = oci.queue.Queue("testQueue",
-            compartment_id=var["compartment_id"],
-            display_name=var["queue_display_name"],
-            channel_consumption_limit=var["queue_channel_consumption_limit"],
-            custom_encryption_key_id=oci_kms_key["test_key"]["id"],
-            dead_letter_queue_delivery_count=var["queue_dead_letter_queue_delivery_count"],
+        test_queue = oci.queue.Queue("test_queue",
+            compartment_id=compartment_id,
+            display_name=queue_display_name,
+            channel_consumption_limit=queue_channel_consumption_limit,
+            custom_encryption_key_id=test_key["id"],
+            dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_in_seconds=var["queue_retention_in_seconds"],
-            timeout_in_seconds=var["queue_timeout_in_seconds"],
-            visibility_in_seconds=var["queue_visibility_in_seconds"])
+            retention_in_seconds=queue_retention_in_seconds,
+            timeout_in_seconds=queue_timeout_in_seconds,
+            visibility_in_seconds=queue_visibility_in_seconds)
         ```
         <!--End PulumiCodeChooser -->
 

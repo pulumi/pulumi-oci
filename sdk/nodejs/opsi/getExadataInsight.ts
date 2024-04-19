@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExadataInsight = oci.Opsi.getExadataInsight({
- *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
+ *     exadataInsightId: testExadataInsightOciOpsiExadataInsight.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -163,7 +163,7 @@ export interface GetExadataInsightResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExadataInsight = oci.Opsi.getExadataInsight({
- *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
+ *     exadataInsightId: testExadataInsightOciOpsiExadataInsight.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

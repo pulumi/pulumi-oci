@@ -20,24 +20,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfile = new oci.osmanagementhub.Profile("testProfile", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.profile_display_name,
- *     profileType: _var.profile_profile_type,
- *     archType: _var.profile_arch_type,
+ * const testProfile = new oci.osmanagementhub.Profile("test_profile", {
+ *     compartmentId: compartmentId,
+ *     displayName: profileDisplayName,
+ *     profileType: profileProfileType,
+ *     archType: profileArchType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.profile_description,
+ *     description: profileDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     lifecycleStageId: oci_os_management_hub_lifecycle_stage.test_lifecycle_stage.id,
- *     managedInstanceGroupId: oci_os_management_hub_managed_instance_group.test_managed_instance_group.id,
- *     managementStationId: oci_os_management_hub_management_station.test_management_station.id,
- *     osFamily: _var.profile_os_family,
- *     softwareSourceIds: _var.profile_software_source_ids,
- *     vendorName: _var.profile_vendor_name,
+ *     lifecycleStageId: testLifecycleStage.id,
+ *     managedInstanceGroupId: testManagedInstanceGroup.id,
+ *     managementStationId: testManagementStation.id,
+ *     osFamily: profileOsFamily,
+ *     softwareSourceIds: profileSoftwareSourceIds,
+ *     vendorName: profileVendorName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

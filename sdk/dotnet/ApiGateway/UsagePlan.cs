@@ -25,32 +25,32 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUsagePlan = new Oci.ApiGateway.UsagePlan("testUsagePlan", new()
+    ///     var testUsagePlan = new Oci.ApiGateway.UsagePlan("test_usage_plan", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Entitlements = new[]
     ///         {
     ///             new Oci.ApiGateway.Inputs.UsagePlanEntitlementArgs
     ///             {
-    ///                 Name = @var.Usage_plan_entitlements_name,
-    ///                 Description = @var.Usage_plan_entitlements_description,
+    ///                 Name = usagePlanEntitlementsName,
+    ///                 Description = usagePlanEntitlementsDescription,
     ///                 Quota = new Oci.ApiGateway.Inputs.UsagePlanEntitlementQuotaArgs
     ///                 {
-    ///                     OperationOnBreach = @var.Usage_plan_entitlements_quota_operation_on_breach,
-    ///                     ResetPolicy = @var.Usage_plan_entitlements_quota_reset_policy,
-    ///                     Unit = @var.Usage_plan_entitlements_quota_unit,
-    ///                     Value = @var.Usage_plan_entitlements_quota_value,
+    ///                     OperationOnBreach = usagePlanEntitlementsQuotaOperationOnBreach,
+    ///                     ResetPolicy = usagePlanEntitlementsQuotaResetPolicy,
+    ///                     Unit = usagePlanEntitlementsQuotaUnit,
+    ///                     Value = usagePlanEntitlementsQuotaValue,
     ///                 },
     ///                 RateLimit = new Oci.ApiGateway.Inputs.UsagePlanEntitlementRateLimitArgs
     ///                 {
-    ///                     Unit = @var.Usage_plan_entitlements_rate_limit_unit,
-    ///                     Value = @var.Usage_plan_entitlements_rate_limit_value,
+    ///                     Unit = usagePlanEntitlementsRateLimitUnit,
+    ///                     Value = usagePlanEntitlementsRateLimitValue,
     ///                 },
     ///                 Targets = new[]
     ///                 {
     ///                     new Oci.ApiGateway.Inputs.UsagePlanEntitlementTargetArgs
     ///                     {
-    ///                         DeploymentId = oci_apigateway_deployment.Test_deployment.Id,
+    ///                         DeploymentId = testDeployment.Id,
     ///                     },
     ///                 },
     ///             },
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.ApiGateway
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Usage_plan_display_name,
+    ///         DisplayName = usagePlanDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

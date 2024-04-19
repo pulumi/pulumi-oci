@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Ons
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSubscription = new Oci.Ons.Subscription("testSubscription", new()
+    ///     var testSubscription = new Oci.Ons.Subscription("test_subscription", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Endpoint = @var.Subscription_endpoint,
-    ///         Protocol = @var.Subscription_protocol,
-    ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+    ///         CompartmentId = compartmentId,
+    ///         Endpoint = subscriptionEndpoint,
+    ///         Protocol = subscriptionProtocol,
+    ///         TopicId = testNotificationTopic.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

@@ -21,15 +21,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointScanProxy = new oci.oda.OdaPrivateEndpointScanProxy("testOdaPrivateEndpointScanProxy", {
- *     odaPrivateEndpointId: oci_oda_oda_private_endpoint.test_oda_private_endpoint.id,
- *     protocol: _var.oda_private_endpoint_scan_proxy_protocol,
+ * const testOdaPrivateEndpointScanProxy = new oci.oda.OdaPrivateEndpointScanProxy("test_oda_private_endpoint_scan_proxy", {
+ *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
+ *     protocol: odaPrivateEndpointScanProxyProtocol,
  *     scanListenerInfos: [{
- *         scanListenerFqdn: _var.oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
- *         scanListenerIp: _var.oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
- *         scanListenerPort: _var.oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
+ *         scanListenerFqdn: odaPrivateEndpointScanProxyScanListenerInfosScanListenerFqdn,
+ *         scanListenerIp: odaPrivateEndpointScanProxyScanListenerInfosScanListenerIp,
+ *         scanListenerPort: odaPrivateEndpointScanProxyScanListenerInfosScanListenerPort,
  *     }],
- *     scanListenerType: _var.oda_private_endpoint_scan_proxy_scan_listener_type,
+ *     scanListenerType: odaPrivateEndpointScanProxyScanListenerType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

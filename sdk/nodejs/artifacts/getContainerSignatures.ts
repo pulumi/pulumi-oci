@@ -19,16 +19,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerImageSignatures = oci.Artifacts.getContainerSignatures({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.container_image_signature_compartment_id_in_subtree,
- *     displayName: _var.container_image_signature_display_name,
- *     imageDigest: _var.container_image_signature_image_digest,
- *     imageId: oci_core_image.test_image.id,
- *     kmsKeyId: oci_kms_key.test_key.id,
- *     kmsKeyVersionId: oci_kms_key_version.test_key_version.id,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     repositoryName: oci_artifacts_repository.test_repository.name,
- *     signingAlgorithm: _var.container_image_signature_signing_algorithm,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree,
+ *     displayName: containerImageSignatureDisplayName,
+ *     imageDigest: containerImageSignatureImageDigest,
+ *     imageId: testImage.id,
+ *     kmsKeyId: testKey.id,
+ *     kmsKeyVersionId: testKeyVersion.id,
+ *     repositoryId: testRepository.id,
+ *     repositoryName: testRepository.name,
+ *     signingAlgorithm: containerImageSignatureSigningAlgorithm,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -153,16 +153,16 @@ export interface GetContainerSignaturesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerImageSignatures = oci.Artifacts.getContainerSignatures({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.container_image_signature_compartment_id_in_subtree,
- *     displayName: _var.container_image_signature_display_name,
- *     imageDigest: _var.container_image_signature_image_digest,
- *     imageId: oci_core_image.test_image.id,
- *     kmsKeyId: oci_kms_key.test_key.id,
- *     kmsKeyVersionId: oci_kms_key_version.test_key_version.id,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     repositoryName: oci_artifacts_repository.test_repository.name,
- *     signingAlgorithm: _var.container_image_signature_signing_algorithm,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree,
+ *     displayName: containerImageSignatureDisplayName,
+ *     imageDigest: containerImageSignatureImageDigest,
+ *     imageId: testImage.id,
+ *     kmsKeyId: testKey.id,
+ *     kmsKeyVersionId: testKeyVersion.id,
+ *     repositoryId: testRepository.id,
+ *     repositoryName: testRepository.name,
+ *     signingAlgorithm: containerImageSignatureSigningAlgorithm,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

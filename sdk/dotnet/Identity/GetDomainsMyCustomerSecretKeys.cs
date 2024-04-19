@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyCustomerSecretKeys = Oci.Identity.GetDomainsMyCustomerSecretKeys.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyCustomerSecretKeyCount = @var.My_customer_secret_key_my_customer_secret_key_count,
-        ///         MyCustomerSecretKeyFilter = @var.My_customer_secret_key_my_customer_secret_key_filter,
-        ///         Authorization = @var.My_customer_secret_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_customer_secret_key_resource_type_schema_version,
-        ///         StartIndex = @var.My_customer_secret_key_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCustomerSecretKeyCount = myCustomerSecretKeyMyCustomerSecretKeyCount,
+        ///         MyCustomerSecretKeyFilter = myCustomerSecretKeyMyCustomerSecretKeyFilter,
+        ///         Authorization = myCustomerSecretKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myCustomerSecretKeyResourceTypeSchemaVersion,
+        ///         StartIndex = myCustomerSecretKeyStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyCustomerSecretKeys = Oci.Identity.GetDomainsMyCustomerSecretKeys.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyCustomerSecretKeyCount = @var.My_customer_secret_key_my_customer_secret_key_count,
-        ///         MyCustomerSecretKeyFilter = @var.My_customer_secret_key_my_customer_secret_key_filter,
-        ///         Authorization = @var.My_customer_secret_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_customer_secret_key_resource_type_schema_version,
-        ///         StartIndex = @var.My_customer_secret_key_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCustomerSecretKeyCount = myCustomerSecretKeyMyCustomerSecretKeyCount,
+        ///         MyCustomerSecretKeyFilter = myCustomerSecretKeyMyCustomerSecretKeyFilter,
+        ///         Authorization = myCustomerSecretKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myCustomerSecretKeyResourceTypeSchemaVersion,
+        ///         StartIndex = myCustomerSecretKeyStartIndex,
         ///     });
         /// 
         /// });

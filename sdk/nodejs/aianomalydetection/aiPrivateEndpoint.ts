@@ -16,14 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAiPrivateEndpoint = new oci.aianomalydetection.AiPrivateEndpoint("testAiPrivateEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     dnsZones: _var.ai_private_endpoint_dns_zones,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testAiPrivateEndpoint = new oci.aianomalydetection.AiPrivateEndpoint("test_ai_private_endpoint", {
+ *     compartmentId: compartmentId,
+ *     dnsZones: aiPrivateEndpointDnsZones,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.ai_private_endpoint_display_name,
+ *     displayName: aiPrivateEndpointDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

@@ -157,10 +157,10 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_namespace_ingest_time_rules_management = oci.log_analytics.NamespaceIngestTimeRulesManagement("testNamespaceIngestTimeRulesManagement",
-            ingest_time_rule_id=oci_events_rule["test_rule"]["id"],
-            namespace=var["namespace_ingest_time_rules_management_namespace"],
-            enable_ingest_time_rule=var["enable_ingest_time_rule"])
+        test_namespace_ingest_time_rules_management = oci.log_analytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management",
+            ingest_time_rule_id=test_rule["id"],
+            namespace=namespace_ingest_time_rules_management_namespace,
+            enable_ingest_time_rule=enable_ingest_time_rule)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -192,10 +192,10 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_namespace_ingest_time_rules_management = oci.log_analytics.NamespaceIngestTimeRulesManagement("testNamespaceIngestTimeRulesManagement",
-            ingest_time_rule_id=oci_events_rule["test_rule"]["id"],
-            namespace=var["namespace_ingest_time_rules_management_namespace"],
-            enable_ingest_time_rule=var["enable_ingest_time_rule"])
+        test_namespace_ingest_time_rules_management = oci.log_analytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management",
+            ingest_time_rule_id=test_rule["id"],
+            namespace=namespace_ingest_time_rules_management_namespace,
+            enable_ingest_time_rule=enable_ingest_time_rule)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkRequests = oci.ContainerEngine.getWorkRequests({
- *     compartmentId: _var.compartment_id,
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
- *     resourceId: oci_containerengine_resource.test_resource.id,
- *     resourceType: _var.work_request_resource_type,
- *     statuses: _var.work_request_status,
+ *     compartmentId: compartmentId,
+ *     clusterId: testCluster.id,
+ *     resourceId: testResource.id,
+ *     resourceType: workRequestResourceType,
+ *     statuses: workRequestStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,11 +106,11 @@ export interface GetWorkRequestsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkRequests = oci.ContainerEngine.getWorkRequests({
- *     compartmentId: _var.compartment_id,
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
- *     resourceId: oci_containerengine_resource.test_resource.id,
- *     resourceType: _var.work_request_resource_type,
- *     statuses: _var.work_request_status,
+ *     compartmentId: compartmentId,
+ *     clusterId: testCluster.id,
+ *     resourceId: testResource.id,
+ *     resourceType: workRequestResourceType,
+ *     statuses: workRequestStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

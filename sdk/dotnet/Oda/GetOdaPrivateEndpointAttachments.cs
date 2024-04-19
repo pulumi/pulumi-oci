@@ -34,9 +34,9 @@ namespace Pulumi.Oci.Oda
         /// {
         ///     var testOdaPrivateEndpointAttachments = Oci.Oda.GetOdaPrivateEndpointAttachments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         OdaPrivateEndpointId = oci_oda_oda_private_endpoint.Test_oda_private_endpoint.Id,
-        ///         State = @var.Oda_private_endpoint_attachment_state,
+        ///         CompartmentId = compartmentId,
+        ///         OdaPrivateEndpointId = testOdaPrivateEndpoint.Id,
+        ///         State = odaPrivateEndpointAttachmentState,
         ///     });
         /// 
         /// });
@@ -69,9 +69,9 @@ namespace Pulumi.Oci.Oda
         /// {
         ///     var testOdaPrivateEndpointAttachments = Oci.Oda.GetOdaPrivateEndpointAttachments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         OdaPrivateEndpointId = oci_oda_oda_private_endpoint.Test_oda_private_endpoint.Id,
-        ///         State = @var.Oda_private_endpoint_attachment_state,
+        ///         CompartmentId = compartmentId,
+        ///         OdaPrivateEndpointId = testOdaPrivateEndpoint.Id,
+        ///         State = odaPrivateEndpointAttachmentState,
         ///     });
         /// 
         /// });

@@ -32,19 +32,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewOperationsInsightsWarehouseUser(ctx, "testOperationsInsightsWarehouseUser", &Opsi.OperationsInsightsWarehouseUserArgs{
-//				CompartmentId:                 pulumi.Any(_var.Compartment_id),
-//				ConnectionPassword:            pulumi.Any(_var.Operations_insights_warehouse_user_connection_password),
-//				IsAwrDataAccess:               pulumi.Any(_var.Operations_insights_warehouse_user_is_awr_data_access),
-//				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
+//			_, err := Opsi.NewOperationsInsightsWarehouseUser(ctx, "test_operations_insights_warehouse_user", &Opsi.OperationsInsightsWarehouseUserArgs{
+//				CompartmentId:                 pulumi.Any(compartmentId),
+//				ConnectionPassword:            pulumi.Any(operationsInsightsWarehouseUserConnectionPassword),
+//				IsAwrDataAccess:               pulumi.Any(operationsInsightsWarehouseUserIsAwrDataAccess),
+//				Name:                          pulumi.Any(operationsInsightsWarehouseUserName),
+//				OperationsInsightsWarehouseId: pulumi.Any(testOperationsInsightsWarehouse.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsEmDataAccess:   pulumi.Any(_var.Operations_insights_warehouse_user_is_em_data_access),
-//				IsOpsiDataAccess: pulumi.Any(_var.Operations_insights_warehouse_user_is_opsi_data_access),
+//				IsEmDataAccess:   pulumi.Any(operationsInsightsWarehouseUserIsEmDataAccess),
+//				IsOpsiDataAccess: pulumi.Any(operationsInsightsWarehouseUserIsOpsiDataAccess),
 //			})
 //			if err != nil {
 //				return err

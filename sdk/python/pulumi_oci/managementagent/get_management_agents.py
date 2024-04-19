@@ -273,22 +273,22 @@ def get_management_agents(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=var["compartment_id"],
-        access_level=var["management_agent_access_level"],
-        availability_status=var["management_agent_availability_status"],
-        compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
-        data_source_names=oci_management_agent_management_agent_data_source["test_management_agent_data_source"]["name"],
-        data_source_type=var["management_agent_data_source_type"],
-        display_name=var["management_agent_display_name"],
-        gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
-        host_id=oci_management_agent_host["test_host"]["id"],
+    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=compartment_id,
+        access_level=management_agent_access_level,
+        availability_status=management_agent_availability_status,
+        compartment_id_in_subtree=management_agent_compartment_id_in_subtree,
+        data_source_names=test_management_agent_data_source["name"],
+        data_source_type=management_agent_data_source_type,
+        display_name=management_agent_display_name,
+        gateway_ids=test_gateway["id"],
+        host_id=test_host["id"],
         wait_for_host_id=10,
-        install_type=var["management_agent_install_type"],
-        is_customer_deployed=var["management_agent_is_customer_deployed"],
-        platform_types=var["management_agent_platform_type"],
-        plugin_names=var["management_agent_plugin_name"],
-        state=var["management_agent_state"],
-        versions=var["management_agent_version"])
+        install_type=management_agent_install_type,
+        is_customer_deployed=management_agent_is_customer_deployed,
+        platform_types=management_agent_platform_type,
+        plugin_names=management_agent_plugin_name,
+        state=management_agent_state,
+        versions=management_agent_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -386,22 +386,22 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=var["compartment_id"],
-        access_level=var["management_agent_access_level"],
-        availability_status=var["management_agent_availability_status"],
-        compartment_id_in_subtree=var["management_agent_compartment_id_in_subtree"],
-        data_source_names=oci_management_agent_management_agent_data_source["test_management_agent_data_source"]["name"],
-        data_source_type=var["management_agent_data_source_type"],
-        display_name=var["management_agent_display_name"],
-        gateway_ids=oci_apigateway_gateway["test_gateway"]["id"],
-        host_id=oci_management_agent_host["test_host"]["id"],
+    test_management_agents = oci.ManagementAgent.get_management_agents(compartment_id=compartment_id,
+        access_level=management_agent_access_level,
+        availability_status=management_agent_availability_status,
+        compartment_id_in_subtree=management_agent_compartment_id_in_subtree,
+        data_source_names=test_management_agent_data_source["name"],
+        data_source_type=management_agent_data_source_type,
+        display_name=management_agent_display_name,
+        gateway_ids=test_gateway["id"],
+        host_id=test_host["id"],
         wait_for_host_id=10,
-        install_type=var["management_agent_install_type"],
-        is_customer_deployed=var["management_agent_is_customer_deployed"],
-        platform_types=var["management_agent_platform_type"],
-        plugin_names=var["management_agent_plugin_name"],
-        state=var["management_agent_state"],
-        versions=var["management_agent_version"])
+        install_type=management_agent_install_type,
+        is_customer_deployed=management_agent_is_customer_deployed,
+        platform_types=management_agent_platform_type,
+        plugin_names=management_agent_plugin_name,
+        state=management_agent_state,
+        versions=management_agent_version)
     ```
     <!--End PulumiCodeChooser -->
 

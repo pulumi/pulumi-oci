@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedVantagePoints = oci.ApmSynthetics.getDedicatedVantagePoints({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     displayName: _var.dedicated_vantage_point_display_name,
- *     name: _var.dedicated_vantage_point_name,
- *     status: _var.dedicated_vantage_point_status,
+ *     apmDomainId: testApmDomain.id,
+ *     displayName: dedicatedVantagePointDisplayName,
+ *     name: dedicatedVantagePointName,
+ *     status: dedicatedVantagePointStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetDedicatedVantagePointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedVantagePoints = oci.ApmSynthetics.getDedicatedVantagePoints({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     displayName: _var.dedicated_vantage_point_display_name,
- *     name: _var.dedicated_vantage_point_name,
- *     status: _var.dedicated_vantage_point_status,
+ *     apmDomainId: testApmDomain.id,
+ *     displayName: dedicatedVantagePointDisplayName,
+ *     name: dedicatedVantagePointName,
+ *     status: dedicatedVantagePointStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

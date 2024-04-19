@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testNetworkAddressLists = Oci.Waf.GetNetworkAddressLists.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Network_address_list_display_name,
-        ///         Id = @var.Network_address_list_id,
-        ///         States = @var.Network_address_list_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = networkAddressListDisplayName,
+        ///         Id = networkAddressListId,
+        ///         States = networkAddressListState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testNetworkAddressLists = Oci.Waf.GetNetworkAddressLists.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Network_address_list_display_name,
-        ///         Id = @var.Network_address_list_id,
-        ///         States = @var.Network_address_list_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = networkAddressListDisplayName,
+        ///         Id = networkAddressListId,
+        ///         States = networkAddressListState,
         ///     });
         /// 
         /// });

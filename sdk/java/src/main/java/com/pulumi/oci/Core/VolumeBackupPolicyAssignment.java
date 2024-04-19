@@ -45,8 +45,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVolumeBackupPolicyAssignment = new VolumeBackupPolicyAssignment(&#34;testVolumeBackupPolicyAssignment&#34;, VolumeBackupPolicyAssignmentArgs.builder()        
- *             .assetId(oci_core_volume.test_volume().id())
- *             .policyId(oci_core_volume_backup_policy.test_volume_backup_policy().id())
+ *             .assetId(testVolume.id())
+ *             .policyId(testVolumeBackupPolicy.id())
  *             .build());
  * 
  *     }

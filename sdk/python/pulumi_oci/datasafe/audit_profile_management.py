@@ -500,18 +500,18 @@ class AuditProfileManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_audit_profile_management = oci.data_safe.AuditProfileManagement("testAuditProfileManagement",
-            compartment_id=var["compartment_id"],
-            target_id=oci_data_safe_target_database["test_target_database"]["id"],
+        test_audit_profile_management = oci.data_safe.AuditProfileManagement("test_audit_profile_management",
+            compartment_id=compartment_id,
+            target_id=test_target_database["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["audit_profile_management_description"],
-            display_name=var["audit_profile_management_display_name"],
+            description=audit_profile_management_description,
+            display_name=audit_profile_management_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_paid_usage_enabled=var["audit_profile_management_is_paid_usage_enabled"],
+            is_paid_usage_enabled=audit_profile_management_is_paid_usage_enabled,
             change_retention_trigger=True,
             offline_months=10,
             online_months=7)
@@ -557,18 +557,18 @@ class AuditProfileManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_audit_profile_management = oci.data_safe.AuditProfileManagement("testAuditProfileManagement",
-            compartment_id=var["compartment_id"],
-            target_id=oci_data_safe_target_database["test_target_database"]["id"],
+        test_audit_profile_management = oci.data_safe.AuditProfileManagement("test_audit_profile_management",
+            compartment_id=compartment_id,
+            target_id=test_target_database["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["audit_profile_management_description"],
-            display_name=var["audit_profile_management_display_name"],
+            description=audit_profile_management_description,
+            display_name=audit_profile_management_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_paid_usage_enabled=var["audit_profile_management_is_paid_usage_enabled"],
+            is_paid_usage_enabled=audit_profile_management_is_paid_usage_enabled,
             change_retention_trigger=True,
             offline_months=10,
             online_months=7)

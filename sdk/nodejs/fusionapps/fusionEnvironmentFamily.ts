@@ -18,17 +18,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentFamily = new oci.fusionapps.FusionEnvironmentFamily("testFusionEnvironmentFamily", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.fusion_environment_family_display_name,
- *     subscriptionIds: _var.fusion_environment_family_subscription_ids,
+ * const testFusionEnvironmentFamily = new oci.fusionapps.FusionEnvironmentFamily("test_fusion_environment_family", {
+ *     compartmentId: compartmentId,
+ *     displayName: fusionEnvironmentFamilyDisplayName,
+ *     subscriptionIds: fusionEnvironmentFamilySubscriptionIds,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     familyMaintenancePolicy: {
- *         concurrentMaintenance: _var.fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
- *         isMonthlyPatchingEnabled: _var.fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
- *         quarterlyUpgradeBeginTimes: _var.fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
+ *         concurrentMaintenance: fusionEnvironmentFamilyFamilyMaintenancePolicyConcurrentMaintenance,
+ *         isMonthlyPatchingEnabled: fusionEnvironmentFamilyFamilyMaintenancePolicyIsMonthlyPatchingEnabled,
+ *         quarterlyUpgradeBeginTimes: fusionEnvironmentFamilyFamilyMaintenancePolicyQuarterlyUpgradeBeginTimes,
  *     },
  *     freeformTags: {
  *         "bar-key": "value",

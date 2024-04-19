@@ -30,14 +30,14 @@ namespace Pulumi.Oci.Identity
         ///     var testBrandingSetting = Oci.Identity.GetDomainsBrandingSetting.Invoke(new()
         ///     {
         ///         BrandingSettingId = "BrandingSettings",
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Branding_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Branding_setting_resource_type_schema_version,
+        ///         Authorization = brandingSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = brandingSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.Identity
         ///     var testBrandingSetting = Oci.Identity.GetDomainsBrandingSetting.Invoke(new()
         ///     {
         ///         BrandingSettingId = "BrandingSettings",
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Branding_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Branding_setting_resource_type_schema_version,
+        ///         Authorization = brandingSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = brandingSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

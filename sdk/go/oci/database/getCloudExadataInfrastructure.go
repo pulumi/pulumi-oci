@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetCloudExadataInfrastructure(ctx, &database.GetCloudExadataInfrastructureArgs{
-//				CloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
+//				CloudExadataInfrastructureId: testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

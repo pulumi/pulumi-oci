@@ -31,7 +31,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaces = Oci.LogAnalytics.GetNamespaces.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaces = Oci.LogAnalytics.GetNamespaces.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

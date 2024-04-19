@@ -451,21 +451,21 @@ class Rule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_alert_rule = oci.budget.Rule("testAlertRule",
-            budget_id=oci_budget_budget["test_budget"]["id"],
-            threshold=var["alert_rule_threshold"],
-            threshold_type=var["alert_rule_threshold_type"],
-            type=var["alert_rule_type"],
+        test_alert_rule = oci.budget.Rule("test_alert_rule",
+            budget_id=test_budget["id"],
+            threshold=alert_rule_threshold,
+            threshold_type=alert_rule_threshold_type,
+            type=alert_rule_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["alert_rule_description"],
-            display_name=var["alert_rule_display_name"],
+            description=alert_rule_description,
+            display_name=alert_rule_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            message=var["alert_rule_message"],
-            recipients=var["alert_rule_recipients"])
+            message=alert_rule_message,
+            recipients=alert_rule_recipients)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -512,21 +512,21 @@ class Rule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_alert_rule = oci.budget.Rule("testAlertRule",
-            budget_id=oci_budget_budget["test_budget"]["id"],
-            threshold=var["alert_rule_threshold"],
-            threshold_type=var["alert_rule_threshold_type"],
-            type=var["alert_rule_type"],
+        test_alert_rule = oci.budget.Rule("test_alert_rule",
+            budget_id=test_budget["id"],
+            threshold=alert_rule_threshold,
+            threshold_type=alert_rule_threshold_type,
+            type=alert_rule_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["alert_rule_description"],
-            display_name=var["alert_rule_display_name"],
+            description=alert_rule_description,
+            display_name=alert_rule_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            message=var["alert_rule_message"],
-            recipients=var["alert_rule_recipients"])
+            message=alert_rule_message,
+            recipients=alert_rule_recipients)
         ```
         <!--End PulumiCodeChooser -->
 

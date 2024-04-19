@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testImportableComputeEntity = oci.Opsi.getImportableComputeEntity({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -84,7 +84,7 @@ export interface GetImportableComputeEntityResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testImportableComputeEntity = oci.Opsi.getImportableComputeEntity({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

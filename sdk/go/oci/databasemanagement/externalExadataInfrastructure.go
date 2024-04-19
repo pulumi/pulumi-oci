@@ -37,19 +37,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewExternalExadataInfrastructure(ctx, "testExternalExadataInfrastructure", &DatabaseManagement.ExternalExadataInfrastructureArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DbSystemIds:   pulumi.Any(_var.External_exadata_infrastructure_db_system_ids),
-//				DisplayName:   pulumi.Any(_var.External_exadata_infrastructure_display_name),
+//			_, err := DatabaseManagement.NewExternalExadataInfrastructure(ctx, "test_external_exadata_infrastructure", &DatabaseManagement.ExternalExadataInfrastructureArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DbSystemIds:   pulumi.Any(externalExadataInfrastructureDbSystemIds),
+//				DisplayName:   pulumi.Any(externalExadataInfrastructureDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DiscoveryKey: pulumi.Any(_var.External_exadata_infrastructure_discovery_key),
+//				DiscoveryKey: pulumi.Any(externalExadataInfrastructureDiscoveryKey),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				LicenseModel:       pulumi.Any(_var.External_exadata_infrastructure_license_model),
-//				StorageServerNames: pulumi.Any(_var.External_exadata_infrastructure_storage_server_names),
+//				LicenseModel:       pulumi.Any(externalExadataInfrastructureLicenseModel),
+//				StorageServerNames: pulumi.Any(externalExadataInfrastructureStorageServerNames),
 //			})
 //			if err != nil {
 //				return err

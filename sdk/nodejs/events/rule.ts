@@ -18,25 +18,25 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRule = new oci.events.Rule("testRule", {
+ * const testRule = new oci.events.Rule("test_rule", {
  *     actions: {
  *         actions: [{
- *             actionType: _var.rule_actions_actions_action_type,
- *             isEnabled: _var.rule_actions_actions_is_enabled,
- *             description: _var.rule_actions_actions_description,
- *             functionId: oci_functions_function.test_function.id,
- *             streamId: oci_streaming_stream.test_stream.id,
- *             topicId: oci_ons_notification_topic.test_topic.id,
+ *             actionType: ruleActionsActionsActionType,
+ *             isEnabled: ruleActionsActionsIsEnabled,
+ *             description: ruleActionsActionsDescription,
+ *             functionId: testFunction.id,
+ *             streamId: testStream.id,
+ *             topicId: testTopic.id,
  *         }],
  *     },
- *     compartmentId: _var.compartment_id,
- *     condition: _var.rule_condition,
- *     displayName: _var.rule_display_name,
- *     isEnabled: _var.rule_is_enabled,
+ *     compartmentId: compartmentId,
+ *     condition: ruleCondition,
+ *     displayName: ruleDisplayName,
+ *     isEnabled: ruleIsEnabled,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.rule_description,
+ *     description: ruleDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

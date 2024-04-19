@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataInfrastructure = oci.DatabaseManagement.getExternalExadataInfrastructure({
- *     externalExadataInfrastructureId: oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure.id,
+ *     externalExadataInfrastructureId: testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -138,7 +138,7 @@ export interface GetExternalExadataInfrastructureResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataInfrastructure = oci.DatabaseManagement.getExternalExadataInfrastructure({
- *     externalExadataInfrastructureId: oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure.id,
+ *     externalExadataInfrastructureId: testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

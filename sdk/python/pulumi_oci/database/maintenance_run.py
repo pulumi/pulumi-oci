@@ -637,13 +637,13 @@ class MaintenanceRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_maintenance_run = oci.database.MaintenanceRun("testMaintenanceRun",
-            patch_type=var["maintenance_run_patch_type"],
-            target_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-            time_scheduled=var["maintenance_run_time_scheduled"],
-            compartment_id=var["compartment_id"],
-            is_dst_file_update_enabled=var["maintenance_run_is_dst_file_update_enabled"],
-            patching_mode=var["maintenance_run_patching_mode"])
+        test_maintenance_run = oci.database.MaintenanceRun("test_maintenance_run",
+            patch_type=maintenance_run_patch_type,
+            target_resource_id=test_resource["id"],
+            time_scheduled=maintenance_run_time_scheduled,
+            compartment_id=compartment_id,
+            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
+            patching_mode=maintenance_run_patching_mode)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -691,13 +691,13 @@ class MaintenanceRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_maintenance_run = oci.database.MaintenanceRun("testMaintenanceRun",
-            patch_type=var["maintenance_run_patch_type"],
-            target_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-            time_scheduled=var["maintenance_run_time_scheduled"],
-            compartment_id=var["compartment_id"],
-            is_dst_file_update_enabled=var["maintenance_run_is_dst_file_update_enabled"],
-            patching_mode=var["maintenance_run_patching_mode"])
+        test_maintenance_run = oci.database.MaintenanceRun("test_maintenance_run",
+            patch_type=maintenance_run_patch_type,
+            target_resource_id=test_resource["id"],
+            time_scheduled=maintenance_run_time_scheduled,
+            compartment_id=compartment_id,
+            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
+            patching_mode=maintenance_run_patching_mode)
         ```
         <!--End PulumiCodeChooser -->
 

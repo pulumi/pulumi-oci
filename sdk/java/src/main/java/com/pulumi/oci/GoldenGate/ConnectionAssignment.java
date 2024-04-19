@@ -43,8 +43,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConnectionAssignment = new ConnectionAssignment(&#34;testConnectionAssignment&#34;, ConnectionAssignmentArgs.builder()        
- *             .connectionId(oci_golden_gate_connection.test_connection().id())
- *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+ *             .connectionId(testConnection.id())
+ *             .deploymentId(testDeployment.id())
  *             .build());
  * 
  *     }

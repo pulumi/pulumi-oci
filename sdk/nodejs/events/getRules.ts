@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRules = oci.Events.getRules({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.rule_display_name,
- *     state: _var.rule_state,
+ *     compartmentId: compartmentId,
+ *     displayName: ruleDisplayName,
+ *     state: ruleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetRulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRules = oci.Events.getRules({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.rule_display_name,
- *     state: _var.rule_state,
+ *     compartmentId: compartmentId,
+ *     displayName: ruleDisplayName,
+ *     state: ruleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

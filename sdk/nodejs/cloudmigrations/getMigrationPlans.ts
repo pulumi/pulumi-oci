@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationPlans = oci.CloudMigrations.getMigrationPlans({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.migration_plan_display_name,
- *     migrationId: oci_cloud_migrations_migration.test_migration.id,
- *     migrationPlanId: oci_cloud_migrations_migration_plan.test_migration_plan.id,
- *     state: _var.migration_plan_state,
+ *     compartmentId: compartmentId,
+ *     displayName: migrationPlanDisplayName,
+ *     migrationId: testMigration.id,
+ *     migrationPlanId: testMigrationPlan.id,
+ *     state: migrationPlanState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,11 +113,11 @@ export interface GetMigrationPlansResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationPlans = oci.CloudMigrations.getMigrationPlans({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.migration_plan_display_name,
- *     migrationId: oci_cloud_migrations_migration.test_migration.id,
- *     migrationPlanId: oci_cloud_migrations_migration_plan.test_migration_plan.id,
- *     state: _var.migration_plan_state,
+ *     compartmentId: compartmentId,
+ *     displayName: migrationPlanDisplayName,
+ *     migrationId: testMigration.id,
+ *     migrationPlanId: testMigrationPlan.id,
+ *     state: migrationPlanState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

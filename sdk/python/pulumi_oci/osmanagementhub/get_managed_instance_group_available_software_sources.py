@@ -128,10 +128,10 @@ def get_managed_instance_group_available_software_sources(compartment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_software_sources = oci.OsManagementHub.get_managed_instance_group_available_software_sources(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_available_software_source_display_name"],
-        display_name_contains=var["managed_instance_group_available_software_source_display_name_contains"])
+    test_managed_instance_group_available_software_sources = oci.OsManagementHub.get_managed_instance_group_available_software_sources(managed_instance_group_id=test_managed_instance_group["id"],
+        compartment_id=compartment_id,
+        display_names=managed_instance_group_available_software_source_display_name,
+        display_name_contains=managed_instance_group_available_software_source_display_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -180,10 +180,10 @@ def get_managed_instance_group_available_software_sources_output(compartment_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_software_sources = oci.OsManagementHub.get_managed_instance_group_available_software_sources(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_available_software_source_display_name"],
-        display_name_contains=var["managed_instance_group_available_software_source_display_name_contains"])
+    test_managed_instance_group_available_software_sources = oci.OsManagementHub.get_managed_instance_group_available_software_sources(managed_instance_group_id=test_managed_instance_group["id"],
+        compartment_id=compartment_id,
+        display_names=managed_instance_group_available_software_source_display_name,
+        display_name_contains=managed_instance_group_available_software_source_display_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 

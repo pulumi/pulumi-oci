@@ -33,11 +33,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewActionCreateZoneFromZoneFile(ctx, "testActionCreateZoneFromZoneFile", &Dns.ActionCreateZoneFromZoneFileArgs{
-//				CreateZoneFromZoneFileDetails: pulumi.Any(_var.Action_create_zone_from_zone_file_create_zone_from_zone_file_details),
-//				CompartmentId:                 pulumi.Any(_var.Compartment_id),
-//				Scope:                         pulumi.Any(_var.Action_create_zone_from_zone_file_scope),
-//				ViewId:                        pulumi.Any(oci_dns_view.Test_view.Id),
+//			_, err := Dns.NewActionCreateZoneFromZoneFile(ctx, "test_action_create_zone_from_zone_file", &Dns.ActionCreateZoneFromZoneFileArgs{
+//				CreateZoneFromZoneFileDetails: pulumi.Any(actionCreateZoneFromZoneFileCreateZoneFromZoneFileDetails),
+//				CompartmentId:                 pulumi.Any(compartmentId),
+//				Scope:                         pulumi.Any(actionCreateZoneFromZoneFileScope),
+//				ViewId:                        pulumi.Any(testView.Id),
 //			})
 //			if err != nil {
 //				return err

@@ -344,7 +344,7 @@ def get_db_node(db_node_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node = oci.Database.get_db_node(db_node_id=var["db_node_id"])
+    test_db_node = oci.Database.get_db_node(db_node_id=db_node_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -399,7 +399,7 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node = oci.Database.get_db_node(db_node_id=var["db_node_id"])
+    test_db_node = oci.Database.get_db_node(db_node_id=db_node_id)
     ```
     <!--End PulumiCodeChooser -->
 

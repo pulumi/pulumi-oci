@@ -34,15 +34,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDedicatedVmHost(ctx, "testDedicatedVmHost", &Core.DedicatedVmHostArgs{
-//				AvailabilityDomain:   pulumi.Any(_var.Dedicated_vm_host_availability_domain),
-//				CompartmentId:        pulumi.Any(_var.Compartment_id),
-//				DedicatedVmHostShape: pulumi.Any(_var.Dedicated_vm_host_dedicated_vm_host_shape),
+//			_, err := Core.NewDedicatedVmHost(ctx, "test_dedicated_vm_host", &Core.DedicatedVmHostArgs{
+//				AvailabilityDomain:   pulumi.Any(dedicatedVmHostAvailabilityDomain),
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				DedicatedVmHostShape: pulumi.Any(dedicatedVmHostDedicatedVmHostShape),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Dedicated_vm_host_display_name),
-//				FaultDomain: pulumi.Any(_var.Dedicated_vm_host_fault_domain),
+//				DisplayName: pulumi.Any(dedicatedVmHostDisplayName),
+//				FaultDomain: pulumi.Any(dedicatedVmHostFaultDomain),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

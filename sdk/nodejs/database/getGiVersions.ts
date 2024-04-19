@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testGiVersions = oci.Database.getGiVersions({
- *     compartmentId: _var.compartment_id,
- *     shape: _var.gi_version_shape,
+ *     compartmentId: compartmentId,
+ *     shape: giVersionShape,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetGiVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testGiVersions = oci.Database.getGiVersions({
- *     compartmentId: _var.compartment_id,
- *     shape: _var.gi_version_shape,
+ *     compartmentId: compartmentId,
+ *     shape: giVersionShape,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

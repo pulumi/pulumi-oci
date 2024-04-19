@@ -375,12 +375,12 @@ class DataAsset(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_asset = oci.data_catalog.DataAsset("testDataAsset",
-            catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-            display_name=var["data_asset_display_name"],
-            type_key=var["data_asset_type_key"],
-            description=var["data_asset_description"],
-            properties=var["data_asset_properties"])
+        test_data_asset = oci.data_catalog.DataAsset("test_data_asset",
+            catalog_id=test_catalog["id"],
+            display_name=data_asset_display_name,
+            type_key=data_asset_type_key,
+            description=data_asset_description,
+            properties=data_asset_properties)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -421,12 +421,12 @@ class DataAsset(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_asset = oci.data_catalog.DataAsset("testDataAsset",
-            catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-            display_name=var["data_asset_display_name"],
-            type_key=var["data_asset_type_key"],
-            description=var["data_asset_description"],
-            properties=var["data_asset_properties"])
+        test_data_asset = oci.data_catalog.DataAsset("test_data_asset",
+            catalog_id=test_catalog["id"],
+            display_name=data_asset_display_name,
+            type_key=data_asset_type_key,
+            description=data_asset_description,
+            properties=data_asset_properties)
         ```
         <!--End PulumiCodeChooser -->
 

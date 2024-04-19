@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLimitDefinitions = oci.Limits.getLimitDefinitions({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.limit_definition_name,
- *     serviceName: oci_limits_service.test_service.name,
+ *     compartmentId: tenancyOcid,
+ *     name: limitDefinitionName,
+ *     serviceName: testService.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,9 +96,9 @@ export interface GetLimitDefinitionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLimitDefinitions = oci.Limits.getLimitDefinitions({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.limit_definition_name,
- *     serviceName: oci_limits_service.test_service.name,
+ *     compartmentId: tenancyOcid,
+ *     name: limitDefinitionName,
+ *     serviceName: testService.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

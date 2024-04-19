@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTraceSnapshotData = oci.ApmTraces.getTraceSnapshotData({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     traceKey: _var.trace_snapshot_data_trace_key,
- *     isSummarized: _var.trace_snapshot_data_is_summarized,
- *     snapshotTime: _var.trace_snapshot_data_snapshot_time,
- *     threadId: oci_apm_traces_thread.test_thread.id,
+ *     apmDomainId: testApmDomain.id,
+ *     traceKey: traceSnapshotDataTraceKey,
+ *     isSummarized: traceSnapshotDataIsSummarized,
+ *     snapshotTime: traceSnapshotDataSnapshotTime,
+ *     threadId: testThread.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetTraceSnapshotDataResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTraceSnapshotData = oci.ApmTraces.getTraceSnapshotData({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     traceKey: _var.trace_snapshot_data_trace_key,
- *     isSummarized: _var.trace_snapshot_data_is_summarized,
- *     snapshotTime: _var.trace_snapshot_data_snapshot_time,
- *     threadId: oci_apm_traces_thread.test_thread.id,
+ *     apmDomainId: testApmDomain.id,
+ *     traceKey: traceSnapshotDataTraceKey,
+ *     isSummarized: traceSnapshotDataIsSummarized,
+ *     snapshotTime: traceSnapshotDataSnapshotTime,
+ *     threadId: testThread.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

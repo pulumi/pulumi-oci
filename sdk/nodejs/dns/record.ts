@@ -22,13 +22,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecord = new oci.dns.Record("testRecord", {
- *     zoneNameOrId: oci_dns_zone_name_or.test_zone_name_or.id,
- *     domain: _var.record_items_domain,
- *     rtype: _var.record_items_rtype,
- *     compartmentId: _var.compartment_id,
- *     rdata: _var.record_items_rdata,
- *     ttl: _var.record_items_ttl,
+ * const testRecord = new oci.dns.Record("test_record", {
+ *     zoneNameOrId: testZoneNameOr.id,
+ *     domain: recordItemsDomain,
+ *     rtype: recordItemsRtype,
+ *     compartmentId: compartmentId,
+ *     rdata: recordItemsRdata,
+ *     ttl: recordItemsTtl,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

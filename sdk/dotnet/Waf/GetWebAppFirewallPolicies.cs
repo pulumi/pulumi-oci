@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testWebAppFirewallPolicies = Oci.Waf.GetWebAppFirewallPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Web_app_firewall_policy_display_name,
-        ///         Id = @var.Web_app_firewall_policy_id,
-        ///         States = @var.Web_app_firewall_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = webAppFirewallPolicyDisplayName,
+        ///         Id = webAppFirewallPolicyId,
+        ///         States = webAppFirewallPolicyState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testWebAppFirewallPolicies = Oci.Waf.GetWebAppFirewallPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Web_app_firewall_policy_display_name,
-        ///         Id = @var.Web_app_firewall_policy_id,
-        ///         States = @var.Web_app_firewall_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = webAppFirewallPolicyDisplayName,
+        ///         Id = webAppFirewallPolicyId,
+        ///         States = webAppFirewallPolicyState,
         ///     });
         /// 
         /// });

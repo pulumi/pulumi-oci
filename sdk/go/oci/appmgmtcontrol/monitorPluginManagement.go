@@ -33,8 +33,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AppMgmtControl.NewMonitorPluginManagement(ctx, "testMonitorPluginManagement", &AppMgmtControl.MonitorPluginManagementArgs{
-//				MonitoredInstanceId: pulumi.Any(oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id),
+//			_, err := AppMgmtControl.NewMonitorPluginManagement(ctx, "test_monitor_plugin_management", &AppMgmtControl.MonitorPluginManagementArgs{
+//				MonitoredInstanceId: pulumi.Any(testMonitoredInstance.Id),
 //			})
 //			if err != nil {
 //				return err

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetTargetDatabasePeerTargetDatabases(ctx, &datasafe.GetTargetDatabasePeerTargetDatabasesArgs{
-//				TargetDatabaseId: oci_data_safe_target_database.Test_target_database.Id,
+//				TargetDatabaseId: testTargetDatabase.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

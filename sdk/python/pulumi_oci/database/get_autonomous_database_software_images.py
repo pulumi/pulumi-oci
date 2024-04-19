@@ -133,10 +133,10 @@ def get_autonomous_database_software_images(compartment_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_software_images = oci.Database.get_autonomous_database_software_images(compartment_id=var["compartment_id"],
-        image_shape_family=var["autonomous_database_software_image_image_shape_family"],
-        display_name=var["autonomous_database_software_image_display_name"],
-        state=var["autonomous_database_software_image_state"])
+    test_autonomous_database_software_images = oci.Database.get_autonomous_database_software_images(compartment_id=compartment_id,
+        image_shape_family=autonomous_database_software_image_image_shape_family,
+        display_name=autonomous_database_software_image_display_name,
+        state=autonomous_database_software_image_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_autonomous_database_software_images_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_software_images = oci.Database.get_autonomous_database_software_images(compartment_id=var["compartment_id"],
-        image_shape_family=var["autonomous_database_software_image_image_shape_family"],
-        display_name=var["autonomous_database_software_image_display_name"],
-        state=var["autonomous_database_software_image_state"])
+    test_autonomous_database_software_images = oci.Database.get_autonomous_database_software_images(compartment_id=compartment_id,
+        image_shape_family=autonomous_database_software_image_image_shape_family,
+        display_name=autonomous_database_software_image_display_name,
+        state=autonomous_database_software_image_state)
     ```
     <!--End PulumiCodeChooser -->
 

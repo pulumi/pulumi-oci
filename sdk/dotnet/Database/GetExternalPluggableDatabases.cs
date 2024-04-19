@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testExternalPluggableDatabases = Oci.Database.GetExternalPluggableDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.External_pluggable_database_display_name,
-        ///         ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
-        ///         State = @var.External_pluggable_database_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = externalPluggableDatabaseDisplayName,
+        ///         ExternalContainerDatabaseId = testExternalContainerDatabase.Id,
+        ///         State = externalPluggableDatabaseState,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testExternalPluggableDatabases = Oci.Database.GetExternalPluggableDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.External_pluggable_database_display_name,
-        ///         ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
-        ///         State = @var.External_pluggable_database_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = externalPluggableDatabaseDisplayName,
+        ///         ExternalContainerDatabaseId = testExternalContainerDatabase.Id,
+        ///         State = externalPluggableDatabaseState,
         ///     });
         /// 
         /// });

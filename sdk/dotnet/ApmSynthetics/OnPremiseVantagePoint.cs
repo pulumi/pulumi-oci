@@ -25,19 +25,20 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOnPremiseVantagePoint = new Oci.ApmSynthetics.OnPremiseVantagePoint("testOnPremiseVantagePoint", new()
+    ///     var testOnPremiseVantagePoint = new Oci.ApmSynthetics.OnPremiseVantagePoint("test_on_premise_vantage_point", new()
     ///     {
-    ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+    ///         ApmDomainId = testApmDomain.Id,
+    ///         Name = onPremiseVantagePointName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.On_premise_vantage_point_description,
+    ///         Description = onPremiseVantagePointDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Type = @var.On_premise_vantage_point_type,
+    ///         Type = onPremiseVantagePointType,
     ///     });
     /// 
     /// });

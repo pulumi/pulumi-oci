@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbSystemComputePerformances(ctx, &database.GetDbSystemComputePerformancesArgs{
-//				DbSystemShape: pulumi.StringRef(_var.Db_system_compute_performance_db_system_shape),
+//				DbSystemShape: pulumi.StringRef(dbSystemComputePerformanceDbSystemShape),
 //			}, nil)
 //			if err != nil {
 //				return err

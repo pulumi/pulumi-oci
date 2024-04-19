@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testTags = Oci.Identity.GetTags.Invoke(new()
         ///     {
-        ///         TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
-        ///         State = @var.Tag_state,
+        ///         TagNamespaceId = testTagNamespace.Id,
+        ///         State = tagState,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testTags = Oci.Identity.GetTags.Invoke(new()
         ///     {
-        ///         TagNamespaceId = oci_identity_tag_namespace.Test_tag_namespace.Id,
-        ///         State = @var.Tag_state,
+        ///         TagNamespaceId = testTagNamespace.Id,
+        ///         State = tagState,
         ///     });
         /// 
         /// });

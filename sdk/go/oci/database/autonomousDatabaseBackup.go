@@ -31,11 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousDatabaseBackup(ctx, "testAutonomousDatabaseBackup", &Database.AutonomousDatabaseBackupArgs{
-//				AutonomousDatabaseId:  pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-//				DisplayName:           pulumi.Any(_var.Autonomous_database_backup_display_name),
-//				IsLongTermBackup:      pulumi.Any(_var.Autonomous_database_backup_is_long_term_backup),
-//				RetentionPeriodInDays: pulumi.Any(_var.Autonomous_database_backup_retention_period_in_days),
+//			_, err := Database.NewAutonomousDatabaseBackup(ctx, "test_autonomous_database_backup", &Database.AutonomousDatabaseBackupArgs{
+//				AutonomousDatabaseId:  pulumi.Any(testAutonomousDatabase.Id),
+//				DisplayName:           pulumi.Any(autonomousDatabaseBackupDisplayName),
+//				IsLongTermBackup:      pulumi.Any(autonomousDatabaseBackupIsLongTermBackup),
+//				RetentionPeriodInDays: pulumi.Any(autonomousDatabaseBackupRetentionPeriodInDays),
 //			})
 //			if err != nil {
 //				return err

@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Limits.GetLimitValues(ctx, &limits.GetLimitValuesArgs{
-//				CompartmentId:      _var.Tenancy_ocid,
-//				ServiceName:        oci_limits_service.Test_service.Name,
-//				AvailabilityDomain: pulumi.StringRef(_var.Limit_value_availability_domain),
-//				Name:               pulumi.StringRef(_var.Limit_value_name),
-//				ScopeType:          pulumi.StringRef(_var.Limit_value_scope_type),
+//				CompartmentId:      tenancyOcid,
+//				ServiceName:        testService.Name,
+//				AvailabilityDomain: pulumi.StringRef(limitValueAvailabilityDomain),
+//				Name:               pulumi.StringRef(limitValueName),
+//				ScopeType:          pulumi.StringRef(limitValueScopeType),
 //			}, nil)
 //			if err != nil {
 //				return err

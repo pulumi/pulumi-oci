@@ -133,10 +133,10 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=var["compartment_id"],
-        cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-        display_name=var["cloud_vm_cluster_display_name"],
-        state=var["cloud_vm_cluster_state"])
+    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=compartment_id,
+        cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+        display_name=cloud_vm_cluster_display_name,
+        state=cloud_vm_cluster_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=var["compartment_id"],
-        cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-        display_name=var["cloud_vm_cluster_display_name"],
-        state=var["cloud_vm_cluster_state"])
+    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=compartment_id,
+        cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+        display_name=cloud_vm_cluster_display_name,
+        state=cloud_vm_cluster_state)
     ```
     <!--End PulumiCodeChooser -->
 

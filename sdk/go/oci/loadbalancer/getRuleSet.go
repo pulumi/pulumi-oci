@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LoadBalancer.GetRuleSet(ctx, &loadbalancer.GetRuleSetArgs{
-//				LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
-//				Name:           _var.Rule_set_name,
+//				LoadBalancerId: testLoadBalancer.Id,
+//				Name:           ruleSetName,
 //			}, nil)
 //			if err != nil {
 //				return err

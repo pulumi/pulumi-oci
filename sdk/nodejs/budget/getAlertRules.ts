@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAlertRules = oci.Budget.getAlertRules({
- *     budgetId: oci_budget_budget.test_budget.id,
- *     displayName: _var.alert_rule_display_name,
- *     state: _var.alert_rule_state,
+ *     budgetId: testBudget.id,
+ *     displayName: alertRuleDisplayName,
+ *     state: alertRuleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetAlertRulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAlertRules = oci.Budget.getAlertRules({
- *     budgetId: oci_budget_budget.test_budget.id,
- *     displayName: _var.alert_rule_display_name,
- *     state: _var.alert_rule_state,
+ *     budgetId: testBudget.id,
+ *     displayName: alertRuleDisplayName,
+ *     state: alertRuleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,8 +31,8 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentPluginCount = Oci.ManagementAgent.GetManagementAgentPluginCount.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         GroupBy = @var.Management_agent_plugin_count_group_by,
+        ///         CompartmentId = compartmentId,
+        ///         GroupBy = managementAgentPluginCountGroupBy,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentPluginCount = Oci.ManagementAgent.GetManagementAgentPluginCount.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         GroupBy = @var.Management_agent_plugin_count_group_by,
+        ///         CompartmentId = compartmentId,
+        ///         GroupBy = managementAgentPluginCountGroupBy,
         ///     });
         /// 
         /// });

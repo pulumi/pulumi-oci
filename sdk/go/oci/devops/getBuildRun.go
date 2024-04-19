@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetBuildRun(ctx, &devops.GetBuildRunArgs{
-//				BuildRunId: oci_devops_build_run.Test_build_run.Id,
+//				BuildRunId: testBuildRunOciDevopsBuildRun.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

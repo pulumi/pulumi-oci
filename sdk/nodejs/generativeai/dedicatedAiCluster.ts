@@ -18,16 +18,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedAiCluster = new oci.generativeai.DedicatedAiCluster("testDedicatedAiCluster", {
- *     compartmentId: _var.compartment_id,
- *     type: _var.dedicated_ai_cluster_type,
- *     unitCount: _var.dedicated_ai_cluster_unit_count,
- *     unitShape: _var.dedicated_ai_cluster_unit_shape,
+ * const testDedicatedAiCluster = new oci.generativeai.DedicatedAiCluster("test_dedicated_ai_cluster", {
+ *     compartmentId: compartmentId,
+ *     type: dedicatedAiClusterType,
+ *     unitCount: dedicatedAiClusterUnitCount,
+ *     unitShape: dedicatedAiClusterUnitShape,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.dedicated_ai_cluster_description,
- *     displayName: _var.dedicated_ai_cluster_display_name,
+ *     description: dedicatedAiClusterDescription,
+ *     displayName: dedicatedAiClusterDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

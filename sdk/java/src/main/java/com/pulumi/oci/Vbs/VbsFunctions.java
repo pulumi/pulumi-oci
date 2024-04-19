@@ -47,7 +47,7 @@ public final class VbsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbsInstance = VbsFunctions.getInstVbsInstance(GetInstVbsInstanceArgs.builder()
-     *             .vbsInstanceId(oci_vbs_inst_vbs_instance.test_vbs_instance().id())
+     *             .vbsInstanceId(testVbsInstanceOciVbsInstVbsInstance.id())
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class VbsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbsInstance = VbsFunctions.getInstVbsInstance(GetInstVbsInstanceArgs.builder()
-     *             .vbsInstanceId(oci_vbs_inst_vbs_instance.test_vbs_instance().id())
+     *             .vbsInstanceId(testVbsInstanceOciVbsInstVbsInstance.id())
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class VbsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbsInstance = VbsFunctions.getInstVbsInstance(GetInstVbsInstanceArgs.builder()
-     *             .vbsInstanceId(oci_vbs_inst_vbs_instance.test_vbs_instance().id())
+     *             .vbsInstanceId(testVbsInstanceOciVbsInstVbsInstance.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class VbsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbsInstance = VbsFunctions.getInstVbsInstance(GetInstVbsInstanceArgs.builder()
-     *             .vbsInstanceId(oci_vbs_inst_vbs_instance.test_vbs_instance().id())
+     *             .vbsInstanceId(testVbsInstanceOciVbsInstVbsInstance.id())
      *             .build());
      * 
      *     }
@@ -215,10 +215,10 @@ public final class VbsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbsInstances = VbsFunctions.getInstVbsInstances(GetInstVbsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.vbs_instance_id())
-     *             .name(var_.vbs_instance_name())
-     *             .state(var_.vbs_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .id(vbsInstanceId)
+     *             .name(vbsInstanceName)
+     *             .state(vbsInstanceState)
      *             .build());
      * 
      *     }
@@ -260,10 +260,10 @@ public final class VbsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbsInstances = VbsFunctions.getInstVbsInstances(GetInstVbsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.vbs_instance_id())
-     *             .name(var_.vbs_instance_name())
-     *             .state(var_.vbs_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .id(vbsInstanceId)
+     *             .name(vbsInstanceName)
+     *             .state(vbsInstanceState)
      *             .build());
      * 
      *     }
@@ -305,10 +305,10 @@ public final class VbsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbsInstances = VbsFunctions.getInstVbsInstances(GetInstVbsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.vbs_instance_id())
-     *             .name(var_.vbs_instance_name())
-     *             .state(var_.vbs_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .id(vbsInstanceId)
+     *             .name(vbsInstanceName)
+     *             .state(vbsInstanceState)
      *             .build());
      * 
      *     }
@@ -350,10 +350,10 @@ public final class VbsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbsInstances = VbsFunctions.getInstVbsInstances(GetInstVbsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.vbs_instance_id())
-     *             .name(var_.vbs_instance_name())
-     *             .state(var_.vbs_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .id(vbsInstanceId)
+     *             .name(vbsInstanceName)
+     *             .state(vbsInstanceState)
      *             .build());
      * 
      *     }

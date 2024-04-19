@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiDocument.GetProject(ctx, &aidocument.GetProjectArgs{
-//				ProjectId: oci_ai_document_project.Test_project.Id,
+//				ProjectId: testProjectOciAiDocumentProject.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

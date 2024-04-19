@@ -27,18 +27,18 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAuditArchiveRetrieval = new Oci.DataSafe.AuditArchiveRetrieval("testAuditArchiveRetrieval", new()
+    ///     var testAuditArchiveRetrieval = new Oci.DataSafe.AuditArchiveRetrieval("test_audit_archive_retrieval", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         EndDate = @var.Audit_archive_retrieval_end_date,
-    ///         StartDate = @var.Audit_archive_retrieval_start_date,
-    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         CompartmentId = compartmentId,
+    ///         EndDate = auditArchiveRetrievalEndDate,
+    ///         StartDate = auditArchiveRetrievalStartDate,
+    ///         TargetId = testTarget.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Audit_archive_retrieval_description,
-    ///         DisplayName = @var.Audit_archive_retrieval_display_name,
+    ///         Description = auditArchiveRetrievalDescription,
+    ///         DisplayName = auditArchiveRetrievalDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

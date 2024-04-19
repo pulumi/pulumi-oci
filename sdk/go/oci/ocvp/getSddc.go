@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetSddc(ctx, &ocvp.GetSddcArgs{
-//				SddcId: oci_ocvp_sddc.Test_sddc.Id,
+//				SddcId: testSddcOciOcvpSddc.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

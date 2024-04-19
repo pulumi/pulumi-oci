@@ -22,16 +22,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfig = new oci.stackmonitoring.Config("testConfig", {
- *     compartmentId: _var.compartment_id,
- *     configType: _var.config_config_type,
- *     isEnabled: _var.config_is_enabled,
- *     resourceType: _var.config_resource_type,
- *     license: _var.config_license,
+ * const testConfig = new oci.stackmonitoring.Config("test_config", {
+ *     compartmentId: compartmentId,
+ *     configType: configConfigType,
+ *     isEnabled: configIsEnabled,
+ *     resourceType: configResourceType,
+ *     license: configLicense,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.config_display_name,
+ *     displayName: configDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

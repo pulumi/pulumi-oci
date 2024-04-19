@@ -22,15 +22,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testListUserGrants = oci.DataSafe.getListUserGrants({
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
- *     userKey: _var.list_user_grant_user_key,
- *     depthLevel: _var.list_user_grant_depth_level,
- *     depthLevelGreaterThanOrEqualTo: _var.list_user_grant_depth_level_greater_than_or_equal_to,
- *     depthLevelLessThan: _var.list_user_grant_depth_level_less_than,
- *     grantKey: _var.list_user_grant_grant_key,
- *     grantName: _var.list_user_grant_grant_name,
- *     privilegeCategory: _var.list_user_grant_privilege_category,
- *     privilegeType: _var.list_user_grant_privilege_type,
+ *     userAssessmentId: testUserAssessment.id,
+ *     userKey: listUserGrantUserKey,
+ *     depthLevel: listUserGrantDepthLevel,
+ *     depthLevelGreaterThanOrEqualTo: listUserGrantDepthLevelGreaterThanOrEqualTo,
+ *     depthLevelLessThan: listUserGrantDepthLevelLessThan,
+ *     grantKey: listUserGrantGrantKey,
+ *     grantName: listUserGrantGrantName,
+ *     privilegeCategory: listUserGrantPrivilegeCategory,
+ *     privilegeType: listUserGrantPrivilegeType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -146,15 +146,15 @@ export interface GetListUserGrantsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testListUserGrants = oci.DataSafe.getListUserGrants({
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
- *     userKey: _var.list_user_grant_user_key,
- *     depthLevel: _var.list_user_grant_depth_level,
- *     depthLevelGreaterThanOrEqualTo: _var.list_user_grant_depth_level_greater_than_or_equal_to,
- *     depthLevelLessThan: _var.list_user_grant_depth_level_less_than,
- *     grantKey: _var.list_user_grant_grant_key,
- *     grantName: _var.list_user_grant_grant_name,
- *     privilegeCategory: _var.list_user_grant_privilege_category,
- *     privilegeType: _var.list_user_grant_privilege_type,
+ *     userAssessmentId: testUserAssessment.id,
+ *     userKey: listUserGrantUserKey,
+ *     depthLevel: listUserGrantDepthLevel,
+ *     depthLevelGreaterThanOrEqualTo: listUserGrantDepthLevelGreaterThanOrEqualTo,
+ *     depthLevelLessThan: listUserGrantDepthLevelLessThan,
+ *     grantKey: listUserGrantGrantKey,
+ *     grantName: listUserGrantGrantName,
+ *     privilegeCategory: listUserGrantPrivilegeCategory,
+ *     privilegeType: listUserGrantPrivilegeType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

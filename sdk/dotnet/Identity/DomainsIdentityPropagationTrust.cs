@@ -25,62 +25,63 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIdentityPropagationTrust = new Oci.Identity.DomainsIdentityPropagationTrust("testIdentityPropagationTrust", new()
+    ///     var testIdentityPropagationTrust = new Oci.Identity.DomainsIdentityPropagationTrust("test_identity_propagation_trust", new()
     ///     {
-    ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-    ///         Issuer = @var.Identity_propagation_trust_issuer,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Issuer = identityPropagationTrustIssuer,
+    ///         Name = identityPropagationTrustName,
     ///         Schemas = new[]
     ///         {
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust",
     ///         },
-    ///         Type = @var.Identity_propagation_trust_type,
+    ///         Type = identityPropagationTrustType,
     ///         AccountId = "accountId",
-    ///         Active = @var.Identity_propagation_trust_active,
-    ///         AllowImpersonation = @var.Identity_propagation_trust_allow_impersonation,
+    ///         Active = identityPropagationTrustActive,
+    ///         AllowImpersonation = identityPropagationTrustAllowImpersonation,
     ///         AttributeSets = new[]
     ///         {
     ///             "all",
     ///         },
     ///         Attributes = "",
-    ///         Authorization = @var.Identity_propagation_trust_authorization,
-    ///         ClientClaimName = @var.Identity_propagation_trust_client_claim_name,
+    ///         Authorization = identityPropagationTrustAuthorization,
+    ///         ClientClaimName = identityPropagationTrustClientClaimName,
     ///         ClientClaimValues = new[]
     ///         {
     ///             "clientClaimValues",
     ///         },
-    ///         ClockSkewSeconds = @var.Identity_propagation_trust_clock_skew_seconds,
-    ///         Description = @var.Identity_propagation_trust_description,
+    ///         ClockSkewSeconds = identityPropagationTrustClockSkewSeconds,
+    ///         Description = identityPropagationTrustDescription,
     ///         ImpersonationServiceUsers = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsIdentityPropagationTrustImpersonationServiceUserArgs
     ///             {
-    ///                 Rule = @var.Identity_propagation_trust_impersonation_service_users_rule,
-    ///                 Value = oci_identity_domains_user.Test_identity_propagation_trust_user.Id,
-    ///                 Ocid = @var.Identity_propagation_trust_impersonation_service_users_ocid,
+    ///                 Rule = identityPropagationTrustImpersonationServiceUsersRule,
+    ///                 Value = testIdentityPropagationTrustUser.Id,
+    ///                 Ocid = identityPropagationTrustImpersonationServiceUsersOcid,
     ///             },
     ///         },
     ///         Keytab = new Oci.Identity.Inputs.DomainsIdentityPropagationTrustKeytabArgs
     ///         {
-    ///             SecretOcid = @var.Identity_propagation_trust_keytab_secret_ocid,
-    ///             SecretVersion = @var.Identity_propagation_trust_keytab_secret_version,
+    ///             SecretOcid = identityPropagationTrustKeytabSecretOcid,
+    ///             SecretVersion = identityPropagationTrustKeytabSecretVersion,
     ///         },
     ///         OauthClients = new[]
     ///         {
     ///             "oauthClients",
     ///         },
-    ///         Ocid = @var.Identity_propagation_trust_ocid,
-    ///         PublicCertificate = @var.Identity_propagation_trust_public_certificate,
-    ///         PublicKeyEndpoint = @var.Identity_propagation_trust_public_key_endpoint,
-    ///         ResourceTypeSchemaVersion = @var.Identity_propagation_trust_resource_type_schema_version,
-    ///         SubjectClaimName = @var.Identity_propagation_trust_subject_claim_name,
-    ///         SubjectMappingAttribute = @var.Identity_propagation_trust_subject_mapping_attribute,
-    ///         SubjectType = @var.Identity_propagation_trust_subject_type,
+    ///         Ocid = identityPropagationTrustOcid,
+    ///         PublicCertificate = identityPropagationTrustPublicCertificate,
+    ///         PublicKeyEndpoint = identityPropagationTrustPublicKeyEndpoint,
+    ///         ResourceTypeSchemaVersion = identityPropagationTrustResourceTypeSchemaVersion,
+    ///         SubjectClaimName = identityPropagationTrustSubjectClaimName,
+    ///         SubjectMappingAttribute = identityPropagationTrustSubjectMappingAttribute,
+    ///         SubjectType = identityPropagationTrustSubjectType,
     ///         Tags = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsIdentityPropagationTrustTagArgs
     ///             {
-    ///                 Key = @var.Identity_propagation_trust_tags_key,
-    ///                 Value = @var.Identity_propagation_trust_tags_value,
+    ///                 Key = identityPropagationTrustTagsKey,
+    ///                 Value = identityPropagationTrustTagsValue,
     ///             },
     ///         },
     ///     });

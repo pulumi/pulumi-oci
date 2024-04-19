@@ -41,9 +41,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewCustomerSecretKey(ctx, "testCustomerSecretKey", &Identity.CustomerSecretKeyArgs{
-//				DisplayName: pulumi.Any(_var.Customer_secret_key_display_name),
-//				UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
+//			_, err := Identity.NewCustomerSecretKey(ctx, "test_customer_secret_key", &Identity.CustomerSecretKeyArgs{
+//				DisplayName: pulumi.Any(customerSecretKeyDisplayName),
+//				UserId:      pulumi.Any(testUser.Id),
 //			})
 //			if err != nil {
 //				return err

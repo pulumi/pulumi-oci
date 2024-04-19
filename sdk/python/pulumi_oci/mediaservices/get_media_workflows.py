@@ -121,10 +121,10 @@ def get_media_workflows(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflows = oci.MediaServices.get_media_workflows(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_display_name"],
-        id=var["media_workflow_id"],
-        state=var["media_workflow_state"])
+    test_media_workflows = oci.MediaServices.get_media_workflows(compartment_id=compartment_id,
+        display_name=media_workflow_display_name,
+        id=media_workflow_id,
+        state=media_workflow_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_media_workflows_output(compartment_id: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflows = oci.MediaServices.get_media_workflows(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_display_name"],
-        id=var["media_workflow_id"],
-        state=var["media_workflow_state"])
+    test_media_workflows = oci.MediaServices.get_media_workflows(compartment_id=compartment_id,
+        display_name=media_workflow_display_name,
+        id=media_workflow_id,
+        state=media_workflow_state)
     ```
     <!--End PulumiCodeChooser -->
 

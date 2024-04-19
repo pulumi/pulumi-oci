@@ -210,14 +210,14 @@ def get_domains_approval_workflow_steps(approval_workflow_step_count: Optional[i
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_steps = oci.Identity.get_domains_approval_workflow_steps(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        approval_workflow_step_count=var["approval_workflow_step_approval_workflow_step_count"],
-        approval_workflow_step_filter=var["approval_workflow_step_approval_workflow_step_filter"],
+    test_approval_workflow_steps = oci.Identity.get_domains_approval_workflow_steps(idcs_endpoint=test_domain["url"],
+        approval_workflow_step_count=approval_workflow_step_approval_workflow_step_count,
+        approval_workflow_step_filter=approval_workflow_step_approval_workflow_step_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_step_authorization"],
-        resource_type_schema_version=var["approval_workflow_step_resource_type_schema_version"],
-        start_index=var["approval_workflow_step_start_index"])
+        authorization=approval_workflow_step_authorization,
+        resource_type_schema_version=approval_workflow_step_resource_type_schema_version,
+        start_index=approval_workflow_step_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_approval_workflow_steps_output(approval_workflow_step_count: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_steps = oci.Identity.get_domains_approval_workflow_steps(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        approval_workflow_step_count=var["approval_workflow_step_approval_workflow_step_count"],
-        approval_workflow_step_filter=var["approval_workflow_step_approval_workflow_step_filter"],
+    test_approval_workflow_steps = oci.Identity.get_domains_approval_workflow_steps(idcs_endpoint=test_domain["url"],
+        approval_workflow_step_count=approval_workflow_step_approval_workflow_step_count,
+        approval_workflow_step_filter=approval_workflow_step_approval_workflow_step_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_step_authorization"],
-        resource_type_schema_version=var["approval_workflow_step_resource_type_schema_version"],
-        start_index=var["approval_workflow_step_start_index"])
+        authorization=approval_workflow_step_authorization,
+        resource_type_schema_version=approval_workflow_step_resource_type_schema_version,
+        start_index=approval_workflow_step_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

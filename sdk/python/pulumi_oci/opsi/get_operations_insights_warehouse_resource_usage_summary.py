@@ -104,7 +104,7 @@ def get_operations_insights_warehouse_resource_usage_summary(operations_insights
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
+    test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -140,7 +140,7 @@ def get_operations_insights_warehouse_resource_usage_summary_output(operations_i
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
+    test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
     ```
     <!--End PulumiCodeChooser -->
 

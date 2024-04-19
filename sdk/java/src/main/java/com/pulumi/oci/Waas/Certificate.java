@@ -54,13 +54,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCertificate = new Certificate(&#34;testCertificate&#34;, CertificateArgs.builder()        
- *             .certificateData(var_.certificate_certificate_data())
- *             .compartmentId(var_.compartment_id())
- *             .privateKeyData(var_.certificate_private_key_data())
+ *             .certificateData(certificateCertificateData)
+ *             .compartmentId(compartmentId)
+ *             .privateKeyData(certificatePrivateKeyData)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.certificate_display_name())
+ *             .displayName(certificateDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .isTrustVerificationDisabled(var_.certificate_is_trust_verification_disabled())
+ *             .isTrustVerificationDisabled(certificateIsTrustVerificationDisabled)
  *             .build());
  * 
  *     }

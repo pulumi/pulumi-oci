@@ -258,21 +258,21 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        column_names=var["masking_policies_masking_column_column_name"],
-        data_types=var["masking_policies_masking_column_data_type"],
-        is_masking_enabled=var["masking_policies_masking_column_is_masking_enabled"],
-        is_seed_required=var["masking_policies_masking_column_is_seed_required"],
-        masking_column_groups=var["masking_policies_masking_column_masking_column_group"],
-        masking_column_lifecycle_state=var["masking_policies_masking_column_masking_column_lifecycle_state"],
-        objects=var["masking_policies_masking_column_object"],
-        object_types=var["masking_policies_masking_column_object_type"],
-        schema_names=var["masking_policies_masking_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        time_created_greater_than_or_equal_to=var["masking_policies_masking_column_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["masking_policies_masking_column_time_created_less_than"],
-        time_updated_greater_than_or_equal_to=var["masking_policies_masking_column_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["masking_policies_masking_column_time_updated_less_than"])
+    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
+        column_names=masking_policies_masking_column_column_name,
+        data_types=masking_policies_masking_column_data_type,
+        is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
+        is_seed_required=masking_policies_masking_column_is_seed_required,
+        masking_column_groups=masking_policies_masking_column_masking_column_group,
+        masking_column_lifecycle_state=masking_policies_masking_column_masking_column_lifecycle_state,
+        objects=masking_policies_masking_column_object,
+        object_types=masking_policies_masking_column_object_type,
+        schema_names=masking_policies_masking_column_schema_name,
+        sensitive_type_id=test_sensitive_type["id"],
+        time_created_greater_than_or_equal_to=masking_policies_masking_column_time_created_greater_than_or_equal_to,
+        time_created_less_than=masking_policies_masking_column_time_created_less_than,
+        time_updated_greater_than_or_equal_to=masking_policies_masking_column_time_updated_greater_than_or_equal_to,
+        time_updated_less_than=masking_policies_masking_column_time_updated_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -368,21 +368,21 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        column_names=var["masking_policies_masking_column_column_name"],
-        data_types=var["masking_policies_masking_column_data_type"],
-        is_masking_enabled=var["masking_policies_masking_column_is_masking_enabled"],
-        is_seed_required=var["masking_policies_masking_column_is_seed_required"],
-        masking_column_groups=var["masking_policies_masking_column_masking_column_group"],
-        masking_column_lifecycle_state=var["masking_policies_masking_column_masking_column_lifecycle_state"],
-        objects=var["masking_policies_masking_column_object"],
-        object_types=var["masking_policies_masking_column_object_type"],
-        schema_names=var["masking_policies_masking_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        time_created_greater_than_or_equal_to=var["masking_policies_masking_column_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["masking_policies_masking_column_time_created_less_than"],
-        time_updated_greater_than_or_equal_to=var["masking_policies_masking_column_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["masking_policies_masking_column_time_updated_less_than"])
+    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=test_masking_policy["id"],
+        column_names=masking_policies_masking_column_column_name,
+        data_types=masking_policies_masking_column_data_type,
+        is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
+        is_seed_required=masking_policies_masking_column_is_seed_required,
+        masking_column_groups=masking_policies_masking_column_masking_column_group,
+        masking_column_lifecycle_state=masking_policies_masking_column_masking_column_lifecycle_state,
+        objects=masking_policies_masking_column_object,
+        object_types=masking_policies_masking_column_object_type,
+        schema_names=masking_policies_masking_column_schema_name,
+        sensitive_type_id=test_sensitive_type["id"],
+        time_created_greater_than_or_equal_to=masking_policies_masking_column_time_created_greater_than_or_equal_to,
+        time_created_less_than=masking_policies_masking_column_time_created_less_than,
+        time_updated_greater_than_or_equal_to=masking_policies_masking_column_time_updated_greater_than_or_equal_to,
+        time_updated_less_than=masking_policies_masking_column_time_updated_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

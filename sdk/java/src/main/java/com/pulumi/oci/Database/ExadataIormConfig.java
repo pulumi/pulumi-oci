@@ -54,10 +54,10 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testExadataIormConfig = new ExadataIormConfig(&#34;testExadataIormConfig&#34;, ExadataIormConfigArgs.builder()        
  *             .dbPlans(ExadataIormConfigDbPlanArgs.builder()
- *                 .dbName(var_.exadata_iorm_config_db_plans_db_name())
- *                 .share(var_.exadata_iorm_config_db_plans_share())
+ *                 .dbName(exadataIormConfigDbPlansDbName)
+ *                 .share(exadataIormConfigDbPlansShare)
  *                 .build())
- *             .dbSystemId(oci_database_db_system.test_db_system().id())
+ *             .dbSystemId(testDbSystem.id())
  *             .objective(&#34;AUTO&#34;)
  *             .build());
  * 

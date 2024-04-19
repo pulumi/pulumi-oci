@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasesUserProxyUser = oci.DatabaseManagement.getManagedDatabasesUserProxyUser({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_databases_user_proxy_user_name,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabasesUserProxyUserName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,9 +86,9 @@ export interface GetManagedDatabasesUserProxyUserResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasesUserProxyUser = oci.DatabaseManagement.getManagedDatabasesUserProxyUser({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_databases_user_proxy_user_name,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabasesUserProxyUserName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

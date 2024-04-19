@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApiGateway.GetDeployment(ctx, &apigateway.GetDeploymentArgs{
-//				DeploymentId: oci_apigateway_deployment.Test_deployment.Id,
+//				DeploymentId: testDeploymentOciApigatewayDeployment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

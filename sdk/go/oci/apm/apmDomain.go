@@ -31,17 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Apm.NewApmDomain(ctx, "testApmDomain", &Apm.ApmDomainArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Apm_domain_display_name),
+//			_, err := Apm.NewApmDomain(ctx, "test_apm_domain", &Apm.ApmDomainArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(apmDomainDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Apm_domain_description),
+//				Description: pulumi.Any(apmDomainDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsFreeTier: pulumi.Any(_var.Apm_domain_is_free_tier),
+//				IsFreeTier: pulumi.Any(apmDomainIsFreeTier),
 //			})
 //			if err != nil {
 //				return err

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityReservationInstances = oci.Core.getComputeCapacityReservationInstances({
- *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
- *     availabilityDomain: _var.compute_capacity_reservation_instance_availability_domain,
- *     compartmentId: _var.compartment_id,
+ *     capacityReservationId: testCapacityReservation.id,
+ *     availabilityDomain: computeCapacityReservationInstanceAvailabilityDomain,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetComputeCapacityReservationInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityReservationInstances = oci.Core.getComputeCapacityReservationInstances({
- *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
- *     availabilityDomain: _var.compute_capacity_reservation_instance_availability_domain,
- *     compartmentId: _var.compartment_id,
+ *     capacityReservationId: testCapacityReservation.id,
+ *     availabilityDomain: computeCapacityReservationInstanceAvailabilityDomain,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -37,9 +37,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpv6s = Oci.Core.GetIpv6s.Invoke(new()
         ///     {
-        ///         IpAddress = @var.Ipv6_ip_address,
-        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+        ///         IpAddress = ipv6IpAddress,
+        ///         SubnetId = testSubnet.Id,
+        ///         VnicId = testVnicAttachment.Id,
         ///     });
         /// 
         /// });
@@ -75,9 +75,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpv6s = Oci.Core.GetIpv6s.Invoke(new()
         ///     {
-        ///         IpAddress = @var.Ipv6_ip_address,
-        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+        ///         IpAddress = ipv6IpAddress,
+        ///         SubnetId = testSubnet.Id,
+        ///         VnicId = testVnicAttachment.Id,
         ///     });
         /// 
         /// });

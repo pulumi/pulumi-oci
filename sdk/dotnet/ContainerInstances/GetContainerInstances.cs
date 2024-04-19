@@ -30,10 +30,10 @@ namespace Pulumi.Oci.ContainerInstances
         /// {
         ///     var testContainerInstances = Oci.ContainerInstances.GetContainerInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Container_instance_availability_domain,
-        ///         DisplayName = @var.Container_instance_display_name,
-        ///         State = @var.Container_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = containerInstanceAvailabilityDomain,
+        ///         DisplayName = containerInstanceDisplayName,
+        ///         State = containerInstanceState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.ContainerInstances
         /// {
         ///     var testContainerInstances = Oci.ContainerInstances.GetContainerInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Container_instance_availability_domain,
-        ///         DisplayName = @var.Container_instance_display_name,
-        ///         State = @var.Container_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = containerInstanceAvailabilityDomain,
+        ///         DisplayName = containerInstanceDisplayName,
+        ///         State = containerInstanceState,
         ///     });
         /// 
         /// });

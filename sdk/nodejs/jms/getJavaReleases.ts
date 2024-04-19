@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaReleases = oci.Jms.getJavaReleases({
- *     familyVersion: _var.java_release_family_version,
- *     jreSecurityStatus: _var.java_release_jre_security_status,
- *     licenseType: _var.java_release_license_type,
- *     releaseType: _var.java_release_release_type,
- *     releaseVersion: _var.java_release_release_version,
+ *     familyVersion: javaReleaseFamilyVersion,
+ *     jreSecurityStatus: javaReleaseJreSecurityStatus,
+ *     licenseType: javaReleaseLicenseType,
+ *     releaseType: javaReleaseReleaseType,
+ *     releaseVersion: javaReleaseReleaseVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,11 +113,11 @@ export interface GetJavaReleasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaReleases = oci.Jms.getJavaReleases({
- *     familyVersion: _var.java_release_family_version,
- *     jreSecurityStatus: _var.java_release_jre_security_status,
- *     licenseType: _var.java_release_license_type,
- *     releaseType: _var.java_release_release_type,
- *     releaseVersion: _var.java_release_release_version,
+ *     familyVersion: javaReleaseFamilyVersion,
+ *     jreSecurityStatus: javaReleaseJreSecurityStatus,
+ *     licenseType: javaReleaseLicenseType,
+ *     releaseType: javaReleaseReleaseType,
+ *     releaseVersion: javaReleaseReleaseVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

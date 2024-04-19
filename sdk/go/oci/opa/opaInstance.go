@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opa.NewOpaInstance(ctx, "testOpaInstance", &Opa.OpaInstanceArgs{
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
-//				DisplayName:      pulumi.Any(_var.Opa_instance_display_name),
-//				ShapeName:        pulumi.Any(oci_core_shape.Test_shape.Name),
-//				ConsumptionModel: pulumi.Any(_var.Opa_instance_consumption_model),
+//			_, err := Opa.NewOpaInstance(ctx, "test_opa_instance", &Opa.OpaInstanceArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				DisplayName:      pulumi.Any(opaInstanceDisplayName),
+//				ShapeName:        pulumi.Any(testShape.Name),
+//				ConsumptionModel: pulumi.Any(opaInstanceConsumptionModel),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Opa_instance_description),
+//				Description: pulumi.Any(opaInstanceDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IdcsAt:              pulumi.Any(_var.Opa_instance_idcs_at),
-//				IsBreakglassEnabled: pulumi.Any(_var.Opa_instance_is_breakglass_enabled),
-//				MeteringType:        pulumi.Any(_var.Opa_instance_metering_type),
+//				IdcsAt:              pulumi.Any(opaInstanceIdcsAt),
+//				IsBreakglassEnabled: pulumi.Any(opaInstanceIsBreakglassEnabled),
+//				MeteringType:        pulumi.Any(opaInstanceMeteringType),
 //			})
 //			if err != nil {
 //				return err

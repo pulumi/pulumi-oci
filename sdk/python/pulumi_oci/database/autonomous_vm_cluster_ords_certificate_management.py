@@ -224,12 +224,12 @@ class AutonomousVmClusterOrdsCertificateManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_vm_cluster_ords_certificate_management = oci.database.AutonomousVmClusterOrdsCertificateManagement("testAutonomousVmClusterOrdsCertificateManagement",
-            autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-            certificate_generation_type=var["autonomous_vm_cluster_ords_certificate_management_certificate_generation_type"],
-            ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
-            certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-            certificate_id=oci_apigateway_certificate["test_certificate"]["id"])
+        test_autonomous_vm_cluster_ords_certificate_management = oci.database.AutonomousVmClusterOrdsCertificateManagement("test_autonomous_vm_cluster_ords_certificate_management",
+            autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+            certificate_generation_type=autonomous_vm_cluster_ords_certificate_management_certificate_generation_type,
+            ca_bundle_id=test_ca_bundle["id"],
+            certificate_authority_id=test_certificate_authority["id"],
+            certificate_id=test_certificate["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -267,12 +267,12 @@ class AutonomousVmClusterOrdsCertificateManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_vm_cluster_ords_certificate_management = oci.database.AutonomousVmClusterOrdsCertificateManagement("testAutonomousVmClusterOrdsCertificateManagement",
-            autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-            certificate_generation_type=var["autonomous_vm_cluster_ords_certificate_management_certificate_generation_type"],
-            ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
-            certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-            certificate_id=oci_apigateway_certificate["test_certificate"]["id"])
+        test_autonomous_vm_cluster_ords_certificate_management = oci.database.AutonomousVmClusterOrdsCertificateManagement("test_autonomous_vm_cluster_ords_certificate_management",
+            autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+            certificate_generation_type=autonomous_vm_cluster_ords_certificate_management_certificate_generation_type,
+            ca_bundle_id=test_ca_bundle["id"],
+            certificate_authority_id=test_certificate_authority["id"],
+            certificate_id=test_certificate["id"])
         ```
         <!--End PulumiCodeChooser -->
 

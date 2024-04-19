@@ -354,11 +354,11 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_java_download_report = oci.jms.JavaDownloadsJavaDownloadReport("testJavaDownloadReport",
-            compartment_id=var["tenancy_ocid"],
-            format=var["java_download_report_format"],
-            time_end=var["java_download_report_time_end"],
-            time_start=var["java_download_report_time_start"])
+        test_java_download_report = oci.jms.JavaDownloadsJavaDownloadReport("test_java_download_report",
+            compartment_id=tenancy_ocid,
+            format=java_download_report_format,
+            time_end=java_download_report_time_end,
+            time_start=java_download_report_time_start)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -396,11 +396,11 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_java_download_report = oci.jms.JavaDownloadsJavaDownloadReport("testJavaDownloadReport",
-            compartment_id=var["tenancy_ocid"],
-            format=var["java_download_report_format"],
-            time_end=var["java_download_report_time_end"],
-            time_start=var["java_download_report_time_start"])
+        test_java_download_report = oci.jms.JavaDownloadsJavaDownloadReport("test_java_download_report",
+            compartment_id=tenancy_ocid,
+            format=java_download_report_format,
+            time_end=java_download_report_time_end,
+            time_start=java_download_report_time_start)
         ```
         <!--End PulumiCodeChooser -->
 

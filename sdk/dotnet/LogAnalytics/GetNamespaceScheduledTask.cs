@@ -29,8 +29,8 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceScheduledTask = Oci.LogAnalytics.GetNamespaceScheduledTask.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_scheduled_task_namespace,
-        ///         ScheduledTaskId = oci_log_analytics_scheduled_task.Test_scheduled_task.Id,
+        ///         Namespace = namespaceScheduledTaskNamespace,
+        ///         ScheduledTaskId = testScheduledTask.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceScheduledTask = Oci.LogAnalytics.GetNamespaceScheduledTask.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_scheduled_task_namespace,
-        ///         ScheduledTaskId = oci_log_analytics_scheduled_task.Test_scheduled_task.Id,
+        ///         Namespace = namespaceScheduledTaskNamespace,
+        ///         ScheduledTaskId = testScheduledTask.Id,
         ///     });
         /// 
         /// });

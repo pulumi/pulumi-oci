@@ -16,9 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyApplicationGroup = new oci.networkfirewall.NetworkFirewallPolicyApplicationGroup("testNetworkFirewallPolicyApplicationGroup", {
- *     apps: _var.network_firewall_policy_application_group_apps,
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
+ * const testNetworkFirewallPolicyApplicationGroup = new oci.networkfirewall.NetworkFirewallPolicyApplicationGroup("test_network_firewall_policy_application_group", {
+ *     apps: networkFirewallPolicyApplicationGroupApps,
+ *     name: networkFirewallPolicyApplicationGroupName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

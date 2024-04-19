@@ -28,10 +28,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOpensearchClusters = oci.Opensearch.getOpensearchClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.opensearch_cluster_display_name,
- *     id: _var.opensearch_cluster_id,
- *     state: _var.opensearch_cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: opensearchClusterDisplayName,
+ *     id: opensearchClusterId,
+ *     state: opensearchClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,10 +119,10 @@ export interface GetOpensearchClustersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOpensearchClusters = oci.Opensearch.getOpensearchClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.opensearch_cluster_display_name,
- *     id: _var.opensearch_cluster_id,
- *     state: _var.opensearch_cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: opensearchClusterDisplayName,
+ *     id: opensearchClusterId,
+ *     state: opensearchClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOccAvailabilityCatalogOccAvailabilities = oci.CapacityManagement.getOccAvailabilityCatalogOccAvailabilities({
- *     occAvailabilityCatalogId: oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog.id,
- *     dateExpectedCapacityHandover: _var.occ_availability_catalog_occ_availability_date_expected_capacity_handover,
- *     resourceName: oci_usage_proxy_resource.test_resource.name,
- *     resourceType: _var.occ_availability_catalog_occ_availability_resource_type,
- *     workloadType: _var.occ_availability_catalog_occ_availability_workload_type,
+ *     occAvailabilityCatalogId: testOccAvailabilityCatalog.id,
+ *     dateExpectedCapacityHandover: occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover,
+ *     resourceName: testResource.name,
+ *     resourceType: occAvailabilityCatalogOccAvailabilityResourceType,
+ *     workloadType: occAvailabilityCatalogOccAvailabilityWorkloadType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetOccAvailabilityCatalogOccAvailabilitiesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOccAvailabilityCatalogOccAvailabilities = oci.CapacityManagement.getOccAvailabilityCatalogOccAvailabilities({
- *     occAvailabilityCatalogId: oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog.id,
- *     dateExpectedCapacityHandover: _var.occ_availability_catalog_occ_availability_date_expected_capacity_handover,
- *     resourceName: oci_usage_proxy_resource.test_resource.name,
- *     resourceType: _var.occ_availability_catalog_occ_availability_resource_type,
- *     workloadType: _var.occ_availability_catalog_occ_availability_workload_type,
+ *     occAvailabilityCatalogId: testOccAvailabilityCatalog.id,
+ *     dateExpectedCapacityHandover: occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover,
+ *     resourceName: testResource.name,
+ *     resourceType: occAvailabilityCatalogOccAvailabilityResourceType,
+ *     workloadType: occAvailabilityCatalogOccAvailabilityWorkloadType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

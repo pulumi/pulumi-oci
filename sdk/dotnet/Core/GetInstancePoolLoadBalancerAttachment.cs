@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstancePoolLoadBalancerAttachment = Oci.Core.GetInstancePoolLoadBalancerAttachment.Invoke(new()
         ///     {
-        ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
-        ///         InstancePoolLoadBalancerAttachmentId = oci_core_instance_pool_load_balancer_attachment.Test_instance_pool_load_balancer_attachment.Id,
+        ///         InstancePoolId = testInstancePool.Id,
+        ///         InstancePoolLoadBalancerAttachmentId = testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstancePoolLoadBalancerAttachment = Oci.Core.GetInstancePoolLoadBalancerAttachment.Invoke(new()
         ///     {
-        ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
-        ///         InstancePoolLoadBalancerAttachmentId = oci_core_instance_pool_load_balancer_attachment.Test_instance_pool_load_balancer_attachment.Id,
+        ///         InstancePoolId = testInstancePool.Id,
+        ///         InstancePoolLoadBalancerAttachmentId = testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.Id,
         ///     });
         /// 
         /// });

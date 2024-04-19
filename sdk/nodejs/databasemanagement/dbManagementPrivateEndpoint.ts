@@ -16,18 +16,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbManagementPrivateEndpoint = new oci.databasemanagement.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testDbManagementPrivateEndpoint = new oci.databasemanagement.DbManagementPrivateEndpoint("test_db_management_private_endpoint", {
+ *     compartmentId: compartmentId,
+ *     name: dbManagementPrivateEndpointName,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.db_management_private_endpoint_description,
+ *     description: dbManagementPrivateEndpointDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isCluster: _var.db_management_private_endpoint_is_cluster,
- *     nsgIds: _var.db_management_private_endpoint_nsg_ids,
+ *     isCluster: dbManagementPrivateEndpointIsCluster,
+ *     nsgIds: dbManagementPrivateEndpointNsgIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

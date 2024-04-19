@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceProjects = Oci.DataIntegration.GetWorkspaceProjects.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         Fields = @var.Workspace_project_fields,
-        ///         Identifiers = @var.Workspace_project_identifier,
-        ///         Name = @var.Workspace_project_name,
-        ///         NameContains = @var.Workspace_project_name_contains,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Fields = workspaceProjectFields,
+        ///         Identifiers = workspaceProjectIdentifier,
+        ///         Name = workspaceProjectName,
+        ///         NameContains = workspaceProjectNameContains,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceProjects = Oci.DataIntegration.GetWorkspaceProjects.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         Fields = @var.Workspace_project_fields,
-        ///         Identifiers = @var.Workspace_project_identifier,
-        ///         Name = @var.Workspace_project_name,
-        ///         NameContains = @var.Workspace_project_name_contains,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Fields = workspaceProjectFields,
+        ///         Identifiers = workspaceProjectIdentifier,
+        ///         Name = workspaceProjectName,
+        ///         NameContains = workspaceProjectNameContains,
         ///     });
         /// 
         /// });

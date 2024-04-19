@@ -140,11 +140,11 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        display_name=var["dr_plan_execution_display_name"],
-        dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"],
-        dr_plan_execution_type=var["dr_plan_execution_dr_plan_execution_type"],
-        state=var["dr_plan_execution_state"])
+    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=test_dr_protection_group["id"],
+        display_name=dr_plan_execution_display_name,
+        dr_plan_execution_id=test_dr_plan_execution["id"],
+        dr_plan_execution_type=dr_plan_execution_dr_plan_execution_type,
+        state=dr_plan_execution_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_dr_plan_executions_output(display_name: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        display_name=var["dr_plan_execution_display_name"],
-        dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"],
-        dr_plan_execution_type=var["dr_plan_execution_dr_plan_execution_type"],
-        state=var["dr_plan_execution_state"])
+    test_dr_plan_executions = oci.DisasterRecovery.get_dr_plan_executions(dr_protection_group_id=test_dr_protection_group["id"],
+        display_name=dr_plan_execution_display_name,
+        dr_plan_execution_id=test_dr_plan_execution["id"],
+        dr_plan_execution_type=dr_plan_execution_dr_plan_execution_type,
+        state=dr_plan_execution_state)
     ```
     <!--End PulumiCodeChooser -->
 

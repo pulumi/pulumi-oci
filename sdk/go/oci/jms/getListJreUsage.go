@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetListJreUsage(ctx, &jms.GetListJreUsageArgs{
-//				ApplicationId:   pulumi.StringRef(oci_dataflow_application.Test_application.Id),
-//				ApplicationName: pulumi.StringRef(oci_dataflow_application.Test_application.Name),
-//				CompartmentId:   pulumi.StringRef(_var.Compartment_id),
-//				HostId:          pulumi.StringRef(oci_jms_host.Test_host.Id),
-//				TimeEnd:         pulumi.StringRef(_var.List_jre_usage_time_end),
-//				TimeStart:       pulumi.StringRef(_var.List_jre_usage_time_start),
+//				ApplicationId:   pulumi.StringRef(testApplication.Id),
+//				ApplicationName: pulumi.StringRef(testApplication.Name),
+//				CompartmentId:   pulumi.StringRef(compartmentId),
+//				HostId:          pulumi.StringRef(testHost.Id),
+//				TimeEnd:         pulumi.StringRef(listJreUsageTimeEnd),
+//				TimeStart:       pulumi.StringRef(listJreUsageTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err

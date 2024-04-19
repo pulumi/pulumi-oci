@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Blockchain
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOsn = new Oci.Blockchain.Osn("testOsn", new()
+    ///     var testOsn = new Oci.Blockchain.Osn("test_osn", new()
     ///     {
-    ///         Ad = @var.Osn_ad,
-    ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+    ///         Ad = osnAd,
+    ///         BlockchainPlatformId = testBlockchainPlatform.Id,
     ///         OcpuAllocationParam = new Oci.Blockchain.Inputs.OsnOcpuAllocationParamArgs
     ///         {
-    ///             OcpuAllocationNumber = @var.Osn_ocpu_allocation_param_ocpu_allocation_number,
+    ///             OcpuAllocationNumber = osnOcpuAllocationParamOcpuAllocationNumber,
     ///         },
     ///     });
     /// 

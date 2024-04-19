@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogs = Oci.Logging.GetLogs.Invoke(new()
         ///     {
-        ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
-        ///         DisplayName = @var.Log_display_name,
-        ///         LogType = @var.Log_log_type,
-        ///         SourceResource = @var.Log_source_resource,
-        ///         SourceService = @var.Log_source_service,
-        ///         State = @var.Log_state,
+        ///         LogGroupId = testLogGroup.Id,
+        ///         DisplayName = logDisplayName,
+        ///         LogType = logLogType,
+        ///         SourceResource = logSourceResource,
+        ///         SourceService = logSourceService,
+        ///         State = logState,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogs = Oci.Logging.GetLogs.Invoke(new()
         ///     {
-        ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
-        ///         DisplayName = @var.Log_display_name,
-        ///         LogType = @var.Log_log_type,
-        ///         SourceResource = @var.Log_source_resource,
-        ///         SourceService = @var.Log_source_service,
-        ///         State = @var.Log_state,
+        ///         LogGroupId = testLogGroup.Id,
+        ///         DisplayName = logDisplayName,
+        ///         LogType = logLogType,
+        ///         SourceResource = logSourceResource,
+        ///         SourceService = logSourceService,
+        ///         State = logState,
         ///     });
         /// 
         /// });

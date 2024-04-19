@@ -20,14 +20,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlDbSystems = oci.Mysql.getMysqlDbSystems({
- *     compartmentId: _var.compartment_id,
- *     configurationId: _var.mysql_configuration_id,
- *     databaseManagements: _var.mysql_db_system_database_management,
- *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
- *     displayName: _var.mysql_db_system_display_name,
- *     isHeatWaveClusterAttached: _var.mysql_db_system_is_heat_wave_cluster_attached,
- *     isUpToDate: _var.mysql_db_system_is_up_to_date,
- *     state: _var.mysql_db_system_state,
+ *     compartmentId: compartmentId,
+ *     configurationId: mysqlConfigurationId,
+ *     databaseManagements: mysqlDbSystemDatabaseManagement,
+ *     dbSystemId: testDbSystem.id,
+ *     displayName: mysqlDbSystemDisplayName,
+ *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached,
+ *     isUpToDate: mysqlDbSystemIsUpToDate,
+ *     state: mysqlDbSystemState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -144,14 +144,14 @@ export interface GetMysqlDbSystemsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlDbSystems = oci.Mysql.getMysqlDbSystems({
- *     compartmentId: _var.compartment_id,
- *     configurationId: _var.mysql_configuration_id,
- *     databaseManagements: _var.mysql_db_system_database_management,
- *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
- *     displayName: _var.mysql_db_system_display_name,
- *     isHeatWaveClusterAttached: _var.mysql_db_system_is_heat_wave_cluster_attached,
- *     isUpToDate: _var.mysql_db_system_is_up_to_date,
- *     state: _var.mysql_db_system_state,
+ *     compartmentId: compartmentId,
+ *     configurationId: mysqlConfigurationId,
+ *     databaseManagements: mysqlDbSystemDatabaseManagement,
+ *     dbSystemId: testDbSystem.id,
+ *     displayName: mysqlDbSystemDisplayName,
+ *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached,
+ *     isUpToDate: mysqlDbSystemIsUpToDate,
+ *     state: mysqlDbSystemState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

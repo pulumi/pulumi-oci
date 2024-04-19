@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetByoipAllocatedRanges(ctx, &core.GetByoipAllocatedRangesArgs{
-//				ByoipRangeId: oci_core_byoip_range.Test_byoip_range.Id,
+//				ByoipRangeId: testByoipRange.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

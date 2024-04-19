@@ -31,48 +31,48 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewCloudAutonomousVmCluster(ctx, "testCloudAutonomousVmCluster", &Database.CloudAutonomousVmClusterArgs{
-//				CloudExadataInfrastructureId:   pulumi.Any(oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id),
-//				CompartmentId:                  pulumi.Any(_var.Compartment_id),
-//				DisplayName:                    pulumi.Any(_var.Cloud_autonomous_vm_cluster_display_name),
-//				SubnetId:                       pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				AutonomousDataStorageSizeInTbs: pulumi.Any(_var.Cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs),
-//				ClusterTimeZone:                pulumi.Any(_var.Cloud_autonomous_vm_cluster_cluster_time_zone),
-//				ComputeModel:                   pulumi.Any(_var.Cloud_autonomous_vm_cluster_compute_model),
-//				CpuCoreCountPerNode:            pulumi.Any(_var.Cloud_autonomous_vm_cluster_cpu_core_count_per_node),
-//				DbServers:                      pulumi.Any(_var.Cloud_autonomous_vm_cluster_db_servers),
-//				DefinedTags:                    pulumi.Any(_var.Cloud_autonomous_vm_cluster_defined_tags),
-//				Description:                    pulumi.Any(_var.Cloud_autonomous_vm_cluster_description),
+//			_, err := Database.NewCloudAutonomousVmCluster(ctx, "test_cloud_autonomous_vm_cluster", &Database.CloudAutonomousVmClusterArgs{
+//				CloudExadataInfrastructureId:   pulumi.Any(testCloudExadataInfrastructure.Id),
+//				CompartmentId:                  pulumi.Any(compartmentId),
+//				DisplayName:                    pulumi.Any(cloudAutonomousVmClusterDisplayName),
+//				SubnetId:                       pulumi.Any(testSubnet.Id),
+//				AutonomousDataStorageSizeInTbs: pulumi.Any(cloudAutonomousVmClusterAutonomousDataStorageSizeInTbs),
+//				ClusterTimeZone:                pulumi.Any(cloudAutonomousVmClusterClusterTimeZone),
+//				ComputeModel:                   pulumi.Any(cloudAutonomousVmClusterComputeModel),
+//				CpuCoreCountPerNode:            pulumi.Any(cloudAutonomousVmClusterCpuCoreCountPerNode),
+//				DbServers:                      pulumi.Any(cloudAutonomousVmClusterDbServers),
+//				DefinedTags:                    pulumi.Any(cloudAutonomousVmClusterDefinedTags),
+//				Description:                    pulumi.Any(cloudAutonomousVmClusterDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsMtlsEnabledVmCluster: pulumi.Any(_var.Cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster),
-//				LicenseModel:           pulumi.Any(_var.Cloud_autonomous_vm_cluster_license_model),
+//				IsMtlsEnabledVmCluster: pulumi.Any(cloudAutonomousVmClusterIsMtlsEnabledVmCluster),
+//				LicenseModel:           pulumi.Any(cloudAutonomousVmClusterLicenseModel),
 //				MaintenanceWindowDetails: &database.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs{
-//					CustomActionTimeoutInMins: pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins),
+//					CustomActionTimeoutInMins: pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsCustomActionTimeoutInMins),
 //					DaysOfWeeks: database.CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArray{
 //						&database.CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs{
-//							Name: pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_days_of_week_name),
+//							Name: pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekName),
 //						},
 //					},
-//					HoursOfDays:                  pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_hours_of_day),
-//					IsCustomActionTimeoutEnabled: pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_is_custom_action_timeout_enabled),
-//					IsMonthlyPatchingEnabled:     pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_is_monthly_patching_enabled),
-//					LeadTimeInWeeks:              pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks),
+//					HoursOfDays:                  pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsHoursOfDay),
+//					IsCustomActionTimeoutEnabled: pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsIsCustomActionTimeoutEnabled),
+//					IsMonthlyPatchingEnabled:     pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsIsMonthlyPatchingEnabled),
+//					LeadTimeInWeeks:              pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks),
 //					Months: database.CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArray{
 //						&database.CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs{
-//							Name: pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_months_name),
+//							Name: pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsMonthsName),
 //						},
 //					},
-//					PatchingMode:  pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_patching_mode),
-//					Preference:    pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_preference),
-//					WeeksOfMonths: pulumi.Any(_var.Cloud_autonomous_vm_cluster_maintenance_window_details_weeks_of_month),
+//					PatchingMode:  pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsPatchingMode),
+//					Preference:    pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsPreference),
+//					WeeksOfMonths: pulumi.Any(cloudAutonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth),
 //				},
-//				MemoryPerOracleComputeUnitInGbs: pulumi.Any(_var.Cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs),
-//				NsgIds:                          pulumi.Any(_var.Cloud_autonomous_vm_cluster_nsg_ids),
-//				ScanListenerPortNonTls:          pulumi.Any(_var.Cloud_autonomous_vm_cluster_scan_listener_port_non_tls),
-//				ScanListenerPortTls:             pulumi.Any(_var.Cloud_autonomous_vm_cluster_scan_listener_port_tls),
-//				TotalContainerDatabases:         pulumi.Any(_var.Cloud_autonomous_vm_cluster_total_container_databases),
+//				MemoryPerOracleComputeUnitInGbs: pulumi.Any(cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs),
+//				NsgIds:                          pulumi.Any(cloudAutonomousVmClusterNsgIds),
+//				ScanListenerPortNonTls:          pulumi.Any(cloudAutonomousVmClusterScanListenerPortNonTls),
+//				ScanListenerPortTls:             pulumi.Any(cloudAutonomousVmClusterScanListenerPortTls),
+//				TotalContainerDatabases:         pulumi.Any(cloudAutonomousVmClusterTotalContainerDatabases),
 //			})
 //			if err != nil {
 //				return err

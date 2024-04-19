@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuthTokens = oci.Identity.getDomainsAuthTokens({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     authTokenCount: _var.auth_token_auth_token_count,
- *     authTokenFilter: _var.auth_token_auth_token_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     authTokenCount: authTokenAuthTokenCount,
+ *     authTokenFilter: authTokenAuthTokenFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.auth_token_authorization,
- *     resourceTypeSchemaVersion: _var.auth_token_resource_type_schema_version,
- *     startIndex: _var.auth_token_start_index,
+ *     authorization: authTokenAuthorization,
+ *     resourceTypeSchemaVersion: authTokenResourceTypeSchemaVersion,
+ *     startIndex: authTokenStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsAuthTokensResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuthTokens = oci.Identity.getDomainsAuthTokens({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     authTokenCount: _var.auth_token_auth_token_count,
- *     authTokenFilter: _var.auth_token_auth_token_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     authTokenCount: authTokenAuthTokenCount,
+ *     authTokenFilter: authTokenAuthTokenFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.auth_token_authorization,
- *     resourceTypeSchemaVersion: _var.auth_token_resource_type_schema_version,
- *     startIndex: _var.auth_token_start_index,
+ *     authorization: authTokenAuthorization,
+ *     resourceTypeSchemaVersion: authTokenResourceTypeSchemaVersion,
+ *     startIndex: authTokenStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

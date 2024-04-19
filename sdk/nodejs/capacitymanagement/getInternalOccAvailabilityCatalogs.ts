@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInternalOccAvailabilityCatalogs = oci.CapacityManagement.getInternalOccAvailabilityCatalogs({
- *     compartmentId: _var.compartment_id,
- *     catalogState: _var.internal_occ_availability_catalog_catalog_state,
- *     displayName: _var.internal_occ_availability_catalog_display_name,
- *     id: _var.internal_occ_availability_catalog_id,
- *     namespace: _var.internal_occ_availability_catalog_namespace,
- *     occCustomerGroupId: oci_capacity_management_occ_customer_group.test_occ_customer_group.id,
+ *     compartmentId: compartmentId,
+ *     catalogState: internalOccAvailabilityCatalogCatalogState,
+ *     displayName: internalOccAvailabilityCatalogDisplayName,
+ *     id: internalOccAvailabilityCatalogId,
+ *     namespace: internalOccAvailabilityCatalogNamespace,
+ *     occCustomerGroupId: testOccCustomerGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetInternalOccAvailabilityCatalogsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInternalOccAvailabilityCatalogs = oci.CapacityManagement.getInternalOccAvailabilityCatalogs({
- *     compartmentId: _var.compartment_id,
- *     catalogState: _var.internal_occ_availability_catalog_catalog_state,
- *     displayName: _var.internal_occ_availability_catalog_display_name,
- *     id: _var.internal_occ_availability_catalog_id,
- *     namespace: _var.internal_occ_availability_catalog_namespace,
- *     occCustomerGroupId: oci_capacity_management_occ_customer_group.test_occ_customer_group.id,
+ *     compartmentId: compartmentId,
+ *     catalogState: internalOccAvailabilityCatalogCatalogState,
+ *     displayName: internalOccAvailabilityCatalogDisplayName,
+ *     id: internalOccAvailabilityCatalogId,
+ *     namespace: internalOccAvailabilityCatalogNamespace,
+ *     occCustomerGroupId: testOccCustomerGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

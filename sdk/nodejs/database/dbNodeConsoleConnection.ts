@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeConsoleConnection = new oci.database.DbNodeConsoleConnection("testDbNodeConsoleConnection", {
- *     dbNodeId: oci_database_db_node.test_db_node.id,
- *     publicKey: _var.db_node_console_connection_public_key,
- *     definedTags: _var.db_node_console_connection_defined_tags,
+ * const testDbNodeConsoleConnection = new oci.database.DbNodeConsoleConnection("test_db_node_console_connection", {
+ *     dbNodeId: testDbNode.id,
+ *     publicKey: dbNodeConsoleConnectionPublicKey,
+ *     definedTags: dbNodeConsoleConnectionDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

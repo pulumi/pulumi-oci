@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.NewEnvironment(ctx, "testEnvironment", &CloudBridge.EnvironmentArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := CloudBridge.NewEnvironment(ctx, "test_environment", &CloudBridge.EnvironmentArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Environment_display_name),
+//				DisplayName: pulumi.Any(environmentDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

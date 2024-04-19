@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyReportDatabaseViewAccessEntries = oci.DataSafe.getSecurityPolicyReportDatabaseViewAccessEntries({
- *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
- *     scimQuery: _var.security_policy_report_database_view_access_entry_scim_query,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     securityPolicyReportId: testSecurityPolicyReport.id,
+ *     scimQuery: securityPolicyReportDatabaseViewAccessEntryScimQuery,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetSecurityPolicyReportDatabaseViewAccessEntriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyReportDatabaseViewAccessEntries = oci.DataSafe.getSecurityPolicyReportDatabaseViewAccessEntries({
- *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
- *     scimQuery: _var.security_policy_report_database_view_access_entry_scim_query,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     securityPolicyReportId: testSecurityPolicyReport.id,
+ *     scimQuery: securityPolicyReportDatabaseViewAccessEntryScimQuery,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

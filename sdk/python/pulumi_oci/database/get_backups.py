@@ -107,8 +107,8 @@ def get_backups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Database.get_backups(compartment_id=var["compartment_id"],
-        database_id=oci_database_database["test_database"]["id"])
+    test_backups = oci.Database.get_backups(compartment_id=compartment_id,
+        database_id=test_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -148,8 +148,8 @@ def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Database.get_backups(compartment_id=var["compartment_id"],
-        database_id=oci_database_database["test_database"]["id"])
+    test_backups = oci.Database.get_backups(compartment_id=compartment_id,
+        database_id=test_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceIngestTimeRules = oci.LogAnalytics.getNamespaceIngestTimeRules({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.namespace_ingest_time_rule_namespace,
- *     conditionKind: _var.namespace_ingest_time_rule_condition_kind,
- *     displayName: _var.namespace_ingest_time_rule_display_name,
- *     fieldName: _var.namespace_ingest_time_rule_field_name,
- *     fieldValue: _var.namespace_ingest_time_rule_field_value,
- *     state: _var.namespace_ingest_time_rule_state,
+ *     compartmentId: compartmentId,
+ *     namespace: namespaceIngestTimeRuleNamespace,
+ *     conditionKind: namespaceIngestTimeRuleConditionKind,
+ *     displayName: namespaceIngestTimeRuleDisplayName,
+ *     fieldName: namespaceIngestTimeRuleFieldName,
+ *     fieldValue: namespaceIngestTimeRuleFieldValue,
+ *     state: namespaceIngestTimeRuleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -132,13 +132,13 @@ export interface GetNamespaceIngestTimeRulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceIngestTimeRules = oci.LogAnalytics.getNamespaceIngestTimeRules({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.namespace_ingest_time_rule_namespace,
- *     conditionKind: _var.namespace_ingest_time_rule_condition_kind,
- *     displayName: _var.namespace_ingest_time_rule_display_name,
- *     fieldName: _var.namespace_ingest_time_rule_field_name,
- *     fieldValue: _var.namespace_ingest_time_rule_field_value,
- *     state: _var.namespace_ingest_time_rule_state,
+ *     compartmentId: compartmentId,
+ *     namespace: namespaceIngestTimeRuleNamespace,
+ *     conditionKind: namespaceIngestTimeRuleConditionKind,
+ *     displayName: namespaceIngestTimeRuleDisplayName,
+ *     fieldName: namespaceIngestTimeRuleFieldName,
+ *     fieldValue: namespaceIngestTimeRuleFieldValue,
+ *     state: namespaceIngestTimeRuleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,17 +31,17 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSources = Oci.OsManagementHub.GetSoftwareSources.Invoke(new()
         ///     {
-        ///         ArchTypes = @var.Software_source_arch_type,
-        ///         Availabilities = @var.Software_source_availability,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Software_source_display_name,
-        ///         DisplayNameContains = @var.Software_source_display_name_contains,
-        ///         DisplayNameNotEqualTos = @var.Software_source_display_name_not_equal_to,
-        ///         OsFamilies = @var.Software_source_os_family,
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         SoftwareSourceTypes = @var.Software_source_software_source_type,
-        ///         States = @var.Software_source_state,
-        ///         VendorName = @var.Software_source_vendor_name,
+        ///         ArchTypes = softwareSourceArchType,
+        ///         Availabilities = softwareSourceAvailability,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = softwareSourceDisplayName,
+        ///         DisplayNameContains = softwareSourceDisplayNameContains,
+        ///         DisplayNameNotEqualTos = softwareSourceDisplayNameNotEqualTo,
+        ///         OsFamilies = softwareSourceOsFamily,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         SoftwareSourceTypes = softwareSourceSoftwareSourceType,
+        ///         States = softwareSourceState,
+        ///         VendorName = softwareSourceVendorName,
         ///     });
         /// 
         /// });
@@ -71,17 +71,17 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSources = Oci.OsManagementHub.GetSoftwareSources.Invoke(new()
         ///     {
-        ///         ArchTypes = @var.Software_source_arch_type,
-        ///         Availabilities = @var.Software_source_availability,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Software_source_display_name,
-        ///         DisplayNameContains = @var.Software_source_display_name_contains,
-        ///         DisplayNameNotEqualTos = @var.Software_source_display_name_not_equal_to,
-        ///         OsFamilies = @var.Software_source_os_family,
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         SoftwareSourceTypes = @var.Software_source_software_source_type,
-        ///         States = @var.Software_source_state,
-        ///         VendorName = @var.Software_source_vendor_name,
+        ///         ArchTypes = softwareSourceArchType,
+        ///         Availabilities = softwareSourceAvailability,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = softwareSourceDisplayName,
+        ///         DisplayNameContains = softwareSourceDisplayNameContains,
+        ///         DisplayNameNotEqualTos = softwareSourceDisplayNameNotEqualTo,
+        ///         OsFamilies = softwareSourceOsFamily,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         SoftwareSourceTypes = softwareSourceSoftwareSourceType,
+        ///         States = softwareSourceState,
+        ///         VendorName = softwareSourceVendorName,
         ///     });
         /// 
         /// });

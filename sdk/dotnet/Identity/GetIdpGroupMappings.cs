@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdpGroupMappings = Oci.Identity.GetIdpGroupMappings.Invoke(new()
         ///     {
-        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///         IdentityProviderId = testIdentityProvider.Id,
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdpGroupMappings = Oci.Identity.GetIdpGroupMappings.Invoke(new()
         ///     {
-        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///         IdentityProviderId = testIdentityProvider.Id,
         ///     });
         /// 
         /// });

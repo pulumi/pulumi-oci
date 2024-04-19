@@ -271,9 +271,9 @@ class Inventory(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_inventory = oci.cloud_bridge.Inventory("testInventory",
-            compartment_id=var["compartment_id"],
-            display_name=var["inventory_display_name"],
+        test_inventory = oci.cloud_bridge.Inventory("test_inventory",
+            compartment_id=compartment_id,
+            display_name=inventory_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -320,9 +320,9 @@ class Inventory(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_inventory = oci.cloud_bridge.Inventory("testInventory",
-            compartment_id=var["compartment_id"],
-            display_name=var["inventory_display_name"],
+        test_inventory = oci.cloud_bridge.Inventory("test_inventory",
+            compartment_id=compartment_id,
+            display_name=inventory_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

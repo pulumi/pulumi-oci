@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDbNodeConsoleConnection = new DbNodeConsoleConnection(&#34;testDbNodeConsoleConnection&#34;, DbNodeConsoleConnectionArgs.builder()        
- *             .dbNodeId(oci_database_db_node.test_db_node().id())
- *             .publicKey(var_.db_node_console_connection_public_key())
- *             .definedTags(var_.db_node_console_connection_defined_tags())
+ *             .dbNodeId(testDbNode.id())
+ *             .publicKey(dbNodeConsoleConnectionPublicKey)
+ *             .definedTags(dbNodeConsoleConnectionDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

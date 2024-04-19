@@ -30,12 +30,12 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testConfigurations = Oci.Psql.GetConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigurationId = oci_psql_configuration.Test_configuration.Id,
-        ///         DbVersion = @var.Configuration_db_version,
-        ///         DisplayName = @var.Configuration_display_name,
-        ///         Shape = @var.Configuration_shape,
-        ///         State = @var.Configuration_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = testConfiguration.Id,
+        ///         DbVersion = configurationDbVersion,
+        ///         DisplayName = configurationDisplayName,
+        ///         Shape = configurationShape,
+        ///         State = configurationState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testConfigurations = Oci.Psql.GetConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigurationId = oci_psql_configuration.Test_configuration.Id,
-        ///         DbVersion = @var.Configuration_db_version,
-        ///         DisplayName = @var.Configuration_display_name,
-        ///         Shape = @var.Configuration_shape,
-        ///         State = @var.Configuration_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = testConfiguration.Id,
+        ///         DbVersion = configurationDbVersion,
+        ///         DisplayName = configurationDisplayName,
+        ///         Shape = configurationShape,
+        ///         State = configurationState,
         ///     });
         /// 
         /// });

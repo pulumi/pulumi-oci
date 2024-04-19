@@ -467,28 +467,29 @@ class Publication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_publication = oci.marketplace.Publication("testPublication",
-            compartment_id=var["compartment_id"],
-            is_agreement_acknowledged=var["publication_is_agreement_acknowledged"],
-            listing_type=var["publication_listing_type"],
+        test_publication = oci.marketplace.Publication("test_publication",
+            compartment_id=compartment_id,
+            is_agreement_acknowledged=publication_is_agreement_acknowledged,
+            listing_type=publication_listing_type,
+            name=publication_name,
             package_details=oci.marketplace.PublicationPackageDetailsArgs(
                 eulas=[oci.marketplace.PublicationPackageDetailsEulaArgs(
-                    eula_type=var["publication_package_details_eula_eula_type"],
-                    license_text=var["publication_package_details_eula_license_text"],
+                    eula_type=publication_package_details_eula_eula_type,
+                    license_text=publication_package_details_eula_license_text,
                 )],
                 operating_system=oci.marketplace.PublicationPackageDetailsOperatingSystemArgs(
-                    name=var["publication_package_details_operating_system_name"],
+                    name=publication_package_details_operating_system_name,
                 ),
-                package_type=var["publication_package_details_package_type"],
-                package_version=var["publication_package_details_package_version"],
-                image_id=oci_core_image["test_image"]["id"],
+                package_type=publication_package_details_package_type,
+                package_version=publication_package_details_package_version,
+                image_id=test_image["id"],
             ),
-            short_description=var["publication_short_description"],
+            short_description=publication_short_description,
             support_contacts=[oci.marketplace.PublicationSupportContactArgs(
-                email=var["publication_support_contacts_email"],
-                name=var["publication_support_contacts_name"],
-                phone=var["publication_support_contacts_phone"],
-                subject=var["publication_support_contacts_subject"],
+                email=publication_support_contacts_email,
+                name=publication_support_contacts_name,
+                phone=publication_support_contacts_phone,
+                subject=publication_support_contacts_subject,
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -496,7 +497,7 @@ class Publication(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            long_description=var["publication_long_description"])
+            long_description=publication_long_description)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -539,28 +540,29 @@ class Publication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_publication = oci.marketplace.Publication("testPublication",
-            compartment_id=var["compartment_id"],
-            is_agreement_acknowledged=var["publication_is_agreement_acknowledged"],
-            listing_type=var["publication_listing_type"],
+        test_publication = oci.marketplace.Publication("test_publication",
+            compartment_id=compartment_id,
+            is_agreement_acknowledged=publication_is_agreement_acknowledged,
+            listing_type=publication_listing_type,
+            name=publication_name,
             package_details=oci.marketplace.PublicationPackageDetailsArgs(
                 eulas=[oci.marketplace.PublicationPackageDetailsEulaArgs(
-                    eula_type=var["publication_package_details_eula_eula_type"],
-                    license_text=var["publication_package_details_eula_license_text"],
+                    eula_type=publication_package_details_eula_eula_type,
+                    license_text=publication_package_details_eula_license_text,
                 )],
                 operating_system=oci.marketplace.PublicationPackageDetailsOperatingSystemArgs(
-                    name=var["publication_package_details_operating_system_name"],
+                    name=publication_package_details_operating_system_name,
                 ),
-                package_type=var["publication_package_details_package_type"],
-                package_version=var["publication_package_details_package_version"],
-                image_id=oci_core_image["test_image"]["id"],
+                package_type=publication_package_details_package_type,
+                package_version=publication_package_details_package_version,
+                image_id=test_image["id"],
             ),
-            short_description=var["publication_short_description"],
+            short_description=publication_short_description,
             support_contacts=[oci.marketplace.PublicationSupportContactArgs(
-                email=var["publication_support_contacts_email"],
-                name=var["publication_support_contacts_name"],
-                phone=var["publication_support_contacts_phone"],
-                subject=var["publication_support_contacts_subject"],
+                email=publication_support_contacts_email,
+                name=publication_support_contacts_name,
+                phone=publication_support_contacts_phone,
+                subject=publication_support_contacts_subject,
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -568,7 +570,7 @@ class Publication(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            long_description=var["publication_long_description"])
+            long_description=publication_long_description)
         ```
         <!--End PulumiCodeChooser -->
 

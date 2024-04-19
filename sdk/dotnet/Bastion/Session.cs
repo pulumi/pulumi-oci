@@ -25,25 +25,25 @@ namespace Pulumi.Oci.Bastion
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSession = new Oci.Bastion.Session("testSession", new()
+    ///     var testSession = new Oci.Bastion.Session("test_session", new()
     ///     {
-    ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
+    ///         BastionId = testBastion.Id,
     ///         KeyDetails = new Oci.Bastion.Inputs.SessionKeyDetailsArgs
     ///         {
-    ///             PublicKeyContent = @var.Session_key_details_public_key_content,
+    ///             PublicKeyContent = sessionKeyDetailsPublicKeyContent,
     ///         },
     ///         TargetResourceDetails = new Oci.Bastion.Inputs.SessionTargetResourceDetailsArgs
     ///         {
-    ///             SessionType = @var.Session_target_resource_details_session_type,
-    ///             TargetResourceFqdn = @var.Session_target_resource_details_target_resource_fqdn,
-    ///             TargetResourceId = oci_bastion_target_resource.Test_target_resource.Id,
-    ///             TargetResourceOperatingSystemUserName = oci_identity_user.Test_user.Name,
-    ///             TargetResourcePort = @var.Session_target_resource_details_target_resource_port,
-    ///             TargetResourcePrivateIpAddress = @var.Session_target_resource_details_target_resource_private_ip_address,
+    ///             SessionType = sessionTargetResourceDetailsSessionType,
+    ///             TargetResourceFqdn = sessionTargetResourceDetailsTargetResourceFqdn,
+    ///             TargetResourceId = testTargetResource.Id,
+    ///             TargetResourceOperatingSystemUserName = testUser.Name,
+    ///             TargetResourcePort = sessionTargetResourceDetailsTargetResourcePort,
+    ///             TargetResourcePrivateIpAddress = sessionTargetResourceDetailsTargetResourcePrivateIpAddress,
     ///         },
-    ///         DisplayName = @var.Session_display_name,
-    ///         KeyType = @var.Session_key_type,
-    ///         SessionTtlInSeconds = @var.Session_session_ttl_in_seconds,
+    ///         DisplayName = sessionDisplayName,
+    ///         KeyType = sessionKeyType,
+    ///         SessionTtlInSeconds = sessionSessionTtlInSeconds,
     ///     });
     /// 
     /// });

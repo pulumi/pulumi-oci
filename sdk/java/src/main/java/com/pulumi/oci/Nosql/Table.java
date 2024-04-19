@@ -52,16 +52,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testTable = new Table(&#34;testTable&#34;, TableArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .ddlStatement(var_.table_ddl_statement())
- *             .definedTags(var_.table_defined_tags())
+ *             .compartmentId(compartmentId)
+ *             .ddlStatement(tableDdlStatement)
+ *             .name(tableName)
+ *             .definedTags(tableDefinedTags)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .isAutoReclaimable(var_.table_is_auto_reclaimable())
+ *             .isAutoReclaimable(tableIsAutoReclaimable)
  *             .tableLimits(TableTableLimitsArgs.builder()
- *                 .maxReadUnits(var_.table_table_limits_max_read_units())
- *                 .maxStorageInGbs(var_.table_table_limits_max_storage_in_gbs())
- *                 .maxWriteUnits(var_.table_table_limits_max_write_units())
- *                 .capacityMode(var_.table_table_limits_capacity_mode())
+ *                 .maxReadUnits(tableTableLimitsMaxReadUnits)
+ *                 .maxStorageInGbs(tableTableLimitsMaxStorageInGbs)
+ *                 .maxWriteUnits(tableTableLimitsMaxWriteUnits)
+ *                 .capacityMode(tableTableLimitsCapacityMode)
  *                 .build())
  *             .build());
  * 

@@ -23,10 +23,10 @@ namespace Pulumi.Oci.Audit
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConfiguration = new Oci.Audit.Configuration("testConfiguration", new()
+    ///     var testConfiguration = new Oci.Audit.Configuration("test_configuration", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         RetentionPeriodDays = @var.Configuration_retention_period_days,
+    ///         CompartmentId = tenancyOcid,
+    ///         RetentionPeriodDays = configurationRetentionPeriodDays,
     ///     });
     /// 
     /// });

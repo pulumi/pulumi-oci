@@ -43,9 +43,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testServiceCatalogAssociation = new CatalogAssociation(&#34;testServiceCatalogAssociation&#34;, CatalogAssociationArgs.builder()        
- *             .entityId(oci_service_catalog_entity.test_entity().id())
- *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
- *             .entityType(var_.service_catalog_association_entity_type())
+ *             .entityId(testEntity.id())
+ *             .serviceCatalogId(testServiceCatalog.id())
+ *             .entityType(serviceCatalogAssociationEntityType)
  *             .build());
  * 
  *     }

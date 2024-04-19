@@ -28,13 +28,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRpcAttachment = new oci.core.DrgAttachmentManagement("testDrgRpcAttachment", {
+ * const testDrgRpcAttachment = new oci.core.DrgAttachmentManagement("test_drg_rpc_attachment", {
  *     attachmentType: "REMOTE_PEERING_CONNECTION",
- *     compartmentId: _var.compartment_ocid,
- *     networkId: oci_core_remote_peering_connection.test_rpc.id,
- *     drgId: oci_core_drg.test_drg.id,
+ *     compartmentId: compartmentOcid,
+ *     networkId: testRpc.id,
+ *     drgId: testDrg.id,
  *     displayName: "MyTestDrgAttachmentForRpc",
- *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
+ *     drgRouteTableId: testDrgRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

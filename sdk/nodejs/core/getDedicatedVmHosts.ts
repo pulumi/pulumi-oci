@@ -22,13 +22,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedVmHosts = oci.Core.getDedicatedVmHosts({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.dedicated_vm_host_availability_domain,
- *     displayName: _var.dedicated_vm_host_display_name,
- *     instanceShapeName: _var.dedicated_vm_host_instance_shape_name,
- *     remainingMemoryInGbsGreaterThanOrEqualTo: _var.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
- *     remainingOcpusGreaterThanOrEqualTo: _var.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
- *     state: _var.dedicated_vm_host_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
+ *     displayName: dedicatedVmHostDisplayName,
+ *     instanceShapeName: dedicatedVmHostInstanceShapeName,
+ *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
+ *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
+ *     state: dedicatedVmHostState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -132,13 +132,13 @@ export interface GetDedicatedVmHostsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedVmHosts = oci.Core.getDedicatedVmHosts({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.dedicated_vm_host_availability_domain,
- *     displayName: _var.dedicated_vm_host_display_name,
- *     instanceShapeName: _var.dedicated_vm_host_instance_shape_name,
- *     remainingMemoryInGbsGreaterThanOrEqualTo: _var.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
- *     remainingOcpusGreaterThanOrEqualTo: _var.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
- *     state: _var.dedicated_vm_host_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
+ *     displayName: dedicatedVmHostDisplayName,
+ *     instanceShapeName: dedicatedVmHostInstanceShapeName,
+ *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
+ *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
+ *     state: dedicatedVmHostState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetNewsReport(ctx, &opsi.GetNewsReportArgs{
-//				NewsReportId: oci_opsi_news_report.Test_news_report.Id,
+//				NewsReportId: testNewsReportOciOpsiNewsReport.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

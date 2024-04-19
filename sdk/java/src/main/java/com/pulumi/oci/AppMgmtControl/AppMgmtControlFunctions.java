@@ -47,7 +47,7 @@ public final class AppMgmtControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredInstance = AppMgmtControlFunctions.getMonitoredInstance(GetMonitoredInstanceArgs.builder()
-     *             .monitoredInstanceId(oci_appmgmt_control_monitored_instance.test_monitored_instance().id())
+     *             .monitoredInstanceId(testMonitoredInstanceOciAppmgmtControlMonitoredInstance.id())
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class AppMgmtControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredInstance = AppMgmtControlFunctions.getMonitoredInstance(GetMonitoredInstanceArgs.builder()
-     *             .monitoredInstanceId(oci_appmgmt_control_monitored_instance.test_monitored_instance().id())
+     *             .monitoredInstanceId(testMonitoredInstanceOciAppmgmtControlMonitoredInstance.id())
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class AppMgmtControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredInstance = AppMgmtControlFunctions.getMonitoredInstance(GetMonitoredInstanceArgs.builder()
-     *             .monitoredInstanceId(oci_appmgmt_control_monitored_instance.test_monitored_instance().id())
+     *             .monitoredInstanceId(testMonitoredInstanceOciAppmgmtControlMonitoredInstance.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class AppMgmtControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredInstance = AppMgmtControlFunctions.getMonitoredInstance(GetMonitoredInstanceArgs.builder()
-     *             .monitoredInstanceId(oci_appmgmt_control_monitored_instance.test_monitored_instance().id())
+     *             .monitoredInstanceId(testMonitoredInstanceOciAppmgmtControlMonitoredInstance.id())
      *             .build());
      * 
      *     }
@@ -215,8 +215,8 @@ public final class AppMgmtControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredInstances = AppMgmtControlFunctions.getMonitoredInstances(GetMonitoredInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.monitored_instance_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoredInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -258,8 +258,8 @@ public final class AppMgmtControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredInstances = AppMgmtControlFunctions.getMonitoredInstances(GetMonitoredInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.monitored_instance_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoredInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -301,8 +301,8 @@ public final class AppMgmtControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredInstances = AppMgmtControlFunctions.getMonitoredInstances(GetMonitoredInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.monitored_instance_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoredInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -344,8 +344,8 @@ public final class AppMgmtControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredInstances = AppMgmtControlFunctions.getMonitoredInstances(GetMonitoredInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.monitored_instance_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(monitoredInstanceDisplayName)
      *             .build());
      * 
      *     }

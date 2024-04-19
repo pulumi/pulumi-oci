@@ -31,11 +31,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditTrailAnalytic = oci.DataSafe.getAuditTrailAnalytic({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_trail_analytic_access_level,
- *     compartmentIdInSubtree: _var.audit_trail_analytic_compartment_id_in_subtree,
- *     groupBies: _var.audit_trail_analytic_group_by,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditTrailAnalyticAccessLevel,
+ *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree,
+ *     groupBies: auditTrailAnalyticGroupBy,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -124,11 +124,11 @@ export interface GetAuditTrailAnalyticResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditTrailAnalytic = oci.DataSafe.getAuditTrailAnalytic({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_trail_analytic_access_level,
- *     compartmentIdInSubtree: _var.audit_trail_analytic_compartment_id_in_subtree,
- *     groupBies: _var.audit_trail_analytic_group_by,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditTrailAnalyticAccessLevel,
+ *     compartmentIdInSubtree: auditTrailAnalyticCompartmentIdInSubtree,
+ *     groupBies: auditTrailAnalyticGroupBy,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

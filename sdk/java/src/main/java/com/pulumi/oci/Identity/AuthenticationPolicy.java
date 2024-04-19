@@ -47,17 +47,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAuthenticationPolicy = new AuthenticationPolicy(&#34;testAuthenticationPolicy&#34;, AuthenticationPolicyArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
+ *             .compartmentId(tenancyOcid)
  *             .networkPolicy(AuthenticationPolicyNetworkPolicyArgs.builder()
- *                 .networkSourceIds(var_.authentication_policy_network_policy_network_source_ids())
+ *                 .networkSourceIds(authenticationPolicyNetworkPolicyNetworkSourceIds)
  *                 .build())
  *             .passwordPolicy(AuthenticationPolicyPasswordPolicyArgs.builder()
- *                 .isLowercaseCharactersRequired(var_.authentication_policy_password_policy_is_lowercase_characters_required())
- *                 .isNumericCharactersRequired(var_.authentication_policy_password_policy_is_numeric_characters_required())
- *                 .isSpecialCharactersRequired(var_.authentication_policy_password_policy_is_special_characters_required())
- *                 .isUppercaseCharactersRequired(var_.authentication_policy_password_policy_is_uppercase_characters_required())
- *                 .isUsernameContainmentAllowed(var_.authentication_policy_password_policy_is_username_containment_allowed())
- *                 .minimumPasswordLength(var_.authentication_policy_password_policy_minimum_password_length())
+ *                 .isLowercaseCharactersRequired(authenticationPolicyPasswordPolicyIsLowercaseCharactersRequired)
+ *                 .isNumericCharactersRequired(authenticationPolicyPasswordPolicyIsNumericCharactersRequired)
+ *                 .isSpecialCharactersRequired(authenticationPolicyPasswordPolicyIsSpecialCharactersRequired)
+ *                 .isUppercaseCharactersRequired(authenticationPolicyPasswordPolicyIsUppercaseCharactersRequired)
+ *                 .isUsernameContainmentAllowed(authenticationPolicyPasswordPolicyIsUsernameContainmentAllowed)
+ *                 .minimumPasswordLength(authenticationPolicyPasswordPolicyMinimumPasswordLength)
  *                 .build())
  *             .build());
  * 

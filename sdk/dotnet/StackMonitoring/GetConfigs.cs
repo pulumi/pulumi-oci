@@ -30,10 +30,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testConfigs = Oci.StackMonitoring.GetConfigs.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Config_display_name,
-        ///         State = @var.Config_state,
-        ///         Type = @var.Config_type,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = configDisplayName,
+        ///         State = configState,
+        ///         Type = configType,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testConfigs = Oci.StackMonitoring.GetConfigs.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Config_display_name,
-        ///         State = @var.Config_state,
-        ///         Type = @var.Config_type,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = configDisplayName,
+        ///         State = configState,
+        ///         Type = configType,
         ///     });
         /// 
         /// });

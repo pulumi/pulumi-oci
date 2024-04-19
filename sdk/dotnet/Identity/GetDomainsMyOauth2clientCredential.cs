@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyOauth2clientCredential = Oci.Identity.GetDomainsMyOauth2clientCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyOauth2clientCredentialId = oci_identity_domains_my_oauth2client_credential.Test_my_oauth2client_credential.Id,
-        ///         Authorization = @var.My_oauth2client_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_oauth2client_credential_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyOauth2clientCredentialId = testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.Id,
+        ///         Authorization = myOauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myOauth2clientCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyOauth2clientCredential = Oci.Identity.GetDomainsMyOauth2clientCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyOauth2clientCredentialId = oci_identity_domains_my_oauth2client_credential.Test_my_oauth2client_credential.Id,
-        ///         Authorization = @var.My_oauth2client_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_oauth2client_credential_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyOauth2clientCredentialId = testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.Id,
+        ///         Authorization = myOauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myOauth2clientCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

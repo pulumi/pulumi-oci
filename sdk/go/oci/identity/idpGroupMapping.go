@@ -34,10 +34,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewIdpGroupMapping(ctx, "testIdpGroupMapping", &Identity.IdpGroupMappingArgs{
-//				GroupId:            pulumi.Any(oci_identity_group.Test_group.Id),
-//				IdentityProviderId: pulumi.Any(oci_identity_identity_provider.Test_identity_provider.Id),
-//				IdpGroupName:       pulumi.Any(_var.Idp_group_mapping_idp_group_name),
+//			_, err := Identity.NewIdpGroupMapping(ctx, "test_idp_group_mapping", &Identity.IdpGroupMappingArgs{
+//				GroupId:            pulumi.Any(testGroup.Id),
+//				IdentityProviderId: pulumi.Any(testIdentityProvider.Id),
+//				IdpGroupName:       pulumi.Any(idpGroupMappingIdpGroupName),
 //			})
 //			if err != nil {
 //				return err

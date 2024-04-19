@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testOauth2clientCredentials = Oci.Identity.GetDomainsOauth2clientCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         Oauth2clientCredentialCount = @var.Oauth2client_credential_oauth2client_credential_count,
-        ///         Oauth2clientCredentialFilter = @var.Oauth2client_credential_oauth2client_credential_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         Oauth2clientCredentialCount = oauth2clientCredentialOauth2clientCredentialCount,
+        ///         Oauth2clientCredentialFilter = oauth2clientCredentialOauth2clientCredentialFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Oauth2client_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Oauth2client_credential_resource_type_schema_version,
-        ///         StartIndex = @var.Oauth2client_credential_start_index,
+        ///         Authorization = oauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = oauth2clientCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = oauth2clientCredentialStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testOauth2clientCredentials = Oci.Identity.GetDomainsOauth2clientCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         Oauth2clientCredentialCount = @var.Oauth2client_credential_oauth2client_credential_count,
-        ///         Oauth2clientCredentialFilter = @var.Oauth2client_credential_oauth2client_credential_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         Oauth2clientCredentialCount = oauth2clientCredentialOauth2clientCredentialCount,
+        ///         Oauth2clientCredentialFilter = oauth2clientCredentialOauth2clientCredentialFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Oauth2client_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Oauth2client_credential_resource_type_schema_version,
-        ///         StartIndex = @var.Oauth2client_credential_start_index,
+        ///         Authorization = oauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = oauth2clientCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = oauth2clientCredentialStartIndex,
         ///     });
         /// 
         /// });

@@ -18,16 +18,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditArchiveRetrieval = new oci.datasafe.AuditArchiveRetrieval("testAuditArchiveRetrieval", {
- *     compartmentId: _var.compartment_id,
- *     endDate: _var.audit_archive_retrieval_end_date,
- *     startDate: _var.audit_archive_retrieval_start_date,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ * const testAuditArchiveRetrieval = new oci.datasafe.AuditArchiveRetrieval("test_audit_archive_retrieval", {
+ *     compartmentId: compartmentId,
+ *     endDate: auditArchiveRetrievalEndDate,
+ *     startDate: auditArchiveRetrievalStartDate,
+ *     targetId: testTarget.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.audit_archive_retrieval_description,
- *     displayName: _var.audit_archive_retrieval_display_name,
+ *     description: auditArchiveRetrievalDescription,
+ *     displayName: auditArchiveRetrievalDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

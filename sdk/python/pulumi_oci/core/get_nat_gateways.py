@@ -134,10 +134,10 @@ def get_nat_gateways(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_nat_gateways = oci.Core.get_nat_gateways(compartment_id=var["compartment_id"],
-        display_name=var["nat_gateway_display_name"],
-        state=var["nat_gateway_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_nat_gateways = oci.Core.get_nat_gateways(compartment_id=compartment_id,
+        display_name=nat_gateway_display_name,
+        state=nat_gateway_state,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -186,10 +186,10 @@ def get_nat_gateways_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_nat_gateways = oci.Core.get_nat_gateways(compartment_id=var["compartment_id"],
-        display_name=var["nat_gateway_display_name"],
-        state=var["nat_gateway_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_nat_gateways = oci.Core.get_nat_gateways(compartment_id=compartment_id,
+        display_name=nat_gateway_display_name,
+        state=nat_gateway_state,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 

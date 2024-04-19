@@ -25,12 +25,12 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProductLicense = new Oci.LicenseManager.ProductLicense("testProductLicense", new()
+    ///     var testProductLicense = new Oci.LicenseManager.ProductLicense("test_product_license", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Product_license_display_name,
-    ///         IsVendorOracle = @var.Product_license_is_vendor_oracle,
-    ///         LicenseUnit = @var.Product_license_license_unit,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = productLicenseDisplayName,
+    ///         IsVendorOracle = productLicenseIsVendorOracle,
+    ///         LicenseUnit = productLicenseLicenseUnit,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -43,11 +43,11 @@ namespace Pulumi.Oci.LicenseManager
     ///         {
     ///             new Oci.LicenseManager.Inputs.ProductLicenseImageArgs
     ///             {
-    ///                 ListingId = oci_marketplace_listing.Test_listing.Id,
-    ///                 PackageVersion = @var.Product_license_images_package_version,
+    ///                 ListingId = testListing.Id,
+    ///                 PackageVersion = productLicenseImagesPackageVersion,
     ///             },
     ///         },
-    ///         VendorName = @var.Product_license_vendor_name,
+    ///         VendorName = productLicenseVendorName,
     ///     });
     /// 
     /// });

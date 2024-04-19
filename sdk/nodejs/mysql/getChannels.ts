@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testChannels = oci.Mysql.getChannels({
- *     compartmentId: _var.compartment_id,
- *     channelId: oci_mysql_channel.test_channel.id,
- *     dbSystemId: oci_database_db_system.test_db_system.id,
- *     displayName: _var.channel_display_name,
- *     isEnabled: _var.channel_is_enabled,
- *     state: _var.channel_state,
+ *     compartmentId: compartmentId,
+ *     channelId: testChannel.id,
+ *     dbSystemId: testDbSystem.id,
+ *     displayName: channelDisplayName,
+ *     isEnabled: channelIsEnabled,
+ *     state: channelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetChannelsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testChannels = oci.Mysql.getChannels({
- *     compartmentId: _var.compartment_id,
- *     channelId: oci_mysql_channel.test_channel.id,
- *     dbSystemId: oci_database_db_system.test_db_system.id,
- *     displayName: _var.channel_display_name,
- *     isEnabled: _var.channel_is_enabled,
- *     state: _var.channel_state,
+ *     compartmentId: compartmentId,
+ *     channelId: testChannel.id,
+ *     dbSystemId: testDbSystem.id,
+ *     displayName: channelDisplayName,
+ *     isEnabled: channelIsEnabled,
+ *     state: channelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,12 +30,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testOnPremiseVantagePointWorkers = Oci.ApmSynthetics.GetOnPremiseVantagePointWorkers.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         OnPremiseVantagePointId = oci_apm_synthetics_on_premise_vantage_point.Test_on_premise_vantage_point.Id,
-        ///         Capability = @var.On_premise_vantage_point_worker_capability,
-        ///         DisplayName = @var.On_premise_vantage_point_worker_display_name,
-        ///         Name = @var.On_premise_vantage_point_worker_name,
-        ///         Status = @var.On_premise_vantage_point_worker_status,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         OnPremiseVantagePointId = testOnPremiseVantagePoint.Id,
+        ///         Capability = onPremiseVantagePointWorkerCapability,
+        ///         DisplayName = onPremiseVantagePointWorkerDisplayName,
+        ///         Name = onPremiseVantagePointWorkerName,
+        ///         Status = onPremiseVantagePointWorkerStatus,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testOnPremiseVantagePointWorkers = Oci.ApmSynthetics.GetOnPremiseVantagePointWorkers.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         OnPremiseVantagePointId = oci_apm_synthetics_on_premise_vantage_point.Test_on_premise_vantage_point.Id,
-        ///         Capability = @var.On_premise_vantage_point_worker_capability,
-        ///         DisplayName = @var.On_premise_vantage_point_worker_display_name,
-        ///         Name = @var.On_premise_vantage_point_worker_name,
-        ///         Status = @var.On_premise_vantage_point_worker_status,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         OnPremiseVantagePointId = testOnPremiseVantagePoint.Id,
+        ///         Capability = onPremiseVantagePointWorkerCapability,
+        ///         DisplayName = onPremiseVantagePointWorkerDisplayName,
+        ///         Name = onPremiseVantagePointWorkerName,
+        ///         Status = onPremiseVantagePointWorkerStatus,
         ///     });
         /// 
         /// });

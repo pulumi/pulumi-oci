@@ -29,9 +29,9 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testQuotas = Oci.Limits.GetQuotas.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Name = @var.Quota_name,
-        ///         State = @var.Quota_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = quotaName,
+        ///         State = quotaState,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testQuotas = Oci.Limits.GetQuotas.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Name = @var.Quota_name,
-        ///         State = @var.Quota_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = quotaName,
+        ///         State = quotaState,
         ///     });
         /// 
         /// });

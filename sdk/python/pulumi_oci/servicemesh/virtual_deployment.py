@@ -438,28 +438,29 @@ class VirtualDeployment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_deployment = oci.service_mesh.VirtualDeployment("testVirtualDeployment",
-            compartment_id=var["compartment_id"],
-            virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
+        test_virtual_deployment = oci.service_mesh.VirtualDeployment("test_virtual_deployment",
+            compartment_id=compartment_id,
+            name=virtual_deployment_name,
+            virtual_service_id=test_virtual_service["id"],
             access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
-                is_enabled=var["virtual_deployment_access_logging_is_enabled"],
+                is_enabled=virtual_deployment_access_logging_is_enabled,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["virtual_deployment_description"],
+            description=virtual_deployment_description,
             freeform_tags={
                 "bar-key": "value",
             },
             listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=var["virtual_deployment_listeners_port"],
-                protocol=var["virtual_deployment_listeners_protocol"],
-                idle_timeout_in_ms=var["virtual_deployment_listeners_idle_timeout_in_ms"],
-                request_timeout_in_ms=var["virtual_deployment_listeners_request_timeout_in_ms"],
+                port=virtual_deployment_listeners_port,
+                protocol=virtual_deployment_listeners_protocol,
+                idle_timeout_in_ms=virtual_deployment_listeners_idle_timeout_in_ms,
+                request_timeout_in_ms=virtual_deployment_listeners_request_timeout_in_ms,
             )],
             service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                type=var["virtual_deployment_service_discovery_type"],
-                hostname=var["virtual_deployment_service_discovery_hostname"],
+                type=virtual_deployment_service_discovery_type,
+                hostname=virtual_deployment_service_discovery_hostname,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -506,28 +507,29 @@ class VirtualDeployment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_deployment = oci.service_mesh.VirtualDeployment("testVirtualDeployment",
-            compartment_id=var["compartment_id"],
-            virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
+        test_virtual_deployment = oci.service_mesh.VirtualDeployment("test_virtual_deployment",
+            compartment_id=compartment_id,
+            name=virtual_deployment_name,
+            virtual_service_id=test_virtual_service["id"],
             access_logging=oci.service_mesh.VirtualDeploymentAccessLoggingArgs(
-                is_enabled=var["virtual_deployment_access_logging_is_enabled"],
+                is_enabled=virtual_deployment_access_logging_is_enabled,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["virtual_deployment_description"],
+            description=virtual_deployment_description,
             freeform_tags={
                 "bar-key": "value",
             },
             listeners=[oci.service_mesh.VirtualDeploymentListenerArgs(
-                port=var["virtual_deployment_listeners_port"],
-                protocol=var["virtual_deployment_listeners_protocol"],
-                idle_timeout_in_ms=var["virtual_deployment_listeners_idle_timeout_in_ms"],
-                request_timeout_in_ms=var["virtual_deployment_listeners_request_timeout_in_ms"],
+                port=virtual_deployment_listeners_port,
+                protocol=virtual_deployment_listeners_protocol,
+                idle_timeout_in_ms=virtual_deployment_listeners_idle_timeout_in_ms,
+                request_timeout_in_ms=virtual_deployment_listeners_request_timeout_in_ms,
             )],
             service_discovery=oci.service_mesh.VirtualDeploymentServiceDiscoveryArgs(
-                type=var["virtual_deployment_service_discovery_type"],
-                hostname=var["virtual_deployment_service_discovery_hostname"],
+                type=virtual_deployment_service_discovery_type,
+                hostname=virtual_deployment_service_discovery_hostname,
             ))
         ```
         <!--End PulumiCodeChooser -->

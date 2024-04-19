@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MeteringComputation.GetCustomTable(ctx, &meteringcomputation.GetCustomTableArgs{
-//				CustomTableId: oci_metering_computation_custom_table.Test_custom_table.Id,
+//				CustomTableId: testCustomTableOciMeteringComputationCustomTable.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

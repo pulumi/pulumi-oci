@@ -30,12 +30,12 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testProtectionCapabilities = Oci.Waf.GetProtectionCapabilities.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Protection_capability_display_name,
-        ///         GroupTags = @var.Protection_capability_group_tag,
-        ///         IsLatestVersions = @var.Protection_capability_is_latest_version,
-        ///         Key = @var.Protection_capability_key,
-        ///         Type = @var.Protection_capability_type,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectionCapabilityDisplayName,
+        ///         GroupTags = protectionCapabilityGroupTag,
+        ///         IsLatestVersions = protectionCapabilityIsLatestVersion,
+        ///         Key = protectionCapabilityKey,
+        ///         Type = protectionCapabilityType,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testProtectionCapabilities = Oci.Waf.GetProtectionCapabilities.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Protection_capability_display_name,
-        ///         GroupTags = @var.Protection_capability_group_tag,
-        ///         IsLatestVersions = @var.Protection_capability_is_latest_version,
-        ///         Key = @var.Protection_capability_key,
-        ///         Type = @var.Protection_capability_type,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectionCapabilityDisplayName,
+        ///         GroupTags = protectionCapabilityGroupTag,
+        ///         IsLatestVersions = protectionCapabilityIsLatestVersion,
+        ///         Key = protectionCapabilityKey,
+        ///         Type = protectionCapabilityType,
         ///     });
         /// 
         /// });

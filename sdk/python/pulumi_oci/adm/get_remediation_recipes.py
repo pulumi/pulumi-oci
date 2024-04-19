@@ -122,10 +122,10 @@ def get_remediation_recipes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_recipes = oci.Adm.get_remediation_recipes(compartment_id=var["compartment_id"],
-        display_name=var["remediation_recipe_display_name"],
-        id=var["remediation_recipe_id"],
-        state=var["remediation_recipe_state"])
+    test_remediation_recipes = oci.Adm.get_remediation_recipes(compartment_id=compartment_id,
+        display_name=remediation_recipe_display_name,
+        id=remediation_recipe_id,
+        state=remediation_recipe_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -173,10 +173,10 @@ def get_remediation_recipes_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_recipes = oci.Adm.get_remediation_recipes(compartment_id=var["compartment_id"],
-        display_name=var["remediation_recipe_display_name"],
-        id=var["remediation_recipe_id"],
-        state=var["remediation_recipe_state"])
+    test_remediation_recipes = oci.Adm.get_remediation_recipes(compartment_id=compartment_id,
+        display_name=remediation_recipe_display_name,
+        id=remediation_recipe_id,
+        state=remediation_recipe_state)
     ```
     <!--End PulumiCodeChooser -->
 

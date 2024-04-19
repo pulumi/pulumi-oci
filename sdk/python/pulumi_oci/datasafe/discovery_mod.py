@@ -635,23 +635,23 @@ class DiscoveryMod(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_discovery_job = oci.data_safe.DiscoveryMod("testDiscoveryJob",
-            compartment_id=var["compartment_id"],
-            sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        test_discovery_job = oci.data_safe.DiscoveryMod("test_discovery_job",
+            compartment_id=compartment_id,
+            sensitive_data_model_id=test_sensitive_data_model["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            discovery_type=var["discovery_job_discovery_type"],
-            display_name=var["discovery_job_display_name"],
+            discovery_type=discovery_job_discovery_type,
+            display_name=discovery_job_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_app_defined_relation_discovery_enabled=var["discovery_job_is_app_defined_relation_discovery_enabled"],
-            is_include_all_schemas=var["discovery_job_is_include_all_schemas"],
-            is_include_all_sensitive_types=var["discovery_job_is_include_all_sensitive_types"],
-            is_sample_data_collection_enabled=var["discovery_job_is_sample_data_collection_enabled"],
-            schemas_for_discoveries=var["discovery_job_schemas_for_discovery"],
-            sensitive_type_ids_for_discoveries=var["discovery_job_sensitive_type_ids_for_discovery"])
+            is_app_defined_relation_discovery_enabled=discovery_job_is_app_defined_relation_discovery_enabled,
+            is_include_all_schemas=discovery_job_is_include_all_schemas,
+            is_include_all_sensitive_types=discovery_job_is_include_all_sensitive_types,
+            is_sample_data_collection_enabled=discovery_job_is_sample_data_collection_enabled,
+            schemas_for_discoveries=discovery_job_schemas_for_discovery,
+            sensitive_type_ids_for_discoveries=discovery_job_sensitive_type_ids_for_discovery)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -704,23 +704,23 @@ class DiscoveryMod(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_discovery_job = oci.data_safe.DiscoveryMod("testDiscoveryJob",
-            compartment_id=var["compartment_id"],
-            sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        test_discovery_job = oci.data_safe.DiscoveryMod("test_discovery_job",
+            compartment_id=compartment_id,
+            sensitive_data_model_id=test_sensitive_data_model["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            discovery_type=var["discovery_job_discovery_type"],
-            display_name=var["discovery_job_display_name"],
+            discovery_type=discovery_job_discovery_type,
+            display_name=discovery_job_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_app_defined_relation_discovery_enabled=var["discovery_job_is_app_defined_relation_discovery_enabled"],
-            is_include_all_schemas=var["discovery_job_is_include_all_schemas"],
-            is_include_all_sensitive_types=var["discovery_job_is_include_all_sensitive_types"],
-            is_sample_data_collection_enabled=var["discovery_job_is_sample_data_collection_enabled"],
-            schemas_for_discoveries=var["discovery_job_schemas_for_discovery"],
-            sensitive_type_ids_for_discoveries=var["discovery_job_sensitive_type_ids_for_discovery"])
+            is_app_defined_relation_discovery_enabled=discovery_job_is_app_defined_relation_discovery_enabled,
+            is_include_all_schemas=discovery_job_is_include_all_schemas,
+            is_include_all_sensitive_types=discovery_job_is_include_all_sensitive_types,
+            is_sample_data_collection_enabled=discovery_job_is_sample_data_collection_enabled,
+            schemas_for_discoveries=discovery_job_schemas_for_discovery,
+            sensitive_type_ids_for_discoveries=discovery_job_sensitive_type_ids_for_discovery)
         ```
         <!--End PulumiCodeChooser -->
 

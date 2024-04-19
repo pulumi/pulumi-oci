@@ -31,22 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.NewWorkspaceApplicationPatch(ctx, "testWorkspaceApplicationPatch", &DataIntegration.WorkspaceApplicationPatchArgs{
-//				ApplicationKey: pulumi.Any(_var.Workspace_application_patch_application_key),
-//				Identifier:     pulumi.Any(_var.Workspace_application_patch_identifier),
-//				ObjectKeys:     pulumi.Any(_var.Workspace_application_patch_object_keys),
-//				PatchType:      pulumi.Any(_var.Workspace_application_patch_patch_type),
-//				WorkspaceId:    pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
-//				Description:    pulumi.Any(_var.Workspace_application_patch_description),
-//				Key:            pulumi.Any(_var.Workspace_application_patch_key),
-//				ModelVersion:   pulumi.Any(_var.Workspace_application_patch_model_version),
-//				ObjectStatus:   pulumi.Any(_var.Workspace_application_patch_object_status),
+//			_, err := DataIntegration.NewWorkspaceApplicationPatch(ctx, "test_workspace_application_patch", &DataIntegration.WorkspaceApplicationPatchArgs{
+//				ApplicationKey: pulumi.Any(workspaceApplicationPatchApplicationKey),
+//				Identifier:     pulumi.Any(workspaceApplicationPatchIdentifier),
+//				Name:           pulumi.Any(workspaceApplicationPatchName),
+//				ObjectKeys:     pulumi.Any(workspaceApplicationPatchObjectKeys),
+//				PatchType:      pulumi.Any(workspaceApplicationPatchPatchType),
+//				WorkspaceId:    pulumi.Any(testWorkspace.Id),
+//				Description:    pulumi.Any(workspaceApplicationPatchDescription),
+//				Key:            pulumi.Any(workspaceApplicationPatchKey),
+//				ModelVersion:   pulumi.Any(workspaceApplicationPatchModelVersion),
+//				ObjectStatus:   pulumi.Any(workspaceApplicationPatchObjectStatus),
 //				RegistryMetadata: &dataintegration.WorkspaceApplicationPatchRegistryMetadataArgs{
-//					AggregatorKey:   pulumi.Any(_var.Workspace_application_patch_registry_metadata_aggregator_key),
-//					IsFavorite:      pulumi.Any(_var.Workspace_application_patch_registry_metadata_is_favorite),
-//					Key:             pulumi.Any(_var.Workspace_application_patch_registry_metadata_key),
-//					Labels:          pulumi.Any(_var.Workspace_application_patch_registry_metadata_labels),
-//					RegistryVersion: pulumi.Any(_var.Workspace_application_patch_registry_metadata_registry_version),
+//					AggregatorKey:   pulumi.Any(workspaceApplicationPatchRegistryMetadataAggregatorKey),
+//					IsFavorite:      pulumi.Any(workspaceApplicationPatchRegistryMetadataIsFavorite),
+//					Key:             pulumi.Any(workspaceApplicationPatchRegistryMetadataKey),
+//					Labels:          pulumi.Any(workspaceApplicationPatchRegistryMetadataLabels),
+//					RegistryVersion: pulumi.Any(workspaceApplicationPatchRegistryMetadataRegistryVersion),
 //				},
 //			})
 //			if err != nil {

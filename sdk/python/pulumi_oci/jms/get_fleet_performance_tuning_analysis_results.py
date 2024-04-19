@@ -140,11 +140,11 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_performance_tuning_analysis_result_time_end"],
-        time_start=var["fleet_performance_tuning_analysis_result_time_start"])
+    test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
+        application_id=test_application["id"],
+        managed_instance_id=test_managed_instance["id"],
+        time_end=fleet_performance_tuning_analysis_result_time_end,
+        time_start=fleet_performance_tuning_analysis_result_time_start)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_performance_tuning_analysis_result_time_end"],
-        time_start=var["fleet_performance_tuning_analysis_result_time_start"])
+    test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
+        application_id=test_application["id"],
+        managed_instance_id=test_managed_instance["id"],
+        time_end=fleet_performance_tuning_analysis_result_time_end,
+        time_start=fleet_performance_tuning_analysis_result_time_start)
     ```
     <!--End PulumiCodeChooser -->
 

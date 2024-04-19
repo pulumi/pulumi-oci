@@ -306,14 +306,14 @@ class EncryptedData(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_encrypted_data = oci.kms.EncryptedData("testEncryptedData",
-            crypto_endpoint=var["encrypted_data_crypto_endpoint"],
-            key_id=oci_kms_key["test_key"]["id"],
-            plaintext=var["encrypted_data_plaintext"],
-            associated_data=var["encrypted_data_associated_data"],
-            encryption_algorithm=var["encrypted_data_encryption_algorithm"],
-            key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            logging_context=var["encrypted_data_logging_context"])
+        test_encrypted_data = oci.kms.EncryptedData("test_encrypted_data",
+            crypto_endpoint=encrypted_data_crypto_endpoint,
+            key_id=test_key["id"],
+            plaintext=encrypted_data_plaintext,
+            associated_data=encrypted_data_associated_data,
+            encryption_algorithm=encrypted_data_encryption_algorithm,
+            key_version_id=test_key_version["id"],
+            logging_context=encrypted_data_logging_context)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -354,14 +354,14 @@ class EncryptedData(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_encrypted_data = oci.kms.EncryptedData("testEncryptedData",
-            crypto_endpoint=var["encrypted_data_crypto_endpoint"],
-            key_id=oci_kms_key["test_key"]["id"],
-            plaintext=var["encrypted_data_plaintext"],
-            associated_data=var["encrypted_data_associated_data"],
-            encryption_algorithm=var["encrypted_data_encryption_algorithm"],
-            key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            logging_context=var["encrypted_data_logging_context"])
+        test_encrypted_data = oci.kms.EncryptedData("test_encrypted_data",
+            crypto_endpoint=encrypted_data_crypto_endpoint,
+            key_id=test_key["id"],
+            plaintext=encrypted_data_plaintext,
+            associated_data=encrypted_data_associated_data,
+            encryption_algorithm=encrypted_data_encryption_algorithm,
+            key_version_id=test_key_version["id"],
+            logging_context=encrypted_data_logging_context)
         ```
         <!--End PulumiCodeChooser -->
 

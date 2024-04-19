@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetTags(ctx, &identity.GetTagsArgs{
-//				TagNamespaceId: oci_identity_tag_namespace.Test_tag_namespace.Id,
-//				State:          pulumi.StringRef(_var.Tag_state),
+//				TagNamespaceId: testTagNamespace.Id,
+//				State:          pulumi.StringRef(tagState),
 //			}, nil)
 //			if err != nil {
 //				return err

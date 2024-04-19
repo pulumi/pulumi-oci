@@ -20,17 +20,17 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSources = oci.OsManagementHub.getSoftwareSources({
- *     archTypes: _var.software_source_arch_type,
- *     availabilities: _var.software_source_availability,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.software_source_display_name,
- *     displayNameContains: _var.software_source_display_name_contains,
- *     displayNameNotEqualTos: _var.software_source_display_name_not_equal_to,
- *     osFamilies: _var.software_source_os_family,
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
- *     softwareSourceTypes: _var.software_source_software_source_type,
- *     states: _var.software_source_state,
- *     vendorName: _var.software_source_vendor_name,
+ *     archTypes: softwareSourceArchType,
+ *     availabilities: softwareSourceAvailability,
+ *     compartmentId: compartmentId,
+ *     displayName: softwareSourceDisplayName,
+ *     displayNameContains: softwareSourceDisplayNameContains,
+ *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
+ *     osFamilies: softwareSourceOsFamily,
+ *     softwareSourceId: testSoftwareSource.id,
+ *     softwareSourceTypes: softwareSourceSoftwareSourceType,
+ *     states: softwareSourceState,
+ *     vendorName: softwareSourceVendorName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -169,17 +169,17 @@ export interface GetSoftwareSourcesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSources = oci.OsManagementHub.getSoftwareSources({
- *     archTypes: _var.software_source_arch_type,
- *     availabilities: _var.software_source_availability,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.software_source_display_name,
- *     displayNameContains: _var.software_source_display_name_contains,
- *     displayNameNotEqualTos: _var.software_source_display_name_not_equal_to,
- *     osFamilies: _var.software_source_os_family,
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
- *     softwareSourceTypes: _var.software_source_software_source_type,
- *     states: _var.software_source_state,
- *     vendorName: _var.software_source_vendor_name,
+ *     archTypes: softwareSourceArchType,
+ *     availabilities: softwareSourceAvailability,
+ *     compartmentId: compartmentId,
+ *     displayName: softwareSourceDisplayName,
+ *     displayNameContains: softwareSourceDisplayNameContains,
+ *     displayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
+ *     osFamilies: softwareSourceOsFamily,
+ *     softwareSourceId: testSoftwareSource.id,
+ *     softwareSourceTypes: softwareSourceSoftwareSourceType,
+ *     states: softwareSourceState,
+ *     vendorName: softwareSourceVendorName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

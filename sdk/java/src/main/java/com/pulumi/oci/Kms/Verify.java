@@ -47,13 +47,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVerify = new Verify(&#34;testVerify&#34;, VerifyArgs.builder()        
- *             .cryptoEndpoint(var_.verify_message_crypto_endpoint())
- *             .keyId(oci_kms_key.test_key().id())
- *             .keyVersionId(oci_kms_key_version.test_key_version().id())
- *             .message(var_.verify_message())
- *             .signature(var_.verify_signature())
- *             .signingAlgorithm(var_.verify_signing_algorithm())
- *             .messageType(var_.verify_message_type())
+ *             .cryptoEndpoint(verifyMessageCryptoEndpoint)
+ *             .keyId(testKey.id())
+ *             .keyVersionId(testKeyVersion.id())
+ *             .message(verifyMessage)
+ *             .signature(verifySignature)
+ *             .signingAlgorithm(verifySigningAlgorithm)
+ *             .messageType(verifyMessageType)
  *             .build());
  * 
  *     }

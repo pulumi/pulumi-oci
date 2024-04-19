@@ -31,16 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewResolverEndpoint(ctx, "testResolverEndpoint", &Dns.ResolverEndpointArgs{
-//				IsForwarding:      pulumi.Any(_var.Resolver_endpoint_is_forwarding),
-//				IsListening:       pulumi.Any(_var.Resolver_endpoint_is_listening),
-//				ResolverId:        pulumi.Any(oci_dns_resolver.Test_resolver.Id),
-//				SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//			_, err := Dns.NewResolverEndpoint(ctx, "test_resolver_endpoint", &Dns.ResolverEndpointArgs{
+//				IsForwarding:      pulumi.Any(resolverEndpointIsForwarding),
+//				IsListening:       pulumi.Any(resolverEndpointIsListening),
+//				Name:              pulumi.Any(resolverEndpointName),
+//				ResolverId:        pulumi.Any(testResolver.Id),
+//				SubnetId:          pulumi.Any(testSubnet.Id),
 //				Scope:             pulumi.String("PRIVATE"),
-//				EndpointType:      pulumi.Any(_var.Resolver_endpoint_endpoint_type),
-//				ForwardingAddress: pulumi.Any(_var.Resolver_endpoint_forwarding_address),
-//				ListeningAddress:  pulumi.Any(_var.Resolver_endpoint_listening_address),
-//				NsgIds:            pulumi.Any(_var.Resolver_endpoint_nsg_ids),
+//				EndpointType:      pulumi.Any(resolverEndpointEndpointType),
+//				ForwardingAddress: pulumi.Any(resolverEndpointForwardingAddress),
+//				ListeningAddress:  pulumi.Any(resolverEndpointListeningAddress),
+//				NsgIds:            pulumi.Any(resolverEndpointNsgIds),
 //			})
 //			if err != nil {
 //				return err

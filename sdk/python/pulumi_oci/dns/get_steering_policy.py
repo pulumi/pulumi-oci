@@ -212,7 +212,7 @@ def get_steering_policy(steering_policy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy = oci.Dns.get_steering_policy(steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"])
+    test_steering_policy = oci.Dns.get_steering_policy(steering_policy_id=test_steering_policy_oci_dns_steering_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -256,7 +256,7 @@ def get_steering_policy_output(steering_policy_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy = oci.Dns.get_steering_policy(steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"])
+    test_steering_policy = oci.Dns.get_steering_policy(steering_policy_id=test_steering_policy_oci_dns_steering_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 

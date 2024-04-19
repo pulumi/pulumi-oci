@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerImage = oci.Artifacts.getContainerImage({
- *     imageId: _var.container_image_id,
+ *     imageId: containerImageId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetContainerImageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerImage = oci.Artifacts.getContainerImage({
- *     imageId: _var.container_image_id,
+ *     imageId: containerImageId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

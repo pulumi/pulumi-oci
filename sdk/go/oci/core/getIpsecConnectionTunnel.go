@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetIpsecConnectionTunnel(ctx, &core.GetIpsecConnectionTunnelArgs{
-//				IpsecId:  oci_core_ipsec.Test_ipsec.Id,
-//				TunnelId: data.Oci_core_ipsec_connection_tunnels.Test_ip_sec_connection_tunnels.Ip_sec_connection_tunnels[0].Id,
+//				IpsecId:  testIpsec.Id,
+//				TunnelId: testIpSecConnectionTunnels.IpSecConnectionTunnels[0].Id,
 //			}, nil)
 //			if err != nil {
 //				return err

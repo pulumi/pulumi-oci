@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGateServers = oci.Identity.getDomainsCloudGateServers({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     cloudGateServerCount: _var.cloud_gate_server_cloud_gate_server_count,
- *     cloudGateServerFilter: _var.cloud_gate_server_cloud_gate_server_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     cloudGateServerCount: cloudGateServerCloudGateServerCount,
+ *     cloudGateServerFilter: cloudGateServerCloudGateServerFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.cloud_gate_server_authorization,
- *     resourceTypeSchemaVersion: _var.cloud_gate_server_resource_type_schema_version,
- *     startIndex: _var.cloud_gate_server_start_index,
+ *     authorization: cloudGateServerAuthorization,
+ *     resourceTypeSchemaVersion: cloudGateServerResourceTypeSchemaVersion,
+ *     startIndex: cloudGateServerStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -130,14 +130,14 @@ export interface GetDomainsCloudGateServersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGateServers = oci.Identity.getDomainsCloudGateServers({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     cloudGateServerCount: _var.cloud_gate_server_cloud_gate_server_count,
- *     cloudGateServerFilter: _var.cloud_gate_server_cloud_gate_server_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     cloudGateServerCount: cloudGateServerCloudGateServerCount,
+ *     cloudGateServerFilter: cloudGateServerCloudGateServerFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.cloud_gate_server_authorization,
- *     resourceTypeSchemaVersion: _var.cloud_gate_server_resource_type_schema_version,
- *     startIndex: _var.cloud_gate_server_start_index,
+ *     authorization: cloudGateServerAuthorization,
+ *     resourceTypeSchemaVersion: cloudGateServerResourceTypeSchemaVersion,
+ *     startIndex: cloudGateServerStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

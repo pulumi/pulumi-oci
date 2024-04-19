@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTrailSequences = oci.GoldenGate.getTrailSequences({
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     trailFileId: oci_golden_gate_trail_file.test_trail_file.id,
- *     displayName: _var.trail_sequence_display_name,
- *     trailSequenceId: oci_golden_gate_trail_sequence.test_trail_sequence.id,
+ *     deploymentId: testDeployment.id,
+ *     trailFileId: testTrailFile.id,
+ *     displayName: trailSequenceDisplayName,
+ *     trailSequenceId: testTrailSequence.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,10 +96,10 @@ export interface GetTrailSequencesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTrailSequences = oci.GoldenGate.getTrailSequences({
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     trailFileId: oci_golden_gate_trail_file.test_trail_file.id,
- *     displayName: _var.trail_sequence_display_name,
- *     trailSequenceId: oci_golden_gate_trail_sequence.test_trail_sequence.id,
+ *     deploymentId: testDeployment.id,
+ *     trailFileId: testTrailFile.id,
+ *     displayName: trailSequenceDisplayName,
+ *     trailSequenceId: testTrailSequence.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

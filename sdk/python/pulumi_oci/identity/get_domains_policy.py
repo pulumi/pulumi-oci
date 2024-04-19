@@ -346,12 +346,12 @@ def get_domains_policy(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_policy = oci.Identity.get_domains_policy(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        policy_id=oci_identity_policy["test_policy"]["id"],
+    test_policy = oci.Identity.get_domains_policy(idcs_endpoint=test_domain["url"],
+        policy_id=test_policy_oci_identity_policy["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["policy_authorization"],
-        resource_type_schema_version=var["policy_resource_type_schema_version"])
+        authorization=policy_authorization,
+        resource_type_schema_version=policy_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -422,12 +422,12 @@ def get_domains_policy_output(attribute_sets: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_policy = oci.Identity.get_domains_policy(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        policy_id=oci_identity_policy["test_policy"]["id"],
+    test_policy = oci.Identity.get_domains_policy(idcs_endpoint=test_domain["url"],
+        policy_id=test_policy_oci_identity_policy["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["policy_authorization"],
-        resource_type_schema_version=var["policy_resource_type_schema_version"])
+        authorization=policy_authorization,
+        resource_type_schema_version=policy_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

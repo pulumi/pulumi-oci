@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployArtifacts = oci.DevOps.getDeployArtifacts({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deploy_artifact_display_name,
- *     id: _var.deploy_artifact_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.deploy_artifact_state,
+ *     compartmentId: compartmentId,
+ *     displayName: deployArtifactDisplayName,
+ *     id: deployArtifactId,
+ *     projectId: testProject.id,
+ *     state: deployArtifactState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetDeployArtifactsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployArtifacts = oci.DevOps.getDeployArtifacts({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deploy_artifact_display_name,
- *     id: _var.deploy_artifact_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.deploy_artifact_state,
+ *     compartmentId: compartmentId,
+ *     displayName: deployArtifactDisplayName,
+ *     id: deployArtifactId,
+ *     projectId: testProject.id,
+ *     state: deployArtifactState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

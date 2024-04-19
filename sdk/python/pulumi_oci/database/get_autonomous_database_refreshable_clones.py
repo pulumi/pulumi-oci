@@ -91,7 +91,7 @@ def get_autonomous_database_refreshable_clones(autonomous_database_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_refreshable_clones = oci.Database.get_autonomous_database_refreshable_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
+    test_autonomous_database_refreshable_clones = oci.Database.get_autonomous_database_refreshable_clones(autonomous_database_id=test_autonomous_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_autonomous_database_refreshable_clones_output(autonomous_database_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_refreshable_clones = oci.Database.get_autonomous_database_refreshable_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
+    test_autonomous_database_refreshable_clones = oci.Database.get_autonomous_database_refreshable_clones(autonomous_database_id=test_autonomous_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

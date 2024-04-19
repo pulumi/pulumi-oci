@@ -51,44 +51,44 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVirtualCircuit(ctx, "testVirtualCircuit", &Core.VirtualCircuitArgs{
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				Type:               pulumi.Any(_var.Virtual_circuit_type),
-//				BandwidthShapeName: pulumi.Any(_var.Virtual_circuit_bandwidth_shape_name),
-//				BgpAdminState:      pulumi.Any(_var.Virtual_circuit_bgp_admin_state),
+//			_, err := Core.NewVirtualCircuit(ctx, "test_virtual_circuit", &Core.VirtualCircuitArgs{
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				Type:               pulumi.Any(virtualCircuitType),
+//				BandwidthShapeName: pulumi.Any(virtualCircuitBandwidthShapeName),
+//				BgpAdminState:      pulumi.Any(virtualCircuitBgpAdminState),
 //				CrossConnectMappings: core.VirtualCircuitCrossConnectMappingArray{
 //					&core.VirtualCircuitCrossConnectMappingArgs{
-//						BgpMd5authKey:                     pulumi.Any(_var.Virtual_circuit_cross_connect_mappings_bgp_md5auth_key),
-//						CrossConnectOrCrossConnectGroupId: pulumi.Any(oci_core_cross_connect_or_cross_connect_group.Test_cross_connect_or_cross_connect_group.Id),
-//						CustomerBgpPeeringIp:              pulumi.Any(_var.Virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip),
-//						CustomerBgpPeeringIpv6:            pulumi.Any(_var.Virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6),
-//						OracleBgpPeeringIp:                pulumi.Any(_var.Virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip),
-//						OracleBgpPeeringIpv6:              pulumi.Any(_var.Virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6),
-//						Vlan:                              pulumi.Any(_var.Virtual_circuit_cross_connect_mappings_vlan),
+//						BgpMd5authKey:                     pulumi.Any(virtualCircuitCrossConnectMappingsBgpMd5authKey),
+//						CrossConnectOrCrossConnectGroupId: pulumi.Any(testCrossConnectOrCrossConnectGroup.Id),
+//						CustomerBgpPeeringIp:              pulumi.Any(virtualCircuitCrossConnectMappingsCustomerBgpPeeringIp),
+//						CustomerBgpPeeringIpv6:            pulumi.Any(virtualCircuitCrossConnectMappingsCustomerBgpPeeringIpv6),
+//						OracleBgpPeeringIp:                pulumi.Any(virtualCircuitCrossConnectMappingsOracleBgpPeeringIp),
+//						OracleBgpPeeringIpv6:              pulumi.Any(virtualCircuitCrossConnectMappingsOracleBgpPeeringIpv6),
+//						Vlan:                              pulumi.Any(virtualCircuitCrossConnectMappingsVlan),
 //					},
 //				},
-//				CustomerAsn:    pulumi.Any(_var.Virtual_circuit_customer_asn),
-//				CustomerBgpAsn: pulumi.Any(_var.Virtual_circuit_customer_bgp_asn),
+//				CustomerAsn:    pulumi.Any(virtualCircuitCustomerAsn),
+//				CustomerBgpAsn: pulumi.Any(virtualCircuitCustomerBgpAsn),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Virtual_circuit_display_name),
+//				DisplayName: pulumi.Any(virtualCircuitDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IpMtu:                  pulumi.Any(_var.Virtual_circuit_ip_mtu),
-//				IsBfdEnabled:           pulumi.Any(_var.Virtual_circuit_is_bfd_enabled),
-//				IsTransportMode:        pulumi.Any(_var.Virtual_circuit_is_transport_mode),
-//				GatewayId:              pulumi.Any(oci_core_gateway.Test_gateway.Id),
-//				ProviderServiceId:      pulumi.Any(data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id),
-//				ProviderServiceKeyName: pulumi.Any(_var.Virtual_circuit_provider_service_key_name),
+//				IpMtu:                  pulumi.Any(virtualCircuitIpMtu),
+//				IsBfdEnabled:           pulumi.Any(virtualCircuitIsBfdEnabled),
+//				IsTransportMode:        pulumi.Any(virtualCircuitIsTransportMode),
+//				GatewayId:              pulumi.Any(testGateway.Id),
+//				ProviderServiceId:      pulumi.Any(testFastConnectProviderServices.FastConnectProviderServices[0].Id),
+//				ProviderServiceKeyName: pulumi.Any(virtualCircuitProviderServiceKeyName),
 //				PublicPrefixes: core.VirtualCircuitPublicPrefixArray{
 //					&core.VirtualCircuitPublicPrefixArgs{
-//						CidrBlock: pulumi.Any(_var.Virtual_circuit_public_prefixes_cidr_block),
+//						CidrBlock: pulumi.Any(virtualCircuitPublicPrefixesCidrBlock),
 //					},
 //				},
-//				Region:          pulumi.Any(_var.Virtual_circuit_region),
-//				RoutingPolicies: pulumi.Any(_var.Virtual_circuit_routing_policy),
+//				Region:          pulumi.Any(virtualCircuitRegion),
+//				RoutingPolicies: pulumi.Any(virtualCircuitRoutingPolicy),
 //			})
 //			if err != nil {
 //				return err

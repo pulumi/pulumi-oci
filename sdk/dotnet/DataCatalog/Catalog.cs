@@ -26,14 +26,14 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCatalog = new Oci.DataCatalog.Catalog("testCatalog", new()
+    ///     var testCatalog = new Oci.DataCatalog.Catalog("test_catalog", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Catalog_display_name,
+    ///         DisplayName = catalogDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

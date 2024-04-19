@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewNamespaceIngestTimeRulesManagement(ctx, "testNamespaceIngestTimeRulesManagement", &LogAnalytics.NamespaceIngestTimeRulesManagementArgs{
-//				IngestTimeRuleId:     pulumi.Any(oci_events_rule.Test_rule.Id),
-//				Namespace:            pulumi.Any(_var.Namespace_ingest_time_rules_management_namespace),
-//				EnableIngestTimeRule: pulumi.Any(_var.Enable_ingest_time_rule),
+//			_, err := LogAnalytics.NewNamespaceIngestTimeRulesManagement(ctx, "test_namespace_ingest_time_rules_management", &LogAnalytics.NamespaceIngestTimeRulesManagementArgs{
+//				IngestTimeRuleId:     pulumi.Any(testRule.Id),
+//				Namespace:            pulumi.Any(namespaceIngestTimeRulesManagementNamespace),
+//				EnableIngestTimeRule: pulumi.Any(enableIngestTimeRule),
 //			})
 //			if err != nil {
 //				return err

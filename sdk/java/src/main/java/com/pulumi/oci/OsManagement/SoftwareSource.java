@@ -50,17 +50,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSoftwareSource = new SoftwareSource(&#34;testSoftwareSource&#34;, SoftwareSourceArgs.builder()        
- *             .archType(var_.software_source_arch_type())
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.software_source_display_name())
- *             .checksumType(var_.software_source_checksum_type())
+ *             .archType(softwareSourceArchType)
+ *             .compartmentId(compartmentId)
+ *             .displayName(softwareSourceDisplayName)
+ *             .checksumType(softwareSourceChecksumType)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.software_source_description())
+ *             .description(softwareSourceDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .maintainerEmail(var_.software_source_maintainer_email())
- *             .maintainerName(var_.software_source_maintainer_name())
- *             .maintainerPhone(var_.software_source_maintainer_phone())
- *             .parentId(oci_osmanagement_parent.test_parent().id())
+ *             .maintainerEmail(softwareSourceMaintainerEmail)
+ *             .maintainerName(softwareSourceMaintainerName)
+ *             .maintainerPhone(softwareSourceMaintainerPhone)
+ *             .parentId(testParent.id())
  *             .build());
  * 
  *     }

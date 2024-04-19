@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeGlobalImageCapabilitySchema(ctx, &core.GetComputeGlobalImageCapabilitySchemaArgs{
-//				ComputeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
+//				ComputeGlobalImageCapabilitySchemaId: testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

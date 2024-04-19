@@ -29,10 +29,10 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testConnection = Oci.DataCatalog.GetConnection.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         ConnectionKey = @var.Connection_connection_key,
-        ///         DataAssetKey = @var.Connection_data_asset_key,
-        ///         Fields = @var.Connection_fields,
+        ///         CatalogId = testCatalog.Id,
+        ///         ConnectionKey = connectionConnectionKey,
+        ///         DataAssetKey = connectionDataAssetKey,
+        ///         Fields = connectionFields,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testConnection = Oci.DataCatalog.GetConnection.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         ConnectionKey = @var.Connection_connection_key,
-        ///         DataAssetKey = @var.Connection_data_asset_key,
-        ///         Fields = @var.Connection_fields,
+        ///         CatalogId = testCatalog.Id,
+        ///         ConnectionKey = connectionConnectionKey,
+        ///         DataAssetKey = connectionDataAssetKey,
+        ///         Fields = connectionFields,
         ///     });
         /// 
         /// });

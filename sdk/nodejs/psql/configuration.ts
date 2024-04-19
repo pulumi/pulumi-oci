@@ -18,27 +18,27 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfiguration = new oci.psql.Configuration("testConfiguration", {
- *     compartmentId: _var.compartment_id,
+ * const testConfiguration = new oci.psql.Configuration("test_configuration", {
+ *     compartmentId: compartmentId,
  *     dbConfigurationOverrides: {
  *         items: [{
- *             configKey: _var.configuration_db_configuration_overrides_items_config_key,
- *             overridenConfigValue: _var.configuration_db_configuration_overrides_items_overriden_config_value,
+ *             configKey: configurationDbConfigurationOverridesItemsConfigKey,
+ *             overridenConfigValue: configurationDbConfigurationOverridesItemsOverridenConfigValue,
  *         }],
  *     },
- *     dbVersion: _var.configuration_db_version,
- *     displayName: _var.configuration_display_name,
- *     instanceMemorySizeInGbs: _var.configuration_instance_memory_size_in_gbs,
- *     instanceOcpuCount: _var.configuration_instance_ocpu_count,
- *     shape: _var.configuration_shape,
+ *     dbVersion: configurationDbVersion,
+ *     displayName: configurationDisplayName,
+ *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: configurationInstanceOcpuCount,
+ *     shape: configurationShape,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.configuration_description,
+ *     description: configurationDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     systemTags: _var.configuration_system_tags,
+ *     systemTags: configurationSystemTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

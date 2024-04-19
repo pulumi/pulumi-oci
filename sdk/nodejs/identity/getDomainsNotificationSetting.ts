@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNotificationSetting = oci.Identity.getDomainsNotificationSetting({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     notificationSettingId: oci_identity_domains_notification_setting.test_notification_setting.id,
+ *     idcsEndpoint: testDomain.url,
+ *     notificationSettingId: testNotificationSettingOciIdentityDomainsNotificationSetting.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.notification_setting_authorization,
- *     resourceTypeSchemaVersion: _var.notification_setting_resource_type_schema_version,
+ *     authorization: notificationSettingAuthorization,
+ *     resourceTypeSchemaVersion: notificationSettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -180,12 +180,12 @@ export interface GetDomainsNotificationSettingResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNotificationSetting = oci.Identity.getDomainsNotificationSetting({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     notificationSettingId: oci_identity_domains_notification_setting.test_notification_setting.id,
+ *     idcsEndpoint: testDomain.url,
+ *     notificationSettingId: testNotificationSettingOciIdentityDomainsNotificationSetting.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.notification_setting_authorization,
- *     resourceTypeSchemaVersion: _var.notification_setting_resource_type_schema_version,
+ *     authorization: notificationSettingAuthorization,
+ *     resourceTypeSchemaVersion: notificationSettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

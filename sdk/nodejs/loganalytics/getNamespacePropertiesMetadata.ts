@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespacePropertiesMetadata = oci.LogAnalytics.getNamespacePropertiesMetadata({
- *     namespace: _var.namespace_properties_metadata_namespace,
- *     constraints: _var.namespace_properties_metadata_constraints,
- *     displayText: _var.namespace_properties_metadata_display_text,
- *     level: _var.namespace_properties_metadata_level,
- *     name: _var.namespace_properties_metadata_name,
+ *     namespace: namespacePropertiesMetadataNamespace,
+ *     constraints: namespacePropertiesMetadataConstraints,
+ *     displayText: namespacePropertiesMetadataDisplayText,
+ *     level: namespacePropertiesMetadataLevel,
+ *     name: namespacePropertiesMetadataName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,11 +106,11 @@ export interface GetNamespacePropertiesMetadataResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespacePropertiesMetadata = oci.LogAnalytics.getNamespacePropertiesMetadata({
- *     namespace: _var.namespace_properties_metadata_namespace,
- *     constraints: _var.namespace_properties_metadata_constraints,
- *     displayText: _var.namespace_properties_metadata_display_text,
- *     level: _var.namespace_properties_metadata_level,
- *     name: _var.namespace_properties_metadata_name,
+ *     namespace: namespacePropertiesMetadataNamespace,
+ *     constraints: namespacePropertiesMetadataConstraints,
+ *     displayText: namespacePropertiesMetadataDisplayText,
+ *     level: namespacePropertiesMetadataLevel,
+ *     name: namespacePropertiesMetadataName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkFirewallPolicyServices = oci.NetworkFirewall.getNetworkFirewallPolicyServices({
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
- *     displayName: _var.network_firewall_policy_service_display_name,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     displayName: networkFirewallPolicyServiceDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetNetworkFirewallPolicyServicesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkFirewallPolicyServices = oci.NetworkFirewall.getNetworkFirewallPolicyServices({
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
- *     displayName: _var.network_firewall_policy_service_display_name,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     displayName: networkFirewallPolicyServiceDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

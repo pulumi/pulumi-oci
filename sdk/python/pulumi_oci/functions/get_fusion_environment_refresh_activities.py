@@ -137,11 +137,11 @@ def get_fusion_environment_refresh_activities(display_name: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activities = oci.Functions.get_fusion_environment_refresh_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_refresh_activity_display_name"],
-        state=var["fusion_environment_refresh_activity_state"],
-        time_expected_finish_less_than_or_equal_to=var["fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to"],
-        time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to"])
+    test_fusion_environment_refresh_activities = oci.Functions.get_fusion_environment_refresh_activities(fusion_environment_id=test_fusion_environment["id"],
+        display_name=fusion_environment_refresh_activity_display_name,
+        state=fusion_environment_refresh_activity_state,
+        time_expected_finish_less_than_or_equal_to=fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to,
+        time_scheduled_start_greater_than_or_equal_to=fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -193,11 +193,11 @@ def get_fusion_environment_refresh_activities_output(display_name: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activities = oci.Functions.get_fusion_environment_refresh_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_refresh_activity_display_name"],
-        state=var["fusion_environment_refresh_activity_state"],
-        time_expected_finish_less_than_or_equal_to=var["fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to"],
-        time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to"])
+    test_fusion_environment_refresh_activities = oci.Functions.get_fusion_environment_refresh_activities(fusion_environment_id=test_fusion_environment["id"],
+        display_name=fusion_environment_refresh_activity_display_name,
+        state=fusion_environment_refresh_activity_state,
+        time_expected_finish_less_than_or_equal_to=fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to,
+        time_scheduled_start_greater_than_or_equal_to=fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to)
     ```
     <!--End PulumiCodeChooser -->
 

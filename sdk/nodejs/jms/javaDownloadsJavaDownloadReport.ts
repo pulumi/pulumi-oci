@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaDownloadReport = new oci.jms.JavaDownloadsJavaDownloadReport("testJavaDownloadReport", {
- *     compartmentId: _var.tenancy_ocid,
- *     format: _var.java_download_report_format,
- *     timeEnd: _var.java_download_report_time_end,
- *     timeStart: _var.java_download_report_time_start,
+ * const testJavaDownloadReport = new oci.jms.JavaDownloadsJavaDownloadReport("test_java_download_report", {
+ *     compartmentId: tenancyOcid,
+ *     format: javaDownloadReportFormat,
+ *     timeEnd: javaDownloadReportTimeEnd,
+ *     timeStart: javaDownloadReportTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

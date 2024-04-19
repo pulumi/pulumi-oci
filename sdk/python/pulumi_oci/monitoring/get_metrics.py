@@ -171,13 +171,13 @@ def get_metrics(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["metric_compartment_id_in_subtree"],
-        dimension_filters=var["metric_dimension_filters"],
-        group_bies=var["metric_group_by"],
-        name=var["metric_name"],
-        namespace=var["metric_namespace"],
-        resource_group=var["metric_resource_group"])
+    test_metrics = oci.Monitoring.get_metrics(compartment_id=compartment_id,
+        compartment_id_in_subtree=metric_compartment_id_in_subtree,
+        dimension_filters=metric_dimension_filters,
+        group_bies=metric_group_by,
+        name=metric_name,
+        namespace=metric_namespace,
+        resource_group=metric_resource_group)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -247,13 +247,13 @@ def get_metrics_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metrics = oci.Monitoring.get_metrics(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["metric_compartment_id_in_subtree"],
-        dimension_filters=var["metric_dimension_filters"],
-        group_bies=var["metric_group_by"],
-        name=var["metric_name"],
-        namespace=var["metric_namespace"],
-        resource_group=var["metric_resource_group"])
+    test_metrics = oci.Monitoring.get_metrics(compartment_id=compartment_id,
+        compartment_id_in_subtree=metric_compartment_id_in_subtree,
+        dimension_filters=metric_dimension_filters,
+        group_bies=metric_group_by,
+        name=metric_name,
+        namespace=metric_namespace,
+        resource_group=metric_resource_group)
     ```
     <!--End PulumiCodeChooser -->
 

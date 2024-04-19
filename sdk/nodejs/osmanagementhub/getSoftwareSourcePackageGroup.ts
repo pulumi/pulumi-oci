@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourcePackageGroup = oci.OsManagementHub.getSoftwareSourcePackageGroup({
- *     packageGroupId: oci_identity_group.test_group.id,
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
+ *     packageGroupId: testGroup.id,
+ *     softwareSourceId: testSoftwareSource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,8 +102,8 @@ export interface GetSoftwareSourcePackageGroupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourcePackageGroup = oci.OsManagementHub.getSoftwareSourcePackageGroup({
- *     packageGroupId: oci_identity_group.test_group.id,
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
+ *     packageGroupId: testGroup.id,
+ *     softwareSourceId: testSoftwareSource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

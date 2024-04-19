@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := BigDataService.GetBdsInstanceMetastoreConfig(ctx, &bigdataservice.GetBdsInstanceMetastoreConfigArgs{
-//				BdsInstanceId:     oci_bds_bds_instance.Test_bds_instance.Id,
-//				MetastoreConfigId: oci_apm_config_config.Test_config.Id,
+//				BdsInstanceId:     testBdsInstance.Id,
+//				MetastoreConfigId: testConfig.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

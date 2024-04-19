@@ -18,28 +18,29 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListener = new oci.loadbalancer.Listener("testListener", {
- *     defaultBackendSetName: oci_load_balancer_backend_set.test_backend_set.name,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     port: _var.listener_port,
- *     protocol: _var.listener_protocol,
+ * const testListener = new oci.loadbalancer.Listener("test_listener", {
+ *     defaultBackendSetName: testBackendSet.name,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     name: listenerName,
+ *     port: listenerPort,
+ *     protocol: listenerProtocol,
  *     connectionConfiguration: {
- *         idleTimeoutInSeconds: _var.listener_connection_configuration_idle_timeout_in_seconds,
- *         backendTcpProxyProtocolVersion: _var.listener_connection_configuration_backend_tcp_proxy_protocol_version,
+ *         idleTimeoutInSeconds: listenerConnectionConfigurationIdleTimeoutInSeconds,
+ *         backendTcpProxyProtocolVersion: listenerConnectionConfigurationBackendTcpProxyProtocolVersion,
  *     },
- *     hostnameNames: [oci_load_balancer_hostname.test_hostname.name],
- *     pathRouteSetName: oci_load_balancer_path_route_set.test_path_route_set.name,
- *     routingPolicyName: oci_load_balancer_load_balancer_routing_policy.test_load_balancer_routing_policy.name,
- *     ruleSetNames: [oci_load_balancer_rule_set.test_rule_set.name],
+ *     hostnameNames: [testHostname.name],
+ *     pathRouteSetName: testPathRouteSet.name,
+ *     routingPolicyName: testLoadBalancerRoutingPolicy.name,
+ *     ruleSetNames: [testRuleSet.name],
  *     sslConfiguration: {
- *         certificateName: oci_load_balancer_certificate.test_certificate.name,
- *         certificateIds: _var.listener_ssl_configuration_certificate_ids,
- *         cipherSuiteName: _var.listener_ssl_configuration_cipher_suite_name,
- *         protocols: _var.listener_ssl_configuration_protocols,
- *         serverOrderPreference: _var.listener_ssl_configuration_server_order_preference,
- *         trustedCertificateAuthorityIds: _var.listener_ssl_configuration_trusted_certificate_authority_ids,
- *         verifyDepth: _var.listener_ssl_configuration_verify_depth,
- *         verifyPeerCertificate: _var.listener_ssl_configuration_verify_peer_certificate,
+ *         certificateName: testCertificate.name,
+ *         certificateIds: listenerSslConfigurationCertificateIds,
+ *         cipherSuiteName: listenerSslConfigurationCipherSuiteName,
+ *         protocols: listenerSslConfigurationProtocols,
+ *         serverOrderPreference: listenerSslConfigurationServerOrderPreference,
+ *         trustedCertificateAuthorityIds: listenerSslConfigurationTrustedCertificateAuthorityIds,
+ *         verifyDepth: listenerSslConfigurationVerifyDepth,
+ *         verifyPeerCertificate: listenerSslConfigurationVerifyPeerCertificate,
  *     },
  * });
  * ```

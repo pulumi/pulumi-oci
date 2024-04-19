@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := NetworkFirewall.GetNetworkFirewallPolicyAddressLists(ctx, &networkfirewall.GetNetworkFirewallPolicyAddressListsArgs{
-//				NetworkFirewallPolicyId: oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-//				DisplayName:             pulumi.StringRef(_var.Network_firewall_policy_address_list_display_name),
+//				NetworkFirewallPolicyId: testNetworkFirewallPolicy.Id,
+//				DisplayName:             pulumi.StringRef(networkFirewallPolicyAddressListDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

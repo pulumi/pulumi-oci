@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testPrivateEndpoints = Oci.DataFlow.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Private_endpoint_display_name,
-        ///         DisplayNameStartsWith = @var.Private_endpoint_display_name_starts_with,
-        ///         OwnerPrincipalId = @var.Owner_principal_id,
-        ///         State = @var.Private_endpoint_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = privateEndpointDisplayName,
+        ///         DisplayNameStartsWith = privateEndpointDisplayNameStartsWith,
+        ///         OwnerPrincipalId = ownerPrincipalId,
+        ///         State = privateEndpointState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testPrivateEndpoints = Oci.DataFlow.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Private_endpoint_display_name,
-        ///         DisplayNameStartsWith = @var.Private_endpoint_display_name_starts_with,
-        ///         OwnerPrincipalId = @var.Owner_principal_id,
-        ///         State = @var.Private_endpoint_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = privateEndpointDisplayName,
+        ///         DisplayNameStartsWith = privateEndpointDisplayNameStartsWith,
+        ///         OwnerPrincipalId = ownerPrincipalId,
+        ///         State = privateEndpointState,
         ///     });
         /// 
         /// });

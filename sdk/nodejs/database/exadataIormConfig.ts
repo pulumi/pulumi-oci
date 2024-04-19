@@ -25,12 +25,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataIormConfig = new oci.database.ExadataIormConfig("testExadataIormConfig", {
+ * const testExadataIormConfig = new oci.database.ExadataIormConfig("test_exadata_iorm_config", {
  *     dbPlans: [{
- *         dbName: _var.exadata_iorm_config_db_plans_db_name,
- *         share: _var.exadata_iorm_config_db_plans_share,
+ *         dbName: exadataIormConfigDbPlansDbName,
+ *         share: exadataIormConfigDbPlansShare,
  *     }],
- *     dbSystemId: oci_database_db_system.test_db_system.id,
+ *     dbSystemId: testDbSystem.id,
  *     objective: "AUTO",
  * });
  * ```

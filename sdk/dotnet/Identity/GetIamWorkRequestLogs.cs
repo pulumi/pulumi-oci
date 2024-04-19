@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIamWorkRequestLogs = Oci.Identity.GetIamWorkRequestLogs.Invoke(new()
         ///     {
-        ///         IamWorkRequestId = oci_identity_iam_work_request.Test_iam_work_request.Id,
+        ///         IamWorkRequestId = testIamWorkRequest.Id,
         ///     });
         /// 
         /// });
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIamWorkRequestLogs = Oci.Identity.GetIamWorkRequestLogs.Invoke(new()
         ///     {
-        ///         IamWorkRequestId = oci_identity_iam_work_request.Test_iam_work_request.Id,
+        ///         IamWorkRequestId = testIamWorkRequest.Id,
         ///     });
         /// 
         /// });

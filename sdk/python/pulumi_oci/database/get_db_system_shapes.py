@@ -101,8 +101,8 @@ def get_db_system_shapes(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["db_system_shape_availability_domain"])
+    test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=compartment_id,
+        availability_domain=db_system_shape_availability_domain)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,8 +142,8 @@ def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["db_system_shape_availability_domain"])
+    test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=compartment_id,
+        availability_domain=db_system_shape_availability_domain)
     ```
     <!--End PulumiCodeChooser -->
 

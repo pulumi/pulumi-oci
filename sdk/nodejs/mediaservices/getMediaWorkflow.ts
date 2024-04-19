@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMediaWorkflow = oci.MediaServices.getMediaWorkflow({
- *     mediaWorkflowId: oci_media_services_media_workflow.test_media_workflow.id,
+ *     mediaWorkflowId: testMediaWorkflowOciMediaServicesMediaWorkflow.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,7 +122,7 @@ export interface GetMediaWorkflowResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMediaWorkflow = oci.MediaServices.getMediaWorkflow({
- *     mediaWorkflowId: oci_media_services_media_workflow.test_media_workflow.id,
+ *     mediaWorkflowId: testMediaWorkflowOciMediaServicesMediaWorkflow.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

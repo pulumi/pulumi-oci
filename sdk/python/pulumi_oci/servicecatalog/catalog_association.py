@@ -174,10 +174,10 @@ class CatalogAssociation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_service_catalog_association = oci.service_catalog.CatalogAssociation("testServiceCatalogAssociation",
-            entity_id=oci_service_catalog_entity["test_entity"]["id"],
-            service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"],
-            entity_type=var["service_catalog_association_entity_type"])
+        test_service_catalog_association = oci.service_catalog.CatalogAssociation("test_service_catalog_association",
+            entity_id=test_entity["id"],
+            service_catalog_id=test_service_catalog["id"],
+            entity_type=service_catalog_association_entity_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -217,10 +217,10 @@ class CatalogAssociation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_service_catalog_association = oci.service_catalog.CatalogAssociation("testServiceCatalogAssociation",
-            entity_id=oci_service_catalog_entity["test_entity"]["id"],
-            service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"],
-            entity_type=var["service_catalog_association_entity_type"])
+        test_service_catalog_association = oci.service_catalog.CatalogAssociation("test_service_catalog_association",
+            entity_id=test_entity["id"],
+            service_catalog_id=test_service_catalog["id"],
+            entity_type=service_catalog_association_entity_type)
         ```
         <!--End PulumiCodeChooser -->
 

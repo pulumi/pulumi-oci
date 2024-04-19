@@ -353,27 +353,27 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_filesystem_snapshot_policy = oci.file_storage.FilesystemSnapshotPolicy("testFilesystemSnapshotPolicy",
-            availability_domain=var["filesystem_snapshot_policy_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_filesystem_snapshot_policy = oci.file_storage.FilesystemSnapshotPolicy("test_filesystem_snapshot_policy",
+            availability_domain=filesystem_snapshot_policy_availability_domain,
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["filesystem_snapshot_policy_display_name"],
+            display_name=filesystem_snapshot_policy_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            policy_prefix=var["filesystem_snapshot_policy_policy_prefix"],
+            policy_prefix=filesystem_snapshot_policy_policy_prefix,
             schedules=[oci.file_storage.FilesystemSnapshotPolicyScheduleArgs(
-                period=var["filesystem_snapshot_policy_schedules_period"],
-                time_zone=var["filesystem_snapshot_policy_schedules_time_zone"],
-                day_of_month=var["filesystem_snapshot_policy_schedules_day_of_month"],
-                day_of_week=var["filesystem_snapshot_policy_schedules_day_of_week"],
-                hour_of_day=var["filesystem_snapshot_policy_schedules_hour_of_day"],
-                month=var["filesystem_snapshot_policy_schedules_month"],
-                retention_duration_in_seconds=var["filesystem_snapshot_policy_schedules_retention_duration_in_seconds"],
-                schedule_prefix=var["filesystem_snapshot_policy_schedules_schedule_prefix"],
-                time_schedule_start=var["filesystem_snapshot_policy_schedules_time_schedule_start"],
+                period=filesystem_snapshot_policy_schedules_period,
+                time_zone=filesystem_snapshot_policy_schedules_time_zone,
+                day_of_month=filesystem_snapshot_policy_schedules_day_of_month,
+                day_of_week=filesystem_snapshot_policy_schedules_day_of_week,
+                hour_of_day=filesystem_snapshot_policy_schedules_hour_of_day,
+                month=filesystem_snapshot_policy_schedules_month,
+                retention_duration_in_seconds=filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
+                schedule_prefix=filesystem_snapshot_policy_schedules_schedule_prefix,
+                time_schedule_start=filesystem_snapshot_policy_schedules_time_schedule_start,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -425,27 +425,27 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_filesystem_snapshot_policy = oci.file_storage.FilesystemSnapshotPolicy("testFilesystemSnapshotPolicy",
-            availability_domain=var["filesystem_snapshot_policy_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_filesystem_snapshot_policy = oci.file_storage.FilesystemSnapshotPolicy("test_filesystem_snapshot_policy",
+            availability_domain=filesystem_snapshot_policy_availability_domain,
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["filesystem_snapshot_policy_display_name"],
+            display_name=filesystem_snapshot_policy_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            policy_prefix=var["filesystem_snapshot_policy_policy_prefix"],
+            policy_prefix=filesystem_snapshot_policy_policy_prefix,
             schedules=[oci.file_storage.FilesystemSnapshotPolicyScheduleArgs(
-                period=var["filesystem_snapshot_policy_schedules_period"],
-                time_zone=var["filesystem_snapshot_policy_schedules_time_zone"],
-                day_of_month=var["filesystem_snapshot_policy_schedules_day_of_month"],
-                day_of_week=var["filesystem_snapshot_policy_schedules_day_of_week"],
-                hour_of_day=var["filesystem_snapshot_policy_schedules_hour_of_day"],
-                month=var["filesystem_snapshot_policy_schedules_month"],
-                retention_duration_in_seconds=var["filesystem_snapshot_policy_schedules_retention_duration_in_seconds"],
-                schedule_prefix=var["filesystem_snapshot_policy_schedules_schedule_prefix"],
-                time_schedule_start=var["filesystem_snapshot_policy_schedules_time_schedule_start"],
+                period=filesystem_snapshot_policy_schedules_period,
+                time_zone=filesystem_snapshot_policy_schedules_time_zone,
+                day_of_month=filesystem_snapshot_policy_schedules_day_of_month,
+                day_of_week=filesystem_snapshot_policy_schedules_day_of_week,
+                hour_of_day=filesystem_snapshot_policy_schedules_hour_of_day,
+                month=filesystem_snapshot_policy_schedules_month,
+                retention_duration_in_seconds=filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
+                schedule_prefix=filesystem_snapshot_policy_schedules_schedule_prefix,
+                time_schedule_start=filesystem_snapshot_policy_schedules_time_schedule_start,
             )])
         ```
         <!--End PulumiCodeChooser -->

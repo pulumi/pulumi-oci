@@ -27,10 +27,10 @@ namespace Pulumi.Oci.AnnouncementsService
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAnnouncementSubscriptionsActionsChangeCompartment = new Oci.AnnouncementsService.AnnouncementSubscriptionsActionsChangeCompartment("testAnnouncementSubscriptionsActionsChangeCompartment", new()
+    ///     var testAnnouncementSubscriptionsActionsChangeCompartment = new Oci.AnnouncementsService.AnnouncementSubscriptionsActionsChangeCompartment("test_announcement_subscriptions_actions_change_compartment", new()
     ///     {
-    ///         AnnouncementSubscriptionId = oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AnnouncementSubscriptionId = testAnnouncementSubscription.Id,
+    ///         CompartmentId = compartmentId,
     ///     });
     /// 
     /// });

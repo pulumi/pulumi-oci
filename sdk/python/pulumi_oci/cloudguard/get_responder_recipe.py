@@ -236,7 +236,7 @@ def get_responder_recipe(responder_recipe_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_responder_recipe = oci.CloudGuard.get_responder_recipe(responder_recipe_id=oci_cloud_guard_responder_recipe["test_responder_recipe"]["id"])
+    test_responder_recipe = oci.CloudGuard.get_responder_recipe(responder_recipe_id=test_responder_recipe_oci_cloud_guard_responder_recipe["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -282,7 +282,7 @@ def get_responder_recipe_output(responder_recipe_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_responder_recipe = oci.CloudGuard.get_responder_recipe(responder_recipe_id=oci_cloud_guard_responder_recipe["test_responder_recipe"]["id"])
+    test_responder_recipe = oci.CloudGuard.get_responder_recipe(responder_recipe_id=test_responder_recipe_oci_cloud_guard_responder_recipe["id"])
     ```
     <!--End PulumiCodeChooser -->
 

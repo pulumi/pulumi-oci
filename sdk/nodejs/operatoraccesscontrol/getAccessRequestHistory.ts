@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAccessRequestHistory = oci.OperatorAccessControl.getAccessRequestHistory({
- *     accessRequestId: oci_operator_access_control_access_request.test_access_request.id,
+ *     accessRequestId: testAccessRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -69,7 +69,7 @@ export interface GetAccessRequestHistoryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAccessRequestHistory = oci.OperatorAccessControl.getAccessRequestHistory({
- *     accessRequestId: oci_operator_access_control_access_request.test_access_request.id,
+ *     accessRequestId: testAccessRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

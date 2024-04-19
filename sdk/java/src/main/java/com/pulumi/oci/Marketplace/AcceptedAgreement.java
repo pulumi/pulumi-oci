@@ -46,13 +46,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAcceptedAgreement = new AcceptedAgreement(&#34;testAcceptedAgreement&#34;, AcceptedAgreementArgs.builder()        
- *             .agreementId(oci_marketplace_agreement.test_agreement().id())
- *             .compartmentId(var_.compartment_id())
- *             .listingId(oci_marketplace_listing.test_listing().id())
- *             .packageVersion(var_.accepted_agreement_package_version())
- *             .signature(var_.accepted_agreement_signature())
+ *             .agreementId(testAgreement.id())
+ *             .compartmentId(compartmentId)
+ *             .listingId(testListing.id())
+ *             .packageVersion(acceptedAgreementPackageVersion)
+ *             .signature(acceptedAgreementSignature)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.accepted_agreement_display_name())
+ *             .displayName(acceptedAgreementDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

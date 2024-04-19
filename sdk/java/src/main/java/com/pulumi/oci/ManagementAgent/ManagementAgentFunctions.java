@@ -77,7 +77,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
      *             .build());
      * 
      *     }
@@ -119,7 +119,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
      *             .build());
      * 
      *     }
@@ -161,7 +161,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
      *             .build());
      * 
      *     }
@@ -203,7 +203,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .managementAgentId(testManagementAgentOciManagementAgentManagementAgent.id())
      *             .build());
      * 
      *     }
@@ -245,9 +245,9 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
-     *             .timeAvailabilityStatusEndedGreaterThan(var_.management_agent_available_history_time_availability_status_ended_greater_than())
-     *             .timeAvailabilityStatusStartedLessThan(var_.management_agent_available_history_time_availability_status_started_less_than())
+     *             .managementAgentId(testManagementAgent.id())
+     *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
+     *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
      *             .build());
      * 
      *     }
@@ -289,9 +289,9 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
-     *             .timeAvailabilityStatusEndedGreaterThan(var_.management_agent_available_history_time_availability_status_ended_greater_than())
-     *             .timeAvailabilityStatusStartedLessThan(var_.management_agent_available_history_time_availability_status_started_less_than())
+     *             .managementAgentId(testManagementAgent.id())
+     *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
+     *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
      *             .build());
      * 
      *     }
@@ -333,9 +333,9 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
-     *             .timeAvailabilityStatusEndedGreaterThan(var_.management_agent_available_history_time_availability_status_ended_greater_than())
-     *             .timeAvailabilityStatusStartedLessThan(var_.management_agent_available_history_time_availability_status_started_less_than())
+     *             .managementAgentId(testManagementAgent.id())
+     *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
+     *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
      *             .build());
      * 
      *     }
@@ -377,9 +377,9 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
-     *             .timeAvailabilityStatusEndedGreaterThan(var_.management_agent_available_history_time_availability_status_ended_greater_than())
-     *             .timeAvailabilityStatusStartedLessThan(var_.management_agent_available_history_time_availability_status_started_less_than())
+     *             .managementAgentId(testManagementAgent.id())
+     *             .timeAvailabilityStatusEndedGreaterThan(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan)
+     *             .timeAvailabilityStatusStartedLessThan(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan)
      *             .build());
      * 
      *     }
@@ -422,10 +422,10 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentCount = ManagementAgentFunctions.getManagementAgentCount(GetManagementAgentCountArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .groupBies(var_.management_agent_count_group_by())
-     *             .hasPlugins(var_.management_agent_count_has_plugins())
-     *             .installType(var_.management_agent_count_install_type())
+     *             .compartmentId(compartmentId)
+     *             .groupBies(managementAgentCountGroupBy)
+     *             .hasPlugins(managementAgentCountHasPlugins)
+     *             .installType(managementAgentCountInstallType)
      *             .build());
      * 
      *     }
@@ -468,10 +468,10 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentCount = ManagementAgentFunctions.getManagementAgentCount(GetManagementAgentCountArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .groupBies(var_.management_agent_count_group_by())
-     *             .hasPlugins(var_.management_agent_count_has_plugins())
-     *             .installType(var_.management_agent_count_install_type())
+     *             .compartmentId(compartmentId)
+     *             .groupBies(managementAgentCountGroupBy)
+     *             .hasPlugins(managementAgentCountHasPlugins)
+     *             .installType(managementAgentCountInstallType)
      *             .build());
      * 
      *     }
@@ -514,10 +514,10 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentCount = ManagementAgentFunctions.getManagementAgentCount(GetManagementAgentCountArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .groupBies(var_.management_agent_count_group_by())
-     *             .hasPlugins(var_.management_agent_count_has_plugins())
-     *             .installType(var_.management_agent_count_install_type())
+     *             .compartmentId(compartmentId)
+     *             .groupBies(managementAgentCountGroupBy)
+     *             .hasPlugins(managementAgentCountHasPlugins)
+     *             .installType(managementAgentCountInstallType)
      *             .build());
      * 
      *     }
@@ -560,10 +560,10 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentCount = ManagementAgentFunctions.getManagementAgentCount(GetManagementAgentCountArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .groupBies(var_.management_agent_count_group_by())
-     *             .hasPlugins(var_.management_agent_count_has_plugins())
-     *             .installType(var_.management_agent_count_install_type())
+     *             .compartmentId(compartmentId)
+     *             .groupBies(managementAgentCountGroupBy)
+     *             .hasPlugins(managementAgentCountHasPlugins)
+     *             .installType(managementAgentCountInstallType)
      *             .build());
      * 
      *     }
@@ -605,8 +605,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
-     *             .dataSourceKey(var_.management_agent_data_source_data_source_key())
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
+     *             .managementAgentId(testManagementAgent.id())
      *             .build());
      * 
      *     }
@@ -648,8 +648,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
-     *             .dataSourceKey(var_.management_agent_data_source_data_source_key())
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
+     *             .managementAgentId(testManagementAgent.id())
      *             .build());
      * 
      *     }
@@ -691,8 +691,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
-     *             .dataSourceKey(var_.management_agent_data_source_data_source_key())
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
+     *             .managementAgentId(testManagementAgent.id())
      *             .build());
      * 
      *     }
@@ -734,8 +734,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSource = ManagementAgentFunctions.getManagementAgentDataSource(GetManagementAgentDataSourceArgs.builder()
-     *             .dataSourceKey(var_.management_agent_data_source_data_source_key())
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .dataSourceKey(managementAgentDataSourceDataSourceKey)
+     *             .managementAgentId(testManagementAgent.id())
      *             .build());
      * 
      *     }
@@ -777,8 +777,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
-     *             .name(var_.management_agent_data_source_name())
+     *             .managementAgentId(testManagementAgent.id())
+     *             .name(managementAgentDataSourceName)
      *             .build());
      * 
      *     }
@@ -820,8 +820,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
-     *             .name(var_.management_agent_data_source_name())
+     *             .managementAgentId(testManagementAgent.id())
+     *             .name(managementAgentDataSourceName)
      *             .build());
      * 
      *     }
@@ -863,8 +863,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
-     *             .name(var_.management_agent_data_source_name())
+     *             .managementAgentId(testManagementAgent.id())
+     *             .name(managementAgentDataSourceName)
      *             .build());
      * 
      *     }
@@ -906,8 +906,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentDataSources = ManagementAgentFunctions.getManagementAgentDataSources(GetManagementAgentDataSourcesArgs.builder()
-     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
-     *             .name(var_.management_agent_data_source_name())
+     *             .managementAgentId(testManagementAgent.id())
+     *             .name(managementAgentDataSourceName)
      *             .build());
      * 
      *     }
@@ -950,7 +950,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentGetAutoUpgradableConfig = ManagementAgentFunctions.getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -993,7 +993,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentGetAutoUpgradableConfig = ManagementAgentFunctions.getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1036,7 +1036,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentGetAutoUpgradableConfig = ManagementAgentFunctions.getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1079,7 +1079,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentGetAutoUpgradableConfig = ManagementAgentFunctions.getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1121,10 +1121,10 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentImages = ManagementAgentFunctions.getManagementAgentImages(GetManagementAgentImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .installType(var_.management_agent_image_install_type())
-     *             .name(var_.management_agent_image_name())
-     *             .state(var_.management_agent_image_state())
+     *             .compartmentId(compartmentId)
+     *             .installType(managementAgentImageInstallType)
+     *             .name(managementAgentImageName)
+     *             .state(managementAgentImageState)
      *             .build());
      * 
      *     }
@@ -1166,10 +1166,10 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentImages = ManagementAgentFunctions.getManagementAgentImages(GetManagementAgentImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .installType(var_.management_agent_image_install_type())
-     *             .name(var_.management_agent_image_name())
-     *             .state(var_.management_agent_image_state())
+     *             .compartmentId(compartmentId)
+     *             .installType(managementAgentImageInstallType)
+     *             .name(managementAgentImageName)
+     *             .state(managementAgentImageState)
      *             .build());
      * 
      *     }
@@ -1211,10 +1211,10 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentImages = ManagementAgentFunctions.getManagementAgentImages(GetManagementAgentImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .installType(var_.management_agent_image_install_type())
-     *             .name(var_.management_agent_image_name())
-     *             .state(var_.management_agent_image_state())
+     *             .compartmentId(compartmentId)
+     *             .installType(managementAgentImageInstallType)
+     *             .name(managementAgentImageName)
+     *             .state(managementAgentImageState)
      *             .build());
      * 
      *     }
@@ -1256,10 +1256,10 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentImages = ManagementAgentFunctions.getManagementAgentImages(GetManagementAgentImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .installType(var_.management_agent_image_install_type())
-     *             .name(var_.management_agent_image_name())
-     *             .state(var_.management_agent_image_state())
+     *             .compartmentId(compartmentId)
+     *             .installType(managementAgentImageInstallType)
+     *             .name(managementAgentImageName)
+     *             .state(managementAgentImageState)
      *             .build());
      * 
      *     }
@@ -1301,7 +1301,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
-     *             .managementAgentInstallKeyId(oci_management_agent_management_agent_install_key.test_management_agent_install_key().id())
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
      *             .build());
      * 
      *     }
@@ -1343,7 +1343,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
-     *             .managementAgentInstallKeyId(oci_management_agent_management_agent_install_key.test_management_agent_install_key().id())
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
      *             .build());
      * 
      *     }
@@ -1385,7 +1385,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
-     *             .managementAgentInstallKeyId(oci_management_agent_management_agent_install_key.test_management_agent_install_key().id())
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
      *             .build());
      * 
      *     }
@@ -1427,7 +1427,7 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
-     *             .managementAgentInstallKeyId(oci_management_agent_management_agent_install_key.test_management_agent_install_key().id())
+     *             .managementAgentInstallKeyId(testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id())
      *             .build());
      * 
      *     }
@@ -1469,11 +1469,11 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKeys = ManagementAgentFunctions.getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.management_agent_install_key_access_level())
-     *             .compartmentIdInSubtree(var_.management_agent_install_key_compartment_id_in_subtree())
-     *             .displayName(var_.management_agent_install_key_display_name())
-     *             .state(var_.management_agent_install_key_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentInstallKeyAccessLevel)
+     *             .compartmentIdInSubtree(managementAgentInstallKeyCompartmentIdInSubtree)
+     *             .displayName(managementAgentInstallKeyDisplayName)
+     *             .state(managementAgentInstallKeyState)
      *             .build());
      * 
      *     }
@@ -1515,11 +1515,11 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKeys = ManagementAgentFunctions.getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.management_agent_install_key_access_level())
-     *             .compartmentIdInSubtree(var_.management_agent_install_key_compartment_id_in_subtree())
-     *             .displayName(var_.management_agent_install_key_display_name())
-     *             .state(var_.management_agent_install_key_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentInstallKeyAccessLevel)
+     *             .compartmentIdInSubtree(managementAgentInstallKeyCompartmentIdInSubtree)
+     *             .displayName(managementAgentInstallKeyDisplayName)
+     *             .state(managementAgentInstallKeyState)
      *             .build());
      * 
      *     }
@@ -1561,11 +1561,11 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKeys = ManagementAgentFunctions.getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.management_agent_install_key_access_level())
-     *             .compartmentIdInSubtree(var_.management_agent_install_key_compartment_id_in_subtree())
-     *             .displayName(var_.management_agent_install_key_display_name())
-     *             .state(var_.management_agent_install_key_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentInstallKeyAccessLevel)
+     *             .compartmentIdInSubtree(managementAgentInstallKeyCompartmentIdInSubtree)
+     *             .displayName(managementAgentInstallKeyDisplayName)
+     *             .state(managementAgentInstallKeyState)
      *             .build());
      * 
      *     }
@@ -1607,11 +1607,11 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentInstallKeys = ManagementAgentFunctions.getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.management_agent_install_key_access_level())
-     *             .compartmentIdInSubtree(var_.management_agent_install_key_compartment_id_in_subtree())
-     *             .displayName(var_.management_agent_install_key_display_name())
-     *             .state(var_.management_agent_install_key_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentInstallKeyAccessLevel)
+     *             .compartmentIdInSubtree(managementAgentInstallKeyCompartmentIdInSubtree)
+     *             .displayName(managementAgentInstallKeyDisplayName)
+     *             .state(managementAgentInstallKeyState)
      *             .build());
      * 
      *     }
@@ -1654,8 +1654,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentPluginCount = ManagementAgentFunctions.getManagementAgentPluginCount(GetManagementAgentPluginCountArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .groupBy(var_.management_agent_plugin_count_group_by())
+     *             .compartmentId(compartmentId)
+     *             .groupBy(managementAgentPluginCountGroupBy)
      *             .build());
      * 
      *     }
@@ -1698,8 +1698,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentPluginCount = ManagementAgentFunctions.getManagementAgentPluginCount(GetManagementAgentPluginCountArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .groupBy(var_.management_agent_plugin_count_group_by())
+     *             .compartmentId(compartmentId)
+     *             .groupBy(managementAgentPluginCountGroupBy)
      *             .build());
      * 
      *     }
@@ -1742,8 +1742,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentPluginCount = ManagementAgentFunctions.getManagementAgentPluginCount(GetManagementAgentPluginCountArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .groupBy(var_.management_agent_plugin_count_group_by())
+     *             .compartmentId(compartmentId)
+     *             .groupBy(managementAgentPluginCountGroupBy)
      *             .build());
      * 
      *     }
@@ -1786,8 +1786,8 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentPluginCount = ManagementAgentFunctions.getManagementAgentPluginCount(GetManagementAgentPluginCountArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .groupBy(var_.management_agent_plugin_count_group_by())
+     *             .compartmentId(compartmentId)
+     *             .groupBy(managementAgentPluginCountGroupBy)
      *             .build());
      * 
      *     }
@@ -1829,11 +1829,11 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentPlugins = ManagementAgentFunctions.getManagementAgentPlugins(GetManagementAgentPluginsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(var_.management_agent_id())
-     *             .displayName(var_.management_agent_plugin_display_name())
-     *             .platformTypes(var_.management_agent_plugin_platform_type())
-     *             .state(var_.management_agent_plugin_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(managementAgentId)
+     *             .displayName(managementAgentPluginDisplayName)
+     *             .platformTypes(managementAgentPluginPlatformType)
+     *             .state(managementAgentPluginState)
      *             .build());
      * 
      *     }
@@ -1875,11 +1875,11 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentPlugins = ManagementAgentFunctions.getManagementAgentPlugins(GetManagementAgentPluginsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(var_.management_agent_id())
-     *             .displayName(var_.management_agent_plugin_display_name())
-     *             .platformTypes(var_.management_agent_plugin_platform_type())
-     *             .state(var_.management_agent_plugin_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(managementAgentId)
+     *             .displayName(managementAgentPluginDisplayName)
+     *             .platformTypes(managementAgentPluginPlatformType)
+     *             .state(managementAgentPluginState)
      *             .build());
      * 
      *     }
@@ -1921,11 +1921,11 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentPlugins = ManagementAgentFunctions.getManagementAgentPlugins(GetManagementAgentPluginsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(var_.management_agent_id())
-     *             .displayName(var_.management_agent_plugin_display_name())
-     *             .platformTypes(var_.management_agent_plugin_platform_type())
-     *             .state(var_.management_agent_plugin_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(managementAgentId)
+     *             .displayName(managementAgentPluginDisplayName)
+     *             .platformTypes(managementAgentPluginPlatformType)
+     *             .state(managementAgentPluginState)
      *             .build());
      * 
      *     }
@@ -1967,11 +1967,11 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgentPlugins = ManagementAgentFunctions.getManagementAgentPlugins(GetManagementAgentPluginsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(var_.management_agent_id())
-     *             .displayName(var_.management_agent_plugin_display_name())
-     *             .platformTypes(var_.management_agent_plugin_platform_type())
-     *             .state(var_.management_agent_plugin_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(managementAgentId)
+     *             .displayName(managementAgentPluginDisplayName)
+     *             .platformTypes(managementAgentPluginPlatformType)
+     *             .state(managementAgentPluginState)
      *             .build());
      * 
      *     }
@@ -2015,22 +2015,22 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgents = ManagementAgentFunctions.getManagementAgents(GetManagementAgentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.management_agent_access_level())
-     *             .availabilityStatus(var_.management_agent_availability_status())
-     *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
-     *             .dataSourceNames(oci_management_agent_management_agent_data_source.test_management_agent_data_source().name())
-     *             .dataSourceType(var_.management_agent_data_source_type())
-     *             .displayName(var_.management_agent_display_name())
-     *             .gatewayIds(oci_apigateway_gateway.test_gateway().id())
-     *             .hostId(oci_management_agent_host.test_host().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentAccessLevel)
+     *             .availabilityStatus(managementAgentAvailabilityStatus)
+     *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
+     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceType(managementAgentDataSourceType)
+     *             .displayName(managementAgentDisplayName)
+     *             .gatewayIds(testGateway.id())
+     *             .hostId(testHost.id())
      *             .waitForHostId(10)
-     *             .installType(var_.management_agent_install_type())
-     *             .isCustomerDeployed(var_.management_agent_is_customer_deployed())
-     *             .platformTypes(var_.management_agent_platform_type())
-     *             .pluginNames(var_.management_agent_plugin_name())
-     *             .state(var_.management_agent_state())
-     *             .versions(var_.management_agent_version())
+     *             .installType(managementAgentInstallType)
+     *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
+     *             .platformTypes(managementAgentPlatformType)
+     *             .pluginNames(managementAgentPluginName)
+     *             .state(managementAgentState)
+     *             .versions(managementAgentVersion)
      *             .build());
      * 
      *     }
@@ -2074,22 +2074,22 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgents = ManagementAgentFunctions.getManagementAgents(GetManagementAgentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.management_agent_access_level())
-     *             .availabilityStatus(var_.management_agent_availability_status())
-     *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
-     *             .dataSourceNames(oci_management_agent_management_agent_data_source.test_management_agent_data_source().name())
-     *             .dataSourceType(var_.management_agent_data_source_type())
-     *             .displayName(var_.management_agent_display_name())
-     *             .gatewayIds(oci_apigateway_gateway.test_gateway().id())
-     *             .hostId(oci_management_agent_host.test_host().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentAccessLevel)
+     *             .availabilityStatus(managementAgentAvailabilityStatus)
+     *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
+     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceType(managementAgentDataSourceType)
+     *             .displayName(managementAgentDisplayName)
+     *             .gatewayIds(testGateway.id())
+     *             .hostId(testHost.id())
      *             .waitForHostId(10)
-     *             .installType(var_.management_agent_install_type())
-     *             .isCustomerDeployed(var_.management_agent_is_customer_deployed())
-     *             .platformTypes(var_.management_agent_platform_type())
-     *             .pluginNames(var_.management_agent_plugin_name())
-     *             .state(var_.management_agent_state())
-     *             .versions(var_.management_agent_version())
+     *             .installType(managementAgentInstallType)
+     *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
+     *             .platformTypes(managementAgentPlatformType)
+     *             .pluginNames(managementAgentPluginName)
+     *             .state(managementAgentState)
+     *             .versions(managementAgentVersion)
      *             .build());
      * 
      *     }
@@ -2133,22 +2133,22 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgents = ManagementAgentFunctions.getManagementAgents(GetManagementAgentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.management_agent_access_level())
-     *             .availabilityStatus(var_.management_agent_availability_status())
-     *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
-     *             .dataSourceNames(oci_management_agent_management_agent_data_source.test_management_agent_data_source().name())
-     *             .dataSourceType(var_.management_agent_data_source_type())
-     *             .displayName(var_.management_agent_display_name())
-     *             .gatewayIds(oci_apigateway_gateway.test_gateway().id())
-     *             .hostId(oci_management_agent_host.test_host().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentAccessLevel)
+     *             .availabilityStatus(managementAgentAvailabilityStatus)
+     *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
+     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceType(managementAgentDataSourceType)
+     *             .displayName(managementAgentDisplayName)
+     *             .gatewayIds(testGateway.id())
+     *             .hostId(testHost.id())
      *             .waitForHostId(10)
-     *             .installType(var_.management_agent_install_type())
-     *             .isCustomerDeployed(var_.management_agent_is_customer_deployed())
-     *             .platformTypes(var_.management_agent_platform_type())
-     *             .pluginNames(var_.management_agent_plugin_name())
-     *             .state(var_.management_agent_state())
-     *             .versions(var_.management_agent_version())
+     *             .installType(managementAgentInstallType)
+     *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
+     *             .platformTypes(managementAgentPlatformType)
+     *             .pluginNames(managementAgentPluginName)
+     *             .state(managementAgentState)
+     *             .versions(managementAgentVersion)
      *             .build());
      * 
      *     }
@@ -2192,22 +2192,22 @@ public final class ManagementAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAgents = ManagementAgentFunctions.getManagementAgents(GetManagementAgentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.management_agent_access_level())
-     *             .availabilityStatus(var_.management_agent_availability_status())
-     *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
-     *             .dataSourceNames(oci_management_agent_management_agent_data_source.test_management_agent_data_source().name())
-     *             .dataSourceType(var_.management_agent_data_source_type())
-     *             .displayName(var_.management_agent_display_name())
-     *             .gatewayIds(oci_apigateway_gateway.test_gateway().id())
-     *             .hostId(oci_management_agent_host.test_host().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(managementAgentAccessLevel)
+     *             .availabilityStatus(managementAgentAvailabilityStatus)
+     *             .compartmentIdInSubtree(managementAgentCompartmentIdInSubtree)
+     *             .dataSourceNames(testManagementAgentDataSource.name())
+     *             .dataSourceType(managementAgentDataSourceType)
+     *             .displayName(managementAgentDisplayName)
+     *             .gatewayIds(testGateway.id())
+     *             .hostId(testHost.id())
      *             .waitForHostId(10)
-     *             .installType(var_.management_agent_install_type())
-     *             .isCustomerDeployed(var_.management_agent_is_customer_deployed())
-     *             .platformTypes(var_.management_agent_platform_type())
-     *             .pluginNames(var_.management_agent_plugin_name())
-     *             .state(var_.management_agent_state())
-     *             .versions(var_.management_agent_version())
+     *             .installType(managementAgentInstallType)
+     *             .isCustomerDeployed(managementAgentIsCustomerDeployed)
+     *             .platformTypes(managementAgentPlatformType)
+     *             .pluginNames(managementAgentPluginName)
+     *             .state(managementAgentState)
+     *             .versions(managementAgentVersion)
      *             .build());
      * 
      *     }

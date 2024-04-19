@@ -33,24 +33,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewProfile(ctx, "testProfile", &OsManagementHub.ProfileArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Profile_display_name),
-//				ProfileType:   pulumi.Any(_var.Profile_profile_type),
-//				ArchType:      pulumi.Any(_var.Profile_arch_type),
+//			_, err := OsManagementHub.NewProfile(ctx, "test_profile", &OsManagementHub.ProfileArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(profileDisplayName),
+//				ProfileType:   pulumi.Any(profileProfileType),
+//				ArchType:      pulumi.Any(profileArchType),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Profile_description),
+//				Description: pulumi.Any(profileDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				LifecycleStageId:       pulumi.Any(oci_os_management_hub_lifecycle_stage.Test_lifecycle_stage.Id),
-//				ManagedInstanceGroupId: pulumi.Any(oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id),
-//				ManagementStationId:    pulumi.Any(oci_os_management_hub_management_station.Test_management_station.Id),
-//				OsFamily:               pulumi.Any(_var.Profile_os_family),
-//				SoftwareSourceIds:      pulumi.Any(_var.Profile_software_source_ids),
-//				VendorName:             pulumi.Any(_var.Profile_vendor_name),
+//				LifecycleStageId:       pulumi.Any(testLifecycleStage.Id),
+//				ManagedInstanceGroupId: pulumi.Any(testManagedInstanceGroup.Id),
+//				ManagementStationId:    pulumi.Any(testManagementStation.Id),
+//				OsFamily:               pulumi.Any(profileOsFamily),
+//				SoftwareSourceIds:      pulumi.Any(profileSoftwareSourceIds),
+//				VendorName:             pulumi.Any(profileVendorName),
 //			})
 //			if err != nil {
 //				return err

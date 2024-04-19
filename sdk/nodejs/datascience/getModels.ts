@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModels = oci.DataScience.getModels({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.model_created_by,
- *     displayName: _var.model_display_name,
- *     id: _var.model_id,
- *     modelVersionSetName: oci_datascience_model_version_set.test_model_version_set.name,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.model_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: modelCreatedBy,
+ *     displayName: modelDisplayName,
+ *     id: modelId,
+ *     modelVersionSetName: testModelVersionSet.name,
+ *     projectId: testProject.id,
+ *     state: modelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -128,13 +128,13 @@ export interface GetModelsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModels = oci.DataScience.getModels({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.model_created_by,
- *     displayName: _var.model_display_name,
- *     id: _var.model_id,
- *     modelVersionSetName: oci_datascience_model_version_set.test_model_version_set.name,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.model_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: modelCreatedBy,
+ *     displayName: modelDisplayName,
+ *     id: modelId,
+ *     modelVersionSetName: testModelVersionSet.name,
+ *     projectId: testProject.id,
+ *     state: modelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

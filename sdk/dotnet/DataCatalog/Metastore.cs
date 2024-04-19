@@ -25,16 +25,16 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMetastore = new Oci.DataCatalog.Metastore("testMetastore", new()
+    ///     var testMetastore = new Oci.DataCatalog.Metastore("test_metastore", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DefaultExternalTableLocation = @var.Metastore_default_external_table_location,
-    ///         DefaultManagedTableLocation = @var.Metastore_default_managed_table_location,
+    ///         CompartmentId = compartmentId,
+    ///         DefaultExternalTableLocation = metastoreDefaultExternalTableLocation,
+    ///         DefaultManagedTableLocation = metastoreDefaultManagedTableLocation,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Metastore_display_name,
+    ///         DisplayName = metastoreDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

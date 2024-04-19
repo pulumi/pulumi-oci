@@ -34,19 +34,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Oda.NewOdaInstance(ctx, "testOdaInstance", &Oda.OdaInstanceArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Oda.NewOdaInstance(ctx, "test_oda_instance", &Oda.OdaInstanceArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				ShapeName:     pulumi.String("DEVELOPMENT"),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Oda_instance_description),
-//				DisplayName: pulumi.Any(_var.Oda_instance_display_name),
+//				Description: pulumi.Any(odaInstanceDescription),
+//				DisplayName: pulumi.Any(odaInstanceDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IdentityDomain:    pulumi.Any(_var.Oda_instance_identity_domain),
-//				IsRoleBasedAccess: pulumi.Any(_var.Oda_instance_is_role_based_access),
+//				IdentityDomain:    pulumi.Any(odaInstanceIdentityDomain),
+//				IsRoleBasedAccess: pulumi.Any(odaInstanceIsRoleBasedAccess),
 //			})
 //			if err != nil {
 //				return err

@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetCloudExadataInfrastructures(ctx, &database.GetCloudExadataInfrastructuresArgs{
-//				CompartmentId:           _var.Compartment_id,
-//				ClusterPlacementGroupId: pulumi.StringRef(_var.Cloud_exadata_infrastructure_cluster_placement_group_id),
-//				DisplayName:             pulumi.StringRef(_var.Cloud_exadata_infrastructure_display_name),
-//				State:                   pulumi.StringRef(_var.Cloud_exadata_infrastructure_state),
+//				CompartmentId:           compartmentId,
+//				ClusterPlacementGroupId: pulumi.StringRef(cloudExadataInfrastructureClusterPlacementGroupId),
+//				DisplayName:             pulumi.StringRef(cloudExadataInfrastructureDisplayName),
+//				State:                   pulumi.StringRef(cloudExadataInfrastructureState),
 //			}, nil)
 //			if err != nil {
 //				return err

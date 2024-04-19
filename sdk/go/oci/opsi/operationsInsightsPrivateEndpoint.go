@@ -32,20 +32,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewOperationsInsightsPrivateEndpoint(ctx, "testOperationsInsightsPrivateEndpoint", &Opsi.OperationsInsightsPrivateEndpointArgs{
-//				CompartmentId:   pulumi.Any(_var.Compartment_id),
-//				DisplayName:     pulumi.Any(_var.Operations_insights_private_endpoint_display_name),
-//				IsUsedForRacDbs: pulumi.Any(_var.Operations_insights_private_endpoint_is_used_for_rac_dbs),
-//				SubnetId:        pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				VcnId:           pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//			_, err := Opsi.NewOperationsInsightsPrivateEndpoint(ctx, "test_operations_insights_private_endpoint", &Opsi.OperationsInsightsPrivateEndpointArgs{
+//				CompartmentId:   pulumi.Any(compartmentId),
+//				DisplayName:     pulumi.Any(operationsInsightsPrivateEndpointDisplayName),
+//				IsUsedForRacDbs: pulumi.Any(operationsInsightsPrivateEndpointIsUsedForRacDbs),
+//				SubnetId:        pulumi.Any(testSubnet.Id),
+//				VcnId:           pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Operations_insights_private_endpoint_description),
+//				Description: pulumi.Any(operationsInsightsPrivateEndpointDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				NsgIds: pulumi.Any(_var.Operations_insights_private_endpoint_nsg_ids),
+//				NsgIds: pulumi.Any(operationsInsightsPrivateEndpointNsgIds),
 //			})
 //			if err != nil {
 //				return err

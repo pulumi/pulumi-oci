@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIngressGatewayRouteTable = oci.ServiceMesh.getIngressGatewayRouteTable({
- *     ingressGatewayRouteTableId: oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table.id,
+ *     ingressGatewayRouteTableId: testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,7 +117,7 @@ export interface GetIngressGatewayRouteTableResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIngressGatewayRouteTable = oci.ServiceMesh.getIngressGatewayRouteTable({
- *     ingressGatewayRouteTableId: oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table.id,
+ *     ingressGatewayRouteTableId: testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

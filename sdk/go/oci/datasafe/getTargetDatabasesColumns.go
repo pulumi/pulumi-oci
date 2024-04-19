@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetTargetDatabasesColumns(ctx, &datasafe.GetTargetDatabasesColumnsArgs{
-//				TargetDatabaseId:   oci_data_safe_target_database.Test_target_database.Id,
-//				ColumnNames:        _var.Target_databases_column_column_name,
-//				ColumnNameContains: pulumi.StringRef(_var.Target_databases_column_column_name_contains),
-//				Datatypes:          _var.Target_databases_column_datatype,
-//				SchemaNames:        _var.Target_databases_column_schema_name,
-//				SchemaNameContains: pulumi.StringRef(_var.Target_databases_column_schema_name_contains),
-//				TableNames:         oci_nosql_table.Test_table.Name,
-//				TableNameContains:  pulumi.StringRef(_var.Target_databases_column_table_name_contains),
+//				TargetDatabaseId:   testTargetDatabase.Id,
+//				ColumnNames:        targetDatabasesColumnColumnName,
+//				ColumnNameContains: pulumi.StringRef(targetDatabasesColumnColumnNameContains),
+//				Datatypes:          targetDatabasesColumnDatatype,
+//				SchemaNames:        targetDatabasesColumnSchemaName,
+//				SchemaNameContains: pulumi.StringRef(targetDatabasesColumnSchemaNameContains),
+//				TableNames:         testTable.Name,
+//				TableNameContains:  pulumi.StringRef(targetDatabasesColumnTableNameContains),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -38,20 +38,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ObjectStorage.NewStorageObject(ctx, "testObject", &ObjectStorage.StorageObjectArgs{
-//				Bucket:                  pulumi.Any(_var.Object_bucket),
-//				Content:                 pulumi.Any(_var.Object_content),
-//				Namespace:               pulumi.Any(_var.Object_namespace),
-//				Object:                  pulumi.Any(_var.Object_object),
-//				CacheControl:            pulumi.Any(_var.Object_cache_control),
-//				ContentDisposition:      pulumi.Any(_var.Object_content_disposition),
-//				ContentEncoding:         pulumi.Any(_var.Object_content_encoding),
-//				ContentLanguage:         pulumi.Any(_var.Object_content_language),
-//				ContentType:             pulumi.Any(_var.Object_content_type),
-//				DeleteAllObjectVersions: pulumi.Any(_var.Object_delete_all_object_versions),
-//				Metadata:                pulumi.Any(_var.Object_metadata),
-//				StorageTier:             pulumi.Any(_var.Object_storage_tier),
-//				OpcSseKmsKeyId:          pulumi.Any(_var.Object_opc_sse_kms_key_id),
+//			_, err := ObjectStorage.NewStorageObject(ctx, "test_object", &ObjectStorage.StorageObjectArgs{
+//				Bucket:                  pulumi.Any(objectBucket),
+//				Content:                 pulumi.Any(objectContent),
+//				Namespace:               pulumi.Any(objectNamespace),
+//				Object:                  pulumi.Any(objectObject),
+//				CacheControl:            pulumi.Any(objectCacheControl),
+//				ContentDisposition:      pulumi.Any(objectContentDisposition),
+//				ContentEncoding:         pulumi.Any(objectContentEncoding),
+//				ContentLanguage:         pulumi.Any(objectContentLanguage),
+//				ContentType:             pulumi.Any(objectContentType),
+//				DeleteAllObjectVersions: pulumi.Any(objectDeleteAllObjectVersions),
+//				Metadata:                pulumi.Any(objectMetadata),
+//				StorageTier:             pulumi.Any(objectStorageTier),
+//				OpcSseKmsKeyId:          pulumi.Any(objectOpcSseKmsKeyId),
 //			})
 //			if err != nil {
 //				return err

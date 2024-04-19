@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSummarizeResourceInventory = oci.Jms.getSummarizeResourceInventory({
- *     compartmentId: _var.compartment_id,
- *     timeEnd: _var.summarize_resource_inventory_time_end,
- *     timeStart: _var.summarize_resource_inventory_time_start,
+ *     compartmentId: compartmentId,
+ *     timeEnd: summarizeResourceInventoryTimeEnd,
+ *     timeStart: summarizeResourceInventoryTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -98,9 +98,9 @@ export interface GetSummarizeResourceInventoryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSummarizeResourceInventory = oci.Jms.getSummarizeResourceInventory({
- *     compartmentId: _var.compartment_id,
- *     timeEnd: _var.summarize_resource_inventory_time_end,
- *     timeStart: _var.summarize_resource_inventory_time_start,
+ *     compartmentId: compartmentId,
+ *     timeEnd: summarizeResourceInventoryTimeEnd,
+ *     timeStart: summarizeResourceInventoryTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

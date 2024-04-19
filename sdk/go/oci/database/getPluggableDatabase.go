@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetPluggableDatabase(ctx, &database.GetPluggableDatabaseArgs{
-//				PluggableDatabaseId: oci_database_pluggable_database.Test_pluggable_database.Id,
+//				PluggableDatabaseId: testPluggableDatabaseOciDatabasePluggableDatabase.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

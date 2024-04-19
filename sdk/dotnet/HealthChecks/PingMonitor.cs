@@ -27,13 +27,13 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPingMonitor = new Oci.HealthChecks.PingMonitor("testPingMonitor", new()
+    ///     var testPingMonitor = new Oci.HealthChecks.PingMonitor("test_ping_monitor", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Ping_monitor_display_name,
-    ///         IntervalInSeconds = @var.Ping_monitor_interval_in_seconds,
-    ///         Protocol = @var.Ping_monitor_protocol,
-    ///         Targets = @var.Ping_monitor_targets,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = pingMonitorDisplayName,
+    ///         IntervalInSeconds = pingMonitorIntervalInSeconds,
+    ///         Protocol = pingMonitorProtocol,
+    ///         Targets = pingMonitorTargets,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -42,10 +42,10 @@ namespace Pulumi.Oci.HealthChecks
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsEnabled = @var.Ping_monitor_is_enabled,
-    ///         Port = @var.Ping_monitor_port,
-    ///         TimeoutInSeconds = @var.Ping_monitor_timeout_in_seconds,
-    ///         VantagePointNames = @var.Ping_monitor_vantage_point_names,
+    ///         IsEnabled = pingMonitorIsEnabled,
+    ///         Port = pingMonitorPort,
+    ///         TimeoutInSeconds = pingMonitorTimeoutInSeconds,
+    ///         VantagePointNames = pingMonitorVantagePointNames,
     ///     });
     /// 
     /// });

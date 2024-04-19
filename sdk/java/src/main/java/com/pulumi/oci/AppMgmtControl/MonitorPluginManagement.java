@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMonitorPluginManagement = new MonitorPluginManagement(&#34;testMonitorPluginManagement&#34;, MonitorPluginManagementArgs.builder()        
- *             .monitoredInstanceId(oci_appmgmt_control_monitored_instance.test_monitored_instance().id())
+ *             .monitoredInstanceId(testMonitoredInstance.id())
  *             .build());
  * 
  *     }

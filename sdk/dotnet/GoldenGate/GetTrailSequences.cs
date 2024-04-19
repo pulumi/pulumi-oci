@@ -30,10 +30,10 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testTrailSequences = Oci.GoldenGate.GetTrailSequences.Invoke(new()
         ///     {
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         TrailFileId = oci_golden_gate_trail_file.Test_trail_file.Id,
-        ///         DisplayName = @var.Trail_sequence_display_name,
-        ///         TrailSequenceId = oci_golden_gate_trail_sequence.Test_trail_sequence.Id,
+        ///         DeploymentId = testDeployment.Id,
+        ///         TrailFileId = testTrailFile.Id,
+        ///         DisplayName = trailSequenceDisplayName,
+        ///         TrailSequenceId = testTrailSequence.Id,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testTrailSequences = Oci.GoldenGate.GetTrailSequences.Invoke(new()
         ///     {
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         TrailFileId = oci_golden_gate_trail_file.Test_trail_file.Id,
-        ///         DisplayName = @var.Trail_sequence_display_name,
-        ///         TrailSequenceId = oci_golden_gate_trail_sequence.Test_trail_sequence.Id,
+        ///         DeploymentId = testDeployment.Id,
+        ///         TrailFileId = testTrailFile.Id,
+        ///         DisplayName = trailSequenceDisplayName,
+        ///         TrailSequenceId = testTrailSequence.Id,
         ///     });
         /// 
         /// });

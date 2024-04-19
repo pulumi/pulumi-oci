@@ -491,26 +491,26 @@ class VolumeGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_group = oci.core.VolumeGroup("testVolumeGroup",
-            availability_domain=var["volume_group_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_volume_group = oci.core.VolumeGroup("test_volume_group",
+            availability_domain=volume_group_availability_domain,
+            compartment_id=compartment_id,
             source_details=oci.core.VolumeGroupSourceDetailsArgs(
                 type="volumeIds",
-                volume_ids=[var["volume_group_source_id"]],
+                volume_ids=[volume_group_source_id],
             ),
-            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
+            backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["volume_group_display_name"],
+            display_name=volume_group_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             volume_group_replicas=[oci.core.VolumeGroupVolumeGroupReplicaArgs(
-                availability_domain=var["volume_group_volume_group_replicas_availability_domain"],
-                display_name=var["volume_group_volume_group_replicas_display_name"],
+                availability_domain=volume_group_volume_group_replicas_availability_domain,
+                display_name=volume_group_volume_group_replicas_display_name,
             )],
-            volume_ids=[var["volume_group_source_id"]])
+            volume_ids=[volume_group_source_id])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -551,26 +551,26 @@ class VolumeGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_group = oci.core.VolumeGroup("testVolumeGroup",
-            availability_domain=var["volume_group_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_volume_group = oci.core.VolumeGroup("test_volume_group",
+            availability_domain=volume_group_availability_domain,
+            compartment_id=compartment_id,
             source_details=oci.core.VolumeGroupSourceDetailsArgs(
                 type="volumeIds",
-                volume_ids=[var["volume_group_source_id"]],
+                volume_ids=[volume_group_source_id],
             ),
-            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
+            backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["volume_group_display_name"],
+            display_name=volume_group_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             volume_group_replicas=[oci.core.VolumeGroupVolumeGroupReplicaArgs(
-                availability_domain=var["volume_group_volume_group_replicas_availability_domain"],
-                display_name=var["volume_group_volume_group_replicas_display_name"],
+                availability_domain=volume_group_volume_group_replicas_availability_domain,
+                display_name=volume_group_volume_group_replicas_display_name,
             )],
-            volume_ids=[var["volume_group_source_id"]])
+            volume_ids=[volume_group_source_id])
         ```
         <!--End PulumiCodeChooser -->
 

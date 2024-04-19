@@ -210,14 +210,14 @@ def get_domains_identity_providers(attribute_sets: Optional[Sequence[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_providers = oci.Identity.get_domains_identity_providers(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_provider_count=var["identity_provider_identity_provider_count"],
-        identity_provider_filter=var["identity_provider_identity_provider_filter"],
+    test_identity_providers = oci.Identity.get_domains_identity_providers(idcs_endpoint=test_domain["url"],
+        identity_provider_count=identity_provider_identity_provider_count,
+        identity_provider_filter=identity_provider_identity_provider_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["identity_provider_authorization"],
-        resource_type_schema_version=var["identity_provider_resource_type_schema_version"],
-        start_index=var["identity_provider_start_index"])
+        authorization=identity_provider_authorization,
+        resource_type_schema_version=identity_provider_resource_type_schema_version,
+        start_index=identity_provider_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_identity_providers_output(attribute_sets: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_providers = oci.Identity.get_domains_identity_providers(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_provider_count=var["identity_provider_identity_provider_count"],
-        identity_provider_filter=var["identity_provider_identity_provider_filter"],
+    test_identity_providers = oci.Identity.get_domains_identity_providers(idcs_endpoint=test_domain["url"],
+        identity_provider_count=identity_provider_identity_provider_count,
+        identity_provider_filter=identity_provider_identity_provider_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["identity_provider_authorization"],
-        resource_type_schema_version=var["identity_provider_resource_type_schema_version"],
-        start_index=var["identity_provider_start_index"])
+        authorization=identity_provider_authorization,
+        resource_type_schema_version=identity_provider_resource_type_schema_version,
+        start_index=identity_provider_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

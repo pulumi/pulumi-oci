@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRecommendations = oci.Optimizer.getRecommendations({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.recommendation_compartment_id_in_subtree,
- *     categoryId: oci_optimizer_category.test_category.id,
- *     categoryName: oci_optimizer_category.test_category.name,
- *     childTenancyIds: _var.recommendation_child_tenancy_ids,
- *     includeOrganization: _var.recommendation_include_organization,
- *     name: _var.recommendation_name,
- *     state: _var.recommendation_state,
- *     status: _var.recommendation_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree,
+ *     categoryId: testCategory.id,
+ *     categoryName: testCategory.name,
+ *     childTenancyIds: recommendationChildTenancyIds,
+ *     includeOrganization: recommendationIncludeOrganization,
+ *     name: recommendationName,
+ *     state: recommendationState,
+ *     status: recommendationStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -155,15 +155,15 @@ export interface GetRecommendationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRecommendations = oci.Optimizer.getRecommendations({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.recommendation_compartment_id_in_subtree,
- *     categoryId: oci_optimizer_category.test_category.id,
- *     categoryName: oci_optimizer_category.test_category.name,
- *     childTenancyIds: _var.recommendation_child_tenancy_ids,
- *     includeOrganization: _var.recommendation_include_organization,
- *     name: _var.recommendation_name,
- *     state: _var.recommendation_state,
- *     status: _var.recommendation_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree,
+ *     categoryId: testCategory.id,
+ *     categoryName: testCategory.name,
+ *     childTenancyIds: recommendationChildTenancyIds,
+ *     includeOrganization: recommendationIncludeOrganization,
+ *     name: recommendationName,
+ *     state: recommendationState,
+ *     status: recommendationStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -121,10 +121,10 @@ def get_projects(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DevOps.get_projects(compartment_id=var["compartment_id"],
-        id=var["project_id"],
-        name=var["project_name"],
-        state=var["project_state"])
+    test_projects = oci.DevOps.get_projects(compartment_id=compartment_id,
+        id=project_id,
+        name=project_name,
+        state=project_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_projects_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.DevOps.get_projects(compartment_id=var["compartment_id"],
-        id=var["project_id"],
-        name=var["project_name"],
-        state=var["project_state"])
+    test_projects = oci.DevOps.get_projects(compartment_id=compartment_id,
+        id=project_id,
+        name=project_name,
+        state=project_state)
     ```
     <!--End PulumiCodeChooser -->
 

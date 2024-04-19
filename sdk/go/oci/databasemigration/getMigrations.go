@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseMigration.GetMigrations(ctx, &databasemigration.GetMigrationsArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				DisplayName:      pulumi.StringRef(_var.Migration_display_name),
-//				LifecycleDetails: pulumi.StringRef(_var.Migration_lifecycle_details),
-//				State:            pulumi.StringRef(_var.Migration_state),
+//				CompartmentId:    compartmentId,
+//				DisplayName:      pulumi.StringRef(migrationDisplayName),
+//				LifecycleDetails: pulumi.StringRef(migrationLifecycleDetails),
+//				State:            pulumi.StringRef(migrationState),
 //			}, nil)
 //			if err != nil {
 //				return err

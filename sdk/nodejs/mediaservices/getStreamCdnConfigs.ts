@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamCdnConfigs = oci.MediaServices.getStreamCdnConfigs({
- *     distributionChannelId: oci_mysql_channel.test_channel.id,
- *     displayName: _var.stream_cdn_config_display_name,
- *     id: _var.stream_cdn_config_id,
- *     state: _var.stream_cdn_config_state,
+ *     distributionChannelId: testChannel.id,
+ *     displayName: streamCdnConfigDisplayName,
+ *     id: streamCdnConfigId,
+ *     state: streamCdnConfigState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetStreamCdnConfigsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamCdnConfigs = oci.MediaServices.getStreamCdnConfigs({
- *     distributionChannelId: oci_mysql_channel.test_channel.id,
- *     displayName: _var.stream_cdn_config_display_name,
- *     id: _var.stream_cdn_config_id,
- *     state: _var.stream_cdn_config_state,
+ *     distributionChannelId: testChannel.id,
+ *     displayName: streamCdnConfigDisplayName,
+ *     id: streamCdnConfigId,
+ *     state: streamCdnConfigState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

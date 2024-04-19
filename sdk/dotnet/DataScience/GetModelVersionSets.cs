@@ -29,12 +29,12 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testModelVersionSets = Oci.DataScience.GetModelVersionSets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Model_version_set_created_by,
-        ///         Id = @var.Model_version_set_id,
-        ///         Name = @var.Model_version_set_name,
-        ///         ProjectId = oci_datascience_project.Test_project.Id,
-        ///         State = @var.Model_version_set_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = modelVersionSetCreatedBy,
+        ///         Id = modelVersionSetId,
+        ///         Name = modelVersionSetName,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelVersionSetState,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testModelVersionSets = Oci.DataScience.GetModelVersionSets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Model_version_set_created_by,
-        ///         Id = @var.Model_version_set_id,
-        ///         Name = @var.Model_version_set_name,
-        ///         ProjectId = oci_datascience_project.Test_project.Id,
-        ///         State = @var.Model_version_set_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = modelVersionSetCreatedBy,
+        ///         Id = modelVersionSetId,
+        ///         Name = modelVersionSetName,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelVersionSetState,
         ///     });
         /// 
         /// });

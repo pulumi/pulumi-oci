@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testSenders = Oci.Email.GetSenders.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Domain = @var.Sender_domain,
-        ///         EmailAddress = @var.Sender_email_address,
-        ///         State = @var.Sender_state,
+        ///         CompartmentId = compartmentId,
+        ///         Domain = senderDomain,
+        ///         EmailAddress = senderEmailAddress,
+        ///         State = senderState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testSenders = Oci.Email.GetSenders.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Domain = @var.Sender_domain,
-        ///         EmailAddress = @var.Sender_email_address,
-        ///         State = @var.Sender_state,
+        ///         CompartmentId = compartmentId,
+        ///         Domain = senderDomain,
+        ///         EmailAddress = senderEmailAddress,
+        ///         State = senderState,
         ///     });
         /// 
         /// });

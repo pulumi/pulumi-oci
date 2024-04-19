@@ -25,28 +25,28 @@ namespace Pulumi.Oci.Budget
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBudget = new Oci.Budget.Budget("testBudget", new()
+    ///     var testBudget = new Oci.Budget.Budget("test_budget", new()
     ///     {
-    ///         Amount = @var.Budget_amount,
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         ResetPeriod = @var.Budget_reset_period,
-    ///         BudgetProcessingPeriodStartOffset = @var.Budget_budget_processing_period_start_offset,
+    ///         Amount = budgetAmount,
+    ///         CompartmentId = tenancyOcid,
+    ///         ResetPeriod = budgetResetPeriod,
+    ///         BudgetProcessingPeriodStartOffset = budgetBudgetProcessingPeriodStartOffset,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Budget_description,
-    ///         DisplayName = @var.Budget_display_name,
-    ///         EndDate = @var.Budget_end_date,
+    ///         Description = budgetDescription,
+    ///         DisplayName = budgetDisplayName,
+    ///         EndDate = budgetEndDate,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         ProcessingPeriodType = @var.Budget_processing_period_type,
-    ///         StartDate = @var.Budget_start_date,
-    ///         TargetCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         TargetType = @var.Budget_target_type,
-    ///         Targets = @var.Budget_targets,
+    ///         ProcessingPeriodType = budgetProcessingPeriodType,
+    ///         StartDate = budgetStartDate,
+    ///         TargetCompartmentId = testCompartment.Id,
+    ///         TargetType = budgetTargetType,
+    ///         Targets = budgetTargets,
     ///     });
     /// 
     /// });

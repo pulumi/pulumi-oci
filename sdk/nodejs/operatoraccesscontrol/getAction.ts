@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOperatorAction = oci.OperatorAccessControl.getAction({
- *     operatorActionId: oci_operator_access_control_operator_action.test_operator_action.id,
+ *     operatorActionId: testOperatorActionOciOperatorAccessControlOperatorAction.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,7 +89,7 @@ export interface GetActionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOperatorAction = oci.OperatorAccessControl.getAction({
- *     operatorActionId: oci_operator_access_control_operator_action.test_operator_action.id,
+ *     operatorActionId: testOperatorActionOciOperatorAccessControlOperatorAction.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

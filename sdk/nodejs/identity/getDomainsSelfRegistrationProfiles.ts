@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSelfRegistrationProfiles = oci.Identity.getDomainsSelfRegistrationProfiles({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     selfRegistrationProfileCount: _var.self_registration_profile_self_registration_profile_count,
- *     selfRegistrationProfileFilter: _var.self_registration_profile_self_registration_profile_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     selfRegistrationProfileCount: selfRegistrationProfileSelfRegistrationProfileCount,
+ *     selfRegistrationProfileFilter: selfRegistrationProfileSelfRegistrationProfileFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.self_registration_profile_authorization,
- *     resourceTypeSchemaVersion: _var.self_registration_profile_resource_type_schema_version,
- *     startIndex: _var.self_registration_profile_start_index,
+ *     authorization: selfRegistrationProfileAuthorization,
+ *     resourceTypeSchemaVersion: selfRegistrationProfileResourceTypeSchemaVersion,
+ *     startIndex: selfRegistrationProfileStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsSelfRegistrationProfilesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSelfRegistrationProfiles = oci.Identity.getDomainsSelfRegistrationProfiles({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     selfRegistrationProfileCount: _var.self_registration_profile_self_registration_profile_count,
- *     selfRegistrationProfileFilter: _var.self_registration_profile_self_registration_profile_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     selfRegistrationProfileCount: selfRegistrationProfileSelfRegistrationProfileCount,
+ *     selfRegistrationProfileFilter: selfRegistrationProfileSelfRegistrationProfileFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.self_registration_profile_authorization,
- *     resourceTypeSchemaVersion: _var.self_registration_profile_resource_type_schema_version,
- *     startIndex: _var.self_registration_profile_start_index,
+ *     authorization: selfRegistrationProfileAuthorization,
+ *     resourceTypeSchemaVersion: selfRegistrationProfileResourceTypeSchemaVersion,
+ *     startIndex: selfRegistrationProfileStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

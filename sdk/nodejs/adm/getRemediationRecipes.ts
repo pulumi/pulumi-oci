@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRemediationRecipes = oci.Adm.getRemediationRecipes({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.remediation_recipe_display_name,
- *     id: _var.remediation_recipe_id,
- *     state: _var.remediation_recipe_state,
+ *     compartmentId: compartmentId,
+ *     displayName: remediationRecipeDisplayName,
+ *     id: remediationRecipeId,
+ *     state: remediationRecipeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -104,10 +104,10 @@ export interface GetRemediationRecipesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRemediationRecipes = oci.Adm.getRemediationRecipes({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.remediation_recipe_display_name,
- *     id: _var.remediation_recipe_id,
- *     state: _var.remediation_recipe_state,
+ *     compartmentId: compartmentId,
+ *     displayName: remediationRecipeDisplayName,
+ *     id: remediationRecipeId,
+ *     state: remediationRecipeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

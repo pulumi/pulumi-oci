@@ -32,18 +32,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewPrivateIp(ctx, "testPrivateIp", &Core.PrivateIpArgs{
+//			_, err := Core.NewPrivateIp(ctx, "test_private_ip", &Core.PrivateIpArgs{
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Private_ip_display_name),
+//				DisplayName: pulumi.Any(privateIpDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				HostnameLabel: pulumi.Any(_var.Private_ip_hostname_label),
-//				IpAddress:     pulumi.Any(_var.Private_ip_ip_address),
-//				VlanId:        pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//				VnicId:        pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Vnic_id),
+//				HostnameLabel: pulumi.Any(privateIpHostnameLabel),
+//				IpAddress:     pulumi.Any(privateIpIpAddress),
+//				VlanId:        pulumi.Any(testVlan.Id),
+//				VnicId:        pulumi.Any(testVnicAttachment.VnicId),
 //			})
 //			if err != nil {
 //				return err

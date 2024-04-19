@@ -47,30 +47,30 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewMaskingPolicy(ctx, "testMaskingPolicy", &DataSafe.MaskingPolicyArgs{
+//			_, err := DataSafe.NewMaskingPolicy(ctx, "test_masking_policy", &DataSafe.MaskingPolicyArgs{
 //				ColumnSources: datasafe.MaskingPolicyColumnSourceArray{
 //					&datasafe.MaskingPolicyColumnSourceArgs{
-//						ColumnSource:         pulumi.Any(_var.Masking_policy_column_source_column_source),
-//						SensitiveDataModelId: pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-//						TargetId:             pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//						ColumnSource:         pulumi.Any(maskingPolicyColumnSourceColumnSource),
+//						SensitiveDataModelId: pulumi.Any(testSensitiveDataModel.Id),
+//						TargetId:             pulumi.Any(testTarget.Id),
 //					},
 //				},
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Masking_policy_description),
-//				DisplayName: pulumi.Any(_var.Masking_policy_display_name),
+//				Description: pulumi.Any(maskingPolicyDescription),
+//				DisplayName: pulumi.Any(maskingPolicyDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsDropTempTablesEnabled: pulumi.Any(_var.Masking_policy_is_drop_temp_tables_enabled),
-//				IsRedoLoggingEnabled:    pulumi.Any(_var.Masking_policy_is_redo_logging_enabled),
-//				IsRefreshStatsEnabled:   pulumi.Any(_var.Masking_policy_is_refresh_stats_enabled),
-//				ParallelDegree:          pulumi.Any(_var.Masking_policy_parallel_degree),
-//				PostMaskingScript:       pulumi.Any(_var.Masking_policy_post_masking_script),
-//				PreMaskingScript:        pulumi.Any(_var.Masking_policy_pre_masking_script),
-//				Recompile:               pulumi.Any(_var.Masking_policy_recompile),
+//				IsDropTempTablesEnabled: pulumi.Any(maskingPolicyIsDropTempTablesEnabled),
+//				IsRedoLoggingEnabled:    pulumi.Any(maskingPolicyIsRedoLoggingEnabled),
+//				IsRefreshStatsEnabled:   pulumi.Any(maskingPolicyIsRefreshStatsEnabled),
+//				ParallelDegree:          pulumi.Any(maskingPolicyParallelDegree),
+//				PostMaskingScript:       pulumi.Any(maskingPolicyPostMaskingScript),
+//				PreMaskingScript:        pulumi.Any(maskingPolicyPreMaskingScript),
+//				Recompile:               pulumi.Any(maskingPolicyRecompile),
 //			})
 //			if err != nil {
 //				return err

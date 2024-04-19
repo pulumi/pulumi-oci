@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityTopologyComputeNetworkBlocks = oci.Core.getComputeCapacityTopologyComputeNetworkBlocks({
- *     computeCapacityTopologyId: oci_core_compute_capacity_topology.test_compute_capacity_topology.id,
- *     availabilityDomain: _var.compute_capacity_topology_compute_network_block_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     computeHpcIslandId: oci_core_compute_hpc_island.test_compute_hpc_island.id,
+ *     computeCapacityTopologyId: testComputeCapacityTopology.id,
+ *     availabilityDomain: computeCapacityTopologyComputeNetworkBlockAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     computeHpcIslandId: testComputeHpcIsland.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,10 +99,10 @@ export interface GetComputeCapacityTopologyComputeNetworkBlocksResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityTopologyComputeNetworkBlocks = oci.Core.getComputeCapacityTopologyComputeNetworkBlocks({
- *     computeCapacityTopologyId: oci_core_compute_capacity_topology.test_compute_capacity_topology.id,
- *     availabilityDomain: _var.compute_capacity_topology_compute_network_block_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     computeHpcIslandId: oci_core_compute_hpc_island.test_compute_hpc_island.id,
+ *     computeCapacityTopologyId: testComputeCapacityTopology.id,
+ *     availabilityDomain: computeCapacityTopologyComputeNetworkBlockAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     computeHpcIslandId: testComputeHpcIsland.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

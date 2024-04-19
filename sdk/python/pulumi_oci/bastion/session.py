@@ -370,22 +370,22 @@ class Session(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_session = oci.bastion.Session("testSession",
-            bastion_id=oci_bastion_bastion["test_bastion"]["id"],
+        test_session = oci.bastion.Session("test_session",
+            bastion_id=test_bastion["id"],
             key_details=oci.bastion.SessionKeyDetailsArgs(
-                public_key_content=var["session_key_details_public_key_content"],
+                public_key_content=session_key_details_public_key_content,
             ),
             target_resource_details=oci.bastion.SessionTargetResourceDetailsArgs(
-                session_type=var["session_target_resource_details_session_type"],
-                target_resource_fqdn=var["session_target_resource_details_target_resource_fqdn"],
-                target_resource_id=oci_bastion_target_resource["test_target_resource"]["id"],
-                target_resource_operating_system_user_name=oci_identity_user["test_user"]["name"],
-                target_resource_port=var["session_target_resource_details_target_resource_port"],
-                target_resource_private_ip_address=var["session_target_resource_details_target_resource_private_ip_address"],
+                session_type=session_target_resource_details_session_type,
+                target_resource_fqdn=session_target_resource_details_target_resource_fqdn,
+                target_resource_id=test_target_resource["id"],
+                target_resource_operating_system_user_name=test_user["name"],
+                target_resource_port=session_target_resource_details_target_resource_port,
+                target_resource_private_ip_address=session_target_resource_details_target_resource_private_ip_address,
             ),
-            display_name=var["session_display_name"],
-            key_type=var["session_key_type"],
-            session_ttl_in_seconds=var["session_session_ttl_in_seconds"])
+            display_name=session_display_name,
+            key_type=session_key_type,
+            session_ttl_in_seconds=session_session_ttl_in_seconds)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -424,22 +424,22 @@ class Session(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_session = oci.bastion.Session("testSession",
-            bastion_id=oci_bastion_bastion["test_bastion"]["id"],
+        test_session = oci.bastion.Session("test_session",
+            bastion_id=test_bastion["id"],
             key_details=oci.bastion.SessionKeyDetailsArgs(
-                public_key_content=var["session_key_details_public_key_content"],
+                public_key_content=session_key_details_public_key_content,
             ),
             target_resource_details=oci.bastion.SessionTargetResourceDetailsArgs(
-                session_type=var["session_target_resource_details_session_type"],
-                target_resource_fqdn=var["session_target_resource_details_target_resource_fqdn"],
-                target_resource_id=oci_bastion_target_resource["test_target_resource"]["id"],
-                target_resource_operating_system_user_name=oci_identity_user["test_user"]["name"],
-                target_resource_port=var["session_target_resource_details_target_resource_port"],
-                target_resource_private_ip_address=var["session_target_resource_details_target_resource_private_ip_address"],
+                session_type=session_target_resource_details_session_type,
+                target_resource_fqdn=session_target_resource_details_target_resource_fqdn,
+                target_resource_id=test_target_resource["id"],
+                target_resource_operating_system_user_name=test_user["name"],
+                target_resource_port=session_target_resource_details_target_resource_port,
+                target_resource_private_ip_address=session_target_resource_details_target_resource_private_ip_address,
             ),
-            display_name=var["session_display_name"],
-            key_type=var["session_key_type"],
-            session_ttl_in_seconds=var["session_session_ttl_in_seconds"])
+            display_name=session_display_name,
+            key_type=session_key_type,
+            session_ttl_in_seconds=session_session_ttl_in_seconds)
         ```
         <!--End PulumiCodeChooser -->
 

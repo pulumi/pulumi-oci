@@ -25,14 +25,14 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDeploymentBackup = new Oci.GoldenGate.DeploymentBackup("testDeploymentBackup", new()
+    ///     var testDeploymentBackup = new Oci.GoldenGate.DeploymentBackup("test_deployment_backup", new()
     ///     {
-    ///         Bucket = @var.Deployment_backup_bucket,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-    ///         DisplayName = @var.Deployment_backup_display_name,
-    ///         Namespace = @var.Deployment_backup_namespace,
-    ///         Object = @var.Deployment_backup_object,
+    ///         Bucket = deploymentBackupBucket,
+    ///         CompartmentId = compartmentId,
+    ///         DeploymentId = testDeployment.Id,
+    ///         DisplayName = deploymentBackupDisplayName,
+    ///         Namespace = deploymentBackupNamespace,
+    ///         Object = deploymentBackupObject,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },

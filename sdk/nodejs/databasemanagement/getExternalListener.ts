@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalListener = oci.DatabaseManagement.getExternalListener({
- *     externalListenerId: oci_database_management_external_listener.test_external_listener.id,
+ *     externalListenerId: testExternalListenerOciDatabaseManagementExternalListener.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -169,7 +169,7 @@ export interface GetExternalListenerResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalListener = oci.DatabaseManagement.getExternalListener({
- *     externalListenerId: oci_database_management_external_listener.test_external_listener.id,
+ *     externalListenerId: testExternalListenerOciDatabaseManagementExternalListener.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

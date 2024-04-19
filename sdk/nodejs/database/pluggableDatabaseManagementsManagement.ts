@@ -18,19 +18,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluggableDatabasePluggabledatabasemanagementsManagement = new oci.database.PluggableDatabaseManagementsManagement("testPluggableDatabasePluggabledatabasemanagementsManagement", {
- *     pluggableDatabaseId: oci_database_pluggable_database.test_pluggable_database.id,
- *     enablePluggabledatabasemanagement: _var.enable_pluggabledatabasemanagement,
+ * const testPluggableDatabasePluggabledatabasemanagementsManagement = new oci.database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management", {
+ *     pluggableDatabaseId: testPluggableDatabase.id,
+ *     enablePluggabledatabasemanagement: enablePluggabledatabasemanagement,
  *     credentialDetails: {
- *         passwordSecretId: oci_vault_secret.test_secret.id,
- *         userName: oci_identity_user.test_user.name,
+ *         passwordSecretId: testSecret.id,
+ *         userName: testUser.name,
  *     },
- *     privateEndPointId: oci_database_private_end_point.test_private_end_point.id,
- *     serviceName: oci_core_service.test_service.name,
- *     port: _var.pluggable_database_pluggabledatabasemanagements_management_port,
- *     protocol: _var.pluggable_database_pluggabledatabasemanagements_management_protocol,
- *     role: _var.pluggable_database_pluggabledatabasemanagements_management_role,
- *     sslSecretId: oci_vault_secret.test_secret.id,
+ *     privateEndPointId: testPrivateEndPoint.id,
+ *     serviceName: testService.name,
+ *     port: pluggableDatabasePluggabledatabasemanagementsManagementPort,
+ *     protocol: pluggableDatabasePluggabledatabasemanagementsManagementProtocol,
+ *     role: pluggableDatabasePluggabledatabasemanagementsManagementRole,
+ *     sslSecretId: testSecret.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

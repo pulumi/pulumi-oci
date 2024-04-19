@@ -36,7 +36,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetAllowedDomainLicenseTypes(ctx, &identity.GetAllowedDomainLicenseTypesArgs{
-//				CurrentLicenseTypeName: pulumi.StringRef(_var.Allowed_domain_license_type_current_license_type_name),
+//				CurrentLicenseTypeName: pulumi.StringRef(allowedDomainLicenseTypeCurrentLicenseTypeName),
 //			}, nil)
 //			if err != nil {
 //				return err

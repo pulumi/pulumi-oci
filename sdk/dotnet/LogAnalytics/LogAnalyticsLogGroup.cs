@@ -25,16 +25,16 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLogAnalyticsLogGroup = new Oci.LogAnalytics.LogAnalyticsLogGroup("testLogAnalyticsLogGroup", new()
+    ///     var testLogAnalyticsLogGroup = new Oci.LogAnalytics.LogAnalyticsLogGroup("test_log_analytics_log_group", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Log_analytics_log_group_display_name,
-    ///         Namespace = @var.Log_analytics_log_group_namespace,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = logAnalyticsLogGroupDisplayName,
+    ///         Namespace = logAnalyticsLogGroupNamespace,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Log_analytics_log_group_description,
+    ///         Description = logAnalyticsLogGroupDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

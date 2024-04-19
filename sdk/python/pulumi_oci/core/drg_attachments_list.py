@@ -177,10 +177,10 @@ class DrgAttachmentsList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_attachments_list = oci.core.DrgAttachmentsList("testDrgAttachmentsList",
-            drg_id=oci_core_drg["test_drg"]["id"],
-            attachment_type=var["drg_attachments_list_attachment_type"],
-            is_cross_tenancy=var["drg_attachments_list_is_cross_tenancy"])
+        test_drg_attachments_list = oci.core.DrgAttachmentsList("test_drg_attachments_list",
+            drg_id=test_drg["id"],
+            attachment_type=drg_attachments_list_attachment_type,
+            is_cross_tenancy=drg_attachments_list_is_cross_tenancy)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -216,10 +216,10 @@ class DrgAttachmentsList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_attachments_list = oci.core.DrgAttachmentsList("testDrgAttachmentsList",
-            drg_id=oci_core_drg["test_drg"]["id"],
-            attachment_type=var["drg_attachments_list_attachment_type"],
-            is_cross_tenancy=var["drg_attachments_list_is_cross_tenancy"])
+        test_drg_attachments_list = oci.core.DrgAttachmentsList("test_drg_attachments_list",
+            drg_id=test_drg["id"],
+            attachment_type=drg_attachments_list_attachment_type,
+            is_cross_tenancy=drg_attachments_list_is_cross_tenancy)
         ```
         <!--End PulumiCodeChooser -->
 

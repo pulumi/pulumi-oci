@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetFilesystemSnapshotPolicies(ctx, &filestorage.GetFilesystemSnapshotPoliciesArgs{
-//				AvailabilityDomain: _var.Filesystem_snapshot_policy_availability_domain,
-//				CompartmentId:      _var.Compartment_id,
-//				DisplayName:        pulumi.StringRef(_var.Filesystem_snapshot_policy_display_name),
-//				Id:                 pulumi.StringRef(_var.Filesystem_snapshot_policy_id),
-//				State:              pulumi.StringRef(_var.Filesystem_snapshot_policy_state),
+//				AvailabilityDomain: filesystemSnapshotPolicyAvailabilityDomain,
+//				CompartmentId:      compartmentId,
+//				DisplayName:        pulumi.StringRef(filesystemSnapshotPolicyDisplayName),
+//				Id:                 pulumi.StringRef(filesystemSnapshotPolicyId),
+//				State:              pulumi.StringRef(filesystemSnapshotPolicyState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseSoftwareImages = oci.Database.getDatabaseSoftwareImages({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_software_image_display_name,
- *     imageShapeFamily: _var.database_software_image_image_shape_family,
- *     imageType: _var.database_software_image_image_type,
- *     isUpgradeSupported: _var.database_software_image_is_upgrade_supported,
- *     state: _var.database_software_image_state,
+ *     compartmentId: compartmentId,
+ *     displayName: databaseSoftwareImageDisplayName,
+ *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
+ *     imageType: databaseSoftwareImageImageType,
+ *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported,
+ *     state: databaseSoftwareImageState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,12 +125,12 @@ export interface GetDatabaseSoftwareImagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseSoftwareImages = oci.Database.getDatabaseSoftwareImages({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_software_image_display_name,
- *     imageShapeFamily: _var.database_software_image_image_shape_family,
- *     imageType: _var.database_software_image_image_type,
- *     isUpgradeSupported: _var.database_software_image_is_upgrade_supported,
- *     state: _var.database_software_image_state,
+ *     compartmentId: compartmentId,
+ *     displayName: databaseSoftwareImageDisplayName,
+ *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
+ *     imageType: databaseSoftwareImageImageType,
+ *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported,
+ *     state: databaseSoftwareImageState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

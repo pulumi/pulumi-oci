@@ -95,7 +95,7 @@ def get_iam_work_request_logs(filters: Optional[Sequence[pulumi.InputType['GetIa
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request_logs = oci.Identity.get_iam_work_request_logs(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
+    test_iam_work_request_logs = oci.Identity.get_iam_work_request_logs(iam_work_request_id=test_iam_work_request["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -135,7 +135,7 @@ def get_iam_work_request_logs_output(filters: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_iam_work_request_logs = oci.Identity.get_iam_work_request_logs(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
+    test_iam_work_request_logs = oci.Identity.get_iam_work_request_logs(iam_work_request_id=test_iam_work_request["id"])
     ```
     <!--End PulumiCodeChooser -->
 

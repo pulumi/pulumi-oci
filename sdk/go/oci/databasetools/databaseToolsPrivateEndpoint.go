@@ -31,28 +31,28 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseTools.NewDatabaseToolsPrivateEndpoint(ctx, "testDatabaseToolsPrivateEndpoint", &DatabaseTools.DatabaseToolsPrivateEndpointArgs{
-//				CompartmentId:     pulumi.Any(_var.Compartment_id),
-//				DisplayName:       pulumi.Any(_var.Database_tools_private_endpoint_display_name),
-//				EndpointServiceId: pulumi.Any(oci_core_service.Test_service.Id),
-//				SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//			_, err := DatabaseTools.NewDatabaseToolsPrivateEndpoint(ctx, "test_database_tools_private_endpoint", &DatabaseTools.DatabaseToolsPrivateEndpointArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				DisplayName:       pulumi.Any(databaseToolsPrivateEndpointDisplayName),
+//				EndpointServiceId: pulumi.Any(testService.Id),
+//				SubnetId:          pulumi.Any(testSubnet.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Database_tools_private_endpoint_description),
+//				Description: pulumi.Any(databaseToolsPrivateEndpointDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Locks: databasetools.DatabaseToolsPrivateEndpointLockArray{
 //					&databasetools.DatabaseToolsPrivateEndpointLockArgs{
-//						Type:              pulumi.Any(_var.Database_tools_private_endpoint_locks_type),
-//						Message:           pulumi.Any(_var.Database_tools_private_endpoint_locks_message),
-//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
-//						TimeCreated:       pulumi.Any(_var.Database_tools_private_endpoint_locks_time_created),
+//						Type:              pulumi.Any(databaseToolsPrivateEndpointLocksType),
+//						Message:           pulumi.Any(databaseToolsPrivateEndpointLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(databaseToolsPrivateEndpointLocksTimeCreated),
 //					},
 //				},
-//				NsgIds:            pulumi.Any(_var.Database_tools_private_endpoint_nsg_ids),
-//				PrivateEndpointIp: pulumi.Any(_var.Database_tools_private_endpoint_private_endpoint_ip),
+//				NsgIds:            pulumi.Any(databaseToolsPrivateEndpointNsgIds),
+//				PrivateEndpointIp: pulumi.Any(databaseToolsPrivateEndpointPrivateEndpointIp),
 //			})
 //			if err != nil {
 //				return err

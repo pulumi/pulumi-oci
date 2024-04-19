@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.GetVirtualServices(ctx, &servicemesh.GetVirtualServicesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Virtual_service_id),
-//				MeshId:        pulumi.StringRef(oci_service_mesh_mesh.Test_mesh.Id),
-//				Name:          pulumi.StringRef(_var.Virtual_service_name),
-//				State:         pulumi.StringRef(_var.Virtual_service_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(virtualServiceId),
+//				MeshId:        pulumi.StringRef(testMesh.Id),
+//				Name:          pulumi.StringRef(virtualServiceName),
+//				State:         pulumi.StringRef(virtualServiceState),
 //			}, nil)
 //			if err != nil {
 //				return err

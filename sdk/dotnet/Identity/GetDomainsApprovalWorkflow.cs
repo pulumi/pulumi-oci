@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflow = Oci.Identity.GetDomainsApprovalWorkflow.Invoke(new()
         ///     {
-        ///         ApprovalWorkflowId = oci_identity_domains_approval_workflow.Test_approval_workflow.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         ApprovalWorkflowId = testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_resource_type_schema_version,
+        ///         Authorization = approvalWorkflowAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflow = Oci.Identity.GetDomainsApprovalWorkflow.Invoke(new()
         ///     {
-        ///         ApprovalWorkflowId = oci_identity_domains_approval_workflow.Test_approval_workflow.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         ApprovalWorkflowId = testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_resource_type_schema_version,
+        ///         Authorization = approvalWorkflowAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetModelDeployments(ctx, &datascience.GetModelDeploymentsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CreatedBy:     pulumi.StringRef(_var.Model_deployment_created_by),
-//				DisplayName:   pulumi.StringRef(_var.Model_deployment_display_name),
-//				Id:            pulumi.StringRef(_var.Model_deployment_id),
-//				ProjectId:     pulumi.StringRef(oci_datascience_project.Test_project.Id),
-//				State:         pulumi.StringRef(_var.Model_deployment_state),
+//				CompartmentId: compartmentId,
+//				CreatedBy:     pulumi.StringRef(modelDeploymentCreatedBy),
+//				DisplayName:   pulumi.StringRef(modelDeploymentDisplayName),
+//				Id:            pulumi.StringRef(modelDeploymentId),
+//				ProjectId:     pulumi.StringRef(testProject.Id),
+//				State:         pulumi.StringRef(modelDeploymentState),
 //			}, nil)
 //			if err != nil {
 //				return err

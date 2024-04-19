@@ -28,20 +28,20 @@ namespace Pulumi.Oci.Oda
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOdaPrivateEndpointScanProxy = new Oci.Oda.OdaPrivateEndpointScanProxy("testOdaPrivateEndpointScanProxy", new()
+    ///     var testOdaPrivateEndpointScanProxy = new Oci.Oda.OdaPrivateEndpointScanProxy("test_oda_private_endpoint_scan_proxy", new()
     ///     {
-    ///         OdaPrivateEndpointId = oci_oda_oda_private_endpoint.Test_oda_private_endpoint.Id,
-    ///         Protocol = @var.Oda_private_endpoint_scan_proxy_protocol,
+    ///         OdaPrivateEndpointId = testOdaPrivateEndpoint.Id,
+    ///         Protocol = odaPrivateEndpointScanProxyProtocol,
     ///         ScanListenerInfos = new[]
     ///         {
     ///             new Oci.Oda.Inputs.OdaPrivateEndpointScanProxyScanListenerInfoArgs
     ///             {
-    ///                 ScanListenerFqdn = @var.Oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
-    ///                 ScanListenerIp = @var.Oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
-    ///                 ScanListenerPort = @var.Oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
+    ///                 ScanListenerFqdn = odaPrivateEndpointScanProxyScanListenerInfosScanListenerFqdn,
+    ///                 ScanListenerIp = odaPrivateEndpointScanProxyScanListenerInfosScanListenerIp,
+    ///                 ScanListenerPort = odaPrivateEndpointScanProxyScanListenerInfosScanListenerPort,
     ///             },
     ///         },
-    ///         ScanListenerType = @var.Oda_private_endpoint_scan_proxy_scan_listener_type,
+    ///         ScanListenerType = odaPrivateEndpointScanProxyScanListenerType,
     ///     });
     /// 
     /// });

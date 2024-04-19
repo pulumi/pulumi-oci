@@ -44,31 +44,31 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOutboundConnector = new Oci.FileStorage.OutboundConnector("testOutboundConnector", new()
+    ///     var testOutboundConnector = new Oci.FileStorage.OutboundConnector("test_outbound_connector", new()
     ///     {
-    ///         AvailabilityDomain = @var.Outbound_connector_availability_domain,
-    ///         BindDistinguishedName = @var.Outbound_connector_bind_distinguished_name,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ConnectorType = @var.Outbound_connector_connector_type,
+    ///         AvailabilityDomain = outboundConnectorAvailabilityDomain,
+    ///         BindDistinguishedName = outboundConnectorBindDistinguishedName,
+    ///         CompartmentId = compartmentId,
+    ///         ConnectorType = outboundConnectorConnectorType,
     ///         Endpoints = new[]
     ///         {
     ///             new Oci.FileStorage.Inputs.OutboundConnectorEndpointArgs
     ///             {
-    ///                 Hostname = @var.Outbound_connector_endpoints_hostname,
-    ///                 Port = @var.Outbound_connector_endpoints_port,
+    ///                 Hostname = outboundConnectorEndpointsHostname,
+    ///                 Port = outboundConnectorEndpointsPort,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Outbound_connector_display_name,
+    ///         DisplayName = outboundConnectorDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         PasswordSecretId = oci_vault_secret.Test_secret.Id,
-    ///         PasswordSecretVersion = @var.Outbound_connector_password_secret_version,
+    ///         PasswordSecretId = testSecret.Id,
+    ///         PasswordSecretVersion = outboundConnectorPasswordSecretVersion,
     ///     });
     /// 
     /// });

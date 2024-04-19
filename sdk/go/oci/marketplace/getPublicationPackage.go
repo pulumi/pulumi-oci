@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetPublicationPackage(ctx, &marketplace.GetPublicationPackageArgs{
-//				PackageVersion: _var.Publication_package_package_version,
-//				PublicationId:  oci_marketplace_publication.Test_publication.Id,
+//				PackageVersion: publicationPackagePackageVersion,
+//				PublicationId:  testPublication.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

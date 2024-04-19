@@ -305,13 +305,14 @@ class LogSavedSearch(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_saved_search = oci.logging.LogSavedSearch("testLogSavedSearch",
-            compartment_id=var["compartment_id"],
-            query=var["log_saved_search_query"],
+        test_log_saved_search = oci.logging.LogSavedSearch("test_log_saved_search",
+            compartment_id=compartment_id,
+            name=log_saved_search_name,
+            query=log_saved_search_query,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["log_saved_search_description"],
+            description=log_saved_search_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -357,13 +358,14 @@ class LogSavedSearch(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_saved_search = oci.logging.LogSavedSearch("testLogSavedSearch",
-            compartment_id=var["compartment_id"],
-            query=var["log_saved_search_query"],
+        test_log_saved_search = oci.logging.LogSavedSearch("test_log_saved_search",
+            compartment_id=compartment_id,
+            name=log_saved_search_name,
+            query=log_saved_search_query,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["log_saved_search_description"],
+            description=log_saved_search_description,
             freeform_tags={
                 "Department": "Finance",
             })

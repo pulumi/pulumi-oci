@@ -21,12 +21,12 @@ namespace Pulumi.Oci.Functions
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testApplication = new Oci.Functions.Application("testApplication", new()
+    ///     var testApplication = new Oci.Functions.Application("test_application", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Application_display_name,
-    ///         SubnetIds = @var.Application_subnet_ids,
-    ///         Config = @var.Application_config,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = applicationDisplayName,
+    ///         SubnetIds = applicationSubnetIds,
+    ///         Config = applicationConfig,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -35,24 +35,24 @@ namespace Pulumi.Oci.Functions
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         NetworkSecurityGroupIds = @var.Application_network_security_group_ids,
+    ///         NetworkSecurityGroupIds = applicationNetworkSecurityGroupIds,
     ///         ImagePolicyConfig = new Oci.Functions.Inputs.ApplicationImagePolicyConfigArgs
     ///         {
-    ///             IsPolicyEnabled = @var.Application_image_policy_config_is_policy_enabled,
+    ///             IsPolicyEnabled = applicationImagePolicyConfigIsPolicyEnabled,
     ///             KeyDetails = new[]
     ///             {
     ///                 new Oci.Functions.Inputs.ApplicationImagePolicyConfigKeyDetailArgs
     ///                 {
-    ///                     KmsKeyId = oci_kms_key.Test_key.Id,
+    ///                     KmsKeyId = testKey.Id,
     ///                 },
     ///             },
     ///         },
-    ///         Shape = @var.Application_shape,
-    ///         SyslogUrl = @var.Application_syslog_url,
+    ///         Shape = applicationShape,
+    ///         SyslogUrl = applicationSyslogUrl,
     ///         TraceConfig = new Oci.Functions.Inputs.ApplicationTraceConfigArgs
     ///         {
-    ///             DomainId = oci_functions_domain.Test_domain.Id,
-    ///             IsEnabled = @var.Application_trace_config_is_enabled,
+    ///             DomainId = testDomain.Id,
+    ///             IsEnabled = applicationTraceConfigIsEnabled,
     ///         },
     ///     });
     /// 

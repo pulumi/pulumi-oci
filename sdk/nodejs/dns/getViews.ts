@@ -24,11 +24,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testViews = oci.Dns.getViews({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
- *     displayName: _var.view_display_name,
- *     id: _var.view_id,
- *     state: _var.view_state,
+ *     displayName: viewDisplayName,
+ *     id: viewId,
+ *     state: viewState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,11 +118,11 @@ export interface GetViewsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testViews = oci.Dns.getViews({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
- *     displayName: _var.view_display_name,
- *     id: _var.view_id,
- *     state: _var.view_state,
+ *     displayName: viewDisplayName,
+ *     id: viewId,
+ *     state: viewState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

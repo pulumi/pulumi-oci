@@ -25,11 +25,11 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDbNodeConsoleHistory = new Oci.Database.DbNodeConsoleHistory("testDbNodeConsoleHistory", new()
+    ///     var testDbNodeConsoleHistory = new Oci.Database.DbNodeConsoleHistory("test_db_node_console_history", new()
     ///     {
-    ///         DbNodeId = oci_database_db_node.Test_db_node.Id,
-    ///         DisplayName = @var.Db_node_console_history_display_name,
-    ///         DefinedTags = @var.Db_node_console_history_defined_tags,
+    ///         DbNodeId = testDbNode.Id,
+    ///         DisplayName = dbNodeConsoleHistoryDisplayName,
+    ///         DefinedTags = dbNodeConsoleHistoryDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

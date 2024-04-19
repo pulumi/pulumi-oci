@@ -30,13 +30,13 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAutonomousDatabaseWallet = new Oci.Database.AutonomousDatabaseWallet("testAutonomousDatabaseWallet", new()
+    ///     var testAutonomousDatabaseWallet = new Oci.Database.AutonomousDatabaseWallet("test_autonomous_database_wallet", new()
     ///     {
-    ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-    ///         Password = @var.Autonomous_database_wallet_password,
+    ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+    ///         Password = autonomousDatabaseWalletPassword,
     ///         Base64EncodeContent = false,
-    ///         GenerateType = @var.Autonomous_database_wallet_generate_type,
-    ///         IsRegional = @var.Autonomous_database_wallet_is_regional,
+    ///         GenerateType = autonomousDatabaseWalletGenerateType,
+    ///         IsRegional = autonomousDatabaseWalletIsRegional,
     ///     });
     /// 
     /// });

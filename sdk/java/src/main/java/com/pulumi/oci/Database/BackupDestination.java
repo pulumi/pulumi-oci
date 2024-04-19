@@ -50,20 +50,20 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBackupDestination = new BackupDestination(&#34;testBackupDestination&#34;, BackupDestinationArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.backup_destination_display_name())
- *             .type(var_.backup_destination_type())
- *             .connectionString(var_.backup_destination_connection_string())
- *             .definedTags(var_.backup_destination_defined_tags())
+ *             .compartmentId(compartmentId)
+ *             .displayName(backupDestinationDisplayName)
+ *             .type(backupDestinationType)
+ *             .connectionString(backupDestinationConnectionString)
+ *             .definedTags(backupDestinationDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .localMountPointPath(var_.backup_destination_local_mount_point_path())
+ *             .localMountPointPath(backupDestinationLocalMountPointPath)
  *             .mountTypeDetails(BackupDestinationMountTypeDetailsArgs.builder()
- *                 .mountType(var_.backup_destination_mount_type_details_mount_type())
- *                 .localMountPointPath(var_.backup_destination_mount_type_details_local_mount_point_path())
- *                 .nfsServers(var_.backup_destination_mount_type_details_nfs_server())
- *                 .nfsServerExport(var_.backup_destination_mount_type_details_nfs_server_export())
+ *                 .mountType(backupDestinationMountTypeDetailsMountType)
+ *                 .localMountPointPath(backupDestinationMountTypeDetailsLocalMountPointPath)
+ *                 .nfsServers(backupDestinationMountTypeDetailsNfsServer)
+ *                 .nfsServerExport(backupDestinationMountTypeDetailsNfsServerExport)
  *                 .build())
- *             .vpcUsers(var_.backup_destination_vpc_users())
+ *             .vpcUsers(backupDestinationVpcUsers)
  *             .build());
  * 
  *     }

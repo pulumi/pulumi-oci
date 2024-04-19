@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterAddVirtualMachine = new oci.database.VmClusterAddVirtualNetwork("testVmClusterAddVirtualMachine", {
+ * const testVmClusterAddVirtualMachine = new oci.database.VmClusterAddVirtualNetwork("test_vm_cluster_add_virtual_machine", {
  *     dbServers: [{
- *         dbServerId: oci_database_db_server.test_db_server.id,
+ *         dbServerId: testDbServer.id,
  *     }],
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *     vmClusterId: testVmCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

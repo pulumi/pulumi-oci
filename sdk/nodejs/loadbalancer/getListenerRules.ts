@@ -25,8 +25,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testListenerRules = oci.LoadBalancer.getListenerRules({
- *     listenerName: oci_load_balancer_listener.test_listener.name,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     listenerName: testListener.name,
+ *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,8 +91,8 @@ export interface GetListenerRulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testListenerRules = oci.LoadBalancer.getListenerRules({
- *     listenerName: oci_load_balancer_listener.test_listener.name,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     listenerName: testListener.name,
+ *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

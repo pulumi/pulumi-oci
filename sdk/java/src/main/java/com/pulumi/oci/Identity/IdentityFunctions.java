@@ -487,7 +487,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
-     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .currentLicenseTypeName(allowedDomainLicenseTypeCurrentLicenseTypeName)
      *             .build());
      * 
      *     }
@@ -534,7 +534,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
-     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .currentLicenseTypeName(allowedDomainLicenseTypeCurrentLicenseTypeName)
      *             .build());
      * 
      *     }
@@ -581,7 +581,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
-     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .currentLicenseTypeName(allowedDomainLicenseTypeCurrentLicenseTypeName)
      *             .build());
      * 
      *     }
@@ -628,7 +628,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
-     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .currentLicenseTypeName(allowedDomainLicenseTypeCurrentLicenseTypeName)
      *             .build());
      * 
      *     }
@@ -675,7 +675,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
-     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .currentLicenseTypeName(allowedDomainLicenseTypeCurrentLicenseTypeName)
      *             .build());
      * 
      *     }
@@ -722,7 +722,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
-     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .currentLicenseTypeName(allowedDomainLicenseTypeCurrentLicenseTypeName)
      *             .build());
      * 
      *     }
@@ -767,7 +767,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -812,7 +812,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -857,7 +857,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -902,7 +902,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -945,7 +945,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -988,7 +988,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -1031,7 +1031,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -1074,7 +1074,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -1117,7 +1117,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationPolicy = IdentityFunctions.getAuthenticationPolicy(GetAuthenticationPolicyArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1160,7 +1160,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationPolicy = IdentityFunctions.getAuthenticationPolicy(GetAuthenticationPolicyArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1203,7 +1203,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationPolicy = IdentityFunctions.getAuthenticationPolicy(GetAuthenticationPolicyArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1246,7 +1246,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationPolicy = IdentityFunctions.getAuthenticationPolicy(GetAuthenticationPolicyArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1286,9 +1286,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartment = IdentityFunctions.getAvailabilityDomain(GetAvailabilityDomainArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .id(var_.id())
-     *             .adNumber(var_.ad_number())
+     *             .compartmentId(tenancyOcid)
+     *             .id(id)
+     *             .adNumber(adNumber)
      *             .build());
      * 
      *     }
@@ -1328,9 +1328,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartment = IdentityFunctions.getAvailabilityDomain(GetAvailabilityDomainArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .id(var_.id())
-     *             .adNumber(var_.ad_number())
+     *             .compartmentId(tenancyOcid)
+     *             .id(id)
+     *             .adNumber(adNumber)
      *             .build());
      * 
      *     }
@@ -1370,9 +1370,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartment = IdentityFunctions.getAvailabilityDomain(GetAvailabilityDomainArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .id(var_.id())
-     *             .adNumber(var_.ad_number())
+     *             .compartmentId(tenancyOcid)
+     *             .id(id)
+     *             .adNumber(adNumber)
      *             .build());
      * 
      *     }
@@ -1412,9 +1412,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartment = IdentityFunctions.getAvailabilityDomain(GetAvailabilityDomainArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .id(var_.id())
-     *             .adNumber(var_.ad_number())
+     *             .compartmentId(tenancyOcid)
+     *             .id(id)
+     *             .adNumber(adNumber)
      *             .build());
      * 
      *     }
@@ -1460,7 +1460,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAvailabilityDomains = IdentityFunctions.getAvailabilityDomains(GetAvailabilityDomainsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1506,7 +1506,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAvailabilityDomains = IdentityFunctions.getAvailabilityDomains(GetAvailabilityDomainsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1552,7 +1552,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAvailabilityDomains = IdentityFunctions.getAvailabilityDomains(GetAvailabilityDomainsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1598,7 +1598,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAvailabilityDomains = IdentityFunctions.getAvailabilityDomains(GetAvailabilityDomainsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1647,7 +1647,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartment = IdentityFunctions.getCompartment(GetCompartmentArgs.builder()
-     *             .id(var_.compartment_id())
+     *             .id(compartmentId)
      *             .build());
      * 
      *     }
@@ -1696,7 +1696,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartment = IdentityFunctions.getCompartment(GetCompartmentArgs.builder()
-     *             .id(var_.compartment_id())
+     *             .id(compartmentId)
      *             .build());
      * 
      *     }
@@ -1745,7 +1745,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartment = IdentityFunctions.getCompartment(GetCompartmentArgs.builder()
-     *             .id(var_.compartment_id())
+     *             .id(compartmentId)
      *             .build());
      * 
      *     }
@@ -1794,7 +1794,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartment = IdentityFunctions.getCompartment(GetCompartmentArgs.builder()
-     *             .id(var_.compartment_id())
+     *             .id(compartmentId)
      *             .build());
      * 
      *     }
@@ -1853,11 +1853,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartments = IdentityFunctions.getCompartments(GetCompartmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.compartment_access_level())
-     *             .compartmentIdInSubtree(var_.compartment_compartment_id_in_subtree())
-     *             .name(var_.compartment_name())
-     *             .state(var_.compartment_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(compartmentAccessLevel)
+     *             .compartmentIdInSubtree(compartmentCompartmentIdInSubtree)
+     *             .name(compartmentName)
+     *             .state(compartmentState)
      *             .build());
      * 
      *     }
@@ -1916,11 +1916,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartments = IdentityFunctions.getCompartments(GetCompartmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.compartment_access_level())
-     *             .compartmentIdInSubtree(var_.compartment_compartment_id_in_subtree())
-     *             .name(var_.compartment_name())
-     *             .state(var_.compartment_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(compartmentAccessLevel)
+     *             .compartmentIdInSubtree(compartmentCompartmentIdInSubtree)
+     *             .name(compartmentName)
+     *             .state(compartmentState)
      *             .build());
      * 
      *     }
@@ -1979,11 +1979,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartments = IdentityFunctions.getCompartments(GetCompartmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.compartment_access_level())
-     *             .compartmentIdInSubtree(var_.compartment_compartment_id_in_subtree())
-     *             .name(var_.compartment_name())
-     *             .state(var_.compartment_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(compartmentAccessLevel)
+     *             .compartmentIdInSubtree(compartmentCompartmentIdInSubtree)
+     *             .name(compartmentName)
+     *             .state(compartmentState)
      *             .build());
      * 
      *     }
@@ -2042,11 +2042,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompartments = IdentityFunctions.getCompartments(GetCompartmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.compartment_access_level())
-     *             .compartmentIdInSubtree(var_.compartment_compartment_id_in_subtree())
-     *             .name(var_.compartment_name())
-     *             .state(var_.compartment_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(compartmentAccessLevel)
+     *             .compartmentIdInSubtree(compartmentCompartmentIdInSubtree)
+     *             .name(compartmentName)
+     *             .state(compartmentState)
      *             .build());
      * 
      *     }
@@ -2089,7 +2089,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostTrackingTags = IdentityFunctions.getCostTrackingTags(GetCostTrackingTagsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2132,7 +2132,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostTrackingTags = IdentityFunctions.getCostTrackingTags(GetCostTrackingTagsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2175,7 +2175,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostTrackingTags = IdentityFunctions.getCostTrackingTags(GetCostTrackingTagsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2218,7 +2218,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostTrackingTags = IdentityFunctions.getCostTrackingTags(GetCostTrackingTagsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2261,7 +2261,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -2304,7 +2304,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -2347,7 +2347,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -2390,7 +2390,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -2432,9 +2432,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
-     *             .name(var_.db_credential_name())
-     *             .state(var_.db_credential_state())
+     *             .userId(testUser.id())
+     *             .name(dbCredentialName)
+     *             .state(dbCredentialState)
      *             .build());
      * 
      *     }
@@ -2476,9 +2476,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
-     *             .name(var_.db_credential_name())
-     *             .state(var_.db_credential_state())
+     *             .userId(testUser.id())
+     *             .name(dbCredentialName)
+     *             .state(dbCredentialState)
      *             .build());
      * 
      *     }
@@ -2520,9 +2520,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
-     *             .name(var_.db_credential_name())
-     *             .state(var_.db_credential_state())
+     *             .userId(testUser.id())
+     *             .name(dbCredentialName)
+     *             .state(dbCredentialState)
      *             .build());
      * 
      *     }
@@ -2564,9 +2564,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
-     *             .name(var_.db_credential_name())
-     *             .state(var_.db_credential_state())
+     *             .userId(testUser.id())
+     *             .name(dbCredentialName)
+     *             .state(dbCredentialState)
      *             .build());
      * 
      *     }
@@ -2611,7 +2611,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(oci_identity_domain.test_domain().id())
+     *             .domainId(testDomainOciIdentityDomain.id())
      *             .build());
      * 
      *     }
@@ -2656,7 +2656,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(oci_identity_domain.test_domain().id())
+     *             .domainId(testDomainOciIdentityDomain.id())
      *             .build());
      * 
      *     }
@@ -2701,7 +2701,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(oci_identity_domain.test_domain().id())
+     *             .domainId(testDomainOciIdentityDomain.id())
      *             .build());
      * 
      *     }
@@ -2746,7 +2746,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(oci_identity_domain.test_domain().id())
+     *             .domainId(testDomainOciIdentityDomain.id())
      *             .build());
      * 
      *     }
@@ -2789,15 +2789,15 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomains = IdentityFunctions.getDomains(GetDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.domain_display_name())
-     *             .homeRegionUrl(var_.domain_home_region_url())
-     *             .isHiddenOnLogin(var_.domain_is_hidden_on_login())
-     *             .licenseType(var_.domain_license_type())
-     *             .name(var_.domain_name())
-     *             .state(var_.domain_state())
-     *             .type(var_.domain_type())
-     *             .url(var_.domain_url())
+     *             .compartmentId(compartmentId)
+     *             .displayName(domainDisplayName)
+     *             .homeRegionUrl(domainHomeRegionUrl)
+     *             .isHiddenOnLogin(domainIsHiddenOnLogin)
+     *             .licenseType(domainLicenseType)
+     *             .name(domainName)
+     *             .state(domainState)
+     *             .type(domainType)
+     *             .url(domainUrl)
      *             .build());
      * 
      *     }
@@ -2840,15 +2840,15 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomains = IdentityFunctions.getDomains(GetDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.domain_display_name())
-     *             .homeRegionUrl(var_.domain_home_region_url())
-     *             .isHiddenOnLogin(var_.domain_is_hidden_on_login())
-     *             .licenseType(var_.domain_license_type())
-     *             .name(var_.domain_name())
-     *             .state(var_.domain_state())
-     *             .type(var_.domain_type())
-     *             .url(var_.domain_url())
+     *             .compartmentId(compartmentId)
+     *             .displayName(domainDisplayName)
+     *             .homeRegionUrl(domainHomeRegionUrl)
+     *             .isHiddenOnLogin(domainIsHiddenOnLogin)
+     *             .licenseType(domainLicenseType)
+     *             .name(domainName)
+     *             .state(domainState)
+     *             .type(domainType)
+     *             .url(domainUrl)
      *             .build());
      * 
      *     }
@@ -2891,15 +2891,15 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomains = IdentityFunctions.getDomains(GetDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.domain_display_name())
-     *             .homeRegionUrl(var_.domain_home_region_url())
-     *             .isHiddenOnLogin(var_.domain_is_hidden_on_login())
-     *             .licenseType(var_.domain_license_type())
-     *             .name(var_.domain_name())
-     *             .state(var_.domain_state())
-     *             .type(var_.domain_type())
-     *             .url(var_.domain_url())
+     *             .compartmentId(compartmentId)
+     *             .displayName(domainDisplayName)
+     *             .homeRegionUrl(domainHomeRegionUrl)
+     *             .isHiddenOnLogin(domainIsHiddenOnLogin)
+     *             .licenseType(domainLicenseType)
+     *             .name(domainName)
+     *             .state(domainState)
+     *             .type(domainType)
+     *             .url(domainUrl)
      *             .build());
      * 
      *     }
@@ -2942,15 +2942,15 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomains = IdentityFunctions.getDomains(GetDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.domain_display_name())
-     *             .homeRegionUrl(var_.domain_home_region_url())
-     *             .isHiddenOnLogin(var_.domain_is_hidden_on_login())
-     *             .licenseType(var_.domain_license_type())
-     *             .name(var_.domain_name())
-     *             .state(var_.domain_state())
-     *             .type(var_.domain_type())
-     *             .url(var_.domain_url())
+     *             .compartmentId(compartmentId)
+     *             .displayName(domainDisplayName)
+     *             .homeRegionUrl(domainHomeRegionUrl)
+     *             .isHiddenOnLogin(domainIsHiddenOnLogin)
+     *             .licenseType(domainLicenseType)
+     *             .name(domainName)
+     *             .state(domainState)
+     *             .type(domainType)
+     *             .url(domainUrl)
      *             .build());
      * 
      *     }
@@ -2992,12 +2992,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
-     *             .accountMgmtInfoId(oci_identity_domains_account_mgmt_info.test_account_mgmt_info().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_mgmt_info_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_mgmt_info_resource_type_schema_version())
+     *             .authorization(accountMgmtInfoAuthorization)
+     *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3039,12 +3039,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
-     *             .accountMgmtInfoId(oci_identity_domains_account_mgmt_info.test_account_mgmt_info().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_mgmt_info_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_mgmt_info_resource_type_schema_version())
+     *             .authorization(accountMgmtInfoAuthorization)
+     *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3086,12 +3086,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
-     *             .accountMgmtInfoId(oci_identity_domains_account_mgmt_info.test_account_mgmt_info().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_mgmt_info_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_mgmt_info_resource_type_schema_version())
+     *             .authorization(accountMgmtInfoAuthorization)
+     *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3133,12 +3133,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfo = IdentityFunctions.getDomainsAccountMgmtInfo(GetDomainsAccountMgmtInfoArgs.builder()
-     *             .accountMgmtInfoId(oci_identity_domains_account_mgmt_info.test_account_mgmt_info().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .accountMgmtInfoId(testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_mgmt_info_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_mgmt_info_resource_type_schema_version())
+     *             .authorization(accountMgmtInfoAuthorization)
+     *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3180,14 +3180,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfos = IdentityFunctions.getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .accountMgmtInfoCount(var_.account_mgmt_info_account_mgmt_info_count())
-     *             .accountMgmtInfoFilter(var_.account_mgmt_info_account_mgmt_info_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
+     *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_mgmt_info_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_mgmt_info_resource_type_schema_version())
-     *             .startIndex(var_.account_mgmt_info_start_index())
+     *             .authorization(accountMgmtInfoAuthorization)
+     *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
+     *             .startIndex(accountMgmtInfoStartIndex)
      *             .build());
      * 
      *     }
@@ -3229,14 +3229,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfos = IdentityFunctions.getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .accountMgmtInfoCount(var_.account_mgmt_info_account_mgmt_info_count())
-     *             .accountMgmtInfoFilter(var_.account_mgmt_info_account_mgmt_info_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
+     *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_mgmt_info_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_mgmt_info_resource_type_schema_version())
-     *             .startIndex(var_.account_mgmt_info_start_index())
+     *             .authorization(accountMgmtInfoAuthorization)
+     *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
+     *             .startIndex(accountMgmtInfoStartIndex)
      *             .build());
      * 
      *     }
@@ -3278,14 +3278,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfos = IdentityFunctions.getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .accountMgmtInfoCount(var_.account_mgmt_info_account_mgmt_info_count())
-     *             .accountMgmtInfoFilter(var_.account_mgmt_info_account_mgmt_info_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
+     *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_mgmt_info_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_mgmt_info_resource_type_schema_version())
-     *             .startIndex(var_.account_mgmt_info_start_index())
+     *             .authorization(accountMgmtInfoAuthorization)
+     *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
+     *             .startIndex(accountMgmtInfoStartIndex)
      *             .build());
      * 
      *     }
@@ -3327,14 +3327,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountMgmtInfos = IdentityFunctions.getDomainsAccountMgmtInfos(GetDomainsAccountMgmtInfosArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .accountMgmtInfoCount(var_.account_mgmt_info_account_mgmt_info_count())
-     *             .accountMgmtInfoFilter(var_.account_mgmt_info_account_mgmt_info_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .accountMgmtInfoCount(accountMgmtInfoAccountMgmtInfoCount)
+     *             .accountMgmtInfoFilter(accountMgmtInfoAccountMgmtInfoFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_mgmt_info_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_mgmt_info_resource_type_schema_version())
-     *             .startIndex(var_.account_mgmt_info_start_index())
+     *             .authorization(accountMgmtInfoAuthorization)
+     *             .resourceTypeSchemaVersion(accountMgmtInfoResourceTypeSchemaVersion)
+     *             .startIndex(accountMgmtInfoStartIndex)
      *             .build());
      * 
      *     }
@@ -3376,12 +3376,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
-     *             .accountRecoverySettingId(oci_identity_domains_account_recovery_setting.test_account_recovery_setting().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_recovery_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_recovery_setting_resource_type_schema_version())
+     *             .authorization(accountRecoverySettingAuthorization)
+     *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3423,12 +3423,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
-     *             .accountRecoverySettingId(oci_identity_domains_account_recovery_setting.test_account_recovery_setting().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_recovery_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_recovery_setting_resource_type_schema_version())
+     *             .authorization(accountRecoverySettingAuthorization)
+     *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3470,12 +3470,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
-     *             .accountRecoverySettingId(oci_identity_domains_account_recovery_setting.test_account_recovery_setting().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_recovery_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_recovery_setting_resource_type_schema_version())
+     *             .authorization(accountRecoverySettingAuthorization)
+     *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3517,12 +3517,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySetting = IdentityFunctions.getDomainsAccountRecoverySetting(GetDomainsAccountRecoverySettingArgs.builder()
-     *             .accountRecoverySettingId(oci_identity_domains_account_recovery_setting.test_account_recovery_setting().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .accountRecoverySettingId(testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_recovery_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_recovery_setting_resource_type_schema_version())
+     *             .authorization(accountRecoverySettingAuthorization)
+     *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3564,11 +3564,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_recovery_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_recovery_setting_resource_type_schema_version())
+     *             .authorization(accountRecoverySettingAuthorization)
+     *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3610,11 +3610,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_recovery_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_recovery_setting_resource_type_schema_version())
+     *             .authorization(accountRecoverySettingAuthorization)
+     *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3656,11 +3656,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_recovery_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_recovery_setting_resource_type_schema_version())
+     *             .authorization(accountRecoverySettingAuthorization)
+     *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3702,11 +3702,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccountRecoverySettings = IdentityFunctions.getDomainsAccountRecoverySettings(GetDomainsAccountRecoverySettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.account_recovery_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.account_recovery_setting_resource_type_schema_version())
+     *             .authorization(accountRecoverySettingAuthorization)
+     *             .resourceTypeSchemaVersion(accountRecoverySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3748,12 +3748,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKey = IdentityFunctions.getDomainsApiKey(GetDomainsApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.api_key_resource_type_schema_version())
+     *             .authorization(apiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3795,12 +3795,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKey = IdentityFunctions.getDomainsApiKey(GetDomainsApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.api_key_resource_type_schema_version())
+     *             .authorization(apiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3842,12 +3842,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKey = IdentityFunctions.getDomainsApiKey(GetDomainsApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.api_key_resource_type_schema_version())
+     *             .authorization(apiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3889,12 +3889,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKey = IdentityFunctions.getDomainsApiKey(GetDomainsApiKeyArgs.builder()
-     *             .apiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .apiKeyId(testApiKeyOciIdentityApiKey.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.api_key_resource_type_schema_version())
+     *             .authorization(apiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -3936,14 +3936,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getDomainsApiKeys(GetDomainsApiKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .apiKeyCount(var_.api_key_api_key_count())
-     *             .apiKeyFilter(var_.api_key_api_key_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .apiKeyCount(apiKeyApiKeyCount)
+     *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.api_key_resource_type_schema_version())
-     *             .startIndex(var_.api_key_start_index())
+     *             .authorization(apiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
+     *             .startIndex(apiKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -3985,14 +3985,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getDomainsApiKeys(GetDomainsApiKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .apiKeyCount(var_.api_key_api_key_count())
-     *             .apiKeyFilter(var_.api_key_api_key_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .apiKeyCount(apiKeyApiKeyCount)
+     *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.api_key_resource_type_schema_version())
-     *             .startIndex(var_.api_key_start_index())
+     *             .authorization(apiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
+     *             .startIndex(apiKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -4034,14 +4034,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getDomainsApiKeys(GetDomainsApiKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .apiKeyCount(var_.api_key_api_key_count())
-     *             .apiKeyFilter(var_.api_key_api_key_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .apiKeyCount(apiKeyApiKeyCount)
+     *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.api_key_resource_type_schema_version())
-     *             .startIndex(var_.api_key_start_index())
+     *             .authorization(apiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
+     *             .startIndex(apiKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -4083,14 +4083,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiKeys = IdentityFunctions.getDomainsApiKeys(GetDomainsApiKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .apiKeyCount(var_.api_key_api_key_count())
-     *             .apiKeyFilter(var_.api_key_api_key_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .apiKeyCount(apiKeyApiKeyCount)
+     *             .apiKeyFilter(apiKeyApiKeyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.api_key_resource_type_schema_version())
-     *             .startIndex(var_.api_key_start_index())
+     *             .authorization(apiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
+     *             .startIndex(apiKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -4132,12 +4132,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
-     *             .appId(oci_identity_domains_app.test_app().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .appId(testAppOciIdentityDomainsApp.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_resource_type_schema_version())
+     *             .authorization(appAuthorization)
+     *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4179,12 +4179,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
-     *             .appId(oci_identity_domains_app.test_app().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .appId(testAppOciIdentityDomainsApp.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_resource_type_schema_version())
+     *             .authorization(appAuthorization)
+     *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4226,12 +4226,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
-     *             .appId(oci_identity_domains_app.test_app().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .appId(testAppOciIdentityDomainsApp.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_resource_type_schema_version())
+     *             .authorization(appAuthorization)
+     *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4273,12 +4273,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApp = IdentityFunctions.getDomainsApp(GetDomainsAppArgs.builder()
-     *             .appId(oci_identity_domains_app.test_app().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .appId(testAppOciIdentityDomainsApp.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_resource_type_schema_version())
+     *             .authorization(appAuthorization)
+     *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4320,12 +4320,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
-     *             .appRoleId(oci_identity_domains_app_role.test_app_role().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_role_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_role_resource_type_schema_version())
+     *             .authorization(appRoleAuthorization)
+     *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4367,12 +4367,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
-     *             .appRoleId(oci_identity_domains_app_role.test_app_role().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_role_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_role_resource_type_schema_version())
+     *             .authorization(appRoleAuthorization)
+     *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4414,12 +4414,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
-     *             .appRoleId(oci_identity_domains_app_role.test_app_role().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_role_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_role_resource_type_schema_version())
+     *             .authorization(appRoleAuthorization)
+     *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4461,12 +4461,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRole = IdentityFunctions.getDomainsAppRole(GetDomainsAppRoleArgs.builder()
-     *             .appRoleId(oci_identity_domains_app_role.test_app_role().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .appRoleId(testAppRoleOciIdentityDomainsAppRole.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_role_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_role_resource_type_schema_version())
+     *             .authorization(appRoleAuthorization)
+     *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4508,14 +4508,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRoles = IdentityFunctions.getDomainsAppRoles(GetDomainsAppRolesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .appRoleCount(var_.app_role_app_role_count())
-     *             .appRoleFilter(var_.app_role_app_role_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .appRoleCount(appRoleAppRoleCount)
+     *             .appRoleFilter(appRoleAppRoleFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_role_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_role_resource_type_schema_version())
-     *             .startIndex(var_.app_role_start_index())
+     *             .authorization(appRoleAuthorization)
+     *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
+     *             .startIndex(appRoleStartIndex)
      *             .build());
      * 
      *     }
@@ -4557,14 +4557,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRoles = IdentityFunctions.getDomainsAppRoles(GetDomainsAppRolesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .appRoleCount(var_.app_role_app_role_count())
-     *             .appRoleFilter(var_.app_role_app_role_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .appRoleCount(appRoleAppRoleCount)
+     *             .appRoleFilter(appRoleAppRoleFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_role_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_role_resource_type_schema_version())
-     *             .startIndex(var_.app_role_start_index())
+     *             .authorization(appRoleAuthorization)
+     *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
+     *             .startIndex(appRoleStartIndex)
      *             .build());
      * 
      *     }
@@ -4606,14 +4606,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRoles = IdentityFunctions.getDomainsAppRoles(GetDomainsAppRolesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .appRoleCount(var_.app_role_app_role_count())
-     *             .appRoleFilter(var_.app_role_app_role_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .appRoleCount(appRoleAppRoleCount)
+     *             .appRoleFilter(appRoleAppRoleFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_role_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_role_resource_type_schema_version())
-     *             .startIndex(var_.app_role_start_index())
+     *             .authorization(appRoleAuthorization)
+     *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
+     *             .startIndex(appRoleStartIndex)
      *             .build());
      * 
      *     }
@@ -4655,14 +4655,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppRoles = IdentityFunctions.getDomainsAppRoles(GetDomainsAppRolesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .appRoleCount(var_.app_role_app_role_count())
-     *             .appRoleFilter(var_.app_role_app_role_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .appRoleCount(appRoleAppRoleCount)
+     *             .appRoleFilter(appRoleAppRoleFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_role_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_role_resource_type_schema_version())
-     *             .startIndex(var_.app_role_start_index())
+     *             .authorization(appRoleAuthorization)
+     *             .resourceTypeSchemaVersion(appRoleResourceTypeSchemaVersion)
+     *             .startIndex(appRoleStartIndex)
      *             .build());
      * 
      *     }
@@ -4704,12 +4704,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
-     *             .approvalWorkflowId(oci_identity_domains_approval_workflow.test_approval_workflow().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .authorization(approvalWorkflowAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4751,12 +4751,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
-     *             .approvalWorkflowId(oci_identity_domains_approval_workflow.test_approval_workflow().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .authorization(approvalWorkflowAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4798,12 +4798,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
-     *             .approvalWorkflowId(oci_identity_domains_approval_workflow.test_approval_workflow().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .authorization(approvalWorkflowAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4845,12 +4845,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
-     *             .approvalWorkflowId(oci_identity_domains_approval_workflow.test_approval_workflow().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowId(testApprovalWorkflowOciIdentityDomainsApprovalWorkflow.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .authorization(approvalWorkflowAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4892,12 +4892,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
-     *             .approvalWorkflowAssignmentId(oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_assignment_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .authorization(approvalWorkflowAssignmentAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4939,12 +4939,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
-     *             .approvalWorkflowAssignmentId(oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_assignment_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .authorization(approvalWorkflowAssignmentAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -4986,12 +4986,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
-     *             .approvalWorkflowAssignmentId(oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_assignment_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .authorization(approvalWorkflowAssignmentAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -5033,12 +5033,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
-     *             .approvalWorkflowAssignmentId(oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowAssignmentId(testApprovalWorkflowAssignmentOciIdentityDomainsApprovalWorkflowAssignment.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_assignment_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .authorization(approvalWorkflowAssignmentAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -5080,14 +5080,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowAssignmentCount(var_.approval_workflow_assignment_approval_workflow_assignment_count())
-     *             .approvalWorkflowAssignmentFilter(var_.approval_workflow_assignment_approval_workflow_assignment_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
+     *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_assignment_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_assignment_start_index())
+     *             .authorization(approvalWorkflowAssignmentAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowAssignmentStartIndex)
      *             .build());
      * 
      *     }
@@ -5129,14 +5129,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowAssignmentCount(var_.approval_workflow_assignment_approval_workflow_assignment_count())
-     *             .approvalWorkflowAssignmentFilter(var_.approval_workflow_assignment_approval_workflow_assignment_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
+     *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_assignment_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_assignment_start_index())
+     *             .authorization(approvalWorkflowAssignmentAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowAssignmentStartIndex)
      *             .build());
      * 
      *     }
@@ -5178,14 +5178,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowAssignmentCount(var_.approval_workflow_assignment_approval_workflow_assignment_count())
-     *             .approvalWorkflowAssignmentFilter(var_.approval_workflow_assignment_approval_workflow_assignment_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
+     *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_assignment_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_assignment_start_index())
+     *             .authorization(approvalWorkflowAssignmentAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowAssignmentStartIndex)
      *             .build());
      * 
      *     }
@@ -5227,14 +5227,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowAssignmentCount(var_.approval_workflow_assignment_approval_workflow_assignment_count())
-     *             .approvalWorkflowAssignmentFilter(var_.approval_workflow_assignment_approval_workflow_assignment_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowAssignmentCount(approvalWorkflowAssignmentApprovalWorkflowAssignmentCount)
+     *             .approvalWorkflowAssignmentFilter(approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_assignment_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_assignment_start_index())
+     *             .authorization(approvalWorkflowAssignmentAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowAssignmentResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowAssignmentStartIndex)
      *             .build());
      * 
      *     }
@@ -5276,12 +5276,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
-     *             .approvalWorkflowStepId(oci_identity_domains_approval_workflow_step.test_approval_workflow_step().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_step_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .authorization(approvalWorkflowStepAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -5323,12 +5323,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
-     *             .approvalWorkflowStepId(oci_identity_domains_approval_workflow_step.test_approval_workflow_step().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_step_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .authorization(approvalWorkflowStepAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -5370,12 +5370,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
-     *             .approvalWorkflowStepId(oci_identity_domains_approval_workflow_step.test_approval_workflow_step().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_step_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .authorization(approvalWorkflowStepAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -5417,12 +5417,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
-     *             .approvalWorkflowStepId(oci_identity_domains_approval_workflow_step.test_approval_workflow_step().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowStepId(testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_step_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .authorization(approvalWorkflowStepAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -5464,14 +5464,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowStepCount(var_.approval_workflow_step_approval_workflow_step_count())
-     *             .approvalWorkflowStepFilter(var_.approval_workflow_step_approval_workflow_step_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
+     *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_step_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_step_start_index())
+     *             .authorization(approvalWorkflowStepAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowStepStartIndex)
      *             .build());
      * 
      *     }
@@ -5513,14 +5513,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowStepCount(var_.approval_workflow_step_approval_workflow_step_count())
-     *             .approvalWorkflowStepFilter(var_.approval_workflow_step_approval_workflow_step_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
+     *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_step_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_step_start_index())
+     *             .authorization(approvalWorkflowStepAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowStepStartIndex)
      *             .build());
      * 
      *     }
@@ -5562,14 +5562,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowStepCount(var_.approval_workflow_step_approval_workflow_step_count())
-     *             .approvalWorkflowStepFilter(var_.approval_workflow_step_approval_workflow_step_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
+     *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_step_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_step_start_index())
+     *             .authorization(approvalWorkflowStepAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowStepStartIndex)
      *             .build());
      * 
      *     }
@@ -5611,14 +5611,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowStepCount(var_.approval_workflow_step_approval_workflow_step_count())
-     *             .approvalWorkflowStepFilter(var_.approval_workflow_step_approval_workflow_step_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowStepCount(approvalWorkflowStepApprovalWorkflowStepCount)
+     *             .approvalWorkflowStepFilter(approvalWorkflowStepApprovalWorkflowStepFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_step_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_step_start_index())
+     *             .authorization(approvalWorkflowStepAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowStepResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowStepStartIndex)
      *             .build());
      * 
      *     }
@@ -5660,14 +5660,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowCount(var_.approval_workflow_approval_workflow_count())
-     *             .approvalWorkflowFilter(var_.approval_workflow_approval_workflow_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
+     *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_start_index())
+     *             .authorization(approvalWorkflowAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowStartIndex)
      *             .build());
      * 
      *     }
@@ -5709,14 +5709,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowCount(var_.approval_workflow_approval_workflow_count())
-     *             .approvalWorkflowFilter(var_.approval_workflow_approval_workflow_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
+     *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_start_index())
+     *             .authorization(approvalWorkflowAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowStartIndex)
      *             .build());
      * 
      *     }
@@ -5758,14 +5758,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowCount(var_.approval_workflow_approval_workflow_count())
-     *             .approvalWorkflowFilter(var_.approval_workflow_approval_workflow_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
+     *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_start_index())
+     *             .authorization(approvalWorkflowAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowStartIndex)
      *             .build());
      * 
      *     }
@@ -5807,14 +5807,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .approvalWorkflowCount(var_.approval_workflow_approval_workflow_count())
-     *             .approvalWorkflowFilter(var_.approval_workflow_approval_workflow_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .approvalWorkflowCount(approvalWorkflowApprovalWorkflowCount)
+     *             .approvalWorkflowFilter(approvalWorkflowApprovalWorkflowFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.approval_workflow_authorization())
-     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
-     *             .startIndex(var_.approval_workflow_start_index())
+     *             .authorization(approvalWorkflowAuthorization)
+     *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
+     *             .startIndex(approvalWorkflowStartIndex)
      *             .build());
      * 
      *     }
@@ -5856,14 +5856,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApps = IdentityFunctions.getDomainsApps(GetDomainsAppsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .appCount(var_.app_app_count())
-     *             .appFilter(var_.app_app_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .appCount(appAppCount)
+     *             .appFilter(appAppFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_resource_type_schema_version())
-     *             .startIndex(var_.app_start_index())
+     *             .authorization(appAuthorization)
+     *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
+     *             .startIndex(appStartIndex)
      *             .build());
      * 
      *     }
@@ -5905,14 +5905,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApps = IdentityFunctions.getDomainsApps(GetDomainsAppsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .appCount(var_.app_app_count())
-     *             .appFilter(var_.app_app_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .appCount(appAppCount)
+     *             .appFilter(appAppFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_resource_type_schema_version())
-     *             .startIndex(var_.app_start_index())
+     *             .authorization(appAuthorization)
+     *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
+     *             .startIndex(appStartIndex)
      *             .build());
      * 
      *     }
@@ -5954,14 +5954,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApps = IdentityFunctions.getDomainsApps(GetDomainsAppsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .appCount(var_.app_app_count())
-     *             .appFilter(var_.app_app_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .appCount(appAppCount)
+     *             .appFilter(appAppFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_resource_type_schema_version())
-     *             .startIndex(var_.app_start_index())
+     *             .authorization(appAuthorization)
+     *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
+     *             .startIndex(appStartIndex)
      *             .build());
      * 
      *     }
@@ -6003,14 +6003,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApps = IdentityFunctions.getDomainsApps(GetDomainsAppsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .appCount(var_.app_app_count())
-     *             .appFilter(var_.app_app_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .appCount(appAppCount)
+     *             .appFilter(appAppFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.app_authorization())
-     *             .resourceTypeSchemaVersion(var_.app_resource_type_schema_version())
-     *             .startIndex(var_.app_start_index())
+     *             .authorization(appAuthorization)
+     *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
+     *             .startIndex(appStartIndex)
      *             .build());
      * 
      *     }
@@ -6052,12 +6052,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthToken = IdentityFunctions.getDomainsAuthToken(GetDomainsAuthTokenArgs.builder()
-     *             .authTokenId(oci_identity_auth_token.test_auth_token().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.auth_token_resource_type_schema_version())
+     *             .authorization(authTokenAuthorization)
+     *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6099,12 +6099,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthToken = IdentityFunctions.getDomainsAuthToken(GetDomainsAuthTokenArgs.builder()
-     *             .authTokenId(oci_identity_auth_token.test_auth_token().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.auth_token_resource_type_schema_version())
+     *             .authorization(authTokenAuthorization)
+     *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6146,12 +6146,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthToken = IdentityFunctions.getDomainsAuthToken(GetDomainsAuthTokenArgs.builder()
-     *             .authTokenId(oci_identity_auth_token.test_auth_token().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.auth_token_resource_type_schema_version())
+     *             .authorization(authTokenAuthorization)
+     *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6193,12 +6193,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthToken = IdentityFunctions.getDomainsAuthToken(GetDomainsAuthTokenArgs.builder()
-     *             .authTokenId(oci_identity_auth_token.test_auth_token().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .authTokenId(testAuthTokenOciIdentityAuthToken.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.auth_token_resource_type_schema_version())
+     *             .authorization(authTokenAuthorization)
+     *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6240,14 +6240,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getDomainsAuthTokens(GetDomainsAuthTokensArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .authTokenCount(var_.auth_token_auth_token_count())
-     *             .authTokenFilter(var_.auth_token_auth_token_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .authTokenCount(authTokenAuthTokenCount)
+     *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.auth_token_resource_type_schema_version())
-     *             .startIndex(var_.auth_token_start_index())
+     *             .authorization(authTokenAuthorization)
+     *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
+     *             .startIndex(authTokenStartIndex)
      *             .build());
      * 
      *     }
@@ -6289,14 +6289,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getDomainsAuthTokens(GetDomainsAuthTokensArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .authTokenCount(var_.auth_token_auth_token_count())
-     *             .authTokenFilter(var_.auth_token_auth_token_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .authTokenCount(authTokenAuthTokenCount)
+     *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.auth_token_resource_type_schema_version())
-     *             .startIndex(var_.auth_token_start_index())
+     *             .authorization(authTokenAuthorization)
+     *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
+     *             .startIndex(authTokenStartIndex)
      *             .build());
      * 
      *     }
@@ -6338,14 +6338,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getDomainsAuthTokens(GetDomainsAuthTokensArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .authTokenCount(var_.auth_token_auth_token_count())
-     *             .authTokenFilter(var_.auth_token_auth_token_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .authTokenCount(authTokenAuthTokenCount)
+     *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.auth_token_resource_type_schema_version())
-     *             .startIndex(var_.auth_token_start_index())
+     *             .authorization(authTokenAuthorization)
+     *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
+     *             .startIndex(authTokenStartIndex)
      *             .build());
      * 
      *     }
@@ -6387,14 +6387,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthTokens = IdentityFunctions.getDomainsAuthTokens(GetDomainsAuthTokensArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .authTokenCount(var_.auth_token_auth_token_count())
-     *             .authTokenFilter(var_.auth_token_auth_token_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .authTokenCount(authTokenAuthTokenCount)
+     *             .authTokenFilter(authTokenAuthTokenFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.auth_token_resource_type_schema_version())
-     *             .startIndex(var_.auth_token_start_index())
+     *             .authorization(authTokenAuthorization)
+     *             .resourceTypeSchemaVersion(authTokenResourceTypeSchemaVersion)
+     *             .startIndex(authTokenStartIndex)
      *             .build());
      * 
      *     }
@@ -6436,12 +6436,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSetting = IdentityFunctions.getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs.builder()
-     *             .authenticationFactorSettingId(oci_identity_domains_authentication_factor_setting.test_authentication_factor_setting().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.authentication_factor_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.authentication_factor_setting_resource_type_schema_version())
+     *             .authorization(authenticationFactorSettingAuthorization)
+     *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6483,12 +6483,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSetting = IdentityFunctions.getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs.builder()
-     *             .authenticationFactorSettingId(oci_identity_domains_authentication_factor_setting.test_authentication_factor_setting().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.authentication_factor_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.authentication_factor_setting_resource_type_schema_version())
+     *             .authorization(authenticationFactorSettingAuthorization)
+     *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6530,12 +6530,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSetting = IdentityFunctions.getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs.builder()
-     *             .authenticationFactorSettingId(oci_identity_domains_authentication_factor_setting.test_authentication_factor_setting().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.authentication_factor_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.authentication_factor_setting_resource_type_schema_version())
+     *             .authorization(authenticationFactorSettingAuthorization)
+     *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6577,12 +6577,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSetting = IdentityFunctions.getDomainsAuthenticationFactorSetting(GetDomainsAuthenticationFactorSettingArgs.builder()
-     *             .authenticationFactorSettingId(oci_identity_domains_authentication_factor_setting.test_authentication_factor_setting().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .authenticationFactorSettingId(testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.authentication_factor_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.authentication_factor_setting_resource_type_schema_version())
+     *             .authorization(authenticationFactorSettingAuthorization)
+     *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6624,11 +6624,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.authentication_factor_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.authentication_factor_setting_resource_type_schema_version())
+     *             .authorization(authenticationFactorSettingAuthorization)
+     *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6670,11 +6670,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.authentication_factor_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.authentication_factor_setting_resource_type_schema_version())
+     *             .authorization(authenticationFactorSettingAuthorization)
+     *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6716,11 +6716,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.authentication_factor_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.authentication_factor_setting_resource_type_schema_version())
+     *             .authorization(authenticationFactorSettingAuthorization)
+     *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6762,11 +6762,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuthenticationFactorSettings = IdentityFunctions.getDomainsAuthenticationFactorSettings(GetDomainsAuthenticationFactorSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.authentication_factor_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.authentication_factor_setting_resource_type_schema_version())
+     *             .authorization(authenticationFactorSettingAuthorization)
+     *             .resourceTypeSchemaVersion(authenticationFactorSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6809,11 +6809,11 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
      *             .brandingSettingId(&#34;BrandingSettings&#34;)
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.branding_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .authorization(brandingSettingAuthorization)
+     *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6856,11 +6856,11 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
      *             .brandingSettingId(&#34;BrandingSettings&#34;)
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.branding_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .authorization(brandingSettingAuthorization)
+     *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6903,11 +6903,11 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
      *             .brandingSettingId(&#34;BrandingSettings&#34;)
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.branding_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .authorization(brandingSettingAuthorization)
+     *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6950,11 +6950,11 @@ public final class IdentityFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
      *             .brandingSettingId(&#34;BrandingSettings&#34;)
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.branding_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .authorization(brandingSettingAuthorization)
+     *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -6996,11 +6996,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.branding_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .authorization(brandingSettingAuthorization)
+     *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7042,11 +7042,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.branding_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .authorization(brandingSettingAuthorization)
+     *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7088,11 +7088,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.branding_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .authorization(brandingSettingAuthorization)
+     *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7134,11 +7134,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.branding_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .authorization(brandingSettingAuthorization)
+     *             .resourceTypeSchemaVersion(brandingSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7180,12 +7180,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
-     *             .cloudGateId(oci_identity_domains_cloud_gate.test_cloud_gate().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .authorization(cloudGateAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7227,12 +7227,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
-     *             .cloudGateId(oci_identity_domains_cloud_gate.test_cloud_gate().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .authorization(cloudGateAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7274,12 +7274,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
-     *             .cloudGateId(oci_identity_domains_cloud_gate.test_cloud_gate().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .authorization(cloudGateAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7321,12 +7321,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
-     *             .cloudGateId(oci_identity_domains_cloud_gate.test_cloud_gate().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateId(testCloudGateOciIdentityDomainsCloudGate.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .authorization(cloudGateAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7368,12 +7368,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
-     *             .cloudGateMappingId(oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_mapping_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .authorization(cloudGateMappingAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7415,12 +7415,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
-     *             .cloudGateMappingId(oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_mapping_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .authorization(cloudGateMappingAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7462,12 +7462,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
-     *             .cloudGateMappingId(oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_mapping_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .authorization(cloudGateMappingAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7509,12 +7509,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
-     *             .cloudGateMappingId(oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateMappingId(testCloudGateMappingOciIdentityDomainsCloudGateMapping.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_mapping_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .authorization(cloudGateMappingAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7556,14 +7556,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateMappingCount(var_.cloud_gate_mapping_cloud_gate_mapping_count())
-     *             .cloudGateMappingFilter(var_.cloud_gate_mapping_cloud_gate_mapping_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
+     *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_mapping_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_mapping_start_index())
+     *             .authorization(cloudGateMappingAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateMappingStartIndex)
      *             .build());
      * 
      *     }
@@ -7605,14 +7605,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateMappingCount(var_.cloud_gate_mapping_cloud_gate_mapping_count())
-     *             .cloudGateMappingFilter(var_.cloud_gate_mapping_cloud_gate_mapping_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
+     *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_mapping_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_mapping_start_index())
+     *             .authorization(cloudGateMappingAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateMappingStartIndex)
      *             .build());
      * 
      *     }
@@ -7654,14 +7654,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateMappingCount(var_.cloud_gate_mapping_cloud_gate_mapping_count())
-     *             .cloudGateMappingFilter(var_.cloud_gate_mapping_cloud_gate_mapping_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
+     *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_mapping_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_mapping_start_index())
+     *             .authorization(cloudGateMappingAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateMappingStartIndex)
      *             .build());
      * 
      *     }
@@ -7703,14 +7703,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateMappingCount(var_.cloud_gate_mapping_cloud_gate_mapping_count())
-     *             .cloudGateMappingFilter(var_.cloud_gate_mapping_cloud_gate_mapping_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateMappingCount(cloudGateMappingCloudGateMappingCount)
+     *             .cloudGateMappingFilter(cloudGateMappingCloudGateMappingFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_mapping_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_mapping_start_index())
+     *             .authorization(cloudGateMappingAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateMappingResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateMappingStartIndex)
      *             .build());
      * 
      *     }
@@ -7752,12 +7752,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
-     *             .cloudGateServerId(oci_identity_domains_cloud_gate_server.test_cloud_gate_server().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_server_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .authorization(cloudGateServerAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7799,12 +7799,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
-     *             .cloudGateServerId(oci_identity_domains_cloud_gate_server.test_cloud_gate_server().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_server_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .authorization(cloudGateServerAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7846,12 +7846,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
-     *             .cloudGateServerId(oci_identity_domains_cloud_gate_server.test_cloud_gate_server().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_server_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .authorization(cloudGateServerAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7893,12 +7893,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
-     *             .cloudGateServerId(oci_identity_domains_cloud_gate_server.test_cloud_gate_server().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateServerId(testCloudGateServerOciIdentityDomainsCloudGateServer.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_server_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .authorization(cloudGateServerAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -7940,14 +7940,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateServerCount(var_.cloud_gate_server_cloud_gate_server_count())
-     *             .cloudGateServerFilter(var_.cloud_gate_server_cloud_gate_server_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
+     *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_server_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_server_start_index())
+     *             .authorization(cloudGateServerAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateServerStartIndex)
      *             .build());
      * 
      *     }
@@ -7989,14 +7989,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateServerCount(var_.cloud_gate_server_cloud_gate_server_count())
-     *             .cloudGateServerFilter(var_.cloud_gate_server_cloud_gate_server_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
+     *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_server_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_server_start_index())
+     *             .authorization(cloudGateServerAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateServerStartIndex)
      *             .build());
      * 
      *     }
@@ -8038,14 +8038,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateServerCount(var_.cloud_gate_server_cloud_gate_server_count())
-     *             .cloudGateServerFilter(var_.cloud_gate_server_cloud_gate_server_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
+     *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_server_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_server_start_index())
+     *             .authorization(cloudGateServerAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateServerStartIndex)
      *             .build());
      * 
      *     }
@@ -8087,14 +8087,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateServerCount(var_.cloud_gate_server_cloud_gate_server_count())
-     *             .cloudGateServerFilter(var_.cloud_gate_server_cloud_gate_server_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateServerCount(cloudGateServerCloudGateServerCount)
+     *             .cloudGateServerFilter(cloudGateServerCloudGateServerFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_server_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_server_start_index())
+     *             .authorization(cloudGateServerAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateServerStartIndex)
      *             .build());
      * 
      *     }
@@ -8136,14 +8136,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateCount(var_.cloud_gate_cloud_gate_count())
-     *             .cloudGateFilter(var_.cloud_gate_cloud_gate_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateCount(cloudGateCloudGateCount)
+     *             .cloudGateFilter(cloudGateCloudGateFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_start_index())
+     *             .authorization(cloudGateAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateStartIndex)
      *             .build());
      * 
      *     }
@@ -8185,14 +8185,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateCount(var_.cloud_gate_cloud_gate_count())
-     *             .cloudGateFilter(var_.cloud_gate_cloud_gate_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateCount(cloudGateCloudGateCount)
+     *             .cloudGateFilter(cloudGateCloudGateFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_start_index())
+     *             .authorization(cloudGateAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateStartIndex)
      *             .build());
      * 
      *     }
@@ -8234,14 +8234,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateCount(var_.cloud_gate_cloud_gate_count())
-     *             .cloudGateFilter(var_.cloud_gate_cloud_gate_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateCount(cloudGateCloudGateCount)
+     *             .cloudGateFilter(cloudGateCloudGateFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_start_index())
+     *             .authorization(cloudGateAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateStartIndex)
      *             .build());
      * 
      *     }
@@ -8283,14 +8283,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .cloudGateCount(var_.cloud_gate_cloud_gate_count())
-     *             .cloudGateFilter(var_.cloud_gate_cloud_gate_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .cloudGateCount(cloudGateCloudGateCount)
+     *             .cloudGateFilter(cloudGateCloudGateFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.cloud_gate_authorization())
-     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
-     *             .startIndex(var_.cloud_gate_start_index())
+     *             .authorization(cloudGateAuthorization)
+     *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
+     *             .startIndex(cloudGateStartIndex)
      *             .build());
      * 
      *     }
@@ -8332,12 +8332,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
-     *             .conditionId(oci_identity_domains_condition.test_condition().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .conditionId(testConditionOciIdentityDomainsCondition.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.condition_authorization())
-     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .authorization(conditionAuthorization)
+     *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -8379,12 +8379,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
-     *             .conditionId(oci_identity_domains_condition.test_condition().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .conditionId(testConditionOciIdentityDomainsCondition.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.condition_authorization())
-     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .authorization(conditionAuthorization)
+     *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -8426,12 +8426,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
-     *             .conditionId(oci_identity_domains_condition.test_condition().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .conditionId(testConditionOciIdentityDomainsCondition.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.condition_authorization())
-     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .authorization(conditionAuthorization)
+     *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -8473,12 +8473,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
-     *             .conditionId(oci_identity_domains_condition.test_condition().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .conditionId(testConditionOciIdentityDomainsCondition.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.condition_authorization())
-     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .authorization(conditionAuthorization)
+     *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -8520,14 +8520,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .conditionCount(var_.condition_condition_count())
-     *             .conditionFilter(var_.condition_condition_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .conditionCount(conditionConditionCount)
+     *             .conditionFilter(conditionConditionFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.condition_authorization())
-     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
-     *             .startIndex(var_.condition_start_index())
+     *             .authorization(conditionAuthorization)
+     *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
+     *             .startIndex(conditionStartIndex)
      *             .build());
      * 
      *     }
@@ -8569,14 +8569,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .conditionCount(var_.condition_condition_count())
-     *             .conditionFilter(var_.condition_condition_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .conditionCount(conditionConditionCount)
+     *             .conditionFilter(conditionConditionFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.condition_authorization())
-     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
-     *             .startIndex(var_.condition_start_index())
+     *             .authorization(conditionAuthorization)
+     *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
+     *             .startIndex(conditionStartIndex)
      *             .build());
      * 
      *     }
@@ -8618,14 +8618,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .conditionCount(var_.condition_condition_count())
-     *             .conditionFilter(var_.condition_condition_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .conditionCount(conditionConditionCount)
+     *             .conditionFilter(conditionConditionFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.condition_authorization())
-     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
-     *             .startIndex(var_.condition_start_index())
+     *             .authorization(conditionAuthorization)
+     *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
+     *             .startIndex(conditionStartIndex)
      *             .build());
      * 
      *     }
@@ -8667,14 +8667,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .conditionCount(var_.condition_condition_count())
-     *             .conditionFilter(var_.condition_condition_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .conditionCount(conditionConditionCount)
+     *             .conditionFilter(conditionConditionFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.condition_authorization())
-     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
-     *             .startIndex(var_.condition_start_index())
+     *             .authorization(conditionAuthorization)
+     *             .resourceTypeSchemaVersion(conditionResourceTypeSchemaVersion)
+     *             .startIndex(conditionStartIndex)
      *             .build());
      * 
      *     }
@@ -8716,12 +8716,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKey = IdentityFunctions.getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs.builder()
-     *             .customerSecretKeyId(oci_identity_customer_secret_key.test_customer_secret_key().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.customer_secret_key_resource_type_schema_version())
+     *             .authorization(customerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -8763,12 +8763,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKey = IdentityFunctions.getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs.builder()
-     *             .customerSecretKeyId(oci_identity_customer_secret_key.test_customer_secret_key().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.customer_secret_key_resource_type_schema_version())
+     *             .authorization(customerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -8810,12 +8810,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKey = IdentityFunctions.getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs.builder()
-     *             .customerSecretKeyId(oci_identity_customer_secret_key.test_customer_secret_key().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.customer_secret_key_resource_type_schema_version())
+     *             .authorization(customerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -8857,12 +8857,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKey = IdentityFunctions.getDomainsCustomerSecretKey(GetDomainsCustomerSecretKeyArgs.builder()
-     *             .customerSecretKeyId(oci_identity_customer_secret_key.test_customer_secret_key().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .customerSecretKeyId(testCustomerSecretKeyOciIdentityCustomerSecretKey.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.customer_secret_key_resource_type_schema_version())
+     *             .authorization(customerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -8904,14 +8904,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .customerSecretKeyCount(var_.customer_secret_key_customer_secret_key_count())
-     *             .customerSecretKeyFilter(var_.customer_secret_key_customer_secret_key_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
+     *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.customer_secret_key_resource_type_schema_version())
-     *             .startIndex(var_.customer_secret_key_start_index())
+     *             .authorization(customerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
+     *             .startIndex(customerSecretKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -8953,14 +8953,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .customerSecretKeyCount(var_.customer_secret_key_customer_secret_key_count())
-     *             .customerSecretKeyFilter(var_.customer_secret_key_customer_secret_key_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
+     *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.customer_secret_key_resource_type_schema_version())
-     *             .startIndex(var_.customer_secret_key_start_index())
+     *             .authorization(customerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
+     *             .startIndex(customerSecretKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -9002,14 +9002,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .customerSecretKeyCount(var_.customer_secret_key_customer_secret_key_count())
-     *             .customerSecretKeyFilter(var_.customer_secret_key_customer_secret_key_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
+     *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.customer_secret_key_resource_type_schema_version())
-     *             .startIndex(var_.customer_secret_key_start_index())
+     *             .authorization(customerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
+     *             .startIndex(customerSecretKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -9051,14 +9051,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomerSecretKeys = IdentityFunctions.getDomainsCustomerSecretKeys(GetDomainsCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .customerSecretKeyCount(var_.customer_secret_key_customer_secret_key_count())
-     *             .customerSecretKeyFilter(var_.customer_secret_key_customer_secret_key_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .customerSecretKeyCount(customerSecretKeyCustomerSecretKeyCount)
+     *             .customerSecretKeyFilter(customerSecretKeyCustomerSecretKeyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.customer_secret_key_resource_type_schema_version())
-     *             .startIndex(var_.customer_secret_key_start_index())
+     *             .authorization(customerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(customerSecretKeyResourceTypeSchemaVersion)
+     *             .startIndex(customerSecretKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -9100,12 +9100,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroup = IdentityFunctions.getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs.builder()
-     *             .dynamicResourceGroupId(oci_identity_group.test_group().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .dynamicResourceGroupId(testGroup.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.dynamic_resource_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.dynamic_resource_group_resource_type_schema_version())
+     *             .authorization(dynamicResourceGroupAuthorization)
+     *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9147,12 +9147,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroup = IdentityFunctions.getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs.builder()
-     *             .dynamicResourceGroupId(oci_identity_group.test_group().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .dynamicResourceGroupId(testGroup.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.dynamic_resource_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.dynamic_resource_group_resource_type_schema_version())
+     *             .authorization(dynamicResourceGroupAuthorization)
+     *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9194,12 +9194,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroup = IdentityFunctions.getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs.builder()
-     *             .dynamicResourceGroupId(oci_identity_group.test_group().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .dynamicResourceGroupId(testGroup.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.dynamic_resource_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.dynamic_resource_group_resource_type_schema_version())
+     *             .authorization(dynamicResourceGroupAuthorization)
+     *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9241,12 +9241,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroup = IdentityFunctions.getDomainsDynamicResourceGroup(GetDomainsDynamicResourceGroupArgs.builder()
-     *             .dynamicResourceGroupId(oci_identity_group.test_group().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .dynamicResourceGroupId(testGroup.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.dynamic_resource_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.dynamic_resource_group_resource_type_schema_version())
+     *             .authorization(dynamicResourceGroupAuthorization)
+     *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9288,14 +9288,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroups = IdentityFunctions.getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .dynamicResourceGroupCount(var_.dynamic_resource_group_dynamic_resource_group_count())
-     *             .dynamicResourceGroupFilter(var_.dynamic_resource_group_dynamic_resource_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
+     *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.dynamic_resource_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.dynamic_resource_group_resource_type_schema_version())
-     *             .startIndex(var_.dynamic_resource_group_start_index())
+     *             .authorization(dynamicResourceGroupAuthorization)
+     *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
+     *             .startIndex(dynamicResourceGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -9337,14 +9337,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroups = IdentityFunctions.getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .dynamicResourceGroupCount(var_.dynamic_resource_group_dynamic_resource_group_count())
-     *             .dynamicResourceGroupFilter(var_.dynamic_resource_group_dynamic_resource_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
+     *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.dynamic_resource_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.dynamic_resource_group_resource_type_schema_version())
-     *             .startIndex(var_.dynamic_resource_group_start_index())
+     *             .authorization(dynamicResourceGroupAuthorization)
+     *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
+     *             .startIndex(dynamicResourceGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -9386,14 +9386,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroups = IdentityFunctions.getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .dynamicResourceGroupCount(var_.dynamic_resource_group_dynamic_resource_group_count())
-     *             .dynamicResourceGroupFilter(var_.dynamic_resource_group_dynamic_resource_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
+     *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.dynamic_resource_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.dynamic_resource_group_resource_type_schema_version())
-     *             .startIndex(var_.dynamic_resource_group_start_index())
+     *             .authorization(dynamicResourceGroupAuthorization)
+     *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
+     *             .startIndex(dynamicResourceGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -9435,14 +9435,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicResourceGroups = IdentityFunctions.getDomainsDynamicResourceGroups(GetDomainsDynamicResourceGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .dynamicResourceGroupCount(var_.dynamic_resource_group_dynamic_resource_group_count())
-     *             .dynamicResourceGroupFilter(var_.dynamic_resource_group_dynamic_resource_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .dynamicResourceGroupCount(dynamicResourceGroupDynamicResourceGroupCount)
+     *             .dynamicResourceGroupFilter(dynamicResourceGroupDynamicResourceGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.dynamic_resource_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.dynamic_resource_group_resource_type_schema_version())
-     *             .startIndex(var_.dynamic_resource_group_start_index())
+     *             .authorization(dynamicResourceGroupAuthorization)
+     *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
+     *             .startIndex(dynamicResourceGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -9484,12 +9484,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
-     *             .grantId(oci_identity_domains_grant.test_grant().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .grantId(testGrantOciIdentityDomainsGrant.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.grant_authorization())
-     *             .resourceTypeSchemaVersion(var_.grant_resource_type_schema_version())
+     *             .authorization(grantAuthorization)
+     *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9531,12 +9531,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
-     *             .grantId(oci_identity_domains_grant.test_grant().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .grantId(testGrantOciIdentityDomainsGrant.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.grant_authorization())
-     *             .resourceTypeSchemaVersion(var_.grant_resource_type_schema_version())
+     *             .authorization(grantAuthorization)
+     *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9578,12 +9578,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
-     *             .grantId(oci_identity_domains_grant.test_grant().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .grantId(testGrantOciIdentityDomainsGrant.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.grant_authorization())
-     *             .resourceTypeSchemaVersion(var_.grant_resource_type_schema_version())
+     *             .authorization(grantAuthorization)
+     *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9625,12 +9625,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrant = IdentityFunctions.getDomainsGrant(GetDomainsGrantArgs.builder()
-     *             .grantId(oci_identity_domains_grant.test_grant().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .grantId(testGrantOciIdentityDomainsGrant.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.grant_authorization())
-     *             .resourceTypeSchemaVersion(var_.grant_resource_type_schema_version())
+     *             .authorization(grantAuthorization)
+     *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9672,14 +9672,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrants = IdentityFunctions.getDomainsGrants(GetDomainsGrantsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .grantCount(var_.grant_grant_count())
-     *             .grantFilter(var_.grant_grant_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .grantCount(grantGrantCount)
+     *             .grantFilter(grantGrantFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.grant_authorization())
-     *             .resourceTypeSchemaVersion(var_.grant_resource_type_schema_version())
-     *             .startIndex(var_.grant_start_index())
+     *             .authorization(grantAuthorization)
+     *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
+     *             .startIndex(grantStartIndex)
      *             .build());
      * 
      *     }
@@ -9721,14 +9721,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrants = IdentityFunctions.getDomainsGrants(GetDomainsGrantsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .grantCount(var_.grant_grant_count())
-     *             .grantFilter(var_.grant_grant_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .grantCount(grantGrantCount)
+     *             .grantFilter(grantGrantFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.grant_authorization())
-     *             .resourceTypeSchemaVersion(var_.grant_resource_type_schema_version())
-     *             .startIndex(var_.grant_start_index())
+     *             .authorization(grantAuthorization)
+     *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
+     *             .startIndex(grantStartIndex)
      *             .build());
      * 
      *     }
@@ -9770,14 +9770,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrants = IdentityFunctions.getDomainsGrants(GetDomainsGrantsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .grantCount(var_.grant_grant_count())
-     *             .grantFilter(var_.grant_grant_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .grantCount(grantGrantCount)
+     *             .grantFilter(grantGrantFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.grant_authorization())
-     *             .resourceTypeSchemaVersion(var_.grant_resource_type_schema_version())
-     *             .startIndex(var_.grant_start_index())
+     *             .authorization(grantAuthorization)
+     *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
+     *             .startIndex(grantStartIndex)
      *             .build());
      * 
      *     }
@@ -9819,14 +9819,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGrants = IdentityFunctions.getDomainsGrants(GetDomainsGrantsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .grantCount(var_.grant_grant_count())
-     *             .grantFilter(var_.grant_grant_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .grantCount(grantGrantCount)
+     *             .grantFilter(grantGrantFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.grant_authorization())
-     *             .resourceTypeSchemaVersion(var_.grant_resource_type_schema_version())
-     *             .startIndex(var_.grant_start_index())
+     *             .authorization(grantAuthorization)
+     *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
+     *             .startIndex(grantStartIndex)
      *             .build());
      * 
      *     }
@@ -9868,12 +9868,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getDomainsGroup(GetDomainsGroupArgs.builder()
-     *             .groupId(oci_identity_group.test_group().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .groupId(testGroupOciIdentityGroup.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.group_authorization())
-     *             .resourceTypeSchemaVersion(var_.group_resource_type_schema_version())
+     *             .authorization(groupAuthorization)
+     *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9915,12 +9915,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getDomainsGroup(GetDomainsGroupArgs.builder()
-     *             .groupId(oci_identity_group.test_group().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .groupId(testGroupOciIdentityGroup.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.group_authorization())
-     *             .resourceTypeSchemaVersion(var_.group_resource_type_schema_version())
+     *             .authorization(groupAuthorization)
+     *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -9962,12 +9962,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getDomainsGroup(GetDomainsGroupArgs.builder()
-     *             .groupId(oci_identity_group.test_group().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .groupId(testGroupOciIdentityGroup.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.group_authorization())
-     *             .resourceTypeSchemaVersion(var_.group_resource_type_schema_version())
+     *             .authorization(groupAuthorization)
+     *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10009,12 +10009,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getDomainsGroup(GetDomainsGroupArgs.builder()
-     *             .groupId(oci_identity_group.test_group().id())
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .groupId(testGroupOciIdentityGroup.id())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.group_authorization())
-     *             .resourceTypeSchemaVersion(var_.group_resource_type_schema_version())
+     *             .authorization(groupAuthorization)
+     *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10056,14 +10056,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getDomainsGroups(GetDomainsGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .groupCount(var_.group_group_count())
-     *             .groupFilter(var_.group_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .groupCount(groupGroupCount)
+     *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.group_authorization())
-     *             .resourceTypeSchemaVersion(var_.group_resource_type_schema_version())
-     *             .startIndex(var_.group_start_index())
+     *             .authorization(groupAuthorization)
+     *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
+     *             .startIndex(groupStartIndex)
      *             .build());
      * 
      *     }
@@ -10105,14 +10105,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getDomainsGroups(GetDomainsGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .groupCount(var_.group_group_count())
-     *             .groupFilter(var_.group_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .groupCount(groupGroupCount)
+     *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.group_authorization())
-     *             .resourceTypeSchemaVersion(var_.group_resource_type_schema_version())
-     *             .startIndex(var_.group_start_index())
+     *             .authorization(groupAuthorization)
+     *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
+     *             .startIndex(groupStartIndex)
      *             .build());
      * 
      *     }
@@ -10154,14 +10154,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getDomainsGroups(GetDomainsGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .groupCount(var_.group_group_count())
-     *             .groupFilter(var_.group_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .groupCount(groupGroupCount)
+     *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.group_authorization())
-     *             .resourceTypeSchemaVersion(var_.group_resource_type_schema_version())
-     *             .startIndex(var_.group_start_index())
+     *             .authorization(groupAuthorization)
+     *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
+     *             .startIndex(groupStartIndex)
      *             .build());
      * 
      *     }
@@ -10203,14 +10203,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getDomainsGroups(GetDomainsGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .groupCount(var_.group_group_count())
-     *             .groupFilter(var_.group_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .groupCount(groupGroupCount)
+     *             .groupFilter(groupGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.group_authorization())
-     *             .resourceTypeSchemaVersion(var_.group_resource_type_schema_version())
-     *             .startIndex(var_.group_start_index())
+     *             .authorization(groupAuthorization)
+     *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
+     *             .startIndex(groupStartIndex)
      *             .build());
      * 
      *     }
@@ -10252,12 +10252,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityPropagationTrustId(oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_propagation_trust_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .authorization(identityPropagationTrustAuthorization)
+     *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10299,12 +10299,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityPropagationTrustId(oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_propagation_trust_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .authorization(identityPropagationTrustAuthorization)
+     *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10346,12 +10346,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityPropagationTrustId(oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_propagation_trust_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .authorization(identityPropagationTrustAuthorization)
+     *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10393,12 +10393,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityPropagationTrustId(oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityPropagationTrustId(testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_propagation_trust_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .authorization(identityPropagationTrustAuthorization)
+     *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10440,14 +10440,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityPropagationTrustCount(var_.identity_propagation_trust_identity_propagation_trust_count())
-     *             .identityPropagationTrustFilter(var_.identity_propagation_trust_identity_propagation_trust_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
+     *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_propagation_trust_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
-     *             .startIndex(var_.identity_propagation_trust_start_index())
+     *             .authorization(identityPropagationTrustAuthorization)
+     *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
+     *             .startIndex(identityPropagationTrustStartIndex)
      *             .build());
      * 
      *     }
@@ -10489,14 +10489,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityPropagationTrustCount(var_.identity_propagation_trust_identity_propagation_trust_count())
-     *             .identityPropagationTrustFilter(var_.identity_propagation_trust_identity_propagation_trust_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
+     *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_propagation_trust_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
-     *             .startIndex(var_.identity_propagation_trust_start_index())
+     *             .authorization(identityPropagationTrustAuthorization)
+     *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
+     *             .startIndex(identityPropagationTrustStartIndex)
      *             .build());
      * 
      *     }
@@ -10538,14 +10538,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityPropagationTrustCount(var_.identity_propagation_trust_identity_propagation_trust_count())
-     *             .identityPropagationTrustFilter(var_.identity_propagation_trust_identity_propagation_trust_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
+     *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_propagation_trust_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
-     *             .startIndex(var_.identity_propagation_trust_start_index())
+     *             .authorization(identityPropagationTrustAuthorization)
+     *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
+     *             .startIndex(identityPropagationTrustStartIndex)
      *             .build());
      * 
      *     }
@@ -10587,14 +10587,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityPropagationTrustCount(var_.identity_propagation_trust_identity_propagation_trust_count())
-     *             .identityPropagationTrustFilter(var_.identity_propagation_trust_identity_propagation_trust_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityPropagationTrustCount(identityPropagationTrustIdentityPropagationTrustCount)
+     *             .identityPropagationTrustFilter(identityPropagationTrustIdentityPropagationTrustFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_propagation_trust_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
-     *             .startIndex(var_.identity_propagation_trust_start_index())
+     *             .authorization(identityPropagationTrustAuthorization)
+     *             .resourceTypeSchemaVersion(identityPropagationTrustResourceTypeSchemaVersion)
+     *             .startIndex(identityPropagationTrustStartIndex)
      *             .build());
      * 
      *     }
@@ -10636,12 +10636,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProvider = IdentityFunctions.getDomainsIdentityProvider(GetDomainsIdentityProviderArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_provider_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_provider_resource_type_schema_version())
+     *             .authorization(identityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10683,12 +10683,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProvider = IdentityFunctions.getDomainsIdentityProvider(GetDomainsIdentityProviderArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_provider_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_provider_resource_type_schema_version())
+     *             .authorization(identityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10730,12 +10730,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProvider = IdentityFunctions.getDomainsIdentityProvider(GetDomainsIdentityProviderArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_provider_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_provider_resource_type_schema_version())
+     *             .authorization(identityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10777,12 +10777,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProvider = IdentityFunctions.getDomainsIdentityProvider(GetDomainsIdentityProviderArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProviderId(testIdentityProviderOciIdentityIdentityProvider.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_provider_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_provider_resource_type_schema_version())
+     *             .authorization(identityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -10824,14 +10824,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityProviderCount(var_.identity_provider_identity_provider_count())
-     *             .identityProviderFilter(var_.identity_provider_identity_provider_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProviderCount(identityProviderIdentityProviderCount)
+     *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_provider_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_provider_resource_type_schema_version())
-     *             .startIndex(var_.identity_provider_start_index())
+     *             .authorization(identityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
+     *             .startIndex(identityProviderStartIndex)
      *             .build());
      * 
      *     }
@@ -10873,14 +10873,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityProviderCount(var_.identity_provider_identity_provider_count())
-     *             .identityProviderFilter(var_.identity_provider_identity_provider_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProviderCount(identityProviderIdentityProviderCount)
+     *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_provider_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_provider_resource_type_schema_version())
-     *             .startIndex(var_.identity_provider_start_index())
+     *             .authorization(identityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
+     *             .startIndex(identityProviderStartIndex)
      *             .build());
      * 
      *     }
@@ -10922,14 +10922,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityProviderCount(var_.identity_provider_identity_provider_count())
-     *             .identityProviderFilter(var_.identity_provider_identity_provider_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProviderCount(identityProviderIdentityProviderCount)
+     *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_provider_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_provider_resource_type_schema_version())
-     *             .startIndex(var_.identity_provider_start_index())
+     *             .authorization(identityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
+     *             .startIndex(identityProviderStartIndex)
      *             .build());
      * 
      *     }
@@ -10971,14 +10971,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getDomainsIdentityProviders(GetDomainsIdentityProvidersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identityProviderCount(var_.identity_provider_identity_provider_count())
-     *             .identityProviderFilter(var_.identity_provider_identity_provider_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identityProviderCount(identityProviderIdentityProviderCount)
+     *             .identityProviderFilter(identityProviderIdentityProviderFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_provider_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_provider_resource_type_schema_version())
-     *             .startIndex(var_.identity_provider_start_index())
+     *             .authorization(identityProviderAuthorization)
+     *             .resourceTypeSchemaVersion(identityProviderResourceTypeSchemaVersion)
+     *             .startIndex(identityProviderStartIndex)
      *             .build());
      * 
      *     }
@@ -11020,12 +11020,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identitySettingId(oci_identity_domains_identity_setting.test_identity_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_setting_resource_type_schema_version())
+     *             .authorization(identitySettingAuthorization)
+     *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11067,12 +11067,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identitySettingId(oci_identity_domains_identity_setting.test_identity_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_setting_resource_type_schema_version())
+     *             .authorization(identitySettingAuthorization)
+     *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11114,12 +11114,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identitySettingId(oci_identity_domains_identity_setting.test_identity_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_setting_resource_type_schema_version())
+     *             .authorization(identitySettingAuthorization)
+     *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11161,12 +11161,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySetting = IdentityFunctions.getDomainsIdentitySetting(GetDomainsIdentitySettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .identitySettingId(oci_identity_domains_identity_setting.test_identity_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .identitySettingId(testIdentitySettingOciIdentityDomainsIdentitySetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_setting_resource_type_schema_version())
+     *             .authorization(identitySettingAuthorization)
+     *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11208,11 +11208,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_setting_resource_type_schema_version())
+     *             .authorization(identitySettingAuthorization)
+     *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11254,11 +11254,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_setting_resource_type_schema_version())
+     *             .authorization(identitySettingAuthorization)
+     *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11300,11 +11300,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_setting_resource_type_schema_version())
+     *             .authorization(identitySettingAuthorization)
+     *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11346,11 +11346,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentitySettings = IdentityFunctions.getDomainsIdentitySettings(GetDomainsIdentitySettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.identity_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.identity_setting_resource_type_schema_version())
+     *             .authorization(identitySettingAuthorization)
+     *             .resourceTypeSchemaVersion(identitySettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11392,12 +11392,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSetting = IdentityFunctions.getDomainsKmsiSetting(GetDomainsKmsiSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .kmsiSettingId(oci_identity_domains_kmsi_setting.test_kmsi_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.kmsi_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.kmsi_setting_resource_type_schema_version())
+     *             .authorization(kmsiSettingAuthorization)
+     *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11439,12 +11439,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSetting = IdentityFunctions.getDomainsKmsiSetting(GetDomainsKmsiSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .kmsiSettingId(oci_identity_domains_kmsi_setting.test_kmsi_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.kmsi_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.kmsi_setting_resource_type_schema_version())
+     *             .authorization(kmsiSettingAuthorization)
+     *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11486,12 +11486,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSetting = IdentityFunctions.getDomainsKmsiSetting(GetDomainsKmsiSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .kmsiSettingId(oci_identity_domains_kmsi_setting.test_kmsi_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.kmsi_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.kmsi_setting_resource_type_schema_version())
+     *             .authorization(kmsiSettingAuthorization)
+     *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11533,12 +11533,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSetting = IdentityFunctions.getDomainsKmsiSetting(GetDomainsKmsiSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .kmsiSettingId(oci_identity_domains_kmsi_setting.test_kmsi_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .kmsiSettingId(testKmsiSettingOciIdentityDomainsKmsiSetting.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.kmsi_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.kmsi_setting_resource_type_schema_version())
+     *             .authorization(kmsiSettingAuthorization)
+     *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11580,11 +11580,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.kmsi_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.kmsi_setting_resource_type_schema_version())
+     *             .authorization(kmsiSettingAuthorization)
+     *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11626,11 +11626,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.kmsi_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.kmsi_setting_resource_type_schema_version())
+     *             .authorization(kmsiSettingAuthorization)
+     *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11672,11 +11672,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.kmsi_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.kmsi_setting_resource_type_schema_version())
+     *             .authorization(kmsiSettingAuthorization)
+     *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11718,11 +11718,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKmsiSettings = IdentityFunctions.getDomainsKmsiSettings(GetDomainsKmsiSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.kmsi_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.kmsi_setting_resource_type_schema_version())
+     *             .authorization(kmsiSettingAuthorization)
+     *             .resourceTypeSchemaVersion(kmsiSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11764,10 +11764,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKey = IdentityFunctions.getDomainsMyApiKey(GetDomainsMyApiKeyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myApiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .authorization(var_.my_api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_api_key_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myApiKeyId(testApiKey.id())
+     *             .authorization(myApiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11809,10 +11809,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKey = IdentityFunctions.getDomainsMyApiKey(GetDomainsMyApiKeyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myApiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .authorization(var_.my_api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_api_key_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myApiKeyId(testApiKey.id())
+     *             .authorization(myApiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11854,10 +11854,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKey = IdentityFunctions.getDomainsMyApiKey(GetDomainsMyApiKeyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myApiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .authorization(var_.my_api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_api_key_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myApiKeyId(testApiKey.id())
+     *             .authorization(myApiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11899,10 +11899,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKey = IdentityFunctions.getDomainsMyApiKey(GetDomainsMyApiKeyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myApiKeyId(oci_identity_api_key.test_api_key().id())
-     *             .authorization(var_.my_api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_api_key_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myApiKeyId(testApiKey.id())
+     *             .authorization(myApiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -11944,12 +11944,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKeys = IdentityFunctions.getDomainsMyApiKeys(GetDomainsMyApiKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myApiKeyCount(var_.my_api_key_my_api_key_count())
-     *             .myApiKeyFilter(var_.my_api_key_my_api_key_filter())
-     *             .authorization(var_.my_api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_api_key_resource_type_schema_version())
-     *             .startIndex(var_.my_api_key_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myApiKeyCount(myApiKeyMyApiKeyCount)
+     *             .myApiKeyFilter(myApiKeyMyApiKeyFilter)
+     *             .authorization(myApiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
+     *             .startIndex(myApiKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -11991,12 +11991,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKeys = IdentityFunctions.getDomainsMyApiKeys(GetDomainsMyApiKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myApiKeyCount(var_.my_api_key_my_api_key_count())
-     *             .myApiKeyFilter(var_.my_api_key_my_api_key_filter())
-     *             .authorization(var_.my_api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_api_key_resource_type_schema_version())
-     *             .startIndex(var_.my_api_key_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myApiKeyCount(myApiKeyMyApiKeyCount)
+     *             .myApiKeyFilter(myApiKeyMyApiKeyFilter)
+     *             .authorization(myApiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
+     *             .startIndex(myApiKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -12038,12 +12038,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKeys = IdentityFunctions.getDomainsMyApiKeys(GetDomainsMyApiKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myApiKeyCount(var_.my_api_key_my_api_key_count())
-     *             .myApiKeyFilter(var_.my_api_key_my_api_key_filter())
-     *             .authorization(var_.my_api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_api_key_resource_type_schema_version())
-     *             .startIndex(var_.my_api_key_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myApiKeyCount(myApiKeyMyApiKeyCount)
+     *             .myApiKeyFilter(myApiKeyMyApiKeyFilter)
+     *             .authorization(myApiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
+     *             .startIndex(myApiKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -12085,12 +12085,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApiKeys = IdentityFunctions.getDomainsMyApiKeys(GetDomainsMyApiKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myApiKeyCount(var_.my_api_key_my_api_key_count())
-     *             .myApiKeyFilter(var_.my_api_key_my_api_key_filter())
-     *             .authorization(var_.my_api_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_api_key_resource_type_schema_version())
-     *             .startIndex(var_.my_api_key_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myApiKeyCount(myApiKeyMyApiKeyCount)
+     *             .myApiKeyFilter(myApiKeyMyApiKeyFilter)
+     *             .authorization(myApiKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
+     *             .startIndex(myApiKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -12132,12 +12132,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApps = IdentityFunctions.getDomainsMyApps(GetDomainsMyAppsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAppCount(var_.my_app_my_app_count())
-     *             .myAppFilter(var_.my_app_my_app_filter())
-     *             .authorization(var_.my_app_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_app_resource_type_schema_version())
-     *             .startIndex(var_.my_app_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAppCount(myAppMyAppCount)
+     *             .myAppFilter(myAppMyAppFilter)
+     *             .authorization(myAppAuthorization)
+     *             .resourceTypeSchemaVersion(myAppResourceTypeSchemaVersion)
+     *             .startIndex(myAppStartIndex)
      *             .build());
      * 
      *     }
@@ -12179,12 +12179,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApps = IdentityFunctions.getDomainsMyApps(GetDomainsMyAppsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAppCount(var_.my_app_my_app_count())
-     *             .myAppFilter(var_.my_app_my_app_filter())
-     *             .authorization(var_.my_app_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_app_resource_type_schema_version())
-     *             .startIndex(var_.my_app_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAppCount(myAppMyAppCount)
+     *             .myAppFilter(myAppMyAppFilter)
+     *             .authorization(myAppAuthorization)
+     *             .resourceTypeSchemaVersion(myAppResourceTypeSchemaVersion)
+     *             .startIndex(myAppStartIndex)
      *             .build());
      * 
      *     }
@@ -12226,12 +12226,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApps = IdentityFunctions.getDomainsMyApps(GetDomainsMyAppsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAppCount(var_.my_app_my_app_count())
-     *             .myAppFilter(var_.my_app_my_app_filter())
-     *             .authorization(var_.my_app_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_app_resource_type_schema_version())
-     *             .startIndex(var_.my_app_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAppCount(myAppMyAppCount)
+     *             .myAppFilter(myAppMyAppFilter)
+     *             .authorization(myAppAuthorization)
+     *             .resourceTypeSchemaVersion(myAppResourceTypeSchemaVersion)
+     *             .startIndex(myAppStartIndex)
      *             .build());
      * 
      *     }
@@ -12273,12 +12273,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyApps = IdentityFunctions.getDomainsMyApps(GetDomainsMyAppsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAppCount(var_.my_app_my_app_count())
-     *             .myAppFilter(var_.my_app_my_app_filter())
-     *             .authorization(var_.my_app_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_app_resource_type_schema_version())
-     *             .startIndex(var_.my_app_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAppCount(myAppMyAppCount)
+     *             .myAppFilter(myAppMyAppFilter)
+     *             .authorization(myAppAuthorization)
+     *             .resourceTypeSchemaVersion(myAppResourceTypeSchemaVersion)
+     *             .startIndex(myAppStartIndex)
      *             .build());
      * 
      *     }
@@ -12320,10 +12320,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthToken = IdentityFunctions.getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAuthTokenId(oci_identity_auth_token.test_auth_token().id())
-     *             .authorization(var_.my_auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_auth_token_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAuthTokenId(testAuthToken.id())
+     *             .authorization(myAuthTokenAuthorization)
+     *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -12365,10 +12365,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthToken = IdentityFunctions.getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAuthTokenId(oci_identity_auth_token.test_auth_token().id())
-     *             .authorization(var_.my_auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_auth_token_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAuthTokenId(testAuthToken.id())
+     *             .authorization(myAuthTokenAuthorization)
+     *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -12410,10 +12410,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthToken = IdentityFunctions.getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAuthTokenId(oci_identity_auth_token.test_auth_token().id())
-     *             .authorization(var_.my_auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_auth_token_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAuthTokenId(testAuthToken.id())
+     *             .authorization(myAuthTokenAuthorization)
+     *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -12455,10 +12455,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthToken = IdentityFunctions.getDomainsMyAuthToken(GetDomainsMyAuthTokenArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAuthTokenId(oci_identity_auth_token.test_auth_token().id())
-     *             .authorization(var_.my_auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_auth_token_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAuthTokenId(testAuthToken.id())
+     *             .authorization(myAuthTokenAuthorization)
+     *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -12500,12 +12500,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthTokens = IdentityFunctions.getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAuthTokenCount(var_.my_auth_token_my_auth_token_count())
-     *             .myAuthTokenFilter(var_.my_auth_token_my_auth_token_filter())
-     *             .authorization(var_.my_auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_auth_token_resource_type_schema_version())
-     *             .startIndex(var_.my_auth_token_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAuthTokenCount(myAuthTokenMyAuthTokenCount)
+     *             .myAuthTokenFilter(myAuthTokenMyAuthTokenFilter)
+     *             .authorization(myAuthTokenAuthorization)
+     *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
+     *             .startIndex(myAuthTokenStartIndex)
      *             .build());
      * 
      *     }
@@ -12547,12 +12547,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthTokens = IdentityFunctions.getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAuthTokenCount(var_.my_auth_token_my_auth_token_count())
-     *             .myAuthTokenFilter(var_.my_auth_token_my_auth_token_filter())
-     *             .authorization(var_.my_auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_auth_token_resource_type_schema_version())
-     *             .startIndex(var_.my_auth_token_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAuthTokenCount(myAuthTokenMyAuthTokenCount)
+     *             .myAuthTokenFilter(myAuthTokenMyAuthTokenFilter)
+     *             .authorization(myAuthTokenAuthorization)
+     *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
+     *             .startIndex(myAuthTokenStartIndex)
      *             .build());
      * 
      *     }
@@ -12594,12 +12594,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthTokens = IdentityFunctions.getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAuthTokenCount(var_.my_auth_token_my_auth_token_count())
-     *             .myAuthTokenFilter(var_.my_auth_token_my_auth_token_filter())
-     *             .authorization(var_.my_auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_auth_token_resource_type_schema_version())
-     *             .startIndex(var_.my_auth_token_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAuthTokenCount(myAuthTokenMyAuthTokenCount)
+     *             .myAuthTokenFilter(myAuthTokenMyAuthTokenFilter)
+     *             .authorization(myAuthTokenAuthorization)
+     *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
+     *             .startIndex(myAuthTokenStartIndex)
      *             .build());
      * 
      *     }
@@ -12641,12 +12641,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyAuthTokens = IdentityFunctions.getDomainsMyAuthTokens(GetDomainsMyAuthTokensArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myAuthTokenCount(var_.my_auth_token_my_auth_token_count())
-     *             .myAuthTokenFilter(var_.my_auth_token_my_auth_token_filter())
-     *             .authorization(var_.my_auth_token_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_auth_token_resource_type_schema_version())
-     *             .startIndex(var_.my_auth_token_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myAuthTokenCount(myAuthTokenMyAuthTokenCount)
+     *             .myAuthTokenFilter(myAuthTokenMyAuthTokenFilter)
+     *             .authorization(myAuthTokenAuthorization)
+     *             .resourceTypeSchemaVersion(myAuthTokenResourceTypeSchemaVersion)
+     *             .startIndex(myAuthTokenStartIndex)
      *             .build());
      * 
      *     }
@@ -12688,10 +12688,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCompletedApprovalId(oci_identity_domains_my_completed_approval.test_my_completed_approval().id())
-     *             .authorization(var_.my_completed_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id())
+     *             .authorization(myCompletedApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -12733,10 +12733,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCompletedApprovalId(oci_identity_domains_my_completed_approval.test_my_completed_approval().id())
-     *             .authorization(var_.my_completed_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id())
+     *             .authorization(myCompletedApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -12778,10 +12778,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCompletedApprovalId(oci_identity_domains_my_completed_approval.test_my_completed_approval().id())
-     *             .authorization(var_.my_completed_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id())
+     *             .authorization(myCompletedApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -12823,10 +12823,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCompletedApprovalId(oci_identity_domains_my_completed_approval.test_my_completed_approval().id())
-     *             .authorization(var_.my_completed_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCompletedApprovalId(testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id())
+     *             .authorization(myCompletedApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -12868,12 +12868,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCompletedApprovalCount(var_.my_completed_approval_my_completed_approval_count())
-     *             .myCompletedApprovalFilter(var_.my_completed_approval_my_completed_approval_filter())
-     *             .authorization(var_.my_completed_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
-     *             .startIndex(var_.my_completed_approval_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCompletedApprovalCount(myCompletedApprovalMyCompletedApprovalCount)
+     *             .myCompletedApprovalFilter(myCompletedApprovalMyCompletedApprovalFilter)
+     *             .authorization(myCompletedApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
+     *             .startIndex(myCompletedApprovalStartIndex)
      *             .build());
      * 
      *     }
@@ -12915,12 +12915,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCompletedApprovalCount(var_.my_completed_approval_my_completed_approval_count())
-     *             .myCompletedApprovalFilter(var_.my_completed_approval_my_completed_approval_filter())
-     *             .authorization(var_.my_completed_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
-     *             .startIndex(var_.my_completed_approval_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCompletedApprovalCount(myCompletedApprovalMyCompletedApprovalCount)
+     *             .myCompletedApprovalFilter(myCompletedApprovalMyCompletedApprovalFilter)
+     *             .authorization(myCompletedApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
+     *             .startIndex(myCompletedApprovalStartIndex)
      *             .build());
      * 
      *     }
@@ -12962,12 +12962,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCompletedApprovalCount(var_.my_completed_approval_my_completed_approval_count())
-     *             .myCompletedApprovalFilter(var_.my_completed_approval_my_completed_approval_filter())
-     *             .authorization(var_.my_completed_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
-     *             .startIndex(var_.my_completed_approval_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCompletedApprovalCount(myCompletedApprovalMyCompletedApprovalCount)
+     *             .myCompletedApprovalFilter(myCompletedApprovalMyCompletedApprovalFilter)
+     *             .authorization(myCompletedApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
+     *             .startIndex(myCompletedApprovalStartIndex)
      *             .build());
      * 
      *     }
@@ -13009,12 +13009,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCompletedApprovalCount(var_.my_completed_approval_my_completed_approval_count())
-     *             .myCompletedApprovalFilter(var_.my_completed_approval_my_completed_approval_filter())
-     *             .authorization(var_.my_completed_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
-     *             .startIndex(var_.my_completed_approval_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCompletedApprovalCount(myCompletedApprovalMyCompletedApprovalCount)
+     *             .myCompletedApprovalFilter(myCompletedApprovalMyCompletedApprovalFilter)
+     *             .authorization(myCompletedApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myCompletedApprovalResourceTypeSchemaVersion)
+     *             .startIndex(myCompletedApprovalStartIndex)
      *             .build());
      * 
      *     }
@@ -13056,10 +13056,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKey = IdentityFunctions.getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCustomerSecretKeyId(oci_identity_customer_secret_key.test_customer_secret_key().id())
-     *             .authorization(var_.my_customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_customer_secret_key_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCustomerSecretKeyId(testCustomerSecretKey.id())
+     *             .authorization(myCustomerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -13101,10 +13101,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKey = IdentityFunctions.getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCustomerSecretKeyId(oci_identity_customer_secret_key.test_customer_secret_key().id())
-     *             .authorization(var_.my_customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_customer_secret_key_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCustomerSecretKeyId(testCustomerSecretKey.id())
+     *             .authorization(myCustomerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -13146,10 +13146,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKey = IdentityFunctions.getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCustomerSecretKeyId(oci_identity_customer_secret_key.test_customer_secret_key().id())
-     *             .authorization(var_.my_customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_customer_secret_key_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCustomerSecretKeyId(testCustomerSecretKey.id())
+     *             .authorization(myCustomerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -13191,10 +13191,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKey = IdentityFunctions.getDomainsMyCustomerSecretKey(GetDomainsMyCustomerSecretKeyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCustomerSecretKeyId(oci_identity_customer_secret_key.test_customer_secret_key().id())
-     *             .authorization(var_.my_customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_customer_secret_key_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCustomerSecretKeyId(testCustomerSecretKey.id())
+     *             .authorization(myCustomerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -13236,12 +13236,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKeys = IdentityFunctions.getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCustomerSecretKeyCount(var_.my_customer_secret_key_my_customer_secret_key_count())
-     *             .myCustomerSecretKeyFilter(var_.my_customer_secret_key_my_customer_secret_key_filter())
-     *             .authorization(var_.my_customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_customer_secret_key_resource_type_schema_version())
-     *             .startIndex(var_.my_customer_secret_key_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCustomerSecretKeyCount(myCustomerSecretKeyMyCustomerSecretKeyCount)
+     *             .myCustomerSecretKeyFilter(myCustomerSecretKeyMyCustomerSecretKeyFilter)
+     *             .authorization(myCustomerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
+     *             .startIndex(myCustomerSecretKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -13283,12 +13283,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKeys = IdentityFunctions.getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCustomerSecretKeyCount(var_.my_customer_secret_key_my_customer_secret_key_count())
-     *             .myCustomerSecretKeyFilter(var_.my_customer_secret_key_my_customer_secret_key_filter())
-     *             .authorization(var_.my_customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_customer_secret_key_resource_type_schema_version())
-     *             .startIndex(var_.my_customer_secret_key_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCustomerSecretKeyCount(myCustomerSecretKeyMyCustomerSecretKeyCount)
+     *             .myCustomerSecretKeyFilter(myCustomerSecretKeyMyCustomerSecretKeyFilter)
+     *             .authorization(myCustomerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
+     *             .startIndex(myCustomerSecretKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -13330,12 +13330,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKeys = IdentityFunctions.getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCustomerSecretKeyCount(var_.my_customer_secret_key_my_customer_secret_key_count())
-     *             .myCustomerSecretKeyFilter(var_.my_customer_secret_key_my_customer_secret_key_filter())
-     *             .authorization(var_.my_customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_customer_secret_key_resource_type_schema_version())
-     *             .startIndex(var_.my_customer_secret_key_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCustomerSecretKeyCount(myCustomerSecretKeyMyCustomerSecretKeyCount)
+     *             .myCustomerSecretKeyFilter(myCustomerSecretKeyMyCustomerSecretKeyFilter)
+     *             .authorization(myCustomerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
+     *             .startIndex(myCustomerSecretKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -13377,12 +13377,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyCustomerSecretKeys = IdentityFunctions.getDomainsMyCustomerSecretKeys(GetDomainsMyCustomerSecretKeysArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myCustomerSecretKeyCount(var_.my_customer_secret_key_my_customer_secret_key_count())
-     *             .myCustomerSecretKeyFilter(var_.my_customer_secret_key_my_customer_secret_key_filter())
-     *             .authorization(var_.my_customer_secret_key_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_customer_secret_key_resource_type_schema_version())
-     *             .startIndex(var_.my_customer_secret_key_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myCustomerSecretKeyCount(myCustomerSecretKeyMyCustomerSecretKeyCount)
+     *             .myCustomerSecretKeyFilter(myCustomerSecretKeyMyCustomerSecretKeyFilter)
+     *             .authorization(myCustomerSecretKeyAuthorization)
+     *             .resourceTypeSchemaVersion(myCustomerSecretKeyResourceTypeSchemaVersion)
+     *             .startIndex(myCustomerSecretKeyStartIndex)
      *             .build());
      * 
      *     }
@@ -13424,12 +13424,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevice = IdentityFunctions.getDomainsMyDevice(GetDomainsMyDeviceArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myDeviceId(oci_identity_domains_my_device.test_my_device().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_device_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_device_resource_type_schema_version())
+     *             .authorization(myDeviceAuthorization)
+     *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -13471,12 +13471,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevice = IdentityFunctions.getDomainsMyDevice(GetDomainsMyDeviceArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myDeviceId(oci_identity_domains_my_device.test_my_device().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_device_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_device_resource_type_schema_version())
+     *             .authorization(myDeviceAuthorization)
+     *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -13518,12 +13518,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevice = IdentityFunctions.getDomainsMyDevice(GetDomainsMyDeviceArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myDeviceId(oci_identity_domains_my_device.test_my_device().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_device_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_device_resource_type_schema_version())
+     *             .authorization(myDeviceAuthorization)
+     *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -13565,12 +13565,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevice = IdentityFunctions.getDomainsMyDevice(GetDomainsMyDeviceArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myDeviceId(oci_identity_domains_my_device.test_my_device().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myDeviceId(testMyDeviceOciIdentityDomainsMyDevice.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_device_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_device_resource_type_schema_version())
+     *             .authorization(myDeviceAuthorization)
+     *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -13612,14 +13612,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevices = IdentityFunctions.getDomainsMyDevices(GetDomainsMyDevicesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myDeviceCount(var_.my_device_my_device_count())
-     *             .myDeviceFilter(var_.my_device_my_device_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myDeviceCount(myDeviceMyDeviceCount)
+     *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_device_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_device_resource_type_schema_version())
-     *             .startIndex(var_.my_device_start_index())
+     *             .authorization(myDeviceAuthorization)
+     *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
+     *             .startIndex(myDeviceStartIndex)
      *             .build());
      * 
      *     }
@@ -13661,14 +13661,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevices = IdentityFunctions.getDomainsMyDevices(GetDomainsMyDevicesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myDeviceCount(var_.my_device_my_device_count())
-     *             .myDeviceFilter(var_.my_device_my_device_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myDeviceCount(myDeviceMyDeviceCount)
+     *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_device_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_device_resource_type_schema_version())
-     *             .startIndex(var_.my_device_start_index())
+     *             .authorization(myDeviceAuthorization)
+     *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
+     *             .startIndex(myDeviceStartIndex)
      *             .build());
      * 
      *     }
@@ -13710,14 +13710,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevices = IdentityFunctions.getDomainsMyDevices(GetDomainsMyDevicesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myDeviceCount(var_.my_device_my_device_count())
-     *             .myDeviceFilter(var_.my_device_my_device_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myDeviceCount(myDeviceMyDeviceCount)
+     *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_device_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_device_resource_type_schema_version())
-     *             .startIndex(var_.my_device_start_index())
+     *             .authorization(myDeviceAuthorization)
+     *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
+     *             .startIndex(myDeviceStartIndex)
      *             .build());
      * 
      *     }
@@ -13759,14 +13759,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyDevices = IdentityFunctions.getDomainsMyDevices(GetDomainsMyDevicesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myDeviceCount(var_.my_device_my_device_count())
-     *             .myDeviceFilter(var_.my_device_my_device_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myDeviceCount(myDeviceMyDeviceCount)
+     *             .myDeviceFilter(myDeviceMyDeviceFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_device_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_device_resource_type_schema_version())
-     *             .startIndex(var_.my_device_start_index())
+     *             .authorization(myDeviceAuthorization)
+     *             .resourceTypeSchemaVersion(myDeviceResourceTypeSchemaVersion)
+     *             .startIndex(myDeviceStartIndex)
      *             .build());
      * 
      *     }
@@ -13808,14 +13808,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyGroups = IdentityFunctions.getDomainsMyGroups(GetDomainsMyGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myGroupCount(var_.my_group_my_group_count())
-     *             .myGroupFilter(var_.my_group_my_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myGroupCount(myGroupMyGroupCount)
+     *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_group_resource_type_schema_version())
-     *             .startIndex(var_.my_group_start_index())
+     *             .authorization(myGroupAuthorization)
+     *             .resourceTypeSchemaVersion(myGroupResourceTypeSchemaVersion)
+     *             .startIndex(myGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -13857,14 +13857,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyGroups = IdentityFunctions.getDomainsMyGroups(GetDomainsMyGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myGroupCount(var_.my_group_my_group_count())
-     *             .myGroupFilter(var_.my_group_my_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myGroupCount(myGroupMyGroupCount)
+     *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_group_resource_type_schema_version())
-     *             .startIndex(var_.my_group_start_index())
+     *             .authorization(myGroupAuthorization)
+     *             .resourceTypeSchemaVersion(myGroupResourceTypeSchemaVersion)
+     *             .startIndex(myGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -13906,14 +13906,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyGroups = IdentityFunctions.getDomainsMyGroups(GetDomainsMyGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myGroupCount(var_.my_group_my_group_count())
-     *             .myGroupFilter(var_.my_group_my_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myGroupCount(myGroupMyGroupCount)
+     *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_group_resource_type_schema_version())
-     *             .startIndex(var_.my_group_start_index())
+     *             .authorization(myGroupAuthorization)
+     *             .resourceTypeSchemaVersion(myGroupResourceTypeSchemaVersion)
+     *             .startIndex(myGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -13955,14 +13955,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyGroups = IdentityFunctions.getDomainsMyGroups(GetDomainsMyGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myGroupCount(var_.my_group_my_group_count())
-     *             .myGroupFilter(var_.my_group_my_group_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myGroupCount(myGroupMyGroupCount)
+     *             .myGroupFilter(myGroupMyGroupFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_group_resource_type_schema_version())
-     *             .startIndex(var_.my_group_start_index())
+     *             .authorization(myGroupAuthorization)
+     *             .resourceTypeSchemaVersion(myGroupResourceTypeSchemaVersion)
+     *             .startIndex(myGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -14004,10 +14004,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredential = IdentityFunctions.getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myOauth2clientCredentialId(oci_identity_domains_my_oauth2client_credential.test_my_oauth2client_credential().id())
-     *             .authorization(var_.my_oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_oauth2client_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id())
+     *             .authorization(myOauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -14049,10 +14049,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredential = IdentityFunctions.getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myOauth2clientCredentialId(oci_identity_domains_my_oauth2client_credential.test_my_oauth2client_credential().id())
-     *             .authorization(var_.my_oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_oauth2client_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id())
+     *             .authorization(myOauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -14094,10 +14094,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredential = IdentityFunctions.getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myOauth2clientCredentialId(oci_identity_domains_my_oauth2client_credential.test_my_oauth2client_credential().id())
-     *             .authorization(var_.my_oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_oauth2client_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id())
+     *             .authorization(myOauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -14139,10 +14139,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredential = IdentityFunctions.getDomainsMyOauth2clientCredential(GetDomainsMyOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myOauth2clientCredentialId(oci_identity_domains_my_oauth2client_credential.test_my_oauth2client_credential().id())
-     *             .authorization(var_.my_oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_oauth2client_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myOauth2clientCredentialId(testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id())
+     *             .authorization(myOauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -14184,12 +14184,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredentials = IdentityFunctions.getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myOauth2clientCredentialCount(var_.my_oauth2client_credential_my_oauth2client_credential_count())
-     *             .myOauth2clientCredentialFilter(var_.my_oauth2client_credential_my_oauth2client_credential_filter())
-     *             .authorization(var_.my_oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_oauth2client_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_oauth2client_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myOauth2clientCredentialCount(myOauth2clientCredentialMyOauth2clientCredentialCount)
+     *             .myOauth2clientCredentialFilter(myOauth2clientCredentialMyOauth2clientCredentialFilter)
+     *             .authorization(myOauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
+     *             .startIndex(myOauth2clientCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -14231,12 +14231,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredentials = IdentityFunctions.getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myOauth2clientCredentialCount(var_.my_oauth2client_credential_my_oauth2client_credential_count())
-     *             .myOauth2clientCredentialFilter(var_.my_oauth2client_credential_my_oauth2client_credential_filter())
-     *             .authorization(var_.my_oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_oauth2client_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_oauth2client_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myOauth2clientCredentialCount(myOauth2clientCredentialMyOauth2clientCredentialCount)
+     *             .myOauth2clientCredentialFilter(myOauth2clientCredentialMyOauth2clientCredentialFilter)
+     *             .authorization(myOauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
+     *             .startIndex(myOauth2clientCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -14278,12 +14278,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredentials = IdentityFunctions.getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myOauth2clientCredentialCount(var_.my_oauth2client_credential_my_oauth2client_credential_count())
-     *             .myOauth2clientCredentialFilter(var_.my_oauth2client_credential_my_oauth2client_credential_filter())
-     *             .authorization(var_.my_oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_oauth2client_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_oauth2client_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myOauth2clientCredentialCount(myOauth2clientCredentialMyOauth2clientCredentialCount)
+     *             .myOauth2clientCredentialFilter(myOauth2clientCredentialMyOauth2clientCredentialFilter)
+     *             .authorization(myOauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
+     *             .startIndex(myOauth2clientCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -14325,12 +14325,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyOauth2clientCredentials = IdentityFunctions.getDomainsMyOauth2clientCredentials(GetDomainsMyOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myOauth2clientCredentialCount(var_.my_oauth2client_credential_my_oauth2client_credential_count())
-     *             .myOauth2clientCredentialFilter(var_.my_oauth2client_credential_my_oauth2client_credential_filter())
-     *             .authorization(var_.my_oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_oauth2client_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_oauth2client_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myOauth2clientCredentialCount(myOauth2clientCredentialMyOauth2clientCredentialCount)
+     *             .myOauth2clientCredentialFilter(myOauth2clientCredentialMyOauth2clientCredentialFilter)
+     *             .authorization(myOauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myOauth2clientCredentialResourceTypeSchemaVersion)
+     *             .startIndex(myOauth2clientCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -14372,10 +14372,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myPendingApprovalId(oci_identity_domains_my_pending_approval.test_my_pending_approval().id())
-     *             .authorization(var_.my_pending_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id())
+     *             .authorization(myPendingApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -14417,10 +14417,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myPendingApprovalId(oci_identity_domains_my_pending_approval.test_my_pending_approval().id())
-     *             .authorization(var_.my_pending_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id())
+     *             .authorization(myPendingApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -14462,10 +14462,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myPendingApprovalId(oci_identity_domains_my_pending_approval.test_my_pending_approval().id())
-     *             .authorization(var_.my_pending_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id())
+     *             .authorization(myPendingApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -14507,10 +14507,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myPendingApprovalId(oci_identity_domains_my_pending_approval.test_my_pending_approval().id())
-     *             .authorization(var_.my_pending_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myPendingApprovalId(testMyPendingApprovalOciIdentityDomainsMyPendingApproval.id())
+     *             .authorization(myPendingApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -14552,12 +14552,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myPendingApprovalCount(var_.my_pending_approval_my_pending_approval_count())
-     *             .myPendingApprovalFilter(var_.my_pending_approval_my_pending_approval_filter())
-     *             .authorization(var_.my_pending_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
-     *             .startIndex(var_.my_pending_approval_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myPendingApprovalCount(myPendingApprovalMyPendingApprovalCount)
+     *             .myPendingApprovalFilter(myPendingApprovalMyPendingApprovalFilter)
+     *             .authorization(myPendingApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
+     *             .startIndex(myPendingApprovalStartIndex)
      *             .build());
      * 
      *     }
@@ -14599,12 +14599,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myPendingApprovalCount(var_.my_pending_approval_my_pending_approval_count())
-     *             .myPendingApprovalFilter(var_.my_pending_approval_my_pending_approval_filter())
-     *             .authorization(var_.my_pending_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
-     *             .startIndex(var_.my_pending_approval_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myPendingApprovalCount(myPendingApprovalMyPendingApprovalCount)
+     *             .myPendingApprovalFilter(myPendingApprovalMyPendingApprovalFilter)
+     *             .authorization(myPendingApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
+     *             .startIndex(myPendingApprovalStartIndex)
      *             .build());
      * 
      *     }
@@ -14646,12 +14646,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myPendingApprovalCount(var_.my_pending_approval_my_pending_approval_count())
-     *             .myPendingApprovalFilter(var_.my_pending_approval_my_pending_approval_filter())
-     *             .authorization(var_.my_pending_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
-     *             .startIndex(var_.my_pending_approval_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myPendingApprovalCount(myPendingApprovalMyPendingApprovalCount)
+     *             .myPendingApprovalFilter(myPendingApprovalMyPendingApprovalFilter)
+     *             .authorization(myPendingApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
+     *             .startIndex(myPendingApprovalStartIndex)
      *             .build());
      * 
      *     }
@@ -14693,12 +14693,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myPendingApprovalCount(var_.my_pending_approval_my_pending_approval_count())
-     *             .myPendingApprovalFilter(var_.my_pending_approval_my_pending_approval_filter())
-     *             .authorization(var_.my_pending_approval_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
-     *             .startIndex(var_.my_pending_approval_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myPendingApprovalCount(myPendingApprovalMyPendingApprovalCount)
+     *             .myPendingApprovalFilter(myPendingApprovalMyPendingApprovalFilter)
+     *             .authorization(myPendingApprovalAuthorization)
+     *             .resourceTypeSchemaVersion(myPendingApprovalResourceTypeSchemaVersion)
+     *             .startIndex(myPendingApprovalStartIndex)
      *             .build());
      * 
      *     }
@@ -14740,12 +14740,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequestableGroups = IdentityFunctions.getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myRequestableGroupCount(var_.my_requestable_group_my_requestable_group_count())
-     *             .myRequestableGroupFilter(var_.my_requestable_group_my_requestable_group_filter())
-     *             .authorization(var_.my_requestable_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_requestable_group_resource_type_schema_version())
-     *             .startIndex(var_.my_requestable_group_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myRequestableGroupCount(myRequestableGroupMyRequestableGroupCount)
+     *             .myRequestableGroupFilter(myRequestableGroupMyRequestableGroupFilter)
+     *             .authorization(myRequestableGroupAuthorization)
+     *             .resourceTypeSchemaVersion(myRequestableGroupResourceTypeSchemaVersion)
+     *             .startIndex(myRequestableGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -14787,12 +14787,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequestableGroups = IdentityFunctions.getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myRequestableGroupCount(var_.my_requestable_group_my_requestable_group_count())
-     *             .myRequestableGroupFilter(var_.my_requestable_group_my_requestable_group_filter())
-     *             .authorization(var_.my_requestable_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_requestable_group_resource_type_schema_version())
-     *             .startIndex(var_.my_requestable_group_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myRequestableGroupCount(myRequestableGroupMyRequestableGroupCount)
+     *             .myRequestableGroupFilter(myRequestableGroupMyRequestableGroupFilter)
+     *             .authorization(myRequestableGroupAuthorization)
+     *             .resourceTypeSchemaVersion(myRequestableGroupResourceTypeSchemaVersion)
+     *             .startIndex(myRequestableGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -14834,12 +14834,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequestableGroups = IdentityFunctions.getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myRequestableGroupCount(var_.my_requestable_group_my_requestable_group_count())
-     *             .myRequestableGroupFilter(var_.my_requestable_group_my_requestable_group_filter())
-     *             .authorization(var_.my_requestable_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_requestable_group_resource_type_schema_version())
-     *             .startIndex(var_.my_requestable_group_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myRequestableGroupCount(myRequestableGroupMyRequestableGroupCount)
+     *             .myRequestableGroupFilter(myRequestableGroupMyRequestableGroupFilter)
+     *             .authorization(myRequestableGroupAuthorization)
+     *             .resourceTypeSchemaVersion(myRequestableGroupResourceTypeSchemaVersion)
+     *             .startIndex(myRequestableGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -14881,12 +14881,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequestableGroups = IdentityFunctions.getDomainsMyRequestableGroups(GetDomainsMyRequestableGroupsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myRequestableGroupCount(var_.my_requestable_group_my_requestable_group_count())
-     *             .myRequestableGroupFilter(var_.my_requestable_group_my_requestable_group_filter())
-     *             .authorization(var_.my_requestable_group_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_requestable_group_resource_type_schema_version())
-     *             .startIndex(var_.my_requestable_group_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myRequestableGroupCount(myRequestableGroupMyRequestableGroupCount)
+     *             .myRequestableGroupFilter(myRequestableGroupMyRequestableGroupFilter)
+     *             .authorization(myRequestableGroupAuthorization)
+     *             .resourceTypeSchemaVersion(myRequestableGroupResourceTypeSchemaVersion)
+     *             .startIndex(myRequestableGroupStartIndex)
      *             .build());
      * 
      *     }
@@ -14928,14 +14928,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequests = IdentityFunctions.getDomainsMyRequests(GetDomainsMyRequestsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myRequestCount(var_.my_request_my_request_count())
-     *             .myRequestFilter(var_.my_request_my_request_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myRequestCount(myRequestMyRequestCount)
+     *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_request_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
-     *             .startIndex(var_.my_request_start_index())
+     *             .authorization(myRequestAuthorization)
+     *             .resourceTypeSchemaVersion(myRequestResourceTypeSchemaVersion)
+     *             .startIndex(myRequestStartIndex)
      *             .build());
      * 
      *     }
@@ -14977,14 +14977,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequests = IdentityFunctions.getDomainsMyRequests(GetDomainsMyRequestsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myRequestCount(var_.my_request_my_request_count())
-     *             .myRequestFilter(var_.my_request_my_request_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myRequestCount(myRequestMyRequestCount)
+     *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_request_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
-     *             .startIndex(var_.my_request_start_index())
+     *             .authorization(myRequestAuthorization)
+     *             .resourceTypeSchemaVersion(myRequestResourceTypeSchemaVersion)
+     *             .startIndex(myRequestStartIndex)
      *             .build());
      * 
      *     }
@@ -15026,14 +15026,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequests = IdentityFunctions.getDomainsMyRequests(GetDomainsMyRequestsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myRequestCount(var_.my_request_my_request_count())
-     *             .myRequestFilter(var_.my_request_my_request_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myRequestCount(myRequestMyRequestCount)
+     *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_request_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
-     *             .startIndex(var_.my_request_start_index())
+     *             .authorization(myRequestAuthorization)
+     *             .resourceTypeSchemaVersion(myRequestResourceTypeSchemaVersion)
+     *             .startIndex(myRequestStartIndex)
      *             .build());
      * 
      *     }
@@ -15075,14 +15075,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyRequests = IdentityFunctions.getDomainsMyRequests(GetDomainsMyRequestsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myRequestCount(var_.my_request_my_request_count())
-     *             .myRequestFilter(var_.my_request_my_request_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myRequestCount(myRequestMyRequestCount)
+     *             .myRequestFilter(myRequestMyRequestFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_request_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
-     *             .startIndex(var_.my_request_start_index())
+     *             .authorization(myRequestAuthorization)
+     *             .resourceTypeSchemaVersion(myRequestResourceTypeSchemaVersion)
+     *             .startIndex(myRequestStartIndex)
      *             .build());
      * 
      *     }
@@ -15124,10 +15124,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredential = IdentityFunctions.getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySmtpCredentialId(oci_identity_smtp_credential.test_smtp_credential().id())
-     *             .authorization(var_.my_smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_smtp_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySmtpCredentialId(testSmtpCredential.id())
+     *             .authorization(mySmtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15169,10 +15169,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredential = IdentityFunctions.getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySmtpCredentialId(oci_identity_smtp_credential.test_smtp_credential().id())
-     *             .authorization(var_.my_smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_smtp_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySmtpCredentialId(testSmtpCredential.id())
+     *             .authorization(mySmtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15214,10 +15214,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredential = IdentityFunctions.getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySmtpCredentialId(oci_identity_smtp_credential.test_smtp_credential().id())
-     *             .authorization(var_.my_smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_smtp_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySmtpCredentialId(testSmtpCredential.id())
+     *             .authorization(mySmtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15259,10 +15259,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredential = IdentityFunctions.getDomainsMySmtpCredential(GetDomainsMySmtpCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySmtpCredentialId(oci_identity_smtp_credential.test_smtp_credential().id())
-     *             .authorization(var_.my_smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_smtp_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySmtpCredentialId(testSmtpCredential.id())
+     *             .authorization(mySmtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15304,12 +15304,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredentials = IdentityFunctions.getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySmtpCredentialCount(var_.my_smtp_credential_my_smtp_credential_count())
-     *             .mySmtpCredentialFilter(var_.my_smtp_credential_my_smtp_credential_filter())
-     *             .authorization(var_.my_smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_smtp_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_smtp_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySmtpCredentialCount(mySmtpCredentialMySmtpCredentialCount)
+     *             .mySmtpCredentialFilter(mySmtpCredentialMySmtpCredentialFilter)
+     *             .authorization(mySmtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
+     *             .startIndex(mySmtpCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -15351,12 +15351,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredentials = IdentityFunctions.getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySmtpCredentialCount(var_.my_smtp_credential_my_smtp_credential_count())
-     *             .mySmtpCredentialFilter(var_.my_smtp_credential_my_smtp_credential_filter())
-     *             .authorization(var_.my_smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_smtp_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_smtp_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySmtpCredentialCount(mySmtpCredentialMySmtpCredentialCount)
+     *             .mySmtpCredentialFilter(mySmtpCredentialMySmtpCredentialFilter)
+     *             .authorization(mySmtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
+     *             .startIndex(mySmtpCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -15398,12 +15398,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredentials = IdentityFunctions.getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySmtpCredentialCount(var_.my_smtp_credential_my_smtp_credential_count())
-     *             .mySmtpCredentialFilter(var_.my_smtp_credential_my_smtp_credential_filter())
-     *             .authorization(var_.my_smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_smtp_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_smtp_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySmtpCredentialCount(mySmtpCredentialMySmtpCredentialCount)
+     *             .mySmtpCredentialFilter(mySmtpCredentialMySmtpCredentialFilter)
+     *             .authorization(mySmtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
+     *             .startIndex(mySmtpCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -15445,12 +15445,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySmtpCredentials = IdentityFunctions.getDomainsMySmtpCredentials(GetDomainsMySmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySmtpCredentialCount(var_.my_smtp_credential_my_smtp_credential_count())
-     *             .mySmtpCredentialFilter(var_.my_smtp_credential_my_smtp_credential_filter())
-     *             .authorization(var_.my_smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_smtp_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_smtp_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySmtpCredentialCount(mySmtpCredentialMySmtpCredentialCount)
+     *             .mySmtpCredentialFilter(mySmtpCredentialMySmtpCredentialFilter)
+     *             .authorization(mySmtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(mySmtpCredentialResourceTypeSchemaVersion)
+     *             .startIndex(mySmtpCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -15492,10 +15492,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccount = IdentityFunctions.getDomainsMySupportAccount(GetDomainsMySupportAccountArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySupportAccountId(oci_identity_domains_my_support_account.test_my_support_account().id())
-     *             .authorization(var_.my_support_account_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_support_account_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.id())
+     *             .authorization(mySupportAccountAuthorization)
+     *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15537,10 +15537,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccount = IdentityFunctions.getDomainsMySupportAccount(GetDomainsMySupportAccountArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySupportAccountId(oci_identity_domains_my_support_account.test_my_support_account().id())
-     *             .authorization(var_.my_support_account_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_support_account_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.id())
+     *             .authorization(mySupportAccountAuthorization)
+     *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15582,10 +15582,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccount = IdentityFunctions.getDomainsMySupportAccount(GetDomainsMySupportAccountArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySupportAccountId(oci_identity_domains_my_support_account.test_my_support_account().id())
-     *             .authorization(var_.my_support_account_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_support_account_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.id())
+     *             .authorization(mySupportAccountAuthorization)
+     *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15627,10 +15627,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccount = IdentityFunctions.getDomainsMySupportAccount(GetDomainsMySupportAccountArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySupportAccountId(oci_identity_domains_my_support_account.test_my_support_account().id())
-     *             .authorization(var_.my_support_account_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_support_account_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySupportAccountId(testMySupportAccountOciIdentityDomainsMySupportAccount.id())
+     *             .authorization(mySupportAccountAuthorization)
+     *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15672,12 +15672,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccounts = IdentityFunctions.getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySupportAccountCount(var_.my_support_account_my_support_account_count())
-     *             .mySupportAccountFilter(var_.my_support_account_my_support_account_filter())
-     *             .authorization(var_.my_support_account_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_support_account_resource_type_schema_version())
-     *             .startIndex(var_.my_support_account_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySupportAccountCount(mySupportAccountMySupportAccountCount)
+     *             .mySupportAccountFilter(mySupportAccountMySupportAccountFilter)
+     *             .authorization(mySupportAccountAuthorization)
+     *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
+     *             .startIndex(mySupportAccountStartIndex)
      *             .build());
      * 
      *     }
@@ -15719,12 +15719,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccounts = IdentityFunctions.getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySupportAccountCount(var_.my_support_account_my_support_account_count())
-     *             .mySupportAccountFilter(var_.my_support_account_my_support_account_filter())
-     *             .authorization(var_.my_support_account_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_support_account_resource_type_schema_version())
-     *             .startIndex(var_.my_support_account_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySupportAccountCount(mySupportAccountMySupportAccountCount)
+     *             .mySupportAccountFilter(mySupportAccountMySupportAccountFilter)
+     *             .authorization(mySupportAccountAuthorization)
+     *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
+     *             .startIndex(mySupportAccountStartIndex)
      *             .build());
      * 
      *     }
@@ -15766,12 +15766,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccounts = IdentityFunctions.getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySupportAccountCount(var_.my_support_account_my_support_account_count())
-     *             .mySupportAccountFilter(var_.my_support_account_my_support_account_filter())
-     *             .authorization(var_.my_support_account_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_support_account_resource_type_schema_version())
-     *             .startIndex(var_.my_support_account_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySupportAccountCount(mySupportAccountMySupportAccountCount)
+     *             .mySupportAccountFilter(mySupportAccountMySupportAccountFilter)
+     *             .authorization(mySupportAccountAuthorization)
+     *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
+     *             .startIndex(mySupportAccountStartIndex)
      *             .build());
      * 
      *     }
@@ -15813,12 +15813,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMySupportAccounts = IdentityFunctions.getDomainsMySupportAccounts(GetDomainsMySupportAccountsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .mySupportAccountCount(var_.my_support_account_my_support_account_count())
-     *             .mySupportAccountFilter(var_.my_support_account_my_support_account_filter())
-     *             .authorization(var_.my_support_account_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_support_account_resource_type_schema_version())
-     *             .startIndex(var_.my_support_account_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .mySupportAccountCount(mySupportAccountMySupportAccountCount)
+     *             .mySupportAccountFilter(mySupportAccountMySupportAccountFilter)
+     *             .authorization(mySupportAccountAuthorization)
+     *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
+     *             .startIndex(mySupportAccountStartIndex)
      *             .build());
      * 
      *     }
@@ -15860,12 +15860,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgent = IdentityFunctions.getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myTrustedUserAgentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myTrustedUserAgentId(testAgent.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_trusted_user_agent_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_trusted_user_agent_resource_type_schema_version())
+     *             .authorization(myTrustedUserAgentAuthorization)
+     *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15907,12 +15907,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgent = IdentityFunctions.getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myTrustedUserAgentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myTrustedUserAgentId(testAgent.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_trusted_user_agent_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_trusted_user_agent_resource_type_schema_version())
+     *             .authorization(myTrustedUserAgentAuthorization)
+     *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -15954,12 +15954,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgent = IdentityFunctions.getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myTrustedUserAgentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myTrustedUserAgentId(testAgent.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_trusted_user_agent_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_trusted_user_agent_resource_type_schema_version())
+     *             .authorization(myTrustedUserAgentAuthorization)
+     *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16001,12 +16001,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgent = IdentityFunctions.getDomainsMyTrustedUserAgent(GetDomainsMyTrustedUserAgentArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myTrustedUserAgentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myTrustedUserAgentId(testAgent.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_trusted_user_agent_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_trusted_user_agent_resource_type_schema_version())
+     *             .authorization(myTrustedUserAgentAuthorization)
+     *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16048,14 +16048,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgents = IdentityFunctions.getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myTrustedUserAgentCount(var_.my_trusted_user_agent_my_trusted_user_agent_count())
-     *             .myTrustedUserAgentFilter(var_.my_trusted_user_agent_my_trusted_user_agent_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
+     *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_trusted_user_agent_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_trusted_user_agent_resource_type_schema_version())
-     *             .startIndex(var_.my_trusted_user_agent_start_index())
+     *             .authorization(myTrustedUserAgentAuthorization)
+     *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
+     *             .startIndex(myTrustedUserAgentStartIndex)
      *             .build());
      * 
      *     }
@@ -16097,14 +16097,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgents = IdentityFunctions.getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myTrustedUserAgentCount(var_.my_trusted_user_agent_my_trusted_user_agent_count())
-     *             .myTrustedUserAgentFilter(var_.my_trusted_user_agent_my_trusted_user_agent_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
+     *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_trusted_user_agent_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_trusted_user_agent_resource_type_schema_version())
-     *             .startIndex(var_.my_trusted_user_agent_start_index())
+     *             .authorization(myTrustedUserAgentAuthorization)
+     *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
+     *             .startIndex(myTrustedUserAgentStartIndex)
      *             .build());
      * 
      *     }
@@ -16146,14 +16146,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgents = IdentityFunctions.getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myTrustedUserAgentCount(var_.my_trusted_user_agent_my_trusted_user_agent_count())
-     *             .myTrustedUserAgentFilter(var_.my_trusted_user_agent_my_trusted_user_agent_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
+     *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_trusted_user_agent_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_trusted_user_agent_resource_type_schema_version())
-     *             .startIndex(var_.my_trusted_user_agent_start_index())
+     *             .authorization(myTrustedUserAgentAuthorization)
+     *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
+     *             .startIndex(myTrustedUserAgentStartIndex)
      *             .build());
      * 
      *     }
@@ -16195,14 +16195,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyTrustedUserAgents = IdentityFunctions.getDomainsMyTrustedUserAgents(GetDomainsMyTrustedUserAgentsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myTrustedUserAgentCount(var_.my_trusted_user_agent_my_trusted_user_agent_count())
-     *             .myTrustedUserAgentFilter(var_.my_trusted_user_agent_my_trusted_user_agent_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myTrustedUserAgentCount(myTrustedUserAgentMyTrustedUserAgentCount)
+     *             .myTrustedUserAgentFilter(myTrustedUserAgentMyTrustedUserAgentFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.my_trusted_user_agent_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_trusted_user_agent_resource_type_schema_version())
-     *             .startIndex(var_.my_trusted_user_agent_start_index())
+     *             .authorization(myTrustedUserAgentAuthorization)
+     *             .resourceTypeSchemaVersion(myTrustedUserAgentResourceTypeSchemaVersion)
+     *             .startIndex(myTrustedUserAgentStartIndex)
      *             .build());
      * 
      *     }
@@ -16244,10 +16244,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredential = IdentityFunctions.getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myUserDbCredentialId(oci_identity_db_credential.test_db_credential().id())
-     *             .authorization(var_.my_user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_user_db_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myUserDbCredentialId(testDbCredential.id())
+     *             .authorization(myUserDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16289,10 +16289,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredential = IdentityFunctions.getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myUserDbCredentialId(oci_identity_db_credential.test_db_credential().id())
-     *             .authorization(var_.my_user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_user_db_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myUserDbCredentialId(testDbCredential.id())
+     *             .authorization(myUserDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16334,10 +16334,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredential = IdentityFunctions.getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myUserDbCredentialId(oci_identity_db_credential.test_db_credential().id())
-     *             .authorization(var_.my_user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_user_db_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myUserDbCredentialId(testDbCredential.id())
+     *             .authorization(myUserDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16379,10 +16379,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredential = IdentityFunctions.getDomainsMyUserDbCredential(GetDomainsMyUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myUserDbCredentialId(oci_identity_db_credential.test_db_credential().id())
-     *             .authorization(var_.my_user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_user_db_credential_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myUserDbCredentialId(testDbCredential.id())
+     *             .authorization(myUserDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16424,12 +16424,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredentials = IdentityFunctions.getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myUserDbCredentialCount(var_.my_user_db_credential_my_user_db_credential_count())
-     *             .myUserDbCredentialFilter(var_.my_user_db_credential_my_user_db_credential_filter())
-     *             .authorization(var_.my_user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_user_db_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_user_db_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myUserDbCredentialCount(myUserDbCredentialMyUserDbCredentialCount)
+     *             .myUserDbCredentialFilter(myUserDbCredentialMyUserDbCredentialFilter)
+     *             .authorization(myUserDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
+     *             .startIndex(myUserDbCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -16471,12 +16471,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredentials = IdentityFunctions.getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myUserDbCredentialCount(var_.my_user_db_credential_my_user_db_credential_count())
-     *             .myUserDbCredentialFilter(var_.my_user_db_credential_my_user_db_credential_filter())
-     *             .authorization(var_.my_user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_user_db_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_user_db_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myUserDbCredentialCount(myUserDbCredentialMyUserDbCredentialCount)
+     *             .myUserDbCredentialFilter(myUserDbCredentialMyUserDbCredentialFilter)
+     *             .authorization(myUserDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
+     *             .startIndex(myUserDbCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -16518,12 +16518,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredentials = IdentityFunctions.getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myUserDbCredentialCount(var_.my_user_db_credential_my_user_db_credential_count())
-     *             .myUserDbCredentialFilter(var_.my_user_db_credential_my_user_db_credential_filter())
-     *             .authorization(var_.my_user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_user_db_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_user_db_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myUserDbCredentialCount(myUserDbCredentialMyUserDbCredentialCount)
+     *             .myUserDbCredentialFilter(myUserDbCredentialMyUserDbCredentialFilter)
+     *             .authorization(myUserDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
+     *             .startIndex(myUserDbCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -16565,12 +16565,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMyUserDbCredentials = IdentityFunctions.getDomainsMyUserDbCredentials(GetDomainsMyUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .myUserDbCredentialCount(var_.my_user_db_credential_my_user_db_credential_count())
-     *             .myUserDbCredentialFilter(var_.my_user_db_credential_my_user_db_credential_filter())
-     *             .authorization(var_.my_user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.my_user_db_credential_resource_type_schema_version())
-     *             .startIndex(var_.my_user_db_credential_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .myUserDbCredentialCount(myUserDbCredentialMyUserDbCredentialCount)
+     *             .myUserDbCredentialFilter(myUserDbCredentialMyUserDbCredentialFilter)
+     *             .authorization(myUserDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(myUserDbCredentialResourceTypeSchemaVersion)
+     *             .startIndex(myUserDbCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -16612,12 +16612,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .networkPerimeterId(oci_identity_domains_network_perimeter.test_network_perimeter().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.network_perimeter_authorization())
-     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .authorization(networkPerimeterAuthorization)
+     *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16659,12 +16659,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .networkPerimeterId(oci_identity_domains_network_perimeter.test_network_perimeter().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.network_perimeter_authorization())
-     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .authorization(networkPerimeterAuthorization)
+     *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16706,12 +16706,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .networkPerimeterId(oci_identity_domains_network_perimeter.test_network_perimeter().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.network_perimeter_authorization())
-     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .authorization(networkPerimeterAuthorization)
+     *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16753,12 +16753,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .networkPerimeterId(oci_identity_domains_network_perimeter.test_network_perimeter().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .networkPerimeterId(testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.network_perimeter_authorization())
-     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .authorization(networkPerimeterAuthorization)
+     *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -16800,14 +16800,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .networkPerimeterCount(var_.network_perimeter_network_perimeter_count())
-     *             .networkPerimeterFilter(var_.network_perimeter_network_perimeter_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
+     *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.network_perimeter_authorization())
-     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
-     *             .startIndex(var_.network_perimeter_start_index())
+     *             .authorization(networkPerimeterAuthorization)
+     *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
+     *             .startIndex(networkPerimeterStartIndex)
      *             .build());
      * 
      *     }
@@ -16849,14 +16849,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .networkPerimeterCount(var_.network_perimeter_network_perimeter_count())
-     *             .networkPerimeterFilter(var_.network_perimeter_network_perimeter_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
+     *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.network_perimeter_authorization())
-     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
-     *             .startIndex(var_.network_perimeter_start_index())
+     *             .authorization(networkPerimeterAuthorization)
+     *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
+     *             .startIndex(networkPerimeterStartIndex)
      *             .build());
      * 
      *     }
@@ -16898,14 +16898,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .networkPerimeterCount(var_.network_perimeter_network_perimeter_count())
-     *             .networkPerimeterFilter(var_.network_perimeter_network_perimeter_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
+     *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.network_perimeter_authorization())
-     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
-     *             .startIndex(var_.network_perimeter_start_index())
+     *             .authorization(networkPerimeterAuthorization)
+     *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
+     *             .startIndex(networkPerimeterStartIndex)
      *             .build());
      * 
      *     }
@@ -16947,14 +16947,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .networkPerimeterCount(var_.network_perimeter_network_perimeter_count())
-     *             .networkPerimeterFilter(var_.network_perimeter_network_perimeter_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .networkPerimeterCount(networkPerimeterNetworkPerimeterCount)
+     *             .networkPerimeterFilter(networkPerimeterNetworkPerimeterFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.network_perimeter_authorization())
-     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
-     *             .startIndex(var_.network_perimeter_start_index())
+     *             .authorization(networkPerimeterAuthorization)
+     *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
+     *             .startIndex(networkPerimeterStartIndex)
      *             .build());
      * 
      *     }
@@ -16996,12 +16996,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .notificationSettingId(oci_identity_domains_notification_setting.test_notification_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.notification_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .authorization(notificationSettingAuthorization)
+     *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17043,12 +17043,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .notificationSettingId(oci_identity_domains_notification_setting.test_notification_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.notification_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .authorization(notificationSettingAuthorization)
+     *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17090,12 +17090,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .notificationSettingId(oci_identity_domains_notification_setting.test_notification_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.notification_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .authorization(notificationSettingAuthorization)
+     *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17137,12 +17137,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .notificationSettingId(oci_identity_domains_notification_setting.test_notification_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .notificationSettingId(testNotificationSettingOciIdentityDomainsNotificationSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.notification_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .authorization(notificationSettingAuthorization)
+     *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17184,11 +17184,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.notification_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .authorization(notificationSettingAuthorization)
+     *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17230,11 +17230,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.notification_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .authorization(notificationSettingAuthorization)
+     *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17276,11 +17276,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.notification_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .authorization(notificationSettingAuthorization)
+     *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17322,11 +17322,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.notification_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .authorization(notificationSettingAuthorization)
+     *             .resourceTypeSchemaVersion(notificationSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17368,12 +17368,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredential = IdentityFunctions.getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuth2clientCredentialId(oci_identity_domains_o_auth2client_credential.test_o_auth2client_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth2client_credential_resource_type_schema_version())
+     *             .authorization(oauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17415,12 +17415,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredential = IdentityFunctions.getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuth2clientCredentialId(oci_identity_domains_o_auth2client_credential.test_o_auth2client_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth2client_credential_resource_type_schema_version())
+     *             .authorization(oauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17462,12 +17462,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredential = IdentityFunctions.getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuth2clientCredentialId(oci_identity_domains_o_auth2client_credential.test_o_auth2client_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth2client_credential_resource_type_schema_version())
+     *             .authorization(oauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17509,12 +17509,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredential = IdentityFunctions.getDomainsOauth2clientCredential(GetDomainsOauth2clientCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuth2clientCredentialId(oci_identity_domains_o_auth2client_credential.test_o_auth2client_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuth2clientCredentialId(testOAuth2clientCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth2client_credential_resource_type_schema_version())
+     *             .authorization(oauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17556,14 +17556,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredentials = IdentityFunctions.getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauth2clientCredentialCount(var_.oauth2client_credential_oauth2client_credential_count())
-     *             .oauth2clientCredentialFilter(var_.oauth2client_credential_oauth2client_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
+     *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth2client_credential_resource_type_schema_version())
-     *             .startIndex(var_.oauth2client_credential_start_index())
+     *             .authorization(oauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
+     *             .startIndex(oauth2clientCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -17605,14 +17605,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredentials = IdentityFunctions.getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauth2clientCredentialCount(var_.oauth2client_credential_oauth2client_credential_count())
-     *             .oauth2clientCredentialFilter(var_.oauth2client_credential_oauth2client_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
+     *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth2client_credential_resource_type_schema_version())
-     *             .startIndex(var_.oauth2client_credential_start_index())
+     *             .authorization(oauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
+     *             .startIndex(oauth2clientCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -17654,14 +17654,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredentials = IdentityFunctions.getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauth2clientCredentialCount(var_.oauth2client_credential_oauth2client_credential_count())
-     *             .oauth2clientCredentialFilter(var_.oauth2client_credential_oauth2client_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
+     *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth2client_credential_resource_type_schema_version())
-     *             .startIndex(var_.oauth2client_credential_start_index())
+     *             .authorization(oauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
+     *             .startIndex(oauth2clientCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -17703,14 +17703,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauth2clientCredentials = IdentityFunctions.getDomainsOauth2clientCredentials(GetDomainsOauth2clientCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauth2clientCredentialCount(var_.oauth2client_credential_oauth2client_credential_count())
-     *             .oauth2clientCredentialFilter(var_.oauth2client_credential_oauth2client_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauth2clientCredentialCount(oauth2clientCredentialOauth2clientCredentialCount)
+     *             .oauth2clientCredentialFilter(oauth2clientCredentialOauth2clientCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.oauth2client_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth2client_credential_resource_type_schema_version())
-     *             .startIndex(var_.oauth2client_credential_start_index())
+     *             .authorization(oauth2clientCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(oauth2clientCredentialResourceTypeSchemaVersion)
+     *             .startIndex(oauth2clientCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -17752,10 +17752,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuthClientCertificateId(oci_apigateway_certificate.test_certificate().id())
-     *             .authorization(var_.oauth_client_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuthClientCertificateId(testCertificate.id())
+     *             .authorization(oauthClientCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17797,10 +17797,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuthClientCertificateId(oci_apigateway_certificate.test_certificate().id())
-     *             .authorization(var_.oauth_client_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuthClientCertificateId(testCertificate.id())
+     *             .authorization(oauthClientCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17842,10 +17842,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuthClientCertificateId(oci_apigateway_certificate.test_certificate().id())
-     *             .authorization(var_.oauth_client_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuthClientCertificateId(testCertificate.id())
+     *             .authorization(oauthClientCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17887,10 +17887,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuthClientCertificateId(oci_apigateway_certificate.test_certificate().id())
-     *             .authorization(var_.oauth_client_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuthClientCertificateId(testCertificate.id())
+     *             .authorization(oauthClientCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -17932,12 +17932,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauthClientCertificateCount(var_.oauth_client_certificate_oauth_client_certificate_count())
-     *             .oauthClientCertificateFilter(var_.oauth_client_certificate_oauth_client_certificate_filter())
-     *             .authorization(var_.oauth_client_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
-     *             .startIndex(var_.oauth_client_certificate_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauthClientCertificateCount(oauthClientCertificateOauthClientCertificateCount)
+     *             .oauthClientCertificateFilter(oauthClientCertificateOauthClientCertificateFilter)
+     *             .authorization(oauthClientCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
+     *             .startIndex(oauthClientCertificateStartIndex)
      *             .build());
      * 
      *     }
@@ -17979,12 +17979,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauthClientCertificateCount(var_.oauth_client_certificate_oauth_client_certificate_count())
-     *             .oauthClientCertificateFilter(var_.oauth_client_certificate_oauth_client_certificate_filter())
-     *             .authorization(var_.oauth_client_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
-     *             .startIndex(var_.oauth_client_certificate_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauthClientCertificateCount(oauthClientCertificateOauthClientCertificateCount)
+     *             .oauthClientCertificateFilter(oauthClientCertificateOauthClientCertificateFilter)
+     *             .authorization(oauthClientCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
+     *             .startIndex(oauthClientCertificateStartIndex)
      *             .build());
      * 
      *     }
@@ -18026,12 +18026,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauthClientCertificateCount(var_.oauth_client_certificate_oauth_client_certificate_count())
-     *             .oauthClientCertificateFilter(var_.oauth_client_certificate_oauth_client_certificate_filter())
-     *             .authorization(var_.oauth_client_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
-     *             .startIndex(var_.oauth_client_certificate_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauthClientCertificateCount(oauthClientCertificateOauthClientCertificateCount)
+     *             .oauthClientCertificateFilter(oauthClientCertificateOauthClientCertificateFilter)
+     *             .authorization(oauthClientCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
+     *             .startIndex(oauthClientCertificateStartIndex)
      *             .build());
      * 
      *     }
@@ -18073,12 +18073,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauthClientCertificateCount(var_.oauth_client_certificate_oauth_client_certificate_count())
-     *             .oauthClientCertificateFilter(var_.oauth_client_certificate_oauth_client_certificate_filter())
-     *             .authorization(var_.oauth_client_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
-     *             .startIndex(var_.oauth_client_certificate_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauthClientCertificateCount(oauthClientCertificateOauthClientCertificateCount)
+     *             .oauthClientCertificateFilter(oauthClientCertificateOauthClientCertificateFilter)
+     *             .authorization(oauthClientCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthClientCertificateResourceTypeSchemaVersion)
+     *             .startIndex(oauthClientCertificateStartIndex)
      *             .build());
      * 
      *     }
@@ -18120,10 +18120,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuthPartnerCertificateId(oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate().id())
-     *             .authorization(var_.oauth_partner_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id())
+     *             .authorization(oauthPartnerCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -18165,10 +18165,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuthPartnerCertificateId(oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate().id())
-     *             .authorization(var_.oauth_partner_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id())
+     *             .authorization(oauthPartnerCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -18210,10 +18210,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuthPartnerCertificateId(oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate().id())
-     *             .authorization(var_.oauth_partner_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id())
+     *             .authorization(oauthPartnerCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -18255,10 +18255,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oAuthPartnerCertificateId(oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate().id())
-     *             .authorization(var_.oauth_partner_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oAuthPartnerCertificateId(testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id())
+     *             .authorization(oauthPartnerCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -18300,12 +18300,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauthPartnerCertificateCount(var_.oauth_partner_certificate_oauth_partner_certificate_count())
-     *             .oauthPartnerCertificateFilter(var_.oauth_partner_certificate_oauth_partner_certificate_filter())
-     *             .authorization(var_.oauth_partner_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
-     *             .startIndex(var_.oauth_partner_certificate_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauthPartnerCertificateCount(oauthPartnerCertificateOauthPartnerCertificateCount)
+     *             .oauthPartnerCertificateFilter(oauthPartnerCertificateOauthPartnerCertificateFilter)
+     *             .authorization(oauthPartnerCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
+     *             .startIndex(oauthPartnerCertificateStartIndex)
      *             .build());
      * 
      *     }
@@ -18347,12 +18347,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauthPartnerCertificateCount(var_.oauth_partner_certificate_oauth_partner_certificate_count())
-     *             .oauthPartnerCertificateFilter(var_.oauth_partner_certificate_oauth_partner_certificate_filter())
-     *             .authorization(var_.oauth_partner_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
-     *             .startIndex(var_.oauth_partner_certificate_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauthPartnerCertificateCount(oauthPartnerCertificateOauthPartnerCertificateCount)
+     *             .oauthPartnerCertificateFilter(oauthPartnerCertificateOauthPartnerCertificateFilter)
+     *             .authorization(oauthPartnerCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
+     *             .startIndex(oauthPartnerCertificateStartIndex)
      *             .build());
      * 
      *     }
@@ -18394,12 +18394,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauthPartnerCertificateCount(var_.oauth_partner_certificate_oauth_partner_certificate_count())
-     *             .oauthPartnerCertificateFilter(var_.oauth_partner_certificate_oauth_partner_certificate_filter())
-     *             .authorization(var_.oauth_partner_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
-     *             .startIndex(var_.oauth_partner_certificate_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauthPartnerCertificateCount(oauthPartnerCertificateOauthPartnerCertificateCount)
+     *             .oauthPartnerCertificateFilter(oauthPartnerCertificateOauthPartnerCertificateFilter)
+     *             .authorization(oauthPartnerCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
+     *             .startIndex(oauthPartnerCertificateStartIndex)
      *             .build());
      * 
      *     }
@@ -18441,12 +18441,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .oauthPartnerCertificateCount(var_.oauth_partner_certificate_oauth_partner_certificate_count())
-     *             .oauthPartnerCertificateFilter(var_.oauth_partner_certificate_oauth_partner_certificate_filter())
-     *             .authorization(var_.oauth_partner_certificate_authorization())
-     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
-     *             .startIndex(var_.oauth_partner_certificate_start_index())
+     *             .idcsEndpoint(testDomain.url())
+     *             .oauthPartnerCertificateCount(oauthPartnerCertificateOauthPartnerCertificateCount)
+     *             .oauthPartnerCertificateFilter(oauthPartnerCertificateOauthPartnerCertificateFilter)
+     *             .authorization(oauthPartnerCertificateAuthorization)
+     *             .resourceTypeSchemaVersion(oauthPartnerCertificateResourceTypeSchemaVersion)
+     *             .startIndex(oauthPartnerCertificateStartIndex)
      *             .build());
      * 
      *     }
@@ -18488,14 +18488,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicies = IdentityFunctions.getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .passwordPolicyCount(var_.password_policy_password_policy_count())
-     *             .passwordPolicyFilter(var_.password_policy_password_policy_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
+     *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.password_policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.password_policy_resource_type_schema_version())
-     *             .startIndex(var_.password_policy_start_index())
+     *             .authorization(passwordPolicyAuthorization)
+     *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
+     *             .startIndex(passwordPolicyStartIndex)
      *             .build());
      * 
      *     }
@@ -18537,14 +18537,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicies = IdentityFunctions.getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .passwordPolicyCount(var_.password_policy_password_policy_count())
-     *             .passwordPolicyFilter(var_.password_policy_password_policy_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
+     *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.password_policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.password_policy_resource_type_schema_version())
-     *             .startIndex(var_.password_policy_start_index())
+     *             .authorization(passwordPolicyAuthorization)
+     *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
+     *             .startIndex(passwordPolicyStartIndex)
      *             .build());
      * 
      *     }
@@ -18586,14 +18586,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicies = IdentityFunctions.getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .passwordPolicyCount(var_.password_policy_password_policy_count())
-     *             .passwordPolicyFilter(var_.password_policy_password_policy_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
+     *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.password_policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.password_policy_resource_type_schema_version())
-     *             .startIndex(var_.password_policy_start_index())
+     *             .authorization(passwordPolicyAuthorization)
+     *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
+     *             .startIndex(passwordPolicyStartIndex)
      *             .build());
      * 
      *     }
@@ -18635,14 +18635,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicies = IdentityFunctions.getDomainsPasswordPolicies(GetDomainsPasswordPoliciesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .passwordPolicyCount(var_.password_policy_password_policy_count())
-     *             .passwordPolicyFilter(var_.password_policy_password_policy_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .passwordPolicyCount(passwordPolicyPasswordPolicyCount)
+     *             .passwordPolicyFilter(passwordPolicyPasswordPolicyFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.password_policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.password_policy_resource_type_schema_version())
-     *             .startIndex(var_.password_policy_start_index())
+     *             .authorization(passwordPolicyAuthorization)
+     *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
+     *             .startIndex(passwordPolicyStartIndex)
      *             .build());
      * 
      *     }
@@ -18684,12 +18684,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicy = IdentityFunctions.getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .passwordPolicyId(oci_identity_policy.test_policy().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .passwordPolicyId(testPolicy.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.password_policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.password_policy_resource_type_schema_version())
+     *             .authorization(passwordPolicyAuthorization)
+     *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -18731,12 +18731,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicy = IdentityFunctions.getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .passwordPolicyId(oci_identity_policy.test_policy().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .passwordPolicyId(testPolicy.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.password_policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.password_policy_resource_type_schema_version())
+     *             .authorization(passwordPolicyAuthorization)
+     *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -18778,12 +18778,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicy = IdentityFunctions.getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .passwordPolicyId(oci_identity_policy.test_policy().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .passwordPolicyId(testPolicy.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.password_policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.password_policy_resource_type_schema_version())
+     *             .authorization(passwordPolicyAuthorization)
+     *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -18825,12 +18825,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPasswordPolicy = IdentityFunctions.getDomainsPasswordPolicy(GetDomainsPasswordPolicyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .passwordPolicyId(oci_identity_policy.test_policy().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .passwordPolicyId(testPolicy.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.password_policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.password_policy_resource_type_schema_version())
+     *             .authorization(passwordPolicyAuthorization)
+     *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -18872,14 +18872,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .policyCount(var_.policy_policy_count())
-     *             .policyFilter(var_.policy_policy_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .policyCount(policyPolicyCount)
+     *             .policyFilter(policyPolicyFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
-     *             .startIndex(var_.policy_start_index())
+     *             .authorization(policyAuthorization)
+     *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
+     *             .startIndex(policyStartIndex)
      *             .build());
      * 
      *     }
@@ -18921,14 +18921,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .policyCount(var_.policy_policy_count())
-     *             .policyFilter(var_.policy_policy_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .policyCount(policyPolicyCount)
+     *             .policyFilter(policyPolicyFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
-     *             .startIndex(var_.policy_start_index())
+     *             .authorization(policyAuthorization)
+     *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
+     *             .startIndex(policyStartIndex)
      *             .build());
      * 
      *     }
@@ -18970,14 +18970,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .policyCount(var_.policy_policy_count())
-     *             .policyFilter(var_.policy_policy_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .policyCount(policyPolicyCount)
+     *             .policyFilter(policyPolicyFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
-     *             .startIndex(var_.policy_start_index())
+     *             .authorization(policyAuthorization)
+     *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
+     *             .startIndex(policyStartIndex)
      *             .build());
      * 
      *     }
@@ -19019,14 +19019,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .policyCount(var_.policy_policy_count())
-     *             .policyFilter(var_.policy_policy_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .policyCount(policyPolicyCount)
+     *             .policyFilter(policyPolicyFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
-     *             .startIndex(var_.policy_start_index())
+     *             .authorization(policyAuthorization)
+     *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
+     *             .startIndex(policyStartIndex)
      *             .build());
      * 
      *     }
@@ -19068,12 +19068,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .policyId(oci_identity_policy.test_policy().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .policyId(testPolicyOciIdentityPolicy.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .authorization(policyAuthorization)
+     *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19115,12 +19115,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .policyId(oci_identity_policy.test_policy().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .policyId(testPolicyOciIdentityPolicy.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .authorization(policyAuthorization)
+     *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19162,12 +19162,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .policyId(oci_identity_policy.test_policy().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .policyId(testPolicyOciIdentityPolicy.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .authorization(policyAuthorization)
+     *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19209,12 +19209,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .policyId(oci_identity_policy.test_policy().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .policyId(testPolicyOciIdentityPolicy.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.policy_authorization())
-     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .authorization(policyAuthorization)
+     *             .resourceTypeSchemaVersion(policyResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19256,14 +19256,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceTypeSchemaAttributes = IdentityFunctions.getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .resourceTypeSchemaAttributeCount(var_.resource_type_schema_attribute_resource_type_schema_attribute_count())
-     *             .resourceTypeSchemaAttributeFilter(var_.resource_type_schema_attribute_resource_type_schema_attribute_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
+     *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.resource_type_schema_attribute_authorization())
-     *             .resourceTypeSchemaVersion(var_.resource_type_schema_attribute_resource_type_schema_version())
-     *             .startIndex(var_.resource_type_schema_attribute_start_index())
+     *             .authorization(resourceTypeSchemaAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(resourceTypeSchemaAttributeResourceTypeSchemaVersion)
+     *             .startIndex(resourceTypeSchemaAttributeStartIndex)
      *             .build());
      * 
      *     }
@@ -19305,14 +19305,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceTypeSchemaAttributes = IdentityFunctions.getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .resourceTypeSchemaAttributeCount(var_.resource_type_schema_attribute_resource_type_schema_attribute_count())
-     *             .resourceTypeSchemaAttributeFilter(var_.resource_type_schema_attribute_resource_type_schema_attribute_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
+     *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.resource_type_schema_attribute_authorization())
-     *             .resourceTypeSchemaVersion(var_.resource_type_schema_attribute_resource_type_schema_version())
-     *             .startIndex(var_.resource_type_schema_attribute_start_index())
+     *             .authorization(resourceTypeSchemaAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(resourceTypeSchemaAttributeResourceTypeSchemaVersion)
+     *             .startIndex(resourceTypeSchemaAttributeStartIndex)
      *             .build());
      * 
      *     }
@@ -19354,14 +19354,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceTypeSchemaAttributes = IdentityFunctions.getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .resourceTypeSchemaAttributeCount(var_.resource_type_schema_attribute_resource_type_schema_attribute_count())
-     *             .resourceTypeSchemaAttributeFilter(var_.resource_type_schema_attribute_resource_type_schema_attribute_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
+     *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.resource_type_schema_attribute_authorization())
-     *             .resourceTypeSchemaVersion(var_.resource_type_schema_attribute_resource_type_schema_version())
-     *             .startIndex(var_.resource_type_schema_attribute_start_index())
+     *             .authorization(resourceTypeSchemaAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(resourceTypeSchemaAttributeResourceTypeSchemaVersion)
+     *             .startIndex(resourceTypeSchemaAttributeStartIndex)
      *             .build());
      * 
      *     }
@@ -19403,14 +19403,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceTypeSchemaAttributes = IdentityFunctions.getDomainsResourceTypeSchemaAttributes(GetDomainsResourceTypeSchemaAttributesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .resourceTypeSchemaAttributeCount(var_.resource_type_schema_attribute_resource_type_schema_attribute_count())
-     *             .resourceTypeSchemaAttributeFilter(var_.resource_type_schema_attribute_resource_type_schema_attribute_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .resourceTypeSchemaAttributeCount(resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount)
+     *             .resourceTypeSchemaAttributeFilter(resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.resource_type_schema_attribute_authorization())
-     *             .resourceTypeSchemaVersion(var_.resource_type_schema_attribute_resource_type_schema_version())
-     *             .startIndex(var_.resource_type_schema_attribute_start_index())
+     *             .authorization(resourceTypeSchemaAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(resourceTypeSchemaAttributeResourceTypeSchemaVersion)
+     *             .startIndex(resourceTypeSchemaAttributeStartIndex)
      *             .build());
      * 
      *     }
@@ -19452,12 +19452,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .ruleId(testRuleOciEventsRule.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.rule_authorization())
-     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .authorization(ruleAuthorization)
+     *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19499,12 +19499,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .ruleId(testRuleOciEventsRule.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.rule_authorization())
-     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .authorization(ruleAuthorization)
+     *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19546,12 +19546,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .ruleId(testRuleOciEventsRule.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.rule_authorization())
-     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .authorization(ruleAuthorization)
+     *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19593,12 +19593,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .ruleId(testRuleOciEventsRule.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.rule_authorization())
-     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .authorization(ruleAuthorization)
+     *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19640,14 +19640,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .ruleCount(var_.rule_rule_count())
-     *             .ruleFilter(var_.rule_rule_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .ruleCount(ruleRuleCount)
+     *             .ruleFilter(ruleRuleFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.rule_authorization())
-     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
-     *             .startIndex(var_.rule_start_index())
+     *             .authorization(ruleAuthorization)
+     *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
+     *             .startIndex(ruleStartIndex)
      *             .build());
      * 
      *     }
@@ -19689,14 +19689,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .ruleCount(var_.rule_rule_count())
-     *             .ruleFilter(var_.rule_rule_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .ruleCount(ruleRuleCount)
+     *             .ruleFilter(ruleRuleFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.rule_authorization())
-     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
-     *             .startIndex(var_.rule_start_index())
+     *             .authorization(ruleAuthorization)
+     *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
+     *             .startIndex(ruleStartIndex)
      *             .build());
      * 
      *     }
@@ -19738,14 +19738,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .ruleCount(var_.rule_rule_count())
-     *             .ruleFilter(var_.rule_rule_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .ruleCount(ruleRuleCount)
+     *             .ruleFilter(ruleRuleFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.rule_authorization())
-     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
-     *             .startIndex(var_.rule_start_index())
+     *             .authorization(ruleAuthorization)
+     *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
+     *             .startIndex(ruleStartIndex)
      *             .build());
      * 
      *     }
@@ -19787,14 +19787,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .ruleCount(var_.rule_rule_count())
-     *             .ruleFilter(var_.rule_rule_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .ruleCount(ruleRuleCount)
+     *             .ruleFilter(ruleRuleFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.rule_authorization())
-     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
-     *             .startIndex(var_.rule_start_index())
+     *             .authorization(ruleAuthorization)
+     *             .resourceTypeSchemaVersion(ruleResourceTypeSchemaVersion)
+     *             .startIndex(ruleStartIndex)
      *             .build());
      * 
      *     }
@@ -19836,12 +19836,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionId(oci_identity_domains_security_question.test_security_question().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_resource_type_schema_version())
+     *             .authorization(securityQuestionAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19883,12 +19883,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionId(oci_identity_domains_security_question.test_security_question().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_resource_type_schema_version())
+     *             .authorization(securityQuestionAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19930,12 +19930,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionId(oci_identity_domains_security_question.test_security_question().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_resource_type_schema_version())
+     *             .authorization(securityQuestionAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -19977,12 +19977,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestion = IdentityFunctions.getDomainsSecurityQuestion(GetDomainsSecurityQuestionArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionId(oci_identity_domains_security_question.test_security_question().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionId(testSecurityQuestionOciIdentityDomainsSecurityQuestion.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_resource_type_schema_version())
+     *             .authorization(securityQuestionAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20024,12 +20024,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionSettingId(oci_identity_domains_security_question_setting.test_security_question_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_setting_resource_type_schema_version())
+     *             .authorization(securityQuestionSettingAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20071,12 +20071,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionSettingId(oci_identity_domains_security_question_setting.test_security_question_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_setting_resource_type_schema_version())
+     *             .authorization(securityQuestionSettingAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20118,12 +20118,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionSettingId(oci_identity_domains_security_question_setting.test_security_question_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_setting_resource_type_schema_version())
+     *             .authorization(securityQuestionSettingAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20165,12 +20165,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSetting = IdentityFunctions.getDomainsSecurityQuestionSetting(GetDomainsSecurityQuestionSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionSettingId(oci_identity_domains_security_question_setting.test_security_question_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionSettingId(testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_setting_resource_type_schema_version())
+     *             .authorization(securityQuestionSettingAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20212,11 +20212,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_setting_resource_type_schema_version())
+     *             .authorization(securityQuestionSettingAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20258,11 +20258,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_setting_resource_type_schema_version())
+     *             .authorization(securityQuestionSettingAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20304,11 +20304,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_setting_resource_type_schema_version())
+     *             .authorization(securityQuestionSettingAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20350,11 +20350,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestionSettings = IdentityFunctions.getDomainsSecurityQuestionSettings(GetDomainsSecurityQuestionSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_setting_resource_type_schema_version())
+     *             .authorization(securityQuestionSettingAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20396,14 +20396,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestions = IdentityFunctions.getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionCount(var_.security_question_security_question_count())
-     *             .securityQuestionFilter(var_.security_question_security_question_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
+     *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_resource_type_schema_version())
-     *             .startIndex(var_.security_question_start_index())
+     *             .authorization(securityQuestionAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
+     *             .startIndex(securityQuestionStartIndex)
      *             .build());
      * 
      *     }
@@ -20445,14 +20445,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestions = IdentityFunctions.getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionCount(var_.security_question_security_question_count())
-     *             .securityQuestionFilter(var_.security_question_security_question_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
+     *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_resource_type_schema_version())
-     *             .startIndex(var_.security_question_start_index())
+     *             .authorization(securityQuestionAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
+     *             .startIndex(securityQuestionStartIndex)
      *             .build());
      * 
      *     }
@@ -20494,14 +20494,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestions = IdentityFunctions.getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionCount(var_.security_question_security_question_count())
-     *             .securityQuestionFilter(var_.security_question_security_question_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
+     *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_resource_type_schema_version())
-     *             .startIndex(var_.security_question_start_index())
+     *             .authorization(securityQuestionAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
+     *             .startIndex(securityQuestionStartIndex)
      *             .build());
      * 
      *     }
@@ -20543,14 +20543,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityQuestions = IdentityFunctions.getDomainsSecurityQuestions(GetDomainsSecurityQuestionsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .securityQuestionCount(var_.security_question_security_question_count())
-     *             .securityQuestionFilter(var_.security_question_security_question_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .securityQuestionCount(securityQuestionSecurityQuestionCount)
+     *             .securityQuestionFilter(securityQuestionSecurityQuestionFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.security_question_authorization())
-     *             .resourceTypeSchemaVersion(var_.security_question_resource_type_schema_version())
-     *             .startIndex(var_.security_question_start_index())
+     *             .authorization(securityQuestionAuthorization)
+     *             .resourceTypeSchemaVersion(securityQuestionResourceTypeSchemaVersion)
+     *             .startIndex(securityQuestionStartIndex)
      *             .build());
      * 
      *     }
@@ -20592,12 +20592,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .selfRegistrationProfileId(oci_optimizer_profile.test_profile().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .selfRegistrationProfileId(testProfile.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.self_registration_profile_authorization())
-     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .authorization(selfRegistrationProfileAuthorization)
+     *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20639,12 +20639,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .selfRegistrationProfileId(oci_optimizer_profile.test_profile().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .selfRegistrationProfileId(testProfile.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.self_registration_profile_authorization())
-     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .authorization(selfRegistrationProfileAuthorization)
+     *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20686,12 +20686,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .selfRegistrationProfileId(oci_optimizer_profile.test_profile().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .selfRegistrationProfileId(testProfile.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.self_registration_profile_authorization())
-     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .authorization(selfRegistrationProfileAuthorization)
+     *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20733,12 +20733,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .selfRegistrationProfileId(oci_optimizer_profile.test_profile().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .selfRegistrationProfileId(testProfile.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.self_registration_profile_authorization())
-     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .authorization(selfRegistrationProfileAuthorization)
+     *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -20780,14 +20780,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .selfRegistrationProfileCount(var_.self_registration_profile_self_registration_profile_count())
-     *             .selfRegistrationProfileFilter(var_.self_registration_profile_self_registration_profile_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
+     *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.self_registration_profile_authorization())
-     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
-     *             .startIndex(var_.self_registration_profile_start_index())
+     *             .authorization(selfRegistrationProfileAuthorization)
+     *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
+     *             .startIndex(selfRegistrationProfileStartIndex)
      *             .build());
      * 
      *     }
@@ -20829,14 +20829,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .selfRegistrationProfileCount(var_.self_registration_profile_self_registration_profile_count())
-     *             .selfRegistrationProfileFilter(var_.self_registration_profile_self_registration_profile_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
+     *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.self_registration_profile_authorization())
-     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
-     *             .startIndex(var_.self_registration_profile_start_index())
+     *             .authorization(selfRegistrationProfileAuthorization)
+     *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
+     *             .startIndex(selfRegistrationProfileStartIndex)
      *             .build());
      * 
      *     }
@@ -20878,14 +20878,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .selfRegistrationProfileCount(var_.self_registration_profile_self_registration_profile_count())
-     *             .selfRegistrationProfileFilter(var_.self_registration_profile_self_registration_profile_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
+     *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.self_registration_profile_authorization())
-     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
-     *             .startIndex(var_.self_registration_profile_start_index())
+     *             .authorization(selfRegistrationProfileAuthorization)
+     *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
+     *             .startIndex(selfRegistrationProfileStartIndex)
      *             .build());
      * 
      *     }
@@ -20927,14 +20927,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .selfRegistrationProfileCount(var_.self_registration_profile_self_registration_profile_count())
-     *             .selfRegistrationProfileFilter(var_.self_registration_profile_self_registration_profile_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .selfRegistrationProfileCount(selfRegistrationProfileSelfRegistrationProfileCount)
+     *             .selfRegistrationProfileFilter(selfRegistrationProfileSelfRegistrationProfileFilter)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.self_registration_profile_authorization())
-     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
-     *             .startIndex(var_.self_registration_profile_start_index())
+     *             .authorization(selfRegistrationProfileAuthorization)
+     *             .resourceTypeSchemaVersion(selfRegistrationProfileResourceTypeSchemaVersion)
+     *             .startIndex(selfRegistrationProfileStartIndex)
      *             .build());
      * 
      *     }
@@ -20976,12 +20976,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .settingId(&#34;Settings&#34;)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .authorization(settingAuthorization)
+     *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21023,12 +21023,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .settingId(&#34;Settings&#34;)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .authorization(settingAuthorization)
+     *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21070,12 +21070,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .settingId(&#34;Settings&#34;)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .authorization(settingAuthorization)
+     *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21117,12 +21117,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .settingId(&#34;Settings&#34;)
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .authorization(settingAuthorization)
+     *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21164,11 +21164,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .authorization(settingAuthorization)
+     *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21210,11 +21210,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .authorization(settingAuthorization)
+     *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21256,11 +21256,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .authorization(settingAuthorization)
+     *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21302,11 +21302,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .idcsEndpoint(testDomain.url())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .authorization(settingAuthorization)
+     *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21348,12 +21348,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredential = IdentityFunctions.getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .smtpCredentialId(oci_identity_smtp_credential.test_smtp_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.smtp_credential_resource_type_schema_version())
+     *             .authorization(smtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21395,12 +21395,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredential = IdentityFunctions.getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .smtpCredentialId(oci_identity_smtp_credential.test_smtp_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.smtp_credential_resource_type_schema_version())
+     *             .authorization(smtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21442,12 +21442,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredential = IdentityFunctions.getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .smtpCredentialId(oci_identity_smtp_credential.test_smtp_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.smtp_credential_resource_type_schema_version())
+     *             .authorization(smtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21489,12 +21489,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredential = IdentityFunctions.getDomainsSmtpCredential(GetDomainsSmtpCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .smtpCredentialId(oci_identity_smtp_credential.test_smtp_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .smtpCredentialId(testSmtpCredentialOciIdentitySmtpCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.smtp_credential_resource_type_schema_version())
+     *             .authorization(smtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21536,14 +21536,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .smtpCredentialCount(var_.smtp_credential_smtp_credential_count())
-     *             .smtpCredentialFilter(var_.smtp_credential_smtp_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
+     *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.smtp_credential_resource_type_schema_version())
-     *             .startIndex(var_.smtp_credential_start_index())
+     *             .authorization(smtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
+     *             .startIndex(smtpCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -21585,14 +21585,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .smtpCredentialCount(var_.smtp_credential_smtp_credential_count())
-     *             .smtpCredentialFilter(var_.smtp_credential_smtp_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
+     *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.smtp_credential_resource_type_schema_version())
-     *             .startIndex(var_.smtp_credential_start_index())
+     *             .authorization(smtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
+     *             .startIndex(smtpCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -21634,14 +21634,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .smtpCredentialCount(var_.smtp_credential_smtp_credential_count())
-     *             .smtpCredentialFilter(var_.smtp_credential_smtp_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
+     *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.smtp_credential_resource_type_schema_version())
-     *             .startIndex(var_.smtp_credential_start_index())
+     *             .authorization(smtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
+     *             .startIndex(smtpCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -21683,14 +21683,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getDomainsSmtpCredentials(GetDomainsSmtpCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .smtpCredentialCount(var_.smtp_credential_smtp_credential_count())
-     *             .smtpCredentialFilter(var_.smtp_credential_smtp_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .smtpCredentialCount(smtpCredentialSmtpCredentialCount)
+     *             .smtpCredentialFilter(smtpCredentialSmtpCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.smtp_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.smtp_credential_resource_type_schema_version())
-     *             .startIndex(var_.smtp_credential_start_index())
+     *             .authorization(smtpCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
+     *             .startIndex(smtpCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -21732,12 +21732,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getDomainsUser(GetDomainsUserArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userId(oci_identity_user.test_user().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userId(testUserOciIdentityUser.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_resource_type_schema_version())
+     *             .authorization(userAuthorization)
+     *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21779,12 +21779,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getDomainsUser(GetDomainsUserArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userId(oci_identity_user.test_user().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userId(testUserOciIdentityUser.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_resource_type_schema_version())
+     *             .authorization(userAuthorization)
+     *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21826,12 +21826,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getDomainsUser(GetDomainsUserArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userId(oci_identity_user.test_user().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userId(testUserOciIdentityUser.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_resource_type_schema_version())
+     *             .authorization(userAuthorization)
+     *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21873,12 +21873,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getDomainsUser(GetDomainsUserArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userId(oci_identity_user.test_user().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userId(testUserOciIdentityUser.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_resource_type_schema_version())
+     *             .authorization(userAuthorization)
+     *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21920,12 +21920,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userAttributesSettingId(oci_identity_domains_user_attributes_setting.test_user_attributes_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_attributes_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_attributes_setting_resource_type_schema_version())
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -21967,12 +21967,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userAttributesSettingId(oci_identity_domains_user_attributes_setting.test_user_attributes_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_attributes_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_attributes_setting_resource_type_schema_version())
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22014,12 +22014,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userAttributesSettingId(oci_identity_domains_user_attributes_setting.test_user_attributes_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_attributes_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_attributes_setting_resource_type_schema_version())
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22061,12 +22061,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSetting = IdentityFunctions.getDomainsUserAttributesSetting(GetDomainsUserAttributesSettingArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userAttributesSettingId(oci_identity_domains_user_attributes_setting.test_user_attributes_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userAttributesSettingId(testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_attributes_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_attributes_setting_resource_type_schema_version())
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22108,12 +22108,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userAttributesSettingId(oci_identity_domains_user_attributes_setting.test_user_attributes_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userAttributesSettingId(testUserAttributesSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_attributes_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_attributes_setting_resource_type_schema_version())
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22155,12 +22155,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userAttributesSettingId(oci_identity_domains_user_attributes_setting.test_user_attributes_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userAttributesSettingId(testUserAttributesSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_attributes_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_attributes_setting_resource_type_schema_version())
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22202,12 +22202,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userAttributesSettingId(oci_identity_domains_user_attributes_setting.test_user_attributes_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userAttributesSettingId(testUserAttributesSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_attributes_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_attributes_setting_resource_type_schema_version())
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22249,12 +22249,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userAttributesSettingId(oci_identity_domains_user_attributes_setting.test_user_attributes_setting().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userAttributesSettingId(testUserAttributesSetting.id())
      *             .attributeSets(&#34;all&#34;)
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_attributes_setting_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_attributes_setting_resource_type_schema_version())
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22296,12 +22296,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredential = IdentityFunctions.getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userDbCredentialId(oci_identity_db_credential.test_db_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userDbCredentialId(testDbCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_db_credential_resource_type_schema_version())
+     *             .authorization(userDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22343,12 +22343,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredential = IdentityFunctions.getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userDbCredentialId(oci_identity_db_credential.test_db_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userDbCredentialId(testDbCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_db_credential_resource_type_schema_version())
+     *             .authorization(userDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22390,12 +22390,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredential = IdentityFunctions.getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userDbCredentialId(oci_identity_db_credential.test_db_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userDbCredentialId(testDbCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_db_credential_resource_type_schema_version())
+     *             .authorization(userDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22437,12 +22437,12 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredential = IdentityFunctions.getDomainsUserDbCredential(GetDomainsUserDbCredentialArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userDbCredentialId(oci_identity_db_credential.test_db_credential().id())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userDbCredentialId(testDbCredential.id())
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_db_credential_resource_type_schema_version())
+     *             .authorization(userDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
      *             .build());
      * 
      *     }
@@ -22484,14 +22484,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredentials = IdentityFunctions.getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userDbCredentialCount(var_.user_db_credential_user_db_credential_count())
-     *             .userDbCredentialFilter(var_.user_db_credential_user_db_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
+     *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_db_credential_resource_type_schema_version())
-     *             .startIndex(var_.user_db_credential_start_index())
+     *             .authorization(userDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
+     *             .startIndex(userDbCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -22533,14 +22533,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredentials = IdentityFunctions.getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userDbCredentialCount(var_.user_db_credential_user_db_credential_count())
-     *             .userDbCredentialFilter(var_.user_db_credential_user_db_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
+     *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_db_credential_resource_type_schema_version())
-     *             .startIndex(var_.user_db_credential_start_index())
+     *             .authorization(userDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
+     *             .startIndex(userDbCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -22582,14 +22582,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredentials = IdentityFunctions.getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userDbCredentialCount(var_.user_db_credential_user_db_credential_count())
-     *             .userDbCredentialFilter(var_.user_db_credential_user_db_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
+     *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_db_credential_resource_type_schema_version())
-     *             .startIndex(var_.user_db_credential_start_index())
+     *             .authorization(userDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
+     *             .startIndex(userDbCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -22631,14 +22631,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserDbCredentials = IdentityFunctions.getDomainsUserDbCredentials(GetDomainsUserDbCredentialsArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userDbCredentialCount(var_.user_db_credential_user_db_credential_count())
-     *             .userDbCredentialFilter(var_.user_db_credential_user_db_credential_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userDbCredentialCount(userDbCredentialUserDbCredentialCount)
+     *             .userDbCredentialFilter(userDbCredentialUserDbCredentialFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_db_credential_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_db_credential_resource_type_schema_version())
-     *             .startIndex(var_.user_db_credential_start_index())
+     *             .authorization(userDbCredentialAuthorization)
+     *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
+     *             .startIndex(userDbCredentialStartIndex)
      *             .build());
      * 
      *     }
@@ -22680,14 +22680,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getDomainsUsers(GetDomainsUsersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userCount(var_.user_user_count())
-     *             .userFilter(var_.user_user_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userCount(userUserCount)
+     *             .userFilter(userUserFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_resource_type_schema_version())
-     *             .startIndex(var_.user_start_index())
+     *             .authorization(userAuthorization)
+     *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
+     *             .startIndex(userStartIndex)
      *             .build());
      * 
      *     }
@@ -22729,14 +22729,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getDomainsUsers(GetDomainsUsersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userCount(var_.user_user_count())
-     *             .userFilter(var_.user_user_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userCount(userUserCount)
+     *             .userFilter(userUserFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_resource_type_schema_version())
-     *             .startIndex(var_.user_start_index())
+     *             .authorization(userAuthorization)
+     *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
+     *             .startIndex(userStartIndex)
      *             .build());
      * 
      *     }
@@ -22778,14 +22778,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getDomainsUsers(GetDomainsUsersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userCount(var_.user_user_count())
-     *             .userFilter(var_.user_user_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userCount(userUserCount)
+     *             .userFilter(userUserFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_resource_type_schema_version())
-     *             .startIndex(var_.user_start_index())
+     *             .authorization(userAuthorization)
+     *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
+     *             .startIndex(userStartIndex)
      *             .build());
      * 
      *     }
@@ -22827,14 +22827,14 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getDomainsUsers(GetDomainsUsersArgs.builder()
-     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
-     *             .userCount(var_.user_user_count())
-     *             .userFilter(var_.user_user_filter())
+     *             .idcsEndpoint(testDomain.url())
+     *             .userCount(userUserCount)
+     *             .userFilter(userUserFilter)
      *             .attributeSets()
      *             .attributes(&#34;&#34;)
-     *             .authorization(var_.user_authorization())
-     *             .resourceTypeSchemaVersion(var_.user_resource_type_schema_version())
-     *             .startIndex(var_.user_start_index())
+     *             .authorization(userAuthorization)
+     *             .resourceTypeSchemaVersion(userResourceTypeSchemaVersion)
+     *             .startIndex(userStartIndex)
      *             .build());
      * 
      *     }
@@ -22878,9 +22878,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicGroups = IdentityFunctions.getDynamicGroups(GetDynamicGroupsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.dynamic_group_name())
-     *             .state(var_.dynamic_group_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(dynamicGroupName)
+     *             .state(dynamicGroupState)
      *             .build());
      * 
      *     }
@@ -22924,9 +22924,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicGroups = IdentityFunctions.getDynamicGroups(GetDynamicGroupsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.dynamic_group_name())
-     *             .state(var_.dynamic_group_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(dynamicGroupName)
+     *             .state(dynamicGroupState)
      *             .build());
      * 
      *     }
@@ -22970,9 +22970,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicGroups = IdentityFunctions.getDynamicGroups(GetDynamicGroupsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.dynamic_group_name())
-     *             .state(var_.dynamic_group_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(dynamicGroupName)
+     *             .state(dynamicGroupState)
      *             .build());
      * 
      *     }
@@ -23016,9 +23016,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicGroups = IdentityFunctions.getDynamicGroups(GetDynamicGroupsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.dynamic_group_name())
-     *             .state(var_.dynamic_group_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(dynamicGroupName)
+     *             .state(dynamicGroupState)
      *             .build());
      * 
      *     }
@@ -23062,8 +23062,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFaultDomains = IdentityFunctions.getFaultDomains(GetFaultDomainsArgs.builder()
-     *             .availabilityDomain(var_.fault_domain_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(faultDomainAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -23107,8 +23107,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFaultDomains = IdentityFunctions.getFaultDomains(GetFaultDomainsArgs.builder()
-     *             .availabilityDomain(var_.fault_domain_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(faultDomainAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -23152,8 +23152,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFaultDomains = IdentityFunctions.getFaultDomains(GetFaultDomainsArgs.builder()
-     *             .availabilityDomain(var_.fault_domain_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(faultDomainAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -23197,8 +23197,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFaultDomains = IdentityFunctions.getFaultDomains(GetFaultDomainsArgs.builder()
-     *             .availabilityDomain(var_.fault_domain_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(faultDomainAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -23244,7 +23244,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
-     *             .groupId(oci_identity_group.test_group().id())
+     *             .groupId(testGroupOciIdentityGroup.id())
      *             .build());
      * 
      *     }
@@ -23290,7 +23290,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
-     *             .groupId(oci_identity_group.test_group().id())
+     *             .groupId(testGroupOciIdentityGroup.id())
      *             .build());
      * 
      *     }
@@ -23336,7 +23336,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
-     *             .groupId(oci_identity_group.test_group().id())
+     *             .groupId(testGroupOciIdentityGroup.id())
      *             .build());
      * 
      *     }
@@ -23382,7 +23382,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
-     *             .groupId(oci_identity_group.test_group().id())
+     *             .groupId(testGroupOciIdentityGroup.id())
      *             .build());
      * 
      *     }
@@ -23426,9 +23426,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getGroups(GetGroupsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.group_name())
-     *             .state(var_.group_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(groupName)
+     *             .state(groupState)
      *             .build());
      * 
      *     }
@@ -23472,9 +23472,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getGroups(GetGroupsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.group_name())
-     *             .state(var_.group_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(groupName)
+     *             .state(groupState)
      *             .build());
      * 
      *     }
@@ -23518,9 +23518,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getGroups(GetGroupsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.group_name())
-     *             .state(var_.group_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(groupName)
+     *             .state(groupState)
      *             .build());
      * 
      *     }
@@ -23564,9 +23564,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGroups = IdentityFunctions.getGroups(GetGroupsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.group_name())
-     *             .state(var_.group_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(groupName)
+     *             .state(groupState)
      *             .build());
      * 
      *     }
@@ -23612,7 +23612,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -23658,7 +23658,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -23704,7 +23704,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -23750,7 +23750,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequestOciIdentityIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -23796,7 +23796,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -23842,7 +23842,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -23888,7 +23888,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -23934,7 +23934,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -23980,7 +23980,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -24026,7 +24026,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -24072,7 +24072,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -24118,7 +24118,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
-     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .iamWorkRequestId(testIamWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -24163,8 +24163,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequests = IdentityFunctions.getIamWorkRequests(GetIamWorkRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .resourceIdentifier(var_.iam_work_request_resource_identifier())
+     *             .compartmentId(compartmentId)
+     *             .resourceIdentifier(iamWorkRequestResourceIdentifier)
      *             .build());
      * 
      *     }
@@ -24209,8 +24209,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequests = IdentityFunctions.getIamWorkRequests(GetIamWorkRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .resourceIdentifier(var_.iam_work_request_resource_identifier())
+     *             .compartmentId(compartmentId)
+     *             .resourceIdentifier(iamWorkRequestResourceIdentifier)
      *             .build());
      * 
      *     }
@@ -24255,8 +24255,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequests = IdentityFunctions.getIamWorkRequests(GetIamWorkRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .resourceIdentifier(var_.iam_work_request_resource_identifier())
+     *             .compartmentId(compartmentId)
+     *             .resourceIdentifier(iamWorkRequestResourceIdentifier)
      *             .build());
      * 
      *     }
@@ -24301,8 +24301,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIamWorkRequests = IdentityFunctions.getIamWorkRequests(GetIamWorkRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .resourceIdentifier(var_.iam_work_request_resource_identifier())
+     *             .compartmentId(compartmentId)
+     *             .resourceIdentifier(iamWorkRequestResourceIdentifier)
      *             .build());
      * 
      *     }
@@ -24346,9 +24346,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
-     *             .name(var_.identity_provider_group_name())
-     *             .state(var_.identity_provider_group_state())
+     *             .identityProviderId(testIdentityProvider.id())
+     *             .name(identityProviderGroupName)
+     *             .state(identityProviderGroupState)
      *             .build());
      * 
      *     }
@@ -24392,9 +24392,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
-     *             .name(var_.identity_provider_group_name())
-     *             .state(var_.identity_provider_group_state())
+     *             .identityProviderId(testIdentityProvider.id())
+     *             .name(identityProviderGroupName)
+     *             .state(identityProviderGroupState)
      *             .build());
      * 
      *     }
@@ -24438,9 +24438,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
-     *             .name(var_.identity_provider_group_name())
-     *             .state(var_.identity_provider_group_state())
+     *             .identityProviderId(testIdentityProvider.id())
+     *             .name(identityProviderGroupName)
+     *             .state(identityProviderGroupState)
      *             .build());
      * 
      *     }
@@ -24484,9 +24484,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
-     *             .name(var_.identity_provider_group_name())
-     *             .state(var_.identity_provider_group_state())
+     *             .identityProviderId(testIdentityProvider.id())
+     *             .name(identityProviderGroupName)
+     *             .state(identityProviderGroupState)
      *             .build());
      * 
      *     }
@@ -24533,10 +24533,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getIdentityProviders(GetIdentityProvidersArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .protocol(var_.identity_provider_protocol())
-     *             .name(var_.identity_provider_name())
-     *             .state(var_.identity_provider_state())
+     *             .compartmentId(tenancyOcid)
+     *             .protocol(identityProviderProtocol)
+     *             .name(identityProviderName)
+     *             .state(identityProviderState)
      *             .build());
      * 
      *     }
@@ -24583,10 +24583,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getIdentityProviders(GetIdentityProvidersArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .protocol(var_.identity_provider_protocol())
-     *             .name(var_.identity_provider_name())
-     *             .state(var_.identity_provider_state())
+     *             .compartmentId(tenancyOcid)
+     *             .protocol(identityProviderProtocol)
+     *             .name(identityProviderName)
+     *             .state(identityProviderState)
      *             .build());
      * 
      *     }
@@ -24633,10 +24633,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getIdentityProviders(GetIdentityProvidersArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .protocol(var_.identity_provider_protocol())
-     *             .name(var_.identity_provider_name())
-     *             .state(var_.identity_provider_state())
+     *             .compartmentId(tenancyOcid)
+     *             .protocol(identityProviderProtocol)
+     *             .name(identityProviderName)
+     *             .state(identityProviderState)
      *             .build());
      * 
      *     }
@@ -24683,10 +24683,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdentityProviders = IdentityFunctions.getIdentityProviders(GetIdentityProvidersArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .protocol(var_.identity_provider_protocol())
-     *             .name(var_.identity_provider_name())
-     *             .state(var_.identity_provider_state())
+     *             .compartmentId(tenancyOcid)
+     *             .protocol(identityProviderProtocol)
+     *             .name(identityProviderName)
+     *             .state(identityProviderState)
      *             .build());
      * 
      *     }
@@ -24730,7 +24730,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .identityProviderId(testIdentityProvider.id())
      *             .build());
      * 
      *     }
@@ -24774,7 +24774,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .identityProviderId(testIdentityProvider.id())
      *             .build());
      * 
      *     }
@@ -24818,7 +24818,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .identityProviderId(testIdentityProvider.id())
      *             .build());
      * 
      *     }
@@ -24862,7 +24862,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .identityProviderId(testIdentityProvider.id())
      *             .build());
      * 
      *     }
@@ -24904,7 +24904,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
-     *             .networkSourceId(oci_identity_network_source.test_network_source().id())
+     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.id())
      *             .build());
      * 
      *     }
@@ -24946,7 +24946,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
-     *             .networkSourceId(oci_identity_network_source.test_network_source().id())
+     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.id())
      *             .build());
      * 
      *     }
@@ -24988,7 +24988,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
-     *             .networkSourceId(oci_identity_network_source.test_network_source().id())
+     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.id())
      *             .build());
      * 
      *     }
@@ -25030,7 +25030,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
-     *             .networkSourceId(oci_identity_network_source.test_network_source().id())
+     *             .networkSourceId(testNetworkSourceOciIdentityNetworkSource.id())
      *             .build());
      * 
      *     }
@@ -25074,9 +25074,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSources = IdentityFunctions.getNetworkSources(GetNetworkSourcesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.network_source_name())
-     *             .state(var_.network_source_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(networkSourceName)
+     *             .state(networkSourceState)
      *             .build());
      * 
      *     }
@@ -25120,9 +25120,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSources = IdentityFunctions.getNetworkSources(GetNetworkSourcesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.network_source_name())
-     *             .state(var_.network_source_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(networkSourceName)
+     *             .state(networkSourceState)
      *             .build());
      * 
      *     }
@@ -25166,9 +25166,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSources = IdentityFunctions.getNetworkSources(GetNetworkSourcesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.network_source_name())
-     *             .state(var_.network_source_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(networkSourceName)
+     *             .state(networkSourceState)
      *             .build());
      * 
      *     }
@@ -25212,9 +25212,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSources = IdentityFunctions.getNetworkSources(GetNetworkSourcesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.network_source_name())
-     *             .state(var_.network_source_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(networkSourceName)
+     *             .state(networkSourceState)
      *             .build());
      * 
      *     }
@@ -25260,9 +25260,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getPolicies(GetPoliciesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.policy_name())
-     *             .state(var_.policy_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(policyName)
+     *             .state(policyState)
      *             .build());
      * 
      *     }
@@ -25308,9 +25308,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getPolicies(GetPoliciesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.policy_name())
-     *             .state(var_.policy_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(policyName)
+     *             .state(policyState)
      *             .build());
      * 
      *     }
@@ -25356,9 +25356,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getPolicies(GetPoliciesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.policy_name())
-     *             .state(var_.policy_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(policyName)
+     *             .state(policyState)
      *             .build());
      * 
      *     }
@@ -25404,9 +25404,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPolicies = IdentityFunctions.getPolicies(GetPoliciesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.policy_name())
-     *             .state(var_.policy_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(policyName)
+     *             .state(policyState)
      *             .build());
      * 
      *     }
@@ -25448,7 +25448,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -25490,7 +25490,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -25532,7 +25532,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -25574,7 +25574,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -25857,7 +25857,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -25900,7 +25900,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -25943,7 +25943,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -25986,7 +25986,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -26028,8 +26028,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
-     *             .tagName(oci_identity_tag.test_tag().name())
-     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .tagName(testTagOciIdentityTag.name())
+     *             .tagNamespaceId(testTagNamespace.id())
      *             .build());
      * 
      *     }
@@ -26071,8 +26071,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
-     *             .tagName(oci_identity_tag.test_tag().name())
-     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .tagName(testTagOciIdentityTag.name())
+     *             .tagNamespaceId(testTagNamespace.id())
      *             .build());
      * 
      *     }
@@ -26114,8 +26114,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
-     *             .tagName(oci_identity_tag.test_tag().name())
-     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .tagName(testTagOciIdentityTag.name())
+     *             .tagNamespaceId(testTagNamespace.id())
      *             .build());
      * 
      *     }
@@ -26157,8 +26157,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
-     *             .tagName(oci_identity_tag.test_tag().name())
-     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .tagName(testTagOciIdentityTag.name())
+     *             .tagNamespaceId(testTagNamespace.id())
      *             .build());
      * 
      *     }
@@ -26200,7 +26200,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
-     *             .tagDefaultId(oci_identity_tag_default.test_tag_default().id())
+     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.id())
      *             .build());
      * 
      *     }
@@ -26242,7 +26242,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
-     *             .tagDefaultId(oci_identity_tag_default.test_tag_default().id())
+     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.id())
      *             .build());
      * 
      *     }
@@ -26284,7 +26284,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
-     *             .tagDefaultId(oci_identity_tag_default.test_tag_default().id())
+     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.id())
      *             .build());
      * 
      *     }
@@ -26326,7 +26326,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
-     *             .tagDefaultId(oci_identity_tag_default.test_tag_default().id())
+     *             .tagDefaultId(testTagDefaultOciIdentityTagDefault.id())
      *             .build());
      * 
      *     }
@@ -26368,10 +26368,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tag_default_id())
-     *             .state(var_.tag_default_state())
-     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .compartmentId(compartmentId)
+     *             .id(tagDefaultId)
+     *             .state(tagDefaultState)
+     *             .tagDefinitionId(testTagDefinition.id())
      *             .build());
      * 
      *     }
@@ -26413,10 +26413,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tag_default_id())
-     *             .state(var_.tag_default_state())
-     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .compartmentId(compartmentId)
+     *             .id(tagDefaultId)
+     *             .state(tagDefaultState)
+     *             .tagDefinitionId(testTagDefinition.id())
      *             .build());
      * 
      *     }
@@ -26458,10 +26458,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tag_default_id())
-     *             .state(var_.tag_default_state())
-     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .compartmentId(compartmentId)
+     *             .id(tagDefaultId)
+     *             .state(tagDefaultState)
+     *             .tagDefinitionId(testTagDefinition.id())
      *             .build());
      * 
      *     }
@@ -26503,10 +26503,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tag_default_id())
-     *             .state(var_.tag_default_state())
-     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .compartmentId(compartmentId)
+     *             .id(tagDefaultId)
+     *             .state(tagDefaultState)
+     *             .tagDefinitionId(testTagDefinition.id())
      *             .build());
      * 
      *     }
@@ -26548,10 +26548,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tag_default_id())
-     *             .state(var_.tag_default_state())
-     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .compartmentId(compartmentId)
+     *             .id(tagDefaultId)
+     *             .state(tagDefaultState)
+     *             .tagDefinitionId(testTagDefinition.id())
      *             .build());
      * 
      *     }
@@ -26593,10 +26593,10 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.tag_default_id())
-     *             .state(var_.tag_default_state())
-     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .compartmentId(compartmentId)
+     *             .id(tagDefaultId)
+     *             .state(tagDefaultState)
+     *             .tagDefinitionId(testTagDefinition.id())
      *             .build());
      * 
      *     }
@@ -26638,9 +26638,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagNamespaces = IdentityFunctions.getTagNamespaces(GetTagNamespacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .includeSubcompartments(var_.tag_namespace_include_subcompartments())
-     *             .state(var_.tag_namespace_state())
+     *             .compartmentId(compartmentId)
+     *             .includeSubcompartments(tagNamespaceIncludeSubcompartments)
+     *             .state(tagNamespaceState)
      *             .build());
      * 
      *     }
@@ -26682,9 +26682,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagNamespaces = IdentityFunctions.getTagNamespaces(GetTagNamespacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .includeSubcompartments(var_.tag_namespace_include_subcompartments())
-     *             .state(var_.tag_namespace_state())
+     *             .compartmentId(compartmentId)
+     *             .includeSubcompartments(tagNamespaceIncludeSubcompartments)
+     *             .state(tagNamespaceState)
      *             .build());
      * 
      *     }
@@ -26726,9 +26726,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagNamespaces = IdentityFunctions.getTagNamespaces(GetTagNamespacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .includeSubcompartments(var_.tag_namespace_include_subcompartments())
-     *             .state(var_.tag_namespace_state())
+     *             .compartmentId(compartmentId)
+     *             .includeSubcompartments(tagNamespaceIncludeSubcompartments)
+     *             .state(tagNamespaceState)
      *             .build());
      * 
      *     }
@@ -26770,9 +26770,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagNamespaces = IdentityFunctions.getTagNamespaces(GetTagNamespacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .includeSubcompartments(var_.tag_namespace_include_subcompartments())
-     *             .state(var_.tag_namespace_state())
+     *             .compartmentId(compartmentId)
+     *             .includeSubcompartments(tagNamespaceIncludeSubcompartments)
+     *             .state(tagNamespaceState)
      *             .build());
      * 
      *     }
@@ -26814,8 +26814,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .standardTagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+     *             .compartmentId(compartmentId)
+     *             .standardTagNamespaceName(testTagNamespace.name())
      *             .build());
      * 
      *     }
@@ -26857,8 +26857,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .standardTagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+     *             .compartmentId(compartmentId)
+     *             .standardTagNamespaceName(testTagNamespace.name())
      *             .build());
      * 
      *     }
@@ -26900,8 +26900,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .standardTagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+     *             .compartmentId(compartmentId)
+     *             .standardTagNamespaceName(testTagNamespace.name())
      *             .build());
      * 
      *     }
@@ -26943,8 +26943,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .standardTagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+     *             .compartmentId(compartmentId)
+     *             .standardTagNamespaceName(testTagNamespace.name())
      *             .build());
      * 
      *     }
@@ -26986,7 +26986,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplates = IdentityFunctions.getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -27028,7 +27028,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplates = IdentityFunctions.getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -27070,7 +27070,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplates = IdentityFunctions.getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -27112,7 +27112,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTagStandardTagNamespaceTemplates = IdentityFunctions.getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -27154,8 +27154,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
-     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
-     *             .state(var_.tag_state())
+     *             .tagNamespaceId(testTagNamespace.id())
+     *             .state(tagState)
      *             .build());
      * 
      *     }
@@ -27197,8 +27197,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
-     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
-     *             .state(var_.tag_state())
+     *             .tagNamespaceId(testTagNamespace.id())
+     *             .state(tagState)
      *             .build());
      * 
      *     }
@@ -27240,8 +27240,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
-     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
-     *             .state(var_.tag_state())
+     *             .tagNamespaceId(testTagNamespace.id())
+     *             .state(tagState)
      *             .build());
      * 
      *     }
@@ -27283,8 +27283,8 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
-     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
-     *             .state(var_.tag_state())
+     *             .tagNamespaceId(testTagNamespace.id())
+     *             .state(tagState)
      *             .build());
      * 
      *     }
@@ -27326,7 +27326,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTenancy = IdentityFunctions.getTenancy(GetTenancyArgs.builder()
-     *             .tenancyId(var_.tenancy_ocid())
+     *             .tenancyId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -27368,7 +27368,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTenancy = IdentityFunctions.getTenancy(GetTenancyArgs.builder()
-     *             .tenancyId(var_.tenancy_ocid())
+     *             .tenancyId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -27410,7 +27410,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTenancy = IdentityFunctions.getTenancy(GetTenancyArgs.builder()
-     *             .tenancyId(var_.tenancy_ocid())
+     *             .tenancyId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -27452,7 +27452,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTenancy = IdentityFunctions.getTenancy(GetTenancyArgs.builder()
-     *             .tenancyId(var_.tenancy_ocid())
+     *             .tenancyId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -27495,7 +27495,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -27538,7 +27538,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -27581,7 +27581,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -27624,7 +27624,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -27666,7 +27666,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUserOciIdentityUser.id())
      *             .build());
      * 
      *     }
@@ -27708,7 +27708,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUserOciIdentityUser.id())
      *             .build());
      * 
      *     }
@@ -27750,7 +27750,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUserOciIdentityUser.id())
      *             .build());
      * 
      *     }
@@ -27792,7 +27792,7 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
-     *             .userId(oci_identity_user.test_user().id())
+     *             .userId(testUserOciIdentityUser.id())
      *             .build());
      * 
      *     }
@@ -27843,9 +27843,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .groupId(oci_identity_group.test_group().id())
-     *             .userId(oci_identity_user.test_user().id())
+     *             .compartmentId(tenancyOcid)
+     *             .groupId(testGroup.id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -27896,9 +27896,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .groupId(oci_identity_group.test_group().id())
-     *             .userId(oci_identity_user.test_user().id())
+     *             .compartmentId(tenancyOcid)
+     *             .groupId(testGroup.id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -27949,9 +27949,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .groupId(oci_identity_group.test_group().id())
-     *             .userId(oci_identity_user.test_user().id())
+     *             .compartmentId(tenancyOcid)
+     *             .groupId(testGroup.id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -28002,9 +28002,9 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .groupId(oci_identity_group.test_group().id())
-     *             .userId(oci_identity_user.test_user().id())
+     *             .compartmentId(tenancyOcid)
+     *             .groupId(testGroup.id())
+     *             .userId(testUser.id())
      *             .build());
      * 
      *     }
@@ -28048,11 +28048,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .externalIdentifier(var_.user_external_identifier())
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
-     *             .name(var_.user_name())
-     *             .state(var_.user_state())
+     *             .compartmentId(tenancyOcid)
+     *             .externalIdentifier(userExternalIdentifier)
+     *             .identityProviderId(testIdentityProvider.id())
+     *             .name(userName)
+     *             .state(userState)
      *             .build());
      * 
      *     }
@@ -28096,11 +28096,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .externalIdentifier(var_.user_external_identifier())
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
-     *             .name(var_.user_name())
-     *             .state(var_.user_state())
+     *             .compartmentId(tenancyOcid)
+     *             .externalIdentifier(userExternalIdentifier)
+     *             .identityProviderId(testIdentityProvider.id())
+     *             .name(userName)
+     *             .state(userState)
      *             .build());
      * 
      *     }
@@ -28144,11 +28144,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .externalIdentifier(var_.user_external_identifier())
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
-     *             .name(var_.user_name())
-     *             .state(var_.user_state())
+     *             .compartmentId(tenancyOcid)
+     *             .externalIdentifier(userExternalIdentifier)
+     *             .identityProviderId(testIdentityProvider.id())
+     *             .name(userName)
+     *             .state(userState)
      *             .build());
      * 
      *     }
@@ -28192,11 +28192,11 @@ public final class IdentityFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .externalIdentifier(var_.user_external_identifier())
-     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
-     *             .name(var_.user_name())
-     *             .state(var_.user_state())
+     *             .compartmentId(tenancyOcid)
+     *             .externalIdentifier(userExternalIdentifier)
+     *             .identityProviderId(testIdentityProvider.id())
+     *             .name(userName)
+     *             .state(userState)
      *             .build());
      * 
      *     }

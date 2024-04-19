@@ -25,23 +25,23 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSubscriber = new Oci.ApiGateway.Subscriber("testSubscriber", new()
+    ///     var testSubscriber = new Oci.ApiGateway.Subscriber("test_subscriber", new()
     ///     {
     ///         Clients = new[]
     ///         {
     ///             new Oci.ApiGateway.Inputs.SubscriberClientArgs
     ///             {
-    ///                 Name = @var.Subscriber_clients_name,
-    ///                 Token = @var.Subscriber_clients_token,
+    ///                 Name = subscriberClientsName,
+    ///                 Token = subscriberClientsToken,
     ///             },
     ///         },
-    ///         CompartmentId = @var.Compartment_id,
-    ///         UsagePlans = @var.Subscriber_usage_plans,
+    ///         CompartmentId = compartmentId,
+    ///         UsagePlans = subscriberUsagePlans,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Subscriber_display_name,
+    ///         DisplayName = subscriberDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

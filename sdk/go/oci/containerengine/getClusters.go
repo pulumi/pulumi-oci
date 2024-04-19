@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetClusters(ctx, &containerengine.GetClustersArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Cluster_name),
-//				States:        _var.Cluster_state,
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(clusterName),
+//				States:        clusterState,
 //			}, nil)
 //			if err != nil {
 //				return err

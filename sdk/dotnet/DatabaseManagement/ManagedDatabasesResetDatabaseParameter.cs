@@ -25,26 +25,26 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagedDatabasesResetDatabaseParameter = new Oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameter("testManagedDatabasesResetDatabaseParameter", new()
+    ///     var testManagedDatabasesResetDatabaseParameter = new Oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameter("test_managed_databases_reset_database_parameter", new()
     ///     {
-    ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-    ///         Parameters = @var.Managed_databases_reset_database_parameter_parameters,
-    ///         Scope = @var.Managed_databases_reset_database_parameter_scope,
+    ///         ManagedDatabaseId = testManagedDatabase.Id,
+    ///         Parameters = managedDatabasesResetDatabaseParameterParameters,
+    ///         Scope = managedDatabasesResetDatabaseParameterScope,
     ///         Credentials = new Oci.DatabaseManagement.Inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs
     ///         {
-    ///             Password = @var.Managed_databases_reset_database_parameter_credentials_password,
-    ///             Role = @var.Managed_databases_reset_database_parameter_credentials_role,
-    ///             SecretId = oci_vault_secret.Test_secret.Id,
-    ///             UserName = oci_identity_user.Test_user.Name,
+    ///             Password = managedDatabasesResetDatabaseParameterCredentialsPassword,
+    ///             Role = managedDatabasesResetDatabaseParameterCredentialsRole,
+    ///             SecretId = testSecret.Id,
+    ///             UserName = testUser.Name,
     ///         },
     ///         DatabaseCredential = new Oci.DatabaseManagement.Inputs.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs
     ///         {
-    ///             CredentialType = @var.Managed_databases_reset_database_parameter_database_credential_credential_type,
-    ///             NamedCredentialId = oci_database_management_named_credential.Test_named_credential.Id,
-    ///             Password = @var.Managed_databases_reset_database_parameter_database_credential_password,
-    ///             PasswordSecretId = oci_vault_secret.Test_secret.Id,
-    ///             Role = @var.Managed_databases_reset_database_parameter_database_credential_role,
-    ///             Username = @var.Managed_databases_reset_database_parameter_database_credential_username,
+    ///             CredentialType = managedDatabasesResetDatabaseParameterDatabaseCredentialCredentialType,
+    ///             NamedCredentialId = testNamedCredential.Id,
+    ///             Password = managedDatabasesResetDatabaseParameterDatabaseCredentialPassword,
+    ///             PasswordSecretId = testSecret.Id,
+    ///             Role = managedDatabasesResetDatabaseParameterDatabaseCredentialRole,
+    ///             Username = managedDatabasesResetDatabaseParameterDatabaseCredentialUsername,
     ///         },
     ///     });
     /// 

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNewsReport = oci.Opsi.getNewsReport({
- *     newsReportId: oci_opsi_news_report.test_news_report.id,
+ *     newsReportId: testNewsReportOciOpsiNewsReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,7 +133,7 @@ export interface GetNewsReportResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNewsReport = oci.Opsi.getNewsReport({
- *     newsReportId: oci_opsi_news_report.test_news_report.id,
+ *     newsReportId: testNewsReportOciOpsiNewsReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

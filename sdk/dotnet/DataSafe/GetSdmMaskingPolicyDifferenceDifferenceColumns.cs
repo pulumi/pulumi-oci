@@ -29,13 +29,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSdmMaskingPolicyDifferenceDifferenceColumns = Oci.DataSafe.GetSdmMaskingPolicyDifferenceDifferenceColumns.Invoke(new()
         ///     {
-        ///         SdmMaskingPolicyDifferenceId = oci_data_safe_sdm_masking_policy_difference.Test_sdm_masking_policy_difference.Id,
-        ///         ColumnNames = @var.Sdm_masking_policy_difference_difference_column_column_name,
-        ///         DifferenceType = @var.Sdm_masking_policy_difference_difference_column_difference_type,
-        ///         Objects = @var.Sdm_masking_policy_difference_difference_column_object,
-        ///         PlannedAction = @var.Sdm_masking_policy_difference_difference_column_planned_action,
-        ///         SchemaNames = @var.Sdm_masking_policy_difference_difference_column_schema_name,
-        ///         SyncStatus = @var.Sdm_masking_policy_difference_difference_column_sync_status,
+        ///         SdmMaskingPolicyDifferenceId = testSdmMaskingPolicyDifference.Id,
+        ///         ColumnNames = sdmMaskingPolicyDifferenceDifferenceColumnColumnName,
+        ///         DifferenceType = sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType,
+        ///         Objects = sdmMaskingPolicyDifferenceDifferenceColumnObject,
+        ///         PlannedAction = sdmMaskingPolicyDifferenceDifferenceColumnPlannedAction,
+        ///         SchemaNames = sdmMaskingPolicyDifferenceDifferenceColumnSchemaName,
+        ///         SyncStatus = sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus,
         ///     });
         /// 
         /// });
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSdmMaskingPolicyDifferenceDifferenceColumns = Oci.DataSafe.GetSdmMaskingPolicyDifferenceDifferenceColumns.Invoke(new()
         ///     {
-        ///         SdmMaskingPolicyDifferenceId = oci_data_safe_sdm_masking_policy_difference.Test_sdm_masking_policy_difference.Id,
-        ///         ColumnNames = @var.Sdm_masking_policy_difference_difference_column_column_name,
-        ///         DifferenceType = @var.Sdm_masking_policy_difference_difference_column_difference_type,
-        ///         Objects = @var.Sdm_masking_policy_difference_difference_column_object,
-        ///         PlannedAction = @var.Sdm_masking_policy_difference_difference_column_planned_action,
-        ///         SchemaNames = @var.Sdm_masking_policy_difference_difference_column_schema_name,
-        ///         SyncStatus = @var.Sdm_masking_policy_difference_difference_column_sync_status,
+        ///         SdmMaskingPolicyDifferenceId = testSdmMaskingPolicyDifference.Id,
+        ///         ColumnNames = sdmMaskingPolicyDifferenceDifferenceColumnColumnName,
+        ///         DifferenceType = sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType,
+        ///         Objects = sdmMaskingPolicyDifferenceDifferenceColumnObject,
+        ///         PlannedAction = sdmMaskingPolicyDifferenceDifferenceColumnPlannedAction,
+        ///         SchemaNames = sdmMaskingPolicyDifferenceDifferenceColumnSchemaName,
+        ///         SyncStatus = sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus,
         ///     });
         /// 
         /// });

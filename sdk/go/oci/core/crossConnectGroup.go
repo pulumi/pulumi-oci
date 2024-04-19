@@ -45,23 +45,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewCrossConnectGroup(ctx, "testCrossConnectGroup", &Core.CrossConnectGroupArgs{
-//				CompartmentId:         pulumi.Any(_var.Compartment_id),
-//				CustomerReferenceName: pulumi.Any(_var.Cross_connect_group_customer_reference_name),
+//			_, err := Core.NewCrossConnectGroup(ctx, "test_cross_connect_group", &Core.CrossConnectGroupArgs{
+//				CompartmentId:         pulumi.Any(compartmentId),
+//				CustomerReferenceName: pulumi.Any(crossConnectGroupCustomerReferenceName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Cross_connect_group_display_name),
+//				DisplayName: pulumi.Any(crossConnectGroupDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				MacsecProperties: &core.CrossConnectGroupMacsecPropertiesArgs{
-//					State:                       pulumi.Any(_var.Cross_connect_group_macsec_properties_state),
-//					EncryptionCipher:            pulumi.Any(_var.Cross_connect_group_macsec_properties_encryption_cipher),
-//					IsUnprotectedTrafficAllowed: pulumi.Any(_var.Cross_connect_group_macsec_properties_is_unprotected_traffic_allowed),
+//					State:                       pulumi.Any(crossConnectGroupMacsecPropertiesState),
+//					EncryptionCipher:            pulumi.Any(crossConnectGroupMacsecPropertiesEncryptionCipher),
+//					IsUnprotectedTrafficAllowed: pulumi.Any(crossConnectGroupMacsecPropertiesIsUnprotectedTrafficAllowed),
 //					PrimaryKey: &core.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs{
-//						ConnectivityAssociationKeySecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-//						ConnectivityAssociationNameSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//						ConnectivityAssociationKeySecretId:  pulumi.Any(testSecret.Id),
+//						ConnectivityAssociationNameSecretId: pulumi.Any(testSecret.Id),
 //					},
 //				},
 //			})

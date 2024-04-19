@@ -25,16 +25,16 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCatalogPrivateEndpoint = new Oci.DataCatalog.CatalogPrivateEndpoint("testCatalogPrivateEndpoint", new()
+    ///     var testCatalogPrivateEndpoint = new Oci.DataCatalog.CatalogPrivateEndpoint("test_catalog_private_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DnsZones = @var.Catalog_private_endpoint_dns_zones,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DnsZones = catalogPrivateEndpointDnsZones,
+    ///         SubnetId = testSubnet.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Catalog_private_endpoint_display_name,
+    ///         DisplayName = catalogPrivateEndpointDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

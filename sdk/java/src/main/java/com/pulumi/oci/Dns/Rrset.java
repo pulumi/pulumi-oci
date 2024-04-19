@@ -48,18 +48,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRrset = new Rrset(&#34;testRrset&#34;, RrsetArgs.builder()        
- *             .domain(var_.rrset_domain())
- *             .rtype(var_.rrset_rtype())
- *             .zoneNameOrId(oci_dns_zone.test_zone().id())
- *             .compartmentId(var_.compartment_id())
+ *             .domain(rrsetDomain)
+ *             .rtype(rrsetRtype)
+ *             .zoneNameOrId(testZone.id())
+ *             .compartmentId(compartmentId)
  *             .items(RrsetItemArgs.builder()
- *                 .domain(var_.rrset_items_domain())
- *                 .rdata(var_.rrset_items_rdata())
- *                 .rtype(var_.rrset_items_rtype())
- *                 .ttl(var_.rrset_items_ttl())
+ *                 .domain(rrsetItemsDomain)
+ *                 .rdata(rrsetItemsRdata)
+ *                 .rtype(rrsetItemsRtype)
+ *                 .ttl(rrsetItemsTtl)
  *                 .build())
- *             .scope(var_.rrset_scope())
- *             .viewId(oci_dns_view.test_view().id())
+ *             .scope(rrsetScope)
+ *             .viewId(testView.id())
  *             .build());
  * 
  *     }

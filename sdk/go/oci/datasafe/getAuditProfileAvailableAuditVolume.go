@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditProfileAvailableAuditVolume(ctx, &datasafe.GetAuditProfileAvailableAuditVolumeArgs{
-//				AuditProfileId:                  oci_data_safe_audit_profile.Test_audit_profile.Id,
-//				WorkRequestId:                   oci_containerengine_work_request.Test_work_request.Id,
-//				MonthInConsiderationGreaterThan: pulumi.StringRef(_var.Audit_profile_available_audit_volume_month_in_consideration_greater_than),
-//				MonthInConsiderationLessThan:    pulumi.StringRef(_var.Audit_profile_available_audit_volume_month_in_consideration_less_than),
-//				TrailLocation:                   pulumi.StringRef(_var.Audit_profile_available_audit_volume_trail_location),
+//				AuditProfileId:                  testAuditProfile.Id,
+//				WorkRequestId:                   testWorkRequest.Id,
+//				MonthInConsiderationGreaterThan: pulumi.StringRef(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan),
+//				MonthInConsiderationLessThan:    pulumi.StringRef(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan),
+//				TrailLocation:                   pulumi.StringRef(auditProfileAvailableAuditVolumeTrailLocation),
 //			}, nil)
 //			if err != nil {
 //				return err

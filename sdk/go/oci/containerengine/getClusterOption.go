@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetClusterOption(ctx, &containerengine.GetClusterOptionArgs{
-//				ClusterOptionId: oci_containerengine_cluster_option.Test_cluster_option.Id,
-//				CompartmentId:   pulumi.StringRef(_var.Compartment_id),
+//				ClusterOptionId: testClusterOptionOciContainerengineClusterOption.Id,
+//				CompartmentId:   pulumi.StringRef(compartmentId),
 //			}, nil)
 //			if err != nil {
 //				return err

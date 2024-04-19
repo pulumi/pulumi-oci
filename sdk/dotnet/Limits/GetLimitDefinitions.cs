@@ -32,9 +32,9 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testLimitDefinitions = Oci.Limits.GetLimitDefinitions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Name = @var.Limit_definition_name,
-        ///         ServiceName = oci_limits_service.Test_service.Name,
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = limitDefinitionName,
+        ///         ServiceName = testService.Name,
         ///     });
         /// 
         /// });
@@ -65,9 +65,9 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testLimitDefinitions = Oci.Limits.GetLimitDefinitions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Name = @var.Limit_definition_name,
-        ///         ServiceName = oci_limits_service.Test_service.Name,
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = limitDefinitionName,
+        ///         ServiceName = testService.Name,
         ///     });
         /// 
         /// });

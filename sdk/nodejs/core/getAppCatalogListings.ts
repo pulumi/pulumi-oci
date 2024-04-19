@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAppCatalogListings = oci.Core.getAppCatalogListings({
- *     displayName: _var.app_catalog_listing_display_name,
- *     publisherName: _var.app_catalog_listing_publisher_name,
- *     publisherType: _var.app_catalog_listing_publisher_type,
+ *     displayName: appCatalogListingDisplayName,
+ *     publisherName: appCatalogListingPublisherName,
+ *     publisherType: appCatalogListingPublisherType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -93,9 +93,9 @@ export interface GetAppCatalogListingsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAppCatalogListings = oci.Core.getAppCatalogListings({
- *     displayName: _var.app_catalog_listing_display_name,
- *     publisherName: _var.app_catalog_listing_publisher_name,
- *     publisherType: _var.app_catalog_listing_publisher_type,
+ *     displayName: appCatalogListingDisplayName,
+ *     publisherName: appCatalogListingPublisherName,
+ *     publisherType: appCatalogListingPublisherType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

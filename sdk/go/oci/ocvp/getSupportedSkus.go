@@ -32,8 +32,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetSupportedSkus(ctx, &ocvp.GetSupportedSkusArgs{
-//				CompartmentId: _var.Compartment_id,
-//				HostShapeName: pulumi.StringRef(oci_core_shape.Test_shape.Name),
+//				CompartmentId: compartmentId,
+//				HostShapeName: pulumi.StringRef(testShape.Name),
 //			}, nil)
 //			if err != nil {
 //				return err

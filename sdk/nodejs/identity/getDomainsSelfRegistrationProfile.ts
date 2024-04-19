@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSelfRegistrationProfile = oci.Identity.getDomainsSelfRegistrationProfile({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     selfRegistrationProfileId: oci_optimizer_profile.test_profile.id,
+ *     idcsEndpoint: testDomain.url,
+ *     selfRegistrationProfileId: testProfile.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.self_registration_profile_authorization,
- *     resourceTypeSchemaVersion: _var.self_registration_profile_resource_type_schema_version,
+ *     authorization: selfRegistrationProfileAuthorization,
+ *     resourceTypeSchemaVersion: selfRegistrationProfileResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -244,12 +244,12 @@ export interface GetDomainsSelfRegistrationProfileResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSelfRegistrationProfile = oci.Identity.getDomainsSelfRegistrationProfile({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     selfRegistrationProfileId: oci_optimizer_profile.test_profile.id,
+ *     idcsEndpoint: testDomain.url,
+ *     selfRegistrationProfileId: testProfile.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.self_registration_profile_authorization,
- *     resourceTypeSchemaVersion: _var.self_registration_profile_resource_type_schema_version,
+ *     authorization: selfRegistrationProfileAuthorization,
+ *     resourceTypeSchemaVersion: selfRegistrationProfileResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

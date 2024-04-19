@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionPolicy = new oci.recoverymod.ProtectionPolicy("testProtectionPolicy", {
- *     backupRetentionPeriodInDays: _var.protection_policy_backup_retention_period_in_days,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.protection_policy_display_name,
+ * const testProtectionPolicy = new oci.recoverymod.ProtectionPolicy("test_protection_policy", {
+ *     backupRetentionPeriodInDays: protectionPolicyBackupRetentionPeriodInDays,
+ *     compartmentId: compartmentId,
+ *     displayName: protectionPolicyDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },

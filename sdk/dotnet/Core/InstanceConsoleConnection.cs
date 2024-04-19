@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testInstanceConsoleConnection = new Oci.Core.InstanceConsoleConnection("testInstanceConsoleConnection", new()
+    ///     var testInstanceConsoleConnection = new Oci.Core.InstanceConsoleConnection("test_instance_console_connection", new()
     ///     {
-    ///         InstanceId = oci_core_instance.Test_instance.Id,
-    ///         PublicKey = @var.Instance_console_connection_public_key,
+    ///         InstanceId = testInstance.Id,
+    ///         PublicKey = instanceConsoleConnectionPublicKey,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

@@ -576,27 +576,27 @@ class MediaWorkflowJob(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_media_workflow_job = oci.media_services.MediaWorkflowJob("testMediaWorkflowJob",
-            compartment_id=var["compartment_id"],
-            workflow_identifier_type=var["media_workflow_job_workflow_identifier_type"],
+        test_media_workflow_job = oci.media_services.MediaWorkflowJob("test_media_workflow_job",
+            compartment_id=compartment_id,
+            workflow_identifier_type=media_workflow_job_workflow_identifier_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["media_workflow_job_display_name"],
+            display_name=media_workflow_job_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             locks=[oci.media_services.MediaWorkflowJobLockArgs(
-                compartment_id=var["compartment_id"],
-                type=var["media_workflow_job_locks_type"],
-                message=var["media_workflow_job_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["media_workflow_job_locks_time_created"],
+                compartment_id=compartment_id,
+                type=media_workflow_job_locks_type,
+                message=media_workflow_job_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=media_workflow_job_locks_time_created,
             )],
-            media_workflow_configuration_ids=var["media_workflow_job_media_workflow_configuration_ids"],
-            media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-            media_workflow_name=oci_media_services_media_workflow["test_media_workflow"]["name"],
-            parameters=var["media_workflow_job_parameters"])
+            media_workflow_configuration_ids=media_workflow_job_media_workflow_configuration_ids,
+            media_workflow_id=test_media_workflow["id"],
+            media_workflow_name=test_media_workflow["name"],
+            parameters=media_workflow_job_parameters)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -643,27 +643,27 @@ class MediaWorkflowJob(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_media_workflow_job = oci.media_services.MediaWorkflowJob("testMediaWorkflowJob",
-            compartment_id=var["compartment_id"],
-            workflow_identifier_type=var["media_workflow_job_workflow_identifier_type"],
+        test_media_workflow_job = oci.media_services.MediaWorkflowJob("test_media_workflow_job",
+            compartment_id=compartment_id,
+            workflow_identifier_type=media_workflow_job_workflow_identifier_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["media_workflow_job_display_name"],
+            display_name=media_workflow_job_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             locks=[oci.media_services.MediaWorkflowJobLockArgs(
-                compartment_id=var["compartment_id"],
-                type=var["media_workflow_job_locks_type"],
-                message=var["media_workflow_job_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["media_workflow_job_locks_time_created"],
+                compartment_id=compartment_id,
+                type=media_workflow_job_locks_type,
+                message=media_workflow_job_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=media_workflow_job_locks_time_created,
             )],
-            media_workflow_configuration_ids=var["media_workflow_job_media_workflow_configuration_ids"],
-            media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-            media_workflow_name=oci_media_services_media_workflow["test_media_workflow"]["name"],
-            parameters=var["media_workflow_job_parameters"])
+            media_workflow_configuration_ids=media_workflow_job_media_workflow_configuration_ids,
+            media_workflow_id=test_media_workflow["id"],
+            media_workflow_name=test_media_workflow["name"],
+            parameters=media_workflow_job_parameters)
         ```
         <!--End PulumiCodeChooser -->
 

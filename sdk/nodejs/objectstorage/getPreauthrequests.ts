@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPreauthenticatedRequests = oci.ObjectStorage.getPreauthrequests({
- *     bucket: _var.preauthenticated_request_bucket,
- *     namespace: _var.preauthenticated_request_namespace,
- *     objectNamePrefix: _var.preauthenticated_request_object_name_prefix,
+ *     bucket: preauthenticatedRequestBucket,
+ *     namespace: preauthenticatedRequestNamespace,
+ *     objectNamePrefix: preauthenticatedRequestObjectNamePrefix,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetPreauthrequestsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPreauthenticatedRequests = oci.ObjectStorage.getPreauthrequests({
- *     bucket: _var.preauthenticated_request_bucket,
- *     namespace: _var.preauthenticated_request_namespace,
- *     objectNamePrefix: _var.preauthenticated_request_object_name_prefix,
+ *     bucket: preauthenticatedRequestBucket,
+ *     namespace: preauthenticatedRequestNamespace,
+ *     objectNamePrefix: preauthenticatedRequestObjectNamePrefix,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

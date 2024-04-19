@@ -29,9 +29,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {
         ///     var testPrivateApplications = Oci.ServiceCatalog.GetPrivateApplications.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Private_application_display_name,
-        ///         PrivateApplicationId = oci_service_catalog_private_application.Test_private_application.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = privateApplicationDisplayName,
+        ///         PrivateApplicationId = testPrivateApplication.Id,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {
         ///     var testPrivateApplications = Oci.ServiceCatalog.GetPrivateApplications.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Private_application_display_name,
-        ///         PrivateApplicationId = oci_service_catalog_private_application.Test_private_application.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = privateApplicationDisplayName,
+        ///         PrivateApplicationId = testPrivateApplication.Id,
         ///     });
         /// 
         /// });

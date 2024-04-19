@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseSoftwareImage = oci.Database.getDatabaseSoftwareImage({
- *     databaseSoftwareImageId: oci_database_database_software_image.test_database_software_image.id,
+ *     databaseSoftwareImageId: testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -128,7 +128,7 @@ export interface GetDatabaseSoftwareImageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseSoftwareImage = oci.Database.getDatabaseSoftwareImage({
- *     databaseSoftwareImageId: oci_database_database_software_image.test_database_software_image.id,
+ *     databaseSoftwareImageId: testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

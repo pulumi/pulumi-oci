@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabase = oci.Database.getDatabase({
- *     databaseId: _var.database_id,
+ *     databaseId: databaseId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -190,7 +190,7 @@ export interface GetDatabaseResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabase = oci.Database.getDatabase({
- *     databaseId: _var.database_id,
+ *     databaseId: databaseId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

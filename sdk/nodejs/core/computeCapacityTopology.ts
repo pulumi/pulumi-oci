@@ -23,17 +23,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopology = new oci.core.ComputeCapacityTopology("testComputeCapacityTopology", {
- *     availabilityDomain: _var.compute_capacity_topology_availability_domain,
+ * const testComputeCapacityTopology = new oci.core.ComputeCapacityTopology("test_compute_capacity_topology", {
+ *     availabilityDomain: computeCapacityTopologyAvailabilityDomain,
  *     capacitySource: {
- *         capacityType: _var.compute_capacity_topology_capacity_source_capacity_type,
- *         compartmentId: _var.compartment_id,
+ *         capacityType: computeCapacityTopologyCapacitySourceCapacityType,
+ *         compartmentId: compartmentId,
  *     },
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.compute_capacity_topology_display_name,
+ *     displayName: computeCapacityTopologyDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

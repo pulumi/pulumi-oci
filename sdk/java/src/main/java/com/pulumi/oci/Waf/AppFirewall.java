@@ -45,14 +45,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testWebAppFirewall = new AppFirewall(&#34;testWebAppFirewall&#34;, AppFirewallArgs.builder()        
- *             .backendType(var_.web_app_firewall_backend_type())
- *             .compartmentId(var_.compartment_id())
- *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
- *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+ *             .backendType(webAppFirewallBackendType)
+ *             .compartmentId(compartmentId)
+ *             .loadBalancerId(testLoadBalancer.id())
+ *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.web_app_firewall_display_name())
+ *             .displayName(webAppFirewallDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .systemTags(var_.web_app_firewall_system_tags())
+ *             .systemTags(webAppFirewallSystemTags)
  *             .build());
  * 
  *     }

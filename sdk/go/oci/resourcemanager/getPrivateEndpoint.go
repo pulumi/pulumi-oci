@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ResourceManager.GetPrivateEndpoint(ctx, &resourcemanager.GetPrivateEndpointArgs{
-//				PrivateEndpointId: oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+//				PrivateEndpointId: testPrivateEndpointOciResourcemanagerPrivateEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

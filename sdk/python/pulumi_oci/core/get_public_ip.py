@@ -239,7 +239,7 @@ def get_public_ip(id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=var["test_public_ip_id"])
+    test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=test_public_ip_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -249,7 +249,7 @@ def get_public_ip(id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=var["test_public_ip_private_ip_id"])
+    test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=test_public_ip_private_ip_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -259,7 +259,7 @@ def get_public_ip(id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=var["test_public_ip_ip_address"])
+    test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=test_public_ip_ip_address)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -321,7 +321,7 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=var["test_public_ip_id"])
+    test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=test_public_ip_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -331,7 +331,7 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=var["test_public_ip_private_ip_id"])
+    test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=test_public_ip_private_ip_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -341,7 +341,7 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=var["test_public_ip_ip_address"])
+    test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=test_public_ip_ip_address)
     ```
     <!--End PulumiCodeChooser -->
 

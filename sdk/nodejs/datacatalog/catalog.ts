@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalog = new oci.datacatalog.Catalog("testCatalog", {
- *     compartmentId: _var.compartment_id,
+ * const testCatalog = new oci.datacatalog.Catalog("test_catalog", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.catalog_display_name,
+ *     displayName: catalogDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

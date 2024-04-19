@@ -20,12 +20,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAssociations = oci.CertificatesManagement.getAssociations({
- *     associatedResourceId: oci_certificates_management_associated_resource.test_associated_resource.id,
- *     associationId: oci_certificates_management_association.test_association.id,
- *     associationType: _var.association_association_type,
- *     certificatesResourceId: oci_certificates_management_certificates_resource.test_certificates_resource.id,
- *     compartmentId: _var.compartment_id,
- *     name: _var.association_name,
+ *     associatedResourceId: testAssociatedResource.id,
+ *     associationId: testAssociation.id,
+ *     associationType: associationAssociationType,
+ *     certificatesResourceId: testCertificatesResource.id,
+ *     compartmentId: compartmentId,
+ *     name: associationName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,12 +125,12 @@ export interface GetAssociationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAssociations = oci.CertificatesManagement.getAssociations({
- *     associatedResourceId: oci_certificates_management_associated_resource.test_associated_resource.id,
- *     associationId: oci_certificates_management_association.test_association.id,
- *     associationType: _var.association_association_type,
- *     certificatesResourceId: oci_certificates_management_certificates_resource.test_certificates_resource.id,
- *     compartmentId: _var.compartment_id,
- *     name: _var.association_name,
+ *     associatedResourceId: testAssociatedResource.id,
+ *     associationId: testAssociation.id,
+ *     associationType: associationAssociationType,
+ *     certificatesResourceId: testCertificatesResource.id,
+ *     compartmentId: compartmentId,
+ *     name: associationName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

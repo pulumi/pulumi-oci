@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReportDefinition = oci.DataSafe.getReportDefinition({
- *     reportDefinitionId: oci_data_safe_report_definition.test_report_definition.id,
+ *     reportDefinitionId: testReportDefinitionOciDataSafeReportDefinition.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -169,7 +169,7 @@ export interface GetReportDefinitionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReportDefinition = oci.DataSafe.getReportDefinition({
- *     reportDefinitionId: oci_data_safe_report_definition.test_report_definition.id,
+ *     reportDefinitionId: testReportDefinitionOciDataSafeReportDefinition.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

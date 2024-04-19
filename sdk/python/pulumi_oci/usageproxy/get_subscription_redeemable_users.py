@@ -101,8 +101,8 @@ def get_subscription_redeemable_users(filters: Optional[Sequence[pulumi.InputTyp
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redeemable_users = oci.UsageProxy.get_subscription_redeemable_users(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
+    test_subscription_redeemable_users = oci.UsageProxy.get_subscription_redeemable_users(subscription_id=test_subscription["id"],
+        tenancy_id=test_tenancy["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,8 +142,8 @@ def get_subscription_redeemable_users_output(filters: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redeemable_users = oci.UsageProxy.get_subscription_redeemable_users(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
+    test_subscription_redeemable_users = oci.UsageProxy.get_subscription_redeemable_users(subscription_id=test_subscription["id"],
+        tenancy_id=test_tenancy["id"])
     ```
     <!--End PulumiCodeChooser -->
 

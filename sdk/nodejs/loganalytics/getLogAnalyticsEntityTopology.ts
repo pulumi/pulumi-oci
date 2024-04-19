@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
- *     logAnalyticsEntityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
- *     namespace: _var.log_analytics_entity_topology_namespace,
- *     metadataEquals: _var.log_analytics_entity_topology_metadata_equals,
- *     state: _var.log_analytics_entity_topology_state,
+ *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
+ *     namespace: logAnalyticsEntityTopologyNamespace,
+ *     metadataEquals: logAnalyticsEntityTopologyMetadataEquals,
+ *     state: logAnalyticsEntityTopologyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -93,10 +93,10 @@ export interface GetLogAnalyticsEntityTopologyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsEntityTopology = oci.LogAnalytics.getLogAnalyticsEntityTopology({
- *     logAnalyticsEntityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
- *     namespace: _var.log_analytics_entity_topology_namespace,
- *     metadataEquals: _var.log_analytics_entity_topology_metadata_equals,
- *     state: _var.log_analytics_entity_topology_state,
+ *     logAnalyticsEntityId: testLogAnalyticsEntity.id,
+ *     namespace: logAnalyticsEntityTopologyNamespace,
+ *     metadataEquals: logAnalyticsEntityTopologyMetadataEquals,
+ *     state: logAnalyticsEntityTopologyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

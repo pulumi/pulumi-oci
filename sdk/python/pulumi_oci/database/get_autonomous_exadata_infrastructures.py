@@ -133,10 +133,10 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=var["compartment_id"],
-        availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
-        display_name=var["autonomous_exadata_infrastructure_display_name"],
-        state=var["autonomous_exadata_infrastructure_state"])
+    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
+        availability_domain=autonomous_exadata_infrastructure_availability_domain,
+        display_name=autonomous_exadata_infrastructure_display_name,
+        state=autonomous_exadata_infrastructure_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=var["compartment_id"],
-        availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
-        display_name=var["autonomous_exadata_infrastructure_display_name"],
-        state=var["autonomous_exadata_infrastructure_state"])
+    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
+        availability_domain=autonomous_exadata_infrastructure_availability_domain,
+        display_name=autonomous_exadata_infrastructure_display_name,
+        state=autonomous_exadata_infrastructure_state)
     ```
     <!--End PulumiCodeChooser -->
 

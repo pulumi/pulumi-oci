@@ -762,23 +762,23 @@ class BlockchainPlatform(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_blockchain_platform = oci.blockchain.BlockchainPlatform("testBlockchainPlatform",
-            compartment_id=var["compartment_id"],
-            compute_shape=var["blockchain_platform_compute_shape"],
-            display_name=var["blockchain_platform_display_name"],
-            idcs_access_token=var["blockchain_platform_idcs_access_token"],
-            platform_role=var["blockchain_platform_platform_role"],
-            ca_cert_archive_text=var["blockchain_platform_ca_cert_archive_text"],
+        test_blockchain_platform = oci.blockchain.BlockchainPlatform("test_blockchain_platform",
+            compartment_id=compartment_id,
+            compute_shape=blockchain_platform_compute_shape,
+            display_name=blockchain_platform_display_name,
+            idcs_access_token=blockchain_platform_idcs_access_token,
+            platform_role=blockchain_platform_platform_role,
+            ca_cert_archive_text=blockchain_platform_ca_cert_archive_text,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["blockchain_platform_description"],
-            federated_user_id=oci_identity_user["test_user"]["id"],
+            description=blockchain_platform_description,
+            federated_user_id=test_user["id"],
             freeform_tags={
                 "bar-key": "value",
             },
-            is_byol=var["blockchain_platform_is_byol"],
-            platform_version=var["blockchain_platform_platform_version"])
+            is_byol=blockchain_platform_is_byol,
+            platform_version=blockchain_platform_platform_version)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -831,23 +831,23 @@ class BlockchainPlatform(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_blockchain_platform = oci.blockchain.BlockchainPlatform("testBlockchainPlatform",
-            compartment_id=var["compartment_id"],
-            compute_shape=var["blockchain_platform_compute_shape"],
-            display_name=var["blockchain_platform_display_name"],
-            idcs_access_token=var["blockchain_platform_idcs_access_token"],
-            platform_role=var["blockchain_platform_platform_role"],
-            ca_cert_archive_text=var["blockchain_platform_ca_cert_archive_text"],
+        test_blockchain_platform = oci.blockchain.BlockchainPlatform("test_blockchain_platform",
+            compartment_id=compartment_id,
+            compute_shape=blockchain_platform_compute_shape,
+            display_name=blockchain_platform_display_name,
+            idcs_access_token=blockchain_platform_idcs_access_token,
+            platform_role=blockchain_platform_platform_role,
+            ca_cert_archive_text=blockchain_platform_ca_cert_archive_text,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["blockchain_platform_description"],
-            federated_user_id=oci_identity_user["test_user"]["id"],
+            description=blockchain_platform_description,
+            federated_user_id=test_user["id"],
             freeform_tags={
                 "bar-key": "value",
             },
-            is_byol=var["blockchain_platform_is_byol"],
-            platform_version=var["blockchain_platform_platform_version"])
+            is_byol=blockchain_platform_is_byol,
+            platform_version=blockchain_platform_platform_version)
         ```
         <!--End PulumiCodeChooser -->
 

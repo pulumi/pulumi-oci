@@ -30,10 +30,10 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testManagedInstanceEventReport = Oci.OsManagement.GetManagedInstanceEventReport.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         LatestTimestampGreaterThanOrEqualTo = @var.Managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
-        ///         LatestTimestampLessThan = @var.Managed_instance_event_report_latest_timestamp_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         LatestTimestampGreaterThanOrEqualTo = managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo,
+        ///         LatestTimestampLessThan = managedInstanceEventReportLatestTimestampLessThan,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testManagedInstanceEventReport = Oci.OsManagement.GetManagedInstanceEventReport.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         LatestTimestampGreaterThanOrEqualTo = @var.Managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
-        ///         LatestTimestampLessThan = @var.Managed_instance_event_report_latest_timestamp_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         LatestTimestampGreaterThanOrEqualTo = managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo,
+        ///         LatestTimestampLessThan = managedInstanceEventReportLatestTimestampLessThan,
         ///     });
         /// 
         /// });

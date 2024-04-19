@@ -59,7 +59,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
-     *             .connectHarnessId(oci_streaming_connect_harnes.test_connect_harnes().id())
+     *             .connectHarnessId(testConnectHarnes.id())
      *             .build());
      * 
      *     }
@@ -101,7 +101,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
-     *             .connectHarnessId(oci_streaming_connect_harnes.test_connect_harnes().id())
+     *             .connectHarnessId(testConnectHarnes.id())
      *             .build());
      * 
      *     }
@@ -143,7 +143,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
-     *             .connectHarnessId(oci_streaming_connect_harnes.test_connect_harnes().id())
+     *             .connectHarnessId(testConnectHarnes.id())
      *             .build());
      * 
      *     }
@@ -185,7 +185,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
-     *             .connectHarnessId(oci_streaming_connect_harnes.test_connect_harnes().id())
+     *             .connectHarnessId(testConnectHarnes.id())
      *             .build());
      * 
      *     }
@@ -227,10 +227,10 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarnesses = StreamingFunctions.getConnectHarnesses(GetConnectHarnessesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.connect_harness_id())
-     *             .name(var_.connect_harness_name())
-     *             .state(var_.connect_harness_state())
+     *             .compartmentId(compartmentId)
+     *             .id(connectHarnessId)
+     *             .name(connectHarnessName)
+     *             .state(connectHarnessState)
      *             .build());
      * 
      *     }
@@ -272,10 +272,10 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarnesses = StreamingFunctions.getConnectHarnesses(GetConnectHarnessesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.connect_harness_id())
-     *             .name(var_.connect_harness_name())
-     *             .state(var_.connect_harness_state())
+     *             .compartmentId(compartmentId)
+     *             .id(connectHarnessId)
+     *             .name(connectHarnessName)
+     *             .state(connectHarnessState)
      *             .build());
      * 
      *     }
@@ -317,10 +317,10 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarnesses = StreamingFunctions.getConnectHarnesses(GetConnectHarnessesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.connect_harness_id())
-     *             .name(var_.connect_harness_name())
-     *             .state(var_.connect_harness_state())
+     *             .compartmentId(compartmentId)
+     *             .id(connectHarnessId)
+     *             .name(connectHarnessName)
+     *             .state(connectHarnessState)
      *             .build());
      * 
      *     }
@@ -362,10 +362,10 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarnesses = StreamingFunctions.getConnectHarnesses(GetConnectHarnessesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.connect_harness_id())
-     *             .name(var_.connect_harness_name())
-     *             .state(var_.connect_harness_state())
+     *             .compartmentId(compartmentId)
+     *             .id(connectHarnessId)
+     *             .name(connectHarnessName)
+     *             .state(connectHarnessState)
      *             .build());
      * 
      *     }
@@ -407,7 +407,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
-     *             .streamId(oci_streaming_stream.test_stream().id())
+     *             .streamId(testStreamOciStreamingStream.id())
      *             .build());
      * 
      *     }
@@ -449,7 +449,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
-     *             .streamId(oci_streaming_stream.test_stream().id())
+     *             .streamId(testStreamOciStreamingStream.id())
      *             .build());
      * 
      *     }
@@ -491,7 +491,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
-     *             .streamId(oci_streaming_stream.test_stream().id())
+     *             .streamId(testStreamOciStreamingStream.id())
      *             .build());
      * 
      *     }
@@ -533,7 +533,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
-     *             .streamId(oci_streaming_stream.test_stream().id())
+     *             .streamId(testStreamOciStreamingStream.id())
      *             .build());
      * 
      *     }
@@ -575,7 +575,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
      *             .build());
      * 
      *     }
@@ -617,7 +617,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
      *             .build());
      * 
      *     }
@@ -659,7 +659,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
      *             .build());
      * 
      *     }
@@ -701,7 +701,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
      *             .build());
      * 
      *     }
@@ -743,10 +743,10 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPools = StreamingFunctions.getStreamPools(GetStreamPoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_pool_id())
-     *             .name(var_.stream_pool_name())
-     *             .state(var_.stream_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .id(streamPoolId)
+     *             .name(streamPoolName)
+     *             .state(streamPoolState)
      *             .build());
      * 
      *     }
@@ -788,10 +788,10 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPools = StreamingFunctions.getStreamPools(GetStreamPoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_pool_id())
-     *             .name(var_.stream_pool_name())
-     *             .state(var_.stream_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .id(streamPoolId)
+     *             .name(streamPoolName)
+     *             .state(streamPoolState)
      *             .build());
      * 
      *     }
@@ -833,10 +833,10 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPools = StreamingFunctions.getStreamPools(GetStreamPoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_pool_id())
-     *             .name(var_.stream_pool_name())
-     *             .state(var_.stream_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .id(streamPoolId)
+     *             .name(streamPoolName)
+     *             .state(streamPoolState)
      *             .build());
      * 
      *     }
@@ -878,10 +878,10 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPools = StreamingFunctions.getStreamPools(GetStreamPoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_pool_id())
-     *             .name(var_.stream_pool_name())
-     *             .state(var_.stream_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .id(streamPoolId)
+     *             .name(streamPoolName)
+     *             .state(streamPoolState)
      *             .build());
      * 
      *     }
@@ -926,11 +926,11 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_id())
-     *             .name(var_.stream_name())
-     *             .state(var_.stream_state())
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .id(streamId)
+     *             .name(streamName)
+     *             .state(streamState)
+     *             .streamPoolId(testStreamPool.id())
      *             .build());
      * 
      *     }
@@ -975,11 +975,11 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_id())
-     *             .name(var_.stream_name())
-     *             .state(var_.stream_state())
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .id(streamId)
+     *             .name(streamName)
+     *             .state(streamState)
+     *             .streamPoolId(testStreamPool.id())
      *             .build());
      * 
      *     }
@@ -1024,11 +1024,11 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_id())
-     *             .name(var_.stream_name())
-     *             .state(var_.stream_state())
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .id(streamId)
+     *             .name(streamName)
+     *             .state(streamState)
+     *             .streamPoolId(testStreamPool.id())
      *             .build());
      * 
      *     }
@@ -1073,11 +1073,11 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_id())
-     *             .name(var_.stream_name())
-     *             .state(var_.stream_state())
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .id(streamId)
+     *             .name(streamName)
+     *             .state(streamState)
+     *             .streamPoolId(testStreamPool.id())
      *             .build());
      * 
      *     }
@@ -1122,11 +1122,11 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_id())
-     *             .name(var_.stream_name())
-     *             .state(var_.stream_state())
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .id(streamId)
+     *             .name(streamName)
+     *             .state(streamState)
+     *             .streamPoolId(testStreamPool.id())
      *             .build());
      * 
      *     }
@@ -1171,11 +1171,11 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.stream_id())
-     *             .name(var_.stream_name())
-     *             .state(var_.stream_state())
-     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .id(streamId)
+     *             .name(streamName)
+     *             .state(streamState)
+     *             .streamPoolId(testStreamPool.id())
      *             .build());
      * 
      *     }

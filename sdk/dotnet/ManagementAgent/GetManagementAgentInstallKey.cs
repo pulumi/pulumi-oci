@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentInstallKey = Oci.ManagementAgent.GetManagementAgentInstallKey.Invoke(new()
         ///     {
-        ///         ManagementAgentInstallKeyId = oci_management_agent_management_agent_install_key.Test_management_agent_install_key.Id,
+        ///         ManagementAgentInstallKeyId = testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentInstallKey = Oci.ManagementAgent.GetManagementAgentInstallKey.Invoke(new()
         ///     {
-        ///         ManagementAgentInstallKeyId = oci_management_agent_management_agent_install_key.Test_management_agent_install_key.Id,
+        ///         ManagementAgentInstallKeyId = testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.Id,
         ///     });
         /// 
         /// });

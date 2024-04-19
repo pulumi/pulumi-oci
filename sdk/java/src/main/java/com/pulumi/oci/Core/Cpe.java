@@ -60,13 +60,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCpe = new Cpe(&#34;testCpe&#34;, CpeArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .ipAddress(var_.cpe_ip_address())
- *             .cpeDeviceShapeId(data.oci_core_cpe_device_shapes().test_cpe_device_shapes().cpe_device_shapes()[0].cpe_device_shape_id())
+ *             .compartmentId(compartmentId)
+ *             .ipAddress(cpeIpAddress)
+ *             .cpeDeviceShapeId(testCpeDeviceShapes.cpeDeviceShapes()[0].cpeDeviceShapeId())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.cpe_display_name())
+ *             .displayName(cpeDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .isPrivate(var_.cpe_is_private())
+ *             .isPrivate(cpeIsPrivate)
  *             .build());
  * 
  *     }

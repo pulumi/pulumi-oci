@@ -25,21 +25,22 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDbManagementPrivateEndpoint = new Oci.DatabaseManagement.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", new()
+    ///     var testDbManagementPrivateEndpoint = new Oci.DatabaseManagement.DbManagementPrivateEndpoint("test_db_management_private_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = dbManagementPrivateEndpointName,
+    ///         SubnetId = testSubnet.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Db_management_private_endpoint_description,
+    ///         Description = dbManagementPrivateEndpointDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsCluster = @var.Db_management_private_endpoint_is_cluster,
-    ///         NsgIds = @var.Db_management_private_endpoint_nsg_ids,
+    ///         IsCluster = dbManagementPrivateEndpointIsCluster,
+    ///         NsgIds = dbManagementPrivateEndpointNsgIds,
     ///     });
     /// 
     /// });

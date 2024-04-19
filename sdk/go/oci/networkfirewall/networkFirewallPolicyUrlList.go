@@ -31,12 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.NewNetworkFirewallPolicyUrlList(ctx, "testNetworkFirewallPolicyUrlList", &NetworkFirewall.NetworkFirewallPolicyUrlListArgs{
-//				NetworkFirewallPolicyId: pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
+//			_, err := NetworkFirewall.NewNetworkFirewallPolicyUrlList(ctx, "test_network_firewall_policy_url_list", &NetworkFirewall.NetworkFirewallPolicyUrlListArgs{
+//				Name:                    pulumi.Any(networkFirewallPolicyUrlListName),
+//				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
 //				Urls: networkfirewall.NetworkFirewallPolicyUrlListUrlArray{
 //					&networkfirewall.NetworkFirewallPolicyUrlListUrlArgs{
-//						Pattern: pulumi.Any(_var.Network_firewall_policy_url_list_urls_pattern),
-//						Type:    pulumi.Any(_var.Network_firewall_policy_url_list_urls_type),
+//						Pattern: pulumi.Any(networkFirewallPolicyUrlListUrlsPattern),
+//						Type:    pulumi.Any(networkFirewallPolicyUrlListUrlsType),
 //					},
 //				},
 //			})

@@ -103,9 +103,9 @@ def get_managed_database_user_data_access_container(managed_database_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_data_access_container = oci.DatabaseManagement.get_managed_database_user_data_access_container(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_data_access_container_name"])
+    test_managed_database_user_data_access_container = oci.DatabaseManagement.get_managed_database_user_data_access_container(managed_database_id=test_managed_database["id"],
+        user_name=test_user["name"],
+        name=managed_database_user_data_access_container_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -146,9 +146,9 @@ def get_managed_database_user_data_access_container_output(managed_database_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_data_access_container = oci.DatabaseManagement.get_managed_database_user_data_access_container(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_data_access_container_name"])
+    test_managed_database_user_data_access_container = oci.DatabaseManagement.get_managed_database_user_data_access_container(managed_database_id=test_managed_database["id"],
+        user_name=test_user["name"],
+        name=managed_database_user_data_access_container_name)
     ```
     <!--End PulumiCodeChooser -->
 

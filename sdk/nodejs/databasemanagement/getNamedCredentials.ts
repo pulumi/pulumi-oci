@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamedCredentials = oci.DatabaseManagement.getNamedCredentials({
- *     compartmentId: _var.compartment_id,
- *     associatedResource: _var.named_credential_associated_resource,
- *     name: _var.named_credential_name,
- *     scope: _var.named_credential_scope,
- *     type: _var.named_credential_type,
+ *     compartmentId: compartmentId,
+ *     associatedResource: namedCredentialAssociatedResource,
+ *     name: namedCredentialName,
+ *     scope: namedCredentialScope,
+ *     type: namedCredentialType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetNamedCredentialsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamedCredentials = oci.DatabaseManagement.getNamedCredentials({
- *     compartmentId: _var.compartment_id,
- *     associatedResource: _var.named_credential_associated_resource,
- *     name: _var.named_credential_name,
- *     scope: _var.named_credential_scope,
- *     type: _var.named_credential_type,
+ *     compartmentId: compartmentId,
+ *     associatedResource: namedCredentialAssociatedResource,
+ *     name: namedCredentialName,
+ *     scope: namedCredentialScope,
+ *     type: namedCredentialType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

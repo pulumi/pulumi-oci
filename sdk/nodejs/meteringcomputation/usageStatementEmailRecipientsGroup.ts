@@ -18,15 +18,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsageStatementEmailRecipientsGroup = new oci.meteringcomputation.UsageStatementEmailRecipientsGroup("testUsageStatementEmailRecipientsGroup", {
- *     compartmentId: _var.compartment_id,
+ * const testUsageStatementEmailRecipientsGroup = new oci.meteringcomputation.UsageStatementEmailRecipientsGroup("test_usage_statement_email_recipients_group", {
+ *     compartmentId: compartmentId,
  *     recipientsLists: [{
- *         emailId: oci_metering_computation_email.test_email.id,
- *         state: _var.usage_statement_email_recipients_group_recipients_list_state,
- *         firstName: _var.usage_statement_email_recipients_group_recipients_list_first_name,
- *         lastName: _var.usage_statement_email_recipients_group_recipients_list_last_name,
+ *         emailId: testEmail.id,
+ *         state: usageStatementEmailRecipientsGroupRecipientsListState,
+ *         firstName: usageStatementEmailRecipientsGroupRecipientsListFirstName,
+ *         lastName: usageStatementEmailRecipientsGroupRecipientsListLastName,
  *     }],
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
+ *     subscriptionId: testSubscription.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

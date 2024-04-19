@@ -184,14 +184,14 @@ def get_drg_attachments(attachment_type: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=var["compartment_id"],
-        attachment_type=var["drg_attachment_attachment_type"],
-        display_name=var["drg_attachment_display_name"],
-        drg_id=oci_core_drg["test_drg"]["id"],
-        drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-        network_id=oci_core_network["test_network"]["id"],
-        state=var["drg_attachment_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=compartment_id,
+        attachment_type=drg_attachment_attachment_type,
+        display_name=drg_attachment_display_name,
+        drg_id=test_drg["id"],
+        drg_route_table_id=test_drg_route_table["id"],
+        network_id=test_network["id"],
+        state=drg_attachment_state,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -260,14 +260,14 @@ def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=var["compartment_id"],
-        attachment_type=var["drg_attachment_attachment_type"],
-        display_name=var["drg_attachment_display_name"],
-        drg_id=oci_core_drg["test_drg"]["id"],
-        drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-        network_id=oci_core_network["test_network"]["id"],
-        state=var["drg_attachment_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_drg_attachments = oci.Core.get_drg_attachments(compartment_id=compartment_id,
+        attachment_type=drg_attachment_attachment_type,
+        display_name=drg_attachment_display_name,
+        drg_id=test_drg["id"],
+        drg_route_table_id=test_drg_route_table["id"],
+        network_id=test_network["id"],
+        state=drg_attachment_state,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 

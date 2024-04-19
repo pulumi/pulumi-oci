@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CertificatesManagement.GetCaBundle(ctx, &certificatesmanagement.GetCaBundleArgs{
-//				CaBundleId: oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
+//				CaBundleId: testCaBundleOciCertificatesManagementCaBundle.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

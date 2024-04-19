@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testWaasPolicies = Oci.Waas.GetWaasPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Waas_policy_display_names,
-        ///         Ids = @var.Waas_policy_ids,
-        ///         States = @var.Waas_policy_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Waas_policy_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Waas_policy_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = waasPolicyDisplayNames,
+        ///         Ids = waasPolicyIds,
+        ///         States = waasPolicyStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = waasPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = waasPolicyTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testWaasPolicies = Oci.Waas.GetWaasPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Waas_policy_display_names,
-        ///         Ids = @var.Waas_policy_ids,
-        ///         States = @var.Waas_policy_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Waas_policy_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Waas_policy_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = waasPolicyDisplayNames,
+        ///         Ids = waasPolicyIds,
+        ///         States = waasPolicyStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = waasPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = waasPolicyTimeCreatedLessThan,
         ///     });
         /// 
         /// });

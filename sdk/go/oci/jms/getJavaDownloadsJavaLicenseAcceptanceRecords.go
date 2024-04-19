@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetJavaDownloadsJavaLicenseAcceptanceRecords(ctx, &jms.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				Id:            pulumi.StringRef(_var.Java_license_acceptance_record_id),
-//				LicenseType:   pulumi.StringRef(_var.Java_license_acceptance_record_license_type),
-//				SearchByUser:  pulumi.StringRef(_var.Java_license_acceptance_record_search_by_user),
-//				Status:        pulumi.StringRef(_var.Java_license_acceptance_record_status),
+//				CompartmentId: tenancyOcid,
+//				Id:            pulumi.StringRef(javaLicenseAcceptanceRecordId),
+//				LicenseType:   pulumi.StringRef(javaLicenseAcceptanceRecordLicenseType),
+//				SearchByUser:  pulumi.StringRef(javaLicenseAcceptanceRecordSearchByUser),
+//				Status:        pulumi.StringRef(javaLicenseAcceptanceRecordStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

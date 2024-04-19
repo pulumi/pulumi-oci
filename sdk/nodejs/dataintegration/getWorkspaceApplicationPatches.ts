@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceApplicationPatches = oci.DataIntegration.getWorkspaceApplicationPatches({
- *     applicationKey: _var.workspace_application_patch_application_key,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     fields: _var.workspace_application_patch_fields,
- *     identifiers: _var.workspace_application_patch_identifier,
- *     name: _var.workspace_application_patch_name,
+ *     applicationKey: workspaceApplicationPatchApplicationKey,
+ *     workspaceId: testWorkspace.id,
+ *     fields: workspaceApplicationPatchFields,
+ *     identifiers: workspaceApplicationPatchIdentifier,
+ *     name: workspaceApplicationPatchName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,11 +106,11 @@ export interface GetWorkspaceApplicationPatchesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceApplicationPatches = oci.DataIntegration.getWorkspaceApplicationPatches({
- *     applicationKey: _var.workspace_application_patch_application_key,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     fields: _var.workspace_application_patch_fields,
- *     identifiers: _var.workspace_application_patch_identifier,
- *     name: _var.workspace_application_patch_name,
+ *     applicationKey: workspaceApplicationPatchApplicationKey,
+ *     workspaceId: testWorkspace.id,
+ *     fields: workspaceApplicationPatchFields,
+ *     identifiers: workspaceApplicationPatchIdentifier,
+ *     name: workspaceApplicationPatchName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

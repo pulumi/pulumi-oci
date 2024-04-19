@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTagDefaults = oci.Identity.getTagDefaults({
- *     compartmentId: _var.compartment_id,
- *     id: _var.tag_default_id,
- *     state: _var.tag_default_state,
- *     tagDefinitionId: oci_identity_tag_definition.test_tag_definition.id,
+ *     compartmentId: compartmentId,
+ *     id: tagDefaultId,
+ *     state: tagDefaultState,
+ *     tagDefinitionId: testTagDefinition.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetTagDefaultsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTagDefaults = oci.Identity.getTagDefaults({
- *     compartmentId: _var.compartment_id,
- *     id: _var.tag_default_id,
- *     state: _var.tag_default_state,
- *     tagDefinitionId: oci_identity_tag_definition.test_tag_definition.id,
+ *     compartmentId: compartmentId,
+ *     id: tagDefaultId,
+ *     state: tagDefaultState,
+ *     tagDefinitionId: testTagDefinition.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

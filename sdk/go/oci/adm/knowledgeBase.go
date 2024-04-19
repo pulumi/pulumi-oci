@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Adm.NewKnowledgeBase(ctx, "testKnowledgeBase", &Adm.KnowledgeBaseArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Adm.NewKnowledgeBase(ctx, "test_knowledge_base", &Adm.KnowledgeBaseArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Knowledge_base_display_name),
+//				DisplayName: pulumi.Any(knowledgeBaseDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

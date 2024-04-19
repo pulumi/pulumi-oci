@@ -1191,28 +1191,28 @@ class DomainsMyRequest(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_my_request = oci.identity.DomainsMyRequest("testMyRequest",
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-            justification=var["my_request_justification"],
+        test_my_request = oci.identity.DomainsMyRequest("test_my_request",
+            approval_details=[oci.identity.DomainsMyRequestApprovalDetailArgs()],
+            idcs_endpoint=test_domain["url"],
+            justification=my_request_justification,
             requesting=oci.identity.DomainsMyRequestRequestingArgs(
-                type=var["my_request_requesting_type"],
-                value=oci_identity_domains_group["group_to_request"]["id"],
-                description=var["my_request_requesting_description"],
+                type=my_request_requesting_type,
+                value=group_to_request["id"],
+                description=my_request_requesting_description,
             ),
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Request"],
-            action=var["my_request_action"],
-            approval_details=[oci.identity.DomainsMyRequestApprovalDetailArgs()],
+            action=my_request_action,
             attribute_sets=["all"],
             attributes="",
-            authorization=var["my_request_authorization"],
-            ocid=var["my_request_ocid"],
+            authorization=my_request_authorization,
+            ocid=my_request_ocid,
             requestor=oci.identity.DomainsMyRequestRequestorArgs(
-                value=var["my_request_requestor_value"],
+                value=my_request_requestor_value,
             ),
-            resource_type_schema_version=var["my_request_resource_type_schema_version"],
+            resource_type_schema_version=my_request_resource_type_schema_version,
             tags=[oci.identity.DomainsMyRequestTagArgs(
-                key=var["my_request_tags_key"],
-                value=var["my_request_tags_value"],
+                key=my_request_tags_key,
+                value=my_request_tags_value,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -1338,28 +1338,28 @@ class DomainsMyRequest(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_my_request = oci.identity.DomainsMyRequest("testMyRequest",
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-            justification=var["my_request_justification"],
+        test_my_request = oci.identity.DomainsMyRequest("test_my_request",
+            approval_details=[oci.identity.DomainsMyRequestApprovalDetailArgs()],
+            idcs_endpoint=test_domain["url"],
+            justification=my_request_justification,
             requesting=oci.identity.DomainsMyRequestRequestingArgs(
-                type=var["my_request_requesting_type"],
-                value=oci_identity_domains_group["group_to_request"]["id"],
-                description=var["my_request_requesting_description"],
+                type=my_request_requesting_type,
+                value=group_to_request["id"],
+                description=my_request_requesting_description,
             ),
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Request"],
-            action=var["my_request_action"],
-            approval_details=[oci.identity.DomainsMyRequestApprovalDetailArgs()],
+            action=my_request_action,
             attribute_sets=["all"],
             attributes="",
-            authorization=var["my_request_authorization"],
-            ocid=var["my_request_ocid"],
+            authorization=my_request_authorization,
+            ocid=my_request_ocid,
             requestor=oci.identity.DomainsMyRequestRequestorArgs(
-                value=var["my_request_requestor_value"],
+                value=my_request_requestor_value,
             ),
-            resource_type_schema_version=var["my_request_resource_type_schema_version"],
+            resource_type_schema_version=my_request_resource_type_schema_version,
             tags=[oci.identity.DomainsMyRequestTagArgs(
-                key=var["my_request_tags_key"],
-                value=var["my_request_tags_value"],
+                key=my_request_tags_key,
+                value=my_request_tags_value,
             )])
         ```
         <!--End PulumiCodeChooser -->

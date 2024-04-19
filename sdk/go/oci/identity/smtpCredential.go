@@ -34,9 +34,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewSmtpCredential(ctx, "testSmtpCredential", &Identity.SmtpCredentialArgs{
-//				Description: pulumi.Any(_var.Smtp_credential_description),
-//				UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
+//			_, err := Identity.NewSmtpCredential(ctx, "test_smtp_credential", &Identity.SmtpCredentialArgs{
+//				Description: pulumi.Any(smtpCredentialDescription),
+//				UserId:      pulumi.Any(testUser.Id),
 //			})
 //			if err != nil {
 //				return err

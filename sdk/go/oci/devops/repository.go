@@ -31,23 +31,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewRepository(ctx, "testRepository", &DevOps.RepositoryArgs{
-//				ProjectId:      pulumi.Any(oci_devops_project.Test_project.Id),
-//				RepositoryType: pulumi.Any(_var.Repository_repository_type),
-//				DefaultBranch:  pulumi.Any(_var.Repository_default_branch),
+//			_, err := DevOps.NewRepository(ctx, "test_repository", &DevOps.RepositoryArgs{
+//				Name:           pulumi.Any(repositoryName),
+//				ProjectId:      pulumi.Any(testProject.Id),
+//				RepositoryType: pulumi.Any(repositoryRepositoryType),
+//				DefaultBranch:  pulumi.Any(repositoryDefaultBranch),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Repository_description),
+//				Description: pulumi.Any(repositoryDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				MirrorRepositoryConfig: &devops.RepositoryMirrorRepositoryConfigArgs{
-//					ConnectorId:   pulumi.Any(oci_devops_connector.Test_connector.Id),
-//					RepositoryUrl: pulumi.Any(_var.Repository_mirror_repository_config_repository_url),
+//					ConnectorId:   pulumi.Any(testConnector.Id),
+//					RepositoryUrl: pulumi.Any(repositoryMirrorRepositoryConfigRepositoryUrl),
 //					TriggerSchedule: &devops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs{
-//						ScheduleType:   pulumi.Any(_var.Repository_mirror_repository_config_trigger_schedule_schedule_type),
-//						CustomSchedule: pulumi.Any(_var.Repository_mirror_repository_config_trigger_schedule_custom_schedule),
+//						ScheduleType:   pulumi.Any(repositoryMirrorRepositoryConfigTriggerScheduleScheduleType),
+//						CustomSchedule: pulumi.Any(repositoryMirrorRepositoryConfigTriggerScheduleCustomSchedule),
 //					},
 //				},
 //			})

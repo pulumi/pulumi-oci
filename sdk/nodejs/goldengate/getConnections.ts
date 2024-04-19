@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnections = oci.GoldenGate.getConnections({
- *     compartmentId: _var.compartment_id,
- *     assignableDeploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     assignableDeploymentType: _var.connection_assignable_deployment_type,
- *     assignedDeploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     connectionTypes: _var.connection_connection_type,
- *     displayName: _var.connection_display_name,
- *     state: _var.connection_state,
- *     technologyTypes: _var.connection_technology_type,
+ *     compartmentId: compartmentId,
+ *     assignableDeploymentId: testDeployment.id,
+ *     assignableDeploymentType: connectionAssignableDeploymentType,
+ *     assignedDeploymentId: testDeployment.id,
+ *     connectionTypes: connectionConnectionType,
+ *     displayName: connectionDisplayName,
+ *     state: connectionState,
+ *     technologyTypes: connectionTechnologyType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -136,14 +136,14 @@ export interface GetConnectionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnections = oci.GoldenGate.getConnections({
- *     compartmentId: _var.compartment_id,
- *     assignableDeploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     assignableDeploymentType: _var.connection_assignable_deployment_type,
- *     assignedDeploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     connectionTypes: _var.connection_connection_type,
- *     displayName: _var.connection_display_name,
- *     state: _var.connection_state,
- *     technologyTypes: _var.connection_technology_type,
+ *     compartmentId: compartmentId,
+ *     assignableDeploymentId: testDeployment.id,
+ *     assignableDeploymentType: connectionAssignableDeploymentType,
+ *     assignedDeploymentId: testDeployment.id,
+ *     connectionTypes: connectionConnectionType,
+ *     displayName: connectionDisplayName,
+ *     state: connectionState,
+ *     technologyTypes: connectionTechnologyType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

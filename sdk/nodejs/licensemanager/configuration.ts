@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfiguration = new oci.licensemanager.Configuration("testConfiguration", {
- *     compartmentId: _var.compartment_id,
- *     emailIds: _var.configuration_email_ids,
+ * const testConfiguration = new oci.licensemanager.Configuration("test_configuration", {
+ *     compartmentId: compartmentId,
+ *     emailIds: configurationEmailIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

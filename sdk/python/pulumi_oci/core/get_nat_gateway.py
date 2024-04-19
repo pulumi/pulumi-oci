@@ -199,7 +199,7 @@ def get_nat_gateway(nat_gateway_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_nat_gateway = oci.Core.get_nat_gateway(nat_gateway_id=oci_core_nat_gateway["test_nat_gateway"]["id"])
+    test_nat_gateway = oci.Core.get_nat_gateway(nat_gateway_id=test_nat_gateway_oci_core_nat_gateway["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -242,7 +242,7 @@ def get_nat_gateway_output(nat_gateway_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_nat_gateway = oci.Core.get_nat_gateway(nat_gateway_id=oci_core_nat_gateway["test_nat_gateway"]["id"])
+    test_nat_gateway = oci.Core.get_nat_gateway(nat_gateway_id=test_nat_gateway_oci_core_nat_gateway["id"])
     ```
     <!--End PulumiCodeChooser -->
 

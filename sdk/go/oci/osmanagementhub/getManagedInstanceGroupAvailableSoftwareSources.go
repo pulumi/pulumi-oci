@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSources(ctx, &osmanagementhub.GetManagedInstanceGroupAvailableSoftwareSourcesArgs{
-//				ManagedInstanceGroupId: oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				DisplayNames:           _var.Managed_instance_group_available_software_source_display_name,
-//				DisplayNameContains:    pulumi.StringRef(_var.Managed_instance_group_available_software_source_display_name_contains),
+//				ManagedInstanceGroupId: testManagedInstanceGroup.Id,
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				DisplayNames:           managedInstanceGroupAvailableSoftwareSourceDisplayName,
+//				DisplayNameContains:    pulumi.StringRef(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains),
 //			}, nil)
 //			if err != nil {
 //				return err

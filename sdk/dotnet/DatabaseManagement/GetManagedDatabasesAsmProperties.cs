@@ -29,8 +29,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabasesAsmProperties = Oci.DatabaseManagement.GetManagedDatabasesAsmProperties.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         Name = @var.Managed_databases_asm_property_name,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         Name = managedDatabasesAsmPropertyName,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabasesAsmProperties = Oci.DatabaseManagement.GetManagedDatabasesAsmProperties.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         Name = @var.Managed_databases_asm_property_name,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         Name = managedDatabasesAsmPropertyName,
         ///     });
         /// 
         /// });

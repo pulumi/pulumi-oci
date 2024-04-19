@@ -161,17 +161,6 @@ class Hostname(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_hostname = oci.load_balancer.Hostname("testHostname",
-            hostname=var["hostname_hostname"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-        ```
-        <!--End PulumiCodeChooser -->
-
         ## Import
 
         Hostnames can be imported using the `id`, e.g.
@@ -198,17 +187,6 @@ class Hostname(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_hostname = oci.load_balancer.Hostname("testHostname",
-            hostname=var["hostname_hostname"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
-        ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

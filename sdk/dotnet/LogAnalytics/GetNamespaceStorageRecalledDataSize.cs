@@ -30,9 +30,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceStorageRecalledDataSize = Oci.LogAnalytics.GetNamespaceStorageRecalledDataSize.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_storage_recalled_data_size_namespace,
-        ///         TimeDataEnded = @var.Namespace_storage_recalled_data_size_time_data_ended,
-        ///         TimeDataStarted = @var.Namespace_storage_recalled_data_size_time_data_started,
+        ///         Namespace = namespaceStorageRecalledDataSizeNamespace,
+        ///         TimeDataEnded = namespaceStorageRecalledDataSizeTimeDataEnded,
+        ///         TimeDataStarted = namespaceStorageRecalledDataSizeTimeDataStarted,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceStorageRecalledDataSize = Oci.LogAnalytics.GetNamespaceStorageRecalledDataSize.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_storage_recalled_data_size_namespace,
-        ///         TimeDataEnded = @var.Namespace_storage_recalled_data_size_time_data_ended,
-        ///         TimeDataStarted = @var.Namespace_storage_recalled_data_size_time_data_started,
+        ///         Namespace = namespaceStorageRecalledDataSizeNamespace,
+        ///         TimeDataEnded = namespaceStorageRecalledDataSizeTimeDataEnded,
+        ///         TimeDataStarted = namespaceStorageRecalledDataSizeTimeDataStarted,
         ///     });
         /// 
         /// });

@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHost = new oci.core.DedicatedVmHost("testDedicatedVmHost", {
- *     availabilityDomain: _var.dedicated_vm_host_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     dedicatedVmHostShape: _var.dedicated_vm_host_dedicated_vm_host_shape,
+ * const testDedicatedVmHost = new oci.core.DedicatedVmHost("test_dedicated_vm_host", {
+ *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     dedicatedVmHostShape: dedicatedVmHostDedicatedVmHostShape,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.dedicated_vm_host_display_name,
- *     faultDomain: _var.dedicated_vm_host_fault_domain,
+ *     displayName: dedicatedVmHostDisplayName,
+ *     faultDomain: dedicatedVmHostFaultDomain,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

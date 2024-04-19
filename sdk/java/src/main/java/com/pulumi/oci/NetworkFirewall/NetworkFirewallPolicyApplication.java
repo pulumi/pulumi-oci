@@ -44,10 +44,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyApplication = new NetworkFirewallPolicyApplication(&#34;testNetworkFirewallPolicyApplication&#34;, NetworkFirewallPolicyApplicationArgs.builder()        
- *             .icmpType(var_.network_firewall_policy_application_icmp_type())
- *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
- *             .type(var_.network_firewall_policy_application_type())
- *             .icmpCode(var_.network_firewall_policy_application_icmp_code())
+ *             .icmpType(networkFirewallPolicyApplicationIcmpType)
+ *             .name(networkFirewallPolicyApplicationName)
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .type(networkFirewallPolicyApplicationType)
+ *             .icmpCode(networkFirewallPolicyApplicationIcmpCode)
  *             .build());
  * 
  *     }

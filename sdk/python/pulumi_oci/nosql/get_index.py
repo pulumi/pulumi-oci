@@ -169,9 +169,9 @@ def get_index(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_index = oci.Nosql.get_index(index_name=oci_nosql_index["test_index"]["name"],
-        table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"])
+    test_index = oci.Nosql.get_index(index_name=test_index_oci_nosql_index["name"],
+        table_name_or_id=test_table_name_or["id"],
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -218,9 +218,9 @@ def get_index_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_index = oci.Nosql.get_index(index_name=oci_nosql_index["test_index"]["name"],
-        table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"])
+    test_index = oci.Nosql.get_index(index_name=test_index_oci_nosql_index["name"],
+        table_name_or_id=test_table_name_or["id"],
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

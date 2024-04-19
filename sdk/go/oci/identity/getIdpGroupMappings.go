@@ -33,7 +33,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetIdpGroupMappings(ctx, &identity.GetIdpGroupMappingsArgs{
-//				IdentityProviderId: oci_identity_identity_provider.Test_identity_provider.Id,
+//				IdentityProviderId: testIdentityProvider.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

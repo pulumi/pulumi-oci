@@ -293,17 +293,18 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_database_group = oci.database_management.ManagedDatabaseGroup("testManagedDatabaseGroup",
-            compartment_id=var["compartment_id"],
+        test_managed_database_group = oci.database_management.ManagedDatabaseGroup("test_managed_database_group",
+            compartment_id=compartment_id,
+            name=managed_database_group_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["managed_database_group_description"],
+            description=managed_database_group_description,
             freeform_tags={
                 "Department": "Finance",
             },
             managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=var["managed_database_id"],
+                id=managed_database_id,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -344,17 +345,18 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_database_group = oci.database_management.ManagedDatabaseGroup("testManagedDatabaseGroup",
-            compartment_id=var["compartment_id"],
+        test_managed_database_group = oci.database_management.ManagedDatabaseGroup("test_managed_database_group",
+            compartment_id=compartment_id,
+            name=managed_database_group_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["managed_database_group_description"],
+            description=managed_database_group_description,
             freeform_tags={
                 "Department": "Finance",
             },
             managed_databases=[oci.database_management.ManagedDatabaseGroupManagedDatabaseArgs(
-                id=var["managed_database_id"],
+                id=managed_database_id,
             )])
         ```
         <!--End PulumiCodeChooser -->

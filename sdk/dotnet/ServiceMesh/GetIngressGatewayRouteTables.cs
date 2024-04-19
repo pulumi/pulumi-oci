@@ -30,11 +30,11 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testIngressGatewayRouteTables = Oci.ServiceMesh.GetIngressGatewayRouteTables.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Ingress_gateway_route_table_id,
-        ///         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-        ///         Name = @var.Ingress_gateway_route_table_name,
-        ///         State = @var.Ingress_gateway_route_table_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = ingressGatewayRouteTableId,
+        ///         IngressGatewayId = testIngressGateway.Id,
+        ///         Name = ingressGatewayRouteTableName,
+        ///         State = ingressGatewayRouteTableState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testIngressGatewayRouteTables = Oci.ServiceMesh.GetIngressGatewayRouteTables.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Ingress_gateway_route_table_id,
-        ///         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-        ///         Name = @var.Ingress_gateway_route_table_name,
-        ///         State = @var.Ingress_gateway_route_table_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = ingressGatewayRouteTableId,
+        ///         IngressGatewayId = testIngressGateway.Id,
+        ///         Name = ingressGatewayRouteTableName,
+        ///         State = ingressGatewayRouteTableState,
         ///     });
         /// 
         /// });

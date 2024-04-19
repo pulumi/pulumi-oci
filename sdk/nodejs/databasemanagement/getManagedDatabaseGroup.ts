@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseGroup = oci.DatabaseManagement.getManagedDatabaseGroup({
- *     managedDatabaseGroupId: oci_database_management_managed_database_group.test_managed_database_group.id,
+ *     managedDatabaseGroupId: testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,7 +101,7 @@ export interface GetManagedDatabaseGroupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseGroup = oci.DatabaseManagement.getManagedDatabaseGroup({
- *     managedDatabaseGroupId: oci_database_management_managed_database_group.test_managed_database_group.id,
+ *     managedDatabaseGroupId: testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

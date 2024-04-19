@@ -207,9 +207,9 @@ class RunStatement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_run_statement = oci.data_flow.RunStatement("testRunStatement",
-            code=var["run_statement_code"],
-            run_id=oci_dataflow_run["test_run"]["id"])
+        test_run_statement = oci.data_flow.RunStatement("test_run_statement",
+            code=run_statement_code,
+            run_id=test_run["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -248,9 +248,9 @@ class RunStatement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_run_statement = oci.data_flow.RunStatement("testRunStatement",
-            code=var["run_statement_code"],
-            run_id=oci_dataflow_run["test_run"]["id"])
+        test_run_statement = oci.data_flow.RunStatement("test_run_statement",
+            code=run_statement_code,
+            run_id=test_run["id"])
         ```
         <!--End PulumiCodeChooser -->
 

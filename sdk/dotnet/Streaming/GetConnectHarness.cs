@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Streaming
         /// {
         ///     var testConnectHarness = Oci.Streaming.GetConnectHarness.Invoke(new()
         ///     {
-        ///         ConnectHarnessId = oci_streaming_connect_harnes.Test_connect_harnes.Id,
+        ///         ConnectHarnessId = testConnectHarnes.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Streaming
         /// {
         ///     var testConnectHarness = Oci.Streaming.GetConnectHarness.Invoke(new()
         ///     {
-        ///         ConnectHarnessId = oci_streaming_connect_harnes.Test_connect_harnes.Id,
+        ///         ConnectHarnessId = testConnectHarnes.Id,
         ///     });
         /// 
         /// });

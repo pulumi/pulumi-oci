@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOceInstance = oci.Oce.getOceInstance({
- *     oceInstanceId: oci_oce_oce_instance.test_oce_instance.id,
+ *     oceInstanceId: testOceInstanceOciOceOceInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -164,7 +164,7 @@ export interface GetOceInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOceInstance = oci.Oce.getOceInstance({
- *     oceInstanceId: oci_oce_oce_instance.test_oce_instance.id,
+ *     oceInstanceId: testOceInstanceOciOceOceInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

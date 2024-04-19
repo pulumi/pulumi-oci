@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataStorageGrid = oci.DatabaseManagement.getExternalExadataStorageGrid({
- *     externalExadataStorageGridId: oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid.id,
+ *     externalExadataStorageGridId: testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,7 +125,7 @@ export interface GetExternalExadataStorageGridResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataStorageGrid = oci.DatabaseManagement.getExternalExadataStorageGrid({
- *     externalExadataStorageGridId: oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid.id,
+ *     externalExadataStorageGridId: testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

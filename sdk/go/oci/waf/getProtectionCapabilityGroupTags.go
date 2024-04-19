@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waf.GetProtectionCapabilityGroupTags(ctx, &waf.GetProtectionCapabilityGroupTagsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Protection_capability_group_tag_name),
-//				Type:          pulumi.StringRef(_var.Protection_capability_group_tag_type),
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(protectionCapabilityGroupTagName),
+//				Type:          pulumi.StringRef(protectionCapabilityGroupTagType),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -200,7 +200,7 @@ def get_monitored_resource_task(monitored_resource_task_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_task = oci.StackMonitoring.get_monitored_resource_task(monitored_resource_task_id=oci_stack_monitoring_monitored_resource_task["test_monitored_resource_task"]["id"])
+    test_monitored_resource_task = oci.StackMonitoring.get_monitored_resource_task(monitored_resource_task_id=test_monitored_resource_task_oci_stack_monitoring_monitored_resource_task["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -243,7 +243,7 @@ def get_monitored_resource_task_output(monitored_resource_task_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_task = oci.StackMonitoring.get_monitored_resource_task(monitored_resource_task_id=oci_stack_monitoring_monitored_resource_task["test_monitored_resource_task"]["id"])
+    test_monitored_resource_task = oci.StackMonitoring.get_monitored_resource_task(monitored_resource_task_id=test_monitored_resource_task_oci_stack_monitoring_monitored_resource_task["id"])
     ```
     <!--End PulumiCodeChooser -->
 

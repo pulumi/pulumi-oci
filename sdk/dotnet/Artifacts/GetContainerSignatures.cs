@@ -29,16 +29,16 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerImageSignatures = Oci.Artifacts.GetContainerSignatures.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Container_image_signature_compartment_id_in_subtree,
-        ///         DisplayName = @var.Container_image_signature_display_name,
-        ///         ImageDigest = @var.Container_image_signature_image_digest,
-        ///         ImageId = oci_core_image.Test_image.Id,
-        ///         KmsKeyId = oci_kms_key.Test_key.Id,
-        ///         KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         RepositoryName = oci_artifacts_repository.Test_repository.Name,
-        ///         SigningAlgorithm = @var.Container_image_signature_signing_algorithm,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = containerImageSignatureCompartmentIdInSubtree,
+        ///         DisplayName = containerImageSignatureDisplayName,
+        ///         ImageDigest = containerImageSignatureImageDigest,
+        ///         ImageId = testImage.Id,
+        ///         KmsKeyId = testKey.Id,
+        ///         KmsKeyVersionId = testKeyVersion.Id,
+        ///         RepositoryId = testRepository.Id,
+        ///         RepositoryName = testRepository.Name,
+        ///         SigningAlgorithm = containerImageSignatureSigningAlgorithm,
         ///     });
         /// 
         /// });
@@ -66,16 +66,16 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerImageSignatures = Oci.Artifacts.GetContainerSignatures.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Container_image_signature_compartment_id_in_subtree,
-        ///         DisplayName = @var.Container_image_signature_display_name,
-        ///         ImageDigest = @var.Container_image_signature_image_digest,
-        ///         ImageId = oci_core_image.Test_image.Id,
-        ///         KmsKeyId = oci_kms_key.Test_key.Id,
-        ///         KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         RepositoryName = oci_artifacts_repository.Test_repository.Name,
-        ///         SigningAlgorithm = @var.Container_image_signature_signing_algorithm,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = containerImageSignatureCompartmentIdInSubtree,
+        ///         DisplayName = containerImageSignatureDisplayName,
+        ///         ImageDigest = containerImageSignatureImageDigest,
+        ///         ImageId = testImage.Id,
+        ///         KmsKeyId = testKey.Id,
+        ///         KmsKeyVersionId = testKeyVersion.Id,
+        ///         RepositoryId = testRepository.Id,
+        ///         RepositoryName = testRepository.Name,
+        ///         SigningAlgorithm = containerImageSignatureSigningAlgorithm,
         ///     });
         /// 
         /// });

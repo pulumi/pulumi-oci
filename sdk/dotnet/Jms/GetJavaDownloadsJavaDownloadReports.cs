@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaDownloadReports = Oci.Jms.GetJavaDownloadsJavaDownloadReports.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         DisplayName = @var.Java_download_report_display_name,
-        ///         JavaDownloadReportId = oci_jms_java_downloads_java_download_report.Test_java_download_report.Id,
-        ///         State = @var.Java_download_report_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         DisplayName = javaDownloadReportDisplayName,
+        ///         JavaDownloadReportId = testJavaDownloadReport.Id,
+        ///         State = javaDownloadReportState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaDownloadReports = Oci.Jms.GetJavaDownloadsJavaDownloadReports.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         DisplayName = @var.Java_download_report_display_name,
-        ///         JavaDownloadReportId = oci_jms_java_downloads_java_download_report.Test_java_download_report.Id,
-        ///         State = @var.Java_download_report_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         DisplayName = javaDownloadReportDisplayName,
+        ///         JavaDownloadReportId = testJavaDownloadReport.Id,
+        ///         State = javaDownloadReportState,
         ///     });
         /// 
         /// });

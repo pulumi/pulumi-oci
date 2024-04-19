@@ -26,6 +26,68 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
+ * ### VCN Local with Internet
+ *
+ * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDhcpOptions = new oci.core.DhcpOptions("test_dhcp_options", {
+ *     compartmentId: compartmentId,
+ *     options: [
+ *         {
+ *             type: "DomainNameServer",
+ *             serverType: "VcnLocalPlusInternet",
+ *         },
+ *         {
+ *             type: "SearchDomain",
+ *             searchDomainNames: ["test.com"],
+ *         },
+ *     ],
+ *     vcnId: testVcn.id,
+ *     displayName: dhcpOptionsDisplayName,
+ * });
+ * ```
+ * <!--End PulumiCodeChooser -->
+ *
+ * ### Custom DNS Server
+ *
+ * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDhcpOptions = new oci.core.DhcpOptions("test_dhcp_options", {
+ *     compartmentId: compartmentId,
+ *     options: [
+ *         {
+ *             type: "DomainNameServer",
+ *             serverType: "CustomDnsServer",
+ *             customDnsServers: [
+ *                 "192.168.0.2",
+ *                 "192.168.0.11",
+ *                 "192.168.0.19",
+ *             ],
+ *         },
+ *         {
+ *             type: "SearchDomain",
+ *             searchDomainNames: ["test.com"],
+ *         },
+ *     ],
+ *     vcnId: testVcn.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: dhcpOptionsDisplayName,
+ *     domainNameType: dhcpOptionsDomainNameType,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ * });
+ * ```
+ * <!--End PulumiCodeChooser -->
+ *
  * ## Import
  *
  * DhcpOptions can be imported using the `id`, e.g.

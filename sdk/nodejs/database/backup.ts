@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackup = new oci.database.Backup("testBackup", {
- *     databaseId: oci_database_database.test_database.id,
- *     displayName: _var.backup_display_name,
+ * const testBackup = new oci.database.Backup("test_backup", {
+ *     databaseId: testDatabase.id,
+ *     displayName: backupDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

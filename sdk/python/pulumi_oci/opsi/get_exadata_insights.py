@@ -158,13 +158,13 @@ def get_exadata_insights(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["exadata_insight_compartment_id_in_subtree"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_types=var["exadata_insight_exadata_type"],
-        id=var["exadata_insight_id"],
-        states=var["exadata_insight_state"],
-        statuses=var["exadata_insight_status"])
+    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree,
+        enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
+        exadata_types=exadata_insight_exadata_type,
+        id=exadata_insight_id,
+        states=exadata_insight_state,
+        statuses=exadata_insight_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -224,13 +224,13 @@ def get_exadata_insights_output(compartment_id: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["exadata_insight_compartment_id_in_subtree"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_types=var["exadata_insight_exadata_type"],
-        id=var["exadata_insight_id"],
-        states=var["exadata_insight_state"],
-        statuses=var["exadata_insight_status"])
+    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree,
+        enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
+        exadata_types=exadata_insight_exadata_type,
+        id=exadata_insight_id,
+        states=exadata_insight_state,
+        statuses=exadata_insight_status)
     ```
     <!--End PulumiCodeChooser -->
 

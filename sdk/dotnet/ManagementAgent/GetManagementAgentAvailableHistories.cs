@@ -29,9 +29,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentAvailableHistories = Oci.ManagementAgent.GetManagementAgentAvailableHistories.Invoke(new()
         ///     {
-        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-        ///         TimeAvailabilityStatusEndedGreaterThan = @var.Management_agent_available_history_time_availability_status_ended_greater_than,
-        ///         TimeAvailabilityStatusStartedLessThan = @var.Management_agent_available_history_time_availability_status_started_less_than,
+        ///         ManagementAgentId = testManagementAgent.Id,
+        ///         TimeAvailabilityStatusEndedGreaterThan = managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan,
+        ///         TimeAvailabilityStatusStartedLessThan = managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentAvailableHistories = Oci.ManagementAgent.GetManagementAgentAvailableHistories.Invoke(new()
         ///     {
-        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-        ///         TimeAvailabilityStatusEndedGreaterThan = @var.Management_agent_available_history_time_availability_status_ended_greater_than,
-        ///         TimeAvailabilityStatusStartedLessThan = @var.Management_agent_available_history_time_availability_status_started_less_than,
+        ///         ManagementAgentId = testManagementAgent.Id,
+        ///         TimeAvailabilityStatusEndedGreaterThan = managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan,
+        ///         TimeAvailabilityStatusStartedLessThan = managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
         ///     });
         /// 
         /// });

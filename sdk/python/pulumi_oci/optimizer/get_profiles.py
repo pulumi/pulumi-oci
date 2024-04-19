@@ -120,9 +120,9 @@ def get_profiles(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=var["compartment_id"],
-        name=var["profile_name"],
-        state=var["profile_state"])
+    test_profiles = oci.Optimizer.get_profiles(compartment_id=compartment_id,
+        name=profile_name,
+        state=profile_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_profiles_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.Optimizer.get_profiles(compartment_id=var["compartment_id"],
-        name=var["profile_name"],
-        state=var["profile_state"])
+    test_profiles = oci.Optimizer.get_profiles(compartment_id=compartment_id,
+        name=profile_name,
+        state=profile_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -29,8 +29,8 @@ namespace Pulumi.Oci.LicenseManager
         /// {
         ///     var testLicenseMetric = Oci.LicenseManager.GetLicenseMetric.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IsCompartmentIdInSubtree = @var.License_metric_is_compartment_id_in_subtree,
+        ///         CompartmentId = compartmentId,
+        ///         IsCompartmentIdInSubtree = licenseMetricIsCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.LicenseManager
         /// {
         ///     var testLicenseMetric = Oci.LicenseManager.GetLicenseMetric.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IsCompartmentIdInSubtree = @var.License_metric_is_compartment_id_in_subtree,
+        ///         CompartmentId = compartmentId,
+        ///         IsCompartmentIdInSubtree = licenseMetricIsCompartmentIdInSubtree,
         ///     });
         /// 
         /// });

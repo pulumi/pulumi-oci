@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waas.GetHttpRedirects(ctx, &waas.GetHttpRedirectsArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				DisplayNames:                    _var.Http_redirect_display_names,
-//				Ids:                             _var.Http_redirect_ids,
-//				States:                          _var.Http_redirect_states,
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Http_redirect_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Http_redirect_time_created_less_than),
+//				CompartmentId:                   compartmentId,
+//				DisplayNames:                    httpRedirectDisplayNames,
+//				Ids:                             httpRedirectIds,
+//				States:                          httpRedirectStates,
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(httpRedirectTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(httpRedirectTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

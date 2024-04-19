@@ -211,7 +211,7 @@ def get_vlan(vlan_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vlan = oci.Core.get_vlan(vlan_id=oci_core_vlan["test_vlan"]["id"])
+    test_vlan = oci.Core.get_vlan(vlan_id=test_vlan_oci_core_vlan["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -255,7 +255,7 @@ def get_vlan_output(vlan_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vlan = oci.Core.get_vlan(vlan_id=oci_core_vlan["test_vlan"]["id"])
+    test_vlan = oci.Core.get_vlan(vlan_id=test_vlan_oci_core_vlan["id"])
     ```
     <!--End PulumiCodeChooser -->
 

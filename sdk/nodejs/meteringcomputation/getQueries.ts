@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testQueries = oci.MeteringComputation.getQueries({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -81,7 +81,7 @@ export interface GetQueriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testQueries = oci.MeteringComputation.getQueries({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

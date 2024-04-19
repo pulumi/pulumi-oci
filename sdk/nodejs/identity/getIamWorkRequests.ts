@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIamWorkRequests = oci.Identity.getIamWorkRequests({
- *     compartmentId: _var.compartment_id,
- *     resourceIdentifier: _var.iam_work_request_resource_identifier,
+ *     compartmentId: compartmentId,
+ *     resourceIdentifier: iamWorkRequestResourceIdentifier,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -88,8 +88,8 @@ export interface GetIamWorkRequestsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIamWorkRequests = oci.Identity.getIamWorkRequests({
- *     compartmentId: _var.compartment_id,
- *     resourceIdentifier: _var.iam_work_request_resource_identifier,
+ *     compartmentId: compartmentId,
+ *     resourceIdentifier: iamWorkRequestResourceIdentifier,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -667,28 +667,28 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_container_database_dataguard_association = oci.database.AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation",
-            autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
-            peer_autonomous_container_database_display_name=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name"],
-            protection_mode=var["autonomous_container_database_dataguard_association_protection_mode"],
-            fast_start_fail_over_lag_limit_in_seconds=var["autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds"],
-            is_automatic_failover_enabled=var["autonomous_container_database_dataguard_association_is_automatic_failover_enabled"],
+        test_autonomous_container_database_dataguard_association = oci.database.AutonomousContainerDatabaseDataguardAssociation("test_autonomous_container_database_dataguard_association",
+            autonomous_container_database_id=test_autonomous_container_database["id"],
+            peer_autonomous_container_database_display_name=autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name,
+            protection_mode=autonomous_container_database_dataguard_association_protection_mode,
+            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds,
+            is_automatic_failover_enabled=autonomous_container_database_dataguard_association_is_automatic_failover_enabled,
             peer_autonomous_container_database_backup_config=oci.database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs(
                 backup_destination_details=[oci.database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs(
-                    type=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type"],
-                    dbrs_policy_id=oci_identity_policy["test_policy"]["id"],
-                    id=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id"],
-                    internet_proxy=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy"],
-                    vpc_password=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password"],
-                    vpc_user=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user"],
+                    type=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+                    dbrs_policy_id=test_policy["id"],
+                    id=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
+                    internet_proxy=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    vpc_password=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+                    vpc_user=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 )],
-                recovery_window_in_days=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days"],
+                recovery_window_in_days=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
             ),
-            peer_autonomous_container_database_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            peer_autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-            peer_cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
-            peer_db_unique_name=var["autonomous_container_database_dataguard_association_peer_db_unique_name"],
-            standby_maintenance_buffer_in_days=var["autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days"])
+            peer_autonomous_container_database_compartment_id=test_compartment["id"],
+            peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+            peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
+            peer_db_unique_name=autonomous_container_database_dataguard_association_peer_db_unique_name,
+            standby_maintenance_buffer_in_days=autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -744,28 +744,28 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_container_database_dataguard_association = oci.database.AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation",
-            autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
-            peer_autonomous_container_database_display_name=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name"],
-            protection_mode=var["autonomous_container_database_dataguard_association_protection_mode"],
-            fast_start_fail_over_lag_limit_in_seconds=var["autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds"],
-            is_automatic_failover_enabled=var["autonomous_container_database_dataguard_association_is_automatic_failover_enabled"],
+        test_autonomous_container_database_dataguard_association = oci.database.AutonomousContainerDatabaseDataguardAssociation("test_autonomous_container_database_dataguard_association",
+            autonomous_container_database_id=test_autonomous_container_database["id"],
+            peer_autonomous_container_database_display_name=autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name,
+            protection_mode=autonomous_container_database_dataguard_association_protection_mode,
+            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds,
+            is_automatic_failover_enabled=autonomous_container_database_dataguard_association_is_automatic_failover_enabled,
             peer_autonomous_container_database_backup_config=oci.database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs(
                 backup_destination_details=[oci.database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs(
-                    type=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type"],
-                    dbrs_policy_id=oci_identity_policy["test_policy"]["id"],
-                    id=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id"],
-                    internet_proxy=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy"],
-                    vpc_password=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password"],
-                    vpc_user=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user"],
+                    type=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+                    dbrs_policy_id=test_policy["id"],
+                    id=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
+                    internet_proxy=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    vpc_password=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+                    vpc_user=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 )],
-                recovery_window_in_days=var["autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days"],
+                recovery_window_in_days=autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
             ),
-            peer_autonomous_container_database_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            peer_autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-            peer_cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
-            peer_db_unique_name=var["autonomous_container_database_dataguard_association_peer_db_unique_name"],
-            standby_maintenance_buffer_in_days=var["autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days"])
+            peer_autonomous_container_database_compartment_id=test_compartment["id"],
+            peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+            peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
+            peer_db_unique_name=autonomous_container_database_dataguard_association_peer_db_unique_name,
+            standby_maintenance_buffer_in_days=autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days)
         ```
         <!--End PulumiCodeChooser -->
 

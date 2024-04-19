@@ -359,25 +359,26 @@ class StreamPool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_stream_pool = oci.streaming.StreamPool("testStreamPool",
-            compartment_id=var["compartment_id"],
+        test_stream_pool = oci.streaming.StreamPool("test_stream_pool",
+            compartment_id=compartment_id,
+            name=stream_pool_name,
             custom_encryption_key=oci.streaming.StreamPoolCustomEncryptionKeyArgs(
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                kms_key_id=test_key["id"],
             ),
-            defined_tags=var["stream_pool_defined_tags"],
+            defined_tags=stream_pool_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
             kafka_settings=oci.streaming.StreamPoolKafkaSettingsArgs(
-                auto_create_topics_enable=var["stream_pool_kafka_settings_auto_create_topics_enable"],
-                bootstrap_servers=var["stream_pool_kafka_settings_bootstrap_servers"],
-                log_retention_hours=var["stream_pool_kafka_settings_log_retention_hours"],
-                num_partitions=var["stream_pool_kafka_settings_num_partitions"],
+                auto_create_topics_enable=stream_pool_kafka_settings_auto_create_topics_enable,
+                bootstrap_servers=stream_pool_kafka_settings_bootstrap_servers,
+                log_retention_hours=stream_pool_kafka_settings_log_retention_hours,
+                num_partitions=stream_pool_kafka_settings_num_partitions,
             ),
             private_endpoint_settings=oci.streaming.StreamPoolPrivateEndpointSettingsArgs(
-                nsg_ids=var["stream_pool_private_endpoint_settings_nsg_ids"],
-                private_endpoint_ip=var["stream_pool_private_endpoint_settings_private_endpoint_ip"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                nsg_ids=stream_pool_private_endpoint_settings_nsg_ids,
+                private_endpoint_ip=stream_pool_private_endpoint_settings_private_endpoint_ip,
+                subnet_id=test_subnet["id"],
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -420,25 +421,26 @@ class StreamPool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_stream_pool = oci.streaming.StreamPool("testStreamPool",
-            compartment_id=var["compartment_id"],
+        test_stream_pool = oci.streaming.StreamPool("test_stream_pool",
+            compartment_id=compartment_id,
+            name=stream_pool_name,
             custom_encryption_key=oci.streaming.StreamPoolCustomEncryptionKeyArgs(
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                kms_key_id=test_key["id"],
             ),
-            defined_tags=var["stream_pool_defined_tags"],
+            defined_tags=stream_pool_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
             kafka_settings=oci.streaming.StreamPoolKafkaSettingsArgs(
-                auto_create_topics_enable=var["stream_pool_kafka_settings_auto_create_topics_enable"],
-                bootstrap_servers=var["stream_pool_kafka_settings_bootstrap_servers"],
-                log_retention_hours=var["stream_pool_kafka_settings_log_retention_hours"],
-                num_partitions=var["stream_pool_kafka_settings_num_partitions"],
+                auto_create_topics_enable=stream_pool_kafka_settings_auto_create_topics_enable,
+                bootstrap_servers=stream_pool_kafka_settings_bootstrap_servers,
+                log_retention_hours=stream_pool_kafka_settings_log_retention_hours,
+                num_partitions=stream_pool_kafka_settings_num_partitions,
             ),
             private_endpoint_settings=oci.streaming.StreamPoolPrivateEndpointSettingsArgs(
-                nsg_ids=var["stream_pool_private_endpoint_settings_nsg_ids"],
-                private_endpoint_ip=var["stream_pool_private_endpoint_settings_private_endpoint_ip"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                nsg_ids=stream_pool_private_endpoint_settings_nsg_ids,
+                private_endpoint_ip=stream_pool_private_endpoint_settings_private_endpoint_ip,
+                subnet_id=test_subnet["id"],
             ))
         ```
         <!--End PulumiCodeChooser -->

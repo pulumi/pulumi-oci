@@ -31,18 +31,18 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConfig = new Oci.StackMonitoring.Config("testConfig", new()
+    ///     var testConfig = new Oci.StackMonitoring.Config("test_config", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ConfigType = @var.Config_config_type,
-    ///         IsEnabled = @var.Config_is_enabled,
-    ///         ResourceType = @var.Config_resource_type,
-    ///         License = @var.Config_license,
+    ///         CompartmentId = compartmentId,
+    ///         ConfigType = configConfigType,
+    ///         IsEnabled = configIsEnabled,
+    ///         ResourceType = configResourceType,
+    ///         License = configLicense,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Config_display_name,
+    ///         DisplayName = configDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

@@ -547,19 +547,19 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("testPluggableDatabasePluggabledatabasemanagementsManagement",
-            pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
-            enable_pluggabledatabasemanagement=var["enable_pluggabledatabasemanagement"],
+        test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management",
+            pluggable_database_id=test_pluggable_database["id"],
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
             credential_details=oci.database.PluggableDatabaseManagementsManagementCredentialDetailsArgs(
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
+                password_secret_id=test_secret["id"],
+                user_name=test_user["name"],
             ),
-            private_end_point_id=oci_database_private_end_point["test_private_end_point"]["id"],
-            service_name=oci_core_service["test_service"]["name"],
-            port=var["pluggable_database_pluggabledatabasemanagements_management_port"],
-            protocol=var["pluggable_database_pluggabledatabasemanagements_management_protocol"],
-            role=var["pluggable_database_pluggabledatabasemanagements_management_role"],
-            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
+            private_end_point_id=test_private_end_point["id"],
+            service_name=test_service["name"],
+            port=pluggable_database_pluggabledatabasemanagements_management_port,
+            protocol=pluggable_database_pluggabledatabasemanagements_management_protocol,
+            role=pluggable_database_pluggabledatabasemanagements_management_role,
+            ssl_secret_id=test_secret["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -597,19 +597,19 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("testPluggableDatabasePluggabledatabasemanagementsManagement",
-            pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
-            enable_pluggabledatabasemanagement=var["enable_pluggabledatabasemanagement"],
+        test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management",
+            pluggable_database_id=test_pluggable_database["id"],
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
             credential_details=oci.database.PluggableDatabaseManagementsManagementCredentialDetailsArgs(
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
+                password_secret_id=test_secret["id"],
+                user_name=test_user["name"],
             ),
-            private_end_point_id=oci_database_private_end_point["test_private_end_point"]["id"],
-            service_name=oci_core_service["test_service"]["name"],
-            port=var["pluggable_database_pluggabledatabasemanagements_management_port"],
-            protocol=var["pluggable_database_pluggabledatabasemanagements_management_protocol"],
-            role=var["pluggable_database_pluggabledatabasemanagements_management_role"],
-            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
+            private_end_point_id=test_private_end_point["id"],
+            service_name=test_service["name"],
+            port=pluggable_database_pluggabledatabasemanagements_management_port,
+            protocol=pluggable_database_pluggabledatabasemanagements_management_protocol,
+            role=pluggable_database_pluggabledatabasemanagements_management_role,
+            ssl_secret_id=test_secret["id"])
         ```
         <!--End PulumiCodeChooser -->
 

@@ -549,26 +549,26 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_database_tools_private_endpoint = oci.database_tools.DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["database_tools_private_endpoint_display_name"],
-            endpoint_service_id=oci_core_service["test_service"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_database_tools_private_endpoint = oci.database_tools.DatabaseToolsPrivateEndpoint("test_database_tools_private_endpoint",
+            compartment_id=compartment_id,
+            display_name=database_tools_private_endpoint_display_name,
+            endpoint_service_id=test_service["id"],
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["database_tools_private_endpoint_description"],
+            description=database_tools_private_endpoint_description,
             freeform_tags={
                 "bar-key": "value",
             },
             locks=[oci.database_tools.DatabaseToolsPrivateEndpointLockArgs(
-                type=var["database_tools_private_endpoint_locks_type"],
-                message=var["database_tools_private_endpoint_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["database_tools_private_endpoint_locks_time_created"],
+                type=database_tools_private_endpoint_locks_type,
+                message=database_tools_private_endpoint_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=database_tools_private_endpoint_locks_time_created,
             )],
-            nsg_ids=var["database_tools_private_endpoint_nsg_ids"],
-            private_endpoint_ip=var["database_tools_private_endpoint_private_endpoint_ip"])
+            nsg_ids=database_tools_private_endpoint_nsg_ids,
+            private_endpoint_ip=database_tools_private_endpoint_private_endpoint_ip)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -615,26 +615,26 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_database_tools_private_endpoint = oci.database_tools.DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["database_tools_private_endpoint_display_name"],
-            endpoint_service_id=oci_core_service["test_service"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_database_tools_private_endpoint = oci.database_tools.DatabaseToolsPrivateEndpoint("test_database_tools_private_endpoint",
+            compartment_id=compartment_id,
+            display_name=database_tools_private_endpoint_display_name,
+            endpoint_service_id=test_service["id"],
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["database_tools_private_endpoint_description"],
+            description=database_tools_private_endpoint_description,
             freeform_tags={
                 "bar-key": "value",
             },
             locks=[oci.database_tools.DatabaseToolsPrivateEndpointLockArgs(
-                type=var["database_tools_private_endpoint_locks_type"],
-                message=var["database_tools_private_endpoint_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["database_tools_private_endpoint_locks_time_created"],
+                type=database_tools_private_endpoint_locks_type,
+                message=database_tools_private_endpoint_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=database_tools_private_endpoint_locks_time_created,
             )],
-            nsg_ids=var["database_tools_private_endpoint_nsg_ids"],
-            private_endpoint_ip=var["database_tools_private_endpoint_private_endpoint_ip"])
+            nsg_ids=database_tools_private_endpoint_nsg_ids,
+            private_endpoint_ip=database_tools_private_endpoint_private_endpoint_ip)
         ```
         <!--End PulumiCodeChooser -->
 

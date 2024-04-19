@@ -25,22 +25,23 @@ namespace Pulumi.Oci.Optimizer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProfile = new Oci.Optimizer.Profile("testProfile", new()
+    ///     var testProfile = new Oci.Optimizer.Profile("test_profile", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Description = @var.Profile_description,
+    ///         CompartmentId = compartmentId,
+    ///         Description = profileDescription,
     ///         LevelsConfiguration = new Oci.Optimizer.Inputs.ProfileLevelsConfigurationArgs
     ///         {
     ///             Items = new[]
     ///             {
     ///                 new Oci.Optimizer.Inputs.ProfileLevelsConfigurationItemArgs
     ///                 {
-    ///                     Level = @var.Profile_levels_configuration_items_level,
-    ///                     RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+    ///                     Level = profileLevelsConfigurationItemsLevel,
+    ///                     RecommendationId = testRecommendation.Id,
     ///                 },
     ///             },
     ///         },
-    ///         AggregationIntervalInDays = @var.Profile_aggregation_interval_in_days,
+    ///         Name = profileName,
+    ///         AggregationIntervalInDays = profileAggregationIntervalInDays,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -51,7 +52,7 @@ namespace Pulumi.Oci.Optimizer
     ///         },
     ///         TargetCompartments = new Oci.Optimizer.Inputs.ProfileTargetCompartmentsArgs
     ///         {
-    ///             Items = @var.Profile_target_compartments_items,
+    ///             Items = profileTargetCompartmentsItems,
     ///         },
     ///         TargetTags = new Oci.Optimizer.Inputs.ProfileTargetTagsArgs
     ///         {
@@ -59,10 +60,10 @@ namespace Pulumi.Oci.Optimizer
     ///             {
     ///                 new Oci.Optimizer.Inputs.ProfileTargetTagsItemArgs
     ///                 {
-    ///                     TagDefinitionName = @var.Profile_target_tags_items_tag_definition_name,
-    ///                     TagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
-    ///                     TagValueType = @var.Profile_target_tags_items_tag_value_type,
-    ///                     TagValues = @var.Profile_target_tags_items_tag_values,
+    ///                     TagDefinitionName = profileTargetTagsItemsTagDefinitionName,
+    ///                     TagNamespaceName = testTagNamespace.Name,
+    ///                     TagValueType = profileTargetTagsItemsTagValueType,
+    ///                     TagValues = profileTargetTagsItemsTagValues,
     ///                 },
     ///             },
     ///         },

@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSupportedHostShapes = Oci.Ocvp.GetSupportedHostShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         InitialHostShapeName = oci_core_shape.Test_shape.Name,
-        ///         IsSingleHostSddcSupported = @var.Supported_host_shape_is_single_host_sddc_supported,
-        ///         Name = @var.Supported_host_shape_name,
+        ///         CompartmentId = compartmentId,
+        ///         InitialHostShapeName = testShape.Name,
+        ///         IsSingleHostSddcSupported = supportedHostShapeIsSingleHostSddcSupported,
+        ///         Name = supportedHostShapeName,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSupportedHostShapes = Oci.Ocvp.GetSupportedHostShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         InitialHostShapeName = oci_core_shape.Test_shape.Name,
-        ///         IsSingleHostSddcSupported = @var.Supported_host_shape_is_single_host_sddc_supported,
-        ///         Name = @var.Supported_host_shape_name,
+        ///         CompartmentId = compartmentId,
+        ///         InitialHostShapeName = testShape.Name,
+        ///         IsSingleHostSddcSupported = supportedHostShapeIsSingleHostSddcSupported,
+        ///         Name = supportedHostShapeName,
         ///     });
         /// 
         /// });

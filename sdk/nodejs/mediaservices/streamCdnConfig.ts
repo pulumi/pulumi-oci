@@ -18,36 +18,36 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamCdnConfig = new oci.mediaservices.StreamCdnConfig("testStreamCdnConfig", {
+ * const testStreamCdnConfig = new oci.mediaservices.StreamCdnConfig("test_stream_cdn_config", {
  *     config: {
- *         type: _var.stream_cdn_config_config_type,
- *         edgeHostname: _var.stream_cdn_config_config_edge_hostname,
- *         edgePathPrefix: _var.stream_cdn_config_config_edge_path_prefix,
- *         edgeTokenKey: _var.stream_cdn_config_config_edge_token_key,
- *         edgeTokenSalt: _var.stream_cdn_config_config_edge_token_salt,
- *         isEdgeTokenAuth: _var.stream_cdn_config_config_is_edge_token_auth,
- *         originAuthSecretKeyA: _var.stream_cdn_config_config_origin_auth_secret_key_a,
- *         originAuthSecretKeyB: _var.stream_cdn_config_config_origin_auth_secret_key_b,
- *         originAuthSecretKeyNonceA: _var.stream_cdn_config_config_origin_auth_secret_key_nonce_a,
- *         originAuthSecretKeyNonceB: _var.stream_cdn_config_config_origin_auth_secret_key_nonce_b,
- *         originAuthSignEncryption: _var.stream_cdn_config_config_origin_auth_sign_encryption,
- *         originAuthSignType: _var.stream_cdn_config_config_origin_auth_sign_type,
+ *         type: streamCdnConfigConfigType,
+ *         edgeHostname: streamCdnConfigConfigEdgeHostname,
+ *         edgePathPrefix: streamCdnConfigConfigEdgePathPrefix,
+ *         edgeTokenKey: streamCdnConfigConfigEdgeTokenKey,
+ *         edgeTokenSalt: streamCdnConfigConfigEdgeTokenSalt,
+ *         isEdgeTokenAuth: streamCdnConfigConfigIsEdgeTokenAuth,
+ *         originAuthSecretKeyA: streamCdnConfigConfigOriginAuthSecretKeyA,
+ *         originAuthSecretKeyB: streamCdnConfigConfigOriginAuthSecretKeyB,
+ *         originAuthSecretKeyNonceA: streamCdnConfigConfigOriginAuthSecretKeyNonceA,
+ *         originAuthSecretKeyNonceB: streamCdnConfigConfigOriginAuthSecretKeyNonceB,
+ *         originAuthSignEncryption: streamCdnConfigConfigOriginAuthSignEncryption,
+ *         originAuthSignType: streamCdnConfigConfigOriginAuthSignType,
  *     },
- *     displayName: _var.stream_cdn_config_display_name,
- *     distributionChannelId: oci_mysql_channel.test_channel.id,
+ *     displayName: streamCdnConfigDisplayName,
+ *     distributionChannelId: testChannel.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEnabled: _var.stream_cdn_config_is_enabled,
+ *     isEnabled: streamCdnConfigIsEnabled,
  *     locks: [{
- *         compartmentId: _var.compartment_id,
- *         type: _var.stream_cdn_config_locks_type,
- *         message: _var.stream_cdn_config_locks_message,
- *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
- *         timeCreated: _var.stream_cdn_config_locks_time_created,
+ *         compartmentId: compartmentId,
+ *         type: streamCdnConfigLocksType,
+ *         message: streamCdnConfigLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: streamCdnConfigLocksTimeCreated,
  *     }],
  * });
  * ```

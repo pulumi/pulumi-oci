@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Waa
         /// {
         ///     var testWebAppAcceleration = Oci.Waa.GetAppAcceleration.Invoke(new()
         ///     {
-        ///         WebAppAccelerationId = oci_waa_web_app_acceleration.Test_web_app_acceleration.Id,
+        ///         WebAppAccelerationId = testWebAppAccelerationOciWaaWebAppAcceleration.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Waa
         /// {
         ///     var testWebAppAcceleration = Oci.Waa.GetAppAcceleration.Invoke(new()
         ///     {
-        ///         WebAppAccelerationId = oci_waa_web_app_acceleration.Test_web_app_acceleration.Id,
+        ///         WebAppAccelerationId = testWebAppAccelerationOciWaaWebAppAcceleration.Id,
         ///     });
         /// 
         /// });

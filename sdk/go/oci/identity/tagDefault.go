@@ -38,11 +38,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewTagDefault(ctx, "testTagDefault", &Identity.TagDefaultArgs{
-//				CompartmentId:   pulumi.Any(_var.Compartment_id),
-//				TagDefinitionId: pulumi.Any(oci_identity_tag_definition.Test_tag_definition.Id),
-//				Value:           pulumi.Any(_var.Tag_default_value),
-//				IsRequired:      pulumi.Any(_var.Tag_default_is_required),
+//			_, err := Identity.NewTagDefault(ctx, "test_tag_default", &Identity.TagDefaultArgs{
+//				CompartmentId:   pulumi.Any(compartmentId),
+//				TagDefinitionId: pulumi.Any(testTagDefinition.Id),
+//				Value:           pulumi.Any(tagDefaultValue),
+//				IsRequired:      pulumi.Any(tagDefaultIsRequired),
 //			})
 //			if err != nil {
 //				return err

@@ -25,11 +25,11 @@ namespace Pulumi.Oci.ServiceCatalog
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testServiceCatalogAssociation = new Oci.ServiceCatalog.CatalogAssociation("testServiceCatalogAssociation", new()
+    ///     var testServiceCatalogAssociation = new Oci.ServiceCatalog.CatalogAssociation("test_service_catalog_association", new()
     ///     {
-    ///         EntityId = oci_service_catalog_entity.Test_entity.Id,
-    ///         ServiceCatalogId = oci_service_catalog_service_catalog.Test_service_catalog.Id,
-    ///         EntityType = @var.Service_catalog_association_entity_type,
+    ///         EntityId = testEntity.Id,
+    ///         ServiceCatalogId = testServiceCatalog.Id,
+    ///         EntityType = serviceCatalogAssociationEntityType,
     ///     });
     /// 
     /// });

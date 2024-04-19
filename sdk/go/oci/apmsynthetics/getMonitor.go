@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmSynthetics.GetMonitor(ctx, &apmsynthetics.GetMonitorArgs{
-//				ApmDomainId: oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-//				MonitorId:   oci_apm_synthetics_monitor.Test_monitor.Id,
+//				ApmDomainId: testApmDomain.Id,
+//				MonitorId:   testMonitorOciApmSyntheticsMonitor.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

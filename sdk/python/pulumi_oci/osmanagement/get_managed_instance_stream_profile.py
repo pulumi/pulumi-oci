@@ -173,12 +173,12 @@ def get_managed_instance_stream_profile(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_stream_profiles = oci.OsManagement.get_managed_instance_stream_profile(managed_instance_id=var["managed_instance_id"],
-        compartment_id=var["compartment_id"],
-        module_name=var["managed_instance_module_name"],
-        profile_name=var["managed_instance_module_stream_profile_name"],
-        profile_status=var["managed_instance_profile_status"],
-        stream_name=var["managed_instance_module_stream_name"])
+    test_managed_instance_stream_profiles = oci.OsManagement.get_managed_instance_stream_profile(managed_instance_id=managed_instance_id,
+        compartment_id=compartment_id,
+        module_name=managed_instance_module_name,
+        profile_name=managed_instance_module_stream_profile_name,
+        profile_status=managed_instance_profile_status,
+        stream_name=managed_instance_module_stream_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -261,12 +261,12 @@ def get_managed_instance_stream_profile_output(compartment_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_stream_profiles = oci.OsManagement.get_managed_instance_stream_profile(managed_instance_id=var["managed_instance_id"],
-        compartment_id=var["compartment_id"],
-        module_name=var["managed_instance_module_name"],
-        profile_name=var["managed_instance_module_stream_profile_name"],
-        profile_status=var["managed_instance_profile_status"],
-        stream_name=var["managed_instance_module_stream_name"])
+    test_managed_instance_stream_profiles = oci.OsManagement.get_managed_instance_stream_profile(managed_instance_id=managed_instance_id,
+        compartment_id=compartment_id,
+        module_name=managed_instance_module_name,
+        profile_name=managed_instance_module_stream_profile_name,
+        profile_status=managed_instance_profile_status,
+        stream_name=managed_instance_module_stream_name)
     ```
     <!--End PulumiCodeChooser -->
 

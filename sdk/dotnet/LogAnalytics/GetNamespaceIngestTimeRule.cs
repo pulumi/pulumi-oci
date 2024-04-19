@@ -30,8 +30,8 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceIngestTimeRule = Oci.LogAnalytics.GetNamespaceIngestTimeRule.Invoke(new()
         ///     {
-        ///         IngestTimeRuleId = oci_events_rule.Test_rule.Id,
-        ///         Namespace = @var.Namespace_ingest_time_rule_namespace,
+        ///         IngestTimeRuleId = testRule.Id,
+        ///         Namespace = namespaceIngestTimeRuleNamespace,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceIngestTimeRule = Oci.LogAnalytics.GetNamespaceIngestTimeRule.Invoke(new()
         ///     {
-        ///         IngestTimeRuleId = oci_events_rule.Test_rule.Id,
-        ///         Namespace = @var.Namespace_ingest_time_rule_namespace,
+        ///         IngestTimeRuleId = testRule.Id,
+        ///         Namespace = namespaceIngestTimeRuleNamespace,
         ///     });
         /// 
         /// });

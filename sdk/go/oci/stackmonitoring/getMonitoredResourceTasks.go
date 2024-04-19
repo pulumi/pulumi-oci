@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetMonitoredResourceTasks(ctx, &stackmonitoring.GetMonitoredResourceTasksArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Status:        pulumi.StringRef(_var.Monitored_resource_task_status),
+//				CompartmentId: compartmentId,
+//				Status:        pulumi.StringRef(monitoredResourceTaskStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

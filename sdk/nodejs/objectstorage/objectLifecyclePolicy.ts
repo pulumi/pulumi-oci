@@ -18,21 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectLifecyclePolicy = new oci.objectstorage.ObjectLifecyclePolicy("testObjectLifecyclePolicy", {
- *     bucket: _var.object_lifecycle_policy_bucket,
- *     namespace: _var.object_lifecycle_policy_namespace,
+ * const testObjectLifecyclePolicy = new oci.objectstorage.ObjectLifecyclePolicy("test_object_lifecycle_policy", {
+ *     bucket: objectLifecyclePolicyBucket,
+ *     namespace: objectLifecyclePolicyNamespace,
  *     rules: [{
- *         action: _var.object_lifecycle_policy_rules_action,
- *         isEnabled: _var.object_lifecycle_policy_rules_is_enabled,
- *         name: _var.object_lifecycle_policy_rules_name,
- *         timeAmount: _var.object_lifecycle_policy_rules_time_amount,
- *         timeUnit: _var.object_lifecycle_policy_rules_time_unit,
+ *         action: objectLifecyclePolicyRulesAction,
+ *         isEnabled: objectLifecyclePolicyRulesIsEnabled,
+ *         name: objectLifecyclePolicyRulesName,
+ *         timeAmount: objectLifecyclePolicyRulesTimeAmount,
+ *         timeUnit: objectLifecyclePolicyRulesTimeUnit,
  *         objectNameFilter: {
- *             exclusionPatterns: _var.object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
- *             inclusionPatterns: _var.object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
- *             inclusionPrefixes: _var.object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
+ *             exclusionPatterns: objectLifecyclePolicyRulesObjectNameFilterExclusionPatterns,
+ *             inclusionPatterns: objectLifecyclePolicyRulesObjectNameFilterInclusionPatterns,
+ *             inclusionPrefixes: objectLifecyclePolicyRulesObjectNameFilterInclusionPrefixes,
  *         },
- *         target: _var.object_lifecycle_policy_rules_target,
+ *         target: objectLifecyclePolicyRulesTarget,
  *     }],
  * });
  * ```

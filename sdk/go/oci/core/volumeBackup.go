@@ -35,17 +35,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVolumeBackup(ctx, "testVolumeBackup", &Core.VolumeBackupArgs{
-//				VolumeId: pulumi.Any(oci_core_volume.Test_volume.Id),
+//			_, err := Core.NewVolumeBackup(ctx, "test_volume_backup", &Core.VolumeBackupArgs{
+//				VolumeId: pulumi.Any(testVolume.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Volume_backup_display_name),
+//				DisplayName: pulumi.Any(volumeBackupDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
-//				Type:     pulumi.Any(_var.Volume_backup_type),
+//				KmsKeyId: pulumi.Any(testKey.Id),
+//				Type:     pulumi.Any(volumeBackupType),
 //			})
 //			if err != nil {
 //				return err

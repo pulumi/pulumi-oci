@@ -46,38 +46,38 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewSecurityList(ctx, "testSecurityList", &Core.SecurityListArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//			_, err := Core.NewSecurityList(ctx, "test_security_list", &Core.SecurityListArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				VcnId:         pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Security_list_display_name),
+//				DisplayName: pulumi.Any(securityListDisplayName),
 //				EgressSecurityRules: core.SecurityListEgressSecurityRuleArray{
 //					&core.SecurityListEgressSecurityRuleArgs{
-//						Destination:     pulumi.Any(_var.Security_list_egress_security_rules_destination),
-//						Protocol:        pulumi.Any(_var.Security_list_egress_security_rules_protocol),
-//						Description:     pulumi.Any(_var.Security_list_egress_security_rules_description),
-//						DestinationType: pulumi.Any(_var.Security_list_egress_security_rules_destination_type),
+//						Destination:     pulumi.Any(securityListEgressSecurityRulesDestination),
+//						Protocol:        pulumi.Any(securityListEgressSecurityRulesProtocol),
+//						Description:     pulumi.Any(securityListEgressSecurityRulesDescription),
+//						DestinationType: pulumi.Any(securityListEgressSecurityRulesDestinationType),
 //						IcmpOptions: &core.SecurityListEgressSecurityRuleIcmpOptionsArgs{
-//							Type: pulumi.Any(_var.Security_list_egress_security_rules_icmp_options_type),
-//							Code: pulumi.Any(_var.Security_list_egress_security_rules_icmp_options_code),
+//							Type: pulumi.Any(securityListEgressSecurityRulesIcmpOptionsType),
+//							Code: pulumi.Any(securityListEgressSecurityRulesIcmpOptionsCode),
 //						},
-//						Stateless: pulumi.Any(_var.Security_list_egress_security_rules_stateless),
+//						Stateless: pulumi.Any(securityListEgressSecurityRulesStateless),
 //						TcpOptions: &core.SecurityListEgressSecurityRuleTcpOptionsArgs{
-//							Max: pulumi.Any(_var.Security_list_egress_security_rules_tcp_options_destination_port_range_max),
-//							Min: pulumi.Any(_var.Security_list_egress_security_rules_tcp_options_destination_port_range_min),
+//							Max: pulumi.Any(securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMax),
+//							Min: pulumi.Any(securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMin),
 //							SourcePortRange: &core.SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs{
-//								Max: pulumi.Any(_var.Security_list_egress_security_rules_tcp_options_source_port_range_max),
-//								Min: pulumi.Any(_var.Security_list_egress_security_rules_tcp_options_source_port_range_min),
+//								Max: pulumi.Any(securityListEgressSecurityRulesTcpOptionsSourcePortRangeMax),
+//								Min: pulumi.Any(securityListEgressSecurityRulesTcpOptionsSourcePortRangeMin),
 //							},
 //						},
 //						UdpOptions: &core.SecurityListEgressSecurityRuleUdpOptionsArgs{
-//							Max: pulumi.Any(_var.Security_list_egress_security_rules_udp_options_destination_port_range_max),
-//							Min: pulumi.Any(_var.Security_list_egress_security_rules_udp_options_destination_port_range_min),
+//							Max: pulumi.Any(securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMax),
+//							Min: pulumi.Any(securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMin),
 //							SourcePortRange: &core.SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs{
-//								Max: pulumi.Any(_var.Security_list_egress_security_rules_udp_options_source_port_range_max),
-//								Min: pulumi.Any(_var.Security_list_egress_security_rules_udp_options_source_port_range_min),
+//								Max: pulumi.Any(securityListEgressSecurityRulesUdpOptionsSourcePortRangeMax),
+//								Min: pulumi.Any(securityListEgressSecurityRulesUdpOptionsSourcePortRangeMin),
 //							},
 //						},
 //					},
@@ -87,29 +87,29 @@ import (
 //				},
 //				IngressSecurityRules: core.SecurityListIngressSecurityRuleArray{
 //					&core.SecurityListIngressSecurityRuleArgs{
-//						Protocol:    pulumi.Any(_var.Security_list_ingress_security_rules_protocol),
-//						Source:      pulumi.Any(_var.Security_list_ingress_security_rules_source),
-//						Description: pulumi.Any(_var.Security_list_ingress_security_rules_description),
+//						Protocol:    pulumi.Any(securityListIngressSecurityRulesProtocol),
+//						Source:      pulumi.Any(securityListIngressSecurityRulesSource),
+//						Description: pulumi.Any(securityListIngressSecurityRulesDescription),
 //						IcmpOptions: &core.SecurityListIngressSecurityRuleIcmpOptionsArgs{
-//							Type: pulumi.Any(_var.Security_list_ingress_security_rules_icmp_options_type),
-//							Code: pulumi.Any(_var.Security_list_ingress_security_rules_icmp_options_code),
+//							Type: pulumi.Any(securityListIngressSecurityRulesIcmpOptionsType),
+//							Code: pulumi.Any(securityListIngressSecurityRulesIcmpOptionsCode),
 //						},
-//						SourceType: pulumi.Any(_var.Security_list_ingress_security_rules_source_type),
-//						Stateless:  pulumi.Any(_var.Security_list_ingress_security_rules_stateless),
+//						SourceType: pulumi.Any(securityListIngressSecurityRulesSourceType),
+//						Stateless:  pulumi.Any(securityListIngressSecurityRulesStateless),
 //						TcpOptions: &core.SecurityListIngressSecurityRuleTcpOptionsArgs{
-//							Max: pulumi.Any(_var.Security_list_ingress_security_rules_tcp_options_destination_port_range_max),
-//							Min: pulumi.Any(_var.Security_list_ingress_security_rules_tcp_options_destination_port_range_min),
+//							Max: pulumi.Any(securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMax),
+//							Min: pulumi.Any(securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMin),
 //							SourcePortRange: &core.SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs{
-//								Max: pulumi.Any(_var.Security_list_ingress_security_rules_tcp_options_source_port_range_max),
-//								Min: pulumi.Any(_var.Security_list_ingress_security_rules_tcp_options_source_port_range_min),
+//								Max: pulumi.Any(securityListIngressSecurityRulesTcpOptionsSourcePortRangeMax),
+//								Min: pulumi.Any(securityListIngressSecurityRulesTcpOptionsSourcePortRangeMin),
 //							},
 //						},
 //						UdpOptions: &core.SecurityListIngressSecurityRuleUdpOptionsArgs{
-//							Max: pulumi.Any(_var.Security_list_ingress_security_rules_udp_options_destination_port_range_max),
-//							Min: pulumi.Any(_var.Security_list_ingress_security_rules_udp_options_destination_port_range_min),
+//							Max: pulumi.Any(securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMax),
+//							Min: pulumi.Any(securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMin),
 //							SourcePortRange: &core.SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs{
-//								Max: pulumi.Any(_var.Security_list_ingress_security_rules_udp_options_source_port_range_max),
-//								Min: pulumi.Any(_var.Security_list_ingress_security_rules_udp_options_source_port_range_min),
+//								Max: pulumi.Any(securityListIngressSecurityRulesUdpOptionsSourcePortRangeMax),
+//								Min: pulumi.Any(securityListIngressSecurityRulesUdpOptionsSourcePortRangeMin),
 //							},
 //						},
 //					},

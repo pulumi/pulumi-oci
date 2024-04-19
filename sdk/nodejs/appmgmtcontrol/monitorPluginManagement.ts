@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitorPluginManagement = new oci.appmgmtcontrol.MonitorPluginManagement("testMonitorPluginManagement", {monitoredInstanceId: oci_appmgmt_control_monitored_instance.test_monitored_instance.id});
+ * const testMonitorPluginManagement = new oci.appmgmtcontrol.MonitorPluginManagement("test_monitor_plugin_management", {monitoredInstanceId: testMonitoredInstance.id});
  * ```
  * <!--End PulumiCodeChooser -->
  *

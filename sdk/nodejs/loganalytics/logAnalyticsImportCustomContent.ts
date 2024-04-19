@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsImportCustomContent = new oci.loganalytics.LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent", {
- *     importCustomContentFile: _var.log_analytics_import_custom_content_import_custom_content_file,
- *     namespace: _var.log_analytics_import_custom_content_namespace,
- *     expect: _var.log_analytics_import_custom_content_expect,
- *     isOverwrite: _var.log_analytics_import_custom_content_is_overwrite,
+ * const testLogAnalyticsImportCustomContent = new oci.loganalytics.LogAnalyticsImportCustomContent("test_log_analytics_import_custom_content", {
+ *     importCustomContentFile: logAnalyticsImportCustomContentImportCustomContentFile,
+ *     namespace: logAnalyticsImportCustomContentNamespace,
+ *     expect: logAnalyticsImportCustomContentExpect,
+ *     isOverwrite: logAnalyticsImportCustomContentIsOverwrite,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

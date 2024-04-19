@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSecurityQuestionSetting = Oci.Identity.GetDomainsSecurityQuestionSetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SecurityQuestionSettingId = oci_identity_domains_security_question_setting.Test_security_question_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SecurityQuestionSettingId = testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Security_question_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Security_question_setting_resource_type_schema_version,
+        ///         Authorization = securityQuestionSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = securityQuestionSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSecurityQuestionSetting = Oci.Identity.GetDomainsSecurityQuestionSetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SecurityQuestionSettingId = oci_identity_domains_security_question_setting.Test_security_question_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SecurityQuestionSettingId = testSecurityQuestionSettingOciIdentityDomainsSecurityQuestionSetting.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Security_question_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Security_question_setting_resource_type_schema_version,
+        ///         Authorization = securityQuestionSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = securityQuestionSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

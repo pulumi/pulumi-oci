@@ -774,37 +774,37 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cloud_exadata_infrastructure = oci.database.CloudExadataInfrastructure("testCloudExadataInfrastructure",
-            availability_domain=var["cloud_exadata_infrastructure_availability_domain"],
-            compartment_id=var["compartment_id"],
-            display_name=var["cloud_exadata_infrastructure_display_name"],
-            shape=var["cloud_exadata_infrastructure_shape"],
-            cluster_placement_group_id=var["cloud_exadata_infrastructure_cluster_placement_group_id"],
-            compute_count=var["cloud_exadata_infrastructure_compute_count"],
+        test_cloud_exadata_infrastructure = oci.database.CloudExadataInfrastructure("test_cloud_exadata_infrastructure",
+            availability_domain=cloud_exadata_infrastructure_availability_domain,
+            compartment_id=compartment_id,
+            display_name=cloud_exadata_infrastructure_display_name,
+            shape=cloud_exadata_infrastructure_shape,
+            cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
+            compute_count=cloud_exadata_infrastructure_compute_count,
             customer_contacts=[oci.database.CloudExadataInfrastructureCustomerContactArgs(
-                email=var["cloud_exadata_infrastructure_customer_contacts_email"],
+                email=cloud_exadata_infrastructure_customer_contacts_email,
             )],
-            defined_tags=var["cloud_exadata_infrastructure_defined_tags"],
+            defined_tags=cloud_exadata_infrastructure_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
             maintenance_window=oci.database.CloudExadataInfrastructureMaintenanceWindowArgs(
-                custom_action_timeout_in_mins=var["cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
+                custom_action_timeout_in_mins=cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
                 days_of_weeks=[oci.database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
-                    name=var["cloud_exadata_infrastructure_maintenance_window_days_of_week_name"],
+                    name=cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
                 )],
-                hours_of_days=var["cloud_exadata_infrastructure_maintenance_window_hours_of_day"],
-                is_custom_action_timeout_enabled=var["cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks"],
+                hours_of_days=cloud_exadata_infrastructure_maintenance_window_hours_of_day,
+                is_custom_action_timeout_enabled=cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
+                is_monthly_patching_enabled=cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
+                lead_time_in_weeks=cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
                 months=[oci.database.CloudExadataInfrastructureMaintenanceWindowMonthArgs(
-                    name=var["cloud_exadata_infrastructure_maintenance_window_months_name"],
+                    name=cloud_exadata_infrastructure_maintenance_window_months_name,
                 )],
-                patching_mode=var["cloud_exadata_infrastructure_maintenance_window_patching_mode"],
-                preference=var["cloud_exadata_infrastructure_maintenance_window_preference"],
-                weeks_of_months=var["cloud_exadata_infrastructure_maintenance_window_weeks_of_month"],
+                patching_mode=cloud_exadata_infrastructure_maintenance_window_patching_mode,
+                preference=cloud_exadata_infrastructure_maintenance_window_preference,
+                weeks_of_months=cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
             ),
-            storage_count=var["cloud_exadata_infrastructure_storage_count"])
+            storage_count=cloud_exadata_infrastructure_storage_count)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -852,37 +852,37 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cloud_exadata_infrastructure = oci.database.CloudExadataInfrastructure("testCloudExadataInfrastructure",
-            availability_domain=var["cloud_exadata_infrastructure_availability_domain"],
-            compartment_id=var["compartment_id"],
-            display_name=var["cloud_exadata_infrastructure_display_name"],
-            shape=var["cloud_exadata_infrastructure_shape"],
-            cluster_placement_group_id=var["cloud_exadata_infrastructure_cluster_placement_group_id"],
-            compute_count=var["cloud_exadata_infrastructure_compute_count"],
+        test_cloud_exadata_infrastructure = oci.database.CloudExadataInfrastructure("test_cloud_exadata_infrastructure",
+            availability_domain=cloud_exadata_infrastructure_availability_domain,
+            compartment_id=compartment_id,
+            display_name=cloud_exadata_infrastructure_display_name,
+            shape=cloud_exadata_infrastructure_shape,
+            cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
+            compute_count=cloud_exadata_infrastructure_compute_count,
             customer_contacts=[oci.database.CloudExadataInfrastructureCustomerContactArgs(
-                email=var["cloud_exadata_infrastructure_customer_contacts_email"],
+                email=cloud_exadata_infrastructure_customer_contacts_email,
             )],
-            defined_tags=var["cloud_exadata_infrastructure_defined_tags"],
+            defined_tags=cloud_exadata_infrastructure_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
             maintenance_window=oci.database.CloudExadataInfrastructureMaintenanceWindowArgs(
-                custom_action_timeout_in_mins=var["cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
+                custom_action_timeout_in_mins=cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
                 days_of_weeks=[oci.database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
-                    name=var["cloud_exadata_infrastructure_maintenance_window_days_of_week_name"],
+                    name=cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
                 )],
-                hours_of_days=var["cloud_exadata_infrastructure_maintenance_window_hours_of_day"],
-                is_custom_action_timeout_enabled=var["cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks"],
+                hours_of_days=cloud_exadata_infrastructure_maintenance_window_hours_of_day,
+                is_custom_action_timeout_enabled=cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
+                is_monthly_patching_enabled=cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
+                lead_time_in_weeks=cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
                 months=[oci.database.CloudExadataInfrastructureMaintenanceWindowMonthArgs(
-                    name=var["cloud_exadata_infrastructure_maintenance_window_months_name"],
+                    name=cloud_exadata_infrastructure_maintenance_window_months_name,
                 )],
-                patching_mode=var["cloud_exadata_infrastructure_maintenance_window_patching_mode"],
-                preference=var["cloud_exadata_infrastructure_maintenance_window_preference"],
-                weeks_of_months=var["cloud_exadata_infrastructure_maintenance_window_weeks_of_month"],
+                patching_mode=cloud_exadata_infrastructure_maintenance_window_patching_mode,
+                preference=cloud_exadata_infrastructure_maintenance_window_preference,
+                weeks_of_months=cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
             ),
-            storage_count=var["cloud_exadata_infrastructure_storage_count"])
+            storage_count=cloud_exadata_infrastructure_storage_count)
         ```
         <!--End PulumiCodeChooser -->
 

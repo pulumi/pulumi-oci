@@ -46,16 +46,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testHostInsight = new HostInsight(&#34;testHostInsight&#34;, HostInsightArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .entitySource(var_.host_insight_entity_source())
- *             .computeId(oci_opsi_compute.test_compute().id())
+ *             .compartmentId(compartmentId)
+ *             .entitySource(hostInsightEntitySource)
+ *             .computeId(testCompute.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
- *             .enterpriseManagerEntityIdentifier(var_.host_insight_enterprise_manager_entity_identifier())
- *             .enterpriseManagerIdentifier(var_.host_insight_enterprise_manager_identifier())
- *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+ *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+ *             .enterpriseManagerEntityIdentifier(hostInsightEnterpriseManagerEntityIdentifier)
+ *             .enterpriseManagerIdentifier(hostInsightEnterpriseManagerIdentifier)
+ *             .exadataInsightId(testExadataInsight.id())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+ *             .managementAgentId(testManagementAgent.id())
  *             .status(&#34;DISABLED&#34;)
  *             .build());
  * 

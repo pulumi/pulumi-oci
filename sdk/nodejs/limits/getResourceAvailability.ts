@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceAvailability = oci.Limits.getResourceAvailability({
- *     compartmentId: _var.tenancy_ocid,
- *     limitName: _var.resource_availability_limit_name,
- *     serviceName: oci_limits_service.test_service.name,
- *     availabilityDomain: _var.resource_availability_availability_domain,
+ *     compartmentId: tenancyOcid,
+ *     limitName: resourceAvailabilityLimitName,
+ *     serviceName: testService.name,
+ *     availabilityDomain: resourceAvailabilityAvailabilityDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,10 +110,10 @@ export interface GetResourceAvailabilityResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceAvailability = oci.Limits.getResourceAvailability({
- *     compartmentId: _var.tenancy_ocid,
- *     limitName: _var.resource_availability_limit_name,
- *     serviceName: oci_limits_service.test_service.name,
- *     availabilityDomain: _var.resource_availability_availability_domain,
+ *     compartmentId: tenancyOcid,
+ *     limitName: resourceAvailabilityLimitName,
+ *     serviceName: testService.name,
+ *     availabilityDomain: resourceAvailabilityAvailabilityDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

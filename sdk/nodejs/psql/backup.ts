@@ -18,18 +18,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackup = new oci.psql.Backup("testBackup", {
- *     compartmentId: _var.compartment_id,
- *     dbSystemId: oci_psql_db_system.test_db_system.id,
- *     displayName: _var.backup_display_name,
+ * const testBackup = new oci.psql.Backup("test_backup", {
+ *     compartmentId: compartmentId,
+ *     dbSystemId: testDbSystem.id,
+ *     displayName: backupDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.backup_description,
+ *     description: backupDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionPeriod: _var.backup_retention_period,
+ *     retentionPeriod: backupRetentionPeriod,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

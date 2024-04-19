@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetJavaDownloadsJavaDownloadReports(ctx, &jms.GetJavaDownloadsJavaDownloadReportsArgs{
-//				CompartmentId:        _var.Tenancy_ocid,
-//				DisplayName:          pulumi.StringRef(_var.Java_download_report_display_name),
-//				JavaDownloadReportId: pulumi.StringRef(oci_jms_java_downloads_java_download_report.Test_java_download_report.Id),
-//				State:                pulumi.StringRef(_var.Java_download_report_state),
+//				CompartmentId:        tenancyOcid,
+//				DisplayName:          pulumi.StringRef(javaDownloadReportDisplayName),
+//				JavaDownloadReportId: pulumi.StringRef(testJavaDownloadReport.Id),
+//				State:                pulumi.StringRef(javaDownloadReportState),
 //			}, nil)
 //			if err != nil {
 //				return err

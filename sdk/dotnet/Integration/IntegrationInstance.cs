@@ -25,55 +25,55 @@ namespace Pulumi.Oci.Integration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIntegrationInstance = new Oci.Integration.IntegrationInstance("testIntegrationInstance", new()
+    ///     var testIntegrationInstance = new Oci.Integration.IntegrationInstance("test_integration_instance", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Integration_instance_display_name,
-    ///         IntegrationInstanceType = @var.Integration_instance_integration_instance_type,
-    ///         IsByol = @var.Integration_instance_is_byol,
-    ///         MessagePacks = @var.Integration_instance_message_packs,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = integrationInstanceDisplayName,
+    ///         IntegrationInstanceType = integrationInstanceIntegrationInstanceType,
+    ///         IsByol = integrationInstanceIsByol,
+    ///         MessagePacks = integrationInstanceMessagePacks,
     ///         AlternateCustomEndpoints = new[]
     ///         {
     ///             new Oci.Integration.Inputs.IntegrationInstanceAlternateCustomEndpointArgs
     ///             {
-    ///                 Hostname = @var.Integration_instance_alternate_custom_endpoints_hostname,
-    ///                 CertificateSecretId = oci_vault_secret.Test_secret.Id,
+    ///                 Hostname = integrationInstanceAlternateCustomEndpointsHostname,
+    ///                 CertificateSecretId = testSecret.Id,
     ///             },
     ///         },
-    ///         ConsumptionModel = @var.Integration_instance_consumption_model,
+    ///         ConsumptionModel = integrationInstanceConsumptionModel,
     ///         CustomEndpoint = new Oci.Integration.Inputs.IntegrationInstanceCustomEndpointArgs
     ///         {
-    ///             Hostname = @var.Integration_instance_custom_endpoint_hostname,
-    ///             CertificateSecretId = oci_vault_secret.Test_secret.Id,
+    ///             Hostname = integrationInstanceCustomEndpointHostname,
+    ///             CertificateSecretId = testSecret.Id,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DomainId = oci_identity_domain.Test_domain.Id,
+    ///         DomainId = testDomain.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IdcsAt = @var.Integration_instance_idcs_at,
-    ///         IsFileServerEnabled = @var.Integration_instance_is_file_server_enabled,
-    ///         IsVisualBuilderEnabled = @var.Integration_instance_is_visual_builder_enabled,
+    ///         IdcsAt = integrationInstanceIdcsAt,
+    ///         IsFileServerEnabled = integrationInstanceIsFileServerEnabled,
+    ///         IsVisualBuilderEnabled = integrationInstanceIsVisualBuilderEnabled,
     ///         NetworkEndpointDetails = new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsArgs
     ///         {
-    ///             NetworkEndpointType = @var.Integration_instance_network_endpoint_details_network_endpoint_type,
-    ///             AllowlistedHttpIps = @var.Integration_instance_network_endpoint_details_allowlisted_http_ips,
+    ///             NetworkEndpointType = integrationInstanceNetworkEndpointDetailsNetworkEndpointType,
+    ///             AllowlistedHttpIps = integrationInstanceNetworkEndpointDetailsAllowlistedHttpIps,
     ///             AllowlistedHttpVcns = new[]
     ///             {
     ///                 new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs
     ///                 {
-    ///                     Id = @var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
-    ///                     AllowlistedIps = @var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
+    ///                     Id = integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsId,
+    ///                     AllowlistedIps = integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsAllowlistedIps,
     ///                 },
     ///             },
-    ///             IsIntegrationVcnAllowlisted = @var.Integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
+    ///             IsIntegrationVcnAllowlisted = integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted,
     ///         },
-    ///         Shape = @var.Integration_instance_shape,
-    ///         State = @var.Integration_instance_target_state,
+    ///         Shape = integrationInstanceShape,
+    ///         State = integrationInstanceTargetState,
     ///     });
     /// 
     /// });

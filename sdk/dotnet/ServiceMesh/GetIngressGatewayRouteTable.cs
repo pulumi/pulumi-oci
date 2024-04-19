@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testIngressGatewayRouteTable = Oci.ServiceMesh.GetIngressGatewayRouteTable.Invoke(new()
         ///     {
-        ///         IngressGatewayRouteTableId = oci_service_mesh_ingress_gateway_route_table.Test_ingress_gateway_route_table.Id,
+        ///         IngressGatewayRouteTableId = testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testIngressGatewayRouteTable = Oci.ServiceMesh.GetIngressGatewayRouteTable.Invoke(new()
         ///     {
-        ///         IngressGatewayRouteTableId = oci_service_mesh_ingress_gateway_route_table.Test_ingress_gateway_route_table.Id,
+        ///         IngressGatewayRouteTableId = testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.Id,
         ///     });
         /// 
         /// });

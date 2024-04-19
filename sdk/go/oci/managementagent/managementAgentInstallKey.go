@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementAgent.NewManagementAgentInstallKey(ctx, "testManagementAgentInstallKey", &ManagementAgent.ManagementAgentInstallKeyArgs{
-//				CompartmentId:          pulumi.Any(_var.Compartment_id),
-//				DisplayName:            pulumi.Any(_var.Management_agent_install_key_display_name),
-//				AllowedKeyInstallCount: pulumi.Any(_var.Management_agent_install_key_allowed_key_install_count),
-//				IsUnlimited:            pulumi.Any(_var.Management_agent_install_key_is_unlimited),
-//				TimeExpires:            pulumi.Any(_var.Management_agent_install_key_time_expires),
+//			_, err := ManagementAgent.NewManagementAgentInstallKey(ctx, "test_management_agent_install_key", &ManagementAgent.ManagementAgentInstallKeyArgs{
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				DisplayName:            pulumi.Any(managementAgentInstallKeyDisplayName),
+//				AllowedKeyInstallCount: pulumi.Any(managementAgentInstallKeyAllowedKeyInstallCount),
+//				IsUnlimited:            pulumi.Any(managementAgentInstallKeyIsUnlimited),
+//				TimeExpires:            pulumi.Any(managementAgentInstallKeyTimeExpires),
 //			})
 //			if err != nil {
 //				return err

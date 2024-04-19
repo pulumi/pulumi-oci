@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementStations = oci.OsManagementHub.getManagementStations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.management_station_display_name,
- *     displayNameContains: _var.management_station_display_name_contains,
- *     id: _var.management_station_id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     state: _var.management_station_state,
+ *     compartmentId: compartmentId,
+ *     displayName: managementStationDisplayName,
+ *     displayNameContains: managementStationDisplayNameContains,
+ *     id: managementStationId,
+ *     managedInstanceId: testManagedInstance.id,
+ *     state: managementStationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetManagementStationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementStations = oci.OsManagementHub.getManagementStations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.management_station_display_name,
- *     displayNameContains: _var.management_station_display_name_contains,
- *     id: _var.management_station_id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     state: _var.management_station_state,
+ *     compartmentId: compartmentId,
+ *     displayName: managementStationDisplayName,
+ *     displayNameContains: managementStationDisplayNameContains,
+ *     id: managementStationId,
+ *     managedInstanceId: testManagedInstance.id,
+ *     state: managementStationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

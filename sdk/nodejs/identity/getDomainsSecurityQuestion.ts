@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityQuestion = oci.Identity.getDomainsSecurityQuestion({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     securityQuestionId: oci_identity_domains_security_question.test_security_question.id,
+ *     idcsEndpoint: testDomain.url,
+ *     securityQuestionId: testSecurityQuestionOciIdentityDomainsSecurityQuestion.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.security_question_authorization,
- *     resourceTypeSchemaVersion: _var.security_question_resource_type_schema_version,
+ *     authorization: securityQuestionAuthorization,
+ *     resourceTypeSchemaVersion: securityQuestionResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -164,12 +164,12 @@ export interface GetDomainsSecurityQuestionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityQuestion = oci.Identity.getDomainsSecurityQuestion({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     securityQuestionId: oci_identity_domains_security_question.test_security_question.id,
+ *     idcsEndpoint: testDomain.url,
+ *     securityQuestionId: testSecurityQuestionOciIdentityDomainsSecurityQuestion.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.security_question_authorization,
- *     resourceTypeSchemaVersion: _var.security_question_resource_type_schema_version,
+ *     authorization: securityQuestionAuthorization,
+ *     resourceTypeSchemaVersion: securityQuestionResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

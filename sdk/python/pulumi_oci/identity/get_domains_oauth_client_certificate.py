@@ -374,10 +374,10 @@ def get_domains_oauth_client_certificate(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_client_certificate = oci.Identity.get_domains_oauth_client_certificate(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        o_auth_client_certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
-        authorization=var["oauth_client_certificate_authorization"],
-        resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"])
+    test_oauth_client_certificate = oci.Identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
+        o_auth_client_certificate_id=test_certificate["id"],
+        authorization=oauth_client_certificate_authorization,
+        resource_type_schema_version=oauth_client_certificate_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -444,10 +444,10 @@ def get_domains_oauth_client_certificate_output(authorization: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_client_certificate = oci.Identity.get_domains_oauth_client_certificate(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        o_auth_client_certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
-        authorization=var["oauth_client_certificate_authorization"],
-        resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"])
+    test_oauth_client_certificate = oci.Identity.get_domains_oauth_client_certificate(idcs_endpoint=test_domain["url"],
+        o_auth_client_certificate_id=test_certificate["id"],
+        authorization=oauth_client_certificate_authorization,
+        resource_type_schema_version=oauth_client_certificate_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

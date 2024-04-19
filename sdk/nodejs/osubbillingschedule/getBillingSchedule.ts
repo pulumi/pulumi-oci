@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBillingSchedules = oci.OsubBillingSchedule.getBillingSchedule({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
- *     subscribedServiceId: oci_core_service.test_service.id,
- *     xOneOriginRegion: _var.billing_schedule_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     subscribedServiceId: testService.id,
+ *     xOneOriginRegion: billingScheduleXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,10 +95,10 @@ export interface GetBillingScheduleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBillingSchedules = oci.OsubBillingSchedule.getBillingSchedule({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
- *     subscribedServiceId: oci_core_service.test_service.id,
- *     xOneOriginRegion: _var.billing_schedule_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     subscribedServiceId: testService.id,
+ *     xOneOriginRegion: billingScheduleXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

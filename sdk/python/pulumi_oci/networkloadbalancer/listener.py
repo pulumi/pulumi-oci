@@ -255,12 +255,13 @@ class Listener(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_listener = oci.network_load_balancer.Listener("testListener",
-            default_backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
-            network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-            port=var["listener_port"],
-            protocol=var["listener_protocol"],
-            ip_version=var["listener_ip_version"])
+        test_listener = oci.network_load_balancer.Listener("test_listener",
+            default_backend_set_name=test_backend_set["name"],
+            name=listener_name,
+            network_load_balancer_id=test_network_load_balancer["id"],
+            port=listener_port,
+            protocol=listener_protocol,
+            ip_version=listener_ip_version)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -303,12 +304,13 @@ class Listener(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_listener = oci.network_load_balancer.Listener("testListener",
-            default_backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
-            network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-            port=var["listener_port"],
-            protocol=var["listener_protocol"],
-            ip_version=var["listener_ip_version"])
+        test_listener = oci.network_load_balancer.Listener("test_listener",
+            default_backend_set_name=test_backend_set["name"],
+            name=listener_name,
+            network_load_balancer_id=test_network_load_balancer["id"],
+            port=listener_port,
+            protocol=listener_protocol,
+            ip_version=listener_ip_version)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.NewStreamDistributionChannel(ctx, "testStreamDistributionChannel", &MediaServices.StreamDistributionChannelArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Stream_distribution_channel_display_name),
+//			_, err := MediaServices.NewStreamDistributionChannel(ctx, "test_stream_distribution_channel", &MediaServices.StreamDistributionChannelArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(streamDistributionChannelDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -42,11 +42,11 @@ import (
 //				},
 //				Locks: mediaservices.StreamDistributionChannelLockArray{
 //					&mediaservices.StreamDistributionChannelLockArgs{
-//						CompartmentId:     pulumi.Any(_var.Compartment_id),
-//						Type:              pulumi.Any(_var.Stream_distribution_channel_locks_type),
-//						Message:           pulumi.Any(_var.Stream_distribution_channel_locks_message),
-//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
-//						TimeCreated:       pulumi.Any(_var.Stream_distribution_channel_locks_time_created),
+//						CompartmentId:     pulumi.Any(compartmentId),
+//						Type:              pulumi.Any(streamDistributionChannelLocksType),
+//						Message:           pulumi.Any(streamDistributionChannelLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(streamDistributionChannelLocksTimeCreated),
 //					},
 //				},
 //			})

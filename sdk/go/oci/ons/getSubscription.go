@@ -33,7 +33,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ons.GetSubscription(ctx, &ons.GetSubscriptionArgs{
-//				SubscriptionId: oci_ons_subscription.Test_subscription.Id,
+//				SubscriptionId: testSubscriptionOciOnsSubscription.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

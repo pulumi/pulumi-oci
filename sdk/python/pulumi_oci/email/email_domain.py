@@ -305,12 +305,13 @@ class EmailDomain(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_email_domain = oci.email.EmailDomain("testEmailDomain",
-            compartment_id=var["compartment_id"],
+        test_email_domain = oci.email.EmailDomain("test_email_domain",
+            compartment_id=compartment_id,
+            name=email_domain_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["email_domain_description"],
+            description=email_domain_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -355,12 +356,13 @@ class EmailDomain(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_email_domain = oci.email.EmailDomain("testEmailDomain",
-            compartment_id=var["compartment_id"],
+        test_email_domain = oci.email.EmailDomain("test_email_domain",
+            compartment_id=compartment_id,
+            name=email_domain_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["email_domain_description"],
+            description=email_domain_description,
             freeform_tags={
                 "Department": "Finance",
             })

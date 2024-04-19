@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscription = new oci.ons.Subscription("testSubscription", {
- *     compartmentId: _var.compartment_id,
- *     endpoint: _var.subscription_endpoint,
- *     protocol: _var.subscription_protocol,
- *     topicId: oci_ons_notification_topic.test_notification_topic.id,
+ * const testSubscription = new oci.ons.Subscription("test_subscription", {
+ *     compartmentId: compartmentId,
+ *     endpoint: subscriptionEndpoint,
+ *     protocol: subscriptionProtocol,
+ *     topicId: testNotificationTopic.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

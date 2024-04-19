@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetInstanceDevices(ctx, &core.GetInstanceDevicesArgs{
-//				InstanceId:  oci_core_instance.Test_instance.Id,
-//				IsAvailable: pulumi.BoolRef(_var.Instance_device_is_available),
-//				Name:        pulumi.StringRef(_var.Instance_device_name),
+//				InstanceId:  testInstance.Id,
+//				IsAvailable: pulumi.BoolRef(instanceDeviceIsAvailable),
+//				Name:        pulumi.StringRef(instanceDeviceName),
 //			}, nil)
 //			if err != nil {
 //				return err

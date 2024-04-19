@@ -31,11 +31,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testEnterpriseManagerBridges = Oci.Opsi.GetEnterpriseManagerBridges.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Enterprise_manager_bridge_compartment_id_in_subtree,
-        ///         DisplayName = @var.Enterprise_manager_bridge_display_name,
-        ///         Id = @var.Enterprise_manager_bridge_id,
-        ///         States = @var.Enterprise_manager_bridge_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = enterpriseManagerBridgeCompartmentIdInSubtree,
+        ///         DisplayName = enterpriseManagerBridgeDisplayName,
+        ///         Id = enterpriseManagerBridgeId,
+        ///         States = enterpriseManagerBridgeState,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testEnterpriseManagerBridges = Oci.Opsi.GetEnterpriseManagerBridges.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Enterprise_manager_bridge_compartment_id_in_subtree,
-        ///         DisplayName = @var.Enterprise_manager_bridge_display_name,
-        ///         Id = @var.Enterprise_manager_bridge_id,
-        ///         States = @var.Enterprise_manager_bridge_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = enterpriseManagerBridgeCompartmentIdInSubtree,
+        ///         DisplayName = enterpriseManagerBridgeDisplayName,
+        ///         Id = enterpriseManagerBridgeId,
+        ///         States = enterpriseManagerBridgeState,
         ///     });
         /// 
         /// });

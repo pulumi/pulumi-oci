@@ -44,13 +44,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetManagedLists(ctx, &cloudguard.GetManagedListsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Managed_list_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Managed_list_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Managed_list_display_name),
-//				ListType:               pulumi.StringRef(_var.Managed_list_list_type),
-//				ResourceMetadataOnly:   pulumi.BoolRef(_var.Managed_list_resource_metadata_only),
-//				State:                  pulumi.StringRef(_var.Managed_list_state),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(managedListAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(managedListCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(managedListDisplayName),
+//				ListType:               pulumi.StringRef(managedListListType),
+//				ResourceMetadataOnly:   pulumi.BoolRef(managedListResourceMetadataOnly),
+//				State:                  pulumi.StringRef(managedListState),
 //			}, nil)
 //			if err != nil {
 //				return err

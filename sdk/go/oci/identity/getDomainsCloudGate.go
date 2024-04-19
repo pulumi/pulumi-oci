@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsCloudGate(ctx, &identity.GetDomainsCloudGateArgs{
-//				CloudGateId:  oci_identity_domains_cloud_gate.Test_cloud_gate.Id,
-//				IdcsEndpoint: data.Oci_identity_domain.Test_domain.Url,
+//				CloudGateId:  testCloudGateOciIdentityDomainsCloudGate.Id,
+//				IdcsEndpoint: testDomain.Url,
 //				AttributeSets: []string{
 //					"all",
 //				},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Cloud_gate_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Cloud_gate_resource_type_schema_version),
+//				Authorization:             pulumi.StringRef(cloudGateAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(cloudGateResourceTypeSchemaVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

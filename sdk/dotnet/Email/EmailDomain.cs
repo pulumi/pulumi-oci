@@ -25,14 +25,15 @@ namespace Pulumi.Oci.Email
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testEmailDomain = new Oci.Email.EmailDomain("testEmailDomain", new()
+    ///     var testEmailDomain = new Oci.Email.EmailDomain("test_email_domain", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = emailDomainName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Email_domain_description,
+    ///         Description = emailDomainDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

@@ -26,15 +26,15 @@ namespace Pulumi.Oci.Logging
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLogGroup = new Oci.Logging.LogGroup("testLogGroup", new()
+    ///     var testLogGroup = new Oci.Logging.LogGroup("test_log_group", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Log_group_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = logGroupDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Log_group_description,
+    ///         Description = logGroupDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

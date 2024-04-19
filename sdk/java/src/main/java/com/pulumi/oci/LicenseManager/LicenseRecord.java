@@ -47,16 +47,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLicenseRecord = new LicenseRecord(&#34;testLicenseRecord&#34;, LicenseRecordArgs.builder()        
- *             .displayName(var_.license_record_display_name())
- *             .isPerpetual(var_.license_record_is_perpetual())
- *             .isUnlimited(var_.license_record_is_unlimited())
- *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+ *             .displayName(licenseRecordDisplayName)
+ *             .isPerpetual(licenseRecordIsPerpetual)
+ *             .isUnlimited(licenseRecordIsUnlimited)
+ *             .productLicenseId(testProductLicense.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .expirationDate(var_.license_record_expiration_date())
+ *             .expirationDate(licenseRecordExpirationDate)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .licenseCount(var_.license_record_license_count())
- *             .productId(oci_license_manager_product.test_product().id())
- *             .supportEndDate(var_.license_record_support_end_date())
+ *             .licenseCount(licenseRecordLicenseCount)
+ *             .productId(testProduct.id())
+ *             .supportEndDate(licenseRecordSupportEndDate)
  *             .build());
  * 
  *     }

@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUserDbCredentials = Oci.Identity.GetDomainsUserDbCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         UserDbCredentialCount = @var.User_db_credential_user_db_credential_count,
-        ///         UserDbCredentialFilter = @var.User_db_credential_user_db_credential_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserDbCredentialCount = userDbCredentialUserDbCredentialCount,
+        ///         UserDbCredentialFilter = userDbCredentialUserDbCredentialFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.User_db_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.User_db_credential_resource_type_schema_version,
-        ///         StartIndex = @var.User_db_credential_start_index,
+        ///         Authorization = userDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = userDbCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = userDbCredentialStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUserDbCredentials = Oci.Identity.GetDomainsUserDbCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         UserDbCredentialCount = @var.User_db_credential_user_db_credential_count,
-        ///         UserDbCredentialFilter = @var.User_db_credential_user_db_credential_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserDbCredentialCount = userDbCredentialUserDbCredentialCount,
+        ///         UserDbCredentialFilter = userDbCredentialUserDbCredentialFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.User_db_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.User_db_credential_resource_type_schema_version,
-        ///         StartIndex = @var.User_db_credential_start_index,
+        ///         Authorization = userDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = userDbCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = userDbCredentialStartIndex,
         ///     });
         /// 
         /// });

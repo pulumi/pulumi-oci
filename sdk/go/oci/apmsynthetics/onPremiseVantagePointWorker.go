@@ -31,21 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmSynthetics.NewOnPremiseVantagePointWorker(ctx, "testOnPremiseVantagePointWorker", &ApmSynthetics.OnPremiseVantagePointWorkerArgs{
-//				ApmDomainId:                     pulumi.Any(oci_apm_apm_domain.Test_apm_domain.Id),
-//				OnPremiseVantagePointId:         pulumi.Any(oci_apm_synthetics_on_premise_vantage_point.Test_on_premise_vantage_point.Id),
-//				ResourcePrincipalTokenPublicKey: pulumi.Any(_var.On_premise_vantage_point_worker_resource_principal_token_public_key),
-//				Version:                         pulumi.Any(_var.On_premise_vantage_point_worker_version),
-//				ConfigurationDetails:            pulumi.Any(_var.On_premise_vantage_point_worker_configuration_details),
+//			_, err := ApmSynthetics.NewOnPremiseVantagePointWorker(ctx, "test_on_premise_vantage_point_worker", &ApmSynthetics.OnPremiseVantagePointWorkerArgs{
+//				ApmDomainId:                     pulumi.Any(testApmDomain.Id),
+//				Name:                            pulumi.Any(onPremiseVantagePointWorkerName),
+//				OnPremiseVantagePointId:         pulumi.Any(testOnPremiseVantagePoint.Id),
+//				ResourcePrincipalTokenPublicKey: pulumi.Any(onPremiseVantagePointWorkerResourcePrincipalTokenPublicKey),
+//				Version:                         pulumi.Any(onPremiseVantagePointWorkerVersion),
+//				ConfigurationDetails:            pulumi.Any(onPremiseVantagePointWorkerConfigurationDetails),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Priority:   pulumi.Any(_var.On_premise_vantage_point_worker_priority),
-//				Status:     pulumi.Any(_var.On_premise_vantage_point_worker_status),
-//				WorkerType: pulumi.Any(_var.On_premise_vantage_point_worker_worker_type),
+//				Priority:   pulumi.Any(onPremiseVantagePointWorkerPriority),
+//				Status:     pulumi.Any(onPremiseVantagePointWorkerStatus),
+//				WorkerType: pulumi.Any(onPremiseVantagePointWorkerWorkerType),
 //			})
 //			if err != nil {
 //				return err

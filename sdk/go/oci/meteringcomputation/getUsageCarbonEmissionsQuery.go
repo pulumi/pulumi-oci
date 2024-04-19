@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MeteringComputation.GetUsageCarbonEmissionsQuery(ctx, &meteringcomputation.GetUsageCarbonEmissionsQueryArgs{
-//				UsageCarbonEmissionsQueryId: oci_metering_computation_usage_carbon_emissions_query.Test_usage_carbon_emissions_query.Id,
+//				UsageCarbonEmissionsQueryId: testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalExadataStorageGrid = Oci.DatabaseManagement.GetExternalExadataStorageGrid.Invoke(new()
         ///     {
-        ///         ExternalExadataStorageGridId = oci_database_management_external_exadata_storage_grid.Test_external_exadata_storage_grid.Id,
+        ///         ExternalExadataStorageGridId = testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalExadataStorageGrid = Oci.DatabaseManagement.GetExternalExadataStorageGrid.Invoke(new()
         ///     {
-        ///         ExternalExadataStorageGridId = oci_database_management_external_exadata_storage_grid.Test_external_exadata_storage_grid.Id,
+        ///         ExternalExadataStorageGridId = testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.Id,
         ///     });
         /// 
         /// });

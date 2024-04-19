@@ -278,7 +278,7 @@ def get_audit_policy(audit_policy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"])
+    test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=test_audit_policy_oci_data_safe_audit_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -328,7 +328,7 @@ def get_audit_policy_output(audit_policy_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=oci_data_safe_audit_policy["test_audit_policy"]["id"])
+    test_audit_policy = oci.DataSafe.get_audit_policy(audit_policy_id=test_audit_policy_oci_data_safe_audit_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 

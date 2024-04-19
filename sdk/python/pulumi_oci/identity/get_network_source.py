@@ -200,7 +200,7 @@ def get_network_source(network_source_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_source = oci.Identity.get_network_source(network_source_id=oci_identity_network_source["test_network_source"]["id"])
+    test_network_source = oci.Identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -243,7 +243,7 @@ def get_network_source_output(network_source_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_network_source = oci.Identity.get_network_source(network_source_id=oci_identity_network_source["test_network_source"]["id"])
+    test_network_source = oci.Identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
     ```
     <!--End PulumiCodeChooser -->
 

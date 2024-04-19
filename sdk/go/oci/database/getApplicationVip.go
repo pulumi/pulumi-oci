@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetApplicationVip(ctx, &database.GetApplicationVipArgs{
-//				ApplicationVipId: oci_database_application_vip.Test_application_vip.Id,
+//				ApplicationVipId: testApplicationVipOciDatabaseApplicationVip.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

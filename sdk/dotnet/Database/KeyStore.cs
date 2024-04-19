@@ -25,19 +25,19 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testKeyStore = new Oci.Database.KeyStore("testKeyStore", new()
+    ///     var testKeyStore = new Oci.Database.KeyStore("test_key_store", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Key_store_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = keyStoreDisplayName,
     ///         TypeDetails = new Oci.Database.Inputs.KeyStoreTypeDetailsArgs
     ///         {
-    ///             AdminUsername = @var.Key_store_type_details_admin_username,
-    ///             ConnectionIps = @var.Key_store_type_details_connection_ips,
-    ///             SecretId = oci_vault_secret.Test_secret.Id,
-    ///             Type = @var.Key_store_type_details_type,
-    ///             VaultId = oci_kms_vault.Test_vault.Id,
+    ///             AdminUsername = keyStoreTypeDetailsAdminUsername,
+    ///             ConnectionIps = keyStoreTypeDetailsConnectionIps,
+    ///             SecretId = testSecret.Id,
+    ///             Type = keyStoreTypeDetailsType,
+    ///             VaultId = testVault.Id,
     ///         },
-    ///         DefinedTags = @var.Key_store_defined_tags,
+    ///         DefinedTags = keyStoreDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

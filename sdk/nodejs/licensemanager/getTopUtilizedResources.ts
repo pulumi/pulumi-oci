@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTopUtilizedResources = oci.LicenseManager.getTopUtilizedResources({
- *     compartmentId: _var.compartment_id,
- *     isCompartmentIdInSubtree: _var.top_utilized_resource_is_compartment_id_in_subtree,
- *     resourceUnitType: _var.top_utilized_resource_resource_unit_type,
+ *     compartmentId: compartmentId,
+ *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree,
+ *     resourceUnitType: topUtilizedResourceResourceUnitType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -83,9 +83,9 @@ export interface GetTopUtilizedResourcesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTopUtilizedResources = oci.LicenseManager.getTopUtilizedResources({
- *     compartmentId: _var.compartment_id,
- *     isCompartmentIdInSubtree: _var.top_utilized_resource_is_compartment_id_in_subtree,
- *     resourceUnitType: _var.top_utilized_resource_resource_unit_type,
+ *     compartmentId: compartmentId,
+ *     isCompartmentIdInSubtree: topUtilizedResourceIsCompartmentIdInSubtree,
+ *     resourceUnitType: topUtilizedResourceResourceUnitType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

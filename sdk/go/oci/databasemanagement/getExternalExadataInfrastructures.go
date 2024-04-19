@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalExadataInfrastructures(ctx, &databasemanagement.GetExternalExadataInfrastructuresArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.External_exadata_infrastructure_display_name),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(externalExadataInfrastructureDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

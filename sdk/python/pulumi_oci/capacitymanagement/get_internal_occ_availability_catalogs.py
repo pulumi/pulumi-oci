@@ -147,12 +147,12 @@ def get_internal_occ_availability_catalogs(catalog_state: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_availability_catalogs = oci.CapacityManagement.get_internal_occ_availability_catalogs(compartment_id=var["compartment_id"],
-        catalog_state=var["internal_occ_availability_catalog_catalog_state"],
-        display_name=var["internal_occ_availability_catalog_display_name"],
-        id=var["internal_occ_availability_catalog_id"],
-        namespace=var["internal_occ_availability_catalog_namespace"],
-        occ_customer_group_id=oci_capacity_management_occ_customer_group["test_occ_customer_group"]["id"])
+    test_internal_occ_availability_catalogs = oci.CapacityManagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
+        catalog_state=internal_occ_availability_catalog_catalog_state,
+        display_name=internal_occ_availability_catalog_display_name,
+        id=internal_occ_availability_catalog_id,
+        namespace=internal_occ_availability_catalog_namespace,
+        occ_customer_group_id=test_occ_customer_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,12 +207,12 @@ def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_occ_availability_catalogs = oci.CapacityManagement.get_internal_occ_availability_catalogs(compartment_id=var["compartment_id"],
-        catalog_state=var["internal_occ_availability_catalog_catalog_state"],
-        display_name=var["internal_occ_availability_catalog_display_name"],
-        id=var["internal_occ_availability_catalog_id"],
-        namespace=var["internal_occ_availability_catalog_namespace"],
-        occ_customer_group_id=oci_capacity_management_occ_customer_group["test_occ_customer_group"]["id"])
+    test_internal_occ_availability_catalogs = oci.CapacityManagement.get_internal_occ_availability_catalogs(compartment_id=compartment_id,
+        catalog_state=internal_occ_availability_catalog_catalog_state,
+        display_name=internal_occ_availability_catalog_display_name,
+        id=internal_occ_availability_catalog_id,
+        namespace=internal_occ_availability_catalog_namespace,
+        occ_customer_group_id=test_occ_customer_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 

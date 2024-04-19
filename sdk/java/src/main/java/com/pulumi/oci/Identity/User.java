@@ -78,10 +78,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testUser = new User(&#34;testUser&#34;, UserArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
- *             .description(var_.user_description())
+ *             .compartmentId(tenancyOcid)
+ *             .description(userDescription)
+ *             .name(userName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .email(var_.user_email())
+ *             .email(userEmail)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

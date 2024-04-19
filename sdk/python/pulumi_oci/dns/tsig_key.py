@@ -337,12 +337,13 @@ class TsigKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_tsig_key = oci.dns.TsigKey("testTsigKey",
-            algorithm=var["tsig_key_algorithm"],
-            compartment_id=var["compartment_id"],
-            secret=var["tsig_key_secret"],
-            defined_tags=var["tsig_key_defined_tags"],
-            freeform_tags=var["tsig_key_freeform_tags"])
+        test_tsig_key = oci.dns.TsigKey("test_tsig_key",
+            algorithm=tsig_key_algorithm,
+            compartment_id=compartment_id,
+            name=tsig_key_name,
+            secret=tsig_key_secret,
+            defined_tags=tsig_key_defined_tags,
+            freeform_tags=tsig_key_freeform_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -390,12 +391,13 @@ class TsigKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_tsig_key = oci.dns.TsigKey("testTsigKey",
-            algorithm=var["tsig_key_algorithm"],
-            compartment_id=var["compartment_id"],
-            secret=var["tsig_key_secret"],
-            defined_tags=var["tsig_key_defined_tags"],
-            freeform_tags=var["tsig_key_freeform_tags"])
+        test_tsig_key = oci.dns.TsigKey("test_tsig_key",
+            algorithm=tsig_key_algorithm,
+            compartment_id=compartment_id,
+            name=tsig_key_name,
+            secret=tsig_key_secret,
+            defined_tags=tsig_key_defined_tags,
+            freeform_tags=tsig_key_freeform_tags)
         ```
         <!--End PulumiCodeChooser -->
 

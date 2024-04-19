@@ -515,11 +515,11 @@ class ProductLicense(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_product_license = oci.license_manager.ProductLicense("testProductLicense",
-            compartment_id=var["compartment_id"],
-            display_name=var["product_license_display_name"],
-            is_vendor_oracle=var["product_license_is_vendor_oracle"],
-            license_unit=var["product_license_license_unit"],
+        test_product_license = oci.license_manager.ProductLicense("test_product_license",
+            compartment_id=compartment_id,
+            display_name=product_license_display_name,
+            is_vendor_oracle=product_license_is_vendor_oracle,
+            license_unit=product_license_license_unit,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -527,10 +527,10 @@ class ProductLicense(pulumi.CustomResource):
                 "bar-key": "value",
             },
             images=[oci.license_manager.ProductLicenseImageArgs(
-                listing_id=oci_marketplace_listing["test_listing"]["id"],
-                package_version=var["product_license_images_package_version"],
+                listing_id=test_listing["id"],
+                package_version=product_license_images_package_version,
             )],
-            vendor_name=var["product_license_vendor_name"])
+            vendor_name=product_license_vendor_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -575,11 +575,11 @@ class ProductLicense(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_product_license = oci.license_manager.ProductLicense("testProductLicense",
-            compartment_id=var["compartment_id"],
-            display_name=var["product_license_display_name"],
-            is_vendor_oracle=var["product_license_is_vendor_oracle"],
-            license_unit=var["product_license_license_unit"],
+        test_product_license = oci.license_manager.ProductLicense("test_product_license",
+            compartment_id=compartment_id,
+            display_name=product_license_display_name,
+            is_vendor_oracle=product_license_is_vendor_oracle,
+            license_unit=product_license_license_unit,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -587,10 +587,10 @@ class ProductLicense(pulumi.CustomResource):
                 "bar-key": "value",
             },
             images=[oci.license_manager.ProductLicenseImageArgs(
-                listing_id=oci_marketplace_listing["test_listing"]["id"],
-                package_version=var["product_license_images_package_version"],
+                listing_id=test_listing["id"],
+                package_version=product_license_images_package_version,
             )],
-            vendor_name=var["product_license_vendor_name"])
+            vendor_name=product_license_vendor_name)
         ```
         <!--End PulumiCodeChooser -->
 

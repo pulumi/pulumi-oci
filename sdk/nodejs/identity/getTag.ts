@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTag = oci.Identity.getTag({
- *     tagName: oci_identity_tag.test_tag.name,
- *     tagNamespaceId: oci_identity_tag_namespace.test_tag_namespace.id,
+ *     tagName: testTagOciIdentityTag.name,
+ *     tagNamespaceId: testTagNamespace.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,8 +111,8 @@ export interface GetTagResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTag = oci.Identity.getTag({
- *     tagName: oci_identity_tag.test_tag.name,
- *     tagNamespaceId: oci_identity_tag_namespace.test_tag_namespace.id,
+ *     tagName: testTagOciIdentityTag.name,
+ *     tagNamespaceId: testTagNamespace.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

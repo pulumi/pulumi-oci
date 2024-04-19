@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Autoscaling
         /// {
         ///     var testAutoScalingConfigurations = Oci.Autoscaling.GetAutoScalingConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Auto_scaling_configuration_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = autoScalingConfigurationDisplayName,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Autoscaling
         /// {
         ///     var testAutoScalingConfigurations = Oci.Autoscaling.GetAutoScalingConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Auto_scaling_configuration_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = autoScalingConfigurationDisplayName,
         ///     });
         /// 
         /// });

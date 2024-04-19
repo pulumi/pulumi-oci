@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Events
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRule = new Oci.Events.Rule("testRule", new()
+    ///     var testRule = new Oci.Events.Rule("test_rule", new()
     ///     {
     ///         Actions = new Oci.Events.Inputs.RuleActionsArgs
     ///         {
@@ -33,24 +33,24 @@ namespace Pulumi.Oci.Events
     ///             {
     ///                 new Oci.Events.Inputs.RuleActionsActionArgs
     ///                 {
-    ///                     ActionType = @var.Rule_actions_actions_action_type,
-    ///                     IsEnabled = @var.Rule_actions_actions_is_enabled,
-    ///                     Description = @var.Rule_actions_actions_description,
-    ///                     FunctionId = oci_functions_function.Test_function.Id,
-    ///                     StreamId = oci_streaming_stream.Test_stream.Id,
-    ///                     TopicId = oci_ons_notification_topic.Test_topic.Id,
+    ///                     ActionType = ruleActionsActionsActionType,
+    ///                     IsEnabled = ruleActionsActionsIsEnabled,
+    ///                     Description = ruleActionsActionsDescription,
+    ///                     FunctionId = testFunction.Id,
+    ///                     StreamId = testStream.Id,
+    ///                     TopicId = testTopic.Id,
     ///                 },
     ///             },
     ///         },
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Condition = @var.Rule_condition,
-    ///         DisplayName = @var.Rule_display_name,
-    ///         IsEnabled = @var.Rule_is_enabled,
+    ///         CompartmentId = compartmentId,
+    ///         Condition = ruleCondition,
+    ///         DisplayName = ruleDisplayName,
+    ///         IsEnabled = ruleIsEnabled,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Rule_description,
+    ///         Description = ruleDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

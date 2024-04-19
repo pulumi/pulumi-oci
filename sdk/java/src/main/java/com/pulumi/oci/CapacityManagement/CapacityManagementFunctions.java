@@ -68,12 +68,12 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .catalogState(var_.internal_occ_availability_catalog_catalog_state())
-     *             .displayName(var_.internal_occ_availability_catalog_display_name())
-     *             .id(var_.internal_occ_availability_catalog_id())
-     *             .namespace(var_.internal_occ_availability_catalog_namespace())
-     *             .occCustomerGroupId(oci_capacity_management_occ_customer_group.test_occ_customer_group().id())
+     *             .compartmentId(compartmentId)
+     *             .catalogState(internalOccAvailabilityCatalogCatalogState)
+     *             .displayName(internalOccAvailabilityCatalogDisplayName)
+     *             .id(internalOccAvailabilityCatalogId)
+     *             .namespace(internalOccAvailabilityCatalogNamespace)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
      *             .build());
      * 
      *     }
@@ -115,12 +115,12 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .catalogState(var_.internal_occ_availability_catalog_catalog_state())
-     *             .displayName(var_.internal_occ_availability_catalog_display_name())
-     *             .id(var_.internal_occ_availability_catalog_id())
-     *             .namespace(var_.internal_occ_availability_catalog_namespace())
-     *             .occCustomerGroupId(oci_capacity_management_occ_customer_group.test_occ_customer_group().id())
+     *             .compartmentId(compartmentId)
+     *             .catalogState(internalOccAvailabilityCatalogCatalogState)
+     *             .displayName(internalOccAvailabilityCatalogDisplayName)
+     *             .id(internalOccAvailabilityCatalogId)
+     *             .namespace(internalOccAvailabilityCatalogNamespace)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
      *             .build());
      * 
      *     }
@@ -162,12 +162,12 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .catalogState(var_.internal_occ_availability_catalog_catalog_state())
-     *             .displayName(var_.internal_occ_availability_catalog_display_name())
-     *             .id(var_.internal_occ_availability_catalog_id())
-     *             .namespace(var_.internal_occ_availability_catalog_namespace())
-     *             .occCustomerGroupId(oci_capacity_management_occ_customer_group.test_occ_customer_group().id())
+     *             .compartmentId(compartmentId)
+     *             .catalogState(internalOccAvailabilityCatalogCatalogState)
+     *             .displayName(internalOccAvailabilityCatalogDisplayName)
+     *             .id(internalOccAvailabilityCatalogId)
+     *             .namespace(internalOccAvailabilityCatalogNamespace)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
      *             .build());
      * 
      *     }
@@ -209,12 +209,12 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalOccAvailabilityCatalogs = CapacityManagementFunctions.getInternalOccAvailabilityCatalogs(GetInternalOccAvailabilityCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .catalogState(var_.internal_occ_availability_catalog_catalog_state())
-     *             .displayName(var_.internal_occ_availability_catalog_display_name())
-     *             .id(var_.internal_occ_availability_catalog_id())
-     *             .namespace(var_.internal_occ_availability_catalog_namespace())
-     *             .occCustomerGroupId(oci_capacity_management_occ_customer_group.test_occ_customer_group().id())
+     *             .compartmentId(compartmentId)
+     *             .catalogState(internalOccAvailabilityCatalogCatalogState)
+     *             .displayName(internalOccAvailabilityCatalogDisplayName)
+     *             .id(internalOccAvailabilityCatalogId)
+     *             .namespace(internalOccAvailabilityCatalogNamespace)
+     *             .occCustomerGroupId(testOccCustomerGroup.id())
      *             .build());
      * 
      *     }
@@ -256,7 +256,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -298,7 +298,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -340,7 +340,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -382,7 +382,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalog = CapacityManagementFunctions.getOccAvailabilityCatalog(GetOccAvailabilityCatalogArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -424,7 +424,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -466,7 +466,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -508,7 +508,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -550,7 +550,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogContent = CapacityManagementFunctions.getOccAvailabilityCatalogContent(GetOccAvailabilityCatalogContentArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -592,11 +592,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
-     *             .dateExpectedCapacityHandover(var_.occ_availability_catalog_occ_availability_date_expected_capacity_handover())
-     *             .resourceName(oci_usage_proxy_resource.test_resource().name())
-     *             .resourceType(var_.occ_availability_catalog_occ_availability_resource_type())
-     *             .workloadType(var_.occ_availability_catalog_occ_availability_workload_type())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
+     *             .resourceName(testResource.name())
+     *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
+     *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
      *             .build());
      * 
      *     }
@@ -638,11 +638,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
-     *             .dateExpectedCapacityHandover(var_.occ_availability_catalog_occ_availability_date_expected_capacity_handover())
-     *             .resourceName(oci_usage_proxy_resource.test_resource().name())
-     *             .resourceType(var_.occ_availability_catalog_occ_availability_resource_type())
-     *             .workloadType(var_.occ_availability_catalog_occ_availability_workload_type())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
+     *             .resourceName(testResource.name())
+     *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
+     *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
      *             .build());
      * 
      *     }
@@ -684,11 +684,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
-     *             .dateExpectedCapacityHandover(var_.occ_availability_catalog_occ_availability_date_expected_capacity_handover())
-     *             .resourceName(oci_usage_proxy_resource.test_resource().name())
-     *             .resourceType(var_.occ_availability_catalog_occ_availability_resource_type())
-     *             .workloadType(var_.occ_availability_catalog_occ_availability_workload_type())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
+     *             .resourceName(testResource.name())
+     *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
+     *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
      *             .build());
      * 
      *     }
@@ -730,11 +730,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogOccAvailabilities = CapacityManagementFunctions.getOccAvailabilityCatalogOccAvailabilities(GetOccAvailabilityCatalogOccAvailabilitiesArgs.builder()
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
-     *             .dateExpectedCapacityHandover(var_.occ_availability_catalog_occ_availability_date_expected_capacity_handover())
-     *             .resourceName(oci_usage_proxy_resource.test_resource().name())
-     *             .resourceType(var_.occ_availability_catalog_occ_availability_resource_type())
-     *             .workloadType(var_.occ_availability_catalog_occ_availability_workload_type())
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+     *             .dateExpectedCapacityHandover(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover)
+     *             .resourceName(testResource.name())
+     *             .resourceType(occAvailabilityCatalogOccAvailabilityResourceType)
+     *             .workloadType(occAvailabilityCatalogOccAvailabilityWorkloadType)
      *             .build());
      * 
      *     }
@@ -776,11 +776,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogs = CapacityManagementFunctions.getOccAvailabilityCatalogs(GetOccAvailabilityCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .catalogState(var_.occ_availability_catalog_catalog_state())
-     *             .displayName(var_.occ_availability_catalog_display_name())
-     *             .id(var_.occ_availability_catalog_id())
-     *             .namespace(var_.occ_availability_catalog_namespace())
+     *             .compartmentId(compartmentId)
+     *             .catalogState(occAvailabilityCatalogCatalogState)
+     *             .displayName(occAvailabilityCatalogDisplayName)
+     *             .id(occAvailabilityCatalogId)
+     *             .namespace(occAvailabilityCatalogNamespace)
      *             .build());
      * 
      *     }
@@ -822,11 +822,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogs = CapacityManagementFunctions.getOccAvailabilityCatalogs(GetOccAvailabilityCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .catalogState(var_.occ_availability_catalog_catalog_state())
-     *             .displayName(var_.occ_availability_catalog_display_name())
-     *             .id(var_.occ_availability_catalog_id())
-     *             .namespace(var_.occ_availability_catalog_namespace())
+     *             .compartmentId(compartmentId)
+     *             .catalogState(occAvailabilityCatalogCatalogState)
+     *             .displayName(occAvailabilityCatalogDisplayName)
+     *             .id(occAvailabilityCatalogId)
+     *             .namespace(occAvailabilityCatalogNamespace)
      *             .build());
      * 
      *     }
@@ -868,11 +868,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogs = CapacityManagementFunctions.getOccAvailabilityCatalogs(GetOccAvailabilityCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .catalogState(var_.occ_availability_catalog_catalog_state())
-     *             .displayName(var_.occ_availability_catalog_display_name())
-     *             .id(var_.occ_availability_catalog_id())
-     *             .namespace(var_.occ_availability_catalog_namespace())
+     *             .compartmentId(compartmentId)
+     *             .catalogState(occAvailabilityCatalogCatalogState)
+     *             .displayName(occAvailabilityCatalogDisplayName)
+     *             .id(occAvailabilityCatalogId)
+     *             .namespace(occAvailabilityCatalogNamespace)
      *             .build());
      * 
      *     }
@@ -914,11 +914,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccAvailabilityCatalogs = CapacityManagementFunctions.getOccAvailabilityCatalogs(GetOccAvailabilityCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .catalogState(var_.occ_availability_catalog_catalog_state())
-     *             .displayName(var_.occ_availability_catalog_display_name())
-     *             .id(var_.occ_availability_catalog_id())
-     *             .namespace(var_.occ_availability_catalog_namespace())
+     *             .compartmentId(compartmentId)
+     *             .catalogState(occAvailabilityCatalogCatalogState)
+     *             .displayName(occAvailabilityCatalogDisplayName)
+     *             .id(occAvailabilityCatalogId)
+     *             .namespace(occAvailabilityCatalogNamespace)
      *             .build());
      * 
      *     }
@@ -960,7 +960,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
-     *             .occCapacityRequestId(oci_capacity_management_occ_capacity_request.test_occ_capacity_request().id())
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
      *             .build());
      * 
      *     }
@@ -1002,7 +1002,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
-     *             .occCapacityRequestId(oci_capacity_management_occ_capacity_request.test_occ_capacity_request().id())
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
      *             .build());
      * 
      *     }
@@ -1044,7 +1044,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
-     *             .occCapacityRequestId(oci_capacity_management_occ_capacity_request.test_occ_capacity_request().id())
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
      *             .build());
      * 
      *     }
@@ -1086,7 +1086,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequest = CapacityManagementFunctions.getOccCapacityRequest(GetOccCapacityRequestArgs.builder()
-     *             .occCapacityRequestId(oci_capacity_management_occ_capacity_request.test_occ_capacity_request().id())
+     *             .occCapacityRequestId(testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id())
      *             .build());
      * 
      *     }
@@ -1128,11 +1128,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequests = CapacityManagementFunctions.getOccCapacityRequests(GetOccCapacityRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.occ_capacity_request_display_name())
-     *             .id(var_.occ_capacity_request_id())
-     *             .namespace(var_.occ_capacity_request_namespace())
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCapacityRequestDisplayName)
+     *             .id(occCapacityRequestId)
+     *             .namespace(occCapacityRequestNamespace)
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -1174,11 +1174,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequests = CapacityManagementFunctions.getOccCapacityRequests(GetOccCapacityRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.occ_capacity_request_display_name())
-     *             .id(var_.occ_capacity_request_id())
-     *             .namespace(var_.occ_capacity_request_namespace())
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCapacityRequestDisplayName)
+     *             .id(occCapacityRequestId)
+     *             .namespace(occCapacityRequestNamespace)
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -1220,11 +1220,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequests = CapacityManagementFunctions.getOccCapacityRequests(GetOccCapacityRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.occ_capacity_request_display_name())
-     *             .id(var_.occ_capacity_request_id())
-     *             .namespace(var_.occ_capacity_request_namespace())
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCapacityRequestDisplayName)
+     *             .id(occCapacityRequestId)
+     *             .namespace(occCapacityRequestNamespace)
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -1266,11 +1266,11 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCapacityRequests = CapacityManagementFunctions.getOccCapacityRequests(GetOccCapacityRequestsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.occ_capacity_request_display_name())
-     *             .id(var_.occ_capacity_request_id())
-     *             .namespace(var_.occ_capacity_request_namespace())
-     *             .occAvailabilityCatalogId(oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCapacityRequestDisplayName)
+     *             .id(occCapacityRequestId)
+     *             .namespace(occCapacityRequestNamespace)
+     *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
      *             .build());
      * 
      *     }
@@ -1312,7 +1312,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
-     *             .occCustomerGroupId(oci_capacity_management_occ_customer_group.test_occ_customer_group().id())
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
      *             .build());
      * 
      *     }
@@ -1354,7 +1354,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
-     *             .occCustomerGroupId(oci_capacity_management_occ_customer_group.test_occ_customer_group().id())
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
      *             .build());
      * 
      *     }
@@ -1396,7 +1396,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
-     *             .occCustomerGroupId(oci_capacity_management_occ_customer_group.test_occ_customer_group().id())
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
      *             .build());
      * 
      *     }
@@ -1438,7 +1438,7 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroup = CapacityManagementFunctions.getOccCustomerGroup(GetOccCustomerGroupArgs.builder()
-     *             .occCustomerGroupId(oci_capacity_management_occ_customer_group.test_occ_customer_group().id())
+     *             .occCustomerGroupId(testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id())
      *             .build());
      * 
      *     }
@@ -1480,10 +1480,10 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroups = CapacityManagementFunctions.getOccCustomerGroups(GetOccCustomerGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.occ_customer_group_display_name())
-     *             .id(var_.occ_customer_group_id())
-     *             .status(var_.occ_customer_group_status())
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCustomerGroupDisplayName)
+     *             .id(occCustomerGroupId)
+     *             .status(occCustomerGroupStatus)
      *             .build());
      * 
      *     }
@@ -1525,10 +1525,10 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroups = CapacityManagementFunctions.getOccCustomerGroups(GetOccCustomerGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.occ_customer_group_display_name())
-     *             .id(var_.occ_customer_group_id())
-     *             .status(var_.occ_customer_group_status())
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCustomerGroupDisplayName)
+     *             .id(occCustomerGroupId)
+     *             .status(occCustomerGroupStatus)
      *             .build());
      * 
      *     }
@@ -1570,10 +1570,10 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroups = CapacityManagementFunctions.getOccCustomerGroups(GetOccCustomerGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.occ_customer_group_display_name())
-     *             .id(var_.occ_customer_group_id())
-     *             .status(var_.occ_customer_group_status())
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCustomerGroupDisplayName)
+     *             .id(occCustomerGroupId)
+     *             .status(occCustomerGroupStatus)
      *             .build());
      * 
      *     }
@@ -1615,10 +1615,10 @@ public final class CapacityManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccCustomerGroups = CapacityManagementFunctions.getOccCustomerGroups(GetOccCustomerGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.occ_customer_group_display_name())
-     *             .id(var_.occ_customer_group_id())
-     *             .status(var_.occ_customer_group_status())
+     *             .compartmentId(compartmentId)
+     *             .displayName(occCustomerGroupDisplayName)
+     *             .id(occCustomerGroupId)
+     *             .status(occCustomerGroupStatus)
      *             .build());
      * 
      *     }

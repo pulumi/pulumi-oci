@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testSecurityLists = Oci.Core.GetSecurityLists.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Security_list_display_name,
-        ///         State = @var.Security_list_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = securityListDisplayName,
+        ///         State = securityListState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testSecurityLists = Oci.Core.GetSecurityLists.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Security_list_display_name,
-        ///         State = @var.Security_list_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = securityListDisplayName,
+        ///         State = securityListState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

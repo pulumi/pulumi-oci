@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetPublishers(ctx, &marketplace.GetPublishersArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				PublisherId:   pulumi.StringRef(oci_marketplace_publisher.Test_publisher.Id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				PublisherId:   pulumi.StringRef(testPublisher.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

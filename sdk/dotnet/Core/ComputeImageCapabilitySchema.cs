@@ -25,26 +25,26 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testComputeImageCapabilitySchema = new Oci.Core.ComputeImageCapabilitySchema("testComputeImageCapabilitySchema", new()
+    ///     var testComputeImageCapabilitySchema = new Oci.Core.ComputeImageCapabilitySchema("test_compute_image_capability_schema", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ComputeGlobalImageCapabilitySchemaVersionName = @var.Compute_image_capability_schema_compute_global_image_capability_schema_version_name,
-    ///         ImageId = oci_core_image.Test_image.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ComputeGlobalImageCapabilitySchemaVersionName = computeImageCapabilitySchemaComputeGlobalImageCapabilitySchemaVersionName,
+    ///         ImageId = testImage.Id,
     ///         SchemaData = new[]
     ///         {
     ///             new Dictionary&lt;string, object?&gt;
     ///             {
-    ///                 ["descriptorType"] = @var.Compute_image_capability_schema_schema_data_descriptor_type,
-    ///                 ["source"] = @var.Compute_image_capability_schema_schema_data_source,
-    ///                 ["defaultValue"] = @var.Compute_image_capability_schema_schema_data_default_value,
-    ///                 ["values"] = @var.Compute_image_capability_schema_schema_data_values,
+    ///                 ["descriptorType"] = computeImageCapabilitySchemaSchemaDataDescriptorType,
+    ///                 ["source"] = computeImageCapabilitySchemaSchemaDataSource,
+    ///                 ["defaultValue"] = computeImageCapabilitySchemaSchemaDataDefaultValue,
+    ///                 ["values"] = computeImageCapabilitySchemaSchemaDataValues,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Compute_image_capability_schema_display_name,
+    ///         DisplayName = computeImageCapabilitySchemaDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

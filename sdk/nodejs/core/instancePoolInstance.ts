@@ -22,9 +22,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstancePoolInstance = new oci.core.InstancePoolInstance("testInstancePoolInstance", {
- *     instanceId: oci_core_instance.test_instance.id,
- *     instancePoolId: oci_core_instance_pool.test_instance_pool.id,
+ * const testInstancePoolInstance = new oci.core.InstancePoolInstance("test_instance_pool_instance", {
+ *     instanceId: testInstance.id,
+ *     instancePoolId: testInstancePool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

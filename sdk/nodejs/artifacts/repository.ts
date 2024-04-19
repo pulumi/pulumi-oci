@@ -16,15 +16,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepository = new oci.artifacts.Repository("testRepository", {
- *     compartmentId: _var.compartment_id,
- *     isImmutable: _var.repository_is_immutable,
- *     repositoryType: _var.repository_repository_type,
+ * const testRepository = new oci.artifacts.Repository("test_repository", {
+ *     compartmentId: compartmentId,
+ *     isImmutable: repositoryIsImmutable,
+ *     repositoryType: repositoryRepositoryType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.repository_description,
- *     displayName: _var.repository_display_name,
+ *     description: repositoryDescription,
+ *     displayName: repositoryDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

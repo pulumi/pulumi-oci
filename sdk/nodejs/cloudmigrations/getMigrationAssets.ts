@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationAssets = oci.CloudMigrations.getMigrationAssets({
- *     displayName: _var.migration_asset_display_name,
- *     migrationAssetId: oci_cloud_migrations_migration_asset.test_migration_asset.id,
- *     migrationId: oci_cloud_migrations_migration.test_migration.id,
- *     state: _var.migration_asset_state,
+ *     displayName: migrationAssetDisplayName,
+ *     migrationAssetId: testMigrationAsset.id,
+ *     migrationId: testMigration.id,
+ *     state: migrationAssetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,10 +103,10 @@ export interface GetMigrationAssetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationAssets = oci.CloudMigrations.getMigrationAssets({
- *     displayName: _var.migration_asset_display_name,
- *     migrationAssetId: oci_cloud_migrations_migration_asset.test_migration_asset.id,
- *     migrationId: oci_cloud_migrations_migration.test_migration.id,
- *     state: _var.migration_asset_state,
+ *     displayName: migrationAssetDisplayName,
+ *     migrationAssetId: testMigrationAsset.id,
+ *     migrationId: testMigration.id,
+ *     state: migrationAssetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

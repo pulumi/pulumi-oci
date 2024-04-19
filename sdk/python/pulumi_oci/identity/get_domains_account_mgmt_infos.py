@@ -210,14 +210,14 @@ def get_domains_account_mgmt_infos(account_mgmt_info_count: Optional[int] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_infos = oci.Identity.get_domains_account_mgmt_infos(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        account_mgmt_info_count=var["account_mgmt_info_account_mgmt_info_count"],
-        account_mgmt_info_filter=var["account_mgmt_info_account_mgmt_info_filter"],
+    test_account_mgmt_infos = oci.Identity.get_domains_account_mgmt_infos(idcs_endpoint=test_domain["url"],
+        account_mgmt_info_count=account_mgmt_info_account_mgmt_info_count,
+        account_mgmt_info_filter=account_mgmt_info_account_mgmt_info_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["account_mgmt_info_authorization"],
-        resource_type_schema_version=var["account_mgmt_info_resource_type_schema_version"],
-        start_index=var["account_mgmt_info_start_index"])
+        authorization=account_mgmt_info_authorization,
+        resource_type_schema_version=account_mgmt_info_resource_type_schema_version,
+        start_index=account_mgmt_info_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_account_mgmt_infos_output(account_mgmt_info_count: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_infos = oci.Identity.get_domains_account_mgmt_infos(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        account_mgmt_info_count=var["account_mgmt_info_account_mgmt_info_count"],
-        account_mgmt_info_filter=var["account_mgmt_info_account_mgmt_info_filter"],
+    test_account_mgmt_infos = oci.Identity.get_domains_account_mgmt_infos(idcs_endpoint=test_domain["url"],
+        account_mgmt_info_count=account_mgmt_info_account_mgmt_info_count,
+        account_mgmt_info_filter=account_mgmt_info_account_mgmt_info_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["account_mgmt_info_authorization"],
-        resource_type_schema_version=var["account_mgmt_info_resource_type_schema_version"],
-        start_index=var["account_mgmt_info_start_index"])
+        authorization=account_mgmt_info_authorization,
+        resource_type_schema_version=account_mgmt_info_resource_type_schema_version,
+        start_index=account_mgmt_info_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

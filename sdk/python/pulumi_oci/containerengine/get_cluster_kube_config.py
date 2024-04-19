@@ -109,10 +109,10 @@ def get_cluster_kube_config(cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        endpoint=var["cluster_kube_config_endpoint"],
-        expiration=var["cluster_kube_config_expiration"],
-        token_version=var["cluster_kube_config_token_version"])
+    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=test_cluster["id"],
+        endpoint=cluster_kube_config_endpoint,
+        expiration=cluster_kube_config_expiration,
+        token_version=cluster_kube_config_token_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -157,10 +157,10 @@ def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        endpoint=var["cluster_kube_config_endpoint"],
-        expiration=var["cluster_kube_config_expiration"],
-        token_version=var["cluster_kube_config_token_version"])
+    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=test_cluster["id"],
+        endpoint=cluster_kube_config_endpoint,
+        expiration=cluster_kube_config_expiration,
+        token_version=cluster_kube_config_token_version)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.GetIngressGatewayRouteTables(ctx, &servicemesh.GetIngressGatewayRouteTablesArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				Id:               pulumi.StringRef(_var.Ingress_gateway_route_table_id),
-//				IngressGatewayId: pulumi.StringRef(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
-//				Name:             pulumi.StringRef(_var.Ingress_gateway_route_table_name),
-//				State:            pulumi.StringRef(_var.Ingress_gateway_route_table_state),
+//				CompartmentId:    compartmentId,
+//				Id:               pulumi.StringRef(ingressGatewayRouteTableId),
+//				IngressGatewayId: pulumi.StringRef(testIngressGateway.Id),
+//				Name:             pulumi.StringRef(ingressGatewayRouteTableName),
+//				State:            pulumi.StringRef(ingressGatewayRouteTableState),
 //			}, nil)
 //			if err != nil {
 //				return err

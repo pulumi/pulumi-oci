@@ -44,10 +44,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testReplicationPolicy = new ReplicationPolicy(&#34;testReplicationPolicy&#34;, ReplicationPolicyArgs.builder()        
- *             .bucket(var_.replication_policy_bucket())
- *             .destinationBucketName(oci_objectstorage_bucket.test_bucket().name())
- *             .destinationRegionName(oci_identity_region.test_region().name())
- *             .namespace(var_.replication_policy_namespace())
+ *             .bucket(replicationPolicyBucket)
+ *             .destinationBucketName(testBucket.name())
+ *             .destinationRegionName(testRegion.name())
+ *             .name(replicationPolicyName)
+ *             .namespace(replicationPolicyNamespace)
  *             .build());
  * 
  *     }

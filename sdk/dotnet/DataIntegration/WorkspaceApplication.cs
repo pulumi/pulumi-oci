@@ -25,39 +25,40 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWorkspaceApplication = new Oci.DataIntegration.WorkspaceApplication("testWorkspaceApplication", new()
+    ///     var testWorkspaceApplication = new Oci.DataIntegration.WorkspaceApplication("test_workspace_application", new()
     ///     {
-    ///         Identifier = @var.Workspace_application_identifier,
-    ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-    ///         ModelType = @var.Workspace_application_model_type,
+    ///         Identifier = workspaceApplicationIdentifier,
+    ///         Name = workspaceApplicationName,
+    ///         WorkspaceId = testWorkspace.Id,
+    ///         ModelType = workspaceApplicationModelType,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Workspace_application_description,
-    ///         DisplayName = @var.Workspace_application_display_name,
+    ///         Description = workspaceApplicationDescription,
+    ///         DisplayName = workspaceApplicationDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Key = @var.Workspace_application_key,
-    ///         ModelVersion = @var.Workspace_application_model_version,
-    ///         ObjectStatus = @var.Workspace_application_object_status,
+    ///         Key = workspaceApplicationKey,
+    ///         ModelVersion = workspaceApplicationModelVersion,
+    ///         ObjectStatus = workspaceApplicationObjectStatus,
     ///         RegistryMetadata = new Oci.DataIntegration.Inputs.WorkspaceApplicationRegistryMetadataArgs
     ///         {
-    ///             AggregatorKey = @var.Workspace_application_registry_metadata_aggregator_key,
-    ///             IsFavorite = @var.Workspace_application_registry_metadata_is_favorite,
-    ///             Key = @var.Workspace_application_registry_metadata_key,
-    ///             Labels = @var.Workspace_application_registry_metadata_labels,
-    ///             RegistryVersion = @var.Workspace_application_registry_metadata_registry_version,
+    ///             AggregatorKey = workspaceApplicationRegistryMetadataAggregatorKey,
+    ///             IsFavorite = workspaceApplicationRegistryMetadataIsFavorite,
+    ///             Key = workspaceApplicationRegistryMetadataKey,
+    ///             Labels = workspaceApplicationRegistryMetadataLabels,
+    ///             RegistryVersion = workspaceApplicationRegistryMetadataRegistryVersion,
     ///         },
     ///         SourceApplicationInfo = new Oci.DataIntegration.Inputs.WorkspaceApplicationSourceApplicationInfoArgs
     ///         {
-    ///             ApplicationKey = @var.Workspace_application_source_application_info_application_key,
-    ///             CopyType = @var.Workspace_application_source_application_info_copy_type,
-    ///             WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+    ///             ApplicationKey = workspaceApplicationSourceApplicationInfoApplicationKey,
+    ///             CopyType = workspaceApplicationSourceApplicationInfoCopyType,
+    ///             WorkspaceId = testWorkspace.Id,
     ///         },
-    ///         State = @var.Workspace_application_state,
+    ///         State = workspaceApplicationState,
     ///     });
     /// 
     /// });

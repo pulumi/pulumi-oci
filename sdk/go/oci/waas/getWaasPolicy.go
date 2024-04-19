@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waas.GetWaasPolicy(ctx, &waas.GetWaasPolicyArgs{
-//				WaasPolicyId: oci_waas_waas_policy.Test_waas_policy.Id,
+//				WaasPolicyId: testWaasPolicyOciWaasWaasPolicy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

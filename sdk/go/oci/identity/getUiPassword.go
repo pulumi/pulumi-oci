@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetUiPassword(ctx, &identity.GetUiPasswordArgs{
-//				UserId: oci_identity_user.Test_user.Id,
+//				UserId: testUser.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

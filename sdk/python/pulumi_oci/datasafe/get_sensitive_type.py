@@ -295,7 +295,7 @@ def get_sensitive_type(sensitive_type_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
+    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -346,7 +346,7 @@ def get_sensitive_type_output(sensitive_type_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
+    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
     ```
     <!--End PulumiCodeChooser -->
 

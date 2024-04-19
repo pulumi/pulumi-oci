@@ -31,17 +31,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetResourceActions(ctx, &optimizer.GetResourceActionsArgs{
-//				CompartmentId:           _var.Compartment_id,
-//				CompartmentIdInSubtree:  _var.Resource_action_compartment_id_in_subtree,
-//				ChildTenancyIds:         _var.Resource_action_child_tenancy_ids,
-//				IncludeOrganization:     pulumi.BoolRef(_var.Resource_action_include_organization),
-//				IncludeResourceMetadata: pulumi.BoolRef(_var.Resource_action_include_resource_metadata),
-//				Name:                    pulumi.StringRef(_var.Resource_action_name),
-//				RecommendationId:        pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Id),
-//				RecommendationName:      pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
-//				ResourceType:            pulumi.StringRef(_var.Resource_action_resource_type),
-//				State:                   pulumi.StringRef(_var.Resource_action_state),
-//				Status:                  pulumi.StringRef(_var.Resource_action_status),
+//				CompartmentId:           compartmentId,
+//				CompartmentIdInSubtree:  resourceActionCompartmentIdInSubtree,
+//				ChildTenancyIds:         resourceActionChildTenancyIds,
+//				IncludeOrganization:     pulumi.BoolRef(resourceActionIncludeOrganization),
+//				IncludeResourceMetadata: pulumi.BoolRef(resourceActionIncludeResourceMetadata),
+//				Name:                    pulumi.StringRef(resourceActionName),
+//				RecommendationId:        pulumi.StringRef(testRecommendation.Id),
+//				RecommendationName:      pulumi.StringRef(testRecommendation.Name),
+//				ResourceType:            pulumi.StringRef(resourceActionResourceType),
+//				State:                   pulumi.StringRef(resourceActionState),
+//				Status:                  pulumi.StringRef(resourceActionStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

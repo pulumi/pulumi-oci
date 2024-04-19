@@ -29,19 +29,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogAnalyticsEntities = Oci.LogAnalytics.GetLogAnalyticsEntities.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Log_analytics_entity_namespace,
-        ///         CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
-        ///         EntityTypeNames = @var.Log_analytics_entity_entity_type_name,
-        ///         Hostname = @var.Log_analytics_entity_hostname,
-        ///         HostnameContains = @var.Log_analytics_entity_hostname_contains,
-        ///         IsManagementAgentIdNull = @var.Log_analytics_entity_is_management_agent_id_null,
-        ///         LifecycleDetailsContains = @var.Log_analytics_entity_lifecycle_details_contains,
-        ///         MetadataEquals = @var.Log_analytics_entity_metadata_equals,
-        ///         Name = @var.Log_analytics_entity_name,
-        ///         NameContains = @var.Log_analytics_entity_name_contains,
-        ///         SourceId = oci_log_analytics_source.Test_source.Id,
-        ///         State = @var.Log_analytics_entity_state,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = logAnalyticsEntityNamespace,
+        ///         CloudResourceId = testCloudResource.Id,
+        ///         EntityTypeNames = logAnalyticsEntityEntityTypeName,
+        ///         Hostname = logAnalyticsEntityHostname,
+        ///         HostnameContains = logAnalyticsEntityHostnameContains,
+        ///         IsManagementAgentIdNull = logAnalyticsEntityIsManagementAgentIdNull,
+        ///         LifecycleDetailsContains = logAnalyticsEntityLifecycleDetailsContains,
+        ///         MetadataEquals = logAnalyticsEntityMetadataEquals,
+        ///         Name = logAnalyticsEntityName,
+        ///         NameContains = logAnalyticsEntityNameContains,
+        ///         SourceId = testSource.Id,
+        ///         State = logAnalyticsEntityState,
         ///     });
         /// 
         /// });
@@ -69,19 +69,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogAnalyticsEntities = Oci.LogAnalytics.GetLogAnalyticsEntities.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Log_analytics_entity_namespace,
-        ///         CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
-        ///         EntityTypeNames = @var.Log_analytics_entity_entity_type_name,
-        ///         Hostname = @var.Log_analytics_entity_hostname,
-        ///         HostnameContains = @var.Log_analytics_entity_hostname_contains,
-        ///         IsManagementAgentIdNull = @var.Log_analytics_entity_is_management_agent_id_null,
-        ///         LifecycleDetailsContains = @var.Log_analytics_entity_lifecycle_details_contains,
-        ///         MetadataEquals = @var.Log_analytics_entity_metadata_equals,
-        ///         Name = @var.Log_analytics_entity_name,
-        ///         NameContains = @var.Log_analytics_entity_name_contains,
-        ///         SourceId = oci_log_analytics_source.Test_source.Id,
-        ///         State = @var.Log_analytics_entity_state,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = logAnalyticsEntityNamespace,
+        ///         CloudResourceId = testCloudResource.Id,
+        ///         EntityTypeNames = logAnalyticsEntityEntityTypeName,
+        ///         Hostname = logAnalyticsEntityHostname,
+        ///         HostnameContains = logAnalyticsEntityHostnameContains,
+        ///         IsManagementAgentIdNull = logAnalyticsEntityIsManagementAgentIdNull,
+        ///         LifecycleDetailsContains = logAnalyticsEntityLifecycleDetailsContains,
+        ///         MetadataEquals = logAnalyticsEntityMetadataEquals,
+        ///         Name = logAnalyticsEntityName,
+        ///         NameContains = logAnalyticsEntityNameContains,
+        ///         SourceId = testSource.Id,
+        ///         State = logAnalyticsEntityState,
         ///     });
         /// 
         /// });

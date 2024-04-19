@@ -41,15 +41,15 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRouteTable = new Oci.Core.RouteTable("testRouteTable", new()
+    ///     var testRouteTable = new Oci.Core.RouteTable("test_route_table", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         CompartmentId = compartmentId,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Route_table_display_name,
+    ///         DisplayName = routeTableDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -58,11 +58,11 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             new Oci.Core.Inputs.RouteTableRouteRuleArgs
     ///             {
-    ///                 NetworkEntityId = oci_core_internet_gateway.Test_internet_gateway.Id,
-    ///                 CidrBlock = @var.Route_table_route_rules_cidr_block,
-    ///                 Description = @var.Route_table_route_rules_description,
-    ///                 Destination = @var.Route_table_route_rules_destination,
-    ///                 DestinationType = @var.Route_table_route_rules_destination_type,
+    ///                 NetworkEntityId = testInternetGateway.Id,
+    ///                 CidrBlock = routeTableRouteRulesCidrBlock,
+    ///                 Description = routeTableRouteRulesDescription,
+    ///                 Destination = routeTableRouteRulesDestination,
+    ///                 DestinationType = routeTableRouteRulesDestinationType,
     ///             },
     ///         },
     ///     });

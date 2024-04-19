@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedAiClusters = oci.GenerativeAi.getDedicatedAiClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.dedicated_ai_cluster_display_name,
- *     id: _var.dedicated_ai_cluster_id,
- *     state: _var.dedicated_ai_cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: dedicatedAiClusterDisplayName,
+ *     id: dedicatedAiClusterId,
+ *     state: dedicatedAiClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetDedicatedAiClustersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedAiClusters = oci.GenerativeAi.getDedicatedAiClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.dedicated_ai_cluster_display_name,
- *     id: _var.dedicated_ai_cluster_id,
- *     state: _var.dedicated_ai_cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: dedicatedAiClusterDisplayName,
+ *     id: dedicatedAiClusterId,
+ *     state: dedicatedAiClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

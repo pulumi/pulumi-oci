@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Artifacts.GetContainerImageSignature(ctx, &artifacts.GetContainerImageSignatureArgs{
-//				ImageSignatureId: oci_artifacts_image_signature.Test_image_signature.Id,
+//				ImageSignatureId: testImageSignature.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

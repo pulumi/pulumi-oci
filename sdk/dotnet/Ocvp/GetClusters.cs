@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testClusters = Oci.Ocvp.GetClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Cluster_display_name,
-        ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
-        ///         State = @var.Cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = clusterDisplayName,
+        ///         SddcId = testSddc.Id,
+        ///         State = clusterState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testClusters = Oci.Ocvp.GetClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Cluster_display_name,
-        ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
-        ///         State = @var.Cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = clusterDisplayName,
+        ///         SddcId = testSddc.Id,
+        ///         State = clusterState,
         ///     });
         /// 
         /// });

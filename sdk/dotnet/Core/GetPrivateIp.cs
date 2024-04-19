@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testPrivateIp = Oci.Core.GetPrivateIp.Invoke(new()
         ///     {
-        ///         PrivateIpId = oci_core_private_ip.Test_private_ip.Id,
+        ///         PrivateIpId = testPrivateIpOciCorePrivateIp.Id,
         ///     });
         /// 
         /// });
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testPrivateIp = Oci.Core.GetPrivateIp.Invoke(new()
         ///     {
-        ///         PrivateIpId = oci_core_private_ip.Test_private_ip.Id,
+        ///         PrivateIpId = testPrivateIpOciCorePrivateIp.Id,
         ///     });
         /// 
         /// });

@@ -135,11 +135,11 @@ def get_remediation_runs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=var["compartment_id"],
-        display_name=var["remediation_run_display_name"],
-        id=var["remediation_run_id"],
-        remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
-        state=var["remediation_run_state"])
+    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=compartment_id,
+        display_name=remediation_run_display_name,
+        id=remediation_run_id,
+        remediation_recipe_id=test_remediation_recipe["id"],
+        state=remediation_run_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -191,11 +191,11 @@ def get_remediation_runs_output(compartment_id: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=var["compartment_id"],
-        display_name=var["remediation_run_display_name"],
-        id=var["remediation_run_id"],
-        remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
-        state=var["remediation_run_state"])
+    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=compartment_id,
+        display_name=remediation_run_display_name,
+        id=remediation_run_id,
+        remediation_recipe_id=test_remediation_recipe["id"],
+        state=remediation_run_state)
     ```
     <!--End PulumiCodeChooser -->
 

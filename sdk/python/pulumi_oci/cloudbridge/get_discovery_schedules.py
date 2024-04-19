@@ -130,10 +130,10 @@ def get_discovery_schedules(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=var["compartment_id"],
-        discovery_schedule_id=oci_cloud_bridge_discovery_schedule["test_discovery_schedule"]["id"],
-        display_name=var["discovery_schedule_display_name"],
-        state=var["discovery_schedule_state"])
+    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=compartment_id,
+        discovery_schedule_id=test_discovery_schedule["id"],
+        display_name=discovery_schedule_display_name,
+        state=discovery_schedule_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_discovery_schedules_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=var["compartment_id"],
-        discovery_schedule_id=oci_cloud_bridge_discovery_schedule["test_discovery_schedule"]["id"],
-        display_name=var["discovery_schedule_display_name"],
-        state=var["discovery_schedule_state"])
+    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=compartment_id,
+        discovery_schedule_id=test_discovery_schedule["id"],
+        display_name=discovery_schedule_display_name,
+        state=discovery_schedule_state)
     ```
     <!--End PulumiCodeChooser -->
 

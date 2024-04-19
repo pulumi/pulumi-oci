@@ -134,11 +134,11 @@ def get_deploy_environments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_environments = oci.DevOps.get_deploy_environments(compartment_id=var["compartment_id"],
-        display_name=var["deploy_environment_display_name"],
-        id=var["deploy_environment_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deploy_environment_state"])
+    test_deploy_environments = oci.DevOps.get_deploy_environments(compartment_id=compartment_id,
+        display_name=deploy_environment_display_name,
+        id=deploy_environment_id,
+        project_id=test_project["id"],
+        state=deploy_environment_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_deploy_environments_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_environments = oci.DevOps.get_deploy_environments(compartment_id=var["compartment_id"],
-        display_name=var["deploy_environment_display_name"],
-        id=var["deploy_environment_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deploy_environment_state"])
+    test_deploy_environments = oci.DevOps.get_deploy_environments(compartment_id=compartment_id,
+        display_name=deploy_environment_display_name,
+        id=deploy_environment_id,
+        project_id=test_project["id"],
+        state=deploy_environment_state)
     ```
     <!--End PulumiCodeChooser -->
 

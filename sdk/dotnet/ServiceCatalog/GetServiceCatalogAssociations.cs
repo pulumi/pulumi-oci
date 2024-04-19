@@ -29,10 +29,10 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {
         ///     var testServiceCatalogAssociations = Oci.ServiceCatalog.GetServiceCatalogAssociations.Invoke(new()
         ///     {
-        ///         EntityId = oci_service_catalog_entity.Test_entity.Id,
-        ///         EntityType = @var.Service_catalog_association_entity_type,
-        ///         ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
-        ///         ServiceCatalogId = oci_service_catalog_service_catalog.Test_service_catalog.Id,
+        ///         EntityId = testEntity.Id,
+        ///         EntityType = serviceCatalogAssociationEntityType,
+        ///         ServiceCatalogAssociationId = testServiceCatalogAssociation.Id,
+        ///         ServiceCatalogId = testServiceCatalog.Id,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {
         ///     var testServiceCatalogAssociations = Oci.ServiceCatalog.GetServiceCatalogAssociations.Invoke(new()
         ///     {
-        ///         EntityId = oci_service_catalog_entity.Test_entity.Id,
-        ///         EntityType = @var.Service_catalog_association_entity_type,
-        ///         ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
-        ///         ServiceCatalogId = oci_service_catalog_service_catalog.Test_service_catalog.Id,
+        ///         EntityId = testEntity.Id,
+        ///         EntityType = serviceCatalogAssociationEntityType,
+        ///         ServiceCatalogAssociationId = testServiceCatalogAssociation.Id,
+        ///         ServiceCatalogId = testServiceCatalog.Id,
         ///     });
         /// 
         /// });

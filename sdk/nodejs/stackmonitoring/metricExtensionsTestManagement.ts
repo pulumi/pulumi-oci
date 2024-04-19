@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricExtensionsTestManagement = new oci.stackmonitoring.MetricExtensionsTestManagement("testMetricExtensionsTestManagement", {
- *     metricExtensionId: oci_stack_monitoring_metric_extension.test_metric_extension.id,
- *     resourceIds: _var.metric_extensions_test_management_resource_ids,
+ * const testMetricExtensionsTestManagement = new oci.stackmonitoring.MetricExtensionsTestManagement("test_metric_extensions_test_management", {
+ *     metricExtensionId: testMetricExtension.id,
+ *     resourceIds: metricExtensionsTestManagementResourceIds[0],
  * });
  * ```
  * <!--End PulumiCodeChooser -->

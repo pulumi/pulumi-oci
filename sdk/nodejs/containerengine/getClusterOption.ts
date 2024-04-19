@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testClusterOption = oci.ContainerEngine.getClusterOption({
- *     clusterOptionId: oci_containerengine_cluster_option.test_cluster_option.id,
- *     compartmentId: _var.compartment_id,
+ *     clusterOptionId: testClusterOptionOciContainerengineClusterOption.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -80,8 +80,8 @@ export interface GetClusterOptionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testClusterOption = oci.ContainerEngine.getClusterOption({
- *     clusterOptionId: oci_containerengine_cluster_option.test_cluster_option.id,
- *     compartmentId: _var.compartment_id,
+ *     clusterOptionId: testClusterOptionOciContainerengineClusterOption.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

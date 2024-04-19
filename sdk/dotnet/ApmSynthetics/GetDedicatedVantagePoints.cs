@@ -30,10 +30,10 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testDedicatedVantagePoints = Oci.ApmSynthetics.GetDedicatedVantagePoints.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         DisplayName = @var.Dedicated_vantage_point_display_name,
-        ///         Name = @var.Dedicated_vantage_point_name,
-        ///         Status = @var.Dedicated_vantage_point_status,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DisplayName = dedicatedVantagePointDisplayName,
+        ///         Name = dedicatedVantagePointName,
+        ///         Status = dedicatedVantagePointStatus,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testDedicatedVantagePoints = Oci.ApmSynthetics.GetDedicatedVantagePoints.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         DisplayName = @var.Dedicated_vantage_point_display_name,
-        ///         Name = @var.Dedicated_vantage_point_name,
-        ///         Status = @var.Dedicated_vantage_point_status,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DisplayName = dedicatedVantagePointDisplayName,
+        ///         Name = dedicatedVantagePointName,
+        ///         Status = dedicatedVantagePointStatus,
         ///     });
         /// 
         /// });

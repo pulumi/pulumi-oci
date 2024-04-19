@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStacks = oci.ResourceManager.getStacks({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.stack_display_name,
- *     id: _var.stack_id,
- *     state: _var.stack_state,
+ *     compartmentId: compartmentId,
+ *     displayName: stackDisplayName,
+ *     id: stackId,
+ *     state: stackState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,10 +111,10 @@ export interface GetStacksResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStacks = oci.ResourceManager.getStacks({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.stack_display_name,
- *     id: _var.stack_id,
- *     state: _var.stack_state,
+ *     compartmentId: compartmentId,
+ *     displayName: stackDisplayName,
+ *     id: stackId,
+ *     state: stackState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -32,9 +32,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExternalNonContainerDatabaseOperationsInsightsManagement(ctx, "testExternalNonContainerDatabaseOperationsInsightsManagement", &Database.ExternalNonContainerDatabaseOperationsInsightsManagementArgs{
-//				ExternalDatabaseConnectorId:    pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
-//				ExternalNonContainerDatabaseId: pulumi.Any(oci_database_external_non_container_database.Test_external_non_container_database.Id),
+//			_, err := Database.NewExternalNonContainerDatabaseOperationsInsightsManagement(ctx, "test_external_non_container_database_operations_insights_management", &Database.ExternalNonContainerDatabaseOperationsInsightsManagementArgs{
+//				ExternalDatabaseConnectorId:    pulumi.Any(testExternalDatabaseConnector.Id),
+//				ExternalNonContainerDatabaseId: pulumi.Any(testExternalNonContainerDatabase.Id),
 //				EnableOperationsInsights:       pulumi.Bool(true),
 //			})
 //			if err != nil {

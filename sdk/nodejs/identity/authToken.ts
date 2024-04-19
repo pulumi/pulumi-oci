@@ -25,9 +25,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthToken = new oci.identity.AuthToken("testAuthToken", {
- *     description: _var.auth_token_description,
- *     userId: oci_identity_user.test_user.id,
+ * const testAuthToken = new oci.identity.AuthToken("test_auth_token", {
+ *     description: authTokenDescription,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

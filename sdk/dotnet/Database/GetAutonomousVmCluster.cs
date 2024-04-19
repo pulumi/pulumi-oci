@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousVmCluster = Oci.Database.GetAutonomousVmCluster.Invoke(new()
         ///     {
-        ///         AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
+        ///         AutonomousVmClusterId = testAutonomousVmClusterOciDatabaseAutonomousVmCluster.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousVmCluster = Oci.Database.GetAutonomousVmCluster.Invoke(new()
         ///     {
-        ///         AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
+        ///         AutonomousVmClusterId = testAutonomousVmClusterOciDatabaseAutonomousVmCluster.Id,
         ///     });
         /// 
         /// });

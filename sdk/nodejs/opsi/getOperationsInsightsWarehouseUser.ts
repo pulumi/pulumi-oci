@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsWarehouseUser = oci.Opsi.getOperationsInsightsWarehouseUser({
- *     operationsInsightsWarehouseUserId: oci_opsi_operations_insights_warehouse_user.test_operations_insights_warehouse_user.id,
+ *     operationsInsightsWarehouseUserId: testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,7 +119,7 @@ export interface GetOperationsInsightsWarehouseUserResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsWarehouseUser = oci.Opsi.getOperationsInsightsWarehouseUser({
- *     operationsInsightsWarehouseUserId: oci_opsi_operations_insights_warehouse_user.test_operations_insights_warehouse_user.id,
+ *     operationsInsightsWarehouseUserId: testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

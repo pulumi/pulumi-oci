@@ -273,17 +273,17 @@ class KeyStore(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_key_store = oci.database.KeyStore("testKeyStore",
-            compartment_id=var["compartment_id"],
-            display_name=var["key_store_display_name"],
+        test_key_store = oci.database.KeyStore("test_key_store",
+            compartment_id=compartment_id,
+            display_name=key_store_display_name,
             type_details=oci.database.KeyStoreTypeDetailsArgs(
-                admin_username=var["key_store_type_details_admin_username"],
-                connection_ips=var["key_store_type_details_connection_ips"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["key_store_type_details_type"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
+                admin_username=key_store_type_details_admin_username,
+                connection_ips=key_store_type_details_connection_ips,
+                secret_id=test_secret["id"],
+                type=key_store_type_details_type,
+                vault_id=test_vault["id"],
             ),
-            defined_tags=var["key_store_defined_tags"],
+            defined_tags=key_store_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -324,17 +324,17 @@ class KeyStore(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_key_store = oci.database.KeyStore("testKeyStore",
-            compartment_id=var["compartment_id"],
-            display_name=var["key_store_display_name"],
+        test_key_store = oci.database.KeyStore("test_key_store",
+            compartment_id=compartment_id,
+            display_name=key_store_display_name,
             type_details=oci.database.KeyStoreTypeDetailsArgs(
-                admin_username=var["key_store_type_details_admin_username"],
-                connection_ips=var["key_store_type_details_connection_ips"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["key_store_type_details_type"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
+                admin_username=key_store_type_details_admin_username,
+                connection_ips=key_store_type_details_connection_ips,
+                secret_id=test_secret["id"],
+                type=key_store_type_details_type,
+                vault_id=test_vault["id"],
             ),
-            defined_tags=var["key_store_defined_tags"],
+            defined_tags=key_store_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })

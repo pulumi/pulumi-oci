@@ -120,8 +120,8 @@ def get_media_workflow_job_fact(key: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_job_fact = oci.MediaServices.get_media_workflow_job_fact(key=var["media_workflow_job_fact_key"],
-        media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
+    test_media_workflow_job_fact = oci.MediaServices.get_media_workflow_job_fact(key=media_workflow_job_fact_key,
+        media_workflow_job_id=test_media_workflow_job["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -161,8 +161,8 @@ def get_media_workflow_job_fact_output(key: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_job_fact = oci.MediaServices.get_media_workflow_job_fact(key=var["media_workflow_job_fact_key"],
-        media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
+    test_media_workflow_job_fact = oci.MediaServices.get_media_workflow_job_fact(key=media_workflow_job_fact_key,
+        media_workflow_job_id=test_media_workflow_job["id"])
     ```
     <!--End PulumiCodeChooser -->
 

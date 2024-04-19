@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testHostInsight = Oci.Opsi.GetHostInsight.Invoke(new()
         ///     {
-        ///         HostInsightId = oci_opsi_host_insight.Test_host_insight.Id,
+        ///         HostInsightId = testHostInsightOciOpsiHostInsight.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testHostInsight = Oci.Opsi.GetHostInsight.Invoke(new()
         ///     {
-        ///         HostInsightId = oci_opsi_host_insight.Test_host_insight.Id,
+        ///         HostInsightId = testHostInsightOciOpsiHostInsight.Id,
         ///     });
         /// 
         /// });

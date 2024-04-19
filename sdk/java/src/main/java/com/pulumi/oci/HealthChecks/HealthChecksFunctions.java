@@ -62,7 +62,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .monitorId(testMonitor.id())
      *             .build());
      * 
      *     }
@@ -104,7 +104,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .monitorId(testMonitor.id())
      *             .build());
      * 
      *     }
@@ -146,7 +146,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .monitorId(testMonitor.id())
      *             .build());
      * 
      *     }
@@ -188,7 +188,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .monitorId(testMonitor.id())
      *             .build());
      * 
      *     }
@@ -230,9 +230,9 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitors = HealthChecksFunctions.getHttpMonitors(GetHttpMonitorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.http_monitor_display_name())
-     *             .homeRegion(var_.http_monitor_home_region())
+     *             .compartmentId(compartmentId)
+     *             .displayName(httpMonitorDisplayName)
+     *             .homeRegion(httpMonitorHomeRegion)
      *             .build());
      * 
      *     }
@@ -274,9 +274,9 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitors = HealthChecksFunctions.getHttpMonitors(GetHttpMonitorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.http_monitor_display_name())
-     *             .homeRegion(var_.http_monitor_home_region())
+     *             .compartmentId(compartmentId)
+     *             .displayName(httpMonitorDisplayName)
+     *             .homeRegion(httpMonitorHomeRegion)
      *             .build());
      * 
      *     }
@@ -318,9 +318,9 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitors = HealthChecksFunctions.getHttpMonitors(GetHttpMonitorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.http_monitor_display_name())
-     *             .homeRegion(var_.http_monitor_home_region())
+     *             .compartmentId(compartmentId)
+     *             .displayName(httpMonitorDisplayName)
+     *             .homeRegion(httpMonitorHomeRegion)
      *             .build());
      * 
      *     }
@@ -362,9 +362,9 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitors = HealthChecksFunctions.getHttpMonitors(GetHttpMonitorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.http_monitor_display_name())
-     *             .homeRegion(var_.http_monitor_home_region())
+     *             .compartmentId(compartmentId)
+     *             .displayName(httpMonitorDisplayName)
+     *             .homeRegion(httpMonitorHomeRegion)
      *             .build());
      * 
      *     }
@@ -408,10 +408,10 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
-     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
-     *             .startTimeGreaterThanOrEqualTo(var_.http_probe_result_start_time_greater_than_or_equal_to())
-     *             .startTimeLessThanOrEqualTo(var_.http_probe_result_start_time_less_than_or_equal_to())
-     *             .target(var_.http_probe_result_target())
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(httpProbeResultTarget)
      *             .build());
      * 
      *     }
@@ -455,10 +455,10 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
-     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
-     *             .startTimeGreaterThanOrEqualTo(var_.http_probe_result_start_time_greater_than_or_equal_to())
-     *             .startTimeLessThanOrEqualTo(var_.http_probe_result_start_time_less_than_or_equal_to())
-     *             .target(var_.http_probe_result_target())
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(httpProbeResultTarget)
      *             .build());
      * 
      *     }
@@ -502,10 +502,10 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
-     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
-     *             .startTimeGreaterThanOrEqualTo(var_.http_probe_result_start_time_greater_than_or_equal_to())
-     *             .startTimeLessThanOrEqualTo(var_.http_probe_result_start_time_less_than_or_equal_to())
-     *             .target(var_.http_probe_result_target())
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(httpProbeResultTarget)
      *             .build());
      * 
      *     }
@@ -549,10 +549,10 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
-     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
-     *             .startTimeGreaterThanOrEqualTo(var_.http_probe_result_start_time_greater_than_or_equal_to())
-     *             .startTimeLessThanOrEqualTo(var_.http_probe_result_start_time_less_than_or_equal_to())
-     *             .target(var_.http_probe_result_target())
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(httpProbeResultTarget)
      *             .build());
      * 
      *     }
@@ -594,7 +594,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .monitorId(testMonitor.id())
      *             .build());
      * 
      *     }
@@ -636,7 +636,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .monitorId(testMonitor.id())
      *             .build());
      * 
      *     }
@@ -678,7 +678,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .monitorId(testMonitor.id())
      *             .build());
      * 
      *     }
@@ -720,7 +720,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .monitorId(testMonitor.id())
      *             .build());
      * 
      *     }
@@ -765,9 +765,9 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitors = HealthChecksFunctions.getPingMonitors(GetPingMonitorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.ping_monitor_display_name())
-     *             .homeRegion(var_.ping_monitor_home_region())
+     *             .compartmentId(compartmentId)
+     *             .displayName(pingMonitorDisplayName)
+     *             .homeRegion(pingMonitorHomeRegion)
      *             .build());
      * 
      *     }
@@ -812,9 +812,9 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitors = HealthChecksFunctions.getPingMonitors(GetPingMonitorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.ping_monitor_display_name())
-     *             .homeRegion(var_.ping_monitor_home_region())
+     *             .compartmentId(compartmentId)
+     *             .displayName(pingMonitorDisplayName)
+     *             .homeRegion(pingMonitorHomeRegion)
      *             .build());
      * 
      *     }
@@ -859,9 +859,9 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitors = HealthChecksFunctions.getPingMonitors(GetPingMonitorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.ping_monitor_display_name())
-     *             .homeRegion(var_.ping_monitor_home_region())
+     *             .compartmentId(compartmentId)
+     *             .displayName(pingMonitorDisplayName)
+     *             .homeRegion(pingMonitorHomeRegion)
      *             .build());
      * 
      *     }
@@ -906,9 +906,9 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitors = HealthChecksFunctions.getPingMonitors(GetPingMonitorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.ping_monitor_display_name())
-     *             .homeRegion(var_.ping_monitor_home_region())
+     *             .compartmentId(compartmentId)
+     *             .displayName(pingMonitorDisplayName)
+     *             .homeRegion(pingMonitorHomeRegion)
      *             .build());
      * 
      *     }
@@ -956,10 +956,10 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
-     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
-     *             .startTimeGreaterThanOrEqualTo(var_.ping_probe_result_start_time_greater_than_or_equal_to())
-     *             .startTimeLessThanOrEqualTo(var_.ping_probe_result_start_time_less_than_or_equal_to())
-     *             .target(var_.ping_probe_result_target())
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(pingProbeResultTarget)
      *             .build());
      * 
      *     }
@@ -1007,10 +1007,10 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
-     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
-     *             .startTimeGreaterThanOrEqualTo(var_.ping_probe_result_start_time_greater_than_or_equal_to())
-     *             .startTimeLessThanOrEqualTo(var_.ping_probe_result_start_time_less_than_or_equal_to())
-     *             .target(var_.ping_probe_result_target())
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(pingProbeResultTarget)
      *             .build());
      * 
      *     }
@@ -1058,10 +1058,10 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
-     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
-     *             .startTimeGreaterThanOrEqualTo(var_.ping_probe_result_start_time_greater_than_or_equal_to())
-     *             .startTimeLessThanOrEqualTo(var_.ping_probe_result_start_time_less_than_or_equal_to())
-     *             .target(var_.ping_probe_result_target())
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(pingProbeResultTarget)
      *             .build());
      * 
      *     }
@@ -1109,10 +1109,10 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
-     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
-     *             .startTimeGreaterThanOrEqualTo(var_.ping_probe_result_start_time_greater_than_or_equal_to())
-     *             .startTimeLessThanOrEqualTo(var_.ping_probe_result_start_time_less_than_or_equal_to())
-     *             .target(var_.ping_probe_result_target())
+     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
+     *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
+     *             .target(pingProbeResultTarget)
      *             .build());
      * 
      *     }
@@ -1154,8 +1154,8 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .displayName(var_.vantage_point_display_name())
-     *             .name(var_.vantage_point_name())
+     *             .displayName(vantagePointDisplayName)
+     *             .name(vantagePointName)
      *             .build());
      * 
      *     }
@@ -1197,8 +1197,8 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .displayName(var_.vantage_point_display_name())
-     *             .name(var_.vantage_point_name())
+     *             .displayName(vantagePointDisplayName)
+     *             .name(vantagePointName)
      *             .build());
      * 
      *     }
@@ -1240,8 +1240,8 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .displayName(var_.vantage_point_display_name())
-     *             .name(var_.vantage_point_name())
+     *             .displayName(vantagePointDisplayName)
+     *             .name(vantagePointName)
      *             .build());
      * 
      *     }
@@ -1283,8 +1283,8 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .displayName(var_.vantage_point_display_name())
-     *             .name(var_.vantage_point_name())
+     *             .displayName(vantagePointDisplayName)
+     *             .name(vantagePointName)
      *             .build());
      * 
      *     }
@@ -1326,8 +1326,8 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .displayName(var_.vantage_point_display_name())
-     *             .name(var_.vantage_point_name())
+     *             .displayName(vantagePointDisplayName)
+     *             .name(vantagePointName)
      *             .build());
      * 
      *     }
@@ -1369,8 +1369,8 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .displayName(var_.vantage_point_display_name())
-     *             .name(var_.vantage_point_name())
+     *             .displayName(vantagePointDisplayName)
+     *             .name(vantagePointName)
      *             .build());
      * 
      *     }

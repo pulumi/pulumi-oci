@@ -190,12 +190,12 @@ def get_domains_oauth_client_certificates(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_client_certificates = oci.Identity.get_domains_oauth_client_certificates(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        oauth_client_certificate_count=var["oauth_client_certificate_oauth_client_certificate_count"],
-        oauth_client_certificate_filter=var["oauth_client_certificate_oauth_client_certificate_filter"],
-        authorization=var["oauth_client_certificate_authorization"],
-        resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"],
-        start_index=var["oauth_client_certificate_start_index"])
+    test_oauth_client_certificates = oci.Identity.get_domains_oauth_client_certificates(idcs_endpoint=test_domain["url"],
+        oauth_client_certificate_count=oauth_client_certificate_oauth_client_certificate_count,
+        oauth_client_certificate_filter=oauth_client_certificate_oauth_client_certificate_filter,
+        authorization=oauth_client_certificate_authorization,
+        resource_type_schema_version=oauth_client_certificate_resource_type_schema_version,
+        start_index=oauth_client_certificate_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -260,12 +260,12 @@ def get_domains_oauth_client_certificates_output(authorization: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_client_certificates = oci.Identity.get_domains_oauth_client_certificates(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        oauth_client_certificate_count=var["oauth_client_certificate_oauth_client_certificate_count"],
-        oauth_client_certificate_filter=var["oauth_client_certificate_oauth_client_certificate_filter"],
-        authorization=var["oauth_client_certificate_authorization"],
-        resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"],
-        start_index=var["oauth_client_certificate_start_index"])
+    test_oauth_client_certificates = oci.Identity.get_domains_oauth_client_certificates(idcs_endpoint=test_domain["url"],
+        oauth_client_certificate_count=oauth_client_certificate_oauth_client_certificate_count,
+        oauth_client_certificate_filter=oauth_client_certificate_oauth_client_certificate_filter,
+        authorization=oauth_client_certificate_authorization,
+        resource_type_schema_version=oauth_client_certificate_resource_type_schema_version,
+        start_index=oauth_client_certificate_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

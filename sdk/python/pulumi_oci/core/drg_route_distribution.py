@@ -275,13 +275,13 @@ class DrgRouteDistribution(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_route_distribution = oci.core.DrgRouteDistribution("testDrgRouteDistribution",
-            distribution_type=var["drg_route_distribution_distribution_type"],
-            drg_id=oci_core_drg["test_drg"]["id"],
+        test_drg_route_distribution = oci.core.DrgRouteDistribution("test_drg_route_distribution",
+            distribution_type=drg_route_distribution_distribution_type,
+            drg_id=test_drg["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["drg_route_distribution_display_name"],
+            display_name=drg_route_distribution_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -329,13 +329,13 @@ class DrgRouteDistribution(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_route_distribution = oci.core.DrgRouteDistribution("testDrgRouteDistribution",
-            distribution_type=var["drg_route_distribution_distribution_type"],
-            drg_id=oci_core_drg["test_drg"]["id"],
+        test_drg_route_distribution = oci.core.DrgRouteDistribution("test_drg_route_distribution",
+            distribution_type=drg_route_distribution_distribution_type,
+            drg_id=test_drg["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["drg_route_distribution_display_name"],
+            display_name=drg_route_distribution_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

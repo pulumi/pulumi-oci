@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApiGateway.GetCertificate(ctx, &apigateway.GetCertificateArgs{
-//				CertificateId: oci_apigateway_certificate.Test_certificate.Id,
+//				CertificateId: testCertificateOciApigatewayCertificate.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

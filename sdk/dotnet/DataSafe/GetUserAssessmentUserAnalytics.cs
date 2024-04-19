@@ -44,21 +44,21 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testUserAssessmentUserAnalytics = Oci.DataSafe.GetUserAssessmentUserAnalytics.Invoke(new()
         ///     {
-        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///         AccessLevel = @var.User_assessment_user_analytic_access_level,
-        ///         AccountStatus = @var.User_assessment_user_analytic_account_status,
-        ///         AuthenticationType = @var.User_assessment_user_analytic_authentication_type,
-        ///         CompartmentIdInSubtree = @var.User_assessment_user_analytic_compartment_id_in_subtree,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeLastLoginGreaterThanOrEqualTo = @var.User_assessment_user_analytic_time_last_login_greater_than_or_equal_to,
-        ///         TimeLastLoginLessThan = @var.User_assessment_user_analytic_time_last_login_less_than,
-        ///         TimePasswordLastChangedGreaterThanOrEqualTo = @var.User_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to,
-        ///         TimePasswordLastChangedLessThan = @var.User_assessment_user_analytic_time_password_last_changed_less_than,
-        ///         TimeUserCreatedGreaterThanOrEqualTo = @var.User_assessment_user_analytic_time_user_created_greater_than_or_equal_to,
-        ///         TimeUserCreatedLessThan = @var.User_assessment_user_analytic_time_user_created_less_than,
-        ///         UserCategory = @var.User_assessment_user_analytic_user_category,
-        ///         UserKey = @var.User_assessment_user_analytic_user_key,
-        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///         AccessLevel = userAssessmentUserAnalyticAccessLevel,
+        ///         AccountStatus = userAssessmentUserAnalyticAccountStatus,
+        ///         AuthenticationType = userAssessmentUserAnalyticAuthenticationType,
+        ///         CompartmentIdInSubtree = userAssessmentUserAnalyticCompartmentIdInSubtree,
+        ///         TargetId = testTarget.Id,
+        ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
+        ///         TimeLastLoginLessThan = userAssessmentUserAnalyticTimeLastLoginLessThan,
+        ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
+        ///         TimePasswordLastChangedLessThan = userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
+        ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
+        ///         TimeUserCreatedLessThan = userAssessmentUserAnalyticTimeUserCreatedLessThan,
+        ///         UserCategory = userAssessmentUserAnalyticUserCategory,
+        ///         UserKey = userAssessmentUserAnalyticUserKey,
+        ///         UserName = testUser.Name,
         ///     });
         /// 
         /// });
@@ -101,21 +101,21 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testUserAssessmentUserAnalytics = Oci.DataSafe.GetUserAssessmentUserAnalytics.Invoke(new()
         ///     {
-        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///         AccessLevel = @var.User_assessment_user_analytic_access_level,
-        ///         AccountStatus = @var.User_assessment_user_analytic_account_status,
-        ///         AuthenticationType = @var.User_assessment_user_analytic_authentication_type,
-        ///         CompartmentIdInSubtree = @var.User_assessment_user_analytic_compartment_id_in_subtree,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeLastLoginGreaterThanOrEqualTo = @var.User_assessment_user_analytic_time_last_login_greater_than_or_equal_to,
-        ///         TimeLastLoginLessThan = @var.User_assessment_user_analytic_time_last_login_less_than,
-        ///         TimePasswordLastChangedGreaterThanOrEqualTo = @var.User_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to,
-        ///         TimePasswordLastChangedLessThan = @var.User_assessment_user_analytic_time_password_last_changed_less_than,
-        ///         TimeUserCreatedGreaterThanOrEqualTo = @var.User_assessment_user_analytic_time_user_created_greater_than_or_equal_to,
-        ///         TimeUserCreatedLessThan = @var.User_assessment_user_analytic_time_user_created_less_than,
-        ///         UserCategory = @var.User_assessment_user_analytic_user_category,
-        ///         UserKey = @var.User_assessment_user_analytic_user_key,
-        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///         AccessLevel = userAssessmentUserAnalyticAccessLevel,
+        ///         AccountStatus = userAssessmentUserAnalyticAccountStatus,
+        ///         AuthenticationType = userAssessmentUserAnalyticAuthenticationType,
+        ///         CompartmentIdInSubtree = userAssessmentUserAnalyticCompartmentIdInSubtree,
+        ///         TargetId = testTarget.Id,
+        ///         TimeLastLoginGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
+        ///         TimeLastLoginLessThan = userAssessmentUserAnalyticTimeLastLoginLessThan,
+        ///         TimePasswordLastChangedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
+        ///         TimePasswordLastChangedLessThan = userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
+        ///         TimeUserCreatedGreaterThanOrEqualTo = userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
+        ///         TimeUserCreatedLessThan = userAssessmentUserAnalyticTimeUserCreatedLessThan,
+        ///         UserCategory = userAssessmentUserAnalyticUserCategory,
+        ///         UserKey = userAssessmentUserAnalyticUserKey,
+        ///         UserName = testUser.Name,
         ///     });
         /// 
         /// });

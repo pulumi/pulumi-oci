@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInternetGateways = oci.Core.getInternetGateways({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.internet_gateway_display_name,
- *     state: _var.internet_gateway_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: internetGatewayDisplayName,
+ *     state: internetGatewayState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetInternetGatewaysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInternetGateways = oci.Core.getInternetGateways({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.internet_gateway_display_name,
- *     state: _var.internet_gateway_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: internetGatewayDisplayName,
+ *     state: internetGatewayState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

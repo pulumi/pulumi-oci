@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Nosql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTableReplica = new Oci.Nosql.TableReplica("testTableReplica", new()
+    ///     var testTableReplica = new Oci.Nosql.TableReplica("test_table_replica", new()
     ///     {
-    ///         Region = @var.Table_replica_region,
-    ///         TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         MaxReadUnits = @var.Table_replica_max_read_units,
-    ///         MaxWriteUnits = @var.Table_replica_max_write_units,
+    ///         Region = tableReplicaRegion,
+    ///         TableNameOrId = testTableNameOr.Id,
+    ///         CompartmentId = compartmentId,
+    ///         MaxReadUnits = tableReplicaMaxReadUnits,
+    ///         MaxWriteUnits = tableReplicaMaxWriteUnits,
     ///     });
     /// 
     /// });

@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAgentPlugin = oci.CloudBridge.getAgentPlugin({
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
- *     pluginName: _var.agent_plugin_plugin_name,
+ *     agentId: testAgent.id,
+ *     pluginName: agentPluginPluginName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,8 +110,8 @@ export interface GetAgentPluginResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAgentPlugin = oci.CloudBridge.getAgentPlugin({
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
- *     pluginName: _var.agent_plugin_plugin_name,
+ *     agentId: testAgent.id,
+ *     pluginName: agentPluginPluginName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

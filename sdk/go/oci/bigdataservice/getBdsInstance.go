@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := BigDataService.GetBdsInstance(ctx, &bigdataservice.GetBdsInstanceArgs{
-//				BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
+//				BdsInstanceId: testBdsInstanceOciBdsBdsInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

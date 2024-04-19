@@ -133,10 +133,10 @@ def get_repository_refs(commit_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=oci_devops_repository["test_repository"]["id"],
-        commit_id=oci_devops_commit["test_commit"]["id"],
-        ref_name=var["repository_ref_ref_name"],
-        ref_type=var["repository_ref_ref_type"])
+    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=test_repository["id"],
+        commit_id=test_commit["id"],
+        ref_name=repository_ref_ref_name,
+        ref_type=repository_ref_ref_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_repository_refs_output(commit_id: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=oci_devops_repository["test_repository"]["id"],
-        commit_id=oci_devops_commit["test_commit"]["id"],
-        ref_name=var["repository_ref_ref_name"],
-        ref_type=var["repository_ref_ref_type"])
+    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=test_repository["id"],
+        commit_id=test_commit["id"],
+        ref_name=repository_ref_ref_name,
+        ref_type=repository_ref_ref_type)
     ```
     <!--End PulumiCodeChooser -->
 

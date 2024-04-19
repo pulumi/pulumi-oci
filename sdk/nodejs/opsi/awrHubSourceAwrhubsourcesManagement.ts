@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubSourceAwrhubsourcesManagement = new oci.opsi.AwrHubSourceAwrhubsourcesManagement("testAwrHubSourceAwrhubsourcesManagement", {
- *     awrHubSourceId: oci_opsi_awr_hub_source.test_awr_hub_source.id,
- *     enableAwrhubsource: _var.enable_awrhubsource,
+ * const testAwrHubSourceAwrhubsourcesManagement = new oci.opsi.AwrHubSourceAwrhubsourcesManagement("test_awr_hub_source_awrhubsources_management", {
+ *     awrHubSourceId: testAwrHubSource.id,
+ *     enableAwrhubsource: enableAwrhubsource,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousVmClusterAcdResourceUsages = oci.Database.getAutonomousVmClusterAcdResourceUsages({
- *     autonomousVmClusterId: oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster.id,
- *     compartmentId: _var.compartment_id,
+ *     autonomousVmClusterId: testAutonomousVmCluster.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetAutonomousVmClusterAcdResourceUsagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousVmClusterAcdResourceUsages = oci.Database.getAutonomousVmClusterAcdResourceUsages({
- *     autonomousVmClusterId: oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster.id,
- *     compartmentId: _var.compartment_id,
+ *     autonomousVmClusterId: testAutonomousVmCluster.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutoScalingConfiguration = oci.Autoscaling.getAutoScalingConfiguration({
- *     autoScalingConfigurationId: oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration.id,
+ *     autoScalingConfigurationId: testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,7 +109,7 @@ export interface GetAutoScalingConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutoScalingConfiguration = oci.Autoscaling.getAutoScalingConfiguration({
- *     autoScalingConfigurationId: oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration.id,
+ *     autoScalingConfigurationId: testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

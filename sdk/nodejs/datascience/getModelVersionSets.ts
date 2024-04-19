@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModelVersionSets = oci.DataScience.getModelVersionSets({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.model_version_set_created_by,
- *     id: _var.model_version_set_id,
- *     name: _var.model_version_set_name,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.model_version_set_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: modelVersionSetCreatedBy,
+ *     id: modelVersionSetId,
+ *     name: modelVersionSetName,
+ *     projectId: testProject.id,
+ *     state: modelVersionSetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetModelVersionSetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModelVersionSets = oci.DataScience.getModelVersionSets({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.model_version_set_created_by,
- *     id: _var.model_version_set_id,
- *     name: _var.model_version_set_name,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.model_version_set_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: modelVersionSetCreatedBy,
+ *     id: modelVersionSetId,
+ *     name: modelVersionSetName,
+ *     projectId: testProject.id,
+ *     state: modelVersionSetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

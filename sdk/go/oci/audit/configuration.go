@@ -29,9 +29,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Audit.NewConfiguration(ctx, "testConfiguration", &Audit.ConfigurationArgs{
-//				CompartmentId:       pulumi.Any(_var.Tenancy_ocid),
-//				RetentionPeriodDays: pulumi.Any(_var.Configuration_retention_period_days),
+//			_, err := Audit.NewConfiguration(ctx, "test_configuration", &Audit.ConfigurationArgs{
+//				CompartmentId:       pulumi.Any(tenancyOcid),
+//				RetentionPeriodDays: pulumi.Any(configurationRetentionPeriodDays),
 //			})
 //			if err != nil {
 //				return err

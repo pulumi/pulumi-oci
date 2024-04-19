@@ -27,21 +27,21 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPrivateIp = new Oci.Core.PrivateIp("testPrivateIp", new()
+    ///     var testPrivateIp = new Oci.Core.PrivateIp("test_private_ip", new()
     ///     {
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Private_ip_display_name,
+    ///         DisplayName = privateIpDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         HostnameLabel = @var.Private_ip_hostname_label,
-    ///         IpAddress = @var.Private_ip_ip_address,
-    ///         VlanId = oci_core_vlan.Test_vlan.Id,
-    ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Vnic_id,
+    ///         HostnameLabel = privateIpHostnameLabel,
+    ///         IpAddress = privateIpIpAddress,
+    ///         VlanId = testVlan.Id,
+    ///         VnicId = testVnicAttachment.VnicId,
     ///     });
     /// 
     /// });

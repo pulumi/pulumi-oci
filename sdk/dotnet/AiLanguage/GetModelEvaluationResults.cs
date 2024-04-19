@@ -29,7 +29,7 @@ namespace Pulumi.Oci.AiLanguage
         /// {
         ///     var testModelEvaluationResults = Oci.AiLanguage.GetModelEvaluationResults.Invoke(new()
         ///     {
-        ///         ModelId = oci_ai_language_model.Test_model.Id,
+        ///         ModelId = testModel.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.AiLanguage
         /// {
         ///     var testModelEvaluationResults = Oci.AiLanguage.GetModelEvaluationResults.Invoke(new()
         ///     {
-        ///         ModelId = oci_ai_language_model.Test_model.Id,
+        ///         ModelId = testModel.Id,
         ///     });
         /// 
         /// });

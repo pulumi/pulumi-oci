@@ -35,23 +35,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewDiscoveryMod(ctx, "testDiscoveryJob", &DataSafe.DiscoveryModArgs{
-//				CompartmentId:        pulumi.Any(_var.Compartment_id),
-//				SensitiveDataModelId: pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
+//			_, err := DataSafe.NewDiscoveryMod(ctx, "test_discovery_job", &DataSafe.DiscoveryModArgs{
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				SensitiveDataModelId: pulumi.Any(testSensitiveDataModel.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DiscoveryType: pulumi.Any(_var.Discovery_job_discovery_type),
-//				DisplayName:   pulumi.Any(_var.Discovery_job_display_name),
+//				DiscoveryType: pulumi.Any(discoveryJobDiscoveryType),
+//				DisplayName:   pulumi.Any(discoveryJobDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(_var.Discovery_job_is_app_defined_relation_discovery_enabled),
-//				IsIncludeAllSchemas:                  pulumi.Any(_var.Discovery_job_is_include_all_schemas),
-//				IsIncludeAllSensitiveTypes:           pulumi.Any(_var.Discovery_job_is_include_all_sensitive_types),
-//				IsSampleDataCollectionEnabled:        pulumi.Any(_var.Discovery_job_is_sample_data_collection_enabled),
-//				SchemasForDiscoveries:                pulumi.Any(_var.Discovery_job_schemas_for_discovery),
-//				SensitiveTypeIdsForDiscoveries:       pulumi.Any(_var.Discovery_job_sensitive_type_ids_for_discovery),
+//				IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(discoveryJobIsAppDefinedRelationDiscoveryEnabled),
+//				IsIncludeAllSchemas:                  pulumi.Any(discoveryJobIsIncludeAllSchemas),
+//				IsIncludeAllSensitiveTypes:           pulumi.Any(discoveryJobIsIncludeAllSensitiveTypes),
+//				IsSampleDataCollectionEnabled:        pulumi.Any(discoveryJobIsSampleDataCollectionEnabled),
+//				SchemasForDiscoveries:                pulumi.Any(discoveryJobSchemasForDiscovery),
+//				SensitiveTypeIdsForDiscoveries:       pulumi.Any(discoveryJobSensitiveTypeIdsForDiscovery),
 //			})
 //			if err != nil {
 //				return err

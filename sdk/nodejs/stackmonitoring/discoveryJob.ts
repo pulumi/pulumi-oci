@@ -18,38 +18,38 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJob = new oci.stackmonitoring.DiscoveryJob("testDiscoveryJob", {
- *     compartmentId: _var.compartment_id,
+ * const testDiscoveryJob = new oci.stackmonitoring.DiscoveryJob("test_discovery_job", {
+ *     compartmentId: compartmentId,
  *     discoveryDetails: {
- *         agentId: _var.management_agent_id,
+ *         agentId: managementAgentId,
  *         properties: {
- *             propertiesMap: _var.discovery_job_discovery_details_properties_properties_map,
+ *             propertiesMap: discoveryJobDiscoveryDetailsPropertiesPropertiesMap,
  *         },
- *         resourceName: _var.discovery_job_discovery_details_resource_name,
- *         resourceType: _var.discovery_job_discovery_details_resource_type,
+ *         resourceName: discoveryJobDiscoveryDetailsResourceName,
+ *         resourceType: discoveryJobDiscoveryDetailsResourceType,
  *         credentials: {
  *             items: [{
- *                 credentialName: _var.discovery_job_discovery_details_credentials_items_credential_name,
- *                 credentialType: _var.discovery_job_discovery_details_credentials_items_credential_type,
+ *                 credentialName: discoveryJobDiscoveryDetailsCredentialsItemsCredentialName,
+ *                 credentialType: discoveryJobDiscoveryDetailsCredentialsItemsCredentialType,
  *                 properties: {
- *                     propertiesMap: _var.discovery_job_discovery_details_credentials_items_properties_properties_map,
+ *                     propertiesMap: discoveryJobDiscoveryDetailsCredentialsItemsPropertiesPropertiesMap,
  *                 },
  *             }],
  *         },
- *         license: _var.discovery_job_discovery_details_license,
+ *         license: discoveryJobDiscoveryDetailsLicense,
  *         tags: {
- *             propertiesMap: _var.discovery_job_discovery_details_tags_properties_map,
+ *             propertiesMap: discoveryJobDiscoveryDetailsTagsPropertiesMap,
  *         },
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     discoveryClient: _var.discovery_job_discovery_client,
- *     discoveryType: _var.discovery_job_discovery_type,
+ *     discoveryClient: discoveryJobDiscoveryClient,
+ *     discoveryType: discoveryJobDiscoveryType,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     shouldPropagateTagsToDiscoveredResources: _var.discovery_job_should_propagate_tags_to_discovered_resources,
+ *     shouldPropagateTagsToDiscoveredResources: discoveryJobShouldPropagateTagsToDiscoveredResources,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

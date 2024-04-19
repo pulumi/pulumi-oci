@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSmtpCredentials = Oci.Identity.GetDomainsSmtpCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SmtpCredentialCount = @var.Smtp_credential_smtp_credential_count,
-        ///         SmtpCredentialFilter = @var.Smtp_credential_smtp_credential_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SmtpCredentialCount = smtpCredentialSmtpCredentialCount,
+        ///         SmtpCredentialFilter = smtpCredentialSmtpCredentialFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Smtp_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Smtp_credential_resource_type_schema_version,
-        ///         StartIndex = @var.Smtp_credential_start_index,
+        ///         Authorization = smtpCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = smtpCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = smtpCredentialStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSmtpCredentials = Oci.Identity.GetDomainsSmtpCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SmtpCredentialCount = @var.Smtp_credential_smtp_credential_count,
-        ///         SmtpCredentialFilter = @var.Smtp_credential_smtp_credential_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SmtpCredentialCount = smtpCredentialSmtpCredentialCount,
+        ///         SmtpCredentialFilter = smtpCredentialSmtpCredentialFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Smtp_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Smtp_credential_resource_type_schema_version,
-        ///         StartIndex = @var.Smtp_credential_start_index,
+        ///         Authorization = smtpCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = smtpCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = smtpCredentialStartIndex,
         ///     });
         /// 
         /// });

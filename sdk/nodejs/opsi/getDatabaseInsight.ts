@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseInsight = oci.Opsi.getDatabaseInsight({
- *     databaseInsightId: oci_opsi_database_insight.test_database_insight.id,
+ *     databaseInsightId: testDatabaseInsightOciOpsiDatabaseInsight.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -195,7 +195,7 @@ export interface GetDatabaseInsightResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseInsight = oci.Opsi.getDatabaseInsight({
- *     databaseInsightId: oci_opsi_database_insight.test_database_insight.id,
+ *     databaseInsightId: testDatabaseInsightOciOpsiDatabaseInsight.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

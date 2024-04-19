@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := NetworkLoadBalancer.GetBackendHealth(ctx, &networkloadbalancer.GetBackendHealthArgs{
-//				BackendName:           oci_network_load_balancer_backend.Test_backend.Name,
-//				BackendSetName:        oci_network_load_balancer_backend_set.Test_backend_set.Name,
-//				NetworkLoadBalancerId: oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+//				BackendName:           testBackend.Name,
+//				BackendSetName:        testBackendSet.Name,
+//				NetworkLoadBalancerId: testNetworkLoadBalancer.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

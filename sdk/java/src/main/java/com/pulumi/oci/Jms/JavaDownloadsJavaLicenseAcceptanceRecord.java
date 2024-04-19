@@ -48,9 +48,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testJavaLicenseAcceptanceRecord = new JavaDownloadsJavaLicenseAcceptanceRecord(&#34;testJavaLicenseAcceptanceRecord&#34;, JavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
- *             .licenseAcceptanceStatus(var_.java_license_acceptance_record_license_acceptance_status())
- *             .licenseType(var_.java_license_acceptance_record_license_type())
+ *             .compartmentId(tenancyOcid)
+ *             .licenseAcceptanceStatus(javaLicenseAcceptanceRecordLicenseAcceptanceStatus)
+ *             .licenseType(javaLicenseAcceptanceRecordLicenseType)
  *             .build());
  * 
  *     }

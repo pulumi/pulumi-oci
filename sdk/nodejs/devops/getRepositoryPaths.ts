@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryPaths = oci.DevOps.getRepositoryPaths({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     displayName: _var.repository_path_display_name,
- *     folderPath: _var.repository_path_folder_path,
- *     pathsInSubtree: _var.repository_path_paths_in_subtree,
- *     ref: _var.repository_path_ref,
+ *     repositoryId: testRepository.id,
+ *     displayName: repositoryPathDisplayName,
+ *     folderPath: repositoryPathFolderPath,
+ *     pathsInSubtree: repositoryPathPathsInSubtree,
+ *     ref: repositoryPathRef,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -100,11 +100,11 @@ export interface GetRepositoryPathsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryPaths = oci.DevOps.getRepositoryPaths({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     displayName: _var.repository_path_display_name,
- *     folderPath: _var.repository_path_folder_path,
- *     pathsInSubtree: _var.repository_path_paths_in_subtree,
- *     ref: _var.repository_path_ref,
+ *     repositoryId: testRepository.id,
+ *     displayName: repositoryPathDisplayName,
+ *     folderPath: repositoryPathFolderPath,
+ *     pathsInSubtree: repositoryPathPathsInSubtree,
+ *     ref: repositoryPathRef,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

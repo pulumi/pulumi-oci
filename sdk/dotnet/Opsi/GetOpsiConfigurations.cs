@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOpsiConfigurations = Oci.Opsi.GetOpsiConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Opsi_configuration_display_name,
-        ///         OpsiConfigTypes = @var.Opsi_configuration_opsi_config_type,
-        ///         States = @var.Opsi_configuration_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = opsiConfigurationDisplayName,
+        ///         OpsiConfigTypes = opsiConfigurationOpsiConfigType,
+        ///         States = opsiConfigurationState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOpsiConfigurations = Oci.Opsi.GetOpsiConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Opsi_configuration_display_name,
-        ///         OpsiConfigTypes = @var.Opsi_configuration_opsi_config_type,
-        ///         States = @var.Opsi_configuration_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = opsiConfigurationDisplayName,
+        ///         OpsiConfigTypes = opsiConfigurationOpsiConfigType,
+        ///         States = opsiConfigurationState,
         ///     });
         /// 
         /// });

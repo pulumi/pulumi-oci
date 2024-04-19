@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppAccelerationPolicy = oci.Waa.getAppAccelerationPolicy({
- *     webAppAccelerationPolicyId: oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy.id,
+ *     webAppAccelerationPolicyId: testWebAppAccelerationPolicyOciWaaWebAppAccelerationPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,7 +109,7 @@ export interface GetAppAccelerationPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppAccelerationPolicy = oci.Waa.getAppAccelerationPolicy({
- *     webAppAccelerationPolicyId: oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy.id,
+ *     webAppAccelerationPolicyId: testWebAppAccelerationPolicyOciWaaWebAppAccelerationPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

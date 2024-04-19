@@ -25,143 +25,143 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testContainerInstance = new Oci.ContainerEngine.ContainerInstance("testContainerInstance", new()
+    ///     var testContainerInstance = new Oci.ContainerEngine.ContainerInstance("test_container_instance", new()
     ///     {
-    ///         AvailabilityDomain = @var.Container_instance_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AvailabilityDomain = containerInstanceAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
     ///         Containers = new[]
     ///         {
     ///             new Oci.ContainerEngine.Inputs.ContainerInstanceContainerArgs
     ///             {
-    ///                 ImageUrl = @var.Container_instance_containers_image_url,
-    ///                 Arguments = @var.Container_instance_containers_arguments,
-    ///                 Commands = @var.Container_instance_containers_command,
-    ///                 DefinedTags = @var.Container_instance_containers_defined_tags,
-    ///                 DisplayName = @var.Container_instance_containers_display_name,
-    ///                 EnvironmentVariables = @var.Container_instance_containers_environment_variables,
-    ///                 FreeformTags = @var.Container_instance_containers_freeform_tags,
+    ///                 ImageUrl = containerInstanceContainersImageUrl,
+    ///                 Arguments = containerInstanceContainersArguments,
+    ///                 Commands = containerInstanceContainersCommand,
+    ///                 DefinedTags = containerInstanceContainersDefinedTags,
+    ///                 DisplayName = containerInstanceContainersDisplayName,
+    ///                 EnvironmentVariables = containerInstanceContainersEnvironmentVariables,
+    ///                 FreeformTags = containerInstanceContainersFreeformTags,
     ///                 HealthChecks = new[]
     ///                 {
     ///                     new Oci.ContainerEngine.Inputs.ContainerInstanceContainerHealthCheckArgs
     ///                     {
-    ///                         HealthCheckType = @var.Container_instance_containers_health_checks_health_check_type,
-    ///                         Commands = @var.Container_instance_containers_health_checks_command,
-    ///                         FailureAction = @var.Container_instance_containers_health_checks_failure_action,
-    ///                         FailureThreshold = @var.Container_instance_containers_health_checks_failure_threshold,
+    ///                         HealthCheckType = containerInstanceContainersHealthChecksHealthCheckType,
+    ///                         Commands = containerInstanceContainersHealthChecksCommand,
+    ///                         FailureAction = containerInstanceContainersHealthChecksFailureAction,
+    ///                         FailureThreshold = containerInstanceContainersHealthChecksFailureThreshold,
     ///                         Headers = new[]
     ///                         {
     ///                             new Oci.ContainerEngine.Inputs.ContainerInstanceContainerHealthCheckHeaderArgs
     ///                             {
-    ///                                 Name = @var.Container_instance_containers_health_checks_headers_name,
-    ///                                 Value = @var.Container_instance_containers_health_checks_headers_value,
+    ///                                 Name = containerInstanceContainersHealthChecksHeadersName,
+    ///                                 Value = containerInstanceContainersHealthChecksHeadersValue,
     ///                             },
     ///                         },
-    ///                         InitialDelayInSeconds = @var.Container_instance_containers_health_checks_initial_delay_in_seconds,
-    ///                         IntervalInSeconds = @var.Container_instance_containers_health_checks_interval_in_seconds,
-    ///                         Name = @var.Container_instance_containers_health_checks_name,
-    ///                         Path = @var.Container_instance_containers_health_checks_path,
-    ///                         Port = @var.Container_instance_containers_health_checks_port,
-    ///                         SuccessThreshold = @var.Container_instance_containers_health_checks_success_threshold,
-    ///                         TimeoutInSeconds = @var.Container_instance_containers_health_checks_timeout_in_seconds,
+    ///                         InitialDelayInSeconds = containerInstanceContainersHealthChecksInitialDelayInSeconds,
+    ///                         IntervalInSeconds = containerInstanceContainersHealthChecksIntervalInSeconds,
+    ///                         Name = containerInstanceContainersHealthChecksName,
+    ///                         Path = containerInstanceContainersHealthChecksPath,
+    ///                         Port = containerInstanceContainersHealthChecksPort,
+    ///                         SuccessThreshold = containerInstanceContainersHealthChecksSuccessThreshold,
+    ///                         TimeoutInSeconds = containerInstanceContainersHealthChecksTimeoutInSeconds,
     ///                     },
     ///                 },
-    ///                 IsResourcePrincipalDisabled = @var.Container_instance_containers_is_resource_principal_disabled,
+    ///                 IsResourcePrincipalDisabled = containerInstanceContainersIsResourcePrincipalDisabled,
     ///                 ResourceConfig = new Oci.ContainerEngine.Inputs.ContainerInstanceContainerResourceConfigArgs
     ///                 {
-    ///                     MemoryLimitInGbs = @var.Container_instance_containers_resource_config_memory_limit_in_gbs,
-    ///                     VcpusLimit = @var.Container_instance_containers_resource_config_vcpus_limit,
+    ///                     MemoryLimitInGbs = containerInstanceContainersResourceConfigMemoryLimitInGbs,
+    ///                     VcpusLimit = containerInstanceContainersResourceConfigVcpusLimit,
     ///                 },
     ///                 SecurityContext = new Oci.ContainerEngine.Inputs.ContainerInstanceContainerSecurityContextArgs
     ///                 {
     ///                     Capabilities = new Oci.ContainerEngine.Inputs.ContainerInstanceContainerSecurityContextCapabilitiesArgs
     ///                     {
-    ///                         AddCapabilities = @var.Container_instance_containers_security_context_capabilities_add_capabilities,
-    ///                         DropCapabilities = @var.Container_instance_containers_security_context_capabilities_drop_capabilities,
+    ///                         AddCapabilities = containerInstanceContainersSecurityContextCapabilitiesAddCapabilities,
+    ///                         DropCapabilities = containerInstanceContainersSecurityContextCapabilitiesDropCapabilities,
     ///                     },
-    ///                     IsNonRootUserCheckEnabled = @var.Container_instance_containers_security_context_is_non_root_user_check_enabled,
-    ///                     IsRootFileSystemReadonly = @var.Container_instance_containers_security_context_is_root_file_system_readonly,
-    ///                     RunAsGroup = @var.Container_instance_containers_security_context_run_as_group,
-    ///                     RunAsUser = @var.Container_instance_containers_security_context_run_as_user,
-    ///                     SecurityContextType = @var.Container_instance_containers_security_context_security_context_type,
+    ///                     IsNonRootUserCheckEnabled = containerInstanceContainersSecurityContextIsNonRootUserCheckEnabled,
+    ///                     IsRootFileSystemReadonly = containerInstanceContainersSecurityContextIsRootFileSystemReadonly,
+    ///                     RunAsGroup = containerInstanceContainersSecurityContextRunAsGroup,
+    ///                     RunAsUser = containerInstanceContainersSecurityContextRunAsUser,
+    ///                     SecurityContextType = containerInstanceContainersSecurityContextSecurityContextType,
     ///                 },
     ///                 VolumeMounts = new[]
     ///                 {
     ///                     new Oci.ContainerEngine.Inputs.ContainerInstanceContainerVolumeMountArgs
     ///                     {
-    ///                         MountPath = @var.Container_instance_containers_volume_mounts_mount_path,
-    ///                         VolumeName = @var.Container_instance_containers_volume_mounts_volume_name,
-    ///                         IsReadOnly = @var.Container_instance_containers_volume_mounts_is_read_only,
-    ///                         Partition = @var.Container_instance_containers_volume_mounts_partition,
-    ///                         SubPath = @var.Container_instance_containers_volume_mounts_sub_path,
+    ///                         MountPath = containerInstanceContainersVolumeMountsMountPath,
+    ///                         VolumeName = containerInstanceContainersVolumeMountsVolumeName,
+    ///                         IsReadOnly = containerInstanceContainersVolumeMountsIsReadOnly,
+    ///                         Partition = containerInstanceContainersVolumeMountsPartition,
+    ///                         SubPath = containerInstanceContainersVolumeMountsSubPath,
     ///                     },
     ///                 },
-    ///                 WorkingDirectory = @var.Container_instance_containers_working_directory,
+    ///                 WorkingDirectory = containerInstanceContainersWorkingDirectory,
     ///             },
     ///         },
-    ///         Shape = @var.Container_instance_shape,
+    ///         Shape = containerInstanceShape,
     ///         ShapeConfig = new Oci.ContainerEngine.Inputs.ContainerInstanceShapeConfigArgs
     ///         {
-    ///             Ocpus = @var.Container_instance_shape_config_ocpus,
-    ///             MemoryInGbs = @var.Container_instance_shape_config_memory_in_gbs,
+    ///             Ocpus = containerInstanceShapeConfigOcpus,
+    ///             MemoryInGbs = containerInstanceShapeConfigMemoryInGbs,
     ///         },
     ///         Vnics = new[]
     ///         {
     ///             new Oci.ContainerEngine.Inputs.ContainerInstanceVnicArgs
     ///             {
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 DefinedTags = @var.Container_instance_vnics_defined_tags,
-    ///                 DisplayName = @var.Container_instance_vnics_display_name,
-    ///                 FreeformTags = @var.Container_instance_vnics_freeform_tags,
-    ///                 HostnameLabel = @var.Container_instance_vnics_hostname_label,
-    ///                 IsPublicIpAssigned = @var.Container_instance_vnics_is_public_ip_assigned,
-    ///                 NsgIds = @var.Container_instance_vnics_nsg_ids,
-    ///                 PrivateIp = @var.Container_instance_vnics_private_ip,
-    ///                 SkipSourceDestCheck = @var.Container_instance_vnics_skip_source_dest_check,
+    ///                 SubnetId = testSubnet.Id,
+    ///                 DefinedTags = containerInstanceVnicsDefinedTags,
+    ///                 DisplayName = containerInstanceVnicsDisplayName,
+    ///                 FreeformTags = containerInstanceVnicsFreeformTags,
+    ///                 HostnameLabel = containerInstanceVnicsHostnameLabel,
+    ///                 IsPublicIpAssigned = containerInstanceVnicsIsPublicIpAssigned,
+    ///                 NsgIds = containerInstanceVnicsNsgIds,
+    ///                 PrivateIp = containerInstanceVnicsPrivateIp,
+    ///                 SkipSourceDestCheck = containerInstanceVnicsSkipSourceDestCheck,
     ///             },
     ///         },
-    ///         ContainerRestartPolicy = @var.Container_instance_container_restart_policy,
+    ///         ContainerRestartPolicy = containerInstanceContainerRestartPolicy,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Container_instance_display_name,
+    ///         DisplayName = containerInstanceDisplayName,
     ///         DnsConfig = new Oci.ContainerEngine.Inputs.ContainerInstanceDnsConfigArgs
     ///         {
-    ///             Nameservers = @var.Container_instance_dns_config_nameservers,
-    ///             Options = @var.Container_instance_dns_config_options,
-    ///             Searches = @var.Container_instance_dns_config_searches,
+    ///             Nameservers = containerInstanceDnsConfigNameservers,
+    ///             Options = containerInstanceDnsConfigOptions,
+    ///             Searches = containerInstanceDnsConfigSearches,
     ///         },
-    ///         FaultDomain = @var.Container_instance_fault_domain,
+    ///         FaultDomain = containerInstanceFaultDomain,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         GracefulShutdownTimeoutInSeconds = @var.Container_instance_graceful_shutdown_timeout_in_seconds,
+    ///         GracefulShutdownTimeoutInSeconds = containerInstanceGracefulShutdownTimeoutInSeconds,
     ///         ImagePullSecrets = new[]
     ///         {
     ///             new Oci.ContainerEngine.Inputs.ContainerInstanceImagePullSecretArgs
     ///             {
-    ///                 RegistryEndpoint = @var.Container_instance_image_pull_secrets_registry_endpoint,
-    ///                 SecretType = @var.Container_instance_image_pull_secrets_secret_type,
-    ///                 Password = @var.Container_instance_image_pull_secrets_password,
-    ///                 SecretId = oci_vault_secret.Test_secret.Id,
-    ///                 Username = @var.Container_instance_image_pull_secrets_username,
+    ///                 RegistryEndpoint = containerInstanceImagePullSecretsRegistryEndpoint,
+    ///                 SecretType = containerInstanceImagePullSecretsSecretType,
+    ///                 Password = containerInstanceImagePullSecretsPassword,
+    ///                 SecretId = testSecret.Id,
+    ///                 Username = containerInstanceImagePullSecretsUsername,
     ///             },
     ///         },
     ///         Volumes = new[]
     ///         {
     ///             new Oci.ContainerEngine.Inputs.ContainerInstanceVolumeArgs
     ///             {
-    ///                 Name = @var.Container_instance_volumes_name,
-    ///                 VolumeType = @var.Container_instance_volumes_volume_type,
-    ///                 BackingStore = @var.Container_instance_volumes_backing_store,
+    ///                 Name = containerInstanceVolumesName,
+    ///                 VolumeType = containerInstanceVolumesVolumeType,
+    ///                 BackingStore = containerInstanceVolumesBackingStore,
     ///                 Configs = new[]
     ///                 {
     ///                     new Oci.ContainerEngine.Inputs.ContainerInstanceVolumeConfigArgs
     ///                     {
-    ///                         Data = @var.Container_instance_volumes_configs_data,
-    ///                         FileName = @var.Container_instance_volumes_configs_file_name,
-    ///                         Path = @var.Container_instance_volumes_configs_path,
+    ///                         Data = containerInstanceVolumesConfigsData,
+    ///                         FileName = containerInstanceVolumesConfigsFileName,
+    ///                         Path = containerInstanceVolumesConfigsPath,
     ///                     },
     ///                 },
     ///             },

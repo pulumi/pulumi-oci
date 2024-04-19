@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpoint = oci.ResourceManager.getPrivateEndpoint({
- *     privateEndpointId: oci_resourcemanager_private_endpoint.test_private_endpoint.id,
+ *     privateEndpointId: testPrivateEndpointOciResourcemanagerPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,7 +115,7 @@ export interface GetPrivateEndpointResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpoint = oci.ResourceManager.getPrivateEndpoint({
- *     privateEndpointId: oci_resourcemanager_private_endpoint.test_private_endpoint.id,
+ *     privateEndpointId: testPrivateEndpointOciResourcemanagerPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

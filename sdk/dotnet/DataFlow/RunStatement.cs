@@ -25,10 +25,10 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRunStatement = new Oci.DataFlow.RunStatement("testRunStatement", new()
+    ///     var testRunStatement = new Oci.DataFlow.RunStatement("test_run_statement", new()
     ///     {
-    ///         Code = @var.Run_statement_code,
-    ///         RunId = oci_dataflow_run.Test_run.Id,
+    ///         Code = runStatementCode,
+    ///         RunId = testRun.Id,
     ///     });
     /// 
     /// });

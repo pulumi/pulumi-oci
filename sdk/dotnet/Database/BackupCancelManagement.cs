@@ -25,9 +25,9 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBackupCancelManagement = new Oci.Database.BackupCancelManagement("testBackupCancelManagement", new()
+    ///     var testBackupCancelManagement = new Oci.Database.BackupCancelManagement("test_backup_cancel_management", new()
     ///     {
-    ///         BackupId = oci_database_backup.Test_backup.Id,
+    ///         BackupId = testBackup.Id,
     ///         CancelBackupTrigger = 1,
     ///     });
     /// 

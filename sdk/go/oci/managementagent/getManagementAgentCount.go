@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ManagementAgent.GetManagementAgentCount(ctx, &managementagent.GetManagementAgentCountArgs{
-//				CompartmentId: _var.Compartment_id,
-//				GroupBies:     _var.Management_agent_count_group_by,
-//				HasPlugins:    pulumi.BoolRef(_var.Management_agent_count_has_plugins),
-//				InstallType:   pulumi.StringRef(_var.Management_agent_count_install_type),
+//				CompartmentId: compartmentId,
+//				GroupBies:     managementAgentCountGroupBy,
+//				HasPlugins:    pulumi.BoolRef(managementAgentCountHasPlugins),
+//				InstallType:   pulumi.StringRef(managementAgentCountInstallType),
 //			}, nil)
 //			if err != nil {
 //				return err

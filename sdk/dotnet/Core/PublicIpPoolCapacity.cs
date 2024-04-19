@@ -21,11 +21,11 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPublicIpPoolCapacity = new Oci.Core.PublicIpPoolCapacity("testPublicIpPoolCapacity", new()
+    ///     var testPublicIpPoolCapacity = new Oci.Core.PublicIpPoolCapacity("test_public_ip_pool_capacity", new()
     ///     {
-    ///         ByoipId = @var.Byoip_id,
-    ///         CidrBlock = @var.Cidr_block,
-    ///         PublicIpPoolId = @var.Public_ip_pool_id,
+    ///         PublicIpPoolId = publicIpPoolId,
+    ///         ByoipId = byoipId,
+    ///         CidrBlock = cidrBlock,
     ///     });
     /// 
     /// });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetSubnet(ctx, &core.GetSubnetArgs{
-//				SubnetId: oci_core_subnet.Test_subnet.Id,
+//				SubnetId: testSubnetOciCoreSubnet.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

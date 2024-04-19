@@ -174,14 +174,14 @@ def get_file_systems(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_file_systems = oci.FileStorage.get_file_systems(availability_domain=var["file_system_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["file_system_display_name"],
-        filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
-        id=var["file_system_id"],
-        parent_file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        source_snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"],
-        state=var["file_system_state"])
+    test_file_systems = oci.FileStorage.get_file_systems(availability_domain=file_system_availability_domain,
+        compartment_id=compartment_id,
+        display_name=file_system_display_name,
+        filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],
+        id=file_system_id,
+        parent_file_system_id=test_file_system["id"],
+        source_snapshot_id=test_snapshot["id"],
+        state=file_system_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -245,14 +245,14 @@ def get_file_systems_output(availability_domain: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_file_systems = oci.FileStorage.get_file_systems(availability_domain=var["file_system_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["file_system_display_name"],
-        filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
-        id=var["file_system_id"],
-        parent_file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        source_snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"],
-        state=var["file_system_state"])
+    test_file_systems = oci.FileStorage.get_file_systems(availability_domain=file_system_availability_domain,
+        compartment_id=compartment_id,
+        display_name=file_system_display_name,
+        filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],
+        id=file_system_id,
+        parent_file_system_id=test_file_system["id"],
+        source_snapshot_id=test_snapshot["id"],
+        state=file_system_state)
     ```
     <!--End PulumiCodeChooser -->
 

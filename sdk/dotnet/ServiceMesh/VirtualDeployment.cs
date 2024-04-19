@@ -25,19 +25,20 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVirtualDeployment = new Oci.ServiceMesh.VirtualDeployment("testVirtualDeployment", new()
+    ///     var testVirtualDeployment = new Oci.ServiceMesh.VirtualDeployment("test_virtual_deployment", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = virtualDeploymentName,
+    ///         VirtualServiceId = testVirtualService.Id,
     ///         AccessLogging = new Oci.ServiceMesh.Inputs.VirtualDeploymentAccessLoggingArgs
     ///         {
-    ///             IsEnabled = @var.Virtual_deployment_access_logging_is_enabled,
+    ///             IsEnabled = virtualDeploymentAccessLoggingIsEnabled,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Virtual_deployment_description,
+    ///         Description = virtualDeploymentDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
@@ -46,16 +47,16 @@ namespace Pulumi.Oci.ServiceMesh
     ///         {
     ///             new Oci.ServiceMesh.Inputs.VirtualDeploymentListenerArgs
     ///             {
-    ///                 Port = @var.Virtual_deployment_listeners_port,
-    ///                 Protocol = @var.Virtual_deployment_listeners_protocol,
-    ///                 IdleTimeoutInMs = @var.Virtual_deployment_listeners_idle_timeout_in_ms,
-    ///                 RequestTimeoutInMs = @var.Virtual_deployment_listeners_request_timeout_in_ms,
+    ///                 Port = virtualDeploymentListenersPort,
+    ///                 Protocol = virtualDeploymentListenersProtocol,
+    ///                 IdleTimeoutInMs = virtualDeploymentListenersIdleTimeoutInMs,
+    ///                 RequestTimeoutInMs = virtualDeploymentListenersRequestTimeoutInMs,
     ///             },
     ///         },
     ///         ServiceDiscovery = new Oci.ServiceMesh.Inputs.VirtualDeploymentServiceDiscoveryArgs
     ///         {
-    ///             Type = @var.Virtual_deployment_service_discovery_type,
-    ///             Hostname = @var.Virtual_deployment_service_discovery_hostname,
+    ///             Type = virtualDeploymentServiceDiscoveryType,
+    ///             Hostname = virtualDeploymentServiceDiscoveryHostname,
     ///         },
     ///     });
     /// 

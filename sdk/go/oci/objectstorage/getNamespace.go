@@ -37,7 +37,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.GetNamespace(ctx, &objectstorage.GetNamespaceArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
 //			}, nil)
 //			if err != nil {
 //				return err

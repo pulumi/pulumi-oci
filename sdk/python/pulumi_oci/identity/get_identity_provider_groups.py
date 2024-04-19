@@ -119,9 +119,9 @@ def get_identity_provider_groups(filters: Optional[Sequence[pulumi.InputType['Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider_groups = oci.Identity.get_identity_provider_groups(identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        name=var["identity_provider_group_name"],
-        state=var["identity_provider_group_state"])
+    test_identity_provider_groups = oci.Identity.get_identity_provider_groups(identity_provider_id=test_identity_provider["id"],
+        name=identity_provider_group_name,
+        state=identity_provider_group_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -167,9 +167,9 @@ def get_identity_provider_groups_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider_groups = oci.Identity.get_identity_provider_groups(identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        name=var["identity_provider_group_name"],
-        state=var["identity_provider_group_state"])
+    test_identity_provider_groups = oci.Identity.get_identity_provider_groups(identity_provider_id=test_identity_provider["id"],
+        name=identity_provider_group_name,
+        state=identity_provider_group_state)
     ```
     <!--End PulumiCodeChooser -->
 

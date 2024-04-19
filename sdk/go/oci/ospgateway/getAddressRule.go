@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OspGateway.GetAddressRule(ctx, &ospgateway.GetAddressRuleArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CountryCode:   _var.Address_rule_country_code,
-//				OspHomeRegion: _var.Address_rule_osp_home_region,
+//				CompartmentId: compartmentId,
+//				CountryCode:   addressRuleCountryCode,
+//				OspHomeRegion: addressRuleOspHomeRegion,
 //			}, nil)
 //			if err != nil {
 //				return err

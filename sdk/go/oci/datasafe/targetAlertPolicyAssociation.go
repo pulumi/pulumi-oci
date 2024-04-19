@@ -31,16 +31,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewTargetAlertPolicyAssociation(ctx, "testTargetAlertPolicyAssociation", &DataSafe.TargetAlertPolicyAssociationArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				IsEnabled:     pulumi.Any(_var.Target_alert_policy_association_is_enabled),
-//				PolicyId:      pulumi.Any(oci_identity_policy.Test_policy.Id),
-//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//			_, err := DataSafe.NewTargetAlertPolicyAssociation(ctx, "test_target_alert_policy_association", &DataSafe.TargetAlertPolicyAssociationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				IsEnabled:     pulumi.Any(targetAlertPolicyAssociationIsEnabled),
+//				PolicyId:      pulumi.Any(testPolicy.Id),
+//				TargetId:      pulumi.Any(testTarget.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Target_alert_policy_association_description),
-//				DisplayName: pulumi.Any(_var.Target_alert_policy_association_display_name),
+//				Description: pulumi.Any(targetAlertPolicyAssociationDescription),
+//				DisplayName: pulumi.Any(targetAlertPolicyAssociationDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

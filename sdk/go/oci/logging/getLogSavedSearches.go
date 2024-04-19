@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Logging.GetLogSavedSearches(ctx, &logging.GetLogSavedSearchesArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				LogSavedSearchId: pulumi.StringRef(oci_logging_log_saved_search.Test_log_saved_search.Id),
-//				Name:             pulumi.StringRef(_var.Log_saved_search_name),
+//				CompartmentId:    compartmentId,
+//				LogSavedSearchId: pulumi.StringRef(testLogSavedSearch.Id),
+//				Name:             pulumi.StringRef(logSavedSearchName),
 //			}, nil)
 //			if err != nil {
 //				return err

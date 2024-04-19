@@ -31,12 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewAwrHubSource(ctx, "testAwrHubSource", &Opsi.AwrHubSourceArgs{
-//				AwrHubId:             pulumi.Any(oci_opsi_awr_hub.Test_awr_hub.Id),
-//				CompartmentId:        pulumi.Any(_var.Compartment_id),
-//				Type:                 pulumi.Any(_var.Awr_hub_source_type),
-//				AssociatedOpsiId:     pulumi.Any(oci_opsi_associated_opsi.Test_associated_opsi.Id),
-//				AssociatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
+//			_, err := Opsi.NewAwrHubSource(ctx, "test_awr_hub_source", &Opsi.AwrHubSourceArgs{
+//				AwrHubId:             pulumi.Any(testAwrHub.Id),
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				Name:                 pulumi.Any(awrHubSourceName),
+//				Type:                 pulumi.Any(awrHubSourceType),
+//				AssociatedOpsiId:     pulumi.Any(testAssociatedOpsi.Id),
+//				AssociatedResourceId: pulumi.Any(testResource.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},

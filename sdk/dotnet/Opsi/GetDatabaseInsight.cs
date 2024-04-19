@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testDatabaseInsight = Oci.Opsi.GetDatabaseInsight.Invoke(new()
         ///     {
-        ///         DatabaseInsightId = oci_opsi_database_insight.Test_database_insight.Id,
+        ///         DatabaseInsightId = testDatabaseInsightOciOpsiDatabaseInsight.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testDatabaseInsight = Oci.Opsi.GetDatabaseInsight.Invoke(new()
         ///     {
-        ///         DatabaseInsightId = oci_opsi_database_insight.Test_database_insight.Id,
+        ///         DatabaseInsightId = testDatabaseInsightOciOpsiDatabaseInsight.Id,
         ///     });
         /// 
         /// });

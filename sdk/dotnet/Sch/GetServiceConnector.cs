@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Sch
         /// {
         ///     var testServiceConnector = Oci.Sch.GetServiceConnector.Invoke(new()
         ///     {
-        ///         ServiceConnectorId = oci_sch_service_connector.Test_service_connector.Id,
+        ///         ServiceConnectorId = testServiceConnectorOciSchServiceConnector.Id,
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Sch
         /// {
         ///     var testServiceConnector = Oci.Sch.GetServiceConnector.Invoke(new()
         ///     {
-        ///         ServiceConnectorId = oci_sch_service_connector.Test_service_connector.Id,
+        ///         ServiceConnectorId = testServiceConnectorOciSchServiceConnector.Id,
         ///     });
         /// 
         /// });

@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyApiKeys = Oci.Identity.GetDomainsMyApiKeys.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyApiKeyCount = @var.My_api_key_my_api_key_count,
-        ///         MyApiKeyFilter = @var.My_api_key_my_api_key_filter,
-        ///         Authorization = @var.My_api_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_api_key_resource_type_schema_version,
-        ///         StartIndex = @var.My_api_key_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyApiKeyCount = myApiKeyMyApiKeyCount,
+        ///         MyApiKeyFilter = myApiKeyMyApiKeyFilter,
+        ///         Authorization = myApiKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myApiKeyResourceTypeSchemaVersion,
+        ///         StartIndex = myApiKeyStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyApiKeys = Oci.Identity.GetDomainsMyApiKeys.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyApiKeyCount = @var.My_api_key_my_api_key_count,
-        ///         MyApiKeyFilter = @var.My_api_key_my_api_key_filter,
-        ///         Authorization = @var.My_api_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_api_key_resource_type_schema_version,
-        ///         StartIndex = @var.My_api_key_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyApiKeyCount = myApiKeyMyApiKeyCount,
+        ///         MyApiKeyFilter = myApiKeyMyApiKeyFilter,
+        ///         Authorization = myApiKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myApiKeyResourceTypeSchemaVersion,
+        ///         StartIndex = myApiKeyStartIndex,
         ///     });
         /// 
         /// });

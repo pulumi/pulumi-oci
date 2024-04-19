@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystemDatabaseManagementsManagement = new oci.databasemanagement.ExternalDbSystemDatabaseManagementsManagement("testExternalDbSystemDatabaseManagementsManagement", {
- *     externalDbSystemId: oci_database_management_external_db_system.test_external_db_system.id,
- *     enableDatabaseManagement: _var.enable_database_management,
- *     licenseModel: _var.external_db_system_database_managements_management_license_model,
+ * const testExternalDbSystemDatabaseManagementsManagement = new oci.databasemanagement.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management", {
+ *     externalDbSystemId: testExternalDbSystem.id,
+ *     enableDatabaseManagement: enableDatabaseManagement,
+ *     licenseModel: externalDbSystemDatabaseManagementsManagementLicenseModel,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

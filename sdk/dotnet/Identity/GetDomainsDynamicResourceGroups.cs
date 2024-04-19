@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testDynamicResourceGroups = Oci.Identity.GetDomainsDynamicResourceGroups.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         DynamicResourceGroupCount = @var.Dynamic_resource_group_dynamic_resource_group_count,
-        ///         DynamicResourceGroupFilter = @var.Dynamic_resource_group_dynamic_resource_group_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         DynamicResourceGroupCount = dynamicResourceGroupDynamicResourceGroupCount,
+        ///         DynamicResourceGroupFilter = dynamicResourceGroupDynamicResourceGroupFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Dynamic_resource_group_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Dynamic_resource_group_resource_type_schema_version,
-        ///         StartIndex = @var.Dynamic_resource_group_start_index,
+        ///         Authorization = dynamicResourceGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = dynamicResourceGroupResourceTypeSchemaVersion,
+        ///         StartIndex = dynamicResourceGroupStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testDynamicResourceGroups = Oci.Identity.GetDomainsDynamicResourceGroups.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         DynamicResourceGroupCount = @var.Dynamic_resource_group_dynamic_resource_group_count,
-        ///         DynamicResourceGroupFilter = @var.Dynamic_resource_group_dynamic_resource_group_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         DynamicResourceGroupCount = dynamicResourceGroupDynamicResourceGroupCount,
+        ///         DynamicResourceGroupFilter = dynamicResourceGroupDynamicResourceGroupFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Dynamic_resource_group_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Dynamic_resource_group_resource_type_schema_version,
-        ///         StartIndex = @var.Dynamic_resource_group_start_index,
+        ///         Authorization = dynamicResourceGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = dynamicResourceGroupResourceTypeSchemaVersion,
+        ///         StartIndex = dynamicResourceGroupStartIndex,
         ///     });
         /// 
         /// });

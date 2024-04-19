@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUsageCarbonEmissionsQuery = oci.MeteringComputation.getUsageCarbonEmissionsQuery({
- *     usageCarbonEmissionsQueryId: oci_metering_computation_usage_carbon_emissions_query.test_usage_carbon_emissions_query.id,
+ *     usageCarbonEmissionsQueryId: testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -73,7 +73,7 @@ export interface GetUsageCarbonEmissionsQueryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUsageCarbonEmissionsQuery = oci.MeteringComputation.getUsageCarbonEmissionsQuery({
- *     usageCarbonEmissionsQueryId: oci_metering_computation_usage_carbon_emissions_query.test_usage_carbon_emissions_query.id,
+ *     usageCarbonEmissionsQueryId: testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

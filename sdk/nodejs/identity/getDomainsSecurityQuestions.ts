@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityQuestions = oci.Identity.getDomainsSecurityQuestions({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     securityQuestionCount: _var.security_question_security_question_count,
- *     securityQuestionFilter: _var.security_question_security_question_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     securityQuestionCount: securityQuestionSecurityQuestionCount,
+ *     securityQuestionFilter: securityQuestionSecurityQuestionFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.security_question_authorization,
- *     resourceTypeSchemaVersion: _var.security_question_resource_type_schema_version,
- *     startIndex: _var.security_question_start_index,
+ *     authorization: securityQuestionAuthorization,
+ *     resourceTypeSchemaVersion: securityQuestionResourceTypeSchemaVersion,
+ *     startIndex: securityQuestionStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,14 +137,14 @@ export interface GetDomainsSecurityQuestionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityQuestions = oci.Identity.getDomainsSecurityQuestions({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     securityQuestionCount: _var.security_question_security_question_count,
- *     securityQuestionFilter: _var.security_question_security_question_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     securityQuestionCount: securityQuestionSecurityQuestionCount,
+ *     securityQuestionFilter: securityQuestionSecurityQuestionFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.security_question_authorization,
- *     resourceTypeSchemaVersion: _var.security_question_resource_type_schema_version,
- *     startIndex: _var.security_question_start_index,
+ *     authorization: securityQuestionAuthorization,
+ *     resourceTypeSchemaVersion: securityQuestionResourceTypeSchemaVersion,
+ *     startIndex: securityQuestionStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

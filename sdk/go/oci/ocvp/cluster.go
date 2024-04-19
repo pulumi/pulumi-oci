@@ -36,45 +36,45 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ocvp.NewCluster(ctx, "testCluster", &Ocvp.ClusterArgs{
-//				ComputeAvailabilityDomain: pulumi.Any(_var.Cluster_compute_availability_domain),
-//				EsxiHostsCount:            pulumi.Any(_var.Cluster_esxi_hosts_count),
+//			_, err := Ocvp.NewCluster(ctx, "test_cluster", &Ocvp.ClusterArgs{
+//				ComputeAvailabilityDomain: pulumi.Any(clusterComputeAvailabilityDomain),
+//				EsxiHostsCount:            pulumi.Any(clusterEsxiHostsCount),
 //				NetworkConfiguration: &ocvp.ClusterNetworkConfigurationArgs{
-//					NsxEdgeVtepVlanId:    pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//					NsxVtepVlanId:        pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//					ProvisioningSubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					VmotionVlanId:        pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//					VsanVlanId:           pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//					HcxVlanId:            pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//					NsxEdgeUplink1vlanId: pulumi.Any(oci_ocvp_nsx_edge_uplink1vlan.Test_nsx_edge_uplink1vlan.Id),
-//					NsxEdgeUplink2vlanId: pulumi.Any(oci_ocvp_nsx_edge_uplink2vlan.Test_nsx_edge_uplink2vlan.Id),
-//					ProvisioningVlanId:   pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//					ReplicationVlanId:    pulumi.Any(oci_core_vlan.Test_vlan.Id),
-//					VsphereVlanId:        pulumi.Any(oci_core_vlan.Test_vlan.Id),
+//					NsxEdgeVtepVlanId:    pulumi.Any(testVlan.Id),
+//					NsxVtepVlanId:        pulumi.Any(testVlan.Id),
+//					ProvisioningSubnetId: pulumi.Any(testSubnet.Id),
+//					VmotionVlanId:        pulumi.Any(testVlan.Id),
+//					VsanVlanId:           pulumi.Any(testVlan.Id),
+//					HcxVlanId:            pulumi.Any(testVlan.Id),
+//					NsxEdgeUplink1vlanId: pulumi.Any(testNsxEdgeUplink1vlan.Id),
+//					NsxEdgeUplink2vlanId: pulumi.Any(testNsxEdgeUplink2vlan.Id),
+//					ProvisioningVlanId:   pulumi.Any(testVlan.Id),
+//					ReplicationVlanId:    pulumi.Any(testVlan.Id),
+//					VsphereVlanId:        pulumi.Any(testVlan.Id),
 //				},
-//				SddcId:                pulumi.Any(oci_ocvp_sddc.Test_sddc.Id),
-//				CapacityReservationId: pulumi.Any(oci_ocvp_capacity_reservation.Test_capacity_reservation.Id),
+//				SddcId:                pulumi.Any(testSddc.Id),
+//				CapacityReservationId: pulumi.Any(testCapacityReservation.Id),
 //				Datastores: ocvp.ClusterDatastoreArray{
 //					&ocvp.ClusterDatastoreArgs{
-//						BlockVolumeIds: pulumi.Any(_var.Cluster_datastores_block_volume_ids),
-//						DatastoreType:  pulumi.Any(_var.Cluster_datastores_datastore_type),
+//						BlockVolumeIds: pulumi.Any(clusterDatastoresBlockVolumeIds),
+//						DatastoreType:  pulumi.Any(clusterDatastoresDatastoreType),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName:         pulumi.Any(_var.Cluster_display_name),
-//				EsxiSoftwareVersion: pulumi.Any(_var.Cluster_esxi_software_version),
+//				DisplayName:         pulumi.Any(clusterDisplayName),
+//				EsxiSoftwareVersion: pulumi.Any(clusterEsxiSoftwareVersion),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				InitialCommitment:         pulumi.Any(_var.Cluster_initial_commitment),
-//				InitialHostOcpuCount:      pulumi.Any(_var.Cluster_initial_host_ocpu_count),
-//				InitialHostShapeName:      pulumi.Any(oci_core_shape.Test_shape.Name),
-//				InstanceDisplayNamePrefix: pulumi.Any(_var.Cluster_instance_display_name_prefix),
-//				IsShieldedInstanceEnabled: pulumi.Any(_var.Cluster_is_shielded_instance_enabled),
-//				VmwareSoftwareVersion:     pulumi.Any(_var.Cluster_vmware_software_version),
-//				WorkloadNetworkCidr:       pulumi.Any(_var.Cluster_workload_network_cidr),
+//				InitialCommitment:         pulumi.Any(clusterInitialCommitment),
+//				InitialHostOcpuCount:      pulumi.Any(clusterInitialHostOcpuCount),
+//				InitialHostShapeName:      pulumi.Any(testShape.Name),
+//				InstanceDisplayNamePrefix: pulumi.Any(clusterInstanceDisplayNamePrefix),
+//				IsShieldedInstanceEnabled: pulumi.Any(clusterIsShieldedInstanceEnabled),
+//				VmwareSoftwareVersion:     pulumi.Any(clusterVmwareSoftwareVersion),
+//				WorkloadNetworkCidr:       pulumi.Any(clusterWorkloadNetworkCidr),
 //			})
 //			if err != nil {
 //				return err

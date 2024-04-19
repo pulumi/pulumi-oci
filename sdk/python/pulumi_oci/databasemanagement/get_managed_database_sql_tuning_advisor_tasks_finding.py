@@ -153,14 +153,14 @@ def get_managed_database_sql_tuning_advisor_tasks_finding(begin_exec_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id=oci_database_management_begin_exec["test_begin_exec"]["id"],
-        end_exec_id=oci_database_management_end_exec["test_end_exec"]["id"],
-        finding_filter=var["managed_database_sql_tuning_advisor_tasks_finding_finding_filter"],
-        index_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_finding_search_period"],
-        stats_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter"])
+    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
+        sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
+        begin_exec_id=test_begin_exec["id"],
+        end_exec_id=test_end_exec["id"],
+        finding_filter=managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
+        index_hash_filter=managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
+        search_period=managed_database_sql_tuning_advisor_tasks_finding_search_period,
+        stats_hash_filter=managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -221,14 +221,14 @@ def get_managed_database_sql_tuning_advisor_tasks_finding_output(begin_exec_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        begin_exec_id=oci_database_management_begin_exec["test_begin_exec"]["id"],
-        end_exec_id=oci_database_management_end_exec["test_end_exec"]["id"],
-        finding_filter=var["managed_database_sql_tuning_advisor_tasks_finding_finding_filter"],
-        index_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter"],
-        search_period=var["managed_database_sql_tuning_advisor_tasks_finding_search_period"],
-        stats_hash_filter=var["managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter"])
+    test_managed_database_sql_tuning_advisor_tasks_finding = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_finding(managed_database_id=test_managed_database["id"],
+        sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
+        begin_exec_id=test_begin_exec["id"],
+        end_exec_id=test_end_exec["id"],
+        finding_filter=managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
+        index_hash_filter=managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
+        search_period=managed_database_sql_tuning_advisor_tasks_finding_search_period,
+        stats_hash_filter=managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter)
     ```
     <!--End PulumiCodeChooser -->
 

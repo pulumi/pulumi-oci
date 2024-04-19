@@ -31,16 +31,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewOneoffPatch(ctx, "testOneoffPatch", &Database.OneoffPatchArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DbVersion:     pulumi.Any(_var.Oneoff_patch_db_version),
-//				DisplayName:   pulumi.Any(_var.Oneoff_patch_display_name),
-//				ReleaseUpdate: pulumi.Any(_var.Oneoff_patch_release_update),
-//				DefinedTags:   pulumi.Any(_var.Oneoff_patch_defined_tags),
+//			_, err := Database.NewOneoffPatch(ctx, "test_oneoff_patch", &Database.OneoffPatchArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DbVersion:     pulumi.Any(oneoffPatchDbVersion),
+//				DisplayName:   pulumi.Any(oneoffPatchDisplayName),
+//				ReleaseUpdate: pulumi.Any(oneoffPatchReleaseUpdate),
+//				DefinedTags:   pulumi.Any(oneoffPatchDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				OneOffPatches: pulumi.Any(_var.Oneoff_patch_one_off_patches),
+//				OneOffPatches: pulumi.Any(oneoffPatchOneOffPatches),
 //			})
 //			if err != nil {
 //				return err

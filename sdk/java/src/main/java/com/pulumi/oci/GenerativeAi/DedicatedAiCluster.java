@@ -48,13 +48,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDedicatedAiCluster = new DedicatedAiCluster(&#34;testDedicatedAiCluster&#34;, DedicatedAiClusterArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .type(var_.dedicated_ai_cluster_type())
- *             .unitCount(var_.dedicated_ai_cluster_unit_count())
- *             .unitShape(var_.dedicated_ai_cluster_unit_shape())
+ *             .compartmentId(compartmentId)
+ *             .type(dedicatedAiClusterType)
+ *             .unitCount(dedicatedAiClusterUnitCount)
+ *             .unitShape(dedicatedAiClusterUnitShape)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.dedicated_ai_cluster_description())
- *             .displayName(var_.dedicated_ai_cluster_display_name())
+ *             .description(dedicatedAiClusterDescription)
+ *             .displayName(dedicatedAiClusterDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

@@ -18,26 +18,26 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsage = new oci.meteringcomputation.Usage("testUsage", {
- *     granularity: _var.usage_granularity,
- *     tenantId: oci_metering_computation_tenant.test_tenant.id,
- *     timeUsageEnded: _var.usage_time_usage_ended,
- *     timeUsageStarted: _var.usage_time_usage_started,
- *     compartmentDepth: _var.usage_compartment_depth,
- *     filter: _var.usage_filter,
+ * const testUsage = new oci.meteringcomputation.Usage("test_usage", {
+ *     granularity: usageGranularity,
+ *     tenantId: testTenant.id,
+ *     timeUsageEnded: usageTimeUsageEnded,
+ *     timeUsageStarted: usageTimeUsageStarted,
+ *     compartmentDepth: usageCompartmentDepth,
+ *     filter: usageFilter,
  *     forecast: {
- *         timeForecastEnded: _var.usage_forecast_time_forecast_ended,
- *         forecastType: _var.usage_forecast_forecast_type,
- *         timeForecastStarted: _var.usage_forecast_time_forecast_started,
+ *         timeForecastEnded: usageForecastTimeForecastEnded,
+ *         forecastType: usageForecastForecastType,
+ *         timeForecastStarted: usageForecastTimeForecastStarted,
  *     },
- *     groupBies: _var.usage_group_by,
+ *     groupBies: usageGroupBy,
  *     groupByTags: [{
- *         key: _var.usage_group_by_tag_key,
- *         namespace: _var.usage_group_by_tag_namespace,
- *         value: _var.usage_group_by_tag_value,
+ *         key: usageGroupByTagKey,
+ *         namespace: usageGroupByTagNamespace,
+ *         value: usageGroupByTagValue,
  *     }],
- *     isAggregateByTime: _var.usage_is_aggregate_by_time,
- *     queryType: _var.usage_query_type,
+ *     isAggregateByTime: usageIsAggregateByTime,
+ *     queryType: usageQueryType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

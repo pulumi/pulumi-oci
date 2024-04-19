@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTriggers = oci.DevOps.getTriggers({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.trigger_display_name,
- *     id: _var.trigger_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.trigger_state,
+ *     compartmentId: compartmentId,
+ *     displayName: triggerDisplayName,
+ *     id: triggerId,
+ *     projectId: testProject.id,
+ *     state: triggerState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,11 +118,11 @@ export interface GetTriggersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTriggers = oci.DevOps.getTriggers({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.trigger_display_name,
- *     id: _var.trigger_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.trigger_state,
+ *     compartmentId: compartmentId,
+ *     displayName: triggerDisplayName,
+ *     id: triggerId,
+ *     projectId: testProject.id,
+ *     state: triggerState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

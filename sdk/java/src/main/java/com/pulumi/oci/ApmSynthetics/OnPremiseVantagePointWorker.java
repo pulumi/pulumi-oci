@@ -50,16 +50,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOnPremiseVantagePointWorker = new OnPremiseVantagePointWorker(&#34;testOnPremiseVantagePointWorker&#34;, OnPremiseVantagePointWorkerArgs.builder()        
- *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
- *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
- *             .resourcePrincipalTokenPublicKey(var_.on_premise_vantage_point_worker_resource_principal_token_public_key())
- *             .version(var_.on_premise_vantage_point_worker_version())
- *             .configurationDetails(var_.on_premise_vantage_point_worker_configuration_details())
+ *             .apmDomainId(testApmDomain.id())
+ *             .name(onPremiseVantagePointWorkerName)
+ *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+ *             .resourcePrincipalTokenPublicKey(onPremiseVantagePointWorkerResourcePrincipalTokenPublicKey)
+ *             .version(onPremiseVantagePointWorkerVersion)
+ *             .configurationDetails(onPremiseVantagePointWorkerConfigurationDetails)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .priority(var_.on_premise_vantage_point_worker_priority())
- *             .status(var_.on_premise_vantage_point_worker_status())
- *             .workerType(var_.on_premise_vantage_point_worker_worker_type())
+ *             .priority(onPremiseVantagePointWorkerPriority)
+ *             .status(onPremiseVantagePointWorkerStatus)
+ *             .workerType(onPremiseVantagePointWorkerWorkerType)
  *             .build());
  * 
  *     }

@@ -31,19 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.NewWorkspaceImportRequest(ctx, "testWorkspaceImportRequest", &DataIntegration.WorkspaceImportRequestArgs{
-//				Bucket:                         pulumi.Any(_var.Workspace_import_request_bucket),
-//				FileName:                       pulumi.Any(_var.Workspace_import_request_file_name),
-//				WorkspaceId:                    pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
-//				AreDataAssetReferencesIncluded: pulumi.Any(_var.Workspace_import_request_are_data_asset_references_included),
+//			_, err := DataIntegration.NewWorkspaceImportRequest(ctx, "test_workspace_import_request", &DataIntegration.WorkspaceImportRequestArgs{
+//				Bucket:                         pulumi.Any(workspaceImportRequestBucket),
+//				FileName:                       pulumi.Any(workspaceImportRequestFileName),
+//				WorkspaceId:                    pulumi.Any(testWorkspace.Id),
+//				AreDataAssetReferencesIncluded: pulumi.Any(workspaceImportRequestAreDataAssetReferencesIncluded),
 //				ImportConflictResolution: &dataintegration.WorkspaceImportRequestImportConflictResolutionArgs{
-//					ImportConflictResolutionType: pulumi.Any(_var.Workspace_import_request_import_conflict_resolution_import_conflict_resolution_type),
-//					DuplicatePrefix:              pulumi.Any(_var.Workspace_import_request_import_conflict_resolution_duplicate_prefix),
-//					DuplicateSuffix:              pulumi.Any(_var.Workspace_import_request_import_conflict_resolution_duplicate_suffix),
+//					ImportConflictResolutionType: pulumi.Any(workspaceImportRequestImportConflictResolutionImportConflictResolutionType),
+//					DuplicatePrefix:              pulumi.Any(workspaceImportRequestImportConflictResolutionDuplicatePrefix),
+//					DuplicateSuffix:              pulumi.Any(workspaceImportRequestImportConflictResolutionDuplicateSuffix),
 //				},
-//				ObjectKeyForImport:     pulumi.Any(_var.Workspace_import_request_object_key_for_import),
-//				ObjectStorageRegion:    pulumi.Any(_var.Workspace_import_request_object_storage_region),
-//				ObjectStorageTenancyId: pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
+//				ObjectKeyForImport:     pulumi.Any(workspaceImportRequestObjectKeyForImport),
+//				ObjectStorageRegion:    pulumi.Any(workspaceImportRequestObjectStorageRegion),
+//				ObjectStorageTenancyId: pulumi.Any(testTenancy.Id),
 //			})
 //			if err != nil {
 //				return err

@@ -31,20 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewPrivateEndpoint(ctx, "testDataSciencePrivateEndpoint", &DataScience.PrivateEndpointArgs{
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				DataScienceResourceType: pulumi.Any(_var.Data_science_private_endpoint_data_science_resource_type),
-//				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//			_, err := DataScience.NewPrivateEndpoint(ctx, "test_data_science_private_endpoint", &DataScience.PrivateEndpointArgs{
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				DataScienceResourceType: pulumi.Any(dataSciencePrivateEndpointDataScienceResourceType),
+//				SubnetId:                pulumi.Any(testSubnet.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Data_science_private_endpoint_description),
-//				DisplayName: pulumi.Any(_var.Data_science_private_endpoint_display_name),
+//				Description: pulumi.Any(dataSciencePrivateEndpointDescription),
+//				DisplayName: pulumi.Any(dataSciencePrivateEndpointDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				NsgIds:    pulumi.Any(_var.Data_science_private_endpoint_nsg_ids),
-//				SubDomain: pulumi.Any(_var.Data_science_private_endpoint_sub_domain),
+//				NsgIds:    pulumi.Any(dataSciencePrivateEndpointNsgIds),
+//				SubDomain: pulumi.Any(dataSciencePrivateEndpointSubDomain),
 //			})
 //			if err != nil {
 //				return err

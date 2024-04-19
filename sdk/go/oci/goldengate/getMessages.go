@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetMessages(ctx, &goldengate.GetMessagesArgs{
-//				DeploymentId: oci_golden_gate_deployment.Test_deployment.Id,
+//				DeploymentId: testDeployment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

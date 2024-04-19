@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceConsoleConnection = new oci.core.InstanceConsoleConnection("testInstanceConsoleConnection", {
- *     instanceId: oci_core_instance.test_instance.id,
- *     publicKey: _var.instance_console_connection_public_key,
+ * const testInstanceConsoleConnection = new oci.core.InstanceConsoleConnection("test_instance_console_connection", {
+ *     instanceId: testInstance.id,
+ *     publicKey: instanceConsoleConnectionPublicKey,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

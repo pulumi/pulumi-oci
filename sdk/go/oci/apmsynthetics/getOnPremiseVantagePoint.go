@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmSynthetics.GetOnPremiseVantagePoint(ctx, &apmsynthetics.GetOnPremiseVantagePointArgs{
-//				ApmDomainId:             oci_apm_apm_domain.Test_apm_domain.Id,
-//				OnPremiseVantagePointId: oci_apm_synthetics_on_premise_vantage_point.Test_on_premise_vantage_point.Id,
+//				ApmDomainId:             testApmDomain.Id,
+//				OnPremiseVantagePointId: testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

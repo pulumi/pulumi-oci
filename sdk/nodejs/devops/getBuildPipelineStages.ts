@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBuildPipelineStages = oci.DevOps.getBuildPipelineStages({
- *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.build_pipeline_stage_display_name,
- *     id: _var.build_pipeline_stage_id,
- *     state: _var.build_pipeline_stage_state,
+ *     buildPipelineId: testBuildPipeline.id,
+ *     compartmentId: compartmentId,
+ *     displayName: buildPipelineStageDisplayName,
+ *     id: buildPipelineStageId,
+ *     state: buildPipelineStageState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetBuildPipelineStagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBuildPipelineStages = oci.DevOps.getBuildPipelineStages({
- *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.build_pipeline_stage_display_name,
- *     id: _var.build_pipeline_stage_id,
- *     state: _var.build_pipeline_stage_state,
+ *     buildPipelineId: testBuildPipeline.id,
+ *     compartmentId: compartmentId,
+ *     displayName: buildPipelineStageDisplayName,
+ *     id: buildPipelineStageId,
+ *     state: buildPipelineStageState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -341,14 +341,14 @@ class SdmMaskingPolicyDifference(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sdm_masking_policy_difference = oci.data_safe.SdmMaskingPolicyDifference("testSdmMaskingPolicyDifference",
-            compartment_id=var["compartment_id"],
-            masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        test_sdm_masking_policy_difference = oci.data_safe.SdmMaskingPolicyDifference("test_sdm_masking_policy_difference",
+            compartment_id=compartment_id,
+            masking_policy_id=test_masking_policy["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            difference_type=var["sdm_masking_policy_difference_difference_type"],
-            display_name=var["sdm_masking_policy_difference_display_name"],
+            difference_type=sdm_masking_policy_difference_difference_type,
+            display_name=sdm_masking_policy_difference_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -398,14 +398,14 @@ class SdmMaskingPolicyDifference(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sdm_masking_policy_difference = oci.data_safe.SdmMaskingPolicyDifference("testSdmMaskingPolicyDifference",
-            compartment_id=var["compartment_id"],
-            masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
+        test_sdm_masking_policy_difference = oci.data_safe.SdmMaskingPolicyDifference("test_sdm_masking_policy_difference",
+            compartment_id=compartment_id,
+            masking_policy_id=test_masking_policy["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            difference_type=var["sdm_masking_policy_difference_difference_type"],
-            display_name=var["sdm_masking_policy_difference_display_name"],
+            difference_type=sdm_masking_policy_difference_difference_type,
+            display_name=sdm_masking_policy_difference_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuthenticationPolicy = oci.Identity.getAuthenticationPolicy({
- *     compartmentId: _var.tenancy_ocid,
+ *     compartmentId: tenancyOcid,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -75,7 +75,7 @@ export interface GetAuthenticationPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuthenticationPolicy = oci.Identity.getAuthenticationPolicy({
- *     compartmentId: _var.tenancy_ocid,
+ *     compartmentId: tenancyOcid,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

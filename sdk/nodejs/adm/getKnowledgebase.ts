@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testKnowledgeBase = oci.Adm.getKnowledgebase({
- *     knowledgeBaseId: oci_adm_knowledge_base.test_knowledge_base.id,
+ *     knowledgeBaseId: testKnowledgeBaseOciAdmKnowledgeBase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,7 +95,7 @@ export interface GetKnowledgebaseResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testKnowledgeBase = oci.Adm.getKnowledgebase({
- *     knowledgeBaseId: oci_adm_knowledge_base.test_knowledge_base.id,
+ *     knowledgeBaseId: testKnowledgeBaseOciAdmKnowledgeBase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

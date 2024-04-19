@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSmtpCredentials = oci.Identity.getDomainsSmtpCredentials({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     smtpCredentialCount: _var.smtp_credential_smtp_credential_count,
- *     smtpCredentialFilter: _var.smtp_credential_smtp_credential_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     smtpCredentialCount: smtpCredentialSmtpCredentialCount,
+ *     smtpCredentialFilter: smtpCredentialSmtpCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.smtp_credential_authorization,
- *     resourceTypeSchemaVersion: _var.smtp_credential_resource_type_schema_version,
- *     startIndex: _var.smtp_credential_start_index,
+ *     authorization: smtpCredentialAuthorization,
+ *     resourceTypeSchemaVersion: smtpCredentialResourceTypeSchemaVersion,
+ *     startIndex: smtpCredentialStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsSmtpCredentialsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSmtpCredentials = oci.Identity.getDomainsSmtpCredentials({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     smtpCredentialCount: _var.smtp_credential_smtp_credential_count,
- *     smtpCredentialFilter: _var.smtp_credential_smtp_credential_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     smtpCredentialCount: smtpCredentialSmtpCredentialCount,
+ *     smtpCredentialFilter: smtpCredentialSmtpCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.smtp_credential_authorization,
- *     resourceTypeSchemaVersion: _var.smtp_credential_resource_type_schema_version,
- *     startIndex: _var.smtp_credential_start_index,
+ *     authorization: smtpCredentialAuthorization,
+ *     resourceTypeSchemaVersion: smtpCredentialResourceTypeSchemaVersion,
+ *     startIndex: smtpCredentialStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

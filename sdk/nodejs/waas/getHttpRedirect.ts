@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpRedirect = oci.Waas.getHttpRedirect({
- *     httpRedirectId: oci_waas_http_redirect.test_http_redirect.id,
+ *     httpRedirectId: testHttpRedirectOciWaasHttpRedirect.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,7 +101,7 @@ export interface GetHttpRedirectResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpRedirect = oci.Waas.getHttpRedirect({
- *     httpRedirectId: oci_waas_http_redirect.test_http_redirect.id,
+ *     httpRedirectId: testHttpRedirectOciWaasHttpRedirect.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

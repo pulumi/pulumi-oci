@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSystemMediaWorkflow = oci.MediaServices.getSystemMediaWorkflow({
- *     compartmentId: _var.compartment_id,
- *     name: _var.system_media_workflow_name,
+ *     compartmentId: compartmentId,
+ *     name: systemMediaWorkflowName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -80,8 +80,8 @@ export interface GetSystemMediaWorkflowResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSystemMediaWorkflow = oci.MediaServices.getSystemMediaWorkflow({
- *     compartmentId: _var.compartment_id,
- *     name: _var.system_media_workflow_name,
+ *     compartmentId: compartmentId,
+ *     name: systemMediaWorkflowName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

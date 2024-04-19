@@ -47,20 +47,20 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExport = new Export(&#34;testExport&#34;, ExportArgs.builder()        
- *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
- *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
- *             .path(var_.export_path())
+ *             .exportSetId(testExportSet.id())
+ *             .fileSystemId(testFileSystem.id())
+ *             .path(exportPath)
  *             .exportOptions(ExportExportOptionArgs.builder()
- *                 .source(var_.export_export_options_source())
- *                 .access(var_.export_export_options_access())
- *                 .allowedAuths(var_.export_export_options_allowed_auth())
- *                 .anonymousGid(var_.export_export_options_anonymous_gid())
- *                 .anonymousUid(var_.export_export_options_anonymous_uid())
- *                 .identitySquash(var_.export_export_options_identity_squash())
- *                 .isAnonymousAccessAllowed(var_.export_export_options_is_anonymous_access_allowed())
- *                 .requirePrivilegedSourcePort(var_.export_export_options_require_privileged_source_port())
+ *                 .source(exportExportOptionsSource)
+ *                 .access(exportExportOptionsAccess)
+ *                 .allowedAuths(exportExportOptionsAllowedAuth)
+ *                 .anonymousGid(exportExportOptionsAnonymousGid)
+ *                 .anonymousUid(exportExportOptionsAnonymousUid)
+ *                 .identitySquash(exportExportOptionsIdentitySquash)
+ *                 .isAnonymousAccessAllowed(exportExportOptionsIsAnonymousAccessAllowed)
+ *                 .requirePrivilegedSourcePort(exportExportOptionsRequirePrivilegedSourcePort)
  *                 .build())
- *             .isIdmapGroupsForSysAuth(var_.export_is_idmap_groups_for_sys_auth())
+ *             .isIdmapGroupsForSysAuth(exportIsIdmapGroupsForSysAuth)
  *             .build());
  * 
  *     }

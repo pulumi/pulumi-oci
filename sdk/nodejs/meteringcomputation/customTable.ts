@@ -18,21 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomTable = new oci.meteringcomputation.CustomTable("testCustomTable", {
- *     compartmentId: _var.compartment_id,
+ * const testCustomTable = new oci.meteringcomputation.CustomTable("test_custom_table", {
+ *     compartmentId: compartmentId,
  *     savedCustomTable: {
- *         displayName: _var.custom_table_saved_custom_table_display_name,
- *         columnGroupBies: _var.custom_table_saved_custom_table_column_group_by,
- *         compartmentDepth: _var.custom_table_saved_custom_table_compartment_depth,
+ *         displayName: customTableSavedCustomTableDisplayName,
+ *         columnGroupBies: customTableSavedCustomTableColumnGroupBy,
+ *         compartmentDepth: customTableSavedCustomTableCompartmentDepth,
  *         groupByTags: [{
- *             key: _var.custom_table_saved_custom_table_group_by_tag_key,
- *             namespace: _var.custom_table_saved_custom_table_group_by_tag_namespace,
- *             value: _var.custom_table_saved_custom_table_group_by_tag_value,
+ *             key: customTableSavedCustomTableGroupByTagKey,
+ *             namespace: customTableSavedCustomTableGroupByTagNamespace,
+ *             value: customTableSavedCustomTableGroupByTagValue,
  *         }],
- *         rowGroupBies: _var.custom_table_saved_custom_table_row_group_by,
- *         version: _var.custom_table_saved_custom_table_version,
+ *         rowGroupBies: customTableSavedCustomTableRowGroupBy,
+ *         version: customTableSavedCustomTableVersion,
  *     },
- *     savedReportId: oci_metering_computation_saved_report.test_saved_report.id,
+ *     savedReportId: testSavedReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

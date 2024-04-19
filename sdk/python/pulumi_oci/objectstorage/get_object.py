@@ -300,16 +300,16 @@ def get_object(base64_encode_content: Optional[bool] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object = oci.ObjectStorage.get_object(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"],
-        http_response_cache_control=var["object_http_response_cache_control"],
-        http_response_content_disposition=var["object_http_response_content_disposition"],
-        http_response_content_encoding=var["object_http_response_content_encoding"],
-        http_response_content_language=var["object_http_response_content_language"],
-        http_response_content_type=var["object_http_response_content_type"],
-        http_response_expires=var["object_http_response_expires"],
-        version_id=oci_objectstorage_version["test_version"]["id"])
+    test_object = oci.ObjectStorage.get_object(bucket=object_bucket,
+        namespace=object_namespace,
+        object=object_object,
+        http_response_cache_control=object_http_response_cache_control,
+        http_response_content_disposition=object_http_response_content_disposition,
+        http_response_content_encoding=object_http_response_content_encoding,
+        http_response_content_language=object_http_response_content_language,
+        http_response_content_type=object_http_response_content_type,
+        http_response_expires=object_http_response_expires,
+        version_id=test_version["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -394,16 +394,16 @@ def get_object_output(base64_encode_content: Optional[pulumi.Input[Optional[bool
     import pulumi
     import pulumi_oci as oci
 
-    test_object = oci.ObjectStorage.get_object(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"],
-        http_response_cache_control=var["object_http_response_cache_control"],
-        http_response_content_disposition=var["object_http_response_content_disposition"],
-        http_response_content_encoding=var["object_http_response_content_encoding"],
-        http_response_content_language=var["object_http_response_content_language"],
-        http_response_content_type=var["object_http_response_content_type"],
-        http_response_expires=var["object_http_response_expires"],
-        version_id=oci_objectstorage_version["test_version"]["id"])
+    test_object = oci.ObjectStorage.get_object(bucket=object_bucket,
+        namespace=object_namespace,
+        object=object_object,
+        http_response_cache_control=object_http_response_cache_control,
+        http_response_content_disposition=object_http_response_content_disposition,
+        http_response_content_encoding=object_http_response_content_encoding,
+        http_response_content_language=object_http_response_content_language,
+        http_response_content_type=object_http_response_content_type,
+        http_response_expires=object_http_response_expires,
+        version_id=test_version["id"])
     ```
     <!--End PulumiCodeChooser -->
 

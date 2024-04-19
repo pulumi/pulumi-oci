@@ -42,7 +42,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetPublicIp(ctx, &core.GetPublicIpArgs{
-//				Id: pulumi.StringRef(_var.Test_public_ip_id),
+//				Id: pulumi.StringRef(testPublicIpId),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -69,7 +69,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetPublicIp(ctx, &core.GetPublicIpArgs{
-//				PrivateIpId: pulumi.StringRef(_var.Test_public_ip_private_ip_id),
+//				PrivateIpId: pulumi.StringRef(testPublicIpPrivateIpId),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -96,7 +96,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetPublicIp(ctx, &core.GetPublicIpArgs{
-//				IpAddress: pulumi.StringRef(_var.Test_public_ip_ip_address),
+//				IpAddress: pulumi.StringRef(testPublicIpIpAddress),
 //			}, nil)
 //			if err != nil {
 //				return err

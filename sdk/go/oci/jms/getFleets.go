@@ -32,11 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleets(ctx, &jms.GetFleetsArgs{
-//				CompartmentId:       pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:         pulumi.StringRef(_var.Fleet_display_name),
-//				DisplayNameContains: pulumi.StringRef(_var.Fleet_display_name_contains),
-//				Id:                  pulumi.StringRef(_var.Fleet_id),
-//				State:               pulumi.StringRef(_var.Fleet_state),
+//				CompartmentId:       pulumi.StringRef(compartmentId),
+//				DisplayName:         pulumi.StringRef(fleetDisplayName),
+//				DisplayNameContains: pulumi.StringRef(fleetDisplayNameContains),
+//				Id:                  pulumi.StringRef(fleetId),
+//				State:               pulumi.StringRef(fleetState),
 //			}, nil)
 //			if err != nil {
 //				return err

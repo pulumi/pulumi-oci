@@ -16,22 +16,22 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentDependency = new oci.cloudbridge.AgentDependency("testAgentDependency", {
- *     bucket: _var.agent_dependency_bucket,
- *     compartmentId: _var.compartment_id,
- *     dependencyName: _var.agent_dependency_dependency_name,
- *     displayName: _var.agent_dependency_display_name,
- *     namespace: _var.agent_dependency_namespace,
- *     object: _var.agent_dependency_object,
+ * const testAgentDependency = new oci.cloudbridge.AgentDependency("test_agent_dependency", {
+ *     bucket: agentDependencyBucket,
+ *     compartmentId: compartmentId,
+ *     dependencyName: agentDependencyDependencyName,
+ *     displayName: agentDependencyDisplayName,
+ *     namespace: agentDependencyNamespace,
+ *     object: agentDependencyObject,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     dependencyVersion: _var.agent_dependency_dependency_version,
- *     description: _var.agent_dependency_description,
+ *     dependencyVersion: agentDependencyDependencyVersion,
+ *     description: agentDependencyDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     systemTags: _var.agent_dependency_system_tags,
+ *     systemTags: agentDependencySystemTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

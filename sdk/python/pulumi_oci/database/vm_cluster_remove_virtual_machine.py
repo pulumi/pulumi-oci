@@ -511,11 +511,11 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vm_cluster_remove_virtual_machine = oci.database.VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine",
+        test_vm_cluster_remove_virtual_machine = oci.database.VmClusterRemoveVirtualMachine("test_vm_cluster_remove_virtual_machine",
             db_servers=[oci.database.VmClusterRemoveVirtualMachineDbServerArgs(
-                db_server_id=oci_database_db_server["test_db_server"]["id"],
+                db_server_id=test_db_server["id"],
             )],
-            vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+            vm_cluster_id=test_vm_cluster["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -554,11 +554,11 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vm_cluster_remove_virtual_machine = oci.database.VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine",
+        test_vm_cluster_remove_virtual_machine = oci.database.VmClusterRemoveVirtualMachine("test_vm_cluster_remove_virtual_machine",
             db_servers=[oci.database.VmClusterRemoveVirtualMachineDbServerArgs(
-                db_server_id=oci_database_db_server["test_db_server"]["id"],
+                db_server_id=test_db_server["id"],
             )],
-            vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+            vm_cluster_id=test_vm_cluster["id"])
         ```
         <!--End PulumiCodeChooser -->
 

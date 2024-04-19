@@ -111,9 +111,9 @@ def get_organization_subscriptions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_subscriptions = oci.OsubOrganizationSubscription.get_organization_subscriptions(compartment_id=var["compartment_id"],
-        subscription_ids=var["organization_subscription_subscription_ids"],
-        x_one_origin_region=var["organization_subscription_x_one_origin_region"])
+    test_organization_subscriptions = oci.OsubOrganizationSubscription.get_organization_subscriptions(compartment_id=compartment_id,
+        subscription_ids=organization_subscription_subscription_ids,
+        x_one_origin_region=organization_subscription_x_one_origin_region)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -157,9 +157,9 @@ def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_subscriptions = oci.OsubOrganizationSubscription.get_organization_subscriptions(compartment_id=var["compartment_id"],
-        subscription_ids=var["organization_subscription_subscription_ids"],
-        x_one_origin_region=var["organization_subscription_x_one_origin_region"])
+    test_organization_subscriptions = oci.OsubOrganizationSubscription.get_organization_subscriptions(compartment_id=compartment_id,
+        subscription_ids=organization_subscription_subscription_ids,
+        x_one_origin_region=organization_subscription_x_one_origin_region)
     ```
     <!--End PulumiCodeChooser -->
 

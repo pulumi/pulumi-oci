@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSourceEvent = oci.CloudGuard.getDataSourceEvent({
- *     dataSourceId: oci_cloud_guard_data_source.test_data_source.id,
- *     region: _var.data_source_event_region,
+ *     dataSourceId: testDataSource.id,
+ *     region: dataSourceEventRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetDataSourceEventResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSourceEvent = oci.CloudGuard.getDataSourceEvent({
- *     dataSourceId: oci_cloud_guard_data_source.test_data_source.id,
- *     region: _var.data_source_event_region,
+ *     dataSourceId: testDataSource.id,
+ *     region: dataSourceEventRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

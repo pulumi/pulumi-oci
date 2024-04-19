@@ -27,25 +27,25 @@ namespace Pulumi.Oci.OsManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSoftwareSource = new Oci.OsManagement.SoftwareSource("testSoftwareSource", new()
+    ///     var testSoftwareSource = new Oci.OsManagement.SoftwareSource("test_software_source", new()
     ///     {
-    ///         ArchType = @var.Software_source_arch_type,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Software_source_display_name,
-    ///         ChecksumType = @var.Software_source_checksum_type,
+    ///         ArchType = softwareSourceArchType,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = softwareSourceDisplayName,
+    ///         ChecksumType = softwareSourceChecksumType,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Software_source_description,
+    ///         Description = softwareSourceDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         MaintainerEmail = @var.Software_source_maintainer_email,
-    ///         MaintainerName = @var.Software_source_maintainer_name,
-    ///         MaintainerPhone = @var.Software_source_maintainer_phone,
-    ///         ParentId = oci_osmanagement_parent.Test_parent.Id,
+    ///         MaintainerEmail = softwareSourceMaintainerEmail,
+    ///         MaintainerName = softwareSourceMaintainerName,
+    ///         MaintainerPhone = softwareSourceMaintainerPhone,
+    ///         ParentId = testParent.Id,
     ///     });
     /// 
     /// });

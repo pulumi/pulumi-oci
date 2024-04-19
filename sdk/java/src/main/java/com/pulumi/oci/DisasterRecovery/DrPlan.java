@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDrPlan = new DrPlan(&#34;testDrPlan&#34;, DrPlanArgs.builder()        
- *             .displayName(var_.dr_plan_display_name())
- *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
- *             .type(var_.dr_plan_type())
+ *             .displayName(drPlanDisplayName)
+ *             .drProtectionGroupId(testDrProtectionGroup.id())
+ *             .type(drPlanType)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());

@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetCryptoAnalysisResults(ctx, &jms.GetFleetCryptoAnalysisResultsArgs{
-//				FleetId:           oci_jms_fleet.Test_fleet.Id,
-//				AggregationMode:   pulumi.StringRef(_var.Fleet_crypto_analysis_result_aggregation_mode),
-//				ManagedInstanceId: pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
-//				TimeEnd:           pulumi.StringRef(_var.Fleet_crypto_analysis_result_time_end),
-//				TimeStart:         pulumi.StringRef(_var.Fleet_crypto_analysis_result_time_start),
+//				FleetId:           testFleet.Id,
+//				AggregationMode:   pulumi.StringRef(fleetCryptoAnalysisResultAggregationMode),
+//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
+//				TimeEnd:           pulumi.StringRef(fleetCryptoAnalysisResultTimeEnd),
+//				TimeStart:         pulumi.StringRef(fleetCryptoAnalysisResultTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err

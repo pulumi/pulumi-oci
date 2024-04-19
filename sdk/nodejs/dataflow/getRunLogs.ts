@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRunLogs = oci.DataFlow.getRunLogs({
- *     runId: oci_dataflow_run.test_run.id,
+ *     runId: testRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetRunLogsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRunLogs = oci.DataFlow.getRunLogs({
- *     runId: oci_dataflow_run.test_run.id,
+ *     runId: testRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

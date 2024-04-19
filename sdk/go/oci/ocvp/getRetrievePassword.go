@@ -29,8 +29,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetRetrievePassword(ctx, &ocvp.GetRetrievePasswordArgs{
-//				SddcId: _var.Compartment_id,
-//				Type:   _var.Password_type,
+//				SddcId: compartmentId,
+//				Type:   passwordType,
 //			}, nil)
 //			if err != nil {
 //				return err

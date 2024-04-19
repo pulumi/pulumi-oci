@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousPatch = Oci.Database.GetAutonomousPatch.Invoke(new()
         ///     {
-        ///         AutonomousPatchId = oci_database_autonomous_patch.Test_autonomous_patch.Id,
+        ///         AutonomousPatchId = testAutonomousPatchOciDatabaseAutonomousPatch.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousPatch = Oci.Database.GetAutonomousPatch.Invoke(new()
         ///     {
-        ///         AutonomousPatchId = oci_database_autonomous_patch.Test_autonomous_patch.Id,
+        ///         AutonomousPatchId = testAutonomousPatchOciDatabaseAutonomousPatch.Id,
         ///     });
         /// 
         /// });

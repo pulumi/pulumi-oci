@@ -32,45 +32,45 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterNetwork = new oci.core.ClusterNetwork("testClusterNetwork", {
- *     compartmentId: _var.compartment_id,
+ * const testClusterNetwork = new oci.core.ClusterNetwork("test_cluster_network", {
+ *     compartmentId: compartmentId,
  *     instancePools: [{
- *         instanceConfigurationId: oci_core_instance_configuration.test_instance_configuration.id,
- *         size: _var.cluster_network_instance_pools_size,
+ *         instanceConfigurationId: testInstanceConfiguration.id,
+ *         size: clusterNetworkInstancePoolsSize,
  *         definedTags: {
  *             "Operations.CostCenter": "42",
  *         },
- *         displayName: _var.cluster_network_instance_pools_display_name,
+ *         displayName: clusterNetworkInstancePoolsDisplayName,
  *         freeformTags: {
  *             Department: "Finance",
  *         },
  *     }],
  *     placementConfiguration: {
- *         availabilityDomain: _var.cluster_network_placement_configuration_availability_domain,
+ *         availabilityDomain: clusterNetworkPlacementConfigurationAvailabilityDomain,
  *         primaryVnicSubnets: {
- *             subnetId: oci_core_subnet.test_subnet.id,
+ *             subnetId: testSubnet.id,
  *             ipv6addressIpv6subnetCidrPairDetails: [{
- *                 ipv6subnetCidr: _var.cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *                 ipv6subnetCidr: clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: _var.cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
+ *             isAssignIpv6ip: clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIsAssignIpv6ip,
  *         },
  *         secondaryVnicSubnets: [{
- *             subnetId: oci_core_subnet.test_subnet.id,
- *             displayName: _var.cluster_network_placement_configuration_secondary_vnic_subnets_display_name,
+ *             subnetId: testSubnet.id,
+ *             displayName: clusterNetworkPlacementConfigurationSecondaryVnicSubnetsDisplayName,
  *             ipv6addressIpv6subnetCidrPairDetails: [{
- *                 ipv6subnetCidr: _var.cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+ *                 ipv6subnetCidr: clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: _var.cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
+ *             isAssignIpv6ip: clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIsAssignIpv6ip,
  *         }],
  *     },
  *     clusterConfiguration: {
- *         hpcIslandId: oci_core_hpc_island.test_hpc_island.id,
- *         networkBlockIds: _var.cluster_network_cluster_configuration_network_block_ids,
+ *         hpcIslandId: testHpcIsland.id,
+ *         networkBlockIds: clusterNetworkClusterConfigurationNetworkBlockIds,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.cluster_network_display_name,
+ *     displayName: clusterNetworkDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerInstances.GetContainerInstance(ctx, &containerinstances.GetContainerInstanceArgs{
-//				ContainerInstanceId: oci_container_instances_container_instance.Test_container_instance.Id,
+//				ContainerInstanceId: testContainerInstanceOciContainerInstancesContainerInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

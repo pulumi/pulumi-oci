@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewRepositoryRef(ctx, "testRepositoryRef", &DevOps.RepositoryRefArgs{
-//				RefName:      pulumi.Any(_var.Repository_ref_ref_name),
-//				RefType:      pulumi.Any(_var.Repository_ref_ref_type),
-//				RepositoryId: pulumi.Any(oci_devops_repository.Test_repository.Id),
-//				CommitId:     pulumi.Any(oci_devops_commit.Test_commit.Id),
-//				ObjectId:     pulumi.Any(oci_objectstorage_object.Test_object.Id),
+//			_, err := DevOps.NewRepositoryRef(ctx, "test_repository_ref", &DevOps.RepositoryRefArgs{
+//				RefName:      pulumi.Any(repositoryRefRefName),
+//				RefType:      pulumi.Any(repositoryRefRefType),
+//				RepositoryId: pulumi.Any(testRepository.Id),
+//				CommitId:     pulumi.Any(testCommit.Id),
+//				ObjectId:     pulumi.Any(testObject.Id),
 //			})
 //			if err != nil {
 //				return err

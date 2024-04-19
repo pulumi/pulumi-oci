@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testPrivateEndpoint = Oci.DataFlow.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+        ///         PrivateEndpointId = testPrivateEndpointOciDataflowPrivateEndpoint.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testPrivateEndpoint = Oci.DataFlow.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+        ///         PrivateEndpointId = testPrivateEndpointOciDataflowPrivateEndpoint.Id,
         ///     });
         /// 
         /// });

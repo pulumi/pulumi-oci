@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetOneoffPatch(ctx, &database.GetOneoffPatchArgs{
-//				OneoffPatchId: oci_database_oneoff_patch.Test_oneoff_patch.Id,
+//				OneoffPatchId: testOneoffPatchOciDatabaseOneoffPatch.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -216,16 +216,16 @@ def get_audit_profiles(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profiles = oci.DataSafe.get_audit_profiles(compartment_id=var["compartment_id"],
-        access_level=var["audit_profile_access_level"],
-        audit_collected_volume_greater_than_or_equal_to=var["audit_profile_audit_collected_volume_greater_than_or_equal_to"],
-        audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        compartment_id_in_subtree=var["audit_profile_compartment_id_in_subtree"],
-        display_name=var["audit_profile_display_name"],
-        is_override_global_retention_setting=var["audit_profile_is_override_global_retention_setting"],
-        is_paid_usage_enabled=var["audit_profile_is_paid_usage_enabled"],
-        state=var["audit_profile_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_audit_profiles = oci.DataSafe.get_audit_profiles(compartment_id=compartment_id,
+        access_level=audit_profile_access_level,
+        audit_collected_volume_greater_than_or_equal_to=audit_profile_audit_collected_volume_greater_than_or_equal_to,
+        audit_profile_id=test_audit_profile["id"],
+        compartment_id_in_subtree=audit_profile_compartment_id_in_subtree,
+        display_name=audit_profile_display_name,
+        is_override_global_retention_setting=audit_profile_is_override_global_retention_setting,
+        is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
+        state=audit_profile_state,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -311,16 +311,16 @@ def get_audit_profiles_output(access_level: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profiles = oci.DataSafe.get_audit_profiles(compartment_id=var["compartment_id"],
-        access_level=var["audit_profile_access_level"],
-        audit_collected_volume_greater_than_or_equal_to=var["audit_profile_audit_collected_volume_greater_than_or_equal_to"],
-        audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        compartment_id_in_subtree=var["audit_profile_compartment_id_in_subtree"],
-        display_name=var["audit_profile_display_name"],
-        is_override_global_retention_setting=var["audit_profile_is_override_global_retention_setting"],
-        is_paid_usage_enabled=var["audit_profile_is_paid_usage_enabled"],
-        state=var["audit_profile_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_audit_profiles = oci.DataSafe.get_audit_profiles(compartment_id=compartment_id,
+        access_level=audit_profile_access_level,
+        audit_collected_volume_greater_than_or_equal_to=audit_profile_audit_collected_volume_greater_than_or_equal_to,
+        audit_profile_id=test_audit_profile["id"],
+        compartment_id_in_subtree=audit_profile_compartment_id_in_subtree,
+        display_name=audit_profile_display_name,
+        is_override_global_retention_setting=audit_profile_is_override_global_retention_setting,
+        is_paid_usage_enabled=audit_profile_is_paid_usage_enabled,
+        state=audit_profile_state,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 

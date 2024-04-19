@@ -466,17 +466,17 @@ class DrPlanExecution(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dr_plan_execution = oci.disaster_recovery.DrPlanExecution("testDrPlanExecution",
+        test_dr_plan_execution = oci.disaster_recovery.DrPlanExecution("test_dr_plan_execution",
             execution_options=oci.disaster_recovery.DrPlanExecutionExecutionOptionsArgs(
-                plan_execution_type=var["dr_plan_execution_execution_options_plan_execution_type"],
-                are_prechecks_enabled=var["dr_plan_execution_execution_options_are_prechecks_enabled"],
-                are_warnings_ignored=var["dr_plan_execution_execution_options_are_warnings_ignored"],
+                plan_execution_type=dr_plan_execution_execution_options_plan_execution_type,
+                are_prechecks_enabled=dr_plan_execution_execution_options_are_prechecks_enabled,
+                are_warnings_ignored=dr_plan_execution_execution_options_are_warnings_ignored,
             ),
-            plan_id=oci_disaster_recovery_plan["test_plan"]["id"],
+            plan_id=test_plan["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["dr_plan_execution_display_name"],
+            display_name=dr_plan_execution_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -521,17 +521,17 @@ class DrPlanExecution(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dr_plan_execution = oci.disaster_recovery.DrPlanExecution("testDrPlanExecution",
+        test_dr_plan_execution = oci.disaster_recovery.DrPlanExecution("test_dr_plan_execution",
             execution_options=oci.disaster_recovery.DrPlanExecutionExecutionOptionsArgs(
-                plan_execution_type=var["dr_plan_execution_execution_options_plan_execution_type"],
-                are_prechecks_enabled=var["dr_plan_execution_execution_options_are_prechecks_enabled"],
-                are_warnings_ignored=var["dr_plan_execution_execution_options_are_warnings_ignored"],
+                plan_execution_type=dr_plan_execution_execution_options_plan_execution_type,
+                are_prechecks_enabled=dr_plan_execution_execution_options_are_prechecks_enabled,
+                are_warnings_ignored=dr_plan_execution_execution_options_are_warnings_ignored,
             ),
-            plan_id=oci_disaster_recovery_plan["test_plan"]["id"],
+            plan_id=test_plan["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["dr_plan_execution_display_name"],
+            display_name=dr_plan_execution_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

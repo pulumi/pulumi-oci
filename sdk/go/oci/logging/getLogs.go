@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Logging.GetLogs(ctx, &logging.GetLogsArgs{
-//				LogGroupId:     oci_logging_log_group.Test_log_group.Id,
-//				DisplayName:    pulumi.StringRef(_var.Log_display_name),
-//				LogType:        pulumi.StringRef(_var.Log_log_type),
-//				SourceResource: pulumi.StringRef(_var.Log_source_resource),
-//				SourceService:  pulumi.StringRef(_var.Log_source_service),
-//				State:          pulumi.StringRef(_var.Log_state),
+//				LogGroupId:     testLogGroup.Id,
+//				DisplayName:    pulumi.StringRef(logDisplayName),
+//				LogType:        pulumi.StringRef(logLogType),
+//				SourceResource: pulumi.StringRef(logSourceResource),
+//				SourceService:  pulumi.StringRef(logSourceService),
+//				State:          pulumi.StringRef(logState),
 //			}, nil)
 //			if err != nil {
 //				return err

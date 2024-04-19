@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testView = Oci.Dns.GetView.Invoke(new()
         ///     {
-        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///         ViewId = testViewOciDnsView.Id,
         ///         Scope = "PRIVATE",
         ///     });
         /// 
@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testView = Oci.Dns.GetView.Invoke(new()
         ///     {
-        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///         ViewId = testViewOciDnsView.Id,
         ///         Scope = "PRIVATE",
         ///     });
         /// 

@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testConditions = Oci.Identity.GetDomainsConditions.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ConditionCount = @var.Condition_condition_count,
-        ///         ConditionFilter = @var.Condition_condition_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ConditionCount = conditionConditionCount,
+        ///         ConditionFilter = conditionConditionFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Condition_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Condition_resource_type_schema_version,
-        ///         StartIndex = @var.Condition_start_index,
+        ///         Authorization = conditionAuthorization,
+        ///         ResourceTypeSchemaVersion = conditionResourceTypeSchemaVersion,
+        ///         StartIndex = conditionStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testConditions = Oci.Identity.GetDomainsConditions.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ConditionCount = @var.Condition_condition_count,
-        ///         ConditionFilter = @var.Condition_condition_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ConditionCount = conditionConditionCount,
+        ///         ConditionFilter = conditionConditionFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Condition_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Condition_resource_type_schema_version,
-        ///         StartIndex = @var.Condition_start_index,
+        ///         Authorization = conditionAuthorization,
+        ///         ResourceTypeSchemaVersion = conditionResourceTypeSchemaVersion,
+        ///         StartIndex = conditionStartIndex,
         ///     });
         /// 
         /// });

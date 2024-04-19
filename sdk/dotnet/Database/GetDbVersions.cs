@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbVersions = Oci.Database.GetDbVersions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         DbSystemShape = @var.Db_version_db_system_shape,
-        ///         IsDatabaseSoftwareImageSupported = @var.Db_version_is_database_software_image_supported,
-        ///         IsUpgradeSupported = @var.Db_version_is_upgrade_supported,
-        ///         StorageManagement = @var.Db_version_storage_management,
+        ///         CompartmentId = compartmentId,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DbSystemShape = dbVersionDbSystemShape,
+        ///         IsDatabaseSoftwareImageSupported = dbVersionIsDatabaseSoftwareImageSupported,
+        ///         IsUpgradeSupported = dbVersionIsUpgradeSupported,
+        ///         StorageManagement = dbVersionStorageManagement,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbVersions = Oci.Database.GetDbVersions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         DbSystemShape = @var.Db_version_db_system_shape,
-        ///         IsDatabaseSoftwareImageSupported = @var.Db_version_is_database_software_image_supported,
-        ///         IsUpgradeSupported = @var.Db_version_is_upgrade_supported,
-        ///         StorageManagement = @var.Db_version_storage_management,
+        ///         CompartmentId = compartmentId,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DbSystemShape = dbVersionDbSystemShape,
+        ///         IsDatabaseSoftwareImageSupported = dbVersionIsDatabaseSoftwareImageSupported,
+        ///         IsUpgradeSupported = dbVersionIsUpgradeSupported,
+        ///         StorageManagement = dbVersionStorageManagement,
         ///     });
         /// 
         /// });

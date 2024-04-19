@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testOauthClientCertificate = Oci.Identity.GetDomainsOauthClientCertificate.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         OAuthClientCertificateId = oci_apigateway_certificate.Test_certificate.Id,
-        ///         Authorization = @var.Oauth_client_certificate_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Oauth_client_certificate_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OAuthClientCertificateId = testCertificate.Id,
+        ///         Authorization = oauthClientCertificateAuthorization,
+        ///         ResourceTypeSchemaVersion = oauthClientCertificateResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testOauthClientCertificate = Oci.Identity.GetDomainsOauthClientCertificate.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         OAuthClientCertificateId = oci_apigateway_certificate.Test_certificate.Id,
-        ///         Authorization = @var.Oauth_client_certificate_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Oauth_client_certificate_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OAuthClientCertificateId = testCertificate.Id,
+        ///         Authorization = oauthClientCertificateAuthorization,
+        ///         ResourceTypeSchemaVersion = oauthClientCertificateResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

@@ -20,14 +20,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testHostInsights = oci.Opsi.getHostInsights({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.host_insight_compartment_id_in_subtree,
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
- *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
- *     hostTypes: _var.host_insight_host_type,
- *     id: _var.host_insight_id,
- *     states: _var.host_insight_state,
- *     statuses: _var.host_insight_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree,
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
+ *     exadataInsightId: testExadataInsight.id,
+ *     hostTypes: hostInsightHostType,
+ *     id: hostInsightId,
+ *     states: hostInsightState,
+ *     statuses: hostInsightStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -141,14 +141,14 @@ export interface GetHostInsightsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testHostInsights = oci.Opsi.getHostInsights({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.host_insight_compartment_id_in_subtree,
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
- *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
- *     hostTypes: _var.host_insight_host_type,
- *     id: _var.host_insight_id,
- *     states: _var.host_insight_state,
- *     statuses: _var.host_insight_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: hostInsightCompartmentIdInSubtree,
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
+ *     exadataInsightId: testExadataInsight.id,
+ *     hostTypes: hostInsightHostType,
+ *     id: hostInsightId,
+ *     states: hostInsightState,
+ *     statuses: hostInsightStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

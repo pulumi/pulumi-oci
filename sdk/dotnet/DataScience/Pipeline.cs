@@ -25,71 +25,71 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPipeline = new Oci.DataScience.Pipeline("testPipeline", new()
+    ///     var testPipeline = new Oci.DataScience.Pipeline("test_pipeline", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ProjectId = testProject.Id,
     ///         StepDetails = new[]
     ///         {
     ///             new Oci.DataScience.Inputs.PipelineStepDetailArgs
     ///             {
-    ///                 StepName = @var.Pipeline_step_details_step_name,
-    ///                 StepType = @var.Pipeline_step_details_step_type,
-    ///                 DependsOns = @var.Pipeline_step_details_depends_on,
-    ///                 Description = @var.Pipeline_step_details_description,
-    ///                 IsArtifactUploaded = @var.Pipeline_step_details_is_artifact_uploaded,
-    ///                 JobId = oci_datascience_job.Test_job.Id,
+    ///                 StepName = pipelineStepDetailsStepName,
+    ///                 StepType = pipelineStepDetailsStepType,
+    ///                 DependsOns = pipelineStepDetailsDependsOn,
+    ///                 Description = pipelineStepDetailsDescription,
+    ///                 IsArtifactUploaded = pipelineStepDetailsIsArtifactUploaded,
+    ///                 JobId = testJob.Id,
     ///                 StepConfigurationDetails = new Oci.DataScience.Inputs.PipelineStepDetailStepConfigurationDetailsArgs
     ///                 {
-    ///                     CommandLineArguments = @var.Pipeline_step_details_step_configuration_details_command_line_arguments,
-    ///                     EnvironmentVariables = @var.Pipeline_step_details_step_configuration_details_environment_variables,
-    ///                     MaximumRuntimeInMinutes = @var.Pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes,
+    ///                     CommandLineArguments = pipelineStepDetailsStepConfigurationDetailsCommandLineArguments,
+    ///                     EnvironmentVariables = pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables,
+    ///                     MaximumRuntimeInMinutes = pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
     ///                 },
     ///                 StepInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs
     ///                 {
-    ///                     BlockStorageSizeInGbs = @var.Pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+    ///                     BlockStorageSizeInGbs = pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
     ///                     ShapeConfigDetails = new Oci.DataScience.Inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs
     ///                     {
-    ///                         MemoryInGbs = @var.Pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
-    ///                         Ocpus = @var.Pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
+    ///                         MemoryInGbs = pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
+    ///                         Ocpus = pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
     ///                     },
-    ///                     ShapeName = oci_core_shape.Test_shape.Name,
+    ///                     ShapeName = testShape.Name,
     ///                 },
     ///             },
     ///         },
     ///         ConfigurationDetails = new Oci.DataScience.Inputs.PipelineConfigurationDetailsArgs
     ///         {
-    ///             Type = @var.Pipeline_configuration_details_type,
-    ///             CommandLineArguments = @var.Pipeline_configuration_details_command_line_arguments,
-    ///             EnvironmentVariables = @var.Pipeline_configuration_details_environment_variables,
-    ///             MaximumRuntimeInMinutes = @var.Pipeline_configuration_details_maximum_runtime_in_minutes,
+    ///             Type = pipelineConfigurationDetailsType,
+    ///             CommandLineArguments = pipelineConfigurationDetailsCommandLineArguments,
+    ///             EnvironmentVariables = pipelineConfigurationDetailsEnvironmentVariables,
+    ///             MaximumRuntimeInMinutes = pipelineConfigurationDetailsMaximumRuntimeInMinutes,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Pipeline_description,
-    ///         DisplayName = @var.Pipeline_display_name,
+    ///         Description = pipelineDescription,
+    ///         DisplayName = pipelineDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         InfrastructureConfigurationDetails = new Oci.DataScience.Inputs.PipelineInfrastructureConfigurationDetailsArgs
     ///         {
-    ///             BlockStorageSizeInGbs = @var.Pipeline_infrastructure_configuration_details_block_storage_size_in_gbs,
-    ///             ShapeName = oci_core_shape.Test_shape.Name,
+    ///             BlockStorageSizeInGbs = pipelineInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+    ///             ShapeName = testShape.Name,
     ///             ShapeConfigDetails = new Oci.DataScience.Inputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs
     ///             {
-    ///                 MemoryInGbs = @var.Pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
-    ///                 Ocpus = @var.Pipeline_infrastructure_configuration_details_shape_config_details_ocpus,
+    ///                 MemoryInGbs = pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
+    ///                 Ocpus = pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
     ///             },
     ///         },
     ///         LogConfigurationDetails = new Oci.DataScience.Inputs.PipelineLogConfigurationDetailsArgs
     ///         {
-    ///             EnableAutoLogCreation = @var.Pipeline_log_configuration_details_enable_auto_log_creation,
-    ///             EnableLogging = @var.Pipeline_log_configuration_details_enable_logging,
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogId = oci_logging_log.Test_log.Id,
+    ///             EnableAutoLogCreation = pipelineLogConfigurationDetailsEnableAutoLogCreation,
+    ///             EnableLogging = pipelineLogConfigurationDetailsEnableLogging,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogId = testLog.Id,
     ///         },
     ///     });
     /// 

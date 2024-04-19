@@ -31,29 +31,29 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewOpsiConfiguration(ctx, "testOpsiConfiguration", &Opsi.OpsiConfigurationArgs{
-//				OpsiConfigType:           pulumi.Any(_var.Opsi_configuration_opsi_config_type),
-//				CompartmentId:            pulumi.Any(_var.Compartment_id),
-//				ConfigItemCustomStatuses: pulumi.Any(_var.Opsi_configuration_config_item_custom_status),
-//				ConfigItemFields:         pulumi.Any(_var.Opsi_configuration_config_item_field),
+//			_, err := Opsi.NewOpsiConfiguration(ctx, "test_opsi_configuration", &Opsi.OpsiConfigurationArgs{
+//				OpsiConfigType:           pulumi.Any(opsiConfigurationOpsiConfigType),
+//				CompartmentId:            pulumi.Any(compartmentId),
+//				ConfigItemCustomStatuses: pulumi.Any(opsiConfigurationConfigItemCustomStatus),
+//				ConfigItemFields:         pulumi.Any(opsiConfigurationConfigItemField),
 //				ConfigItems: opsi.OpsiConfigurationConfigItemArray{
 //					&opsi.OpsiConfigurationConfigItemArgs{
-//						ConfigItemType: pulumi.Any(_var.Opsi_configuration_config_items_config_item_type),
-//						Name:           pulumi.Any(_var.Opsi_configuration_config_items_name),
-//						Value:          pulumi.Any(_var.Opsi_configuration_config_items_value),
+//						ConfigItemType: pulumi.Any(opsiConfigurationConfigItemsConfigItemType),
+//						Name:           pulumi.Any(opsiConfigurationConfigItemsName),
+//						Value:          pulumi.Any(opsiConfigurationConfigItemsValue),
 //					},
 //				},
-//				ConfigItemsApplicableContexts: pulumi.Any(_var.Opsi_configuration_config_items_applicable_context),
+//				ConfigItemsApplicableContexts: pulumi.Any(opsiConfigurationConfigItemsApplicableContext),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Opsi_configuration_description),
-//				DisplayName: pulumi.Any(_var.Opsi_configuration_display_name),
+//				Description: pulumi.Any(opsiConfigurationDescription),
+//				DisplayName: pulumi.Any(opsiConfigurationDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				OpsiConfigFields: pulumi.Any(_var.Opsi_configuration_opsi_config_field),
-//				SystemTags:       pulumi.Any(_var.Opsi_configuration_system_tags),
+//				OpsiConfigFields: pulumi.Any(opsiConfigurationOpsiConfigField),
+//				SystemTags:       pulumi.Any(opsiConfigurationSystemTags),
 //			})
 //			if err != nil {
 //				return err

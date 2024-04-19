@@ -169,11 +169,11 @@ def get_domains_identity_settings(attribute_sets: Optional[Sequence[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_settings = oci.Identity.get_domains_identity_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_identity_settings = oci.Identity.get_domains_identity_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["identity_setting_authorization"],
-        resource_type_schema_version=var["identity_setting_resource_type_schema_version"])
+        authorization=identity_setting_authorization,
+        resource_type_schema_version=identity_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -229,11 +229,11 @@ def get_domains_identity_settings_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_settings = oci.Identity.get_domains_identity_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_identity_settings = oci.Identity.get_domains_identity_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["identity_setting_authorization"],
-        resource_type_schema_version=var["identity_setting_resource_type_schema_version"])
+        authorization=identity_setting_authorization,
+        resource_type_schema_version=identity_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

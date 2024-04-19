@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseCursorCacheStatements = oci.DatabaseManagement.getManagedDatabaseCursorCacheStatements({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     opcNamedCredentialId: _var.managed_database_cursor_cache_statement_opc_named_credential_id,
- *     sqlText: _var.managed_database_cursor_cache_statement_sql_text,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     opcNamedCredentialId: managedDatabaseCursorCacheStatementOpcNamedCredentialId,
+ *     sqlText: managedDatabaseCursorCacheStatementSqlText,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseCursorCacheStatements = oci.DatabaseManagement.getManagedDatabaseCursorCacheStatements({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     opcNamedCredentialId: _var.managed_database_cursor_cache_statement_opc_named_credential_id,
- *     sqlText: _var.managed_database_cursor_cache_statement_sql_text,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     opcNamedCredentialId: managedDatabaseCursorCacheStatementOpcNamedCredentialId,
+ *     sqlText: managedDatabaseCursorCacheStatementSqlText,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

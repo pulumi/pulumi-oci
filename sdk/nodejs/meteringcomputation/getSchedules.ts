@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSchedules = oci.MeteringComputation.getSchedules({
- *     compartmentId: _var.compartment_id,
- *     name: _var.schedule_name,
+ *     compartmentId: compartmentId,
+ *     name: scheduleName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,8 +91,8 @@ export interface GetSchedulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSchedules = oci.MeteringComputation.getSchedules({
- *     compartmentId: _var.compartment_id,
- *     name: _var.schedule_name,
+ *     compartmentId: compartmentId,
+ *     name: scheduleName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

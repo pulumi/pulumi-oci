@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApiGateway.GetSubscriber(ctx, &apigateway.GetSubscriberArgs{
-//				SubscriberId: oci_apigateway_subscriber.Test_subscriber.Id,
+//				SubscriberId: testSubscriberOciApigatewaySubscriber.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

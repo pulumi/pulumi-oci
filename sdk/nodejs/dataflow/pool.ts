@@ -18,30 +18,30 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPool = new oci.dataflow.Pool("testPool", {
- *     compartmentId: _var.compartment_id,
+ * const testPool = new oci.dataflow.Pool("test_pool", {
+ *     compartmentId: compartmentId,
  *     configurations: [{
- *         max: _var.pool_configurations_max,
- *         min: _var.pool_configurations_min,
- *         shape: _var.pool_configurations_shape,
+ *         max: poolConfigurationsMax,
+ *         min: poolConfigurationsMin,
+ *         shape: poolConfigurationsShape,
  *         shapeConfig: {
- *             memoryInGbs: _var.pool_configurations_shape_config_memory_in_gbs,
- *             ocpus: _var.pool_configurations_shape_config_ocpus,
+ *             memoryInGbs: poolConfigurationsShapeConfigMemoryInGbs,
+ *             ocpus: poolConfigurationsShapeConfigOcpus,
  *         },
  *     }],
- *     displayName: _var.pool_display_name,
+ *     displayName: poolDisplayName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.pool_description,
+ *     description: poolDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     idleTimeoutInMinutes: _var.pool_idle_timeout_in_minutes,
+ *     idleTimeoutInMinutes: poolIdleTimeoutInMinutes,
  *     schedules: [{
- *         dayOfWeek: _var.pool_schedules_day_of_week,
- *         startTime: _var.pool_schedules_start_time,
- *         stopTime: _var.pool_schedules_stop_time,
+ *         dayOfWeek: poolSchedulesDayOfWeek,
+ *         startTime: poolSchedulesStartTime,
+ *         stopTime: poolSchedulesStopTime,
  *     }],
  * });
  * ```

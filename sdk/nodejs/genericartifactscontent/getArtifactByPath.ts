@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testArtifactByPath = oci.GenericArtifactsContent.getArtifactByPath({
- *     artifactPath: _var.artifact_by_path_artifact_path,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     version: _var.artifact_by_path_version,
+ *     artifactPath: artifactByPathArtifactPath,
+ *     repositoryId: testRepository.id,
+ *     version: artifactByPathVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,9 +85,9 @@ export interface GetArtifactByPathResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testArtifactByPath = oci.GenericArtifactsContent.getArtifactByPath({
- *     artifactPath: _var.artifact_by_path_artifact_path,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     version: _var.artifact_by_path_version,
+ *     artifactPath: artifactByPathArtifactPath,
+ *     repositoryId: testRepository.id,
+ *     version: artifactByPathVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

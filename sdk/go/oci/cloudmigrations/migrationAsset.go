@@ -16,40 +16,6 @@ import (
 //
 // Creates a migration asset.
 //
-// ## Example Usage
-//
-// <!--Start PulumiCodeChooser -->
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/CloudMigrations"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudMigrations.NewMigrationAsset(ctx, "testMigrationAsset", &CloudMigrations.MigrationAssetArgs{
-//				AvailabilityDomain:       pulumi.Any(_var.Migration_asset_availability_domain),
-//				InventoryAssetId:         pulumi.Any(oci_cloud_migrations_inventory_asset.Test_inventory_asset.Id),
-//				MigrationId:              pulumi.Any(oci_cloud_migrations_migration.Test_migration.Id),
-//				ReplicationCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//				SnapShotBucketName:       pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
-//				DisplayName:              pulumi.Any(_var.Migration_asset_display_name),
-//				ReplicationScheduleId:    pulumi.Any(oci_cloud_migrations_replication_schedule.Test_replication_schedule.Id),
-//			}, pulumi.DependsOn(_var.Migration_asset_depends_on))
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// <!--End PulumiCodeChooser -->
-//
 // ## Import
 //
 // MigrationAssets can be imported using the `id`, e.g.

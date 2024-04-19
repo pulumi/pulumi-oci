@@ -44,91 +44,91 @@ namespace Pulumi.Oci.Sch
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testServiceConnector = new Oci.Sch.Connector("testServiceConnector", new()
+    ///     var testServiceConnector = new Oci.Sch.Connector("test_service_connector", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Service_connector_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = serviceConnectorDisplayName,
     ///         Source = new Oci.Sch.Inputs.ConnectorSourceArgs
     ///         {
-    ///             Kind = @var.Service_connector_source_kind,
-    ///             ConfigMap = @var.Service_connector_source_config_map,
+    ///             Kind = serviceConnectorSourceKind,
+    ///             ConfigMap = serviceConnectorSourceConfigMap,
     ///             Cursor = new Oci.Sch.Inputs.ConnectorSourceCursorArgs
     ///             {
-    ///                 Kind = @var.Service_connector_source_cursor_kind,
+    ///                 Kind = serviceConnectorSourceCursorKind,
     ///             },
     ///             LogSources = new[]
     ///             {
     ///                 new Oci.Sch.Inputs.ConnectorSourceLogSourceArgs
     ///                 {
-    ///                     CompartmentId = @var.Compartment_id,
-    ///                     LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///                     LogId = oci_logging_log.Test_log.Id,
+    ///                     CompartmentId = compartmentId,
+    ///                     LogGroupId = testLogGroup.Id,
+    ///                     LogId = testLog.Id,
     ///                 },
     ///             },
     ///             MonitoringSources = new[]
     ///             {
     ///                 new Oci.Sch.Inputs.ConnectorSourceMonitoringSourceArgs
     ///                 {
-    ///                     CompartmentId = @var.Compartment_id,
+    ///                     CompartmentId = compartmentId,
     ///                     NamespaceDetails = new Oci.Sch.Inputs.ConnectorSourceMonitoringSourceNamespaceDetailsArgs
     ///                     {
-    ///                         Kind = @var.Service_connector_source_monitoring_sources_namespace_details_kind,
+    ///                         Kind = serviceConnectorSourceMonitoringSourcesNamespaceDetailsKind,
     ///                         Namespaces = new[]
     ///                         {
     ///                             new Oci.Sch.Inputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs
     ///                             {
     ///                                 Metrics = new Oci.Sch.Inputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs
     ///                                 {
-    ///                                     Kind = @var.Service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind,
+    ///                                     Kind = serviceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetricsKind,
     ///                                 },
-    ///                                 Namespace = @var.Service_connector_source_monitoring_sources_namespace_details_namespaces_namespace,
+    ///                                 Namespace = serviceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesNamespace,
     ///                             },
     ///                         },
     ///                     },
     ///                 },
     ///             },
-    ///             PluginName = @var.Service_connector_source_plugin_name,
-    ///             StreamId = oci_streaming_stream.Test_stream.Id,
+    ///             PluginName = serviceConnectorSourcePluginName,
+    ///             StreamId = testStream.Id,
     ///         },
     ///         Target = new Oci.Sch.Inputs.ConnectorTargetArgs
     ///         {
-    ///             Kind = @var.Service_connector_target_kind,
-    ///             BatchRolloverSizeInMbs = @var.Service_connector_target_batch_rollover_size_in_mbs,
-    ///             BatchRolloverTimeInMs = @var.Service_connector_target_batch_rollover_time_in_ms,
-    ///             BatchSizeInKbs = @var.Service_connector_target_batch_size_in_kbs,
-    ///             BatchSizeInNum = @var.Service_connector_target_batch_size_in_num,
-    ///             BatchTimeInSec = @var.Service_connector_target_batch_time_in_sec,
-    ///             Bucket = @var.Service_connector_target_bucket,
-    ///             CompartmentId = @var.Compartment_id,
+    ///             Kind = serviceConnectorTargetKind,
+    ///             BatchRolloverSizeInMbs = serviceConnectorTargetBatchRolloverSizeInMbs,
+    ///             BatchRolloverTimeInMs = serviceConnectorTargetBatchRolloverTimeInMs,
+    ///             BatchSizeInKbs = serviceConnectorTargetBatchSizeInKbs,
+    ///             BatchSizeInNum = serviceConnectorTargetBatchSizeInNum,
+    ///             BatchTimeInSec = serviceConnectorTargetBatchTimeInSec,
+    ///             Bucket = serviceConnectorTargetBucket,
+    ///             CompartmentId = compartmentId,
     ///             Dimensions = new[]
     ///             {
     ///                 new Oci.Sch.Inputs.ConnectorTargetDimensionArgs
     ///                 {
     ///                     DimensionValue = new Oci.Sch.Inputs.ConnectorTargetDimensionDimensionValueArgs
     ///                     {
-    ///                         Kind = @var.Service_connector_target_dimensions_dimension_value_kind,
-    ///                         Path = @var.Service_connector_target_dimensions_dimension_value_path,
-    ///                         Value = @var.Service_connector_target_dimensions_dimension_value_value,
+    ///                         Kind = serviceConnectorTargetDimensionsDimensionValueKind,
+    ///                         Path = serviceConnectorTargetDimensionsDimensionValuePath,
+    ///                         Value = serviceConnectorTargetDimensionsDimensionValueValue,
     ///                     },
-    ///                     Name = @var.Service_connector_target_dimensions_name,
+    ///                     Name = serviceConnectorTargetDimensionsName,
     ///                 },
     ///             },
-    ///             EnableFormattedMessaging = @var.Service_connector_target_enable_formatted_messaging,
-    ///             FunctionId = oci_functions_function.Test_function.Id,
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogSourceIdentifier = @var.Service_connector_target_log_source_identifier,
-    ///             Metric = @var.Service_connector_target_metric,
-    ///             MetricNamespace = @var.Service_connector_target_metric_namespace,
-    ///             Namespace = @var.Service_connector_target_namespace,
-    ///             ObjectNamePrefix = @var.Service_connector_target_object_name_prefix,
-    ///             StreamId = oci_streaming_stream.Test_stream.Id,
-    ///             TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+    ///             EnableFormattedMessaging = serviceConnectorTargetEnableFormattedMessaging,
+    ///             FunctionId = testFunction.Id,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogSourceIdentifier = serviceConnectorTargetLogSourceIdentifier,
+    ///             Metric = serviceConnectorTargetMetric,
+    ///             MetricNamespace = serviceConnectorTargetMetricNamespace,
+    ///             Namespace = serviceConnectorTargetNamespace,
+    ///             ObjectNamePrefix = serviceConnectorTargetObjectNamePrefix,
+    ///             StreamId = testStream.Id,
+    ///             TopicId = testNotificationTopic.Id,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Service_connector_description,
+    ///         Description = serviceConnectorDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
@@ -137,11 +137,11 @@ namespace Pulumi.Oci.Sch
     ///         {
     ///             new Oci.Sch.Inputs.ConnectorTaskArgs
     ///             {
-    ///                 Kind = @var.Service_connector_tasks_kind,
-    ///                 BatchSizeInKbs = @var.Service_connector_tasks_batch_size_in_kbs,
-    ///                 BatchTimeInSec = @var.Service_connector_tasks_batch_time_in_sec,
-    ///                 Condition = @var.Service_connector_tasks_condition,
-    ///                 FunctionId = oci_functions_function.Test_function.Id,
+    ///                 Kind = serviceConnectorTasksKind,
+    ///                 BatchSizeInKbs = serviceConnectorTasksBatchSizeInKbs,
+    ///                 BatchTimeInSec = serviceConnectorTasksBatchTimeInSec,
+    ///                 Condition = serviceConnectorTasksCondition,
+    ///                 FunctionId = testFunction.Id,
     ///             },
     ///         },
     ///     });

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolume = oci.Core.getBootVolume({
- *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
+ *     bootVolumeId: testBootVolumeOciCoreBootVolume.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -147,7 +147,7 @@ export interface GetBootVolumeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolume = oci.Core.getBootVolume({
- *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
+ *     bootVolumeId: testBootVolumeOciCoreBootVolume.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

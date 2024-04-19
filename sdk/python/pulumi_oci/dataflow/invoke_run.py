@@ -1216,48 +1216,48 @@ class InvokeRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_invoke_run = oci.data_flow.InvokeRun("testInvokeRun",
-            compartment_id=var["compartment_id"],
-            application_id=oci_dataflow_application["test_application"]["id"],
+        test_invoke_run = oci.data_flow.InvokeRun("test_invoke_run",
+            compartment_id=compartment_id,
+            application_id=test_application["id"],
             application_log_config=oci.data_flow.InvokeRunApplicationLogConfigArgs(
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ),
-            archive_uri=var["invoke_run_archive_uri"],
-            arguments=var["invoke_run_arguments"],
-            configuration=var["invoke_run_configuration"],
+            archive_uri=invoke_run_archive_uri,
+            arguments=invoke_run_arguments,
+            configuration=invoke_run_configuration,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["invoke_run_display_name"],
-            driver_shape=var["invoke_run_driver_shape"],
+            display_name=invoke_run_display_name,
+            driver_shape=invoke_run_driver_shape,
             driver_shape_config=oci.data_flow.InvokeRunDriverShapeConfigArgs(
-                memory_in_gbs=var["invoke_run_driver_shape_config_memory_in_gbs"],
-                ocpus=var["invoke_run_driver_shape_config_ocpus"],
+                memory_in_gbs=invoke_run_driver_shape_config_memory_in_gbs,
+                ocpus=invoke_run_driver_shape_config_ocpus,
             ),
-            execute=var["invoke_run_execute"],
-            executor_shape=var["invoke_run_executor_shape"],
+            execute=invoke_run_execute,
+            executor_shape=invoke_run_executor_shape,
             executor_shape_config=oci.data_flow.InvokeRunExecutorShapeConfigArgs(
-                memory_in_gbs=var["invoke_run_executor_shape_config_memory_in_gbs"],
-                ocpus=var["invoke_run_executor_shape_config_ocpus"],
+                memory_in_gbs=invoke_run_executor_shape_config_memory_in_gbs,
+                ocpus=invoke_run_executor_shape_config_ocpus,
             ),
             freeform_tags={
                 "Department": "Finance",
             },
-            idle_timeout_in_minutes=var["invoke_run_idle_timeout_in_minutes"],
-            logs_bucket_uri=var["invoke_run_logs_bucket_uri"],
-            max_duration_in_minutes=var["invoke_run_max_duration_in_minutes"],
-            metastore_id=var["metastore_id"],
-            num_executors=var["invoke_run_num_executors"],
-            opc_parent_rpt_url=var["invoke_run_opc_parent_rpt_url"],
+            idle_timeout_in_minutes=invoke_run_idle_timeout_in_minutes,
+            logs_bucket_uri=invoke_run_logs_bucket_uri,
+            max_duration_in_minutes=invoke_run_max_duration_in_minutes,
+            metastore_id=metastore_id,
+            num_executors=invoke_run_num_executors,
+            opc_parent_rpt_url=invoke_run_opc_parent_rpt_url,
             parameters=[oci.data_flow.InvokeRunParameterArgs(
-                name=var["invoke_run_parameters_name"],
-                value=var["invoke_run_parameters_value"],
+                name=invoke_run_parameters_name,
+                value=invoke_run_parameters_value,
             )],
-            pool_id=oci_dataflow_pool["test_pool"]["id"],
-            spark_version=var["invoke_run_spark_version"],
-            type=var["invoke_run_type"],
-            warehouse_bucket_uri=var["invoke_run_warehouse_bucket_uri"])
+            pool_id=test_pool["id"],
+            spark_version=invoke_run_spark_version,
+            type=invoke_run_type,
+            warehouse_bucket_uri=invoke_run_warehouse_bucket_uri)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -1323,48 +1323,48 @@ class InvokeRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_invoke_run = oci.data_flow.InvokeRun("testInvokeRun",
-            compartment_id=var["compartment_id"],
-            application_id=oci_dataflow_application["test_application"]["id"],
+        test_invoke_run = oci.data_flow.InvokeRun("test_invoke_run",
+            compartment_id=compartment_id,
+            application_id=test_application["id"],
             application_log_config=oci.data_flow.InvokeRunApplicationLogConfigArgs(
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ),
-            archive_uri=var["invoke_run_archive_uri"],
-            arguments=var["invoke_run_arguments"],
-            configuration=var["invoke_run_configuration"],
+            archive_uri=invoke_run_archive_uri,
+            arguments=invoke_run_arguments,
+            configuration=invoke_run_configuration,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["invoke_run_display_name"],
-            driver_shape=var["invoke_run_driver_shape"],
+            display_name=invoke_run_display_name,
+            driver_shape=invoke_run_driver_shape,
             driver_shape_config=oci.data_flow.InvokeRunDriverShapeConfigArgs(
-                memory_in_gbs=var["invoke_run_driver_shape_config_memory_in_gbs"],
-                ocpus=var["invoke_run_driver_shape_config_ocpus"],
+                memory_in_gbs=invoke_run_driver_shape_config_memory_in_gbs,
+                ocpus=invoke_run_driver_shape_config_ocpus,
             ),
-            execute=var["invoke_run_execute"],
-            executor_shape=var["invoke_run_executor_shape"],
+            execute=invoke_run_execute,
+            executor_shape=invoke_run_executor_shape,
             executor_shape_config=oci.data_flow.InvokeRunExecutorShapeConfigArgs(
-                memory_in_gbs=var["invoke_run_executor_shape_config_memory_in_gbs"],
-                ocpus=var["invoke_run_executor_shape_config_ocpus"],
+                memory_in_gbs=invoke_run_executor_shape_config_memory_in_gbs,
+                ocpus=invoke_run_executor_shape_config_ocpus,
             ),
             freeform_tags={
                 "Department": "Finance",
             },
-            idle_timeout_in_minutes=var["invoke_run_idle_timeout_in_minutes"],
-            logs_bucket_uri=var["invoke_run_logs_bucket_uri"],
-            max_duration_in_minutes=var["invoke_run_max_duration_in_minutes"],
-            metastore_id=var["metastore_id"],
-            num_executors=var["invoke_run_num_executors"],
-            opc_parent_rpt_url=var["invoke_run_opc_parent_rpt_url"],
+            idle_timeout_in_minutes=invoke_run_idle_timeout_in_minutes,
+            logs_bucket_uri=invoke_run_logs_bucket_uri,
+            max_duration_in_minutes=invoke_run_max_duration_in_minutes,
+            metastore_id=metastore_id,
+            num_executors=invoke_run_num_executors,
+            opc_parent_rpt_url=invoke_run_opc_parent_rpt_url,
             parameters=[oci.data_flow.InvokeRunParameterArgs(
-                name=var["invoke_run_parameters_name"],
-                value=var["invoke_run_parameters_value"],
+                name=invoke_run_parameters_name,
+                value=invoke_run_parameters_value,
             )],
-            pool_id=oci_dataflow_pool["test_pool"]["id"],
-            spark_version=var["invoke_run_spark_version"],
-            type=var["invoke_run_type"],
-            warehouse_bucket_uri=var["invoke_run_warehouse_bucket_uri"])
+            pool_id=test_pool["id"],
+            spark_version=invoke_run_spark_version,
+            type=invoke_run_type,
+            warehouse_bucket_uri=invoke_run_warehouse_bucket_uri)
         ```
         <!--End PulumiCodeChooser -->
 

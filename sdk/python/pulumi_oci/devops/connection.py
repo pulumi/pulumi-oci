@@ -520,25 +520,25 @@ class Connection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connection = oci.dev_ops.Connection("testConnection",
-            connection_type=var["connection_connection_type"],
-            project_id=oci_devops_project["test_project"]["id"],
-            access_token=var["connection_access_token"],
-            app_password=var["connection_app_password"],
-            base_url=var["connection_base_url"],
+        test_connection = oci.dev_ops.Connection("test_connection",
+            connection_type=connection_connection_type,
+            project_id=test_project["id"],
+            access_token=connection_access_token,
+            app_password=connection_app_password,
+            base_url=connection_base_url,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["connection_description"],
-            display_name=var["connection_display_name"],
+            description=connection_description,
+            display_name=connection_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             tls_verify_config=oci.dev_ops.ConnectionTlsVerifyConfigArgs(
-                ca_certificate_bundle_id=oci_devops_ca_certificate_bundle["test_ca_certificate_bundle"]["id"],
-                tls_verify_mode=var["connection_tls_verify_config_tls_verify_mode"],
+                ca_certificate_bundle_id=test_ca_certificate_bundle["id"],
+                tls_verify_mode=connection_tls_verify_config_tls_verify_mode,
             ),
-            username=var["connection_username"])
+            username=connection_username)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -586,25 +586,25 @@ class Connection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connection = oci.dev_ops.Connection("testConnection",
-            connection_type=var["connection_connection_type"],
-            project_id=oci_devops_project["test_project"]["id"],
-            access_token=var["connection_access_token"],
-            app_password=var["connection_app_password"],
-            base_url=var["connection_base_url"],
+        test_connection = oci.dev_ops.Connection("test_connection",
+            connection_type=connection_connection_type,
+            project_id=test_project["id"],
+            access_token=connection_access_token,
+            app_password=connection_app_password,
+            base_url=connection_base_url,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["connection_description"],
-            display_name=var["connection_display_name"],
+            description=connection_description,
+            display_name=connection_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             tls_verify_config=oci.dev_ops.ConnectionTlsVerifyConfigArgs(
-                ca_certificate_bundle_id=oci_devops_ca_certificate_bundle["test_ca_certificate_bundle"]["id"],
-                tls_verify_mode=var["connection_tls_verify_config_tls_verify_mode"],
+                ca_certificate_bundle_id=test_ca_certificate_bundle["id"],
+                tls_verify_mode=connection_tls_verify_config_tls_verify_mode,
             ),
-            username=var["connection_username"])
+            username=connection_username)
         ```
         <!--End PulumiCodeChooser -->
 

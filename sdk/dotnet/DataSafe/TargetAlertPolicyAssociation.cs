@@ -25,18 +25,18 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTargetAlertPolicyAssociation = new Oci.DataSafe.TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation", new()
+    ///     var testTargetAlertPolicyAssociation = new Oci.DataSafe.TargetAlertPolicyAssociation("test_target_alert_policy_association", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IsEnabled = @var.Target_alert_policy_association_is_enabled,
-    ///         PolicyId = oci_identity_policy.Test_policy.Id,
-    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         CompartmentId = compartmentId,
+    ///         IsEnabled = targetAlertPolicyAssociationIsEnabled,
+    ///         PolicyId = testPolicy.Id,
+    ///         TargetId = testTarget.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Target_alert_policy_association_description,
-    ///         DisplayName = @var.Target_alert_policy_association_display_name,
+    ///         Description = targetAlertPolicyAssociationDescription,
+    ///         DisplayName = targetAlertPolicyAssociationDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

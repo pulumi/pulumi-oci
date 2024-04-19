@@ -61,9 +61,9 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.limit_definition_name())
-     *             .serviceName(oci_limits_service.test_service().name())
+     *             .compartmentId(tenancyOcid)
+     *             .name(limitDefinitionName)
+     *             .serviceName(testService.name())
      *             .build());
      * 
      *     }
@@ -107,9 +107,9 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.limit_definition_name())
-     *             .serviceName(oci_limits_service.test_service().name())
+     *             .compartmentId(tenancyOcid)
+     *             .name(limitDefinitionName)
+     *             .serviceName(testService.name())
      *             .build());
      * 
      *     }
@@ -153,9 +153,9 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.limit_definition_name())
-     *             .serviceName(oci_limits_service.test_service().name())
+     *             .compartmentId(tenancyOcid)
+     *             .name(limitDefinitionName)
+     *             .serviceName(testService.name())
      *             .build());
      * 
      *     }
@@ -199,9 +199,9 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLimitDefinitions = LimitsFunctions.getLimitDefinitions(GetLimitDefinitionsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.limit_definition_name())
-     *             .serviceName(oci_limits_service.test_service().name())
+     *             .compartmentId(tenancyOcid)
+     *             .name(limitDefinitionName)
+     *             .serviceName(testService.name())
      *             .build());
      * 
      *     }
@@ -243,11 +243,11 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .serviceName(oci_limits_service.test_service().name())
-     *             .availabilityDomain(var_.limit_value_availability_domain())
-     *             .name(var_.limit_value_name())
-     *             .scopeType(var_.limit_value_scope_type())
+     *             .compartmentId(tenancyOcid)
+     *             .serviceName(testService.name())
+     *             .availabilityDomain(limitValueAvailabilityDomain)
+     *             .name(limitValueName)
+     *             .scopeType(limitValueScopeType)
      *             .build());
      * 
      *     }
@@ -289,11 +289,11 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .serviceName(oci_limits_service.test_service().name())
-     *             .availabilityDomain(var_.limit_value_availability_domain())
-     *             .name(var_.limit_value_name())
-     *             .scopeType(var_.limit_value_scope_type())
+     *             .compartmentId(tenancyOcid)
+     *             .serviceName(testService.name())
+     *             .availabilityDomain(limitValueAvailabilityDomain)
+     *             .name(limitValueName)
+     *             .scopeType(limitValueScopeType)
      *             .build());
      * 
      *     }
@@ -335,11 +335,11 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .serviceName(oci_limits_service.test_service().name())
-     *             .availabilityDomain(var_.limit_value_availability_domain())
-     *             .name(var_.limit_value_name())
-     *             .scopeType(var_.limit_value_scope_type())
+     *             .compartmentId(tenancyOcid)
+     *             .serviceName(testService.name())
+     *             .availabilityDomain(limitValueAvailabilityDomain)
+     *             .name(limitValueName)
+     *             .scopeType(limitValueScopeType)
      *             .build());
      * 
      *     }
@@ -381,11 +381,11 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLimitValues = LimitsFunctions.getLimitValues(GetLimitValuesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .serviceName(oci_limits_service.test_service().name())
-     *             .availabilityDomain(var_.limit_value_availability_domain())
-     *             .name(var_.limit_value_name())
-     *             .scopeType(var_.limit_value_scope_type())
+     *             .compartmentId(tenancyOcid)
+     *             .serviceName(testService.name())
+     *             .availabilityDomain(limitValueAvailabilityDomain)
+     *             .name(limitValueName)
+     *             .scopeType(limitValueScopeType)
      *             .build());
      * 
      *     }
@@ -427,7 +427,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
-     *             .quotaId(oci_limits_quota.test_quota().id())
+     *             .quotaId(testQuotaOciLimitsQuota.id())
      *             .build());
      * 
      *     }
@@ -469,7 +469,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
-     *             .quotaId(oci_limits_quota.test_quota().id())
+     *             .quotaId(testQuotaOciLimitsQuota.id())
      *             .build());
      * 
      *     }
@@ -511,7 +511,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
-     *             .quotaId(oci_limits_quota.test_quota().id())
+     *             .quotaId(testQuotaOciLimitsQuota.id())
      *             .build());
      * 
      *     }
@@ -553,7 +553,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuota = LimitsFunctions.getQuota(GetQuotaArgs.builder()
-     *             .quotaId(oci_limits_quota.test_quota().id())
+     *             .quotaId(testQuotaOciLimitsQuota.id())
      *             .build());
      * 
      *     }
@@ -595,9 +595,9 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuotas = LimitsFunctions.getQuotas(GetQuotasArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.quota_name())
-     *             .state(var_.quota_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(quotaName)
+     *             .state(quotaState)
      *             .build());
      * 
      *     }
@@ -639,9 +639,9 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuotas = LimitsFunctions.getQuotas(GetQuotasArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.quota_name())
-     *             .state(var_.quota_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(quotaName)
+     *             .state(quotaState)
      *             .build());
      * 
      *     }
@@ -683,9 +683,9 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuotas = LimitsFunctions.getQuotas(GetQuotasArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.quota_name())
-     *             .state(var_.quota_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(quotaName)
+     *             .state(quotaState)
      *             .build());
      * 
      *     }
@@ -727,9 +727,9 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuotas = LimitsFunctions.getQuotas(GetQuotasArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .name(var_.quota_name())
-     *             .state(var_.quota_state())
+     *             .compartmentId(tenancyOcid)
+     *             .name(quotaName)
+     *             .state(quotaState)
      *             .build());
      * 
      *     }
@@ -774,10 +774,10 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .limitName(var_.resource_availability_limit_name())
-     *             .serviceName(oci_limits_service.test_service().name())
-     *             .availabilityDomain(var_.resource_availability_availability_domain())
+     *             .compartmentId(tenancyOcid)
+     *             .limitName(resourceAvailabilityLimitName)
+     *             .serviceName(testService.name())
+     *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -822,10 +822,10 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .limitName(var_.resource_availability_limit_name())
-     *             .serviceName(oci_limits_service.test_service().name())
-     *             .availabilityDomain(var_.resource_availability_availability_domain())
+     *             .compartmentId(tenancyOcid)
+     *             .limitName(resourceAvailabilityLimitName)
+     *             .serviceName(testService.name())
+     *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -870,10 +870,10 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .limitName(var_.resource_availability_limit_name())
-     *             .serviceName(oci_limits_service.test_service().name())
-     *             .availabilityDomain(var_.resource_availability_availability_domain())
+     *             .compartmentId(tenancyOcid)
+     *             .limitName(resourceAvailabilityLimitName)
+     *             .serviceName(testService.name())
+     *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -918,10 +918,10 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAvailability = LimitsFunctions.getResourceAvailability(GetResourceAvailabilityArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .limitName(var_.resource_availability_limit_name())
-     *             .serviceName(oci_limits_service.test_service().name())
-     *             .availabilityDomain(var_.resource_availability_availability_domain())
+     *             .compartmentId(tenancyOcid)
+     *             .limitName(resourceAvailabilityLimitName)
+     *             .serviceName(testService.name())
+     *             .availabilityDomain(resourceAvailabilityAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -964,7 +964,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServices = LimitsFunctions.getServices(GetServicesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1007,7 +1007,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServices = LimitsFunctions.getServices(GetServicesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1050,7 +1050,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServices = LimitsFunctions.getServices(GetServicesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -1093,7 +1093,7 @@ public final class LimitsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServices = LimitsFunctions.getServices(GetServicesArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }

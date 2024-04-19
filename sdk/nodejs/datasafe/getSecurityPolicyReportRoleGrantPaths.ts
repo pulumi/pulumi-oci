@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyReportRoleGrantPaths = oci.DataSafe.getSecurityPolicyReportRoleGrantPaths({
- *     grantedRole: _var.security_policy_report_role_grant_path_granted_role,
- *     grantee: _var.security_policy_report_role_grant_path_grantee,
- *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
+ *     grantedRole: securityPolicyReportRoleGrantPathGrantedRole,
+ *     grantee: securityPolicyReportRoleGrantPathGrantee,
+ *     securityPolicyReportId: testSecurityPolicyReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,9 +96,9 @@ export interface GetSecurityPolicyReportRoleGrantPathsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyReportRoleGrantPaths = oci.DataSafe.getSecurityPolicyReportRoleGrantPaths({
- *     grantedRole: _var.security_policy_report_role_grant_path_granted_role,
- *     grantee: _var.security_policy_report_role_grant_path_grantee,
- *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
+ *     grantedRole: securityPolicyReportRoleGrantPathGrantedRole,
+ *     grantee: securityPolicyReportRoleGrantPathGrantee,
+ *     securityPolicyReportId: testSecurityPolicyReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

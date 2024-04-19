@@ -103,7 +103,7 @@ def get_cluster_credential_rotation_status(cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
+    test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=test_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -138,7 +138,7 @@ def get_cluster_credential_rotation_status_output(cluster_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
+    test_cluster_credential_rotation_status = oci.ContainerEngine.get_cluster_credential_rotation_status(cluster_id=test_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 

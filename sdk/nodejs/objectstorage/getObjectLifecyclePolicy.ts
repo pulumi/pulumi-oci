@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testObjectLifecyclePolicy = oci.ObjectStorage.getObjectLifecyclePolicy({
- *     bucket: _var.object_lifecycle_policy_bucket,
- *     namespace: _var.object_lifecycle_policy_namespace,
+ *     bucket: objectLifecyclePolicyBucket,
+ *     namespace: objectLifecyclePolicyNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,8 +77,8 @@ export interface GetObjectLifecyclePolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testObjectLifecyclePolicy = oci.ObjectStorage.getObjectLifecyclePolicy({
- *     bucket: _var.object_lifecycle_policy_bucket,
- *     namespace: _var.object_lifecycle_policy_namespace,
+ *     bucket: objectLifecyclePolicyBucket,
+ *     namespace: objectLifecyclePolicyNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

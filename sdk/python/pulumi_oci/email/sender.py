@@ -271,9 +271,9 @@ class Sender(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sender = oci.email.Sender("testSender",
-            compartment_id=var["compartment_id"],
-            email_address=var["sender_email_address"],
+        test_sender = oci.email.Sender("test_sender",
+            compartment_id=compartment_id,
+            email_address=sender_email_address,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -320,9 +320,9 @@ class Sender(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sender = oci.email.Sender("testSender",
-            compartment_id=var["compartment_id"],
-            email_address=var["sender_email_address"],
+        test_sender = oci.email.Sender("test_sender",
+            compartment_id=compartment_id,
+            email_address=sender_email_address,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

@@ -34,10 +34,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeCapacityReservations(ctx, &core.GetComputeCapacityReservationsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Compute_capacity_reservation_availability_domain),
-//				DisplayName:        pulumi.StringRef(_var.Compute_capacity_reservation_display_name),
-//				State:              pulumi.StringRef(_var.Compute_capacity_reservation_state),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(computeCapacityReservationAvailabilityDomain),
+//				DisplayName:        pulumi.StringRef(computeCapacityReservationDisplayName),
+//				State:              pulumi.StringRef(computeCapacityReservationState),
 //			}, nil)
 //			if err != nil {
 //				return err

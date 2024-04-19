@@ -36,11 +36,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetResolvers(ctx, &dns.GetResolversArgs{
-//				CompartmentId: _var.Compartment_id,
+//				CompartmentId: compartmentId,
 //				Scope:         "PRIVATE",
-//				DisplayName:   pulumi.StringRef(_var.Resolver_display_name),
-//				Id:            pulumi.StringRef(_var.Resolver_id),
-//				State:         pulumi.StringRef(_var.Resolver_state),
+//				DisplayName:   pulumi.StringRef(resolverDisplayName),
+//				Id:            pulumi.StringRef(resolverId),
+//				State:         pulumi.StringRef(resolverState),
 //			}, nil)
 //			if err != nil {
 //				return err

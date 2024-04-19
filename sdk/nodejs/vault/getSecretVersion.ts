@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecretVersion = oci.Vault.getSecretVersion({
- *     secretId: oci_vault_secret.test_secret.id,
- *     secretVersionNumber: _var.secret_version_secret_version_number,
+ *     secretId: testSecret.id,
+ *     secretVersionNumber: secretVersionSecretVersionNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,8 +101,8 @@ export interface GetSecretVersionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecretVersion = oci.Vault.getSecretVersion({
- *     secretId: oci_vault_secret.test_secret.id,
- *     secretVersionNumber: _var.secret_version_secret_version_number,
+ *     secretId: testSecret.id,
+ *     secretVersionNumber: secretVersionSecretVersionNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

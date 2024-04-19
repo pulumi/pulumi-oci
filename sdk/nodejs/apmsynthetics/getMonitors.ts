@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitors = oci.ApmSynthetics.getMonitors({
- *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
- *     displayName: _var.monitor_display_name,
- *     isMaintenanceWindowActive: _var.monitor_is_maintenance_window_active,
- *     isMaintenanceWindowSet: _var.monitor_is_maintenance_window_set,
- *     monitorType: _var.monitor_monitor_type,
- *     scriptId: oci_apm_synthetics_script.test_script.id,
- *     status: _var.monitor_status,
- *     vantagePoint: _var.monitor_vantage_point,
+ *     apmDomainId: testApmDomain.id,
+ *     displayName: monitorDisplayName,
+ *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive,
+ *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet,
+ *     monitorType: monitorMonitorType,
+ *     scriptId: testScript.id,
+ *     status: monitorStatus,
+ *     vantagePoint: monitorVantagePoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetMonitorsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitors = oci.ApmSynthetics.getMonitors({
- *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
- *     displayName: _var.monitor_display_name,
- *     isMaintenanceWindowActive: _var.monitor_is_maintenance_window_active,
- *     isMaintenanceWindowSet: _var.monitor_is_maintenance_window_set,
- *     monitorType: _var.monitor_monitor_type,
- *     scriptId: oci_apm_synthetics_script.test_script.id,
- *     status: _var.monitor_status,
- *     vantagePoint: _var.monitor_vantage_point,
+ *     apmDomainId: testApmDomain.id,
+ *     displayName: monitorDisplayName,
+ *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive,
+ *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet,
+ *     monitorType: monitorMonitorType,
+ *     scriptId: testScript.id,
+ *     status: monitorStatus,
+ *     vantagePoint: monitorVantagePoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -385,45 +385,45 @@ class ClusterNetwork(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cluster_network = oci.core.ClusterNetwork("testClusterNetwork",
-            compartment_id=var["compartment_id"],
+        test_cluster_network = oci.core.ClusterNetwork("test_cluster_network",
+            compartment_id=compartment_id,
             instance_pools=[oci.core.ClusterNetworkInstancePoolArgs(
-                instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
-                size=var["cluster_network_instance_pools_size"],
+                instance_configuration_id=test_instance_configuration["id"],
+                size=cluster_network_instance_pools_size,
                 defined_tags={
                     "Operations.CostCenter": "42",
                 },
-                display_name=var["cluster_network_instance_pools_display_name"],
+                display_name=cluster_network_instance_pools_display_name,
                 freeform_tags={
                     "Department": "Finance",
                 },
             )],
             placement_configuration=oci.core.ClusterNetworkPlacementConfigurationArgs(
-                availability_domain=var["cluster_network_placement_configuration_availability_domain"],
+                availability_domain=cluster_network_placement_configuration_availability_domain,
                 primary_vnic_subnets=oci.core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    subnet_id=test_subnet["id"],
                     ipv6address_ipv6subnet_cidr_pair_details=[oci.core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        ipv6subnet_cidr=cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     )],
-                    is_assign_ipv6ip=var["cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip"],
+                    is_assign_ipv6ip=cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
                 ),
                 secondary_vnic_subnets=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    display_name=var["cluster_network_placement_configuration_secondary_vnic_subnets_display_name"],
+                    subnet_id=test_subnet["id"],
+                    display_name=cluster_network_placement_configuration_secondary_vnic_subnets_display_name,
                     ipv6address_ipv6subnet_cidr_pair_details=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        ipv6subnet_cidr=cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     )],
-                    is_assign_ipv6ip=var["cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip"],
+                    is_assign_ipv6ip=cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
                 )],
             ),
             cluster_configuration=oci.core.ClusterNetworkClusterConfigurationArgs(
-                hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
-                network_block_ids=var["cluster_network_cluster_configuration_network_block_ids"],
+                hpc_island_id=test_hpc_island["id"],
+                network_block_ids=cluster_network_cluster_configuration_network_block_ids,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["cluster_network_display_name"],
+            display_name=cluster_network_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -484,45 +484,45 @@ class ClusterNetwork(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cluster_network = oci.core.ClusterNetwork("testClusterNetwork",
-            compartment_id=var["compartment_id"],
+        test_cluster_network = oci.core.ClusterNetwork("test_cluster_network",
+            compartment_id=compartment_id,
             instance_pools=[oci.core.ClusterNetworkInstancePoolArgs(
-                instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
-                size=var["cluster_network_instance_pools_size"],
+                instance_configuration_id=test_instance_configuration["id"],
+                size=cluster_network_instance_pools_size,
                 defined_tags={
                     "Operations.CostCenter": "42",
                 },
-                display_name=var["cluster_network_instance_pools_display_name"],
+                display_name=cluster_network_instance_pools_display_name,
                 freeform_tags={
                     "Department": "Finance",
                 },
             )],
             placement_configuration=oci.core.ClusterNetworkPlacementConfigurationArgs(
-                availability_domain=var["cluster_network_placement_configuration_availability_domain"],
+                availability_domain=cluster_network_placement_configuration_availability_domain,
                 primary_vnic_subnets=oci.core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    subnet_id=test_subnet["id"],
                     ipv6address_ipv6subnet_cidr_pair_details=[oci.core.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        ipv6subnet_cidr=cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     )],
-                    is_assign_ipv6ip=var["cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip"],
+                    is_assign_ipv6ip=cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
                 ),
                 secondary_vnic_subnets=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    display_name=var["cluster_network_placement_configuration_secondary_vnic_subnets_display_name"],
+                    subnet_id=test_subnet["id"],
+                    display_name=cluster_network_placement_configuration_secondary_vnic_subnets_display_name,
                     ipv6address_ipv6subnet_cidr_pair_details=[oci.core.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        ipv6subnet_cidr=cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     )],
-                    is_assign_ipv6ip=var["cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip"],
+                    is_assign_ipv6ip=cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
                 )],
             ),
             cluster_configuration=oci.core.ClusterNetworkClusterConfigurationArgs(
-                hpc_island_id=oci_core_hpc_island["test_hpc_island"]["id"],
-                network_block_ids=var["cluster_network_cluster_configuration_network_block_ids"],
+                hpc_island_id=test_hpc_island["id"],
+                network_block_ids=cluster_network_cluster_configuration_network_block_ids,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["cluster_network_display_name"],
+            display_name=cluster_network_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

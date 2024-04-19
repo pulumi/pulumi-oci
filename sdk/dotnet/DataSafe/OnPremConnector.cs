@@ -25,15 +25,15 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOnPremConnector = new Oci.DataSafe.OnPremConnector("testOnPremConnector", new()
+    ///     var testOnPremConnector = new Oci.DataSafe.OnPremConnector("test_on_prem_connector", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.On_prem_connector_description,
-    ///         DisplayName = @var.On_prem_connector_display_name,
+    ///         Description = onPremConnectorDescription,
+    ///         DisplayName = onPremConnectorDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

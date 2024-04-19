@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsPrivateEndpoint = oci.DatabaseTools.getDatabaseToolsPrivateEndpoint({
- *     databaseToolsPrivateEndpointId: oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint.id,
+ *     databaseToolsPrivateEndpointId: testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -145,7 +145,7 @@ export interface GetDatabaseToolsPrivateEndpointResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsPrivateEndpoint = oci.DatabaseTools.getDatabaseToolsPrivateEndpoint({
- *     databaseToolsPrivateEndpointId: oci_database_tools_database_tools_private_endpoint.test_database_tools_private_endpoint.id,
+ *     databaseToolsPrivateEndpointId: testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

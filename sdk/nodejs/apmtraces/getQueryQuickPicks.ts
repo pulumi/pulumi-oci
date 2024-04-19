@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testQueryQuickPicks = oci.ApmTraces.getQueryQuickPicks({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     apmDomainId: testApmDomain.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -74,7 +74,7 @@ export interface GetQueryQuickPicksResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testQueryQuickPicks = oci.ApmTraces.getQueryQuickPicks({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     apmDomainId: testApmDomain.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

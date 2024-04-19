@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDkim = oci.Email.getDkim({
- *     dkimId: oci_email_dkim.test_dkim.id,
+ *     dkimId: testDkimOciEmailDkim.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,7 +119,7 @@ export interface GetDkimResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDkim = oci.Email.getDkim({
- *     dkimId: oci_email_dkim.test_dkim.id,
+ *     dkimId: testDkimOciEmailDkim.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

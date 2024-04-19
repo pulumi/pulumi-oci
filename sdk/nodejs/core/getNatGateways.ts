@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNatGateways = oci.Core.getNatGateways({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.nat_gateway_display_name,
- *     state: _var.nat_gateway_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: natGatewayDisplayName,
+ *     state: natGatewayState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetNatGatewaysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNatGateways = oci.Core.getNatGateways({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.nat_gateway_display_name,
- *     state: _var.nat_gateway_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: natGatewayDisplayName,
+ *     state: natGatewayState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

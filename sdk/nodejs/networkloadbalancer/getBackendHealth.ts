@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBackendHealth = oci.NetworkLoadBalancer.getBackendHealth({
- *     backendName: oci_network_load_balancer_backend.test_backend.name,
- *     backendSetName: oci_network_load_balancer_backend_set.test_backend_set.name,
- *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
+ *     backendName: testBackend.name,
+ *     backendSetName: testBackendSet.name,
+ *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetBackendHealthResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBackendHealth = oci.NetworkLoadBalancer.getBackendHealth({
- *     backendName: oci_network_load_balancer_backend.test_backend.name,
- *     backendSetName: oci_network_load_balancer_backend_set.test_backend_set.name,
- *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
+ *     backendName: testBackend.name,
+ *     backendSetName: testBackendSet.name,
+ *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

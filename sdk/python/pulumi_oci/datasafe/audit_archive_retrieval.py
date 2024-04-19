@@ -451,16 +451,16 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_audit_archive_retrieval = oci.data_safe.AuditArchiveRetrieval("testAuditArchiveRetrieval",
-            compartment_id=var["compartment_id"],
-            end_date=var["audit_archive_retrieval_end_date"],
-            start_date=var["audit_archive_retrieval_start_date"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_audit_archive_retrieval = oci.data_safe.AuditArchiveRetrieval("test_audit_archive_retrieval",
+            compartment_id=compartment_id,
+            end_date=audit_archive_retrieval_end_date,
+            start_date=audit_archive_retrieval_start_date,
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["audit_archive_retrieval_description"],
-            display_name=var["audit_archive_retrieval_display_name"],
+            description=audit_archive_retrieval_description,
+            display_name=audit_archive_retrieval_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -510,16 +510,16 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_audit_archive_retrieval = oci.data_safe.AuditArchiveRetrieval("testAuditArchiveRetrieval",
-            compartment_id=var["compartment_id"],
-            end_date=var["audit_archive_retrieval_end_date"],
-            start_date=var["audit_archive_retrieval_start_date"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_audit_archive_retrieval = oci.data_safe.AuditArchiveRetrieval("test_audit_archive_retrieval",
+            compartment_id=compartment_id,
+            end_date=audit_archive_retrieval_end_date,
+            start_date=audit_archive_retrieval_start_date,
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["audit_archive_retrieval_description"],
-            display_name=var["audit_archive_retrieval_display_name"],
+            description=audit_archive_retrieval_description,
+            display_name=audit_archive_retrieval_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

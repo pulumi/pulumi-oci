@@ -24,9 +24,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaInstances = oci.Oda.getOdaInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.oda_instance_display_name,
- *     state: _var.oda_instance_state,
+ *     compartmentId: compartmentId,
+ *     displayName: odaInstanceDisplayName,
+ *     state: odaInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,9 +105,9 @@ export interface GetOdaInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaInstances = oci.Oda.getOdaInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.oda_instance_display_name,
- *     state: _var.oda_instance_state,
+ *     compartmentId: compartmentId,
+ *     displayName: odaInstanceDisplayName,
+ *     state: odaInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

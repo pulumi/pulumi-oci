@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testCloudAutonomousVmClusters = Oci.Database.GetCloudAutonomousVmClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Cloud_autonomous_vm_cluster_availability_domain,
-        ///         CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
-        ///         DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
-        ///         State = @var.Cloud_autonomous_vm_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = cloudAutonomousVmClusterAvailabilityDomain,
+        ///         CloudExadataInfrastructureId = testCloudExadataInfrastructure.Id,
+        ///         DisplayName = cloudAutonomousVmClusterDisplayName,
+        ///         State = cloudAutonomousVmClusterState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testCloudAutonomousVmClusters = Oci.Database.GetCloudAutonomousVmClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Cloud_autonomous_vm_cluster_availability_domain,
-        ///         CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
-        ///         DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
-        ///         State = @var.Cloud_autonomous_vm_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = cloudAutonomousVmClusterAvailabilityDomain,
+        ///         CloudExadataInfrastructureId = testCloudExadataInfrastructure.Id,
+        ///         DisplayName = cloudAutonomousVmClusterDisplayName,
+        ///         State = cloudAutonomousVmClusterState,
         ///     });
         /// 
         /// });

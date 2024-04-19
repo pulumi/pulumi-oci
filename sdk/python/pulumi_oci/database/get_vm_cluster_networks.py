@@ -133,10 +133,10 @@ def get_vm_cluster_networks(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_networks = oci.Database.get_vm_cluster_networks(compartment_id=var["compartment_id"],
-        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        display_name=var["vm_cluster_network_display_name"],
-        state=var["vm_cluster_network_state"])
+    test_vm_cluster_networks = oci.Database.get_vm_cluster_networks(compartment_id=compartment_id,
+        exadata_infrastructure_id=test_exadata_infrastructure["id"],
+        display_name=vm_cluster_network_display_name,
+        state=vm_cluster_network_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_vm_cluster_networks_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_networks = oci.Database.get_vm_cluster_networks(compartment_id=var["compartment_id"],
-        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        display_name=var["vm_cluster_network_display_name"],
-        state=var["vm_cluster_network_state"])
+    test_vm_cluster_networks = oci.Database.get_vm_cluster_networks(compartment_id=compartment_id,
+        exadata_infrastructure_id=test_exadata_infrastructure["id"],
+        display_name=vm_cluster_network_display_name,
+        state=vm_cluster_network_state)
     ```
     <!--End PulumiCodeChooser -->
 

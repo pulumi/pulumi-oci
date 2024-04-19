@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerRepositories = oci.Artifacts.getContainerRepositories({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.container_repository_compartment_id_in_subtree,
- *     displayName: _var.container_repository_display_name,
- *     isPublic: _var.container_repository_is_public,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     state: _var.container_repository_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
+ *     displayName: containerRepositoryDisplayName,
+ *     isPublic: containerRepositoryIsPublic,
+ *     repositoryId: testRepository.id,
+ *     state: containerRepositoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetContainerRepositoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerRepositories = oci.Artifacts.getContainerRepositories({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.container_repository_compartment_id_in_subtree,
- *     displayName: _var.container_repository_display_name,
- *     isPublic: _var.container_repository_is_public,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     state: _var.container_repository_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
+ *     displayName: containerRepositoryDisplayName,
+ *     isPublic: containerRepositoryIsPublic,
+ *     repositoryId: testRepository.id,
+ *     state: containerRepositoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

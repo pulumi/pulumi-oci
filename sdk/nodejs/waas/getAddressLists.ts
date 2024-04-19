@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAddressLists = oci.Waas.getAddressLists({
- *     compartmentId: _var.compartment_id,
- *     ids: _var.address_list_ids,
- *     names: _var.address_list_names,
- *     states: _var.address_list_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.address_list_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.address_list_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     ids: addressListIds,
+ *     names: addressListNames,
+ *     states: addressListStates,
+ *     timeCreatedGreaterThanOrEqualTo: addressListTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: addressListTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,12 +110,12 @@ export interface GetAddressListsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAddressLists = oci.Waas.getAddressLists({
- *     compartmentId: _var.compartment_id,
- *     ids: _var.address_list_ids,
- *     names: _var.address_list_names,
- *     states: _var.address_list_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.address_list_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.address_list_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     ids: addressListIds,
+ *     names: addressListNames,
+ *     states: addressListStates,
+ *     timeCreatedGreaterThanOrEqualTo: addressListTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: addressListTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

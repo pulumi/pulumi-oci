@@ -44,11 +44,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testTableReplica = new TableReplica(&#34;testTableReplica&#34;, TableReplicaArgs.builder()        
- *             .region(var_.table_replica_region())
- *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
- *             .compartmentId(var_.compartment_id())
- *             .maxReadUnits(var_.table_replica_max_read_units())
- *             .maxWriteUnits(var_.table_replica_max_write_units())
+ *             .region(tableReplicaRegion)
+ *             .tableNameOrId(testTableNameOr.id())
+ *             .compartmentId(compartmentId)
+ *             .maxReadUnits(tableReplicaMaxReadUnits)
+ *             .maxWriteUnits(tableReplicaMaxWriteUnits)
  *             .build());
  * 
  *     }

@@ -33,9 +33,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVolumeBackupPolicyAssignment(ctx, "testVolumeBackupPolicyAssignment", &Core.VolumeBackupPolicyAssignmentArgs{
-//				AssetId:  pulumi.Any(oci_core_volume.Test_volume.Id),
-//				PolicyId: pulumi.Any(oci_core_volume_backup_policy.Test_volume_backup_policy.Id),
+//			_, err := Core.NewVolumeBackupPolicyAssignment(ctx, "test_volume_backup_policy_assignment", &Core.VolumeBackupPolicyAssignmentArgs{
+//				AssetId:  pulumi.Any(testVolume.Id),
+//				PolicyId: pulumi.Any(testVolumeBackupPolicy.Id),
 //			})
 //			if err != nil {
 //				return err

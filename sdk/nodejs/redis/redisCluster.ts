@@ -18,20 +18,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRedisCluster = new oci.redis.RedisCluster("testRedisCluster", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.redis_cluster_display_name,
- *     nodeCount: _var.redis_cluster_node_count,
- *     nodeMemoryInGbs: _var.redis_cluster_node_memory_in_gbs,
- *     softwareVersion: _var.redis_cluster_software_version,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testRedisCluster = new oci.redis.RedisCluster("test_redis_cluster", {
+ *     compartmentId: compartmentId,
+ *     displayName: redisClusterDisplayName,
+ *     nodeCount: redisClusterNodeCount,
+ *     nodeMemoryInGbs: redisClusterNodeMemoryInGbs,
+ *     softwareVersion: redisClusterSoftwareVersion,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     nsgIds: _var.redis_cluster_nsg_ids,
+ *     nsgIds: redisClusterNsgIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

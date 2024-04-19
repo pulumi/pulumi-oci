@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CertificatesManagement.GetCertificateVersion(ctx, &certificatesmanagement.GetCertificateVersionArgs{
-//				CertificateId:            oci_certificates_management_certificate.Test_certificate.Id,
-//				CertificateVersionNumber: _var.Certificate_version_certificate_version_number,
+//				CertificateId:            testCertificate.Id,
+//				CertificateVersionNumber: certificateVersionCertificateVersionNumber,
 //			}, nil)
 //			if err != nil {
 //				return err

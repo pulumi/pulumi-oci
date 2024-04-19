@@ -291,9 +291,9 @@ class InstanceConsoleConnection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_instance_console_connection = oci.core.InstanceConsoleConnection("testInstanceConsoleConnection",
-            instance_id=oci_core_instance["test_instance"]["id"],
-            public_key=var["instance_console_connection_public_key"],
+        test_instance_console_connection = oci.core.InstanceConsoleConnection("test_instance_console_connection",
+            instance_id=test_instance["id"],
+            public_key=instance_console_connection_public_key,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -344,9 +344,9 @@ class InstanceConsoleConnection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_instance_console_connection = oci.core.InstanceConsoleConnection("testInstanceConsoleConnection",
-            instance_id=oci_core_instance["test_instance"]["id"],
-            public_key=var["instance_console_connection_public_key"],
+        test_instance_console_connection = oci.core.InstanceConsoleConnection("test_instance_console_connection",
+            instance_id=test_instance["id"],
+            public_key=instance_console_connection_public_key,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

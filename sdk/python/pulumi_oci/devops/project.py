@@ -339,15 +339,16 @@ class Project(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_project = oci.dev_ops.Project("testProject",
-            compartment_id=var["compartment_id"],
+        test_project = oci.dev_ops.Project("test_project",
+            compartment_id=compartment_id,
+            name=project_name,
             notification_config=oci.dev_ops.ProjectNotificationConfigArgs(
-                topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
+                topic_id=test_notification_topic["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["project_description"],
+            description=project_description,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -389,15 +390,16 @@ class Project(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_project = oci.dev_ops.Project("testProject",
-            compartment_id=var["compartment_id"],
+        test_project = oci.dev_ops.Project("test_project",
+            compartment_id=compartment_id,
+            name=project_name,
             notification_config=oci.dev_ops.ProjectNotificationConfigArgs(
-                topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
+                topic_id=test_notification_topic["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["project_description"],
+            description=project_description,
             freeform_tags={
                 "bar-key": "value",
             })

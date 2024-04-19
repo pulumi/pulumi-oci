@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetPerformanceTuningAnalysisResult = Oci.Jms.GetFleetPerformanceTuningAnalysisResult.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         PerformanceTuningAnalysisResultId = oci_apm_synthetics_result.Test_result.Id,
+        ///         FleetId = testFleet.Id,
+        ///         PerformanceTuningAnalysisResultId = testResult.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetPerformanceTuningAnalysisResult = Oci.Jms.GetFleetPerformanceTuningAnalysisResult.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         PerformanceTuningAnalysisResultId = oci_apm_synthetics_result.Test_result.Id,
+        ///         FleetId = testFleet.Id,
+        ///         PerformanceTuningAnalysisResultId = testResult.Id,
         ///     });
         /// 
         /// });

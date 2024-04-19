@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEncryptedData = new oci.kms.EncryptedData("testEncryptedData", {
- *     cryptoEndpoint: _var.encrypted_data_crypto_endpoint,
- *     keyId: oci_kms_key.test_key.id,
- *     plaintext: _var.encrypted_data_plaintext,
- *     associatedData: _var.encrypted_data_associated_data,
- *     encryptionAlgorithm: _var.encrypted_data_encryption_algorithm,
- *     keyVersionId: oci_kms_key_version.test_key_version.id,
- *     loggingContext: _var.encrypted_data_logging_context,
+ * const testEncryptedData = new oci.kms.EncryptedData("test_encrypted_data", {
+ *     cryptoEndpoint: encryptedDataCryptoEndpoint,
+ *     keyId: testKey.id,
+ *     plaintext: encryptedDataPlaintext,
+ *     associatedData: encryptedDataAssociatedData,
+ *     encryptionAlgorithm: encryptedDataEncryptionAlgorithm,
+ *     keyVersionId: testKeyVersion.id,
+ *     loggingContext: encryptedDataLoggingContext,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

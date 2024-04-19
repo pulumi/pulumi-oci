@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceApplicationSchedule(ctx, &dataintegration.GetWorkspaceApplicationScheduleArgs{
-//				ApplicationKey: _var.Workspace_application_schedule_application_key,
-//				ScheduleKey:    _var.Workspace_application_schedule_schedule_key,
-//				WorkspaceId:    oci_dataintegration_workspace.Test_workspace.Id,
+//				ApplicationKey: workspaceApplicationScheduleApplicationKey,
+//				ScheduleKey:    workspaceApplicationScheduleScheduleKey,
+//				WorkspaceId:    testWorkspace.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

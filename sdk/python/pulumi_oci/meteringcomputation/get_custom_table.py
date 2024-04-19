@@ -104,7 +104,7 @@ def get_custom_table(custom_table_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_table = oci.MeteringComputation.get_custom_table(custom_table_id=oci_metering_computation_custom_table["test_custom_table"]["id"])
+    test_custom_table = oci.MeteringComputation.get_custom_table(custom_table_id=test_custom_table_oci_metering_computation_custom_table["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -139,7 +139,7 @@ def get_custom_table_output(custom_table_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_table = oci.MeteringComputation.get_custom_table(custom_table_id=oci_metering_computation_custom_table["test_custom_table"]["id"])
+    test_custom_table = oci.MeteringComputation.get_custom_table(custom_table_id=test_custom_table_oci_metering_computation_custom_table["id"])
     ```
     <!--End PulumiCodeChooser -->
 

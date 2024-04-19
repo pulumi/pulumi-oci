@@ -32,8 +32,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Apm.GetDataKeys(ctx, &apm.GetDataKeysArgs{
-//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-//				DataKeyType: pulumi.StringRef(_var.Data_key_data_key_type),
+//				ApmDomainId: testApmDomain.Id,
+//				DataKeyType: pulumi.StringRef(dataKeyDataKeyType),
 //			}, nil)
 //			if err != nil {
 //				return err

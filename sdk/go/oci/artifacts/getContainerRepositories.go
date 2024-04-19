@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Artifacts.GetContainerRepositories(ctx, &artifacts.GetContainerRepositoriesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Container_repository_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Container_repository_display_name),
-//				IsPublic:               pulumi.BoolRef(_var.Container_repository_is_public),
-//				RepositoryId:           pulumi.StringRef(oci_artifacts_repository.Test_repository.Id),
-//				State:                  pulumi.StringRef(_var.Container_repository_state),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: pulumi.BoolRef(containerRepositoryCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(containerRepositoryDisplayName),
+//				IsPublic:               pulumi.BoolRef(containerRepositoryIsPublic),
+//				RepositoryId:           pulumi.StringRef(testRepository.Id),
+//				State:                  pulumi.StringRef(containerRepositoryState),
 //			}, nil)
 //			if err != nil {
 //				return err

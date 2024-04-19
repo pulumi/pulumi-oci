@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSteeringPolicies = oci.Dns.getSteeringPolicies({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.steering_policy_display_name,
- *     displayNameContains: _var.steering_policy_display_name_contains,
- *     healthCheckMonitorId: oci_health_checks_http_monitor.test_http_monitor.id,
- *     id: _var.steering_policy_id,
- *     state: _var.steering_policy_state,
- *     template: _var.steering_policy_template,
- *     timeCreatedGreaterThanOrEqualTo: _var.steering_policy_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.steering_policy_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayName: steeringPolicyDisplayName,
+ *     displayNameContains: steeringPolicyDisplayNameContains,
+ *     healthCheckMonitorId: testHttpMonitor.id,
+ *     id: steeringPolicyId,
+ *     state: steeringPolicyState,
+ *     template: steeringPolicyTemplate,
+ *     timeCreatedGreaterThanOrEqualTo: steeringPolicyTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: steeringPolicyTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,15 +142,15 @@ export interface GetSteeringPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSteeringPolicies = oci.Dns.getSteeringPolicies({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.steering_policy_display_name,
- *     displayNameContains: _var.steering_policy_display_name_contains,
- *     healthCheckMonitorId: oci_health_checks_http_monitor.test_http_monitor.id,
- *     id: _var.steering_policy_id,
- *     state: _var.steering_policy_state,
- *     template: _var.steering_policy_template,
- *     timeCreatedGreaterThanOrEqualTo: _var.steering_policy_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.steering_policy_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayName: steeringPolicyDisplayName,
+ *     displayNameContains: steeringPolicyDisplayNameContains,
+ *     healthCheckMonitorId: testHttpMonitor.id,
+ *     id: steeringPolicyId,
+ *     state: steeringPolicyState,
+ *     template: steeringPolicyTemplate,
+ *     timeCreatedGreaterThanOrEqualTo: steeringPolicyTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: steeringPolicyTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

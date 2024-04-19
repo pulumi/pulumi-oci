@@ -77,7 +77,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstance = OsManagementFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .managedInstanceId(testManagedInstanceOciOsmanagementManagedInstance.id())
      *             .build());
      * 
      *     }
@@ -119,7 +119,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstance = OsManagementFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .managedInstanceId(testManagedInstanceOciOsmanagementManagedInstance.id())
      *             .build());
      * 
      *     }
@@ -161,7 +161,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstance = OsManagementFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .managedInstanceId(testManagedInstanceOciOsmanagementManagedInstance.id())
      *             .build());
      * 
      *     }
@@ -203,7 +203,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstance = OsManagementFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .managedInstanceId(testManagedInstanceOciOsmanagementManagedInstance.id())
      *             .build());
      * 
      *     }
@@ -245,10 +245,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceEventReport = OsManagementFunctions.getManagedInstanceEventReport(GetManagedInstanceEventReportArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .latestTimestampGreaterThanOrEqualTo(var_.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to())
-     *             .latestTimestampLessThan(var_.managed_instance_event_report_latest_timestamp_less_than())
+     *             .compartmentId(compartmentId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .latestTimestampGreaterThanOrEqualTo(managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo)
+     *             .latestTimestampLessThan(managedInstanceEventReportLatestTimestampLessThan)
      *             .build());
      * 
      *     }
@@ -290,10 +290,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceEventReport = OsManagementFunctions.getManagedInstanceEventReport(GetManagedInstanceEventReportArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .latestTimestampGreaterThanOrEqualTo(var_.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to())
-     *             .latestTimestampLessThan(var_.managed_instance_event_report_latest_timestamp_less_than())
+     *             .compartmentId(compartmentId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .latestTimestampGreaterThanOrEqualTo(managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo)
+     *             .latestTimestampLessThan(managedInstanceEventReportLatestTimestampLessThan)
      *             .build());
      * 
      *     }
@@ -335,10 +335,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceEventReport = OsManagementFunctions.getManagedInstanceEventReport(GetManagedInstanceEventReportArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .latestTimestampGreaterThanOrEqualTo(var_.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to())
-     *             .latestTimestampLessThan(var_.managed_instance_event_report_latest_timestamp_less_than())
+     *             .compartmentId(compartmentId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .latestTimestampGreaterThanOrEqualTo(managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo)
+     *             .latestTimestampLessThan(managedInstanceEventReportLatestTimestampLessThan)
      *             .build());
      * 
      *     }
@@ -380,10 +380,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceEventReport = OsManagementFunctions.getManagedInstanceEventReport(GetManagedInstanceEventReportArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .latestTimestampGreaterThanOrEqualTo(var_.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to())
-     *             .latestTimestampLessThan(var_.managed_instance_event_report_latest_timestamp_less_than())
+     *             .compartmentId(compartmentId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .latestTimestampGreaterThanOrEqualTo(managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo)
+     *             .latestTimestampLessThan(managedInstanceEventReportLatestTimestampLessThan)
      *             .build());
      * 
      *     }
@@ -425,7 +425,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsmanagementManagedInstanceGroup.id())
      *             .build());
      * 
      *     }
@@ -467,7 +467,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsmanagementManagedInstanceGroup.id())
      *             .build());
      * 
      *     }
@@ -509,7 +509,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsmanagementManagedInstanceGroup.id())
      *             .build());
      * 
      *     }
@@ -551,7 +551,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsmanagementManagedInstanceGroup.id())
      *             .build());
      * 
      *     }
@@ -593,10 +593,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.managed_instance_group_display_name())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .state(var_.managed_instance_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceGroupDisplayName)
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -638,10 +638,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.managed_instance_group_display_name())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .state(var_.managed_instance_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceGroupDisplayName)
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -683,10 +683,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.managed_instance_group_display_name())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .state(var_.managed_instance_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceGroupDisplayName)
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -728,10 +728,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.managed_instance_group_display_name())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .state(var_.managed_instance_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceGroupDisplayName)
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -793,11 +793,11 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceModuleStreams = OsManagementFunctions.getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs.builder()
-     *             .managedInstanceId(var_.managed_instance_id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.managed_instance_module_name())
-     *             .streamName(var_.managed_instance_module_stream_name())
-     *             .streamStatus(var_.managed_instance_module_stream_status())
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .streamName(managedInstanceModuleStreamName)
+     *             .streamStatus(managedInstanceModuleStreamStatus)
      *             .build());
      * 
      *     }
@@ -859,11 +859,11 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceModuleStreams = OsManagementFunctions.getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs.builder()
-     *             .managedInstanceId(var_.managed_instance_id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.managed_instance_module_name())
-     *             .streamName(var_.managed_instance_module_stream_name())
-     *             .streamStatus(var_.managed_instance_module_stream_status())
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .streamName(managedInstanceModuleStreamName)
+     *             .streamStatus(managedInstanceModuleStreamStatus)
      *             .build());
      * 
      *     }
@@ -925,11 +925,11 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceModuleStreams = OsManagementFunctions.getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs.builder()
-     *             .managedInstanceId(var_.managed_instance_id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.managed_instance_module_name())
-     *             .streamName(var_.managed_instance_module_stream_name())
-     *             .streamStatus(var_.managed_instance_module_stream_status())
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .streamName(managedInstanceModuleStreamName)
+     *             .streamStatus(managedInstanceModuleStreamStatus)
      *             .build());
      * 
      *     }
@@ -991,11 +991,11 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceModuleStreams = OsManagementFunctions.getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs.builder()
-     *             .managedInstanceId(var_.managed_instance_id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.managed_instance_module_name())
-     *             .streamName(var_.managed_instance_module_stream_name())
-     *             .streamStatus(var_.managed_instance_module_stream_status())
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .streamName(managedInstanceModuleStreamName)
+     *             .streamStatus(managedInstanceModuleStreamStatus)
      *             .build());
      * 
      *     }
@@ -1060,12 +1060,12 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceStreamProfiles = OsManagementFunctions.getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs.builder()
-     *             .managedInstanceId(var_.managed_instance_id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.managed_instance_module_name())
-     *             .profileName(var_.managed_instance_module_stream_profile_name())
-     *             .profileStatus(var_.managed_instance_profile_status())
-     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .profileName(managedInstanceModuleStreamProfileName)
+     *             .profileStatus(managedInstanceProfileStatus)
+     *             .streamName(managedInstanceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1130,12 +1130,12 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceStreamProfiles = OsManagementFunctions.getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs.builder()
-     *             .managedInstanceId(var_.managed_instance_id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.managed_instance_module_name())
-     *             .profileName(var_.managed_instance_module_stream_profile_name())
-     *             .profileStatus(var_.managed_instance_profile_status())
-     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .profileName(managedInstanceModuleStreamProfileName)
+     *             .profileStatus(managedInstanceProfileStatus)
+     *             .streamName(managedInstanceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1200,12 +1200,12 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceStreamProfiles = OsManagementFunctions.getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs.builder()
-     *             .managedInstanceId(var_.managed_instance_id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.managed_instance_module_name())
-     *             .profileName(var_.managed_instance_module_stream_profile_name())
-     *             .profileStatus(var_.managed_instance_profile_status())
-     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .profileName(managedInstanceModuleStreamProfileName)
+     *             .profileStatus(managedInstanceProfileStatus)
+     *             .streamName(managedInstanceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1270,12 +1270,12 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceStreamProfiles = OsManagementFunctions.getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs.builder()
-     *             .managedInstanceId(var_.managed_instance_id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.managed_instance_module_name())
-     *             .profileName(var_.managed_instance_module_stream_profile_name())
-     *             .profileStatus(var_.managed_instance_profile_status())
-     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .managedInstanceId(managedInstanceId)
+     *             .compartmentId(compartmentId)
+     *             .moduleName(managedInstanceModuleName)
+     *             .profileName(managedInstanceModuleStreamProfileName)
+     *             .profileStatus(managedInstanceProfileStatus)
+     *             .streamName(managedInstanceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1317,9 +1317,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstances = OsManagementFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.managed_instance_display_name())
-     *             .osFamily(var_.managed_instance_os_family())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceDisplayName)
+     *             .osFamily(managedInstanceOsFamily)
      *             .build());
      * 
      *     }
@@ -1361,9 +1361,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstances = OsManagementFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.managed_instance_display_name())
-     *             .osFamily(var_.managed_instance_os_family())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceDisplayName)
+     *             .osFamily(managedInstanceOsFamily)
      *             .build());
      * 
      *     }
@@ -1405,9 +1405,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstances = OsManagementFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.managed_instance_display_name())
-     *             .osFamily(var_.managed_instance_os_family())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceDisplayName)
+     *             .osFamily(managedInstanceOsFamily)
      *             .build());
      * 
      *     }
@@ -1449,9 +1449,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstances = OsManagementFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.managed_instance_display_name())
-     *             .osFamily(var_.managed_instance_os_family())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managedInstanceDisplayName)
+     *             .osFamily(managedInstanceOsFamily)
      *             .build());
      * 
      *     }
@@ -1493,7 +1493,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(oci_osmanagement_software_source.test_software_source().id())
+     *             .softwareSourceId(testSoftwareSourceOciOsmanagementSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -1535,7 +1535,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(oci_osmanagement_software_source.test_software_source().id())
+     *             .softwareSourceId(testSoftwareSourceOciOsmanagementSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -1577,7 +1577,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(oci_osmanagement_software_source.test_software_source().id())
+     *             .softwareSourceId(testSoftwareSourceOciOsmanagementSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -1619,7 +1619,7 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(oci_osmanagement_software_source.test_software_source().id())
+     *             .softwareSourceId(testSoftwareSourceOciOsmanagementSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -1661,9 +1661,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .softwareSourceId(var_.software_source().id())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1705,9 +1705,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .softwareSourceId(var_.software_source().id())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1749,9 +1749,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .softwareSourceId(var_.software_source().id())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1793,9 +1793,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .softwareSourceId(var_.software_source().id())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1837,10 +1837,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
-     *             .moduleName(var_.software_source_module_name())
-     *             .profileName(var_.software_source_module_stream_profile_name())
-     *             .softwareSourceId(var_.software_source().id())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1882,10 +1882,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
-     *             .moduleName(var_.software_source_module_name())
-     *             .profileName(var_.software_source_module_stream_profile_name())
-     *             .softwareSourceId(var_.software_source().id())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1927,10 +1927,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
-     *             .moduleName(var_.software_source_module_name())
-     *             .profileName(var_.software_source_module_stream_profile_name())
-     *             .softwareSourceId(var_.software_source().id())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -1972,10 +1972,10 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
-     *             .moduleName(var_.software_source_module_name())
-     *             .profileName(var_.software_source_module_stream_profile_name())
-     *             .softwareSourceId(var_.software_source().id())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .softwareSourceId(softwareSource.id())
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -2029,11 +2029,11 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceStreamProfiles = OsManagementFunctions.getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs.builder()
-     *             .softwareSourceId(var_.software_source().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.software_source_module_name())
-     *             .profileName(var_.software_source_module_stream_profile_name())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .softwareSourceId(softwareSource.id())
+     *             .compartmentId(compartmentId)
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -2087,11 +2087,11 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceStreamProfiles = OsManagementFunctions.getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs.builder()
-     *             .softwareSourceId(var_.software_source().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.software_source_module_name())
-     *             .profileName(var_.software_source_module_stream_profile_name())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .softwareSourceId(softwareSource.id())
+     *             .compartmentId(compartmentId)
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -2145,11 +2145,11 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceStreamProfiles = OsManagementFunctions.getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs.builder()
-     *             .softwareSourceId(var_.software_source().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.software_source_module_name())
-     *             .profileName(var_.software_source_module_stream_profile_name())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .softwareSourceId(softwareSource.id())
+     *             .compartmentId(compartmentId)
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -2203,11 +2203,11 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceStreamProfiles = OsManagementFunctions.getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs.builder()
-     *             .softwareSourceId(var_.software_source().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .moduleName(var_.software_source_module_name())
-     *             .profileName(var_.software_source_module_stream_profile_name())
-     *             .streamName(var_.software_source_module_stream_name())
+     *             .softwareSourceId(softwareSource.id())
+     *             .compartmentId(compartmentId)
+     *             .moduleName(softwareSourceModuleName)
+     *             .profileName(softwareSourceModuleStreamProfileName)
+     *             .streamName(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -2249,9 +2249,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .state(var_.software_source_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .state(softwareSourceState)
      *             .build());
      * 
      *     }
@@ -2293,9 +2293,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .state(var_.software_source_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .state(softwareSourceState)
      *             .build());
      * 
      *     }
@@ -2337,9 +2337,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .state(var_.software_source_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .state(softwareSourceState)
      *             .build());
      * 
      *     }
@@ -2381,9 +2381,9 @@ public final class OsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .state(var_.software_source_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .state(softwareSourceState)
      *             .build());
      * 
      *     }

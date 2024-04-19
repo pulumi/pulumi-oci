@@ -145,12 +145,12 @@ def get_ratecards(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ratecards = oci.OsubSubscription.get_ratecards(compartment_id=var["compartment_id"],
-        subscription_id=oci_osub_subscription_subscription["test_subscription"]["id"],
-        part_number=var["ratecard_part_number"],
-        time_from=var["ratecard_time_from"],
-        time_to=var["ratecard_time_to"],
-        x_one_origin_region=var["ratecard_x_one_origin_region"])
+    test_ratecards = oci.OsubSubscription.get_ratecards(compartment_id=compartment_id,
+        subscription_id=test_subscription["id"],
+        part_number=ratecard_part_number,
+        time_from=ratecard_time_from,
+        time_to=ratecard_time_to,
+        x_one_origin_region=ratecard_x_one_origin_region)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,12 +207,12 @@ def get_ratecards_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ratecards = oci.OsubSubscription.get_ratecards(compartment_id=var["compartment_id"],
-        subscription_id=oci_osub_subscription_subscription["test_subscription"]["id"],
-        part_number=var["ratecard_part_number"],
-        time_from=var["ratecard_time_from"],
-        time_to=var["ratecard_time_to"],
-        x_one_origin_region=var["ratecard_x_one_origin_region"])
+    test_ratecards = oci.OsubSubscription.get_ratecards(compartment_id=compartment_id,
+        subscription_id=test_subscription["id"],
+        part_number=ratecard_part_number,
+        time_from=ratecard_time_from,
+        time_to=ratecard_time_to,
+        x_one_origin_region=ratecard_x_one_origin_region)
     ```
     <!--End PulumiCodeChooser -->
 

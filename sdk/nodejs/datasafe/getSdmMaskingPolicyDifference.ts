@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSdmMaskingPolicyDifference = oci.DataSafe.getSdmMaskingPolicyDifference({
- *     sdmMaskingPolicyDifferenceId: oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference.id,
+ *     sdmMaskingPolicyDifferenceId: testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,7 +107,7 @@ export interface GetSdmMaskingPolicyDifferenceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSdmMaskingPolicyDifference = oci.DataSafe.getSdmMaskingPolicyDifference({
- *     sdmMaskingPolicyDifferenceId: oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference.id,
+ *     sdmMaskingPolicyDifferenceId: testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

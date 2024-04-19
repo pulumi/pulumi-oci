@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetDrsFile = Oci.Jms.GetFleetDrsFile.Invoke(new()
         ///     {
-        ///         DrsFileKey = @var.Fleet_drs_file_drs_file_key,
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         DrsFileKey = fleetDrsFileDrsFileKey,
+        ///         FleetId = testFleet.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetDrsFile = Oci.Jms.GetFleetDrsFile.Invoke(new()
         ///     {
-        ///         DrsFileKey = @var.Fleet_drs_file_drs_file_key,
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         DrsFileKey = fleetDrsFileDrsFileKey,
+        ///         FleetId = testFleet.Id,
         ///     });
         /// 
         /// });

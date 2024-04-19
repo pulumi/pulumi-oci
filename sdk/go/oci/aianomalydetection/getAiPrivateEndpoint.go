@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiAnomalyDetection.GetAiPrivateEndpoint(ctx, &aianomalydetection.GetAiPrivateEndpointArgs{
-//				AiPrivateEndpointId: oci_ai_anomaly_detection_ai_private_endpoint.Test_ai_private_endpoint.Id,
+//				AiPrivateEndpointId: testAiPrivateEndpointOciAiAnomalyDetectionAiPrivateEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

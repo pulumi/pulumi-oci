@@ -680,21 +680,21 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ip_sec_connection_tunnel = oci.core.IpsecConnectionTunnelManagement("testIpSecConnectionTunnel",
-            ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-            tunnel_id=data["oci_core_ipsec_connection_tunnels"]["test_ip_sec_connection_tunnels"]["ip_sec_connection_tunnels"][0]["id"],
-            routing=var["ip_sec_connection_tunnel_management_routing"],
+        test_ip_sec_connection_tunnel = oci.core.IpsecConnectionTunnelManagement("test_ip_sec_connection_tunnel",
+            ipsec_id=test_ipsec["id"],
+            tunnel_id=test_ip_sec_connection_tunnels["ipSecConnectionTunnels"][0]["id"],
+            routing=ip_sec_connection_tunnel_management_routing,
             bgp_session_infos=[oci.core.IpsecConnectionTunnelManagementBgpSessionInfoArgs(
-                customer_bgp_asn=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn"],
-                customer_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip"],
-                oracle_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip"],
+                customer_bgp_asn=ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn,
+                customer_interface_ip=ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip,
+                oracle_interface_ip=ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip,
             )],
-            display_name=var["ip_sec_connection_tunnel_management_display_name"],
+            display_name=ip_sec_connection_tunnel_management_display_name,
             encryption_domain_config=oci.core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs(
-                cpe_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector"],
-                oracle_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector"],
+                cpe_traffic_selectors=ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector,
+                oracle_traffic_selectors=ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector,
             ),
-            shared_secret=var["ip_sec_connection_tunnel_management_shared_secret"],
+            shared_secret=ip_sec_connection_tunnel_management_shared_secret,
             ike_version="V1")
         ```
         <!--End PulumiCodeChooser -->
@@ -756,21 +756,21 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ip_sec_connection_tunnel = oci.core.IpsecConnectionTunnelManagement("testIpSecConnectionTunnel",
-            ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-            tunnel_id=data["oci_core_ipsec_connection_tunnels"]["test_ip_sec_connection_tunnels"]["ip_sec_connection_tunnels"][0]["id"],
-            routing=var["ip_sec_connection_tunnel_management_routing"],
+        test_ip_sec_connection_tunnel = oci.core.IpsecConnectionTunnelManagement("test_ip_sec_connection_tunnel",
+            ipsec_id=test_ipsec["id"],
+            tunnel_id=test_ip_sec_connection_tunnels["ipSecConnectionTunnels"][0]["id"],
+            routing=ip_sec_connection_tunnel_management_routing,
             bgp_session_infos=[oci.core.IpsecConnectionTunnelManagementBgpSessionInfoArgs(
-                customer_bgp_asn=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn"],
-                customer_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip"],
-                oracle_interface_ip=var["ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip"],
+                customer_bgp_asn=ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn,
+                customer_interface_ip=ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip,
+                oracle_interface_ip=ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip,
             )],
-            display_name=var["ip_sec_connection_tunnel_management_display_name"],
+            display_name=ip_sec_connection_tunnel_management_display_name,
             encryption_domain_config=oci.core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs(
-                cpe_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector"],
-                oracle_traffic_selectors=var["ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector"],
+                cpe_traffic_selectors=ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector,
+                oracle_traffic_selectors=ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector,
             ),
-            shared_secret=var["ip_sec_connection_tunnel_management_shared_secret"],
+            shared_secret=ip_sec_connection_tunnel_management_shared_secret,
             ike_version="V1")
         ```
         <!--End PulumiCodeChooser -->

@@ -68,7 +68,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = EmailFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -110,7 +110,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = EmailFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -152,7 +152,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = EmailFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -194,7 +194,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = EmailFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -236,7 +236,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
-     *             .dkimId(oci_email_dkim.test_dkim().id())
+     *             .dkimId(testDkimOciEmailDkim.id())
      *             .build());
      * 
      *     }
@@ -278,7 +278,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
-     *             .dkimId(oci_email_dkim.test_dkim().id())
+     *             .dkimId(testDkimOciEmailDkim.id())
      *             .build());
      * 
      *     }
@@ -320,7 +320,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
-     *             .dkimId(oci_email_dkim.test_dkim().id())
+     *             .dkimId(testDkimOciEmailDkim.id())
      *             .build());
      * 
      *     }
@@ -362,7 +362,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkim = EmailFunctions.getDkim(GetDkimArgs.builder()
-     *             .dkimId(oci_email_dkim.test_dkim().id())
+     *             .dkimId(testDkimOciEmailDkim.id())
      *             .build());
      * 
      *     }
@@ -404,10 +404,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
-     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
-     *             .id(var_.dkim_id())
-     *             .name(var_.dkim_name())
-     *             .state(var_.dkim_state())
+     *             .emailDomainId(testEmailDomain.id())
+     *             .id(dkimId)
+     *             .name(dkimName)
+     *             .state(dkimState)
      *             .build());
      * 
      *     }
@@ -449,10 +449,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
-     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
-     *             .id(var_.dkim_id())
-     *             .name(var_.dkim_name())
-     *             .state(var_.dkim_state())
+     *             .emailDomainId(testEmailDomain.id())
+     *             .id(dkimId)
+     *             .name(dkimName)
+     *             .state(dkimState)
      *             .build());
      * 
      *     }
@@ -494,10 +494,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
-     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
-     *             .id(var_.dkim_id())
-     *             .name(var_.dkim_name())
-     *             .state(var_.dkim_state())
+     *             .emailDomainId(testEmailDomain.id())
+     *             .id(dkimId)
+     *             .name(dkimName)
+     *             .state(dkimState)
      *             .build());
      * 
      *     }
@@ -539,10 +539,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDkims = EmailFunctions.getDkims(GetDkimsArgs.builder()
-     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
-     *             .id(var_.dkim_id())
-     *             .name(var_.dkim_name())
-     *             .state(var_.dkim_state())
+     *             .emailDomainId(testEmailDomain.id())
+     *             .id(dkimId)
+     *             .name(dkimName)
+     *             .state(dkimState)
      *             .build());
      * 
      *     }
@@ -584,7 +584,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
-     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.id())
      *             .build());
      * 
      *     }
@@ -626,7 +626,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
-     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.id())
      *             .build());
      * 
      *     }
@@ -668,7 +668,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
-     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.id())
      *             .build());
      * 
      *     }
@@ -710,7 +710,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomain = EmailFunctions.getEmailDomain(GetEmailDomainArgs.builder()
-     *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+     *             .emailDomainId(testEmailDomainOciEmailEmailDomain.id())
      *             .build());
      * 
      *     }
@@ -752,10 +752,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomains = EmailFunctions.getEmailDomains(GetEmailDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.email_domain_id())
-     *             .name(var_.email_domain_name())
-     *             .state(var_.email_domain_state())
+     *             .compartmentId(compartmentId)
+     *             .id(emailDomainId)
+     *             .name(emailDomainName)
+     *             .state(emailDomainState)
      *             .build());
      * 
      *     }
@@ -797,10 +797,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomains = EmailFunctions.getEmailDomains(GetEmailDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.email_domain_id())
-     *             .name(var_.email_domain_name())
-     *             .state(var_.email_domain_state())
+     *             .compartmentId(compartmentId)
+     *             .id(emailDomainId)
+     *             .name(emailDomainName)
+     *             .state(emailDomainState)
      *             .build());
      * 
      *     }
@@ -842,10 +842,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomains = EmailFunctions.getEmailDomains(GetEmailDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.email_domain_id())
-     *             .name(var_.email_domain_name())
-     *             .state(var_.email_domain_state())
+     *             .compartmentId(compartmentId)
+     *             .id(emailDomainId)
+     *             .name(emailDomainName)
+     *             .state(emailDomainState)
      *             .build());
      * 
      *     }
@@ -887,10 +887,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmailDomains = EmailFunctions.getEmailDomains(GetEmailDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.email_domain_id())
-     *             .name(var_.email_domain_name())
-     *             .state(var_.email_domain_state())
+     *             .compartmentId(compartmentId)
+     *             .id(emailDomainId)
+     *             .name(emailDomainName)
+     *             .state(emailDomainState)
      *             .build());
      * 
      *     }
@@ -932,7 +932,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
-     *             .senderId(oci_email_sender.test_sender().id())
+     *             .senderId(testSenderOciEmailSender.id())
      *             .build());
      * 
      *     }
@@ -974,7 +974,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
-     *             .senderId(oci_email_sender.test_sender().id())
+     *             .senderId(testSenderOciEmailSender.id())
      *             .build());
      * 
      *     }
@@ -1016,7 +1016,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
-     *             .senderId(oci_email_sender.test_sender().id())
+     *             .senderId(testSenderOciEmailSender.id())
      *             .build());
      * 
      *     }
@@ -1058,7 +1058,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSender = EmailFunctions.getSender(GetSenderArgs.builder()
-     *             .senderId(oci_email_sender.test_sender().id())
+     *             .senderId(testSenderOciEmailSender.id())
      *             .build());
      * 
      *     }
@@ -1100,10 +1100,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSenders = EmailFunctions.getSenders(GetSendersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .domain(var_.sender_domain())
-     *             .emailAddress(var_.sender_email_address())
-     *             .state(var_.sender_state())
+     *             .compartmentId(compartmentId)
+     *             .domain(senderDomain)
+     *             .emailAddress(senderEmailAddress)
+     *             .state(senderState)
      *             .build());
      * 
      *     }
@@ -1145,10 +1145,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSenders = EmailFunctions.getSenders(GetSendersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .domain(var_.sender_domain())
-     *             .emailAddress(var_.sender_email_address())
-     *             .state(var_.sender_state())
+     *             .compartmentId(compartmentId)
+     *             .domain(senderDomain)
+     *             .emailAddress(senderEmailAddress)
+     *             .state(senderState)
      *             .build());
      * 
      *     }
@@ -1190,10 +1190,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSenders = EmailFunctions.getSenders(GetSendersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .domain(var_.sender_domain())
-     *             .emailAddress(var_.sender_email_address())
-     *             .state(var_.sender_state())
+     *             .compartmentId(compartmentId)
+     *             .domain(senderDomain)
+     *             .emailAddress(senderEmailAddress)
+     *             .state(senderState)
      *             .build());
      * 
      *     }
@@ -1235,10 +1235,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSenders = EmailFunctions.getSenders(GetSendersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .domain(var_.sender_domain())
-     *             .emailAddress(var_.sender_email_address())
-     *             .state(var_.sender_state())
+     *             .compartmentId(compartmentId)
+     *             .domain(senderDomain)
+     *             .emailAddress(senderEmailAddress)
+     *             .state(senderState)
      *             .build());
      * 
      *     }
@@ -1281,7 +1281,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
-     *             .suppressionId(oci_email_suppression.test_suppression().id())
+     *             .suppressionId(testSuppressionOciEmailSuppression.id())
      *             .build());
      * 
      *     }
@@ -1324,7 +1324,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
-     *             .suppressionId(oci_email_suppression.test_suppression().id())
+     *             .suppressionId(testSuppressionOciEmailSuppression.id())
      *             .build());
      * 
      *     }
@@ -1367,7 +1367,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
-     *             .suppressionId(oci_email_suppression.test_suppression().id())
+     *             .suppressionId(testSuppressionOciEmailSuppression.id())
      *             .build());
      * 
      *     }
@@ -1410,7 +1410,7 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppression = EmailFunctions.getSuppression(GetSuppressionArgs.builder()
-     *             .suppressionId(oci_email_suppression.test_suppression().id())
+     *             .suppressionId(testSuppressionOciEmailSuppression.id())
      *             .build());
      * 
      *     }
@@ -1454,10 +1454,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppressions = EmailFunctions.getSuppressions(GetSuppressionsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .emailAddress(var_.suppression_email_address())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.suppression_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.suppression_time_created_less_than())
+     *             .compartmentId(tenancyOcid)
+     *             .emailAddress(suppressionEmailAddress)
+     *             .timeCreatedGreaterThanOrEqualTo(suppressionTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(suppressionTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1501,10 +1501,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppressions = EmailFunctions.getSuppressions(GetSuppressionsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .emailAddress(var_.suppression_email_address())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.suppression_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.suppression_time_created_less_than())
+     *             .compartmentId(tenancyOcid)
+     *             .emailAddress(suppressionEmailAddress)
+     *             .timeCreatedGreaterThanOrEqualTo(suppressionTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(suppressionTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1548,10 +1548,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppressions = EmailFunctions.getSuppressions(GetSuppressionsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .emailAddress(var_.suppression_email_address())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.suppression_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.suppression_time_created_less_than())
+     *             .compartmentId(tenancyOcid)
+     *             .emailAddress(suppressionEmailAddress)
+     *             .timeCreatedGreaterThanOrEqualTo(suppressionTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(suppressionTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1595,10 +1595,10 @@ public final class EmailFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSuppressions = EmailFunctions.getSuppressions(GetSuppressionsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .emailAddress(var_.suppression_email_address())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.suppression_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.suppression_time_created_less_than())
+     *             .compartmentId(tenancyOcid)
+     *             .emailAddress(suppressionEmailAddress)
+     *             .timeCreatedGreaterThanOrEqualTo(suppressionTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(suppressionTimeCreatedLessThan)
      *             .build());
      * 
      *     }

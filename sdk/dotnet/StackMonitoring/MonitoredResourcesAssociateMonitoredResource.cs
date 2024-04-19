@@ -27,12 +27,12 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMonitoredResourcesAssociateMonitoredResource = new Oci.StackMonitoring.MonitoredResourcesAssociateMonitoredResource("testMonitoredResourcesAssociateMonitoredResource", new()
+    ///     var testMonitoredResourcesAssociateMonitoredResource = new Oci.StackMonitoring.MonitoredResourcesAssociateMonitoredResource("test_monitored_resources_associate_monitored_resource", new()
     ///     {
-    ///         AssociationType = @var.Monitored_resources_associate_monitored_resource_association_type,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DestinationResourceId = oci_stack_monitoring_destination_resource.Test_destination_resource.Id,
-    ///         SourceResourceId = oci_stack_monitoring_source_resource.Test_source_resource.Id,
+    ///         AssociationType = monitoredResourcesAssociateMonitoredResourceAssociationType,
+    ///         CompartmentId = compartmentId,
+    ///         DestinationResourceId = testDestinationResource.Id,
+    ///         SourceResourceId = testSourceResource.Id,
     ///     });
     /// 
     /// });

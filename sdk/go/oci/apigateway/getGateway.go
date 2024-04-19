@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApiGateway.GetGateway(ctx, &apigateway.GetGatewayArgs{
-//				GatewayId: oci_apigateway_gateway.Test_gateway.Id,
+//				GatewayId: testGatewayOciApigatewayGateway.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

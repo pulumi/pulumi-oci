@@ -30,12 +30,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceRules = Oci.LogAnalytics.GetNamespaceRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Namespace_rule_namespace,
-        ///         DisplayName = @var.Namespace_rule_display_name,
-        ///         Kind = @var.Namespace_rule_kind,
-        ///         State = @var.Namespace_rule_state,
-        ///         TargetService = @var.Namespace_rule_target_service,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceRuleNamespace,
+        ///         DisplayName = namespaceRuleDisplayName,
+        ///         Kind = namespaceRuleKind,
+        ///         State = namespaceRuleState,
+        ///         TargetService = namespaceRuleTargetService,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceRules = Oci.LogAnalytics.GetNamespaceRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Namespace_rule_namespace,
-        ///         DisplayName = @var.Namespace_rule_display_name,
-        ///         Kind = @var.Namespace_rule_kind,
-        ///         State = @var.Namespace_rule_state,
-        ///         TargetService = @var.Namespace_rule_target_service,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceRuleNamespace,
+        ///         DisplayName = namespaceRuleDisplayName,
+        ///         Kind = namespaceRuleKind,
+        ///         State = namespaceRuleState,
+        ///         TargetService = namespaceRuleTargetService,
         ///     });
         /// 
         /// });

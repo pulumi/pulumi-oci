@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waf.GetProtectionCapabilities(ctx, &waf.GetProtectionCapabilitiesArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				DisplayName:      pulumi.StringRef(_var.Protection_capability_display_name),
-//				GroupTags:        _var.Protection_capability_group_tag,
-//				IsLatestVersions: _var.Protection_capability_is_latest_version,
-//				Key:              pulumi.StringRef(_var.Protection_capability_key),
-//				Type:             pulumi.StringRef(_var.Protection_capability_type),
+//				CompartmentId:    compartmentId,
+//				DisplayName:      pulumi.StringRef(protectionCapabilityDisplayName),
+//				GroupTags:        protectionCapabilityGroupTag,
+//				IsLatestVersions: protectionCapabilityIsLatestVersion,
+//				Key:              pulumi.StringRef(protectionCapabilityKey),
+//				Type:             pulumi.StringRef(protectionCapabilityType),
 //			}, nil)
 //			if err != nil {
 //				return err

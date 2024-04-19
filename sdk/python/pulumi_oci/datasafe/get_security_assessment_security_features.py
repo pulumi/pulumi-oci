@@ -237,21 +237,21 @@ def get_security_assessment_security_features(access_level: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_security_features = oci.DataSafe.get_security_assessment_security_features(compartment_id=var["compartment_id"],
-        access_level=var["security_assessment_security_feature_access_level"],
-        compartment_id_in_subtree=var["security_assessment_security_feature_compartment_id_in_subtree"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        targets_with_column_encryption=var["security_assessment_security_feature_targets_with_column_encryption"],
-        targets_with_database_vault=var["security_assessment_security_feature_targets_with_database_vault"],
-        targets_with_external_authentication=var["security_assessment_security_feature_targets_with_external_authentication"],
-        targets_with_fine_grained_audit=var["security_assessment_security_feature_targets_with_fine_grained_audit"],
-        targets_with_global_authentication=var["security_assessment_security_feature_targets_with_global_authentication"],
-        targets_with_network_encryption=var["security_assessment_security_feature_targets_with_network_encryption"],
-        targets_with_password_authentication=var["security_assessment_security_feature_targets_with_password_authentication"],
-        targets_with_privilege_analysis=var["security_assessment_security_feature_targets_with_privilege_analysis"],
-        targets_with_tablespace_encryption=var["security_assessment_security_feature_targets_with_tablespace_encryption"],
-        targets_with_traditional_audit=var["security_assessment_security_feature_targets_with_traditional_audit"],
-        targets_with_unified_audit=var["security_assessment_security_feature_targets_with_unified_audit"])
+    test_security_assessment_security_features = oci.DataSafe.get_security_assessment_security_features(compartment_id=compartment_id,
+        access_level=security_assessment_security_feature_access_level,
+        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree,
+        target_id=test_target["id"],
+        targets_with_column_encryption=security_assessment_security_feature_targets_with_column_encryption,
+        targets_with_database_vault=security_assessment_security_feature_targets_with_database_vault,
+        targets_with_external_authentication=security_assessment_security_feature_targets_with_external_authentication,
+        targets_with_fine_grained_audit=security_assessment_security_feature_targets_with_fine_grained_audit,
+        targets_with_global_authentication=security_assessment_security_feature_targets_with_global_authentication,
+        targets_with_network_encryption=security_assessment_security_feature_targets_with_network_encryption,
+        targets_with_password_authentication=security_assessment_security_feature_targets_with_password_authentication,
+        targets_with_privilege_analysis=security_assessment_security_feature_targets_with_privilege_analysis,
+        targets_with_tablespace_encryption=security_assessment_security_feature_targets_with_tablespace_encryption,
+        targets_with_traditional_audit=security_assessment_security_feature_targets_with_traditional_audit,
+        targets_with_unified_audit=security_assessment_security_feature_targets_with_unified_audit)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -343,21 +343,21 @@ def get_security_assessment_security_features_output(access_level: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_security_features = oci.DataSafe.get_security_assessment_security_features(compartment_id=var["compartment_id"],
-        access_level=var["security_assessment_security_feature_access_level"],
-        compartment_id_in_subtree=var["security_assessment_security_feature_compartment_id_in_subtree"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        targets_with_column_encryption=var["security_assessment_security_feature_targets_with_column_encryption"],
-        targets_with_database_vault=var["security_assessment_security_feature_targets_with_database_vault"],
-        targets_with_external_authentication=var["security_assessment_security_feature_targets_with_external_authentication"],
-        targets_with_fine_grained_audit=var["security_assessment_security_feature_targets_with_fine_grained_audit"],
-        targets_with_global_authentication=var["security_assessment_security_feature_targets_with_global_authentication"],
-        targets_with_network_encryption=var["security_assessment_security_feature_targets_with_network_encryption"],
-        targets_with_password_authentication=var["security_assessment_security_feature_targets_with_password_authentication"],
-        targets_with_privilege_analysis=var["security_assessment_security_feature_targets_with_privilege_analysis"],
-        targets_with_tablespace_encryption=var["security_assessment_security_feature_targets_with_tablespace_encryption"],
-        targets_with_traditional_audit=var["security_assessment_security_feature_targets_with_traditional_audit"],
-        targets_with_unified_audit=var["security_assessment_security_feature_targets_with_unified_audit"])
+    test_security_assessment_security_features = oci.DataSafe.get_security_assessment_security_features(compartment_id=compartment_id,
+        access_level=security_assessment_security_feature_access_level,
+        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree,
+        target_id=test_target["id"],
+        targets_with_column_encryption=security_assessment_security_feature_targets_with_column_encryption,
+        targets_with_database_vault=security_assessment_security_feature_targets_with_database_vault,
+        targets_with_external_authentication=security_assessment_security_feature_targets_with_external_authentication,
+        targets_with_fine_grained_audit=security_assessment_security_feature_targets_with_fine_grained_audit,
+        targets_with_global_authentication=security_assessment_security_feature_targets_with_global_authentication,
+        targets_with_network_encryption=security_assessment_security_feature_targets_with_network_encryption,
+        targets_with_password_authentication=security_assessment_security_feature_targets_with_password_authentication,
+        targets_with_privilege_analysis=security_assessment_security_feature_targets_with_privilege_analysis,
+        targets_with_tablespace_encryption=security_assessment_security_feature_targets_with_tablespace_encryption,
+        targets_with_traditional_audit=security_assessment_security_feature_targets_with_traditional_audit,
+        targets_with_unified_audit=security_assessment_security_feature_targets_with_unified_audit)
     ```
     <!--End PulumiCodeChooser -->
 

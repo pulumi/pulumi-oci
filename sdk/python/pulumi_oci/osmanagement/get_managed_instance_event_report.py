@@ -106,10 +106,10 @@ def get_managed_instance_event_report(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=var["compartment_id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        latest_timestamp_greater_than_or_equal_to=var["managed_instance_event_report_latest_timestamp_greater_than_or_equal_to"],
-        latest_timestamp_less_than=var["managed_instance_event_report_latest_timestamp_less_than"])
+    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=compartment_id,
+        managed_instance_id=test_managed_instance["id"],
+        latest_timestamp_greater_than_or_equal_to=managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
+        latest_timestamp_less_than=managed_instance_event_report_latest_timestamp_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -154,10 +154,10 @@ def get_managed_instance_event_report_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=var["compartment_id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        latest_timestamp_greater_than_or_equal_to=var["managed_instance_event_report_latest_timestamp_greater_than_or_equal_to"],
-        latest_timestamp_less_than=var["managed_instance_event_report_latest_timestamp_less_than"])
+    test_managed_instance_event_report = oci.OsManagement.get_managed_instance_event_report(compartment_id=compartment_id,
+        managed_instance_id=test_managed_instance["id"],
+        latest_timestamp_greater_than_or_equal_to=managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
+        latest_timestamp_less_than=managed_instance_event_report_latest_timestamp_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

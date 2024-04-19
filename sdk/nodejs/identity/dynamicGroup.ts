@@ -30,10 +30,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicGroup = new oci.identity.DynamicGroup("testDynamicGroup", {
- *     compartmentId: _var.tenancy_ocid,
- *     description: _var.dynamic_group_description,
- *     matchingRule: _var.dynamic_group_matching_rule,
+ * const testDynamicGroup = new oci.identity.DynamicGroup("test_dynamic_group", {
+ *     compartmentId: tenancyOcid,
+ *     description: dynamicGroupDescription,
+ *     matchingRule: dynamicGroupMatchingRule,
+ *     name: dynamicGroupName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

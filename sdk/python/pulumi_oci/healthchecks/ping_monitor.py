@@ -469,22 +469,22 @@ class PingMonitor(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ping_monitor = oci.health_checks.PingMonitor("testPingMonitor",
-            compartment_id=var["compartment_id"],
-            display_name=var["ping_monitor_display_name"],
-            interval_in_seconds=var["ping_monitor_interval_in_seconds"],
-            protocol=var["ping_monitor_protocol"],
-            targets=var["ping_monitor_targets"],
+        test_ping_monitor = oci.health_checks.PingMonitor("test_ping_monitor",
+            compartment_id=compartment_id,
+            display_name=ping_monitor_display_name,
+            interval_in_seconds=ping_monitor_interval_in_seconds,
+            protocol=ping_monitor_protocol,
+            targets=ping_monitor_targets,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=var["ping_monitor_is_enabled"],
-            port=var["ping_monitor_port"],
-            timeout_in_seconds=var["ping_monitor_timeout_in_seconds"],
-            vantage_point_names=var["ping_monitor_vantage_point_names"])
+            is_enabled=ping_monitor_is_enabled,
+            port=ping_monitor_port,
+            timeout_in_seconds=ping_monitor_timeout_in_seconds,
+            vantage_point_names=ping_monitor_vantage_point_names)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -534,22 +534,22 @@ class PingMonitor(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ping_monitor = oci.health_checks.PingMonitor("testPingMonitor",
-            compartment_id=var["compartment_id"],
-            display_name=var["ping_monitor_display_name"],
-            interval_in_seconds=var["ping_monitor_interval_in_seconds"],
-            protocol=var["ping_monitor_protocol"],
-            targets=var["ping_monitor_targets"],
+        test_ping_monitor = oci.health_checks.PingMonitor("test_ping_monitor",
+            compartment_id=compartment_id,
+            display_name=ping_monitor_display_name,
+            interval_in_seconds=ping_monitor_interval_in_seconds,
+            protocol=ping_monitor_protocol,
+            targets=ping_monitor_targets,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=var["ping_monitor_is_enabled"],
-            port=var["ping_monitor_port"],
-            timeout_in_seconds=var["ping_monitor_timeout_in_seconds"],
-            vantage_point_names=var["ping_monitor_vantage_point_names"])
+            is_enabled=ping_monitor_is_enabled,
+            port=ping_monitor_port,
+            timeout_in_seconds=ping_monitor_timeout_in_seconds,
+            vantage_point_names=ping_monitor_vantage_point_names)
         ```
         <!--End PulumiCodeChooser -->
 

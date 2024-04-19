@@ -30,9 +30,9 @@ namespace Pulumi.Oci.OsubOrganizationSubscription
         /// {
         ///     var testOrganizationSubscriptions = Oci.OsubOrganizationSubscription.GetOrganizationSubscriptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionIds = @var.Organization_subscription_subscription_ids,
-        ///         XOneOriginRegion = @var.Organization_subscription_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionIds = organizationSubscriptionSubscriptionIds,
+        ///         XOneOriginRegion = organizationSubscriptionXOneOriginRegion,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.OsubOrganizationSubscription
         /// {
         ///     var testOrganizationSubscriptions = Oci.OsubOrganizationSubscription.GetOrganizationSubscriptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionIds = @var.Organization_subscription_subscription_ids,
-        ///         XOneOriginRegion = @var.Organization_subscription_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionIds = organizationSubscriptionSubscriptionIds,
+        ///         XOneOriginRegion = organizationSubscriptionXOneOriginRegion,
         ///     });
         /// 
         /// });

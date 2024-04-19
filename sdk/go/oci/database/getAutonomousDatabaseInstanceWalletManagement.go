@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousDatabaseInstanceWalletManagement(ctx, &database.GetAutonomousDatabaseInstanceWalletManagementArgs{
-//				AutonomousDatabaseId: oci_database_autonomous_database.Test_autonomous_database.Id,
+//				AutonomousDatabaseId: testAutonomousDatabase.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

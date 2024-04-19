@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdpGroupMapping = new oci.identity.IdpGroupMapping("testIdpGroupMapping", {
- *     groupId: oci_identity_group.test_group.id,
- *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
- *     idpGroupName: _var.idp_group_mapping_idp_group_name,
+ * const testIdpGroupMapping = new oci.identity.IdpGroupMapping("test_idp_group_mapping", {
+ *     groupId: testGroup.id,
+ *     identityProviderId: testIdentityProvider.id,
+ *     idpGroupName: idpGroupMappingIdpGroupName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

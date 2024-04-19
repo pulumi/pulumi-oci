@@ -49,16 +49,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testKeyStore = new KeyStore(&#34;testKeyStore&#34;, KeyStoreArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.key_store_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(keyStoreDisplayName)
  *             .typeDetails(KeyStoreTypeDetailsArgs.builder()
- *                 .adminUsername(var_.key_store_type_details_admin_username())
- *                 .connectionIps(var_.key_store_type_details_connection_ips())
- *                 .secretId(oci_vault_secret.test_secret().id())
- *                 .type(var_.key_store_type_details_type())
- *                 .vaultId(oci_kms_vault.test_vault().id())
+ *                 .adminUsername(keyStoreTypeDetailsAdminUsername)
+ *                 .connectionIps(keyStoreTypeDetailsConnectionIps)
+ *                 .secretId(testSecret.id())
+ *                 .type(keyStoreTypeDetailsType)
+ *                 .vaultId(testVault.id())
  *                 .build())
- *             .definedTags(var_.key_store_defined_tags())
+ *             .definedTags(keyStoreDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

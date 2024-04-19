@@ -25,10 +25,10 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOperationsInsightsWarehouseDownloadWarehouseWallet = new Oci.Opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet", new()
+    ///     var testOperationsInsightsWarehouseDownloadWarehouseWallet = new Oci.Opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("test_operations_insights_warehouse_download_warehouse_wallet", new()
     ///     {
-    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-    ///         OperationsInsightsWarehouseWalletPassword = @var.Operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password,
+    ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
+    ///         OperationsInsightsWarehouseWalletPassword = operationsInsightsWarehouseDownloadWarehouseWalletOperationsInsightsWarehouseWalletPassword,
     ///     });
     /// 
     /// });

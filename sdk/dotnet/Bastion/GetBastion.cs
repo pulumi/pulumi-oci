@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Bastion
         /// {
         ///     var testBastion = Oci.Bastion.GetBastion.Invoke(new()
         ///     {
-        ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
+        ///         BastionId = testBastionOciBastionBastion.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Bastion
         /// {
         ///     var testBastion = Oci.Bastion.GetBastion.Invoke(new()
         ///     {
-        ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
+        ///         BastionId = testBastionOciBastionBastion.Id,
         ///     });
         /// 
         /// });

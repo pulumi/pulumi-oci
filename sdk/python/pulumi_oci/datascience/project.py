@@ -289,13 +289,13 @@ class Project(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_project = oci.data_science.Project("testProject",
-            compartment_id=var["compartment_id"],
+        test_project = oci.data_science.Project("test_project",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["project_description"],
-            display_name=var["project_display_name"],
+            description=project_description,
+            display_name=project_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -340,13 +340,13 @@ class Project(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_project = oci.data_science.Project("testProject",
-            compartment_id=var["compartment_id"],
+        test_project = oci.data_science.Project("test_project",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["project_description"],
-            display_name=var["project_display_name"],
+            description=project_description,
+            display_name=project_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

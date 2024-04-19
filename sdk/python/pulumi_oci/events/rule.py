@@ -418,25 +418,25 @@ class Rule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_rule = oci.events.Rule("testRule",
+        test_rule = oci.events.Rule("test_rule",
             actions=oci.events.RuleActionsArgs(
                 actions=[oci.events.RuleActionsActionArgs(
-                    action_type=var["rule_actions_actions_action_type"],
-                    is_enabled=var["rule_actions_actions_is_enabled"],
-                    description=var["rule_actions_actions_description"],
-                    function_id=oci_functions_function["test_function"]["id"],
-                    stream_id=oci_streaming_stream["test_stream"]["id"],
-                    topic_id=oci_ons_notification_topic["test_topic"]["id"],
+                    action_type=rule_actions_actions_action_type,
+                    is_enabled=rule_actions_actions_is_enabled,
+                    description=rule_actions_actions_description,
+                    function_id=test_function["id"],
+                    stream_id=test_stream["id"],
+                    topic_id=test_topic["id"],
                 )],
             ),
-            compartment_id=var["compartment_id"],
-            condition=var["rule_condition"],
-            display_name=var["rule_display_name"],
-            is_enabled=var["rule_is_enabled"],
+            compartment_id=compartment_id,
+            condition=rule_condition,
+            display_name=rule_display_name,
+            is_enabled=rule_is_enabled,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["rule_description"],
+            description=rule_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -496,25 +496,25 @@ class Rule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_rule = oci.events.Rule("testRule",
+        test_rule = oci.events.Rule("test_rule",
             actions=oci.events.RuleActionsArgs(
                 actions=[oci.events.RuleActionsActionArgs(
-                    action_type=var["rule_actions_actions_action_type"],
-                    is_enabled=var["rule_actions_actions_is_enabled"],
-                    description=var["rule_actions_actions_description"],
-                    function_id=oci_functions_function["test_function"]["id"],
-                    stream_id=oci_streaming_stream["test_stream"]["id"],
-                    topic_id=oci_ons_notification_topic["test_topic"]["id"],
+                    action_type=rule_actions_actions_action_type,
+                    is_enabled=rule_actions_actions_is_enabled,
+                    description=rule_actions_actions_description,
+                    function_id=test_function["id"],
+                    stream_id=test_stream["id"],
+                    topic_id=test_topic["id"],
                 )],
             ),
-            compartment_id=var["compartment_id"],
-            condition=var["rule_condition"],
-            display_name=var["rule_display_name"],
-            is_enabled=var["rule_is_enabled"],
+            compartment_id=compartment_id,
+            condition=rule_condition,
+            display_name=rule_display_name,
+            is_enabled=rule_is_enabled,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["rule_description"],
+            description=rule_description,
             freeform_tags={
                 "Department": "Finance",
             })

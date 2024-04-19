@@ -33,18 +33,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.NewCertificate(ctx, "testCertificate", &Waas.CertificateArgs{
-//				CertificateData: pulumi.Any(_var.Certificate_certificate_data),
-//				CompartmentId:   pulumi.Any(_var.Compartment_id),
-//				PrivateKeyData:  pulumi.Any(_var.Certificate_private_key_data),
+//			_, err := Waas.NewCertificate(ctx, "test_certificate", &Waas.CertificateArgs{
+//				CertificateData: pulumi.Any(certificateCertificateData),
+//				CompartmentId:   pulumi.Any(compartmentId),
+//				PrivateKeyData:  pulumi.Any(certificatePrivateKeyData),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Certificate_display_name),
+//				DisplayName: pulumi.Any(certificateDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsTrustVerificationDisabled: pulumi.Any(_var.Certificate_is_trust_verification_disabled),
+//				IsTrustVerificationDisabled: pulumi.Any(certificateIsTrustVerificationDisabled),
 //			})
 //			if err != nil {
 //				return err

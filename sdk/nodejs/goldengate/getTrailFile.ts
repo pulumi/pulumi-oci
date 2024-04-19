@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTrailFile = oci.GoldenGate.getTrailFile({
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     trailFileId: oci_golden_gate_trail_file.test_trail_file.id,
- *     displayName: _var.trail_file_display_name,
+ *     deploymentId: testDeployment.id,
+ *     trailFileId: testTrailFileOciGoldenGateTrailFile.id,
+ *     displayName: trailFileDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -93,9 +93,9 @@ export interface GetTrailFileResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTrailFile = oci.GoldenGate.getTrailFile({
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     trailFileId: oci_golden_gate_trail_file.test_trail_file.id,
- *     displayName: _var.trail_file_display_name,
+ *     deploymentId: testDeployment.id,
+ *     trailFileId: testTrailFileOciGoldenGateTrailFile.id,
+ *     displayName: trailFileDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

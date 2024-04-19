@@ -48,20 +48,20 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBudget = new Budget(&#34;testBudget&#34;, BudgetArgs.builder()        
- *             .amount(var_.budget_amount())
- *             .compartmentId(var_.tenancy_ocid())
- *             .resetPeriod(var_.budget_reset_period())
- *             .budgetProcessingPeriodStartOffset(var_.budget_budget_processing_period_start_offset())
+ *             .amount(budgetAmount)
+ *             .compartmentId(tenancyOcid)
+ *             .resetPeriod(budgetResetPeriod)
+ *             .budgetProcessingPeriodStartOffset(budgetBudgetProcessingPeriodStartOffset)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.budget_description())
- *             .displayName(var_.budget_display_name())
- *             .endDate(var_.budget_end_date())
+ *             .description(budgetDescription)
+ *             .displayName(budgetDisplayName)
+ *             .endDate(budgetEndDate)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .processingPeriodType(var_.budget_processing_period_type())
- *             .startDate(var_.budget_start_date())
- *             .targetCompartmentId(oci_identity_compartment.test_compartment().id())
- *             .targetType(var_.budget_target_type())
- *             .targets(var_.budget_targets())
+ *             .processingPeriodType(budgetProcessingPeriodType)
+ *             .startDate(budgetStartDate)
+ *             .targetCompartmentId(testCompartment.id())
+ *             .targetType(budgetTargetType)
+ *             .targets(budgetTargets)
  *             .build());
  * 
  *     }

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetSystemVersions(ctx, &database.GetSystemVersionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				GiVersion:     _var.System_version_gi_version,
-//				Shape:         _var.System_version_shape,
+//				CompartmentId: compartmentId,
+//				GiVersion:     systemVersionGiVersion,
+//				Shape:         systemVersionShape,
 //			}, nil)
 //			if err != nil {
 //				return err

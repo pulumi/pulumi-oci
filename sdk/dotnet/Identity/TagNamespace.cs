@@ -38,10 +38,11 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTagNamespace = new Oci.Identity.TagNamespace("testTagNamespace", new()
+    ///     var testTagNamespace = new Oci.Identity.TagNamespace("test_tag_namespace", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Description = @var.Tag_namespace_description,
+    ///         CompartmentId = compartmentId,
+    ///         Description = tagNamespaceDescription,
+    ///         Name = tagNamespaceName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

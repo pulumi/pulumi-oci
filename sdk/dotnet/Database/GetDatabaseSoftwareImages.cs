@@ -30,12 +30,12 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDatabaseSoftwareImages = Oci.Database.GetDatabaseSoftwareImages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Database_software_image_display_name,
-        ///         ImageShapeFamily = @var.Database_software_image_image_shape_family,
-        ///         ImageType = @var.Database_software_image_image_type,
-        ///         IsUpgradeSupported = @var.Database_software_image_is_upgrade_supported,
-        ///         State = @var.Database_software_image_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseSoftwareImageDisplayName,
+        ///         ImageShapeFamily = databaseSoftwareImageImageShapeFamily,
+        ///         ImageType = databaseSoftwareImageImageType,
+        ///         IsUpgradeSupported = databaseSoftwareImageIsUpgradeSupported,
+        ///         State = databaseSoftwareImageState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDatabaseSoftwareImages = Oci.Database.GetDatabaseSoftwareImages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Database_software_image_display_name,
-        ///         ImageShapeFamily = @var.Database_software_image_image_shape_family,
-        ///         ImageType = @var.Database_software_image_image_type,
-        ///         IsUpgradeSupported = @var.Database_software_image_is_upgrade_supported,
-        ///         State = @var.Database_software_image_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseSoftwareImageDisplayName,
+        ///         ImageShapeFamily = databaseSoftwareImageImageShapeFamily,
+        ///         ImageType = databaseSoftwareImageImageType,
+        ///         IsUpgradeSupported = databaseSoftwareImageIsUpgradeSupported,
+        ///         State = databaseSoftwareImageState,
         ///     });
         /// 
         /// });

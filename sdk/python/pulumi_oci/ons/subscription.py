@@ -356,11 +356,11 @@ class Subscription(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_subscription = oci.ons.Subscription("testSubscription",
-            compartment_id=var["compartment_id"],
-            endpoint=var["subscription_endpoint"],
-            protocol=var["subscription_protocol"],
-            topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
+        test_subscription = oci.ons.Subscription("test_subscription",
+            compartment_id=compartment_id,
+            endpoint=subscription_endpoint,
+            protocol=subscription_protocol,
+            topic_id=test_notification_topic["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -418,11 +418,11 @@ class Subscription(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_subscription = oci.ons.Subscription("testSubscription",
-            compartment_id=var["compartment_id"],
-            endpoint=var["subscription_endpoint"],
-            protocol=var["subscription_protocol"],
-            topic_id=oci_ons_notification_topic["test_notification_topic"]["id"],
+        test_subscription = oci.ons.Subscription("test_subscription",
+            compartment_id=compartment_id,
+            endpoint=subscription_endpoint,
+            protocol=subscription_protocol,
+            topic_id=test_notification_topic["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIntegrationInstance = oci.Integration.getIntegrationInstance({
- *     integrationInstanceId: oci_integration_integration_instance.test_integration_instance.id,
+ *     integrationInstanceId: testIntegrationInstanceOciIntegrationIntegrationInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -157,7 +157,7 @@ export interface GetIntegrationInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIntegrationInstance = oci.Integration.getIntegrationInstance({
- *     integrationInstanceId: oci_integration_integration_instance.test_integration_instance.id,
+ *     integrationInstanceId: testIntegrationInstanceOciIntegrationIntegrationInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMigration = oci.DatabaseMigration.getMigration({
- *     migrationId: oci_database_migration_migration.test_migration.id,
+ *     migrationId: testMigrationOciDatabaseMigrationMigration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -175,7 +175,7 @@ export interface GetMigrationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMigration = oci.DatabaseMigration.getMigration({
- *     migrationId: oci_database_migration_migration.test_migration.id,
+ *     migrationId: testMigrationOciDatabaseMigrationMigration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

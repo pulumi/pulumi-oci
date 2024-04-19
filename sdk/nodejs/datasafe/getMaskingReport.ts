@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingReport = oci.DataSafe.getMaskingReport({
- *     maskingReportId: oci_data_safe_masking_report.test_masking_report.id,
+ *     maskingReportId: testMaskingReportOciDataSafeMaskingReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -135,7 +135,7 @@ export interface GetMaskingReportResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingReport = oci.DataSafe.getMaskingReport({
- *     maskingReportId: oci_data_safe_masking_report.test_masking_report.id,
+ *     maskingReportId: testMaskingReportOciDataSafeMaskingReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

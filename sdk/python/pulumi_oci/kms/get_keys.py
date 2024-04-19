@@ -164,12 +164,12 @@ def get_keys(algorithm: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_keys = oci.Kms.get_keys(compartment_id=var["compartment_id"],
-        management_endpoint=var["key_management_endpoint"],
-        algorithm=var["key_algorithm"],
-        length=var["key_length"],
-        curve_id=oci_kms_curve["test_curve"]["id"],
-        protection_mode=var["key_protection_mode"])
+    test_keys = oci.Kms.get_keys(compartment_id=compartment_id,
+        management_endpoint=key_management_endpoint,
+        algorithm=key_algorithm,
+        length=key_length,
+        curve_id=test_curve["id"],
+        protection_mode=key_protection_mode)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -230,12 +230,12 @@ def get_keys_output(algorithm: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_keys = oci.Kms.get_keys(compartment_id=var["compartment_id"],
-        management_endpoint=var["key_management_endpoint"],
-        algorithm=var["key_algorithm"],
-        length=var["key_length"],
-        curve_id=oci_kms_curve["test_curve"]["id"],
-        protection_mode=var["key_protection_mode"])
+    test_keys = oci.Kms.get_keys(compartment_id=compartment_id,
+        management_endpoint=key_management_endpoint,
+        algorithm=key_algorithm,
+        length=key_length,
+        curve_id=test_curve["id"],
+        protection_mode=key_protection_mode)
     ```
     <!--End PulumiCodeChooser -->
 

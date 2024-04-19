@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testListJreUsage = oci.Jms.getListJreUsage({
- *     applicationId: oci_dataflow_application.test_application.id,
- *     applicationName: oci_dataflow_application.test_application.name,
- *     compartmentId: _var.compartment_id,
- *     hostId: oci_jms_host.test_host.id,
- *     timeEnd: _var.list_jre_usage_time_end,
- *     timeStart: _var.list_jre_usage_time_start,
+ *     applicationId: testApplication.id,
+ *     applicationName: testApplication.name,
+ *     compartmentId: compartmentId,
+ *     hostId: testHost.id,
+ *     timeEnd: listJreUsageTimeEnd,
+ *     timeStart: listJreUsageTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,12 +111,12 @@ export interface GetListJreUsageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testListJreUsage = oci.Jms.getListJreUsage({
- *     applicationId: oci_dataflow_application.test_application.id,
- *     applicationName: oci_dataflow_application.test_application.name,
- *     compartmentId: _var.compartment_id,
- *     hostId: oci_jms_host.test_host.id,
- *     timeEnd: _var.list_jre_usage_time_end,
- *     timeStart: _var.list_jre_usage_time_start,
+ *     applicationId: testApplication.id,
+ *     applicationName: testApplication.name,
+ *     compartmentId: compartmentId,
+ *     hostId: testHost.id,
+ *     timeEnd: listJreUsageTimeEnd,
+ *     timeStart: listJreUsageTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMetastore = oci.DataCatalog.getMetastore({
- *     metastoreId: oci_datacatalog_metastore.test_metastore.id,
+ *     metastoreId: testMetastoreOciDatacatalogMetastore.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetMetastoreResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMetastore = oci.DataCatalog.getMetastore({
- *     metastoreId: oci_datacatalog_metastore.test_metastore.id,
+ *     metastoreId: testMetastoreOciDatacatalogMetastore.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

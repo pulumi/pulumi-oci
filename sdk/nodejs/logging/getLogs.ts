@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogs = oci.Logging.getLogs({
- *     logGroupId: oci_logging_log_group.test_log_group.id,
- *     displayName: _var.log_display_name,
- *     logType: _var.log_log_type,
- *     sourceResource: _var.log_source_resource,
- *     sourceService: _var.log_source_service,
- *     state: _var.log_state,
+ *     logGroupId: testLogGroup.id,
+ *     displayName: logDisplayName,
+ *     logType: logLogType,
+ *     sourceResource: logSourceResource,
+ *     sourceService: logSourceService,
+ *     state: logState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetLogsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogs = oci.Logging.getLogs({
- *     logGroupId: oci_logging_log_group.test_log_group.id,
- *     displayName: _var.log_display_name,
- *     logType: _var.log_log_type,
- *     sourceResource: _var.log_source_resource,
- *     sourceService: _var.log_source_service,
- *     state: _var.log_state,
+ *     logGroupId: testLogGroup.id,
+ *     displayName: logDisplayName,
+ *     logType: logLogType,
+ *     sourceResource: logSourceResource,
+ *     sourceService: logSourceService,
+ *     state: logState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

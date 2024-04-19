@@ -370,14 +370,14 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_catalog_private_endpoint = oci.data_catalog.CatalogPrivateEndpoint("testCatalogPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            dns_zones=var["catalog_private_endpoint_dns_zones"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_catalog_private_endpoint = oci.data_catalog.CatalogPrivateEndpoint("test_catalog_private_endpoint",
+            compartment_id=compartment_id,
+            dns_zones=catalog_private_endpoint_dns_zones,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["catalog_private_endpoint_display_name"],
+            display_name=catalog_private_endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -423,14 +423,14 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_catalog_private_endpoint = oci.data_catalog.CatalogPrivateEndpoint("testCatalogPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            dns_zones=var["catalog_private_endpoint_dns_zones"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_catalog_private_endpoint = oci.data_catalog.CatalogPrivateEndpoint("test_catalog_private_endpoint",
+            compartment_id=compartment_id,
+            dns_zones=catalog_private_endpoint_dns_zones,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["catalog_private_endpoint_display_name"],
+            display_name=catalog_private_endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

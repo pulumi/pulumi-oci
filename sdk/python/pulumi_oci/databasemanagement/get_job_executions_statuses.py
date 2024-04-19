@@ -139,13 +139,13 @@ def get_job_executions_statuses(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_executions_statuses = oci.DatabaseManagement.get_job_executions_statuses(compartment_id=var["compartment_id"],
-        end_time=var["job_executions_status_end_time"],
-        start_time=var["job_executions_status_start_time"],
-        id=var["job_executions_status_id"],
-        managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["job_executions_status_name"])
+    test_job_executions_statuses = oci.DatabaseManagement.get_job_executions_statuses(compartment_id=compartment_id,
+        end_time=job_executions_status_end_time,
+        start_time=job_executions_status_start_time,
+        id=job_executions_status_id,
+        managed_database_group_id=test_managed_database_group["id"],
+        managed_database_id=test_managed_database["id"],
+        name=job_executions_status_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -204,13 +204,13 @@ def get_job_executions_statuses_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_job_executions_statuses = oci.DatabaseManagement.get_job_executions_statuses(compartment_id=var["compartment_id"],
-        end_time=var["job_executions_status_end_time"],
-        start_time=var["job_executions_status_start_time"],
-        id=var["job_executions_status_id"],
-        managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["job_executions_status_name"])
+    test_job_executions_statuses = oci.DatabaseManagement.get_job_executions_statuses(compartment_id=compartment_id,
+        end_time=job_executions_status_end_time,
+        start_time=job_executions_status_start_time,
+        id=job_executions_status_id,
+        managed_database_group_id=test_managed_database_group["id"],
+        managed_database_id=test_managed_database["id"],
+        name=job_executions_status_name)
     ```
     <!--End PulumiCodeChooser -->
 

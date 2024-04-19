@@ -25,15 +25,15 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testApi = new Oci.ApiGateway.Api("testApi", new()
+    ///     var testApi = new Oci.ApiGateway.Api("test_api", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Content = @var.Api_content,
+    ///         CompartmentId = compartmentId,
+    ///         Content = apiContent,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Api_display_name,
+    ///         DisplayName = apiDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

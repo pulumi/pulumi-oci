@@ -22,13 +22,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptions = oci.OsubSubscription.getSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     buyerEmail: _var.subscription_buyer_email,
- *     isCommitInfoRequired: _var.subscription_is_commit_info_required,
- *     planNumber: _var.subscription_plan_number,
- *     subscriptionId: oci_osub_subscription_subscription.test_subscription.id,
- *     xOneGatewaySubscriptionId: _var.subscription_x_one_gateway_subscription_id,
- *     xOneOriginRegion: _var.subscription_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     buyerEmail: subscriptionBuyerEmail,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     planNumber: subscriptionPlanNumber,
+ *     subscriptionId: testSubscription.id,
+ *     xOneGatewaySubscriptionId: subscriptionXOneGatewaySubscriptionId,
+ *     xOneOriginRegion: subscriptionXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -120,13 +120,13 @@ export interface GetSubscriptionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptions = oci.OsubSubscription.getSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     buyerEmail: _var.subscription_buyer_email,
- *     isCommitInfoRequired: _var.subscription_is_commit_info_required,
- *     planNumber: _var.subscription_plan_number,
- *     subscriptionId: oci_osub_subscription_subscription.test_subscription.id,
- *     xOneGatewaySubscriptionId: _var.subscription_x_one_gateway_subscription_id,
- *     xOneOriginRegion: _var.subscription_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     buyerEmail: subscriptionBuyerEmail,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     planNumber: subscriptionPlanNumber,
+ *     subscriptionId: testSubscription.id,
+ *     xOneGatewaySubscriptionId: subscriptionXOneGatewaySubscriptionId,
+ *     xOneOriginRegion: subscriptionXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -210,14 +210,14 @@ def get_domains_password_policies(attribute_sets: Optional[Sequence[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_password_policies = oci.Identity.get_domains_password_policies(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        password_policy_count=var["password_policy_password_policy_count"],
-        password_policy_filter=var["password_policy_password_policy_filter"],
+    test_password_policies = oci.Identity.get_domains_password_policies(idcs_endpoint=test_domain["url"],
+        password_policy_count=password_policy_password_policy_count,
+        password_policy_filter=password_policy_password_policy_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["password_policy_authorization"],
-        resource_type_schema_version=var["password_policy_resource_type_schema_version"],
-        start_index=var["password_policy_start_index"])
+        authorization=password_policy_authorization,
+        resource_type_schema_version=password_policy_resource_type_schema_version,
+        start_index=password_policy_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_password_policies_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_password_policies = oci.Identity.get_domains_password_policies(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        password_policy_count=var["password_policy_password_policy_count"],
-        password_policy_filter=var["password_policy_password_policy_filter"],
+    test_password_policies = oci.Identity.get_domains_password_policies(idcs_endpoint=test_domain["url"],
+        password_policy_count=password_policy_password_policy_count,
+        password_policy_filter=password_policy_password_policy_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["password_policy_authorization"],
-        resource_type_schema_version=var["password_policy_resource_type_schema_version"],
-        start_index=var["password_policy_start_index"])
+        authorization=password_policy_authorization,
+        resource_type_schema_version=password_policy_resource_type_schema_version,
+        start_index=password_policy_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

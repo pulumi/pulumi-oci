@@ -32,10 +32,10 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testEncryptedData = Oci.Kms.GetEncryptedData.Invoke(new()
         ///     {
-        ///         CryptoEndpoint = @var.Encrypted_data_crypto_endpoint,
-        ///         KeyId = oci_kms_key.Test_key.Id,
-        ///         Plaintext = @var.Encrypted_data_plaintext,
-        ///         AssociatedData = @var.Encrypted_data_associated_data,
+        ///         CryptoEndpoint = encryptedDataCryptoEndpoint,
+        ///         KeyId = testKey.Id,
+        ///         Plaintext = encryptedDataPlaintext,
+        ///         AssociatedData = encryptedDataAssociatedData,
         ///     });
         /// 
         /// });
@@ -66,10 +66,10 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testEncryptedData = Oci.Kms.GetEncryptedData.Invoke(new()
         ///     {
-        ///         CryptoEndpoint = @var.Encrypted_data_crypto_endpoint,
-        ///         KeyId = oci_kms_key.Test_key.Id,
-        ///         Plaintext = @var.Encrypted_data_plaintext,
-        ///         AssociatedData = @var.Encrypted_data_associated_data,
+        ///         CryptoEndpoint = encryptedDataCryptoEndpoint,
+        ///         KeyId = testKey.Id,
+        ///         Plaintext = encryptedDataPlaintext,
+        ///         AssociatedData = encryptedDataAssociatedData,
         ///     });
         /// 
         /// });

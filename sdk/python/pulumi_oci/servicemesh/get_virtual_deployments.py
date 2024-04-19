@@ -134,11 +134,11 @@ def get_virtual_deployments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_deployments = oci.ServiceMesh.get_virtual_deployments(compartment_id=var["compartment_id"],
-        id=var["virtual_deployment_id"],
-        name=var["virtual_deployment_name"],
-        state=var["virtual_deployment_state"],
-        virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
+    test_virtual_deployments = oci.ServiceMesh.get_virtual_deployments(compartment_id=compartment_id,
+        id=virtual_deployment_id,
+        name=virtual_deployment_name,
+        state=virtual_deployment_state,
+        virtual_service_id=test_virtual_service["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_virtual_deployments_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_deployments = oci.ServiceMesh.get_virtual_deployments(compartment_id=var["compartment_id"],
-        id=var["virtual_deployment_id"],
-        name=var["virtual_deployment_name"],
-        state=var["virtual_deployment_state"],
-        virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
+    test_virtual_deployments = oci.ServiceMesh.get_virtual_deployments(compartment_id=compartment_id,
+        id=virtual_deployment_id,
+        name=virtual_deployment_name,
+        state=virtual_deployment_state,
+        virtual_service_id=test_virtual_service["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -29,10 +29,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseUserRoles = Oci.DatabaseManagement.GetManagedDatabaseUserRoles.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         UserName = oci_identity_user.Test_user.Name,
-        ///         Name = @var.Managed_database_user_role_name,
-        ///         OpcNamedCredentialId = @var.Managed_database_user_role_opc_named_credential_id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         UserName = testUser.Name,
+        ///         Name = managedDatabaseUserRoleName,
+        ///         OpcNamedCredentialId = managedDatabaseUserRoleOpcNamedCredentialId,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseUserRoles = Oci.DatabaseManagement.GetManagedDatabaseUserRoles.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         UserName = oci_identity_user.Test_user.Name,
-        ///         Name = @var.Managed_database_user_role_name,
-        ///         OpcNamedCredentialId = @var.Managed_database_user_role_opc_named_credential_id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         UserName = testUser.Name,
+        ///         Name = managedDatabaseUserRoleName,
+        ///         OpcNamedCredentialId = managedDatabaseUserRoleOpcNamedCredentialId,
         ///     });
         /// 
         /// });

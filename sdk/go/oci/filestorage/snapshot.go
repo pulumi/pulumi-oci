@@ -32,12 +32,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewSnapshot(ctx, "testSnapshot", &FileStorage.SnapshotArgs{
-//				FileSystemId: pulumi.Any(oci_file_storage_file_system.Test_file_system.Id),
+//			_, err := FileStorage.NewSnapshot(ctx, "test_snapshot", &FileStorage.SnapshotArgs{
+//				FileSystemId: pulumi.Any(testFileSystem.Id),
+//				Name:         pulumi.Any(snapshotName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				ExpirationTime: pulumi.Any(_var.Snapshot_expiration_time),
+//				ExpirationTime: pulumi.Any(snapshotExpirationTime),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

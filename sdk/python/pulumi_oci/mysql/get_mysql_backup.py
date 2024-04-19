@@ -284,7 +284,7 @@ def get_mysql_backup(backup_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=oci_mysql_mysql_backup["test_backup"]["id"])
+    test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=test_backup["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -334,7 +334,7 @@ def get_mysql_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=oci_mysql_mysql_backup["test_backup"]["id"])
+    test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=test_backup["id"])
     ```
     <!--End PulumiCodeChooser -->
 

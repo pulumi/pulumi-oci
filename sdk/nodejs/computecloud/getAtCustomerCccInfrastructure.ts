@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCccInfrastructure = oci.ComputeCloud.getAtCustomerCccInfrastructure({
- *     cccInfrastructureId: oci_compute_cloud_at_customer_ccc_infrastructure.test_ccc_infrastructure.id,
+ *     cccInfrastructureId: testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -147,7 +147,7 @@ export interface GetAtCustomerCccInfrastructureResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCccInfrastructure = oci.ComputeCloud.getAtCustomerCccInfrastructure({
- *     cccInfrastructureId: oci_compute_cloud_at_customer_ccc_infrastructure.test_ccc_infrastructure.id,
+ *     cccInfrastructureId: testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

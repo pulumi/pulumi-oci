@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceTasks(ctx, &dataintegration.GetWorkspaceTasksArgs{
-//				WorkspaceId: oci_dataintegration_workspace.Test_workspace.Id,
-//				Fields:      _var.Workspace_task_fields,
-//				FolderId:    pulumi.StringRef(oci_dataintegration_folder.Test_folder.Id),
-//				Identifiers: _var.Workspace_task_identifier,
-//				Keys:        _var.Workspace_task_key,
-//				Name:        pulumi.StringRef(_var.Workspace_task_name),
-//				Types:       _var.Workspace_task_type,
+//				WorkspaceId: testWorkspace.Id,
+//				Fields:      workspaceTaskFields,
+//				FolderId:    pulumi.StringRef(testFolder.Id),
+//				Identifiers: workspaceTaskIdentifier,
+//				Keys:        workspaceTaskKey,
+//				Name:        pulumi.StringRef(workspaceTaskName),
+//				Types:       workspaceTaskType,
 //			}, nil)
 //			if err != nil {
 //				return err

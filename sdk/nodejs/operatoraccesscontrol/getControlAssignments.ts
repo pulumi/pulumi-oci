@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOperatorControlAssignments = oci.OperatorAccessControl.getControlAssignments({
- *     compartmentId: _var.compartment_id,
- *     operatorControlName: oci_operator_access_control_operator_control.test_operator_control.name,
- *     resourceName: _var.operator_control_assignment_resource_name,
- *     resourceType: _var.operator_control_assignment_resource_type,
- *     state: _var.operator_control_assignment_state,
+ *     compartmentId: compartmentId,
+ *     operatorControlName: testOperatorControl.name,
+ *     resourceName: operatorControlAssignmentResourceName,
+ *     resourceType: operatorControlAssignmentResourceType,
+ *     state: operatorControlAssignmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetControlAssignmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOperatorControlAssignments = oci.OperatorAccessControl.getControlAssignments({
- *     compartmentId: _var.compartment_id,
- *     operatorControlName: oci_operator_access_control_operator_control.test_operator_control.name,
- *     resourceName: _var.operator_control_assignment_resource_name,
- *     resourceType: _var.operator_control_assignment_resource_type,
- *     state: _var.operator_control_assignment_state,
+ *     compartmentId: compartmentId,
+ *     operatorControlName: testOperatorControl.name,
+ *     resourceName: operatorControlAssignmentResourceName,
+ *     resourceType: operatorControlAssignmentResourceType,
+ *     state: operatorControlAssignmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApps = Oci.Identity.GetDomainsApps.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AppCount = @var.App_app_count,
-        ///         AppFilter = @var.App_app_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AppCount = appAppCount,
+        ///         AppFilter = appAppFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.App_authorization,
-        ///         ResourceTypeSchemaVersion = @var.App_resource_type_schema_version,
-        ///         StartIndex = @var.App_start_index,
+        ///         Authorization = appAuthorization,
+        ///         ResourceTypeSchemaVersion = appResourceTypeSchemaVersion,
+        ///         StartIndex = appStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApps = Oci.Identity.GetDomainsApps.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AppCount = @var.App_app_count,
-        ///         AppFilter = @var.App_app_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AppCount = appAppCount,
+        ///         AppFilter = appAppFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.App_authorization,
-        ///         ResourceTypeSchemaVersion = @var.App_resource_type_schema_version,
-        ///         StartIndex = @var.App_start_index,
+        ///         Authorization = appAuthorization,
+        ///         ResourceTypeSchemaVersion = appResourceTypeSchemaVersion,
+        ///         StartIndex = appStartIndex,
         ///     });
         /// 
         /// });

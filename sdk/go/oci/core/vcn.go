@@ -70,27 +70,27 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVcn(ctx, "testVcn", &Core.VcnArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewVcn(ctx, "test_vcn", &Core.VcnArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				Byoipv6cidrDetails: core.VcnByoipv6cidrDetailArray{
 //					&core.VcnByoipv6cidrDetailArgs{
-//						Byoipv6rangeId: pulumi.Any(oci_core_byoipv6range.Test_byoipv6range.Id),
-//						Ipv6cidrBlock:  pulumi.Any(_var.Vcn_byoipv6cidr_details_ipv6cidr_block),
+//						Byoipv6rangeId: pulumi.Any(testByoipv6range.Id),
+//						Ipv6cidrBlock:  pulumi.Any(vcnByoipv6cidrDetailsIpv6cidrBlock),
 //					},
 //				},
-//				CidrBlock:  pulumi.Any(_var.Vcn_cidr_block),
-//				CidrBlocks: pulumi.Any(_var.Vcn_cidr_blocks),
+//				CidrBlock:  pulumi.Any(vcnCidrBlock),
+//				CidrBlocks: pulumi.Any(vcnCidrBlocks),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Vcn_display_name),
-//				DnsLabel:    pulumi.Any(_var.Vcn_dns_label),
+//				DisplayName: pulumi.Any(vcnDisplayName),
+//				DnsLabel:    pulumi.Any(vcnDnsLabel),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Ipv6privateCidrBlocks:        pulumi.Any(_var.Vcn_ipv6private_cidr_blocks),
-//				IsIpv6enabled:                pulumi.Any(_var.Vcn_is_ipv6enabled),
-//				IsOracleGuaAllocationEnabled: pulumi.Any(_var.Vcn_is_oracle_gua_allocation_enabled),
+//				Ipv6privateCidrBlocks:        pulumi.Any(vcnIpv6privateCidrBlocks),
+//				IsIpv6enabled:                pulumi.Any(vcnIsIpv6enabled),
+//				IsOracleGuaAllocationEnabled: pulumi.Any(vcnIsOracleGuaAllocationEnabled),
 //			})
 //			if err != nil {
 //				return err

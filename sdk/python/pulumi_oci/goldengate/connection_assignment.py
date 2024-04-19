@@ -205,9 +205,9 @@ class ConnectionAssignment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connection_assignment = oci.golden_gate.ConnectionAssignment("testConnectionAssignment",
-            connection_id=oci_golden_gate_connection["test_connection"]["id"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
+        test_connection_assignment = oci.golden_gate.ConnectionAssignment("test_connection_assignment",
+            connection_id=test_connection["id"],
+            deployment_id=test_deployment["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -246,9 +246,9 @@ class ConnectionAssignment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connection_assignment = oci.golden_gate.ConnectionAssignment("testConnectionAssignment",
-            connection_id=oci_golden_gate_connection["test_connection"]["id"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
+        test_connection_assignment = oci.golden_gate.ConnectionAssignment("test_connection_assignment",
+            connection_id=test_connection["id"],
+            deployment_id=test_deployment["id"])
         ```
         <!--End PulumiCodeChooser -->
 

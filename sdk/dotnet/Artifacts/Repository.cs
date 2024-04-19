@@ -25,17 +25,17 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRepository = new Oci.Artifacts.Repository("testRepository", new()
+    ///     var testRepository = new Oci.Artifacts.Repository("test_repository", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IsImmutable = @var.Repository_is_immutable,
-    ///         RepositoryType = @var.Repository_repository_type,
+    ///         CompartmentId = compartmentId,
+    ///         IsImmutable = repositoryIsImmutable,
+    ///         RepositoryType = repositoryRepositoryType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Repository_description,
-    ///         DisplayName = @var.Repository_display_name,
+    ///         Description = repositoryDescription,
+    ///         DisplayName = repositoryDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

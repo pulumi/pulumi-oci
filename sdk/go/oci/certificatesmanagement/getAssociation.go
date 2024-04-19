@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CertificatesManagement.GetAssociation(ctx, &certificatesmanagement.GetAssociationArgs{
-//				AssociationId: oci_certificates_management_association.Test_association.Id,
+//				AssociationId: testAssociationOciCertificatesManagementAssociation.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

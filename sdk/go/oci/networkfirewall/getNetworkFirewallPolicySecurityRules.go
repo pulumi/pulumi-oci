@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := NetworkFirewall.GetNetworkFirewallPolicySecurityRules(ctx, &networkfirewall.GetNetworkFirewallPolicySecurityRulesArgs{
-//				NetworkFirewallPolicyId:   oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-//				DisplayName:               pulumi.StringRef(_var.Network_firewall_policy_security_rule_display_name),
-//				SecurityRulePriorityOrder: pulumi.IntRef(_var.Network_firewall_policy_security_rule_security_rule_priority_order),
+//				NetworkFirewallPolicyId:   testNetworkFirewallPolicy.Id,
+//				DisplayName:               pulumi.StringRef(networkFirewallPolicySecurityRuleDisplayName),
+//				SecurityRulePriorityOrder: pulumi.IntRef(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder),
 //			}, nil)
 //			if err != nil {
 //				return err

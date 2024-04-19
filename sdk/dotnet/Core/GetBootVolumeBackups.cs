@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testBootVolumeBackups = Oci.Core.GetBootVolumeBackups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-        ///         DisplayName = @var.Boot_volume_backup_display_name,
-        ///         SourceBootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
-        ///         State = @var.Boot_volume_backup_state,
+        ///         CompartmentId = compartmentId,
+        ///         BootVolumeId = testBootVolume.Id,
+        ///         DisplayName = bootVolumeBackupDisplayName,
+        ///         SourceBootVolumeBackupId = testBootVolumeBackup.Id,
+        ///         State = bootVolumeBackupState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testBootVolumeBackups = Oci.Core.GetBootVolumeBackups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-        ///         DisplayName = @var.Boot_volume_backup_display_name,
-        ///         SourceBootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
-        ///         State = @var.Boot_volume_backup_state,
+        ///         CompartmentId = compartmentId,
+        ///         BootVolumeId = testBootVolume.Id,
+        ///         DisplayName = bootVolumeBackupDisplayName,
+        ///         SourceBootVolumeBackupId = testBootVolumeBackup.Id,
+        ///         State = bootVolumeBackupState,
         ///     });
         /// 
         /// });

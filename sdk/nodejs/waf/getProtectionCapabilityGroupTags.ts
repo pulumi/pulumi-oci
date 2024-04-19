@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectionCapabilityGroupTags = oci.Waf.getProtectionCapabilityGroupTags({
- *     compartmentId: _var.compartment_id,
- *     name: _var.protection_capability_group_tag_name,
- *     type: _var.protection_capability_group_tag_type,
+ *     compartmentId: compartmentId,
+ *     name: protectionCapabilityGroupTagName,
+ *     type: protectionCapabilityGroupTagType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetProtectionCapabilityGroupTagsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectionCapabilityGroupTags = oci.Waf.getProtectionCapabilityGroupTags({
- *     compartmentId: _var.compartment_id,
- *     name: _var.protection_capability_group_tag_name,
- *     type: _var.protection_capability_group_tag_type,
+ *     compartmentId: compartmentId,
+ *     name: protectionCapabilityGroupTagName,
+ *     type: protectionCapabilityGroupTagType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

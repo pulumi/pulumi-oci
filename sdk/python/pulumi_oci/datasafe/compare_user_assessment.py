@@ -126,9 +126,9 @@ class CompareUserAssessment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compare_user_assessment = oci.data_safe.CompareUserAssessment("testCompareUserAssessment",
-            comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-            user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+        test_compare_user_assessment = oci.data_safe.CompareUserAssessment("test_compare_user_assessment",
+            comparison_user_assessment_id=test_user_assessment["id"],
+            user_assessment_id=test_user_assessment["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -168,9 +168,9 @@ class CompareUserAssessment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compare_user_assessment = oci.data_safe.CompareUserAssessment("testCompareUserAssessment",
-            comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-            user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+        test_compare_user_assessment = oci.data_safe.CompareUserAssessment("test_compare_user_assessment",
+            comparison_user_assessment_id=test_user_assessment["id"],
+            user_assessment_id=test_user_assessment["id"])
         ```
         <!--End PulumiCodeChooser -->
 

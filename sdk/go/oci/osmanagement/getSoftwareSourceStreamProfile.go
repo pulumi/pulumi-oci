@@ -43,11 +43,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagement.GetSoftwareSourceStreamProfile(ctx, &osmanagement.GetSoftwareSourceStreamProfileArgs{
-//				SoftwareSourceId: _var.Software_source.Id,
-//				CompartmentId:    pulumi.StringRef(_var.Compartment_id),
-//				ModuleName:       pulumi.StringRef(_var.Software_source_module_name),
-//				ProfileName:      pulumi.StringRef(_var.Software_source_module_stream_profile_name),
-//				StreamName:       pulumi.StringRef(_var.Software_source_module_stream_name),
+//				SoftwareSourceId: softwareSource.Id,
+//				CompartmentId:    pulumi.StringRef(compartmentId),
+//				ModuleName:       pulumi.StringRef(softwareSourceModuleName),
+//				ProfileName:      pulumi.StringRef(softwareSourceModuleStreamProfileName),
+//				StreamName:       pulumi.StringRef(softwareSourceModuleStreamName),
 //			}, nil)
 //			if err != nil {
 //				return err

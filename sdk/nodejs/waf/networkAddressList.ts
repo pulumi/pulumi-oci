@@ -18,21 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkAddressList = new oci.waf.NetworkAddressList("testNetworkAddressList", {
- *     compartmentId: _var.compartment_id,
- *     type: _var.network_address_list_type,
- *     addresses: _var.network_address_list_addresses,
+ * const testNetworkAddressList = new oci.waf.NetworkAddressList("test_network_address_list", {
+ *     compartmentId: compartmentId,
+ *     type: networkAddressListType,
+ *     addresses: networkAddressListAddresses,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.network_address_list_display_name,
+ *     displayName: networkAddressListDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     systemTags: _var.network_address_list_system_tags,
+ *     systemTags: networkAddressListSystemTags,
  *     vcnAddresses: [{
- *         addresses: _var.network_address_list_vcn_addresses_addresses,
- *         vcnId: oci_core_vcn.test_vcn.id,
+ *         addresses: networkAddressListVcnAddressesAddresses,
+ *         vcnId: testVcn.id,
  *     }],
  * });
  * ```

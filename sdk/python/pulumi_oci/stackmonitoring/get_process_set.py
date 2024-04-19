@@ -188,7 +188,7 @@ def get_process_set(process_set_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_process_set = oci.StackMonitoring.get_process_set(process_set_id=oci_stack_monitoring_process_set["test_process_set"]["id"])
+    test_process_set = oci.StackMonitoring.get_process_set(process_set_id=test_process_set_oci_stack_monitoring_process_set["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -230,7 +230,7 @@ def get_process_set_output(process_set_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_process_set = oci.StackMonitoring.get_process_set(process_set_id=oci_stack_monitoring_process_set["test_process_set"]["id"])
+    test_process_set = oci.StackMonitoring.get_process_set(process_set_id=test_process_set_oci_stack_monitoring_process_set["id"])
     ```
     <!--End PulumiCodeChooser -->
 

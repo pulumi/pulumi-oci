@@ -760,27 +760,28 @@ class Instance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oce_instance = oci.oce.Instance("testOceInstance",
-            admin_email=var["oce_instance_admin_email"],
-            compartment_id=var["compartment_id"],
-            idcs_access_token=var["oce_instance_idcs_access_token"],
-            object_storage_namespace=var["oce_instance_object_storage_namespace"],
-            tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-            tenancy_name=oci_identity_tenancy["test_tenancy"]["name"],
-            add_on_features=var["oce_instance_add_on_features"],
+        test_oce_instance = oci.oce.Instance("test_oce_instance",
+            admin_email=oce_instance_admin_email,
+            compartment_id=compartment_id,
+            idcs_access_token=oce_instance_idcs_access_token,
+            name=oce_instance_name,
+            object_storage_namespace=oce_instance_object_storage_namespace,
+            tenancy_id=test_tenancy["id"],
+            tenancy_name=test_tenancy["name"],
+            add_on_features=oce_instance_add_on_features,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["oce_instance_description"],
-            dr_region=var["oce_instance_dr_region"],
+            description=oce_instance_description,
+            dr_region=oce_instance_dr_region,
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_access_type=var["oce_instance_instance_access_type"],
-            instance_license_type=var["oce_instance_instance_license_type"],
-            instance_usage_type=var["oce_instance_instance_usage_type"],
-            upgrade_schedule=var["oce_instance_upgrade_schedule"],
-            waf_primary_domain=var["oce_instance_waf_primary_domain"])
+            instance_access_type=oce_instance_instance_access_type,
+            instance_license_type=oce_instance_instance_license_type,
+            instance_usage_type=oce_instance_instance_usage_type,
+            upgrade_schedule=oce_instance_upgrade_schedule,
+            waf_primary_domain=oce_instance_waf_primary_domain)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -834,27 +835,28 @@ class Instance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oce_instance = oci.oce.Instance("testOceInstance",
-            admin_email=var["oce_instance_admin_email"],
-            compartment_id=var["compartment_id"],
-            idcs_access_token=var["oce_instance_idcs_access_token"],
-            object_storage_namespace=var["oce_instance_object_storage_namespace"],
-            tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-            tenancy_name=oci_identity_tenancy["test_tenancy"]["name"],
-            add_on_features=var["oce_instance_add_on_features"],
+        test_oce_instance = oci.oce.Instance("test_oce_instance",
+            admin_email=oce_instance_admin_email,
+            compartment_id=compartment_id,
+            idcs_access_token=oce_instance_idcs_access_token,
+            name=oce_instance_name,
+            object_storage_namespace=oce_instance_object_storage_namespace,
+            tenancy_id=test_tenancy["id"],
+            tenancy_name=test_tenancy["name"],
+            add_on_features=oce_instance_add_on_features,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["oce_instance_description"],
-            dr_region=var["oce_instance_dr_region"],
+            description=oce_instance_description,
+            dr_region=oce_instance_dr_region,
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_access_type=var["oce_instance_instance_access_type"],
-            instance_license_type=var["oce_instance_instance_license_type"],
-            instance_usage_type=var["oce_instance_instance_usage_type"],
-            upgrade_schedule=var["oce_instance_upgrade_schedule"],
-            waf_primary_domain=var["oce_instance_waf_primary_domain"])
+            instance_access_type=oce_instance_instance_access_type,
+            instance_license_type=oce_instance_instance_license_type,
+            instance_usage_type=oce_instance_instance_usage_type,
+            upgrade_schedule=oce_instance_upgrade_schedule,
+            waf_primary_domain=oce_instance_waf_primary_domain)
         ```
         <!--End PulumiCodeChooser -->
 

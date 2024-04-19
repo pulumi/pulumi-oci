@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamDistributionChannel = oci.MediaServices.getStreamDistributionChannel({
- *     streamDistributionChannelId: oci_media_services_stream_distribution_channel.test_stream_distribution_channel.id,
+ *     streamDistributionChannelId: testStreamDistributionChannelOciMediaServicesStreamDistributionChannel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,7 +106,7 @@ export interface GetStreamDistributionChannelResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamDistributionChannel = oci.MediaServices.getStreamDistributionChannel({
- *     streamDistributionChannelId: oci_media_services_stream_distribution_channel.test_stream_distribution_channel.id,
+ *     streamDistributionChannelId: testStreamDistributionChannelOciMediaServicesStreamDistributionChannel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

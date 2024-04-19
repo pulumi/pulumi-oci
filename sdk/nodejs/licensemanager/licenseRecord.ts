@@ -16,21 +16,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLicenseRecord = new oci.licensemanager.LicenseRecord("testLicenseRecord", {
- *     displayName: _var.license_record_display_name,
- *     isPerpetual: _var.license_record_is_perpetual,
- *     isUnlimited: _var.license_record_is_unlimited,
- *     productLicenseId: oci_license_manager_product_license.test_product_license.id,
+ * const testLicenseRecord = new oci.licensemanager.LicenseRecord("test_license_record", {
+ *     displayName: licenseRecordDisplayName,
+ *     isPerpetual: licenseRecordIsPerpetual,
+ *     isUnlimited: licenseRecordIsUnlimited,
+ *     productLicenseId: testProductLicense.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     expirationDate: _var.license_record_expiration_date,
+ *     expirationDate: licenseRecordExpirationDate,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     licenseCount: _var.license_record_license_count,
- *     productId: oci_license_manager_product.test_product.id,
- *     supportEndDate: _var.license_record_support_end_date,
+ *     licenseCount: licenseRecordLicenseCount,
+ *     productId: testProduct.id,
+ *     supportEndDate: licenseRecordSupportEndDate,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -341,8 +341,8 @@ def get_key(key_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key = oci.Kms.get_key(key_id=oci_kms_key["test_key"]["id"],
-        management_endpoint=var["key_management_endpoint"])
+    test_key = oci.Kms.get_key(key_id=test_key_oci_kms_key["id"],
+        management_endpoint=key_management_endpoint)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -405,8 +405,8 @@ def get_key_output(key_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key = oci.Kms.get_key(key_id=oci_kms_key["test_key"]["id"],
-        management_endpoint=var["key_management_endpoint"])
+    test_key = oci.Kms.get_key(key_id=test_key_oci_kms_key["id"],
+        management_endpoint=key_management_endpoint)
     ```
     <!--End PulumiCodeChooser -->
 

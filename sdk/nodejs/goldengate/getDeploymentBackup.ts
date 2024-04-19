@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentBackup = oci.GoldenGate.getDeploymentBackup({
- *     deploymentBackupId: oci_golden_gate_deployment_backup.test_deployment_backup.id,
+ *     deploymentBackupId: testDeploymentBackupOciGoldenGateDeploymentBackup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -139,7 +139,7 @@ export interface GetDeploymentBackupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentBackup = oci.GoldenGate.getDeploymentBackup({
- *     deploymentBackupId: oci_golden_gate_deployment_backup.test_deployment_backup.id,
+ *     deploymentBackupId: testDeploymentBackupOciGoldenGateDeploymentBackup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

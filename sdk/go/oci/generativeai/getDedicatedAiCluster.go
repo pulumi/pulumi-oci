@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GenerativeAi.GetDedicatedAiCluster(ctx, &generativeai.GetDedicatedAiClusterArgs{
-//				DedicatedAiClusterId: oci_generative_ai_dedicated_ai_cluster.Test_dedicated_ai_cluster.Id,
+//				DedicatedAiClusterId: testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

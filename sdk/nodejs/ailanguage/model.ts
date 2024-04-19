@@ -18,57 +18,57 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModel = new oci.ailanguage.Model("testModel", {
- *     compartmentId: _var.compartment_id,
+ * const testModel = new oci.ailanguage.Model("test_model", {
+ *     compartmentId: compartmentId,
  *     modelDetails: {
- *         modelType: _var.model_model_details_model_type,
+ *         modelType: modelModelDetailsModelType,
  *         classificationMode: {
- *             classificationMode: _var.model_model_details_classification_mode_classification_mode,
- *             version: _var.model_model_details_classification_mode_version,
+ *             classificationMode: modelModelDetailsClassificationModeClassificationMode,
+ *             version: modelModelDetailsClassificationModeVersion,
  *         },
- *         languageCode: _var.model_model_details_language_code,
- *         version: _var.model_model_details_version,
+ *         languageCode: modelModelDetailsLanguageCode,
+ *         version: modelModelDetailsVersion,
  *     },
- *     projectId: oci_ai_language_project.test_project.id,
+ *     projectId: testProject.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.model_description,
- *     displayName: _var.model_display_name,
+ *     description: modelDescription,
+ *     displayName: modelDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     testStrategy: {
- *         strategyType: _var.model_test_strategy_strategy_type,
+ *         strategyType: modelTestStrategyStrategyType,
  *         testingDataset: {
- *             datasetType: _var.model_test_strategy_testing_dataset_dataset_type,
- *             datasetId: oci_data_labeling_service_dataset.test_dataset.id,
+ *             datasetType: modelTestStrategyTestingDatasetDatasetType,
+ *             datasetId: testDataset.id,
  *             locationDetails: {
- *                 bucket: _var.model_test_strategy_testing_dataset_location_details_bucket,
- *                 locationType: _var.model_test_strategy_testing_dataset_location_details_location_type,
- *                 namespace: _var.model_test_strategy_testing_dataset_location_details_namespace,
- *                 objectNames: _var.model_test_strategy_testing_dataset_location_details_object_names,
+ *                 bucket: modelTestStrategyTestingDatasetLocationDetailsBucket,
+ *                 locationType: modelTestStrategyTestingDatasetLocationDetailsLocationType,
+ *                 namespace: modelTestStrategyTestingDatasetLocationDetailsNamespace,
+ *                 objectNames: modelTestStrategyTestingDatasetLocationDetailsObjectNames,
  *             },
  *         },
  *         validationDataset: {
- *             datasetType: _var.model_test_strategy_validation_dataset_dataset_type,
- *             datasetId: oci_data_labeling_service_dataset.test_dataset.id,
+ *             datasetType: modelTestStrategyValidationDatasetDatasetType,
+ *             datasetId: testDataset.id,
  *             locationDetails: {
- *                 bucket: _var.model_test_strategy_validation_dataset_location_details_bucket,
- *                 locationType: _var.model_test_strategy_validation_dataset_location_details_location_type,
- *                 namespace: _var.model_test_strategy_validation_dataset_location_details_namespace,
- *                 objectNames: _var.model_test_strategy_validation_dataset_location_details_object_names,
+ *                 bucket: modelTestStrategyValidationDatasetLocationDetailsBucket,
+ *                 locationType: modelTestStrategyValidationDatasetLocationDetailsLocationType,
+ *                 namespace: modelTestStrategyValidationDatasetLocationDetailsNamespace,
+ *                 objectNames: modelTestStrategyValidationDatasetLocationDetailsObjectNames,
  *             },
  *         },
  *     },
  *     trainingDataset: {
- *         datasetType: _var.model_training_dataset_dataset_type,
- *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
+ *         datasetType: modelTrainingDatasetDatasetType,
+ *         datasetId: testDataset.id,
  *         locationDetails: {
- *             bucket: _var.model_training_dataset_location_details_bucket,
- *             locationType: _var.model_training_dataset_location_details_location_type,
- *             namespace: _var.model_training_dataset_location_details_namespace,
- *             objectNames: _var.model_training_dataset_location_details_object_names,
+ *             bucket: modelTrainingDatasetLocationDetailsBucket,
+ *             locationType: modelTrainingDatasetLocationDetailsLocationType,
+ *             namespace: modelTrainingDatasetLocationDetailsNamespace,
+ *             objectNames: modelTrainingDatasetLocationDetailsObjectNames,
  *         },
  *     },
  * });

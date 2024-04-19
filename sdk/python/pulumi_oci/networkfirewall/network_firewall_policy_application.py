@@ -239,11 +239,12 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_application = oci.network_firewall.NetworkFirewallPolicyApplication("testNetworkFirewallPolicyApplication",
-            icmp_type=var["network_firewall_policy_application_icmp_type"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_application_type"],
-            icmp_code=var["network_firewall_policy_application_icmp_code"])
+        test_network_firewall_policy_application = oci.network_firewall.NetworkFirewallPolicyApplication("test_network_firewall_policy_application",
+            icmp_type=network_firewall_policy_application_icmp_type,
+            name=network_firewall_policy_application_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            type=network_firewall_policy_application_type,
+            icmp_code=network_firewall_policy_application_icmp_code)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -285,11 +286,12 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_application = oci.network_firewall.NetworkFirewallPolicyApplication("testNetworkFirewallPolicyApplication",
-            icmp_type=var["network_firewall_policy_application_icmp_type"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_application_type"],
-            icmp_code=var["network_firewall_policy_application_icmp_code"])
+        test_network_firewall_policy_application = oci.network_firewall.NetworkFirewallPolicyApplication("test_network_firewall_policy_application",
+            icmp_type=network_firewall_policy_application_icmp_type,
+            name=network_firewall_policy_application_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            type=network_firewall_policy_application_type,
+            icmp_code=network_firewall_policy_application_icmp_code)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -16,18 +16,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLocalPeeringGateway = new oci.core.LocalPeeringGateway("testLocalPeeringGateway", {
- *     compartmentId: _var.compartment_id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ * const testLocalPeeringGateway = new oci.core.LocalPeeringGateway("test_local_peering_gateway", {
+ *     compartmentId: compartmentId,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.local_peering_gateway_display_name,
+ *     displayName: localPeeringGatewayDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     peerId: oci_core_local_peering_gateway.test_local_peering_gateway2.id,
- *     routeTableId: oci_core_route_table.test_route_table.id,
+ *     peerId: testLocalPeeringGateway2.id,
+ *     routeTableId: testRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

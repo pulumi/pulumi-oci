@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testStack = Oci.ResourceManager.GetStack.Invoke(new()
         ///     {
-        ///         StackId = oci_resourcemanager_stack.Test_stack.Id,
+        ///         StackId = testStackOciResourcemanagerStack.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testStack = Oci.ResourceManager.GetStack.Invoke(new()
         ///     {
-        ///         StackId = oci_resourcemanager_stack.Test_stack.Id,
+        ///         StackId = testStackOciResourcemanagerStack.Id,
         ///     });
         /// 
         /// });

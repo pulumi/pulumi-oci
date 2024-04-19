@@ -279,11 +279,11 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resources_associate_monitored_resource = oci.stack_monitoring.MonitoredResourcesAssociateMonitoredResource("testMonitoredResourcesAssociateMonitoredResource",
-            association_type=var["monitored_resources_associate_monitored_resource_association_type"],
-            compartment_id=var["compartment_id"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"])
+        test_monitored_resources_associate_monitored_resource = oci.stack_monitoring.MonitoredResourcesAssociateMonitoredResource("test_monitored_resources_associate_monitored_resource",
+            association_type=monitored_resources_associate_monitored_resource_association_type,
+            compartment_id=compartment_id,
+            destination_resource_id=test_destination_resource["id"],
+            source_resource_id=test_source_resource["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -326,11 +326,11 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resources_associate_monitored_resource = oci.stack_monitoring.MonitoredResourcesAssociateMonitoredResource("testMonitoredResourcesAssociateMonitoredResource",
-            association_type=var["monitored_resources_associate_monitored_resource_association_type"],
-            compartment_id=var["compartment_id"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"])
+        test_monitored_resources_associate_monitored_resource = oci.stack_monitoring.MonitoredResourcesAssociateMonitoredResource("test_monitored_resources_associate_monitored_resource",
+            association_type=monitored_resources_associate_monitored_resource_association_type,
+            compartment_id=compartment_id,
+            destination_resource_id=test_destination_resource["id"],
+            source_resource_id=test_source_resource["id"])
         ```
         <!--End PulumiCodeChooser -->
 

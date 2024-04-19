@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystemsUpgradeHistoryEntries = Oci.Database.GetDbSystemsUpgradeHistoryEntries.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         State = @var.Db_systems_upgrade_history_entry_state,
-        ///         UpgradeAction = @var.Db_systems_upgrade_history_entry_upgrade_action,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         State = dbSystemsUpgradeHistoryEntryState,
+        ///         UpgradeAction = dbSystemsUpgradeHistoryEntryUpgradeAction,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystemsUpgradeHistoryEntries = Oci.Database.GetDbSystemsUpgradeHistoryEntries.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         State = @var.Db_systems_upgrade_history_entry_state,
-        ///         UpgradeAction = @var.Db_systems_upgrade_history_entry_upgrade_action,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         State = dbSystemsUpgradeHistoryEntryState,
+        ///         UpgradeAction = dbSystemsUpgradeHistoryEntryUpgradeAction,
         ///     });
         /// 
         /// });

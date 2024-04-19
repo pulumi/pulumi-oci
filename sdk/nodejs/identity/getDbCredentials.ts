@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbCredentials = oci.Identity.getDbCredentials({
- *     userId: oci_identity_user.test_user.id,
- *     name: _var.db_credential_name,
- *     state: _var.db_credential_state,
+ *     userId: testUser.id,
+ *     name: dbCredentialName,
+ *     state: dbCredentialState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetDbCredentialsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbCredentials = oci.Identity.getDbCredentials({
- *     userId: oci_identity_user.test_user.id,
- *     name: _var.db_credential_name,
- *     state: _var.db_credential_state,
+ *     userId: testUser.id,
+ *     name: dbCredentialName,
+ *     state: dbCredentialState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

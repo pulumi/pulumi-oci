@@ -25,9 +25,9 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOperationsInsightsWarehouseRotateWarehouseWallet = new Oci.Opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", new()
+    ///     var testOperationsInsightsWarehouseRotateWarehouseWallet = new Oci.Opsi.OperationsInsightsWarehouseRotateWarehouseWallet("test_operations_insights_warehouse_rotate_warehouse_wallet", new()
     ///     {
-    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+    ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
     ///     });
     /// 
     /// });

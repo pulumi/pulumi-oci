@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsEndpointServices = oci.DatabaseTools.getDatabaseToolsEndpointServices({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_tools_endpoint_service_display_name,
- *     name: _var.database_tools_endpoint_service_name,
- *     state: _var.database_tools_endpoint_service_state,
+ *     compartmentId: compartmentId,
+ *     displayName: databaseToolsEndpointServiceDisplayName,
+ *     name: databaseToolsEndpointServiceName,
+ *     state: databaseToolsEndpointServiceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetDatabaseToolsEndpointServicesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsEndpointServices = oci.DatabaseTools.getDatabaseToolsEndpointServices({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_tools_endpoint_service_display_name,
- *     name: _var.database_tools_endpoint_service_name,
- *     state: _var.database_tools_endpoint_service_state,
+ *     compartmentId: compartmentId,
+ *     displayName: databaseToolsEndpointServiceDisplayName,
+ *     name: databaseToolsEndpointServiceName,
+ *     state: databaseToolsEndpointServiceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

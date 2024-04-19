@@ -31,15 +31,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewProject(ctx, "testProject", &DevOps.ProjectArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := DevOps.NewProject(ctx, "test_project", &DevOps.ProjectArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(projectName),
 //				NotificationConfig: &devops.ProjectNotificationConfigArgs{
-//					TopicId: pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
+//					TopicId: pulumi.Any(testNotificationTopic.Id),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Project_description),
+//				Description: pulumi.Any(projectDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

@@ -25,15 +25,16 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testModelVersionSet = new Oci.DataScience.ModelVersionSet("testModelVersionSet", new()
+    ///     var testModelVersionSet = new Oci.DataScience.ModelVersionSet("test_model_version_set", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = modelVersionSetName,
+    ///         ProjectId = testProject.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Model_version_set_description,
+    ///         Description = modelVersionSetDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

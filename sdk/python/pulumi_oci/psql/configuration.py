@@ -483,27 +483,27 @@ class Configuration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_configuration = oci.psql.Configuration("testConfiguration",
-            compartment_id=var["compartment_id"],
+        test_configuration = oci.psql.Configuration("test_configuration",
+            compartment_id=compartment_id,
             db_configuration_overrides=oci.psql.ConfigurationDbConfigurationOverridesArgs(
                 items=[oci.psql.ConfigurationDbConfigurationOverridesItemArgs(
-                    config_key=var["configuration_db_configuration_overrides_items_config_key"],
-                    overriden_config_value=var["configuration_db_configuration_overrides_items_overriden_config_value"],
+                    config_key=configuration_db_configuration_overrides_items_config_key,
+                    overriden_config_value=configuration_db_configuration_overrides_items_overriden_config_value,
                 )],
             ),
-            db_version=var["configuration_db_version"],
-            display_name=var["configuration_display_name"],
-            instance_memory_size_in_gbs=var["configuration_instance_memory_size_in_gbs"],
-            instance_ocpu_count=var["configuration_instance_ocpu_count"],
-            shape=var["configuration_shape"],
+            db_version=configuration_db_version,
+            display_name=configuration_display_name,
+            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
+            instance_ocpu_count=configuration_instance_ocpu_count,
+            shape=configuration_shape,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["configuration_description"],
+            description=configuration_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            system_tags=var["configuration_system_tags"])
+            system_tags=configuration_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -551,27 +551,27 @@ class Configuration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_configuration = oci.psql.Configuration("testConfiguration",
-            compartment_id=var["compartment_id"],
+        test_configuration = oci.psql.Configuration("test_configuration",
+            compartment_id=compartment_id,
             db_configuration_overrides=oci.psql.ConfigurationDbConfigurationOverridesArgs(
                 items=[oci.psql.ConfigurationDbConfigurationOverridesItemArgs(
-                    config_key=var["configuration_db_configuration_overrides_items_config_key"],
-                    overriden_config_value=var["configuration_db_configuration_overrides_items_overriden_config_value"],
+                    config_key=configuration_db_configuration_overrides_items_config_key,
+                    overriden_config_value=configuration_db_configuration_overrides_items_overriden_config_value,
                 )],
             ),
-            db_version=var["configuration_db_version"],
-            display_name=var["configuration_display_name"],
-            instance_memory_size_in_gbs=var["configuration_instance_memory_size_in_gbs"],
-            instance_ocpu_count=var["configuration_instance_ocpu_count"],
-            shape=var["configuration_shape"],
+            db_version=configuration_db_version,
+            display_name=configuration_display_name,
+            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
+            instance_ocpu_count=configuration_instance_ocpu_count,
+            shape=configuration_shape,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["configuration_description"],
+            description=configuration_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            system_tags=var["configuration_system_tags"])
+            system_tags=configuration_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 

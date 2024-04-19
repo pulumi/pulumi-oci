@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetInstanceConfiguration(ctx, &core.GetInstanceConfigurationArgs{
-//				InstanceConfigurationId: oci_core_instance_configuration.Test_instance_configuration.Id,
+//				InstanceConfigurationId: testInstanceConfigurationOciCoreInstanceConfiguration.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opa.GetOpaInstances(ctx, &opa.GetOpaInstancesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Opa_instance_display_name),
-//				Id:            pulumi.StringRef(_var.Opa_instance_id),
-//				State:         pulumi.StringRef(_var.Opa_instance_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(opaInstanceDisplayName),
+//				Id:            pulumi.StringRef(opaInstanceId),
+//				State:         pulumi.StringRef(opaInstanceState),
 //			}, nil)
 //			if err != nil {
 //				return err

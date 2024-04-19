@@ -140,11 +140,11 @@ def get_dr_plans(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plans = oci.DisasterRecovery.get_dr_plans(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        display_name=var["dr_plan_display_name"],
-        dr_plan_id=oci_disaster_recovery_dr_plan["test_dr_plan"]["id"],
-        dr_plan_type=var["dr_plan_dr_plan_type"],
-        state=var["dr_plan_state"])
+    test_dr_plans = oci.DisasterRecovery.get_dr_plans(dr_protection_group_id=test_dr_protection_group["id"],
+        display_name=dr_plan_display_name,
+        dr_plan_id=test_dr_plan["id"],
+        dr_plan_type=dr_plan_dr_plan_type,
+        state=dr_plan_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[str]]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plans = oci.DisasterRecovery.get_dr_plans(dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        display_name=var["dr_plan_display_name"],
-        dr_plan_id=oci_disaster_recovery_dr_plan["test_dr_plan"]["id"],
-        dr_plan_type=var["dr_plan_dr_plan_type"],
-        state=var["dr_plan_state"])
+    test_dr_plans = oci.DisasterRecovery.get_dr_plans(dr_protection_group_id=test_dr_protection_group["id"],
+        display_name=dr_plan_display_name,
+        dr_plan_id=test_dr_plan["id"],
+        dr_plan_type=dr_plan_dr_plan_type,
+        state=dr_plan_state)
     ```
     <!--End PulumiCodeChooser -->
 

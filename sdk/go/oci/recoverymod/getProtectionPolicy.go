@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := RecoveryMod.GetProtectionPolicy(ctx, &recoverymod.GetProtectionPolicyArgs{
-//				ProtectionPolicyId: oci_recovery_protection_policy.Test_protection_policy.Id,
+//				ProtectionPolicyId: testProtectionPolicyOciRecoveryProtectionPolicy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

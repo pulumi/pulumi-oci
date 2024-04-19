@@ -16,13 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceMetastoreConfig = new oci.bigdataservice.BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig", {
- *     bdsApiKeyId: oci_identity_api_key.test_api_key.id,
- *     bdsApiKeyPassphrase: _var.bds_instance_metastore_config_bds_api_key_passphrase,
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     clusterAdminPassword: _var.bds_instance_metastore_config_cluster_admin_password,
- *     metastoreId: oci_datacatalog_metastore.test_metastore.id,
- *     displayName: _var.bds_instance_metastore_config_display_name,
+ * const testBdsInstanceMetastoreConfig = new oci.bigdataservice.BdsInstanceMetastoreConfig("test_bds_instance_metastore_config", {
+ *     bdsApiKeyId: testApiKey.id,
+ *     bdsApiKeyPassphrase: bdsInstanceMetastoreConfigBdsApiKeyPassphrase,
+ *     bdsInstanceId: testBdsInstance.id,
+ *     clusterAdminPassword: bdsInstanceMetastoreConfigClusterAdminPassword,
+ *     metastoreId: testMetastore.id,
+ *     displayName: bdsInstanceMetastoreConfigDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

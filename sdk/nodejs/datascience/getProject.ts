@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProject = oci.DataScience.getProject({
- *     projectId: oci_datascience_project.test_project.id,
+ *     projectId: testProjectOciDatascienceProject.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,7 +99,7 @@ export interface GetProjectResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProject = oci.DataScience.getProject({
- *     projectId: oci_datascience_project.test_project.id,
+ *     projectId: testProjectOciDatascienceProject.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

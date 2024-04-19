@@ -575,38 +575,38 @@ class PipelineRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pipeline_run = oci.data_science.PipelineRun("testPipelineRun",
-            compartment_id=var["compartment_id"],
-            pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"],
+        test_pipeline_run = oci.data_science.PipelineRun("test_pipeline_run",
+            compartment_id=compartment_id,
+            pipeline_id=test_pipeline["id"],
             configuration_override_details=oci.data_science.PipelineRunConfigurationOverrideDetailsArgs(
-                type=var["pipeline_run_configuration_override_details_type"],
-                command_line_arguments=var["pipeline_run_configuration_override_details_command_line_arguments"],
-                environment_variables=var["pipeline_run_configuration_override_details_environment_variables"],
-                maximum_runtime_in_minutes=var["pipeline_run_configuration_override_details_maximum_runtime_in_minutes"],
+                type=pipeline_run_configuration_override_details_type,
+                command_line_arguments=pipeline_run_configuration_override_details_command_line_arguments,
+                environment_variables=pipeline_run_configuration_override_details_environment_variables,
+                maximum_runtime_in_minutes=pipeline_run_configuration_override_details_maximum_runtime_in_minutes,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["pipeline_run_display_name"],
+            display_name=pipeline_run_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             log_configuration_override_details=oci.data_science.PipelineRunLogConfigurationOverrideDetailsArgs(
-                enable_auto_log_creation=var["pipeline_run_log_configuration_override_details_enable_auto_log_creation"],
-                enable_logging=var["pipeline_run_log_configuration_override_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                enable_auto_log_creation=pipeline_run_log_configuration_override_details_enable_auto_log_creation,
+                enable_logging=pipeline_run_log_configuration_override_details_enable_logging,
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ),
-            project_id=oci_datascience_project["test_project"]["id"],
+            project_id=test_project["id"],
             step_override_details=[oci.data_science.PipelineRunStepOverrideDetailArgs(
                 step_configuration_details=oci.data_science.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs(
-                    command_line_arguments=var["pipeline_run_step_override_details_step_configuration_details_command_line_arguments"],
-                    environment_variables=var["pipeline_run_step_override_details_step_configuration_details_environment_variables"],
-                    maximum_runtime_in_minutes=var["pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes"],
+                    command_line_arguments=pipeline_run_step_override_details_step_configuration_details_command_line_arguments,
+                    environment_variables=pipeline_run_step_override_details_step_configuration_details_environment_variables,
+                    maximum_runtime_in_minutes=pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes,
                 ),
-                step_name=var["pipeline_run_step_override_details_step_name"],
+                step_name=pipeline_run_step_override_details_step_name,
             )],
-            system_tags=var["pipeline_run_system_tags"])
+            system_tags=pipeline_run_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -653,38 +653,38 @@ class PipelineRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pipeline_run = oci.data_science.PipelineRun("testPipelineRun",
-            compartment_id=var["compartment_id"],
-            pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"],
+        test_pipeline_run = oci.data_science.PipelineRun("test_pipeline_run",
+            compartment_id=compartment_id,
+            pipeline_id=test_pipeline["id"],
             configuration_override_details=oci.data_science.PipelineRunConfigurationOverrideDetailsArgs(
-                type=var["pipeline_run_configuration_override_details_type"],
-                command_line_arguments=var["pipeline_run_configuration_override_details_command_line_arguments"],
-                environment_variables=var["pipeline_run_configuration_override_details_environment_variables"],
-                maximum_runtime_in_minutes=var["pipeline_run_configuration_override_details_maximum_runtime_in_minutes"],
+                type=pipeline_run_configuration_override_details_type,
+                command_line_arguments=pipeline_run_configuration_override_details_command_line_arguments,
+                environment_variables=pipeline_run_configuration_override_details_environment_variables,
+                maximum_runtime_in_minutes=pipeline_run_configuration_override_details_maximum_runtime_in_minutes,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["pipeline_run_display_name"],
+            display_name=pipeline_run_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             log_configuration_override_details=oci.data_science.PipelineRunLogConfigurationOverrideDetailsArgs(
-                enable_auto_log_creation=var["pipeline_run_log_configuration_override_details_enable_auto_log_creation"],
-                enable_logging=var["pipeline_run_log_configuration_override_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                enable_auto_log_creation=pipeline_run_log_configuration_override_details_enable_auto_log_creation,
+                enable_logging=pipeline_run_log_configuration_override_details_enable_logging,
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ),
-            project_id=oci_datascience_project["test_project"]["id"],
+            project_id=test_project["id"],
             step_override_details=[oci.data_science.PipelineRunStepOverrideDetailArgs(
                 step_configuration_details=oci.data_science.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs(
-                    command_line_arguments=var["pipeline_run_step_override_details_step_configuration_details_command_line_arguments"],
-                    environment_variables=var["pipeline_run_step_override_details_step_configuration_details_environment_variables"],
-                    maximum_runtime_in_minutes=var["pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes"],
+                    command_line_arguments=pipeline_run_step_override_details_step_configuration_details_command_line_arguments,
+                    environment_variables=pipeline_run_step_override_details_step_configuration_details_environment_variables,
+                    maximum_runtime_in_minutes=pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes,
                 ),
-                step_name=var["pipeline_run_step_override_details_step_name"],
+                step_name=pipeline_run_step_override_details_step_name,
             )],
-            system_tags=var["pipeline_run_system_tags"])
+            system_tags=pipeline_run_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 

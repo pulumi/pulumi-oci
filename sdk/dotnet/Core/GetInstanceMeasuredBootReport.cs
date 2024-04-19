@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceMeasuredBootReport = Oci.Core.GetInstanceMeasuredBootReport.Invoke(new()
         ///     {
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         InstanceId = testInstance.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceMeasuredBootReport = Oci.Core.GetInstanceMeasuredBootReport.Invoke(new()
         ///     {
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         InstanceId = testInstance.Id,
         ///     });
         /// 
         /// });

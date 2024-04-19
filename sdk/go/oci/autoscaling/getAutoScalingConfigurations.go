@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Autoscaling.GetAutoScalingConfigurations(ctx, &autoscaling.GetAutoScalingConfigurationsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Auto_scaling_configuration_display_name),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(autoScalingConfigurationDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

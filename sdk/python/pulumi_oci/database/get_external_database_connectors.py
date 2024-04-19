@@ -133,10 +133,10 @@ def get_external_database_connectors(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=var["compartment_id"],
-        external_database_id=oci_database_database["test_database"]["id"],
-        display_name=var["external_database_connector_display_name"],
-        state=var["external_database_connector_state"])
+    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=compartment_id,
+        external_database_id=test_database["id"],
+        display_name=external_database_connector_display_name,
+        state=external_database_connector_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_external_database_connectors_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=var["compartment_id"],
-        external_database_id=oci_database_database["test_database"]["id"],
-        display_name=var["external_database_connector_display_name"],
-        state=var["external_database_connector_state"])
+    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=compartment_id,
+        external_database_id=test_database["id"],
+        display_name=external_database_connector_display_name,
+        state=external_database_connector_state)
     ```
     <!--End PulumiCodeChooser -->
 

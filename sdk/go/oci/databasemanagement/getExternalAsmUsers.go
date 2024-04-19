@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalAsmUsers(ctx, &databasemanagement.GetExternalAsmUsersArgs{
-//				ExternalAsmId:        oci_database_management_external_asm.Test_external_asm.Id,
-//				OpcNamedCredentialId: pulumi.StringRef(_var.External_asm_user_opc_named_credential_id),
+//				ExternalAsmId:        testExternalAsm.Id,
+//				OpcNamedCredentialId: pulumi.StringRef(externalAsmUserOpcNamedCredentialId),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCaptureFilter = Oci.Core.GetCaptureFilter.Invoke(new()
         ///     {
-        ///         CaptureFilterId = oci_core_capture_filter.Test_capture_filter.Id,
+        ///         CaptureFilterId = testCaptureFilterOciCoreCaptureFilter.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCaptureFilter = Oci.Core.GetCaptureFilter.Invoke(new()
         ///     {
-        ///         CaptureFilterId = oci_core_capture_filter.Test_capture_filter.Id,
+        ///         CaptureFilterId = testCaptureFilterOciCoreCaptureFilter.Id,
         ///     });
         /// 
         /// });

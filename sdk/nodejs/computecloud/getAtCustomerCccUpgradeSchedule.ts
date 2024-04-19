@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCccUpgradeSchedule = oci.ComputeCloud.getAtCustomerCccUpgradeSchedule({
- *     cccUpgradeScheduleId: oci_compute_cloud_at_customer_ccc_upgrade_schedule.test_ccc_upgrade_schedule.id,
+ *     cccUpgradeScheduleId: testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,7 +115,7 @@ export interface GetAtCustomerCccUpgradeScheduleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCccUpgradeSchedule = oci.ComputeCloud.getAtCustomerCccUpgradeSchedule({
- *     cccUpgradeScheduleId: oci_compute_cloud_at_customer_ccc_upgrade_schedule.test_ccc_upgrade_schedule.id,
+ *     cccUpgradeScheduleId: testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -26,12 +26,12 @@ namespace Pulumi.Oci.Marketplace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testListingPackageAgreement = new Oci.Marketplace.ListingPackageAgreement("testListingPackageAgreement", new()
+    ///     var testListingPackageAgreement = new Oci.Marketplace.ListingPackageAgreement("test_listing_package_agreement", new()
     ///     {
-    ///         AgreementId = oci_marketplace_agreement.Test_agreement.Id,
-    ///         ListingId = oci_marketplace_listing.Test_listing.Id,
-    ///         PackageVersion = @var.Listing_package_agreement_package_version,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AgreementId = testAgreement.Id,
+    ///         ListingId = testListing.Id,
+    ///         PackageVersion = listingPackageAgreementPackageVersion,
+    ///         CompartmentId = compartmentId,
     ///     });
     /// 
     /// });

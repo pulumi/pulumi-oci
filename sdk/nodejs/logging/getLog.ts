@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLog = oci.Logging.getLog({
- *     logGroupId: oci_logging_log_group.test_log_group.id,
- *     logId: oci_logging_log.test_log.id,
+ *     logGroupId: testLogGroup.id,
+ *     logId: testLogOciLoggingLog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -123,8 +123,8 @@ export interface GetLogResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLog = oci.Logging.getLog({
- *     logGroupId: oci_logging_log_group.test_log_group.id,
- *     logId: oci_logging_log.test_log.id,
+ *     logGroupId: testLogGroup.id,
+ *     logId: testLogOciLoggingLog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

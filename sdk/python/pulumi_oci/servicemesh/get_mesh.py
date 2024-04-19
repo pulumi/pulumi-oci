@@ -212,7 +212,7 @@ def get_mesh(mesh_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mesh = oci.ServiceMesh.get_mesh(mesh_id=oci_service_mesh_mesh["test_mesh"]["id"])
+    test_mesh = oci.ServiceMesh.get_mesh(mesh_id=test_mesh_oci_service_mesh_mesh["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -256,7 +256,7 @@ def get_mesh_output(mesh_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mesh = oci.ServiceMesh.get_mesh(mesh_id=oci_service_mesh_mesh["test_mesh"]["id"])
+    test_mesh = oci.ServiceMesh.get_mesh(mesh_id=test_mesh_oci_service_mesh_mesh["id"])
     ```
     <!--End PulumiCodeChooser -->
 

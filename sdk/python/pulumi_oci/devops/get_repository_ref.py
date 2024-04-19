@@ -152,8 +152,8 @@ def get_repository_ref(ref_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_ref = oci.DevOps.get_repository_ref(ref_name=var["repository_ref_ref_name"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
+    test_repository_ref = oci.DevOps.get_repository_ref(ref_name=repository_ref_ref_name,
+        repository_id=test_repository["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -195,8 +195,8 @@ def get_repository_ref_output(ref_name: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_ref = oci.DevOps.get_repository_ref(ref_name=var["repository_ref_ref_name"],
-        repository_id=oci_devops_repository["test_repository"]["id"])
+    test_repository_ref = oci.DevOps.get_repository_ref(ref_name=repository_ref_ref_name,
+        repository_id=test_repository["id"])
     ```
     <!--End PulumiCodeChooser -->
 

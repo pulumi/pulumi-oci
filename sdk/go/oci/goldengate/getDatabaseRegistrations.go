@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetDatabaseRegistrations(ctx, &goldengate.GetDatabaseRegistrationsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Database_registration_display_name),
-//				State:         pulumi.StringRef(_var.Database_registration_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(databaseRegistrationDisplayName),
+//				State:         pulumi.StringRef(databaseRegistrationState),
 //			}, nil)
 //			if err != nil {
 //				return err

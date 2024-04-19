@@ -49,12 +49,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVolumeGroupBackup = new VolumeGroupBackup(&#34;testVolumeGroupBackup&#34;, VolumeGroupBackupArgs.builder()        
- *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
- *             .compartmentId(var_.compartment_id())
+ *             .volumeGroupId(testVolumeGroup.id())
+ *             .compartmentId(compartmentId)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.volume_group_backup_display_name())
+ *             .displayName(volumeGroupBackupDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .type(var_.volume_group_backup_type())
+ *             .type(volumeGroupBackupType)
  *             .build());
  * 
  *     }

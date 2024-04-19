@@ -30,13 +30,13 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testMaintenanceRuns = Oci.Database.GetMaintenanceRuns.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Maintenance_run_availability_domain,
-        ///         MaintenanceSubtype = @var.Maintenance_run_maintenance_subtype,
-        ///         MaintenanceType = @var.Maintenance_run_maintenance_type,
-        ///         State = @var.Maintenance_run_state,
-        ///         TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
-        ///         TargetResourceType = @var.Maintenance_run_target_resource_type,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = maintenanceRunAvailabilityDomain,
+        ///         MaintenanceSubtype = maintenanceRunMaintenanceSubtype,
+        ///         MaintenanceType = maintenanceRunMaintenanceType,
+        ///         State = maintenanceRunState,
+        ///         TargetResourceId = testTargetResource.Id,
+        ///         TargetResourceType = maintenanceRunTargetResourceType,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testMaintenanceRuns = Oci.Database.GetMaintenanceRuns.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Maintenance_run_availability_domain,
-        ///         MaintenanceSubtype = @var.Maintenance_run_maintenance_subtype,
-        ///         MaintenanceType = @var.Maintenance_run_maintenance_type,
-        ///         State = @var.Maintenance_run_state,
-        ///         TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
-        ///         TargetResourceType = @var.Maintenance_run_target_resource_type,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = maintenanceRunAvailabilityDomain,
+        ///         MaintenanceSubtype = maintenanceRunMaintenanceSubtype,
+        ///         MaintenanceType = maintenanceRunMaintenanceType,
+        ///         State = maintenanceRunState,
+        ///         TargetResourceId = testTargetResource.Id,
+        ///         TargetResourceType = maintenanceRunTargetResourceType,
         ///     });
         /// 
         /// });

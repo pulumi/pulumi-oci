@@ -308,7 +308,7 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=oci_database_tools_database_tools_private_endpoint["test_database_tools_private_endpoint"]["id"])
+    test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=test_database_tools_private_endpoint_oci_database_tools_database_tools_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -360,7 +360,7 @@ def get_database_tools_private_endpoint_output(database_tools_private_endpoint_i
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=oci_database_tools_database_tools_private_endpoint["test_database_tools_private_endpoint"]["id"])
+    test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=test_database_tools_private_endpoint_oci_database_tools_database_tools_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 

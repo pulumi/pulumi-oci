@@ -26,22 +26,22 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNatGateway = new Oci.Core.NatGateway("testNatGateway", new()
+    ///     var testNatGateway = new Oci.Core.NatGateway("test_nat_gateway", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
-    ///         BlockTraffic = @var.Nat_gateway_block_traffic,
+    ///         CompartmentId = compartmentId,
+    ///         VcnId = testVcn.Id,
+    ///         BlockTraffic = natGatewayBlockTraffic,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Nat_gateway_display_name,
+    ///         DisplayName = natGatewayDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         PublicIpId = oci_core_public_ip.Test_public_ip.Id,
-    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///         PublicIpId = testPublicIp.Id,
+    ///         RouteTableId = testRouteTable.Id,
     ///     });
     /// 
     /// });

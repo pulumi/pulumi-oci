@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testConnections = Oci.DevOps.GetConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConnectionType = @var.Connection_connection_type,
-        ///         DisplayName = @var.Connection_display_name,
-        ///         Id = @var.Connection_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Connection_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConnectionType = connectionConnectionType,
+        ///         DisplayName = connectionDisplayName,
+        ///         Id = connectionId,
+        ///         ProjectId = testProject.Id,
+        ///         State = connectionState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testConnections = Oci.DevOps.GetConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConnectionType = @var.Connection_connection_type,
-        ///         DisplayName = @var.Connection_display_name,
-        ///         Id = @var.Connection_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Connection_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConnectionType = connectionConnectionType,
+        ///         DisplayName = connectionDisplayName,
+        ///         Id = connectionId,
+        ///         ProjectId = testProject.Id,
+        ///         State = connectionState,
         ///     });
         /// 
         /// });

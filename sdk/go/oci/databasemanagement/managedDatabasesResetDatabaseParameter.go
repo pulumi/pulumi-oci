@@ -31,23 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewManagedDatabasesResetDatabaseParameter(ctx, "testManagedDatabasesResetDatabaseParameter", &DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs{
-//				ManagedDatabaseId: pulumi.Any(oci_database_management_managed_database.Test_managed_database.Id),
-//				Parameters:        pulumi.Any(_var.Managed_databases_reset_database_parameter_parameters),
-//				Scope:             pulumi.Any(_var.Managed_databases_reset_database_parameter_scope),
+//			_, err := DatabaseManagement.NewManagedDatabasesResetDatabaseParameter(ctx, "test_managed_databases_reset_database_parameter", &DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs{
+//				ManagedDatabaseId: pulumi.Any(testManagedDatabase.Id),
+//				Parameters:        pulumi.Any(managedDatabasesResetDatabaseParameterParameters),
+//				Scope:             pulumi.Any(managedDatabasesResetDatabaseParameterScope),
 //				Credentials: &databasemanagement.ManagedDatabasesResetDatabaseParameterCredentialsArgs{
-//					Password: pulumi.Any(_var.Managed_databases_reset_database_parameter_credentials_password),
-//					Role:     pulumi.Any(_var.Managed_databases_reset_database_parameter_credentials_role),
-//					SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					UserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//					Password: pulumi.Any(managedDatabasesResetDatabaseParameterCredentialsPassword),
+//					Role:     pulumi.Any(managedDatabasesResetDatabaseParameterCredentialsRole),
+//					SecretId: pulumi.Any(testSecret.Id),
+//					UserName: pulumi.Any(testUser.Name),
 //				},
 //				DatabaseCredential: &databasemanagement.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs{
-//					CredentialType:    pulumi.Any(_var.Managed_databases_reset_database_parameter_database_credential_credential_type),
-//					NamedCredentialId: pulumi.Any(oci_database_management_named_credential.Test_named_credential.Id),
-//					Password:          pulumi.Any(_var.Managed_databases_reset_database_parameter_database_credential_password),
-//					PasswordSecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					Role:              pulumi.Any(_var.Managed_databases_reset_database_parameter_database_credential_role),
-//					Username:          pulumi.Any(_var.Managed_databases_reset_database_parameter_database_credential_username),
+//					CredentialType:    pulumi.Any(managedDatabasesResetDatabaseParameterDatabaseCredentialCredentialType),
+//					NamedCredentialId: pulumi.Any(testNamedCredential.Id),
+//					Password:          pulumi.Any(managedDatabasesResetDatabaseParameterDatabaseCredentialPassword),
+//					PasswordSecretId:  pulumi.Any(testSecret.Id),
+//					Role:              pulumi.Any(managedDatabasesResetDatabaseParameterDatabaseCredentialRole),
+//					Username:          pulumi.Any(managedDatabasesResetDatabaseParameterDatabaseCredentialUsername),
 //				},
 //			})
 //			if err != nil {

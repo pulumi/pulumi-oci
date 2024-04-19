@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemConnectionDetail = oci.Psql.getDbSystemConnectionDetail({
- *     dbSystemId: oci_psql_db_system.test_db_system.id,
+ *     dbSystemId: testDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,7 +77,7 @@ export interface GetDbSystemConnectionDetailResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemConnectionDetail = oci.Psql.getDbSystemConnectionDetail({
- *     dbSystemId: oci_psql_db_system.test_db_system.id,
+ *     dbSystemId: testDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

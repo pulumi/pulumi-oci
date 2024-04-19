@@ -33,10 +33,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Email.GetSuppressions(ctx, &email.GetSuppressionsArgs{
-//				CompartmentId:                   _var.Tenancy_ocid,
-//				EmailAddress:                    pulumi.StringRef(_var.Suppression_email_address),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Suppression_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Suppression_time_created_less_than),
+//				CompartmentId:                   tenancyOcid,
+//				EmailAddress:                    pulumi.StringRef(suppressionEmailAddress),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(suppressionTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(suppressionTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

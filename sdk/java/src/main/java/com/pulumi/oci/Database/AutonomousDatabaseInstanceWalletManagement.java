@@ -46,9 +46,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseInstanceWalletManagement = new AutonomousDatabaseInstanceWalletManagement(&#34;testAutonomousDatabaseInstanceWalletManagement&#34;, AutonomousDatabaseInstanceWalletManagementArgs.builder()        
- *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
- *             .gracePeriod(var_.autonomous_database_instance_wallet_management_grace_period())
- *             .shouldRotate(var_.autonomous_database_instance_wallet_management_should_rotate())
+ *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .gracePeriod(autonomousDatabaseInstanceWalletManagementGracePeriod)
+ *             .shouldRotate(autonomousDatabaseInstanceWalletManagementShouldRotate)
  *             .build());
  * 
  *     }

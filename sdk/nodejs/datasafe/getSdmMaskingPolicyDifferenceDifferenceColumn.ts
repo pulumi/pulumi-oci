@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSdmMaskingPolicyDifferenceDifferenceColumn = oci.DataSafe.getSdmMaskingPolicyDifferenceDifferenceColumn({
- *     differenceColumnKey: _var.sdm_masking_policy_difference_difference_column_difference_column_key,
- *     sdmMaskingPolicyDifferenceId: oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference.id,
+ *     differenceColumnKey: sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey,
+ *     sdmMaskingPolicyDifferenceId: testSdmMaskingPolicyDifference.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -114,8 +114,8 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSdmMaskingPolicyDifferenceDifferenceColumn = oci.DataSafe.getSdmMaskingPolicyDifferenceDifferenceColumn({
- *     differenceColumnKey: _var.sdm_masking_policy_difference_difference_column_difference_column_key,
- *     sdmMaskingPolicyDifferenceId: oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference.id,
+ *     differenceColumnKey: sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey,
+ *     sdmMaskingPolicyDifferenceId: testSdmMaskingPolicyDifference.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

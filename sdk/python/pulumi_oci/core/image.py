@@ -484,14 +484,14 @@ class Image(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            instance_id=oci_core_instance["test_instance"]["id"],
+        test_image = oci.core.Image("test_image",
+            compartment_id=compartment_id,
+            instance_id=test_instance["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
+            display_name=image_display_name,
+            launch_mode=image_launch_mode,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -504,18 +504,18 @@ class Image(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
+        test_image = oci.core.Image("test_image",
+            compartment_id=compartment_id,
+            display_name=image_display_name,
+            launch_mode=image_launch_mode,
             image_source_details=oci.core.ImageImageSourceDetailsArgs(
                 source_type="objectStorageTuple",
-                bucket_name=var["bucket_name"],
-                namespace_name=var["namespace"],
-                object_name=var["object_name"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
+                bucket_name=bucket_name,
+                namespace_name=namespace,
+                object_name=object_name,
+                operating_system=image_image_source_details_operating_system,
+                operating_system_version=image_image_source_details_operating_system_version,
+                source_image_type=source_image_type,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -526,16 +526,16 @@ class Image(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
+        test_image = oci.core.Image("test_image",
+            compartment_id=compartment_id,
+            display_name=image_display_name,
+            launch_mode=image_launch_mode,
             image_source_details=oci.core.ImageImageSourceDetailsArgs(
                 source_type="objectStorageUri",
-                source_uri=var["source_uri"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
+                source_uri=source_uri,
+                operating_system=image_image_source_details_operating_system,
+                operating_system_version=image_image_source_details_operating_system_version,
+                source_image_type=source_image_type,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -602,14 +602,14 @@ class Image(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            instance_id=oci_core_instance["test_instance"]["id"],
+        test_image = oci.core.Image("test_image",
+            compartment_id=compartment_id,
+            instance_id=test_instance["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
+            display_name=image_display_name,
+            launch_mode=image_launch_mode,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -622,18 +622,18 @@ class Image(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
+        test_image = oci.core.Image("test_image",
+            compartment_id=compartment_id,
+            display_name=image_display_name,
+            launch_mode=image_launch_mode,
             image_source_details=oci.core.ImageImageSourceDetailsArgs(
                 source_type="objectStorageTuple",
-                bucket_name=var["bucket_name"],
-                namespace_name=var["namespace"],
-                object_name=var["object_name"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
+                bucket_name=bucket_name,
+                namespace_name=namespace,
+                object_name=object_name,
+                operating_system=image_image_source_details_operating_system,
+                operating_system_version=image_image_source_details_operating_system_version,
+                source_image_type=source_image_type,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -644,16 +644,16 @@ class Image(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_image = oci.core.Image("testImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["image_display_name"],
-            launch_mode=var["image_launch_mode"],
+        test_image = oci.core.Image("test_image",
+            compartment_id=compartment_id,
+            display_name=image_display_name,
+            launch_mode=image_launch_mode,
             image_source_details=oci.core.ImageImageSourceDetailsArgs(
                 source_type="objectStorageUri",
-                source_uri=var["source_uri"],
-                operating_system=var["image_image_source_details_operating_system"],
-                operating_system_version=var["image_image_source_details_operating_system_version"],
-                source_image_type=var["source_image_type"],
+                source_uri=source_uri,
+                operating_system=image_image_source_details_operating_system,
+                operating_system_version=image_image_source_details_operating_system_version,
+                source_image_type=source_image_type,
             ))
         ```
         <!--End PulumiCodeChooser -->

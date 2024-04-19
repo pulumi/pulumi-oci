@@ -28,43 +28,43 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMyRequest = new Oci.Identity.DomainsMyRequest("testMyRequest", new()
+    ///     var testMyRequest = new Oci.Identity.DomainsMyRequest("test_my_request", new()
     ///     {
-    ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-    ///         Justification = @var.My_request_justification,
+    ///         ApprovalDetails = new[]
+    ///         {
+    ///             null,
+    ///         },
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Justification = myRequestJustification,
     ///         Requesting = new Oci.Identity.Inputs.DomainsMyRequestRequestingArgs
     ///         {
-    ///             Type = @var.My_request_requesting_type,
-    ///             Value = oci_identity_domains_group.Group_to_request.Id,
-    ///             Description = @var.My_request_requesting_description,
+    ///             Type = myRequestRequestingType,
+    ///             Value = groupToRequest.Id,
+    ///             Description = myRequestRequestingDescription,
     ///         },
     ///         Schemas = new[]
     ///         {
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:Request",
     ///         },
-    ///         Action = @var.My_request_action,
-    ///         ApprovalDetails = new[]
-    ///         {
-    ///             null,
-    ///         },
+    ///         Action = myRequestAction,
     ///         AttributeSets = new[]
     ///         {
     ///             "all",
     ///         },
     ///         Attributes = "",
-    ///         Authorization = @var.My_request_authorization,
-    ///         Ocid = @var.My_request_ocid,
+    ///         Authorization = myRequestAuthorization,
+    ///         Ocid = myRequestOcid,
     ///         Requestor = new Oci.Identity.Inputs.DomainsMyRequestRequestorArgs
     ///         {
-    ///             Value = @var.My_request_requestor_value,
+    ///             Value = myRequestRequestorValue,
     ///         },
-    ///         ResourceTypeSchemaVersion = @var.My_request_resource_type_schema_version,
+    ///         ResourceTypeSchemaVersion = myRequestResourceTypeSchemaVersion,
     ///         Tags = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsMyRequestTagArgs
     ///             {
-    ///                 Key = @var.My_request_tags_key,
-    ///                 Value = @var.My_request_tags_value,
+    ///                 Key = myRequestTagsKey,
+    ///                 Value = myRequestTagsValue,
     ///             },
     ///         },
     ///     });

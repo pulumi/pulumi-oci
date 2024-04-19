@@ -290,10 +290,10 @@ def get_domains_my_support_account(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_account = oci.Identity.get_domains_my_support_account(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_support_account_id=oci_identity_domains_my_support_account["test_my_support_account"]["id"],
-        authorization=var["my_support_account_authorization"],
-        resource_type_schema_version=var["my_support_account_resource_type_schema_version"])
+    test_my_support_account = oci.Identity.get_domains_my_support_account(idcs_endpoint=test_domain["url"],
+        my_support_account_id=test_my_support_account_oci_identity_domains_my_support_account["id"],
+        authorization=my_support_account_authorization,
+        resource_type_schema_version=my_support_account_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -353,10 +353,10 @@ def get_domains_my_support_account_output(authorization: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_account = oci.Identity.get_domains_my_support_account(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_support_account_id=oci_identity_domains_my_support_account["test_my_support_account"]["id"],
-        authorization=var["my_support_account_authorization"],
-        resource_type_schema_version=var["my_support_account_resource_type_schema_version"])
+    test_my_support_account = oci.Identity.get_domains_my_support_account(idcs_endpoint=test_domain["url"],
+        my_support_account_id=test_my_support_account_oci_identity_domains_my_support_account["id"],
+        authorization=my_support_account_authorization,
+        resource_type_schema_version=my_support_account_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

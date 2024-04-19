@@ -163,12 +163,12 @@ def get_responder_recipes(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_responder_recipes = oci.CloudGuard.get_responder_recipes(compartment_id=var["compartment_id"],
-        access_level=var["responder_recipe_access_level"],
-        compartment_id_in_subtree=var["responder_recipe_compartment_id_in_subtree"],
-        display_name=var["responder_recipe_display_name"],
-        resource_metadata_only=var["responder_recipe_resource_metadata_only"],
-        state=var["responder_recipe_state"])
+    test_responder_recipes = oci.CloudGuard.get_responder_recipes(compartment_id=compartment_id,
+        access_level=responder_recipe_access_level,
+        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree,
+        display_name=responder_recipe_display_name,
+        resource_metadata_only=responder_recipe_resource_metadata_only,
+        state=responder_recipe_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -237,12 +237,12 @@ def get_responder_recipes_output(access_level: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_responder_recipes = oci.CloudGuard.get_responder_recipes(compartment_id=var["compartment_id"],
-        access_level=var["responder_recipe_access_level"],
-        compartment_id_in_subtree=var["responder_recipe_compartment_id_in_subtree"],
-        display_name=var["responder_recipe_display_name"],
-        resource_metadata_only=var["responder_recipe_resource_metadata_only"],
-        state=var["responder_recipe_state"])
+    test_responder_recipes = oci.CloudGuard.get_responder_recipes(compartment_id=compartment_id,
+        access_level=responder_recipe_access_level,
+        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree,
+        display_name=responder_recipe_display_name,
+        resource_metadata_only=responder_recipe_resource_metadata_only,
+        state=responder_recipe_state)
     ```
     <!--End PulumiCodeChooser -->
 

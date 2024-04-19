@@ -31,22 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waf.NewNetworkAddressList(ctx, "testNetworkAddressList", &Waf.NetworkAddressListArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Type:          pulumi.Any(_var.Network_address_list_type),
-//				Addresses:     pulumi.Any(_var.Network_address_list_addresses),
+//			_, err := Waf.NewNetworkAddressList(ctx, "test_network_address_list", &Waf.NetworkAddressListArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Type:          pulumi.Any(networkAddressListType),
+//				Addresses:     pulumi.Any(networkAddressListAddresses),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Network_address_list_display_name),
+//				DisplayName: pulumi.Any(networkAddressListDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				SystemTags: pulumi.Any(_var.Network_address_list_system_tags),
+//				SystemTags: pulumi.Any(networkAddressListSystemTags),
 //				VcnAddresses: waf.NetworkAddressListVcnAddressArray{
 //					&waf.NetworkAddressListVcnAddressArgs{
-//						Addresses: pulumi.Any(_var.Network_address_list_vcn_addresses_addresses),
-//						VcnId:     pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//						Addresses: pulumi.Any(networkAddressListVcnAddressesAddresses),
+//						VcnId:     pulumi.Any(testVcn.Id),
 //					},
 //				},
 //			})

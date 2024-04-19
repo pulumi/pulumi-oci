@@ -25,13 +25,13 @@ namespace Pulumi.Oci.ManagementAgent
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagementAgentInstallKey = new Oci.ManagementAgent.ManagementAgentInstallKey("testManagementAgentInstallKey", new()
+    ///     var testManagementAgentInstallKey = new Oci.ManagementAgent.ManagementAgentInstallKey("test_management_agent_install_key", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Management_agent_install_key_display_name,
-    ///         AllowedKeyInstallCount = @var.Management_agent_install_key_allowed_key_install_count,
-    ///         IsUnlimited = @var.Management_agent_install_key_is_unlimited,
-    ///         TimeExpires = @var.Management_agent_install_key_time_expires,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = managementAgentInstallKeyDisplayName,
+    ///         AllowedKeyInstallCount = managementAgentInstallKeyAllowedKeyInstallCount,
+    ///         IsUnlimited = managementAgentInstallKeyIsUnlimited,
+    ///         TimeExpires = managementAgentInstallKeyTimeExpires,
     ///     });
     /// 
     /// });

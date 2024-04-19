@@ -25,27 +25,27 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTarget = new Oci.CloudGuard.Target("testTarget", new()
+    ///     var testTarget = new Oci.CloudGuard.Target("test_target", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Target_display_name,
-    ///         TargetResourceId = oci_cloud_guard_target_resource.Test_target_resource.Id,
-    ///         TargetResourceType = @var.Target_target_resource_type,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = targetDisplayName,
+    ///         TargetResourceId = testTargetResource.Id,
+    ///         TargetResourceType = targetTargetResourceType,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Target_description,
+    ///         Description = targetDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         State = @var.Target_state,
+    ///         State = targetState,
     ///         TargetDetectorRecipes = new[]
     ///         {
     ///             new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeArgs
     ///             {
-    ///                 DetectorRecipeId = oci_cloud_guard_detector_recipe.Test_detector_recipe.Id,
+    ///                 DetectorRecipeId = testDetectorRecipe.Id,
     ///                 DetectorRules = new[]
     ///                 {
     ///                     new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeDetectorRuleArgs
@@ -56,12 +56,12 @@ namespace Pulumi.Oci.CloudGuard
     ///                             {
     ///                                 new Oci.CloudGuard.Inputs.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs
     ///                                 {
-    ///                                     CompartmentId = @var.Compartment_id,
-    ///                                     Condition = @var.Target_target_detector_recipes_detector_rules_details_condition_groups_condition,
+    ///                                     CompartmentId = compartmentId,
+    ///                                     Condition = targetTargetDetectorRecipesDetectorRulesDetailsConditionGroupsCondition,
     ///                                 },
     ///                             },
     ///                         },
-    ///                         DetectorRuleId = oci_events_rule.Test_rule.Id,
+    ///                         DetectorRuleId = testRule.Id,
     ///                     },
     ///                 },
     ///             },
@@ -70,26 +70,26 @@ namespace Pulumi.Oci.CloudGuard
     ///         {
     ///             new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeArgs
     ///             {
-    ///                 ResponderRecipeId = oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
+    ///                 ResponderRecipeId = testResponderRecipe.Id,
     ///                 ResponderRules = new[]
     ///                 {
     ///                     new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeResponderRuleArgs
     ///                     {
     ///                         Details = new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeResponderRuleDetailsArgs
     ///                         {
-    ///                             Condition = @var.Target_target_responder_recipes_responder_rules_details_condition,
+    ///                             Condition = targetTargetResponderRecipesResponderRulesDetailsCondition,
     ///                             Configurations = new[]
     ///                             {
     ///                                 new Oci.CloudGuard.Inputs.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs
     ///                                 {
-    ///                                     ConfigKey = @var.Target_target_responder_recipes_responder_rules_details_configurations_config_key,
-    ///                                     Name = @var.Target_target_responder_recipes_responder_rules_details_configurations_name,
-    ///                                     Value = @var.Target_target_responder_recipes_responder_rules_details_configurations_value,
+    ///                                     ConfigKey = targetTargetResponderRecipesResponderRulesDetailsConfigurationsConfigKey,
+    ///                                     Name = targetTargetResponderRecipesResponderRulesDetailsConfigurationsName,
+    ///                                     Value = targetTargetResponderRecipesResponderRulesDetailsConfigurationsValue,
     ///                                 },
     ///                             },
-    ///                             Mode = @var.Target_target_responder_recipes_responder_rules_details_mode,
+    ///                             Mode = targetTargetResponderRecipesResponderRulesDetailsMode,
     ///                         },
-    ///                         ResponderRuleId = oci_events_rule.Test_rule.Id,
+    ///                         ResponderRuleId = testRule.Id,
     ///                     },
     ///                 },
     ///             },

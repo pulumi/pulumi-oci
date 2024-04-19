@@ -130,10 +130,10 @@ def get_log_analytics_object_collection_rules(compartment_id: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_object_collection_rule_namespace"],
-        name=var["log_analytics_object_collection_rule_name"],
-        state=var["log_analytics_object_collection_rule_state"])
+    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
+        namespace=log_analytics_object_collection_rule_namespace,
+        name=log_analytics_object_collection_rule_name,
+        state=log_analytics_object_collection_rule_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_object_collection_rule_namespace"],
-        name=var["log_analytics_object_collection_rule_name"],
-        state=var["log_analytics_object_collection_rule_state"])
+    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
+        namespace=log_analytics_object_collection_rule_namespace,
+        name=log_analytics_object_collection_rule_name,
+        state=log_analytics_object_collection_rule_state)
     ```
     <!--End PulumiCodeChooser -->
 

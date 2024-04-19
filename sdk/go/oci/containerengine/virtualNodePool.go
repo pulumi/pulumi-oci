@@ -31,15 +31,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ContainerEngine.NewVirtualNodePool(ctx, "testVirtualNodePool", &ContainerEngine.VirtualNodePoolArgs{
-//				ClusterId:     pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Virtual_node_pool_display_name),
+//			_, err := ContainerEngine.NewVirtualNodePool(ctx, "test_virtual_node_pool", &ContainerEngine.VirtualNodePoolArgs{
+//				ClusterId:     pulumi.Any(testCluster.Id),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(virtualNodePoolDisplayName),
 //				PlacementConfigurations: containerengine.VirtualNodePoolPlacementConfigurationArray{
 //					&containerengine.VirtualNodePoolPlacementConfigurationArgs{
-//						AvailabilityDomain: pulumi.Any(_var.Virtual_node_pool_placement_configurations_availability_domain),
-//						FaultDomains:       pulumi.Any(_var.Virtual_node_pool_placement_configurations_fault_domain),
-//						SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//						AvailabilityDomain: pulumi.Any(virtualNodePoolPlacementConfigurationsAvailabilityDomain),
+//						FaultDomains:       pulumi.Any(virtualNodePoolPlacementConfigurationsFaultDomain),
+//						SubnetId:           pulumi.Any(testSubnet.Id),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
@@ -50,22 +50,22 @@ import (
 //				},
 //				InitialVirtualNodeLabels: containerengine.VirtualNodePoolInitialVirtualNodeLabelArray{
 //					&containerengine.VirtualNodePoolInitialVirtualNodeLabelArgs{
-//						Key:   pulumi.Any(_var.Virtual_node_pool_initial_virtual_node_labels_key),
-//						Value: pulumi.Any(_var.Virtual_node_pool_initial_virtual_node_labels_value),
+//						Key:   pulumi.Any(virtualNodePoolInitialVirtualNodeLabelsKey),
+//						Value: pulumi.Any(virtualNodePoolInitialVirtualNodeLabelsValue),
 //					},
 //				},
-//				NsgIds: pulumi.Any(_var.Virtual_node_pool_nsg_ids),
+//				NsgIds: pulumi.Any(virtualNodePoolNsgIds),
 //				PodConfiguration: &containerengine.VirtualNodePoolPodConfigurationArgs{
-//					Shape:    pulumi.Any(_var.Virtual_node_pool_pod_configuration_shape),
-//					SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					NsgIds:   pulumi.Any(_var.Virtual_node_pool_pod_configuration_nsg_ids),
+//					Shape:    pulumi.Any(virtualNodePoolPodConfigurationShape),
+//					SubnetId: pulumi.Any(testSubnet.Id),
+//					NsgIds:   pulumi.Any(virtualNodePoolPodConfigurationNsgIds),
 //				},
-//				Size: pulumi.Any(_var.Virtual_node_pool_size),
+//				Size: pulumi.Any(virtualNodePoolSize),
 //				Taints: containerengine.VirtualNodePoolTaintArray{
 //					&containerengine.VirtualNodePoolTaintArgs{
-//						Effect: pulumi.Any(_var.Virtual_node_pool_taints_effect),
-//						Key:    pulumi.Any(_var.Virtual_node_pool_taints_key),
-//						Value:  pulumi.Any(_var.Virtual_node_pool_taints_value),
+//						Effect: pulumi.Any(virtualNodePoolTaintsEffect),
+//						Key:    pulumi.Any(virtualNodePoolTaintsKey),
+//						Value:  pulumi.Any(virtualNodePoolTaintsValue),
 //					},
 //				},
 //				VirtualNodeTags: &containerengine.VirtualNodePoolVirtualNodeTagsArgs{

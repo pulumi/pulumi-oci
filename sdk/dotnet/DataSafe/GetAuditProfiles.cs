@@ -44,16 +44,16 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditProfiles = Oci.DataSafe.GetAuditProfiles.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_profile_access_level,
-        ///         AuditCollectedVolumeGreaterThanOrEqualTo = @var.Audit_profile_audit_collected_volume_greater_than_or_equal_to,
-        ///         AuditProfileId = oci_data_safe_audit_profile.Test_audit_profile.Id,
-        ///         CompartmentIdInSubtree = @var.Audit_profile_compartment_id_in_subtree,
-        ///         DisplayName = @var.Audit_profile_display_name,
-        ///         IsOverrideGlobalRetentionSetting = @var.Audit_profile_is_override_global_retention_setting,
-        ///         IsPaidUsageEnabled = @var.Audit_profile_is_paid_usage_enabled,
-        ///         State = @var.Audit_profile_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditProfileAccessLevel,
+        ///         AuditCollectedVolumeGreaterThanOrEqualTo = auditProfileAuditCollectedVolumeGreaterThanOrEqualTo,
+        ///         AuditProfileId = testAuditProfile.Id,
+        ///         CompartmentIdInSubtree = auditProfileCompartmentIdInSubtree,
+        ///         DisplayName = auditProfileDisplayName,
+        ///         IsOverrideGlobalRetentionSetting = auditProfileIsOverrideGlobalRetentionSetting,
+        ///         IsPaidUsageEnabled = auditProfileIsPaidUsageEnabled,
+        ///         State = auditProfileState,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -96,16 +96,16 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditProfiles = Oci.DataSafe.GetAuditProfiles.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_profile_access_level,
-        ///         AuditCollectedVolumeGreaterThanOrEqualTo = @var.Audit_profile_audit_collected_volume_greater_than_or_equal_to,
-        ///         AuditProfileId = oci_data_safe_audit_profile.Test_audit_profile.Id,
-        ///         CompartmentIdInSubtree = @var.Audit_profile_compartment_id_in_subtree,
-        ///         DisplayName = @var.Audit_profile_display_name,
-        ///         IsOverrideGlobalRetentionSetting = @var.Audit_profile_is_override_global_retention_setting,
-        ///         IsPaidUsageEnabled = @var.Audit_profile_is_paid_usage_enabled,
-        ///         State = @var.Audit_profile_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditProfileAccessLevel,
+        ///         AuditCollectedVolumeGreaterThanOrEqualTo = auditProfileAuditCollectedVolumeGreaterThanOrEqualTo,
+        ///         AuditProfileId = testAuditProfile.Id,
+        ///         CompartmentIdInSubtree = auditProfileCompartmentIdInSubtree,
+        ///         DisplayName = auditProfileDisplayName,
+        ///         IsOverrideGlobalRetentionSetting = auditProfileIsOverrideGlobalRetentionSetting,
+        ///         IsPaidUsageEnabled = auditProfileIsPaidUsageEnabled,
+        ///         State = auditProfileState,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });

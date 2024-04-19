@@ -25,25 +25,25 @@ namespace Pulumi.Oci.ComputeCloud
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCccUpgradeSchedule = new Oci.ComputeCloud.AtCustomerCccUpgradeSchedule("testCccUpgradeSchedule", new()
+    ///     var testCccUpgradeSchedule = new Oci.ComputeCloud.AtCustomerCccUpgradeSchedule("test_ccc_upgrade_schedule", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Ccc_upgrade_schedule_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = cccUpgradeScheduleDisplayName,
     ///         Events = new[]
     ///         {
     ///             new Oci.ComputeCloud.Inputs.AtCustomerCccUpgradeScheduleEventArgs
     ///             {
-    ///                 Description = @var.Ccc_upgrade_schedule_events_description,
-    ///                 ScheduleEventDuration = @var.Ccc_upgrade_schedule_events_schedule_event_duration,
-    ///                 TimeStart = @var.Ccc_upgrade_schedule_events_time_start,
-    ///                 ScheduleEventRecurrences = @var.Ccc_upgrade_schedule_events_schedule_event_recurrences,
+    ///                 Description = cccUpgradeScheduleEventsDescription,
+    ///                 ScheduleEventDuration = cccUpgradeScheduleEventsScheduleEventDuration,
+    ///                 TimeStart = cccUpgradeScheduleEventsTimeStart,
+    ///                 ScheduleEventRecurrences = cccUpgradeScheduleEventsScheduleEventRecurrences,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Ccc_upgrade_schedule_description,
+    ///         Description = cccUpgradeScheduleDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

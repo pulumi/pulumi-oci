@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbServers = oci.Database.getDbServers({
- *     compartmentId: _var.compartment_id,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     displayName: _var.db_server_display_name,
- *     state: _var.db_server_state,
+ *     compartmentId: compartmentId,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     displayName: dbServerDisplayName,
+ *     state: dbServerState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetDbServersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbServers = oci.Database.getDbServers({
- *     compartmentId: _var.compartment_id,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     displayName: _var.db_server_display_name,
- *     state: _var.db_server_state,
+ *     compartmentId: compartmentId,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     displayName: dbServerDisplayName,
+ *     state: dbServerState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

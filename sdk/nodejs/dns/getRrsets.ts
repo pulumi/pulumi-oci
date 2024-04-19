@@ -22,12 +22,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRrsets = oci.Dns.getRrsets({
- *     zoneNameOrId: oci_dns_zone.test_zone.id,
- *     domain: _var.rrset_domain,
- *     domainContains: _var.rrset_domain,
- *     rtype: _var.rrset_rtype,
- *     scope: _var.rrset_scope,
- *     viewId: oci_dns_view.test_view.id,
+ *     zoneNameOrId: testZone.id,
+ *     domain: rrsetDomain,
+ *     domainContains: rrsetDomain,
+ *     rtype: rrsetRtype,
+ *     scope: rrsetScope,
+ *     viewId: testView.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetRrsetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRrsets = oci.Dns.getRrsets({
- *     zoneNameOrId: oci_dns_zone.test_zone.id,
- *     domain: _var.rrset_domain,
- *     domainContains: _var.rrset_domain,
- *     rtype: _var.rrset_rtype,
- *     scope: _var.rrset_scope,
- *     viewId: oci_dns_view.test_view.id,
+ *     zoneNameOrId: testZone.id,
+ *     domain: rrsetDomain,
+ *     domainContains: rrsetDomain,
+ *     rtype: rrsetRtype,
+ *     scope: rrsetScope,
+ *     viewId: testView.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

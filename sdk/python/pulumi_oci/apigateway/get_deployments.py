@@ -133,10 +133,10 @@ def get_deployments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.ApiGateway.get_deployments(compartment_id=var["compartment_id"],
-        display_name=var["deployment_display_name"],
-        gateway_id=oci_apigateway_gateway["test_gateway"]["id"],
-        state=var["deployment_state"])
+    test_deployments = oci.ApiGateway.get_deployments(compartment_id=compartment_id,
+        display_name=deployment_display_name,
+        gateway_id=test_gateway["id"],
+        state=deployment_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.ApiGateway.get_deployments(compartment_id=var["compartment_id"],
-        display_name=var["deployment_display_name"],
-        gateway_id=oci_apigateway_gateway["test_gateway"]["id"],
-        state=var["deployment_state"])
+    test_deployments = oci.ApiGateway.get_deployments(compartment_id=compartment_id,
+        display_name=deployment_display_name,
+        gateway_id=test_gateway["id"],
+        state=deployment_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecretbundle = oci.Secrets.getSecretbundle({
- *     secretId: oci_vault_secret.test_secret.id,
- *     secretVersionName: oci_vault_secret_version.test_secret_version.name,
- *     stage: _var.secretbundle_stage,
- *     versionNumber: _var.secretbundle_version_number,
+ *     secretId: testSecret.id,
+ *     secretVersionName: testSecretVersion.name,
+ *     stage: secretbundleStage,
+ *     versionNumber: secretbundleVersionNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,10 +122,10 @@ export interface GetSecretbundleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecretbundle = oci.Secrets.getSecretbundle({
- *     secretId: oci_vault_secret.test_secret.id,
- *     secretVersionName: oci_vault_secret_version.test_secret_version.name,
- *     stage: _var.secretbundle_stage,
- *     versionNumber: _var.secretbundle_version_number,
+ *     secretId: testSecret.id,
+ *     secretVersionName: testSecretVersion.name,
+ *     stage: secretbundleStage,
+ *     versionNumber: secretbundleVersionNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

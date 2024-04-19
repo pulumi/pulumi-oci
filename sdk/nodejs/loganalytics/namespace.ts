@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespace = new oci.loganalytics.Namespace("testNamespace", {
- *     compartmentId: _var.compartment_id,
- *     isOnboarded: _var.is_onboarded,
- *     namespace: _var.namespace_namespace,
+ * const testNamespace = new oci.loganalytics.Namespace("test_namespace", {
+ *     compartmentId: compartmentId,
+ *     isOnboarded: isOnboarded,
+ *     namespace: namespaceNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

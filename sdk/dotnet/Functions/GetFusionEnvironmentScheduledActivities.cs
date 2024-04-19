@@ -30,12 +30,12 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentScheduledActivities = Oci.Functions.GetFusionEnvironmentScheduledActivities.Invoke(new()
         ///     {
-        ///         FusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-        ///         DisplayName = @var.Fusion_environment_scheduled_activity_display_name,
-        ///         RunCycle = @var.Fusion_environment_scheduled_activity_run_cycle,
-        ///         State = @var.Fusion_environment_scheduled_activity_state,
-        ///         TimeExpectedFinishLessThanOrEqualTo = @var.Fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to,
-        ///         TimeScheduledStartGreaterThanOrEqualTo = @var.Fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to,
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         DisplayName = fusionEnvironmentScheduledActivityDisplayName,
+        ///         RunCycle = fusionEnvironmentScheduledActivityRunCycle,
+        ///         State = fusionEnvironmentScheduledActivityState,
+        ///         TimeExpectedFinishLessThanOrEqualTo = fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo,
+        ///         TimeScheduledStartGreaterThanOrEqualTo = fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentScheduledActivities = Oci.Functions.GetFusionEnvironmentScheduledActivities.Invoke(new()
         ///     {
-        ///         FusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-        ///         DisplayName = @var.Fusion_environment_scheduled_activity_display_name,
-        ///         RunCycle = @var.Fusion_environment_scheduled_activity_run_cycle,
-        ///         State = @var.Fusion_environment_scheduled_activity_state,
-        ///         TimeExpectedFinishLessThanOrEqualTo = @var.Fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to,
-        ///         TimeScheduledStartGreaterThanOrEqualTo = @var.Fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to,
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         DisplayName = fusionEnvironmentScheduledActivityDisplayName,
+        ///         RunCycle = fusionEnvironmentScheduledActivityRunCycle,
+        ///         State = fusionEnvironmentScheduledActivityState,
+        ///         TimeExpectedFinishLessThanOrEqualTo = fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo,
+        ///         TimeScheduledStartGreaterThanOrEqualTo = fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo,
         ///     });
         /// 
         /// });

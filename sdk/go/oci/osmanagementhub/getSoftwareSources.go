@@ -32,17 +32,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetSoftwareSources(ctx, &osmanagementhub.GetSoftwareSourcesArgs{
-//				ArchTypes:              _var.Software_source_arch_type,
-//				Availabilities:         _var.Software_source_availability,
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:            pulumi.StringRef(_var.Software_source_display_name),
-//				DisplayNameContains:    pulumi.StringRef(_var.Software_source_display_name_contains),
-//				DisplayNameNotEqualTos: _var.Software_source_display_name_not_equal_to,
-//				OsFamilies:             _var.Software_source_os_family,
-//				SoftwareSourceId:       pulumi.StringRef(oci_os_management_hub_software_source.Test_software_source.Id),
-//				SoftwareSourceTypes:    _var.Software_source_software_source_type,
-//				States:                 _var.Software_source_state,
-//				VendorName:             pulumi.StringRef(_var.Software_source_vendor_name),
+//				ArchTypes:              softwareSourceArchType,
+//				Availabilities:         softwareSourceAvailability,
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				DisplayName:            pulumi.StringRef(softwareSourceDisplayName),
+//				DisplayNameContains:    pulumi.StringRef(softwareSourceDisplayNameContains),
+//				DisplayNameNotEqualTos: softwareSourceDisplayNameNotEqualTo,
+//				OsFamilies:             softwareSourceOsFamily,
+//				SoftwareSourceId:       pulumi.StringRef(testSoftwareSource.Id),
+//				SoftwareSourceTypes:    softwareSourceSoftwareSourceType,
+//				States:                 softwareSourceState,
+//				VendorName:             pulumi.StringRef(softwareSourceVendorName),
 //			}, nil)
 //			if err != nil {
 //				return err

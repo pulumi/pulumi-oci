@@ -31,20 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSqlCollection(ctx, "testSqlCollection", &DataSafe.SqlCollectionArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DbUserName:    pulumi.Any(oci_identity_user.Test_user.Name),
-//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//			_, err := DataSafe.NewSqlCollection(ctx, "test_sql_collection", &DataSafe.SqlCollectionArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DbUserName:    pulumi.Any(testUser.Name),
+//				TargetId:      pulumi.Any(testTarget.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Sql_collection_description),
-//				DisplayName: pulumi.Any(_var.Sql_collection_display_name),
+//				Description: pulumi.Any(sqlCollectionDescription),
+//				DisplayName: pulumi.Any(sqlCollectionDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				SqlLevel: pulumi.Any(_var.Sql_collection_sql_level),
-//				Status:   pulumi.Any(_var.Sql_collection_status),
+//				SqlLevel: pulumi.Any(sqlCollectionSqlLevel),
+//				Status:   pulumi.Any(sqlCollectionStatus),
 //			})
 //			if err != nil {
 //				return err

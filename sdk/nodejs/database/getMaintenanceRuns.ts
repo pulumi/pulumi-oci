@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.maintenance_run_availability_domain,
- *     maintenanceSubtype: _var.maintenance_run_maintenance_subtype,
- *     maintenanceType: _var.maintenance_run_maintenance_type,
- *     state: _var.maintenance_run_state,
- *     targetResourceId: oci_database_target_resource.test_target_resource.id,
- *     targetResourceType: _var.maintenance_run_target_resource_type,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: maintenanceRunAvailabilityDomain,
+ *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
+ *     maintenanceType: maintenanceRunMaintenanceType,
+ *     state: maintenanceRunState,
+ *     targetResourceId: testTargetResource.id,
+ *     targetResourceType: maintenanceRunTargetResourceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -132,13 +132,13 @@ export interface GetMaintenanceRunsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.maintenance_run_availability_domain,
- *     maintenanceSubtype: _var.maintenance_run_maintenance_subtype,
- *     maintenanceType: _var.maintenance_run_maintenance_type,
- *     state: _var.maintenance_run_state,
- *     targetResourceId: oci_database_target_resource.test_target_resource.id,
- *     targetResourceType: _var.maintenance_run_target_resource_type,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: maintenanceRunAvailabilityDomain,
+ *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
+ *     maintenanceType: maintenanceRunMaintenanceType,
+ *     state: maintenanceRunState,
+ *     targetResourceId: testTargetResource.id,
+ *     targetResourceType: maintenanceRunTargetResourceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousDatabaseSoftwareImages(ctx, &database.GetAutonomousDatabaseSoftwareImagesArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				ImageShapeFamily: _var.Autonomous_database_software_image_image_shape_family,
-//				DisplayName:      pulumi.StringRef(_var.Autonomous_database_software_image_display_name),
-//				State:            pulumi.StringRef(_var.Autonomous_database_software_image_state),
+//				CompartmentId:    compartmentId,
+//				ImageShapeFamily: autonomousDatabaseSoftwareImageImageShapeFamily,
+//				DisplayName:      pulumi.StringRef(autonomousDatabaseSoftwareImageDisplayName),
+//				State:            pulumi.StringRef(autonomousDatabaseSoftwareImageState),
 //			}, nil)
 //			if err != nil {
 //				return err

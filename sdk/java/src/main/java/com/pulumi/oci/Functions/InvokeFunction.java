@@ -45,10 +45,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testInvokeFunction = new InvokeFunction(&#34;testInvokeFunction&#34;, InvokeFunctionArgs.builder()        
- *             .functionId(oci_functions_function.test_function().id())
- *             .invokeFunctionBody(var_.invoke_function_invoke_function_body())
- *             .fnIntent(var_.invoke_function_fn_intent())
- *             .fnInvokeType(var_.invoke_function_fn_invoke_type())
+ *             .functionId(testFunction.id())
+ *             .invokeFunctionBody(invokeFunctionInvokeFunctionBody)
+ *             .fnIntent(invokeFunctionFnIntent)
+ *             .fnInvokeType(invokeFunctionFnInvokeType)
  *             .base64EncodeContent(false)
  *             .build());
  * 

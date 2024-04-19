@@ -48,19 +48,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDataMaskRule = new DataMaskRule(&#34;testDataMaskRule&#34;, DataMaskRuleArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dataMaskCategories(var_.data_mask_rule_data_mask_categories())
- *             .displayName(var_.data_mask_rule_display_name())
- *             .iamGroupId(oci_identity_group.test_group().id())
+ *             .compartmentId(compartmentId)
+ *             .dataMaskCategories(dataMaskRuleDataMaskCategories)
+ *             .displayName(dataMaskRuleDisplayName)
+ *             .iamGroupId(testGroup.id())
  *             .targetSelected(DataMaskRuleTargetSelectedArgs.builder()
- *                 .kind(var_.data_mask_rule_target_selected_kind())
- *                 .values(var_.data_mask_rule_target_selected_values())
+ *                 .kind(dataMaskRuleTargetSelectedKind)
+ *                 .values(dataMaskRuleTargetSelectedValues)
  *                 .build())
- *             .dataMaskRuleStatus(var_.data_mask_rule_data_mask_rule_status())
+ *             .dataMaskRuleStatus(dataMaskRuleDataMaskRuleStatus)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.data_mask_rule_description())
+ *             .description(dataMaskRuleDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .state(var_.data_mask_rule_state())
+ *             .state(dataMaskRuleState)
  *             .build());
  * 
  *     }

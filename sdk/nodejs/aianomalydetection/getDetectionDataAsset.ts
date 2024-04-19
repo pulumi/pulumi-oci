@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataAsset = oci.AiAnomalyDetection.getDetectionDataAsset({
- *     dataAssetId: oci_ai_anomaly_detection_data_asset.test_data_asset.id,
+ *     dataAssetId: testDataAssetOciAiAnomalyDetectionDataAsset.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetDetectionDataAssetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataAsset = oci.AiAnomalyDetection.getDetectionDataAsset({
- *     dataAssetId: oci_ai_anomaly_detection_data_asset.test_data_asset.id,
+ *     dataAssetId: testDataAssetOciAiAnomalyDetectionDataAsset.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -16,8 +16,8 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackupCancelManagement = new oci.database.BackupCancelManagement("testBackupCancelManagement", {
- *     backupId: oci_database_backup.test_backup.id,
+ * const testBackupCancelManagement = new oci.database.BackupCancelManagement("test_backup_cancel_management", {
+ *     backupId: testBackup.id,
  *     cancelBackupTrigger: 1,
  * });
  * ```

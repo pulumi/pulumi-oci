@@ -19,19 +19,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLog = new oci.logging.Log("testLog", {
- *     displayName: _var.log_display_name,
- *     logGroupId: oci_logging_log_group.test_log_group.id,
- *     logType: _var.log_log_type,
+ * const testLog = new oci.logging.Log("test_log", {
+ *     displayName: logDisplayName,
+ *     logGroupId: testLogGroup.id,
+ *     logType: logLogType,
  *     configuration: {
  *         source: {
- *             category: _var.log_configuration_source_category,
- *             resource: _var.log_configuration_source_resource,
- *             service: _var.log_configuration_source_service,
- *             sourceType: _var.log_configuration_source_source_type,
- *             parameters: _var.log_configuration_source_parameters,
+ *             category: logConfigurationSourceCategory,
+ *             resource: logConfigurationSourceResource,
+ *             service: logConfigurationSourceService,
+ *             sourceType: logConfigurationSourceSourceType,
+ *             parameters: logConfigurationSourceParameters,
  *         },
- *         compartmentId: _var.compartment_id,
+ *         compartmentId: compartmentId,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -39,8 +39,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: _var.log_is_enabled,
- *     retentionDuration: _var.log_retention_duration,
+ *     isEnabled: logIsEnabled,
+ *     retentionDuration: logRetentionDuration,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

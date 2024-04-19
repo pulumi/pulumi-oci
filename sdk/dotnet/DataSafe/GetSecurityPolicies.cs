@@ -43,12 +43,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicies = Oci.DataSafe.GetSecurityPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_policy_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_policy_compartment_id_in_subtree,
-        ///         DisplayName = @var.Security_policy_display_name,
-        ///         SecurityPolicyId = oci_data_safe_security_policy.Test_security_policy.Id,
-        ///         State = @var.Security_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityPolicyAccessLevel,
+        ///         CompartmentIdInSubtree = securityPolicyCompartmentIdInSubtree,
+        ///         DisplayName = securityPolicyDisplayName,
+        ///         SecurityPolicyId = testSecurityPolicy.Id,
+        ///         State = securityPolicyState,
         ///     });
         /// 
         /// });
@@ -90,12 +90,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicies = Oci.DataSafe.GetSecurityPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_policy_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_policy_compartment_id_in_subtree,
-        ///         DisplayName = @var.Security_policy_display_name,
-        ///         SecurityPolicyId = oci_data_safe_security_policy.Test_security_policy.Id,
-        ///         State = @var.Security_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityPolicyAccessLevel,
+        ///         CompartmentIdInSubtree = securityPolicyCompartmentIdInSubtree,
+        ///         DisplayName = securityPolicyDisplayName,
+        ///         SecurityPolicyId = testSecurityPolicy.Id,
+        ///         State = securityPolicyState,
         ///     });
         /// 
         /// });

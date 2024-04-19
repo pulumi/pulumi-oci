@@ -11,6 +11,97 @@ import * as utilities from "../utilities";
  *
  * Create a DR protection group.
  *
+ * ## Example Usage
+ *
+ * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const config = new pulumi.Config();
+ * const disassociateTrigger = config.getNumber("disassociateTrigger") || 0;
+ * const testDrProtectionGroup = new oci.disasterrecovery.DrProtectionGroup("test_dr_protection_group", {
+ *     compartmentId: compartmentId,
+ *     displayName: drProtectionGroupDisplayName,
+ *     logLocation: {
+ *         bucket: drProtectionGroupLogLocationBucket,
+ *         namespace: drProtectionGroupLogLocationNamespace,
+ *     },
+ *     association: {
+ *         role: drProtectionGroupAssociationRole,
+ *         peerId: drProtectionGroupAssociationPeerId,
+ *         peerRegion: drProtectionGroupAssociationPeerRegion,
+ *     },
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     disassociateTrigger: disassociateTrigger,
+ *     members: [{
+ *         memberId: drProtectionGroupMembersMemberId,
+ *         memberType: drProtectionGroupMembersMemberType,
+ *         backendSetMappings: [{
+ *             destinationBackendSetName: testBackendSet.name,
+ *             isBackendSetForNonMovable: drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable,
+ *             sourceBackendSetName: testBackendSet.name,
+ *         }],
+ *         blockVolumeOperations: [{
+ *             attachmentDetails: {
+ *                 volumeAttachmentReferenceInstanceId: testInstance.id,
+ *             },
+ *             blockVolumeId: testVolume.id,
+ *             mountDetails: {
+ *                 mountPoint: drProtectionGroupMembersBlockVolumeOperationsMountDetailsMountPoint,
+ *             },
+ *         }],
+ *         destinationAvailabilityDomain: drProtectionGroupMembersDestinationAvailabilityDomain,
+ *         destinationCapacityReservationId: destinationCapacityReservationId,
+ *         destinationCompartmentId: testCompartment.id,
+ *         destinationDedicatedVmHostId: testDedicatedVmHost.id,
+ *         destinationLoadBalancerId: testLoadBalancer.id,
+ *         destinationNetworkLoadBalancerId: testNetworkLoadBalancer.id,
+ *         exportMappings: [{
+ *             destinationMountTargetId: testMountTarget.id,
+ *             exportId: testExport.id,
+ *         }],
+ *         fileSystemOperations: [{
+ *             exportPath: drProtectionGroupMembersFileSystemOperationsExportPath,
+ *             mountDetails: {
+ *                 mountTargetId: testMountTarget.id,
+ *             },
+ *             mountPoint: drProtectionGroupMembersFileSystemOperationsMountPoint,
+ *             mountTargetId: testMountTarget.id,
+ *             unmountDetails: {
+ *                 mountTargetId: testMountTarget.id,
+ *             },
+ *         }],
+ *         isMovable: drProtectionGroupMembersIsMovable,
+ *         isRetainFaultDomain: drProtectionGroupMembersIsRetainFaultDomain,
+ *         isStartStopEnabled: drProtectionGroupMembersIsStartStopEnabled,
+ *         passwordVaultSecretId: passwordVaultSecretId,
+ *         vnicMappings: [
+ *             {
+ *                 destinationNsgIdLists: drProtectionGroupMembersVnicMappingDestinationNsgIdList,
+ *                 destinationPrimaryPrivateIpAddress: drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpAddress,
+ *                 destinationPrimaryPrivateIpHostnameLabel: drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpHostnameLabel,
+ *                 destinationSubnetId: testSubnet.id,
+ *                 sourceVnicId: testVnic.id,
+ *             },
+ *             {
+ *                 destinationNsgIdLists: drProtectionGroupMembersVnicMappingsDestinationNsgIdList,
+ *                 destinationPrimaryPrivateIpAddress: drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpAddress,
+ *                 destinationPrimaryPrivateIpHostnameLabel: drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpHostnameLabel,
+ *                 destinationSubnetId: testSubnet.id,
+ *                 sourceVnicId: testVnic.id,
+ *             },
+ *         ],
+ *     }],
+ * });
+ * ```
+ * <!--End PulumiCodeChooser -->
+ *
  * ## Create
  *
  * Create DR Protection Group resource with a default value of `disassociateTrigger` property, e.g.

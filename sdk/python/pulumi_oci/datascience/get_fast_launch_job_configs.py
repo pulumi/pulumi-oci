@@ -91,7 +91,7 @@ def get_fast_launch_job_configs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_launch_job_configs = oci.DataScience.get_fast_launch_job_configs(compartment_id=var["compartment_id"])
+    test_fast_launch_job_configs = oci.DataScience.get_fast_launch_job_configs(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_fast_launch_job_configs_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_launch_job_configs = oci.DataScience.get_fast_launch_job_configs(compartment_id=var["compartment_id"])
+    test_fast_launch_job_configs = oci.DataScience.get_fast_launch_job_configs(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

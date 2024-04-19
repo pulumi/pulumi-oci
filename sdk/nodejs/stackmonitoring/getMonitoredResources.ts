@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResources = oci.StackMonitoring.getMonitoredResources({
- *     compartmentId: _var.compartment_id,
- *     name: _var.monitored_resource_name,
- *     status: _var.monitored_resource_status,
- *     workRequestId: oci_containerengine_work_request.test_work_request.id,
+ *     compartmentId: compartmentId,
+ *     name: monitoredResourceName,
+ *     status: monitoredResourceStatus,
+ *     workRequestId: testWorkRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,10 +99,10 @@ export interface GetMonitoredResourcesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResources = oci.StackMonitoring.getMonitoredResources({
- *     compartmentId: _var.compartment_id,
- *     name: _var.monitored_resource_name,
- *     status: _var.monitored_resource_status,
- *     workRequestId: oci_containerengine_work_request.test_work_request.id,
+ *     compartmentId: compartmentId,
+ *     name: monitoredResourceName,
+ *     status: monitoredResourceStatus,
+ *     workRequestId: testWorkRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

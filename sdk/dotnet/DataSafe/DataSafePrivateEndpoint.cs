@@ -25,23 +25,23 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDataSafePrivateEndpoint = new Oci.DataSafe.DataSafePrivateEndpoint("testDataSafePrivateEndpoint", new()
+    ///     var testDataSafePrivateEndpoint = new Oci.DataSafe.DataSafePrivateEndpoint("test_data_safe_private_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Data_safe_private_endpoint_display_name,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = dataSafePrivateEndpointDisplayName,
+    ///         SubnetId = testSubnet.Id,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Data_safe_private_endpoint_description,
+    ///         Description = dataSafePrivateEndpointDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         NsgIds = @var.Data_safe_private_endpoint_nsg_ids,
-    ///         PrivateEndpointIp = @var.Data_safe_private_endpoint_private_endpoint_ip,
+    ///         NsgIds = dataSafePrivateEndpointNsgIds,
+    ///         PrivateEndpointIp = dataSafePrivateEndpointPrivateEndpointIp,
     ///     });
     /// 
     /// });

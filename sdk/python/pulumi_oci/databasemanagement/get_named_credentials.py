@@ -146,11 +146,11 @@ def get_named_credentials(associated_resource: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credentials = oci.DatabaseManagement.get_named_credentials(compartment_id=var["compartment_id"],
-        associated_resource=var["named_credential_associated_resource"],
-        name=var["named_credential_name"],
-        scope=var["named_credential_scope"],
-        type=var["named_credential_type"])
+    test_named_credentials = oci.DatabaseManagement.get_named_credentials(compartment_id=compartment_id,
+        associated_resource=named_credential_associated_resource,
+        name=named_credential_name,
+        scope=named_credential_scope,
+        type=named_credential_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -202,11 +202,11 @@ def get_named_credentials_output(associated_resource: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credentials = oci.DatabaseManagement.get_named_credentials(compartment_id=var["compartment_id"],
-        associated_resource=var["named_credential_associated_resource"],
-        name=var["named_credential_name"],
-        scope=var["named_credential_scope"],
-        type=var["named_credential_type"])
+    test_named_credentials = oci.DatabaseManagement.get_named_credentials(compartment_id=compartment_id,
+        associated_resource=named_credential_associated_resource,
+        name=named_credential_name,
+        scope=named_credential_scope,
+        type=named_credential_type)
     ```
     <!--End PulumiCodeChooser -->
 

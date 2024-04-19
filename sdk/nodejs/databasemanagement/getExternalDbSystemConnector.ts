@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalDbSystemConnector = oci.DatabaseManagement.getExternalDbSystemConnector({
- *     externalDbSystemConnectorId: oci_database_management_external_db_system_connector.test_external_db_system_connector.id,
+ *     externalDbSystemConnectorId: testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,7 +125,7 @@ export interface GetExternalDbSystemConnectorResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalDbSystemConnector = oci.DatabaseManagement.getExternalDbSystemConnector({
- *     externalDbSystemConnectorId: oci_database_management_external_db_system_connector.test_external_db_system_connector.id,
+ *     externalDbSystemConnectorId: testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

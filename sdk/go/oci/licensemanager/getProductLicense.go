@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LicenseManager.GetProductLicense(ctx, &licensemanager.GetProductLicenseArgs{
-//				ProductLicenseId: oci_license_manager_product_license.Test_product_license.Id,
+//				ProductLicenseId: testProductLicenseOciLicenseManagerProductLicense.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

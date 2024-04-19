@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.GetAccessPolicy(ctx, &servicemesh.GetAccessPolicyArgs{
-//				AccessPolicyId: oci_service_mesh_access_policy.Test_access_policy.Id,
+//				AccessPolicyId: testAccessPolicyOciServiceMeshAccessPolicy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

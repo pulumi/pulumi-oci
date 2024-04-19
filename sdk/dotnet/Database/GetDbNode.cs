@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbNode = Oci.Database.GetDbNode.Invoke(new()
         ///     {
-        ///         DbNodeId = @var.Db_node_id,
+        ///         DbNodeId = dbNodeId,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbNode = Oci.Database.GetDbNode.Invoke(new()
         ///     {
-        ///         DbNodeId = @var.Db_node_id,
+        ///         DbNodeId = dbNodeId,
         ///     });
         /// 
         /// });

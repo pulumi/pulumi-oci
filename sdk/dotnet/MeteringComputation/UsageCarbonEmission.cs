@@ -25,24 +25,24 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUsageCarbonEmission = new Oci.MeteringComputation.UsageCarbonEmission("testUsageCarbonEmission", new()
+    ///     var testUsageCarbonEmission = new Oci.MeteringComputation.UsageCarbonEmission("test_usage_carbon_emission", new()
     ///     {
-    ///         TenantId = oci_metering_computation_tenant.Test_tenant.Id,
-    ///         TimeUsageEnded = @var.Usage_carbon_emission_time_usage_ended,
-    ///         TimeUsageStarted = @var.Usage_carbon_emission_time_usage_started,
-    ///         CompartmentDepth = @var.Usage_carbon_emission_compartment_depth,
-    ///         GroupBies = @var.Usage_carbon_emission_group_by,
+    ///         TenantId = testTenant.Id,
+    ///         TimeUsageEnded = usageCarbonEmissionTimeUsageEnded,
+    ///         TimeUsageStarted = usageCarbonEmissionTimeUsageStarted,
+    ///         CompartmentDepth = usageCarbonEmissionCompartmentDepth,
+    ///         GroupBies = usageCarbonEmissionGroupBy,
     ///         GroupByTags = new[]
     ///         {
     ///             new Oci.MeteringComputation.Inputs.UsageCarbonEmissionGroupByTagArgs
     ///             {
-    ///                 Key = @var.Usage_carbon_emission_group_by_tag_key,
-    ///                 Namespace = @var.Usage_carbon_emission_group_by_tag_namespace,
-    ///                 Value = @var.Usage_carbon_emission_group_by_tag_value,
+    ///                 Key = usageCarbonEmissionGroupByTagKey,
+    ///                 Namespace = usageCarbonEmissionGroupByTagNamespace,
+    ///                 Value = usageCarbonEmissionGroupByTagValue,
     ///             },
     ///         },
-    ///         IsAggregateByTime = @var.Usage_carbon_emission_is_aggregate_by_time,
-    ///         UsageCarbonEmissionFilter = @var.Usage_carbon_emission_usage_carbon_emission_filter,
+    ///         IsAggregateByTime = usageCarbonEmissionIsAggregateByTime,
+    ///         UsageCarbonEmissionFilter = usageCarbonEmissionUsageCarbonEmissionFilter,
     ///     });
     /// 
     /// });

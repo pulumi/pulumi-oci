@@ -29,7 +29,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {
         ///     var testNetworkFirewallPolicy = Oci.NetworkFirewall.GetNetworkFirewallPolicy.Invoke(new()
         ///     {
-        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {
         ///     var testNetworkFirewallPolicy = Oci.NetworkFirewall.GetNetworkFirewallPolicy.Invoke(new()
         ///     {
-        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.Id,
         ///     });
         /// 
         /// });

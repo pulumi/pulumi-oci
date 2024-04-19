@@ -17,17 +17,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTable = new oci.core.DrgRouteTable("testDrgRouteTable", {
- *     drgId: oci_core_drg.test_drg.id,
+ * const testDrgRouteTable = new oci.core.DrgRouteTable("test_drg_route_table", {
+ *     drgId: testDrg.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.drg_route_table_display_name,
+ *     displayName: drgRouteTableDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     importDrgRouteDistributionId: oci_core_drg_route_distribution.test_drg_route_distribution.id,
- *     isEcmpEnabled: _var.drg_route_table_is_ecmp_enabled,
+ *     importDrgRouteDistributionId: testDrgRouteDistribution.id,
+ *     isEcmpEnabled: drgRouteTableIsEcmpEnabled,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

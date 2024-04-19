@@ -143,9 +143,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncements = JmsFunctions.getAnnouncements(GetAnnouncementsArgs.builder()
-     *             .summaryContains(var_.announcement_summary_contains())
-     *             .timeEnd(var_.announcement_time_end())
-     *             .timeStart(var_.announcement_time_start())
+     *             .summaryContains(announcementSummaryContains)
+     *             .timeEnd(announcementTimeEnd)
+     *             .timeStart(announcementTimeStart)
      *             .build());
      * 
      *     }
@@ -187,9 +187,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncements = JmsFunctions.getAnnouncements(GetAnnouncementsArgs.builder()
-     *             .summaryContains(var_.announcement_summary_contains())
-     *             .timeEnd(var_.announcement_time_end())
-     *             .timeStart(var_.announcement_time_start())
+     *             .summaryContains(announcementSummaryContains)
+     *             .timeEnd(announcementTimeEnd)
+     *             .timeStart(announcementTimeStart)
      *             .build());
      * 
      *     }
@@ -231,9 +231,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncements = JmsFunctions.getAnnouncements(GetAnnouncementsArgs.builder()
-     *             .summaryContains(var_.announcement_summary_contains())
-     *             .timeEnd(var_.announcement_time_end())
-     *             .timeStart(var_.announcement_time_start())
+     *             .summaryContains(announcementSummaryContains)
+     *             .timeEnd(announcementTimeEnd)
+     *             .timeStart(announcementTimeStart)
      *             .build());
      * 
      *     }
@@ -275,9 +275,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncements = JmsFunctions.getAnnouncements(GetAnnouncementsArgs.builder()
-     *             .summaryContains(var_.announcement_summary_contains())
-     *             .timeEnd(var_.announcement_time_end())
-     *             .timeStart(var_.announcement_time_start())
+     *             .summaryContains(announcementSummaryContains)
+     *             .timeEnd(announcementTimeEnd)
+     *             .timeStart(announcementTimeStart)
      *             .build());
      * 
      *     }
@@ -319,9 +319,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncements = JmsFunctions.getAnnouncements(GetAnnouncementsArgs.builder()
-     *             .summaryContains(var_.announcement_summary_contains())
-     *             .timeEnd(var_.announcement_time_end())
-     *             .timeStart(var_.announcement_time_start())
+     *             .summaryContains(announcementSummaryContains)
+     *             .timeEnd(announcementTimeEnd)
+     *             .timeStart(announcementTimeStart)
      *             .build());
      * 
      *     }
@@ -363,9 +363,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncements = JmsFunctions.getAnnouncements(GetAnnouncementsArgs.builder()
-     *             .summaryContains(var_.announcement_summary_contains())
-     *             .timeEnd(var_.announcement_time_end())
-     *             .timeStart(var_.announcement_time_start())
+     *             .summaryContains(announcementSummaryContains)
+     *             .timeEnd(announcementTimeEnd)
+     *             .timeStart(announcementTimeStart)
      *             .build());
      * 
      *     }
@@ -407,7 +407,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleetOciJmsFleet.id())
      *             .build());
      * 
      *     }
@@ -449,7 +449,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleetOciJmsFleet.id())
      *             .build());
      * 
      *     }
@@ -491,7 +491,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleetOciJmsFleet.id())
      *             .build());
      * 
      *     }
@@ -533,7 +533,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleetOciJmsFleet.id())
      *             .build());
      * 
      *     }
@@ -575,7 +575,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -617,7 +617,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -659,7 +659,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -701,7 +701,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -743,9 +743,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .operation(var_.fleet_blocklist_operation())
+     *             .fleetId(testFleet.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .operation(fleetBlocklistOperation)
      *             .build());
      * 
      *     }
@@ -787,9 +787,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .operation(var_.fleet_blocklist_operation())
+     *             .fleetId(testFleet.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .operation(fleetBlocklistOperation)
      *             .build());
      * 
      *     }
@@ -831,9 +831,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .operation(var_.fleet_blocklist_operation())
+     *             .fleetId(testFleet.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .operation(fleetBlocklistOperation)
      *             .build());
      * 
      *     }
@@ -875,9 +875,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .operation(var_.fleet_blocklist_operation())
+     *             .fleetId(testFleet.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .operation(fleetBlocklistOperation)
      *             .build());
      * 
      *     }
@@ -919,8 +919,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
-     *             .cryptoAnalysisResultId(oci_apm_synthetics_result.test_result().id())
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .cryptoAnalysisResultId(testResult.id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -962,8 +962,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
-     *             .cryptoAnalysisResultId(oci_apm_synthetics_result.test_result().id())
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .cryptoAnalysisResultId(testResult.id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1005,8 +1005,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
-     *             .cryptoAnalysisResultId(oci_apm_synthetics_result.test_result().id())
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .cryptoAnalysisResultId(testResult.id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1048,8 +1048,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
-     *             .cryptoAnalysisResultId(oci_apm_synthetics_result.test_result().id())
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .cryptoAnalysisResultId(testResult.id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1091,11 +1091,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .aggregationMode(var_.fleet_crypto_analysis_result_aggregation_mode())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_crypto_analysis_result_time_end())
-     *             .timeStart(var_.fleet_crypto_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetCryptoAnalysisResultTimeEnd)
+     *             .timeStart(fleetCryptoAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -1137,11 +1137,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .aggregationMode(var_.fleet_crypto_analysis_result_aggregation_mode())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_crypto_analysis_result_time_end())
-     *             .timeStart(var_.fleet_crypto_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetCryptoAnalysisResultTimeEnd)
+     *             .timeStart(fleetCryptoAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -1183,11 +1183,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .aggregationMode(var_.fleet_crypto_analysis_result_aggregation_mode())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_crypto_analysis_result_time_end())
-     *             .timeStart(var_.fleet_crypto_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetCryptoAnalysisResultTimeEnd)
+     *             .timeStart(fleetCryptoAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -1229,11 +1229,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .aggregationMode(var_.fleet_crypto_analysis_result_aggregation_mode())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_crypto_analysis_result_time_end())
-     *             .timeStart(var_.fleet_crypto_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetCryptoAnalysisResultTimeEnd)
+     *             .timeStart(fleetCryptoAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -1275,7 +1275,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDiagnoses = JmsFunctions.getFleetDiagnoses(GetFleetDiagnosesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1317,7 +1317,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDiagnoses = JmsFunctions.getFleetDiagnoses(GetFleetDiagnosesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1359,7 +1359,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDiagnoses = JmsFunctions.getFleetDiagnoses(GetFleetDiagnosesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1401,7 +1401,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDiagnoses = JmsFunctions.getFleetDiagnoses(GetFleetDiagnosesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1443,8 +1443,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
-     *             .drsFileKey(var_.fleet_drs_file_drs_file_key())
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .drsFileKey(fleetDrsFileDrsFileKey)
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1486,8 +1486,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
-     *             .drsFileKey(var_.fleet_drs_file_drs_file_key())
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .drsFileKey(fleetDrsFileDrsFileKey)
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1529,8 +1529,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
-     *             .drsFileKey(var_.fleet_drs_file_drs_file_key())
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .drsFileKey(fleetDrsFileDrsFileKey)
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1572,8 +1572,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
-     *             .drsFileKey(var_.fleet_drs_file_drs_file_key())
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .drsFileKey(fleetDrsFileDrsFileKey)
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1615,7 +1615,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1657,7 +1657,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1699,7 +1699,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1741,7 +1741,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1783,7 +1783,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1825,7 +1825,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1867,7 +1867,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1909,7 +1909,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1951,7 +1951,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -1993,7 +1993,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -2035,7 +2035,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -2077,7 +2077,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .fleetId(testFleet.id())
      *             .build());
      * 
      *     }
@@ -2119,8 +2119,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .javaMigrationAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(testFleet.id())
+     *             .javaMigrationAnalysisResultId(testResult.id())
      *             .build());
      * 
      *     }
@@ -2162,8 +2162,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .javaMigrationAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(testFleet.id())
+     *             .javaMigrationAnalysisResultId(testResult.id())
      *             .build());
      * 
      *     }
@@ -2205,8 +2205,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .javaMigrationAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(testFleet.id())
+     *             .javaMigrationAnalysisResultId(testResult.id())
      *             .build());
      * 
      *     }
@@ -2248,8 +2248,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .javaMigrationAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(testFleet.id())
+     *             .javaMigrationAnalysisResultId(testResult.id())
      *             .build());
      * 
      *     }
@@ -2291,10 +2291,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_java_migration_analysis_result_time_end())
-     *             .timeStart(var_.fleet_java_migration_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetJavaMigrationAnalysisResultTimeEnd)
+     *             .timeStart(fleetJavaMigrationAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -2336,10 +2336,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_java_migration_analysis_result_time_end())
-     *             .timeStart(var_.fleet_java_migration_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetJavaMigrationAnalysisResultTimeEnd)
+     *             .timeStart(fleetJavaMigrationAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -2381,10 +2381,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_java_migration_analysis_result_time_end())
-     *             .timeStart(var_.fleet_java_migration_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetJavaMigrationAnalysisResultTimeEnd)
+     *             .timeStart(fleetJavaMigrationAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -2426,10 +2426,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_java_migration_analysis_result_time_end())
-     *             .timeStart(var_.fleet_java_migration_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetJavaMigrationAnalysisResultTimeEnd)
+     *             .timeStart(fleetJavaMigrationAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -2471,8 +2471,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .performanceTuningAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(testFleet.id())
+     *             .performanceTuningAnalysisResultId(testResult.id())
      *             .build());
      * 
      *     }
@@ -2514,8 +2514,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .performanceTuningAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(testFleet.id())
+     *             .performanceTuningAnalysisResultId(testResult.id())
      *             .build());
      * 
      *     }
@@ -2557,8 +2557,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .performanceTuningAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(testFleet.id())
+     *             .performanceTuningAnalysisResultId(testResult.id())
      *             .build());
      * 
      *     }
@@ -2600,8 +2600,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .performanceTuningAnalysisResultId(oci_apm_synthetics_result.test_result().id())
+     *             .fleetId(testFleet.id())
+     *             .performanceTuningAnalysisResultId(testResult.id())
      *             .build());
      * 
      *     }
@@ -2643,11 +2643,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_performance_tuning_analysis_result_time_end())
-     *             .timeStart(var_.fleet_performance_tuning_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
+     *             .timeStart(fleetPerformanceTuningAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -2689,11 +2689,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_performance_tuning_analysis_result_time_end())
-     *             .timeStart(var_.fleet_performance_tuning_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
+     *             .timeStart(fleetPerformanceTuningAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -2735,11 +2735,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_performance_tuning_analysis_result_time_end())
-     *             .timeStart(var_.fleet_performance_tuning_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
+     *             .timeStart(fleetPerformanceTuningAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -2781,11 +2781,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .timeEnd(var_.fleet_performance_tuning_analysis_result_time_end())
-     *             .timeStart(var_.fleet_performance_tuning_analysis_result_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetPerformanceTuningAnalysisResultTimeEnd)
+     *             .timeStart(fleetPerformanceTuningAnalysisResultTimeStart)
      *             .build());
      * 
      *     }
@@ -2828,11 +2828,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fleet_display_name())
-     *             .displayNameContains(var_.fleet_display_name_contains())
-     *             .id(var_.fleet_id())
-     *             .state(var_.fleet_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fleetDisplayName)
+     *             .displayNameContains(fleetDisplayNameContains)
+     *             .id(fleetId)
+     *             .state(fleetState)
      *             .build());
      * 
      *     }
@@ -2875,11 +2875,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fleet_display_name())
-     *             .displayNameContains(var_.fleet_display_name_contains())
-     *             .id(var_.fleet_id())
-     *             .state(var_.fleet_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fleetDisplayName)
+     *             .displayNameContains(fleetDisplayNameContains)
+     *             .id(fleetId)
+     *             .state(fleetState)
      *             .build());
      * 
      *     }
@@ -2922,11 +2922,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fleet_display_name())
-     *             .displayNameContains(var_.fleet_display_name_contains())
-     *             .id(var_.fleet_id())
-     *             .state(var_.fleet_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fleetDisplayName)
+     *             .displayNameContains(fleetDisplayNameContains)
+     *             .id(fleetId)
+     *             .state(fleetState)
      *             .build());
      * 
      *     }
@@ -2969,11 +2969,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fleet_display_name())
-     *             .displayNameContains(var_.fleet_display_name_contains())
-     *             .id(var_.fleet_id())
-     *             .state(var_.fleet_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fleetDisplayName)
+     *             .displayNameContains(fleetDisplayNameContains)
+     *             .id(fleetId)
+     *             .state(fleetState)
      *             .build());
      * 
      *     }
@@ -3016,11 +3016,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fleet_display_name())
-     *             .displayNameContains(var_.fleet_display_name_contains())
-     *             .id(var_.fleet_id())
-     *             .state(var_.fleet_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fleetDisplayName)
+     *             .displayNameContains(fleetDisplayNameContains)
+     *             .id(fleetId)
+     *             .state(fleetState)
      *             .build());
      * 
      *     }
@@ -3063,11 +3063,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fleet_display_name())
-     *             .displayNameContains(var_.fleet_display_name_contains())
-     *             .id(var_.fleet_id())
-     *             .state(var_.fleet_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fleetDisplayName)
+     *             .displayNameContains(fleetDisplayNameContains)
+     *             .id(fleetId)
+     *             .state(fleetState)
      *             .build());
      * 
      *     }
@@ -3109,18 +3109,18 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .installationPath(var_.fleet_installation_site_installation_path())
-     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
-     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
-     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
-     *             .jreVersion(var_.fleet_installation_site_jre_version())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .osFamilies(var_.fleet_installation_site_os_family())
-     *             .pathContains(var_.fleet_installation_site_path_contains())
-     *             .timeEnd(var_.fleet_installation_site_time_end())
-     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .installationPath(fleetInstallationSiteInstallationPath)
+     *             .jreDistribution(fleetInstallationSiteJreDistribution)
+     *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
+     *             .jreVendor(fleetInstallationSiteJreVendor)
+     *             .jreVersion(fleetInstallationSiteJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .osFamilies(fleetInstallationSiteOsFamily)
+     *             .pathContains(fleetInstallationSitePathContains)
+     *             .timeEnd(fleetInstallationSiteTimeEnd)
+     *             .timeStart(fleetInstallationSiteTimeStart)
      *             .build());
      * 
      *     }
@@ -3162,18 +3162,18 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .installationPath(var_.fleet_installation_site_installation_path())
-     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
-     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
-     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
-     *             .jreVersion(var_.fleet_installation_site_jre_version())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .osFamilies(var_.fleet_installation_site_os_family())
-     *             .pathContains(var_.fleet_installation_site_path_contains())
-     *             .timeEnd(var_.fleet_installation_site_time_end())
-     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .installationPath(fleetInstallationSiteInstallationPath)
+     *             .jreDistribution(fleetInstallationSiteJreDistribution)
+     *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
+     *             .jreVendor(fleetInstallationSiteJreVendor)
+     *             .jreVersion(fleetInstallationSiteJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .osFamilies(fleetInstallationSiteOsFamily)
+     *             .pathContains(fleetInstallationSitePathContains)
+     *             .timeEnd(fleetInstallationSiteTimeEnd)
+     *             .timeStart(fleetInstallationSiteTimeStart)
      *             .build());
      * 
      *     }
@@ -3215,18 +3215,18 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .installationPath(var_.fleet_installation_site_installation_path())
-     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
-     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
-     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
-     *             .jreVersion(var_.fleet_installation_site_jre_version())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .osFamilies(var_.fleet_installation_site_os_family())
-     *             .pathContains(var_.fleet_installation_site_path_contains())
-     *             .timeEnd(var_.fleet_installation_site_time_end())
-     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .installationPath(fleetInstallationSiteInstallationPath)
+     *             .jreDistribution(fleetInstallationSiteJreDistribution)
+     *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
+     *             .jreVendor(fleetInstallationSiteJreVendor)
+     *             .jreVersion(fleetInstallationSiteJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .osFamilies(fleetInstallationSiteOsFamily)
+     *             .pathContains(fleetInstallationSitePathContains)
+     *             .timeEnd(fleetInstallationSiteTimeEnd)
+     *             .timeStart(fleetInstallationSiteTimeStart)
      *             .build());
      * 
      *     }
@@ -3268,18 +3268,18 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .installationPath(var_.fleet_installation_site_installation_path())
-     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
-     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
-     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
-     *             .jreVersion(var_.fleet_installation_site_jre_version())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .osFamilies(var_.fleet_installation_site_os_family())
-     *             .pathContains(var_.fleet_installation_site_path_contains())
-     *             .timeEnd(var_.fleet_installation_site_time_end())
-     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .installationPath(fleetInstallationSiteInstallationPath)
+     *             .jreDistribution(fleetInstallationSiteJreDistribution)
+     *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
+     *             .jreVendor(fleetInstallationSiteJreVendor)
+     *             .jreVersion(fleetInstallationSiteJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .osFamilies(fleetInstallationSiteOsFamily)
+     *             .pathContains(fleetInstallationSitePathContains)
+     *             .timeEnd(fleetInstallationSiteTimeEnd)
+     *             .timeStart(fleetInstallationSiteTimeStart)
      *             .build());
      * 
      *     }
@@ -3321,18 +3321,18 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .installationPath(var_.fleet_installation_site_installation_path())
-     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
-     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
-     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
-     *             .jreVersion(var_.fleet_installation_site_jre_version())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .osFamilies(var_.fleet_installation_site_os_family())
-     *             .pathContains(var_.fleet_installation_site_path_contains())
-     *             .timeEnd(var_.fleet_installation_site_time_end())
-     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .installationPath(fleetInstallationSiteInstallationPath)
+     *             .jreDistribution(fleetInstallationSiteJreDistribution)
+     *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
+     *             .jreVendor(fleetInstallationSiteJreVendor)
+     *             .jreVersion(fleetInstallationSiteJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .osFamilies(fleetInstallationSiteOsFamily)
+     *             .pathContains(fleetInstallationSitePathContains)
+     *             .timeEnd(fleetInstallationSiteTimeEnd)
+     *             .timeStart(fleetInstallationSiteTimeStart)
      *             .build());
      * 
      *     }
@@ -3374,18 +3374,18 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .installationPath(var_.fleet_installation_site_installation_path())
-     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
-     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
-     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
-     *             .jreVersion(var_.fleet_installation_site_jre_version())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .osFamilies(var_.fleet_installation_site_os_family())
-     *             .pathContains(var_.fleet_installation_site_path_contains())
-     *             .timeEnd(var_.fleet_installation_site_time_end())
-     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .installationPath(fleetInstallationSiteInstallationPath)
+     *             .jreDistribution(fleetInstallationSiteJreDistribution)
+     *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
+     *             .jreVendor(fleetInstallationSiteJreVendor)
+     *             .jreVersion(fleetInstallationSiteJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .osFamilies(fleetInstallationSiteOsFamily)
+     *             .pathContains(fleetInstallationSitePathContains)
+     *             .timeEnd(fleetInstallationSiteTimeEnd)
+     *             .timeStart(fleetInstallationSiteTimeStart)
      *             .build());
      * 
      *     }
@@ -3427,18 +3427,18 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .installationPath(var_.fleet_installation_site_installation_path())
-     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
-     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
-     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
-     *             .jreVersion(var_.fleet_installation_site_jre_version())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .osFamilies(var_.fleet_installation_site_os_family())
-     *             .pathContains(var_.fleet_installation_site_path_contains())
-     *             .timeEnd(var_.fleet_installation_site_time_end())
-     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .installationPath(fleetInstallationSiteInstallationPath)
+     *             .jreDistribution(fleetInstallationSiteJreDistribution)
+     *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
+     *             .jreVendor(fleetInstallationSiteJreVendor)
+     *             .jreVersion(fleetInstallationSiteJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .osFamilies(fleetInstallationSiteOsFamily)
+     *             .pathContains(fleetInstallationSitePathContains)
+     *             .timeEnd(fleetInstallationSiteTimeEnd)
+     *             .timeStart(fleetInstallationSiteTimeStart)
      *             .build());
      * 
      *     }
@@ -3480,18 +3480,18 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
-     *             .fleetId(oci_jms_fleet.test_fleet().id())
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .installationPath(var_.fleet_installation_site_installation_path())
-     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
-     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
-     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
-     *             .jreVersion(var_.fleet_installation_site_jre_version())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .osFamilies(var_.fleet_installation_site_os_family())
-     *             .pathContains(var_.fleet_installation_site_path_contains())
-     *             .timeEnd(var_.fleet_installation_site_time_end())
-     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .installationPath(fleetInstallationSiteInstallationPath)
+     *             .jreDistribution(fleetInstallationSiteJreDistribution)
+     *             .jreSecurityStatus(fleetInstallationSiteJreSecurityStatus)
+     *             .jreVendor(fleetInstallationSiteJreVendor)
+     *             .jreVersion(fleetInstallationSiteJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .osFamilies(fleetInstallationSiteOsFamily)
+     *             .pathContains(fleetInstallationSitePathContains)
+     *             .timeEnd(fleetInstallationSiteTimeEnd)
+     *             .timeStart(fleetInstallationSiteTimeStart)
      *             .build());
      * 
      *     }
@@ -3535,14 +3535,14 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadRecords = JmsFunctions.getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .architecture(var_.java_download_record_architecture())
-     *             .familyVersion(var_.java_download_record_family_version())
-     *             .osFamily(var_.java_download_record_os_family())
-     *             .packageTypeDetail(var_.java_download_record_package_type_detail())
-     *             .releaseVersion(var_.java_download_record_release_version())
-     *             .timeEnd(var_.java_download_record_time_end())
-     *             .timeStart(var_.java_download_record_time_start())
+     *             .compartmentId(compartmentId)
+     *             .architecture(javaDownloadRecordArchitecture)
+     *             .familyVersion(javaDownloadRecordFamilyVersion)
+     *             .osFamily(javaDownloadRecordOsFamily)
+     *             .packageTypeDetail(javaDownloadRecordPackageTypeDetail)
+     *             .releaseVersion(javaDownloadRecordReleaseVersion)
+     *             .timeEnd(javaDownloadRecordTimeEnd)
+     *             .timeStart(javaDownloadRecordTimeStart)
      *             .build());
      * 
      *     }
@@ -3586,14 +3586,14 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadRecords = JmsFunctions.getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .architecture(var_.java_download_record_architecture())
-     *             .familyVersion(var_.java_download_record_family_version())
-     *             .osFamily(var_.java_download_record_os_family())
-     *             .packageTypeDetail(var_.java_download_record_package_type_detail())
-     *             .releaseVersion(var_.java_download_record_release_version())
-     *             .timeEnd(var_.java_download_record_time_end())
-     *             .timeStart(var_.java_download_record_time_start())
+     *             .compartmentId(compartmentId)
+     *             .architecture(javaDownloadRecordArchitecture)
+     *             .familyVersion(javaDownloadRecordFamilyVersion)
+     *             .osFamily(javaDownloadRecordOsFamily)
+     *             .packageTypeDetail(javaDownloadRecordPackageTypeDetail)
+     *             .releaseVersion(javaDownloadRecordReleaseVersion)
+     *             .timeEnd(javaDownloadRecordTimeEnd)
+     *             .timeStart(javaDownloadRecordTimeStart)
      *             .build());
      * 
      *     }
@@ -3637,14 +3637,14 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadRecords = JmsFunctions.getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .architecture(var_.java_download_record_architecture())
-     *             .familyVersion(var_.java_download_record_family_version())
-     *             .osFamily(var_.java_download_record_os_family())
-     *             .packageTypeDetail(var_.java_download_record_package_type_detail())
-     *             .releaseVersion(var_.java_download_record_release_version())
-     *             .timeEnd(var_.java_download_record_time_end())
-     *             .timeStart(var_.java_download_record_time_start())
+     *             .compartmentId(compartmentId)
+     *             .architecture(javaDownloadRecordArchitecture)
+     *             .familyVersion(javaDownloadRecordFamilyVersion)
+     *             .osFamily(javaDownloadRecordOsFamily)
+     *             .packageTypeDetail(javaDownloadRecordPackageTypeDetail)
+     *             .releaseVersion(javaDownloadRecordReleaseVersion)
+     *             .timeEnd(javaDownloadRecordTimeEnd)
+     *             .timeStart(javaDownloadRecordTimeStart)
      *             .build());
      * 
      *     }
@@ -3688,14 +3688,14 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadRecords = JmsFunctions.getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .architecture(var_.java_download_record_architecture())
-     *             .familyVersion(var_.java_download_record_family_version())
-     *             .osFamily(var_.java_download_record_os_family())
-     *             .packageTypeDetail(var_.java_download_record_package_type_detail())
-     *             .releaseVersion(var_.java_download_record_release_version())
-     *             .timeEnd(var_.java_download_record_time_end())
-     *             .timeStart(var_.java_download_record_time_start())
+     *             .compartmentId(compartmentId)
+     *             .architecture(javaDownloadRecordArchitecture)
+     *             .familyVersion(javaDownloadRecordFamilyVersion)
+     *             .osFamily(javaDownloadRecordOsFamily)
+     *             .packageTypeDetail(javaDownloadRecordPackageTypeDetail)
+     *             .releaseVersion(javaDownloadRecordReleaseVersion)
+     *             .timeEnd(javaDownloadRecordTimeEnd)
+     *             .timeStart(javaDownloadRecordTimeStart)
      *             .build());
      * 
      *     }
@@ -3737,7 +3737,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.id())
      *             .build());
      * 
      *     }
@@ -3779,7 +3779,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.id())
      *             .build());
      * 
      *     }
@@ -3821,7 +3821,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.id())
      *             .build());
      * 
      *     }
@@ -3863,7 +3863,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.id())
      *             .build());
      * 
      *     }
@@ -3905,7 +3905,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .javaDownloadReportId(testJavaDownloadReport.id())
      *             .build());
      * 
      *     }
@@ -3947,7 +3947,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .javaDownloadReportId(testJavaDownloadReport.id())
      *             .build());
      * 
      *     }
@@ -3989,7 +3989,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .javaDownloadReportId(testJavaDownloadReport.id())
      *             .build());
      * 
      *     }
@@ -4031,7 +4031,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .javaDownloadReportId(testJavaDownloadReport.id())
      *             .build());
      * 
      *     }
@@ -4073,10 +4073,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.java_download_report_display_name())
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
-     *             .state(var_.java_download_report_state())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(javaDownloadReportDisplayName)
+     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .state(javaDownloadReportState)
      *             .build());
      * 
      *     }
@@ -4118,10 +4118,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.java_download_report_display_name())
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
-     *             .state(var_.java_download_report_state())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(javaDownloadReportDisplayName)
+     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .state(javaDownloadReportState)
      *             .build());
      * 
      *     }
@@ -4163,10 +4163,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.java_download_report_display_name())
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
-     *             .state(var_.java_download_report_state())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(javaDownloadReportDisplayName)
+     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .state(javaDownloadReportState)
      *             .build());
      * 
      *     }
@@ -4208,10 +4208,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.java_download_report_display_name())
-     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
-     *             .state(var_.java_download_report_state())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(javaDownloadReportDisplayName)
+     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .state(javaDownloadReportState)
      *             .build());
      * 
      *     }
@@ -4253,7 +4253,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
-     *             .javaDownloadTokenId(oci_jms_java_downloads_java_download_token.test_java_download_token().id())
+     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id())
      *             .build());
      * 
      *     }
@@ -4295,7 +4295,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
-     *             .javaDownloadTokenId(oci_jms_java_downloads_java_download_token.test_java_download_token().id())
+     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id())
      *             .build());
      * 
      *     }
@@ -4337,7 +4337,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
-     *             .javaDownloadTokenId(oci_jms_java_downloads_java_download_token.test_java_download_token().id())
+     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id())
      *             .build());
      * 
      *     }
@@ -4379,7 +4379,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
-     *             .javaDownloadTokenId(oci_jms_java_downloads_java_download_token.test_java_download_token().id())
+     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id())
      *             .build());
      * 
      *     }
@@ -4421,13 +4421,13 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadTokens = JmsFunctions.getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.java_download_token_display_name())
-     *             .familyVersion(var_.java_download_token_family_version())
-     *             .id(var_.java_download_token_id())
-     *             .searchByUser(var_.java_download_token_search_by_user())
-     *             .state(var_.java_download_token_state())
-     *             .value(var_.java_download_token_value())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(javaDownloadTokenDisplayName)
+     *             .familyVersion(javaDownloadTokenFamilyVersion)
+     *             .id(javaDownloadTokenId)
+     *             .searchByUser(javaDownloadTokenSearchByUser)
+     *             .state(javaDownloadTokenState)
+     *             .value(javaDownloadTokenValue)
      *             .build());
      * 
      *     }
@@ -4469,13 +4469,13 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadTokens = JmsFunctions.getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.java_download_token_display_name())
-     *             .familyVersion(var_.java_download_token_family_version())
-     *             .id(var_.java_download_token_id())
-     *             .searchByUser(var_.java_download_token_search_by_user())
-     *             .state(var_.java_download_token_state())
-     *             .value(var_.java_download_token_value())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(javaDownloadTokenDisplayName)
+     *             .familyVersion(javaDownloadTokenFamilyVersion)
+     *             .id(javaDownloadTokenId)
+     *             .searchByUser(javaDownloadTokenSearchByUser)
+     *             .state(javaDownloadTokenState)
+     *             .value(javaDownloadTokenValue)
      *             .build());
      * 
      *     }
@@ -4517,13 +4517,13 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadTokens = JmsFunctions.getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.java_download_token_display_name())
-     *             .familyVersion(var_.java_download_token_family_version())
-     *             .id(var_.java_download_token_id())
-     *             .searchByUser(var_.java_download_token_search_by_user())
-     *             .state(var_.java_download_token_state())
-     *             .value(var_.java_download_token_value())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(javaDownloadTokenDisplayName)
+     *             .familyVersion(javaDownloadTokenFamilyVersion)
+     *             .id(javaDownloadTokenId)
+     *             .searchByUser(javaDownloadTokenSearchByUser)
+     *             .state(javaDownloadTokenState)
+     *             .value(javaDownloadTokenValue)
      *             .build());
      * 
      *     }
@@ -4565,13 +4565,13 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadTokens = JmsFunctions.getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.java_download_token_display_name())
-     *             .familyVersion(var_.java_download_token_family_version())
-     *             .id(var_.java_download_token_id())
-     *             .searchByUser(var_.java_download_token_search_by_user())
-     *             .state(var_.java_download_token_state())
-     *             .value(var_.java_download_token_value())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(javaDownloadTokenDisplayName)
+     *             .familyVersion(javaDownloadTokenFamilyVersion)
+     *             .id(javaDownloadTokenId)
+     *             .searchByUser(javaDownloadTokenSearchByUser)
+     *             .state(javaDownloadTokenState)
+     *             .value(javaDownloadTokenValue)
      *             .build());
      * 
      *     }
@@ -4613,7 +4613,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicense = JmsFunctions.getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs.builder()
-     *             .licenseType(var_.java_license_license_type())
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -4655,7 +4655,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicense = JmsFunctions.getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs.builder()
-     *             .licenseType(var_.java_license_license_type())
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -4697,7 +4697,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicense = JmsFunctions.getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs.builder()
-     *             .licenseType(var_.java_license_license_type())
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -4739,7 +4739,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicense = JmsFunctions.getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs.builder()
-     *             .licenseType(var_.java_license_license_type())
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -4781,7 +4781,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
-     *             .javaLicenseAcceptanceRecordId(oci_jms_java_downloads_java_license_acceptance_record.test_java_license_acceptance_record().id())
+     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.id())
      *             .build());
      * 
      *     }
@@ -4823,7 +4823,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
-     *             .javaLicenseAcceptanceRecordId(oci_jms_java_downloads_java_license_acceptance_record.test_java_license_acceptance_record().id())
+     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.id())
      *             .build());
      * 
      *     }
@@ -4865,7 +4865,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
-     *             .javaLicenseAcceptanceRecordId(oci_jms_java_downloads_java_license_acceptance_record.test_java_license_acceptance_record().id())
+     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.id())
      *             .build());
      * 
      *     }
@@ -4907,7 +4907,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
-     *             .javaLicenseAcceptanceRecordId(oci_jms_java_downloads_java_license_acceptance_record.test_java_license_acceptance_record().id())
+     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.id())
      *             .build());
      * 
      *     }
@@ -4949,11 +4949,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecords = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .id(var_.java_license_acceptance_record_id())
-     *             .licenseType(var_.java_license_acceptance_record_license_type())
-     *             .searchByUser(var_.java_license_acceptance_record_search_by_user())
-     *             .status(var_.java_license_acceptance_record_status())
+     *             .compartmentId(tenancyOcid)
+     *             .id(javaLicenseAcceptanceRecordId)
+     *             .licenseType(javaLicenseAcceptanceRecordLicenseType)
+     *             .searchByUser(javaLicenseAcceptanceRecordSearchByUser)
+     *             .status(javaLicenseAcceptanceRecordStatus)
      *             .build());
      * 
      *     }
@@ -4995,11 +4995,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecords = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .id(var_.java_license_acceptance_record_id())
-     *             .licenseType(var_.java_license_acceptance_record_license_type())
-     *             .searchByUser(var_.java_license_acceptance_record_search_by_user())
-     *             .status(var_.java_license_acceptance_record_status())
+     *             .compartmentId(tenancyOcid)
+     *             .id(javaLicenseAcceptanceRecordId)
+     *             .licenseType(javaLicenseAcceptanceRecordLicenseType)
+     *             .searchByUser(javaLicenseAcceptanceRecordSearchByUser)
+     *             .status(javaLicenseAcceptanceRecordStatus)
      *             .build());
      * 
      *     }
@@ -5041,11 +5041,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecords = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .id(var_.java_license_acceptance_record_id())
-     *             .licenseType(var_.java_license_acceptance_record_license_type())
-     *             .searchByUser(var_.java_license_acceptance_record_search_by_user())
-     *             .status(var_.java_license_acceptance_record_status())
+     *             .compartmentId(tenancyOcid)
+     *             .id(javaLicenseAcceptanceRecordId)
+     *             .licenseType(javaLicenseAcceptanceRecordLicenseType)
+     *             .searchByUser(javaLicenseAcceptanceRecordSearchByUser)
+     *             .status(javaLicenseAcceptanceRecordStatus)
      *             .build());
      * 
      *     }
@@ -5087,11 +5087,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecords = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .id(var_.java_license_acceptance_record_id())
-     *             .licenseType(var_.java_license_acceptance_record_license_type())
-     *             .searchByUser(var_.java_license_acceptance_record_search_by_user())
-     *             .status(var_.java_license_acceptance_record_status())
+     *             .compartmentId(tenancyOcid)
+     *             .id(javaLicenseAcceptanceRecordId)
+     *             .licenseType(javaLicenseAcceptanceRecordLicenseType)
+     *             .searchByUser(javaLicenseAcceptanceRecordSearchByUser)
+     *             .status(javaLicenseAcceptanceRecordStatus)
      *             .build());
      * 
      *     }
@@ -5133,8 +5133,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
-     *             .displayName(var_.java_license_display_name())
-     *             .licenseType(var_.java_license_license_type())
+     *             .displayName(javaLicenseDisplayName)
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -5176,8 +5176,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
-     *             .displayName(var_.java_license_display_name())
-     *             .licenseType(var_.java_license_license_type())
+     *             .displayName(javaLicenseDisplayName)
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -5219,8 +5219,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
-     *             .displayName(var_.java_license_display_name())
-     *             .licenseType(var_.java_license_license_type())
+     *             .displayName(javaLicenseDisplayName)
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -5262,8 +5262,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
-     *             .displayName(var_.java_license_display_name())
-     *             .licenseType(var_.java_license_license_type())
+     *             .displayName(javaLicenseDisplayName)
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -5305,8 +5305,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
-     *             .displayName(var_.java_license_display_name())
-     *             .licenseType(var_.java_license_license_type())
+     *             .displayName(javaLicenseDisplayName)
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -5348,8 +5348,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
-     *             .displayName(var_.java_license_display_name())
-     *             .licenseType(var_.java_license_license_type())
+     *             .displayName(javaLicenseDisplayName)
+     *             .licenseType(javaLicenseLicenseType)
      *             .build());
      * 
      *     }
@@ -5392,9 +5392,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
-     *             .displayName(var_.java_family_display_name())
-     *             .familyVersion(var_.java_family_family_version())
-     *             .isSupportedVersion(var_.java_family_is_supported_version())
+     *             .displayName(javaFamilyDisplayName)
+     *             .familyVersion(javaFamilyFamilyVersion)
+     *             .isSupportedVersion(javaFamilyIsSupportedVersion)
      *             .build());
      * 
      *     }
@@ -5437,9 +5437,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
-     *             .displayName(var_.java_family_display_name())
-     *             .familyVersion(var_.java_family_family_version())
-     *             .isSupportedVersion(var_.java_family_is_supported_version())
+     *             .displayName(javaFamilyDisplayName)
+     *             .familyVersion(javaFamilyFamilyVersion)
+     *             .isSupportedVersion(javaFamilyIsSupportedVersion)
      *             .build());
      * 
      *     }
@@ -5482,9 +5482,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
-     *             .displayName(var_.java_family_display_name())
-     *             .familyVersion(var_.java_family_family_version())
-     *             .isSupportedVersion(var_.java_family_is_supported_version())
+     *             .displayName(javaFamilyDisplayName)
+     *             .familyVersion(javaFamilyFamilyVersion)
+     *             .isSupportedVersion(javaFamilyIsSupportedVersion)
      *             .build());
      * 
      *     }
@@ -5527,9 +5527,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
-     *             .displayName(var_.java_family_display_name())
-     *             .familyVersion(var_.java_family_family_version())
-     *             .isSupportedVersion(var_.java_family_is_supported_version())
+     *             .displayName(javaFamilyDisplayName)
+     *             .familyVersion(javaFamilyFamilyVersion)
+     *             .isSupportedVersion(javaFamilyIsSupportedVersion)
      *             .build());
      * 
      *     }
@@ -5572,9 +5572,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
-     *             .displayName(var_.java_family_display_name())
-     *             .familyVersion(var_.java_family_family_version())
-     *             .isSupportedVersion(var_.java_family_is_supported_version())
+     *             .displayName(javaFamilyDisplayName)
+     *             .familyVersion(javaFamilyFamilyVersion)
+     *             .isSupportedVersion(javaFamilyIsSupportedVersion)
      *             .build());
      * 
      *     }
@@ -5617,9 +5617,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
-     *             .displayName(var_.java_family_display_name())
-     *             .familyVersion(var_.java_family_family_version())
-     *             .isSupportedVersion(var_.java_family_is_supported_version())
+     *             .displayName(javaFamilyDisplayName)
+     *             .familyVersion(javaFamilyFamilyVersion)
+     *             .isSupportedVersion(javaFamilyIsSupportedVersion)
      *             .build());
      * 
      *     }
@@ -5661,7 +5661,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamily = JmsFunctions.getJavaFamily(GetJavaFamilyArgs.builder()
-     *             .familyVersion(var_.java_family_family_version())
+     *             .familyVersion(javaFamilyFamilyVersion)
      *             .build());
      * 
      *     }
@@ -5703,7 +5703,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamily = JmsFunctions.getJavaFamily(GetJavaFamilyArgs.builder()
-     *             .familyVersion(var_.java_family_family_version())
+     *             .familyVersion(javaFamilyFamilyVersion)
      *             .build());
      * 
      *     }
@@ -5745,7 +5745,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamily = JmsFunctions.getJavaFamily(GetJavaFamilyArgs.builder()
-     *             .familyVersion(var_.java_family_family_version())
+     *             .familyVersion(javaFamilyFamilyVersion)
      *             .build());
      * 
      *     }
@@ -5787,7 +5787,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaFamily = JmsFunctions.getJavaFamily(GetJavaFamilyArgs.builder()
-     *             .familyVersion(var_.java_family_family_version())
+     *             .familyVersion(javaFamilyFamilyVersion)
      *             .build());
      * 
      *     }
@@ -5829,7 +5829,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaRelease = JmsFunctions.getJavaRelease(GetJavaReleaseArgs.builder()
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -5871,7 +5871,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaRelease = JmsFunctions.getJavaRelease(GetJavaReleaseArgs.builder()
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -5913,7 +5913,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaRelease = JmsFunctions.getJavaRelease(GetJavaReleaseArgs.builder()
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -5955,7 +5955,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaRelease = JmsFunctions.getJavaRelease(GetJavaReleaseArgs.builder()
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -5997,11 +5997,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
-     *             .familyVersion(var_.java_release_family_version())
-     *             .jreSecurityStatus(var_.java_release_jre_security_status())
-     *             .licenseType(var_.java_release_license_type())
-     *             .releaseType(var_.java_release_release_type())
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .familyVersion(javaReleaseFamilyVersion)
+     *             .jreSecurityStatus(javaReleaseJreSecurityStatus)
+     *             .licenseType(javaReleaseLicenseType)
+     *             .releaseType(javaReleaseReleaseType)
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -6043,11 +6043,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
-     *             .familyVersion(var_.java_release_family_version())
-     *             .jreSecurityStatus(var_.java_release_jre_security_status())
-     *             .licenseType(var_.java_release_license_type())
-     *             .releaseType(var_.java_release_release_type())
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .familyVersion(javaReleaseFamilyVersion)
+     *             .jreSecurityStatus(javaReleaseJreSecurityStatus)
+     *             .licenseType(javaReleaseLicenseType)
+     *             .releaseType(javaReleaseReleaseType)
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -6089,11 +6089,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
-     *             .familyVersion(var_.java_release_family_version())
-     *             .jreSecurityStatus(var_.java_release_jre_security_status())
-     *             .licenseType(var_.java_release_license_type())
-     *             .releaseType(var_.java_release_release_type())
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .familyVersion(javaReleaseFamilyVersion)
+     *             .jreSecurityStatus(javaReleaseJreSecurityStatus)
+     *             .licenseType(javaReleaseLicenseType)
+     *             .releaseType(javaReleaseReleaseType)
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -6135,11 +6135,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
-     *             .familyVersion(var_.java_release_family_version())
-     *             .jreSecurityStatus(var_.java_release_jre_security_status())
-     *             .licenseType(var_.java_release_license_type())
-     *             .releaseType(var_.java_release_release_type())
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .familyVersion(javaReleaseFamilyVersion)
+     *             .jreSecurityStatus(javaReleaseJreSecurityStatus)
+     *             .licenseType(javaReleaseLicenseType)
+     *             .releaseType(javaReleaseReleaseType)
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -6181,11 +6181,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
-     *             .familyVersion(var_.java_release_family_version())
-     *             .jreSecurityStatus(var_.java_release_jre_security_status())
-     *             .licenseType(var_.java_release_license_type())
-     *             .releaseType(var_.java_release_release_type())
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .familyVersion(javaReleaseFamilyVersion)
+     *             .jreSecurityStatus(javaReleaseJreSecurityStatus)
+     *             .licenseType(javaReleaseLicenseType)
+     *             .releaseType(javaReleaseReleaseType)
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -6227,11 +6227,11 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
-     *             .familyVersion(var_.java_release_family_version())
-     *             .jreSecurityStatus(var_.java_release_jre_security_status())
-     *             .licenseType(var_.java_release_license_type())
-     *             .releaseType(var_.java_release_release_type())
-     *             .releaseVersion(var_.java_release_release_version())
+     *             .familyVersion(javaReleaseFamilyVersion)
+     *             .jreSecurityStatus(javaReleaseJreSecurityStatus)
+     *             .licenseType(javaReleaseLicenseType)
+     *             .releaseType(javaReleaseReleaseType)
+     *             .releaseVersion(javaReleaseReleaseVersion)
      *             .build());
      * 
      *     }
@@ -6273,12 +6273,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .applicationName(oci_dataflow_application.test_application().name())
-     *             .compartmentId(var_.compartment_id())
-     *             .hostId(oci_jms_host.test_host().id())
-     *             .timeEnd(var_.list_jre_usage_time_end())
-     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .compartmentId(compartmentId)
+     *             .hostId(testHost.id())
+     *             .timeEnd(listJreUsageTimeEnd)
+     *             .timeStart(listJreUsageTimeStart)
      *             .build());
      * 
      *     }
@@ -6320,12 +6320,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .applicationName(oci_dataflow_application.test_application().name())
-     *             .compartmentId(var_.compartment_id())
-     *             .hostId(oci_jms_host.test_host().id())
-     *             .timeEnd(var_.list_jre_usage_time_end())
-     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .compartmentId(compartmentId)
+     *             .hostId(testHost.id())
+     *             .timeEnd(listJreUsageTimeEnd)
+     *             .timeStart(listJreUsageTimeStart)
      *             .build());
      * 
      *     }
@@ -6367,12 +6367,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .applicationName(oci_dataflow_application.test_application().name())
-     *             .compartmentId(var_.compartment_id())
-     *             .hostId(oci_jms_host.test_host().id())
-     *             .timeEnd(var_.list_jre_usage_time_end())
-     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .compartmentId(compartmentId)
+     *             .hostId(testHost.id())
+     *             .timeEnd(listJreUsageTimeEnd)
+     *             .timeStart(listJreUsageTimeStart)
      *             .build());
      * 
      *     }
@@ -6414,12 +6414,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .applicationName(oci_dataflow_application.test_application().name())
-     *             .compartmentId(var_.compartment_id())
-     *             .hostId(oci_jms_host.test_host().id())
-     *             .timeEnd(var_.list_jre_usage_time_end())
-     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .compartmentId(compartmentId)
+     *             .hostId(testHost.id())
+     *             .timeEnd(listJreUsageTimeEnd)
+     *             .timeStart(listJreUsageTimeStart)
      *             .build());
      * 
      *     }
@@ -6461,12 +6461,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .applicationName(oci_dataflow_application.test_application().name())
-     *             .compartmentId(var_.compartment_id())
-     *             .hostId(oci_jms_host.test_host().id())
-     *             .timeEnd(var_.list_jre_usage_time_end())
-     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .compartmentId(compartmentId)
+     *             .hostId(testHost.id())
+     *             .timeEnd(listJreUsageTimeEnd)
+     *             .timeStart(listJreUsageTimeStart)
      *             .build());
      * 
      *     }
@@ -6508,12 +6508,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(oci_dataflow_application.test_application().id())
-     *             .applicationName(oci_dataflow_application.test_application().name())
-     *             .compartmentId(var_.compartment_id())
-     *             .hostId(oci_jms_host.test_host().id())
-     *             .timeEnd(var_.list_jre_usage_time_end())
-     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .compartmentId(compartmentId)
+     *             .hostId(testHost.id())
+     *             .timeEnd(listJreUsageTimeEnd)
+     *             .timeStart(listJreUsageTimeStart)
      *             .build());
      * 
      *     }
@@ -6555,9 +6555,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .timeEnd(var_.summarize_resource_inventory_time_end())
-     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .compartmentId(compartmentId)
+     *             .timeEnd(summarizeResourceInventoryTimeEnd)
+     *             .timeStart(summarizeResourceInventoryTimeStart)
      *             .build());
      * 
      *     }
@@ -6599,9 +6599,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .timeEnd(var_.summarize_resource_inventory_time_end())
-     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .compartmentId(compartmentId)
+     *             .timeEnd(summarizeResourceInventoryTimeEnd)
+     *             .timeStart(summarizeResourceInventoryTimeStart)
      *             .build());
      * 
      *     }
@@ -6643,9 +6643,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .timeEnd(var_.summarize_resource_inventory_time_end())
-     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .compartmentId(compartmentId)
+     *             .timeEnd(summarizeResourceInventoryTimeEnd)
+     *             .timeStart(summarizeResourceInventoryTimeStart)
      *             .build());
      * 
      *     }
@@ -6687,9 +6687,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .timeEnd(var_.summarize_resource_inventory_time_end())
-     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .compartmentId(compartmentId)
+     *             .timeEnd(summarizeResourceInventoryTimeEnd)
+     *             .timeStart(summarizeResourceInventoryTimeStart)
      *             .build());
      * 
      *     }
@@ -6731,9 +6731,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .timeEnd(var_.summarize_resource_inventory_time_end())
-     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .compartmentId(compartmentId)
+     *             .timeEnd(summarizeResourceInventoryTimeEnd)
+     *             .timeStart(summarizeResourceInventoryTimeStart)
      *             .build());
      * 
      *     }
@@ -6775,9 +6775,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .timeEnd(var_.summarize_resource_inventory_time_end())
-     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .compartmentId(compartmentId)
+     *             .timeEnd(summarizeResourceInventoryTimeEnd)
+     *             .timeStart(summarizeResourceInventoryTimeStart)
      *             .build());
      * 
      *     }

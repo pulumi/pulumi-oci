@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAcceptedAgreement = oci.Marketplace.getAcceptedAgreement({
- *     acceptedAgreementId: oci_marketplace_accepted_agreement.test_accepted_agreement.id,
+ *     acceptedAgreementId: testAcceptedAgreementOciMarketplaceAcceptedAgreement.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,7 +96,7 @@ export interface GetAcceptedAgreementResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAcceptedAgreement = oci.Marketplace.getAcceptedAgreement({
- *     acceptedAgreementId: oci_marketplace_accepted_agreement.test_accepted_agreement.id,
+ *     acceptedAgreementId: testAcceptedAgreementOciMarketplaceAcceptedAgreement.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

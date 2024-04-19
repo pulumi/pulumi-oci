@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualDeployment = oci.ServiceMesh.getVirtualDeployment({
- *     virtualDeploymentId: oci_service_mesh_virtual_deployment.test_virtual_deployment.id,
+ *     virtualDeploymentId: testVirtualDeploymentOciServiceMeshVirtualDeployment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetVirtualDeploymentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualDeployment = oci.ServiceMesh.getVirtualDeployment({
- *     virtualDeploymentId: oci_service_mesh_virtual_deployment.test_virtual_deployment.id,
+ *     virtualDeploymentId: testVirtualDeploymentOciServiceMeshVirtualDeployment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

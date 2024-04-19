@@ -132,11 +132,11 @@ def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["enterprise_manager_bridge_compartment_id_in_subtree"],
-        display_name=var["enterprise_manager_bridge_display_name"],
-        id=var["enterprise_manager_bridge_id"],
-        states=var["enterprise_manager_bridge_state"])
+    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
+        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree,
+        display_name=enterprise_manager_bridge_display_name,
+        id=enterprise_manager_bridge_id,
+        states=enterprise_manager_bridge_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -188,11 +188,11 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["enterprise_manager_bridge_compartment_id_in_subtree"],
-        display_name=var["enterprise_manager_bridge_display_name"],
-        id=var["enterprise_manager_bridge_id"],
-        states=var["enterprise_manager_bridge_state"])
+    test_enterprise_manager_bridges = oci.Opsi.get_enterprise_manager_bridges(compartment_id=compartment_id,
+        compartment_id_in_subtree=enterprise_manager_bridge_compartment_id_in_subtree,
+        display_name=enterprise_manager_bridge_display_name,
+        id=enterprise_manager_bridge_id,
+        states=enterprise_manager_bridge_state)
     ```
     <!--End PulumiCodeChooser -->
 

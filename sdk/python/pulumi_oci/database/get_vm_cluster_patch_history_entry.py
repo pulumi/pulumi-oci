@@ -149,8 +149,8 @@ def get_vm_cluster_patch_history_entry(patch_history_entry_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=oci_database_patch_history_entry["test_patch_history_entry"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
+        vm_cluster_id=test_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -192,8 +192,8 @@ def get_vm_cluster_patch_history_entry_output(patch_history_entry_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=oci_database_patch_history_entry["test_patch_history_entry"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_vm_cluster_patch_history_entry = oci.Database.get_vm_cluster_patch_history_entry(patch_history_entry_id=test_patch_history_entry["id"],
+        vm_cluster_id=test_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 

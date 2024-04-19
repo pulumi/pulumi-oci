@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDrProtectionGroups = oci.DisasterRecovery.getDrProtectionGroups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.dr_protection_group_display_name,
- *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
- *     lifecycleSubState: _var.dr_protection_group_lifecycle_sub_state,
- *     role: _var.dr_protection_group_role,
- *     state: _var.dr_protection_group_state,
+ *     compartmentId: compartmentId,
+ *     displayName: drProtectionGroupDisplayName,
+ *     drProtectionGroupId: testDrProtectionGroup.id,
+ *     lifecycleSubState: drProtectionGroupLifecycleSubState,
+ *     role: drProtectionGroupRole,
+ *     state: drProtectionGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetDrProtectionGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDrProtectionGroups = oci.DisasterRecovery.getDrProtectionGroups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.dr_protection_group_display_name,
- *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
- *     lifecycleSubState: _var.dr_protection_group_lifecycle_sub_state,
- *     role: _var.dr_protection_group_role,
- *     state: _var.dr_protection_group_state,
+ *     compartmentId: compartmentId,
+ *     displayName: drProtectionGroupDisplayName,
+ *     drProtectionGroupId: testDrProtectionGroup.id,
+ *     lifecycleSubState: drProtectionGroupLifecycleSubState,
+ *     role: drProtectionGroupRole,
+ *     state: drProtectionGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

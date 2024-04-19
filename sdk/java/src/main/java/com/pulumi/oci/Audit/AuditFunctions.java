@@ -47,7 +47,7 @@ public final class AuditFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = AuditFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class AuditFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = AuditFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class AuditFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = AuditFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class AuditFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = AuditFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
+     *             .compartmentId(tenancyOcid)
      *             .build());
      * 
      *     }
@@ -216,9 +216,9 @@ public final class AuditFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvents = AuditFunctions.getEvents(GetEventsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.audit_event_end_time())
-     *             .startTime(var_.audit_event_start_time())
+     *             .compartmentId(compartmentId)
+     *             .endTime(auditEventEndTime)
+     *             .startTime(auditEventStartTime)
      *             .build());
      * 
      *     }
@@ -261,9 +261,9 @@ public final class AuditFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvents = AuditFunctions.getEvents(GetEventsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.audit_event_end_time())
-     *             .startTime(var_.audit_event_start_time())
+     *             .compartmentId(compartmentId)
+     *             .endTime(auditEventEndTime)
+     *             .startTime(auditEventStartTime)
      *             .build());
      * 
      *     }
@@ -306,9 +306,9 @@ public final class AuditFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvents = AuditFunctions.getEvents(GetEventsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.audit_event_end_time())
-     *             .startTime(var_.audit_event_start_time())
+     *             .compartmentId(compartmentId)
+     *             .endTime(auditEventEndTime)
+     *             .startTime(auditEventStartTime)
      *             .build());
      * 
      *     }
@@ -351,9 +351,9 @@ public final class AuditFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvents = AuditFunctions.getEvents(GetEventsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.audit_event_end_time())
-     *             .startTime(var_.audit_event_start_time())
+     *             .compartmentId(compartmentId)
+     *             .endTime(auditEventEndTime)
+     *             .startTime(auditEventStartTime)
      *             .build());
      * 
      *     }

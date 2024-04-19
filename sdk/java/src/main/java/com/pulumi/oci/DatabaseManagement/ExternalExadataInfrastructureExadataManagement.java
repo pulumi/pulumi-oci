@@ -49,9 +49,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalExadataInfrastructureExadataManagement = new ExternalExadataInfrastructureExadataManagement(&#34;testExternalExadataInfrastructureExadataManagement&#34;, ExternalExadataInfrastructureExadataManagementArgs.builder()        
- *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
- *             .enableExadata(var_.enable_exadata())
- *             .licenseModel(var_.external_exadata_infrastructure_exadata_management_license_model())
+ *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+ *             .enableExadata(enableExadata)
+ *             .licenseModel(externalExadataInfrastructureExadataManagementLicenseModel)
  *             .build());
  * 
  *     }

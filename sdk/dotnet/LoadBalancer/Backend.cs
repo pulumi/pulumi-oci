@@ -25,16 +25,16 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBackend = new Oci.LoadBalancer.Backend("testBackend", new()
+    ///     var testBackend = new Oci.LoadBalancer.Backend("test_backend", new()
     ///     {
-    ///         BackendsetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///         IpAddress = @var.Backend_ip_address,
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         Port = @var.Backend_port,
-    ///         Backup = @var.Backend_backup,
-    ///         Drain = @var.Backend_drain,
-    ///         Offline = @var.Backend_offline,
-    ///         Weight = @var.Backend_weight,
+    ///         BackendsetName = testBackendSet.Name,
+    ///         IpAddress = backendIpAddress,
+    ///         LoadBalancerId = testLoadBalancer.Id,
+    ///         Port = backendPort,
+    ///         Backup = backendBackup,
+    ///         Drain = backendDrain,
+    ///         Offline = backendOffline,
+    ///         Weight = backendWeight,
     ///     });
     /// 
     /// });

@@ -134,11 +134,11 @@ def get_outbound_connectors(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_outbound_connectors = oci.FileStorage.get_outbound_connectors(availability_domain=var["outbound_connector_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["outbound_connector_display_name"],
-        id=var["outbound_connector_id"],
-        state=var["outbound_connector_state"])
+    test_outbound_connectors = oci.FileStorage.get_outbound_connectors(availability_domain=outbound_connector_availability_domain,
+        compartment_id=compartment_id,
+        display_name=outbound_connector_display_name,
+        id=outbound_connector_id,
+        state=outbound_connector_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_outbound_connectors_output(availability_domain: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_outbound_connectors = oci.FileStorage.get_outbound_connectors(availability_domain=var["outbound_connector_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["outbound_connector_display_name"],
-        id=var["outbound_connector_id"],
-        state=var["outbound_connector_state"])
+    test_outbound_connectors = oci.FileStorage.get_outbound_connectors(availability_domain=outbound_connector_availability_domain,
+        compartment_id=compartment_id,
+        display_name=outbound_connector_display_name,
+        id=outbound_connector_id,
+        state=outbound_connector_state)
     ```
     <!--End PulumiCodeChooser -->
 

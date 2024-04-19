@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystemConnector = new oci.databasemanagement.ExternalDbSystemConnector("testExternalDbSystemConnector", {
- *     connectorType: _var.external_db_system_connector_connector_type,
- *     externalDbSystemId: oci_database_management_external_db_system.test_external_db_system.id,
- *     displayName: _var.external_db_system_connector_display_name,
+ * const testExternalDbSystemConnector = new oci.databasemanagement.ExternalDbSystemConnector("test_external_db_system_connector", {
+ *     connectorType: externalDbSystemConnectorConnectorType,
+ *     externalDbSystemId: testExternalDbSystem.id,
+ *     displayName: externalDbSystemConnectorDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

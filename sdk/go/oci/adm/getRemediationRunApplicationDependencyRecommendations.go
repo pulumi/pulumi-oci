@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Adm.GetRemediationRunApplicationDependencyRecommendations(ctx, &adm.GetRemediationRunApplicationDependencyRecommendationsArgs{
-//				RemediationRunId: oci_adm_remediation_run.Test_remediation_run.Id,
-//				Gav:              pulumi.StringRef(_var.Remediation_run_application_dependency_recommendation_gav),
-//				Purl:             pulumi.StringRef(_var.Remediation_run_application_dependency_recommendation_purl),
+//				RemediationRunId: testRemediationRun.Id,
+//				Gav:              pulumi.StringRef(remediationRunApplicationDependencyRecommendationGav),
+//				Purl:             pulumi.StringRef(remediationRunApplicationDependencyRecommendationPurl),
 //			}, nil)
 //			if err != nil {
 //				return err

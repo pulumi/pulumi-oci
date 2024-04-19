@@ -92,7 +92,7 @@ def get_byoip_allocated_ranges(byoip_range_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_allocated_ranges = oci.Core.get_byoip_allocated_ranges(byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"])
+    test_byoip_allocated_ranges = oci.Core.get_byoip_allocated_ranges(byoip_range_id=test_byoip_range["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -129,7 +129,7 @@ def get_byoip_allocated_ranges_output(byoip_range_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_allocated_ranges = oci.Core.get_byoip_allocated_ranges(byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"])
+    test_byoip_allocated_ranges = oci.Core.get_byoip_allocated_ranges(byoip_range_id=test_byoip_range["id"])
     ```
     <!--End PulumiCodeChooser -->
 

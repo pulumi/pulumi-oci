@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ComputeInstanceAgent.GetInstanceAgentPlugin(ctx, &computeinstanceagent.GetInstanceAgentPluginArgs{
-//				InstanceagentId: oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
-//				PluginName:      _var.Instance_agent_plugin_plugin_name,
+//				InstanceagentId: testInstanceagent.Id,
+//				PluginName:      instanceAgentPluginPluginName,
 //			}, nil)
 //			if err != nil {
 //				return err

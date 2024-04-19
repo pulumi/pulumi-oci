@@ -26,10 +26,10 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalNonContainerDatabaseOperationsInsightsManagement = new Oci.Database.ExternalNonContainerDatabaseOperationsInsightsManagement("testExternalNonContainerDatabaseOperationsInsightsManagement", new()
+    ///     var testExternalNonContainerDatabaseOperationsInsightsManagement = new Oci.Database.ExternalNonContainerDatabaseOperationsInsightsManagement("test_external_non_container_database_operations_insights_management", new()
     ///     {
-    ///         ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
-    ///         ExternalNonContainerDatabaseId = oci_database_external_non_container_database.Test_external_non_container_database.Id,
+    ///         ExternalDatabaseConnectorId = testExternalDatabaseConnector.Id,
+    ///         ExternalNonContainerDatabaseId = testExternalNonContainerDatabase.Id,
     ///         EnableOperationsInsights = true,
     ///     });
     /// 

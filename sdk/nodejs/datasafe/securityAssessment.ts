@@ -20,18 +20,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessment = new oci.datasafe.SecurityAssessment("testSecurityAssessment", {
- *     compartmentId: _var.compartment_id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ * const testSecurityAssessment = new oci.datasafe.SecurityAssessment("test_security_assessment", {
+ *     compartmentId: compartmentId,
+ *     targetId: testTarget.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.security_assessment_description,
- *     displayName: _var.security_assessment_display_name,
+ *     description: securityAssessmentDescription,
+ *     displayName: securityAssessmentDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     schedule: _var.security_assessment_schedule,
+ *     schedule: securityAssessmentSchedule,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

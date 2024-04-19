@@ -126,9 +126,9 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_set_user_assessment_baseline = oci.data_safe.SetUserAssessmentBaseline("testSetUserAssessmentBaseline",
-            user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-            assessment_ids=var["set_user_assessment_baseline_assessment_ids"])
+        test_set_user_assessment_baseline = oci.data_safe.SetUserAssessmentBaseline("test_set_user_assessment_baseline",
+            user_assessment_id=test_user_assessment["id"],
+            assessment_ids=set_user_assessment_baseline_assessment_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -167,9 +167,9 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_set_user_assessment_baseline = oci.data_safe.SetUserAssessmentBaseline("testSetUserAssessmentBaseline",
-            user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-            assessment_ids=var["set_user_assessment_baseline_assessment_ids"])
+        test_set_user_assessment_baseline = oci.data_safe.SetUserAssessmentBaseline("test_set_user_assessment_baseline",
+            user_assessment_id=test_user_assessment["id"],
+            assessment_ids=set_user_assessment_baseline_assessment_ids)
         ```
         <!--End PulumiCodeChooser -->
 

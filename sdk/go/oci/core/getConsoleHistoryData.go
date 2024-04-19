@@ -33,9 +33,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetConsoleHistoryData(ctx, &core.GetConsoleHistoryDataArgs{
-//				ConsoleHistoryId: oci_core_console_history.Test_console_history.Id,
-//				Length:           pulumi.IntRef(_var.Console_history_content_length),
-//				Offset:           pulumi.IntRef(_var.Console_history_content_offset),
+//				ConsoleHistoryId: testConsoleHistory.Id,
+//				Length:           pulumi.IntRef(consoleHistoryContentLength),
+//				Offset:           pulumi.IntRef(consoleHistoryContentOffset),
 //			}, nil)
 //			if err != nil {
 //				return err

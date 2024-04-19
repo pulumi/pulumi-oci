@@ -518,16 +518,16 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_export_request = oci.data_integration.WorkspaceExportRequest("testWorkspaceExportRequest",
-            bucket=var["workspace_export_request_bucket"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            are_references_included=var["workspace_export_request_are_references_included"],
-            file_name=var["workspace_export_request_file_name"],
-            filters=var["workspace_export_request_filters"],
-            is_object_overwrite_enabled=var["workspace_export_request_is_object_overwrite_enabled"],
-            object_keys=var["workspace_export_request_object_keys"],
-            object_storage_region=var["workspace_export_request_object_storage_region"],
-            object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
+        test_workspace_export_request = oci.data_integration.WorkspaceExportRequest("test_workspace_export_request",
+            bucket=workspace_export_request_bucket,
+            workspace_id=test_workspace["id"],
+            are_references_included=workspace_export_request_are_references_included,
+            file_name=workspace_export_request_file_name,
+            filters=workspace_export_request_filters,
+            is_object_overwrite_enabled=workspace_export_request_is_object_overwrite_enabled,
+            object_keys=workspace_export_request_object_keys,
+            object_storage_region=workspace_export_request_object_storage_region,
+            object_storage_tenancy_id=test_tenancy["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -573,16 +573,16 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_export_request = oci.data_integration.WorkspaceExportRequest("testWorkspaceExportRequest",
-            bucket=var["workspace_export_request_bucket"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            are_references_included=var["workspace_export_request_are_references_included"],
-            file_name=var["workspace_export_request_file_name"],
-            filters=var["workspace_export_request_filters"],
-            is_object_overwrite_enabled=var["workspace_export_request_is_object_overwrite_enabled"],
-            object_keys=var["workspace_export_request_object_keys"],
-            object_storage_region=var["workspace_export_request_object_storage_region"],
-            object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
+        test_workspace_export_request = oci.data_integration.WorkspaceExportRequest("test_workspace_export_request",
+            bucket=workspace_export_request_bucket,
+            workspace_id=test_workspace["id"],
+            are_references_included=workspace_export_request_are_references_included,
+            file_name=workspace_export_request_file_name,
+            filters=workspace_export_request_filters,
+            is_object_overwrite_enabled=workspace_export_request_is_object_overwrite_enabled,
+            object_keys=workspace_export_request_object_keys,
+            object_storage_region=workspace_export_request_object_storage_region,
+            object_storage_tenancy_id=test_tenancy["id"])
         ```
         <!--End PulumiCodeChooser -->
 

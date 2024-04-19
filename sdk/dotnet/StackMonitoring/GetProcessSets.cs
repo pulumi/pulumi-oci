@@ -29,8 +29,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testProcessSets = Oci.StackMonitoring.GetProcessSets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Process_set_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = processSetDisplayName,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testProcessSets = Oci.StackMonitoring.GetProcessSets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Process_set_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = processSetDisplayName,
         ///     });
         /// 
         /// });

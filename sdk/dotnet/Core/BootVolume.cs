@@ -28,45 +28,45 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBootVolume = new Oci.Core.BootVolume("testBootVolume", new()
+    ///     var testBootVolume = new Oci.Core.BootVolume("test_boot_volume", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         SourceDetails = new Oci.Core.Inputs.BootVolumeSourceDetailsArgs
     ///         {
-    ///             Id = @var.Boot_volume_source_details_id,
-    ///             Type = @var.Boot_volume_source_details_type,
+    ///             Id = bootVolumeSourceDetailsId,
+    ///             Type = bootVolumeSourceDetailsType,
     ///         },
     ///         AutotunePolicies = new[]
     ///         {
     ///             new Oci.Core.Inputs.BootVolumeAutotunePolicyArgs
     ///             {
-    ///                 AutotuneType = @var.Boot_volume_autotune_policies_autotune_type,
-    ///                 MaxVpusPerGb = @var.Boot_volume_autotune_policies_max_vpus_per_gb,
+    ///                 AutotuneType = bootVolumeAutotunePoliciesAutotuneType,
+    ///                 MaxVpusPerGb = bootVolumeAutotunePoliciesMaxVpusPerGb,
     ///             },
     ///         },
-    ///         AvailabilityDomain = @var.Boot_volume_availability_domain,
-    ///         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
+    ///         AvailabilityDomain = bootVolumeAvailabilityDomain,
+    ///         BackupPolicyId = testVolumeBackupPolicies.VolumeBackupPolicies[0].Id,
     ///         BootVolumeReplicas = new[]
     ///         {
     ///             new Oci.Core.Inputs.BootVolumeBootVolumeReplicaArgs
     ///             {
-    ///                 AvailabilityDomain = @var.Boot_volume_boot_volume_replicas_availability_domain,
-    ///                 DisplayName = @var.Boot_volume_boot_volume_replicas_display_name,
+    ///                 AvailabilityDomain = bootVolumeBootVolumeReplicasAvailabilityDomain,
+    ///                 DisplayName = bootVolumeBootVolumeReplicasDisplayName,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Boot_volume_display_name,
+    ///         DisplayName = bootVolumeDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsAutoTuneEnabled = @var.Boot_volume_is_auto_tune_enabled,
-    ///         KmsKeyId = oci_kms_key.Test_key.Id,
-    ///         SizeInGbs = @var.Boot_volume_size_in_gbs,
-    ///         VpusPerGb = @var.Boot_volume_vpus_per_gb,
+    ///         IsAutoTuneEnabled = bootVolumeIsAutoTuneEnabled,
+    ///         KmsKeyId = testKey.Id,
+    ///         SizeInGbs = bootVolumeSizeInGbs,
+    ///         VpusPerGb = bootVolumeVpusPerGb,
     ///         BootVolumeReplicasDeletion = true,
     ///     });
     /// 

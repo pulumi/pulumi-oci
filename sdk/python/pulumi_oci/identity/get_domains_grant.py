@@ -373,12 +373,12 @@ def get_domains_grant(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_grant = oci.Identity.get_domains_grant(grant_id=oci_identity_domains_grant["test_grant"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_grant = oci.Identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["grant_authorization"],
-        resource_type_schema_version=var["grant_resource_type_schema_version"])
+        authorization=grant_authorization,
+        resource_type_schema_version=grant_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -451,12 +451,12 @@ def get_domains_grant_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_grant = oci.Identity.get_domains_grant(grant_id=oci_identity_domains_grant["test_grant"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_grant = oci.Identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["grant_authorization"],
-        resource_type_schema_version=var["grant_resource_type_schema_version"])
+        authorization=grant_authorization,
+        resource_type_schema_version=grant_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

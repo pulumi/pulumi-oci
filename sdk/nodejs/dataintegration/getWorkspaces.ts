@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaces = oci.DataIntegration.getWorkspaces({
- *     compartmentId: _var.compartment_id,
- *     name: _var.workspace_name,
- *     state: _var.workspace_state,
+ *     compartmentId: compartmentId,
+ *     name: workspaceName,
+ *     state: workspaceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetWorkspacesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaces = oci.DataIntegration.getWorkspaces({
- *     compartmentId: _var.compartment_id,
- *     name: _var.workspace_name,
- *     state: _var.workspace_state,
+ *     compartmentId: compartmentId,
+ *     name: workspaceName,
+ *     state: workspaceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

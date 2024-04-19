@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseMigration.GetConnection(ctx, &databasemigration.GetConnectionArgs{
-//				ConnectionId: oci_database_migration_connection.Test_connection.Id,
+//				ConnectionId: testConnectionOciDatabaseMigrationConnection.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

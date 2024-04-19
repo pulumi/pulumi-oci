@@ -62,7 +62,7 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatform = BlockchainFunctions.getBlockchainPlatform(GetBlockchainPlatformArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .blockchainPlatformId(testBlockchainPlatformOciBlockchainBlockchainPlatform.id())
      *             .build());
      * 
      *     }
@@ -104,7 +104,7 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatform = BlockchainFunctions.getBlockchainPlatform(GetBlockchainPlatformArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .blockchainPlatformId(testBlockchainPlatformOciBlockchainBlockchainPlatform.id())
      *             .build());
      * 
      *     }
@@ -146,7 +146,7 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatform = BlockchainFunctions.getBlockchainPlatform(GetBlockchainPlatformArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .blockchainPlatformId(testBlockchainPlatformOciBlockchainBlockchainPlatform.id())
      *             .build());
      * 
      *     }
@@ -188,7 +188,7 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatform = BlockchainFunctions.getBlockchainPlatform(GetBlockchainPlatformArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .blockchainPlatformId(testBlockchainPlatformOciBlockchainBlockchainPlatform.id())
      *             .build());
      * 
      *     }
@@ -230,7 +230,7 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatformPatches = BlockchainFunctions.getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
      *             .build());
      * 
      *     }
@@ -272,7 +272,7 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatformPatches = BlockchainFunctions.getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
      *             .build());
      * 
      *     }
@@ -314,7 +314,7 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatformPatches = BlockchainFunctions.getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
      *             .build());
      * 
      *     }
@@ -356,7 +356,7 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatformPatches = BlockchainFunctions.getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
      *             .build());
      * 
      *     }
@@ -398,9 +398,9 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatforms = BlockchainFunctions.getBlockchainPlatforms(GetBlockchainPlatformsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.blockchain_platform_display_name())
-     *             .state(var_.blockchain_platform_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockchainPlatformDisplayName)
+     *             .state(blockchainPlatformState)
      *             .build());
      * 
      *     }
@@ -442,9 +442,9 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatforms = BlockchainFunctions.getBlockchainPlatforms(GetBlockchainPlatformsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.blockchain_platform_display_name())
-     *             .state(var_.blockchain_platform_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockchainPlatformDisplayName)
+     *             .state(blockchainPlatformState)
      *             .build());
      * 
      *     }
@@ -486,9 +486,9 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatforms = BlockchainFunctions.getBlockchainPlatforms(GetBlockchainPlatformsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.blockchain_platform_display_name())
-     *             .state(var_.blockchain_platform_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockchainPlatformDisplayName)
+     *             .state(blockchainPlatformState)
      *             .build());
      * 
      *     }
@@ -530,9 +530,9 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockchainPlatforms = BlockchainFunctions.getBlockchainPlatforms(GetBlockchainPlatformsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.blockchain_platform_display_name())
-     *             .state(var_.blockchain_platform_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockchainPlatformDisplayName)
+     *             .state(blockchainPlatformState)
      *             .build());
      * 
      *     }
@@ -574,8 +574,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOsn = BlockchainFunctions.getOsn(GetOsnArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .osnId(oci_blockchain_osn.test_osn().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .osnId(testOsnOciBlockchainOsn.id())
      *             .build());
      * 
      *     }
@@ -617,8 +617,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOsn = BlockchainFunctions.getOsn(GetOsnArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .osnId(oci_blockchain_osn.test_osn().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .osnId(testOsnOciBlockchainOsn.id())
      *             .build());
      * 
      *     }
@@ -660,8 +660,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOsn = BlockchainFunctions.getOsn(GetOsnArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .osnId(oci_blockchain_osn.test_osn().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .osnId(testOsnOciBlockchainOsn.id())
      *             .build());
      * 
      *     }
@@ -703,8 +703,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOsn = BlockchainFunctions.getOsn(GetOsnArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .osnId(oci_blockchain_osn.test_osn().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .osnId(testOsnOciBlockchainOsn.id())
      *             .build());
      * 
      *     }
@@ -746,8 +746,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOsns = BlockchainFunctions.getOsns(GetOsnsArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .displayName(var_.osn_display_name())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .displayName(osnDisplayName)
      *             .build());
      * 
      *     }
@@ -789,8 +789,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOsns = BlockchainFunctions.getOsns(GetOsnsArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .displayName(var_.osn_display_name())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .displayName(osnDisplayName)
      *             .build());
      * 
      *     }
@@ -832,8 +832,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOsns = BlockchainFunctions.getOsns(GetOsnsArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .displayName(var_.osn_display_name())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .displayName(osnDisplayName)
      *             .build());
      * 
      *     }
@@ -875,8 +875,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOsns = BlockchainFunctions.getOsns(GetOsnsArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .displayName(var_.osn_display_name())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .displayName(osnDisplayName)
      *             .build());
      * 
      *     }
@@ -918,8 +918,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPeer = BlockchainFunctions.getPeer(GetPeerArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .peerId(oci_blockchain_peer.test_peer().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .peerId(testPeerOciBlockchainPeer.id())
      *             .build());
      * 
      *     }
@@ -961,8 +961,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPeer = BlockchainFunctions.getPeer(GetPeerArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .peerId(oci_blockchain_peer.test_peer().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .peerId(testPeerOciBlockchainPeer.id())
      *             .build());
      * 
      *     }
@@ -1004,8 +1004,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPeer = BlockchainFunctions.getPeer(GetPeerArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .peerId(oci_blockchain_peer.test_peer().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .peerId(testPeerOciBlockchainPeer.id())
      *             .build());
      * 
      *     }
@@ -1047,8 +1047,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPeer = BlockchainFunctions.getPeer(GetPeerArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .peerId(oci_blockchain_peer.test_peer().id())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .peerId(testPeerOciBlockchainPeer.id())
      *             .build());
      * 
      *     }
@@ -1090,8 +1090,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPeers = BlockchainFunctions.getPeers(GetPeersArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .displayName(var_.peer_display_name())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .displayName(peerDisplayName)
      *             .build());
      * 
      *     }
@@ -1133,8 +1133,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPeers = BlockchainFunctions.getPeers(GetPeersArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .displayName(var_.peer_display_name())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .displayName(peerDisplayName)
      *             .build());
      * 
      *     }
@@ -1176,8 +1176,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPeers = BlockchainFunctions.getPeers(GetPeersArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .displayName(var_.peer_display_name())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .displayName(peerDisplayName)
      *             .build());
      * 
      *     }
@@ -1219,8 +1219,8 @@ public final class BlockchainFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPeers = BlockchainFunctions.getPeers(GetPeersArgs.builder()
-     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
-     *             .displayName(var_.peer_display_name())
+     *             .blockchainPlatformId(testBlockchainPlatform.id())
+     *             .displayName(peerDisplayName)
      *             .build());
      * 
      *     }

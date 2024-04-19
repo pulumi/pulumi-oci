@@ -499,15 +499,15 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_pluggable_database = oci.database.ExternalPluggableDatabase("testExternalPluggableDatabase",
-            compartment_id=var["compartment_id"],
-            display_name=var["external_pluggable_database_display_name"],
-            external_container_database_id=oci_database_external_container_database["test_external_container_database"]["id"],
-            defined_tags=var["external_pluggable_database_defined_tags"],
+        test_external_pluggable_database = oci.database.ExternalPluggableDatabase("test_external_pluggable_database",
+            compartment_id=compartment_id,
+            display_name=external_pluggable_database_display_name,
+            external_container_database_id=test_external_container_database["id"],
+            defined_tags=external_pluggable_database_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            source_id=oci_database_source["test_source"]["id"])
+            source_id=test_source["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -551,15 +551,15 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_pluggable_database = oci.database.ExternalPluggableDatabase("testExternalPluggableDatabase",
-            compartment_id=var["compartment_id"],
-            display_name=var["external_pluggable_database_display_name"],
-            external_container_database_id=oci_database_external_container_database["test_external_container_database"]["id"],
-            defined_tags=var["external_pluggable_database_defined_tags"],
+        test_external_pluggable_database = oci.database.ExternalPluggableDatabase("test_external_pluggable_database",
+            compartment_id=compartment_id,
+            display_name=external_pluggable_database_display_name,
+            external_container_database_id=test_external_container_database["id"],
+            defined_tags=external_pluggable_database_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            source_id=oci_database_source["test_source"]["id"])
+            source_id=test_source["id"])
         ```
         <!--End PulumiCodeChooser -->
 

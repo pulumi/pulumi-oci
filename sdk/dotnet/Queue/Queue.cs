@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Queue
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testQueue = new Oci.Queue.Queue("testQueue", new()
+    ///     var testQueue = new Oci.Queue.Queue("test_queue", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Queue_display_name,
-    ///         ChannelConsumptionLimit = @var.Queue_channel_consumption_limit,
-    ///         CustomEncryptionKeyId = oci_kms_key.Test_key.Id,
-    ///         DeadLetterQueueDeliveryCount = @var.Queue_dead_letter_queue_delivery_count,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = queueDisplayName,
+    ///         ChannelConsumptionLimit = queueChannelConsumptionLimit,
+    ///         CustomEncryptionKeyId = testKey.Id,
+    ///         DeadLetterQueueDeliveryCount = queueDeadLetterQueueDeliveryCount,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -40,9 +40,9 @@ namespace Pulumi.Oci.Queue
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         RetentionInSeconds = @var.Queue_retention_in_seconds,
-    ///         TimeoutInSeconds = @var.Queue_timeout_in_seconds,
-    ///         VisibilityInSeconds = @var.Queue_visibility_in_seconds,
+    ///         RetentionInSeconds = queueRetentionInSeconds,
+    ///         TimeoutInSeconds = queueTimeoutInSeconds,
+    ///         VisibilityInSeconds = queueVisibilityInSeconds,
     ///     });
     /// 
     /// });

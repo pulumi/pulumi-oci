@@ -141,8 +141,8 @@ def get_backend_set_health(backend_set_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+    test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=test_backend_set["name"],
+        load_balancer_id=test_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -183,8 +183,8 @@ def get_backend_set_health_output(backend_set_name: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-        load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+    test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=test_backend_set["name"],
+        load_balancer_id=test_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 

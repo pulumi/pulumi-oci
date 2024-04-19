@@ -26,21 +26,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVault = new oci.kms.Vault("testVault", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vault_display_name,
- *     vaultType: _var.vault_vault_type,
+ * const testVault = new oci.kms.Vault("test_vault", {
+ *     compartmentId: compartmentId,
+ *     displayName: vaultDisplayName,
+ *     vaultType: vaultVaultType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     externalKeyManagerMetadata: {
- *         externalVaultEndpointUrl: _var.vault_external_key_manager_metadata_external_vault_endpoint_url,
+ *         externalVaultEndpointUrl: vaultExternalKeyManagerMetadataExternalVaultEndpointUrl,
  *         oauthMetadata: {
- *             clientAppId: oci_kms_client_app.test_client_app.id,
- *             clientAppSecret: _var.vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
- *             idcsAccountNameUrl: _var.vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
+ *             clientAppId: testClientApp.id,
+ *             clientAppSecret: vaultExternalKeyManagerMetadataOauthMetadataClientAppSecret,
+ *             idcsAccountNameUrl: vaultExternalKeyManagerMetadataOauthMetadataIdcsAccountNameUrl,
  *         },
- *         privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *         privateEndpointId: testPrivateEndpoint.id,
  *     },
  *     freeformTags: {
  *         Department: "Finance",

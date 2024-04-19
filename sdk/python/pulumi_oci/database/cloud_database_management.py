@@ -383,19 +383,19 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test = oci.database.CloudDatabaseManagement("test",
-            database_id=oci_database_database["test_database"]["id"],
-            management_type=var["database_cloud_database_management_details_management_type"],
-            private_end_point_id=var["database_cloud_database_management_details_private_end_point_id"],
-            service_name=var["database_cloud_database_management_details_service_name"],
+            database_id=test_database["id"],
+            management_type=database_cloud_database_management_details_management_type,
+            private_end_point_id=database_cloud_database_management_details_private_end_point_id,
+            service_name=database_cloud_database_management_details_service_name,
             credentialdetails=oci.database.CloudDatabaseManagementCredentialdetailsArgs(
-                user_name=var["database_cloud_database_management_details_user_name"],
-                password_secret_id=var["database_cloud_database_management_details_password_secret_id"],
+                user_name=database_cloud_database_management_details_user_name,
+                password_secret_id=database_cloud_database_management_details_password_secret_id,
             ),
-            enable_management=var["database_cloud_database_management_details_enable_management"],
-            port=var["cloud_database_management_port"],
-            protocol=var["cloud_database_management_protocol"],
-            role=var["cloud_database_management_role"],
-            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
+            enable_management=database_cloud_database_management_details_enable_management,
+            port=cloud_database_management_port,
+            protocol=cloud_database_management_protocol,
+            role=cloud_database_management_role,
+            ssl_secret_id=test_secret["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -441,19 +441,19 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test = oci.database.CloudDatabaseManagement("test",
-            database_id=oci_database_database["test_database"]["id"],
-            management_type=var["database_cloud_database_management_details_management_type"],
-            private_end_point_id=var["database_cloud_database_management_details_private_end_point_id"],
-            service_name=var["database_cloud_database_management_details_service_name"],
+            database_id=test_database["id"],
+            management_type=database_cloud_database_management_details_management_type,
+            private_end_point_id=database_cloud_database_management_details_private_end_point_id,
+            service_name=database_cloud_database_management_details_service_name,
             credentialdetails=oci.database.CloudDatabaseManagementCredentialdetailsArgs(
-                user_name=var["database_cloud_database_management_details_user_name"],
-                password_secret_id=var["database_cloud_database_management_details_password_secret_id"],
+                user_name=database_cloud_database_management_details_user_name,
+                password_secret_id=database_cloud_database_management_details_password_secret_id,
             ),
-            enable_management=var["database_cloud_database_management_details_enable_management"],
-            port=var["cloud_database_management_port"],
-            protocol=var["cloud_database_management_protocol"],
-            role=var["cloud_database_management_role"],
-            ssl_secret_id=oci_vault_secret["test_secret"]["id"])
+            enable_management=database_cloud_database_management_details_enable_management,
+            port=cloud_database_management_port,
+            protocol=cloud_database_management_protocol,
+            role=cloud_database_management_role,
+            ssl_secret_id=test_secret["id"])
         ```
         <!--End PulumiCodeChooser -->
 

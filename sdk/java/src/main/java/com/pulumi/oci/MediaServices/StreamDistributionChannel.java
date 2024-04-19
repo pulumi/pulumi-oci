@@ -49,16 +49,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testStreamDistributionChannel = new StreamDistributionChannel(&#34;testStreamDistributionChannel&#34;, StreamDistributionChannelArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.stream_distribution_channel_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(streamDistributionChannelDisplayName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .locks(StreamDistributionChannelLockArgs.builder()
- *                 .compartmentId(var_.compartment_id())
- *                 .type(var_.stream_distribution_channel_locks_type())
- *                 .message(var_.stream_distribution_channel_locks_message())
- *                 .relatedResourceId(oci_usage_proxy_resource.test_resource().id())
- *                 .timeCreated(var_.stream_distribution_channel_locks_time_created())
+ *                 .compartmentId(compartmentId)
+ *                 .type(streamDistributionChannelLocksType)
+ *                 .message(streamDistributionChannelLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(streamDistributionChannelLocksTimeCreated)
  *                 .build())
  *             .build());
  * 

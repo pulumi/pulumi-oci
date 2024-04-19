@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVaults = oci.Kms.getVaults({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,7 +85,7 @@ export interface GetVaultsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVaults = oci.Kms.getVaults({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

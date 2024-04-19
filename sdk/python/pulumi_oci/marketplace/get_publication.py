@@ -254,7 +254,7 @@ def get_publication(publication_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publication = oci.Marketplace.get_publication(publication_id=oci_marketplace_publication["test_publication"]["id"])
+    test_publication = oci.Marketplace.get_publication(publication_id=test_publication_oci_marketplace_publication["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -302,7 +302,7 @@ def get_publication_output(publication_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publication = oci.Marketplace.get_publication(publication_id=oci_marketplace_publication["test_publication"]["id"])
+    test_publication = oci.Marketplace.get_publication(publication_id=test_publication_oci_marketplace_publication["id"])
     ```
     <!--End PulumiCodeChooser -->
 

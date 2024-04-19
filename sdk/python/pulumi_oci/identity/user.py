@@ -456,13 +456,14 @@ class User(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_user = oci.identity.User("testUser",
-            compartment_id=var["tenancy_ocid"],
-            description=var["user_description"],
+        test_user = oci.identity.User("test_user",
+            compartment_id=tenancy_ocid,
+            description=user_description,
+            name=user_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            email=var["user_email"],
+            email=user_email,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -538,13 +539,14 @@ class User(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_user = oci.identity.User("testUser",
-            compartment_id=var["tenancy_ocid"],
-            description=var["user_description"],
+        test_user = oci.identity.User("test_user",
+            compartment_id=tenancy_ocid,
+            description=user_description,
+            name=user_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            email=var["user_email"],
+            email=user_email,
             freeform_tags={
                 "Department": "Finance",
             })

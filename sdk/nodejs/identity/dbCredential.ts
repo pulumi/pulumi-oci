@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbCredential = new oci.identity.DbCredential("testDbCredential", {
- *     description: _var.db_credential_description,
- *     password: _var.db_credential_password,
- *     userId: oci_identity_user.test_user.id,
+ * const testDbCredential = new oci.identity.DbCredential("test_db_credential", {
+ *     description: dbCredentialDescription,
+ *     password: dbCredentialPassword,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

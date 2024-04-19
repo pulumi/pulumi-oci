@@ -16,21 +16,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQueue = new oci.queue.Queue("testQueue", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.queue_display_name,
- *     channelConsumptionLimit: _var.queue_channel_consumption_limit,
- *     customEncryptionKeyId: oci_kms_key.test_key.id,
- *     deadLetterQueueDeliveryCount: _var.queue_dead_letter_queue_delivery_count,
+ * const testQueue = new oci.queue.Queue("test_queue", {
+ *     compartmentId: compartmentId,
+ *     displayName: queueDisplayName,
+ *     channelConsumptionLimit: queueChannelConsumptionLimit,
+ *     customEncryptionKeyId: testKey.id,
+ *     deadLetterQueueDeliveryCount: queueDeadLetterQueueDeliveryCount,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionInSeconds: _var.queue_retention_in_seconds,
- *     timeoutInSeconds: _var.queue_timeout_in_seconds,
- *     visibilityInSeconds: _var.queue_visibility_in_seconds,
+ *     retentionInSeconds: queueRetentionInSeconds,
+ *     timeoutInSeconds: queueTimeoutInSeconds,
+ *     visibilityInSeconds: queueVisibilityInSeconds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

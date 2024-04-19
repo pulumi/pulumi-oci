@@ -19,13 +19,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPathRouteSet = new oci.loadbalancer.PathRouteSet("testPathRouteSet", {
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ * const testPathRouteSet = new oci.loadbalancer.PathRouteSet("test_path_route_set", {
+ *     loadBalancerId: testLoadBalancer.id,
+ *     name: pathRouteSetName,
  *     pathRoutes: [{
- *         backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
- *         path: _var.path_route_set_path_routes_path,
+ *         backendSetName: testBackendSet.name,
+ *         path: pathRouteSetPathRoutesPath,
  *         pathMatchType: {
- *             matchType: _var.path_route_set_path_routes_path_match_type_match_type,
+ *             matchType: pathRouteSetPathRoutesPathMatchTypeMatchType,
  *         },
  *     }],
  * });

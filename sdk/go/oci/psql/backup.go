@@ -31,18 +31,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Psql.NewBackup(ctx, "testBackup", &Psql.BackupArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DbSystemId:    pulumi.Any(oci_psql_db_system.Test_db_system.Id),
-//				DisplayName:   pulumi.Any(_var.Backup_display_name),
+//			_, err := Psql.NewBackup(ctx, "test_backup", &Psql.BackupArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DbSystemId:    pulumi.Any(testDbSystem.Id),
+//				DisplayName:   pulumi.Any(backupDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Backup_description),
+//				Description: pulumi.Any(backupDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				RetentionPeriod: pulumi.Any(_var.Backup_retention_period),
+//				RetentionPeriod: pulumi.Any(backupRetentionPeriod),
 //			})
 //			if err != nil {
 //				return err

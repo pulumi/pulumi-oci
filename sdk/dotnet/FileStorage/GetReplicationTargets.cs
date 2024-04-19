@@ -30,11 +30,11 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testReplicationTargets = Oci.FileStorage.GetReplicationTargets.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Replication_target_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Replication_target_display_name,
-        ///         Id = @var.Replication_target_id,
-        ///         State = @var.Replication_target_state,
+        ///         AvailabilityDomain = replicationTargetAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = replicationTargetDisplayName,
+        ///         Id = replicationTargetId,
+        ///         State = replicationTargetState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testReplicationTargets = Oci.FileStorage.GetReplicationTargets.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Replication_target_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Replication_target_display_name,
-        ///         Id = @var.Replication_target_id,
-        ///         State = @var.Replication_target_state,
+        ///         AvailabilityDomain = replicationTargetAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = replicationTargetDisplayName,
+        ///         Id = replicationTargetId,
+        ///         State = replicationTargetState,
         ///     });
         /// 
         /// });

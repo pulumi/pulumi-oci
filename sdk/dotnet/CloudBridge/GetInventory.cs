@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testInventory = Oci.CloudBridge.GetInventory.Invoke(new()
         ///     {
-        ///         InventoryId = oci_cloud_bridge_inventory.Test_inventory.Id,
+        ///         InventoryId = testInventoryOciCloudBridgeInventory.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testInventory = Oci.CloudBridge.GetInventory.Invoke(new()
         ///     {
-        ///         InventoryId = oci_cloud_bridge_inventory.Test_inventory.Id,
+        ///         InventoryId = testInventoryOciCloudBridgeInventory.Id,
         ///     });
         /// 
         /// });

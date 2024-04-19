@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetNotebookSessions(ctx, &datascience.GetNotebookSessionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CreatedBy:     pulumi.StringRef(_var.Notebook_session_created_by),
-//				DisplayName:   pulumi.StringRef(_var.Notebook_session_display_name),
-//				Id:            pulumi.StringRef(_var.Notebook_session_id),
-//				ProjectId:     pulumi.StringRef(oci_datascience_project.Test_project.Id),
-//				State:         pulumi.StringRef(_var.Notebook_session_state),
+//				CompartmentId: compartmentId,
+//				CreatedBy:     pulumi.StringRef(notebookSessionCreatedBy),
+//				DisplayName:   pulumi.StringRef(notebookSessionDisplayName),
+//				Id:            pulumi.StringRef(notebookSessionId),
+//				ProjectId:     pulumi.StringRef(testProject.Id),
+//				State:         pulumi.StringRef(notebookSessionState),
 //			}, nil)
 //			if err != nil {
 //				return err

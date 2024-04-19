@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testAccessPolicy = Oci.ServiceMesh.GetAccessPolicy.Invoke(new()
         ///     {
-        ///         AccessPolicyId = oci_service_mesh_access_policy.Test_access_policy.Id,
+        ///         AccessPolicyId = testAccessPolicyOciServiceMeshAccessPolicy.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testAccessPolicy = Oci.ServiceMesh.GetAccessPolicy.Invoke(new()
         ///     {
-        ///         AccessPolicyId = oci_service_mesh_access_policy.Test_access_policy.Id,
+        ///         AccessPolicyId = testAccessPolicyOciServiceMeshAccessPolicy.Id,
         ///     });
         /// 
         /// });

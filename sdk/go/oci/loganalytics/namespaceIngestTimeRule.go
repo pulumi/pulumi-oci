@@ -31,37 +31,37 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewNamespaceIngestTimeRule(ctx, "testNamespaceIngestTimeRule", &LogAnalytics.NamespaceIngestTimeRuleArgs{
+//			_, err := LogAnalytics.NewNamespaceIngestTimeRule(ctx, "test_namespace_ingest_time_rule", &LogAnalytics.NamespaceIngestTimeRuleArgs{
 //				Actions: loganalytics.NamespaceIngestTimeRuleActionArray{
 //					&loganalytics.NamespaceIngestTimeRuleActionArgs{
-//						CompartmentId: pulumi.Any(_var.Compartment_id),
-//						MetricName:    pulumi.Any(oci_monitoring_metric.Test_metric.Name),
-//						Namespace:     pulumi.Any(_var.Namespace_ingest_time_rule_actions_namespace),
-//						Type:          pulumi.Any(_var.Namespace_ingest_time_rule_actions_type),
-//						Dimensions:    pulumi.Any(_var.Namespace_ingest_time_rule_actions_dimensions),
-//						ResourceGroup: pulumi.Any(_var.Namespace_ingest_time_rule_actions_resource_group),
+//						CompartmentId: pulumi.Any(compartmentId),
+//						MetricName:    pulumi.Any(testMetric.Name),
+//						Namespace:     pulumi.Any(namespaceIngestTimeRuleActionsNamespace),
+//						Type:          pulumi.Any(namespaceIngestTimeRuleActionsType),
+//						Dimensions:    pulumi.Any(namespaceIngestTimeRuleActionsDimensions),
+//						ResourceGroup: pulumi.Any(namespaceIngestTimeRuleActionsResourceGroup),
 //					},
 //				},
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				CompartmentId: pulumi.Any(compartmentId),
 //				Conditions: &loganalytics.NamespaceIngestTimeRuleConditionsArgs{
-//					FieldName:     pulumi.Any(_var.Namespace_ingest_time_rule_conditions_field_name),
-//					FieldOperator: pulumi.Any(_var.Namespace_ingest_time_rule_conditions_field_operator),
-//					FieldValue:    pulumi.Any(_var.Namespace_ingest_time_rule_conditions_field_value),
-//					Kind:          pulumi.Any(_var.Namespace_ingest_time_rule_conditions_kind),
+//					FieldName:     pulumi.Any(namespaceIngestTimeRuleConditionsFieldName),
+//					FieldOperator: pulumi.Any(namespaceIngestTimeRuleConditionsFieldOperator),
+//					FieldValue:    pulumi.Any(namespaceIngestTimeRuleConditionsFieldValue),
+//					Kind:          pulumi.Any(namespaceIngestTimeRuleConditionsKind),
 //					AdditionalConditions: loganalytics.NamespaceIngestTimeRuleConditionsAdditionalConditionArray{
 //						&loganalytics.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs{
-//							ConditionField:    pulumi.Any(_var.Namespace_ingest_time_rule_conditions_additional_conditions_condition_field),
-//							ConditionOperator: pulumi.Any(_var.Namespace_ingest_time_rule_conditions_additional_conditions_condition_operator),
-//							ConditionValue:    pulumi.Any(_var.Namespace_ingest_time_rule_conditions_additional_conditions_condition_value),
+//							ConditionField:    pulumi.Any(namespaceIngestTimeRuleConditionsAdditionalConditionsConditionField),
+//							ConditionOperator: pulumi.Any(namespaceIngestTimeRuleConditionsAdditionalConditionsConditionOperator),
+//							ConditionValue:    pulumi.Any(namespaceIngestTimeRuleConditionsAdditionalConditionsConditionValue),
 //						},
 //					},
 //				},
-//				DisplayName: pulumi.Any(_var.Namespace_ingest_time_rule_display_name),
-//				Namespace:   pulumi.Any(_var.Namespace_ingest_time_rule_namespace),
+//				DisplayName: pulumi.Any(namespaceIngestTimeRuleDisplayName),
+//				Namespace:   pulumi.Any(namespaceIngestTimeRuleNamespace),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Namespace_ingest_time_rule_description),
+//				Description: pulumi.Any(namespaceIngestTimeRuleDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

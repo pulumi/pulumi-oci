@@ -29,7 +29,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testLifecycleEnvironment = Oci.OsManagementHub.GetLifecycleEnvironment.Invoke(new()
         ///     {
-        ///         LifecycleEnvironmentId = oci_os_management_hub_lifecycle_environment.Test_lifecycle_environment.Id,
+        ///         LifecycleEnvironmentId = testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testLifecycleEnvironment = Oci.OsManagementHub.GetLifecycleEnvironment.Invoke(new()
         ///     {
-        ///         LifecycleEnvironmentId = oci_os_management_hub_lifecycle_environment.Test_lifecycle_environment.Id,
+        ///         LifecycleEnvironmentId = testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.Id,
         ///     });
         /// 
         /// });

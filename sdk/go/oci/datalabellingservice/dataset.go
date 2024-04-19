@@ -31,51 +31,51 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataLabellingService.NewDataset(ctx, "testDataset", &DataLabellingService.DatasetArgs{
-//				AnnotationFormat: pulumi.Any(_var.Dataset_annotation_format),
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
+//			_, err := DataLabellingService.NewDataset(ctx, "test_dataset", &DataLabellingService.DatasetArgs{
+//				AnnotationFormat: pulumi.Any(datasetAnnotationFormat),
+//				CompartmentId:    pulumi.Any(compartmentId),
 //				DatasetFormatDetails: &datalabellingservice.DatasetDatasetFormatDetailsArgs{
-//					FormatType: pulumi.Any(_var.Dataset_dataset_format_details_format_type),
+//					FormatType: pulumi.Any(datasetDatasetFormatDetailsFormatType),
 //					TextFileTypeMetadata: &datalabellingservice.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs{
-//						ColumnIndex:     pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_index),
-//						FormatType:      pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_format_type),
-//						ColumnDelimiter: pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_delimiter),
-//						ColumnName:      pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_column_name),
-//						EscapeCharacter: pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_escape_character),
-//						LineDelimiter:   pulumi.Any(_var.Dataset_dataset_format_details_text_file_type_metadata_line_delimiter),
+//						ColumnIndex:     pulumi.Any(datasetDatasetFormatDetailsTextFileTypeMetadataColumnIndex),
+//						FormatType:      pulumi.Any(datasetDatasetFormatDetailsTextFileTypeMetadataFormatType),
+//						ColumnDelimiter: pulumi.Any(datasetDatasetFormatDetailsTextFileTypeMetadataColumnDelimiter),
+//						ColumnName:      pulumi.Any(datasetDatasetFormatDetailsTextFileTypeMetadataColumnName),
+//						EscapeCharacter: pulumi.Any(datasetDatasetFormatDetailsTextFileTypeMetadataEscapeCharacter),
+//						LineDelimiter:   pulumi.Any(datasetDatasetFormatDetailsTextFileTypeMetadataLineDelimiter),
 //					},
 //				},
 //				DatasetSourceDetails: &datalabellingservice.DatasetDatasetSourceDetailsArgs{
-//					Bucket:     pulumi.Any(_var.Dataset_dataset_source_details_bucket),
-//					Namespace:  pulumi.Any(_var.Dataset_dataset_source_details_namespace),
-//					SourceType: pulumi.Any(_var.Dataset_dataset_source_details_source_type),
-//					Prefix:     pulumi.Any(_var.Dataset_dataset_source_details_prefix),
+//					Bucket:     pulumi.Any(datasetDatasetSourceDetailsBucket),
+//					Namespace:  pulumi.Any(datasetDatasetSourceDetailsNamespace),
+//					SourceType: pulumi.Any(datasetDatasetSourceDetailsSourceType),
+//					Prefix:     pulumi.Any(datasetDatasetSourceDetailsPrefix),
 //				},
 //				LabelSet: &datalabellingservice.DatasetLabelSetArgs{
 //					Items: datalabellingservice.DatasetLabelSetItemArray{
 //						&datalabellingservice.DatasetLabelSetItemArgs{
-//							Name: pulumi.Any(_var.Dataset_label_set_items_name),
+//							Name: pulumi.Any(datasetLabelSetItemsName),
 //						},
 //					},
 //				},
-//				DefinedTags:  pulumi.Any(_var.Dataset_defined_tags),
-//				Description:  pulumi.Any(_var.Dataset_description),
-//				DisplayName:  pulumi.Any(_var.Dataset_display_name),
-//				FreeformTags: pulumi.Any(_var.Dataset_freeform_tags),
+//				DefinedTags:  pulumi.Any(datasetDefinedTags),
+//				Description:  pulumi.Any(datasetDescription),
+//				DisplayName:  pulumi.Any(datasetDisplayName),
+//				FreeformTags: pulumi.Any(datasetFreeformTags),
 //				InitialImportDatasetConfiguration: &datalabellingservice.DatasetInitialImportDatasetConfigurationArgs{
 //					ImportFormat: &datalabellingservice.DatasetInitialImportDatasetConfigurationImportFormatArgs{
-//						Name:    pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_format_name),
-//						Version: pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_format_version),
+//						Name:    pulumi.Any(datasetInitialImportDatasetConfigurationImportFormatName),
+//						Version: pulumi.Any(datasetInitialImportDatasetConfigurationImportFormatVersion),
 //					},
 //					ImportMetadataPath: &datalabellingservice.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs{
-//						Bucket:     pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_metadata_path_bucket),
-//						Namespace:  pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_metadata_path_namespace),
-//						Path:       pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_metadata_path_path),
-//						SourceType: pulumi.Any(_var.Dataset_initial_import_dataset_configuration_import_metadata_path_source_type),
+//						Bucket:     pulumi.Any(datasetInitialImportDatasetConfigurationImportMetadataPathBucket),
+//						Namespace:  pulumi.Any(datasetInitialImportDatasetConfigurationImportMetadataPathNamespace),
+//						Path:       pulumi.Any(datasetInitialImportDatasetConfigurationImportMetadataPathPath),
+//						SourceType: pulumi.Any(datasetInitialImportDatasetConfigurationImportMetadataPathSourceType),
 //					},
 //				},
 //				InitialRecordGenerationConfiguration: nil,
-//				LabelingInstructions:                 pulumi.Any(_var.Dataset_labeling_instructions),
+//				LabelingInstructions:                 pulumi.Any(datasetLabelingInstructions),
 //			})
 //			if err != nil {
 //				return err

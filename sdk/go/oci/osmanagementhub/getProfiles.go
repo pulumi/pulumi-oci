@@ -32,15 +32,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetProfiles(ctx, &osmanagementhub.GetProfilesArgs{
-//				ArchType:            pulumi.StringRef(_var.Profile_arch_type),
-//				CompartmentId:       pulumi.StringRef(_var.Compartment_id),
-//				DisplayNames:        _var.Profile_display_name,
-//				DisplayNameContains: pulumi.StringRef(_var.Profile_display_name_contains),
-//				OsFamily:            pulumi.StringRef(_var.Profile_os_family),
-//				ProfileId:           pulumi.StringRef(oci_os_management_hub_profile.Test_profile.Id),
-//				ProfileTypes:        _var.Profile_profile_type,
-//				State:               pulumi.StringRef(_var.Profile_state),
-//				VendorName:          pulumi.StringRef(_var.Profile_vendor_name),
+//				ArchType:            pulumi.StringRef(profileArchType),
+//				CompartmentId:       pulumi.StringRef(compartmentId),
+//				DisplayNames:        profileDisplayName,
+//				DisplayNameContains: pulumi.StringRef(profileDisplayNameContains),
+//				OsFamily:            pulumi.StringRef(profileOsFamily),
+//				ProfileId:           pulumi.StringRef(testProfile.Id),
+//				ProfileTypes:        profileProfileType,
+//				State:               pulumi.StringRef(profileState),
+//				VendorName:          pulumi.StringRef(profileVendorName),
 //			}, nil)
 //			if err != nil {
 //				return err

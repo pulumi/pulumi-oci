@@ -156,12 +156,12 @@ def get_database_maintenance_run_histories(availability_domain: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=var["compartment_id"],
-        availability_domain=var["maintenance_run_history_availability_domain"],
-        maintenance_type=var["maintenance_run_history_maintenance_type"],
-        state=var["maintenance_run_history_state"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["maintenance_run_history_target_resource_type"])
+    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=compartment_id,
+        availability_domain=maintenance_run_history_availability_domain,
+        maintenance_type=maintenance_run_history_maintenance_type,
+        state=maintenance_run_history_state,
+        target_resource_id=test_target_resource["id"],
+        target_resource_type=maintenance_run_history_target_resource_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -217,12 +217,12 @@ def get_database_maintenance_run_histories_output(availability_domain: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=var["compartment_id"],
-        availability_domain=var["maintenance_run_history_availability_domain"],
-        maintenance_type=var["maintenance_run_history_maintenance_type"],
-        state=var["maintenance_run_history_state"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["maintenance_run_history_target_resource_type"])
+    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=compartment_id,
+        availability_domain=maintenance_run_history_availability_domain,
+        maintenance_type=maintenance_run_history_maintenance_type,
+        state=maintenance_run_history_state,
+        target_resource_id=test_target_resource["id"],
+        target_resource_type=maintenance_run_history_target_resource_type)
     ```
     <!--End PulumiCodeChooser -->
 

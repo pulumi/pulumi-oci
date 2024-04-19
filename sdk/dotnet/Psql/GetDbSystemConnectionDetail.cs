@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testDbSystemConnectionDetail = Oci.Psql.GetDbSystemConnectionDetail.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_psql_db_system.Test_db_system.Id,
+        ///         DbSystemId = testDbSystem.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testDbSystemConnectionDetail = Oci.Psql.GetDbSystemConnectionDetail.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_psql_db_system.Test_db_system.Id,
+        ///         DbSystemId = testDbSystem.Id,
         ///     });
         /// 
         /// });

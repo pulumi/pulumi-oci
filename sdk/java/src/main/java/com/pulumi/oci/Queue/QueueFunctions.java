@@ -47,7 +47,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
-     *             .queueId(oci_queue_queue.test_queue().id())
+     *             .queueId(testQueueOciQueueQueue.id())
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
-     *             .queueId(oci_queue_queue.test_queue().id())
+     *             .queueId(testQueueOciQueueQueue.id())
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
-     *             .queueId(oci_queue_queue.test_queue().id())
+     *             .queueId(testQueueOciQueueQueue.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueue = QueueFunctions.getQueue(GetQueueArgs.builder()
-     *             .queueId(oci_queue_queue.test_queue().id())
+     *             .queueId(testQueueOciQueueQueue.id())
      *             .build());
      * 
      *     }
@@ -215,10 +215,10 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueues = QueueFunctions.getQueues(GetQueuesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.queue_display_name())
-     *             .id(var_.queue_id())
-     *             .state(var_.queue_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(queueDisplayName)
+     *             .id(queueId)
+     *             .state(queueState)
      *             .build());
      * 
      *     }
@@ -260,10 +260,10 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueues = QueueFunctions.getQueues(GetQueuesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.queue_display_name())
-     *             .id(var_.queue_id())
-     *             .state(var_.queue_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(queueDisplayName)
+     *             .id(queueId)
+     *             .state(queueState)
      *             .build());
      * 
      *     }
@@ -305,10 +305,10 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueues = QueueFunctions.getQueues(GetQueuesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.queue_display_name())
-     *             .id(var_.queue_id())
-     *             .state(var_.queue_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(queueDisplayName)
+     *             .id(queueId)
+     *             .state(queueState)
      *             .build());
      * 
      *     }
@@ -350,10 +350,10 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueues = QueueFunctions.getQueues(GetQueuesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.queue_display_name())
-     *             .id(var_.queue_id())
-     *             .state(var_.queue_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(queueDisplayName)
+     *             .id(queueId)
+     *             .state(queueState)
      *             .build());
      * 
      *     }
@@ -395,10 +395,10 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueues = QueueFunctions.getQueues(GetQueuesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.queue_display_name())
-     *             .id(var_.queue_id())
-     *             .state(var_.queue_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(queueDisplayName)
+     *             .id(queueId)
+     *             .state(queueState)
      *             .build());
      * 
      *     }
@@ -440,10 +440,10 @@ public final class QueueFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueues = QueueFunctions.getQueues(GetQueuesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.queue_display_name())
-     *             .id(var_.queue_id())
-     *             .state(var_.queue_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(queueDisplayName)
+     *             .id(queueId)
+     *             .state(queueState)
      *             .build());
      * 
      *     }

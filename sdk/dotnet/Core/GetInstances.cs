@@ -35,12 +35,12 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstances = Oci.Core.GetInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Instance_availability_domain,
-        ///         CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
-        ///         ComputeClusterId = oci_core_compute_cluster.Test_compute_cluster.Id,
-        ///         DisplayName = @var.Instance_display_name,
-        ///         State = @var.Instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = instanceAvailabilityDomain,
+        ///         CapacityReservationId = testCapacityReservation.Id,
+        ///         ComputeClusterId = testComputeCluster.Id,
+        ///         DisplayName = instanceDisplayName,
+        ///         State = instanceState,
         ///     });
         /// 
         /// });
@@ -74,12 +74,12 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstances = Oci.Core.GetInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Instance_availability_domain,
-        ///         CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
-        ///         ComputeClusterId = oci_core_compute_cluster.Test_compute_cluster.Id,
-        ///         DisplayName = @var.Instance_display_name,
-        ///         State = @var.Instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = instanceAvailabilityDomain,
+        ///         CapacityReservationId = testCapacityReservation.Id,
+        ///         ComputeClusterId = testComputeCluster.Id,
+        ///         DisplayName = instanceDisplayName,
+        ///         State = instanceState,
         ///     });
         /// 
         /// });

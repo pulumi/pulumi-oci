@@ -25,23 +25,23 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDataSciencePrivateEndpoint = new Oci.DataScience.PrivateEndpoint("testDataSciencePrivateEndpoint", new()
+    ///     var testDataSciencePrivateEndpoint = new Oci.DataScience.PrivateEndpoint("test_data_science_private_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DataScienceResourceType = @var.Data_science_private_endpoint_data_science_resource_type,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DataScienceResourceType = dataSciencePrivateEndpointDataScienceResourceType,
+    ///         SubnetId = testSubnet.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Data_science_private_endpoint_description,
-    ///         DisplayName = @var.Data_science_private_endpoint_display_name,
+    ///         Description = dataSciencePrivateEndpointDescription,
+    ///         DisplayName = dataSciencePrivateEndpointDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         NsgIds = @var.Data_science_private_endpoint_nsg_ids,
-    ///         SubDomain = @var.Data_science_private_endpoint_sub_domain,
+    ///         NsgIds = dataSciencePrivateEndpointNsgIds,
+    ///         SubDomain = dataSciencePrivateEndpointSubDomain,
     ///     });
     /// 
     /// });

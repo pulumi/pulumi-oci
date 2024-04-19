@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsIdentityPropagationTrusts(ctx, &identity.GetDomainsIdentityPropagationTrustsArgs{
-//				IdcsEndpoint:                   data.Oci_identity_domain.Test_domain.Url,
-//				IdentityPropagationTrustCount:  pulumi.IntRef(_var.Identity_propagation_trust_identity_propagation_trust_count),
-//				IdentityPropagationTrustFilter: pulumi.StringRef(_var.Identity_propagation_trust_identity_propagation_trust_filter),
+//				IdcsEndpoint:                   testDomain.Url,
+//				IdentityPropagationTrustCount:  pulumi.IntRef(identityPropagationTrustIdentityPropagationTrustCount),
+//				IdentityPropagationTrustFilter: pulumi.StringRef(identityPropagationTrustIdentityPropagationTrustFilter),
 //				AttributeSets: []string{
 //					"all",
 //				},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Identity_propagation_trust_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Identity_propagation_trust_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.Identity_propagation_trust_start_index),
+//				Authorization:             pulumi.StringRef(identityPropagationTrustAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(identityPropagationTrustResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(identityPropagationTrustStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

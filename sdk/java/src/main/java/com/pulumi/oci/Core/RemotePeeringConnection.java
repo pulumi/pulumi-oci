@@ -46,13 +46,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRemotePeeringConnection = new RemotePeeringConnection(&#34;testRemotePeeringConnection&#34;, RemotePeeringConnectionArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .drgId(oci_core_drg.test_drg().id())
+ *             .compartmentId(compartmentId)
+ *             .drgId(testDrg.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.remote_peering_connection_display_name())
+ *             .displayName(remotePeeringConnectionDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .peerId(oci_core_remote_peering_connection.test_remote_peering_connection2().id())
- *             .peerRegionName(var_.remote_peering_connection_peer_region_name())
+ *             .peerId(testRemotePeeringConnection2.id())
+ *             .peerRegionName(remotePeeringConnectionPeerRegionName)
  *             .build());
  * 
  *     }

@@ -29,8 +29,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testWorkRequestLogEntries = Oci.ContainerEngine.GetWorkRequestLogEntries.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
+        ///         CompartmentId = compartmentId,
+        ///         WorkRequestId = testWorkRequest.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testWorkRequestLogEntries = Oci.ContainerEngine.GetWorkRequestLogEntries.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
+        ///         CompartmentId = compartmentId,
+        ///         WorkRequestId = testWorkRequest.Id,
         ///     });
         /// 
         /// });

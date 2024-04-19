@@ -18,16 +18,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnPremiseVantagePoint = new oci.apmsynthetics.OnPremiseVantagePoint("testOnPremiseVantagePoint", {
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ * const testOnPremiseVantagePoint = new oci.apmsynthetics.OnPremiseVantagePoint("test_on_premise_vantage_point", {
+ *     apmDomainId: testApmDomain.id,
+ *     name: onPremiseVantagePointName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.on_premise_vantage_point_description,
+ *     description: onPremiseVantagePointDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     type: _var.on_premise_vantage_point_type,
+ *     type: onPremiseVantagePointType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

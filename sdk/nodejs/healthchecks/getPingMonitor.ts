@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPingMonitor = oci.HealthChecks.getPingMonitor({
- *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ *     monitorId: testMonitor.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,7 +119,7 @@ export interface GetPingMonitorResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPingMonitor = oci.HealthChecks.getPingMonitor({
- *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ *     monitorId: testMonitor.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

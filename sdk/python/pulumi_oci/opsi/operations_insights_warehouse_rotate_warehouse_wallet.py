@@ -93,7 +93,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
+        test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("test_operations_insights_warehouse_rotate_warehouse_wallet", operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -131,7 +131,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
+        test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("test_operations_insights_warehouse_rotate_warehouse_wallet", operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
         ```
         <!--End PulumiCodeChooser -->
 

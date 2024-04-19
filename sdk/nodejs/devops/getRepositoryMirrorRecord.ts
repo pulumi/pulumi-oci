@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryMirrorRecord = oci.DevOps.getRepositoryMirrorRecord({
- *     mirrorRecordType: _var.repository_mirror_record_mirror_record_type,
- *     repositoryId: oci_devops_repository.test_repository.id,
+ *     mirrorRecordType: repositoryMirrorRecordMirrorRecordType,
+ *     repositoryId: testRepository.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -90,8 +90,8 @@ export interface GetRepositoryMirrorRecordResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryMirrorRecord = oci.DevOps.getRepositoryMirrorRecord({
- *     mirrorRecordType: _var.repository_mirror_record_mirror_record_type,
- *     repositoryId: oci_devops_repository.test_repository.id,
+ *     mirrorRecordType: repositoryMirrorRecordMirrorRecordType,
+ *     repositoryId: testRepository.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

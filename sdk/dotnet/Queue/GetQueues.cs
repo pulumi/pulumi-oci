@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Queue
         /// {
         ///     var testQueues = Oci.Queue.GetQueues.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Queue_display_name,
-        ///         Id = @var.Queue_id,
-        ///         State = @var.Queue_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = queueDisplayName,
+        ///         Id = queueId,
+        ///         State = queueState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Queue
         /// {
         ///     var testQueues = Oci.Queue.GetQueues.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Queue_display_name,
-        ///         Id = @var.Queue_id,
-        ///         State = @var.Queue_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = queueDisplayName,
+        ///         Id = queueId,
+        ///         State = queueState,
         ///     });
         /// 
         /// });

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApplications = oci.Functions.getApplications({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.application_display_name,
- *     id: _var.application_id,
- *     state: _var.application_state,
+ *     compartmentId: compartmentId,
+ *     displayName: applicationDisplayName,
+ *     id: applicationId,
+ *     state: applicationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetApplicationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApplications = oci.Functions.getApplications({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.application_display_name,
- *     id: _var.application_id,
- *     state: _var.application_state,
+ *     compartmentId: compartmentId,
+ *     displayName: applicationDisplayName,
+ *     id: applicationId,
+ *     state: applicationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -20,22 +20,22 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSource = new oci.osmanagement.SoftwareSource("testSoftwareSource", {
- *     archType: _var.software_source_arch_type,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.software_source_display_name,
- *     checksumType: _var.software_source_checksum_type,
+ * const testSoftwareSource = new oci.osmanagement.SoftwareSource("test_software_source", {
+ *     archType: softwareSourceArchType,
+ *     compartmentId: compartmentId,
+ *     displayName: softwareSourceDisplayName,
+ *     checksumType: softwareSourceChecksumType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.software_source_description,
+ *     description: softwareSourceDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     maintainerEmail: _var.software_source_maintainer_email,
- *     maintainerName: _var.software_source_maintainer_name,
- *     maintainerPhone: _var.software_source_maintainer_phone,
- *     parentId: oci_osmanagement_parent.test_parent.id,
+ *     maintainerEmail: softwareSourceMaintainerEmail,
+ *     maintainerName: softwareSourceMaintainerName,
+ *     maintainerPhone: softwareSourceMaintainerPhone,
+ *     parentId: testParent.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

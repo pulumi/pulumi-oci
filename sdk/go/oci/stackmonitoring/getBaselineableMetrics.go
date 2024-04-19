@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetBaselineableMetrics(ctx, &stackmonitoring.GetBaselineableMetricsArgs{
-//				BaselineableMetricId: pulumi.StringRef(oci_stack_monitoring_baselineable_metric.Test_baselineable_metric.Id),
-//				CompartmentId:        pulumi.StringRef(_var.Compartment_id),
-//				MetricNamespace:      pulumi.StringRef(_var.Baselineable_metric_metric_namespace),
-//				Name:                 pulumi.StringRef(_var.Baselineable_metric_name),
-//				ResourceGroup:        pulumi.StringRef(_var.Baselineable_metric_resource_group),
+//				BaselineableMetricId: pulumi.StringRef(testBaselineableMetric.Id),
+//				CompartmentId:        pulumi.StringRef(compartmentId),
+//				MetricNamespace:      pulumi.StringRef(baselineableMetricMetricNamespace),
+//				Name:                 pulumi.StringRef(baselineableMetricName),
+//				ResourceGroup:        pulumi.StringRef(baselineableMetricResourceGroup),
 //			}, nil)
 //			if err != nil {
 //				return err

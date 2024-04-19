@@ -32,9 +32,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testGroups = Oci.Identity.GetGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Name = @var.Group_name,
-        ///         State = @var.Group_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = groupName,
+        ///         State = groupState,
         ///     });
         /// 
         /// });
@@ -65,9 +65,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testGroups = Oci.Identity.GetGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Name = @var.Group_name,
-        ///         State = @var.Group_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = groupName,
+        ///         State = groupState,
         ///     });
         /// 
         /// });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudMigrations.GetReplicationSchedule(ctx, &cloudmigrations.GetReplicationScheduleArgs{
-//				ReplicationScheduleId: oci_cloud_migrations_replication_schedule.Test_replication_schedule.Id,
+//				ReplicationScheduleId: testReplicationScheduleOciCloudMigrationsReplicationSchedule.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

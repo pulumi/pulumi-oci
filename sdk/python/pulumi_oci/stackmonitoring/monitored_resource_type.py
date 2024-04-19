@@ -456,30 +456,31 @@ class MonitoredResourceType(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resource_type = oci.stack_monitoring.MonitoredResourceType("testMonitoredResourceType",
-            compartment_id=var["compartment_id"],
+        test_monitored_resource_type = oci.stack_monitoring.MonitoredResourceType("test_monitored_resource_type",
+            compartment_id=compartment_id,
+            name=monitored_resource_type_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["monitored_resource_type_description"],
-            display_name=var["monitored_resource_type_display_name"],
+            description=monitored_resource_type_description,
+            display_name=monitored_resource_type_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             metadata=oci.stack_monitoring.MonitoredResourceTypeMetadataArgs(
-                format=var["monitored_resource_type_metadata_format"],
-                agent_properties=var["monitored_resource_type_metadata_agent_properties"],
-                required_properties=var["monitored_resource_type_metadata_required_properties"],
+                format=monitored_resource_type_metadata_format,
+                agent_properties=monitored_resource_type_metadata_agent_properties,
+                required_properties=monitored_resource_type_metadata_required_properties,
                 unique_property_sets=[oci.stack_monitoring.MonitoredResourceTypeMetadataUniquePropertySetArgs(
-                    properties=var["monitored_resource_type_metadata_unique_property_sets_properties"],
+                    properties=monitored_resource_type_metadata_unique_property_sets_properties,
                 )],
-                valid_properties_for_creates=var["monitored_resource_type_metadata_valid_properties_for_create"],
-                valid_properties_for_updates=var["monitored_resource_type_metadata_valid_properties_for_update"],
-                valid_property_values=var["monitored_resource_type_metadata_valid_property_values"],
+                valid_properties_for_creates=monitored_resource_type_metadata_valid_properties_for_create,
+                valid_properties_for_updates=monitored_resource_type_metadata_valid_properties_for_update,
+                valid_property_values=monitored_resource_type_metadata_valid_property_values,
             ),
-            metric_namespace=var["monitored_resource_type_metric_namespace"],
-            resource_category=var["monitored_resource_type_resource_category"],
-            source_type=var["monitored_resource_type_source_type"])
+            metric_namespace=monitored_resource_type_metric_namespace,
+            resource_category=monitored_resource_type_resource_category,
+            source_type=monitored_resource_type_source_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -526,30 +527,31 @@ class MonitoredResourceType(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resource_type = oci.stack_monitoring.MonitoredResourceType("testMonitoredResourceType",
-            compartment_id=var["compartment_id"],
+        test_monitored_resource_type = oci.stack_monitoring.MonitoredResourceType("test_monitored_resource_type",
+            compartment_id=compartment_id,
+            name=monitored_resource_type_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["monitored_resource_type_description"],
-            display_name=var["monitored_resource_type_display_name"],
+            description=monitored_resource_type_description,
+            display_name=monitored_resource_type_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             metadata=oci.stack_monitoring.MonitoredResourceTypeMetadataArgs(
-                format=var["monitored_resource_type_metadata_format"],
-                agent_properties=var["monitored_resource_type_metadata_agent_properties"],
-                required_properties=var["monitored_resource_type_metadata_required_properties"],
+                format=monitored_resource_type_metadata_format,
+                agent_properties=monitored_resource_type_metadata_agent_properties,
+                required_properties=monitored_resource_type_metadata_required_properties,
                 unique_property_sets=[oci.stack_monitoring.MonitoredResourceTypeMetadataUniquePropertySetArgs(
-                    properties=var["monitored_resource_type_metadata_unique_property_sets_properties"],
+                    properties=monitored_resource_type_metadata_unique_property_sets_properties,
                 )],
-                valid_properties_for_creates=var["monitored_resource_type_metadata_valid_properties_for_create"],
-                valid_properties_for_updates=var["monitored_resource_type_metadata_valid_properties_for_update"],
-                valid_property_values=var["monitored_resource_type_metadata_valid_property_values"],
+                valid_properties_for_creates=monitored_resource_type_metadata_valid_properties_for_create,
+                valid_properties_for_updates=monitored_resource_type_metadata_valid_properties_for_update,
+                valid_property_values=monitored_resource_type_metadata_valid_property_values,
             ),
-            metric_namespace=var["monitored_resource_type_metric_namespace"],
-            resource_category=var["monitored_resource_type_resource_category"],
-            source_type=var["monitored_resource_type_source_type"])
+            metric_namespace=monitored_resource_type_metric_namespace,
+            resource_category=monitored_resource_type_resource_category,
+            source_type=monitored_resource_type_source_type)
         ```
         <!--End PulumiCodeChooser -->
 

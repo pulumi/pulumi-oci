@@ -35,14 +35,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSdmMaskingPolicyDifference(ctx, "testSdmMaskingPolicyDifference", &DataSafe.SdmMaskingPolicyDifferenceArgs{
-//				CompartmentId:   pulumi.Any(_var.Compartment_id),
-//				MaskingPolicyId: pulumi.Any(oci_data_safe_masking_policy.Test_masking_policy.Id),
+//			_, err := DataSafe.NewSdmMaskingPolicyDifference(ctx, "test_sdm_masking_policy_difference", &DataSafe.SdmMaskingPolicyDifferenceArgs{
+//				CompartmentId:   pulumi.Any(compartmentId),
+//				MaskingPolicyId: pulumi.Any(testMaskingPolicy.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DifferenceType: pulumi.Any(_var.Sdm_masking_policy_difference_difference_type),
-//				DisplayName:    pulumi.Any(_var.Sdm_masking_policy_difference_display_name),
+//				DifferenceType: pulumi.Any(sdmMaskingPolicyDifferenceDifferenceType),
+//				DisplayName:    pulumi.Any(sdmMaskingPolicyDifferenceDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

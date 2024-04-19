@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyCompletedApprovals = Oci.Identity.GetDomainsMyCompletedApprovals.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyCompletedApprovalCount = @var.My_completed_approval_my_completed_approval_count,
-        ///         MyCompletedApprovalFilter = @var.My_completed_approval_my_completed_approval_filter,
-        ///         Authorization = @var.My_completed_approval_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_completed_approval_resource_type_schema_version,
-        ///         StartIndex = @var.My_completed_approval_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCompletedApprovalCount = myCompletedApprovalMyCompletedApprovalCount,
+        ///         MyCompletedApprovalFilter = myCompletedApprovalMyCompletedApprovalFilter,
+        ///         Authorization = myCompletedApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myCompletedApprovalResourceTypeSchemaVersion,
+        ///         StartIndex = myCompletedApprovalStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyCompletedApprovals = Oci.Identity.GetDomainsMyCompletedApprovals.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyCompletedApprovalCount = @var.My_completed_approval_my_completed_approval_count,
-        ///         MyCompletedApprovalFilter = @var.My_completed_approval_my_completed_approval_filter,
-        ///         Authorization = @var.My_completed_approval_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_completed_approval_resource_type_schema_version,
-        ///         StartIndex = @var.My_completed_approval_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCompletedApprovalCount = myCompletedApprovalMyCompletedApprovalCount,
+        ///         MyCompletedApprovalFilter = myCompletedApprovalMyCompletedApprovalFilter,
+        ///         Authorization = myCompletedApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myCompletedApprovalResourceTypeSchemaVersion,
+        ///         StartIndex = myCompletedApprovalStartIndex,
         ///     });
         /// 
         /// });

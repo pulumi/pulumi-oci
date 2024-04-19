@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetConnection(ctx, &devops.GetConnectionArgs{
-//				ConnectionId: oci_devops_connection.Test_connection.Id,
+//				ConnectionId: testConnectionOciDevopsConnection.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

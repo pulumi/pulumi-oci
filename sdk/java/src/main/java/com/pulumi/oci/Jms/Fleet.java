@@ -57,19 +57,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFleet = new Fleet(&#34;testFleet&#34;, FleetArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.fleet_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(fleetDisplayName)
  *             .inventoryLog(FleetInventoryLogArgs.builder()
- *                 .logGroupId(oci_logging_log_group.test_log_group().id())
- *                 .logId(oci_logging_log.test_log().id())
+ *                 .logGroupId(testLogGroup.id())
+ *                 .logId(testLog.id())
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.fleet_description())
+ *             .description(fleetDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .isAdvancedFeaturesEnabled(var_.fleet_is_advanced_features_enabled())
+ *             .isAdvancedFeaturesEnabled(fleetIsAdvancedFeaturesEnabled)
  *             .operationLog(FleetOperationLogArgs.builder()
- *                 .logGroupId(oci_logging_log_group.test_log_group().id())
- *                 .logId(oci_logging_log.test_log().id())
+ *                 .logGroupId(testLogGroup.id())
+ *                 .logId(testLog.id())
  *                 .build())
  *             .build());
  * 

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testSubnet = Oci.Core.GetSubnet.Invoke(new()
         ///     {
-        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///         SubnetId = testSubnetOciCoreSubnet.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testSubnet = Oci.Core.GetSubnet.Invoke(new()
         ///     {
-        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///         SubnetId = testSubnetOciCoreSubnet.Id,
         ///     });
         /// 
         /// });

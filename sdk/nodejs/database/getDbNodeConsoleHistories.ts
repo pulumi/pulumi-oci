@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbNodeConsoleHistories = oci.Database.getDbNodeConsoleHistories({
- *     dbNodeId: oci_database_db_node.test_db_node.id,
- *     displayName: _var.db_node_console_history_display_name,
- *     state: _var.db_node_console_history_state,
+ *     dbNodeId: testDbNode.id,
+ *     displayName: dbNodeConsoleHistoryDisplayName,
+ *     state: dbNodeConsoleHistoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetDbNodeConsoleHistoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbNodeConsoleHistories = oci.Database.getDbNodeConsoleHistories({
- *     dbNodeId: oci_database_db_node.test_db_node.id,
- *     displayName: _var.db_node_console_history_display_name,
- *     state: _var.db_node_console_history_state,
+ *     dbNodeId: testDbNode.id,
+ *     displayName: dbNodeConsoleHistoryDisplayName,
+ *     state: dbNodeConsoleHistoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

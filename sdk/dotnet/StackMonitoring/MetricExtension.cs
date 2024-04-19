@@ -25,64 +25,65 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMetricExtension = new Oci.StackMonitoring.MetricExtension("testMetricExtension", new()
+    ///     var testMetricExtension = new Oci.StackMonitoring.MetricExtension("test_metric_extension", new()
     ///     {
-    ///         CollectionRecurrences = @var.Metric_extension_collection_recurrences,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Metric_extension_display_name,
+    ///         CollectionRecurrences = metricExtensionCollectionRecurrences,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = metricExtensionDisplayName,
     ///         MetricLists = new[]
     ///         {
     ///             new Oci.StackMonitoring.Inputs.MetricExtensionMetricListArgs
     ///             {
-    ///                 DataType = @var.Metric_extension_metric_list_data_type,
-    ///                 Name = @var.Metric_extension_metric_list_name,
-    ///                 ComputeExpression = @var.Metric_extension_metric_list_compute_expression,
-    ///                 DisplayName = @var.Metric_extension_metric_list_display_name,
-    ///                 IsDimension = @var.Metric_extension_metric_list_is_dimension,
-    ///                 IsHidden = @var.Metric_extension_metric_list_is_hidden,
-    ///                 MetricCategory = @var.Metric_extension_metric_list_metric_category,
-    ///                 Unit = @var.Metric_extension_metric_list_unit,
+    ///                 DataType = metricExtensionMetricListDataType,
+    ///                 Name = metricExtensionMetricListName,
+    ///                 ComputeExpression = metricExtensionMetricListComputeExpression,
+    ///                 DisplayName = metricExtensionMetricListDisplayName,
+    ///                 IsDimension = metricExtensionMetricListIsDimension,
+    ///                 IsHidden = metricExtensionMetricListIsHidden,
+    ///                 MetricCategory = metricExtensionMetricListMetricCategory,
+    ///                 Unit = metricExtensionMetricListUnit,
     ///             },
     ///         },
+    ///         Name = metricExtensionName,
     ///         QueryProperties = new Oci.StackMonitoring.Inputs.MetricExtensionQueryPropertiesArgs
     ///         {
-    ///             CollectionMethod = @var.Metric_extension_query_properties_collection_method,
-    ///             Arguments = @var.Metric_extension_query_properties_arguments,
-    ///             AutoRowPrefix = @var.Metric_extension_query_properties_auto_row_prefix,
-    ///             Command = @var.Metric_extension_query_properties_command,
-    ///             Delimiter = @var.Metric_extension_query_properties_delimiter,
-    ///             IdentityMetric = @var.Metric_extension_query_properties_identity_metric,
+    ///             CollectionMethod = metricExtensionQueryPropertiesCollectionMethod,
+    ///             Arguments = metricExtensionQueryPropertiesArguments,
+    ///             AutoRowPrefix = metricExtensionQueryPropertiesAutoRowPrefix,
+    ///             Command = metricExtensionQueryPropertiesCommand,
+    ///             Delimiter = metricExtensionQueryPropertiesDelimiter,
+    ///             IdentityMetric = metricExtensionQueryPropertiesIdentityMetric,
     ///             InParamDetails = new[]
     ///             {
     ///                 new Oci.StackMonitoring.Inputs.MetricExtensionQueryPropertiesInParamDetailArgs
     ///                 {
-    ///                     InParamPosition = @var.Metric_extension_query_properties_in_param_details_in_param_position,
-    ///                     InParamValue = @var.Metric_extension_query_properties_in_param_details_in_param_value,
+    ///                     InParamPosition = metricExtensionQueryPropertiesInParamDetailsInParamPosition,
+    ///                     InParamValue = metricExtensionQueryPropertiesInParamDetailsInParamValue,
     ///                 },
     ///             },
-    ///             IsMetricServiceEnabled = @var.Metric_extension_query_properties_is_metric_service_enabled,
-    ///             JmxAttributes = @var.Metric_extension_query_properties_jmx_attributes,
-    ///             ManagedBeanQuery = @var.Metric_extension_query_properties_managed_bean_query,
+    ///             IsMetricServiceEnabled = metricExtensionQueryPropertiesIsMetricServiceEnabled,
+    ///             JmxAttributes = metricExtensionQueryPropertiesJmxAttributes,
+    ///             ManagedBeanQuery = metricExtensionQueryPropertiesManagedBeanQuery,
     ///             OutParamDetails = new Oci.StackMonitoring.Inputs.MetricExtensionQueryPropertiesOutParamDetailsArgs
     ///             {
-    ///                 OutParamPosition = @var.Metric_extension_query_properties_out_param_details_out_param_position,
-    ///                 OutParamType = @var.Metric_extension_query_properties_out_param_details_out_param_type,
+    ///                 OutParamPosition = metricExtensionQueryPropertiesOutParamDetailsOutParamPosition,
+    ///                 OutParamType = metricExtensionQueryPropertiesOutParamDetailsOutParamType,
     ///             },
     ///             ScriptDetails = new Oci.StackMonitoring.Inputs.MetricExtensionQueryPropertiesScriptDetailsArgs
     ///             {
-    ///                 Content = @var.Metric_extension_query_properties_script_details_content,
-    ///                 Name = @var.Metric_extension_query_properties_script_details_name,
+    ///                 Content = metricExtensionQueryPropertiesScriptDetailsContent,
+    ///                 Name = metricExtensionQueryPropertiesScriptDetailsName,
     ///             },
     ///             SqlDetails = new Oci.StackMonitoring.Inputs.MetricExtensionQueryPropertiesSqlDetailsArgs
     ///             {
-    ///                 Content = @var.Metric_extension_query_properties_sql_details_content,
-    ///                 ScriptFileName = @var.Metric_extension_query_properties_sql_details_script_file_name,
+    ///                 Content = metricExtensionQueryPropertiesSqlDetailsContent,
+    ///                 ScriptFileName = metricExtensionQueryPropertiesSqlDetailsScriptFileName,
     ///             },
-    ///             SqlType = @var.Metric_extension_query_properties_sql_type,
-    ///             StartsWith = @var.Metric_extension_query_properties_starts_with,
+    ///             SqlType = metricExtensionQueryPropertiesSqlType,
+    ///             StartsWith = metricExtensionQueryPropertiesStartsWith,
     ///         },
-    ///         ResourceType = @var.Metric_extension_resource_type,
-    ///         Description = @var.Metric_extension_description,
+    ///         ResourceType = metricExtensionResourceType,
+    ///         Description = metricExtensionDescription,
     ///     });
     /// 
     /// });

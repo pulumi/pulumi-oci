@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImportStandardTagsManagement = new oci.identity.ImportStandardTagsManagement("testImportStandardTagsManagement", {
- *     compartmentId: _var.compartment_id,
- *     standardTagNamespaceName: oci_identity_tag_namespace.test_tag_namespace.name,
+ * const testImportStandardTagsManagement = new oci.identity.ImportStandardTagsManagement("test_import_standard_tags_management", {
+ *     compartmentId: compartmentId,
+ *     standardTagNamespaceName: testTagNamespace.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

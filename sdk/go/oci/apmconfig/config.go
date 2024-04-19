@@ -31,46 +31,46 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmConfig.NewConfig(ctx, "testConfig", &ApmConfig.ConfigArgs{
-//				ApmDomainId: pulumi.Any(oci_apm_apm_domain.Test_apm_domain.Id),
-//				ConfigType:  pulumi.Any(_var.Config_config_type),
-//				DisplayName: pulumi.Any(_var.Config_display_name),
+//			_, err := ApmConfig.NewConfig(ctx, "test_config", &ApmConfig.ConfigArgs{
+//				ApmDomainId: pulumi.Any(testApmDomain.Id),
+//				ConfigType:  pulumi.Any(configConfigType),
+//				DisplayName: pulumi.Any(configDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Config_description),
+//				Description: pulumi.Any(configDescription),
 //				Dimensions: apmconfig.ConfigDimensionArray{
 //					&apmconfig.ConfigDimensionArgs{
-//						Name:        pulumi.Any(_var.Config_dimensions_name),
-//						ValueSource: pulumi.Any(_var.Config_dimensions_value_source),
+//						Name:        pulumi.Any(configDimensionsName),
+//						ValueSource: pulumi.Any(configDimensionsValueSource),
 //					},
 //				},
-//				FilterId:   pulumi.Any(oci_apm_config_filter.Test_filter.Id),
-//				FilterText: pulumi.Any(_var.Config_filter_text),
+//				FilterId:   pulumi.Any(testFilter.Id),
+//				FilterText: pulumi.Any(configFilterText),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Group: pulumi.Any(_var.Config_group),
+//				Group: pulumi.Any(configGroup),
 //				Metrics: apmconfig.ConfigMetricArray{
 //					&apmconfig.ConfigMetricArgs{
-//						Description: pulumi.Any(_var.Config_metrics_description),
-//						Name:        pulumi.Any(_var.Config_metrics_name),
-//						Unit:        pulumi.Any(_var.Config_metrics_unit),
-//						ValueSource: pulumi.Any(_var.Config_metrics_value_source),
+//						Description: pulumi.Any(configMetricsDescription),
+//						Name:        pulumi.Any(configMetricsName),
+//						Unit:        pulumi.Any(configMetricsUnit),
+//						ValueSource: pulumi.Any(configMetricsValueSource),
 //					},
 //				},
-//				Namespace: pulumi.Any(_var.Config_namespace),
-//				OpcDryRun: pulumi.Any(_var.Config_opc_dry_run),
-//				Options:   pulumi.Any(_var.Config_options),
+//				Namespace: pulumi.Any(configNamespace),
+//				OpcDryRun: pulumi.Any(configOpcDryRun),
+//				Options:   pulumi.Any(configOptions),
 //				Rules: apmconfig.ConfigRuleArray{
 //					&apmconfig.ConfigRuleArgs{
-//						DisplayName:            pulumi.Any(_var.Config_rules_display_name),
-//						FilterText:             pulumi.Any(_var.Config_rules_filter_text),
-//						IsApplyToErrorSpans:    pulumi.Any(_var.Config_rules_is_apply_to_error_spans),
-//						IsEnabled:              pulumi.Any(_var.Config_rules_is_enabled),
-//						Priority:               pulumi.Any(_var.Config_rules_priority),
-//						SatisfiedResponseTime:  pulumi.Any(_var.Config_rules_satisfied_response_time),
-//						ToleratingResponseTime: pulumi.Any(_var.Config_rules_tolerating_response_time),
+//						DisplayName:            pulumi.Any(configRulesDisplayName),
+//						FilterText:             pulumi.Any(configRulesFilterText),
+//						IsApplyToErrorSpans:    pulumi.Any(configRulesIsApplyToErrorSpans),
+//						IsEnabled:              pulumi.Any(configRulesIsEnabled),
+//						Priority:               pulumi.Any(configRulesPriority),
+//						SatisfiedResponseTime:  pulumi.Any(configRulesSatisfiedResponseTime),
+//						ToleratingResponseTime: pulumi.Any(configRulesToleratingResponseTime),
 //					},
 //				},
 //			})

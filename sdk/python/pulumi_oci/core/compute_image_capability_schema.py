@@ -304,20 +304,20 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_image_capability_schema = oci.core.ComputeImageCapabilitySchema("testComputeImageCapabilitySchema",
-            compartment_id=var["compartment_id"],
-            compute_global_image_capability_schema_version_name=var["compute_image_capability_schema_compute_global_image_capability_schema_version_name"],
-            image_id=oci_core_image["test_image"]["id"],
+        test_compute_image_capability_schema = oci.core.ComputeImageCapabilitySchema("test_compute_image_capability_schema",
+            compartment_id=compartment_id,
+            compute_global_image_capability_schema_version_name=compute_image_capability_schema_compute_global_image_capability_schema_version_name,
+            image_id=test_image["id"],
             schema_data=[{
-                "descriptorType": var["compute_image_capability_schema_schema_data_descriptor_type"],
-                "source": var["compute_image_capability_schema_schema_data_source"],
-                "defaultValue": var["compute_image_capability_schema_schema_data_default_value"],
-                "values": var["compute_image_capability_schema_schema_data_values"],
+                "descriptorType": compute_image_capability_schema_schema_data_descriptor_type,
+                "source": compute_image_capability_schema_schema_data_source,
+                "defaultValue": compute_image_capability_schema_schema_data_default_value,
+                "values": compute_image_capability_schema_schema_data_values,
             }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["compute_image_capability_schema_display_name"],
+            display_name=compute_image_capability_schema_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -360,20 +360,20 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_image_capability_schema = oci.core.ComputeImageCapabilitySchema("testComputeImageCapabilitySchema",
-            compartment_id=var["compartment_id"],
-            compute_global_image_capability_schema_version_name=var["compute_image_capability_schema_compute_global_image_capability_schema_version_name"],
-            image_id=oci_core_image["test_image"]["id"],
+        test_compute_image_capability_schema = oci.core.ComputeImageCapabilitySchema("test_compute_image_capability_schema",
+            compartment_id=compartment_id,
+            compute_global_image_capability_schema_version_name=compute_image_capability_schema_compute_global_image_capability_schema_version_name,
+            image_id=test_image["id"],
             schema_data=[{
-                "descriptorType": var["compute_image_capability_schema_schema_data_descriptor_type"],
-                "source": var["compute_image_capability_schema_schema_data_source"],
-                "defaultValue": var["compute_image_capability_schema_schema_data_default_value"],
-                "values": var["compute_image_capability_schema_schema_data_values"],
+                "descriptorType": compute_image_capability_schema_schema_data_descriptor_type,
+                "source": compute_image_capability_schema_schema_data_source,
+                "defaultValue": compute_image_capability_schema_schema_data_default_value,
+                "values": compute_image_capability_schema_schema_data_values,
             }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["compute_image_capability_schema_display_name"],
+            display_name=compute_image_capability_schema_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourcesAssociateMonitoredResource = new oci.stackmonitoring.MonitoredResourcesAssociateMonitoredResource("testMonitoredResourcesAssociateMonitoredResource", {
- *     associationType: _var.monitored_resources_associate_monitored_resource_association_type,
- *     compartmentId: _var.compartment_id,
- *     destinationResourceId: oci_stack_monitoring_destination_resource.test_destination_resource.id,
- *     sourceResourceId: oci_stack_monitoring_source_resource.test_source_resource.id,
+ * const testMonitoredResourcesAssociateMonitoredResource = new oci.stackmonitoring.MonitoredResourcesAssociateMonitoredResource("test_monitored_resources_associate_monitored_resource", {
+ *     associationType: monitoredResourcesAssociateMonitoredResourceAssociationType,
+ *     compartmentId: compartmentId,
+ *     destinationResourceId: testDestinationResource.id,
+ *     sourceResourceId: testSourceResource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,11 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDrgRouteTableRouteRule(ctx, "testDrgRouteTableRouteRule", &Core.DrgRouteTableRouteRuleArgs{
-//				DrgRouteTableId:        pulumi.Any(oci_core_drg_route_table.Test_drg_route_table.Id),
-//				Destination:            pulumi.Any(_var.Drg_route_table_route_rule_route_rules_destination),
-//				DestinationType:        pulumi.Any(_var.Drg_route_table_route_rule_route_rules_destination_type),
-//				NextHopDrgAttachmentId: pulumi.Any(oci_core_drg_attachment.Test_drg_attachment.Id),
+//			_, err := Core.NewDrgRouteTableRouteRule(ctx, "test_drg_route_table_route_rule", &Core.DrgRouteTableRouteRuleArgs{
+//				DrgRouteTableId:        pulumi.Any(testDrgRouteTable.Id),
+//				Destination:            pulumi.Any(drgRouteTableRouteRuleRouteRulesDestination),
+//				DestinationType:        pulumi.Any(drgRouteTableRouteRuleRouteRulesDestinationType),
+//				NextHopDrgAttachmentId: pulumi.Any(testDrgAttachment.Id),
 //			})
 //			if err != nil {
 //				return err

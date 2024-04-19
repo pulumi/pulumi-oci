@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetManagedInstanceGroup(ctx, &osmanagementhub.GetManagedInstanceGroupArgs{
-//				ManagedInstanceGroupId: oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
+//				ManagedInstanceGroupId: testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

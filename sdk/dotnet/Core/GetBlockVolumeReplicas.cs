@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testBlockVolumeReplicas = Oci.Core.GetBlockVolumeReplicas.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Block_volume_replica_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Block_volume_replica_display_name,
-        ///         State = @var.Block_volume_replica_state,
-        ///         VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
+        ///         AvailabilityDomain = blockVolumeReplicaAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = blockVolumeReplicaDisplayName,
+        ///         State = blockVolumeReplicaState,
+        ///         VolumeGroupReplicaId = testVolumeGroupReplica.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testBlockVolumeReplicas = Oci.Core.GetBlockVolumeReplicas.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Block_volume_replica_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Block_volume_replica_display_name,
-        ///         State = @var.Block_volume_replica_state,
-        ///         VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
+        ///         AvailabilityDomain = blockVolumeReplicaAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = blockVolumeReplicaDisplayName,
+        ///         State = blockVolumeReplicaState,
+        ///         VolumeGroupReplicaId = testVolumeGroupReplica.Id,
         ///     });
         /// 
         /// });

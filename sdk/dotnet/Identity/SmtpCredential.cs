@@ -28,10 +28,10 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSmtpCredential = new Oci.Identity.SmtpCredential("testSmtpCredential", new()
+    ///     var testSmtpCredential = new Oci.Identity.SmtpCredential("test_smtp_credential", new()
     ///     {
-    ///         Description = @var.Smtp_credential_description,
-    ///         UserId = oci_identity_user.Test_user.Id,
+    ///         Description = smtpCredentialDescription,
+    ///         UserId = testUser.Id,
     ///     });
     /// 
     /// });

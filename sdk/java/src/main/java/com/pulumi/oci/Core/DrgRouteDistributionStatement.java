@@ -46,14 +46,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDrgRouteDistributionStatement = new DrgRouteDistributionStatement(&#34;testDrgRouteDistributionStatement&#34;, DrgRouteDistributionStatementArgs.builder()        
- *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
- *             .action(var_.drg_route_distribution_statement_statements_action())
+ *             .drgRouteDistributionId(testDrgRouteDistribution.id())
+ *             .action(drgRouteDistributionStatementStatementsAction)
  *             .matchCriteria(DrgRouteDistributionStatementMatchCriteriaArgs.builder()
- *                 .matchType(var_.drg_route_distribution_statement_statements_match_criteria_match_type())
- *                 .attachmentType(var_.drg_route_distribution_statement_statements_match_criteria_attachment_type())
- *                 .drgAttachmentId(oci_core_drg_attachment.test_drg_attachment().id())
+ *                 .matchType(drgRouteDistributionStatementStatementsMatchCriteriaMatchType)
+ *                 .attachmentType(drgRouteDistributionStatementStatementsMatchCriteriaAttachmentType)
+ *                 .drgAttachmentId(testDrgAttachment.id())
  *                 .build())
- *             .priority(var_.drg_route_distribution_statement_statements_priority())
+ *             .priority(drgRouteDistributionStatementStatementsPriority)
  *             .build());
  * 
  *     }

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTagStandardTagNamespaceTemplates = oci.Identity.getTagStandardTagNamespaceTemplates({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetTagStandardTagNamespaceTemplatesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTagStandardTagNamespaceTemplates = oci.Identity.getTagStandardTagNamespaceTemplates({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

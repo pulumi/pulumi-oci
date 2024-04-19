@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscribers = oci.ApiGateway.getSubscribers({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.subscriber_display_name,
- *     state: _var.subscriber_state,
+ *     compartmentId: compartmentId,
+ *     displayName: subscriberDisplayName,
+ *     state: subscriberState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetSubscribersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscribers = oci.ApiGateway.getSubscribers({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.subscriber_display_name,
- *     state: _var.subscriber_state,
+ *     compartmentId: compartmentId,
+ *     displayName: subscriberDisplayName,
+ *     state: subscriberState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

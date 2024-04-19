@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAvailabilityDomains = oci.Identity.getAvailabilityDomains({
- *     compartmentId: _var.tenancy_ocid,
+ *     compartmentId: tenancyOcid,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -83,7 +83,7 @@ export interface GetAvailabilityDomainsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAvailabilityDomains = oci.Identity.getAvailabilityDomains({
- *     compartmentId: _var.tenancy_ocid,
+ *     compartmentId: tenancyOcid,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

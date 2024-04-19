@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificateAuthority = oci.CertificatesManagement.getCertificateAuthority({
- *     certificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
+ *     certificateAuthorityId: testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetCertificateAuthorityResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificateAuthority = oci.CertificatesManagement.getCertificateAuthority({
- *     certificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
+ *     certificateAuthorityId: testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

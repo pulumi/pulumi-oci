@@ -296,7 +296,7 @@ def get_asset_source(asset_source_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_asset_source = oci.CloudBridge.get_asset_source(asset_source_id=oci_cloud_bridge_asset_source["test_asset_source"]["id"])
+    test_asset_source = oci.CloudBridge.get_asset_source(asset_source_id=test_asset_source_oci_cloud_bridge_asset_source["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -347,7 +347,7 @@ def get_asset_source_output(asset_source_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_asset_source = oci.CloudBridge.get_asset_source(asset_source_id=oci_cloud_bridge_asset_source["test_asset_source"]["id"])
+    test_asset_source = oci.CloudBridge.get_asset_source(asset_source_id=test_asset_source_oci_cloud_bridge_asset_source["id"])
     ```
     <!--End PulumiCodeChooser -->
 

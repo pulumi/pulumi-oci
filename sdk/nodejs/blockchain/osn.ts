@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOsn = new oci.blockchain.Osn("testOsn", {
- *     ad: _var.osn_ad,
- *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
+ * const testOsn = new oci.blockchain.Osn("test_osn", {
+ *     ad: osnAd,
+ *     blockchainPlatformId: testBlockchainPlatform.id,
  *     ocpuAllocationParam: {
- *         ocpuAllocationNumber: _var.osn_ocpu_allocation_param_ocpu_allocation_number,
+ *         ocpuAllocationNumber: osnOcpuAllocationParamOcpuAllocationNumber,
  *     },
  * });
  * ```

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasks = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasks({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     name: _var.managed_database_sql_tuning_advisor_task_name,
- *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_task_opc_named_credential_id,
- *     status: _var.managed_database_sql_tuning_advisor_task_status,
- *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
- *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     name: managedDatabaseSqlTuningAdvisorTaskName,
+ *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId,
+ *     status: managedDatabaseSqlTuningAdvisorTaskStatus,
+ *     timeGreaterThanOrEqualTo: managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo,
+ *     timeLessThanOrEqualTo: managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,12 +110,12 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasks = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasks({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     name: _var.managed_database_sql_tuning_advisor_task_name,
- *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_task_opc_named_credential_id,
- *     status: _var.managed_database_sql_tuning_advisor_task_status,
- *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
- *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     name: managedDatabaseSqlTuningAdvisorTaskName,
+ *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId,
+ *     status: managedDatabaseSqlTuningAdvisorTaskStatus,
+ *     timeGreaterThanOrEqualTo: managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo,
+ *     timeLessThanOrEqualTo: managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

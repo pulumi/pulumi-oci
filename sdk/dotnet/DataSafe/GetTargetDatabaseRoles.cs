@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabaseRoles = Oci.DataSafe.GetTargetDatabaseRoles.Invoke(new()
         ///     {
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         AuthenticationType = @var.Target_database_role_authentication_type,
-        ///         IsOracleMaintained = @var.Target_database_role_is_oracle_maintained,
-        ///         RoleNames = @var.Target_database_role_role_name,
-        ///         RoleNameContains = @var.Target_database_role_role_name_contains,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         AuthenticationType = targetDatabaseRoleAuthenticationType,
+        ///         IsOracleMaintained = targetDatabaseRoleIsOracleMaintained,
+        ///         RoleNames = targetDatabaseRoleRoleName,
+        ///         RoleNameContains = targetDatabaseRoleRoleNameContains,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabaseRoles = Oci.DataSafe.GetTargetDatabaseRoles.Invoke(new()
         ///     {
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         AuthenticationType = @var.Target_database_role_authentication_type,
-        ///         IsOracleMaintained = @var.Target_database_role_is_oracle_maintained,
-        ///         RoleNames = @var.Target_database_role_role_name,
-        ///         RoleNameContains = @var.Target_database_role_role_name_contains,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         AuthenticationType = targetDatabaseRoleAuthenticationType,
+        ///         IsOracleMaintained = targetDatabaseRoleIsOracleMaintained,
+        ///         RoleNames = targetDatabaseRoleRoleName,
+        ///         RoleNameContains = targetDatabaseRoleRoleNameContains,
         ///     });
         /// 
         /// });

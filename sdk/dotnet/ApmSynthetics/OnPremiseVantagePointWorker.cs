@@ -25,13 +25,14 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOnPremiseVantagePointWorker = new Oci.ApmSynthetics.OnPremiseVantagePointWorker("testOnPremiseVantagePointWorker", new()
+    ///     var testOnPremiseVantagePointWorker = new Oci.ApmSynthetics.OnPremiseVantagePointWorker("test_on_premise_vantage_point_worker", new()
     ///     {
-    ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-    ///         OnPremiseVantagePointId = oci_apm_synthetics_on_premise_vantage_point.Test_on_premise_vantage_point.Id,
-    ///         ResourcePrincipalTokenPublicKey = @var.On_premise_vantage_point_worker_resource_principal_token_public_key,
-    ///         Version = @var.On_premise_vantage_point_worker_version,
-    ///         ConfigurationDetails = @var.On_premise_vantage_point_worker_configuration_details,
+    ///         ApmDomainId = testApmDomain.Id,
+    ///         Name = onPremiseVantagePointWorkerName,
+    ///         OnPremiseVantagePointId = testOnPremiseVantagePoint.Id,
+    ///         ResourcePrincipalTokenPublicKey = onPremiseVantagePointWorkerResourcePrincipalTokenPublicKey,
+    ///         Version = onPremiseVantagePointWorkerVersion,
+    ///         ConfigurationDetails = onPremiseVantagePointWorkerConfigurationDetails,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -40,9 +41,9 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Priority = @var.On_premise_vantage_point_worker_priority,
-    ///         Status = @var.On_premise_vantage_point_worker_status,
-    ///         WorkerType = @var.On_premise_vantage_point_worker_worker_type,
+    ///         Priority = onPremiseVantagePointWorkerPriority,
+    ///         Status = onPremiseVantagePointWorkerStatus,
+    ///         WorkerType = onPremiseVantagePointWorkerWorkerType,
     ///     });
     /// 
     /// });

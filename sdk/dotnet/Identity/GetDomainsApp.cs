@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApp = Oci.Identity.GetDomainsApp.Invoke(new()
         ///     {
-        ///         AppId = oci_identity_domains_app.Test_app.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         AppId = testAppOciIdentityDomainsApp.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.App_authorization,
-        ///         ResourceTypeSchemaVersion = @var.App_resource_type_schema_version,
+        ///         Authorization = appAuthorization,
+        ///         ResourceTypeSchemaVersion = appResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApp = Oci.Identity.GetDomainsApp.Invoke(new()
         ///     {
-        ///         AppId = oci_identity_domains_app.Test_app.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         AppId = testAppOciIdentityDomainsApp.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.App_authorization,
-        ///         ResourceTypeSchemaVersion = @var.App_resource_type_schema_version,
+        ///         Authorization = appAuthorization,
+        ///         ResourceTypeSchemaVersion = appResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

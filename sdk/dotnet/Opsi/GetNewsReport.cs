@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testNewsReport = Oci.Opsi.GetNewsReport.Invoke(new()
         ///     {
-        ///         NewsReportId = oci_opsi_news_report.Test_news_report.Id,
+        ///         NewsReportId = testNewsReportOciOpsiNewsReport.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testNewsReport = Oci.Opsi.GetNewsReport.Invoke(new()
         ///     {
-        ///         NewsReportId = oci_opsi_news_report.Test_news_report.Id,
+        ///         NewsReportId = testNewsReportOciOpsiNewsReport.Id,
         ///     });
         /// 
         /// });

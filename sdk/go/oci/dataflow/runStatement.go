@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataFlow.NewRunStatement(ctx, "testRunStatement", &DataFlow.RunStatementArgs{
-//				Code:  pulumi.Any(_var.Run_statement_code),
-//				RunId: pulumi.Any(oci_dataflow_run.Test_run.Id),
+//			_, err := DataFlow.NewRunStatement(ctx, "test_run_statement", &DataFlow.RunStatementArgs{
+//				Code:  pulumi.Any(runStatementCode),
+//				RunId: pulumi.Any(testRun.Id),
 //			})
 //			if err != nil {
 //				return err

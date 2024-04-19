@@ -29,12 +29,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrg = new oci.core.Drg("testDrg", {
- *     compartmentId: _var.compartment_id,
+ * const testDrg = new oci.core.Drg("test_drg", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.drg_display_name,
+ *     displayName: drgDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

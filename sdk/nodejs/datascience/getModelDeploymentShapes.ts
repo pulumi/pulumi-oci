@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModelDeploymentShapes = oci.DataScience.getModelDeploymentShapes({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetModelDeploymentShapesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModelDeploymentShapes = oci.DataScience.getModelDeploymentShapes({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

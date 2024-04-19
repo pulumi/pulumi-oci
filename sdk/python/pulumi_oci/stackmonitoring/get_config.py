@@ -211,7 +211,7 @@ def get_config(config_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.StackMonitoring.get_config(config_id=oci_stack_monitoring_config["test_config"]["id"])
+    test_config = oci.StackMonitoring.get_config(config_id=test_config_oci_stack_monitoring_config["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -255,7 +255,7 @@ def get_config_output(config_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.StackMonitoring.get_config(config_id=oci_stack_monitoring_config["test_config"]["id"])
+    test_config = oci.StackMonitoring.get_config(config_id=test_config_oci_stack_monitoring_config["id"])
     ```
     <!--End PulumiCodeChooser -->
 

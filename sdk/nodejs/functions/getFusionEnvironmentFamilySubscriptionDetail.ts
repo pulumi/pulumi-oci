@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentFamilySubscriptionDetail = oci.Functions.getFusionEnvironmentFamilySubscriptionDetail({
- *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
+ *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -69,7 +69,7 @@ export interface GetFusionEnvironmentFamilySubscriptionDetailResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentFamilySubscriptionDetail = oci.Functions.getFusionEnvironmentFamilySubscriptionDetail({
- *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
+ *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

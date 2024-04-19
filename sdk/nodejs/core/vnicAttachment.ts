@@ -20,25 +20,25 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVnicAttachment = new oci.core.VnicAttachment("testVnicAttachment", {
+ * const testVnicAttachment = new oci.core.VnicAttachment("test_vnic_attachment", {
  *     createVnicDetails: {
- *         assignIpv6ip: _var.vnic_attachment_create_vnic_details_assign_ipv6ip,
- *         assignPrivateDnsRecord: _var.vnic_attachment_create_vnic_details_assign_private_dns_record,
- *         assignPublicIp: _var.vnic_attachment_create_vnic_details_assign_public_ip,
- *         definedTags: _var.vnic_attachment_create_vnic_details_defined_tags,
- *         displayName: _var.vnic_attachment_create_vnic_details_display_name,
- *         freeformTags: _var.vnic_attachment_create_vnic_details_freeform_tags,
- *         hostnameLabel: _var.vnic_attachment_create_vnic_details_hostname_label,
- *         ipv6addressIpv6subnetCidrPairDetails: _var.vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details,
- *         nsgIds: _var.vnic_attachment_create_vnic_details_nsg_ids,
- *         privateIp: _var.vnic_attachment_create_vnic_details_private_ip,
- *         skipSourceDestCheck: _var.vnic_attachment_create_vnic_details_skip_source_dest_check,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         vlanId: oci_core_vlan.test_vlan.id,
+ *         assignIpv6ip: vnicAttachmentCreateVnicDetailsAssignIpv6ip,
+ *         assignPrivateDnsRecord: vnicAttachmentCreateVnicDetailsAssignPrivateDnsRecord,
+ *         assignPublicIp: vnicAttachmentCreateVnicDetailsAssignPublicIp,
+ *         definedTags: vnicAttachmentCreateVnicDetailsDefinedTags,
+ *         displayName: vnicAttachmentCreateVnicDetailsDisplayName,
+ *         freeformTags: vnicAttachmentCreateVnicDetailsFreeformTags,
+ *         hostnameLabel: vnicAttachmentCreateVnicDetailsHostnameLabel,
+ *         ipv6addressIpv6subnetCidrPairDetails: vnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetails,
+ *         nsgIds: vnicAttachmentCreateVnicDetailsNsgIds,
+ *         privateIp: vnicAttachmentCreateVnicDetailsPrivateIp,
+ *         skipSourceDestCheck: vnicAttachmentCreateVnicDetailsSkipSourceDestCheck,
+ *         subnetId: testSubnet.id,
+ *         vlanId: testVlan.id,
  *     },
- *     instanceId: oci_core_instance.test_instance.id,
- *     displayName: _var.vnic_attachment_display_name,
- *     nicIndex: _var.vnic_attachment_nic_index,
+ *     instanceId: testInstance.id,
+ *     displayName: vnicAttachmentDisplayName,
+ *     nicIndex: vnicAttachmentNicIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

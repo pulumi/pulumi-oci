@@ -47,18 +47,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewNetworkSource(ctx, "testNetworkSource", &Identity.NetworkSourceArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-//				Description:   pulumi.Any(_var.Network_source_description),
+//			_, err := Identity.NewNetworkSource(ctx, "test_network_source", &Identity.NetworkSourceArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
+//				Description:   pulumi.Any(networkSourceDescription),
+//				Name:          pulumi.Any(networkSourceName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				PublicSourceLists:  pulumi.Any(_var.Network_source_public_source_list),
-//				Services:           pulumi.Any(_var.Network_source_services),
-//				VirtualSourceLists: pulumi.Any(_var.Network_source_virtual_source_list),
+//				PublicSourceLists:  pulumi.Any(networkSourcePublicSourceList),
+//				Services:           pulumi.Any(networkSourceServices),
+//				VirtualSourceLists: pulumi.Any(networkSourceVirtualSourceList),
 //			})
 //			if err != nil {
 //				return err

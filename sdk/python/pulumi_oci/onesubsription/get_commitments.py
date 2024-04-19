@@ -104,8 +104,8 @@ def get_commitments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_commitments = oci.OneSubsription.get_commitments(compartment_id=var["compartment_id"],
-        subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
+    test_commitments = oci.OneSubsription.get_commitments(compartment_id=compartment_id,
+        subscribed_service_id=test_subscribed_service["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -145,8 +145,8 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_commitments = oci.OneSubsription.get_commitments(compartment_id=var["compartment_id"],
-        subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
+    test_commitments = oci.OneSubsription.get_commitments(compartment_id=compartment_id,
+        subscribed_service_id=test_subscribed_service["id"])
     ```
     <!--End PulumiCodeChooser -->
 

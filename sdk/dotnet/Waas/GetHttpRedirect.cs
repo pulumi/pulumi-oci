@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testHttpRedirect = Oci.Waas.GetHttpRedirect.Invoke(new()
         ///     {
-        ///         HttpRedirectId = oci_waas_http_redirect.Test_http_redirect.Id,
+        ///         HttpRedirectId = testHttpRedirectOciWaasHttpRedirect.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testHttpRedirect = Oci.Waas.GetHttpRedirect.Invoke(new()
         ///     {
-        ///         HttpRedirectId = oci_waas_http_redirect.Test_http_redirect.Id,
+        ///         HttpRedirectId = testHttpRedirectOciWaasHttpRedirect.Id,
         ///     });
         /// 
         /// });

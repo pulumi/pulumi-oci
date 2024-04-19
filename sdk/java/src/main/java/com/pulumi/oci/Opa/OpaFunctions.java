@@ -47,7 +47,7 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstance = OpaFunctions.getOpaInstance(GetOpaInstanceArgs.builder()
-     *             .opaInstanceId(oci_opa_opa_instance.test_opa_instance().id())
+     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.id())
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstance = OpaFunctions.getOpaInstance(GetOpaInstanceArgs.builder()
-     *             .opaInstanceId(oci_opa_opa_instance.test_opa_instance().id())
+     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.id())
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstance = OpaFunctions.getOpaInstance(GetOpaInstanceArgs.builder()
-     *             .opaInstanceId(oci_opa_opa_instance.test_opa_instance().id())
+     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstance = OpaFunctions.getOpaInstance(GetOpaInstanceArgs.builder()
-     *             .opaInstanceId(oci_opa_opa_instance.test_opa_instance().id())
+     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.id())
      *             .build());
      * 
      *     }
@@ -215,10 +215,10 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstances = OpaFunctions.getOpaInstances(GetOpaInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opa_instance_display_name())
-     *             .id(var_.opa_instance_id())
-     *             .state(var_.opa_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opaInstanceDisplayName)
+     *             .id(opaInstanceId)
+     *             .state(opaInstanceState)
      *             .build());
      * 
      *     }
@@ -260,10 +260,10 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstances = OpaFunctions.getOpaInstances(GetOpaInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opa_instance_display_name())
-     *             .id(var_.opa_instance_id())
-     *             .state(var_.opa_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opaInstanceDisplayName)
+     *             .id(opaInstanceId)
+     *             .state(opaInstanceState)
      *             .build());
      * 
      *     }
@@ -305,10 +305,10 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstances = OpaFunctions.getOpaInstances(GetOpaInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opa_instance_display_name())
-     *             .id(var_.opa_instance_id())
-     *             .state(var_.opa_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opaInstanceDisplayName)
+     *             .id(opaInstanceId)
+     *             .state(opaInstanceState)
      *             .build());
      * 
      *     }
@@ -350,10 +350,10 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstances = OpaFunctions.getOpaInstances(GetOpaInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opa_instance_display_name())
-     *             .id(var_.opa_instance_id())
-     *             .state(var_.opa_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opaInstanceDisplayName)
+     *             .id(opaInstanceId)
+     *             .state(opaInstanceState)
      *             .build());
      * 
      *     }
@@ -395,10 +395,10 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstances = OpaFunctions.getOpaInstances(GetOpaInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opa_instance_display_name())
-     *             .id(var_.opa_instance_id())
-     *             .state(var_.opa_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opaInstanceDisplayName)
+     *             .id(opaInstanceId)
+     *             .state(opaInstanceState)
      *             .build());
      * 
      *     }
@@ -440,10 +440,10 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstances = OpaFunctions.getOpaInstances(GetOpaInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opa_instance_display_name())
-     *             .id(var_.opa_instance_id())
-     *             .state(var_.opa_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opaInstanceDisplayName)
+     *             .id(opaInstanceId)
+     *             .state(opaInstanceState)
      *             .build());
      * 
      *     }

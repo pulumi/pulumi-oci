@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetExadataInfrastructureDownloadConfigFile(ctx, &database.GetExadataInfrastructureDownloadConfigFileArgs{
-//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+//				ExadataInfrastructureId: testExadataInfrastructure.Id,
 //				Base64EncodeContent:     pulumi.BoolRef(false),
 //			}, nil)
 //			if err != nil {

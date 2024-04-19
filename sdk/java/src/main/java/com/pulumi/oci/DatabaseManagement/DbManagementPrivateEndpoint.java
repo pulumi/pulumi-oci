@@ -47,13 +47,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDbManagementPrivateEndpoint = new DbManagementPrivateEndpoint(&#34;testDbManagementPrivateEndpoint&#34;, DbManagementPrivateEndpointArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .compartmentId(compartmentId)
+ *             .name(dbManagementPrivateEndpointName)
+ *             .subnetId(testSubnet.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.db_management_private_endpoint_description())
+ *             .description(dbManagementPrivateEndpointDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .isCluster(var_.db_management_private_endpoint_is_cluster())
- *             .nsgIds(var_.db_management_private_endpoint_nsg_ids())
+ *             .isCluster(dbManagementPrivateEndpointIsCluster)
+ *             .nsgIds(dbManagementPrivateEndpointNsgIds)
  *             .build());
  * 
  *     }

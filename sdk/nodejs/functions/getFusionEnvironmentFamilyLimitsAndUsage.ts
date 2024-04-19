@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentFamilyLimitsAndUsage = oci.Functions.getFusionEnvironmentFamilyLimitsAndUsage({
- *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
+ *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,7 +77,7 @@ export interface GetFusionEnvironmentFamilyLimitsAndUsageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentFamilyLimitsAndUsage = oci.Functions.getFusionEnvironmentFamilyLimitsAndUsage({
- *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
+ *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

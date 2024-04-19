@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetWorkRequestLogEntries(ctx, &containerengine.GetWorkRequestLogEntriesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				WorkRequestId: oci_containerengine_work_request.Test_work_request.Id,
+//				CompartmentId: compartmentId,
+//				WorkRequestId: testWorkRequest.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

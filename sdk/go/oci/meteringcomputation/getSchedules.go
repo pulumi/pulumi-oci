@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MeteringComputation.GetSchedules(ctx, &meteringcomputation.GetSchedulesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Schedule_name),
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(scheduleName),
 //			}, nil)
 //			if err != nil {
 //				return err

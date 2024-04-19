@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogGroups = oci.Logging.getLogGroups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.log_group_display_name,
- *     isCompartmentIdInSubtree: _var.log_group_is_compartment_id_in_subtree,
+ *     compartmentId: compartmentId,
+ *     displayName: logGroupDisplayName,
+ *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetLogGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogGroups = oci.Logging.getLogGroups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.log_group_display_name,
- *     isCompartmentIdInSubtree: _var.log_group_is_compartment_id_in_subtree,
+ *     compartmentId: compartmentId,
+ *     displayName: logGroupDisplayName,
+ *     isCompartmentIdInSubtree: logGroupIsCompartmentIdInSubtree,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

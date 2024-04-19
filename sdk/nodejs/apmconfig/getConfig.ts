@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConfig = oci.ApmConfig.getConfig({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     configId: oci_apm_config_config.test_config.id,
+ *     apmDomainId: testApmDomain.id,
+ *     configId: testConfigOciApmConfigConfig.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -146,8 +146,8 @@ export interface GetConfigResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConfig = oci.ApmConfig.getConfig({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     configId: oci_apm_config_config.test_config.id,
+ *     apmDomainId: testApmDomain.id,
+ *     configId: testConfigOciApmConfigConfig.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

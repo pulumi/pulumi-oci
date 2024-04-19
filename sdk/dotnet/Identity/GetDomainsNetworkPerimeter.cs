@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNetworkPerimeter = Oci.Identity.GetDomainsNetworkPerimeter.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         NetworkPerimeterId = oci_identity_domains_network_perimeter.Test_network_perimeter.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         NetworkPerimeterId = testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Network_perimeter_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Network_perimeter_resource_type_schema_version,
+        ///         Authorization = networkPerimeterAuthorization,
+        ///         ResourceTypeSchemaVersion = networkPerimeterResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNetworkPerimeter = Oci.Identity.GetDomainsNetworkPerimeter.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         NetworkPerimeterId = oci_identity_domains_network_perimeter.Test_network_perimeter.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         NetworkPerimeterId = testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Network_perimeter_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Network_perimeter_resource_type_schema_version,
+        ///         Authorization = networkPerimeterAuthorization,
+        ///         ResourceTypeSchemaVersion = networkPerimeterResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

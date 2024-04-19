@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasesDatabaseParameters = oci.DatabaseManagement.getManagedDatabasesDatabaseParameters({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     isAllowedValuesIncluded: _var.managed_databases_database_parameter_is_allowed_values_included,
- *     name: _var.managed_databases_database_parameter_name,
- *     opcNamedCredentialId: _var.managed_databases_database_parameter_opc_named_credential_id,
- *     source: _var.managed_databases_database_parameter_source,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+ *     name: managedDatabasesDatabaseParameterName,
+ *     opcNamedCredentialId: managedDatabasesDatabaseParameterOpcNamedCredentialId,
+ *     source: managedDatabasesDatabaseParameterSource,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,11 +103,11 @@ export interface GetManagedDatabasesDatabaseParametersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasesDatabaseParameters = oci.DatabaseManagement.getManagedDatabasesDatabaseParameters({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     isAllowedValuesIncluded: _var.managed_databases_database_parameter_is_allowed_values_included,
- *     name: _var.managed_databases_database_parameter_name,
- *     opcNamedCredentialId: _var.managed_databases_database_parameter_opc_named_credential_id,
- *     source: _var.managed_databases_database_parameter_source,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+ *     name: managedDatabasesDatabaseParameterName,
+ *     opcNamedCredentialId: managedDatabasesDatabaseParameterOpcNamedCredentialId,
+ *     source: managedDatabasesDatabaseParameterSource,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

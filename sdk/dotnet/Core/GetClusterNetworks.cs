@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testClusterNetworks = Oci.Core.GetClusterNetworks.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Cluster_network_display_name,
-        ///         State = @var.Cluster_network_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = clusterNetworkDisplayName,
+        ///         State = clusterNetworkState,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testClusterNetworks = Oci.Core.GetClusterNetworks.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Cluster_network_display_name,
-        ///         State = @var.Cluster_network_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = clusterNetworkDisplayName,
+        ///         State = clusterNetworkState,
         ///     });
         /// 
         /// });

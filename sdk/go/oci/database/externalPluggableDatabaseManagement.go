@@ -33,9 +33,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExternalPluggableDatabaseManagement(ctx, "testExternalPluggableDatabaseManagement", &Database.ExternalPluggableDatabaseManagementArgs{
-//				ExternalDatabaseConnectorId: pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
-//				ExternalPluggableDatabaseId: pulumi.Any(oci_database_external_pluggable_database.Test_external_pluggable_database.Id),
+//			_, err := Database.NewExternalPluggableDatabaseManagement(ctx, "test_external_pluggable_database_management", &Database.ExternalPluggableDatabaseManagementArgs{
+//				ExternalDatabaseConnectorId: pulumi.Any(testExternalDatabaseConnector.Id),
+//				ExternalPluggableDatabaseId: pulumi.Any(testExternalPluggableDatabase.Id),
 //			})
 //			if err != nil {
 //				return err

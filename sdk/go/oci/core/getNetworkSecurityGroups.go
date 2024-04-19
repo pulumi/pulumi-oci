@@ -32,11 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetNetworkSecurityGroups(ctx, &core.GetNetworkSecurityGroupsArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Network_security_group_display_name),
-//				State:         pulumi.StringRef(_var.Network_security_group_state),
-//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
-//				VlanId:        pulumi.StringRef(oci_core_vlan.Test_vlan.Id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(networkSecurityGroupDisplayName),
+//				State:         pulumi.StringRef(networkSecurityGroupState),
+//				VcnId:         pulumi.StringRef(testVcn.Id),
+//				VlanId:        pulumi.StringRef(testVlan.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -234,18 +234,18 @@ def get_media_assets(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_assets = oci.MediaServices.get_media_assets(bucket=var["media_asset_bucket"],
-        compartment_id=var["compartment_id"],
-        display_name=var["media_asset_display_name"],
-        distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        master_media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"],
-        media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"],
-        object=var["media_asset_object"],
-        parent_media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"],
-        source_media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-        source_media_workflow_version=var["media_asset_source_media_workflow_version"],
-        state=var["media_asset_state"],
-        type=var["media_asset_type"])
+    test_media_assets = oci.MediaServices.get_media_assets(bucket=media_asset_bucket,
+        compartment_id=compartment_id,
+        display_name=media_asset_display_name,
+        distribution_channel_id=test_channel["id"],
+        master_media_asset_id=test_media_asset["id"],
+        media_workflow_job_id=test_media_workflow_job["id"],
+        object=media_asset_object,
+        parent_media_asset_id=test_media_asset["id"],
+        source_media_workflow_id=test_media_workflow["id"],
+        source_media_workflow_version=media_asset_source_media_workflow_version,
+        state=media_asset_state,
+        type=media_asset_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -325,18 +325,18 @@ def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[str]]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_media_assets = oci.MediaServices.get_media_assets(bucket=var["media_asset_bucket"],
-        compartment_id=var["compartment_id"],
-        display_name=var["media_asset_display_name"],
-        distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        master_media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"],
-        media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"],
-        object=var["media_asset_object"],
-        parent_media_asset_id=oci_media_services_media_asset["test_media_asset"]["id"],
-        source_media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-        source_media_workflow_version=var["media_asset_source_media_workflow_version"],
-        state=var["media_asset_state"],
-        type=var["media_asset_type"])
+    test_media_assets = oci.MediaServices.get_media_assets(bucket=media_asset_bucket,
+        compartment_id=compartment_id,
+        display_name=media_asset_display_name,
+        distribution_channel_id=test_channel["id"],
+        master_media_asset_id=test_media_asset["id"],
+        media_workflow_job_id=test_media_workflow_job["id"],
+        object=media_asset_object,
+        parent_media_asset_id=test_media_asset["id"],
+        source_media_workflow_id=test_media_workflow["id"],
+        source_media_workflow_version=media_asset_source_media_workflow_version,
+        state=media_asset_state,
+        type=media_asset_type)
     ```
     <!--End PulumiCodeChooser -->
 

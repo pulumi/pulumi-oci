@@ -27,10 +27,11 @@ namespace Pulumi.Oci.Streaming
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConnectHarness = new Oci.Streaming.ConnectHarness("testConnectHarness", new()
+    ///     var testConnectHarness = new Oci.Streaming.ConnectHarness("test_connect_harness", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DefinedTags = @var.Connect_harness_defined_tags,
+    ///         CompartmentId = compartmentId,
+    ///         Name = connectHarnessName,
+    ///         DefinedTags = connectHarnessDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

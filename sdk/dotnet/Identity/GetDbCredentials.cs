@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testDbCredentials = Oci.Identity.GetDbCredentials.Invoke(new()
         ///     {
-        ///         UserId = oci_identity_user.Test_user.Id,
-        ///         Name = @var.Db_credential_name,
-        ///         State = @var.Db_credential_state,
+        ///         UserId = testUser.Id,
+        ///         Name = dbCredentialName,
+        ///         State = dbCredentialState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testDbCredentials = Oci.Identity.GetDbCredentials.Invoke(new()
         ///     {
-        ///         UserId = oci_identity_user.Test_user.Id,
-        ///         Name = @var.Db_credential_name,
-        ///         State = @var.Db_credential_state,
+        ///         UserId = testUser.Id,
+        ///         Name = dbCredentialName,
+        ///         State = dbCredentialState,
         ///     });
         /// 
         /// });

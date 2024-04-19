@@ -94,7 +94,7 @@ def get_autonomous_database_dataguard_associations(autonomous_database_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_dataguard_associations = oci.Database.get_autonomous_database_dataguard_associations(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
+    test_autonomous_database_dataguard_associations = oci.Database.get_autonomous_database_dataguard_associations(autonomous_database_id=test_autonomous_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -130,7 +130,7 @@ def get_autonomous_database_dataguard_associations_output(autonomous_database_id
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_dataguard_associations = oci.Database.get_autonomous_database_dataguard_associations(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"])
+    test_autonomous_database_dataguard_associations = oci.Database.get_autonomous_database_dataguard_associations(autonomous_database_id=test_autonomous_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

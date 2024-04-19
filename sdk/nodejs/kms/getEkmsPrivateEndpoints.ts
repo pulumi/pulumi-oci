@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEkmsPrivateEndpoints = oci.Kms.getEkmsPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -75,7 +75,7 @@ export interface GetEkmsPrivateEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEkmsPrivateEndpoints = oci.Kms.getEkmsPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

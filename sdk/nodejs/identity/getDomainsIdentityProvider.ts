@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityProvider = oci.Identity.getDomainsIdentityProvider({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
+ *     idcsEndpoint: testDomain.url,
+ *     identityProviderId: testIdentityProviderOciIdentityIdentityProvider.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.identity_provider_authorization,
- *     resourceTypeSchemaVersion: _var.identity_provider_resource_type_schema_version,
+ *     authorization: identityProviderAuthorization,
+ *     resourceTypeSchemaVersion: identityProviderResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -332,12 +332,12 @@ export interface GetDomainsIdentityProviderResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityProvider = oci.Identity.getDomainsIdentityProvider({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
+ *     idcsEndpoint: testDomain.url,
+ *     identityProviderId: testIdentityProviderOciIdentityIdentityProvider.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.identity_provider_authorization,
- *     resourceTypeSchemaVersion: _var.identity_provider_resource_type_schema_version,
+ *     authorization: identityProviderAuthorization,
+ *     resourceTypeSchemaVersion: identityProviderResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

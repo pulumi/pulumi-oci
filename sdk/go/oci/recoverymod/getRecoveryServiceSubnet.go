@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := RecoveryMod.GetRecoveryServiceSubnet(ctx, &recoverymod.GetRecoveryServiceSubnetArgs{
-//				RecoveryServiceSubnetId: oci_recovery_recovery_service_subnet.Test_recovery_service_subnet.Id,
+//				RecoveryServiceSubnetId: testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

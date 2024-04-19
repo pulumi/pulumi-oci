@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceConnector = oci.Sch.getServiceConnector({
- *     serviceConnectorId: oci_sch_service_connector.test_service_connector.id,
+ *     serviceConnectorId: testServiceConnectorOciSchServiceConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetServiceConnectorResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceConnector = oci.Sch.getServiceConnector({
- *     serviceConnectorId: oci_sch_service_connector.test_service_connector.id,
+ *     serviceConnectorId: testServiceConnectorOciSchServiceConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

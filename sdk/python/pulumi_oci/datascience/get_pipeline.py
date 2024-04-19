@@ -278,7 +278,7 @@ def get_pipeline(pipeline_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline = oci.DataScience.get_pipeline(pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"])
+    test_pipeline = oci.DataScience.get_pipeline(pipeline_id=test_pipeline_oci_datascience_pipeline["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -328,7 +328,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline = oci.DataScience.get_pipeline(pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"])
+    test_pipeline = oci.DataScience.get_pipeline(pipeline_id=test_pipeline_oci_datascience_pipeline["id"])
     ```
     <!--End PulumiCodeChooser -->
 

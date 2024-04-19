@@ -32,10 +32,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewExternalDbSystemDatabaseManagementsManagement(ctx, "testExternalDbSystemDatabaseManagementsManagement", &DatabaseManagement.ExternalDbSystemDatabaseManagementsManagementArgs{
-//				ExternalDbSystemId:       pulumi.Any(oci_database_management_external_db_system.Test_external_db_system.Id),
-//				EnableDatabaseManagement: pulumi.Any(_var.Enable_database_management),
-//				LicenseModel:             pulumi.Any(_var.External_db_system_database_managements_management_license_model),
+//			_, err := DatabaseManagement.NewExternalDbSystemDatabaseManagementsManagement(ctx, "test_external_db_system_database_managements_management", &DatabaseManagement.ExternalDbSystemDatabaseManagementsManagementArgs{
+//				ExternalDbSystemId:       pulumi.Any(testExternalDbSystem.Id),
+//				EnableDatabaseManagement: pulumi.Any(enableDatabaseManagement),
+//				LicenseModel:             pulumi.Any(externalDbSystemDatabaseManagementsManagementLicenseModel),
 //			})
 //			if err != nil {
 //				return err

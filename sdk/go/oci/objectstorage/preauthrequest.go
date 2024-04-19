@@ -31,13 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ObjectStorage.NewPreauthrequest(ctx, "testPreauthenticatedRequest", &ObjectStorage.PreauthrequestArgs{
-//				AccessType:          pulumi.Any(_var.Preauthenticated_request_access_type),
-//				Bucket:              pulumi.Any(_var.Preauthenticated_request_bucket),
-//				Namespace:           pulumi.Any(_var.Preauthenticated_request_namespace),
-//				TimeExpires:         pulumi.Any(_var.Preauthenticated_request_time_expires),
-//				BucketListingAction: pulumi.Any(_var.Preauthenticated_request_bucket_listing_action),
-//				Object:              pulumi.Any(_var.Preauthenticated_request_object),
+//			_, err := ObjectStorage.NewPreauthrequest(ctx, "test_preauthenticated_request", &ObjectStorage.PreauthrequestArgs{
+//				AccessType:          pulumi.Any(preauthenticatedRequestAccessType),
+//				Bucket:              pulumi.Any(preauthenticatedRequestBucket),
+//				Name:                pulumi.Any(preauthenticatedRequestName),
+//				Namespace:           pulumi.Any(preauthenticatedRequestNamespace),
+//				TimeExpires:         pulumi.Any(preauthenticatedRequestTimeExpires),
+//				BucketListingAction: pulumi.Any(preauthenticatedRequestBucketListingAction),
+//				Object:              pulumi.Any(preauthenticatedRequestObject),
 //			})
 //			if err != nil {
 //				return err

@@ -44,14 +44,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityPolicyDeployments(ctx, &datasafe.GetSecurityPolicyDeploymentsArgs{
-//				CompartmentId:              _var.Compartment_id,
-//				AccessLevel:                pulumi.StringRef(_var.Security_policy_deployment_access_level),
-//				CompartmentIdInSubtree:     pulumi.BoolRef(_var.Security_policy_deployment_compartment_id_in_subtree),
-//				DisplayName:                pulumi.StringRef(_var.Security_policy_deployment_display_name),
-//				SecurityPolicyDeploymentId: pulumi.StringRef(oci_data_safe_security_policy_deployment.Test_security_policy_deployment.Id),
-//				SecurityPolicyId:           pulumi.StringRef(oci_data_safe_security_policy.Test_security_policy.Id),
-//				State:                      pulumi.StringRef(_var.Security_policy_deployment_state),
-//				TargetId:                   pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:              compartmentId,
+//				AccessLevel:                pulumi.StringRef(securityPolicyDeploymentAccessLevel),
+//				CompartmentIdInSubtree:     pulumi.BoolRef(securityPolicyDeploymentCompartmentIdInSubtree),
+//				DisplayName:                pulumi.StringRef(securityPolicyDeploymentDisplayName),
+//				SecurityPolicyDeploymentId: pulumi.StringRef(testSecurityPolicyDeployment.Id),
+//				SecurityPolicyId:           pulumi.StringRef(testSecurityPolicy.Id),
+//				State:                      pulumi.StringRef(securityPolicyDeploymentState),
+//				TargetId:                   pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

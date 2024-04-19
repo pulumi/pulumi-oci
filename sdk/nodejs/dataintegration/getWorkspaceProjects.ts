@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceProjects = oci.DataIntegration.getWorkspaceProjects({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     fields: _var.workspace_project_fields,
- *     identifiers: _var.workspace_project_identifier,
- *     name: _var.workspace_project_name,
- *     nameContains: _var.workspace_project_name_contains,
+ *     workspaceId: testWorkspace.id,
+ *     fields: workspaceProjectFields,
+ *     identifiers: workspaceProjectIdentifier,
+ *     name: workspaceProjectName,
+ *     nameContains: workspaceProjectNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,11 +106,11 @@ export interface GetWorkspaceProjectsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceProjects = oci.DataIntegration.getWorkspaceProjects({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     fields: _var.workspace_project_fields,
- *     identifiers: _var.workspace_project_identifier,
- *     name: _var.workspace_project_name,
- *     nameContains: _var.workspace_project_name_contains,
+ *     workspaceId: testWorkspace.id,
+ *     fields: workspaceProjectFields,
+ *     identifiers: workspaceProjectIdentifier,
+ *     name: workspaceProjectName,
+ *     nameContains: workspaceProjectNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpProbeResults = oci.HealthChecks.getHttpProbeResults({
- *     probeConfigurationId: oci_health_checks_probe_configuration.test_probe_configuration.id,
- *     startTimeGreaterThanOrEqualTo: _var.http_probe_result_start_time_greater_than_or_equal_to,
- *     startTimeLessThanOrEqualTo: _var.http_probe_result_start_time_less_than_or_equal_to,
- *     target: _var.http_probe_result_target,
+ *     probeConfigurationId: testProbeConfiguration.id,
+ *     startTimeGreaterThanOrEqualTo: httpProbeResultStartTimeGreaterThanOrEqualTo,
+ *     startTimeLessThanOrEqualTo: httpProbeResultStartTimeLessThanOrEqualTo,
+ *     target: httpProbeResultTarget,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,10 +103,10 @@ export interface GetHttpProbeResultsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpProbeResults = oci.HealthChecks.getHttpProbeResults({
- *     probeConfigurationId: oci_health_checks_probe_configuration.test_probe_configuration.id,
- *     startTimeGreaterThanOrEqualTo: _var.http_probe_result_start_time_greater_than_or_equal_to,
- *     startTimeLessThanOrEqualTo: _var.http_probe_result_start_time_less_than_or_equal_to,
- *     target: _var.http_probe_result_target,
+ *     probeConfigurationId: testProbeConfiguration.id,
+ *     startTimeGreaterThanOrEqualTo: httpProbeResultStartTimeGreaterThanOrEqualTo,
+ *     startTimeLessThanOrEqualTo: httpProbeResultStartTimeLessThanOrEqualTo,
+ *     target: httpProbeResultTarget,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

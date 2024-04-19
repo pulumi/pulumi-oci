@@ -209,7 +209,7 @@ def get_media_workflow_configuration(media_workflow_configuration_id: Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_configuration = oci.MediaServices.get_media_workflow_configuration(media_workflow_configuration_id=oci_media_services_media_workflow_configuration["test_media_workflow_configuration"]["id"])
+    test_media_workflow_configuration = oci.MediaServices.get_media_workflow_configuration(media_workflow_configuration_id=test_media_workflow_configuration_oci_media_services_media_workflow_configuration["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -253,7 +253,7 @@ def get_media_workflow_configuration_output(media_workflow_configuration_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_configuration = oci.MediaServices.get_media_workflow_configuration(media_workflow_configuration_id=oci_media_services_media_workflow_configuration["test_media_workflow_configuration"]["id"])
+    test_media_workflow_configuration = oci.MediaServices.get_media_workflow_configuration(media_workflow_configuration_id=test_media_workflow_configuration_oci_media_services_media_workflow_configuration["id"])
     ```
     <!--End PulumiCodeChooser -->
 

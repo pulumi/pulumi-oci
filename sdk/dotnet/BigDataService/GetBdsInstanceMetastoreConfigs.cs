@@ -30,12 +30,12 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testBdsInstanceMetastoreConfigs = Oci.BigDataService.GetBdsInstanceMetastoreConfigs.Invoke(new()
         ///     {
-        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         BdsApiKeyId = oci_identity_api_key.Test_api_key.Id,
-        ///         DisplayName = @var.Bds_instance_metastore_config_display_name,
-        ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
-        ///         MetastoreType = @var.Bds_instance_metastore_config_metastore_type,
-        ///         State = @var.Bds_instance_metastore_config_state,
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///         BdsApiKeyId = testApiKey.Id,
+        ///         DisplayName = bdsInstanceMetastoreConfigDisplayName,
+        ///         MetastoreId = testMetastore.Id,
+        ///         MetastoreType = bdsInstanceMetastoreConfigMetastoreType,
+        ///         State = bdsInstanceMetastoreConfigState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testBdsInstanceMetastoreConfigs = Oci.BigDataService.GetBdsInstanceMetastoreConfigs.Invoke(new()
         ///     {
-        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         BdsApiKeyId = oci_identity_api_key.Test_api_key.Id,
-        ///         DisplayName = @var.Bds_instance_metastore_config_display_name,
-        ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
-        ///         MetastoreType = @var.Bds_instance_metastore_config_metastore_type,
-        ///         State = @var.Bds_instance_metastore_config_state,
+        ///         BdsInstanceId = testBdsInstance.Id,
+        ///         BdsApiKeyId = testApiKey.Id,
+        ///         DisplayName = bdsInstanceMetastoreConfigDisplayName,
+        ///         MetastoreId = testMetastore.Id,
+        ///         MetastoreType = bdsInstanceMetastoreConfigMetastoreType,
+        ///         State = bdsInstanceMetastoreConfigState,
         ///     });
         /// 
         /// });

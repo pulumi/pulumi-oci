@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetTsigKeys(ctx, &dns.GetTsigKeysArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Tsig_key_id),
-//				Name:          pulumi.StringRef(_var.Tsig_key_name),
-//				State:         pulumi.StringRef(_var.Tsig_key_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(tsigKeyId),
+//				Name:          pulumi.StringRef(tsigKeyName),
+//				State:         pulumi.StringRef(tsigKeyState),
 //			}, nil)
 //			if err != nil {
 //				return err

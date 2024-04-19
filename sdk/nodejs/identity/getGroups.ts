@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testGroups = oci.Identity.getGroups({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.group_name,
- *     state: _var.group_state,
+ *     compartmentId: tenancyOcid,
+ *     name: groupName,
+ *     state: groupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,9 +99,9 @@ export interface GetGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testGroups = oci.Identity.getGroups({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.group_name,
- *     state: _var.group_state,
+ *     compartmentId: tenancyOcid,
+ *     name: groupName,
+ *     state: groupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

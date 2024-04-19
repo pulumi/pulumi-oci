@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAddonOptions = oci.ContainerEngine.getAddonOptions({
- *     kubernetesVersion: _var.addon_option_kubernetes_version,
- *     addonName: oci_containerengine_addon.test_addon.name,
+ *     kubernetesVersion: addonOptionKubernetesVersion,
+ *     addonName: testAddon.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetAddonOptionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAddonOptions = oci.ContainerEngine.getAddonOptions({
- *     kubernetesVersion: _var.addon_option_kubernetes_version,
- *     addonName: oci_containerengine_addon.test_addon.name,
+ *     kubernetesVersion: addonOptionKubernetesVersion,
+ *     addonName: testAddon.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -466,26 +466,26 @@ class ManagementStation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_management_station = oci.os_management_hub.ManagementStation("testManagementStation",
-            compartment_id=var["compartment_id"],
-            display_name=var["management_station_display_name"],
-            hostname=var["management_station_hostname"],
+        test_management_station = oci.os_management_hub.ManagementStation("test_management_station",
+            compartment_id=compartment_id,
+            display_name=management_station_display_name,
+            hostname=management_station_hostname,
             mirror=oci.os_management_hub.ManagementStationMirrorArgs(
-                directory=var["management_station_mirror_directory"],
-                port=var["management_station_mirror_port"],
-                sslport=var["management_station_mirror_sslport"],
-                sslcert=var["management_station_mirror_sslcert"],
+                directory=management_station_mirror_directory,
+                port=management_station_mirror_port,
+                sslport=management_station_mirror_sslport,
+                sslcert=management_station_mirror_sslcert,
             ),
             proxy=oci.os_management_hub.ManagementStationProxyArgs(
-                is_enabled=var["management_station_proxy_is_enabled"],
-                forward=var["management_station_proxy_forward"],
-                hosts=var["management_station_proxy_hosts"],
-                port=var["management_station_proxy_port"],
+                is_enabled=management_station_proxy_is_enabled,
+                forward=management_station_proxy_forward,
+                hosts=management_station_proxy_hosts,
+                port=management_station_proxy_port,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["management_station_description"],
+            description=management_station_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -529,26 +529,26 @@ class ManagementStation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_management_station = oci.os_management_hub.ManagementStation("testManagementStation",
-            compartment_id=var["compartment_id"],
-            display_name=var["management_station_display_name"],
-            hostname=var["management_station_hostname"],
+        test_management_station = oci.os_management_hub.ManagementStation("test_management_station",
+            compartment_id=compartment_id,
+            display_name=management_station_display_name,
+            hostname=management_station_hostname,
             mirror=oci.os_management_hub.ManagementStationMirrorArgs(
-                directory=var["management_station_mirror_directory"],
-                port=var["management_station_mirror_port"],
-                sslport=var["management_station_mirror_sslport"],
-                sslcert=var["management_station_mirror_sslcert"],
+                directory=management_station_mirror_directory,
+                port=management_station_mirror_port,
+                sslport=management_station_mirror_sslport,
+                sslcert=management_station_mirror_sslcert,
             ),
             proxy=oci.os_management_hub.ManagementStationProxyArgs(
-                is_enabled=var["management_station_proxy_is_enabled"],
-                forward=var["management_station_proxy_forward"],
-                hosts=var["management_station_proxy_hosts"],
-                port=var["management_station_proxy_port"],
+                is_enabled=management_station_proxy_is_enabled,
+                forward=management_station_proxy_forward,
+                hosts=management_station_proxy_hosts,
+                port=management_station_proxy_port,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["management_station_description"],
+            description=management_station_description,
             freeform_tags={
                 "Department": "Finance",
             })

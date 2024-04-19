@@ -31,25 +31,25 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewBuildRun(ctx, "testBuildRun", &DevOps.BuildRunArgs{
-//				BuildPipelineId: pulumi.Any(oci_devops_build_pipeline.Test_build_pipeline.Id),
+//			_, err := DevOps.NewBuildRun(ctx, "test_build_run", &DevOps.BuildRunArgs{
+//				BuildPipelineId: pulumi.Any(testBuildPipeline.Id),
 //				BuildRunArguments: &devops.BuildRunBuildRunArgumentsArgs{
 //					Items: devops.BuildRunBuildRunArgumentsItemArray{
 //						&devops.BuildRunBuildRunArgumentsItemArgs{
-//							Name:  pulumi.Any(_var.Build_run_build_run_arguments_items_name),
-//							Value: pulumi.Any(_var.Build_run_build_run_arguments_items_value),
+//							Name:  pulumi.Any(buildRunBuildRunArgumentsItemsName),
+//							Value: pulumi.Any(buildRunBuildRunArgumentsItemsValue),
 //						},
 //					},
 //				},
 //				CommitInfo: &devops.BuildRunCommitInfoArgs{
-//					CommitHash:       pulumi.Any(_var.Build_run_commit_info_commit_hash),
-//					RepositoryBranch: pulumi.Any(_var.Build_run_commit_info_repository_branch),
-//					RepositoryUrl:    pulumi.Any(_var.Build_run_commit_info_repository_url),
+//					CommitHash:       pulumi.Any(buildRunCommitInfoCommitHash),
+//					RepositoryBranch: pulumi.Any(buildRunCommitInfoRepositoryBranch),
+//					RepositoryUrl:    pulumi.Any(buildRunCommitInfoRepositoryUrl),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Build_run_display_name),
+//				DisplayName: pulumi.Any(buildRunDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

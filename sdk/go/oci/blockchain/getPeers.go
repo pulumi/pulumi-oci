@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Blockchain.GetPeers(ctx, &blockchain.GetPeersArgs{
-//				BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-//				DisplayName:          pulumi.StringRef(_var.Peer_display_name),
+//				BlockchainPlatformId: testBlockchainPlatform.Id,
+//				DisplayName:          pulumi.StringRef(peerDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

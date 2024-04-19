@@ -146,11 +146,11 @@ def get_volume_backups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backups = oci.Core.get_volume_backups(compartment_id=var["compartment_id"],
-        display_name=var["volume_backup_display_name"],
-        source_volume_backup_id=oci_core_volume_backup["test_volume_backup"]["id"],
-        state=var["volume_backup_state"],
-        volume_id=oci_core_volume["test_volume"]["id"])
+    test_volume_backups = oci.Core.get_volume_backups(compartment_id=compartment_id,
+        display_name=volume_backup_display_name,
+        source_volume_backup_id=test_volume_backup["id"],
+        state=volume_backup_state,
+        volume_id=test_volume["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -202,11 +202,11 @@ def get_volume_backups_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_backups = oci.Core.get_volume_backups(compartment_id=var["compartment_id"],
-        display_name=var["volume_backup_display_name"],
-        source_volume_backup_id=oci_core_volume_backup["test_volume_backup"]["id"],
-        state=var["volume_backup_state"],
-        volume_id=oci_core_volume["test_volume"]["id"])
+    test_volume_backups = oci.Core.get_volume_backups(compartment_id=compartment_id,
+        display_name=volume_backup_display_name,
+        source_volume_backup_id=test_volume_backup["id"],
+        state=volume_backup_state,
+        volume_id=test_volume["id"])
     ```
     <!--End PulumiCodeChooser -->
 

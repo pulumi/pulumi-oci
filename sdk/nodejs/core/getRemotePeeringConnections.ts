@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRemotePeeringConnections = oci.Core.getRemotePeeringConnections({
- *     compartmentId: _var.compartment_id,
- *     drgId: oci_core_drg.test_drg.id,
+ *     compartmentId: compartmentId,
+ *     drgId: testDrg.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -87,8 +87,8 @@ export interface GetRemotePeeringConnectionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRemotePeeringConnections = oci.Core.getRemotePeeringConnections({
- *     compartmentId: _var.compartment_id,
- *     drgId: oci_core_drg.test_drg.id,
+ *     compartmentId: compartmentId,
+ *     drgId: testDrg.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

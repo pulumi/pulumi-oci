@@ -44,13 +44,13 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataSources = Oci.CloudGuard.GetDataSources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Data_source_access_level,
-        ///         CompartmentIdInSubtree = @var.Data_source_compartment_id_in_subtree,
-        ///         DataSourceFeedProvider = @var.Data_source_data_source_feed_provider,
-        ///         DisplayName = @var.Data_source_display_name,
-        ///         LoggingQueryType = @var.Data_source_logging_query_type,
-        ///         State = @var.Data_source_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = dataSourceAccessLevel,
+        ///         CompartmentIdInSubtree = dataSourceCompartmentIdInSubtree,
+        ///         DataSourceFeedProvider = dataSourceDataSourceFeedProvider,
+        ///         DisplayName = dataSourceDisplayName,
+        ///         LoggingQueryType = dataSourceLoggingQueryType,
+        ///         State = dataSourceState,
         ///     });
         /// 
         /// });
@@ -93,13 +93,13 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataSources = Oci.CloudGuard.GetDataSources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Data_source_access_level,
-        ///         CompartmentIdInSubtree = @var.Data_source_compartment_id_in_subtree,
-        ///         DataSourceFeedProvider = @var.Data_source_data_source_feed_provider,
-        ///         DisplayName = @var.Data_source_display_name,
-        ///         LoggingQueryType = @var.Data_source_logging_query_type,
-        ///         State = @var.Data_source_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = dataSourceAccessLevel,
+        ///         CompartmentIdInSubtree = dataSourceCompartmentIdInSubtree,
+        ///         DataSourceFeedProvider = dataSourceDataSourceFeedProvider,
+        ///         DisplayName = dataSourceDisplayName,
+        ///         LoggingQueryType = dataSourceLoggingQueryType,
+        ///         State = dataSourceState,
         ///     });
         /// 
         /// });

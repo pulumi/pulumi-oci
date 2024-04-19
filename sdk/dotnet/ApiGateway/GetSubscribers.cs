@@ -29,9 +29,9 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testSubscribers = Oci.ApiGateway.GetSubscribers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Subscriber_display_name,
-        ///         State = @var.Subscriber_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = subscriberDisplayName,
+        ///         State = subscriberState,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testSubscribers = Oci.ApiGateway.GetSubscribers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Subscriber_display_name,
-        ///         State = @var.Subscriber_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = subscriberDisplayName,
+        ///         State = subscriberState,
         ///     });
         /// 
         /// });

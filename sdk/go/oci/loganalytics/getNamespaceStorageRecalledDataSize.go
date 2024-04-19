@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceStorageRecalledDataSize(ctx, &loganalytics.GetNamespaceStorageRecalledDataSizeArgs{
-//				Namespace:       _var.Namespace_storage_recalled_data_size_namespace,
-//				TimeDataEnded:   pulumi.StringRef(_var.Namespace_storage_recalled_data_size_time_data_ended),
-//				TimeDataStarted: pulumi.StringRef(_var.Namespace_storage_recalled_data_size_time_data_started),
+//				Namespace:       namespaceStorageRecalledDataSizeNamespace,
+//				TimeDataEnded:   pulumi.StringRef(namespaceStorageRecalledDataSizeTimeDataEnded),
+//				TimeDataStarted: pulumi.StringRef(namespaceStorageRecalledDataSizeTimeDataStarted),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testRemediationRunStage = Oci.Adm.GetRemediationRunStage.Invoke(new()
         ///     {
-        ///         RemediationRunId = oci_adm_remediation_run.Test_remediation_run.Id,
-        ///         StageType = @var.Remediation_run_stage_stage_type,
+        ///         RemediationRunId = testRemediationRun.Id,
+        ///         StageType = remediationRunStageStageType,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testRemediationRunStage = Oci.Adm.GetRemediationRunStage.Invoke(new()
         ///     {
-        ///         RemediationRunId = oci_adm_remediation_run.Test_remediation_run.Id,
-        ///         StageType = @var.Remediation_run_stage_stage_type,
+        ///         RemediationRunId = testRemediationRun.Id,
+        ///         StageType = remediationRunStageStageType,
         ///     });
         /// 
         /// });

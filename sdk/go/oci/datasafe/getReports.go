@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetReports(ctx, &datasafe.GetReportsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Report_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Report_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Report_display_name),
-//				ReportDefinitionId:     pulumi.StringRef(oci_data_safe_report_definition.Test_report_definition.Id),
-//				State:                  pulumi.StringRef(_var.Report_state),
-//				Type:                   pulumi.StringRef(_var.Report_type),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(reportAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(reportCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(reportDisplayName),
+//				ReportDefinitionId:     pulumi.StringRef(testReportDefinition.Id),
+//				State:                  pulumi.StringRef(reportState),
+//				Type:                   pulumi.StringRef(reportType),
 //			}, nil)
 //			if err != nil {
 //				return err

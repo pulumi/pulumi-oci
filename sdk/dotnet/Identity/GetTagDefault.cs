@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testTagDefault = Oci.Identity.GetTagDefault.Invoke(new()
         ///     {
-        ///         TagDefaultId = oci_identity_tag_default.Test_tag_default.Id,
+        ///         TagDefaultId = testTagDefaultOciIdentityTagDefault.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testTagDefault = Oci.Identity.GetTagDefault.Invoke(new()
         ///     {
-        ///         TagDefaultId = oci_identity_tag_default.Test_tag_default.Id,
+        ///         TagDefaultId = testTagDefaultOciIdentityTagDefault.Id,
         ///     });
         /// 
         /// });

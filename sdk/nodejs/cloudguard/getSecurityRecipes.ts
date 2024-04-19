@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityRecipes = oci.CloudGuard.getSecurityRecipes({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.security_recipe_display_name,
- *     id: _var.security_recipe_id,
- *     state: _var.security_recipe_state,
+ *     compartmentId: compartmentId,
+ *     displayName: securityRecipeDisplayName,
+ *     id: securityRecipeId,
+ *     state: securityRecipeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetSecurityRecipesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityRecipes = oci.CloudGuard.getSecurityRecipes({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.security_recipe_display_name,
- *     id: _var.security_recipe_id,
- *     state: _var.security_recipe_state,
+ *     compartmentId: compartmentId,
+ *     displayName: securityRecipeDisplayName,
+ *     id: securityRecipeId,
+ *     state: securityRecipeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

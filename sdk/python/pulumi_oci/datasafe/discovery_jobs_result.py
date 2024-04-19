@@ -407,7 +407,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_discovery_jobs_result = oci.data_safe.DiscoveryJobsResult("testDiscoveryJobsResult")
+        test_discovery_jobs_result = oci.data_safe.DiscoveryJobsResult("test_discovery_jobs_result")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -441,7 +441,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_discovery_jobs_result = oci.data_safe.DiscoveryJobsResult("testDiscoveryJobsResult")
+        test_discovery_jobs_result = oci.data_safe.DiscoveryJobsResult("test_discovery_jobs_result")
         ```
         <!--End PulumiCodeChooser -->
 

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscribedService = oci.OneSubsription.getSubscribedService({
- *     subscribedServiceId: oci_onesubscription_subscribed_service.test_subscribed_service.id,
- *     fields: _var.subscribed_service_fields,
+ *     subscribedServiceId: testSubscribedServiceOciOnesubscriptionSubscribedService.id,
+ *     fields: subscribedServiceFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -515,8 +515,8 @@ export interface GetSubscribedServiceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscribedService = oci.OneSubsription.getSubscribedService({
- *     subscribedServiceId: oci_onesubscription_subscribed_service.test_subscribed_service.id,
- *     fields: _var.subscribed_service_fields,
+ *     subscribedServiceId: testSubscribedServiceOciOnesubscriptionSubscribedService.id,
+ *     fields: subscribedServiceFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

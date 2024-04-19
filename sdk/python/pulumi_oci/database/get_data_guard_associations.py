@@ -94,7 +94,7 @@ def get_data_guard_associations(database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_guard_associations = oci.Database.get_data_guard_associations(database_id=oci_database_database["test_database"]["id"])
+    test_data_guard_associations = oci.Database.get_data_guard_associations(database_id=test_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -130,7 +130,7 @@ def get_data_guard_associations_output(database_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_data_guard_associations = oci.Database.get_data_guard_associations(database_id=oci_database_database["test_database"]["id"])
+    test_data_guard_associations = oci.Database.get_data_guard_associations(database_id=test_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

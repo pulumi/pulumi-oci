@@ -160,13 +160,13 @@ def get_at_customer_ccc_infrastructures(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=var["ccc_infrastructure_access_level"],
-        ccc_infrastructure_id=oci_compute_cloud_at_customer_ccc_infrastructure["test_ccc_infrastructure"]["id"],
-        compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["ccc_infrastructure_compartment_id_in_subtree"],
-        display_name=var["ccc_infrastructure_display_name"],
-        display_name_contains=var["ccc_infrastructure_display_name_contains"],
-        state=var["ccc_infrastructure_state"])
+    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
+        ccc_infrastructure_id=test_ccc_infrastructure["id"],
+        compartment_id=compartment_id,
+        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree,
+        display_name=ccc_infrastructure_display_name,
+        display_name_contains=ccc_infrastructure_display_name_contains,
+        state=ccc_infrastructure_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -226,13 +226,13 @@ def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=var["ccc_infrastructure_access_level"],
-        ccc_infrastructure_id=oci_compute_cloud_at_customer_ccc_infrastructure["test_ccc_infrastructure"]["id"],
-        compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["ccc_infrastructure_compartment_id_in_subtree"],
-        display_name=var["ccc_infrastructure_display_name"],
-        display_name_contains=var["ccc_infrastructure_display_name_contains"],
-        state=var["ccc_infrastructure_state"])
+    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
+        ccc_infrastructure_id=test_ccc_infrastructure["id"],
+        compartment_id=compartment_id,
+        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree,
+        display_name=ccc_infrastructure_display_name,
+        display_name_contains=ccc_infrastructure_display_name_contains,
+        state=ccc_infrastructure_state)
     ```
     <!--End PulumiCodeChooser -->
 

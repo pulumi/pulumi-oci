@@ -44,8 +44,8 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testListing = Oci.Marketplace.GetListing.Invoke(new()
         ///     {
-        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         ListingId = testListingOciMarketplaceListing.Id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -88,8 +88,8 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testListing = Oci.Marketplace.GetListing.Invoke(new()
         ///     {
-        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         ListingId = testListingOciMarketplaceListing.Id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

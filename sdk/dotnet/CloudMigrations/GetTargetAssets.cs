@@ -30,10 +30,10 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testTargetAssets = Oci.CloudMigrations.GetTargetAssets.Invoke(new()
         ///     {
-        ///         DisplayName = @var.Target_asset_display_name,
-        ///         MigrationPlanId = oci_cloud_migrations_migration_plan.Test_migration_plan.Id,
-        ///         State = @var.Target_asset_state,
-        ///         TargetAssetId = oci_cloud_migrations_target_asset.Test_target_asset.Id,
+        ///         DisplayName = targetAssetDisplayName,
+        ///         MigrationPlanId = testMigrationPlan.Id,
+        ///         State = targetAssetState,
+        ///         TargetAssetId = testTargetAsset.Id,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testTargetAssets = Oci.CloudMigrations.GetTargetAssets.Invoke(new()
         ///     {
-        ///         DisplayName = @var.Target_asset_display_name,
-        ///         MigrationPlanId = oci_cloud_migrations_migration_plan.Test_migration_plan.Id,
-        ///         State = @var.Target_asset_state,
-        ///         TargetAssetId = oci_cloud_migrations_target_asset.Test_target_asset.Id,
+        ///         DisplayName = targetAssetDisplayName,
+        ///         MigrationPlanId = testMigrationPlan.Id,
+        ///         State = targetAssetState,
+        ///         TargetAssetId = testTargetAsset.Id,
         ///     });
         /// 
         /// });

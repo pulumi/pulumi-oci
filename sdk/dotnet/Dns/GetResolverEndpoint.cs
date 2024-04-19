@@ -32,8 +32,8 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testResolverEndpoint = Oci.Dns.GetResolverEndpoint.Invoke(new()
         ///     {
-        ///         ResolverEndpointName = oci_dns_resolver_endpoint.Test_resolver_endpoint.Name,
-        ///         ResolverId = oci_dns_resolver.Test_resolver.Id,
+        ///         ResolverEndpointName = testResolverEndpointOciDnsResolverEndpoint.Name,
+        ///         ResolverId = testResolver.Id,
         ///         Scope = "PRIVATE",
         ///     });
         /// 
@@ -65,8 +65,8 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testResolverEndpoint = Oci.Dns.GetResolverEndpoint.Invoke(new()
         ///     {
-        ///         ResolverEndpointName = oci_dns_resolver_endpoint.Test_resolver_endpoint.Name,
-        ///         ResolverId = oci_dns_resolver.Test_resolver.Id,
+        ///         ResolverEndpointName = testResolverEndpointOciDnsResolverEndpoint.Name,
+        ///         ResolverId = testResolver.Id,
         ///         Scope = "PRIVATE",
         ///     });
         /// 

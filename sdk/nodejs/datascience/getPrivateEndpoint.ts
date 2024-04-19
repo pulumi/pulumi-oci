@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSciencePrivateEndpoint = oci.DataScience.getPrivateEndpoint({
- *     dataSciencePrivateEndpointId: oci_datascience_private_endpoint.test_data_science_private_endpoint.id,
+ *     dataSciencePrivateEndpointId: testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -124,7 +124,7 @@ export interface GetPrivateEndpointResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSciencePrivateEndpoint = oci.DataScience.getPrivateEndpoint({
- *     dataSciencePrivateEndpointId: oci_datascience_private_endpoint.test_data_science_private_endpoint.id,
+ *     dataSciencePrivateEndpointId: testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

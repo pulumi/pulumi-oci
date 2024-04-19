@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabasePeerTargetDatabase = oci.DataSafe.getTargetDatabasePeerTargetDatabase({
- *     peerTargetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ *     peerTargetDatabaseId: testTargetDatabase.id,
+ *     targetDatabaseId: testTargetDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,8 +113,8 @@ export interface GetTargetDatabasePeerTargetDatabaseResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabasePeerTargetDatabase = oci.DataSafe.getTargetDatabasePeerTargetDatabase({
- *     peerTargetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ *     peerTargetDatabaseId: testTargetDatabase.id,
+ *     targetDatabaseId: testTargetDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

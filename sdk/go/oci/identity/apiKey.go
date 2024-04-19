@@ -42,9 +42,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewApiKey(ctx, "testApiKey", &Identity.ApiKeyArgs{
-//				KeyValue: pulumi.Any(_var.Api_key_key_value),
-//				UserId:   pulumi.Any(oci_identity_user.Test_user.Id),
+//			_, err := Identity.NewApiKey(ctx, "test_api_key", &Identity.ApiKeyArgs{
+//				KeyValue: pulumi.Any(apiKeyKeyValue),
+//				UserId:   pulumi.Any(testUser.Id),
 //			})
 //			if err != nil {
 //				return err

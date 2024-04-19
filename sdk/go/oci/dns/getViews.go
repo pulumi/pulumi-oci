@@ -36,11 +36,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetViews(ctx, &dns.GetViewsArgs{
-//				CompartmentId: _var.Compartment_id,
+//				CompartmentId: compartmentId,
 //				Scope:         pulumi.StringRef("PRIVATE"),
-//				DisplayName:   pulumi.StringRef(_var.View_display_name),
-//				Id:            pulumi.StringRef(_var.View_id),
-//				State:         pulumi.StringRef(_var.View_state),
+//				DisplayName:   pulumi.StringRef(viewDisplayName),
+//				Id:            pulumi.StringRef(viewId),
+//				State:         pulumi.StringRef(viewState),
 //			}, nil)
 //			if err != nil {
 //				return err

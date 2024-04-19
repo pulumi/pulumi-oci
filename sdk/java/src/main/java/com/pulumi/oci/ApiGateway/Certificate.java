@@ -46,13 +46,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCertificate = new Certificate(&#34;testCertificate&#34;, CertificateArgs.builder()        
- *             .certificate(var_.certificate_certificate())
- *             .compartmentId(var_.compartment_id())
+ *             .certificate(certificateCertificate)
+ *             .compartmentId(compartmentId)
+ *             .privateKey(certificatePrivateKey)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.certificate_display_name())
+ *             .displayName(certificateDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .intermediateCertificates(var_.certificate_intermediate_certificates())
- *             .privateKey(var_.certificate_private_key())
+ *             .intermediateCertificates(certificateIntermediateCertificates)
  *             .build());
  * 
  *     }

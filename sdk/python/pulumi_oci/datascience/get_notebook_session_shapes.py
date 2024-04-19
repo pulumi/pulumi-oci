@@ -91,7 +91,7 @@ def get_notebook_session_shapes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_session_shapes = oci.DataScience.get_notebook_session_shapes(compartment_id=var["compartment_id"])
+    test_notebook_session_shapes = oci.DataScience.get_notebook_session_shapes(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_notebook_session_shapes_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_session_shapes = oci.DataScience.get_notebook_session_shapes(compartment_id=var["compartment_id"])
+    test_notebook_session_shapes = oci.DataScience.get_notebook_session_shapes(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

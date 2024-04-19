@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityPolicy(ctx, &datasafe.GetSecurityPolicyArgs{
-//				SecurityPolicyId: oci_data_safe_security_policy.Test_security_policy.Id,
+//				SecurityPolicyId: testSecurityPolicyOciDataSafeSecurityPolicy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

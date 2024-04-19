@@ -25,18 +25,19 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProject = new Oci.DevOps.Project("testProject", new()
+    ///     var testProject = new Oci.DevOps.Project("test_project", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = projectName,
     ///         NotificationConfig = new Oci.DevOps.Inputs.ProjectNotificationConfigArgs
     ///         {
-    ///             TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+    ///             TopicId = testNotificationTopic.Id,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Project_description,
+    ///         Description = projectDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

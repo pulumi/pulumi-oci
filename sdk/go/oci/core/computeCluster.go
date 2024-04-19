@@ -43,13 +43,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewComputeCluster(ctx, "testComputeCluster", &Core.ComputeClusterArgs{
-//				AvailabilityDomain: pulumi.Any(_var.Compute_cluster_availability_domain),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewComputeCluster(ctx, "test_compute_cluster", &Core.ComputeClusterArgs{
+//				AvailabilityDomain: pulumi.Any(computeClusterAvailabilityDomain),
+//				CompartmentId:      pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Compute_cluster_display_name),
+//				DisplayName: pulumi.Any(computeClusterDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

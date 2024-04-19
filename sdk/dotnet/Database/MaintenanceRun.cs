@@ -28,14 +28,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMaintenanceRun = new Oci.Database.MaintenanceRun("testMaintenanceRun", new()
+    ///     var testMaintenanceRun = new Oci.Database.MaintenanceRun("test_maintenance_run", new()
     ///     {
-    ///         PatchType = @var.Maintenance_run_patch_type,
-    ///         TargetResourceId = oci_usage_proxy_resource.Test_resource.Id,
-    ///         TimeScheduled = @var.Maintenance_run_time_scheduled,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IsDstFileUpdateEnabled = @var.Maintenance_run_is_dst_file_update_enabled,
-    ///         PatchingMode = @var.Maintenance_run_patching_mode,
+    ///         PatchType = maintenanceRunPatchType,
+    ///         TargetResourceId = testResource.Id,
+    ///         TimeScheduled = maintenanceRunTimeScheduled,
+    ///         CompartmentId = compartmentId,
+    ///         IsDstFileUpdateEnabled = maintenanceRunIsDstFileUpdateEnabled,
+    ///         PatchingMode = maintenanceRunPatchingMode,
     ///     });
     /// 
     /// });

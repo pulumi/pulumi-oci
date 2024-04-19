@@ -505,14 +505,14 @@ class AuditPolicyManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_audit_policy_management = oci.data_safe.AuditPolicyManagement("testAuditPolicyManagement",
-            compartment_id=var["compartment_id"],
-            target_id=oci_data_safe_target_database["test_target_database"]["id"],
+        test_audit_policy_management = oci.data_safe.AuditPolicyManagement("test_audit_policy_management",
+            compartment_id=compartment_id,
+            target_id=test_target_database["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["audit_policy_management_description"],
-            display_name=var["audit_policy_management_display_name"],
+            description=audit_policy_management_description,
+            display_name=audit_policy_management_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
@@ -555,14 +555,14 @@ class AuditPolicyManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_audit_policy_management = oci.data_safe.AuditPolicyManagement("testAuditPolicyManagement",
-            compartment_id=var["compartment_id"],
-            target_id=oci_data_safe_target_database["test_target_database"]["id"],
+        test_audit_policy_management = oci.data_safe.AuditPolicyManagement("test_audit_policy_management",
+            compartment_id=compartment_id,
+            target_id=test_target_database["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["audit_policy_management_description"],
-            display_name=var["audit_policy_management_display_name"],
+            description=audit_policy_management_description,
+            display_name=audit_policy_management_display_name,
             freeform_tags={
                 "Department": "Finance",
             },

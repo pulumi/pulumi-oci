@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOccCapacityRequest = oci.CapacityManagement.getOccCapacityRequest({
- *     occCapacityRequestId: oci_capacity_management_occ_capacity_request.test_occ_capacity_request.id,
+ *     occCapacityRequestId: testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -138,7 +138,7 @@ export interface GetOccCapacityRequestResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOccCapacityRequest = oci.CapacityManagement.getOccCapacityRequest({
- *     occCapacityRequestId: oci_capacity_management_occ_capacity_request.test_occ_capacity_request.id,
+ *     occCapacityRequestId: testOccCapacityRequestOciCapacityManagementOccCapacityRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -193,15 +193,15 @@ def get_histories(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_histories = oci.Optimizer.get_histories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["history_compartment_id_in_subtree"],
-        include_resource_metadata=var["history_include_resource_metadata"],
-        name=var["history_name"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
-        resource_type=var["history_resource_type"],
-        state=var["history_state"],
-        status=var["history_status"])
+    test_histories = oci.Optimizer.get_histories(compartment_id=compartment_id,
+        compartment_id_in_subtree=history_compartment_id_in_subtree,
+        include_resource_metadata=history_include_resource_metadata,
+        name=history_name,
+        recommendation_id=test_recommendation["id"],
+        recommendation_name=test_recommendation["name"],
+        resource_type=history_resource_type,
+        state=history_state,
+        status=history_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -272,15 +272,15 @@ def get_histories_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_histories = oci.Optimizer.get_histories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["history_compartment_id_in_subtree"],
-        include_resource_metadata=var["history_include_resource_metadata"],
-        name=var["history_name"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
-        resource_type=var["history_resource_type"],
-        state=var["history_state"],
-        status=var["history_status"])
+    test_histories = oci.Optimizer.get_histories(compartment_id=compartment_id,
+        compartment_id_in_subtree=history_compartment_id_in_subtree,
+        include_resource_metadata=history_include_resource_metadata,
+        name=history_name,
+        recommendation_id=test_recommendation["id"],
+        recommendation_name=test_recommendation["name"],
+        resource_type=history_resource_type,
+        state=history_state,
+        status=history_status)
     ```
     <!--End PulumiCodeChooser -->
 

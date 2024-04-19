@@ -44,38 +44,38 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVolume(ctx, "testVolume", &Core.VolumeArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewVolume(ctx, "test_volume", &Core.VolumeArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				AutotunePolicies: core.VolumeAutotunePolicyArray{
 //					&core.VolumeAutotunePolicyArgs{
-//						AutotuneType: pulumi.Any(_var.Volume_autotune_policies_autotune_type),
-//						MaxVpusPerGb: pulumi.Any(_var.Volume_autotune_policies_max_vpus_per_gb),
+//						AutotuneType: pulumi.Any(volumeAutotunePoliciesAutotuneType),
+//						MaxVpusPerGb: pulumi.Any(volumeAutotunePoliciesMaxVpusPerGb),
 //					},
 //				},
-//				AvailabilityDomain: pulumi.Any(_var.Volume_availability_domain),
-//				BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
+//				AvailabilityDomain: pulumi.Any(volumeAvailabilityDomain),
+//				BackupPolicyId:     pulumi.Any(testVolumeBackupPolicies.VolumeBackupPolicies[0].Id),
 //				BlockVolumeReplicas: core.VolumeBlockVolumeReplicaArray{
 //					&core.VolumeBlockVolumeReplicaArgs{
-//						AvailabilityDomain: pulumi.Any(_var.Volume_block_volume_replicas_availability_domain),
-//						DisplayName:        pulumi.Any(_var.Volume_block_volume_replicas_display_name),
+//						AvailabilityDomain: pulumi.Any(volumeBlockVolumeReplicasAvailabilityDomain),
+//						DisplayName:        pulumi.Any(volumeBlockVolumeReplicasDisplayName),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Volume_display_name),
+//				DisplayName: pulumi.Any(volumeDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsAutoTuneEnabled: pulumi.Any(_var.Volume_is_auto_tune_enabled),
-//				KmsKeyId:          pulumi.Any(oci_kms_key.Test_key.Id),
-//				SizeInGbs:         pulumi.Any(_var.Volume_size_in_gbs),
-//				SizeInMbs:         pulumi.Any(_var.Volume_size_in_mbs),
+//				IsAutoTuneEnabled: pulumi.Any(volumeIsAutoTuneEnabled),
+//				KmsKeyId:          pulumi.Any(testKey.Id),
+//				SizeInGbs:         pulumi.Any(volumeSizeInGbs),
+//				SizeInMbs:         pulumi.Any(volumeSizeInMbs),
 //				SourceDetails: &core.VolumeSourceDetailsArgs{
-//					Id:   pulumi.Any(_var.Volume_source_details_id),
-//					Type: pulumi.Any(_var.Volume_source_details_type),
+//					Id:   pulumi.Any(volumeSourceDetailsId),
+//					Type: pulumi.Any(volumeSourceDetailsType),
 //				},
-//				VpusPerGb:                   pulumi.Any(_var.Volume_vpus_per_gb),
+//				VpusPerGb:                   pulumi.Any(volumeVpusPerGb),
 //				BlockVolumeReplicasDeletion: pulumi.Bool(true),
 //			})
 //			if err != nil {

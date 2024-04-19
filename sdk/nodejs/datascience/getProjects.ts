@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProjects = oci.DataScience.getProjects({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.project_created_by,
- *     displayName: _var.project_display_name,
- *     id: _var.project_id,
- *     state: _var.project_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: projectCreatedBy,
+ *     displayName: projectDisplayName,
+ *     id: projectId,
+ *     state: projectState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetProjectsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProjects = oci.DataScience.getProjects({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.project_created_by,
- *     displayName: _var.project_display_name,
- *     id: _var.project_id,
- *     state: _var.project_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: projectCreatedBy,
+ *     displayName: projectDisplayName,
+ *     id: projectId,
+ *     state: projectState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

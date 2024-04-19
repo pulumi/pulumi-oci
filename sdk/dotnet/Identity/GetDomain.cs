@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testDomain = Oci.Identity.GetDomain.Invoke(new()
         ///     {
-        ///         DomainId = oci_identity_domain.Test_domain.Id,
+        ///         DomainId = testDomainOciIdentityDomain.Id,
         ///     });
         /// 
         /// });
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testDomain = Oci.Identity.GetDomain.Invoke(new()
         ///     {
-        ///         DomainId = oci_identity_domain.Test_domain.Id,
+        ///         DomainId = testDomainOciIdentityDomain.Id,
         ///     });
         /// 
         /// });

@@ -34,9 +34,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := HealthChecks.GetPingMonitors(ctx, &healthchecks.GetPingMonitorsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Ping_monitor_display_name),
-//				HomeRegion:    pulumi.StringRef(_var.Ping_monitor_home_region),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(pingMonitorDisplayName),
+//				HomeRegion:    pulumi.StringRef(pingMonitorHomeRegion),
 //			}, nil)
 //			if err != nil {
 //				return err

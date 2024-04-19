@@ -50,18 +50,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVirtualService = new VirtualService(&#34;testVirtualService&#34;, VirtualServiceArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+ *             .compartmentId(compartmentId)
+ *             .meshId(testMesh.id())
+ *             .name(virtualServiceName)
  *             .defaultRoutingPolicy(VirtualServiceDefaultRoutingPolicyArgs.builder()
- *                 .type(var_.virtual_service_default_routing_policy_type())
+ *                 .type(virtualServiceDefaultRoutingPolicyType)
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.virtual_service_description())
+ *             .description(virtualServiceDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .hosts(var_.virtual_service_hosts())
+ *             .hosts(virtualServiceHosts)
  *             .mtls(VirtualServiceMtlsArgs.builder()
- *                 .mode(var_.virtual_service_mtls_mode())
- *                 .maximumValidity(var_.virtual_service_mtls_maximum_validity())
+ *                 .mode(virtualServiceMtlsMode)
+ *                 .maximumValidity(virtualServiceMtlsMaximumValidity)
  *                 .build())
  *             .build());
  * 

@@ -632,20 +632,20 @@ class SqlCollection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sql_collection = oci.data_safe.SqlCollection("testSqlCollection",
-            compartment_id=var["compartment_id"],
-            db_user_name=oci_identity_user["test_user"]["name"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_sql_collection = oci.data_safe.SqlCollection("test_sql_collection",
+            compartment_id=compartment_id,
+            db_user_name=test_user["name"],
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["sql_collection_description"],
-            display_name=var["sql_collection_display_name"],
+            description=sql_collection_description,
+            display_name=sql_collection_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            sql_level=var["sql_collection_sql_level"],
-            status=var["sql_collection_status"])
+            sql_level=sql_collection_sql_level,
+            status=sql_collection_status)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -696,20 +696,20 @@ class SqlCollection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sql_collection = oci.data_safe.SqlCollection("testSqlCollection",
-            compartment_id=var["compartment_id"],
-            db_user_name=oci_identity_user["test_user"]["name"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_sql_collection = oci.data_safe.SqlCollection("test_sql_collection",
+            compartment_id=compartment_id,
+            db_user_name=test_user["name"],
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["sql_collection_description"],
-            display_name=var["sql_collection_display_name"],
+            description=sql_collection_description,
+            display_name=sql_collection_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            sql_level=var["sql_collection_sql_level"],
-            status=var["sql_collection_status"])
+            sql_level=sql_collection_sql_level,
+            status=sql_collection_status)
         ```
         <!--End PulumiCodeChooser -->
 

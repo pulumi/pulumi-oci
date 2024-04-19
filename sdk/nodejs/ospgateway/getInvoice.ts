@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInvoice = oci.OspGateway.getInvoice({
- *     compartmentId: _var.compartment_id,
- *     internalInvoiceId: oci_osp_gateway_invoice.test_invoice.id,
- *     ospHomeRegion: _var.invoice_osp_home_region,
+ *     compartmentId: compartmentId,
+ *     internalInvoiceId: testInvoiceOciOspGatewayInvoice.id,
+ *     ospHomeRegion: invoiceOspHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -178,9 +178,9 @@ export interface GetInvoiceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInvoice = oci.OspGateway.getInvoice({
- *     compartmentId: _var.compartment_id,
- *     internalInvoiceId: oci_osp_gateway_invoice.test_invoice.id,
- *     ospHomeRegion: _var.invoice_osp_home_region,
+ *     compartmentId: compartmentId,
+ *     internalInvoiceId: testInvoiceOciOspGatewayInvoice.id,
+ *     ospHomeRegion: invoiceOspHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

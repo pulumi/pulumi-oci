@@ -373,24 +373,24 @@ class AppAccelerationPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_web_app_acceleration_policy = oci.waa.AppAccelerationPolicy("testWebAppAccelerationPolicy",
-            compartment_id=var["compartment_id"],
+        test_web_app_acceleration_policy = oci.waa.AppAccelerationPolicy("test_web_app_acceleration_policy",
+            compartment_id=compartment_id,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["web_app_acceleration_policy_display_name"],
+            display_name=web_app_acceleration_policy_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             response_caching_policy=oci.waa.AppAccelerationPolicyResponseCachingPolicyArgs(
-                is_response_header_based_caching_enabled=var["web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled"],
+                is_response_header_based_caching_enabled=web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
             ),
             response_compression_policy=oci.waa.AppAccelerationPolicyResponseCompressionPolicyArgs(
                 gzip_compression=oci.waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs(
-                    is_enabled=var["web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled"],
+                    is_enabled=web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
                 ),
             ),
-            system_tags=var["web_app_acceleration_policy_system_tags"])
+            system_tags=web_app_acceleration_policy_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -438,24 +438,24 @@ class AppAccelerationPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_web_app_acceleration_policy = oci.waa.AppAccelerationPolicy("testWebAppAccelerationPolicy",
-            compartment_id=var["compartment_id"],
+        test_web_app_acceleration_policy = oci.waa.AppAccelerationPolicy("test_web_app_acceleration_policy",
+            compartment_id=compartment_id,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["web_app_acceleration_policy_display_name"],
+            display_name=web_app_acceleration_policy_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             response_caching_policy=oci.waa.AppAccelerationPolicyResponseCachingPolicyArgs(
-                is_response_header_based_caching_enabled=var["web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled"],
+                is_response_header_based_caching_enabled=web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
             ),
             response_compression_policy=oci.waa.AppAccelerationPolicyResponseCompressionPolicyArgs(
                 gzip_compression=oci.waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs(
-                    is_enabled=var["web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled"],
+                    is_enabled=web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
                 ),
             ),
-            system_tags=var["web_app_acceleration_policy_system_tags"])
+            system_tags=web_app_acceleration_policy_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 

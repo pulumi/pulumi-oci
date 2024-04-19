@@ -45,10 +45,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOsn = new Osn(&#34;testOsn&#34;, OsnArgs.builder()        
- *             .ad(var_.osn_ad())
- *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+ *             .ad(osnAd)
+ *             .blockchainPlatformId(testBlockchainPlatform.id())
  *             .ocpuAllocationParam(OsnOcpuAllocationParamArgs.builder()
- *                 .ocpuAllocationNumber(var_.osn_ocpu_allocation_param_ocpu_allocation_number())
+ *                 .ocpuAllocationNumber(osnOcpuAllocationParamOcpuAllocationNumber)
  *                 .build())
  *             .build());
  * 

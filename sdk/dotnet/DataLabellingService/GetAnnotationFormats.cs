@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// {
         ///     var testAnnotationFormats = Oci.DataLabellingService.GetAnnotationFormats.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// {
         ///     var testAnnotationFormats = Oci.DataLabellingService.GetAnnotationFormats.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

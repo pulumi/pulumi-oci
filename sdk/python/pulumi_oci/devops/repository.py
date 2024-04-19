@@ -549,23 +549,24 @@ class Repository(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_repository = oci.dev_ops.Repository("testRepository",
-            project_id=oci_devops_project["test_project"]["id"],
-            repository_type=var["repository_repository_type"],
-            default_branch=var["repository_default_branch"],
+        test_repository = oci.dev_ops.Repository("test_repository",
+            name=repository_name,
+            project_id=test_project["id"],
+            repository_type=repository_repository_type,
+            default_branch=repository_default_branch,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["repository_description"],
+            description=repository_description,
             freeform_tags={
                 "bar-key": "value",
             },
             mirror_repository_config=oci.dev_ops.RepositoryMirrorRepositoryConfigArgs(
-                connector_id=oci_devops_connector["test_connector"]["id"],
-                repository_url=var["repository_mirror_repository_config_repository_url"],
+                connector_id=test_connector["id"],
+                repository_url=repository_mirror_repository_config_repository_url,
                 trigger_schedule=oci.dev_ops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs(
-                    schedule_type=var["repository_mirror_repository_config_trigger_schedule_schedule_type"],
-                    custom_schedule=var["repository_mirror_repository_config_trigger_schedule_custom_schedule"],
+                    schedule_type=repository_mirror_repository_config_trigger_schedule_schedule_type,
+                    custom_schedule=repository_mirror_repository_config_trigger_schedule_custom_schedule,
                 ),
             ))
         ```
@@ -612,23 +613,24 @@ class Repository(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_repository = oci.dev_ops.Repository("testRepository",
-            project_id=oci_devops_project["test_project"]["id"],
-            repository_type=var["repository_repository_type"],
-            default_branch=var["repository_default_branch"],
+        test_repository = oci.dev_ops.Repository("test_repository",
+            name=repository_name,
+            project_id=test_project["id"],
+            repository_type=repository_repository_type,
+            default_branch=repository_default_branch,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["repository_description"],
+            description=repository_description,
             freeform_tags={
                 "bar-key": "value",
             },
             mirror_repository_config=oci.dev_ops.RepositoryMirrorRepositoryConfigArgs(
-                connector_id=oci_devops_connector["test_connector"]["id"],
-                repository_url=var["repository_mirror_repository_config_repository_url"],
+                connector_id=test_connector["id"],
+                repository_url=repository_mirror_repository_config_repository_url,
                 trigger_schedule=oci.dev_ops.RepositoryMirrorRepositoryConfigTriggerScheduleArgs(
-                    schedule_type=var["repository_mirror_repository_config_trigger_schedule_schedule_type"],
-                    custom_schedule=var["repository_mirror_repository_config_trigger_schedule_custom_schedule"],
+                    schedule_type=repository_mirror_repository_config_trigger_schedule_schedule_type,
+                    custom_schedule=repository_mirror_repository_config_trigger_schedule_custom_schedule,
                 ),
             ))
         ```

@@ -46,8 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRunStatement = new RunStatement(&#34;testRunStatement&#34;, RunStatementArgs.builder()        
- *             .code(var_.run_statement_code())
- *             .runId(oci_dataflow_run.test_run().id())
+ *             .code(runStatementCode)
+ *             .runId(testRun.id())
  *             .build());
  * 
  *     }

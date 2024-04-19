@@ -33,25 +33,25 @@ namespace Pulumi.Oci.Kms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVault = new Oci.Kms.Vault("testVault", new()
+    ///     var testVault = new Oci.Kms.Vault("test_vault", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Vault_display_name,
-    ///         VaultType = @var.Vault_vault_type,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = vaultDisplayName,
+    ///         VaultType = vaultVaultType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
     ///         ExternalKeyManagerMetadata = new Oci.Kms.Inputs.VaultExternalKeyManagerMetadataArgs
     ///         {
-    ///             ExternalVaultEndpointUrl = @var.Vault_external_key_manager_metadata_external_vault_endpoint_url,
+    ///             ExternalVaultEndpointUrl = vaultExternalKeyManagerMetadataExternalVaultEndpointUrl,
     ///             OauthMetadata = new Oci.Kms.Inputs.VaultExternalKeyManagerMetadataOauthMetadataArgs
     ///             {
-    ///                 ClientAppId = oci_kms_client_app.Test_client_app.Id,
-    ///                 ClientAppSecret = @var.Vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
-    ///                 IdcsAccountNameUrl = @var.Vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
+    ///                 ClientAppId = testClientApp.Id,
+    ///                 ClientAppSecret = vaultExternalKeyManagerMetadataOauthMetadataClientAppSecret,
+    ///                 IdcsAccountNameUrl = vaultExternalKeyManagerMetadataOauthMetadataIdcsAccountNameUrl,
     ///             },
-    ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///             PrivateEndpointId = testPrivateEndpoint.Id,
     ///         },
     ///         FreeformTags = 
     ///         {

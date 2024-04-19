@@ -48,16 +48,16 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testImage = new Oci.Core.Image("testImage", new()
+    ///     var testImage = new Oci.Core.Image("test_image", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         InstanceId = oci_core_instance.Test_instance.Id,
+    ///         CompartmentId = compartmentId,
+    ///         InstanceId = testInstance.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Image_display_name,
-    ///         LaunchMode = @var.Image_launch_mode,
+    ///         DisplayName = imageDisplayName,
+    ///         LaunchMode = imageLaunchMode,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -78,20 +78,20 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testImage = new Oci.Core.Image("testImage", new()
+    ///     var testImage = new Oci.Core.Image("test_image", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Image_display_name,
-    ///         LaunchMode = @var.Image_launch_mode,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = imageDisplayName,
+    ///         LaunchMode = imageLaunchMode,
     ///         ImageSourceDetails = new Oci.Core.Inputs.ImageImageSourceDetailsArgs
     ///         {
     ///             SourceType = "objectStorageTuple",
-    ///             BucketName = @var.Bucket_name,
-    ///             NamespaceName = @var.Namespace,
-    ///             ObjectName = @var.Object_name,
-    ///             OperatingSystem = @var.Image_image_source_details_operating_system,
-    ///             OperatingSystemVersion = @var.Image_image_source_details_operating_system_version,
-    ///             SourceImageType = @var.Source_image_type,
+    ///             BucketName = bucketName,
+    ///             NamespaceName = @namespace,
+    ///             ObjectName = objectName,
+    ///             OperatingSystem = imageImageSourceDetailsOperatingSystem,
+    ///             OperatingSystemVersion = imageImageSourceDetailsOperatingSystemVersion,
+    ///             SourceImageType = sourceImageType,
     ///         },
     ///     });
     /// 
@@ -109,18 +109,18 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testImage = new Oci.Core.Image("testImage", new()
+    ///     var testImage = new Oci.Core.Image("test_image", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Image_display_name,
-    ///         LaunchMode = @var.Image_launch_mode,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = imageDisplayName,
+    ///         LaunchMode = imageLaunchMode,
     ///         ImageSourceDetails = new Oci.Core.Inputs.ImageImageSourceDetailsArgs
     ///         {
     ///             SourceType = "objectStorageUri",
-    ///             SourceUri = @var.Source_uri,
-    ///             OperatingSystem = @var.Image_image_source_details_operating_system,
-    ///             OperatingSystemVersion = @var.Image_image_source_details_operating_system_version,
-    ///             SourceImageType = @var.Source_image_type,
+    ///             SourceUri = sourceUri,
+    ///             OperatingSystem = imageImageSourceDetailsOperatingSystem,
+    ///             OperatingSystemVersion = imageImageSourceDetailsOperatingSystemVersion,
+    ///             SourceImageType = sourceImageType,
     ///         },
     ///     });
     /// 

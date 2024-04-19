@@ -19,16 +19,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSteeringPolicyAttachments = oci.Dns.getSteeringPolicyAttachments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.steering_policy_attachment_display_name,
- *     domain: _var.steering_policy_attachment_domain,
- *     domainContains: _var.steering_policy_attachment_domain_contains,
- *     id: _var.steering_policy_attachment_id,
- *     state: _var.steering_policy_attachment_state,
- *     steeringPolicyId: oci_dns_steering_policy.test_steering_policy.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.steering_policy_attachment_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.steering_policy_attachment_time_created_less_than,
- *     zoneId: oci_dns_zone.test_zone.id,
+ *     compartmentId: compartmentId,
+ *     displayName: steeringPolicyAttachmentDisplayName,
+ *     domain: steeringPolicyAttachmentDomain,
+ *     domainContains: steeringPolicyAttachmentDomainContains,
+ *     id: steeringPolicyAttachmentId,
+ *     state: steeringPolicyAttachmentState,
+ *     steeringPolicyId: testSteeringPolicy.id,
+ *     timeCreatedGreaterThanOrEqualTo: steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: steeringPolicyAttachmentTimeCreatedLessThan,
+ *     zoneId: testZone.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -149,16 +149,16 @@ export interface GetSteeringPolicyAttachmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSteeringPolicyAttachments = oci.Dns.getSteeringPolicyAttachments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.steering_policy_attachment_display_name,
- *     domain: _var.steering_policy_attachment_domain,
- *     domainContains: _var.steering_policy_attachment_domain_contains,
- *     id: _var.steering_policy_attachment_id,
- *     state: _var.steering_policy_attachment_state,
- *     steeringPolicyId: oci_dns_steering_policy.test_steering_policy.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.steering_policy_attachment_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.steering_policy_attachment_time_created_less_than,
- *     zoneId: oci_dns_zone.test_zone.id,
+ *     compartmentId: compartmentId,
+ *     displayName: steeringPolicyAttachmentDisplayName,
+ *     domain: steeringPolicyAttachmentDomain,
+ *     domainContains: steeringPolicyAttachmentDomainContains,
+ *     id: steeringPolicyAttachmentId,
+ *     state: steeringPolicyAttachmentState,
+ *     steeringPolicyId: testSteeringPolicy.id,
+ *     timeCreatedGreaterThanOrEqualTo: steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: steeringPolicyAttachmentTimeCreatedLessThan,
+ *     zoneId: testZone.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

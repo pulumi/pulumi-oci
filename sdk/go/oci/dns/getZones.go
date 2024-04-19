@@ -34,16 +34,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetZones(ctx, &dns.GetZonesArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				Name:                            pulumi.StringRef(_var.Zone_name),
-//				NameContains:                    pulumi.StringRef(_var.Zone_name_contains),
-//				Scope:                           pulumi.StringRef(_var.Zone_scope),
-//				State:                           pulumi.StringRef(_var.Zone_state),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Zone_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Zone_time_created_less_than),
-//				TsigKeyId:                       pulumi.StringRef(oci_dns_tsig_key.Test_tsig_key.Id),
-//				ViewId:                          pulumi.StringRef(oci_dns_view.Test_view.Id),
-//				ZoneType:                        pulumi.StringRef(_var.Zone_zone_type),
+//				CompartmentId:                   compartmentId,
+//				Name:                            pulumi.StringRef(zoneName),
+//				NameContains:                    pulumi.StringRef(zoneNameContains),
+//				Scope:                           pulumi.StringRef(zoneScope),
+//				State:                           pulumi.StringRef(zoneState),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(zoneTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(zoneTimeCreatedLessThan),
+//				TsigKeyId:                       pulumi.StringRef(testTsigKey.Id),
+//				ViewId:                          pulumi.StringRef(testView.Id),
+//				ZoneType:                        pulumi.StringRef(zoneZoneType),
 //			}, nil)
 //			if err != nil {
 //				return err

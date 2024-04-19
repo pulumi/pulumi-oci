@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testClusterNetwork = oci.Core.getClusterNetwork({
- *     clusterNetworkId: oci_core_cluster_network.test_cluster_network.id,
+ *     clusterNetworkId: testClusterNetworkOciCoreClusterNetwork.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,7 +110,7 @@ export interface GetClusterNetworkResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testClusterNetwork = oci.Core.getClusterNetwork({
- *     clusterNetworkId: oci_core_cluster_network.test_cluster_network.id,
+ *     clusterNetworkId: testClusterNetworkOciCoreClusterNetwork.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

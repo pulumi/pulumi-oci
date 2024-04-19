@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetConnections(ctx, &devops.GetConnectionsArgs{
-//				CompartmentId:  pulumi.StringRef(_var.Compartment_id),
-//				ConnectionType: pulumi.StringRef(_var.Connection_connection_type),
-//				DisplayName:    pulumi.StringRef(_var.Connection_display_name),
-//				Id:             pulumi.StringRef(_var.Connection_id),
-//				ProjectId:      pulumi.StringRef(oci_devops_project.Test_project.Id),
-//				State:          pulumi.StringRef(_var.Connection_state),
+//				CompartmentId:  pulumi.StringRef(compartmentId),
+//				ConnectionType: pulumi.StringRef(connectionConnectionType),
+//				DisplayName:    pulumi.StringRef(connectionDisplayName),
+//				Id:             pulumi.StringRef(connectionId),
+//				ProjectId:      pulumi.StringRef(testProject.Id),
+//				State:          pulumi.StringRef(connectionState),
 //			}, nil)
 //			if err != nil {
 //				return err

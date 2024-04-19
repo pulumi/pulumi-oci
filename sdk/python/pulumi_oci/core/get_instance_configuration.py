@@ -167,7 +167,7 @@ def get_instance_configuration(instance_configuration_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"])
+    test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=test_instance_configuration_oci_core_instance_configuration["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -208,7 +208,7 @@ def get_instance_configuration_output(instance_configuration_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"])
+    test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=test_instance_configuration_oci_core_instance_configuration["id"])
     ```
     <!--End PulumiCodeChooser -->
 

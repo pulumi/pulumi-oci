@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeCapacityTopologyComputeHpcIslands(ctx, &core.GetComputeCapacityTopologyComputeHpcIslandsArgs{
-//				ComputeCapacityTopologyId: oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
-//				AvailabilityDomain:        pulumi.StringRef(_var.Compute_capacity_topology_compute_hpc_island_availability_domain),
-//				CompartmentId:             pulumi.StringRef(_var.Compartment_id),
+//				ComputeCapacityTopologyId: testComputeCapacityTopology.Id,
+//				AvailabilityDomain:        pulumi.StringRef(computeCapacityTopologyComputeHpcIslandAvailabilityDomain),
+//				CompartmentId:             pulumi.StringRef(compartmentId),
 //			}, nil)
 //			if err != nil {
 //				return err

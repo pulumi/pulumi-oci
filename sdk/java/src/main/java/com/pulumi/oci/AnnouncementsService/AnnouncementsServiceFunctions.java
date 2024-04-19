@@ -49,7 +49,7 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
-     *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
      *             .build());
      * 
      *     }
@@ -93,7 +93,7 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
-     *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
      *             .build());
      * 
      *     }
@@ -137,7 +137,7 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
-     *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
      *             .build());
      * 
      *     }
@@ -181,7 +181,7 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
-     *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
      *             .build());
      * 
      *     }
@@ -225,10 +225,10 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscriptions = AnnouncementsServiceFunctions.getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.announcement_subscription_display_name())
-     *             .id(var_.announcement_subscription_id())
-     *             .state(var_.announcement_subscription_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(announcementSubscriptionDisplayName)
+     *             .id(announcementSubscriptionId)
+     *             .state(announcementSubscriptionState)
      *             .build());
      * 
      *     }
@@ -272,10 +272,10 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscriptions = AnnouncementsServiceFunctions.getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.announcement_subscription_display_name())
-     *             .id(var_.announcement_subscription_id())
-     *             .state(var_.announcement_subscription_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(announcementSubscriptionDisplayName)
+     *             .id(announcementSubscriptionId)
+     *             .state(announcementSubscriptionState)
      *             .build());
      * 
      *     }
@@ -319,10 +319,10 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscriptions = AnnouncementsServiceFunctions.getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.announcement_subscription_display_name())
-     *             .id(var_.announcement_subscription_id())
-     *             .state(var_.announcement_subscription_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(announcementSubscriptionDisplayName)
+     *             .id(announcementSubscriptionId)
+     *             .state(announcementSubscriptionState)
      *             .build());
      * 
      *     }
@@ -366,10 +366,10 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscriptions = AnnouncementsServiceFunctions.getAnnouncementSubscriptions(GetAnnouncementSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.announcement_subscription_display_name())
-     *             .id(var_.announcement_subscription_id())
-     *             .state(var_.announcement_subscription_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(announcementSubscriptionDisplayName)
+     *             .id(announcementSubscriptionId)
+     *             .state(announcementSubscriptionState)
      *             .build());
      * 
      *     }

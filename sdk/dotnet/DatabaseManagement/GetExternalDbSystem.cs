@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalDbSystem = Oci.DatabaseManagement.GetExternalDbSystem.Invoke(new()
         ///     {
-        ///         ExternalDbSystemId = oci_database_management_external_db_system.Test_external_db_system.Id,
+        ///         ExternalDbSystemId = testExternalDbSystemOciDatabaseManagementExternalDbSystem.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalDbSystem = Oci.DatabaseManagement.GetExternalDbSystem.Invoke(new()
         ///     {
-        ///         ExternalDbSystemId = oci_database_management_external_db_system.Test_external_db_system.Id,
+        ///         ExternalDbSystemId = testExternalDbSystemOciDatabaseManagementExternalDbSystem.Id,
         ///     });
         /// 
         /// });

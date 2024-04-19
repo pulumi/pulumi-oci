@@ -44,8 +44,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConfiguration = new Configuration(&#34;testConfiguration&#34;, ConfigurationArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .emailIds(var_.configuration_email_ids())
+ *             .compartmentId(compartmentId)
+ *             .emailIds(configurationEmailIds)
  *             .build());
  * 
  *     }

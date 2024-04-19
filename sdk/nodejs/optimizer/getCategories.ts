@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCategories = oci.Optimizer.getCategories({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.category_compartment_id_in_subtree,
- *     childTenancyIds: _var.category_child_tenancy_ids,
- *     includeOrganization: _var.category_include_organization,
- *     name: _var.category_name,
- *     state: _var.category_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: categoryCompartmentIdInSubtree,
+ *     childTenancyIds: categoryChildTenancyIds,
+ *     includeOrganization: categoryIncludeOrganization,
+ *     name: categoryName,
+ *     state: categoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -128,12 +128,12 @@ export interface GetCategoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCategories = oci.Optimizer.getCategories({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.category_compartment_id_in_subtree,
- *     childTenancyIds: _var.category_child_tenancy_ids,
- *     includeOrganization: _var.category_include_organization,
- *     name: _var.category_name,
- *     state: _var.category_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: categoryCompartmentIdInSubtree,
+ *     childTenancyIds: categoryChildTenancyIds,
+ *     includeOrganization: categoryIncludeOrganization,
+ *     name: categoryName,
+ *     state: categoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

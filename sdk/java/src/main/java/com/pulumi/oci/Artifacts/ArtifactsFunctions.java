@@ -74,7 +74,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerConfiguration = ArtifactsFunctions.getContainerConfiguration(GetContainerConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -116,7 +116,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerConfiguration = ArtifactsFunctions.getContainerConfiguration(GetContainerConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -158,7 +158,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerConfiguration = ArtifactsFunctions.getContainerConfiguration(GetContainerConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -200,7 +200,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerConfiguration = ArtifactsFunctions.getContainerConfiguration(GetContainerConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -242,7 +242,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImage = ArtifactsFunctions.getContainerImage(GetContainerImageArgs.builder()
-     *             .imageId(var_.container_image_id())
+     *             .imageId(containerImageId)
      *             .build());
      * 
      *     }
@@ -284,7 +284,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImage = ArtifactsFunctions.getContainerImage(GetContainerImageArgs.builder()
-     *             .imageId(var_.container_image_id())
+     *             .imageId(containerImageId)
      *             .build());
      * 
      *     }
@@ -326,7 +326,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImage = ArtifactsFunctions.getContainerImage(GetContainerImageArgs.builder()
-     *             .imageId(var_.container_image_id())
+     *             .imageId(containerImageId)
      *             .build());
      * 
      *     }
@@ -368,7 +368,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImage = ArtifactsFunctions.getContainerImage(GetContainerImageArgs.builder()
-     *             .imageId(var_.container_image_id())
+     *             .imageId(containerImageId)
      *             .build());
      * 
      *     }
@@ -410,7 +410,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImageSignature = ArtifactsFunctions.getContainerImageSignature(GetContainerImageSignatureArgs.builder()
-     *             .imageSignatureId(oci_artifacts_image_signature.test_image_signature().id())
+     *             .imageSignatureId(testImageSignature.id())
      *             .build());
      * 
      *     }
@@ -452,7 +452,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImageSignature = ArtifactsFunctions.getContainerImageSignature(GetContainerImageSignatureArgs.builder()
-     *             .imageSignatureId(oci_artifacts_image_signature.test_image_signature().id())
+     *             .imageSignatureId(testImageSignature.id())
      *             .build());
      * 
      *     }
@@ -494,7 +494,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImageSignature = ArtifactsFunctions.getContainerImageSignature(GetContainerImageSignatureArgs.builder()
-     *             .imageSignatureId(oci_artifacts_image_signature.test_image_signature().id())
+     *             .imageSignatureId(testImageSignature.id())
      *             .build());
      * 
      *     }
@@ -536,7 +536,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImageSignature = ArtifactsFunctions.getContainerImageSignature(GetContainerImageSignatureArgs.builder()
-     *             .imageSignatureId(oci_artifacts_image_signature.test_image_signature().id())
+     *             .imageSignatureId(testImageSignature.id())
      *             .build());
      * 
      *     }
@@ -578,15 +578,15 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImages = ArtifactsFunctions.getContainerImages(GetContainerImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_image_compartment_id_in_subtree())
-     *             .displayName(var_.container_image_display_name())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isVersioned(var_.container_image_is_versioned())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .repositoryName(oci_artifacts_repository.test_repository().name())
-     *             .state(var_.container_image_state())
-     *             .version(var_.container_image_version())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageCompartmentIdInSubtree)
+     *             .displayName(containerImageDisplayName)
+     *             .imageId(testImage.id())
+     *             .isVersioned(containerImageIsVersioned)
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .state(containerImageState)
+     *             .version(containerImageVersion)
      *             .build());
      * 
      *     }
@@ -628,15 +628,15 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImages = ArtifactsFunctions.getContainerImages(GetContainerImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_image_compartment_id_in_subtree())
-     *             .displayName(var_.container_image_display_name())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isVersioned(var_.container_image_is_versioned())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .repositoryName(oci_artifacts_repository.test_repository().name())
-     *             .state(var_.container_image_state())
-     *             .version(var_.container_image_version())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageCompartmentIdInSubtree)
+     *             .displayName(containerImageDisplayName)
+     *             .imageId(testImage.id())
+     *             .isVersioned(containerImageIsVersioned)
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .state(containerImageState)
+     *             .version(containerImageVersion)
      *             .build());
      * 
      *     }
@@ -678,15 +678,15 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImages = ArtifactsFunctions.getContainerImages(GetContainerImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_image_compartment_id_in_subtree())
-     *             .displayName(var_.container_image_display_name())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isVersioned(var_.container_image_is_versioned())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .repositoryName(oci_artifacts_repository.test_repository().name())
-     *             .state(var_.container_image_state())
-     *             .version(var_.container_image_version())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageCompartmentIdInSubtree)
+     *             .displayName(containerImageDisplayName)
+     *             .imageId(testImage.id())
+     *             .isVersioned(containerImageIsVersioned)
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .state(containerImageState)
+     *             .version(containerImageVersion)
      *             .build());
      * 
      *     }
@@ -728,15 +728,15 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImages = ArtifactsFunctions.getContainerImages(GetContainerImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_image_compartment_id_in_subtree())
-     *             .displayName(var_.container_image_display_name())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isVersioned(var_.container_image_is_versioned())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .repositoryName(oci_artifacts_repository.test_repository().name())
-     *             .state(var_.container_image_state())
-     *             .version(var_.container_image_version())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageCompartmentIdInSubtree)
+     *             .displayName(containerImageDisplayName)
+     *             .imageId(testImage.id())
+     *             .isVersioned(containerImageIsVersioned)
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .state(containerImageState)
+     *             .version(containerImageVersion)
      *             .build());
      * 
      *     }
@@ -778,12 +778,12 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_repository_compartment_id_in_subtree())
-     *             .displayName(var_.container_repository_display_name())
-     *             .isPublic(var_.container_repository_is_public())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .state(var_.container_repository_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
+     *             .displayName(containerRepositoryDisplayName)
+     *             .isPublic(containerRepositoryIsPublic)
+     *             .repositoryId(testRepository.id())
+     *             .state(containerRepositoryState)
      *             .build());
      * 
      *     }
@@ -825,12 +825,12 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_repository_compartment_id_in_subtree())
-     *             .displayName(var_.container_repository_display_name())
-     *             .isPublic(var_.container_repository_is_public())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .state(var_.container_repository_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
+     *             .displayName(containerRepositoryDisplayName)
+     *             .isPublic(containerRepositoryIsPublic)
+     *             .repositoryId(testRepository.id())
+     *             .state(containerRepositoryState)
      *             .build());
      * 
      *     }
@@ -872,12 +872,12 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_repository_compartment_id_in_subtree())
-     *             .displayName(var_.container_repository_display_name())
-     *             .isPublic(var_.container_repository_is_public())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .state(var_.container_repository_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
+     *             .displayName(containerRepositoryDisplayName)
+     *             .isPublic(containerRepositoryIsPublic)
+     *             .repositoryId(testRepository.id())
+     *             .state(containerRepositoryState)
      *             .build());
      * 
      *     }
@@ -919,12 +919,12 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_repository_compartment_id_in_subtree())
-     *             .displayName(var_.container_repository_display_name())
-     *             .isPublic(var_.container_repository_is_public())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .state(var_.container_repository_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
+     *             .displayName(containerRepositoryDisplayName)
+     *             .isPublic(containerRepositoryIsPublic)
+     *             .repositoryId(testRepository.id())
+     *             .state(containerRepositoryState)
      *             .build());
      * 
      *     }
@@ -966,7 +966,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerRepository = ArtifactsFunctions.getContainerRepository(GetContainerRepositoryArgs.builder()
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryId(testRepository.id())
      *             .build());
      * 
      *     }
@@ -1008,7 +1008,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerRepository = ArtifactsFunctions.getContainerRepository(GetContainerRepositoryArgs.builder()
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryId(testRepository.id())
      *             .build());
      * 
      *     }
@@ -1050,7 +1050,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerRepository = ArtifactsFunctions.getContainerRepository(GetContainerRepositoryArgs.builder()
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryId(testRepository.id())
      *             .build());
      * 
      *     }
@@ -1092,7 +1092,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerRepository = ArtifactsFunctions.getContainerRepository(GetContainerRepositoryArgs.builder()
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryId(testRepository.id())
      *             .build());
      * 
      *     }
@@ -1134,16 +1134,16 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImageSignatures = ArtifactsFunctions.getContainerSignatures(GetContainerSignaturesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_image_signature_compartment_id_in_subtree())
-     *             .displayName(var_.container_image_signature_display_name())
-     *             .imageDigest(var_.container_image_signature_image_digest())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .kmsKeyId(oci_kms_key.test_key().id())
-     *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .repositoryName(oci_artifacts_repository.test_repository().name())
-     *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageSignatureCompartmentIdInSubtree)
+     *             .displayName(containerImageSignatureDisplayName)
+     *             .imageDigest(containerImageSignatureImageDigest)
+     *             .imageId(testImage.id())
+     *             .kmsKeyId(testKey.id())
+     *             .kmsKeyVersionId(testKeyVersion.id())
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .signingAlgorithm(containerImageSignatureSigningAlgorithm)
      *             .build());
      * 
      *     }
@@ -1185,16 +1185,16 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImageSignatures = ArtifactsFunctions.getContainerSignatures(GetContainerSignaturesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_image_signature_compartment_id_in_subtree())
-     *             .displayName(var_.container_image_signature_display_name())
-     *             .imageDigest(var_.container_image_signature_image_digest())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .kmsKeyId(oci_kms_key.test_key().id())
-     *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .repositoryName(oci_artifacts_repository.test_repository().name())
-     *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageSignatureCompartmentIdInSubtree)
+     *             .displayName(containerImageSignatureDisplayName)
+     *             .imageDigest(containerImageSignatureImageDigest)
+     *             .imageId(testImage.id())
+     *             .kmsKeyId(testKey.id())
+     *             .kmsKeyVersionId(testKeyVersion.id())
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .signingAlgorithm(containerImageSignatureSigningAlgorithm)
      *             .build());
      * 
      *     }
@@ -1236,16 +1236,16 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImageSignatures = ArtifactsFunctions.getContainerSignatures(GetContainerSignaturesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_image_signature_compartment_id_in_subtree())
-     *             .displayName(var_.container_image_signature_display_name())
-     *             .imageDigest(var_.container_image_signature_image_digest())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .kmsKeyId(oci_kms_key.test_key().id())
-     *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .repositoryName(oci_artifacts_repository.test_repository().name())
-     *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageSignatureCompartmentIdInSubtree)
+     *             .displayName(containerImageSignatureDisplayName)
+     *             .imageDigest(containerImageSignatureImageDigest)
+     *             .imageId(testImage.id())
+     *             .kmsKeyId(testKey.id())
+     *             .kmsKeyVersionId(testKeyVersion.id())
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .signingAlgorithm(containerImageSignatureSigningAlgorithm)
      *             .build());
      * 
      *     }
@@ -1287,16 +1287,16 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerImageSignatures = ArtifactsFunctions.getContainerSignatures(GetContainerSignaturesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.container_image_signature_compartment_id_in_subtree())
-     *             .displayName(var_.container_image_signature_display_name())
-     *             .imageDigest(var_.container_image_signature_image_digest())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .kmsKeyId(oci_kms_key.test_key().id())
-     *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .repositoryName(oci_artifacts_repository.test_repository().name())
-     *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(containerImageSignatureCompartmentIdInSubtree)
+     *             .displayName(containerImageSignatureDisplayName)
+     *             .imageDigest(containerImageSignatureImageDigest)
+     *             .imageId(testImage.id())
+     *             .kmsKeyId(testKey.id())
+     *             .kmsKeyVersionId(testKeyVersion.id())
+     *             .repositoryId(testRepository.id())
+     *             .repositoryName(testRepository.name())
+     *             .signingAlgorithm(containerImageSignatureSigningAlgorithm)
      *             .build());
      * 
      *     }
@@ -1338,7 +1338,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifact = ArtifactsFunctions.getGenericArtifact(GetGenericArtifactArgs.builder()
-     *             .artifactId(oci_artifacts_artifact.test_artifact().id())
+     *             .artifactId(testArtifact.id())
      *             .build());
      * 
      *     }
@@ -1380,7 +1380,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifact = ArtifactsFunctions.getGenericArtifact(GetGenericArtifactArgs.builder()
-     *             .artifactId(oci_artifacts_artifact.test_artifact().id())
+     *             .artifactId(testArtifact.id())
      *             .build());
      * 
      *     }
@@ -1422,7 +1422,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifact = ArtifactsFunctions.getGenericArtifact(GetGenericArtifactArgs.builder()
-     *             .artifactId(oci_artifacts_artifact.test_artifact().id())
+     *             .artifactId(testArtifact.id())
      *             .build());
      * 
      *     }
@@ -1464,7 +1464,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifact = ArtifactsFunctions.getGenericArtifact(GetGenericArtifactArgs.builder()
-     *             .artifactId(oci_artifacts_artifact.test_artifact().id())
+     *             .artifactId(testArtifact.id())
      *             .build());
      * 
      *     }
@@ -1506,14 +1506,14 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifacts = ArtifactsFunctions.getGenericArtifacts(GetGenericArtifactsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .artifactPath(var_.generic_artifact_artifact_path())
-     *             .displayName(var_.generic_artifact_display_name())
-     *             .id(var_.generic_artifact_id())
-     *             .sha256(var_.generic_artifact_sha256())
-     *             .state(var_.generic_artifact_state())
-     *             .version(var_.generic_artifact_version())
+     *             .compartmentId(compartmentId)
+     *             .repositoryId(testRepository.id())
+     *             .artifactPath(genericArtifactArtifactPath)
+     *             .displayName(genericArtifactDisplayName)
+     *             .id(genericArtifactId)
+     *             .sha256(genericArtifactSha256)
+     *             .state(genericArtifactState)
+     *             .version(genericArtifactVersion)
      *             .build());
      * 
      *     }
@@ -1555,14 +1555,14 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifacts = ArtifactsFunctions.getGenericArtifacts(GetGenericArtifactsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .artifactPath(var_.generic_artifact_artifact_path())
-     *             .displayName(var_.generic_artifact_display_name())
-     *             .id(var_.generic_artifact_id())
-     *             .sha256(var_.generic_artifact_sha256())
-     *             .state(var_.generic_artifact_state())
-     *             .version(var_.generic_artifact_version())
+     *             .compartmentId(compartmentId)
+     *             .repositoryId(testRepository.id())
+     *             .artifactPath(genericArtifactArtifactPath)
+     *             .displayName(genericArtifactDisplayName)
+     *             .id(genericArtifactId)
+     *             .sha256(genericArtifactSha256)
+     *             .state(genericArtifactState)
+     *             .version(genericArtifactVersion)
      *             .build());
      * 
      *     }
@@ -1604,14 +1604,14 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifacts = ArtifactsFunctions.getGenericArtifacts(GetGenericArtifactsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .artifactPath(var_.generic_artifact_artifact_path())
-     *             .displayName(var_.generic_artifact_display_name())
-     *             .id(var_.generic_artifact_id())
-     *             .sha256(var_.generic_artifact_sha256())
-     *             .state(var_.generic_artifact_state())
-     *             .version(var_.generic_artifact_version())
+     *             .compartmentId(compartmentId)
+     *             .repositoryId(testRepository.id())
+     *             .artifactPath(genericArtifactArtifactPath)
+     *             .displayName(genericArtifactDisplayName)
+     *             .id(genericArtifactId)
+     *             .sha256(genericArtifactSha256)
+     *             .state(genericArtifactState)
+     *             .version(genericArtifactVersion)
      *             .build());
      * 
      *     }
@@ -1653,14 +1653,14 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifacts = ArtifactsFunctions.getGenericArtifacts(GetGenericArtifactsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .artifactPath(var_.generic_artifact_artifact_path())
-     *             .displayName(var_.generic_artifact_display_name())
-     *             .id(var_.generic_artifact_id())
-     *             .sha256(var_.generic_artifact_sha256())
-     *             .state(var_.generic_artifact_state())
-     *             .version(var_.generic_artifact_version())
+     *             .compartmentId(compartmentId)
+     *             .repositoryId(testRepository.id())
+     *             .artifactPath(genericArtifactArtifactPath)
+     *             .displayName(genericArtifactDisplayName)
+     *             .id(genericArtifactId)
+     *             .sha256(genericArtifactSha256)
+     *             .state(genericArtifactState)
+     *             .version(genericArtifactVersion)
      *             .build());
      * 
      *     }
@@ -1702,11 +1702,11 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositories = ArtifactsFunctions.getRepositories(GetRepositoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.repository_display_name())
-     *             .id(var_.repository_id())
-     *             .isImmutable(var_.repository_is_immutable())
-     *             .state(var_.repository_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(repositoryDisplayName)
+     *             .id(repositoryId)
+     *             .isImmutable(repositoryIsImmutable)
+     *             .state(repositoryState)
      *             .build());
      * 
      *     }
@@ -1748,11 +1748,11 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositories = ArtifactsFunctions.getRepositories(GetRepositoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.repository_display_name())
-     *             .id(var_.repository_id())
-     *             .isImmutable(var_.repository_is_immutable())
-     *             .state(var_.repository_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(repositoryDisplayName)
+     *             .id(repositoryId)
+     *             .isImmutable(repositoryIsImmutable)
+     *             .state(repositoryState)
      *             .build());
      * 
      *     }
@@ -1794,11 +1794,11 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositories = ArtifactsFunctions.getRepositories(GetRepositoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.repository_display_name())
-     *             .id(var_.repository_id())
-     *             .isImmutable(var_.repository_is_immutable())
-     *             .state(var_.repository_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(repositoryDisplayName)
+     *             .id(repositoryId)
+     *             .isImmutable(repositoryIsImmutable)
+     *             .state(repositoryState)
      *             .build());
      * 
      *     }
@@ -1840,11 +1840,11 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositories = ArtifactsFunctions.getRepositories(GetRepositoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.repository_display_name())
-     *             .id(var_.repository_id())
-     *             .isImmutable(var_.repository_is_immutable())
-     *             .state(var_.repository_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(repositoryDisplayName)
+     *             .id(repositoryId)
+     *             .isImmutable(repositoryIsImmutable)
+     *             .state(repositoryState)
      *             .build());
      * 
      *     }
@@ -1886,7 +1886,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepository = ArtifactsFunctions.getRepository(GetRepositoryArgs.builder()
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryId(testRepositoryOciArtifactsRepository.id())
      *             .build());
      * 
      *     }
@@ -1928,7 +1928,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepository = ArtifactsFunctions.getRepository(GetRepositoryArgs.builder()
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryId(testRepositoryOciArtifactsRepository.id())
      *             .build());
      * 
      *     }
@@ -1970,7 +1970,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepository = ArtifactsFunctions.getRepository(GetRepositoryArgs.builder()
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryId(testRepositoryOciArtifactsRepository.id())
      *             .build());
      * 
      *     }
@@ -2012,7 +2012,7 @@ public final class ArtifactsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepository = ArtifactsFunctions.getRepository(GetRepositoryArgs.builder()
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryId(testRepositoryOciArtifactsRepository.id())
      *             .build());
      * 
      *     }

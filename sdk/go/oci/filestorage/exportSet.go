@@ -27,9 +27,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewExportSet(ctx, "testExportSet", &FileStorage.ExportSetArgs{
-//				MountTargetId:  pulumi.Any(oci_file_storage_mount_target.Test_mount_target.Id),
-//				DisplayName:    pulumi.Any(_var.Export_set_name),
+//			_, err := FileStorage.NewExportSet(ctx, "test_export_set", &FileStorage.ExportSetArgs{
+//				MountTargetId:  pulumi.Any(testMountTarget.Id),
+//				DisplayName:    pulumi.Any(exportSetName),
 //				MaxFsStatBytes: pulumi.String("23843202333"),
 //				MaxFsStatFiles: pulumi.String("223442"),
 //			})

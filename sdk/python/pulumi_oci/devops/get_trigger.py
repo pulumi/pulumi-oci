@@ -257,7 +257,7 @@ def get_trigger(trigger_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trigger = oci.DevOps.get_trigger(trigger_id=oci_devops_trigger["test_trigger"]["id"])
+    test_trigger = oci.DevOps.get_trigger(trigger_id=test_trigger_oci_devops_trigger["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -305,7 +305,7 @@ def get_trigger_output(trigger_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trigger = oci.DevOps.get_trigger(trigger_id=oci_devops_trigger["test_trigger"]["id"])
+    test_trigger = oci.DevOps.get_trigger(trigger_id=test_trigger_oci_devops_trigger["id"])
     ```
     <!--End PulumiCodeChooser -->
 

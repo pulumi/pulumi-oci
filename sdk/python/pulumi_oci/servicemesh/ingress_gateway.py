@@ -437,45 +437,46 @@ class IngressGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ingress_gateway = oci.service_mesh.IngressGateway("testIngressGateway",
-            compartment_id=var["compartment_id"],
+        test_ingress_gateway = oci.service_mesh.IngressGateway("test_ingress_gateway",
+            compartment_id=compartment_id,
             hosts=[oci.service_mesh.IngressGatewayHostArgs(
                 listeners=[oci.service_mesh.IngressGatewayHostListenerArgs(
-                    port=var["ingress_gateway_hosts_listeners_port"],
-                    protocol=var["ingress_gateway_hosts_listeners_protocol"],
+                    port=ingress_gateway_hosts_listeners_port,
+                    protocol=ingress_gateway_hosts_listeners_protocol,
                     tls=oci.service_mesh.IngressGatewayHostListenerTlsArgs(
-                        mode=var["ingress_gateway_hosts_listeners_tls_mode"],
+                        mode=ingress_gateway_hosts_listeners_tls_mode,
                         client_validation=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationArgs(
-                            subject_alternate_names=var["ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names"],
+                            subject_alternate_names=ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
                             trusted_ca_bundle=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs(
-                                type=var["ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type"],
-                                ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
-                                secret_name=oci_vault_secret["test_secret"]["name"],
+                                type=ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
+                                ca_bundle_id=test_ca_bundle["id"],
+                                secret_name=test_secret["name"],
                             ),
                         ),
                         server_certificate=oci.service_mesh.IngressGatewayHostListenerTlsServerCertificateArgs(
-                            type=var["ingress_gateway_hosts_listeners_tls_server_certificate_type"],
-                            certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-                            secret_name=oci_vault_secret["test_secret"]["name"],
+                            type=ingress_gateway_hosts_listeners_tls_server_certificate_type,
+                            certificate_id=test_certificate["id"],
+                            secret_name=test_secret["name"],
                         ),
                     ),
                 )],
-                name=var["ingress_gateway_hosts_name"],
-                hostnames=var["ingress_gateway_hosts_hostnames"],
+                name=ingress_gateway_hosts_name,
+                hostnames=ingress_gateway_hosts_hostnames,
             )],
-            mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
+            mesh_id=test_mesh["id"],
+            name=ingress_gateway_name,
             access_logging=oci.service_mesh.IngressGatewayAccessLoggingArgs(
-                is_enabled=var["ingress_gateway_access_logging_is_enabled"],
+                is_enabled=ingress_gateway_access_logging_is_enabled,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["ingress_gateway_description"],
+            description=ingress_gateway_description,
             freeform_tags={
                 "bar-key": "value",
             },
             mtls=oci.service_mesh.IngressGatewayMtlsArgs(
-                maximum_validity=var["ingress_gateway_mtls_maximum_validity"],
+                maximum_validity=ingress_gateway_mtls_maximum_validity,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -522,45 +523,46 @@ class IngressGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ingress_gateway = oci.service_mesh.IngressGateway("testIngressGateway",
-            compartment_id=var["compartment_id"],
+        test_ingress_gateway = oci.service_mesh.IngressGateway("test_ingress_gateway",
+            compartment_id=compartment_id,
             hosts=[oci.service_mesh.IngressGatewayHostArgs(
                 listeners=[oci.service_mesh.IngressGatewayHostListenerArgs(
-                    port=var["ingress_gateway_hosts_listeners_port"],
-                    protocol=var["ingress_gateway_hosts_listeners_protocol"],
+                    port=ingress_gateway_hosts_listeners_port,
+                    protocol=ingress_gateway_hosts_listeners_protocol,
                     tls=oci.service_mesh.IngressGatewayHostListenerTlsArgs(
-                        mode=var["ingress_gateway_hosts_listeners_tls_mode"],
+                        mode=ingress_gateway_hosts_listeners_tls_mode,
                         client_validation=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationArgs(
-                            subject_alternate_names=var["ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names"],
+                            subject_alternate_names=ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
                             trusted_ca_bundle=oci.service_mesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs(
-                                type=var["ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type"],
-                                ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"],
-                                secret_name=oci_vault_secret["test_secret"]["name"],
+                                type=ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
+                                ca_bundle_id=test_ca_bundle["id"],
+                                secret_name=test_secret["name"],
                             ),
                         ),
                         server_certificate=oci.service_mesh.IngressGatewayHostListenerTlsServerCertificateArgs(
-                            type=var["ingress_gateway_hosts_listeners_tls_server_certificate_type"],
-                            certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-                            secret_name=oci_vault_secret["test_secret"]["name"],
+                            type=ingress_gateway_hosts_listeners_tls_server_certificate_type,
+                            certificate_id=test_certificate["id"],
+                            secret_name=test_secret["name"],
                         ),
                     ),
                 )],
-                name=var["ingress_gateway_hosts_name"],
-                hostnames=var["ingress_gateway_hosts_hostnames"],
+                name=ingress_gateway_hosts_name,
+                hostnames=ingress_gateway_hosts_hostnames,
             )],
-            mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
+            mesh_id=test_mesh["id"],
+            name=ingress_gateway_name,
             access_logging=oci.service_mesh.IngressGatewayAccessLoggingArgs(
-                is_enabled=var["ingress_gateway_access_logging_is_enabled"],
+                is_enabled=ingress_gateway_access_logging_is_enabled,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["ingress_gateway_description"],
+            description=ingress_gateway_description,
             freeform_tags={
                 "bar-key": "value",
             },
             mtls=oci.service_mesh.IngressGatewayMtlsArgs(
-                maximum_validity=var["ingress_gateway_mtls_maximum_validity"],
+                maximum_validity=ingress_gateway_mtls_maximum_validity,
             ))
         ```
         <!--End PulumiCodeChooser -->

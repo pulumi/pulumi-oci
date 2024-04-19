@@ -18,19 +18,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceOperationCertificateManagementsManagement = new oci.bigdataservice.BdsInstanceOperationCertificateManagementsManagement("testBdsInstanceOperationCertificateManagementsManagement", {
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     clusterAdminPassword: _var.bds_instance_operation_certificate_managements_management_cluster_admin_password,
- *     services: _var.bds_instance_operation_certificate_managements_management_services,
- *     enableOperationCertificateManagement: _var.enable_operation_certificate_management,
- *     renewOperationCertificateManagement: _var.renew_operation_certificate_management,
+ * const testBdsInstanceOperationCertificateManagementsManagement = new oci.bigdataservice.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management", {
+ *     bdsInstanceId: testBdsInstance.id,
+ *     clusterAdminPassword: bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword,
+ *     services: bdsInstanceOperationCertificateManagementsManagementServices,
+ *     enableOperationCertificateManagement: enableOperationCertificateManagement,
+ *     renewOperationCertificateManagement: renewOperationCertificateManagement,
  *     hostCertDetails: [{
- *         certificate: _var.bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
- *         hostName: _var.bds_instance_operation_certificate_managements_management_host_cert_details_host_name,
- *         privateKey: _var.bds_instance_operation_certificate_managements_management_host_cert_details_private_key,
+ *         certificate: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsCertificate,
+ *         hostName: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsHostName,
+ *         privateKey: bdsInstanceOperationCertificateManagementsManagementHostCertDetailsPrivateKey,
  *     }],
- *     rootCertificate: _var.bds_instance_operation_certificate_managements_management_root_certificate,
- *     serverKeyPassword: _var.bds_instance_operation_certificate_managements_management_server_key_password,
+ *     rootCertificate: bdsInstanceOperationCertificateManagementsManagementRootCertificate,
+ *     serverKeyPassword: bdsInstanceOperationCertificateManagementsManagementServerKeyPassword,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

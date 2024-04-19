@@ -30,18 +30,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewAuditTrailManagement(ctx, "testAuditTrailManagement", &DataSafe.AuditTrailManagementArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				TargetId:      pulumi.Any(oci_data_safe_target_database.Test_target_database.Id),
+//			_, err := DataSafe.NewAuditTrailManagement(ctx, "test_audit_trail_management", &DataSafe.AuditTrailManagementArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				TargetId:      pulumi.Any(testTargetDatabase.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Audit_trail_management_description),
-//				DisplayName: pulumi.Any(_var.Audit_trail_management_display_name),
+//				Description: pulumi.Any(auditTrailManagementDescription),
+//				DisplayName: pulumi.Any(auditTrailManagementDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsAutoPurgeEnabled: pulumi.Any(_var.Audit_trail_management_is_auto_purge_enabled),
+//				IsAutoPurgeEnabled: pulumi.Any(auditTrailManagementIsAutoPurgeEnabled),
 //			})
 //			if err != nil {
 //				return err

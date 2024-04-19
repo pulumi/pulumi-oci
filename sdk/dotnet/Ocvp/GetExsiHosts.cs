@@ -38,14 +38,14 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testEsxiHosts = Oci.Ocvp.GetExsiHosts.Invoke(new()
         ///     {
-        ///         ClusterId = oci_ocvp_cluster.Test_cluster.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputeInstanceId = oci_core_instance.Test_instance.Id,
-        ///         DisplayName = @var.Esxi_host_display_name,
-        ///         IsBillingDonorsOnly = @var.Esxi_host_is_billing_donors_only,
-        ///         IsSwapBillingOnly = @var.Esxi_host_is_swap_billing_only,
-        ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
-        ///         State = @var.Esxi_host_state,
+        ///         ClusterId = testCluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeInstanceId = testInstance.Id,
+        ///         DisplayName = esxiHostDisplayName,
+        ///         IsBillingDonorsOnly = esxiHostIsBillingDonorsOnly,
+        ///         IsSwapBillingOnly = esxiHostIsSwapBillingOnly,
+        ///         SddcId = testSddc.Id,
+        ///         State = esxiHostState,
         ///     });
         /// 
         /// });
@@ -82,14 +82,14 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testEsxiHosts = Oci.Ocvp.GetExsiHosts.Invoke(new()
         ///     {
-        ///         ClusterId = oci_ocvp_cluster.Test_cluster.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputeInstanceId = oci_core_instance.Test_instance.Id,
-        ///         DisplayName = @var.Esxi_host_display_name,
-        ///         IsBillingDonorsOnly = @var.Esxi_host_is_billing_donors_only,
-        ///         IsSwapBillingOnly = @var.Esxi_host_is_swap_billing_only,
-        ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
-        ///         State = @var.Esxi_host_state,
+        ///         ClusterId = testCluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeInstanceId = testInstance.Id,
+        ///         DisplayName = esxiHostDisplayName,
+        ///         IsBillingDonorsOnly = esxiHostIsBillingDonorsOnly,
+        ///         IsSwapBillingOnly = esxiHostIsSwapBillingOnly,
+        ///         SddcId = testSddc.Id,
+        ///         State = esxiHostState,
         ///     });
         /// 
         /// });

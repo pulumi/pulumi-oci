@@ -29,12 +29,12 @@ namespace Pulumi.Oci.GenerativeAi
         /// {
         ///     var testModels = Oci.GenerativeAi.GetModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Capabilities = @var.Model_capability,
-        ///         DisplayName = @var.Model_display_name,
-        ///         Id = @var.Model_id,
-        ///         State = @var.Model_state,
-        ///         Vendor = @var.Model_vendor,
+        ///         CompartmentId = compartmentId,
+        ///         Capabilities = modelCapability,
+        ///         DisplayName = modelDisplayName,
+        ///         Id = modelId,
+        ///         State = modelState,
+        ///         Vendor = modelVendor,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.GenerativeAi
         /// {
         ///     var testModels = Oci.GenerativeAi.GetModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Capabilities = @var.Model_capability,
-        ///         DisplayName = @var.Model_display_name,
-        ///         Id = @var.Model_id,
-        ///         State = @var.Model_state,
-        ///         Vendor = @var.Model_vendor,
+        ///         CompartmentId = compartmentId,
+        ///         Capabilities = modelCapability,
+        ///         DisplayName = modelDisplayName,
+        ///         Id = modelId,
+        ///         State = modelState,
+        ///         Vendor = modelVendor,
         ///     });
         /// 
         /// });

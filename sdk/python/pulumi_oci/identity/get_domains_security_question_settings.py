@@ -169,11 +169,11 @@ def get_domains_security_question_settings(attribute_sets: Optional[Sequence[str
     import pulumi
     import pulumi_oci as oci
 
-    test_security_question_settings = oci.Identity.get_domains_security_question_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_security_question_settings = oci.Identity.get_domains_security_question_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["security_question_setting_authorization"],
-        resource_type_schema_version=var["security_question_setting_resource_type_schema_version"])
+        authorization=security_question_setting_authorization,
+        resource_type_schema_version=security_question_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -229,11 +229,11 @@ def get_domains_security_question_settings_output(attribute_sets: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_security_question_settings = oci.Identity.get_domains_security_question_settings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_security_question_settings = oci.Identity.get_domains_security_question_settings(idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["security_question_setting_authorization"],
-        resource_type_schema_version=var["security_question_setting_resource_type_schema_version"])
+        authorization=security_question_setting_authorization,
+        resource_type_schema_version=security_question_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

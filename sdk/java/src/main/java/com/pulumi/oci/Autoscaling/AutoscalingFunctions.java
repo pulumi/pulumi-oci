@@ -47,7 +47,7 @@ public final class AutoscalingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfiguration = AutoscalingFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
-     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class AutoscalingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfiguration = AutoscalingFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
-     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class AutoscalingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfiguration = AutoscalingFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
-     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class AutoscalingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfiguration = AutoscalingFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
-     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .autoScalingConfigurationId(testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.id())
      *             .build());
      * 
      *     }
@@ -215,8 +215,8 @@ public final class AutoscalingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfigurations = AutoscalingFunctions.getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.auto_scaling_configuration_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autoScalingConfigurationDisplayName)
      *             .build());
      * 
      *     }
@@ -258,8 +258,8 @@ public final class AutoscalingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfigurations = AutoscalingFunctions.getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.auto_scaling_configuration_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autoScalingConfigurationDisplayName)
      *             .build());
      * 
      *     }
@@ -301,8 +301,8 @@ public final class AutoscalingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfigurations = AutoscalingFunctions.getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.auto_scaling_configuration_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autoScalingConfigurationDisplayName)
      *             .build());
      * 
      *     }
@@ -344,8 +344,8 @@ public final class AutoscalingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutoScalingConfigurations = AutoscalingFunctions.getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.auto_scaling_configuration_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autoScalingConfigurationDisplayName)
      *             .build());
      * 
      *     }

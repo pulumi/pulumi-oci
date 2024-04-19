@@ -32,15 +32,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetHistories(ctx, &optimizer.GetHistoriesArgs{
-//				CompartmentId:           _var.Compartment_id,
-//				CompartmentIdInSubtree:  _var.History_compartment_id_in_subtree,
-//				IncludeResourceMetadata: pulumi.BoolRef(_var.History_include_resource_metadata),
-//				Name:                    pulumi.StringRef(_var.History_name),
-//				RecommendationId:        pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Id),
-//				RecommendationName:      pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
-//				ResourceType:            pulumi.StringRef(_var.History_resource_type),
-//				State:                   pulumi.StringRef(_var.History_state),
-//				Status:                  pulumi.StringRef(_var.History_status),
+//				CompartmentId:           compartmentId,
+//				CompartmentIdInSubtree:  historyCompartmentIdInSubtree,
+//				IncludeResourceMetadata: pulumi.BoolRef(historyIncludeResourceMetadata),
+//				Name:                    pulumi.StringRef(historyName),
+//				RecommendationId:        pulumi.StringRef(testRecommendation.Id),
+//				RecommendationName:      pulumi.StringRef(testRecommendation.Name),
+//				ResourceType:            pulumi.StringRef(historyResourceType),
+//				State:                   pulumi.StringRef(historyState),
+//				Status:                  pulumi.StringRef(historyStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceProjects(ctx, &dataintegration.GetWorkspaceProjectsArgs{
-//				WorkspaceId:  oci_dataintegration_workspace.Test_workspace.Id,
-//				Fields:       _var.Workspace_project_fields,
-//				Identifiers:  _var.Workspace_project_identifier,
-//				Name:         pulumi.StringRef(_var.Workspace_project_name),
-//				NameContains: pulumi.StringRef(_var.Workspace_project_name_contains),
+//				WorkspaceId:  testWorkspace.Id,
+//				Fields:       workspaceProjectFields,
+//				Identifiers:  workspaceProjectIdentifier,
+//				Name:         pulumi.StringRef(workspaceProjectName),
+//				NameContains: pulumi.StringRef(workspaceProjectNameContains),
 //			}, nil)
 //			if err != nil {
 //				return err

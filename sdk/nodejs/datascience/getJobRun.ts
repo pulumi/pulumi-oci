@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJobRun = oci.DataScience.getJobRun({
- *     jobRunId: oci_datascience_job_run.test_job_run.id,
+ *     jobRunId: testJobRunOciDatascienceJobRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -138,7 +138,7 @@ export interface GetJobRunResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJobRun = oci.DataScience.getJobRun({
- *     jobRunId: oci_datascience_job_run.test_job_run.id,
+ *     jobRunId: testJobRunOciDatascienceJobRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

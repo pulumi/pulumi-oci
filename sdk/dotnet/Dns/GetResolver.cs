@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testResolver = Oci.Dns.GetResolver.Invoke(new()
         ///     {
-        ///         ResolverId = oci_dns_resolver.Test_resolver.Id,
+        ///         ResolverId = testResolverOciDnsResolver.Id,
         ///         Scope = "PRIVATE",
         ///     });
         /// 
@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testResolver = Oci.Dns.GetResolver.Invoke(new()
         ///     {
-        ///         ResolverId = oci_dns_resolver.Test_resolver.Id,
+        ///         ResolverId = testResolverOciDnsResolver.Id,
         ///         Scope = "PRIVATE",
         ///     });
         /// 

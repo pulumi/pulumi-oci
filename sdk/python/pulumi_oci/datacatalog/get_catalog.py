@@ -236,7 +236,7 @@ def get_catalog(catalog_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog = oci.DataCatalog.get_catalog(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"])
+    test_catalog = oci.DataCatalog.get_catalog(catalog_id=test_catalog_oci_datacatalog_catalog["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -282,7 +282,7 @@ def get_catalog_output(catalog_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog = oci.DataCatalog.get_catalog(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"])
+    test_catalog = oci.DataCatalog.get_catalog(catalog_id=test_catalog_oci_datacatalog_catalog["id"])
     ```
     <!--End PulumiCodeChooser -->
 

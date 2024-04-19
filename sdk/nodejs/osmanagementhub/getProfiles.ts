@@ -20,15 +20,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProfiles = oci.OsManagementHub.getProfiles({
- *     archType: _var.profile_arch_type,
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.profile_display_name,
- *     displayNameContains: _var.profile_display_name_contains,
- *     osFamily: _var.profile_os_family,
- *     profileId: oci_os_management_hub_profile.test_profile.id,
- *     profileTypes: _var.profile_profile_type,
- *     state: _var.profile_state,
- *     vendorName: _var.profile_vendor_name,
+ *     archType: profileArchType,
+ *     compartmentId: compartmentId,
+ *     displayNames: profileDisplayName,
+ *     displayNameContains: profileDisplayNameContains,
+ *     osFamily: profileOsFamily,
+ *     profileId: testProfile.id,
+ *     profileTypes: profileProfileType,
+ *     state: profileState,
+ *     vendorName: profileVendorName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -152,15 +152,15 @@ export interface GetProfilesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProfiles = oci.OsManagementHub.getProfiles({
- *     archType: _var.profile_arch_type,
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.profile_display_name,
- *     displayNameContains: _var.profile_display_name_contains,
- *     osFamily: _var.profile_os_family,
- *     profileId: oci_os_management_hub_profile.test_profile.id,
- *     profileTypes: _var.profile_profile_type,
- *     state: _var.profile_state,
- *     vendorName: _var.profile_vendor_name,
+ *     archType: profileArchType,
+ *     compartmentId: compartmentId,
+ *     displayNames: profileDisplayName,
+ *     displayNameContains: profileDisplayNameContains,
+ *     osFamily: profileOsFamily,
+ *     profileId: testProfile.id,
+ *     profileTypes: profileProfileType,
+ *     state: profileState,
+ *     vendorName: profileVendorName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

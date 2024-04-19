@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testApplication = Oci.Functions.GetApplication.Invoke(new()
         ///     {
-        ///         ApplicationId = oci_functions_application.Test_application.Id,
+        ///         ApplicationId = testApplicationOciFunctionsApplication.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testApplication = Oci.Functions.GetApplication.Invoke(new()
         ///     {
-        ///         ApplicationId = oci_functions_application.Test_application.Id,
+        ///         ApplicationId = testApplicationOciFunctionsApplication.Id,
         ///     });
         /// 
         /// });

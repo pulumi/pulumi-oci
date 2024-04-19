@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryJob = Oci.DataSafe.GetDiscoveryJob.Invoke(new()
         ///     {
-        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
+        ///         DiscoveryJobId = testDiscoveryJobOciDataSafeDiscoveryJob.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryJob = Oci.DataSafe.GetDiscoveryJob.Invoke(new()
         ///     {
-        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
+        ///         DiscoveryJobId = testDiscoveryJobOciDataSafeDiscoveryJob.Id,
         ///     });
         /// 
         /// });

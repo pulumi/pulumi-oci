@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOnPremConnectors = oci.DataSafe.getOnpremConnectors({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.on_prem_connector_access_level,
- *     compartmentIdInSubtree: _var.on_prem_connector_compartment_id_in_subtree,
- *     displayName: _var.on_prem_connector_display_name,
- *     onPremConnectorId: oci_data_safe_on_prem_connector.test_on_prem_connector.id,
- *     onPremConnectorLifecycleState: _var.on_prem_connector_on_prem_connector_lifecycle_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: onPremConnectorAccessLevel,
+ *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree,
+ *     displayName: onPremConnectorDisplayName,
+ *     onPremConnectorId: testOnPremConnector.id,
+ *     onPremConnectorLifecycleState: onPremConnectorOnPremConnectorLifecycleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,12 +113,12 @@ export interface GetOnpremConnectorsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOnPremConnectors = oci.DataSafe.getOnpremConnectors({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.on_prem_connector_access_level,
- *     compartmentIdInSubtree: _var.on_prem_connector_compartment_id_in_subtree,
- *     displayName: _var.on_prem_connector_display_name,
- *     onPremConnectorId: oci_data_safe_on_prem_connector.test_on_prem_connector.id,
- *     onPremConnectorLifecycleState: _var.on_prem_connector_on_prem_connector_lifecycle_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: onPremConnectorAccessLevel,
+ *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree,
+ *     displayName: onPremConnectorDisplayName,
+ *     onPremConnectorId: testOnPremConnector.id,
+ *     onPremConnectorLifecycleState: onPremConnectorOnPremConnectorLifecycleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

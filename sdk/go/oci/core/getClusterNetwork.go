@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetClusterNetwork(ctx, &core.GetClusterNetworkArgs{
-//				ClusterNetworkId: oci_core_cluster_network.Test_cluster_network.Id,
+//				ClusterNetworkId: testClusterNetworkOciCoreClusterNetwork.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

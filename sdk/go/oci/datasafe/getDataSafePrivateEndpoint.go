@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetDataSafePrivateEndpoint(ctx, &datasafe.GetDataSafePrivateEndpointArgs{
-//				DataSafePrivateEndpointId: oci_data_safe_data_safe_private_endpoint.Test_data_safe_private_endpoint.Id,
+//				DataSafePrivateEndpointId: testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

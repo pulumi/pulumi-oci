@@ -255,9 +255,9 @@ def get_data_asset(catalog_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["data_asset_data_asset_key"],
-        fields=var["data_asset_fields"])
+    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=test_catalog["id"],
+        data_asset_key=data_asset_data_asset_key,
+        fields=data_asset_fields)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -311,9 +311,9 @@ def get_data_asset_output(catalog_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["data_asset_data_asset_key"],
-        fields=var["data_asset_fields"])
+    test_data_asset = oci.DataCatalog.get_data_asset(catalog_id=test_catalog["id"],
+        data_asset_key=data_asset_data_asset_key,
+        fields=data_asset_fields)
     ```
     <!--End PulumiCodeChooser -->
 

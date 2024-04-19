@@ -32,12 +32,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetPbfListings(ctx, &functions.GetPbfListingsArgs{
-//				Name:           pulumi.StringRef(_var.Pbf_listing_name),
-//				NameContains:   pulumi.StringRef(_var.Pbf_listing_name_contains),
-//				NameStartsWith: pulumi.StringRef(_var.Pbf_listing_name_starts_with),
-//				PbfListingId:   pulumi.StringRef(oci_functions_pbf_listing.Test_pbf_listing.Id),
-//				State:          pulumi.StringRef(_var.Pbf_listing_state),
-//				Triggers:       _var.Pbf_listing_trigger,
+//				Name:           pulumi.StringRef(pbfListingName),
+//				NameContains:   pulumi.StringRef(pbfListingNameContains),
+//				NameStartsWith: pulumi.StringRef(pbfListingNameStartsWith),
+//				PbfListingId:   pulumi.StringRef(testPbfListing.Id),
+//				State:          pulumi.StringRef(pbfListingState),
+//				Triggers:       pbfListingTrigger,
 //			}, nil)
 //			if err != nil {
 //				return err

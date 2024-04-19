@@ -30,8 +30,8 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testCustomTables = Oci.MeteringComputation.GetCustomTables.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SavedReportId = oci_metering_computation_saved_report.Test_saved_report.Id,
+        ///         CompartmentId = compartmentId,
+        ///         SavedReportId = testSavedReport.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testCustomTables = Oci.MeteringComputation.GetCustomTables.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SavedReportId = oci_metering_computation_saved_report.Test_saved_report.Id,
+        ///         CompartmentId = compartmentId,
+        ///         SavedReportId = testSavedReport.Id,
         ///     });
         /// 
         /// });

@@ -414,18 +414,18 @@ class PrivateIp(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_private_ip = oci.core.PrivateIp("testPrivateIp",
+        test_private_ip = oci.core.PrivateIp("test_private_ip",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["private_ip_display_name"],
+            display_name=private_ip_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            hostname_label=var["private_ip_hostname_label"],
-            ip_address=var["private_ip_ip_address"],
-            vlan_id=oci_core_vlan["test_vlan"]["id"],
-            vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["vnic_id"])
+            hostname_label=private_ip_hostname_label,
+            ip_address=private_ip_ip_address,
+            vlan_id=test_vlan["id"],
+            vnic_id=test_vnic_attachment["vnicId"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -477,18 +477,18 @@ class PrivateIp(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_private_ip = oci.core.PrivateIp("testPrivateIp",
+        test_private_ip = oci.core.PrivateIp("test_private_ip",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["private_ip_display_name"],
+            display_name=private_ip_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            hostname_label=var["private_ip_hostname_label"],
-            ip_address=var["private_ip_ip_address"],
-            vlan_id=oci_core_vlan["test_vlan"]["id"],
-            vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["vnic_id"])
+            hostname_label=private_ip_hostname_label,
+            ip_address=private_ip_ip_address,
+            vlan_id=test_vlan["id"],
+            vnic_id=test_vnic_attachment["vnicId"])
         ```
         <!--End PulumiCodeChooser -->
 

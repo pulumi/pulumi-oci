@@ -30,8 +30,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testReplicationPolicies = Oci.ObjectStorage.GetReplicationPolicies.Invoke(new()
         ///     {
-        ///         Bucket = @var.Replication_policy_bucket,
-        ///         Namespace = @var.Replication_policy_namespace,
+        ///         Bucket = replicationPolicyBucket,
+        ///         Namespace = replicationPolicyNamespace,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testReplicationPolicies = Oci.ObjectStorage.GetReplicationPolicies.Invoke(new()
         ///     {
-        ///         Bucket = @var.Replication_policy_bucket,
-        ///         Namespace = @var.Replication_policy_namespace,
+        ///         Bucket = replicationPolicyBucket,
+        ///         Namespace = replicationPolicyNamespace,
         ///     });
         /// 
         /// });

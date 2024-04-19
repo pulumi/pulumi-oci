@@ -103,9 +103,9 @@ def get_managed_databases_user_proxy_user(managed_database_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_user_proxy_user = oci.DatabaseManagement.get_managed_databases_user_proxy_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_databases_user_proxy_user_name"])
+    test_managed_databases_user_proxy_user = oci.DatabaseManagement.get_managed_databases_user_proxy_user(managed_database_id=test_managed_database["id"],
+        user_name=test_user["name"],
+        name=managed_databases_user_proxy_user_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -146,9 +146,9 @@ def get_managed_databases_user_proxy_user_output(managed_database_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases_user_proxy_user = oci.DatabaseManagement.get_managed_databases_user_proxy_user(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_databases_user_proxy_user_name"])
+    test_managed_databases_user_proxy_user = oci.DatabaseManagement.get_managed_databases_user_proxy_user(managed_database_id=test_managed_database["id"],
+        user_name=test_user["name"],
+        name=managed_databases_user_proxy_user_name)
     ```
     <!--End PulumiCodeChooser -->
 

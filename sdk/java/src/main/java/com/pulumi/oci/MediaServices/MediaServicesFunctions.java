@@ -98,7 +98,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAsset = MediaServicesFunctions.getMediaAsset(GetMediaAssetArgs.builder()
-     *             .mediaAssetId(oci_media_services_media_asset.test_media_asset().id())
+     *             .mediaAssetId(testMediaAssetOciMediaServicesMediaAsset.id())
      *             .build());
      * 
      *     }
@@ -140,7 +140,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAsset = MediaServicesFunctions.getMediaAsset(GetMediaAssetArgs.builder()
-     *             .mediaAssetId(oci_media_services_media_asset.test_media_asset().id())
+     *             .mediaAssetId(testMediaAssetOciMediaServicesMediaAsset.id())
      *             .build());
      * 
      *     }
@@ -182,7 +182,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAsset = MediaServicesFunctions.getMediaAsset(GetMediaAssetArgs.builder()
-     *             .mediaAssetId(oci_media_services_media_asset.test_media_asset().id())
+     *             .mediaAssetId(testMediaAssetOciMediaServicesMediaAsset.id())
      *             .build());
      * 
      *     }
@@ -224,7 +224,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAsset = MediaServicesFunctions.getMediaAsset(GetMediaAssetArgs.builder()
-     *             .mediaAssetId(oci_media_services_media_asset.test_media_asset().id())
+     *             .mediaAssetId(testMediaAssetOciMediaServicesMediaAsset.id())
      *             .build());
      * 
      *     }
@@ -266,9 +266,9 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .mediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .version(var_.media_asset_distribution_channel_attachment_version())
+     *             .distributionChannelId(testChannel.id())
+     *             .mediaAssetId(testMediaAsset.id())
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
      *             .build());
      * 
      *     }
@@ -310,9 +310,9 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .mediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .version(var_.media_asset_distribution_channel_attachment_version())
+     *             .distributionChannelId(testChannel.id())
+     *             .mediaAssetId(testMediaAsset.id())
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
      *             .build());
      * 
      *     }
@@ -354,9 +354,9 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .mediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .version(var_.media_asset_distribution_channel_attachment_version())
+     *             .distributionChannelId(testChannel.id())
+     *             .mediaAssetId(testMediaAsset.id())
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
      *             .build());
      * 
      *     }
@@ -398,9 +398,9 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .mediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .version(var_.media_asset_distribution_channel_attachment_version())
+     *             .distributionChannelId(testChannel.id())
+     *             .mediaAssetId(testMediaAsset.id())
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
      *             .build());
      * 
      *     }
@@ -442,18 +442,18 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssets = MediaServicesFunctions.getMediaAssets(GetMediaAssetsArgs.builder()
-     *             .bucket(var_.media_asset_bucket())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_asset_display_name())
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .masterMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .object(var_.media_asset_object())
-     *             .parentMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .sourceMediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .sourceMediaWorkflowVersion(var_.media_asset_source_media_workflow_version())
-     *             .state(var_.media_asset_state())
-     *             .type(var_.media_asset_type())
+     *             .bucket(mediaAssetBucket)
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaAssetDisplayName)
+     *             .distributionChannelId(testChannel.id())
+     *             .masterMediaAssetId(testMediaAsset.id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .object(mediaAssetObject)
+     *             .parentMediaAssetId(testMediaAsset.id())
+     *             .sourceMediaWorkflowId(testMediaWorkflow.id())
+     *             .sourceMediaWorkflowVersion(mediaAssetSourceMediaWorkflowVersion)
+     *             .state(mediaAssetState)
+     *             .type(mediaAssetType)
      *             .build());
      * 
      *     }
@@ -495,18 +495,18 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssets = MediaServicesFunctions.getMediaAssets(GetMediaAssetsArgs.builder()
-     *             .bucket(var_.media_asset_bucket())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_asset_display_name())
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .masterMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .object(var_.media_asset_object())
-     *             .parentMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .sourceMediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .sourceMediaWorkflowVersion(var_.media_asset_source_media_workflow_version())
-     *             .state(var_.media_asset_state())
-     *             .type(var_.media_asset_type())
+     *             .bucket(mediaAssetBucket)
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaAssetDisplayName)
+     *             .distributionChannelId(testChannel.id())
+     *             .masterMediaAssetId(testMediaAsset.id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .object(mediaAssetObject)
+     *             .parentMediaAssetId(testMediaAsset.id())
+     *             .sourceMediaWorkflowId(testMediaWorkflow.id())
+     *             .sourceMediaWorkflowVersion(mediaAssetSourceMediaWorkflowVersion)
+     *             .state(mediaAssetState)
+     *             .type(mediaAssetType)
      *             .build());
      * 
      *     }
@@ -548,18 +548,18 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssets = MediaServicesFunctions.getMediaAssets(GetMediaAssetsArgs.builder()
-     *             .bucket(var_.media_asset_bucket())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_asset_display_name())
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .masterMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .object(var_.media_asset_object())
-     *             .parentMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .sourceMediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .sourceMediaWorkflowVersion(var_.media_asset_source_media_workflow_version())
-     *             .state(var_.media_asset_state())
-     *             .type(var_.media_asset_type())
+     *             .bucket(mediaAssetBucket)
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaAssetDisplayName)
+     *             .distributionChannelId(testChannel.id())
+     *             .masterMediaAssetId(testMediaAsset.id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .object(mediaAssetObject)
+     *             .parentMediaAssetId(testMediaAsset.id())
+     *             .sourceMediaWorkflowId(testMediaWorkflow.id())
+     *             .sourceMediaWorkflowVersion(mediaAssetSourceMediaWorkflowVersion)
+     *             .state(mediaAssetState)
+     *             .type(mediaAssetType)
      *             .build());
      * 
      *     }
@@ -601,18 +601,18 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssets = MediaServicesFunctions.getMediaAssets(GetMediaAssetsArgs.builder()
-     *             .bucket(var_.media_asset_bucket())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_asset_display_name())
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .masterMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .object(var_.media_asset_object())
-     *             .parentMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .sourceMediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .sourceMediaWorkflowVersion(var_.media_asset_source_media_workflow_version())
-     *             .state(var_.media_asset_state())
-     *             .type(var_.media_asset_type())
+     *             .bucket(mediaAssetBucket)
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaAssetDisplayName)
+     *             .distributionChannelId(testChannel.id())
+     *             .masterMediaAssetId(testMediaAsset.id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .object(mediaAssetObject)
+     *             .parentMediaAssetId(testMediaAsset.id())
+     *             .sourceMediaWorkflowId(testMediaWorkflow.id())
+     *             .sourceMediaWorkflowVersion(mediaAssetSourceMediaWorkflowVersion)
+     *             .state(mediaAssetState)
+     *             .type(mediaAssetType)
      *             .build());
      * 
      *     }
@@ -654,18 +654,18 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssets = MediaServicesFunctions.getMediaAssets(GetMediaAssetsArgs.builder()
-     *             .bucket(var_.media_asset_bucket())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_asset_display_name())
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .masterMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .object(var_.media_asset_object())
-     *             .parentMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .sourceMediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .sourceMediaWorkflowVersion(var_.media_asset_source_media_workflow_version())
-     *             .state(var_.media_asset_state())
-     *             .type(var_.media_asset_type())
+     *             .bucket(mediaAssetBucket)
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaAssetDisplayName)
+     *             .distributionChannelId(testChannel.id())
+     *             .masterMediaAssetId(testMediaAsset.id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .object(mediaAssetObject)
+     *             .parentMediaAssetId(testMediaAsset.id())
+     *             .sourceMediaWorkflowId(testMediaWorkflow.id())
+     *             .sourceMediaWorkflowVersion(mediaAssetSourceMediaWorkflowVersion)
+     *             .state(mediaAssetState)
+     *             .type(mediaAssetType)
      *             .build());
      * 
      *     }
@@ -707,18 +707,18 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaAssets = MediaServicesFunctions.getMediaAssets(GetMediaAssetsArgs.builder()
-     *             .bucket(var_.media_asset_bucket())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_asset_display_name())
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .masterMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .object(var_.media_asset_object())
-     *             .parentMediaAssetId(oci_media_services_media_asset.test_media_asset().id())
-     *             .sourceMediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .sourceMediaWorkflowVersion(var_.media_asset_source_media_workflow_version())
-     *             .state(var_.media_asset_state())
-     *             .type(var_.media_asset_type())
+     *             .bucket(mediaAssetBucket)
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaAssetDisplayName)
+     *             .distributionChannelId(testChannel.id())
+     *             .masterMediaAssetId(testMediaAsset.id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .object(mediaAssetObject)
+     *             .parentMediaAssetId(testMediaAsset.id())
+     *             .sourceMediaWorkflowId(testMediaWorkflow.id())
+     *             .sourceMediaWorkflowVersion(mediaAssetSourceMediaWorkflowVersion)
+     *             .state(mediaAssetState)
+     *             .type(mediaAssetType)
      *             .build());
      * 
      *     }
@@ -760,7 +760,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflow = MediaServicesFunctions.getMediaWorkflow(GetMediaWorkflowArgs.builder()
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
+     *             .mediaWorkflowId(testMediaWorkflowOciMediaServicesMediaWorkflow.id())
      *             .build());
      * 
      *     }
@@ -802,7 +802,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflow = MediaServicesFunctions.getMediaWorkflow(GetMediaWorkflowArgs.builder()
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
+     *             .mediaWorkflowId(testMediaWorkflowOciMediaServicesMediaWorkflow.id())
      *             .build());
      * 
      *     }
@@ -844,7 +844,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflow = MediaServicesFunctions.getMediaWorkflow(GetMediaWorkflowArgs.builder()
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
+     *             .mediaWorkflowId(testMediaWorkflowOciMediaServicesMediaWorkflow.id())
      *             .build());
      * 
      *     }
@@ -886,7 +886,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflow = MediaServicesFunctions.getMediaWorkflow(GetMediaWorkflowArgs.builder()
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
+     *             .mediaWorkflowId(testMediaWorkflowOciMediaServicesMediaWorkflow.id())
      *             .build());
      * 
      *     }
@@ -928,7 +928,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfiguration = MediaServicesFunctions.getMediaWorkflowConfiguration(GetMediaWorkflowConfigurationArgs.builder()
-     *             .mediaWorkflowConfigurationId(oci_media_services_media_workflow_configuration.test_media_workflow_configuration().id())
+     *             .mediaWorkflowConfigurationId(testMediaWorkflowConfigurationOciMediaServicesMediaWorkflowConfiguration.id())
      *             .build());
      * 
      *     }
@@ -970,7 +970,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfiguration = MediaServicesFunctions.getMediaWorkflowConfiguration(GetMediaWorkflowConfigurationArgs.builder()
-     *             .mediaWorkflowConfigurationId(oci_media_services_media_workflow_configuration.test_media_workflow_configuration().id())
+     *             .mediaWorkflowConfigurationId(testMediaWorkflowConfigurationOciMediaServicesMediaWorkflowConfiguration.id())
      *             .build());
      * 
      *     }
@@ -1012,7 +1012,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfiguration = MediaServicesFunctions.getMediaWorkflowConfiguration(GetMediaWorkflowConfigurationArgs.builder()
-     *             .mediaWorkflowConfigurationId(oci_media_services_media_workflow_configuration.test_media_workflow_configuration().id())
+     *             .mediaWorkflowConfigurationId(testMediaWorkflowConfigurationOciMediaServicesMediaWorkflowConfiguration.id())
      *             .build());
      * 
      *     }
@@ -1054,7 +1054,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfiguration = MediaServicesFunctions.getMediaWorkflowConfiguration(GetMediaWorkflowConfigurationArgs.builder()
-     *             .mediaWorkflowConfigurationId(oci_media_services_media_workflow_configuration.test_media_workflow_configuration().id())
+     *             .mediaWorkflowConfigurationId(testMediaWorkflowConfigurationOciMediaServicesMediaWorkflowConfiguration.id())
      *             .build());
      * 
      *     }
@@ -1096,10 +1096,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfigurations = MediaServicesFunctions.getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_configuration_display_name())
-     *             .id(var_.media_workflow_configuration_id())
-     *             .state(var_.media_workflow_configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowConfigurationDisplayName)
+     *             .id(mediaWorkflowConfigurationId)
+     *             .state(mediaWorkflowConfigurationState)
      *             .build());
      * 
      *     }
@@ -1141,10 +1141,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfigurations = MediaServicesFunctions.getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_configuration_display_name())
-     *             .id(var_.media_workflow_configuration_id())
-     *             .state(var_.media_workflow_configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowConfigurationDisplayName)
+     *             .id(mediaWorkflowConfigurationId)
+     *             .state(mediaWorkflowConfigurationState)
      *             .build());
      * 
      *     }
@@ -1186,10 +1186,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfigurations = MediaServicesFunctions.getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_configuration_display_name())
-     *             .id(var_.media_workflow_configuration_id())
-     *             .state(var_.media_workflow_configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowConfigurationDisplayName)
+     *             .id(mediaWorkflowConfigurationId)
+     *             .state(mediaWorkflowConfigurationState)
      *             .build());
      * 
      *     }
@@ -1231,10 +1231,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfigurations = MediaServicesFunctions.getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_configuration_display_name())
-     *             .id(var_.media_workflow_configuration_id())
-     *             .state(var_.media_workflow_configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowConfigurationDisplayName)
+     *             .id(mediaWorkflowConfigurationId)
+     *             .state(mediaWorkflowConfigurationState)
      *             .build());
      * 
      *     }
@@ -1276,10 +1276,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfigurations = MediaServicesFunctions.getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_configuration_display_name())
-     *             .id(var_.media_workflow_configuration_id())
-     *             .state(var_.media_workflow_configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowConfigurationDisplayName)
+     *             .id(mediaWorkflowConfigurationId)
+     *             .state(mediaWorkflowConfigurationState)
      *             .build());
      * 
      *     }
@@ -1321,10 +1321,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowConfigurations = MediaServicesFunctions.getMediaWorkflowConfigurations(GetMediaWorkflowConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_configuration_display_name())
-     *             .id(var_.media_workflow_configuration_id())
-     *             .state(var_.media_workflow_configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowConfigurationDisplayName)
+     *             .id(mediaWorkflowConfigurationId)
+     *             .state(mediaWorkflowConfigurationState)
      *             .build());
      * 
      *     }
@@ -1366,7 +1366,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJob = MediaServicesFunctions.getMediaWorkflowJob(GetMediaWorkflowJobArgs.builder()
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJobOciMediaServicesMediaWorkflowJob.id())
      *             .build());
      * 
      *     }
@@ -1408,7 +1408,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJob = MediaServicesFunctions.getMediaWorkflowJob(GetMediaWorkflowJobArgs.builder()
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJobOciMediaServicesMediaWorkflowJob.id())
      *             .build());
      * 
      *     }
@@ -1450,7 +1450,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJob = MediaServicesFunctions.getMediaWorkflowJob(GetMediaWorkflowJobArgs.builder()
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJobOciMediaServicesMediaWorkflowJob.id())
      *             .build());
      * 
      *     }
@@ -1492,7 +1492,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJob = MediaServicesFunctions.getMediaWorkflowJob(GetMediaWorkflowJobArgs.builder()
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
+     *             .mediaWorkflowJobId(testMediaWorkflowJobOciMediaServicesMediaWorkflowJob.id())
      *             .build());
      * 
      *     }
@@ -1535,8 +1535,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobFact = MediaServicesFunctions.getMediaWorkflowJobFact(GetMediaWorkflowJobFactArgs.builder()
-     *             .key(var_.media_workflow_job_fact_key())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
+     *             .key(mediaWorkflowJobFactKey)
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
      *             .build());
      * 
      *     }
@@ -1579,8 +1579,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobFact = MediaServicesFunctions.getMediaWorkflowJobFact(GetMediaWorkflowJobFactArgs.builder()
-     *             .key(var_.media_workflow_job_fact_key())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
+     *             .key(mediaWorkflowJobFactKey)
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
      *             .build());
      * 
      *     }
@@ -1623,8 +1623,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobFact = MediaServicesFunctions.getMediaWorkflowJobFact(GetMediaWorkflowJobFactArgs.builder()
-     *             .key(var_.media_workflow_job_fact_key())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
+     *             .key(mediaWorkflowJobFactKey)
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
      *             .build());
      * 
      *     }
@@ -1667,8 +1667,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobFact = MediaServicesFunctions.getMediaWorkflowJobFact(GetMediaWorkflowJobFactArgs.builder()
-     *             .key(var_.media_workflow_job_fact_key())
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
+     *             .key(mediaWorkflowJobFactKey)
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
      *             .build());
      * 
      *     }
@@ -1711,9 +1711,9 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobFacts = MediaServicesFunctions.getMediaWorkflowJobFacts(GetMediaWorkflowJobFactsArgs.builder()
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .key(var_.media_workflow_job_fact_key())
-     *             .type(var_.media_workflow_job_fact_type())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .key(mediaWorkflowJobFactKey)
+     *             .type(mediaWorkflowJobFactType)
      *             .build());
      * 
      *     }
@@ -1756,9 +1756,9 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobFacts = MediaServicesFunctions.getMediaWorkflowJobFacts(GetMediaWorkflowJobFactsArgs.builder()
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .key(var_.media_workflow_job_fact_key())
-     *             .type(var_.media_workflow_job_fact_type())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .key(mediaWorkflowJobFactKey)
+     *             .type(mediaWorkflowJobFactType)
      *             .build());
      * 
      *     }
@@ -1801,9 +1801,9 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobFacts = MediaServicesFunctions.getMediaWorkflowJobFacts(GetMediaWorkflowJobFactsArgs.builder()
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .key(var_.media_workflow_job_fact_key())
-     *             .type(var_.media_workflow_job_fact_type())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .key(mediaWorkflowJobFactKey)
+     *             .type(mediaWorkflowJobFactType)
      *             .build());
      * 
      *     }
@@ -1846,9 +1846,9 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobFacts = MediaServicesFunctions.getMediaWorkflowJobFacts(GetMediaWorkflowJobFactsArgs.builder()
-     *             .mediaWorkflowJobId(oci_media_services_media_workflow_job.test_media_workflow_job().id())
-     *             .key(var_.media_workflow_job_fact_key())
-     *             .type(var_.media_workflow_job_fact_type())
+     *             .mediaWorkflowJobId(testMediaWorkflowJob.id())
+     *             .key(mediaWorkflowJobFactKey)
+     *             .type(mediaWorkflowJobFactType)
      *             .build());
      * 
      *     }
@@ -1890,11 +1890,11 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobs = MediaServicesFunctions.getMediaWorkflowJobs(GetMediaWorkflowJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_job_display_name())
-     *             .id(var_.media_workflow_job_id())
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .state(var_.media_workflow_job_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowJobDisplayName)
+     *             .id(mediaWorkflowJobId)
+     *             .mediaWorkflowId(testMediaWorkflow.id())
+     *             .state(mediaWorkflowJobState)
      *             .build());
      * 
      *     }
@@ -1936,11 +1936,11 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobs = MediaServicesFunctions.getMediaWorkflowJobs(GetMediaWorkflowJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_job_display_name())
-     *             .id(var_.media_workflow_job_id())
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .state(var_.media_workflow_job_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowJobDisplayName)
+     *             .id(mediaWorkflowJobId)
+     *             .mediaWorkflowId(testMediaWorkflow.id())
+     *             .state(mediaWorkflowJobState)
      *             .build());
      * 
      *     }
@@ -1982,11 +1982,11 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobs = MediaServicesFunctions.getMediaWorkflowJobs(GetMediaWorkflowJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_job_display_name())
-     *             .id(var_.media_workflow_job_id())
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .state(var_.media_workflow_job_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowJobDisplayName)
+     *             .id(mediaWorkflowJobId)
+     *             .mediaWorkflowId(testMediaWorkflow.id())
+     *             .state(mediaWorkflowJobState)
      *             .build());
      * 
      *     }
@@ -2028,11 +2028,11 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobs = MediaServicesFunctions.getMediaWorkflowJobs(GetMediaWorkflowJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_job_display_name())
-     *             .id(var_.media_workflow_job_id())
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .state(var_.media_workflow_job_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowJobDisplayName)
+     *             .id(mediaWorkflowJobId)
+     *             .mediaWorkflowId(testMediaWorkflow.id())
+     *             .state(mediaWorkflowJobState)
      *             .build());
      * 
      *     }
@@ -2074,11 +2074,11 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobs = MediaServicesFunctions.getMediaWorkflowJobs(GetMediaWorkflowJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_job_display_name())
-     *             .id(var_.media_workflow_job_id())
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .state(var_.media_workflow_job_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowJobDisplayName)
+     *             .id(mediaWorkflowJobId)
+     *             .mediaWorkflowId(testMediaWorkflow.id())
+     *             .state(mediaWorkflowJobState)
      *             .build());
      * 
      *     }
@@ -2120,11 +2120,11 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowJobs = MediaServicesFunctions.getMediaWorkflowJobs(GetMediaWorkflowJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_job_display_name())
-     *             .id(var_.media_workflow_job_id())
-     *             .mediaWorkflowId(oci_media_services_media_workflow.test_media_workflow().id())
-     *             .state(var_.media_workflow_job_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowJobDisplayName)
+     *             .id(mediaWorkflowJobId)
+     *             .mediaWorkflowId(testMediaWorkflow.id())
+     *             .state(mediaWorkflowJobState)
      *             .build());
      * 
      *     }
@@ -2166,10 +2166,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowTaskDeclaration = MediaServicesFunctions.getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCurrent(var_.media_workflow_task_declaration_is_current())
-     *             .name(var_.media_workflow_task_declaration_name())
-     *             .version(var_.media_workflow_task_declaration_version())
+     *             .compartmentId(compartmentId)
+     *             .isCurrent(mediaWorkflowTaskDeclarationIsCurrent)
+     *             .name(mediaWorkflowTaskDeclarationName)
+     *             .version(mediaWorkflowTaskDeclarationVersion)
      *             .build());
      * 
      *     }
@@ -2211,10 +2211,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowTaskDeclaration = MediaServicesFunctions.getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCurrent(var_.media_workflow_task_declaration_is_current())
-     *             .name(var_.media_workflow_task_declaration_name())
-     *             .version(var_.media_workflow_task_declaration_version())
+     *             .compartmentId(compartmentId)
+     *             .isCurrent(mediaWorkflowTaskDeclarationIsCurrent)
+     *             .name(mediaWorkflowTaskDeclarationName)
+     *             .version(mediaWorkflowTaskDeclarationVersion)
      *             .build());
      * 
      *     }
@@ -2256,10 +2256,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowTaskDeclaration = MediaServicesFunctions.getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCurrent(var_.media_workflow_task_declaration_is_current())
-     *             .name(var_.media_workflow_task_declaration_name())
-     *             .version(var_.media_workflow_task_declaration_version())
+     *             .compartmentId(compartmentId)
+     *             .isCurrent(mediaWorkflowTaskDeclarationIsCurrent)
+     *             .name(mediaWorkflowTaskDeclarationName)
+     *             .version(mediaWorkflowTaskDeclarationVersion)
      *             .build());
      * 
      *     }
@@ -2301,10 +2301,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowTaskDeclaration = MediaServicesFunctions.getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCurrent(var_.media_workflow_task_declaration_is_current())
-     *             .name(var_.media_workflow_task_declaration_name())
-     *             .version(var_.media_workflow_task_declaration_version())
+     *             .compartmentId(compartmentId)
+     *             .isCurrent(mediaWorkflowTaskDeclarationIsCurrent)
+     *             .name(mediaWorkflowTaskDeclarationName)
+     *             .version(mediaWorkflowTaskDeclarationVersion)
      *             .build());
      * 
      *     }
@@ -2346,10 +2346,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowTaskDeclaration = MediaServicesFunctions.getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCurrent(var_.media_workflow_task_declaration_is_current())
-     *             .name(var_.media_workflow_task_declaration_name())
-     *             .version(var_.media_workflow_task_declaration_version())
+     *             .compartmentId(compartmentId)
+     *             .isCurrent(mediaWorkflowTaskDeclarationIsCurrent)
+     *             .name(mediaWorkflowTaskDeclarationName)
+     *             .version(mediaWorkflowTaskDeclarationVersion)
      *             .build());
      * 
      *     }
@@ -2391,10 +2391,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflowTaskDeclaration = MediaServicesFunctions.getMediaWorkflowTaskDeclaration(GetMediaWorkflowTaskDeclarationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCurrent(var_.media_workflow_task_declaration_is_current())
-     *             .name(var_.media_workflow_task_declaration_name())
-     *             .version(var_.media_workflow_task_declaration_version())
+     *             .compartmentId(compartmentId)
+     *             .isCurrent(mediaWorkflowTaskDeclarationIsCurrent)
+     *             .name(mediaWorkflowTaskDeclarationName)
+     *             .version(mediaWorkflowTaskDeclarationVersion)
      *             .build());
      * 
      *     }
@@ -2436,10 +2436,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflows = MediaServicesFunctions.getMediaWorkflows(GetMediaWorkflowsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_display_name())
-     *             .id(var_.media_workflow_id())
-     *             .state(var_.media_workflow_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowDisplayName)
+     *             .id(mediaWorkflowId)
+     *             .state(mediaWorkflowState)
      *             .build());
      * 
      *     }
@@ -2481,10 +2481,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflows = MediaServicesFunctions.getMediaWorkflows(GetMediaWorkflowsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_display_name())
-     *             .id(var_.media_workflow_id())
-     *             .state(var_.media_workflow_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowDisplayName)
+     *             .id(mediaWorkflowId)
+     *             .state(mediaWorkflowState)
      *             .build());
      * 
      *     }
@@ -2526,10 +2526,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflows = MediaServicesFunctions.getMediaWorkflows(GetMediaWorkflowsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_display_name())
-     *             .id(var_.media_workflow_id())
-     *             .state(var_.media_workflow_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowDisplayName)
+     *             .id(mediaWorkflowId)
+     *             .state(mediaWorkflowState)
      *             .build());
      * 
      *     }
@@ -2571,10 +2571,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflows = MediaServicesFunctions.getMediaWorkflows(GetMediaWorkflowsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_display_name())
-     *             .id(var_.media_workflow_id())
-     *             .state(var_.media_workflow_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowDisplayName)
+     *             .id(mediaWorkflowId)
+     *             .state(mediaWorkflowState)
      *             .build());
      * 
      *     }
@@ -2616,10 +2616,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflows = MediaServicesFunctions.getMediaWorkflows(GetMediaWorkflowsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_display_name())
-     *             .id(var_.media_workflow_id())
-     *             .state(var_.media_workflow_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowDisplayName)
+     *             .id(mediaWorkflowId)
+     *             .state(mediaWorkflowState)
      *             .build());
      * 
      *     }
@@ -2661,10 +2661,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMediaWorkflows = MediaServicesFunctions.getMediaWorkflows(GetMediaWorkflowsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.media_workflow_display_name())
-     *             .id(var_.media_workflow_id())
-     *             .state(var_.media_workflow_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(mediaWorkflowDisplayName)
+     *             .id(mediaWorkflowId)
+     *             .state(mediaWorkflowState)
      *             .build());
      * 
      *     }
@@ -2706,7 +2706,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamCdnConfig = MediaServicesFunctions.getStreamCdnConfig(GetStreamCdnConfigArgs.builder()
-     *             .streamCdnConfigId(oci_media_services_stream_cdn_config.test_stream_cdn_config().id())
+     *             .streamCdnConfigId(testStreamCdnConfigOciMediaServicesStreamCdnConfig.id())
      *             .build());
      * 
      *     }
@@ -2748,7 +2748,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamCdnConfig = MediaServicesFunctions.getStreamCdnConfig(GetStreamCdnConfigArgs.builder()
-     *             .streamCdnConfigId(oci_media_services_stream_cdn_config.test_stream_cdn_config().id())
+     *             .streamCdnConfigId(testStreamCdnConfigOciMediaServicesStreamCdnConfig.id())
      *             .build());
      * 
      *     }
@@ -2790,7 +2790,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamCdnConfig = MediaServicesFunctions.getStreamCdnConfig(GetStreamCdnConfigArgs.builder()
-     *             .streamCdnConfigId(oci_media_services_stream_cdn_config.test_stream_cdn_config().id())
+     *             .streamCdnConfigId(testStreamCdnConfigOciMediaServicesStreamCdnConfig.id())
      *             .build());
      * 
      *     }
@@ -2832,7 +2832,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamCdnConfig = MediaServicesFunctions.getStreamCdnConfig(GetStreamCdnConfigArgs.builder()
-     *             .streamCdnConfigId(oci_media_services_stream_cdn_config.test_stream_cdn_config().id())
+     *             .streamCdnConfigId(testStreamCdnConfigOciMediaServicesStreamCdnConfig.id())
      *             .build());
      * 
      *     }
@@ -2874,10 +2874,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamCdnConfigs = MediaServicesFunctions.getStreamCdnConfigs(GetStreamCdnConfigsArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .displayName(var_.stream_cdn_config_display_name())
-     *             .id(var_.stream_cdn_config_id())
-     *             .state(var_.stream_cdn_config_state())
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamCdnConfigDisplayName)
+     *             .id(streamCdnConfigId)
+     *             .state(streamCdnConfigState)
      *             .build());
      * 
      *     }
@@ -2919,10 +2919,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamCdnConfigs = MediaServicesFunctions.getStreamCdnConfigs(GetStreamCdnConfigsArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .displayName(var_.stream_cdn_config_display_name())
-     *             .id(var_.stream_cdn_config_id())
-     *             .state(var_.stream_cdn_config_state())
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamCdnConfigDisplayName)
+     *             .id(streamCdnConfigId)
+     *             .state(streamCdnConfigState)
      *             .build());
      * 
      *     }
@@ -2964,10 +2964,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamCdnConfigs = MediaServicesFunctions.getStreamCdnConfigs(GetStreamCdnConfigsArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .displayName(var_.stream_cdn_config_display_name())
-     *             .id(var_.stream_cdn_config_id())
-     *             .state(var_.stream_cdn_config_state())
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamCdnConfigDisplayName)
+     *             .id(streamCdnConfigId)
+     *             .state(streamCdnConfigState)
      *             .build());
      * 
      *     }
@@ -3009,10 +3009,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamCdnConfigs = MediaServicesFunctions.getStreamCdnConfigs(GetStreamCdnConfigsArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .displayName(var_.stream_cdn_config_display_name())
-     *             .id(var_.stream_cdn_config_id())
-     *             .state(var_.stream_cdn_config_state())
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamCdnConfigDisplayName)
+     *             .id(streamCdnConfigId)
+     *             .state(streamCdnConfigState)
      *             .build());
      * 
      *     }
@@ -3054,7 +3054,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannel = MediaServicesFunctions.getStreamDistributionChannel(GetStreamDistributionChannelArgs.builder()
-     *             .streamDistributionChannelId(oci_media_services_stream_distribution_channel.test_stream_distribution_channel().id())
+     *             .streamDistributionChannelId(testStreamDistributionChannelOciMediaServicesStreamDistributionChannel.id())
      *             .build());
      * 
      *     }
@@ -3096,7 +3096,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannel = MediaServicesFunctions.getStreamDistributionChannel(GetStreamDistributionChannelArgs.builder()
-     *             .streamDistributionChannelId(oci_media_services_stream_distribution_channel.test_stream_distribution_channel().id())
+     *             .streamDistributionChannelId(testStreamDistributionChannelOciMediaServicesStreamDistributionChannel.id())
      *             .build());
      * 
      *     }
@@ -3138,7 +3138,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannel = MediaServicesFunctions.getStreamDistributionChannel(GetStreamDistributionChannelArgs.builder()
-     *             .streamDistributionChannelId(oci_media_services_stream_distribution_channel.test_stream_distribution_channel().id())
+     *             .streamDistributionChannelId(testStreamDistributionChannelOciMediaServicesStreamDistributionChannel.id())
      *             .build());
      * 
      *     }
@@ -3180,7 +3180,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannel = MediaServicesFunctions.getStreamDistributionChannel(GetStreamDistributionChannelArgs.builder()
-     *             .streamDistributionChannelId(oci_media_services_stream_distribution_channel.test_stream_distribution_channel().id())
+     *             .streamDistributionChannelId(testStreamDistributionChannelOciMediaServicesStreamDistributionChannel.id())
      *             .build());
      * 
      *     }
@@ -3222,10 +3222,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannels = MediaServicesFunctions.getStreamDistributionChannels(GetStreamDistributionChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stream_distribution_channel_display_name())
-     *             .id(var_.stream_distribution_channel_id())
-     *             .state(var_.stream_distribution_channel_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamDistributionChannelDisplayName)
+     *             .id(streamDistributionChannelId)
+     *             .state(streamDistributionChannelState)
      *             .build());
      * 
      *     }
@@ -3267,10 +3267,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannels = MediaServicesFunctions.getStreamDistributionChannels(GetStreamDistributionChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stream_distribution_channel_display_name())
-     *             .id(var_.stream_distribution_channel_id())
-     *             .state(var_.stream_distribution_channel_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamDistributionChannelDisplayName)
+     *             .id(streamDistributionChannelId)
+     *             .state(streamDistributionChannelState)
      *             .build());
      * 
      *     }
@@ -3312,10 +3312,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannels = MediaServicesFunctions.getStreamDistributionChannels(GetStreamDistributionChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stream_distribution_channel_display_name())
-     *             .id(var_.stream_distribution_channel_id())
-     *             .state(var_.stream_distribution_channel_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamDistributionChannelDisplayName)
+     *             .id(streamDistributionChannelId)
+     *             .state(streamDistributionChannelState)
      *             .build());
      * 
      *     }
@@ -3357,10 +3357,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannels = MediaServicesFunctions.getStreamDistributionChannels(GetStreamDistributionChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stream_distribution_channel_display_name())
-     *             .id(var_.stream_distribution_channel_id())
-     *             .state(var_.stream_distribution_channel_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamDistributionChannelDisplayName)
+     *             .id(streamDistributionChannelId)
+     *             .state(streamDistributionChannelState)
      *             .build());
      * 
      *     }
@@ -3402,10 +3402,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannels = MediaServicesFunctions.getStreamDistributionChannels(GetStreamDistributionChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stream_distribution_channel_display_name())
-     *             .id(var_.stream_distribution_channel_id())
-     *             .state(var_.stream_distribution_channel_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamDistributionChannelDisplayName)
+     *             .id(streamDistributionChannelId)
+     *             .state(streamDistributionChannelState)
      *             .build());
      * 
      *     }
@@ -3447,10 +3447,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamDistributionChannels = MediaServicesFunctions.getStreamDistributionChannels(GetStreamDistributionChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stream_distribution_channel_display_name())
-     *             .id(var_.stream_distribution_channel_id())
-     *             .state(var_.stream_distribution_channel_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamDistributionChannelDisplayName)
+     *             .id(streamDistributionChannelId)
+     *             .state(streamDistributionChannelState)
      *             .build());
      * 
      *     }
@@ -3492,7 +3492,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPackagingConfig = MediaServicesFunctions.getStreamPackagingConfig(GetStreamPackagingConfigArgs.builder()
-     *             .streamPackagingConfigId(oci_media_services_stream_packaging_config.test_stream_packaging_config().id())
+     *             .streamPackagingConfigId(testStreamPackagingConfigOciMediaServicesStreamPackagingConfig.id())
      *             .build());
      * 
      *     }
@@ -3534,7 +3534,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPackagingConfig = MediaServicesFunctions.getStreamPackagingConfig(GetStreamPackagingConfigArgs.builder()
-     *             .streamPackagingConfigId(oci_media_services_stream_packaging_config.test_stream_packaging_config().id())
+     *             .streamPackagingConfigId(testStreamPackagingConfigOciMediaServicesStreamPackagingConfig.id())
      *             .build());
      * 
      *     }
@@ -3576,7 +3576,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPackagingConfig = MediaServicesFunctions.getStreamPackagingConfig(GetStreamPackagingConfigArgs.builder()
-     *             .streamPackagingConfigId(oci_media_services_stream_packaging_config.test_stream_packaging_config().id())
+     *             .streamPackagingConfigId(testStreamPackagingConfigOciMediaServicesStreamPackagingConfig.id())
      *             .build());
      * 
      *     }
@@ -3618,7 +3618,7 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPackagingConfig = MediaServicesFunctions.getStreamPackagingConfig(GetStreamPackagingConfigArgs.builder()
-     *             .streamPackagingConfigId(oci_media_services_stream_packaging_config.test_stream_packaging_config().id())
+     *             .streamPackagingConfigId(testStreamPackagingConfigOciMediaServicesStreamPackagingConfig.id())
      *             .build());
      * 
      *     }
@@ -3660,10 +3660,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPackagingConfigs = MediaServicesFunctions.getStreamPackagingConfigs(GetStreamPackagingConfigsArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .displayName(var_.stream_packaging_config_display_name())
-     *             .state(var_.stream_packaging_config_state())
-     *             .streamPackagingConfigId(oci_media_services_stream_packaging_config.test_stream_packaging_config().id())
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamPackagingConfigDisplayName)
+     *             .state(streamPackagingConfigState)
+     *             .streamPackagingConfigId(testStreamPackagingConfig.id())
      *             .build());
      * 
      *     }
@@ -3705,10 +3705,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPackagingConfigs = MediaServicesFunctions.getStreamPackagingConfigs(GetStreamPackagingConfigsArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .displayName(var_.stream_packaging_config_display_name())
-     *             .state(var_.stream_packaging_config_state())
-     *             .streamPackagingConfigId(oci_media_services_stream_packaging_config.test_stream_packaging_config().id())
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamPackagingConfigDisplayName)
+     *             .state(streamPackagingConfigState)
+     *             .streamPackagingConfigId(testStreamPackagingConfig.id())
      *             .build());
      * 
      *     }
@@ -3750,10 +3750,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPackagingConfigs = MediaServicesFunctions.getStreamPackagingConfigs(GetStreamPackagingConfigsArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .displayName(var_.stream_packaging_config_display_name())
-     *             .state(var_.stream_packaging_config_state())
-     *             .streamPackagingConfigId(oci_media_services_stream_packaging_config.test_stream_packaging_config().id())
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamPackagingConfigDisplayName)
+     *             .state(streamPackagingConfigState)
+     *             .streamPackagingConfigId(testStreamPackagingConfig.id())
      *             .build());
      * 
      *     }
@@ -3795,10 +3795,10 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPackagingConfigs = MediaServicesFunctions.getStreamPackagingConfigs(GetStreamPackagingConfigsArgs.builder()
-     *             .distributionChannelId(oci_mysql_channel.test_channel().id())
-     *             .displayName(var_.stream_packaging_config_display_name())
-     *             .state(var_.stream_packaging_config_state())
-     *             .streamPackagingConfigId(oci_media_services_stream_packaging_config.test_stream_packaging_config().id())
+     *             .distributionChannelId(testChannel.id())
+     *             .displayName(streamPackagingConfigDisplayName)
+     *             .state(streamPackagingConfigState)
+     *             .streamPackagingConfigId(testStreamPackagingConfig.id())
      *             .build());
      * 
      *     }
@@ -3840,8 +3840,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemMediaWorkflow = MediaServicesFunctions.getSystemMediaWorkflow(GetSystemMediaWorkflowArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.system_media_workflow_name())
+     *             .compartmentId(compartmentId)
+     *             .name(systemMediaWorkflowName)
      *             .build());
      * 
      *     }
@@ -3883,8 +3883,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemMediaWorkflow = MediaServicesFunctions.getSystemMediaWorkflow(GetSystemMediaWorkflowArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.system_media_workflow_name())
+     *             .compartmentId(compartmentId)
+     *             .name(systemMediaWorkflowName)
      *             .build());
      * 
      *     }
@@ -3926,8 +3926,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemMediaWorkflow = MediaServicesFunctions.getSystemMediaWorkflow(GetSystemMediaWorkflowArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.system_media_workflow_name())
+     *             .compartmentId(compartmentId)
+     *             .name(systemMediaWorkflowName)
      *             .build());
      * 
      *     }
@@ -3969,8 +3969,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemMediaWorkflow = MediaServicesFunctions.getSystemMediaWorkflow(GetSystemMediaWorkflowArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.system_media_workflow_name())
+     *             .compartmentId(compartmentId)
+     *             .name(systemMediaWorkflowName)
      *             .build());
      * 
      *     }
@@ -4012,8 +4012,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemMediaWorkflow = MediaServicesFunctions.getSystemMediaWorkflow(GetSystemMediaWorkflowArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.system_media_workflow_name())
+     *             .compartmentId(compartmentId)
+     *             .name(systemMediaWorkflowName)
      *             .build());
      * 
      *     }
@@ -4055,8 +4055,8 @@ public final class MediaServicesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemMediaWorkflow = MediaServicesFunctions.getSystemMediaWorkflow(GetSystemMediaWorkflowArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.system_media_workflow_name())
+     *             .compartmentId(compartmentId)
+     *             .name(systemMediaWorkflowName)
      *             .build());
      * 
      *     }

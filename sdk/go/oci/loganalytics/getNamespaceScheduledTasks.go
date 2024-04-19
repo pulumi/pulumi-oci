@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceScheduledTasks(ctx, &loganalytics.GetNamespaceScheduledTasksArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Namespace:     _var.Namespace_scheduled_task_namespace,
-//				DisplayName:   pulumi.StringRef(_var.Namespace_scheduled_task_display_name),
-//				TargetService: pulumi.StringRef(_var.Namespace_scheduled_task_target_service),
-//				TaskType:      _var.Namespace_scheduled_task_task_type,
+//				CompartmentId: compartmentId,
+//				Namespace:     namespaceScheduledTaskNamespace,
+//				DisplayName:   pulumi.StringRef(namespaceScheduledTaskDisplayName),
+//				TargetService: pulumi.StringRef(namespaceScheduledTaskTargetService),
+//				TaskType:      namespaceScheduledTaskTaskType,
 //			}, nil)
 //			if err != nil {
 //				return err

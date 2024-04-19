@@ -189,14 +189,14 @@ def get_security_policy_deployments(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployments = oci.DataSafe.get_security_policy_deployments(compartment_id=var["compartment_id"],
-        access_level=var["security_policy_deployment_access_level"],
-        compartment_id_in_subtree=var["security_policy_deployment_compartment_id_in_subtree"],
-        display_name=var["security_policy_deployment_display_name"],
-        security_policy_deployment_id=oci_data_safe_security_policy_deployment["test_security_policy_deployment"]["id"],
-        security_policy_id=oci_data_safe_security_policy["test_security_policy"]["id"],
-        state=var["security_policy_deployment_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_security_policy_deployments = oci.DataSafe.get_security_policy_deployments(compartment_id=compartment_id,
+        access_level=security_policy_deployment_access_level,
+        compartment_id_in_subtree=security_policy_deployment_compartment_id_in_subtree,
+        display_name=security_policy_deployment_display_name,
+        security_policy_deployment_id=test_security_policy_deployment["id"],
+        security_policy_id=test_security_policy["id"],
+        state=security_policy_deployment_state,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -273,14 +273,14 @@ def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployments = oci.DataSafe.get_security_policy_deployments(compartment_id=var["compartment_id"],
-        access_level=var["security_policy_deployment_access_level"],
-        compartment_id_in_subtree=var["security_policy_deployment_compartment_id_in_subtree"],
-        display_name=var["security_policy_deployment_display_name"],
-        security_policy_deployment_id=oci_data_safe_security_policy_deployment["test_security_policy_deployment"]["id"],
-        security_policy_id=oci_data_safe_security_policy["test_security_policy"]["id"],
-        state=var["security_policy_deployment_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_security_policy_deployments = oci.DataSafe.get_security_policy_deployments(compartment_id=compartment_id,
+        access_level=security_policy_deployment_access_level,
+        compartment_id_in_subtree=security_policy_deployment_compartment_id_in_subtree,
+        display_name=security_policy_deployment_display_name,
+        security_policy_deployment_id=test_security_policy_deployment["id"],
+        security_policy_id=test_security_policy["id"],
+        state=security_policy_deployment_state,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 

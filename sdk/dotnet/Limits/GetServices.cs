@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testServices = Oci.Limits.GetServices.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         CompartmentId = tenancyOcid,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testServices = Oci.Limits.GetServices.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         CompartmentId = tenancyOcid,
         ///     });
         /// 
         /// });

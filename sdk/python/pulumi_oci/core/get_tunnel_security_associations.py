@@ -101,8 +101,8 @@ def get_tunnel_security_associations(filters: Optional[Sequence[pulumi.InputType
     import pulumi
     import pulumi_oci as oci
 
-    test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=oci_core_tunnel["test_tunnel"]["id"])
+    test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=test_ipsec["id"],
+        tunnel_id=test_tunnel["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,8 +142,8 @@ def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=oci_core_ipsec["test_ipsec"]["id"],
-        tunnel_id=oci_core_tunnel["test_tunnel"]["id"])
+    test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=test_ipsec["id"],
+        tunnel_id=test_tunnel["id"])
     ```
     <!--End PulumiCodeChooser -->
 

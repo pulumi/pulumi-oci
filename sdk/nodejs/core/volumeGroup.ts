@@ -14,26 +14,26 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroup = new oci.core.VolumeGroup("testVolumeGroup", {
- *     availabilityDomain: _var.volume_group_availability_domain,
- *     compartmentId: _var.compartment_id,
+ * const testVolumeGroup = new oci.core.VolumeGroup("test_volume_group", {
+ *     availabilityDomain: volumeGroupAvailabilityDomain,
+ *     compartmentId: compartmentId,
  *     sourceDetails: {
  *         type: "volumeIds",
- *         volumeIds: [_var.volume_group_source_id],
+ *         volumeIds: [volumeGroupSourceId],
  *     },
- *     backupPolicyId: data.oci_core_volume_backup_policies.test_volume_backup_policies.volume_backup_policies[0].id,
+ *     backupPolicyId: testVolumeBackupPolicies.volumeBackupPolicies[0].id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.volume_group_display_name,
+ *     displayName: volumeGroupDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     volumeGroupReplicas: [{
- *         availabilityDomain: _var.volume_group_volume_group_replicas_availability_domain,
- *         displayName: _var.volume_group_volume_group_replicas_display_name,
+ *         availabilityDomain: volumeGroupVolumeGroupReplicasAvailabilityDomain,
+ *         displayName: volumeGroupVolumeGroupReplicasDisplayName,
  *     }],
- *     volumeIds: [_var.volume_group_source_id],
+ *     volumeIds: [volumeGroupSourceId],
  * });
  * ```
  * <!--End PulumiCodeChooser -->

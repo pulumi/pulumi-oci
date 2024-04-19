@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSource = oci.CloudGuard.getDataSource({
- *     dataSourceId: oci_cloud_guard_data_source.test_data_source.id,
+ *     dataSourceId: testDataSourceOciCloudGuardDataSource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,7 +117,7 @@ export interface GetDataSourceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSource = oci.CloudGuard.getDataSource({
- *     dataSourceId: oci_cloud_guard_data_source.test_data_source.id,
+ *     dataSourceId: testDataSourceOciCloudGuardDataSource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,13 +29,13 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOperationsInsightsPrivateEndpoints = Oci.Opsi.GetOperationsInsightsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Operations_insights_private_endpoint_compartment_id_in_subtree,
-        ///         DisplayName = @var.Operations_insights_private_endpoint_display_name,
-        ///         IsUsedForRacDbs = @var.Operations_insights_private_endpoint_is_used_for_rac_dbs,
-        ///         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///         States = @var.Operations_insights_private_endpoint_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = operationsInsightsPrivateEndpointCompartmentIdInSubtree,
+        ///         DisplayName = operationsInsightsPrivateEndpointDisplayName,
+        ///         IsUsedForRacDbs = operationsInsightsPrivateEndpointIsUsedForRacDbs,
+        ///         OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+        ///         States = operationsInsightsPrivateEndpointState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOperationsInsightsPrivateEndpoints = Oci.Opsi.GetOperationsInsightsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Operations_insights_private_endpoint_compartment_id_in_subtree,
-        ///         DisplayName = @var.Operations_insights_private_endpoint_display_name,
-        ///         IsUsedForRacDbs = @var.Operations_insights_private_endpoint_is_used_for_rac_dbs,
-        ///         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///         States = @var.Operations_insights_private_endpoint_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = operationsInsightsPrivateEndpointCompartmentIdInSubtree,
+        ///         DisplayName = operationsInsightsPrivateEndpointDisplayName,
+        ///         IsUsedForRacDbs = operationsInsightsPrivateEndpointIsUsedForRacDbs,
+        ///         OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+        ///         States = operationsInsightsPrivateEndpointState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

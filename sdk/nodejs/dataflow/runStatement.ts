@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunStatement = new oci.dataflow.RunStatement("testRunStatement", {
- *     code: _var.run_statement_code,
- *     runId: oci_dataflow_run.test_run.id,
+ * const testRunStatement = new oci.dataflow.RunStatement("test_run_statement", {
+ *     code: runStatementCode,
+ *     runId: testRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

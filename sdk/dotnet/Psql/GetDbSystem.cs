@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testDbSystem = Oci.Psql.GetDbSystem.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_psql_db_system.Test_db_system.Id,
-        ///         ExcludedFields = @var.Db_system_excluded_fields,
+        ///         DbSystemId = testDbSystemOciPsqlDbSystem.Id,
+        ///         ExcludedFields = dbSystemExcludedFields,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testDbSystem = Oci.Psql.GetDbSystem.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_psql_db_system.Test_db_system.Id,
-        ///         ExcludedFields = @var.Db_system_excluded_fields,
+        ///         DbSystemId = testDbSystemOciPsqlDbSystem.Id,
+        ///         ExcludedFields = dbSystemExcludedFields,
         ///     });
         /// 
         /// });

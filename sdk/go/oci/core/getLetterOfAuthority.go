@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetLetterOfAuthority(ctx, &core.GetLetterOfAuthorityArgs{
-//				CrossConnectId: oci_core_cross_connect.Test_cross_connect.Id,
+//				CrossConnectId: testCrossConnect.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

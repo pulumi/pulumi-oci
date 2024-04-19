@@ -32,8 +32,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetRemotePeeringConnections(ctx, &core.GetRemotePeeringConnectionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DrgId:         pulumi.StringRef(oci_core_drg.Test_drg.Id),
+//				CompartmentId: compartmentId,
+//				DrgId:         pulumi.StringRef(testDrg.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

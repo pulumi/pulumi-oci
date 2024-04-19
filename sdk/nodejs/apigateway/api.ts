@@ -18,13 +18,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApi = new oci.apigateway.Api("testApi", {
- *     compartmentId: _var.compartment_id,
- *     content: _var.api_content,
+ * const testApi = new oci.apigateway.Api("test_api", {
+ *     compartmentId: compartmentId,
+ *     content: apiContent,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.api_display_name,
+ *     displayName: apiDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

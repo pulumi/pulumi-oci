@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsubBillingSchedule.GetBillingSchedule(ctx, &osubbillingschedule.GetBillingScheduleArgs{
-//				CompartmentId:       _var.Compartment_id,
-//				SubscriptionId:      oci_ons_subscription.Test_subscription.Id,
-//				SubscribedServiceId: pulumi.StringRef(oci_core_service.Test_service.Id),
-//				XOneOriginRegion:    pulumi.StringRef(_var.Billing_schedule_x_one_origin_region),
+//				CompartmentId:       compartmentId,
+//				SubscriptionId:      testSubscription.Id,
+//				SubscribedServiceId: pulumi.StringRef(testService.Id),
+//				XOneOriginRegion:    pulumi.StringRef(billingScheduleXOneOriginRegion),
 //			}, nil)
 //			if err != nil {
 //				return err

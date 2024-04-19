@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpRedirects = oci.Waas.getHttpRedirects({
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.http_redirect_display_names,
- *     ids: _var.http_redirect_ids,
- *     states: _var.http_redirect_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.http_redirect_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.http_redirect_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayNames: httpRedirectDisplayNames,
+ *     ids: httpRedirectIds,
+ *     states: httpRedirectStates,
+ *     timeCreatedGreaterThanOrEqualTo: httpRedirectTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: httpRedirectTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,12 +110,12 @@ export interface GetHttpRedirectsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpRedirects = oci.Waas.getHttpRedirects({
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.http_redirect_display_names,
- *     ids: _var.http_redirect_ids,
- *     states: _var.http_redirect_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.http_redirect_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.http_redirect_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayNames: httpRedirectDisplayNames,
+ *     ids: httpRedirectIds,
+ *     states: httpRedirectStates,
+ *     timeCreatedGreaterThanOrEqualTo: httpRedirectTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: httpRedirectTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

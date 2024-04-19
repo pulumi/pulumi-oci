@@ -23,10 +23,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLoadBalancers = oci.LoadBalancer.getLoadBalancers({
- *     compartmentId: _var.compartment_id,
- *     detail: _var.load_balancer_detail,
- *     displayName: _var.load_balancer_display_name,
- *     state: _var.load_balancer_state,
+ *     compartmentId: compartmentId,
+ *     detail: loadBalancerDetail,
+ *     displayName: loadBalancerDisplayName,
+ *     state: loadBalancerState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,10 +110,10 @@ export interface GetLoadBalancersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLoadBalancers = oci.LoadBalancer.getLoadBalancers({
- *     compartmentId: _var.compartment_id,
- *     detail: _var.load_balancer_detail,
- *     displayName: _var.load_balancer_display_name,
- *     state: _var.load_balancer_state,
+ *     compartmentId: compartmentId,
+ *     detail: loadBalancerDetail,
+ *     displayName: loadBalancerDisplayName,
+ *     state: loadBalancerState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

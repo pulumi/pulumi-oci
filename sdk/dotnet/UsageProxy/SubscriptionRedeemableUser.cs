@@ -25,20 +25,20 @@ namespace Pulumi.Oci.UsageProxy
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSubscriptionRedeemableUser = new Oci.UsageProxy.SubscriptionRedeemableUser("testSubscriptionRedeemableUser", new()
+    ///     var testSubscriptionRedeemableUser = new Oci.UsageProxy.SubscriptionRedeemableUser("test_subscription_redeemable_user", new()
     ///     {
-    ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-    ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+    ///         SubscriptionId = testSubscription.Id,
+    ///         TenancyId = testTenancy.Id,
     ///         Items = new[]
     ///         {
     ///             new Oci.UsageProxy.Inputs.SubscriptionRedeemableUserItemArgs
     ///             {
-    ///                 EmailId = oci_usage_proxy_email.Test_email.Id,
-    ///                 FirstName = @var.Subscription_redeemable_user_items_first_name,
-    ///                 LastName = @var.Subscription_redeemable_user_items_last_name,
+    ///                 EmailId = testEmail.Id,
+    ///                 FirstName = subscriptionRedeemableUserItemsFirstName,
+    ///                 LastName = subscriptionRedeemableUserItemsLastName,
     ///             },
     ///         },
-    ///         UserId = oci_identity_user.Test_user.Id,
+    ///         UserId = testUser.Id,
     ///     });
     /// 
     /// });

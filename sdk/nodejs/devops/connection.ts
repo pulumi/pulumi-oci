@@ -18,25 +18,25 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnection = new oci.devops.Connection("testConnection", {
- *     connectionType: _var.connection_connection_type,
- *     projectId: oci_devops_project.test_project.id,
- *     accessToken: _var.connection_access_token,
- *     appPassword: _var.connection_app_password,
- *     baseUrl: _var.connection_base_url,
+ * const testConnection = new oci.devops.Connection("test_connection", {
+ *     connectionType: connectionConnectionType,
+ *     projectId: testProject.id,
+ *     accessToken: connectionAccessToken,
+ *     appPassword: connectionAppPassword,
+ *     baseUrl: connectionBaseUrl,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.connection_description,
- *     displayName: _var.connection_display_name,
+ *     description: connectionDescription,
+ *     displayName: connectionDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     tlsVerifyConfig: {
- *         caCertificateBundleId: oci_devops_ca_certificate_bundle.test_ca_certificate_bundle.id,
- *         tlsVerifyMode: _var.connection_tls_verify_config_tls_verify_mode,
+ *         caCertificateBundleId: testCaCertificateBundle.id,
+ *         tlsVerifyMode: connectionTlsVerifyConfigTlsVerifyMode,
  *     },
- *     username: _var.connection_username,
+ *     username: connectionUsername,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

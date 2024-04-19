@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetMetricExtensions(ctx, &stackmonitoring.GetMetricExtensionsArgs{
-//				CompartmentId:       _var.Compartment_id,
-//				EnabledOnResourceId: pulumi.StringRef(oci_usage_proxy_resource.Test_resource.Id),
-//				Name:                pulumi.StringRef(_var.Metric_extension_name),
-//				ResourceType:        pulumi.StringRef(_var.Metric_extension_resource_type),
-//				State:               pulumi.StringRef(_var.Metric_extension_state),
-//				Status:              pulumi.StringRef(_var.Metric_extension_status),
+//				CompartmentId:       compartmentId,
+//				EnabledOnResourceId: pulumi.StringRef(testResource.Id),
+//				Name:                pulumi.StringRef(metricExtensionName),
+//				ResourceType:        pulumi.StringRef(metricExtensionResourceType),
+//				State:               pulumi.StringRef(metricExtensionState),
+//				Status:              pulumi.StringRef(metricExtensionStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

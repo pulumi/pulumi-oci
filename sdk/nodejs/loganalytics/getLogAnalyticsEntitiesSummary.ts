@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsEntitiesSummary = oci.LogAnalytics.getLogAnalyticsEntitiesSummary({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.log_analytics_entities_summary_namespace,
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsEntitiesSummaryNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetLogAnalyticsEntitiesSummaryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsEntitiesSummary = oci.LogAnalytics.getLogAnalyticsEntitiesSummary({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.log_analytics_entities_summary_namespace,
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsEntitiesSummaryNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

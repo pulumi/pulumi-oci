@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OneSubsription.GetInvoiceLineComputedUsages(ctx, &onesubsription.GetInvoiceLineComputedUsagesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				InvoiceLineId: oci_onesubscription_invoice_line.Test_invoice_line.Id,
-//				Fields:        _var.Invoice_line_computed_usage_fields,
+//				CompartmentId: compartmentId,
+//				InvoiceLineId: testInvoiceLine.Id,
+//				Fields:        invoiceLineComputedUsageFields,
 //			}, nil)
 //			if err != nil {
 //				return err

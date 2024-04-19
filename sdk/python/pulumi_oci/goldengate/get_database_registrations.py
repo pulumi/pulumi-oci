@@ -121,9 +121,9 @@ def get_database_registrations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registrations = oci.GoldenGate.get_database_registrations(compartment_id=var["compartment_id"],
-        display_name=var["database_registration_display_name"],
-        state=var["database_registration_state"])
+    test_database_registrations = oci.GoldenGate.get_database_registrations(compartment_id=compartment_id,
+        display_name=database_registration_display_name,
+        state=database_registration_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -168,9 +168,9 @@ def get_database_registrations_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registrations = oci.GoldenGate.get_database_registrations(compartment_id=var["compartment_id"],
-        display_name=var["database_registration_display_name"],
-        state=var["database_registration_state"])
+    test_database_registrations = oci.GoldenGate.get_database_registrations(compartment_id=compartment_id,
+        display_name=database_registration_display_name,
+        state=database_registration_state)
     ```
     <!--End PulumiCodeChooser -->
 

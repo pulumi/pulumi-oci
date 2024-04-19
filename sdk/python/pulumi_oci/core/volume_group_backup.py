@@ -467,17 +467,17 @@ class VolumeGroupBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_group_backup = oci.core.VolumeGroupBackup("testVolumeGroupBackup",
-            volume_group_id=oci_core_volume_group["test_volume_group"]["id"],
-            compartment_id=var["compartment_id"],
+        test_volume_group_backup = oci.core.VolumeGroupBackup("test_volume_group_backup",
+            volume_group_id=test_volume_group["id"],
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["volume_group_backup_display_name"],
+            display_name=volume_group_backup_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            type=var["volume_group_backup_type"])
+            type=volume_group_backup_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -521,17 +521,17 @@ class VolumeGroupBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_group_backup = oci.core.VolumeGroupBackup("testVolumeGroupBackup",
-            volume_group_id=oci_core_volume_group["test_volume_group"]["id"],
-            compartment_id=var["compartment_id"],
+        test_volume_group_backup = oci.core.VolumeGroupBackup("test_volume_group_backup",
+            volume_group_id=test_volume_group["id"],
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["volume_group_backup_display_name"],
+            display_name=volume_group_backup_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            type=var["volume_group_backup_type"])
+            type=volume_group_backup_type)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -576,25 +576,25 @@ class HttpMonitor(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_http_monitor = oci.health_checks.HttpMonitor("testHttpMonitor",
-            compartment_id=var["compartment_id"],
-            display_name=var["http_monitor_display_name"],
-            interval_in_seconds=var["http_monitor_interval_in_seconds"],
-            protocol=var["http_monitor_protocol"],
-            targets=var["http_monitor_targets"],
+        test_http_monitor = oci.health_checks.HttpMonitor("test_http_monitor",
+            compartment_id=compartment_id,
+            display_name=http_monitor_display_name,
+            interval_in_seconds=http_monitor_interval_in_seconds,
+            protocol=http_monitor_protocol,
+            targets=http_monitor_targets,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            headers=var["http_monitor_headers"],
-            is_enabled=var["http_monitor_is_enabled"],
-            method=var["http_monitor_method"],
-            path=var["http_monitor_path"],
-            port=var["http_monitor_port"],
-            timeout_in_seconds=var["http_monitor_timeout_in_seconds"],
-            vantage_point_names=var["http_monitor_vantage_point_names"])
+            headers=http_monitor_headers,
+            is_enabled=http_monitor_is_enabled,
+            method=http_monitor_method,
+            path=http_monitor_path,
+            port=http_monitor_port,
+            timeout_in_seconds=http_monitor_timeout_in_seconds,
+            vantage_point_names=http_monitor_vantage_point_names)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -649,25 +649,25 @@ class HttpMonitor(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_http_monitor = oci.health_checks.HttpMonitor("testHttpMonitor",
-            compartment_id=var["compartment_id"],
-            display_name=var["http_monitor_display_name"],
-            interval_in_seconds=var["http_monitor_interval_in_seconds"],
-            protocol=var["http_monitor_protocol"],
-            targets=var["http_monitor_targets"],
+        test_http_monitor = oci.health_checks.HttpMonitor("test_http_monitor",
+            compartment_id=compartment_id,
+            display_name=http_monitor_display_name,
+            interval_in_seconds=http_monitor_interval_in_seconds,
+            protocol=http_monitor_protocol,
+            targets=http_monitor_targets,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            headers=var["http_monitor_headers"],
-            is_enabled=var["http_monitor_is_enabled"],
-            method=var["http_monitor_method"],
-            path=var["http_monitor_path"],
-            port=var["http_monitor_port"],
-            timeout_in_seconds=var["http_monitor_timeout_in_seconds"],
-            vantage_point_names=var["http_monitor_vantage_point_names"])
+            headers=http_monitor_headers,
+            is_enabled=http_monitor_is_enabled,
+            method=http_monitor_method,
+            path=http_monitor_path,
+            port=http_monitor_port,
+            timeout_in_seconds=http_monitor_timeout_in_seconds,
+            vantage_point_names=http_monitor_vantage_point_names)
         ```
         <!--End PulumiCodeChooser -->
 

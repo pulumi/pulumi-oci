@@ -49,8 +49,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testInstanceConsoleConnection = new InstanceConsoleConnection(&#34;testInstanceConsoleConnection&#34;, InstanceConsoleConnectionArgs.builder()        
- *             .instanceId(oci_core_instance.test_instance().id())
- *             .publicKey(var_.instance_console_connection_public_key())
+ *             .instanceId(testInstance.id())
+ *             .publicKey(instanceConsoleConnectionPublicKey)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());

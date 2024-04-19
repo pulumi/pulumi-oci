@@ -29,9 +29,9 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {
         ///     var testConnections = Oci.DatabaseMigration.GetConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Connection_display_name,
-        ///         State = @var.Connection_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = connectionDisplayName,
+        ///         State = connectionState,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {
         ///     var testConnections = Oci.DatabaseMigration.GetConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Connection_display_name,
-        ///         State = @var.Connection_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = connectionDisplayName,
+        ///         State = connectionState,
         ///     });
         /// 
         /// });

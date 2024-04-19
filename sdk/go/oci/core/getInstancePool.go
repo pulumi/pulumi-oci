@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetInstancePool(ctx, &core.GetInstancePoolArgs{
-//				InstancePoolId: oci_core_instance_pool.Test_instance_pool.Id,
+//				InstancePoolId: testInstancePoolOciCoreInstancePool.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

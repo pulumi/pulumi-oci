@@ -117,9 +117,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OneSubsriptionFunctions.getBillingSchedules(GetBillingSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscribedServiceId(testSubscribedService.id())
      *             .build());
      * 
      *     }
@@ -162,9 +162,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OneSubsriptionFunctions.getBillingSchedules(GetBillingSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscribedServiceId(testSubscribedService.id())
      *             .build());
      * 
      *     }
@@ -207,9 +207,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OneSubsriptionFunctions.getBillingSchedules(GetBillingSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscribedServiceId(testSubscribedService.id())
      *             .build());
      * 
      *     }
@@ -252,9 +252,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OneSubsriptionFunctions.getBillingSchedules(GetBillingSchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscribedServiceId(testSubscribedService.id())
      *             .build());
      * 
      *     }
@@ -296,7 +296,7 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OneSubsriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(oci_onesubscription_commitment.test_commitment().id())
+     *             .commitmentId(testCommitmentOciOnesubscriptionCommitment.id())
      *             .build());
      * 
      *     }
@@ -338,7 +338,7 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OneSubsriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(oci_onesubscription_commitment.test_commitment().id())
+     *             .commitmentId(testCommitmentOciOnesubscriptionCommitment.id())
      *             .build());
      * 
      *     }
@@ -380,7 +380,7 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OneSubsriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(oci_onesubscription_commitment.test_commitment().id())
+     *             .commitmentId(testCommitmentOciOnesubscriptionCommitment.id())
      *             .build());
      * 
      *     }
@@ -422,7 +422,7 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OneSubsriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(oci_onesubscription_commitment.test_commitment().id())
+     *             .commitmentId(testCommitmentOciOnesubscriptionCommitment.id())
      *             .build());
      * 
      *     }
@@ -464,8 +464,8 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OneSubsriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testSubscribedService.id())
      *             .build());
      * 
      *     }
@@ -507,8 +507,8 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OneSubsriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testSubscribedService.id())
      *             .build());
      * 
      *     }
@@ -550,8 +550,8 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OneSubsriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testSubscribedService.id())
      *             .build());
      * 
      *     }
@@ -593,8 +593,8 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OneSubsriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testSubscribedService.id())
      *             .build());
      * 
      *     }
@@ -636,9 +636,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OneSubsriptionFunctions.getComputedUsage(GetComputedUsageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computedUsageId(oci_onesubscription_computed_usage.test_computed_usage().id())
-     *             .fields(var_.computed_usage_fields())
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOnesubscriptionComputedUsage.id())
+     *             .fields(computedUsageFields)
      *             .build());
      * 
      *     }
@@ -680,9 +680,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OneSubsriptionFunctions.getComputedUsage(GetComputedUsageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computedUsageId(oci_onesubscription_computed_usage.test_computed_usage().id())
-     *             .fields(var_.computed_usage_fields())
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOnesubscriptionComputedUsage.id())
+     *             .fields(computedUsageFields)
      *             .build());
      * 
      *     }
@@ -724,9 +724,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OneSubsriptionFunctions.getComputedUsage(GetComputedUsageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computedUsageId(oci_onesubscription_computed_usage.test_computed_usage().id())
-     *             .fields(var_.computed_usage_fields())
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOnesubscriptionComputedUsage.id())
+     *             .fields(computedUsageFields)
      *             .build());
      * 
      *     }
@@ -768,9 +768,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OneSubsriptionFunctions.getComputedUsage(GetComputedUsageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computedUsageId(oci_onesubscription_computed_usage.test_computed_usage().id())
-     *             .fields(var_.computed_usage_fields())
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOnesubscriptionComputedUsage.id())
+     *             .fields(computedUsageFields)
      *             .build());
      * 
      *     }
@@ -848,9 +848,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvoiceLineComputedUsages = OneSubsriptionFunctions.getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .invoiceLineId(oci_onesubscription_invoice_line.test_invoice_line().id())
-     *             .fields(var_.invoice_line_computed_usage_fields())
+     *             .compartmentId(compartmentId)
+     *             .invoiceLineId(testInvoiceLine.id())
+     *             .fields(invoiceLineComputedUsageFields)
      *             .build());
      * 
      *     }
@@ -892,9 +892,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvoiceLineComputedUsages = OneSubsriptionFunctions.getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .invoiceLineId(oci_onesubscription_invoice_line.test_invoice_line().id())
-     *             .fields(var_.invoice_line_computed_usage_fields())
+     *             .compartmentId(compartmentId)
+     *             .invoiceLineId(testInvoiceLine.id())
+     *             .fields(invoiceLineComputedUsageFields)
      *             .build());
      * 
      *     }
@@ -936,9 +936,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvoiceLineComputedUsages = OneSubsriptionFunctions.getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .invoiceLineId(oci_onesubscription_invoice_line.test_invoice_line().id())
-     *             .fields(var_.invoice_line_computed_usage_fields())
+     *             .compartmentId(compartmentId)
+     *             .invoiceLineId(testInvoiceLine.id())
+     *             .fields(invoiceLineComputedUsageFields)
      *             .build());
      * 
      *     }
@@ -980,9 +980,9 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvoiceLineComputedUsages = OneSubsriptionFunctions.getInvoiceLineComputedUsages(GetInvoiceLineComputedUsagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .invoiceLineId(oci_onesubscription_invoice_line.test_invoice_line().id())
-     *             .fields(var_.invoice_line_computed_usage_fields())
+     *             .compartmentId(compartmentId)
+     *             .invoiceLineId(testInvoiceLine.id())
+     *             .fields(invoiceLineComputedUsageFields)
      *             .build());
      * 
      *     }
@@ -1024,11 +1024,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvoices = OneSubsriptionFunctions.getInvoices(GetInvoicesArgs.builder()
-     *             .arCustomerTransactionId(oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .fields(var_.invoice_fields())
-     *             .timeFrom(var_.invoice_time_from())
-     *             .timeTo(var_.invoice_time_to())
+     *             .arCustomerTransactionId(testArCustomerTransaction.id())
+     *             .compartmentId(compartmentId)
+     *             .fields(invoiceFields)
+     *             .timeFrom(invoiceTimeFrom)
+     *             .timeTo(invoiceTimeTo)
      *             .build());
      * 
      *     }
@@ -1070,11 +1070,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvoices = OneSubsriptionFunctions.getInvoices(GetInvoicesArgs.builder()
-     *             .arCustomerTransactionId(oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .fields(var_.invoice_fields())
-     *             .timeFrom(var_.invoice_time_from())
-     *             .timeTo(var_.invoice_time_to())
+     *             .arCustomerTransactionId(testArCustomerTransaction.id())
+     *             .compartmentId(compartmentId)
+     *             .fields(invoiceFields)
+     *             .timeFrom(invoiceTimeFrom)
+     *             .timeTo(invoiceTimeTo)
      *             .build());
      * 
      *     }
@@ -1116,11 +1116,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvoices = OneSubsriptionFunctions.getInvoices(GetInvoicesArgs.builder()
-     *             .arCustomerTransactionId(oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .fields(var_.invoice_fields())
-     *             .timeFrom(var_.invoice_time_from())
-     *             .timeTo(var_.invoice_time_to())
+     *             .arCustomerTransactionId(testArCustomerTransaction.id())
+     *             .compartmentId(compartmentId)
+     *             .fields(invoiceFields)
+     *             .timeFrom(invoiceTimeFrom)
+     *             .timeTo(invoiceTimeTo)
      *             .build());
      * 
      *     }
@@ -1162,11 +1162,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInvoices = OneSubsriptionFunctions.getInvoices(GetInvoicesArgs.builder()
-     *             .arCustomerTransactionId(oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .fields(var_.invoice_fields())
-     *             .timeFrom(var_.invoice_time_from())
-     *             .timeTo(var_.invoice_time_to())
+     *             .arCustomerTransactionId(testArCustomerTransaction.id())
+     *             .compartmentId(compartmentId)
+     *             .fields(invoiceFields)
+     *             .timeFrom(invoiceTimeFrom)
+     *             .timeTo(invoiceTimeTo)
      *             .build());
      * 
      *     }
@@ -1208,7 +1208,7 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationSubscriptions = OneSubsriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1250,7 +1250,7 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationSubscriptions = OneSubsriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1292,7 +1292,7 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationSubscriptions = OneSubsriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1334,7 +1334,7 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationSubscriptions = OneSubsriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1377,11 +1377,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OneSubsriptionFunctions.getRatecards(GetRatecardsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .partNumber(var_.ratecard_part_number())
-     *             .timeFrom(var_.ratecard_time_from())
-     *             .timeTo(var_.ratecard_time_to())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
      *             .build());
      * 
      *     }
@@ -1424,11 +1424,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OneSubsriptionFunctions.getRatecards(GetRatecardsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .partNumber(var_.ratecard_part_number())
-     *             .timeFrom(var_.ratecard_time_from())
-     *             .timeTo(var_.ratecard_time_to())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
      *             .build());
      * 
      *     }
@@ -1471,11 +1471,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OneSubsriptionFunctions.getRatecards(GetRatecardsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .partNumber(var_.ratecard_part_number())
-     *             .timeFrom(var_.ratecard_time_from())
-     *             .timeTo(var_.ratecard_time_to())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
      *             .build());
      * 
      *     }
@@ -1518,11 +1518,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OneSubsriptionFunctions.getRatecards(GetRatecardsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .partNumber(var_.ratecard_part_number())
-     *             .timeFrom(var_.ratecard_time_from())
-     *             .timeTo(var_.ratecard_time_to())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
      *             .build());
      * 
      *     }
@@ -1564,8 +1564,8 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribedService = OneSubsriptionFunctions.getSubscribedService(GetSubscribedServiceArgs.builder()
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
-     *             .fields(var_.subscribed_service_fields())
+     *             .subscribedServiceId(testSubscribedServiceOciOnesubscriptionSubscribedService.id())
+     *             .fields(subscribedServiceFields)
      *             .build());
      * 
      *     }
@@ -1607,8 +1607,8 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribedService = OneSubsriptionFunctions.getSubscribedService(GetSubscribedServiceArgs.builder()
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
-     *             .fields(var_.subscribed_service_fields())
+     *             .subscribedServiceId(testSubscribedServiceOciOnesubscriptionSubscribedService.id())
+     *             .fields(subscribedServiceFields)
      *             .build());
      * 
      *     }
@@ -1650,8 +1650,8 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribedService = OneSubsriptionFunctions.getSubscribedService(GetSubscribedServiceArgs.builder()
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
-     *             .fields(var_.subscribed_service_fields())
+     *             .subscribedServiceId(testSubscribedServiceOciOnesubscriptionSubscribedService.id())
+     *             .fields(subscribedServiceFields)
      *             .build());
      * 
      *     }
@@ -1693,8 +1693,8 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribedService = OneSubsriptionFunctions.getSubscribedService(GetSubscribedServiceArgs.builder()
-     *             .subscribedServiceId(oci_onesubscription_subscribed_service.test_subscribed_service().id())
-     *             .fields(var_.subscribed_service_fields())
+     *             .subscribedServiceId(testSubscribedServiceOciOnesubscriptionSubscribedService.id())
+     *             .fields(subscribedServiceFields)
      *             .build());
      * 
      *     }
@@ -1736,10 +1736,10 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribedServices = OneSubsriptionFunctions.getSubscribedServices(GetSubscribedServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .orderLineId(oci_onesubscription_order_line.test_order_line().id())
-     *             .status(var_.subscribed_service_status())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .orderLineId(testOrderLine.id())
+     *             .status(subscribedServiceStatus)
      *             .build());
      * 
      *     }
@@ -1781,10 +1781,10 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribedServices = OneSubsriptionFunctions.getSubscribedServices(GetSubscribedServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .orderLineId(oci_onesubscription_order_line.test_order_line().id())
-     *             .status(var_.subscribed_service_status())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .orderLineId(testOrderLine.id())
+     *             .status(subscribedServiceStatus)
      *             .build());
      * 
      *     }
@@ -1826,10 +1826,10 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribedServices = OneSubsriptionFunctions.getSubscribedServices(GetSubscribedServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .orderLineId(oci_onesubscription_order_line.test_order_line().id())
-     *             .status(var_.subscribed_service_status())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .orderLineId(testOrderLine.id())
+     *             .status(subscribedServiceStatus)
      *             .build());
      * 
      *     }
@@ -1871,10 +1871,10 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribedServices = OneSubsriptionFunctions.getSubscribedServices(GetSubscribedServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
-     *             .orderLineId(oci_onesubscription_order_line.test_order_line().id())
-     *             .status(var_.subscribed_service_status())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .orderLineId(testOrderLine.id())
+     *             .status(subscribedServiceStatus)
      *             .build());
      * 
      *     }
@@ -1919,11 +1919,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OneSubsriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .buyerEmail(var_.subscription_buyer_email())
-     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
-     *             .planNumber(var_.subscription_plan_number())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
      *             .build());
      * 
      *     }
@@ -1968,11 +1968,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OneSubsriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .buyerEmail(var_.subscription_buyer_email())
-     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
-     *             .planNumber(var_.subscription_plan_number())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
      *             .build());
      * 
      *     }
@@ -2017,11 +2017,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OneSubsriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .buyerEmail(var_.subscription_buyer_email())
-     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
-     *             .planNumber(var_.subscription_plan_number())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
      *             .build());
      * 
      *     }
@@ -2066,11 +2066,11 @@ public final class OneSubsriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OneSubsriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .buyerEmail(var_.subscription_buyer_email())
-     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
-     *             .planNumber(var_.subscription_plan_number())
-     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
      *             .build());
      * 
      *     }

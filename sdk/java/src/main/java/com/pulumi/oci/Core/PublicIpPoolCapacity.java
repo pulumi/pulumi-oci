@@ -39,9 +39,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPublicIpPoolCapacity = new PublicIpPoolCapacity(&#34;testPublicIpPoolCapacity&#34;, PublicIpPoolCapacityArgs.builder()        
- *             .byoipId(var_.byoip_id())
- *             .cidrBlock(var_.cidr_block())
- *             .publicIpPoolId(var_.public_ip_pool_id())
+ *             .publicIpPoolId(publicIpPoolId)
+ *             .byoipId(byoipId)
+ *             .cidrBlock(cidrBlock)
  *             .build());
  * 
  *     }

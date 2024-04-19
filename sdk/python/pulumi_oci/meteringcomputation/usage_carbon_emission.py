@@ -340,19 +340,19 @@ class UsageCarbonEmission(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage_carbon_emission = oci.metering_computation.UsageCarbonEmission("testUsageCarbonEmission",
-            tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-            time_usage_ended=var["usage_carbon_emission_time_usage_ended"],
-            time_usage_started=var["usage_carbon_emission_time_usage_started"],
-            compartment_depth=var["usage_carbon_emission_compartment_depth"],
-            group_bies=var["usage_carbon_emission_group_by"],
+        test_usage_carbon_emission = oci.metering_computation.UsageCarbonEmission("test_usage_carbon_emission",
+            tenant_id=test_tenant["id"],
+            time_usage_ended=usage_carbon_emission_time_usage_ended,
+            time_usage_started=usage_carbon_emission_time_usage_started,
+            compartment_depth=usage_carbon_emission_compartment_depth,
+            group_bies=usage_carbon_emission_group_by,
             group_by_tags=[oci.metering_computation.UsageCarbonEmissionGroupByTagArgs(
-                key=var["usage_carbon_emission_group_by_tag_key"],
-                namespace=var["usage_carbon_emission_group_by_tag_namespace"],
-                value=var["usage_carbon_emission_group_by_tag_value"],
+                key=usage_carbon_emission_group_by_tag_key,
+                namespace=usage_carbon_emission_group_by_tag_namespace,
+                value=usage_carbon_emission_group_by_tag_value,
             )],
-            is_aggregate_by_time=var["usage_carbon_emission_is_aggregate_by_time"],
-            usage_carbon_emission_filter=var["usage_carbon_emission_usage_carbon_emission_filter"])
+            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
+            usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -397,19 +397,19 @@ class UsageCarbonEmission(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage_carbon_emission = oci.metering_computation.UsageCarbonEmission("testUsageCarbonEmission",
-            tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-            time_usage_ended=var["usage_carbon_emission_time_usage_ended"],
-            time_usage_started=var["usage_carbon_emission_time_usage_started"],
-            compartment_depth=var["usage_carbon_emission_compartment_depth"],
-            group_bies=var["usage_carbon_emission_group_by"],
+        test_usage_carbon_emission = oci.metering_computation.UsageCarbonEmission("test_usage_carbon_emission",
+            tenant_id=test_tenant["id"],
+            time_usage_ended=usage_carbon_emission_time_usage_ended,
+            time_usage_started=usage_carbon_emission_time_usage_started,
+            compartment_depth=usage_carbon_emission_compartment_depth,
+            group_bies=usage_carbon_emission_group_by,
             group_by_tags=[oci.metering_computation.UsageCarbonEmissionGroupByTagArgs(
-                key=var["usage_carbon_emission_group_by_tag_key"],
-                namespace=var["usage_carbon_emission_group_by_tag_namespace"],
-                value=var["usage_carbon_emission_group_by_tag_value"],
+                key=usage_carbon_emission_group_by_tag_key,
+                namespace=usage_carbon_emission_group_by_tag_namespace,
+                value=usage_carbon_emission_group_by_tag_value,
             )],
-            is_aggregate_by_time=var["usage_carbon_emission_is_aggregate_by_time"],
-            usage_carbon_emission_filter=var["usage_carbon_emission_usage_carbon_emission_filter"])
+            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
+            usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
         <!--End PulumiCodeChooser -->
 

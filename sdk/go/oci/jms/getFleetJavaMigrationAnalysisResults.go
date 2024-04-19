@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetJavaMigrationAnalysisResults(ctx, &jms.GetFleetJavaMigrationAnalysisResultsArgs{
-//				FleetId:           oci_jms_fleet.Test_fleet.Id,
-//				ManagedInstanceId: pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
-//				TimeEnd:           pulumi.StringRef(_var.Fleet_java_migration_analysis_result_time_end),
-//				TimeStart:         pulumi.StringRef(_var.Fleet_java_migration_analysis_result_time_start),
+//				FleetId:           testFleet.Id,
+//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
+//				TimeEnd:           pulumi.StringRef(fleetJavaMigrationAnalysisResultTimeEnd),
+//				TimeStart:         pulumi.StringRef(fleetJavaMigrationAnalysisResultTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err

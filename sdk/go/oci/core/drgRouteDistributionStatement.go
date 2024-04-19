@@ -31,15 +31,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDrgRouteDistributionStatement(ctx, "testDrgRouteDistributionStatement", &Core.DrgRouteDistributionStatementArgs{
-//				DrgRouteDistributionId: pulumi.Any(oci_core_drg_route_distribution.Test_drg_route_distribution.Id),
-//				Action:                 pulumi.Any(_var.Drg_route_distribution_statement_statements_action),
+//			_, err := Core.NewDrgRouteDistributionStatement(ctx, "test_drg_route_distribution_statement", &Core.DrgRouteDistributionStatementArgs{
+//				DrgRouteDistributionId: pulumi.Any(testDrgRouteDistribution.Id),
+//				Action:                 pulumi.Any(drgRouteDistributionStatementStatementsAction),
 //				MatchCriteria: &core.DrgRouteDistributionStatementMatchCriteriaArgs{
-//					MatchType:       pulumi.Any(_var.Drg_route_distribution_statement_statements_match_criteria_match_type),
-//					AttachmentType:  pulumi.Any(_var.Drg_route_distribution_statement_statements_match_criteria_attachment_type),
-//					DrgAttachmentId: pulumi.Any(oci_core_drg_attachment.Test_drg_attachment.Id),
+//					MatchType:       pulumi.Any(drgRouteDistributionStatementStatementsMatchCriteriaMatchType),
+//					AttachmentType:  pulumi.Any(drgRouteDistributionStatementStatementsMatchCriteriaAttachmentType),
+//					DrgAttachmentId: pulumi.Any(testDrgAttachment.Id),
 //				},
-//				Priority: pulumi.Any(_var.Drg_route_distribution_statement_statements_priority),
+//				Priority: pulumi.Any(drgRouteDistributionStatementStatementsPriority),
 //			})
 //			if err != nil {
 //				return err

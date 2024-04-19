@@ -31,17 +31,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Nosql.NewIndex(ctx, "testIndex", &Nosql.IndexArgs{
+//			_, err := Nosql.NewIndex(ctx, "test_index", &Nosql.IndexArgs{
 //				Keys: nosql.IndexKeyArray{
 //					&nosql.IndexKeyArgs{
-//						ColumnName:    pulumi.Any(_var.Index_keys_column_name),
-//						JsonFieldType: pulumi.Any(_var.Index_keys_json_field_type),
-//						JsonPath:      pulumi.Any(_var.Index_keys_json_path),
+//						ColumnName:    pulumi.Any(indexKeysColumnName),
+//						JsonFieldType: pulumi.Any(indexKeysJsonFieldType),
+//						JsonPath:      pulumi.Any(indexKeysJsonPath),
 //					},
 //				},
-//				TableNameOrId: pulumi.Any(oci_nosql_table_name_or.Test_table_name_or.Id),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				IsIfNotExists: pulumi.Any(_var.Index_is_if_not_exists),
+//				Name:          pulumi.Any(indexName),
+//				TableNameOrId: pulumi.Any(testTableNameOr.Id),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				IsIfNotExists: pulumi.Any(indexIsIfNotExists),
 //			})
 //			if err != nil {
 //				return err

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {
         ///     var testProject = Oci.AiAnomalyDetection.GetDetectionProject.Invoke(new()
         ///     {
-        ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
+        ///         ProjectId = testProjectOciAiAnomalyDetectionProject.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {
         ///     var testProject = Oci.AiAnomalyDetection.GetDetectionProject.Invoke(new()
         ///     {
-        ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
+        ///         ProjectId = testProjectOciAiAnomalyDetectionProject.Id,
         ///     });
         /// 
         /// });

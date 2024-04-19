@@ -635,30 +635,31 @@ class Bucket(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bucket = oci.object_storage.Bucket("testBucket",
-            compartment_id=var["compartment_id"],
-            namespace=var["bucket_namespace"],
-            access_type=var["bucket_access_type"],
-            auto_tiering=var["bucket_auto_tiering"],
+        test_bucket = oci.object_storage.Bucket("test_bucket",
+            compartment_id=compartment_id,
+            name=bucket_name,
+            namespace=bucket_namespace,
+            access_type=bucket_access_type,
+            auto_tiering=bucket_auto_tiering,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            metadata=var["bucket_metadata"],
-            object_events_enabled=var["bucket_object_events_enabled"],
-            storage_tier=var["bucket_storage_tier"],
+            kms_key_id=test_key["id"],
+            metadata=bucket_metadata,
+            object_events_enabled=bucket_object_events_enabled,
+            storage_tier=bucket_storage_tier,
             retention_rules=[oci.object_storage.BucketRetentionRuleArgs(
-                display_name=var["retention_rule_display_name"],
+                display_name=retention_rule_display_name,
                 duration=oci.object_storage.BucketRetentionRuleDurationArgs(
-                    time_amount=var["retention_rule_duration_time_amount"],
-                    time_unit=var["retention_rule_duration_time_unit"],
+                    time_amount=retention_rule_duration_time_amount,
+                    time_unit=retention_rule_duration_time_unit,
                 ),
-                time_rule_locked=var["retention_rule_time_rule_locked"],
+                time_rule_locked=retention_rule_time_rule_locked,
             )],
-            versioning=var["bucket_versioning"])
+            versioning=bucket_versioning)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -709,30 +710,31 @@ class Bucket(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bucket = oci.object_storage.Bucket("testBucket",
-            compartment_id=var["compartment_id"],
-            namespace=var["bucket_namespace"],
-            access_type=var["bucket_access_type"],
-            auto_tiering=var["bucket_auto_tiering"],
+        test_bucket = oci.object_storage.Bucket("test_bucket",
+            compartment_id=compartment_id,
+            name=bucket_name,
+            namespace=bucket_namespace,
+            access_type=bucket_access_type,
+            auto_tiering=bucket_auto_tiering,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            metadata=var["bucket_metadata"],
-            object_events_enabled=var["bucket_object_events_enabled"],
-            storage_tier=var["bucket_storage_tier"],
+            kms_key_id=test_key["id"],
+            metadata=bucket_metadata,
+            object_events_enabled=bucket_object_events_enabled,
+            storage_tier=bucket_storage_tier,
             retention_rules=[oci.object_storage.BucketRetentionRuleArgs(
-                display_name=var["retention_rule_display_name"],
+                display_name=retention_rule_display_name,
                 duration=oci.object_storage.BucketRetentionRuleDurationArgs(
-                    time_amount=var["retention_rule_duration_time_amount"],
-                    time_unit=var["retention_rule_duration_time_unit"],
+                    time_amount=retention_rule_duration_time_amount,
+                    time_unit=retention_rule_duration_time_unit,
                 ),
-                time_rule_locked=var["retention_rule_time_rule_locked"],
+                time_rule_locked=retention_rule_time_rule_locked,
             )],
-            versioning=var["bucket_versioning"])
+            versioning=bucket_versioning)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataFlow.GetSqlEndpoint(ctx, &dataflow.GetSqlEndpointArgs{
-//				SqlEndpointId: oci_dataflow_sql_endpoint.Test_sql_endpoint.Id,
+//				SqlEndpointId: testSqlEndpointOciDataflowSqlEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

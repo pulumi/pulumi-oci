@@ -371,20 +371,20 @@ class ServiceGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_service_gateway = oci.core.ServiceGateway("testServiceGateway",
-            compartment_id=var["compartment_id"],
+        test_service_gateway = oci.core.ServiceGateway("test_service_gateway",
+            compartment_id=compartment_id,
             services=[oci.core.ServiceGatewayServiceArgs(
-                service_id=data["oci_core_services"]["test_services"]["services"][0]["id"],
+                service_id=test_services["services"][0]["id"],
             )],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["service_gateway_display_name"],
+            display_name=service_gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -442,20 +442,20 @@ class ServiceGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_service_gateway = oci.core.ServiceGateway("testServiceGateway",
-            compartment_id=var["compartment_id"],
+        test_service_gateway = oci.core.ServiceGateway("test_service_gateway",
+            compartment_id=compartment_id,
             services=[oci.core.ServiceGatewayServiceArgs(
-                service_id=data["oci_core_services"]["test_services"]["services"][0]["id"],
+                service_id=test_services["services"][0]["id"],
             )],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["service_gateway_display_name"],
+            display_name=service_gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 

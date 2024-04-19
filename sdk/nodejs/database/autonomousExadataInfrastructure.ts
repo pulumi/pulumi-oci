@@ -18,37 +18,37 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousExadataInfrastructure = new oci.database.AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure", {
- *     availabilityDomain: _var.autonomous_exadata_infrastructure_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     shape: _var.autonomous_exadata_infrastructure_shape,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testAutonomousExadataInfrastructure = new oci.database.AutonomousExadataInfrastructure("test_autonomous_exadata_infrastructure", {
+ *     availabilityDomain: autonomousExadataInfrastructureAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     shape: autonomousExadataInfrastructureShape,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.autonomous_exadata_infrastructure_display_name,
- *     domain: _var.autonomous_exadata_infrastructure_domain,
+ *     displayName: autonomousExadataInfrastructureDisplayName,
+ *     domain: autonomousExadataInfrastructureDomain,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     licenseModel: _var.autonomous_exadata_infrastructure_license_model,
+ *     licenseModel: autonomousExadataInfrastructureLicenseModel,
  *     maintenanceWindowDetails: {
- *         customActionTimeoutInMins: _var.autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
+ *         customActionTimeoutInMins: autonomousExadataInfrastructureMaintenanceWindowDetailsCustomActionTimeoutInMins,
  *         daysOfWeeks: [{
- *             name: _var.autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
+ *             name: autonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekName,
  *         }],
- *         hoursOfDays: _var.autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
- *         isCustomActionTimeoutEnabled: _var.autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
- *         isMonthlyPatchingEnabled: _var.autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled,
- *         leadTimeInWeeks: _var.autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
+ *         hoursOfDays: autonomousExadataInfrastructureMaintenanceWindowDetailsHoursOfDay,
+ *         isCustomActionTimeoutEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsCustomActionTimeoutEnabled,
+ *         isMonthlyPatchingEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsMonthlyPatchingEnabled,
+ *         leadTimeInWeeks: autonomousExadataInfrastructureMaintenanceWindowDetailsLeadTimeInWeeks,
  *         months: [{
- *             name: _var.autonomous_exadata_infrastructure_maintenance_window_details_months_name,
+ *             name: autonomousExadataInfrastructureMaintenanceWindowDetailsMonthsName,
  *         }],
- *         patchingMode: _var.autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
- *         preference: _var.autonomous_exadata_infrastructure_maintenance_window_details_preference,
- *         weeksOfMonths: _var.autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
+ *         patchingMode: autonomousExadataInfrastructureMaintenanceWindowDetailsPatchingMode,
+ *         preference: autonomousExadataInfrastructureMaintenanceWindowDetailsPreference,
+ *         weeksOfMonths: autonomousExadataInfrastructureMaintenanceWindowDetailsWeeksOfMonth,
  *     },
- *     nsgIds: _var.autonomous_exadata_infrastructure_nsg_ids,
+ *     nsgIds: autonomousExadataInfrastructureNsgIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

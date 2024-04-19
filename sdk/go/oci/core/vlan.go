@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVlan(ctx, "testVlan", &Core.VlanArgs{
-//				CidrBlock:          pulumi.Any(_var.Vlan_cidr_block),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				VcnId:              pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				AvailabilityDomain: pulumi.Any(_var.Vlan_availability_domain),
+//			_, err := Core.NewVlan(ctx, "test_vlan", &Core.VlanArgs{
+//				CidrBlock:          pulumi.Any(vlanCidrBlock),
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				VcnId:              pulumi.Any(testVcn.Id),
+//				AvailabilityDomain: pulumi.Any(vlanAvailabilityDomain),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Vlan_display_name),
+//				DisplayName: pulumi.Any(vlanDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				NsgIds:       pulumi.Any(_var.Vlan_nsg_ids),
-//				RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
-//				VlanTag:      pulumi.Any(_var.Vlan_vlan_tag),
+//				NsgIds:       pulumi.Any(vlanNsgIds),
+//				RouteTableId: pulumi.Any(testRouteTable.Id),
+//				VlanTag:      pulumi.Any(vlanVlanTag),
 //			})
 //			if err != nil {
 //				return err

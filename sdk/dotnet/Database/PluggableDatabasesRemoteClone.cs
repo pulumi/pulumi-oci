@@ -27,15 +27,15 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPluggableDatabasesRemoteClone = new Oci.Database.PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone", new()
+    ///     var testPluggableDatabasesRemoteClone = new Oci.Database.PluggableDatabasesRemoteClone("test_pluggable_databases_remote_clone", new()
     ///     {
-    ///         ClonedPdbName = @var.Pluggable_databases_remote_clone_cloned_pdb_name,
-    ///         PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
-    ///         SourceContainerDbAdminPassword = @var.Pluggable_databases_remote_clone_source_container_db_admin_password,
-    ///         TargetContainerDatabaseId = oci_database_database.Test_database.Id,
-    ///         PdbAdminPassword = @var.Pluggable_databases_remote_clone_pdb_admin_password,
-    ///         ShouldPdbAdminAccountBeLocked = @var.Pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
-    ///         TargetTdeWalletPassword = @var.Pluggable_databases_remote_clone_target_tde_wallet_password,
+    ///         ClonedPdbName = pluggableDatabasesRemoteCloneClonedPdbName,
+    ///         PluggableDatabaseId = testPluggableDatabase.Id,
+    ///         SourceContainerDbAdminPassword = pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword,
+    ///         TargetContainerDatabaseId = testDatabase.Id,
+    ///         PdbAdminPassword = pluggableDatabasesRemoteClonePdbAdminPassword,
+    ///         ShouldPdbAdminAccountBeLocked = pluggableDatabasesRemoteCloneShouldPdbAdminAccountBeLocked,
+    ///         TargetTdeWalletPassword = pluggableDatabasesRemoteCloneTargetTdeWalletPassword,
     ///     });
     /// 
     /// });

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Oce
         /// {
         ///     var testOceInstance = Oci.Oce.GetOceInstance.Invoke(new()
         ///     {
-        ///         OceInstanceId = oci_oce_oce_instance.Test_oce_instance.Id,
+        ///         OceInstanceId = testOceInstanceOciOceOceInstance.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Oce
         /// {
         ///     var testOceInstance = Oci.Oce.GetOceInstance.Invoke(new()
         ///     {
-        ///         OceInstanceId = oci_oce_oce_instance.Test_oce_instance.Id,
+        ///         OceInstanceId = testOceInstanceOciOceOceInstance.Id,
         ///     });
         /// 
         /// });

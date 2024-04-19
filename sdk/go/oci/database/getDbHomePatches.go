@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbHomePatches(ctx, &database.GetDbHomePatchesArgs{
-//				DbHomeId: oci_database_db_home.Test_db_home.Id,
+//				DbHomeId: testDbHome.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

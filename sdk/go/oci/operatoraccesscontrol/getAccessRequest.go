@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OperatorAccessControl.GetAccessRequest(ctx, &operatoraccesscontrol.GetAccessRequestArgs{
-//				AccessRequestId: oci_operator_access_control_access_request.Test_access_request.Id,
+//				AccessRequestId: testAccessRequestOciOperatorAccessControlAccessRequest.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyApiKey = Oci.Identity.GetDomainsMyApiKey.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyApiKeyId = oci_identity_api_key.Test_api_key.Id,
-        ///         Authorization = @var.My_api_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_api_key_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyApiKeyId = testApiKey.Id,
+        ///         Authorization = myApiKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myApiKeyResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyApiKey = Oci.Identity.GetDomainsMyApiKey.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyApiKeyId = oci_identity_api_key.Test_api_key.Id,
-        ///         Authorization = @var.My_api_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_api_key_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyApiKeyId = testApiKey.Id,
+        ///         Authorization = myApiKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myApiKeyResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

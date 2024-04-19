@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetTargetDatabasesSchemas(ctx, &datasafe.GetTargetDatabasesSchemasArgs{
-//				TargetDatabaseId:   oci_data_safe_target_database.Test_target_database.Id,
-//				IsOracleMaintained: pulumi.BoolRef(_var.Target_databases_schema_is_oracle_maintained),
-//				SchemaNames:        _var.Target_databases_schema_schema_name,
-//				SchemaNameContains: pulumi.StringRef(_var.Target_databases_schema_schema_name_contains),
+//				TargetDatabaseId:   testTargetDatabase.Id,
+//				IsOracleMaintained: pulumi.BoolRef(targetDatabasesSchemaIsOracleMaintained),
+//				SchemaNames:        targetDatabasesSchemaSchemaName,
+//				SchemaNameContains: pulumi.StringRef(targetDatabasesSchemaSchemaNameContains),
 //			}, nil)
 //			if err != nil {
 //				return err

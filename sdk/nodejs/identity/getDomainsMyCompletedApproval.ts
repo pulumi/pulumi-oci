@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyCompletedApproval = oci.Identity.getDomainsMyCompletedApproval({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myCompletedApprovalId: oci_identity_domains_my_completed_approval.test_my_completed_approval.id,
- *     authorization: _var.my_completed_approval_authorization,
- *     resourceTypeSchemaVersion: _var.my_completed_approval_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myCompletedApprovalId: testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id,
+ *     authorization: myCompletedApprovalAuthorization,
+ *     resourceTypeSchemaVersion: myCompletedApprovalResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -174,10 +174,10 @@ export interface GetDomainsMyCompletedApprovalResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyCompletedApproval = oci.Identity.getDomainsMyCompletedApproval({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myCompletedApprovalId: oci_identity_domains_my_completed_approval.test_my_completed_approval.id,
- *     authorization: _var.my_completed_approval_authorization,
- *     resourceTypeSchemaVersion: _var.my_completed_approval_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myCompletedApprovalId: testMyCompletedApprovalOciIdentityDomainsMyCompletedApproval.id,
+ *     authorization: myCompletedApprovalAuthorization,
+ *     resourceTypeSchemaVersion: myCompletedApprovalResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

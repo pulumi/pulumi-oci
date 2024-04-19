@@ -34,10 +34,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Limits.GetResourceAvailability(ctx, &limits.GetResourceAvailabilityArgs{
-//				CompartmentId:      _var.Tenancy_ocid,
-//				LimitName:          _var.Resource_availability_limit_name,
-//				ServiceName:        oci_limits_service.Test_service.Name,
-//				AvailabilityDomain: pulumi.StringRef(_var.Resource_availability_availability_domain),
+//				CompartmentId:      tenancyOcid,
+//				LimitName:          resourceAvailabilityLimitName,
+//				ServiceName:        testService.Name,
+//				AvailabilityDomain: pulumi.StringRef(resourceAvailabilityAvailabilityDomain),
 //			}, nil)
 //			if err != nil {
 //				return err

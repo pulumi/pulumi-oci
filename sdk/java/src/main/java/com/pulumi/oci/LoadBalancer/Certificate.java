@@ -18,42 +18,6 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.LoadBalancer.Certificate;
- * import com.pulumi.oci.LoadBalancer.CertificateArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testCertificate = new Certificate(&#34;testCertificate&#34;, CertificateArgs.builder()        
- *             .certificateName(var_.certificate_certificate_name())
- *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
- *             .caCertificate(var_.certificate_ca_certificate())
- *             .passphrase(var_.certificate_passphrase())
- *             .privateKey(var_.certificate_private_key())
- *             .publicCertificate(var_.certificate_public_certificate())
- *             .build());
- * 
- *     }
- * }
- * ```
- * &lt;!--End PulumiCodeChooser --&gt;
- * 
  * ## Import
  * 
  * Certificates can be imported using the `id`, e.g.

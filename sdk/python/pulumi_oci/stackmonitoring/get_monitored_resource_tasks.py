@@ -104,8 +104,8 @@ def get_monitored_resource_tasks(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_tasks = oci.StackMonitoring.get_monitored_resource_tasks(compartment_id=var["compartment_id"],
-        status=var["monitored_resource_task_status"])
+    test_monitored_resource_tasks = oci.StackMonitoring.get_monitored_resource_tasks(compartment_id=compartment_id,
+        status=monitored_resource_task_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -145,8 +145,8 @@ def get_monitored_resource_tasks_output(compartment_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_tasks = oci.StackMonitoring.get_monitored_resource_tasks(compartment_id=var["compartment_id"],
-        status=var["monitored_resource_task_status"])
+    test_monitored_resource_tasks = oci.StackMonitoring.get_monitored_resource_tasks(compartment_id=compartment_id,
+        status=monitored_resource_task_status)
     ```
     <!--End PulumiCodeChooser -->
 

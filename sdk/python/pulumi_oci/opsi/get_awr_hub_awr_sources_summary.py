@@ -106,9 +106,9 @@ def get_awr_hub_awr_sources_summary(awr_hub_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_sources_summary = oci.Opsi.get_awr_hub_awr_sources_summary(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["awr_hub_awr_sources_summary_name"])
+    test_awr_hub_awr_sources_summary = oci.Opsi.get_awr_hub_awr_sources_summary(awr_hub_id=test_awr_hub["id"],
+        compartment_id=compartment_id,
+        name=awr_hub_awr_sources_summary_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -149,9 +149,9 @@ def get_awr_hub_awr_sources_summary_output(awr_hub_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_sources_summary = oci.Opsi.get_awr_hub_awr_sources_summary(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["awr_hub_awr_sources_summary_name"])
+    test_awr_hub_awr_sources_summary = oci.Opsi.get_awr_hub_awr_sources_summary(awr_hub_id=test_awr_hub["id"],
+        compartment_id=compartment_id,
+        name=awr_hub_awr_sources_summary_name)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -16,12 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubSource = new oci.opsi.AwrHubSource("testAwrHubSource", {
- *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
- *     compartmentId: _var.compartment_id,
- *     type: _var.awr_hub_source_type,
- *     associatedOpsiId: oci_opsi_associated_opsi.test_associated_opsi.id,
- *     associatedResourceId: oci_usage_proxy_resource.test_resource.id,
+ * const testAwrHubSource = new oci.opsi.AwrHubSource("test_awr_hub_source", {
+ *     awrHubId: testAwrHub.id,
+ *     compartmentId: compartmentId,
+ *     name: awrHubSourceName,
+ *     type: awrHubSourceType,
+ *     associatedOpsiId: testAssociatedOpsi.id,
+ *     associatedResourceId: testResource.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },

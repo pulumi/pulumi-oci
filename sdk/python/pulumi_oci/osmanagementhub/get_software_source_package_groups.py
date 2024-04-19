@@ -138,11 +138,11 @@ def get_software_source_package_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_package_groups = oci.OsManagementHub.get_software_source_package_groups(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        compartment_id=var["compartment_id"],
-        group_types=var["software_source_package_group_group_type"],
-        name=var["software_source_package_group_name"],
-        name_contains=var["software_source_package_group_name_contains"])
+    test_software_source_package_groups = oci.OsManagementHub.get_software_source_package_groups(software_source_id=test_software_source["id"],
+        compartment_id=compartment_id,
+        group_types=software_source_package_group_group_type,
+        name=software_source_package_group_name,
+        name_contains=software_source_package_group_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -195,11 +195,11 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_package_groups = oci.OsManagementHub.get_software_source_package_groups(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        compartment_id=var["compartment_id"],
-        group_types=var["software_source_package_group_group_type"],
-        name=var["software_source_package_group_name"],
-        name_contains=var["software_source_package_group_name_contains"])
+    test_software_source_package_groups = oci.OsManagementHub.get_software_source_package_groups(software_source_id=test_software_source["id"],
+        compartment_id=compartment_id,
+        group_types=software_source_package_group_group_type,
+        name=software_source_package_group_name,
+        name_contains=software_source_package_group_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 

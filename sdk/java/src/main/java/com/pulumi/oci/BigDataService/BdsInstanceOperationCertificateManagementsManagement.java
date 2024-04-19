@@ -47,18 +47,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceOperationCertificateManagementsManagement = new BdsInstanceOperationCertificateManagementsManagement(&#34;testBdsInstanceOperationCertificateManagementsManagement&#34;, BdsInstanceOperationCertificateManagementsManagementArgs.builder()        
- *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
- *             .clusterAdminPassword(var_.bds_instance_operation_certificate_managements_management_cluster_admin_password())
- *             .services(var_.bds_instance_operation_certificate_managements_management_services())
- *             .enableOperationCertificateManagement(var_.enable_operation_certificate_management())
- *             .renewOperationCertificateManagement(var_.renew_operation_certificate_management())
+ *             .bdsInstanceId(testBdsInstance.id())
+ *             .clusterAdminPassword(bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword)
+ *             .services(bdsInstanceOperationCertificateManagementsManagementServices)
+ *             .enableOperationCertificateManagement(enableOperationCertificateManagement)
+ *             .renewOperationCertificateManagement(renewOperationCertificateManagement)
  *             .hostCertDetails(BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs.builder()
- *                 .certificate(var_.bds_instance_operation_certificate_managements_management_host_cert_details_certificate())
- *                 .hostName(var_.bds_instance_operation_certificate_managements_management_host_cert_details_host_name())
- *                 .privateKey(var_.bds_instance_operation_certificate_managements_management_host_cert_details_private_key())
+ *                 .certificate(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsCertificate)
+ *                 .hostName(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsHostName)
+ *                 .privateKey(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsPrivateKey)
  *                 .build())
- *             .rootCertificate(var_.bds_instance_operation_certificate_managements_management_root_certificate())
- *             .serverKeyPassword(var_.bds_instance_operation_certificate_managements_management_server_key_password())
+ *             .rootCertificate(bdsInstanceOperationCertificateManagementsManagementRootCertificate)
+ *             .serverKeyPassword(bdsInstanceOperationCertificateManagementsManagementServerKeyPassword)
  *             .build());
  * 
  *     }

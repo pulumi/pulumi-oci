@@ -405,19 +405,19 @@ class Log(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log = oci.logging.Log("testLog",
-            display_name=var["log_display_name"],
-            log_group_id=oci_logging_log_group["test_log_group"]["id"],
-            log_type=var["log_log_type"],
+        test_log = oci.logging.Log("test_log",
+            display_name=log_display_name,
+            log_group_id=test_log_group["id"],
+            log_type=log_log_type,
             configuration=oci.logging.LogConfigurationArgs(
                 source=oci.logging.LogConfigurationSourceArgs(
-                    category=var["log_configuration_source_category"],
-                    resource=var["log_configuration_source_resource"],
-                    service=var["log_configuration_source_service"],
-                    source_type=var["log_configuration_source_source_type"],
-                    parameters=var["log_configuration_source_parameters"],
+                    category=log_configuration_source_category,
+                    resource=log_configuration_source_resource,
+                    service=log_configuration_source_service,
+                    source_type=log_configuration_source_source_type,
+                    parameters=log_configuration_source_parameters,
                 ),
-                compartment_id=var["compartment_id"],
+                compartment_id=compartment_id,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -425,8 +425,8 @@ class Log(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=var["log_is_enabled"],
-            retention_duration=var["log_retention_duration"])
+            is_enabled=log_is_enabled,
+            retention_duration=log_retention_duration)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -472,19 +472,19 @@ class Log(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log = oci.logging.Log("testLog",
-            display_name=var["log_display_name"],
-            log_group_id=oci_logging_log_group["test_log_group"]["id"],
-            log_type=var["log_log_type"],
+        test_log = oci.logging.Log("test_log",
+            display_name=log_display_name,
+            log_group_id=test_log_group["id"],
+            log_type=log_log_type,
             configuration=oci.logging.LogConfigurationArgs(
                 source=oci.logging.LogConfigurationSourceArgs(
-                    category=var["log_configuration_source_category"],
-                    resource=var["log_configuration_source_resource"],
-                    service=var["log_configuration_source_service"],
-                    source_type=var["log_configuration_source_source_type"],
-                    parameters=var["log_configuration_source_parameters"],
+                    category=log_configuration_source_category,
+                    resource=log_configuration_source_resource,
+                    service=log_configuration_source_service,
+                    source_type=log_configuration_source_source_type,
+                    parameters=log_configuration_source_parameters,
                 ),
-                compartment_id=var["compartment_id"],
+                compartment_id=compartment_id,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -492,8 +492,8 @@ class Log(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=var["log_is_enabled"],
-            retention_duration=var["log_retention_duration"])
+            is_enabled=log_is_enabled,
+            retention_duration=log_retention_duration)
         ```
         <!--End PulumiCodeChooser -->
 

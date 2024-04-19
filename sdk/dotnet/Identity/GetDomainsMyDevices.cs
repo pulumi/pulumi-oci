@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyDevices = Oci.Identity.GetDomainsMyDevices.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyDeviceCount = @var.My_device_my_device_count,
-        ///         MyDeviceFilter = @var.My_device_my_device_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyDeviceCount = myDeviceMyDeviceCount,
+        ///         MyDeviceFilter = myDeviceMyDeviceFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_device_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_device_resource_type_schema_version,
-        ///         StartIndex = @var.My_device_start_index,
+        ///         Authorization = myDeviceAuthorization,
+        ///         ResourceTypeSchemaVersion = myDeviceResourceTypeSchemaVersion,
+        ///         StartIndex = myDeviceStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyDevices = Oci.Identity.GetDomainsMyDevices.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyDeviceCount = @var.My_device_my_device_count,
-        ///         MyDeviceFilter = @var.My_device_my_device_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyDeviceCount = myDeviceMyDeviceCount,
+        ///         MyDeviceFilter = myDeviceMyDeviceFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_device_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_device_resource_type_schema_version,
-        ///         StartIndex = @var.My_device_start_index,
+        ///         Authorization = myDeviceAuthorization,
+        ///         ResourceTypeSchemaVersion = myDeviceResourceTypeSchemaVersion,
+        ///         StartIndex = myDeviceStartIndex,
         ///     });
         /// 
         /// });

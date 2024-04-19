@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystemStackMonitoringsManagement = new oci.databasemanagement.ExternalDbSystemStackMonitoringsManagement("testExternalDbSystemStackMonitoringsManagement", {
- *     externalDbSystemId: oci_database_management_external_db_system.test_external_db_system.id,
- *     enableStackMonitoring: _var.enable_stack_monitoring,
- *     isEnabled: _var.external_db_system_stack_monitorings_management_is_enabled,
- *     metadata: _var.external_db_system_stack_monitorings_management_metadata,
+ * const testExternalDbSystemStackMonitoringsManagement = new oci.databasemanagement.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management", {
+ *     externalDbSystemId: testExternalDbSystem.id,
+ *     enableStackMonitoring: enableStackMonitoring,
+ *     isEnabled: externalDbSystemStackMonitoringsManagementIsEnabled,
+ *     metadata: externalDbSystemStackMonitoringsManagementMetadata,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

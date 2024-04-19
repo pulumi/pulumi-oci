@@ -31,15 +31,15 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testProfiles = Oci.OsManagementHub.GetProfiles.Invoke(new()
         ///     {
-        ///         ArchType = @var.Profile_arch_type,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Profile_display_name,
-        ///         DisplayNameContains = @var.Profile_display_name_contains,
-        ///         OsFamily = @var.Profile_os_family,
-        ///         ProfileId = oci_os_management_hub_profile.Test_profile.Id,
-        ///         ProfileTypes = @var.Profile_profile_type,
-        ///         State = @var.Profile_state,
-        ///         VendorName = @var.Profile_vendor_name,
+        ///         ArchType = profileArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = profileDisplayName,
+        ///         DisplayNameContains = profileDisplayNameContains,
+        ///         OsFamily = profileOsFamily,
+        ///         ProfileId = testProfile.Id,
+        ///         ProfileTypes = profileProfileType,
+        ///         State = profileState,
+        ///         VendorName = profileVendorName,
         ///     });
         /// 
         /// });
@@ -69,15 +69,15 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testProfiles = Oci.OsManagementHub.GetProfiles.Invoke(new()
         ///     {
-        ///         ArchType = @var.Profile_arch_type,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Profile_display_name,
-        ///         DisplayNameContains = @var.Profile_display_name_contains,
-        ///         OsFamily = @var.Profile_os_family,
-        ///         ProfileId = oci_os_management_hub_profile.Test_profile.Id,
-        ///         ProfileTypes = @var.Profile_profile_type,
-        ///         State = @var.Profile_state,
-        ///         VendorName = @var.Profile_vendor_name,
+        ///         ArchType = profileArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = profileDisplayName,
+        ///         DisplayNameContains = profileDisplayNameContains,
+        ///         OsFamily = profileOsFamily,
+        ///         ProfileId = testProfile.Id,
+        ///         ProfileTypes = profileProfileType,
+        ///         State = profileState,
+        ///         VendorName = profileVendorName,
         ///     });
         /// 
         /// });

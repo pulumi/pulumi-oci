@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogSavedSearch = oci.Logging.getLogSavedSearch({
- *     logSavedSearchId: oci_logging_log_saved_search.test_log_saved_search.id,
+ *     logSavedSearchId: testLogSavedSearchOciLoggingLogSavedSearch.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,7 +99,7 @@ export interface GetLogSavedSearchResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogSavedSearch = oci.Logging.getLogSavedSearch({
- *     logSavedSearchId: oci_logging_log_saved_search.test_log_saved_search.id,
+ *     logSavedSearchId: testLogSavedSearchOciLoggingLogSavedSearch.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

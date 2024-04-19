@@ -30,11 +30,11 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualServiceRouteTables = Oci.ServiceMesh.GetVirtualServiceRouteTables.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Virtual_service_route_table_id,
-        ///         Name = @var.Virtual_service_route_table_name,
-        ///         State = @var.Virtual_service_route_table_state,
-        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Id = virtualServiceRouteTableId,
+        ///         Name = virtualServiceRouteTableName,
+        ///         State = virtualServiceRouteTableState,
+        ///         VirtualServiceId = testVirtualService.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualServiceRouteTables = Oci.ServiceMesh.GetVirtualServiceRouteTables.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Virtual_service_route_table_id,
-        ///         Name = @var.Virtual_service_route_table_name,
-        ///         State = @var.Virtual_service_route_table_state,
-        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Id = virtualServiceRouteTableId,
+        ///         Name = virtualServiceRouteTableName,
+        ///         State = virtualServiceRouteTableState,
+        ///         VirtualServiceId = testVirtualService.Id,
         ///     });
         /// 
         /// });

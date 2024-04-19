@@ -29,18 +29,18 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetInstallationSite = Oci.Jms.GetInstallationSite.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         InstallationPath = @var.Fleet_installation_site_installation_path,
-        ///         JreDistribution = @var.Fleet_installation_site_jre_distribution,
-        ///         JreSecurityStatus = @var.Fleet_installation_site_jre_security_status,
-        ///         JreVendor = @var.Fleet_installation_site_jre_vendor,
-        ///         JreVersion = @var.Fleet_installation_site_jre_version,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         OsFamilies = @var.Fleet_installation_site_os_family,
-        ///         PathContains = @var.Fleet_installation_site_path_contains,
-        ///         TimeEnd = @var.Fleet_installation_site_time_end,
-        ///         TimeStart = @var.Fleet_installation_site_time_start,
+        ///         FleetId = testFleet.Id,
+        ///         ApplicationId = testApplication.Id,
+        ///         InstallationPath = fleetInstallationSiteInstallationPath,
+        ///         JreDistribution = fleetInstallationSiteJreDistribution,
+        ///         JreSecurityStatus = fleetInstallationSiteJreSecurityStatus,
+        ///         JreVendor = fleetInstallationSiteJreVendor,
+        ///         JreVersion = fleetInstallationSiteJreVersion,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         OsFamilies = fleetInstallationSiteOsFamily,
+        ///         PathContains = fleetInstallationSitePathContains,
+        ///         TimeEnd = fleetInstallationSiteTimeEnd,
+        ///         TimeStart = fleetInstallationSiteTimeStart,
         ///     });
         /// 
         /// });
@@ -68,18 +68,18 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetInstallationSite = Oci.Jms.GetInstallationSite.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         InstallationPath = @var.Fleet_installation_site_installation_path,
-        ///         JreDistribution = @var.Fleet_installation_site_jre_distribution,
-        ///         JreSecurityStatus = @var.Fleet_installation_site_jre_security_status,
-        ///         JreVendor = @var.Fleet_installation_site_jre_vendor,
-        ///         JreVersion = @var.Fleet_installation_site_jre_version,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         OsFamilies = @var.Fleet_installation_site_os_family,
-        ///         PathContains = @var.Fleet_installation_site_path_contains,
-        ///         TimeEnd = @var.Fleet_installation_site_time_end,
-        ///         TimeStart = @var.Fleet_installation_site_time_start,
+        ///         FleetId = testFleet.Id,
+        ///         ApplicationId = testApplication.Id,
+        ///         InstallationPath = fleetInstallationSiteInstallationPath,
+        ///         JreDistribution = fleetInstallationSiteJreDistribution,
+        ///         JreSecurityStatus = fleetInstallationSiteJreSecurityStatus,
+        ///         JreVendor = fleetInstallationSiteJreVendor,
+        ///         JreVersion = fleetInstallationSiteJreVersion,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         OsFamilies = fleetInstallationSiteOsFamily,
+        ///         PathContains = fleetInstallationSitePathContains,
+        ///         TimeEnd = fleetInstallationSiteTimeEnd,
+        ///         TimeStart = fleetInstallationSiteTimeStart,
         ///     });
         /// 
         /// });

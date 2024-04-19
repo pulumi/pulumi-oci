@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetPrivateIp(ctx, &core.GetPrivateIpArgs{
-//				PrivateIpId: oci_core_private_ip.Test_private_ip.Id,
+//				PrivateIpId: testPrivateIpOciCorePrivateIp.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

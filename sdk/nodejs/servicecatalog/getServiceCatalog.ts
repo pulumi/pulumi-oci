@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceCatalog = oci.ServiceCatalog.getServiceCatalog({
- *     serviceCatalogId: oci_service_catalog_service_catalog.test_service_catalog.id,
+ *     serviceCatalogId: testServiceCatalogOciServiceCatalogServiceCatalog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,7 +91,7 @@ export interface GetServiceCatalogResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceCatalog = oci.ServiceCatalog.getServiceCatalog({
- *     serviceCatalogId: oci_service_catalog_service_catalog.test_service_catalog.id,
+ *     serviceCatalogId: testServiceCatalogOciServiceCatalogServiceCatalog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

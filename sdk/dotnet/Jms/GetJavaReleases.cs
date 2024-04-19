@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaReleases = Oci.Jms.GetJavaReleases.Invoke(new()
         ///     {
-        ///         FamilyVersion = @var.Java_release_family_version,
-        ///         JreSecurityStatus = @var.Java_release_jre_security_status,
-        ///         LicenseType = @var.Java_release_license_type,
-        ///         ReleaseType = @var.Java_release_release_type,
-        ///         ReleaseVersion = @var.Java_release_release_version,
+        ///         FamilyVersion = javaReleaseFamilyVersion,
+        ///         JreSecurityStatus = javaReleaseJreSecurityStatus,
+        ///         LicenseType = javaReleaseLicenseType,
+        ///         ReleaseType = javaReleaseReleaseType,
+        ///         ReleaseVersion = javaReleaseReleaseVersion,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaReleases = Oci.Jms.GetJavaReleases.Invoke(new()
         ///     {
-        ///         FamilyVersion = @var.Java_release_family_version,
-        ///         JreSecurityStatus = @var.Java_release_jre_security_status,
-        ///         LicenseType = @var.Java_release_license_type,
-        ///         ReleaseType = @var.Java_release_release_type,
-        ///         ReleaseVersion = @var.Java_release_release_version,
+        ///         FamilyVersion = javaReleaseFamilyVersion,
+        ///         JreSecurityStatus = javaReleaseJreSecurityStatus,
+        ///         LicenseType = javaReleaseLicenseType,
+        ///         ReleaseType = javaReleaseReleaseType,
+        ///         ReleaseVersion = javaReleaseReleaseVersion,
         ///     });
         /// 
         /// });

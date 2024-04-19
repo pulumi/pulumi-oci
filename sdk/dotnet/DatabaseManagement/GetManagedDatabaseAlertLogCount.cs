@@ -30,14 +30,14 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseAlertLogCount = Oci.DatabaseManagement.GetManagedDatabaseAlertLogCount.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         GroupBy = @var.Managed_database_alert_log_count_group_by,
-        ///         IsRegularExpression = @var.Managed_database_alert_log_count_is_regular_expression,
-        ///         LevelFilter = @var.Managed_database_alert_log_count_level_filter,
-        ///         LogSearchText = @var.Managed_database_alert_log_count_log_search_text,
-        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_alert_log_count_time_greater_than_or_equal_to,
-        ///         TimeLessThanOrEqualTo = @var.Managed_database_alert_log_count_time_less_than_or_equal_to,
-        ///         TypeFilter = @var.Managed_database_alert_log_count_type_filter,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         GroupBy = managedDatabaseAlertLogCountGroupBy,
+        ///         IsRegularExpression = managedDatabaseAlertLogCountIsRegularExpression,
+        ///         LevelFilter = managedDatabaseAlertLogCountLevelFilter,
+        ///         LogSearchText = managedDatabaseAlertLogCountLogSearchText,
+        ///         TimeGreaterThanOrEqualTo = managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = managedDatabaseAlertLogCountTimeLessThanOrEqualTo,
+        ///         TypeFilter = managedDatabaseAlertLogCountTypeFilter,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseAlertLogCount = Oci.DatabaseManagement.GetManagedDatabaseAlertLogCount.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         GroupBy = @var.Managed_database_alert_log_count_group_by,
-        ///         IsRegularExpression = @var.Managed_database_alert_log_count_is_regular_expression,
-        ///         LevelFilter = @var.Managed_database_alert_log_count_level_filter,
-        ///         LogSearchText = @var.Managed_database_alert_log_count_log_search_text,
-        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_alert_log_count_time_greater_than_or_equal_to,
-        ///         TimeLessThanOrEqualTo = @var.Managed_database_alert_log_count_time_less_than_or_equal_to,
-        ///         TypeFilter = @var.Managed_database_alert_log_count_type_filter,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         GroupBy = managedDatabaseAlertLogCountGroupBy,
+        ///         IsRegularExpression = managedDatabaseAlertLogCountIsRegularExpression,
+        ///         LevelFilter = managedDatabaseAlertLogCountLevelFilter,
+        ///         LogSearchText = managedDatabaseAlertLogCountLogSearchText,
+        ///         TimeGreaterThanOrEqualTo = managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = managedDatabaseAlertLogCountTimeLessThanOrEqualTo,
+        ///         TypeFilter = managedDatabaseAlertLogCountTypeFilter,
         ///     });
         /// 
         /// });

@@ -607,38 +607,38 @@ class MountTarget(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_mount_target = oci.file_storage.MountTarget("testMountTarget",
-            availability_domain=var["mount_target_availability_domain"],
-            compartment_id=var["compartment_id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_mount_target = oci.file_storage.MountTarget("test_mount_target",
+            availability_domain=mount_target_availability_domain,
+            compartment_id=compartment_id,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["mount_target_display_name"],
+            display_name=mount_target_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            hostname_label=var["mount_target_hostname_label"],
-            idmap_type=var["mount_target_idmap_type"],
-            ip_address=var["mount_target_ip_address"],
+            hostname_label=mount_target_hostname_label,
+            idmap_type=mount_target_idmap_type,
+            ip_address=mount_target_ip_address,
             kerberos=oci.file_storage.MountTargetKerberosArgs(
-                kerberos_realm=var["mount_target_kerberos_kerberos_realm"],
-                backup_key_tab_secret_version=var["mount_target_kerberos_backup_key_tab_secret_version"],
-                current_key_tab_secret_version=var["mount_target_kerberos_current_key_tab_secret_version"],
-                is_kerberos_enabled=var["mount_target_kerberos_is_kerberos_enabled"],
-                key_tab_secret_id=oci_vault_secret["test_secret"]["id"],
+                kerberos_realm=mount_target_kerberos_kerberos_realm,
+                backup_key_tab_secret_version=mount_target_kerberos_backup_key_tab_secret_version,
+                current_key_tab_secret_version=mount_target_kerberos_current_key_tab_secret_version,
+                is_kerberos_enabled=mount_target_kerberos_is_kerberos_enabled,
+                key_tab_secret_id=test_secret["id"],
             ),
             ldap_idmap=oci.file_storage.MountTargetLdapIdmapArgs(
-                cache_lifetime_seconds=var["mount_target_ldap_idmap_cache_lifetime_seconds"],
-                cache_refresh_interval_seconds=var["mount_target_ldap_idmap_cache_refresh_interval_seconds"],
-                group_search_base=var["mount_target_ldap_idmap_group_search_base"],
-                negative_cache_lifetime_seconds=var["mount_target_ldap_idmap_negative_cache_lifetime_seconds"],
-                outbound_connector1id=oci_file_storage_outbound_connector1["test_outbound_connector1"]["id"],
-                outbound_connector2id=oci_file_storage_outbound_connector2["test_outbound_connector2"]["id"],
-                schema_type=var["mount_target_ldap_idmap_schema_type"],
-                user_search_base=var["mount_target_ldap_idmap_user_search_base"],
+                cache_lifetime_seconds=mount_target_ldap_idmap_cache_lifetime_seconds,
+                cache_refresh_interval_seconds=mount_target_ldap_idmap_cache_refresh_interval_seconds,
+                group_search_base=mount_target_ldap_idmap_group_search_base,
+                negative_cache_lifetime_seconds=mount_target_ldap_idmap_negative_cache_lifetime_seconds,
+                outbound_connector1id=test_outbound_connector1["id"],
+                outbound_connector2id=test_outbound_connector2["id"],
+                schema_type=mount_target_ldap_idmap_schema_type,
+                user_search_base=mount_target_ldap_idmap_user_search_base,
             ),
-            nsg_ids=var["mount_target_nsg_ids"])
+            nsg_ids=mount_target_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -728,38 +728,38 @@ class MountTarget(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_mount_target = oci.file_storage.MountTarget("testMountTarget",
-            availability_domain=var["mount_target_availability_domain"],
-            compartment_id=var["compartment_id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_mount_target = oci.file_storage.MountTarget("test_mount_target",
+            availability_domain=mount_target_availability_domain,
+            compartment_id=compartment_id,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["mount_target_display_name"],
+            display_name=mount_target_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            hostname_label=var["mount_target_hostname_label"],
-            idmap_type=var["mount_target_idmap_type"],
-            ip_address=var["mount_target_ip_address"],
+            hostname_label=mount_target_hostname_label,
+            idmap_type=mount_target_idmap_type,
+            ip_address=mount_target_ip_address,
             kerberos=oci.file_storage.MountTargetKerberosArgs(
-                kerberos_realm=var["mount_target_kerberos_kerberos_realm"],
-                backup_key_tab_secret_version=var["mount_target_kerberos_backup_key_tab_secret_version"],
-                current_key_tab_secret_version=var["mount_target_kerberos_current_key_tab_secret_version"],
-                is_kerberos_enabled=var["mount_target_kerberos_is_kerberos_enabled"],
-                key_tab_secret_id=oci_vault_secret["test_secret"]["id"],
+                kerberos_realm=mount_target_kerberos_kerberos_realm,
+                backup_key_tab_secret_version=mount_target_kerberos_backup_key_tab_secret_version,
+                current_key_tab_secret_version=mount_target_kerberos_current_key_tab_secret_version,
+                is_kerberos_enabled=mount_target_kerberos_is_kerberos_enabled,
+                key_tab_secret_id=test_secret["id"],
             ),
             ldap_idmap=oci.file_storage.MountTargetLdapIdmapArgs(
-                cache_lifetime_seconds=var["mount_target_ldap_idmap_cache_lifetime_seconds"],
-                cache_refresh_interval_seconds=var["mount_target_ldap_idmap_cache_refresh_interval_seconds"],
-                group_search_base=var["mount_target_ldap_idmap_group_search_base"],
-                negative_cache_lifetime_seconds=var["mount_target_ldap_idmap_negative_cache_lifetime_seconds"],
-                outbound_connector1id=oci_file_storage_outbound_connector1["test_outbound_connector1"]["id"],
-                outbound_connector2id=oci_file_storage_outbound_connector2["test_outbound_connector2"]["id"],
-                schema_type=var["mount_target_ldap_idmap_schema_type"],
-                user_search_base=var["mount_target_ldap_idmap_user_search_base"],
+                cache_lifetime_seconds=mount_target_ldap_idmap_cache_lifetime_seconds,
+                cache_refresh_interval_seconds=mount_target_ldap_idmap_cache_refresh_interval_seconds,
+                group_search_base=mount_target_ldap_idmap_group_search_base,
+                negative_cache_lifetime_seconds=mount_target_ldap_idmap_negative_cache_lifetime_seconds,
+                outbound_connector1id=test_outbound_connector1["id"],
+                outbound_connector2id=test_outbound_connector2["id"],
+                schema_type=mount_target_ldap_idmap_schema_type,
+                user_search_base=mount_target_ldap_idmap_user_search_base,
             ),
-            nsg_ids=var["mount_target_nsg_ids"])
+            nsg_ids=mount_target_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 

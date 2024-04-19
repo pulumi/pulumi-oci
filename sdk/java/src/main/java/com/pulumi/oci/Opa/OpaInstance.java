@@ -48,16 +48,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOpaInstance = new OpaInstance(&#34;testOpaInstance&#34;, OpaInstanceArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.opa_instance_display_name())
- *             .shapeName(oci_core_shape.test_shape().name())
- *             .consumptionModel(var_.opa_instance_consumption_model())
+ *             .compartmentId(compartmentId)
+ *             .displayName(opaInstanceDisplayName)
+ *             .shapeName(testShape.name())
+ *             .consumptionModel(opaInstanceConsumptionModel)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.opa_instance_description())
+ *             .description(opaInstanceDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .idcsAt(var_.opa_instance_idcs_at())
- *             .isBreakglassEnabled(var_.opa_instance_is_breakglass_enabled())
- *             .meteringType(var_.opa_instance_metering_type())
+ *             .idcsAt(opaInstanceIdcsAt)
+ *             .isBreakglassEnabled(opaInstanceIsBreakglassEnabled)
+ *             .meteringType(opaInstanceMeteringType)
  *             .build());
  * 
  *     }

@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Budget.NewRule(ctx, "testAlertRule", &Budget.RuleArgs{
-//				BudgetId:      pulumi.Any(oci_budget_budget.Test_budget.Id),
-//				Threshold:     pulumi.Any(_var.Alert_rule_threshold),
-//				ThresholdType: pulumi.Any(_var.Alert_rule_threshold_type),
-//				Type:          pulumi.Any(_var.Alert_rule_type),
+//			_, err := Budget.NewRule(ctx, "test_alert_rule", &Budget.RuleArgs{
+//				BudgetId:      pulumi.Any(testBudget.Id),
+//				Threshold:     pulumi.Any(alertRuleThreshold),
+//				ThresholdType: pulumi.Any(alertRuleThresholdType),
+//				Type:          pulumi.Any(alertRuleType),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Alert_rule_description),
-//				DisplayName: pulumi.Any(_var.Alert_rule_display_name),
+//				Description: pulumi.Any(alertRuleDescription),
+//				DisplayName: pulumi.Any(alertRuleDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Message:    pulumi.Any(_var.Alert_rule_message),
-//				Recipients: pulumi.Any(_var.Alert_rule_recipients),
+//				Message:    pulumi.Any(alertRuleMessage),
+//				Recipients: pulumi.Any(alertRuleRecipients),
 //			})
 //			if err != nil {
 //				return err

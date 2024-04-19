@@ -31,18 +31,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewRemotePeeringConnection(ctx, "testRemotePeeringConnection", &Core.RemotePeeringConnectionArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DrgId:         pulumi.Any(oci_core_drg.Test_drg.Id),
+//			_, err := Core.NewRemotePeeringConnection(ctx, "test_remote_peering_connection", &Core.RemotePeeringConnectionArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DrgId:         pulumi.Any(testDrg.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Remote_peering_connection_display_name),
+//				DisplayName: pulumi.Any(remotePeeringConnectionDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				PeerId:         pulumi.Any(oci_core_remote_peering_connection.Test_remote_peering_connection2.Id),
-//				PeerRegionName: pulumi.Any(_var.Remote_peering_connection_peer_region_name),
+//				PeerId:         pulumi.Any(testRemotePeeringConnection2.Id),
+//				PeerRegionName: pulumi.Any(remotePeeringConnectionPeerRegionName),
 //			})
 //			if err != nil {
 //				return err

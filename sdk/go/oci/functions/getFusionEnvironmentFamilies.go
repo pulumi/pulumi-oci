@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetFusionEnvironmentFamilies(ctx, &functions.GetFusionEnvironmentFamiliesArgs{
-//				CompartmentId:             _var.Compartment_id,
-//				DisplayName:               pulumi.StringRef(_var.Fusion_environment_family_display_name),
-//				FusionEnvironmentFamilyId: pulumi.StringRef(oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id),
-//				State:                     pulumi.StringRef(_var.Fusion_environment_family_state),
+//				CompartmentId:             compartmentId,
+//				DisplayName:               pulumi.StringRef(fusionEnvironmentFamilyDisplayName),
+//				FusionEnvironmentFamilyId: pulumi.StringRef(testFusionEnvironmentFamily.Id),
+//				State:                     pulumi.StringRef(fusionEnvironmentFamilyState),
 //			}, nil)
 //			if err != nil {
 //				return err

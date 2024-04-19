@@ -31,32 +31,32 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.NewAssetSource(ctx, "testAssetSource", &CloudBridge.AssetSourceArgs{
-//				AssetsCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//				CompartmentId:       pulumi.Any(_var.Compartment_id),
+//			_, err := CloudBridge.NewAssetSource(ctx, "test_asset_source", &CloudBridge.AssetSourceArgs{
+//				AssetsCompartmentId: pulumi.Any(testCompartment.Id),
+//				CompartmentId:       pulumi.Any(compartmentId),
 //				DiscoveryCredentials: &cloudbridge.AssetSourceDiscoveryCredentialsArgs{
-//					SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					Type:     pulumi.Any(_var.Asset_source_discovery_credentials_type),
+//					SecretId: pulumi.Any(testSecret.Id),
+//					Type:     pulumi.Any(assetSourceDiscoveryCredentialsType),
 //				},
-//				EnvironmentId:                 pulumi.Any(oci_cloud_bridge_environment.Test_environment.Id),
-//				InventoryId:                   pulumi.Any(oci_cloud_bridge_inventory.Test_inventory.Id),
-//				Type:                          pulumi.Any(_var.Asset_source_type),
-//				VcenterEndpoint:               pulumi.Any(_var.Asset_source_vcenter_endpoint),
-//				AreHistoricalMetricsCollected: pulumi.Any(_var.Asset_source_are_historical_metrics_collected),
-//				AreRealtimeMetricsCollected:   pulumi.Any(_var.Asset_source_are_realtime_metrics_collected),
+//				EnvironmentId:                 pulumi.Any(testEnvironment.Id),
+//				InventoryId:                   pulumi.Any(testInventory.Id),
+//				Type:                          pulumi.Any(assetSourceType),
+//				VcenterEndpoint:               pulumi.Any(assetSourceVcenterEndpoint),
+//				AreHistoricalMetricsCollected: pulumi.Any(assetSourceAreHistoricalMetricsCollected),
+//				AreRealtimeMetricsCollected:   pulumi.Any(assetSourceAreRealtimeMetricsCollected),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DiscoveryScheduleId: pulumi.Any(oci_cloud_bridge_discovery_schedule.Test_discovery_schedule.Id),
-//				DisplayName:         pulumi.Any(_var.Asset_source_display_name),
+//				DiscoveryScheduleId: pulumi.Any(testDiscoverySchedule.Id),
+//				DisplayName:         pulumi.Any(assetSourceDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				ReplicationCredentials: &cloudbridge.AssetSourceReplicationCredentialsArgs{
-//					SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					Type:     pulumi.Any(_var.Asset_source_replication_credentials_type),
+//					SecretId: pulumi.Any(testSecret.Id),
+//					Type:     pulumi.Any(assetSourceReplicationCredentialsType),
 //				},
-//				SystemTags: pulumi.Any(_var.Asset_source_system_tags),
+//				SystemTags: pulumi.Any(assetSourceSystemTags),
 //			})
 //			if err != nil {
 //				return err

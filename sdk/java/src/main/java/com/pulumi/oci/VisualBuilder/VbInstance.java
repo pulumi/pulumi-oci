@@ -55,22 +55,22 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVbInstance = new VbInstance(&#34;testVbInstance&#34;, VbInstanceArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.vb_instance_display_name())
- *             .nodeCount(var_.vb_instance_node_count())
+ *             .compartmentId(compartmentId)
+ *             .displayName(vbInstanceDisplayName)
+ *             .nodeCount(vbInstanceNodeCount)
  *             .alternateCustomEndpoints(VbInstanceAlternateCustomEndpointArgs.builder()
- *                 .hostname(var_.vb_instance_alternate_custom_endpoints_hostname())
- *                 .certificateSecretId(oci_vault_secret.test_secret().id())
+ *                 .hostname(vbInstanceAlternateCustomEndpointsHostname)
+ *                 .certificateSecretId(testSecret.id())
  *                 .build())
- *             .consumptionModel(var_.vb_instance_consumption_model())
+ *             .consumptionModel(vbInstanceConsumptionModel)
  *             .customEndpoint(VbInstanceCustomEndpointArgs.builder()
- *                 .hostname(var_.vb_instance_custom_endpoint_hostname())
- *                 .certificateSecretId(oci_vault_secret.test_secret().id())
+ *                 .hostname(vbInstanceCustomEndpointHostname)
+ *                 .certificateSecretId(testSecret.id())
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .idcsOpenId(oci_visual_builder_idcs_open.test_idcs_open().id())
- *             .isVisualBuilderEnabled(var_.vb_instance_is_visual_builder_enabled())
+ *             .idcsOpenId(testIdcsOpen.id())
+ *             .isVisualBuilderEnabled(vbInstanceIsVisualBuilderEnabled)
  *             .build());
  * 
  *     }

@@ -101,7 +101,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
      *             .build());
      * 
      *     }
@@ -143,7 +143,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
      *             .build());
      * 
      *     }
@@ -185,7 +185,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
      *             .build());
      * 
      *     }
@@ -227,7 +227,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
      *             .build());
      * 
      *     }
@@ -269,8 +269,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
-     *             .applicationKey(var_.workspace_application_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationApplicationKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -312,8 +312,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
-     *             .applicationKey(var_.workspace_application_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationApplicationKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -355,8 +355,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
-     *             .applicationKey(var_.workspace_application_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationApplicationKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -398,8 +398,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
-     *             .applicationKey(var_.workspace_application_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationApplicationKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -441,9 +441,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
-     *             .applicationKey(var_.workspace_application_patch_application_key())
-     *             .patchKey(var_.workspace_application_patch_patch_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .patchKey(workspaceApplicationPatchPatchKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -485,9 +485,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
-     *             .applicationKey(var_.workspace_application_patch_application_key())
-     *             .patchKey(var_.workspace_application_patch_patch_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .patchKey(workspaceApplicationPatchPatchKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -529,9 +529,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
-     *             .applicationKey(var_.workspace_application_patch_application_key())
-     *             .patchKey(var_.workspace_application_patch_patch_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .patchKey(workspaceApplicationPatchPatchKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -573,9 +573,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
-     *             .applicationKey(var_.workspace_application_patch_application_key())
-     *             .patchKey(var_.workspace_application_patch_patch_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .patchKey(workspaceApplicationPatchPatchKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -617,11 +617,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
-     *             .applicationKey(var_.workspace_application_patch_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_application_patch_fields())
-     *             .identifiers(var_.workspace_application_patch_identifier())
-     *             .name(var_.workspace_application_patch_name())
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationPatchFields)
+     *             .identifiers(workspaceApplicationPatchIdentifier)
+     *             .name(workspaceApplicationPatchName)
      *             .build());
      * 
      *     }
@@ -663,11 +663,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
-     *             .applicationKey(var_.workspace_application_patch_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_application_patch_fields())
-     *             .identifiers(var_.workspace_application_patch_identifier())
-     *             .name(var_.workspace_application_patch_name())
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationPatchFields)
+     *             .identifiers(workspaceApplicationPatchIdentifier)
+     *             .name(workspaceApplicationPatchName)
      *             .build());
      * 
      *     }
@@ -709,11 +709,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
-     *             .applicationKey(var_.workspace_application_patch_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_application_patch_fields())
-     *             .identifiers(var_.workspace_application_patch_identifier())
-     *             .name(var_.workspace_application_patch_name())
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationPatchFields)
+     *             .identifiers(workspaceApplicationPatchIdentifier)
+     *             .name(workspaceApplicationPatchName)
      *             .build());
      * 
      *     }
@@ -755,11 +755,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
-     *             .applicationKey(var_.workspace_application_patch_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_application_patch_fields())
-     *             .identifiers(var_.workspace_application_patch_identifier())
-     *             .name(var_.workspace_application_patch_name())
+     *             .applicationKey(workspaceApplicationPatchApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationPatchFields)
+     *             .identifiers(workspaceApplicationPatchIdentifier)
+     *             .name(workspaceApplicationPatchName)
      *             .build());
      * 
      *     }
@@ -801,9 +801,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
-     *             .applicationKey(var_.workspace_application_schedule_application_key())
-     *             .scheduleKey(var_.workspace_application_schedule_schedule_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -845,9 +845,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
-     *             .applicationKey(var_.workspace_application_schedule_application_key())
-     *             .scheduleKey(var_.workspace_application_schedule_schedule_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -889,9 +889,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
-     *             .applicationKey(var_.workspace_application_schedule_application_key())
-     *             .scheduleKey(var_.workspace_application_schedule_schedule_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -933,9 +933,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
-     *             .applicationKey(var_.workspace_application_schedule_application_key())
-     *             .scheduleKey(var_.workspace_application_schedule_schedule_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -977,12 +977,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
-     *             .applicationKey(var_.workspace_application_schedule_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .identifiers(var_.workspace_application_schedule_identifier())
-     *             .keys(var_.workspace_application_schedule_key())
-     *             .name(var_.workspace_application_schedule_name())
-     *             .types(var_.workspace_application_schedule_type())
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationScheduleIdentifier)
+     *             .keys(workspaceApplicationScheduleKey)
+     *             .name(workspaceApplicationScheduleName)
+     *             .types(workspaceApplicationScheduleType)
      *             .build());
      * 
      *     }
@@ -1024,12 +1024,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
-     *             .applicationKey(var_.workspace_application_schedule_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .identifiers(var_.workspace_application_schedule_identifier())
-     *             .keys(var_.workspace_application_schedule_key())
-     *             .name(var_.workspace_application_schedule_name())
-     *             .types(var_.workspace_application_schedule_type())
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationScheduleIdentifier)
+     *             .keys(workspaceApplicationScheduleKey)
+     *             .name(workspaceApplicationScheduleName)
+     *             .types(workspaceApplicationScheduleType)
      *             .build());
      * 
      *     }
@@ -1071,12 +1071,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
-     *             .applicationKey(var_.workspace_application_schedule_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .identifiers(var_.workspace_application_schedule_identifier())
-     *             .keys(var_.workspace_application_schedule_key())
-     *             .name(var_.workspace_application_schedule_name())
-     *             .types(var_.workspace_application_schedule_type())
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationScheduleIdentifier)
+     *             .keys(workspaceApplicationScheduleKey)
+     *             .name(workspaceApplicationScheduleName)
+     *             .types(workspaceApplicationScheduleType)
      *             .build());
      * 
      *     }
@@ -1118,12 +1118,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
-     *             .applicationKey(var_.workspace_application_schedule_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .identifiers(var_.workspace_application_schedule_identifier())
-     *             .keys(var_.workspace_application_schedule_key())
-     *             .name(var_.workspace_application_schedule_name())
-     *             .types(var_.workspace_application_schedule_type())
+     *             .applicationKey(workspaceApplicationScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationScheduleIdentifier)
+     *             .keys(workspaceApplicationScheduleKey)
+     *             .name(workspaceApplicationScheduleName)
+     *             .types(workspaceApplicationScheduleType)
      *             .build());
      * 
      *     }
@@ -1165,9 +1165,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
-     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
-     *             .taskScheduleKey(var_.workspace_application_task_schedule_task_schedule_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -1209,9 +1209,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
-     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
-     *             .taskScheduleKey(var_.workspace_application_task_schedule_task_schedule_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -1253,9 +1253,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
-     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
-     *             .taskScheduleKey(var_.workspace_application_task_schedule_task_schedule_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -1297,9 +1297,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
-     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
-     *             .taskScheduleKey(var_.workspace_application_task_schedule_task_schedule_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -1341,13 +1341,13 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
-     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .identifiers(var_.workspace_application_task_schedule_identifier())
-     *             .isEnabled(var_.workspace_application_task_schedule_is_enabled())
-     *             .keys(var_.workspace_application_task_schedule_key())
-     *             .name(var_.workspace_application_task_schedule_name())
-     *             .types(var_.workspace_application_task_schedule_type())
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
+     *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
+     *             .keys(workspaceApplicationTaskScheduleKey)
+     *             .name(workspaceApplicationTaskScheduleName)
+     *             .types(workspaceApplicationTaskScheduleType)
      *             .build());
      * 
      *     }
@@ -1389,13 +1389,13 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
-     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .identifiers(var_.workspace_application_task_schedule_identifier())
-     *             .isEnabled(var_.workspace_application_task_schedule_is_enabled())
-     *             .keys(var_.workspace_application_task_schedule_key())
-     *             .name(var_.workspace_application_task_schedule_name())
-     *             .types(var_.workspace_application_task_schedule_type())
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
+     *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
+     *             .keys(workspaceApplicationTaskScheduleKey)
+     *             .name(workspaceApplicationTaskScheduleName)
+     *             .types(workspaceApplicationTaskScheduleType)
      *             .build());
      * 
      *     }
@@ -1437,13 +1437,13 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
-     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .identifiers(var_.workspace_application_task_schedule_identifier())
-     *             .isEnabled(var_.workspace_application_task_schedule_is_enabled())
-     *             .keys(var_.workspace_application_task_schedule_key())
-     *             .name(var_.workspace_application_task_schedule_name())
-     *             .types(var_.workspace_application_task_schedule_type())
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
+     *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
+     *             .keys(workspaceApplicationTaskScheduleKey)
+     *             .name(workspaceApplicationTaskScheduleName)
+     *             .types(workspaceApplicationTaskScheduleType)
      *             .build());
      * 
      *     }
@@ -1485,13 +1485,13 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
-     *             .applicationKey(var_.workspace_application_task_schedule_application_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .identifiers(var_.workspace_application_task_schedule_identifier())
-     *             .isEnabled(var_.workspace_application_task_schedule_is_enabled())
-     *             .keys(var_.workspace_application_task_schedule_key())
-     *             .name(var_.workspace_application_task_schedule_name())
-     *             .types(var_.workspace_application_task_schedule_type())
+     *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
+     *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
+     *             .keys(workspaceApplicationTaskScheduleKey)
+     *             .name(workspaceApplicationTaskScheduleName)
+     *             .types(workspaceApplicationTaskScheduleType)
      *             .build());
      * 
      *     }
@@ -1533,11 +1533,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_application_fields())
-     *             .identifiers(var_.workspace_application_identifier())
-     *             .name(var_.workspace_application_name())
-     *             .nameContains(var_.workspace_application_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationFields)
+     *             .identifiers(workspaceApplicationIdentifier)
+     *             .name(workspaceApplicationName)
+     *             .nameContains(workspaceApplicationNameContains)
      *             .build());
      * 
      *     }
@@ -1579,11 +1579,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_application_fields())
-     *             .identifiers(var_.workspace_application_identifier())
-     *             .name(var_.workspace_application_name())
-     *             .nameContains(var_.workspace_application_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationFields)
+     *             .identifiers(workspaceApplicationIdentifier)
+     *             .name(workspaceApplicationName)
+     *             .nameContains(workspaceApplicationNameContains)
      *             .build());
      * 
      *     }
@@ -1625,11 +1625,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_application_fields())
-     *             .identifiers(var_.workspace_application_identifier())
-     *             .name(var_.workspace_application_name())
-     *             .nameContains(var_.workspace_application_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationFields)
+     *             .identifiers(workspaceApplicationIdentifier)
+     *             .name(workspaceApplicationName)
+     *             .nameContains(workspaceApplicationNameContains)
      *             .build());
      * 
      *     }
@@ -1671,11 +1671,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_application_fields())
-     *             .identifiers(var_.workspace_application_identifier())
-     *             .name(var_.workspace_application_name())
-     *             .nameContains(var_.workspace_application_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceApplicationFields)
+     *             .identifiers(workspaceApplicationIdentifier)
+     *             .name(workspaceApplicationName)
+     *             .nameContains(workspaceApplicationNameContains)
      *             .build());
      * 
      *     }
@@ -1717,8 +1717,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
-     *             .exportRequestKey(var_.workspace_export_request_export_request_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .exportRequestKey(workspaceExportRequestExportRequestKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -1760,8 +1760,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
-     *             .exportRequestKey(var_.workspace_export_request_export_request_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .exportRequestKey(workspaceExportRequestExportRequestKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -1803,8 +1803,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
-     *             .exportRequestKey(var_.workspace_export_request_export_request_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .exportRequestKey(workspaceExportRequestExportRequestKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -1846,8 +1846,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
-     *             .exportRequestKey(var_.workspace_export_request_export_request_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .exportRequestKey(workspaceExportRequestExportRequestKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -1889,12 +1889,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .exportStatus(var_.workspace_export_request_export_status())
-     *             .name(var_.workspace_export_request_name())
-     *             .projection(var_.workspace_export_request_projection())
-     *             .timeEndedInMillis(var_.workspace_export_request_time_ended_in_millis())
-     *             .timeStartedInMillis(var_.workspace_export_request_time_started_in_millis())
+     *             .workspaceId(testWorkspace.id())
+     *             .exportStatus(workspaceExportRequestExportStatus)
+     *             .name(workspaceExportRequestName)
+     *             .projection(workspaceExportRequestProjection)
+     *             .timeEndedInMillis(workspaceExportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceExportRequestTimeStartedInMillis)
      *             .build());
      * 
      *     }
@@ -1936,12 +1936,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .exportStatus(var_.workspace_export_request_export_status())
-     *             .name(var_.workspace_export_request_name())
-     *             .projection(var_.workspace_export_request_projection())
-     *             .timeEndedInMillis(var_.workspace_export_request_time_ended_in_millis())
-     *             .timeStartedInMillis(var_.workspace_export_request_time_started_in_millis())
+     *             .workspaceId(testWorkspace.id())
+     *             .exportStatus(workspaceExportRequestExportStatus)
+     *             .name(workspaceExportRequestName)
+     *             .projection(workspaceExportRequestProjection)
+     *             .timeEndedInMillis(workspaceExportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceExportRequestTimeStartedInMillis)
      *             .build());
      * 
      *     }
@@ -1983,12 +1983,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .exportStatus(var_.workspace_export_request_export_status())
-     *             .name(var_.workspace_export_request_name())
-     *             .projection(var_.workspace_export_request_projection())
-     *             .timeEndedInMillis(var_.workspace_export_request_time_ended_in_millis())
-     *             .timeStartedInMillis(var_.workspace_export_request_time_started_in_millis())
+     *             .workspaceId(testWorkspace.id())
+     *             .exportStatus(workspaceExportRequestExportStatus)
+     *             .name(workspaceExportRequestName)
+     *             .projection(workspaceExportRequestProjection)
+     *             .timeEndedInMillis(workspaceExportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceExportRequestTimeStartedInMillis)
      *             .build());
      * 
      *     }
@@ -2030,12 +2030,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .exportStatus(var_.workspace_export_request_export_status())
-     *             .name(var_.workspace_export_request_name())
-     *             .projection(var_.workspace_export_request_projection())
-     *             .timeEndedInMillis(var_.workspace_export_request_time_ended_in_millis())
-     *             .timeStartedInMillis(var_.workspace_export_request_time_started_in_millis())
+     *             .workspaceId(testWorkspace.id())
+     *             .exportStatus(workspaceExportRequestExportStatus)
+     *             .name(workspaceExportRequestName)
+     *             .projection(workspaceExportRequestProjection)
+     *             .timeEndedInMillis(workspaceExportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceExportRequestTimeStartedInMillis)
      *             .build());
      * 
      *     }
@@ -2077,8 +2077,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
-     *             .folderKey(var_.workspace_folder_folder_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .folderKey(workspaceFolderFolderKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2120,8 +2120,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
-     *             .folderKey(var_.workspace_folder_folder_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .folderKey(workspaceFolderFolderKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2163,8 +2163,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
-     *             .folderKey(var_.workspace_folder_folder_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .folderKey(workspaceFolderFolderKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2206,8 +2206,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
-     *             .folderKey(var_.workspace_folder_folder_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .folderKey(workspaceFolderFolderKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2249,12 +2249,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .aggregatorKey(var_.workspace_folder_aggregator_key())
-     *             .fields(var_.workspace_folder_fields())
-     *             .identifiers(var_.workspace_folder_identifier())
-     *             .name(var_.workspace_folder_name())
-     *             .nameContains(var_.workspace_folder_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .aggregatorKey(workspaceFolderAggregatorKey)
+     *             .fields(workspaceFolderFields)
+     *             .identifiers(workspaceFolderIdentifier)
+     *             .name(workspaceFolderName)
+     *             .nameContains(workspaceFolderNameContains)
      *             .build());
      * 
      *     }
@@ -2296,12 +2296,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .aggregatorKey(var_.workspace_folder_aggregator_key())
-     *             .fields(var_.workspace_folder_fields())
-     *             .identifiers(var_.workspace_folder_identifier())
-     *             .name(var_.workspace_folder_name())
-     *             .nameContains(var_.workspace_folder_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .aggregatorKey(workspaceFolderAggregatorKey)
+     *             .fields(workspaceFolderFields)
+     *             .identifiers(workspaceFolderIdentifier)
+     *             .name(workspaceFolderName)
+     *             .nameContains(workspaceFolderNameContains)
      *             .build());
      * 
      *     }
@@ -2343,12 +2343,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .aggregatorKey(var_.workspace_folder_aggregator_key())
-     *             .fields(var_.workspace_folder_fields())
-     *             .identifiers(var_.workspace_folder_identifier())
-     *             .name(var_.workspace_folder_name())
-     *             .nameContains(var_.workspace_folder_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .aggregatorKey(workspaceFolderAggregatorKey)
+     *             .fields(workspaceFolderFields)
+     *             .identifiers(workspaceFolderIdentifier)
+     *             .name(workspaceFolderName)
+     *             .nameContains(workspaceFolderNameContains)
      *             .build());
      * 
      *     }
@@ -2390,12 +2390,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .aggregatorKey(var_.workspace_folder_aggregator_key())
-     *             .fields(var_.workspace_folder_fields())
-     *             .identifiers(var_.workspace_folder_identifier())
-     *             .name(var_.workspace_folder_name())
-     *             .nameContains(var_.workspace_folder_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .aggregatorKey(workspaceFolderAggregatorKey)
+     *             .fields(workspaceFolderFields)
+     *             .identifiers(workspaceFolderIdentifier)
+     *             .name(workspaceFolderName)
+     *             .nameContains(workspaceFolderNameContains)
      *             .build());
      * 
      *     }
@@ -2437,8 +2437,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
-     *             .importRequestKey(var_.workspace_import_request_import_request_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .importRequestKey(workspaceImportRequestImportRequestKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2480,8 +2480,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
-     *             .importRequestKey(var_.workspace_import_request_import_request_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .importRequestKey(workspaceImportRequestImportRequestKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2523,8 +2523,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
-     *             .importRequestKey(var_.workspace_import_request_import_request_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .importRequestKey(workspaceImportRequestImportRequestKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2566,8 +2566,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
-     *             .importRequestKey(var_.workspace_import_request_import_request_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .importRequestKey(workspaceImportRequestImportRequestKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2609,12 +2609,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .importStatus(var_.workspace_import_request_import_status())
-     *             .name(var_.workspace_import_request_name())
-     *             .projection(var_.workspace_import_request_projection())
-     *             .timeEndedInMillis(var_.workspace_import_request_time_ended_in_millis())
-     *             .timeStartedInMillis(var_.workspace_import_request_time_started_in_millis())
+     *             .workspaceId(testWorkspace.id())
+     *             .importStatus(workspaceImportRequestImportStatus)
+     *             .name(workspaceImportRequestName)
+     *             .projection(workspaceImportRequestProjection)
+     *             .timeEndedInMillis(workspaceImportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceImportRequestTimeStartedInMillis)
      *             .build());
      * 
      *     }
@@ -2656,12 +2656,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .importStatus(var_.workspace_import_request_import_status())
-     *             .name(var_.workspace_import_request_name())
-     *             .projection(var_.workspace_import_request_projection())
-     *             .timeEndedInMillis(var_.workspace_import_request_time_ended_in_millis())
-     *             .timeStartedInMillis(var_.workspace_import_request_time_started_in_millis())
+     *             .workspaceId(testWorkspace.id())
+     *             .importStatus(workspaceImportRequestImportStatus)
+     *             .name(workspaceImportRequestName)
+     *             .projection(workspaceImportRequestProjection)
+     *             .timeEndedInMillis(workspaceImportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceImportRequestTimeStartedInMillis)
      *             .build());
      * 
      *     }
@@ -2703,12 +2703,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .importStatus(var_.workspace_import_request_import_status())
-     *             .name(var_.workspace_import_request_name())
-     *             .projection(var_.workspace_import_request_projection())
-     *             .timeEndedInMillis(var_.workspace_import_request_time_ended_in_millis())
-     *             .timeStartedInMillis(var_.workspace_import_request_time_started_in_millis())
+     *             .workspaceId(testWorkspace.id())
+     *             .importStatus(workspaceImportRequestImportStatus)
+     *             .name(workspaceImportRequestName)
+     *             .projection(workspaceImportRequestProjection)
+     *             .timeEndedInMillis(workspaceImportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceImportRequestTimeStartedInMillis)
      *             .build());
      * 
      *     }
@@ -2750,12 +2750,12 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .importStatus(var_.workspace_import_request_import_status())
-     *             .name(var_.workspace_import_request_name())
-     *             .projection(var_.workspace_import_request_projection())
-     *             .timeEndedInMillis(var_.workspace_import_request_time_ended_in_millis())
-     *             .timeStartedInMillis(var_.workspace_import_request_time_started_in_millis())
+     *             .workspaceId(testWorkspace.id())
+     *             .importStatus(workspaceImportRequestImportStatus)
+     *             .name(workspaceImportRequestName)
+     *             .projection(workspaceImportRequestProjection)
+     *             .timeEndedInMillis(workspaceImportRequestTimeEndedInMillis)
+     *             .timeStartedInMillis(workspaceImportRequestTimeStartedInMillis)
      *             .build());
      * 
      *     }
@@ -2797,8 +2797,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
-     *             .projectKey(var_.workspace_project_project_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .projectKey(workspaceProjectProjectKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2840,8 +2840,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
-     *             .projectKey(var_.workspace_project_project_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .projectKey(workspaceProjectProjectKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2883,8 +2883,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
-     *             .projectKey(var_.workspace_project_project_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .projectKey(workspaceProjectProjectKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2926,8 +2926,8 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
-     *             .projectKey(var_.workspace_project_project_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
+     *             .projectKey(workspaceProjectProjectKey)
+     *             .workspaceId(testWorkspace.id())
      *             .build());
      * 
      *     }
@@ -2969,11 +2969,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_project_fields())
-     *             .identifiers(var_.workspace_project_identifier())
-     *             .name(var_.workspace_project_name())
-     *             .nameContains(var_.workspace_project_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceProjectFields)
+     *             .identifiers(workspaceProjectIdentifier)
+     *             .name(workspaceProjectName)
+     *             .nameContains(workspaceProjectNameContains)
      *             .build());
      * 
      *     }
@@ -3015,11 +3015,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_project_fields())
-     *             .identifiers(var_.workspace_project_identifier())
-     *             .name(var_.workspace_project_name())
-     *             .nameContains(var_.workspace_project_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceProjectFields)
+     *             .identifiers(workspaceProjectIdentifier)
+     *             .name(workspaceProjectName)
+     *             .nameContains(workspaceProjectNameContains)
      *             .build());
      * 
      *     }
@@ -3061,11 +3061,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_project_fields())
-     *             .identifiers(var_.workspace_project_identifier())
-     *             .name(var_.workspace_project_name())
-     *             .nameContains(var_.workspace_project_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceProjectFields)
+     *             .identifiers(workspaceProjectIdentifier)
+     *             .name(workspaceProjectName)
+     *             .nameContains(workspaceProjectNameContains)
      *             .build());
      * 
      *     }
@@ -3107,11 +3107,11 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_project_fields())
-     *             .identifiers(var_.workspace_project_identifier())
-     *             .name(var_.workspace_project_name())
-     *             .nameContains(var_.workspace_project_name_contains())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceProjectFields)
+     *             .identifiers(workspaceProjectIdentifier)
+     *             .name(workspaceProjectName)
+     *             .nameContains(workspaceProjectNameContains)
      *             .build());
      * 
      *     }
@@ -3153,9 +3153,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
-     *             .taskKey(var_.workspace_task_task_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .expandReferences(var_.workspace_task_expand_references())
+     *             .taskKey(workspaceTaskTaskKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .expandReferences(workspaceTaskExpandReferences)
      *             .build());
      * 
      *     }
@@ -3197,9 +3197,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
-     *             .taskKey(var_.workspace_task_task_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .expandReferences(var_.workspace_task_expand_references())
+     *             .taskKey(workspaceTaskTaskKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .expandReferences(workspaceTaskExpandReferences)
      *             .build());
      * 
      *     }
@@ -3241,9 +3241,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
-     *             .taskKey(var_.workspace_task_task_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .expandReferences(var_.workspace_task_expand_references())
+     *             .taskKey(workspaceTaskTaskKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .expandReferences(workspaceTaskExpandReferences)
      *             .build());
      * 
      *     }
@@ -3285,9 +3285,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTask = DataIntegrationFunctions.getWorkspaceTask(GetWorkspaceTaskArgs.builder()
-     *             .taskKey(var_.workspace_task_task_key())
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .expandReferences(var_.workspace_task_expand_references())
+     *             .taskKey(workspaceTaskTaskKey)
+     *             .workspaceId(testWorkspace.id())
+     *             .expandReferences(workspaceTaskExpandReferences)
      *             .build());
      * 
      *     }
@@ -3329,13 +3329,13 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_task_fields())
-     *             .folderId(oci_dataintegration_folder.test_folder().id())
-     *             .identifiers(var_.workspace_task_identifier())
-     *             .keys(var_.workspace_task_key())
-     *             .name(var_.workspace_task_name())
-     *             .types(var_.workspace_task_type())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceTaskFields)
+     *             .folderId(testFolder.id())
+     *             .identifiers(workspaceTaskIdentifier)
+     *             .keys(workspaceTaskKey)
+     *             .name(workspaceTaskName)
+     *             .types(workspaceTaskType)
      *             .build());
      * 
      *     }
@@ -3377,13 +3377,13 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_task_fields())
-     *             .folderId(oci_dataintegration_folder.test_folder().id())
-     *             .identifiers(var_.workspace_task_identifier())
-     *             .keys(var_.workspace_task_key())
-     *             .name(var_.workspace_task_name())
-     *             .types(var_.workspace_task_type())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceTaskFields)
+     *             .folderId(testFolder.id())
+     *             .identifiers(workspaceTaskIdentifier)
+     *             .keys(workspaceTaskKey)
+     *             .name(workspaceTaskName)
+     *             .types(workspaceTaskType)
      *             .build());
      * 
      *     }
@@ -3425,13 +3425,13 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_task_fields())
-     *             .folderId(oci_dataintegration_folder.test_folder().id())
-     *             .identifiers(var_.workspace_task_identifier())
-     *             .keys(var_.workspace_task_key())
-     *             .name(var_.workspace_task_name())
-     *             .types(var_.workspace_task_type())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceTaskFields)
+     *             .folderId(testFolder.id())
+     *             .identifiers(workspaceTaskIdentifier)
+     *             .keys(workspaceTaskKey)
+     *             .name(workspaceTaskName)
+     *             .types(workspaceTaskType)
      *             .build());
      * 
      *     }
@@ -3473,13 +3473,13 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
-     *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
-     *             .fields(var_.workspace_task_fields())
-     *             .folderId(oci_dataintegration_folder.test_folder().id())
-     *             .identifiers(var_.workspace_task_identifier())
-     *             .keys(var_.workspace_task_key())
-     *             .name(var_.workspace_task_name())
-     *             .types(var_.workspace_task_type())
+     *             .workspaceId(testWorkspace.id())
+     *             .fields(workspaceTaskFields)
+     *             .folderId(testFolder.id())
+     *             .identifiers(workspaceTaskIdentifier)
+     *             .keys(workspaceTaskKey)
+     *             .name(workspaceTaskName)
+     *             .types(workspaceTaskType)
      *             .build());
      * 
      *     }
@@ -3521,9 +3521,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaces = DataIntegrationFunctions.getWorkspaces(GetWorkspacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.workspace_name())
-     *             .state(var_.workspace_state())
+     *             .compartmentId(compartmentId)
+     *             .name(workspaceName)
+     *             .state(workspaceState)
      *             .build());
      * 
      *     }
@@ -3565,9 +3565,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaces = DataIntegrationFunctions.getWorkspaces(GetWorkspacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.workspace_name())
-     *             .state(var_.workspace_state())
+     *             .compartmentId(compartmentId)
+     *             .name(workspaceName)
+     *             .state(workspaceState)
      *             .build());
      * 
      *     }
@@ -3609,9 +3609,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaces = DataIntegrationFunctions.getWorkspaces(GetWorkspacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.workspace_name())
-     *             .state(var_.workspace_state())
+     *             .compartmentId(compartmentId)
+     *             .name(workspaceName)
+     *             .state(workspaceState)
      *             .build());
      * 
      *     }
@@ -3653,9 +3653,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaces = DataIntegrationFunctions.getWorkspaces(GetWorkspacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.workspace_name())
-     *             .state(var_.workspace_state())
+     *             .compartmentId(compartmentId)
+     *             .name(workspaceName)
+     *             .state(workspaceState)
      *             .build());
      * 
      *     }

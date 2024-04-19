@@ -18,24 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModel = new oci.datasafe.SensitiveDataModel("testSensitiveDataModel", {
- *     compartmentId: _var.compartment_id,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     appSuiteName: _var.sensitive_data_model_app_suite_name,
+ * const testSensitiveDataModel = new oci.datasafe.SensitiveDataModel("test_sensitive_data_model", {
+ *     compartmentId: compartmentId,
+ *     targetId: testTarget.id,
+ *     appSuiteName: sensitiveDataModelAppSuiteName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.sensitive_data_model_description,
- *     displayName: _var.sensitive_data_model_display_name,
+ *     description: sensitiveDataModelDescription,
+ *     displayName: sensitiveDataModelDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAppDefinedRelationDiscoveryEnabled: _var.sensitive_data_model_is_app_defined_relation_discovery_enabled,
- *     isIncludeAllSchemas: _var.sensitive_data_model_is_include_all_schemas,
- *     isIncludeAllSensitiveTypes: _var.sensitive_data_model_is_include_all_sensitive_types,
- *     isSampleDataCollectionEnabled: _var.sensitive_data_model_is_sample_data_collection_enabled,
- *     schemasForDiscoveries: _var.sensitive_data_model_schemas_for_discovery,
- *     sensitiveTypeIdsForDiscoveries: _var.sensitive_data_model_sensitive_type_ids_for_discovery,
+ *     isAppDefinedRelationDiscoveryEnabled: sensitiveDataModelIsAppDefinedRelationDiscoveryEnabled,
+ *     isIncludeAllSchemas: sensitiveDataModelIsIncludeAllSchemas,
+ *     isIncludeAllSensitiveTypes: sensitiveDataModelIsIncludeAllSensitiveTypes,
+ *     isSampleDataCollectionEnabled: sensitiveDataModelIsSampleDataCollectionEnabled,
+ *     schemasForDiscoveries: sensitiveDataModelSchemasForDiscovery,
+ *     sensitiveTypeIdsForDiscoveries: sensitiveDataModelSensitiveTypeIdsForDiscovery,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

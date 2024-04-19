@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testOccAvailabilityCatalogContent = Oci.CapacityManagement.GetOccAvailabilityCatalogContent.Invoke(new()
         ///     {
-        ///         OccAvailabilityCatalogId = oci_capacity_management_occ_availability_catalog.Test_occ_availability_catalog.Id,
+        ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testOccAvailabilityCatalogContent = Oci.CapacityManagement.GetOccAvailabilityCatalogContent.Invoke(new()
         ///     {
-        ///         OccAvailabilityCatalogId = oci_capacity_management_occ_availability_catalog.Test_occ_availability_catalog.Id,
+        ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
         ///     });
         /// 
         /// });

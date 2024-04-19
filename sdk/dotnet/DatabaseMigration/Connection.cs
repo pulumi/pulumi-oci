@@ -26,60 +26,60 @@ namespace Pulumi.Oci.DatabaseMigration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConnection = new Oci.DatabaseMigration.Connection("testConnection", new()
+    ///     var testConnection = new Oci.DatabaseMigration.Connection("test_connection", new()
     ///     {
     ///         AdminCredentials = new Oci.DatabaseMigration.Inputs.ConnectionAdminCredentialsArgs
     ///         {
-    ///             Password = @var.Connection_admin_credentials_password,
-    ///             Username = @var.Connection_admin_credentials_username,
+    ///             Password = connectionAdminCredentialsPassword,
+    ///             Username = connectionAdminCredentialsUsername,
     ///         },
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DatabaseType = @var.Connection_database_type,
+    ///         CompartmentId = compartmentId,
+    ///         DatabaseType = connectionDatabaseType,
     ///         VaultDetails = new Oci.DatabaseMigration.Inputs.ConnectionVaultDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             KeyId = oci_kms_key.Test_key.Id,
-    ///             VaultId = oci_kms_vault.Test_vault.Id,
+    ///             CompartmentId = compartmentId,
+    ///             KeyId = testKey.Id,
+    ///             VaultId = testVault.Id,
     ///         },
-    ///         CertificateTdn = @var.Connection_certificate_tdn,
+    ///         CertificateTdn = connectionCertificateTdn,
     ///         ConnectDescriptor = new Oci.DatabaseMigration.Inputs.ConnectionConnectDescriptorArgs
     ///         {
-    ///             ConnectString = @var.Connection_connect_descriptor_connect_string,
-    ///             DatabaseServiceName = oci_core_service.Test_service.Name,
-    ///             Host = @var.Connection_connect_descriptor_host,
-    ///             Port = @var.Connection_connect_descriptor_port,
+    ///             ConnectString = connectionConnectDescriptorConnectString,
+    ///             DatabaseServiceName = testService.Name,
+    ///             Host = connectionConnectDescriptorHost,
+    ///             Port = connectionConnectDescriptorPort,
     ///         },
-    ///         DatabaseId = oci_database_database.Test_database.Id,
+    ///         DatabaseId = testDatabase.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Connection_display_name,
+    ///         DisplayName = connectionDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         NsgIds = @var.Connection_nsg_ids,
+    ///         NsgIds = connectionNsgIds,
     ///         PrivateEndpoint = new Oci.DatabaseMigration.Inputs.ConnectionPrivateEndpointArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
+    ///             CompartmentId = compartmentId,
+    ///             SubnetId = testSubnet.Id,
+    ///             VcnId = testVcn.Id,
     ///         },
     ///         ReplicationCredentials = new Oci.DatabaseMigration.Inputs.ConnectionReplicationCredentialsArgs
     ///         {
-    ///             Password = @var.Connection_replication_credentials_password,
-    ///             Username = @var.Connection_replication_credentials_username,
+    ///             Password = connectionReplicationCredentialsPassword,
+    ///             Username = connectionReplicationCredentialsUsername,
     ///         },
     ///         SshDetails = new Oci.DatabaseMigration.Inputs.ConnectionSshDetailsArgs
     ///         {
-    ///             Host = @var.Connection_ssh_details_host,
-    ///             Sshkey = @var.Connection_ssh_details_sshkey,
-    ///             User = @var.Connection_ssh_details_user,
-    ///             SudoLocation = @var.Connection_ssh_details_sudo_location,
+    ///             Host = connectionSshDetailsHost,
+    ///             Sshkey = connectionSshDetailsSshkey,
+    ///             User = connectionSshDetailsUser,
+    ///             SudoLocation = connectionSshDetailsSudoLocation,
     ///         },
-    ///         TlsKeystore = @var.Connection_tls_keystore,
-    ///         TlsWallet = @var.Connection_tls_wallet,
+    ///         TlsKeystore = connectionTlsKeystore,
+    ///         TlsWallet = connectionTlsWallet,
     ///     });
     /// 
     /// });

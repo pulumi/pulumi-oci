@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAlertPolicyRule = oci.DataSafe.getAlertPolicyRule({
- *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
+ *     alertPolicyId: testAlertPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -71,7 +71,7 @@ export interface GetAlertPolicyRuleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAlertPolicyRule = oci.DataSafe.getAlertPolicyRule({
- *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
+ *     alertPolicyId: testAlertPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

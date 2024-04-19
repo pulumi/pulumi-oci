@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewEnterpriseManagerBridge(ctx, "testEnterpriseManagerBridge", &Opsi.EnterpriseManagerBridgeArgs{
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				DisplayName:             pulumi.Any(_var.Enterprise_manager_bridge_display_name),
-//				ObjectStorageBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
+//			_, err := Opsi.NewEnterpriseManagerBridge(ctx, "test_enterprise_manager_bridge", &Opsi.EnterpriseManagerBridgeArgs{
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				DisplayName:             pulumi.Any(enterpriseManagerBridgeDisplayName),
+//				ObjectStorageBucketName: pulumi.Any(testBucket.Name),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Enterprise_manager_bridge_description),
+//				Description: pulumi.Any(enterpriseManagerBridgeDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

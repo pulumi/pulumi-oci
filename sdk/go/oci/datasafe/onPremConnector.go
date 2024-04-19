@@ -31,13 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewOnPremConnector(ctx, "testOnPremConnector", &DataSafe.OnPremConnectorArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := DataSafe.NewOnPremConnector(ctx, "test_on_prem_connector", &DataSafe.OnPremConnectorArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.On_prem_connector_description),
-//				DisplayName: pulumi.Any(_var.On_prem_connector_display_name),
+//				Description: pulumi.Any(onPremConnectorDescription),
+//				DisplayName: pulumi.Any(onPremConnectorDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

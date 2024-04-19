@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstancePatchAction = new oci.bigdataservice.BdsInstancePatchAction("testBdsInstancePatchAction", {
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     clusterAdminPassword: _var.bds_instance_patch_action_cluster_admin_password,
- *     version: _var.bds_instance_patch_action_version,
+ * const testBdsInstancePatchAction = new oci.bigdataservice.BdsInstancePatchAction("test_bds_instance_patch_action", {
+ *     bdsInstanceId: testBdsInstance.id,
+ *     clusterAdminPassword: bdsInstancePatchActionClusterAdminPassword,
+ *     version: bdsInstancePatchActionVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

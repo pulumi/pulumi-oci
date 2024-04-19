@@ -50,8 +50,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
-     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
-     *             .pluginName(var_.instance_agent_plugin_plugin_name())
+     *             .instanceagentId(testInstanceagent.id())
+     *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
      *     }
@@ -93,8 +93,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
-     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
-     *             .pluginName(var_.instance_agent_plugin_plugin_name())
+     *             .instanceagentId(testInstanceagent.id())
+     *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
      *     }
@@ -136,8 +136,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
-     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
-     *             .pluginName(var_.instance_agent_plugin_plugin_name())
+     *             .instanceagentId(testInstanceagent.id())
+     *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
      *     }
@@ -179,8 +179,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
-     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
-     *             .pluginName(var_.instance_agent_plugin_plugin_name())
+     *             .instanceagentId(testInstanceagent.id())
+     *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
      *     }
@@ -222,9 +222,9 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
-     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
-     *             .name(var_.instance_agent_plugin_name())
-     *             .status(var_.instance_agent_plugin_status())
+     *             .instanceagentId(testInstanceagent.id())
+     *             .name(instanceAgentPluginName)
+     *             .status(instanceAgentPluginStatus)
      *             .build());
      * 
      *     }
@@ -266,9 +266,9 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
-     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
-     *             .name(var_.instance_agent_plugin_name())
-     *             .status(var_.instance_agent_plugin_status())
+     *             .instanceagentId(testInstanceagent.id())
+     *             .name(instanceAgentPluginName)
+     *             .status(instanceAgentPluginStatus)
      *             .build());
      * 
      *     }
@@ -310,9 +310,9 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
-     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
-     *             .name(var_.instance_agent_plugin_name())
-     *             .status(var_.instance_agent_plugin_status())
+     *             .instanceagentId(testInstanceagent.id())
+     *             .name(instanceAgentPluginName)
+     *             .status(instanceAgentPluginStatus)
      *             .build());
      * 
      *     }
@@ -354,9 +354,9 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
-     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
-     *             .name(var_.instance_agent_plugin_name())
-     *             .status(var_.instance_agent_plugin_status())
+     *             .instanceagentId(testInstanceagent.id())
+     *             .name(instanceAgentPluginName)
+     *             .status(instanceAgentPluginStatus)
      *             .build());
      * 
      *     }
@@ -398,9 +398,9 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
-     *             .osName(var_.instance_available_plugin_os_name())
-     *             .osVersion(var_.instance_available_plugin_os_version())
-     *             .name(var_.instance_available_plugin_name())
+     *             .osName(instanceAvailablePluginOsName)
+     *             .osVersion(instanceAvailablePluginOsVersion)
+     *             .name(instanceAvailablePluginName)
      *             .build());
      * 
      *     }
@@ -442,9 +442,9 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
-     *             .osName(var_.instance_available_plugin_os_name())
-     *             .osVersion(var_.instance_available_plugin_os_version())
-     *             .name(var_.instance_available_plugin_name())
+     *             .osName(instanceAvailablePluginOsName)
+     *             .osVersion(instanceAvailablePluginOsVersion)
+     *             .name(instanceAvailablePluginName)
      *             .build());
      * 
      *     }
@@ -486,9 +486,9 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
-     *             .osName(var_.instance_available_plugin_os_name())
-     *             .osVersion(var_.instance_available_plugin_os_version())
-     *             .name(var_.instance_available_plugin_name())
+     *             .osName(instanceAvailablePluginOsName)
+     *             .osVersion(instanceAvailablePluginOsVersion)
+     *             .name(instanceAvailablePluginName)
      *             .build());
      * 
      *     }
@@ -530,9 +530,9 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
-     *             .osName(var_.instance_available_plugin_os_name())
-     *             .osVersion(var_.instance_available_plugin_os_version())
-     *             .name(var_.instance_available_plugin_name())
+     *             .osName(instanceAvailablePluginOsName)
+     *             .osVersion(instanceAvailablePluginOsVersion)
+     *             .name(instanceAvailablePluginName)
      *             .build());
      * 
      *     }

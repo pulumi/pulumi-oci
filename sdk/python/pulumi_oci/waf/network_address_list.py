@@ -373,21 +373,21 @@ class NetworkAddressList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_address_list = oci.waf.NetworkAddressList("testNetworkAddressList",
-            compartment_id=var["compartment_id"],
-            type=var["network_address_list_type"],
-            addresses=var["network_address_list_addresses"],
+        test_network_address_list = oci.waf.NetworkAddressList("test_network_address_list",
+            compartment_id=compartment_id,
+            type=network_address_list_type,
+            addresses=network_address_list_addresses,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["network_address_list_display_name"],
+            display_name=network_address_list_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            system_tags=var["network_address_list_system_tags"],
+            system_tags=network_address_list_system_tags,
             vcn_addresses=[oci.waf.NetworkAddressListVcnAddressArgs(
-                addresses=var["network_address_list_vcn_addresses_addresses"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
+                addresses=network_address_list_vcn_addresses_addresses,
+                vcn_id=test_vcn["id"],
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -429,21 +429,21 @@ class NetworkAddressList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_address_list = oci.waf.NetworkAddressList("testNetworkAddressList",
-            compartment_id=var["compartment_id"],
-            type=var["network_address_list_type"],
-            addresses=var["network_address_list_addresses"],
+        test_network_address_list = oci.waf.NetworkAddressList("test_network_address_list",
+            compartment_id=compartment_id,
+            type=network_address_list_type,
+            addresses=network_address_list_addresses,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["network_address_list_display_name"],
+            display_name=network_address_list_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            system_tags=var["network_address_list_system_tags"],
+            system_tags=network_address_list_system_tags,
             vcn_addresses=[oci.waf.NetworkAddressListVcnAddressArgs(
-                addresses=var["network_address_list_vcn_addresses_addresses"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
+                addresses=network_address_list_vcn_addresses_addresses,
+                vcn_id=test_vcn["id"],
             )])
         ```
         <!--End PulumiCodeChooser -->

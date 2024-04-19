@@ -94,7 +94,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_unset_user_assessment_baseline = oci.data_safe.UnsetUserAssessmentBaseline("testUnsetUserAssessmentBaseline", user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+        test_unset_user_assessment_baseline = oci.data_safe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline", user_assessment_id=test_user_assessment["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -133,7 +133,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_unset_user_assessment_baseline = oci.data_safe.UnsetUserAssessmentBaseline("testUnsetUserAssessmentBaseline", user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+        test_unset_user_assessment_baseline = oci.data_safe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline", user_assessment_id=test_user_assessment["id"])
         ```
         <!--End PulumiCodeChooser -->
 

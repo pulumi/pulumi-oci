@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOsns = oci.Blockchain.getOsns({
- *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
- *     displayName: _var.osn_display_name,
+ *     blockchainPlatformId: testBlockchainPlatform.id,
+ *     displayName: osnDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetOsnsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOsns = oci.Blockchain.getOsns({
- *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
- *     displayName: _var.osn_display_name,
+ *     blockchainPlatformId: testBlockchainPlatform.id,
+ *     displayName: osnDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

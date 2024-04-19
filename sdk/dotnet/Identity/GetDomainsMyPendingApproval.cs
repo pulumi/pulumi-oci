@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyPendingApproval = Oci.Identity.GetDomainsMyPendingApproval.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyPendingApprovalId = oci_identity_domains_my_pending_approval.Test_my_pending_approval.Id,
-        ///         Authorization = @var.My_pending_approval_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_pending_approval_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyPendingApprovalId = testMyPendingApprovalOciIdentityDomainsMyPendingApproval.Id,
+        ///         Authorization = myPendingApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myPendingApprovalResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyPendingApproval = Oci.Identity.GetDomainsMyPendingApproval.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyPendingApprovalId = oci_identity_domains_my_pending_approval.Test_my_pending_approval.Id,
-        ///         Authorization = @var.My_pending_approval_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_pending_approval_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyPendingApprovalId = testMyPendingApprovalOciIdentityDomainsMyPendingApproval.Id,
+        ///         Authorization = myPendingApprovalAuthorization,
+        ///         ResourceTypeSchemaVersion = myPendingApprovalResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

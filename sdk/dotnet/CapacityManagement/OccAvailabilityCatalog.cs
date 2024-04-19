@@ -25,25 +25,25 @@ namespace Pulumi.Oci.CapacityManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOccAvailabilityCatalog = new Oci.CapacityManagement.OccAvailabilityCatalog("testOccAvailabilityCatalog", new()
+    ///     var testOccAvailabilityCatalog = new Oci.CapacityManagement.OccAvailabilityCatalog("test_occ_availability_catalog", new()
     ///     {
-    ///         Base64encodedCatalogDetails = @var.Occ_availability_catalog_base64encoded_catalog_details,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Occ_availability_catalog_display_name,
-    ///         Namespace = @var.Occ_availability_catalog_namespace,
-    ///         OccCustomerGroupId = oci_capacity_management_occ_customer_group.Test_occ_customer_group.Id,
+    ///         Base64encodedCatalogDetails = occAvailabilityCatalogBase64encodedCatalogDetails,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = occAvailabilityCatalogDisplayName,
+    ///         Namespace = occAvailabilityCatalogNamespace,
+    ///         OccCustomerGroupId = testOccCustomerGroup.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Occ_availability_catalog_description,
+    ///         Description = occAvailabilityCatalogDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
     ///         MetadataDetails = new Oci.CapacityManagement.Inputs.OccAvailabilityCatalogMetadataDetailsArgs
     ///         {
-    ///             FormatVersion = @var.Occ_availability_catalog_metadata_details_format_version,
+    ///             FormatVersion = occAvailabilityCatalogMetadataDetailsFormatVersion,
     ///         },
     ///     });
     /// 

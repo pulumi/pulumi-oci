@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatasets = oci.DataLabellingService.getDatasets({
- *     compartmentId: _var.compartment_id,
- *     annotationFormat: _var.dataset_annotation_format,
- *     displayName: _var.dataset_display_name,
- *     id: _var.dataset_id,
- *     state: _var.dataset_state,
+ *     compartmentId: compartmentId,
+ *     annotationFormat: datasetAnnotationFormat,
+ *     displayName: datasetDisplayName,
+ *     id: datasetId,
+ *     state: datasetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetDatasetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatasets = oci.DataLabellingService.getDatasets({
- *     compartmentId: _var.compartment_id,
- *     annotationFormat: _var.dataset_annotation_format,
- *     displayName: _var.dataset_display_name,
- *     id: _var.dataset_id,
- *     state: _var.dataset_state,
+ *     compartmentId: compartmentId,
+ *     annotationFormat: datasetAnnotationFormat,
+ *     displayName: datasetDisplayName,
+ *     id: datasetId,
+ *     state: datasetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

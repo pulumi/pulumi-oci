@@ -27,10 +27,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewPublicIpPoolCapacity(ctx, "testPublicIpPoolCapacity", &Core.PublicIpPoolCapacityArgs{
-//				ByoipId:        pulumi.Any(_var.Byoip_id),
-//				CidrBlock:      pulumi.Any(_var.Cidr_block),
-//				PublicIpPoolId: pulumi.Any(_var.Public_ip_pool_id),
+//			_, err := Core.NewPublicIpPoolCapacity(ctx, "test_public_ip_pool_capacity", &Core.PublicIpPoolCapacityArgs{
+//				PublicIpPoolId: pulumi.Any(publicIpPoolId),
+//				ByoipId:        pulumi.Any(byoipId),
+//				CidrBlock:      pulumi.Any(cidrBlock),
 //			})
 //			if err != nil {
 //				return err

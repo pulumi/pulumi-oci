@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabasesAsmProperties(ctx, &databasemanagement.GetManagedDatabasesAsmPropertiesArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				Name:              pulumi.StringRef(_var.Managed_databases_asm_property_name),
+//				ManagedDatabaseId: testManagedDatabase.Id,
+//				Name:              pulumi.StringRef(managedDatabasesAsmPropertyName),
 //			}, nil)
 //			if err != nil {
 //				return err

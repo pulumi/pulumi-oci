@@ -26,12 +26,12 @@ namespace Pulumi.Oci.Jms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testJavaDownloadReport = new Oci.Jms.JavaDownloadsJavaDownloadReport("testJavaDownloadReport", new()
+    ///     var testJavaDownloadReport = new Oci.Jms.JavaDownloadsJavaDownloadReport("test_java_download_report", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         Format = @var.Java_download_report_format,
-    ///         TimeEnd = @var.Java_download_report_time_end,
-    ///         TimeStart = @var.Java_download_report_time_start,
+    ///         CompartmentId = tenancyOcid,
+    ///         Format = javaDownloadReportFormat,
+    ///         TimeEnd = javaDownloadReportTimeEnd,
+    ///         TimeStart = javaDownloadReportTimeStart,
     ///     });
     /// 
     /// });

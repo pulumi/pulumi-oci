@@ -288,14 +288,14 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_log_group = oci.log_analytics.LogAnalyticsLogGroup("testLogAnalyticsLogGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["log_analytics_log_group_display_name"],
-            namespace=var["log_analytics_log_group_namespace"],
+        test_log_analytics_log_group = oci.log_analytics.LogAnalyticsLogGroup("test_log_analytics_log_group",
+            compartment_id=compartment_id,
+            display_name=log_analytics_log_group_display_name,
+            namespace=log_analytics_log_group_namespace,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["log_analytics_log_group_description"],
+            description=log_analytics_log_group_description,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -341,14 +341,14 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_log_group = oci.log_analytics.LogAnalyticsLogGroup("testLogAnalyticsLogGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["log_analytics_log_group_display_name"],
-            namespace=var["log_analytics_log_group_namespace"],
+        test_log_analytics_log_group = oci.log_analytics.LogAnalyticsLogGroup("test_log_analytics_log_group",
+            compartment_id=compartment_id,
+            display_name=log_analytics_log_group_display_name,
+            namespace=log_analytics_log_group_namespace,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["log_analytics_log_group_description"],
+            description=log_analytics_log_group_description,
             freeform_tags={
                 "bar-key": "value",
             })

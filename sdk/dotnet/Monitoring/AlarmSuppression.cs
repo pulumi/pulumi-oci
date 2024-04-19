@@ -32,22 +32,22 @@ namespace Pulumi.Oci.Monitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAlarmSuppression = new Oci.Monitoring.AlarmSuppression("testAlarmSuppression", new()
+    ///     var testAlarmSuppression = new Oci.Monitoring.AlarmSuppression("test_alarm_suppression", new()
     ///     {
     ///         AlarmSuppressionTarget = new Oci.Monitoring.Inputs.AlarmSuppressionAlarmSuppressionTargetArgs
     ///         {
-    ///             AlarmId = oci_monitoring_alarm.Test_alarm.Id,
-    ///             TargetType = @var.Alarm_suppression_alarm_suppression_target_target_type,
+    ///             AlarmId = testAlarm.Id,
+    ///             TargetType = alarmSuppressionAlarmSuppressionTargetTargetType,
     ///         },
-    ///         Dimensions = @var.Alarm_suppression_dimensions,
-    ///         DisplayName = @var.Alarm_suppression_display_name,
-    ///         TimeSuppressFrom = @var.Alarm_suppression_time_suppress_from,
-    ///         TimeSuppressUntil = @var.Alarm_suppression_time_suppress_until,
+    ///         Dimensions = alarmSuppressionDimensions,
+    ///         DisplayName = alarmSuppressionDisplayName,
+    ///         TimeSuppressFrom = alarmSuppressionTimeSuppressFrom,
+    ///         TimeSuppressUntil = alarmSuppressionTimeSuppressUntil,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Alarm_suppression_description,
+    ///         Description = alarmSuppressionDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

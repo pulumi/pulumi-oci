@@ -33,9 +33,9 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testPingMonitors = Oci.HealthChecks.GetPingMonitors.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Ping_monitor_display_name,
-        ///         HomeRegion = @var.Ping_monitor_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = pingMonitorDisplayName,
+        ///         HomeRegion = pingMonitorHomeRegion,
         ///     });
         /// 
         /// });
@@ -67,9 +67,9 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testPingMonitors = Oci.HealthChecks.GetPingMonitors.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Ping_monitor_display_name,
-        ///         HomeRegion = @var.Ping_monitor_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = pingMonitorDisplayName,
+        ///         HomeRegion = pingMonitorHomeRegion,
         ///     });
         /// 
         /// });

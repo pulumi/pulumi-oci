@@ -25,11 +25,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseOptimizerStatisticsCollectionOperations = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionOperations({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     endTimeLessThanOrEqualTo: _var.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to,
- *     filterBy: _var.managed_database_optimizer_statistics_collection_operation_filter_by,
- *     startTimeGreaterThanOrEqualTo: _var.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to,
- *     taskType: _var.managed_database_optimizer_statistics_collection_operation_task_type,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo,
+ *     filterBy: managedDatabaseOptimizerStatisticsCollectionOperationFilterBy,
+ *     startTimeGreaterThanOrEqualTo: managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo,
+ *     taskType: managedDatabaseOptimizerStatisticsCollectionOperationTaskType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseOptimizerStatisticsCollectionOperations = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionOperations({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     endTimeLessThanOrEqualTo: _var.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to,
- *     filterBy: _var.managed_database_optimizer_statistics_collection_operation_filter_by,
- *     startTimeGreaterThanOrEqualTo: _var.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to,
- *     taskType: _var.managed_database_optimizer_statistics_collection_operation_task_type,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     endTimeLessThanOrEqualTo: managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo,
+ *     filterBy: managedDatabaseOptimizerStatisticsCollectionOperationFilterBy,
+ *     startTimeGreaterThanOrEqualTo: managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo,
+ *     taskType: managedDatabaseOptimizerStatisticsCollectionOperationTaskType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

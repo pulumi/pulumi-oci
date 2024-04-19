@@ -33,18 +33,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSecurityAssessment(ctx, "testSecurityAssessment", &DataSafe.SecurityAssessmentArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
+//			_, err := DataSafe.NewSecurityAssessment(ctx, "test_security_assessment", &DataSafe.SecurityAssessmentArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				TargetId:      pulumi.Any(testTarget.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Security_assessment_description),
-//				DisplayName: pulumi.Any(_var.Security_assessment_display_name),
+//				Description: pulumi.Any(securityAssessmentDescription),
+//				DisplayName: pulumi.Any(securityAssessmentDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Schedule: pulumi.Any(_var.Security_assessment_schedule),
+//				Schedule: pulumi.Any(securityAssessmentSchedule),
 //			})
 //			if err != nil {
 //				return err

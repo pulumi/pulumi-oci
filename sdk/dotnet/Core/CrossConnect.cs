@@ -43,35 +43,35 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCrossConnect = new Oci.Core.CrossConnect("testCrossConnect", new()
+    ///     var testCrossConnect = new Oci.Core.CrossConnect("test_cross_connect", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         LocationName = @var.Cross_connect_location_name,
-    ///         PortSpeedShapeName = @var.Cross_connect_port_speed_shape_name,
-    ///         CrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
-    ///         CustomerReferenceName = @var.Cross_connect_customer_reference_name,
+    ///         CompartmentId = compartmentId,
+    ///         LocationName = crossConnectLocationName,
+    ///         PortSpeedShapeName = crossConnectPortSpeedShapeName,
+    ///         CrossConnectGroupId = testCrossConnectGroup.Id,
+    ///         CustomerReferenceName = crossConnectCustomerReferenceName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Cross_connect_display_name,
-    ///         FarCrossConnectOrCrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
+    ///         DisplayName = crossConnectDisplayName,
+    ///         FarCrossConnectOrCrossConnectGroupId = testCrossConnectGroup.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         MacsecProperties = new Oci.Core.Inputs.CrossConnectMacsecPropertiesArgs
     ///         {
-    ///             State = @var.Cross_connect_macsec_properties_state,
-    ///             EncryptionCipher = @var.Cross_connect_macsec_properties_encryption_cipher,
-    ///             IsUnprotectedTrafficAllowed = @var.Cross_connect_macsec_properties_is_unprotected_traffic_allowed,
+    ///             State = crossConnectMacsecPropertiesState,
+    ///             EncryptionCipher = crossConnectMacsecPropertiesEncryptionCipher,
+    ///             IsUnprotectedTrafficAllowed = crossConnectMacsecPropertiesIsUnprotectedTrafficAllowed,
     ///             PrimaryKey = new Oci.Core.Inputs.CrossConnectMacsecPropertiesPrimaryKeyArgs
     ///             {
-    ///                 ConnectivityAssociationKeySecretId = oci_vault_secret.Test_secret.Id,
-    ///                 ConnectivityAssociationNameSecretId = oci_vault_secret.Test_secret.Id,
+    ///                 ConnectivityAssociationKeySecretId = testSecret.Id,
+    ///                 ConnectivityAssociationNameSecretId = testSecret.Id,
     ///             },
     ///         },
-    ///         NearCrossConnectOrCrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
+    ///         NearCrossConnectOrCrossConnectGroupId = testCrossConnectGroup.Id,
     ///     });
     /// 
     /// });

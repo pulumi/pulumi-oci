@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetCatalogs(ctx, &datacatalog.GetCatalogsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Catalog_display_name),
-//				State:         pulumi.StringRef(_var.Catalog_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(catalogDisplayName),
+//				State:         pulumi.StringRef(catalogState),
 //			}, nil)
 //			if err != nil {
 //				return err

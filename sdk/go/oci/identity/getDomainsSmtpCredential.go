@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsSmtpCredential(ctx, &identity.GetDomainsSmtpCredentialArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
-//				SmtpCredentialId:          oci_identity_smtp_credential.Test_smtp_credential.Id,
+//				IdcsEndpoint:              testDomain.Url,
+//				SmtpCredentialId:          testSmtpCredentialOciIdentitySmtpCredential.Id,
 //				AttributeSets:             []interface{}{},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Smtp_credential_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Smtp_credential_resource_type_schema_version),
+//				Authorization:             pulumi.StringRef(smtpCredentialAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(smtpCredentialResourceTypeSchemaVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

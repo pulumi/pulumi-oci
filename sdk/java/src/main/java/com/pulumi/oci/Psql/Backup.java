@@ -48,13 +48,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBackup = new Backup(&#34;testBackup&#34;, BackupArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dbSystemId(oci_psql_db_system.test_db_system().id())
- *             .displayName(var_.backup_display_name())
+ *             .compartmentId(compartmentId)
+ *             .dbSystemId(testDbSystem.id())
+ *             .displayName(backupDisplayName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.backup_description())
+ *             .description(backupDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .retentionPeriod(var_.backup_retention_period())
+ *             .retentionPeriod(backupRetentionPeriod)
  *             .build());
  * 
  *     }

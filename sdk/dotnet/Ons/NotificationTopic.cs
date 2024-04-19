@@ -38,14 +38,15 @@ namespace Pulumi.Oci.Ons
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNotificationTopic = new Oci.Ons.NotificationTopic("testNotificationTopic", new()
+    ///     var testNotificationTopic = new Oci.Ons.NotificationTopic("test_notification_topic", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = notificationTopicName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Notification_topic_description,
+    ///         Description = notificationTopicDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

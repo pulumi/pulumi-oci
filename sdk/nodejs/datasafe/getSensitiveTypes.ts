@@ -19,19 +19,19 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveTypes = oci.DataSafe.getSensitiveTypes({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.sensitive_type_access_level,
- *     compartmentIdInSubtree: _var.sensitive_type_compartment_id_in_subtree,
- *     defaultMaskingFormatId: oci_data_safe_default_masking_format.test_default_masking_format.id,
- *     displayName: _var.sensitive_type_display_name,
- *     entityType: _var.sensitive_type_entity_type,
- *     isCommon: _var.sensitive_type_is_common,
- *     parentCategoryId: oci_marketplace_category.test_category.id,
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
- *     sensitiveTypeSource: _var.sensitive_type_sensitive_type_source,
- *     state: _var.sensitive_type_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.sensitive_type_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.sensitive_type_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: sensitiveTypeAccessLevel,
+ *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree,
+ *     defaultMaskingFormatId: testDefaultMaskingFormat.id,
+ *     displayName: sensitiveTypeDisplayName,
+ *     entityType: sensitiveTypeEntityType,
+ *     isCommon: sensitiveTypeIsCommon,
+ *     parentCategoryId: testCategory.id,
+ *     sensitiveTypeId: testSensitiveType.id,
+ *     sensitiveTypeSource: sensitiveTypeSensitiveTypeSource,
+ *     state: sensitiveTypeState,
+ *     timeCreatedGreaterThanOrEqualTo: sensitiveTypeTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: sensitiveTypeTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -181,19 +181,19 @@ export interface GetSensitiveTypesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveTypes = oci.DataSafe.getSensitiveTypes({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.sensitive_type_access_level,
- *     compartmentIdInSubtree: _var.sensitive_type_compartment_id_in_subtree,
- *     defaultMaskingFormatId: oci_data_safe_default_masking_format.test_default_masking_format.id,
- *     displayName: _var.sensitive_type_display_name,
- *     entityType: _var.sensitive_type_entity_type,
- *     isCommon: _var.sensitive_type_is_common,
- *     parentCategoryId: oci_marketplace_category.test_category.id,
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
- *     sensitiveTypeSource: _var.sensitive_type_sensitive_type_source,
- *     state: _var.sensitive_type_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.sensitive_type_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.sensitive_type_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: sensitiveTypeAccessLevel,
+ *     compartmentIdInSubtree: sensitiveTypeCompartmentIdInSubtree,
+ *     defaultMaskingFormatId: testDefaultMaskingFormat.id,
+ *     displayName: sensitiveTypeDisplayName,
+ *     entityType: sensitiveTypeEntityType,
+ *     isCommon: sensitiveTypeIsCommon,
+ *     parentCategoryId: testCategory.id,
+ *     sensitiveTypeId: testSensitiveType.id,
+ *     sensitiveTypeSource: sensitiveTypeSensitiveTypeSource,
+ *     state: sensitiveTypeState,
+ *     timeCreatedGreaterThanOrEqualTo: sensitiveTypeTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: sensitiveTypeTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

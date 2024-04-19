@@ -52,12 +52,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBootVolumeBackup = new BootVolumeBackup(&#34;testBootVolumeBackup&#34;, BootVolumeBackupArgs.builder()        
- *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+ *             .bootVolumeId(testBootVolume.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.boot_volume_backup_display_name())
+ *             .displayName(bootVolumeBackupDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .kmsKeyId(oci_kms_key.test_key().id())
- *             .type(var_.boot_volume_backup_type())
+ *             .kmsKeyId(testKey.id())
+ *             .type(bootVolumeBackupType)
  *             .build());
  * 
  *     }

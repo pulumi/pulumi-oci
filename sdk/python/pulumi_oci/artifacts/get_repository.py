@@ -175,7 +175,7 @@ def get_repository(repository_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository = oci.Artifacts.get_repository(repository_id=oci_artifacts_repository["test_repository"]["id"])
+    test_repository = oci.Artifacts.get_repository(repository_id=test_repository_oci_artifacts_repository["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -216,7 +216,7 @@ def get_repository_output(repository_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository = oci.Artifacts.get_repository(repository_id=oci_artifacts_repository["test_repository"]["id"])
+    test_repository = oci.Artifacts.get_repository(repository_id=test_repository_oci_artifacts_repository["id"])
     ```
     <!--End PulumiCodeChooser -->
 

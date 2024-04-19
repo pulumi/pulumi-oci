@@ -30,7 +30,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testConnectionAssignment = Oci.GoldenGate.GetConnectionAssignment.Invoke(new()
         ///     {
-        ///         ConnectionAssignmentId = oci_golden_gate_connection_assignment.Test_connection_assignment.Id,
+        ///         ConnectionAssignmentId = testConnectionAssignmentOciGoldenGateConnectionAssignment.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testConnectionAssignment = Oci.GoldenGate.GetConnectionAssignment.Invoke(new()
         ///     {
-        ///         ConnectionAssignmentId = oci_golden_gate_connection_assignment.Test_connection_assignment.Id,
+        ///         ConnectionAssignmentId = testConnectionAssignmentOciGoldenGateConnectionAssignment.Id,
         ///     });
         /// 
         /// });

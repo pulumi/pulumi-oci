@@ -33,22 +33,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := HealthChecks.NewPingMonitor(ctx, "testPingMonitor", &HealthChecks.PingMonitorArgs{
-//				CompartmentId:     pulumi.Any(_var.Compartment_id),
-//				DisplayName:       pulumi.Any(_var.Ping_monitor_display_name),
-//				IntervalInSeconds: pulumi.Any(_var.Ping_monitor_interval_in_seconds),
-//				Protocol:          pulumi.Any(_var.Ping_monitor_protocol),
-//				Targets:           pulumi.Any(_var.Ping_monitor_targets),
+//			_, err := HealthChecks.NewPingMonitor(ctx, "test_ping_monitor", &HealthChecks.PingMonitorArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				DisplayName:       pulumi.Any(pingMonitorDisplayName),
+//				IntervalInSeconds: pulumi.Any(pingMonitorIntervalInSeconds),
+//				Protocol:          pulumi.Any(pingMonitorProtocol),
+//				Targets:           pulumi.Any(pingMonitorTargets),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsEnabled:         pulumi.Any(_var.Ping_monitor_is_enabled),
-//				Port:              pulumi.Any(_var.Ping_monitor_port),
-//				TimeoutInSeconds:  pulumi.Any(_var.Ping_monitor_timeout_in_seconds),
-//				VantagePointNames: pulumi.Any(_var.Ping_monitor_vantage_point_names),
+//				IsEnabled:         pulumi.Any(pingMonitorIsEnabled),
+//				Port:              pulumi.Any(pingMonitorPort),
+//				TimeoutInSeconds:  pulumi.Any(pingMonitorTimeoutInSeconds),
+//				VantagePointNames: pulumi.Any(pingMonitorVantagePointNames),
 //			})
 //			if err != nil {
 //				return err

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentScheduledActivities = oci.Functions.getFusionEnvironmentScheduledActivities({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     displayName: _var.fusion_environment_scheduled_activity_display_name,
- *     runCycle: _var.fusion_environment_scheduled_activity_run_cycle,
- *     state: _var.fusion_environment_scheduled_activity_state,
- *     timeExpectedFinishLessThanOrEqualTo: _var.fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to,
- *     timeScheduledStartGreaterThanOrEqualTo: _var.fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     displayName: fusionEnvironmentScheduledActivityDisplayName,
+ *     runCycle: fusionEnvironmentScheduledActivityRunCycle,
+ *     state: fusionEnvironmentScheduledActivityState,
+ *     timeExpectedFinishLessThanOrEqualTo: fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo,
+ *     timeScheduledStartGreaterThanOrEqualTo: fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetFusionEnvironmentScheduledActivitiesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentScheduledActivities = oci.Functions.getFusionEnvironmentScheduledActivities({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     displayName: _var.fusion_environment_scheduled_activity_display_name,
- *     runCycle: _var.fusion_environment_scheduled_activity_run_cycle,
- *     state: _var.fusion_environment_scheduled_activity_state,
- *     timeExpectedFinishLessThanOrEqualTo: _var.fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to,
- *     timeScheduledStartGreaterThanOrEqualTo: _var.fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     displayName: fusionEnvironmentScheduledActivityDisplayName,
+ *     runCycle: fusionEnvironmentScheduledActivityRunCycle,
+ *     state: fusionEnvironmentScheduledActivityState,
+ *     timeExpectedFinishLessThanOrEqualTo: fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo,
+ *     timeScheduledStartGreaterThanOrEqualTo: fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

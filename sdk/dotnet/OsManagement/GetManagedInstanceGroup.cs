@@ -30,7 +30,7 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testManagedInstanceGroup = Oci.OsManagement.GetManagedInstanceGroup.Invoke(new()
         ///     {
-        ///         ManagedInstanceGroupId = oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroupOciOsmanagementManagedInstanceGroup.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testManagedInstanceGroup = Oci.OsManagement.GetManagedInstanceGroup.Invoke(new()
         ///     {
-        ///         ManagedInstanceGroupId = oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroupOciOsmanagementManagedInstanceGroup.Id,
         ///     });
         /// 
         /// });

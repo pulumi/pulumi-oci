@@ -31,10 +31,10 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// {
         ///     var testBillingSchedules = Oci.OsubBillingSchedule.GetBillingSchedule.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///         SubscribedServiceId = oci_core_service.Test_service.Id,
-        ///         XOneOriginRegion = @var.Billing_schedule_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         SubscribedServiceId = testService.Id,
+        ///         XOneOriginRegion = billingScheduleXOneOriginRegion,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// {
         ///     var testBillingSchedules = Oci.OsubBillingSchedule.GetBillingSchedule.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///         SubscribedServiceId = oci_core_service.Test_service.Id,
-        ///         XOneOriginRegion = @var.Billing_schedule_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         SubscribedServiceId = testService.Id,
+        ///         XOneOriginRegion = billingScheduleXOneOriginRegion,
         ///     });
         /// 
         /// });

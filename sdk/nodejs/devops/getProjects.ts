@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProjects = oci.DevOps.getProjects({
- *     compartmentId: _var.compartment_id,
- *     id: _var.project_id,
- *     name: _var.project_name,
- *     state: _var.project_state,
+ *     compartmentId: compartmentId,
+ *     id: projectId,
+ *     name: projectName,
+ *     state: projectState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetProjectsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProjects = oci.DevOps.getProjects({
- *     compartmentId: _var.compartment_id,
- *     id: _var.project_id,
- *     name: _var.project_name,
- *     state: _var.project_state,
+ *     compartmentId: compartmentId,
+ *     id: projectId,
+ *     name: projectName,
+ *     state: projectState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

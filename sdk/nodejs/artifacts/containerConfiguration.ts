@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerConfiguration = new oci.artifacts.ContainerConfiguration("testContainerConfiguration", {});
+ * const testContainerConfiguration = new oci.artifacts.ContainerConfiguration("test_container_configuration", {});
  * ```
  * <!--End PulumiCodeChooser -->
  *

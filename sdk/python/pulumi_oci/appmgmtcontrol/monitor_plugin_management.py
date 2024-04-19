@@ -155,7 +155,7 @@ class MonitorPluginManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitor_plugin_management = oci.app_mgmt_control.MonitorPluginManagement("testMonitorPluginManagement", monitored_instance_id=oci_appmgmt_control_monitored_instance["test_monitored_instance"]["id"])
+        test_monitor_plugin_management = oci.app_mgmt_control.MonitorPluginManagement("test_monitor_plugin_management", monitored_instance_id=test_monitored_instance["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -191,7 +191,7 @@ class MonitorPluginManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitor_plugin_management = oci.app_mgmt_control.MonitorPluginManagement("testMonitorPluginManagement", monitored_instance_id=oci_appmgmt_control_monitored_instance["test_monitored_instance"]["id"])
+        test_monitor_plugin_management = oci.app_mgmt_control.MonitorPluginManagement("test_monitor_plugin_management", monitored_instance_id=test_monitored_instance["id"])
         ```
         <!--End PulumiCodeChooser -->
 

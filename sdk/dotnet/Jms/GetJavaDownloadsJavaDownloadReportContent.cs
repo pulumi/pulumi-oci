@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaDownloadReportContent = Oci.Jms.GetJavaDownloadsJavaDownloadReportContent.Invoke(new()
         ///     {
-        ///         JavaDownloadReportId = oci_jms_java_downloads_java_download_report.Test_java_download_report.Id,
+        ///         JavaDownloadReportId = testJavaDownloadReport.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaDownloadReportContent = Oci.Jms.GetJavaDownloadsJavaDownloadReportContent.Invoke(new()
         ///     {
-        ///         JavaDownloadReportId = oci_jms_java_downloads_java_download_report.Test_java_download_report.Id,
+        ///         JavaDownloadReportId = testJavaDownloadReport.Id,
         ///     });
         /// 
         /// });

@@ -549,14 +549,14 @@ class VirtualNodePool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_node_pool = oci.container_engine.VirtualNodePool("testVirtualNodePool",
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            compartment_id=var["compartment_id"],
-            display_name=var["virtual_node_pool_display_name"],
+        test_virtual_node_pool = oci.container_engine.VirtualNodePool("test_virtual_node_pool",
+            cluster_id=test_cluster["id"],
+            compartment_id=compartment_id,
+            display_name=virtual_node_pool_display_name,
             placement_configurations=[oci.container_engine.VirtualNodePoolPlacementConfigurationArgs(
-                availability_domain=var["virtual_node_pool_placement_configurations_availability_domain"],
-                fault_domains=var["virtual_node_pool_placement_configurations_fault_domain"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                availability_domain=virtual_node_pool_placement_configurations_availability_domain,
+                fault_domains=virtual_node_pool_placement_configurations_fault_domain,
+                subnet_id=test_subnet["id"],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -565,20 +565,20 @@ class VirtualNodePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_virtual_node_labels=[oci.container_engine.VirtualNodePoolInitialVirtualNodeLabelArgs(
-                key=var["virtual_node_pool_initial_virtual_node_labels_key"],
-                value=var["virtual_node_pool_initial_virtual_node_labels_value"],
+                key=virtual_node_pool_initial_virtual_node_labels_key,
+                value=virtual_node_pool_initial_virtual_node_labels_value,
             )],
-            nsg_ids=var["virtual_node_pool_nsg_ids"],
+            nsg_ids=virtual_node_pool_nsg_ids,
             pod_configuration=oci.container_engine.VirtualNodePoolPodConfigurationArgs(
-                shape=var["virtual_node_pool_pod_configuration_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["virtual_node_pool_pod_configuration_nsg_ids"],
+                shape=virtual_node_pool_pod_configuration_shape,
+                subnet_id=test_subnet["id"],
+                nsg_ids=virtual_node_pool_pod_configuration_nsg_ids,
             ),
-            size=var["virtual_node_pool_size"],
+            size=virtual_node_pool_size,
             taints=[oci.container_engine.VirtualNodePoolTaintArgs(
-                effect=var["virtual_node_pool_taints_effect"],
-                key=var["virtual_node_pool_taints_key"],
-                value=var["virtual_node_pool_taints_value"],
+                effect=virtual_node_pool_taints_effect,
+                key=virtual_node_pool_taints_key,
+                value=virtual_node_pool_taints_value,
             )],
             virtual_node_tags=oci.container_engine.VirtualNodePoolVirtualNodeTagsArgs(
                 defined_tags={
@@ -636,14 +636,14 @@ class VirtualNodePool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_node_pool = oci.container_engine.VirtualNodePool("testVirtualNodePool",
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            compartment_id=var["compartment_id"],
-            display_name=var["virtual_node_pool_display_name"],
+        test_virtual_node_pool = oci.container_engine.VirtualNodePool("test_virtual_node_pool",
+            cluster_id=test_cluster["id"],
+            compartment_id=compartment_id,
+            display_name=virtual_node_pool_display_name,
             placement_configurations=[oci.container_engine.VirtualNodePoolPlacementConfigurationArgs(
-                availability_domain=var["virtual_node_pool_placement_configurations_availability_domain"],
-                fault_domains=var["virtual_node_pool_placement_configurations_fault_domain"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                availability_domain=virtual_node_pool_placement_configurations_availability_domain,
+                fault_domains=virtual_node_pool_placement_configurations_fault_domain,
+                subnet_id=test_subnet["id"],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -652,20 +652,20 @@ class VirtualNodePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_virtual_node_labels=[oci.container_engine.VirtualNodePoolInitialVirtualNodeLabelArgs(
-                key=var["virtual_node_pool_initial_virtual_node_labels_key"],
-                value=var["virtual_node_pool_initial_virtual_node_labels_value"],
+                key=virtual_node_pool_initial_virtual_node_labels_key,
+                value=virtual_node_pool_initial_virtual_node_labels_value,
             )],
-            nsg_ids=var["virtual_node_pool_nsg_ids"],
+            nsg_ids=virtual_node_pool_nsg_ids,
             pod_configuration=oci.container_engine.VirtualNodePoolPodConfigurationArgs(
-                shape=var["virtual_node_pool_pod_configuration_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["virtual_node_pool_pod_configuration_nsg_ids"],
+                shape=virtual_node_pool_pod_configuration_shape,
+                subnet_id=test_subnet["id"],
+                nsg_ids=virtual_node_pool_pod_configuration_nsg_ids,
             ),
-            size=var["virtual_node_pool_size"],
+            size=virtual_node_pool_size,
             taints=[oci.container_engine.VirtualNodePoolTaintArgs(
-                effect=var["virtual_node_pool_taints_effect"],
-                key=var["virtual_node_pool_taints_key"],
-                value=var["virtual_node_pool_taints_value"],
+                effect=virtual_node_pool_taints_effect,
+                key=virtual_node_pool_taints_key,
+                value=virtual_node_pool_taints_value,
             )],
             virtual_node_tags=oci.container_engine.VirtualNodePoolVirtualNodeTagsArgs(
                 defined_tags={

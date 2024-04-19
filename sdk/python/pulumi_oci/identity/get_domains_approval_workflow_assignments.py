@@ -210,14 +210,14 @@ def get_domains_approval_workflow_assignments(approval_workflow_assignment_count
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_assignments = oci.Identity.get_domains_approval_workflow_assignments(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        approval_workflow_assignment_count=var["approval_workflow_assignment_approval_workflow_assignment_count"],
-        approval_workflow_assignment_filter=var["approval_workflow_assignment_approval_workflow_assignment_filter"],
+    test_approval_workflow_assignments = oci.Identity.get_domains_approval_workflow_assignments(idcs_endpoint=test_domain["url"],
+        approval_workflow_assignment_count=approval_workflow_assignment_approval_workflow_assignment_count,
+        approval_workflow_assignment_filter=approval_workflow_assignment_approval_workflow_assignment_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_assignment_authorization"],
-        resource_type_schema_version=var["approval_workflow_assignment_resource_type_schema_version"],
-        start_index=var["approval_workflow_assignment_start_index"])
+        authorization=approval_workflow_assignment_authorization,
+        resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version,
+        start_index=approval_workflow_assignment_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_approval_workflow_assignments_output(approval_workflow_assignmen
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_assignments = oci.Identity.get_domains_approval_workflow_assignments(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        approval_workflow_assignment_count=var["approval_workflow_assignment_approval_workflow_assignment_count"],
-        approval_workflow_assignment_filter=var["approval_workflow_assignment_approval_workflow_assignment_filter"],
+    test_approval_workflow_assignments = oci.Identity.get_domains_approval_workflow_assignments(idcs_endpoint=test_domain["url"],
+        approval_workflow_assignment_count=approval_workflow_assignment_approval_workflow_assignment_count,
+        approval_workflow_assignment_filter=approval_workflow_assignment_approval_workflow_assignment_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_assignment_authorization"],
-        resource_type_schema_version=var["approval_workflow_assignment_resource_type_schema_version"],
-        start_index=var["approval_workflow_assignment_start_index"])
+        authorization=approval_workflow_assignment_authorization,
+        resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version,
+        start_index=approval_workflow_assignment_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

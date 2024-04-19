@@ -360,14 +360,14 @@ class SecurityZone(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_security_zone = oci.cloud_guard.SecurityZone("testSecurityZone",
-            compartment_id=var["compartment_id"],
-            display_name=var["security_zone_display_name"],
-            security_zone_recipe_id=oci_cloud_guard_security_zone_recipe["test_security_zone_recipe"]["id"],
+        test_security_zone = oci.cloud_guard.SecurityZone("test_security_zone",
+            compartment_id=compartment_id,
+            display_name=security_zone_display_name,
+            security_zone_recipe_id=test_security_zone_recipe["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["security_zone_description"],
+            description=security_zone_description,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -415,14 +415,14 @@ class SecurityZone(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_security_zone = oci.cloud_guard.SecurityZone("testSecurityZone",
-            compartment_id=var["compartment_id"],
-            display_name=var["security_zone_display_name"],
-            security_zone_recipe_id=oci_cloud_guard_security_zone_recipe["test_security_zone_recipe"]["id"],
+        test_security_zone = oci.cloud_guard.SecurityZone("test_security_zone",
+            compartment_id=compartment_id,
+            display_name=security_zone_display_name,
+            security_zone_recipe_id=test_security_zone_recipe["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["security_zone_description"],
+            description=security_zone_description,
             freeform_tags={
                 "bar-key": "value",
             })

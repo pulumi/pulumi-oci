@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasePreferredCredential = oci.Database.getManagedPreferredCredential({
- *     credentialName: _var.managed_database_preferred_credential_credential_name,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     credentialName: managedDatabasePreferredCredentialCredentialName,
+ *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,8 +106,8 @@ export interface GetManagedPreferredCredentialResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasePreferredCredential = oci.Database.getManagedPreferredCredential({
- *     credentialName: _var.managed_database_preferred_credential_credential_name,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     credentialName: managedDatabasePreferredCredentialCredentialName,
+ *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

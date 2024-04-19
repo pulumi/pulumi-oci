@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalDbSystemConnector = new ExternalDbSystemConnector(&#34;testExternalDbSystemConnector&#34;, ExternalDbSystemConnectorArgs.builder()        
- *             .connectorType(var_.external_db_system_connector_connector_type())
- *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
- *             .displayName(var_.external_db_system_connector_display_name())
+ *             .connectorType(externalDbSystemConnectorConnectorType)
+ *             .externalDbSystemId(testExternalDbSystem.id())
+ *             .displayName(externalDbSystemConnectorDisplayName)
  *             .build());
  * 
  *     }

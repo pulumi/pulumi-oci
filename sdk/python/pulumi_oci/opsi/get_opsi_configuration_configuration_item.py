@@ -127,11 +127,11 @@ def get_opsi_configuration_configuration_item(compartment_id: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configuration_configuration_item = oci.Opsi.get_opsi_configuration_configuration_item(compartment_id=var["compartment_id"],
-        config_item_fields=var["opsi_configuration_configuration_item_config_item_field"],
-        config_items_applicable_contexts=var["opsi_configuration_configuration_item_config_items_applicable_context"],
-        name=var["opsi_configuration_configuration_item_name"],
-        opsi_config_type=var["opsi_configuration_configuration_item_opsi_config_type"])
+    test_opsi_configuration_configuration_item = oci.Opsi.get_opsi_configuration_configuration_item(compartment_id=compartment_id,
+        config_item_fields=opsi_configuration_configuration_item_config_item_field,
+        config_items_applicable_contexts=opsi_configuration_configuration_item_config_items_applicable_context,
+        name=opsi_configuration_configuration_item_name,
+        opsi_config_type=opsi_configuration_configuration_item_opsi_config_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,11 +181,11 @@ def get_opsi_configuration_configuration_item_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configuration_configuration_item = oci.Opsi.get_opsi_configuration_configuration_item(compartment_id=var["compartment_id"],
-        config_item_fields=var["opsi_configuration_configuration_item_config_item_field"],
-        config_items_applicable_contexts=var["opsi_configuration_configuration_item_config_items_applicable_context"],
-        name=var["opsi_configuration_configuration_item_name"],
-        opsi_config_type=var["opsi_configuration_configuration_item_opsi_config_type"])
+    test_opsi_configuration_configuration_item = oci.Opsi.get_opsi_configuration_configuration_item(compartment_id=compartment_id,
+        config_item_fields=opsi_configuration_configuration_item_config_item_field,
+        config_items_applicable_contexts=opsi_configuration_configuration_item_config_items_applicable_context,
+        name=opsi_configuration_configuration_item_name,
+        opsi_config_type=opsi_configuration_configuration_item_opsi_config_type)
     ```
     <!--End PulumiCodeChooser -->
 

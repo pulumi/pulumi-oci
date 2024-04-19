@@ -190,12 +190,12 @@ def get_domains_my_pending_approvals(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_pending_approvals = oci.Identity.get_domains_my_pending_approvals(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_pending_approval_count=var["my_pending_approval_my_pending_approval_count"],
-        my_pending_approval_filter=var["my_pending_approval_my_pending_approval_filter"],
-        authorization=var["my_pending_approval_authorization"],
-        resource_type_schema_version=var["my_pending_approval_resource_type_schema_version"],
-        start_index=var["my_pending_approval_start_index"])
+    test_my_pending_approvals = oci.Identity.get_domains_my_pending_approvals(idcs_endpoint=test_domain["url"],
+        my_pending_approval_count=my_pending_approval_my_pending_approval_count,
+        my_pending_approval_filter=my_pending_approval_my_pending_approval_filter,
+        authorization=my_pending_approval_authorization,
+        resource_type_schema_version=my_pending_approval_resource_type_schema_version,
+        start_index=my_pending_approval_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -260,12 +260,12 @@ def get_domains_my_pending_approvals_output(authorization: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_my_pending_approvals = oci.Identity.get_domains_my_pending_approvals(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_pending_approval_count=var["my_pending_approval_my_pending_approval_count"],
-        my_pending_approval_filter=var["my_pending_approval_my_pending_approval_filter"],
-        authorization=var["my_pending_approval_authorization"],
-        resource_type_schema_version=var["my_pending_approval_resource_type_schema_version"],
-        start_index=var["my_pending_approval_start_index"])
+    test_my_pending_approvals = oci.Identity.get_domains_my_pending_approvals(idcs_endpoint=test_domain["url"],
+        my_pending_approval_count=my_pending_approval_my_pending_approval_count,
+        my_pending_approval_filter=my_pending_approval_my_pending_approval_filter,
+        authorization=my_pending_approval_authorization,
+        resource_type_schema_version=my_pending_approval_resource_type_schema_version,
+        start_index=my_pending_approval_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

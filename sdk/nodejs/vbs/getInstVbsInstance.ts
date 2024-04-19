@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVbsInstance = oci.Vbs.getInstVbsInstance({
- *     vbsInstanceId: oci_vbs_inst_vbs_instance.test_vbs_instance.id,
+ *     vbsInstanceId: testVbsInstanceOciVbsInstVbsInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,7 +116,7 @@ export interface GetInstVbsInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVbsInstance = oci.Vbs.getInstVbsInstance({
- *     vbsInstanceId: oci_vbs_inst_vbs_instance.test_vbs_instance.id,
+ *     vbsInstanceId: testVbsInstanceOciVbsInstVbsInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

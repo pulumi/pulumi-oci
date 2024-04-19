@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMySmtpCredentials = Oci.Identity.GetDomainsMySmtpCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MySmtpCredentialCount = @var.My_smtp_credential_my_smtp_credential_count,
-        ///         MySmtpCredentialFilter = @var.My_smtp_credential_my_smtp_credential_filter,
-        ///         Authorization = @var.My_smtp_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_smtp_credential_resource_type_schema_version,
-        ///         StartIndex = @var.My_smtp_credential_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySmtpCredentialCount = mySmtpCredentialMySmtpCredentialCount,
+        ///         MySmtpCredentialFilter = mySmtpCredentialMySmtpCredentialFilter,
+        ///         Authorization = mySmtpCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = mySmtpCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = mySmtpCredentialStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMySmtpCredentials = Oci.Identity.GetDomainsMySmtpCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MySmtpCredentialCount = @var.My_smtp_credential_my_smtp_credential_count,
-        ///         MySmtpCredentialFilter = @var.My_smtp_credential_my_smtp_credential_filter,
-        ///         Authorization = @var.My_smtp_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_smtp_credential_resource_type_schema_version,
-        ///         StartIndex = @var.My_smtp_credential_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySmtpCredentialCount = mySmtpCredentialMySmtpCredentialCount,
+        ///         MySmtpCredentialFilter = mySmtpCredentialMySmtpCredentialFilter,
+        ///         Authorization = mySmtpCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = mySmtpCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = mySmtpCredentialStartIndex,
         ///     });
         /// 
         /// });

@@ -32,14 +32,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetMysqlDbSystems(ctx, &mysql.GetMysqlDbSystemsArgs{
-//				CompartmentId:             _var.Compartment_id,
-//				ConfigurationId:           pulumi.StringRef(_var.Mysql_configuration_id),
-//				DatabaseManagements:       _var.Mysql_db_system_database_management,
-//				DbSystemId:                pulumi.StringRef(oci_mysql_mysql_db_system.Test_db_system.Id),
-//				DisplayName:               pulumi.StringRef(_var.Mysql_db_system_display_name),
-//				IsHeatWaveClusterAttached: pulumi.BoolRef(_var.Mysql_db_system_is_heat_wave_cluster_attached),
-//				IsUpToDate:                pulumi.BoolRef(_var.Mysql_db_system_is_up_to_date),
-//				State:                     pulumi.StringRef(_var.Mysql_db_system_state),
+//				CompartmentId:             compartmentId,
+//				ConfigurationId:           pulumi.StringRef(mysqlConfigurationId),
+//				DatabaseManagements:       mysqlDbSystemDatabaseManagement,
+//				DbSystemId:                pulumi.StringRef(testDbSystem.Id),
+//				DisplayName:               pulumi.StringRef(mysqlDbSystemDisplayName),
+//				IsHeatWaveClusterAttached: pulumi.BoolRef(mysqlDbSystemIsHeatWaveClusterAttached),
+//				IsUpToDate:                pulumi.BoolRef(mysqlDbSystemIsUpToDate),
+//				State:                     pulumi.StringRef(mysqlDbSystemState),
 //			}, nil)
 //			if err != nil {
 //				return err

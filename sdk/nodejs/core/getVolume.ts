@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVolume = oci.Core.getVolume({
- *     volumeId: oci_core_volume.test_volume.id,
+ *     volumeId: testVolumeOciCoreVolume.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -146,7 +146,7 @@ export interface GetVolumeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVolume = oci.Core.getVolume({
- *     volumeId: oci_core_volume.test_volume.id,
+ *     volumeId: testVolumeOciCoreVolume.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

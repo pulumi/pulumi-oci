@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTenancy = oci.Identity.getTenancy({
- *     tenancyId: _var.tenancy_ocid,
+ *     tenancyId: tenancyOcid,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -87,7 +87,7 @@ export interface GetTenancyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTenancy = oci.Identity.getTenancy({
- *     tenancyId: _var.tenancy_ocid,
+ *     tenancyId: tenancyOcid,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

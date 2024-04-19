@@ -25,16 +25,16 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testEnterpriseManagerBridge = new Oci.Opsi.EnterpriseManagerBridge("testEnterpriseManagerBridge", new()
+    ///     var testEnterpriseManagerBridge = new Oci.Opsi.EnterpriseManagerBridge("test_enterprise_manager_bridge", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Enterprise_manager_bridge_display_name,
-    ///         ObjectStorageBucketName = oci_objectstorage_bucket.Test_bucket.Name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = enterpriseManagerBridgeDisplayName,
+    ///         ObjectStorageBucketName = testBucket.Name,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Enterprise_manager_bridge_description,
+    ///         Description = enterpriseManagerBridgeDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

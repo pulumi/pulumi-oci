@@ -34,13 +34,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetDedicatedVmHosts(ctx, &core.GetDedicatedVmHostsArgs{
-//				CompartmentId:                            _var.Compartment_id,
-//				AvailabilityDomain:                       pulumi.StringRef(_var.Dedicated_vm_host_availability_domain),
-//				DisplayName:                              pulumi.StringRef(_var.Dedicated_vm_host_display_name),
-//				InstanceShapeName:                        pulumi.StringRef(_var.Dedicated_vm_host_instance_shape_name),
-//				RemainingMemoryInGbsGreaterThanOrEqualTo: pulumi.Float64Ref(_var.Dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to),
-//				RemainingOcpusGreaterThanOrEqualTo:       pulumi.Float64Ref(_var.Dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to),
-//				State:                                    pulumi.StringRef(_var.Dedicated_vm_host_state),
+//				CompartmentId:                            compartmentId,
+//				AvailabilityDomain:                       pulumi.StringRef(dedicatedVmHostAvailabilityDomain),
+//				DisplayName:                              pulumi.StringRef(dedicatedVmHostDisplayName),
+//				InstanceShapeName:                        pulumi.StringRef(dedicatedVmHostInstanceShapeName),
+//				RemainingMemoryInGbsGreaterThanOrEqualTo: pulumi.Float64Ref(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo),
+//				RemainingOcpusGreaterThanOrEqualTo:       pulumi.Float64Ref(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo),
+//				State:                                    pulumi.StringRef(dedicatedVmHostState),
 //			}, nil)
 //			if err != nil {
 //				return err

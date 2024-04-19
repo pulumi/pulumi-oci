@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Nosql.GetTables(ctx, &nosql.GetTablesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Table_name),
-//				State:         pulumi.StringRef(_var.Table_state),
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(tableName),
+//				State:         pulumi.StringRef(tableState),
 //			}, nil)
 //			if err != nil {
 //				return err

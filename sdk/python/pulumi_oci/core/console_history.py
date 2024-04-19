@@ -272,12 +272,12 @@ class ConsoleHistory(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_console_history = oci.core.ConsoleHistory("testConsoleHistory",
-            instance_id=oci_core_instance["test_instance"]["id"],
+        test_console_history = oci.core.ConsoleHistory("test_console_history",
+            instance_id=test_instance["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["console_history_display_name"],
+            display_name=console_history_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -337,12 +337,12 @@ class ConsoleHistory(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_console_history = oci.core.ConsoleHistory("testConsoleHistory",
-            instance_id=oci_core_instance["test_instance"]["id"],
+        test_console_history = oci.core.ConsoleHistory("test_console_history",
+            instance_id=test_instance["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["console_history_display_name"],
+            display_name=console_history_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

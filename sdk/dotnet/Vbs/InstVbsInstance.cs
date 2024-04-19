@@ -25,10 +25,11 @@ namespace Pulumi.Oci.Vbs
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVbsInstance = new Oci.Vbs.InstVbsInstance("testVbsInstance", new()
+    ///     var testVbsInstance = new Oci.Vbs.InstVbsInstance("test_vbs_instance", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Vbs_instance_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = vbsInstanceDisplayName,
+    ///         Name = vbsInstanceName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -37,9 +38,9 @@ namespace Pulumi.Oci.Vbs
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IdcsAccessToken = @var.Vbs_instance_idcs_access_token,
-    ///         IsResourceUsageAgreementGranted = @var.Vbs_instance_is_resource_usage_agreement_granted,
-    ///         ResourceCompartmentId = @var.Resource_compartment_id,
+    ///         IdcsAccessToken = vbsInstanceIdcsAccessToken,
+    ///         IsResourceUsageAgreementGranted = vbsInstanceIsResourceUsageAgreementGranted,
+    ///         ResourceCompartmentId = resourceCompartmentId,
     ///     });
     /// 
     /// });

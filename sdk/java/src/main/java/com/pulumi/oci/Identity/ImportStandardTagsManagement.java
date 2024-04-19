@@ -44,8 +44,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testImportStandardTagsManagement = new ImportStandardTagsManagement(&#34;testImportStandardTagsManagement&#34;, ImportStandardTagsManagementArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .standardTagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+ *             .compartmentId(compartmentId)
+ *             .standardTagNamespaceName(testTagNamespace.name())
  *             .build());
  * 
  *     }

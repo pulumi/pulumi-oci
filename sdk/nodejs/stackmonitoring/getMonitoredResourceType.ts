@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResourceType = oci.StackMonitoring.getMonitoredResourceType({
- *     monitoredResourceTypeId: oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type.id,
+ *     monitoredResourceTypeId: testMonitoredResourceTypeOciStackMonitoringMonitoredResourceType.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetMonitoredResourceTypeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResourceType = oci.StackMonitoring.getMonitoredResourceType({
- *     monitoredResourceTypeId: oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type.id,
+ *     monitoredResourceTypeId: testMonitoredResourceTypeOciStackMonitoringMonitoredResourceType.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

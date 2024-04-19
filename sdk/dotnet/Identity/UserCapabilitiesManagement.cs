@@ -27,9 +27,9 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUserCapabilitiesManagement = new Oci.Identity.UserCapabilitiesManagement("testUserCapabilitiesManagement", new()
+    ///     var testUserCapabilitiesManagement = new Oci.Identity.UserCapabilitiesManagement("test_user_capabilities_management", new()
     ///     {
-    ///         UserId = oci_identity_user.User1.Id,
+    ///         UserId = user1.Id,
     ///         CanUseApiKeys = true,
     ///         CanUseAuthTokens = true,
     ///         CanUseConsolePassword = false,

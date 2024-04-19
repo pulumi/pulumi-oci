@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GenerativeAi.GetDedicatedAiClusters(ctx, &generativeai.GetDedicatedAiClustersArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Dedicated_ai_cluster_display_name),
-//				Id:            pulumi.StringRef(_var.Dedicated_ai_cluster_id),
-//				State:         pulumi.StringRef(_var.Dedicated_ai_cluster_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(dedicatedAiClusterDisplayName),
+//				Id:            pulumi.StringRef(dedicatedAiClusterId),
+//				State:         pulumi.StringRef(dedicatedAiClusterState),
 //			}, nil)
 //			if err != nil {
 //				return err

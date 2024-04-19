@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceEffectiveProperties = oci.LogAnalytics.getNamespaceEffectiveProperties({
- *     namespace: _var.namespace_effective_property_namespace,
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
- *     entityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
- *     isIncludePatterns: _var.namespace_effective_property_is_include_patterns,
- *     name: _var.namespace_effective_property_name,
- *     patternId: oci_log_analytics_pattern.test_pattern.id,
- *     sourceName: _var.namespace_effective_property_source_name,
+ *     namespace: namespaceEffectivePropertyNamespace,
+ *     agentId: testAgent.id,
+ *     entityId: testLogAnalyticsEntity.id,
+ *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
+ *     name: namespaceEffectivePropertyName,
+ *     patternId: testPattern.id,
+ *     sourceName: namespaceEffectivePropertySourceName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,13 +117,13 @@ export interface GetNamespaceEffectivePropertiesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceEffectiveProperties = oci.LogAnalytics.getNamespaceEffectiveProperties({
- *     namespace: _var.namespace_effective_property_namespace,
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
- *     entityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
- *     isIncludePatterns: _var.namespace_effective_property_is_include_patterns,
- *     name: _var.namespace_effective_property_name,
- *     patternId: oci_log_analytics_pattern.test_pattern.id,
- *     sourceName: _var.namespace_effective_property_source_name,
+ *     namespace: namespaceEffectivePropertyNamespace,
+ *     agentId: testAgent.id,
+ *     entityId: testLogAnalyticsEntity.id,
+ *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
+ *     name: namespaceEffectivePropertyName,
+ *     patternId: testPattern.id,
+ *     sourceName: namespaceEffectivePropertySourceName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

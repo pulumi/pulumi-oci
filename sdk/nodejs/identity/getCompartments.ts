@@ -36,11 +36,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCompartments = oci.Identity.getCompartments({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.compartment_access_level,
- *     compartmentIdInSubtree: _var.compartment_compartment_id_in_subtree,
- *     name: _var.compartment_name,
- *     state: _var.compartment_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: compartmentAccessLevel,
+ *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree,
+ *     name: compartmentName,
+ *     state: compartmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -145,11 +145,11 @@ export interface GetCompartmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCompartments = oci.Identity.getCompartments({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.compartment_access_level,
- *     compartmentIdInSubtree: _var.compartment_compartment_id_in_subtree,
- *     name: _var.compartment_name,
- *     state: _var.compartment_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: compartmentAccessLevel,
+ *     compartmentIdInSubtree: compartmentCompartmentIdInSubtree,
+ *     name: compartmentName,
+ *     state: compartmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

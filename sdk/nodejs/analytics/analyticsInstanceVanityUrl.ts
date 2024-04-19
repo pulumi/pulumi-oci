@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstanceVanityUrl = new oci.analytics.AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl", {
- *     analyticsInstanceId: oci_analytics_analytics_instance.test_analytics_instance.id,
- *     caCertificate: _var.analytics_instance_vanity_url_ca_certificate,
- *     hosts: _var.analytics_instance_vanity_url_hosts,
- *     privateKey: _var.analytics_instance_vanity_url_private_key,
- *     publicCertificate: _var.analytics_instance_vanity_url_public_certificate,
- *     description: _var.analytics_instance_vanity_url_description,
- *     passphrase: _var.analytics_instance_vanity_url_passphrase,
+ * const testAnalyticsInstanceVanityUrl = new oci.analytics.AnalyticsInstanceVanityUrl("test_analytics_instance_vanity_url", {
+ *     analyticsInstanceId: testAnalyticsInstance.id,
+ *     caCertificate: analyticsInstanceVanityUrlCaCertificate,
+ *     hosts: analyticsInstanceVanityUrlHosts,
+ *     privateKey: analyticsInstanceVanityUrlPrivateKey,
+ *     publicCertificate: analyticsInstanceVanityUrlPublicCertificate,
+ *     description: analyticsInstanceVanityUrlDescription,
+ *     passphrase: analyticsInstanceVanityUrlPassphrase,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

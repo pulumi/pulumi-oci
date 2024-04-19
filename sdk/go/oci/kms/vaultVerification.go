@@ -35,9 +35,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewVaultVerification(ctx, "testReplication", &Kms.VaultVerificationArgs{
-//				VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
-//				ReplicaRegion: pulumi.Any(_var.Replica_region),
+//			_, err := Kms.NewVaultVerification(ctx, "test_replication", &Kms.VaultVerificationArgs{
+//				VaultId:       pulumi.Any(testVault.Id),
+//				ReplicaRegion: pulumi.Any(replicaRegion),
 //			})
 //			if err != nil {
 //				return err

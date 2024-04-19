@@ -311,17 +311,17 @@ class ComputeCapacityTopology(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_capacity_topology = oci.core.ComputeCapacityTopology("testComputeCapacityTopology",
-            availability_domain=var["compute_capacity_topology_availability_domain"],
+        test_compute_capacity_topology = oci.core.ComputeCapacityTopology("test_compute_capacity_topology",
+            availability_domain=compute_capacity_topology_availability_domain,
             capacity_source=oci.core.ComputeCapacityTopologyCapacitySourceArgs(
-                capacity_type=var["compute_capacity_topology_capacity_source_capacity_type"],
-                compartment_id=var["compartment_id"],
+                capacity_type=compute_capacity_topology_capacity_source_capacity_type,
+                compartment_id=compartment_id,
             ),
-            compartment_id=var["compartment_id"],
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["compute_capacity_topology_display_name"],
+            display_name=compute_capacity_topology_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -372,17 +372,17 @@ class ComputeCapacityTopology(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_capacity_topology = oci.core.ComputeCapacityTopology("testComputeCapacityTopology",
-            availability_domain=var["compute_capacity_topology_availability_domain"],
+        test_compute_capacity_topology = oci.core.ComputeCapacityTopology("test_compute_capacity_topology",
+            availability_domain=compute_capacity_topology_availability_domain,
             capacity_source=oci.core.ComputeCapacityTopologyCapacitySourceArgs(
-                capacity_type=var["compute_capacity_topology_capacity_source_capacity_type"],
-                compartment_id=var["compartment_id"],
+                capacity_type=compute_capacity_topology_capacity_source_capacity_type,
+                compartment_id=compartment_id,
             ),
-            compartment_id=var["compartment_id"],
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["compute_capacity_topology_display_name"],
+            display_name=compute_capacity_topology_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

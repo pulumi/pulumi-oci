@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCustomerSecretKeys = oci.Identity.getDomainsCustomerSecretKeys({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     customerSecretKeyCount: _var.customer_secret_key_customer_secret_key_count,
- *     customerSecretKeyFilter: _var.customer_secret_key_customer_secret_key_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     customerSecretKeyCount: customerSecretKeyCustomerSecretKeyCount,
+ *     customerSecretKeyFilter: customerSecretKeyCustomerSecretKeyFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.customer_secret_key_authorization,
- *     resourceTypeSchemaVersion: _var.customer_secret_key_resource_type_schema_version,
- *     startIndex: _var.customer_secret_key_start_index,
+ *     authorization: customerSecretKeyAuthorization,
+ *     resourceTypeSchemaVersion: customerSecretKeyResourceTypeSchemaVersion,
+ *     startIndex: customerSecretKeyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsCustomerSecretKeysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCustomerSecretKeys = oci.Identity.getDomainsCustomerSecretKeys({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     customerSecretKeyCount: _var.customer_secret_key_customer_secret_key_count,
- *     customerSecretKeyFilter: _var.customer_secret_key_customer_secret_key_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     customerSecretKeyCount: customerSecretKeyCustomerSecretKeyCount,
+ *     customerSecretKeyFilter: customerSecretKeyCustomerSecretKeyFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.customer_secret_key_authorization,
- *     resourceTypeSchemaVersion: _var.customer_secret_key_resource_type_schema_version,
- *     startIndex: _var.customer_secret_key_start_index,
+ *     authorization: customerSecretKeyAuthorization,
+ *     resourceTypeSchemaVersion: customerSecretKeyResourceTypeSchemaVersion,
+ *     startIndex: customerSecretKeyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

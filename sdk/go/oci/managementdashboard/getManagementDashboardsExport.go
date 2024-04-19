@@ -33,7 +33,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ManagementDashboard.GetManagementDashboardsExport(ctx, &managementdashboard.GetManagementDashboardsExportArgs{
-//				ExportDashboardId: oci_management_dashboard_export_dashboard.Test_export_dashboard.Id,
+//				ExportDashboardId: testExportDashboard.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -314,9 +314,10 @@ class Compartment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compartment = oci.identity.Compartment("testCompartment",
-            compartment_id=var["compartment_id"],
-            description=var["compartment_description"],
+        test_compartment = oci.identity.Compartment("test_compartment",
+            compartment_id=compartment_id,
+            description=compartment_description,
+            name=compartment_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -360,9 +361,10 @@ class Compartment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compartment = oci.identity.Compartment("testCompartment",
-            compartment_id=var["compartment_id"],
-            description=var["compartment_description"],
+        test_compartment = oci.identity.Compartment("test_compartment",
+            compartment_id=compartment_id,
+            description=compartment_description,
+            name=compartment_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

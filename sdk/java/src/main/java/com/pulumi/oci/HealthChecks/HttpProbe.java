@@ -50,15 +50,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testHttpProbe = new HttpProbe(&#34;testHttpProbe&#34;, HttpProbeArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .protocol(var_.http_probe_protocol())
- *             .targets(var_.http_probe_targets())
- *             .headers(var_.http_probe_headers())
- *             .method(var_.http_probe_method())
- *             .path(var_.http_probe_path())
- *             .port(var_.http_probe_port())
- *             .timeoutInSeconds(var_.http_probe_timeout_in_seconds())
- *             .vantagePointNames(var_.http_probe_vantage_point_names())
+ *             .compartmentId(compartmentId)
+ *             .protocol(httpProbeProtocol)
+ *             .targets(httpProbeTargets)
+ *             .headers(httpProbeHeaders)
+ *             .method(httpProbeMethod)
+ *             .path(httpProbePath)
+ *             .port(httpProbePort)
+ *             .timeoutInSeconds(httpProbeTimeoutInSeconds)
+ *             .vantagePointNames(httpProbeVantagePointNames)
  *             .build());
  * 
  *     }

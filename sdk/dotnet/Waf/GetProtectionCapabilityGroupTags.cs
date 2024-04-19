@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testProtectionCapabilityGroupTags = Oci.Waf.GetProtectionCapabilityGroupTags.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Protection_capability_group_tag_name,
-        ///         Type = @var.Protection_capability_group_tag_type,
+        ///         CompartmentId = compartmentId,
+        ///         Name = protectionCapabilityGroupTagName,
+        ///         Type = protectionCapabilityGroupTagType,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testProtectionCapabilityGroupTags = Oci.Waf.GetProtectionCapabilityGroupTags.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Protection_capability_group_tag_name,
-        ///         Type = @var.Protection_capability_group_tag_type,
+        ///         CompartmentId = compartmentId,
+        ///         Name = protectionCapabilityGroupTagName,
+        ///         Type = protectionCapabilityGroupTagType,
         ///     });
         /// 
         /// });

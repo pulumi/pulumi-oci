@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetListingTaxes(ctx, &marketplace.GetListingTaxesArgs{
-//				ListingId:     oci_marketplace_listing.Test_listing.Id,
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				ListingId:     testListing.Id,
+//				CompartmentId: pulumi.StringRef(compartmentId),
 //			}, nil)
 //			if err != nil {
 //				return err

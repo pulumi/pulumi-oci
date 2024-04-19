@@ -404,38 +404,38 @@ class DiscoveryJob(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_discovery_job = oci.stack_monitoring.DiscoveryJob("testDiscoveryJob",
-            compartment_id=var["compartment_id"],
+        test_discovery_job = oci.stack_monitoring.DiscoveryJob("test_discovery_job",
+            compartment_id=compartment_id,
             discovery_details=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsArgs(
-                agent_id=var["management_agent_id"],
+                agent_id=management_agent_id,
                 properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs(
-                    properties_map=var["discovery_job_discovery_details_properties_properties_map"],
+                    properties_map=discovery_job_discovery_details_properties_properties_map,
                 ),
-                resource_name=var["discovery_job_discovery_details_resource_name"],
-                resource_type=var["discovery_job_discovery_details_resource_type"],
+                resource_name=discovery_job_discovery_details_resource_name,
+                resource_type=discovery_job_discovery_details_resource_type,
                 credentials=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs(
                     items=[oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs(
-                        credential_name=var["discovery_job_discovery_details_credentials_items_credential_name"],
-                        credential_type=var["discovery_job_discovery_details_credentials_items_credential_type"],
+                        credential_name=discovery_job_discovery_details_credentials_items_credential_name,
+                        credential_type=discovery_job_discovery_details_credentials_items_credential_type,
                         properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs(
-                            properties_map=var["discovery_job_discovery_details_credentials_items_properties_properties_map"],
+                            properties_map=discovery_job_discovery_details_credentials_items_properties_properties_map,
                         ),
                     )],
                 ),
-                license=var["discovery_job_discovery_details_license"],
+                license=discovery_job_discovery_details_license,
                 tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
-                    properties_map=var["discovery_job_discovery_details_tags_properties_map"],
+                    properties_map=discovery_job_discovery_details_tags_properties_map,
                 ),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            discovery_client=var["discovery_job_discovery_client"],
-            discovery_type=var["discovery_job_discovery_type"],
+            discovery_client=discovery_job_discovery_client,
+            discovery_type=discovery_job_discovery_type,
             freeform_tags={
                 "bar-key": "value",
             },
-            should_propagate_tags_to_discovered_resources=var["discovery_job_should_propagate_tags_to_discovered_resources"])
+            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -479,38 +479,38 @@ class DiscoveryJob(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_discovery_job = oci.stack_monitoring.DiscoveryJob("testDiscoveryJob",
-            compartment_id=var["compartment_id"],
+        test_discovery_job = oci.stack_monitoring.DiscoveryJob("test_discovery_job",
+            compartment_id=compartment_id,
             discovery_details=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsArgs(
-                agent_id=var["management_agent_id"],
+                agent_id=management_agent_id,
                 properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs(
-                    properties_map=var["discovery_job_discovery_details_properties_properties_map"],
+                    properties_map=discovery_job_discovery_details_properties_properties_map,
                 ),
-                resource_name=var["discovery_job_discovery_details_resource_name"],
-                resource_type=var["discovery_job_discovery_details_resource_type"],
+                resource_name=discovery_job_discovery_details_resource_name,
+                resource_type=discovery_job_discovery_details_resource_type,
                 credentials=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs(
                     items=[oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs(
-                        credential_name=var["discovery_job_discovery_details_credentials_items_credential_name"],
-                        credential_type=var["discovery_job_discovery_details_credentials_items_credential_type"],
+                        credential_name=discovery_job_discovery_details_credentials_items_credential_name,
+                        credential_type=discovery_job_discovery_details_credentials_items_credential_type,
                         properties=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs(
-                            properties_map=var["discovery_job_discovery_details_credentials_items_properties_properties_map"],
+                            properties_map=discovery_job_discovery_details_credentials_items_properties_properties_map,
                         ),
                     )],
                 ),
-                license=var["discovery_job_discovery_details_license"],
+                license=discovery_job_discovery_details_license,
                 tags=oci.stack_monitoring.DiscoveryJobDiscoveryDetailsTagsArgs(
-                    properties_map=var["discovery_job_discovery_details_tags_properties_map"],
+                    properties_map=discovery_job_discovery_details_tags_properties_map,
                 ),
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            discovery_client=var["discovery_job_discovery_client"],
-            discovery_type=var["discovery_job_discovery_type"],
+            discovery_client=discovery_job_discovery_client,
+            discovery_type=discovery_job_discovery_type,
             freeform_tags={
                 "bar-key": "value",
             },
-            should_propagate_tags_to_discovered_resources=var["discovery_job_should_propagate_tags_to_discovered_resources"])
+            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources)
         ```
         <!--End PulumiCodeChooser -->
 

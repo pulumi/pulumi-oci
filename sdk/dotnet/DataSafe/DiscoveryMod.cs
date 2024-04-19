@@ -29,26 +29,26 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDiscoveryJob = new Oci.DataSafe.DiscoveryMod("testDiscoveryJob", new()
+    ///     var testDiscoveryJob = new Oci.DataSafe.DiscoveryMod("test_discovery_job", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+    ///         CompartmentId = compartmentId,
+    ///         SensitiveDataModelId = testSensitiveDataModel.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DiscoveryType = @var.Discovery_job_discovery_type,
-    ///         DisplayName = @var.Discovery_job_display_name,
+    ///         DiscoveryType = discoveryJobDiscoveryType,
+    ///         DisplayName = discoveryJobDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsAppDefinedRelationDiscoveryEnabled = @var.Discovery_job_is_app_defined_relation_discovery_enabled,
-    ///         IsIncludeAllSchemas = @var.Discovery_job_is_include_all_schemas,
-    ///         IsIncludeAllSensitiveTypes = @var.Discovery_job_is_include_all_sensitive_types,
-    ///         IsSampleDataCollectionEnabled = @var.Discovery_job_is_sample_data_collection_enabled,
-    ///         SchemasForDiscoveries = @var.Discovery_job_schemas_for_discovery,
-    ///         SensitiveTypeIdsForDiscoveries = @var.Discovery_job_sensitive_type_ids_for_discovery,
+    ///         IsAppDefinedRelationDiscoveryEnabled = discoveryJobIsAppDefinedRelationDiscoveryEnabled,
+    ///         IsIncludeAllSchemas = discoveryJobIsIncludeAllSchemas,
+    ///         IsIncludeAllSensitiveTypes = discoveryJobIsIncludeAllSensitiveTypes,
+    ///         IsSampleDataCollectionEnabled = discoveryJobIsSampleDataCollectionEnabled,
+    ///         SchemasForDiscoveries = discoveryJobSchemasForDiscovery,
+    ///         SensitiveTypeIdsForDiscoveries = discoveryJobSensitiveTypeIdsForDiscovery,
     ///     });
     /// 
     /// });

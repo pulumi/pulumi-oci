@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplication = new oci.kms.VaultVerification("testReplication", {
- *     vaultId: oci_kms_vault.test_vault.id,
- *     replicaRegion: _var.replica_region,
+ * const testReplication = new oci.kms.VaultVerification("test_replication", {
+ *     vaultId: testVault.id,
+ *     replicaRegion: replicaRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

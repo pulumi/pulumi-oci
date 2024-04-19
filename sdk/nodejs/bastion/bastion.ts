@@ -16,21 +16,22 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBastion = new oci.bastion.Bastion("testBastion", {
- *     bastionType: _var.bastion_bastion_type,
- *     compartmentId: _var.compartment_id,
- *     targetSubnetId: oci_core_subnet.test_subnet.id,
- *     clientCidrBlockAllowLists: _var.bastion_client_cidr_block_allow_list,
+ * const testBastion = new oci.bastion.Bastion("test_bastion", {
+ *     bastionType: bastionBastionType,
+ *     compartmentId: compartmentId,
+ *     targetSubnetId: testSubnet.id,
+ *     clientCidrBlockAllowLists: bastionClientCidrBlockAllowList,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     dnsProxyStatus: _var.bastion_dns_proxy_status,
+ *     dnsProxyStatus: bastionDnsProxyStatus,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     maxSessionTtlInSeconds: _var.bastion_max_session_ttl_in_seconds,
- *     phoneBookEntry: _var.bastion_phone_book_entry,
- *     staticJumpHostIpAddresses: _var.bastion_static_jump_host_ip_addresses,
+ *     maxSessionTtlInSeconds: bastionMaxSessionTtlInSeconds,
+ *     name: bastionName,
+ *     phoneBookEntry: bastionPhoneBookEntry,
+ *     staticJumpHostIpAddresses: bastionStaticJumpHostIpAddresses,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

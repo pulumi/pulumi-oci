@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetMysqlBackups(ctx, &mysql.GetMysqlBackupsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				BackupId:      pulumi.StringRef(oci_mysql_mysql_backup.Test_backup.Id),
-//				CreationType:  pulumi.StringRef(_var.Mysql_backup_creation_type),
-//				DbSystemId:    pulumi.StringRef(oci_mysql_mysql_db_system.Test_db_system.Id),
-//				DisplayName:   pulumi.StringRef(_var.Mysql_backup_display_name),
-//				State:         pulumi.StringRef(_var.Mysql_backup_state),
+//				CompartmentId: compartmentId,
+//				BackupId:      pulumi.StringRef(testBackup.Id),
+//				CreationType:  pulumi.StringRef(mysqlBackupCreationType),
+//				DbSystemId:    pulumi.StringRef(testDbSystem.Id),
+//				DisplayName:   pulumi.StringRef(mysqlBackupDisplayName),
+//				State:         pulumi.StringRef(mysqlBackupState),
 //			}, nil)
 //			if err != nil {
 //				return err

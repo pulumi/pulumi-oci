@@ -38,46 +38,46 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVolume = new Oci.Core.Volume("testVolume", new()
+    ///     var testVolume = new Oci.Core.Volume("test_volume", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         AutotunePolicies = new[]
     ///         {
     ///             new Oci.Core.Inputs.VolumeAutotunePolicyArgs
     ///             {
-    ///                 AutotuneType = @var.Volume_autotune_policies_autotune_type,
-    ///                 MaxVpusPerGb = @var.Volume_autotune_policies_max_vpus_per_gb,
+    ///                 AutotuneType = volumeAutotunePoliciesAutotuneType,
+    ///                 MaxVpusPerGb = volumeAutotunePoliciesMaxVpusPerGb,
     ///             },
     ///         },
-    ///         AvailabilityDomain = @var.Volume_availability_domain,
-    ///         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
+    ///         AvailabilityDomain = volumeAvailabilityDomain,
+    ///         BackupPolicyId = testVolumeBackupPolicies.VolumeBackupPolicies[0].Id,
     ///         BlockVolumeReplicas = new[]
     ///         {
     ///             new Oci.Core.Inputs.VolumeBlockVolumeReplicaArgs
     ///             {
-    ///                 AvailabilityDomain = @var.Volume_block_volume_replicas_availability_domain,
-    ///                 DisplayName = @var.Volume_block_volume_replicas_display_name,
+    ///                 AvailabilityDomain = volumeBlockVolumeReplicasAvailabilityDomain,
+    ///                 DisplayName = volumeBlockVolumeReplicasDisplayName,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Volume_display_name,
+    ///         DisplayName = volumeDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsAutoTuneEnabled = @var.Volume_is_auto_tune_enabled,
-    ///         KmsKeyId = oci_kms_key.Test_key.Id,
-    ///         SizeInGbs = @var.Volume_size_in_gbs,
-    ///         SizeInMbs = @var.Volume_size_in_mbs,
+    ///         IsAutoTuneEnabled = volumeIsAutoTuneEnabled,
+    ///         KmsKeyId = testKey.Id,
+    ///         SizeInGbs = volumeSizeInGbs,
+    ///         SizeInMbs = volumeSizeInMbs,
     ///         SourceDetails = new Oci.Core.Inputs.VolumeSourceDetailsArgs
     ///         {
-    ///             Id = @var.Volume_source_details_id,
-    ///             Type = @var.Volume_source_details_type,
+    ///             Id = volumeSourceDetailsId,
+    ///             Type = volumeSourceDetailsType,
     ///         },
-    ///         VpusPerGb = @var.Volume_vpus_per_gb,
+    ///         VpusPerGb = volumeVpusPerGb,
     ///         BlockVolumeReplicasDeletion = true,
     ///     });
     /// 

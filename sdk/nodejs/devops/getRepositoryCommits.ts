@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryCommits = oci.DevOps.getRepositoryCommits({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     authorName: _var.repository_commit_author_name,
- *     commitMessage: _var.repository_commit_commit_message,
- *     excludeRefName: _var.repository_commit_exclude_ref_name,
- *     filePath: _var.repository_commit_file_path,
- *     refName: _var.repository_commit_ref_name,
- *     timestampGreaterThanOrEqualTo: _var.repository_commit_timestamp_greater_than_or_equal_to,
- *     timestampLessThanOrEqualTo: _var.repository_commit_timestamp_less_than_or_equal_to,
+ *     repositoryId: testRepository.id,
+ *     authorName: repositoryCommitAuthorName,
+ *     commitMessage: repositoryCommitCommitMessage,
+ *     excludeRefName: repositoryCommitExcludeRefName,
+ *     filePath: repositoryCommitFilePath,
+ *     refName: repositoryCommitRefName,
+ *     timestampGreaterThanOrEqualTo: repositoryCommitTimestampGreaterThanOrEqualTo,
+ *     timestampLessThanOrEqualTo: repositoryCommitTimestampLessThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -127,14 +127,14 @@ export interface GetRepositoryCommitsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryCommits = oci.DevOps.getRepositoryCommits({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     authorName: _var.repository_commit_author_name,
- *     commitMessage: _var.repository_commit_commit_message,
- *     excludeRefName: _var.repository_commit_exclude_ref_name,
- *     filePath: _var.repository_commit_file_path,
- *     refName: _var.repository_commit_ref_name,
- *     timestampGreaterThanOrEqualTo: _var.repository_commit_timestamp_greater_than_or_equal_to,
- *     timestampLessThanOrEqualTo: _var.repository_commit_timestamp_less_than_or_equal_to,
+ *     repositoryId: testRepository.id,
+ *     authorName: repositoryCommitAuthorName,
+ *     commitMessage: repositoryCommitCommitMessage,
+ *     excludeRefName: repositoryCommitExcludeRefName,
+ *     filePath: repositoryCommitFilePath,
+ *     refName: repositoryCommitRefName,
+ *     timestampGreaterThanOrEqualTo: repositoryCommitTimestampGreaterThanOrEqualTo,
+ *     timestampLessThanOrEqualTo: repositoryCommitTimestampLessThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

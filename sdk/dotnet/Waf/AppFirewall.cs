@@ -25,22 +25,22 @@ namespace Pulumi.Oci.Waf
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWebAppFirewall = new Oci.Waf.AppFirewall("testWebAppFirewall", new()
+    ///     var testWebAppFirewall = new Oci.Waf.AppFirewall("test_web_app_firewall", new()
     ///     {
-    ///         BackendType = @var.Web_app_firewall_backend_type,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+    ///         BackendType = webAppFirewallBackendType,
+    ///         CompartmentId = compartmentId,
+    ///         LoadBalancerId = testLoadBalancer.Id,
+    ///         WebAppFirewallPolicyId = testWebAppFirewallPolicy.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Web_app_firewall_display_name,
+    ///         DisplayName = webAppFirewallDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         SystemTags = @var.Web_app_firewall_system_tags,
+    ///         SystemTags = webAppFirewallSystemTags,
     ///     });
     /// 
     /// });

@@ -33,11 +33,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewMonitoredResourcesAssociateMonitoredResource(ctx, "testMonitoredResourcesAssociateMonitoredResource", &StackMonitoring.MonitoredResourcesAssociateMonitoredResourceArgs{
-//				AssociationType:       pulumi.Any(_var.Monitored_resources_associate_monitored_resource_association_type),
-//				CompartmentId:         pulumi.Any(_var.Compartment_id),
-//				DestinationResourceId: pulumi.Any(oci_stack_monitoring_destination_resource.Test_destination_resource.Id),
-//				SourceResourceId:      pulumi.Any(oci_stack_monitoring_source_resource.Test_source_resource.Id),
+//			_, err := StackMonitoring.NewMonitoredResourcesAssociateMonitoredResource(ctx, "test_monitored_resources_associate_monitored_resource", &StackMonitoring.MonitoredResourcesAssociateMonitoredResourceArgs{
+//				AssociationType:       pulumi.Any(monitoredResourcesAssociateMonitoredResourceAssociationType),
+//				CompartmentId:         pulumi.Any(compartmentId),
+//				DestinationResourceId: pulumi.Any(testDestinationResource.Id),
+//				SourceResourceId:      pulumi.Any(testSourceResource.Id),
 //			})
 //			if err != nil {
 //				return err

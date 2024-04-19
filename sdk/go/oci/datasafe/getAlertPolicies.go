@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAlertPolicies(ctx, &datasafe.GetAlertPoliciesArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				AccessLevel:                     pulumi.StringRef(_var.Alert_policy_access_level),
-//				AlertPolicyId:                   pulumi.StringRef(oci_data_safe_alert_policy.Test_alert_policy.Id),
-//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Alert_policy_compartment_id_in_subtree),
-//				DisplayName:                     pulumi.StringRef(_var.Alert_policy_display_name),
-//				IsUserDefined:                   pulumi.BoolRef(_var.Alert_policy_is_user_defined),
-//				State:                           pulumi.StringRef(_var.Alert_policy_state),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Alert_policy_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Alert_policy_time_created_less_than),
-//				Type:                            pulumi.StringRef(_var.Alert_policy_type),
+//				CompartmentId:                   compartmentId,
+//				AccessLevel:                     pulumi.StringRef(alertPolicyAccessLevel),
+//				AlertPolicyId:                   pulumi.StringRef(testAlertPolicy.Id),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(alertPolicyCompartmentIdInSubtree),
+//				DisplayName:                     pulumi.StringRef(alertPolicyDisplayName),
+//				IsUserDefined:                   pulumi.BoolRef(alertPolicyIsUserDefined),
+//				State:                           pulumi.StringRef(alertPolicyState),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(alertPolicyTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(alertPolicyTimeCreatedLessThan),
+//				Type:                            pulumi.StringRef(alertPolicyType),
 //			}, nil)
 //			if err != nil {
 //				return err

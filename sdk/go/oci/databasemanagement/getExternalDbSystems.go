@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalDbSystems(ctx, &databasemanagement.GetExternalDbSystemsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.External_db_system_display_name),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(externalDbSystemDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

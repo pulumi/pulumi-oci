@@ -33,14 +33,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.NewCustomProtectionRule(ctx, "testCustomProtectionRule", &Waas.CustomProtectionRuleArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Custom_protection_rule_display_name),
-//				Template:      pulumi.Any(_var.Custom_protection_rule_template),
+//			_, err := Waas.NewCustomProtectionRule(ctx, "test_custom_protection_rule", &Waas.CustomProtectionRuleArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(customProtectionRuleDisplayName),
+//				Template:      pulumi.Any(customProtectionRuleTemplate),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Custom_protection_rule_description),
+//				Description: pulumi.Any(customProtectionRuleDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

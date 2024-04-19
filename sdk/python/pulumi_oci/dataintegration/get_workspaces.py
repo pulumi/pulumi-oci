@@ -117,9 +117,9 @@ def get_workspaces(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=var["compartment_id"],
-        name=var["workspace_name"],
-        state=var["workspace_state"])
+    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=compartment_id,
+        name=workspace_name,
+        state=workspace_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_workspaces_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=var["compartment_id"],
-        name=var["workspace_name"],
-        state=var["workspace_state"])
+    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=compartment_id,
+        name=workspace_name,
+        state=workspace_state)
     ```
     <!--End PulumiCodeChooser -->
 

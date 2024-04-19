@@ -385,19 +385,19 @@ class AppFirewall(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_web_app_firewall = oci.waf.AppFirewall("testWebAppFirewall",
-            backend_type=var["web_app_firewall_backend_type"],
-            compartment_id=var["compartment_id"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            web_app_firewall_policy_id=oci_waf_web_app_firewall_policy["test_web_app_firewall_policy"]["id"],
+        test_web_app_firewall = oci.waf.AppFirewall("test_web_app_firewall",
+            backend_type=web_app_firewall_backend_type,
+            compartment_id=compartment_id,
+            load_balancer_id=test_load_balancer["id"],
+            web_app_firewall_policy_id=test_web_app_firewall_policy["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["web_app_firewall_display_name"],
+            display_name=web_app_firewall_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            system_tags=var["web_app_firewall_system_tags"])
+            system_tags=web_app_firewall_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -442,19 +442,19 @@ class AppFirewall(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_web_app_firewall = oci.waf.AppFirewall("testWebAppFirewall",
-            backend_type=var["web_app_firewall_backend_type"],
-            compartment_id=var["compartment_id"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            web_app_firewall_policy_id=oci_waf_web_app_firewall_policy["test_web_app_firewall_policy"]["id"],
+        test_web_app_firewall = oci.waf.AppFirewall("test_web_app_firewall",
+            backend_type=web_app_firewall_backend_type,
+            compartment_id=compartment_id,
+            load_balancer_id=test_load_balancer["id"],
+            web_app_firewall_policy_id=test_web_app_firewall_policy["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["web_app_firewall_display_name"],
+            display_name=web_app_firewall_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            system_tags=var["web_app_firewall_system_tags"])
+            system_tags=web_app_firewall_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetClusterKubeConfig(ctx, &containerengine.GetClusterKubeConfigArgs{
-//				ClusterId:    oci_containerengine_cluster.Test_cluster.Id,
-//				Endpoint:     pulumi.StringRef(_var.Cluster_kube_config_endpoint),
-//				Expiration:   pulumi.IntRef(_var.Cluster_kube_config_expiration),
-//				TokenVersion: pulumi.StringRef(_var.Cluster_kube_config_token_version),
+//				ClusterId:    testCluster.Id,
+//				Endpoint:     pulumi.StringRef(clusterKubeConfigEndpoint),
+//				Expiration:   pulumi.IntRef(clusterKubeConfigExpiration),
+//				TokenVersion: pulumi.StringRef(clusterKubeConfigTokenVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

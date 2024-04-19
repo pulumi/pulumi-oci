@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waas.GetHttpRedirect(ctx, &waas.GetHttpRedirectArgs{
-//				HttpRedirectId: oci_waas_http_redirect.Test_http_redirect.Id,
+//				HttpRedirectId: testHttpRedirectOciWaasHttpRedirect.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

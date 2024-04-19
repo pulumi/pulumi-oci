@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetNodePools(ctx, &containerengine.GetNodePoolsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				ClusterId:     pulumi.StringRef(oci_containerengine_cluster.Test_cluster.Id),
-//				Name:          pulumi.StringRef(_var.Node_pool_name),
-//				States:        _var.Node_pool_state,
+//				CompartmentId: compartmentId,
+//				ClusterId:     pulumi.StringRef(testCluster.Id),
+//				Name:          pulumi.StringRef(nodePoolName),
+//				States:        nodePoolState,
 //			}, nil)
 //			if err != nil {
 //				return err

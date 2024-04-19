@@ -31,23 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewManagedInstanceGroup(ctx, "testManagedInstanceGroup", &OsManagementHub.ManagedInstanceGroupArgs{
-//				ArchType:      pulumi.Any(_var.Managed_instance_group_arch_type),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Managed_instance_group_display_name),
-//				OsFamily:      pulumi.Any(_var.Managed_instance_group_os_family),
+//			_, err := OsManagementHub.NewManagedInstanceGroup(ctx, "test_managed_instance_group", &OsManagementHub.ManagedInstanceGroupArgs{
 //				SoftwareSourceIds: pulumi.StringArray{
 //					nil,
 //				},
-//				VendorName: pulumi.Any(_var.Managed_instance_group_vendor_name),
+//				ArchType:      pulumi.Any(managedInstanceGroupArchType),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(managedInstanceGroupDisplayName),
+//				OsFamily:      pulumi.Any(managedInstanceGroupOsFamily),
+//				VendorName:    pulumi.Any(managedInstanceGroupVendorName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Managed_instance_group_description),
+//				Description: pulumi.Any(managedInstanceGroupDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				ManagedInstanceIds: pulumi.Any(_var.Managed_instance_group_managed_instance_ids),
+//				ManagedInstanceIds: pulumi.Any(managedInstanceGroupManagedInstanceIds),
 //			})
 //			if err != nil {
 //				return err

@@ -31,6 +31,102 @@ import (
 //
 // ## Example Usage
 //
+// ### VCN Local with Internet
+//
+// <!--Start PulumiCodeChooser -->
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDhcpOptions(ctx, "test_dhcp_options", &Core.DhcpOptionsArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Options: core.DhcpOptionsOptionArray{
+//					&core.DhcpOptionsOptionArgs{
+//						Type:       pulumi.String("DomainNameServer"),
+//						ServerType: pulumi.String("VcnLocalPlusInternet"),
+//					},
+//					&core.DhcpOptionsOptionArgs{
+//						Type: pulumi.String("SearchDomain"),
+//						SearchDomainNames: pulumi.StringArray{
+//							pulumi.String("test.com"),
+//						},
+//					},
+//				},
+//				VcnId:       pulumi.Any(testVcn.Id),
+//				DisplayName: pulumi.Any(dhcpOptionsDisplayName),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// <!--End PulumiCodeChooser -->
+//
+// ### Custom DNS Server
+//
+// <!--Start PulumiCodeChooser -->
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewDhcpOptions(ctx, "test_dhcp_options", &Core.DhcpOptionsArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Options: core.DhcpOptionsOptionArray{
+//					&core.DhcpOptionsOptionArgs{
+//						Type:       pulumi.String("DomainNameServer"),
+//						ServerType: pulumi.String("CustomDnsServer"),
+//						CustomDnsServers: pulumi.StringArray{
+//							pulumi.String("192.168.0.2"),
+//							pulumi.String("192.168.0.11"),
+//							pulumi.String("192.168.0.19"),
+//						},
+//					},
+//					&core.DhcpOptionsOptionArgs{
+//						Type: pulumi.String("SearchDomain"),
+//						SearchDomainNames: pulumi.StringArray{
+//							pulumi.String("test.com"),
+//						},
+//					},
+//				},
+//				VcnId: pulumi.Any(testVcn.Id),
+//				DefinedTags: pulumi.Map{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				DisplayName:    pulumi.Any(dhcpOptionsDisplayName),
+//				DomainNameType: pulumi.Any(dhcpOptionsDomainNameType),
+//				FreeformTags: pulumi.Map{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// <!--End PulumiCodeChooser -->
+//
 // ## Import
 //
 // DhcpOptions can be imported using the `id`, e.g.

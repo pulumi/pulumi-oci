@@ -25,26 +25,26 @@ namespace Pulumi.Oci.Blockchain
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBlockchainPlatform = new Oci.Blockchain.BlockchainPlatform("testBlockchainPlatform", new()
+    ///     var testBlockchainPlatform = new Oci.Blockchain.BlockchainPlatform("test_blockchain_platform", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ComputeShape = @var.Blockchain_platform_compute_shape,
-    ///         DisplayName = @var.Blockchain_platform_display_name,
-    ///         IdcsAccessToken = @var.Blockchain_platform_idcs_access_token,
-    ///         PlatformRole = @var.Blockchain_platform_platform_role,
-    ///         CaCertArchiveText = @var.Blockchain_platform_ca_cert_archive_text,
+    ///         CompartmentId = compartmentId,
+    ///         ComputeShape = blockchainPlatformComputeShape,
+    ///         DisplayName = blockchainPlatformDisplayName,
+    ///         IdcsAccessToken = blockchainPlatformIdcsAccessToken,
+    ///         PlatformRole = blockchainPlatformPlatformRole,
+    ///         CaCertArchiveText = blockchainPlatformCaCertArchiveText,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Blockchain_platform_description,
-    ///         FederatedUserId = oci_identity_user.Test_user.Id,
+    ///         Description = blockchainPlatformDescription,
+    ///         FederatedUserId = testUser.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsByol = @var.Blockchain_platform_is_byol,
-    ///         PlatformVersion = @var.Blockchain_platform_platform_version,
+    ///         IsByol = blockchainPlatformIsByol,
+    ///         PlatformVersion = blockchainPlatformPlatformVersion,
     ///     });
     /// 
     /// });

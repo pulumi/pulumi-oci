@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetJavaFamily(ctx, &jms.GetJavaFamilyArgs{
-//				FamilyVersion: _var.Java_family_family_version,
+//				FamilyVersion: javaFamilyFamilyVersion,
 //			}, nil)
 //			if err != nil {
 //				return err

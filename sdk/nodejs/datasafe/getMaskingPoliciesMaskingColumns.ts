@@ -19,21 +19,21 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPoliciesMaskingColumns = oci.DataSafe.getMaskingPoliciesMaskingColumns({
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     columnNames: _var.masking_policies_masking_column_column_name,
- *     dataTypes: _var.masking_policies_masking_column_data_type,
- *     isMaskingEnabled: _var.masking_policies_masking_column_is_masking_enabled,
- *     isSeedRequired: _var.masking_policies_masking_column_is_seed_required,
- *     maskingColumnGroups: _var.masking_policies_masking_column_masking_column_group,
- *     maskingColumnLifecycleState: _var.masking_policies_masking_column_masking_column_lifecycle_state,
- *     objects: _var.masking_policies_masking_column_object,
- *     objectTypes: _var.masking_policies_masking_column_object_type,
- *     schemaNames: _var.masking_policies_masking_column_schema_name,
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.masking_policies_masking_column_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.masking_policies_masking_column_time_created_less_than,
- *     timeUpdatedGreaterThanOrEqualTo: _var.masking_policies_masking_column_time_updated_greater_than_or_equal_to,
- *     timeUpdatedLessThan: _var.masking_policies_masking_column_time_updated_less_than,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     columnNames: maskingPoliciesMaskingColumnColumnName,
+ *     dataTypes: maskingPoliciesMaskingColumnDataType,
+ *     isMaskingEnabled: maskingPoliciesMaskingColumnIsMaskingEnabled,
+ *     isSeedRequired: maskingPoliciesMaskingColumnIsSeedRequired,
+ *     maskingColumnGroups: maskingPoliciesMaskingColumnMaskingColumnGroup,
+ *     maskingColumnLifecycleState: maskingPoliciesMaskingColumnMaskingColumnLifecycleState,
+ *     objects: maskingPoliciesMaskingColumnObject,
+ *     objectTypes: maskingPoliciesMaskingColumnObjectType,
+ *     schemaNames: maskingPoliciesMaskingColumnSchemaName,
+ *     sensitiveTypeId: testSensitiveType.id,
+ *     timeCreatedGreaterThanOrEqualTo: maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: maskingPoliciesMaskingColumnTimeCreatedLessThan,
+ *     timeUpdatedGreaterThanOrEqualTo: maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo,
+ *     timeUpdatedLessThan: maskingPoliciesMaskingColumnTimeUpdatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -201,21 +201,21 @@ export interface GetMaskingPoliciesMaskingColumnsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPoliciesMaskingColumns = oci.DataSafe.getMaskingPoliciesMaskingColumns({
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     columnNames: _var.masking_policies_masking_column_column_name,
- *     dataTypes: _var.masking_policies_masking_column_data_type,
- *     isMaskingEnabled: _var.masking_policies_masking_column_is_masking_enabled,
- *     isSeedRequired: _var.masking_policies_masking_column_is_seed_required,
- *     maskingColumnGroups: _var.masking_policies_masking_column_masking_column_group,
- *     maskingColumnLifecycleState: _var.masking_policies_masking_column_masking_column_lifecycle_state,
- *     objects: _var.masking_policies_masking_column_object,
- *     objectTypes: _var.masking_policies_masking_column_object_type,
- *     schemaNames: _var.masking_policies_masking_column_schema_name,
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.masking_policies_masking_column_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.masking_policies_masking_column_time_created_less_than,
- *     timeUpdatedGreaterThanOrEqualTo: _var.masking_policies_masking_column_time_updated_greater_than_or_equal_to,
- *     timeUpdatedLessThan: _var.masking_policies_masking_column_time_updated_less_than,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     columnNames: maskingPoliciesMaskingColumnColumnName,
+ *     dataTypes: maskingPoliciesMaskingColumnDataType,
+ *     isMaskingEnabled: maskingPoliciesMaskingColumnIsMaskingEnabled,
+ *     isSeedRequired: maskingPoliciesMaskingColumnIsSeedRequired,
+ *     maskingColumnGroups: maskingPoliciesMaskingColumnMaskingColumnGroup,
+ *     maskingColumnLifecycleState: maskingPoliciesMaskingColumnMaskingColumnLifecycleState,
+ *     objects: maskingPoliciesMaskingColumnObject,
+ *     objectTypes: maskingPoliciesMaskingColumnObjectType,
+ *     schemaNames: maskingPoliciesMaskingColumnSchemaName,
+ *     sensitiveTypeId: testSensitiveType.id,
+ *     timeCreatedGreaterThanOrEqualTo: maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: maskingPoliciesMaskingColumnTimeCreatedLessThan,
+ *     timeUpdatedGreaterThanOrEqualTo: maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo,
+ *     timeUpdatedLessThan: maskingPoliciesMaskingColumnTimeUpdatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

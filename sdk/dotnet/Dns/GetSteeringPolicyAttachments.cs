@@ -30,16 +30,16 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testSteeringPolicyAttachments = Oci.Dns.GetSteeringPolicyAttachments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Steering_policy_attachment_display_name,
-        ///         Domain = @var.Steering_policy_attachment_domain,
-        ///         DomainContains = @var.Steering_policy_attachment_domain_contains,
-        ///         Id = @var.Steering_policy_attachment_id,
-        ///         State = @var.Steering_policy_attachment_state,
-        ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Steering_policy_attachment_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Steering_policy_attachment_time_created_less_than,
-        ///         ZoneId = oci_dns_zone.Test_zone.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = steeringPolicyAttachmentDisplayName,
+        ///         Domain = steeringPolicyAttachmentDomain,
+        ///         DomainContains = steeringPolicyAttachmentDomainContains,
+        ///         Id = steeringPolicyAttachmentId,
+        ///         State = steeringPolicyAttachmentState,
+        ///         SteeringPolicyId = testSteeringPolicy.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = steeringPolicyAttachmentTimeCreatedLessThan,
+        ///         ZoneId = testZone.Id,
         ///     });
         /// 
         /// });
@@ -68,16 +68,16 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testSteeringPolicyAttachments = Oci.Dns.GetSteeringPolicyAttachments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Steering_policy_attachment_display_name,
-        ///         Domain = @var.Steering_policy_attachment_domain,
-        ///         DomainContains = @var.Steering_policy_attachment_domain_contains,
-        ///         Id = @var.Steering_policy_attachment_id,
-        ///         State = @var.Steering_policy_attachment_state,
-        ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Steering_policy_attachment_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Steering_policy_attachment_time_created_less_than,
-        ///         ZoneId = oci_dns_zone.Test_zone.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = steeringPolicyAttachmentDisplayName,
+        ///         Domain = steeringPolicyAttachmentDomain,
+        ///         DomainContains = steeringPolicyAttachmentDomainContains,
+        ///         Id = steeringPolicyAttachmentId,
+        ///         State = steeringPolicyAttachmentState,
+        ///         SteeringPolicyId = testSteeringPolicy.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = steeringPolicyAttachmentTimeCreatedLessThan,
+        ///         ZoneId = testZone.Id,
         ///     });
         /// 
         /// });

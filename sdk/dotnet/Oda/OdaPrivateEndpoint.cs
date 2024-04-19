@@ -28,21 +28,21 @@ namespace Pulumi.Oci.Oda
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOdaPrivateEndpoint = new Oci.Oda.OdaPrivateEndpoint("testOdaPrivateEndpoint", new()
+    ///     var testOdaPrivateEndpoint = new Oci.Oda.OdaPrivateEndpoint("test_oda_private_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CompartmentId = compartmentId,
+    ///         SubnetId = testSubnet.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Oda_private_endpoint_description,
-    ///         DisplayName = @var.Oda_private_endpoint_display_name,
+    ///         Description = odaPrivateEndpointDescription,
+    ///         DisplayName = odaPrivateEndpointDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         NsgIds = @var.Oda_private_endpoint_nsg_ids,
+    ///         NsgIds = odaPrivateEndpointNsgIds,
     ///     });
     /// 
     /// });

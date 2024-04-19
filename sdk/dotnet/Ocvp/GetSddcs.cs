@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSddcs = Oci.Ocvp.GetSddcs.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputeAvailabilityDomain = @var.Sddc_compute_availability_domain,
-        ///         DisplayName = @var.Sddc_display_name,
-        ///         State = @var.Sddc_state,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeAvailabilityDomain = sddcComputeAvailabilityDomain,
+        ///         DisplayName = sddcDisplayName,
+        ///         State = sddcState,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSddcs = Oci.Ocvp.GetSddcs.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputeAvailabilityDomain = @var.Sddc_compute_availability_domain,
-        ///         DisplayName = @var.Sddc_display_name,
-        ///         State = @var.Sddc_state,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeAvailabilityDomain = sddcComputeAvailabilityDomain,
+        ///         DisplayName = sddcDisplayName,
+        ///         State = sddcState,
         ///     });
         /// 
         /// });

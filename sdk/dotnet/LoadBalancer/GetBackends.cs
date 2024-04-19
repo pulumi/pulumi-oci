@@ -29,8 +29,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// {
         ///     var testBackends = Oci.LoadBalancer.GetBackends.Invoke(new()
         ///     {
-        ///         BackendsetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///         BackendsetName = testBackendSet.Name,
+        ///         LoadBalancerId = testLoadBalancer.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// {
         ///     var testBackends = Oci.LoadBalancer.GetBackends.Invoke(new()
         ///     {
-        ///         BackendsetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///         BackendsetName = testBackendSet.Name,
+        ///         LoadBalancerId = testLoadBalancer.Id,
         ///     });
         /// 
         /// });

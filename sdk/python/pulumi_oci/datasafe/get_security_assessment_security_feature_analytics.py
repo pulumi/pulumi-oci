@@ -128,10 +128,10 @@ def get_security_assessment_security_feature_analytics(access_level: Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_security_feature_analytics = oci.DataSafe.get_security_assessment_security_feature_analytics(compartment_id=var["compartment_id"],
-        access_level=var["security_assessment_security_feature_analytic_access_level"],
-        compartment_id_in_subtree=var["security_assessment_security_feature_analytic_compartment_id_in_subtree"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_security_assessment_security_feature_analytics = oci.DataSafe.get_security_assessment_security_feature_analytics(compartment_id=compartment_id,
+        access_level=security_assessment_security_feature_analytic_access_level,
+        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -186,10 +186,10 @@ def get_security_assessment_security_feature_analytics_output(access_level: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_security_feature_analytics = oci.DataSafe.get_security_assessment_security_feature_analytics(compartment_id=var["compartment_id"],
-        access_level=var["security_assessment_security_feature_analytic_access_level"],
-        compartment_id_in_subtree=var["security_assessment_security_feature_analytic_compartment_id_in_subtree"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_security_assessment_security_feature_analytics = oci.DataSafe.get_security_assessment_security_feature_analytics(compartment_id=compartment_id,
+        access_level=security_assessment_security_feature_analytic_access_level,
+        compartment_id_in_subtree=security_assessment_security_feature_analytic_compartment_id_in_subtree,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 

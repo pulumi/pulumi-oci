@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testResourceTypeSchemaAttributes = Oci.Identity.GetDomainsResourceTypeSchemaAttributes.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ResourceTypeSchemaAttributeCount = @var.Resource_type_schema_attribute_resource_type_schema_attribute_count,
-        ///         ResourceTypeSchemaAttributeFilter = @var.Resource_type_schema_attribute_resource_type_schema_attribute_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ResourceTypeSchemaAttributeCount = resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount,
+        ///         ResourceTypeSchemaAttributeFilter = resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Resource_type_schema_attribute_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Resource_type_schema_attribute_resource_type_schema_version,
-        ///         StartIndex = @var.Resource_type_schema_attribute_start_index,
+        ///         Authorization = resourceTypeSchemaAttributeAuthorization,
+        ///         ResourceTypeSchemaVersion = resourceTypeSchemaAttributeResourceTypeSchemaVersion,
+        ///         StartIndex = resourceTypeSchemaAttributeStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testResourceTypeSchemaAttributes = Oci.Identity.GetDomainsResourceTypeSchemaAttributes.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ResourceTypeSchemaAttributeCount = @var.Resource_type_schema_attribute_resource_type_schema_attribute_count,
-        ///         ResourceTypeSchemaAttributeFilter = @var.Resource_type_schema_attribute_resource_type_schema_attribute_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ResourceTypeSchemaAttributeCount = resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount,
+        ///         ResourceTypeSchemaAttributeFilter = resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Resource_type_schema_attribute_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Resource_type_schema_attribute_resource_type_schema_version,
-        ///         StartIndex = @var.Resource_type_schema_attribute_start_index,
+        ///         Authorization = resourceTypeSchemaAttributeAuthorization,
+        ///         ResourceTypeSchemaVersion = resourceTypeSchemaAttributeResourceTypeSchemaVersion,
+        ///         StartIndex = resourceTypeSchemaAttributeStartIndex,
         ///     });
         /// 
         /// });

@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKnowledgeBase = new oci.adm.KnowledgeBase("testKnowledgeBase", {
- *     compartmentId: _var.compartment_id,
+ * const testKnowledgeBase = new oci.adm.KnowledgeBase("test_knowledge_base", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.knowledge_base_display_name,
+ *     displayName: knowledgeBaseDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

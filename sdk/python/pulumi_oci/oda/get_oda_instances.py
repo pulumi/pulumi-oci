@@ -125,9 +125,9 @@ def get_oda_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_instances = oci.Oda.get_oda_instances(compartment_id=var["compartment_id"],
-        display_name=var["oda_instance_display_name"],
-        state=var["oda_instance_state"])
+    test_oda_instances = oci.Oda.get_oda_instances(compartment_id=compartment_id,
+        display_name=oda_instance_display_name,
+        state=oda_instance_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -176,9 +176,9 @@ def get_oda_instances_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_instances = oci.Oda.get_oda_instances(compartment_id=var["compartment_id"],
-        display_name=var["oda_instance_display_name"],
-        state=var["oda_instance_state"])
+    test_oda_instances = oci.Oda.get_oda_instances(compartment_id=compartment_id,
+        display_name=oda_instance_display_name,
+        state=oda_instance_state)
     ```
     <!--End PulumiCodeChooser -->
 

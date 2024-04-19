@@ -73,7 +73,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .alarmId(testAlarmOciMonitoringAlarm.id())
      *             .build());
      * 
      *     }
@@ -123,7 +123,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .alarmId(testAlarmOciMonitoringAlarm.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .alarmId(testAlarmOciMonitoringAlarm.id())
      *             .build());
      * 
      *     }
@@ -223,7 +223,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarm = MonitoringFunctions.getAlarm(GetAlarmArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
+     *             .alarmId(testAlarmOciMonitoringAlarm.id())
      *             .build());
      * 
      *     }
@@ -273,10 +273,10 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
-     *             .alarmHistorytype(var_.alarm_history_collection_alarm_historytype())
-     *             .timestampGreaterThanOrEqualTo(var_.alarm_history_collection_timestamp_greater_than_or_equal_to())
-     *             .timestampLessThan(var_.alarm_history_collection_timestamp_less_than())
+     *             .alarmId(testAlarm.id())
+     *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
+     *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
+     *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
      *             .build());
      * 
      *     }
@@ -326,10 +326,10 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
-     *             .alarmHistorytype(var_.alarm_history_collection_alarm_historytype())
-     *             .timestampGreaterThanOrEqualTo(var_.alarm_history_collection_timestamp_greater_than_or_equal_to())
-     *             .timestampLessThan(var_.alarm_history_collection_timestamp_less_than())
+     *             .alarmId(testAlarm.id())
+     *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
+     *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
+     *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
      *             .build());
      * 
      *     }
@@ -379,10 +379,10 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
-     *             .alarmHistorytype(var_.alarm_history_collection_alarm_historytype())
-     *             .timestampGreaterThanOrEqualTo(var_.alarm_history_collection_timestamp_greater_than_or_equal_to())
-     *             .timestampLessThan(var_.alarm_history_collection_timestamp_less_than())
+     *             .alarmId(testAlarm.id())
+     *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
+     *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
+     *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
      *             .build());
      * 
      *     }
@@ -432,10 +432,10 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmHistoryCollection = MonitoringFunctions.getAlarmHistoryCollection(GetAlarmHistoryCollectionArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
-     *             .alarmHistorytype(var_.alarm_history_collection_alarm_historytype())
-     *             .timestampGreaterThanOrEqualTo(var_.alarm_history_collection_timestamp_greater_than_or_equal_to())
-     *             .timestampLessThan(var_.alarm_history_collection_timestamp_less_than())
+     *             .alarmId(testAlarm.id())
+     *             .alarmHistorytype(alarmHistoryCollectionAlarmHistorytype)
+     *             .timestampGreaterThanOrEqualTo(alarmHistoryCollectionTimestampGreaterThanOrEqualTo)
+     *             .timestampLessThan(alarmHistoryCollectionTimestampLessThan)
      *             .build());
      * 
      *     }
@@ -488,13 +488,13 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmStatuses = MonitoringFunctions.getAlarmStatuses(GetAlarmStatusesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
-     *             .displayName(var_.alarm_status_display_name())
-     *             .entityId(oci_monitoring_entity.test_entity().id())
-     *             .resourceId(oci_monitoring_resource.test_resource().id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .status(var_.alarm_status_status())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
+     *             .displayName(alarmStatusDisplayName)
+     *             .entityId(testEntity.id())
+     *             .resourceId(testResource.id())
+     *             .serviceName(testService.name())
+     *             .status(alarmStatusStatus)
      *             .build());
      * 
      *     }
@@ -547,13 +547,13 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmStatuses = MonitoringFunctions.getAlarmStatuses(GetAlarmStatusesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
-     *             .displayName(var_.alarm_status_display_name())
-     *             .entityId(oci_monitoring_entity.test_entity().id())
-     *             .resourceId(oci_monitoring_resource.test_resource().id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .status(var_.alarm_status_status())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
+     *             .displayName(alarmStatusDisplayName)
+     *             .entityId(testEntity.id())
+     *             .resourceId(testResource.id())
+     *             .serviceName(testService.name())
+     *             .status(alarmStatusStatus)
      *             .build());
      * 
      *     }
@@ -606,13 +606,13 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmStatuses = MonitoringFunctions.getAlarmStatuses(GetAlarmStatusesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
-     *             .displayName(var_.alarm_status_display_name())
-     *             .entityId(oci_monitoring_entity.test_entity().id())
-     *             .resourceId(oci_monitoring_resource.test_resource().id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .status(var_.alarm_status_status())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
+     *             .displayName(alarmStatusDisplayName)
+     *             .entityId(testEntity.id())
+     *             .resourceId(testResource.id())
+     *             .serviceName(testService.name())
+     *             .status(alarmStatusStatus)
      *             .build());
      * 
      *     }
@@ -665,13 +665,13 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmStatuses = MonitoringFunctions.getAlarmStatuses(GetAlarmStatusesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.alarm_status_compartment_id_in_subtree())
-     *             .displayName(var_.alarm_status_display_name())
-     *             .entityId(oci_monitoring_entity.test_entity().id())
-     *             .resourceId(oci_monitoring_resource.test_resource().id())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .status(var_.alarm_status_status())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmStatusCompartmentIdInSubtree)
+     *             .displayName(alarmStatusDisplayName)
+     *             .entityId(testEntity.id())
+     *             .resourceId(testResource.id())
+     *             .serviceName(testService.name())
+     *             .status(alarmStatusStatus)
      *             .build());
      * 
      *     }
@@ -720,7 +720,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
-     *             .alarmSuppressionId(oci_monitoring_alarm_suppression.test_alarm_suppression().id())
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
      *             .build());
      * 
      *     }
@@ -769,7 +769,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
-     *             .alarmSuppressionId(oci_monitoring_alarm_suppression.test_alarm_suppression().id())
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
      *             .build());
      * 
      *     }
@@ -818,7 +818,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
-     *             .alarmSuppressionId(oci_monitoring_alarm_suppression.test_alarm_suppression().id())
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
      *             .build());
      * 
      *     }
@@ -867,7 +867,7 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppression = MonitoringFunctions.getAlarmSuppression(GetAlarmSuppressionArgs.builder()
-     *             .alarmSuppressionId(oci_monitoring_alarm_suppression.test_alarm_suppression().id())
+     *             .alarmSuppressionId(testAlarmSuppressionOciMonitoringAlarmSuppression.id())
      *             .build());
      * 
      *     }
@@ -917,9 +917,9 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
-     *             .displayName(var_.alarm_suppression_display_name())
-     *             .state(var_.alarm_suppression_state())
+     *             .alarmId(testAlarm.id())
+     *             .displayName(alarmSuppressionDisplayName)
+     *             .state(alarmSuppressionState)
      *             .build());
      * 
      *     }
@@ -969,9 +969,9 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
-     *             .displayName(var_.alarm_suppression_display_name())
-     *             .state(var_.alarm_suppression_state())
+     *             .alarmId(testAlarm.id())
+     *             .displayName(alarmSuppressionDisplayName)
+     *             .state(alarmSuppressionState)
      *             .build());
      * 
      *     }
@@ -1021,9 +1021,9 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
-     *             .displayName(var_.alarm_suppression_display_name())
-     *             .state(var_.alarm_suppression_state())
+     *             .alarmId(testAlarm.id())
+     *             .displayName(alarmSuppressionDisplayName)
+     *             .state(alarmSuppressionState)
      *             .build());
      * 
      *     }
@@ -1073,9 +1073,9 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarmSuppressions = MonitoringFunctions.getAlarmSuppressions(GetAlarmSuppressionsArgs.builder()
-     *             .alarmId(oci_monitoring_alarm.test_alarm().id())
-     *             .displayName(var_.alarm_suppression_display_name())
-     *             .state(var_.alarm_suppression_state())
+     *             .alarmId(testAlarm.id())
+     *             .displayName(alarmSuppressionDisplayName)
+     *             .state(alarmSuppressionState)
      *             .build());
      * 
      *     }
@@ -1125,10 +1125,10 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarms = MonitoringFunctions.getAlarms(GetAlarmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.alarm_compartment_id_in_subtree())
-     *             .displayName(var_.alarm_display_name())
-     *             .state(var_.alarm_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmCompartmentIdInSubtree)
+     *             .displayName(alarmDisplayName)
+     *             .state(alarmState)
      *             .build());
      * 
      *     }
@@ -1178,10 +1178,10 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarms = MonitoringFunctions.getAlarms(GetAlarmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.alarm_compartment_id_in_subtree())
-     *             .displayName(var_.alarm_display_name())
-     *             .state(var_.alarm_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmCompartmentIdInSubtree)
+     *             .displayName(alarmDisplayName)
+     *             .state(alarmState)
      *             .build());
      * 
      *     }
@@ -1231,10 +1231,10 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarms = MonitoringFunctions.getAlarms(GetAlarmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.alarm_compartment_id_in_subtree())
-     *             .displayName(var_.alarm_display_name())
-     *             .state(var_.alarm_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmCompartmentIdInSubtree)
+     *             .displayName(alarmDisplayName)
+     *             .state(alarmState)
      *             .build());
      * 
      *     }
@@ -1284,10 +1284,10 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlarms = MonitoringFunctions.getAlarms(GetAlarmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.alarm_compartment_id_in_subtree())
-     *             .displayName(var_.alarm_display_name())
-     *             .state(var_.alarm_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(alarmCompartmentIdInSubtree)
+     *             .displayName(alarmDisplayName)
+     *             .state(alarmState)
      *             .build());
      * 
      *     }
@@ -1337,14 +1337,14 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricData = MonitoringFunctions.getMetricData(GetMetricDataArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.metric_data_namespace())
-     *             .query(var_.metric_data_query())
-     *             .compartmentIdInSubtree(var_.metric_data_compartment_id_in_subtree())
-     *             .endTime(var_.metric_data_end_time())
-     *             .resolution(var_.metric_data_resolution())
-     *             .resourceGroup(var_.metric_data_resource_group())
-     *             .startTime(var_.metric_data_start_time())
+     *             .compartmentId(compartmentId)
+     *             .namespace(metricDataNamespace)
+     *             .query(metricDataQuery)
+     *             .compartmentIdInSubtree(metricDataCompartmentIdInSubtree)
+     *             .endTime(metricDataEndTime)
+     *             .resolution(metricDataResolution)
+     *             .resourceGroup(metricDataResourceGroup)
+     *             .startTime(metricDataStartTime)
      *             .build());
      * 
      *     }
@@ -1394,14 +1394,14 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricData = MonitoringFunctions.getMetricData(GetMetricDataArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.metric_data_namespace())
-     *             .query(var_.metric_data_query())
-     *             .compartmentIdInSubtree(var_.metric_data_compartment_id_in_subtree())
-     *             .endTime(var_.metric_data_end_time())
-     *             .resolution(var_.metric_data_resolution())
-     *             .resourceGroup(var_.metric_data_resource_group())
-     *             .startTime(var_.metric_data_start_time())
+     *             .compartmentId(compartmentId)
+     *             .namespace(metricDataNamespace)
+     *             .query(metricDataQuery)
+     *             .compartmentIdInSubtree(metricDataCompartmentIdInSubtree)
+     *             .endTime(metricDataEndTime)
+     *             .resolution(metricDataResolution)
+     *             .resourceGroup(metricDataResourceGroup)
+     *             .startTime(metricDataStartTime)
      *             .build());
      * 
      *     }
@@ -1451,14 +1451,14 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricData = MonitoringFunctions.getMetricData(GetMetricDataArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.metric_data_namespace())
-     *             .query(var_.metric_data_query())
-     *             .compartmentIdInSubtree(var_.metric_data_compartment_id_in_subtree())
-     *             .endTime(var_.metric_data_end_time())
-     *             .resolution(var_.metric_data_resolution())
-     *             .resourceGroup(var_.metric_data_resource_group())
-     *             .startTime(var_.metric_data_start_time())
+     *             .compartmentId(compartmentId)
+     *             .namespace(metricDataNamespace)
+     *             .query(metricDataQuery)
+     *             .compartmentIdInSubtree(metricDataCompartmentIdInSubtree)
+     *             .endTime(metricDataEndTime)
+     *             .resolution(metricDataResolution)
+     *             .resourceGroup(metricDataResourceGroup)
+     *             .startTime(metricDataStartTime)
      *             .build());
      * 
      *     }
@@ -1508,14 +1508,14 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricData = MonitoringFunctions.getMetricData(GetMetricDataArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.metric_data_namespace())
-     *             .query(var_.metric_data_query())
-     *             .compartmentIdInSubtree(var_.metric_data_compartment_id_in_subtree())
-     *             .endTime(var_.metric_data_end_time())
-     *             .resolution(var_.metric_data_resolution())
-     *             .resourceGroup(var_.metric_data_resource_group())
-     *             .startTime(var_.metric_data_start_time())
+     *             .compartmentId(compartmentId)
+     *             .namespace(metricDataNamespace)
+     *             .query(metricDataQuery)
+     *             .compartmentIdInSubtree(metricDataCompartmentIdInSubtree)
+     *             .endTime(metricDataEndTime)
+     *             .resolution(metricDataResolution)
+     *             .resourceGroup(metricDataResourceGroup)
+     *             .startTime(metricDataStartTime)
      *             .build());
      * 
      *     }
@@ -1565,13 +1565,13 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetrics = MonitoringFunctions.getMetrics(GetMetricsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.metric_compartment_id_in_subtree())
-     *             .dimensionFilters(var_.metric_dimension_filters())
-     *             .groupBies(var_.metric_group_by())
-     *             .name(var_.metric_name())
-     *             .namespace(var_.metric_namespace())
-     *             .resourceGroup(var_.metric_resource_group())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(metricCompartmentIdInSubtree)
+     *             .dimensionFilters(metricDimensionFilters)
+     *             .groupBies(metricGroupBy)
+     *             .name(metricName)
+     *             .namespace(metricNamespace)
+     *             .resourceGroup(metricResourceGroup)
      *             .build());
      * 
      *     }
@@ -1621,13 +1621,13 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetrics = MonitoringFunctions.getMetrics(GetMetricsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.metric_compartment_id_in_subtree())
-     *             .dimensionFilters(var_.metric_dimension_filters())
-     *             .groupBies(var_.metric_group_by())
-     *             .name(var_.metric_name())
-     *             .namespace(var_.metric_namespace())
-     *             .resourceGroup(var_.metric_resource_group())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(metricCompartmentIdInSubtree)
+     *             .dimensionFilters(metricDimensionFilters)
+     *             .groupBies(metricGroupBy)
+     *             .name(metricName)
+     *             .namespace(metricNamespace)
+     *             .resourceGroup(metricResourceGroup)
      *             .build());
      * 
      *     }
@@ -1677,13 +1677,13 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetrics = MonitoringFunctions.getMetrics(GetMetricsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.metric_compartment_id_in_subtree())
-     *             .dimensionFilters(var_.metric_dimension_filters())
-     *             .groupBies(var_.metric_group_by())
-     *             .name(var_.metric_name())
-     *             .namespace(var_.metric_namespace())
-     *             .resourceGroup(var_.metric_resource_group())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(metricCompartmentIdInSubtree)
+     *             .dimensionFilters(metricDimensionFilters)
+     *             .groupBies(metricGroupBy)
+     *             .name(metricName)
+     *             .namespace(metricNamespace)
+     *             .resourceGroup(metricResourceGroup)
      *             .build());
      * 
      *     }
@@ -1733,13 +1733,13 @@ public final class MonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetrics = MonitoringFunctions.getMetrics(GetMetricsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.metric_compartment_id_in_subtree())
-     *             .dimensionFilters(var_.metric_dimension_filters())
-     *             .groupBies(var_.metric_group_by())
-     *             .name(var_.metric_name())
-     *             .namespace(var_.metric_namespace())
-     *             .resourceGroup(var_.metric_resource_group())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(metricCompartmentIdInSubtree)
+     *             .dimensionFilters(metricDimensionFilters)
+     *             .groupBies(metricGroupBy)
+     *             .name(metricName)
+     *             .namespace(metricNamespace)
+     *             .resourceGroup(metricResourceGroup)
      *             .build());
      * 
      *     }

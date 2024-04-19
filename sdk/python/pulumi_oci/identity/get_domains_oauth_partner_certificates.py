@@ -190,12 +190,12 @@ def get_domains_oauth_partner_certificates(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_partner_certificates = oci.Identity.get_domains_oauth_partner_certificates(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        oauth_partner_certificate_count=var["oauth_partner_certificate_oauth_partner_certificate_count"],
-        oauth_partner_certificate_filter=var["oauth_partner_certificate_oauth_partner_certificate_filter"],
-        authorization=var["oauth_partner_certificate_authorization"],
-        resource_type_schema_version=var["oauth_partner_certificate_resource_type_schema_version"],
-        start_index=var["oauth_partner_certificate_start_index"])
+    test_oauth_partner_certificates = oci.Identity.get_domains_oauth_partner_certificates(idcs_endpoint=test_domain["url"],
+        oauth_partner_certificate_count=oauth_partner_certificate_oauth_partner_certificate_count,
+        oauth_partner_certificate_filter=oauth_partner_certificate_oauth_partner_certificate_filter,
+        authorization=oauth_partner_certificate_authorization,
+        resource_type_schema_version=oauth_partner_certificate_resource_type_schema_version,
+        start_index=oauth_partner_certificate_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -260,12 +260,12 @@ def get_domains_oauth_partner_certificates_output(authorization: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_partner_certificates = oci.Identity.get_domains_oauth_partner_certificates(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        oauth_partner_certificate_count=var["oauth_partner_certificate_oauth_partner_certificate_count"],
-        oauth_partner_certificate_filter=var["oauth_partner_certificate_oauth_partner_certificate_filter"],
-        authorization=var["oauth_partner_certificate_authorization"],
-        resource_type_schema_version=var["oauth_partner_certificate_resource_type_schema_version"],
-        start_index=var["oauth_partner_certificate_start_index"])
+    test_oauth_partner_certificates = oci.Identity.get_domains_oauth_partner_certificates(idcs_endpoint=test_domain["url"],
+        oauth_partner_certificate_count=oauth_partner_certificate_oauth_partner_certificate_count,
+        oauth_partner_certificate_filter=oauth_partner_certificate_oauth_partner_certificate_filter,
+        authorization=oauth_partner_certificate_authorization,
+        resource_type_schema_version=oauth_partner_certificate_resource_type_schema_version,
+        start_index=oauth_partner_certificate_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

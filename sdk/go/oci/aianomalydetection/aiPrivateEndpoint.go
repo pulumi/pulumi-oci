@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiAnomalyDetection.NewAiPrivateEndpoint(ctx, "testAiPrivateEndpoint", &AiAnomalyDetection.AiPrivateEndpointArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DnsZones:      pulumi.Any(_var.Ai_private_endpoint_dns_zones),
-//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//			_, err := AiAnomalyDetection.NewAiPrivateEndpoint(ctx, "test_ai_private_endpoint", &AiAnomalyDetection.AiPrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DnsZones:      pulumi.Any(aiPrivateEndpointDnsZones),
+//				SubnetId:      pulumi.Any(testSubnet.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Ai_private_endpoint_display_name),
+//				DisplayName: pulumi.Any(aiPrivateEndpointDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

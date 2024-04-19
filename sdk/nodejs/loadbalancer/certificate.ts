@@ -7,22 +7,6 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testCertificate = new oci.loadbalancer.Certificate("testCertificate", {
- *     certificateName: _var.certificate_certificate_name,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     caCertificate: _var.certificate_ca_certificate,
- *     passphrase: _var.certificate_passphrase,
- *     privateKey: _var.certificate_private_key,
- *     publicCertificate: _var.certificate_public_certificate,
- * });
- * ```
- * <!--End PulumiCodeChooser -->
- *
  * ## Import
  *
  * Certificates can be imported using the `id`, e.g.

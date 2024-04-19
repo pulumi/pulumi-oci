@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCccUpgradeSchedules = oci.ComputeCloud.getAtCustomerCccUpgradeSchedules({
- *     accessLevel: _var.ccc_upgrade_schedule_access_level,
- *     cccUpgradeScheduleId: oci_compute_cloud_at_customer_ccc_upgrade_schedule.test_ccc_upgrade_schedule.id,
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.ccc_upgrade_schedule_compartment_id_in_subtree,
- *     displayName: _var.ccc_upgrade_schedule_display_name,
- *     displayNameContains: _var.ccc_upgrade_schedule_display_name_contains,
- *     state: _var.ccc_upgrade_schedule_state,
+ *     accessLevel: cccUpgradeScheduleAccessLevel,
+ *     cccUpgradeScheduleId: testCccUpgradeSchedule.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree,
+ *     displayName: cccUpgradeScheduleDisplayName,
+ *     displayNameContains: cccUpgradeScheduleDisplayNameContains,
+ *     state: cccUpgradeScheduleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -124,13 +124,13 @@ export interface GetAtCustomerCccUpgradeSchedulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCccUpgradeSchedules = oci.ComputeCloud.getAtCustomerCccUpgradeSchedules({
- *     accessLevel: _var.ccc_upgrade_schedule_access_level,
- *     cccUpgradeScheduleId: oci_compute_cloud_at_customer_ccc_upgrade_schedule.test_ccc_upgrade_schedule.id,
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.ccc_upgrade_schedule_compartment_id_in_subtree,
- *     displayName: _var.ccc_upgrade_schedule_display_name,
- *     displayNameContains: _var.ccc_upgrade_schedule_display_name_contains,
- *     state: _var.ccc_upgrade_schedule_state,
+ *     accessLevel: cccUpgradeScheduleAccessLevel,
+ *     cccUpgradeScheduleId: testCccUpgradeSchedule.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: cccUpgradeScheduleCompartmentIdInSubtree,
+ *     displayName: cccUpgradeScheduleDisplayName,
+ *     displayNameContains: cccUpgradeScheduleDisplayNameContains,
+ *     state: cccUpgradeScheduleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

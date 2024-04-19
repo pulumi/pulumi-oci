@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(ctx, &databasemanagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs{
-//				ExecutionName:     _var.Managed_database_optimizer_statistics_advisor_execution_script_execution_name,
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
-//				TaskName:          _var.Managed_database_optimizer_statistics_advisor_execution_script_task_name,
+//				ExecutionName:     managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName,
+//				ManagedDatabaseId: testManagedDatabase.Id,
+//				TaskName:          managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName,
 //			}, nil)
 //			if err != nil {
 //				return err

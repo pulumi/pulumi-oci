@@ -34,11 +34,11 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testPbfListingVersions = Oci.Functions.GetPbfListingVersions.Invoke(new()
         ///     {
-        ///         PbfListingId = oci_functions_pbf_listing.Test_pbf_listing.Id,
-        ///         IsCurrentVersion = @var.Pbf_listing_version_is_current_version,
-        ///         Name = @var.Pbf_listing_version_name,
-        ///         PbfListingVersionId = oci_functions_pbf_listing_version.Test_pbf_listing_version.Id,
-        ///         State = @var.Pbf_listing_version_state,
+        ///         PbfListingId = testPbfListing.Id,
+        ///         IsCurrentVersion = pbfListingVersionIsCurrentVersion,
+        ///         Name = pbfListingVersionName,
+        ///         PbfListingVersionId = testPbfListingVersion.Id,
+        ///         State = pbfListingVersionState,
         ///     });
         /// 
         /// });
@@ -71,11 +71,11 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testPbfListingVersions = Oci.Functions.GetPbfListingVersions.Invoke(new()
         ///     {
-        ///         PbfListingId = oci_functions_pbf_listing.Test_pbf_listing.Id,
-        ///         IsCurrentVersion = @var.Pbf_listing_version_is_current_version,
-        ///         Name = @var.Pbf_listing_version_name,
-        ///         PbfListingVersionId = oci_functions_pbf_listing_version.Test_pbf_listing_version.Id,
-        ///         State = @var.Pbf_listing_version_state,
+        ///         PbfListingId = testPbfListing.Id,
+        ///         IsCurrentVersion = pbfListingVersionIsCurrentVersion,
+        ///         Name = pbfListingVersionName,
+        ///         PbfListingVersionId = testPbfListingVersion.Id,
+        ///         State = pbfListingVersionState,
         ///     });
         /// 
         /// });

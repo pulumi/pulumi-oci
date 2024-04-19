@@ -18,19 +18,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceProject = new oci.dataintegration.WorkspaceProject("testWorkspaceProject", {
- *     identifier: _var.workspace_project_identifier,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     description: _var.workspace_project_description,
- *     key: _var.workspace_project_key,
- *     modelVersion: _var.workspace_project_model_version,
- *     objectStatus: _var.workspace_project_object_status,
+ * const testWorkspaceProject = new oci.dataintegration.WorkspaceProject("test_workspace_project", {
+ *     identifier: workspaceProjectIdentifier,
+ *     name: workspaceProjectName,
+ *     workspaceId: testWorkspace.id,
+ *     description: workspaceProjectDescription,
+ *     key: workspaceProjectKey,
+ *     modelVersion: workspaceProjectModelVersion,
+ *     objectStatus: workspaceProjectObjectStatus,
  *     registryMetadata: {
- *         aggregatorKey: _var.workspace_project_registry_metadata_aggregator_key,
- *         isFavorite: _var.workspace_project_registry_metadata_is_favorite,
- *         key: _var.workspace_project_registry_metadata_key,
- *         labels: _var.workspace_project_registry_metadata_labels,
- *         registryVersion: _var.workspace_project_registry_metadata_registry_version,
+ *         aggregatorKey: workspaceProjectRegistryMetadataAggregatorKey,
+ *         isFavorite: workspaceProjectRegistryMetadataIsFavorite,
+ *         key: workspaceProjectRegistryMetadataKey,
+ *         labels: workspaceProjectRegistryMetadataLabels,
+ *         registryVersion: workspaceProjectRegistryMetadataRegistryVersion,
  *     },
  * });
  * ```

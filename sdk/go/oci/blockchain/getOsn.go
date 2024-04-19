@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Blockchain.GetOsn(ctx, &blockchain.GetOsnArgs{
-//				BlockchainPlatformId: oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-//				OsnId:                oci_blockchain_osn.Test_osn.Id,
+//				BlockchainPlatformId: testBlockchainPlatform.Id,
+//				OsnId:                testOsnOciBlockchainOsn.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

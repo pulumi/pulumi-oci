@@ -11,6 +11,74 @@ import * as utilities from "../utilities";
  *
  * Create a new cluster.
  *
+ * ## Example Usage
+ *
+ * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCluster = new oci.containerengine.Cluster("test_cluster", {
+ *     compartmentId: compartmentId,
+ *     kubernetesVersion: clusterKubernetesVersion,
+ *     name: clusterName,
+ *     vcnId: testVcn.id,
+ *     clusterPodNetworkOptions: [{
+ *         cniType: clusterClusterPodNetworkOptionsCniType,
+ *     }],
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     endpointConfig: {
+ *         isPublicIpEnabled: clusterEndpointConfigIsPublicIpEnabled,
+ *         nsgIds: clusterEndpointConfigNsgIds,
+ *         subnetId: testSubnet.id,
+ *     },
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     imagePolicyConfig: {
+ *         isPolicyEnabled: clusterImagePolicyConfigIsPolicyEnabled,
+ *         keyDetails: [{
+ *             kmsKeyId: testKey.id,
+ *         }],
+ *     },
+ *     kmsKeyId: testKey.id,
+ *     options: {
+ *         addOns: {
+ *             isKubernetesDashboardEnabled: clusterOptionsAddOnsIsKubernetesDashboardEnabled,
+ *             isTillerEnabled: clusterOptionsAddOnsIsTillerEnabled,
+ *         },
+ *         admissionControllerOptions: {
+ *             isPodSecurityPolicyEnabled: clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled,
+ *         },
+ *         kubernetesNetworkConfig: {
+ *             podsCidr: clusterOptionsKubernetesNetworkConfigPodsCidr,
+ *             servicesCidr: clusterOptionsKubernetesNetworkConfigServicesCidr,
+ *         },
+ *         persistentVolumeConfig: {
+ *             definedTags: {
+ *                 "Operations.CostCenter": "42",
+ *             },
+ *             freeformTags: {
+ *                 Department: "Finance",
+ *             },
+ *         },
+ *         serviceLbConfig: {
+ *             definedTags: {
+ *                 "Operations.CostCenter": "42",
+ *             },
+ *             freeformTags: {
+ *                 Department: "Finance",
+ *             },
+ *         },
+ *         serviceLbSubnetIds: clusterOptionsServiceLbSubnetIds,
+ *     },
+ *     type: clusterType,
+ * });
+ * ```
+ * <!--End PulumiCodeChooser -->
+ *
  * ## Import
  *
  * Clusters can be imported using the `id`, e.g.

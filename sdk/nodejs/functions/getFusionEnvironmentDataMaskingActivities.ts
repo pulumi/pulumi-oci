@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentDataMaskingActivities = oci.Functions.getFusionEnvironmentDataMaskingActivities({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     state: _var.fusion_environment_data_masking_activity_state,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     state: fusionEnvironmentDataMaskingActivityState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetFusionEnvironmentDataMaskingActivitiesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentDataMaskingActivities = oci.Functions.getFusionEnvironmentDataMaskingActivities({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     state: _var.fusion_environment_data_masking_activity_state,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     state: fusionEnvironmentDataMaskingActivityState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

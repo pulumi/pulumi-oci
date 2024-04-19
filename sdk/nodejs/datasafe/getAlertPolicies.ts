@@ -19,16 +19,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAlertPolicies = oci.DataSafe.getAlertPolicies({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.alert_policy_access_level,
- *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
- *     compartmentIdInSubtree: _var.alert_policy_compartment_id_in_subtree,
- *     displayName: _var.alert_policy_display_name,
- *     isUserDefined: _var.alert_policy_is_user_defined,
- *     state: _var.alert_policy_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.alert_policy_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.alert_policy_time_created_less_than,
- *     type: _var.alert_policy_type,
+ *     compartmentId: compartmentId,
+ *     accessLevel: alertPolicyAccessLevel,
+ *     alertPolicyId: testAlertPolicy.id,
+ *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree,
+ *     displayName: alertPolicyDisplayName,
+ *     isUserDefined: alertPolicyIsUserDefined,
+ *     state: alertPolicyState,
+ *     timeCreatedGreaterThanOrEqualTo: alertPolicyTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: alertPolicyTimeCreatedLessThan,
+ *     type: alertPolicyType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -151,16 +151,16 @@ export interface GetAlertPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAlertPolicies = oci.DataSafe.getAlertPolicies({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.alert_policy_access_level,
- *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
- *     compartmentIdInSubtree: _var.alert_policy_compartment_id_in_subtree,
- *     displayName: _var.alert_policy_display_name,
- *     isUserDefined: _var.alert_policy_is_user_defined,
- *     state: _var.alert_policy_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.alert_policy_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.alert_policy_time_created_less_than,
- *     type: _var.alert_policy_type,
+ *     compartmentId: compartmentId,
+ *     accessLevel: alertPolicyAccessLevel,
+ *     alertPolicyId: testAlertPolicy.id,
+ *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree,
+ *     displayName: alertPolicyDisplayName,
+ *     isUserDefined: alertPolicyIsUserDefined,
+ *     state: alertPolicyState,
+ *     timeCreatedGreaterThanOrEqualTo: alertPolicyTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: alertPolicyTimeCreatedLessThan,
+ *     type: alertPolicyType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

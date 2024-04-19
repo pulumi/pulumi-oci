@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Limits.GetQuota(ctx, &limits.GetQuotaArgs{
-//				QuotaId: oci_limits_quota.Test_quota.Id,
+//				QuotaId: testQuotaOciLimitsQuota.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -188,7 +188,7 @@ def get_default_configuration(default_configuration_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configuration = oci.Psql.get_default_configuration(default_configuration_id=oci_psql_default_configuration["test_default_configuration"]["id"])
+    test_default_configuration = oci.Psql.get_default_configuration(default_configuration_id=test_default_configuration_oci_psql_default_configuration["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -230,7 +230,7 @@ def get_default_configuration_output(default_configuration_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configuration = oci.Psql.get_default_configuration(default_configuration_id=oci_psql_default_configuration["test_default_configuration"]["id"])
+    test_default_configuration = oci.Psql.get_default_configuration(default_configuration_id=test_default_configuration_oci_psql_default_configuration["id"])
     ```
     <!--End PulumiCodeChooser -->
 

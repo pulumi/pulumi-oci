@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetDataAsset(ctx, &datacatalog.GetDataAssetArgs{
-//				CatalogId:    oci_datacatalog_catalog.Test_catalog.Id,
-//				DataAssetKey: _var.Data_asset_data_asset_key,
-//				Fields:       _var.Data_asset_fields,
+//				CatalogId:    testCatalog.Id,
+//				DataAssetKey: dataAssetDataAssetKey,
+//				Fields:       dataAssetFields,
 //			}, nil)
 //			if err != nil {
 //				return err

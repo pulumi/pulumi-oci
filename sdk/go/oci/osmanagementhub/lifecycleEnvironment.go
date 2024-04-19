@@ -31,15 +31,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewLifecycleEnvironment(ctx, "testLifecycleEnvironment", &OsManagementHub.LifecycleEnvironmentArgs{
-//				ArchType:      pulumi.Any(_var.Lifecycle_environment_arch_type),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Lifecycle_environment_display_name),
-//				OsFamily:      pulumi.Any(_var.Lifecycle_environment_os_family),
+//			_, err := OsManagementHub.NewLifecycleEnvironment(ctx, "test_lifecycle_environment", &OsManagementHub.LifecycleEnvironmentArgs{
+//				ArchType:      pulumi.Any(lifecycleEnvironmentArchType),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(lifecycleEnvironmentDisplayName),
+//				OsFamily:      pulumi.Any(lifecycleEnvironmentOsFamily),
 //				Stages: osmanagementhub.LifecycleEnvironmentStageArray{
 //					&osmanagementhub.LifecycleEnvironmentStageArgs{
-//						DisplayName: pulumi.Any(_var.Lifecycle_environment_stages_display_name),
-//						Rank:        pulumi.Any(_var.Lifecycle_environment_stages_rank),
+//						DisplayName: pulumi.Any(lifecycleEnvironmentStagesDisplayName),
+//						Rank:        pulumi.Any(lifecycleEnvironmentStagesRank),
 //						DefinedTags: pulumi.Map{
 //							"Operations.CostCenter": pulumi.Any("42"),
 //						},
@@ -48,11 +48,11 @@ import (
 //						},
 //					},
 //				},
-//				VendorName: pulumi.Any(_var.Lifecycle_environment_vendor_name),
+//				VendorName: pulumi.Any(lifecycleEnvironmentVendorName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Lifecycle_environment_description),
+//				Description: pulumi.Any(lifecycleEnvironmentDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

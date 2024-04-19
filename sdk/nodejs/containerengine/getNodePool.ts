@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNodePool = oci.ContainerEngine.getNodePool({
- *     nodePoolId: oci_containerengine_node_pool.test_node_pool.id,
+ *     nodePoolId: testNodePoolOciContainerengineNodePool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -164,7 +164,7 @@ export interface GetNodePoolResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNodePool = oci.ContainerEngine.getNodePool({
- *     nodePoolId: oci_containerengine_node_pool.test_node_pool.id,
+ *     nodePoolId: testNodePoolOciContainerengineNodePool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourceVendors = oci.OsManagementHub.getSoftwareSourceVendors({
- *     compartmentId: _var.compartment_id,
- *     name: _var.software_source_vendor_name,
+ *     compartmentId: compartmentId,
+ *     name: softwareSourceVendorName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -84,8 +84,8 @@ export interface GetSoftwareSourceVendorsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourceVendors = oci.OsManagementHub.getSoftwareSourceVendors({
- *     compartmentId: _var.compartment_id,
- *     name: _var.software_source_vendor_name,
+ *     compartmentId: compartmentId,
+ *     name: softwareSourceVendorName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

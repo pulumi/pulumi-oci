@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRemediationRun = oci.Adm.getRemediationRun({
- *     remediationRunId: oci_adm_remediation_run.test_remediation_run.id,
+ *     remediationRunId: testRemediationRunOciAdmRemediationRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetRemediationRunResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRemediationRun = oci.Adm.getRemediationRun({
- *     remediationRunId: oci_adm_remediation_run.test_remediation_run.id,
+ *     remediationRunId: testRemediationRunOciAdmRemediationRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

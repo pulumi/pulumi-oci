@@ -31,10 +31,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditEvents = oci.DataSafe.getAuditEvents({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_event_access_level,
- *     compartmentIdInSubtree: _var.audit_event_compartment_id_in_subtree,
- *     scimQuery: _var.audit_event_scim_query,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditEventAccessLevel,
+ *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree,
+ *     scimQuery: auditEventScimQuery,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,10 +122,10 @@ export interface GetAuditEventsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditEvents = oci.DataSafe.getAuditEvents({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_event_access_level,
- *     compartmentIdInSubtree: _var.audit_event_compartment_id_in_subtree,
- *     scimQuery: _var.audit_event_scim_query,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditEventAccessLevel,
+ *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree,
+ *     scimQuery: auditEventScimQuery,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

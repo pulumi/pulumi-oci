@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagementAgent = new ManagementAgent(&#34;testManagementAgent&#34;, ManagementAgentArgs.builder()        
- *             .managedAgentId(oci_management_agent_managed_agent.test_managed_agent().id())
+ *             .managedAgentId(testManagedAgent.id())
  *             .build());
  * 
  *     }

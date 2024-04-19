@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentCertificate = new oci.goldengate.DeploymentCertificate("testDeploymentCertificate", {
- *     certificateContent: _var.deployment_certificate_certificate_content,
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     key: _var.deployment_certificate_key,
+ * const testDeploymentCertificate = new oci.goldengate.DeploymentCertificate("test_deployment_certificate", {
+ *     certificateContent: deploymentCertificateCertificateContent,
+ *     deploymentId: testDeployment.id,
+ *     key: deploymentCertificateKey,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

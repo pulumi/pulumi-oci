@@ -21,13 +21,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceRun = new oci.database.MaintenanceRun("testMaintenanceRun", {
- *     patchType: _var.maintenance_run_patch_type,
- *     targetResourceId: oci_usage_proxy_resource.test_resource.id,
- *     timeScheduled: _var.maintenance_run_time_scheduled,
- *     compartmentId: _var.compartment_id,
- *     isDstFileUpdateEnabled: _var.maintenance_run_is_dst_file_update_enabled,
- *     patchingMode: _var.maintenance_run_patching_mode,
+ * const testMaintenanceRun = new oci.database.MaintenanceRun("test_maintenance_run", {
+ *     patchType: maintenanceRunPatchType,
+ *     targetResourceId: testResource.id,
+ *     timeScheduled: maintenanceRunTimeScheduled,
+ *     compartmentId: compartmentId,
+ *     isDstFileUpdateEnabled: maintenanceRunIsDstFileUpdateEnabled,
+ *     patchingMode: maintenanceRunPatchingMode,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -43,10 +43,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditEvent(ctx, &datasafe.GetAuditEventArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Audit_event_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_event_compartment_id_in_subtree),
-//				ScimQuery:              pulumi.StringRef(_var.Audit_event_scim_query),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(auditEventAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(auditEventCompartmentIdInSubtree),
+//				ScimQuery:              pulumi.StringRef(auditEventScimQuery),
 //			}, nil)
 //			if err != nil {
 //				return err

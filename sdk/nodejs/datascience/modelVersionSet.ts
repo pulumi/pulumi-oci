@@ -16,13 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelVersionSet = new oci.datascience.ModelVersionSet("testModelVersionSet", {
- *     compartmentId: _var.compartment_id,
- *     projectId: oci_datascience_project.test_project.id,
+ * const testModelVersionSet = new oci.datascience.ModelVersionSet("test_model_version_set", {
+ *     compartmentId: compartmentId,
+ *     name: modelVersionSetName,
+ *     projectId: testProject.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.model_version_set_description,
+ *     description: modelVersionSetDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

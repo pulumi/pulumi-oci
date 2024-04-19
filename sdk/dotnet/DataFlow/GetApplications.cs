@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testApplications = Oci.DataFlow.GetApplications.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Application_display_name,
-        ///         DisplayNameStartsWith = @var.Application_display_name_starts_with,
-        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///         SparkVersion = @var.Application_spark_version,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = applicationDisplayName,
+        ///         DisplayNameStartsWith = applicationDisplayNameStartsWith,
+        ///         OwnerPrincipalId = testOwnerPrincipal.Id,
+        ///         SparkVersion = applicationSparkVersion,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testApplications = Oci.DataFlow.GetApplications.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Application_display_name,
-        ///         DisplayNameStartsWith = @var.Application_display_name_starts_with,
-        ///         OwnerPrincipalId = oci_dataflow_owner_principal.Test_owner_principal.Id,
-        ///         SparkVersion = @var.Application_spark_version,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = applicationDisplayName,
+        ///         DisplayNameStartsWith = applicationDisplayNameStartsWith,
+        ///         OwnerPrincipalId = testOwnerPrincipal.Id,
+        ///         SparkVersion = applicationSparkVersion,
         ///     });
         /// 
         /// });

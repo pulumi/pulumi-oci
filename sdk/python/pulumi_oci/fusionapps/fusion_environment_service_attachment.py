@@ -318,10 +318,10 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fusion_environment_service_attachment = oci.fusion_apps.FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment",
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            service_instance_id=oci_core_instance["test_instance"]["id"],
-            service_instance_type=var["fusion_environment_service_attachment_service_instance_type"])
+        test_fusion_environment_service_attachment = oci.fusion_apps.FusionEnvironmentServiceAttachment("test_fusion_environment_service_attachment",
+            fusion_environment_id=test_fusion_environment["id"],
+            service_instance_id=test_instance["id"],
+            service_instance_type=fusion_environment_service_attachment_service_instance_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -362,10 +362,10 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fusion_environment_service_attachment = oci.fusion_apps.FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment",
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            service_instance_id=oci_core_instance["test_instance"]["id"],
-            service_instance_type=var["fusion_environment_service_attachment_service_instance_type"])
+        test_fusion_environment_service_attachment = oci.fusion_apps.FusionEnvironmentServiceAttachment("test_fusion_environment_service_attachment",
+            fusion_environment_id=test_fusion_environment["id"],
+            service_instance_id=test_instance["id"],
+            service_instance_type=fusion_environment_service_attachment_service_instance_type)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -46,11 +46,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSecurityZone = new SecurityZone(&#34;testSecurityZone&#34;, SecurityZoneArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.security_zone_display_name())
- *             .securityZoneRecipeId(oci_cloud_guard_security_zone_recipe.test_security_zone_recipe().id())
+ *             .compartmentId(compartmentId)
+ *             .displayName(securityZoneDisplayName)
+ *             .securityZoneRecipeId(testSecurityZoneRecipe.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.security_zone_description())
+ *             .description(securityZoneDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

@@ -157,7 +157,7 @@ def get_network_security_group(network_security_group_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group = oci.Core.get_network_security_group(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"])
+    test_network_security_group = oci.Core.get_network_security_group(network_security_group_id=test_network_security_group_oci_core_network_security_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -202,7 +202,7 @@ def get_network_security_group_output(network_security_group_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group = oci.Core.get_network_security_group(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"])
+    test_network_security_group = oci.Core.get_network_security_group(network_security_group_id=test_network_security_group_oci_core_network_security_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -32,17 +32,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetDatabaseInsights(ctx, &opsi.GetDatabaseInsightsArgs{
-//				CompartmentId:             pulumi.StringRef(_var.Compartment_id),
-//				CompartmentIdInSubtree:    pulumi.BoolRef(_var.Database_insight_compartment_id_in_subtree),
-//				DatabaseIds:               oci_database_database.Test_database.Id,
-//				DatabaseTypes:             _var.Database_insight_database_type,
-//				EnterpriseManagerBridgeId: pulumi.StringRef(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
-//				ExadataInsightId:          pulumi.StringRef(oci_opsi_exadata_insight.Test_exadata_insight.Id),
-//				Fields:                    _var.Database_insight_fields,
-//				Id:                        pulumi.StringRef(_var.Database_insight_id),
-//				OpsiPrivateEndpointId:     pulumi.StringRef(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-//				States:                    _var.Database_insight_state,
-//				Statuses:                  _var.Database_insight_status,
+//				CompartmentId:             pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree:    pulumi.BoolRef(databaseInsightCompartmentIdInSubtree),
+//				DatabaseIds:               testDatabase.Id,
+//				DatabaseTypes:             databaseInsightDatabaseType,
+//				EnterpriseManagerBridgeId: pulumi.StringRef(testEnterpriseManagerBridge.Id),
+//				ExadataInsightId:          pulumi.StringRef(testExadataInsight.Id),
+//				Fields:                    databaseInsightFields,
+//				Id:                        pulumi.StringRef(databaseInsightId),
+//				OpsiPrivateEndpointId:     pulumi.StringRef(testPrivateEndpoint.Id),
+//				States:                    databaseInsightState,
+//				Statuses:                  databaseInsightStatus,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -180,15 +180,15 @@ def get_target_alert_policy_associations(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_alert_policy_associations = oci.DataSafe.get_target_alert_policy_associations(compartment_id=var["compartment_id"],
-        access_level=var["target_alert_policy_association_access_level"],
-        alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"],
-        compartment_id_in_subtree=var["target_alert_policy_association_compartment_id_in_subtree"],
-        state=var["target_alert_policy_association_state"],
-        target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["target_alert_policy_association_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["target_alert_policy_association_time_created_less_than"])
+    test_target_alert_policy_associations = oci.DataSafe.get_target_alert_policy_associations(compartment_id=compartment_id,
+        access_level=target_alert_policy_association_access_level,
+        alert_policy_id=test_alert_policy["id"],
+        compartment_id_in_subtree=target_alert_policy_association_compartment_id_in_subtree,
+        state=target_alert_policy_association_state,
+        target_alert_policy_association_id=test_target_alert_policy_association["id"],
+        target_id=test_target["id"],
+        time_created_greater_than_or_equal_to=target_alert_policy_association_time_created_greater_than_or_equal_to,
+        time_created_less_than=target_alert_policy_association_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -260,15 +260,15 @@ def get_target_alert_policy_associations_output(access_level: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_target_alert_policy_associations = oci.DataSafe.get_target_alert_policy_associations(compartment_id=var["compartment_id"],
-        access_level=var["target_alert_policy_association_access_level"],
-        alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"],
-        compartment_id_in_subtree=var["target_alert_policy_association_compartment_id_in_subtree"],
-        state=var["target_alert_policy_association_state"],
-        target_alert_policy_association_id=oci_data_safe_target_alert_policy_association["test_target_alert_policy_association"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["target_alert_policy_association_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["target_alert_policy_association_time_created_less_than"])
+    test_target_alert_policy_associations = oci.DataSafe.get_target_alert_policy_associations(compartment_id=compartment_id,
+        access_level=target_alert_policy_association_access_level,
+        alert_policy_id=test_alert_policy["id"],
+        compartment_id_in_subtree=target_alert_policy_association_compartment_id_in_subtree,
+        state=target_alert_policy_association_state,
+        target_alert_policy_association_id=test_target_alert_policy_association["id"],
+        target_id=test_target["id"],
+        time_created_greater_than_or_equal_to=target_alert_policy_association_time_created_greater_than_or_equal_to,
+        time_created_less_than=target_alert_policy_association_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

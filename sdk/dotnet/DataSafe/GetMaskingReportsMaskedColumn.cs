@@ -30,13 +30,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingReportsMaskedColumn = Oci.DataSafe.GetMaskingReportsMaskedColumn.Invoke(new()
         ///     {
-        ///         MaskingReportId = oci_data_safe_masking_report.Test_masking_report.Id,
-        ///         ColumnNames = @var.Masking_reports_masked_column_column_name,
-        ///         MaskingColumnGroups = @var.Masking_reports_masked_column_masking_column_group,
-        ///         Objects = @var.Masking_reports_masked_column_object,
-        ///         ObjectTypes = @var.Masking_reports_masked_column_object_type,
-        ///         SchemaNames = @var.Masking_reports_masked_column_schema_name,
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///         MaskingReportId = testMaskingReport.Id,
+        ///         ColumnNames = maskingReportsMaskedColumnColumnName,
+        ///         MaskingColumnGroups = maskingReportsMaskedColumnMaskingColumnGroup,
+        ///         Objects = maskingReportsMaskedColumnObject,
+        ///         ObjectTypes = maskingReportsMaskedColumnObjectType,
+        ///         SchemaNames = maskingReportsMaskedColumnSchemaName,
+        ///         SensitiveTypeId = testSensitiveType.Id,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingReportsMaskedColumn = Oci.DataSafe.GetMaskingReportsMaskedColumn.Invoke(new()
         ///     {
-        ///         MaskingReportId = oci_data_safe_masking_report.Test_masking_report.Id,
-        ///         ColumnNames = @var.Masking_reports_masked_column_column_name,
-        ///         MaskingColumnGroups = @var.Masking_reports_masked_column_masking_column_group,
-        ///         Objects = @var.Masking_reports_masked_column_object,
-        ///         ObjectTypes = @var.Masking_reports_masked_column_object_type,
-        ///         SchemaNames = @var.Masking_reports_masked_column_schema_name,
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///         MaskingReportId = testMaskingReport.Id,
+        ///         ColumnNames = maskingReportsMaskedColumnColumnName,
+        ///         MaskingColumnGroups = maskingReportsMaskedColumnMaskingColumnGroup,
+        ///         Objects = maskingReportsMaskedColumnObject,
+        ///         ObjectTypes = maskingReportsMaskedColumnObjectType,
+        ///         SchemaNames = maskingReportsMaskedColumnSchemaName,
+        ///         SensitiveTypeId = testSensitiveType.Id,
         ///     });
         /// 
         /// });

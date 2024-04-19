@@ -31,11 +31,11 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCertificates = Oci.CertificatesManagement.GetCertificates.Invoke(new()
         ///     {
-        ///         CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         Name = @var.Certificate_name,
-        ///         State = @var.Certificate_state,
+        ///         CertificateId = testCertificate.Id,
+        ///         CompartmentId = compartmentId,
+        ///         IssuerCertificateAuthorityId = testCertificateAuthority.Id,
+        ///         Name = certificateName,
+        ///         State = certificateState,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCertificates = Oci.CertificatesManagement.GetCertificates.Invoke(new()
         ///     {
-        ///         CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         Name = @var.Certificate_name,
-        ///         State = @var.Certificate_state,
+        ///         CertificateId = testCertificate.Id,
+        ///         CompartmentId = compartmentId,
+        ///         IssuerCertificateAuthorityId = testCertificateAuthority.Id,
+        ///         Name = certificateName,
+        ///         State = certificateState,
         ///     });
         /// 
         /// });

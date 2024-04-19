@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMySupportAccounts = Oci.Identity.GetDomainsMySupportAccounts.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MySupportAccountCount = @var.My_support_account_my_support_account_count,
-        ///         MySupportAccountFilter = @var.My_support_account_my_support_account_filter,
-        ///         Authorization = @var.My_support_account_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_support_account_resource_type_schema_version,
-        ///         StartIndex = @var.My_support_account_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySupportAccountCount = mySupportAccountMySupportAccountCount,
+        ///         MySupportAccountFilter = mySupportAccountMySupportAccountFilter,
+        ///         Authorization = mySupportAccountAuthorization,
+        ///         ResourceTypeSchemaVersion = mySupportAccountResourceTypeSchemaVersion,
+        ///         StartIndex = mySupportAccountStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMySupportAccounts = Oci.Identity.GetDomainsMySupportAccounts.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MySupportAccountCount = @var.My_support_account_my_support_account_count,
-        ///         MySupportAccountFilter = @var.My_support_account_my_support_account_filter,
-        ///         Authorization = @var.My_support_account_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_support_account_resource_type_schema_version,
-        ///         StartIndex = @var.My_support_account_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySupportAccountCount = mySupportAccountMySupportAccountCount,
+        ///         MySupportAccountFilter = mySupportAccountMySupportAccountFilter,
+        ///         Authorization = mySupportAccountAuthorization,
+        ///         ResourceTypeSchemaVersion = mySupportAccountResourceTypeSchemaVersion,
+        ///         StartIndex = mySupportAccountStartIndex,
         ///     });
         /// 
         /// });

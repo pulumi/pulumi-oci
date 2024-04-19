@@ -31,15 +31,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetTargetDatabases(ctx, &datasafe.GetTargetDatabasesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Target_database_access_level),
-//				AssociatedResourceId:   pulumi.StringRef(oci_data_safe_associated_resource.Test_associated_resource.Id),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Target_database_compartment_id_in_subtree),
-//				DatabaseType:           pulumi.StringRef(_var.Target_database_database_type),
-//				DisplayName:            pulumi.StringRef(_var.Target_database_display_name),
-//				InfrastructureType:     pulumi.StringRef(_var.Target_database_infrastructure_type),
-//				State:                  pulumi.StringRef(_var.Target_database_state),
-//				TargetDatabaseId:       pulumi.StringRef(oci_data_safe_target_database.Test_target_database.Id),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(targetDatabaseAccessLevel),
+//				AssociatedResourceId:   pulumi.StringRef(testAssociatedResource.Id),
+//				CompartmentIdInSubtree: pulumi.BoolRef(targetDatabaseCompartmentIdInSubtree),
+//				DatabaseType:           pulumi.StringRef(targetDatabaseDatabaseType),
+//				DisplayName:            pulumi.StringRef(targetDatabaseDisplayName),
+//				InfrastructureType:     pulumi.StringRef(targetDatabaseInfrastructureType),
+//				State:                  pulumi.StringRef(targetDatabaseState),
+//				TargetDatabaseId:       pulumi.StringRef(testTargetDatabase.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

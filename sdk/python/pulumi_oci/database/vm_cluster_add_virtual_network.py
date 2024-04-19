@@ -539,11 +539,11 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vm_cluster_add_virtual_machine = oci.database.VmClusterAddVirtualNetwork("testVmClusterAddVirtualMachine",
+        test_vm_cluster_add_virtual_machine = oci.database.VmClusterAddVirtualNetwork("test_vm_cluster_add_virtual_machine",
             db_servers=[oci.database.VmClusterAddVirtualNetworkDbServerArgs(
-                db_server_id=oci_database_db_server["test_db_server"]["id"],
+                db_server_id=test_db_server["id"],
             )],
-            vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+            vm_cluster_id=test_vm_cluster["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -584,11 +584,11 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vm_cluster_add_virtual_machine = oci.database.VmClusterAddVirtualNetwork("testVmClusterAddVirtualMachine",
+        test_vm_cluster_add_virtual_machine = oci.database.VmClusterAddVirtualNetwork("test_vm_cluster_add_virtual_machine",
             db_servers=[oci.database.VmClusterAddVirtualNetworkDbServerArgs(
-                db_server_id=oci_database_db_server["test_db_server"]["id"],
+                db_server_id=test_db_server["id"],
             )],
-            vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+            vm_cluster_id=test_vm_cluster["id"])
         ```
         <!--End PulumiCodeChooser -->
 

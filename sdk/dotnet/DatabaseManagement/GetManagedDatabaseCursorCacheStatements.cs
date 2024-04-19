@@ -30,9 +30,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseCursorCacheStatements = Oci.DatabaseManagement.GetManagedDatabaseCursorCacheStatements.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         OpcNamedCredentialId = @var.Managed_database_cursor_cache_statement_opc_named_credential_id,
-        ///         SqlText = @var.Managed_database_cursor_cache_statement_sql_text,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OpcNamedCredentialId = managedDatabaseCursorCacheStatementOpcNamedCredentialId,
+        ///         SqlText = managedDatabaseCursorCacheStatementSqlText,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseCursorCacheStatements = Oci.DatabaseManagement.GetManagedDatabaseCursorCacheStatements.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         OpcNamedCredentialId = @var.Managed_database_cursor_cache_statement_opc_named_credential_id,
-        ///         SqlText = @var.Managed_database_cursor_cache_statement_sql_text,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OpcNamedCredentialId = managedDatabaseCursorCacheStatementOpcNamedCredentialId,
+        ///         SqlText = managedDatabaseCursorCacheStatementSqlText,
         ///     });
         /// 
         /// });

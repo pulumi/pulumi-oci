@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetAwrHubAwrSnapshots(ctx, &opsi.GetAwrHubAwrSnapshotsArgs{
-//				AwrHubId:                    oci_opsi_awr_hub.Test_awr_hub.Id,
-//				AwrSourceDatabaseIdentifier: _var.Awr_hub_awr_snapshot_awr_source_database_identifier,
-//				TimeGreaterThanOrEqualTo:    pulumi.StringRef(_var.Awr_hub_awr_snapshot_time_greater_than_or_equal_to),
-//				TimeLessThanOrEqualTo:       pulumi.StringRef(_var.Awr_hub_awr_snapshot_time_less_than_or_equal_to),
+//				AwrHubId:                    testAwrHub.Id,
+//				AwrSourceDatabaseIdentifier: awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
+//				TimeGreaterThanOrEqualTo:    pulumi.StringRef(awrHubAwrSnapshotTimeGreaterThanOrEqualTo),
+//				TimeLessThanOrEqualTo:       pulumi.StringRef(awrHubAwrSnapshotTimeLessThanOrEqualTo),
 //			}, nil)
 //			if err != nil {
 //				return err

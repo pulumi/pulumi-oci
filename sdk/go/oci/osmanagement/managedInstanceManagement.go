@@ -42,22 +42,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagement.NewManagedInstanceManagement(ctx, "testManagedInstanceManagement", &OsManagement.ManagedInstanceManagementArgs{
-//				ManagedInstanceId: pulumi.Any(oci_osmanagement_managed_instance.Test_managed_instance.Id),
+//			_, err := OsManagement.NewManagedInstanceManagement(ctx, "test_managed_instance_management", &OsManagement.ManagedInstanceManagementArgs{
+//				ManagedInstanceId: pulumi.Any(testManagedInstance.Id),
 //				ParentSoftwareSource: &osmanagement.ManagedInstanceManagementParentSoftwareSourceArgs{
-//					Id:   pulumi.Any(oci_osmanagement_software_source.Test_parent_software_source.Id),
-//					Name: pulumi.Any(oci_osmanagement_software_source.Test_parent_software_source.Display_name),
+//					Id:   pulumi.Any(testParentSoftwareSource.Id),
+//					Name: pulumi.Any(testParentSoftwareSource.DisplayName),
 //				},
 //				ManagedInstanceGroups: osmanagement.ManagedInstanceManagementManagedInstanceGroupArray{
 //					&osmanagement.ManagedInstanceManagementManagedInstanceGroupArgs{
-//						Id:          pulumi.Any(oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id),
-//						DisplayName: pulumi.Any(_var.Managed_instance_group_display_name),
+//						Id:          pulumi.Any(testManagedInstanceGroup.Id),
+//						DisplayName: pulumi.Any(managedInstanceGroupDisplayName),
 //					},
 //				},
 //				ChildSoftwareSources: osmanagement.ManagedInstanceManagementChildSoftwareSourceArray{
 //					&osmanagement.ManagedInstanceManagementChildSoftwareSourceArgs{
-//						Id:   pulumi.Any(oci_osmanagement_software_source.Test_software_source_child.Id),
-//						Name: pulumi.Any(oci_osmanagement_software_source.Test_software_source_child.Display_name),
+//						Id:   pulumi.Any(testSoftwareSourceChild.Id),
+//						Name: pulumi.Any(testSoftwareSourceChild.DisplayName),
 //					},
 //				},
 //			})

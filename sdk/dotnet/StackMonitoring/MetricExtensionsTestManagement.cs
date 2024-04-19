@@ -25,10 +25,10 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMetricExtensionsTestManagement = new Oci.StackMonitoring.MetricExtensionsTestManagement("testMetricExtensionsTestManagement", new()
+    ///     var testMetricExtensionsTestManagement = new Oci.StackMonitoring.MetricExtensionsTestManagement("test_metric_extensions_test_management", new()
     ///     {
-    ///         MetricExtensionId = oci_stack_monitoring_metric_extension.Test_metric_extension.Id,
-    ///         ResourceIds = @var.Metric_extensions_test_management_resource_ids,
+    ///         MetricExtensionId = testMetricExtension.Id,
+    ///         ResourceIds = metricExtensionsTestManagementResourceIds[0],
     ///     });
     /// 
     /// });

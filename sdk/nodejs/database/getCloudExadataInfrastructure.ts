@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudExadataInfrastructure = oci.Database.getCloudExadataInfrastructure({
- *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
+ *     cloudExadataInfrastructureId: testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -197,7 +197,7 @@ export interface GetCloudExadataInfrastructureResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudExadataInfrastructure = oci.Database.getCloudExadataInfrastructure({
- *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
+ *     cloudExadataInfrastructureId: testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

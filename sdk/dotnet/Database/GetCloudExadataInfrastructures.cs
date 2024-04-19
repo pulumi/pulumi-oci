@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testCloudExadataInfrastructures = Oci.Database.GetCloudExadataInfrastructures.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ClusterPlacementGroupId = @var.Cloud_exadata_infrastructure_cluster_placement_group_id,
-        ///         DisplayName = @var.Cloud_exadata_infrastructure_display_name,
-        ///         State = @var.Cloud_exadata_infrastructure_state,
+        ///         CompartmentId = compartmentId,
+        ///         ClusterPlacementGroupId = cloudExadataInfrastructureClusterPlacementGroupId,
+        ///         DisplayName = cloudExadataInfrastructureDisplayName,
+        ///         State = cloudExadataInfrastructureState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testCloudExadataInfrastructures = Oci.Database.GetCloudExadataInfrastructures.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ClusterPlacementGroupId = @var.Cloud_exadata_infrastructure_cluster_placement_group_id,
-        ///         DisplayName = @var.Cloud_exadata_infrastructure_display_name,
-        ///         State = @var.Cloud_exadata_infrastructure_state,
+        ///         CompartmentId = compartmentId,
+        ///         ClusterPlacementGroupId = cloudExadataInfrastructureClusterPlacementGroupId,
+        ///         DisplayName = cloudExadataInfrastructureDisplayName,
+        ///         State = cloudExadataInfrastructureState,
         ///     });
         /// 
         /// });

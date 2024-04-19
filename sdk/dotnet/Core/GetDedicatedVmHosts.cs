@@ -33,13 +33,13 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDedicatedVmHosts = Oci.Core.GetDedicatedVmHosts.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Dedicated_vm_host_availability_domain,
-        ///         DisplayName = @var.Dedicated_vm_host_display_name,
-        ///         InstanceShapeName = @var.Dedicated_vm_host_instance_shape_name,
-        ///         RemainingMemoryInGbsGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
-        ///         RemainingOcpusGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
-        ///         State = @var.Dedicated_vm_host_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dedicatedVmHostAvailabilityDomain,
+        ///         DisplayName = dedicatedVmHostDisplayName,
+        ///         InstanceShapeName = dedicatedVmHostInstanceShapeName,
+        ///         RemainingMemoryInGbsGreaterThanOrEqualTo = dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
+        ///         RemainingOcpusGreaterThanOrEqualTo = dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
+        ///         State = dedicatedVmHostState,
         ///     });
         /// 
         /// });
@@ -71,13 +71,13 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDedicatedVmHosts = Oci.Core.GetDedicatedVmHosts.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Dedicated_vm_host_availability_domain,
-        ///         DisplayName = @var.Dedicated_vm_host_display_name,
-        ///         InstanceShapeName = @var.Dedicated_vm_host_instance_shape_name,
-        ///         RemainingMemoryInGbsGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
-        ///         RemainingOcpusGreaterThanOrEqualTo = @var.Dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
-        ///         State = @var.Dedicated_vm_host_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dedicatedVmHostAvailabilityDomain,
+        ///         DisplayName = dedicatedVmHostDisplayName,
+        ///         InstanceShapeName = dedicatedVmHostInstanceShapeName,
+        ///         RemainingMemoryInGbsGreaterThanOrEqualTo = dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
+        ///         RemainingOcpusGreaterThanOrEqualTo = dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
+        ///         State = dedicatedVmHostState,
         ///     });
         /// 
         /// });

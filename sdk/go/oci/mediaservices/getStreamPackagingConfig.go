@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetStreamPackagingConfig(ctx, &mediaservices.GetStreamPackagingConfigArgs{
-//				StreamPackagingConfigId: oci_media_services_stream_packaging_config.Test_stream_packaging_config.Id,
+//				StreamPackagingConfigId: testStreamPackagingConfigOciMediaServicesStreamPackagingConfig.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

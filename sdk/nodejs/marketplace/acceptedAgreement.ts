@@ -17,16 +17,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAcceptedAgreement = new oci.marketplace.AcceptedAgreement("testAcceptedAgreement", {
- *     agreementId: oci_marketplace_agreement.test_agreement.id,
- *     compartmentId: _var.compartment_id,
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     packageVersion: _var.accepted_agreement_package_version,
- *     signature: _var.accepted_agreement_signature,
+ * const testAcceptedAgreement = new oci.marketplace.AcceptedAgreement("test_accepted_agreement", {
+ *     agreementId: testAgreement.id,
+ *     compartmentId: compartmentId,
+ *     listingId: testListing.id,
+ *     packageVersion: acceptedAgreementPackageVersion,
+ *     signature: acceptedAgreementSignature,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.accepted_agreement_display_name,
+ *     displayName: acceptedAgreementDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

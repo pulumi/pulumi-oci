@@ -25,19 +25,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmSuppression = new oci.monitoring.AlarmSuppression("testAlarmSuppression", {
+ * const testAlarmSuppression = new oci.monitoring.AlarmSuppression("test_alarm_suppression", {
  *     alarmSuppressionTarget: {
- *         alarmId: oci_monitoring_alarm.test_alarm.id,
- *         targetType: _var.alarm_suppression_alarm_suppression_target_target_type,
+ *         alarmId: testAlarm.id,
+ *         targetType: alarmSuppressionAlarmSuppressionTargetTargetType,
  *     },
- *     dimensions: _var.alarm_suppression_dimensions,
- *     displayName: _var.alarm_suppression_display_name,
- *     timeSuppressFrom: _var.alarm_suppression_time_suppress_from,
- *     timeSuppressUntil: _var.alarm_suppression_time_suppress_until,
+ *     dimensions: alarmSuppressionDimensions,
+ *     displayName: alarmSuppressionDisplayName,
+ *     timeSuppressFrom: alarmSuppressionTimeSuppressFrom,
+ *     timeSuppressUntil: alarmSuppressionTimeSuppressUntil,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.alarm_suppression_description,
+ *     description: alarmSuppressionDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

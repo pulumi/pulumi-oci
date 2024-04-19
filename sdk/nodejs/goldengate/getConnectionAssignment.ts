@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnectionAssignment = oci.GoldenGate.getConnectionAssignment({
- *     connectionAssignmentId: oci_golden_gate_connection_assignment.test_connection_assignment.id,
+ *     connectionAssignmentId: testConnectionAssignmentOciGoldenGateConnectionAssignment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,7 +91,7 @@ export interface GetConnectionAssignmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnectionAssignment = oci.GoldenGate.getConnectionAssignment({
- *     connectionAssignmentId: oci_golden_gate_connection_assignment.test_connection_assignment.id,
+ *     connectionAssignmentId: testConnectionAssignmentOciGoldenGateConnectionAssignment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

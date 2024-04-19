@@ -26,43 +26,44 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRuleSet = new Oci.LoadBalancer.RuleSet("testRuleSet", new()
+    ///     var testRuleSet = new Oci.LoadBalancer.RuleSet("test_rule_set", new()
     ///     {
     ///         Items = new[]
     ///         {
     ///             new Oci.LoadBalancer.Inputs.RuleSetItemArgs
     ///             {
-    ///                 Action = @var.Rule_set_items_action,
-    ///                 AllowedMethods = @var.Rule_set_items_allowed_methods,
-    ///                 AreInvalidCharactersAllowed = @var.Rule_set_items_are_invalid_characters_allowed,
+    ///                 Action = ruleSetItemsAction,
+    ///                 AllowedMethods = ruleSetItemsAllowedMethods,
+    ///                 AreInvalidCharactersAllowed = ruleSetItemsAreInvalidCharactersAllowed,
     ///                 Conditions = new[]
     ///                 {
     ///                     new Oci.LoadBalancer.Inputs.RuleSetItemConditionArgs
     ///                     {
-    ///                         AttributeName = @var.Rule_set_items_conditions_attribute_name,
-    ///                         AttributeValue = @var.Rule_set_items_conditions_attribute_value,
-    ///                         Operator = @var.Rule_set_items_conditions_operator,
+    ///                         AttributeName = ruleSetItemsConditionsAttributeName,
+    ///                         AttributeValue = ruleSetItemsConditionsAttributeValue,
+    ///                         Operator = ruleSetItemsConditionsOperator,
     ///                     },
     ///                 },
-    ///                 Description = @var.Rule_set_items_description,
-    ///                 Header = @var.Rule_set_items_header,
-    ///                 HttpLargeHeaderSizeInKb = @var.Rule_set_items_http_large_header_size_in_kb,
-    ///                 Prefix = @var.Rule_set_items_prefix,
+    ///                 Description = ruleSetItemsDescription,
+    ///                 Header = ruleSetItemsHeader,
+    ///                 HttpLargeHeaderSizeInKb = ruleSetItemsHttpLargeHeaderSizeInKb,
+    ///                 Prefix = ruleSetItemsPrefix,
     ///                 RedirectUri = new Oci.LoadBalancer.Inputs.RuleSetItemRedirectUriArgs
     ///                 {
-    ///                     Host = @var.Rule_set_items_redirect_uri_host,
-    ///                     Path = @var.Rule_set_items_redirect_uri_path,
-    ///                     Port = @var.Rule_set_items_redirect_uri_port,
-    ///                     Protocol = @var.Rule_set_items_redirect_uri_protocol,
-    ///                     Query = @var.Rule_set_items_redirect_uri_query,
+    ///                     Host = ruleSetItemsRedirectUriHost,
+    ///                     Path = ruleSetItemsRedirectUriPath,
+    ///                     Port = ruleSetItemsRedirectUriPort,
+    ///                     Protocol = ruleSetItemsRedirectUriProtocol,
+    ///                     Query = ruleSetItemsRedirectUriQuery,
     ///                 },
-    ///                 ResponseCode = @var.Rule_set_items_response_code,
-    ///                 StatusCode = @var.Rule_set_items_status_code,
-    ///                 Suffix = @var.Rule_set_items_suffix,
-    ///                 Value = @var.Rule_set_items_value,
+    ///                 ResponseCode = ruleSetItemsResponseCode,
+    ///                 StatusCode = ruleSetItemsStatusCode,
+    ///                 Suffix = ruleSetItemsSuffix,
+    ///                 Value = ruleSetItemsValue,
     ///             },
     ///         },
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         LoadBalancerId = testLoadBalancer.Id,
+    ///         Name = ruleSetName,
     ///     });
     /// 
     /// });

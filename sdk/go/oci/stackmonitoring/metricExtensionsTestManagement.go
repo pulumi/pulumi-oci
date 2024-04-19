@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewMetricExtensionsTestManagement(ctx, "testMetricExtensionsTestManagement", &StackMonitoring.MetricExtensionsTestManagementArgs{
-//				MetricExtensionId: pulumi.Any(oci_stack_monitoring_metric_extension.Test_metric_extension.Id),
-//				ResourceIds:       pulumi.Any(_var.Metric_extensions_test_management_resource_ids),
+//			_, err := StackMonitoring.NewMetricExtensionsTestManagement(ctx, "test_metric_extensions_test_management", &StackMonitoring.MetricExtensionsTestManagementArgs{
+//				MetricExtensionId: pulumi.Any(testMetricExtension.Id),
+//				ResourceIds:       pulumi.Any(metricExtensionsTestManagementResourceIds[0]),
 //			})
 //			if err != nil {
 //				return err

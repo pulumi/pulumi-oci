@@ -31,11 +31,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagedInstanceGroupAvailablePackages = Oci.OsManagementHub.GetManagedInstanceGroupAvailablePackages.Invoke(new()
         ///     {
-        ///         ManagedInstanceGroupId = oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Managed_instance_group_available_package_display_name,
-        ///         DisplayNameContains = @var.Managed_instance_group_available_package_display_name_contains,
-        ///         IsLatest = @var.Managed_instance_group_available_package_is_latest,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupAvailablePackageDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupAvailablePackageDisplayNameContains,
+        ///         IsLatest = managedInstanceGroupAvailablePackageIsLatest,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagedInstanceGroupAvailablePackages = Oci.OsManagementHub.GetManagedInstanceGroupAvailablePackages.Invoke(new()
         ///     {
-        ///         ManagedInstanceGroupId = oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Managed_instance_group_available_package_display_name,
-        ///         DisplayNameContains = @var.Managed_instance_group_available_package_display_name_contains,
-        ///         IsLatest = @var.Managed_instance_group_available_package_is_latest,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupAvailablePackageDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupAvailablePackageDisplayNameContains,
+        ///         IsLatest = managedInstanceGroupAvailablePackageIsLatest,
         ///     });
         /// 
         /// });

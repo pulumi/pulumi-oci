@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMetastores = oci.DataCatalog.getMetastores({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.metastore_display_name,
- *     state: _var.metastore_state,
+ *     compartmentId: compartmentId,
+ *     displayName: metastoreDisplayName,
+ *     state: metastoreState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetMetastoresResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMetastores = oci.DataCatalog.getMetastores({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.metastore_display_name,
- *     state: _var.metastore_state,
+ *     compartmentId: compartmentId,
+ *     displayName: metastoreDisplayName,
+ *     state: metastoreState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

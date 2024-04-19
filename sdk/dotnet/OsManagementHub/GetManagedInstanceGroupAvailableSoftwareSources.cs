@@ -31,10 +31,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagedInstanceGroupAvailableSoftwareSources = Oci.OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSources.Invoke(new()
         ///     {
-        ///         ManagedInstanceGroupId = oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Managed_instance_group_available_software_source_display_name,
-        ///         DisplayNameContains = @var.Managed_instance_group_available_software_source_display_name_contains,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupAvailableSoftwareSourceDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupAvailableSoftwareSourceDisplayNameContains,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagedInstanceGroupAvailableSoftwareSources = Oci.OsManagementHub.GetManagedInstanceGroupAvailableSoftwareSources.Invoke(new()
         ///     {
-        ///         ManagedInstanceGroupId = oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Managed_instance_group_available_software_source_display_name,
-        ///         DisplayNameContains = @var.Managed_instance_group_available_software_source_display_name_contains,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupAvailableSoftwareSourceDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupAvailableSoftwareSourceDisplayNameContains,
         ///     });
         /// 
         /// });

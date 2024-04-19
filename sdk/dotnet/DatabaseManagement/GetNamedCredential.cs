@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testNamedCredential = Oci.DatabaseManagement.GetNamedCredential.Invoke(new()
         ///     {
-        ///         NamedCredentialId = oci_database_management_named_credential.Test_named_credential.Id,
+        ///         NamedCredentialId = testNamedCredentialOciDatabaseManagementNamedCredential.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testNamedCredential = Oci.DatabaseManagement.GetNamedCredential.Invoke(new()
         ///     {
-        ///         NamedCredentialId = oci_database_management_named_credential.Test_named_credential.Id,
+        ///         NamedCredentialId = testNamedCredentialOciDatabaseManagementNamedCredential.Id,
         ///     });
         /// 
         /// });

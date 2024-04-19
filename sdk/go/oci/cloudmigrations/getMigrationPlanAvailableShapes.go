@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudMigrations.GetMigrationPlanAvailableShapes(ctx, &cloudmigrations.GetMigrationPlanAvailableShapesArgs{
-//				MigrationPlanId:    oci_cloud_migrations_migration_plan.Test_migration_plan.Id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Migration_plan_available_shape_availability_domain),
-//				CompartmentId:      pulumi.StringRef(_var.Compartment_id),
-//				DvhHostId:          pulumi.StringRef(oci_cloud_migrations_dvh_host.Test_dvh_host.Id),
-//				ReservedCapacityId: pulumi.StringRef(oci_cloud_migrations_reserved_capacity.Test_reserved_capacity.Id),
+//				MigrationPlanId:    testMigrationPlan.Id,
+//				AvailabilityDomain: pulumi.StringRef(migrationPlanAvailableShapeAvailabilityDomain),
+//				CompartmentId:      pulumi.StringRef(compartmentId),
+//				DvhHostId:          pulumi.StringRef(testDvhHost.Id),
+//				ReservedCapacityId: pulumi.StringRef(testReservedCapacity.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

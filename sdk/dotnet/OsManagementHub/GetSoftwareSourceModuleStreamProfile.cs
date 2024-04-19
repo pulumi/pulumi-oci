@@ -30,10 +30,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourceModuleStreamProfile = Oci.OsManagementHub.GetSoftwareSourceModuleStreamProfile.Invoke(new()
         ///     {
-        ///         ModuleName = @var.Software_source_module_stream_profile_module_name,
-        ///         ProfileName = oci_os_management_hub_profile.Test_profile.Name,
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         StreamName = oci_streaming_stream.Test_stream.Name,
+        ///         ModuleName = softwareSourceModuleStreamProfileModuleName,
+        ///         ProfileName = testProfile.Name,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         StreamName = testStream.Name,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourceModuleStreamProfile = Oci.OsManagementHub.GetSoftwareSourceModuleStreamProfile.Invoke(new()
         ///     {
-        ///         ModuleName = @var.Software_source_module_stream_profile_module_name,
-        ///         ProfileName = oci_os_management_hub_profile.Test_profile.Name,
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         StreamName = oci_streaming_stream.Test_stream.Name,
+        ///         ModuleName = softwareSourceModuleStreamProfileModuleName,
+        ///         ProfileName = testProfile.Name,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         StreamName = testStream.Name,
         ///     });
         /// 
         /// });

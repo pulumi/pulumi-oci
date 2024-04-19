@@ -31,8 +31,8 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSupportedSkus = Oci.Ocvp.GetSupportedSkus.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         HostShapeName = oci_core_shape.Test_shape.Name,
+        ///         CompartmentId = compartmentId,
+        ///         HostShapeName = testShape.Name,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSupportedSkus = Oci.Ocvp.GetSupportedSkus.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         HostShapeName = oci_core_shape.Test_shape.Name,
+        ///         CompartmentId = compartmentId,
+        ///         HostShapeName = testShape.Name,
         ///     });
         /// 
         /// });

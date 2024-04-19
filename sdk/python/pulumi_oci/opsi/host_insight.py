@@ -662,21 +662,21 @@ class HostInsight(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_host_insight = oci.opsi.HostInsight("testHostInsight",
-            compartment_id=var["compartment_id"],
-            entity_source=var["host_insight_entity_source"],
-            compute_id=oci_opsi_compute["test_compute"]["id"],
+        test_host_insight = oci.opsi.HostInsight("test_host_insight",
+            compartment_id=compartment_id,
+            entity_source=host_insight_entity_source,
+            compute_id=test_compute["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-            enterprise_manager_entity_identifier=var["host_insight_enterprise_manager_entity_identifier"],
-            enterprise_manager_identifier=var["host_insight_enterprise_manager_identifier"],
-            exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
+            enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
+            enterprise_manager_entity_identifier=host_insight_enterprise_manager_entity_identifier,
+            enterprise_manager_identifier=host_insight_enterprise_manager_identifier,
+            exadata_insight_id=test_exadata_insight["id"],
             freeform_tags={
                 "bar-key": "value",
             },
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
+            management_agent_id=test_management_agent["id"],
             status="DISABLED")
         ```
         <!--End PulumiCodeChooser -->
@@ -725,21 +725,21 @@ class HostInsight(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_host_insight = oci.opsi.HostInsight("testHostInsight",
-            compartment_id=var["compartment_id"],
-            entity_source=var["host_insight_entity_source"],
-            compute_id=oci_opsi_compute["test_compute"]["id"],
+        test_host_insight = oci.opsi.HostInsight("test_host_insight",
+            compartment_id=compartment_id,
+            entity_source=host_insight_entity_source,
+            compute_id=test_compute["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-            enterprise_manager_entity_identifier=var["host_insight_enterprise_manager_entity_identifier"],
-            enterprise_manager_identifier=var["host_insight_enterprise_manager_identifier"],
-            exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
+            enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
+            enterprise_manager_entity_identifier=host_insight_enterprise_manager_entity_identifier,
+            enterprise_manager_identifier=host_insight_enterprise_manager_identifier,
+            exadata_insight_id=test_exadata_insight["id"],
             freeform_tags={
                 "bar-key": "value",
             },
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
+            management_agent_id=test_management_agent["id"],
             status="DISABLED")
         ```
         <!--End PulumiCodeChooser -->

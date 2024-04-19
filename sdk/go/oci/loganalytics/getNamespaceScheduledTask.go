@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceScheduledTask(ctx, &loganalytics.GetNamespaceScheduledTaskArgs{
-//				Namespace:       _var.Namespace_scheduled_task_namespace,
-//				ScheduledTaskId: oci_log_analytics_scheduled_task.Test_scheduled_task.Id,
+//				Namespace:       namespaceScheduledTaskNamespace,
+//				ScheduledTaskId: testScheduledTask.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGates = Oci.Identity.GetDomainsCloudGates.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         CloudGateCount = @var.Cloud_gate_cloud_gate_count,
-        ///         CloudGateFilter = @var.Cloud_gate_cloud_gate_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CloudGateCount = cloudGateCloudGateCount,
+        ///         CloudGateFilter = cloudGateCloudGateFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_resource_type_schema_version,
-        ///         StartIndex = @var.Cloud_gate_start_index,
+        ///         Authorization = cloudGateAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateResourceTypeSchemaVersion,
+        ///         StartIndex = cloudGateStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGates = Oci.Identity.GetDomainsCloudGates.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         CloudGateCount = @var.Cloud_gate_cloud_gate_count,
-        ///         CloudGateFilter = @var.Cloud_gate_cloud_gate_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CloudGateCount = cloudGateCloudGateCount,
+        ///         CloudGateFilter = cloudGateCloudGateFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_resource_type_schema_version,
-        ///         StartIndex = @var.Cloud_gate_start_index,
+        ///         Authorization = cloudGateAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateResourceTypeSchemaVersion,
+        ///         StartIndex = cloudGateStartIndex,
         ///     });
         /// 
         /// });

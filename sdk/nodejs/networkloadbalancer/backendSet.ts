@@ -18,31 +18,32 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackendSet = new oci.networkloadbalancer.BackendSet("testBackendSet", {
+ * const testBackendSet = new oci.networkloadbalancer.BackendSet("test_backend_set", {
  *     healthChecker: {
- *         protocol: _var.backend_set_health_checker_protocol,
+ *         protocol: backendSetHealthCheckerProtocol,
  *         dns: {
- *             domainName: oci_identity_domain.test_domain.name,
- *             queryClass: _var.backend_set_health_checker_dns_query_class,
- *             queryType: _var.backend_set_health_checker_dns_query_type,
- *             rcodes: _var.backend_set_health_checker_dns_rcodes,
- *             transportProtocol: _var.backend_set_health_checker_dns_transport_protocol,
+ *             domainName: testDomain.name,
+ *             queryClass: backendSetHealthCheckerDnsQueryClass,
+ *             queryType: backendSetHealthCheckerDnsQueryType,
+ *             rcodes: backendSetHealthCheckerDnsRcodes,
+ *             transportProtocol: backendSetHealthCheckerDnsTransportProtocol,
  *         },
- *         intervalInMillis: _var.backend_set_health_checker_interval_in_millis,
- *         port: _var.backend_set_health_checker_port,
- *         requestData: _var.backend_set_health_checker_request_data,
- *         responseBodyRegex: _var.backend_set_health_checker_response_body_regex,
- *         responseData: _var.backend_set_health_checker_response_data,
- *         retries: _var.backend_set_health_checker_retries,
- *         returnCode: _var.backend_set_health_checker_return_code,
- *         timeoutInMillis: _var.backend_set_health_checker_timeout_in_millis,
- *         urlPath: _var.backend_set_health_checker_url_path,
+ *         intervalInMillis: backendSetHealthCheckerIntervalInMillis,
+ *         port: backendSetHealthCheckerPort,
+ *         requestData: backendSetHealthCheckerRequestData,
+ *         responseBodyRegex: backendSetHealthCheckerResponseBodyRegex,
+ *         responseData: backendSetHealthCheckerResponseData,
+ *         retries: backendSetHealthCheckerRetries,
+ *         returnCode: backendSetHealthCheckerReturnCode,
+ *         timeoutInMillis: backendSetHealthCheckerTimeoutInMillis,
+ *         urlPath: backendSetHealthCheckerUrlPath,
  *     },
- *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
- *     policy: _var.backend_set_policy,
- *     ipVersion: _var.backend_set_ip_version,
- *     isFailOpen: _var.backend_set_is_fail_open,
- *     isPreserveSource: _var.backend_set_is_preserve_source,
+ *     name: backendSetName,
+ *     networkLoadBalancerId: testNetworkLoadBalancer.id,
+ *     policy: backendSetPolicy,
+ *     ipVersion: backendSetIpVersion,
+ *     isFailOpen: backendSetIsFailOpen,
+ *     isPreserveSource: backendSetIsPreserveSource,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

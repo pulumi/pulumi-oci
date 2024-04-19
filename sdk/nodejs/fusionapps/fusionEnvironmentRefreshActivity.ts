@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentRefreshActivity = new oci.fusionapps.FusionEnvironmentRefreshActivity("testFusionEnvironmentRefreshActivity", {
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     sourceFusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ * const testFusionEnvironmentRefreshActivity = new oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity", {
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     sourceFusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

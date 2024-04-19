@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPbfListing = oci.Functions.getPbfListing({
- *     pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
+ *     pbfListingId: testPbfListingOciFunctionsPbfListing.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,7 +105,7 @@ export interface GetPbfListingResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPbfListing = oci.Functions.getPbfListing({
- *     pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
+ *     pbfListingId: testPbfListingOciFunctionsPbfListing.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

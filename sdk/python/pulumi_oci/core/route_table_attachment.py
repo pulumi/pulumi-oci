@@ -109,9 +109,9 @@ class RouteTableAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_route_table_attachment = oci.core.RouteTableAttachment("testRouteTableAttachment",
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+        test_route_table_attachment = oci.core.RouteTableAttachment("test_route_table_attachment",
+            subnet_id=test_subnet["id"],
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -146,9 +146,9 @@ class RouteTableAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_route_table_attachment = oci.core.RouteTableAttachment("testRouteTableAttachment",
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+        test_route_table_attachment = oci.core.RouteTableAttachment("test_route_table_attachment",
+            subnet_id=test_subnet["id"],
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 

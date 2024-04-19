@@ -25,34 +25,34 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCloudGate = new Oci.Identity.DomainsCloudGate("testCloudGate", new()
+    ///     var testCloudGate = new Oci.Identity.DomainsCloudGate("test_cloud_gate", new()
     ///     {
-    ///         DisplayName = @var.Cloud_gate_display_name,
-    ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+    ///         DisplayName = cloudGateDisplayName,
+    ///         IdcsEndpoint = testDomain.Url,
     ///         Schemas = new[]
     ///         {
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:CloudGate",
     ///         },
-    ///         Active = @var.Cloud_gate_active,
+    ///         Active = cloudGateActive,
     ///         AttributeSets = new[]
     ///         {
     ///             "all",
     ///         },
     ///         Attributes = "",
-    ///         Authorization = @var.Cloud_gate_authorization,
-    ///         Description = @var.Cloud_gate_description,
+    ///         Authorization = cloudGateAuthorization,
+    ///         Description = cloudGateDescription,
     ///         LastModifiedTime = "2000-01-01T00:00:00Z",
-    ///         Ocid = @var.Cloud_gate_ocid,
-    ///         ResourceTypeSchemaVersion = @var.Cloud_gate_resource_type_schema_version,
+    ///         Ocid = cloudGateOcid,
+    ///         ResourceTypeSchemaVersion = cloudGateResourceTypeSchemaVersion,
     ///         Tags = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsCloudGateTagArgs
     ///             {
-    ///                 Key = @var.Cloud_gate_tags_key,
-    ///                 Value = @var.Cloud_gate_tags_value,
+    ///                 Key = cloudGateTagsKey,
+    ///                 Value = cloudGateTagsValue,
     ///             },
     ///         },
-    ///         Type = @var.Cloud_gate_type,
+    ///         Type = cloudGateType,
     ///     });
     /// 
     /// });

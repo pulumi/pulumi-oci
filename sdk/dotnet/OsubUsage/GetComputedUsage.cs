@@ -30,10 +30,10 @@ namespace Pulumi.Oci.OsubUsage
         /// {
         ///     var testComputedUsage = Oci.OsubUsage.GetComputedUsage.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputedUsageId = oci_osub_usage_computed_usage.Test_computed_usage.Id,
-        ///         Fields = @var.Computed_usage_fields,
-        ///         XOneOriginRegion = @var.Computed_usage_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         ComputedUsageId = testComputedUsageOciOsubUsageComputedUsage.Id,
+        ///         Fields = computedUsageFields,
+        ///         XOneOriginRegion = computedUsageXOneOriginRegion,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.OsubUsage
         /// {
         ///     var testComputedUsage = Oci.OsubUsage.GetComputedUsage.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputedUsageId = oci_osub_usage_computed_usage.Test_computed_usage.Id,
-        ///         Fields = @var.Computed_usage_fields,
-        ///         XOneOriginRegion = @var.Computed_usage_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         ComputedUsageId = testComputedUsageOciOsubUsageComputedUsage.Id,
+        ///         Fields = computedUsageFields,
+        ///         XOneOriginRegion = computedUsageXOneOriginRegion,
         ///     });
         /// 
         /// });

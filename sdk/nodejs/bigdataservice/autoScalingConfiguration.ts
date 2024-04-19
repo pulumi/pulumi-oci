@@ -18,41 +18,41 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutoScalingConfiguration = new oci.bigdataservice.AutoScalingConfiguration("testAutoScalingConfiguration", {
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     clusterAdminPassword: _var.auto_scaling_configuration_cluster_admin_password,
- *     isEnabled: _var.auto_scaling_configuration_is_enabled,
- *     nodeType: _var.auto_scaling_configuration_node_type,
- *     displayName: _var.auto_scaling_configuration_display_name,
+ * const testAutoScalingConfiguration = new oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration", {
+ *     bdsInstanceId: testBdsInstance.id,
+ *     clusterAdminPassword: autoScalingConfigurationClusterAdminPassword,
+ *     isEnabled: autoScalingConfigurationIsEnabled,
+ *     nodeType: autoScalingConfigurationNodeType,
+ *     displayName: autoScalingConfigurationDisplayName,
  *     policyDetails: {
- *         policyType: _var.auto_scaling_configuration_policy_details_policy_type,
+ *         policyType: autoScalingConfigurationPolicyDetailsPolicyType,
  *         scaleDownConfig: {
- *             memoryStepSize: _var.auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
+ *             memoryStepSize: autoScalingConfigurationPolicyDetailsScaleDownConfigMemoryStepSize,
  *             metric: {
- *                 metricType: _var.auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
+ *                 metricType: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricMetricType,
  *                 threshold: {
- *                     durationInMinutes: _var.auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
- *                     operator: _var.auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
- *                     value: _var.auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
+ *                     durationInMinutes: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdDurationInMinutes,
+ *                     operator: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOperator,
+ *                     value: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdValue,
  *                 },
  *             },
- *             minMemoryPerNode: _var.auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
- *             minOcpusPerNode: _var.auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
- *             ocpuStepSize: _var.auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
+ *             minMemoryPerNode: autoScalingConfigurationPolicyDetailsScaleDownConfigMinMemoryPerNode,
+ *             minOcpusPerNode: autoScalingConfigurationPolicyDetailsScaleDownConfigMinOcpusPerNode,
+ *             ocpuStepSize: autoScalingConfigurationPolicyDetailsScaleDownConfigOcpuStepSize,
  *         },
  *         scaleUpConfig: {
- *             maxMemoryPerNode: _var.auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
- *             maxOcpusPerNode: _var.auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
- *             memoryStepSize: _var.auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+ *             maxMemoryPerNode: autoScalingConfigurationPolicyDetailsScaleUpConfigMaxMemoryPerNode,
+ *             maxOcpusPerNode: autoScalingConfigurationPolicyDetailsScaleUpConfigMaxOcpusPerNode,
+ *             memoryStepSize: autoScalingConfigurationPolicyDetailsScaleUpConfigMemoryStepSize,
  *             metric: {
- *                 metricType: _var.auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
+ *                 metricType: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricMetricType,
  *                 threshold: {
- *                     durationInMinutes: _var.auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
- *                     operator: _var.auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
- *                     value: _var.auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+ *                     durationInMinutes: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdDurationInMinutes,
+ *                     operator: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOperator,
+ *                     value: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdValue,
  *                 },
  *             },
- *             ocpuStepSize: _var.auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
+ *             ocpuStepSize: autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize,
  *         },
  *     },
  * });

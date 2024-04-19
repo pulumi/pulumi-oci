@@ -32,18 +32,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewManagedDatabaseGroup(ctx, "testManagedDatabaseGroup", &DatabaseManagement.ManagedDatabaseGroupArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := DatabaseManagement.NewManagedDatabaseGroup(ctx, "test_managed_database_group", &DatabaseManagement.ManagedDatabaseGroupArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(managedDatabaseGroupName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Managed_database_group_description),
+//				Description: pulumi.Any(managedDatabaseGroupDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				ManagedDatabases: databasemanagement.ManagedDatabaseGroupManagedDatabaseArray{
 //					&databasemanagement.ManagedDatabaseGroupManagedDatabaseArgs{
-//						Id: pulumi.Any(_var.Managed_database_id),
+//						Id: pulumi.Any(managedDatabaseId),
 //					},
 //				},
 //			})

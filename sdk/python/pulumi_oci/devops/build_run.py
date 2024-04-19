@@ -420,23 +420,23 @@ class BuildRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_build_run = oci.dev_ops.BuildRun("testBuildRun",
-            build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
+        test_build_run = oci.dev_ops.BuildRun("test_build_run",
+            build_pipeline_id=test_build_pipeline["id"],
             build_run_arguments=oci.dev_ops.BuildRunBuildRunArgumentsArgs(
                 items=[oci.dev_ops.BuildRunBuildRunArgumentsItemArgs(
-                    name=var["build_run_build_run_arguments_items_name"],
-                    value=var["build_run_build_run_arguments_items_value"],
+                    name=build_run_build_run_arguments_items_name,
+                    value=build_run_build_run_arguments_items_value,
                 )],
             ),
             commit_info=oci.dev_ops.BuildRunCommitInfoArgs(
-                commit_hash=var["build_run_commit_info_commit_hash"],
-                repository_branch=var["build_run_commit_info_repository_branch"],
-                repository_url=var["build_run_commit_info_repository_url"],
+                commit_hash=build_run_commit_info_commit_hash,
+                repository_branch=build_run_commit_info_repository_branch,
+                repository_url=build_run_commit_info_repository_url,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["build_run_display_name"],
+            display_name=build_run_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -482,23 +482,23 @@ class BuildRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_build_run = oci.dev_ops.BuildRun("testBuildRun",
-            build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
+        test_build_run = oci.dev_ops.BuildRun("test_build_run",
+            build_pipeline_id=test_build_pipeline["id"],
             build_run_arguments=oci.dev_ops.BuildRunBuildRunArgumentsArgs(
                 items=[oci.dev_ops.BuildRunBuildRunArgumentsItemArgs(
-                    name=var["build_run_build_run_arguments_items_name"],
-                    value=var["build_run_build_run_arguments_items_value"],
+                    name=build_run_build_run_arguments_items_name,
+                    value=build_run_build_run_arguments_items_value,
                 )],
             ),
             commit_info=oci.dev_ops.BuildRunCommitInfoArgs(
-                commit_hash=var["build_run_commit_info_commit_hash"],
-                repository_branch=var["build_run_commit_info_repository_branch"],
-                repository_url=var["build_run_commit_info_repository_url"],
+                commit_hash=build_run_commit_info_commit_hash,
+                repository_branch=build_run_commit_info_repository_branch,
+                repository_url=build_run_commit_info_repository_url,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["build_run_display_name"],
+            display_name=build_run_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

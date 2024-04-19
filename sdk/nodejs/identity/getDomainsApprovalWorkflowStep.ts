@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApprovalWorkflowStep = oci.Identity.getDomainsApprovalWorkflowStep({
- *     approvalWorkflowStepId: oci_identity_domains_approval_workflow_step.test_approval_workflow_step.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     approvalWorkflowStepId: testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.approval_workflow_step_authorization,
- *     resourceTypeSchemaVersion: _var.approval_workflow_step_resource_type_schema_version,
+ *     authorization: approvalWorkflowStepAuthorization,
+ *     resourceTypeSchemaVersion: approvalWorkflowStepResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -168,12 +168,12 @@ export interface GetDomainsApprovalWorkflowStepResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApprovalWorkflowStep = oci.Identity.getDomainsApprovalWorkflowStep({
- *     approvalWorkflowStepId: oci_identity_domains_approval_workflow_step.test_approval_workflow_step.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     approvalWorkflowStepId: testApprovalWorkflowStepOciIdentityDomainsApprovalWorkflowStep.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.approval_workflow_step_authorization,
- *     resourceTypeSchemaVersion: _var.approval_workflow_step_resource_type_schema_version,
+ *     authorization: approvalWorkflowStepAuthorization,
+ *     resourceTypeSchemaVersion: approvalWorkflowStepResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

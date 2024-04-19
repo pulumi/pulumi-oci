@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPool = oci.DataFlow.getPool({
- *     poolId: oci_dataflow_pool.test_pool.id,
+ *     poolId: testPoolOciDataflowPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,7 +125,7 @@ export interface GetPoolResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPool = oci.DataFlow.getPool({
- *     poolId: oci_dataflow_pool.test_pool.id,
+ *     poolId: testPoolOciDataflowPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

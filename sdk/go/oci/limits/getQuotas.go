@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Limits.GetQuotas(ctx, &limits.GetQuotasArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				Name:          pulumi.StringRef(_var.Quota_name),
-//				State:         pulumi.StringRef(_var.Quota_state),
+//				CompartmentId: tenancyOcid,
+//				Name:          pulumi.StringRef(quotaName),
+//				State:         pulumi.StringRef(quotaState),
 //			}, nil)
 //			if err != nil {
 //				return err

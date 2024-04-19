@@ -18,32 +18,32 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmCluster = new oci.database.VmCluster("testVmCluster", {
- *     compartmentId: _var.compartment_id,
- *     cpuCoreCount: _var.vm_cluster_cpu_core_count,
- *     displayName: _var.vm_cluster_display_name,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     giVersion: _var.vm_cluster_gi_version,
- *     sshPublicKeys: _var.vm_cluster_ssh_public_keys,
- *     vmClusterNetworkId: oci_database_vm_cluster_network.test_vm_cluster_network.id,
+ * const testVmCluster = new oci.database.VmCluster("test_vm_cluster", {
+ *     compartmentId: compartmentId,
+ *     cpuCoreCount: vmClusterCpuCoreCount,
+ *     displayName: vmClusterDisplayName,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     giVersion: vmClusterGiVersion,
+ *     sshPublicKeys: vmClusterSshPublicKeys,
+ *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     dataCollectionOptions: {
- *         isDiagnosticsEventsEnabled: _var.vm_cluster_data_collection_options_is_diagnostics_events_enabled,
- *         isHealthMonitoringEnabled: _var.vm_cluster_data_collection_options_is_health_monitoring_enabled,
- *         isIncidentLogsEnabled: _var.vm_cluster_data_collection_options_is_incident_logs_enabled,
+ *         isDiagnosticsEventsEnabled: vmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled,
+ *         isHealthMonitoringEnabled: vmClusterDataCollectionOptionsIsHealthMonitoringEnabled,
+ *         isIncidentLogsEnabled: vmClusterDataCollectionOptionsIsIncidentLogsEnabled,
  *     },
- *     dataStorageSizeInTbs: _var.vm_cluster_data_storage_size_in_tbs,
- *     dbNodeStorageSizeInGbs: _var.vm_cluster_db_node_storage_size_in_gbs,
- *     dbServers: _var.vm_cluster_db_servers,
- *     definedTags: _var.vm_cluster_defined_tags,
+ *     dataStorageSizeInTbs: vmClusterDataStorageSizeInTbs,
+ *     dbNodeStorageSizeInGbs: vmClusterDbNodeStorageSizeInGbs,
+ *     dbServers: vmClusterDbServers,
+ *     definedTags: vmClusterDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isLocalBackupEnabled: _var.vm_cluster_is_local_backup_enabled,
- *     isSparseDiskgroupEnabled: _var.vm_cluster_is_sparse_diskgroup_enabled,
- *     licenseModel: _var.vm_cluster_license_model,
- *     memorySizeInGbs: _var.vm_cluster_memory_size_in_gbs,
- *     systemVersion: _var.vm_cluster_system_version,
- *     timeZone: _var.vm_cluster_time_zone,
+ *     isLocalBackupEnabled: vmClusterIsLocalBackupEnabled,
+ *     isSparseDiskgroupEnabled: vmClusterIsSparseDiskgroupEnabled,
+ *     licenseModel: vmClusterLicenseModel,
+ *     memorySizeInGbs: vmClusterMemorySizeInGbs,
+ *     systemVersion: vmClusterSystemVersion,
+ *     timeZone: vmClusterTimeZone,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

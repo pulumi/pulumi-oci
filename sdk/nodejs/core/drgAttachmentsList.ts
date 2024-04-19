@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgAttachmentsList = new oci.core.DrgAttachmentsList("testDrgAttachmentsList", {
- *     drgId: oci_core_drg.test_drg.id,
- *     attachmentType: _var.drg_attachments_list_attachment_type,
- *     isCrossTenancy: _var.drg_attachments_list_is_cross_tenancy,
+ * const testDrgAttachmentsList = new oci.core.DrgAttachmentsList("test_drg_attachments_list", {
+ *     drgId: testDrg.id,
+ *     attachmentType: drgAttachmentsListAttachmentType,
+ *     isCrossTenancy: drgAttachmentsListIsCrossTenancy,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

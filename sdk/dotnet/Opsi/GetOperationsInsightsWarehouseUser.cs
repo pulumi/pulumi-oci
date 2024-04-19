@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOperationsInsightsWarehouseUser = Oci.Opsi.GetOperationsInsightsWarehouseUser.Invoke(new()
         ///     {
-        ///         OperationsInsightsWarehouseUserId = oci_opsi_operations_insights_warehouse_user.Test_operations_insights_warehouse_user.Id,
+        ///         OperationsInsightsWarehouseUserId = testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOperationsInsightsWarehouseUser = Oci.Opsi.GetOperationsInsightsWarehouseUser.Invoke(new()
         ///     {
-        ///         OperationsInsightsWarehouseUserId = oci_opsi_operations_insights_warehouse_user.Test_operations_insights_warehouse_user.Id,
+        ///         OperationsInsightsWarehouseUserId = testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.Id,
         ///     });
         /// 
         /// });

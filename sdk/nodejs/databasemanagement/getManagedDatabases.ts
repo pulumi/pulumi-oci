@@ -24,12 +24,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabases = oci.DatabaseManagement.getManagedDatabases({
- *     compartmentId: _var.compartment_id,
- *     deploymentType: _var.managed_database_deployment_type,
- *     externalExadataInfrastructureId: oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure.id,
- *     id: _var.managed_database_id,
- *     managementOption: _var.managed_database_management_option,
- *     name: _var.managed_database_name,
+ *     compartmentId: compartmentId,
+ *     deploymentType: managedDatabaseDeploymentType,
+ *     externalExadataInfrastructureId: testExternalExadataInfrastructure.id,
+ *     id: managedDatabaseId,
+ *     managementOption: managedDatabaseManagementOption,
+ *     name: managedDatabaseName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -128,12 +128,12 @@ export interface GetManagedDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabases = oci.DatabaseManagement.getManagedDatabases({
- *     compartmentId: _var.compartment_id,
- *     deploymentType: _var.managed_database_deployment_type,
- *     externalExadataInfrastructureId: oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure.id,
- *     id: _var.managed_database_id,
- *     managementOption: _var.managed_database_management_option,
- *     name: _var.managed_database_name,
+ *     compartmentId: compartmentId,
+ *     deploymentType: managedDatabaseDeploymentType,
+ *     externalExadataInfrastructureId: testExternalExadataInfrastructure.id,
+ *     id: managedDatabaseId,
+ *     managementOption: managedDatabaseManagementOption,
+ *     name: managedDatabaseName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

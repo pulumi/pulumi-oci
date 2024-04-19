@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceRules(ctx, &loganalytics.GetNamespaceRulesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Namespace:     _var.Namespace_rule_namespace,
-//				DisplayName:   pulumi.StringRef(_var.Namespace_rule_display_name),
-//				Kind:          pulumi.StringRef(_var.Namespace_rule_kind),
-//				State:         pulumi.StringRef(_var.Namespace_rule_state),
-//				TargetService: pulumi.StringRef(_var.Namespace_rule_target_service),
+//				CompartmentId: compartmentId,
+//				Namespace:     namespaceRuleNamespace,
+//				DisplayName:   pulumi.StringRef(namespaceRuleDisplayName),
+//				Kind:          pulumi.StringRef(namespaceRuleKind),
+//				State:         pulumi.StringRef(namespaceRuleState),
+//				TargetService: pulumi.StringRef(namespaceRuleTargetService),
 //			}, nil)
 //			if err != nil {
 //				return err

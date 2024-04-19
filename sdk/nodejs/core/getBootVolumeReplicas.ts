@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolumeReplicas = oci.Core.getBootVolumeReplicas({
- *     availabilityDomain: _var.boot_volume_replica_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.boot_volume_replica_display_name,
- *     state: _var.boot_volume_replica_state,
- *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
+ *     availabilityDomain: bootVolumeReplicaAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: bootVolumeReplicaDisplayName,
+ *     state: bootVolumeReplicaState,
+ *     volumeGroupReplicaId: testVolumeGroupReplica.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,11 +113,11 @@ export interface GetBootVolumeReplicasResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolumeReplicas = oci.Core.getBootVolumeReplicas({
- *     availabilityDomain: _var.boot_volume_replica_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.boot_volume_replica_display_name,
- *     state: _var.boot_volume_replica_state,
- *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
+ *     availabilityDomain: bootVolumeReplicaAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: bootVolumeReplicaDisplayName,
+ *     state: bootVolumeReplicaState,
+ *     volumeGroupReplicaId: testVolumeGroupReplica.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

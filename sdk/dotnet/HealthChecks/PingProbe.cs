@@ -28,14 +28,14 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPingProbe = new Oci.HealthChecks.PingProbe("testPingProbe", new()
+    ///     var testPingProbe = new Oci.HealthChecks.PingProbe("test_ping_probe", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Protocol = @var.Ping_probe_protocol,
-    ///         Targets = @var.Ping_probe_targets,
-    ///         Port = @var.Ping_probe_port,
-    ///         TimeoutInSeconds = @var.Ping_probe_timeout_in_seconds,
-    ///         VantagePointNames = @var.Ping_probe_vantage_point_names,
+    ///         CompartmentId = compartmentId,
+    ///         Protocol = pingProbeProtocol,
+    ///         Targets = pingProbeTargets,
+    ///         Port = pingProbePort,
+    ///         TimeoutInSeconds = pingProbeTimeoutInSeconds,
+    ///         VantagePointNames = pingProbeVantagePointNames,
     ///     });
     /// 
     /// });

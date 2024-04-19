@@ -310,12 +310,12 @@ def get_domains_account_recovery_setting(account_recovery_setting_id: Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_account_recovery_setting = oci.Identity.get_domains_account_recovery_setting(account_recovery_setting_id=oci_identity_domains_account_recovery_setting["test_account_recovery_setting"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_account_recovery_setting = oci.Identity.get_domains_account_recovery_setting(account_recovery_setting_id=test_account_recovery_setting_oci_identity_domains_account_recovery_setting["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["account_recovery_setting_authorization"],
-        resource_type_schema_version=var["account_recovery_setting_resource_type_schema_version"])
+        authorization=account_recovery_setting_authorization,
+        resource_type_schema_version=account_recovery_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -383,12 +383,12 @@ def get_domains_account_recovery_setting_output(account_recovery_setting_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_account_recovery_setting = oci.Identity.get_domains_account_recovery_setting(account_recovery_setting_id=oci_identity_domains_account_recovery_setting["test_account_recovery_setting"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_account_recovery_setting = oci.Identity.get_domains_account_recovery_setting(account_recovery_setting_id=test_account_recovery_setting_oci_identity_domains_account_recovery_setting["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["account_recovery_setting_authorization"],
-        resource_type_schema_version=var["account_recovery_setting_resource_type_schema_version"])
+        authorization=account_recovery_setting_authorization,
+        resource_type_schema_version=account_recovery_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

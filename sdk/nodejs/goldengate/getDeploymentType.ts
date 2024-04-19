@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentType = oci.GoldenGate.getDeploymentType({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deployment_type_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: deploymentTypeDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetDeploymentTypeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentType = oci.GoldenGate.getDeploymentType({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deployment_type_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: deploymentTypeDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

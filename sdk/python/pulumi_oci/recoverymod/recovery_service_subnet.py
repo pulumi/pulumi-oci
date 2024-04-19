@@ -347,11 +347,11 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_recovery_service_subnet = oci.recovery_mod.RecoveryServiceSubnet("testRecoveryServiceSubnet",
-            compartment_id=var["compartment_id"],
-            display_name=var["recovery_service_subnet_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_recovery_service_subnet = oci.recovery_mod.RecoveryServiceSubnet("test_recovery_service_subnet",
+            compartment_id=compartment_id,
+            display_name=recovery_service_subnet_display_name,
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -400,11 +400,11 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_recovery_service_subnet = oci.recovery_mod.RecoveryServiceSubnet("testRecoveryServiceSubnet",
-            compartment_id=var["compartment_id"],
-            display_name=var["recovery_service_subnet_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_recovery_service_subnet = oci.recovery_mod.RecoveryServiceSubnet("test_recovery_service_subnet",
+            compartment_id=compartment_id,
+            display_name=recovery_service_subnet_display_name,
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },

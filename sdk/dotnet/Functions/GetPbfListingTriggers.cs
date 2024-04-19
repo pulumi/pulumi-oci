@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testPbfListingTriggers = Oci.Functions.GetPbfListingTriggers.Invoke(new()
         ///     {
-        ///         Name = @var.Pbf_listing_trigger_name,
+        ///         Name = pbfListingTriggerName,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testPbfListingTriggers = Oci.Functions.GetPbfListingTriggers.Invoke(new()
         ///     {
-        ///         Name = @var.Pbf_listing_trigger_name,
+        ///         Name = pbfListingTriggerName,
         ///     });
         /// 
         /// });

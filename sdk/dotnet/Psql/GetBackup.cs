@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testBackup = Oci.Psql.GetBackup.Invoke(new()
         ///     {
-        ///         BackupId = oci_psql_backup.Test_backup.Id,
+        ///         BackupId = testBackupOciPsqlBackup.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testBackup = Oci.Psql.GetBackup.Invoke(new()
         ///     {
-        ///         BackupId = oci_psql_backup.Test_backup.Id,
+        ///         BackupId = testBackupOciPsqlBackup.Id,
         ///     });
         /// 
         /// });

@@ -120,9 +120,9 @@ def get_detection_projects(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.AiAnomalyDetection.get_detection_projects(compartment_id=var["compartment_id"],
-        display_name=var["project_display_name"],
-        state=var["project_state"])
+    test_projects = oci.AiAnomalyDetection.get_detection_projects(compartment_id=compartment_id,
+        display_name=project_display_name,
+        state=project_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_detection_projects_output(compartment_id: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_projects = oci.AiAnomalyDetection.get_detection_projects(compartment_id=var["compartment_id"],
-        display_name=var["project_display_name"],
-        state=var["project_state"])
+    test_projects = oci.AiAnomalyDetection.get_detection_projects(compartment_id=compartment_id,
+        display_name=project_display_name,
+        state=project_state)
     ```
     <!--End PulumiCodeChooser -->
 

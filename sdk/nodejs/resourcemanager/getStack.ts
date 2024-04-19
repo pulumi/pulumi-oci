@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStack = oci.ResourceManager.getStack({
- *     stackId: oci_resourcemanager_stack.test_stack.id,
+ *     stackId: testStackOciResourcemanagerStack.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,7 +95,7 @@ export interface GetStackResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStack = oci.ResourceManager.getStack({
- *     stackId: oci_resourcemanager_stack.test_stack.id,
+ *     stackId: testStackOciResourcemanagerStack.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

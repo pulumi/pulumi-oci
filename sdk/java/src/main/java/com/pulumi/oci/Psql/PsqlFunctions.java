@@ -74,7 +74,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
+     *             .backupId(testBackupOciPsqlBackup.id())
      *             .build());
      * 
      *     }
@@ -116,7 +116,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
+     *             .backupId(testBackupOciPsqlBackup.id())
      *             .build());
      * 
      *     }
@@ -158,7 +158,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
+     *             .backupId(testBackupOciPsqlBackup.id())
      *             .build());
      * 
      *     }
@@ -200,7 +200,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
+     *             .backupId(testBackupOciPsqlBackup.id())
      *             .build());
      * 
      *     }
@@ -242,13 +242,13 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.backup_display_name())
-     *             .id(var_.backup_id())
-     *             .state(var_.backup_state())
-     *             .timeEnded(var_.backup_time_ended())
-     *             .timeStarted(var_.backup_time_started())
+     *             .backupId(testBackup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(backupDisplayName)
+     *             .id(backupId)
+     *             .state(backupState)
+     *             .timeEnded(backupTimeEnded)
+     *             .timeStarted(backupTimeStarted)
      *             .build());
      * 
      *     }
@@ -290,13 +290,13 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.backup_display_name())
-     *             .id(var_.backup_id())
-     *             .state(var_.backup_state())
-     *             .timeEnded(var_.backup_time_ended())
-     *             .timeStarted(var_.backup_time_started())
+     *             .backupId(testBackup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(backupDisplayName)
+     *             .id(backupId)
+     *             .state(backupState)
+     *             .timeEnded(backupTimeEnded)
+     *             .timeStarted(backupTimeStarted)
      *             .build());
      * 
      *     }
@@ -338,13 +338,13 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.backup_display_name())
-     *             .id(var_.backup_id())
-     *             .state(var_.backup_state())
-     *             .timeEnded(var_.backup_time_ended())
-     *             .timeStarted(var_.backup_time_started())
+     *             .backupId(testBackup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(backupDisplayName)
+     *             .id(backupId)
+     *             .state(backupState)
+     *             .timeEnded(backupTimeEnded)
+     *             .timeStarted(backupTimeStarted)
      *             .build());
      * 
      *     }
@@ -386,13 +386,13 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.backup_display_name())
-     *             .id(var_.backup_id())
-     *             .state(var_.backup_state())
-     *             .timeEnded(var_.backup_time_ended())
-     *             .timeStarted(var_.backup_time_started())
+     *             .backupId(testBackup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(backupDisplayName)
+     *             .id(backupId)
+     *             .state(backupState)
+     *             .timeEnded(backupTimeEnded)
+     *             .timeStarted(backupTimeStarted)
      *             .build());
      * 
      *     }
@@ -434,13 +434,13 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.backup_display_name())
-     *             .id(var_.backup_id())
-     *             .state(var_.backup_state())
-     *             .timeEnded(var_.backup_time_ended())
-     *             .timeStarted(var_.backup_time_started())
+     *             .backupId(testBackup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(backupDisplayName)
+     *             .id(backupId)
+     *             .state(backupState)
+     *             .timeEnded(backupTimeEnded)
+     *             .timeStarted(backupTimeStarted)
      *             .build());
      * 
      *     }
@@ -482,13 +482,13 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(oci_psql_backup.test_backup().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.backup_display_name())
-     *             .id(var_.backup_id())
-     *             .state(var_.backup_state())
-     *             .timeEnded(var_.backup_time_ended())
-     *             .timeStarted(var_.backup_time_started())
+     *             .backupId(testBackup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(backupDisplayName)
+     *             .id(backupId)
+     *             .state(backupState)
+     *             .timeEnded(backupTimeEnded)
+     *             .timeStarted(backupTimeStarted)
      *             .build());
      * 
      *     }
@@ -530,7 +530,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
+     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
      *             .build());
      * 
      *     }
@@ -572,7 +572,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
+     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
      *             .build());
      * 
      *     }
@@ -614,7 +614,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
+     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
      *             .build());
      * 
      *     }
@@ -656,7 +656,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
+     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
      *             .build());
      * 
      *     }
@@ -698,12 +698,12 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.configuration_db_version())
-     *             .displayName(var_.configuration_display_name())
-     *             .shape(var_.configuration_shape())
-     *             .state(var_.configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(configurationDbVersion)
+     *             .displayName(configurationDisplayName)
+     *             .shape(configurationShape)
+     *             .state(configurationState)
      *             .build());
      * 
      *     }
@@ -745,12 +745,12 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.configuration_db_version())
-     *             .displayName(var_.configuration_display_name())
-     *             .shape(var_.configuration_shape())
-     *             .state(var_.configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(configurationDbVersion)
+     *             .displayName(configurationDisplayName)
+     *             .shape(configurationShape)
+     *             .state(configurationState)
      *             .build());
      * 
      *     }
@@ -792,12 +792,12 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.configuration_db_version())
-     *             .displayName(var_.configuration_display_name())
-     *             .shape(var_.configuration_shape())
-     *             .state(var_.configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(configurationDbVersion)
+     *             .displayName(configurationDisplayName)
+     *             .shape(configurationShape)
+     *             .state(configurationState)
      *             .build());
      * 
      *     }
@@ -839,12 +839,12 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.configuration_db_version())
-     *             .displayName(var_.configuration_display_name())
-     *             .shape(var_.configuration_shape())
-     *             .state(var_.configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(configurationDbVersion)
+     *             .displayName(configurationDisplayName)
+     *             .shape(configurationShape)
+     *             .state(configurationState)
      *             .build());
      * 
      *     }
@@ -886,12 +886,12 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.configuration_db_version())
-     *             .displayName(var_.configuration_display_name())
-     *             .shape(var_.configuration_shape())
-     *             .state(var_.configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(configurationDbVersion)
+     *             .displayName(configurationDisplayName)
+     *             .shape(configurationShape)
+     *             .state(configurationState)
      *             .build());
      * 
      *     }
@@ -933,12 +933,12 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.configuration_db_version())
-     *             .displayName(var_.configuration_display_name())
-     *             .shape(var_.configuration_shape())
-     *             .state(var_.configuration_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(configurationDbVersion)
+     *             .displayName(configurationDisplayName)
+     *             .shape(configurationShape)
+     *             .state(configurationState)
      *             .build());
      * 
      *     }
@@ -980,8 +980,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
-     *             .excludedFields(var_.db_system_excluded_fields())
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .excludedFields(dbSystemExcludedFields)
      *             .build());
      * 
      *     }
@@ -1023,8 +1023,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
-     *             .excludedFields(var_.db_system_excluded_fields())
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .excludedFields(dbSystemExcludedFields)
      *             .build());
      * 
      *     }
@@ -1066,8 +1066,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
-     *             .excludedFields(var_.db_system_excluded_fields())
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .excludedFields(dbSystemExcludedFields)
      *             .build());
      * 
      *     }
@@ -1109,8 +1109,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
-     *             .excludedFields(var_.db_system_excluded_fields())
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .excludedFields(dbSystemExcludedFields)
      *             .build());
      * 
      *     }
@@ -1152,7 +1152,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1194,7 +1194,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1236,7 +1236,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1278,7 +1278,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1320,7 +1320,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1362,7 +1362,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1404,7 +1404,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1446,7 +1446,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
-     *             .dbSystemId(oci_psql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1488,10 +1488,10 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = PsqlFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.db_system_display_name())
-     *             .id(var_.db_system_id())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dbSystemDisplayName)
+     *             .id(dbSystemId)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -1533,10 +1533,10 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = PsqlFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.db_system_display_name())
-     *             .id(var_.db_system_id())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dbSystemDisplayName)
+     *             .id(dbSystemId)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -1578,10 +1578,10 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = PsqlFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.db_system_display_name())
-     *             .id(var_.db_system_id())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dbSystemDisplayName)
+     *             .id(dbSystemId)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -1623,10 +1623,10 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = PsqlFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.db_system_display_name())
-     *             .id(var_.db_system_id())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dbSystemDisplayName)
+     *             .id(dbSystemId)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -1668,10 +1668,10 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = PsqlFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.db_system_display_name())
-     *             .id(var_.db_system_id())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dbSystemDisplayName)
+     *             .id(dbSystemId)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -1713,10 +1713,10 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = PsqlFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.db_system_display_name())
-     *             .id(var_.db_system_id())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dbSystemDisplayName)
+     *             .id(dbSystemId)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -1758,7 +1758,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
-     *             .defaultConfigurationId(oci_psql_default_configuration.test_default_configuration().id())
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
      *             .build());
      * 
      *     }
@@ -1800,7 +1800,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
-     *             .defaultConfigurationId(oci_psql_default_configuration.test_default_configuration().id())
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
      *             .build());
      * 
      *     }
@@ -1842,7 +1842,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
-     *             .defaultConfigurationId(oci_psql_default_configuration.test_default_configuration().id())
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
      *             .build());
      * 
      *     }
@@ -1884,7 +1884,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
-     *             .defaultConfigurationId(oci_psql_default_configuration.test_default_configuration().id())
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
      *             .build());
      * 
      *     }
@@ -1926,11 +1926,11 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.default_configuration_db_version())
-     *             .displayName(var_.default_configuration_display_name())
-     *             .shape(var_.default_configuration_shape())
-     *             .state(var_.default_configuration_state())
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(defaultConfigurationDbVersion)
+     *             .displayName(defaultConfigurationDisplayName)
+     *             .shape(defaultConfigurationShape)
+     *             .state(defaultConfigurationState)
      *             .build());
      * 
      *     }
@@ -1972,11 +1972,11 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.default_configuration_db_version())
-     *             .displayName(var_.default_configuration_display_name())
-     *             .shape(var_.default_configuration_shape())
-     *             .state(var_.default_configuration_state())
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(defaultConfigurationDbVersion)
+     *             .displayName(defaultConfigurationDisplayName)
+     *             .shape(defaultConfigurationShape)
+     *             .state(defaultConfigurationState)
      *             .build());
      * 
      *     }
@@ -2018,11 +2018,11 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.default_configuration_db_version())
-     *             .displayName(var_.default_configuration_display_name())
-     *             .shape(var_.default_configuration_shape())
-     *             .state(var_.default_configuration_state())
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(defaultConfigurationDbVersion)
+     *             .displayName(defaultConfigurationDisplayName)
+     *             .shape(defaultConfigurationShape)
+     *             .state(defaultConfigurationState)
      *             .build());
      * 
      *     }
@@ -2064,11 +2064,11 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.default_configuration_db_version())
-     *             .displayName(var_.default_configuration_display_name())
-     *             .shape(var_.default_configuration_shape())
-     *             .state(var_.default_configuration_state())
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(defaultConfigurationDbVersion)
+     *             .displayName(defaultConfigurationDisplayName)
+     *             .shape(defaultConfigurationShape)
+     *             .state(defaultConfigurationState)
      *             .build());
      * 
      *     }
@@ -2110,11 +2110,11 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.default_configuration_db_version())
-     *             .displayName(var_.default_configuration_display_name())
-     *             .shape(var_.default_configuration_shape())
-     *             .state(var_.default_configuration_state())
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(defaultConfigurationDbVersion)
+     *             .displayName(defaultConfigurationDisplayName)
+     *             .shape(defaultConfigurationShape)
+     *             .state(defaultConfigurationState)
      *             .build());
      * 
      *     }
@@ -2156,11 +2156,11 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(oci_psql_configuration.test_configuration().id())
-     *             .dbVersion(var_.default_configuration_db_version())
-     *             .displayName(var_.default_configuration_display_name())
-     *             .shape(var_.default_configuration_shape())
-     *             .state(var_.default_configuration_state())
+     *             .configurationId(testConfiguration.id())
+     *             .dbVersion(defaultConfigurationDbVersion)
+     *             .displayName(defaultConfigurationDisplayName)
+     *             .shape(defaultConfigurationShape)
+     *             .state(defaultConfigurationState)
      *             .build());
      * 
      *     }
@@ -2202,8 +2202,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = PsqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.shape_id())
+     *             .compartmentId(compartmentId)
+     *             .id(shapeId)
      *             .build());
      * 
      *     }
@@ -2245,8 +2245,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = PsqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.shape_id())
+     *             .compartmentId(compartmentId)
+     *             .id(shapeId)
      *             .build());
      * 
      *     }
@@ -2288,8 +2288,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = PsqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.shape_id())
+     *             .compartmentId(compartmentId)
+     *             .id(shapeId)
      *             .build());
      * 
      *     }
@@ -2331,8 +2331,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = PsqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.shape_id())
+     *             .compartmentId(compartmentId)
+     *             .id(shapeId)
      *             .build());
      * 
      *     }
@@ -2374,8 +2374,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = PsqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.shape_id())
+     *             .compartmentId(compartmentId)
+     *             .id(shapeId)
      *             .build());
      * 
      *     }
@@ -2417,8 +2417,8 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = PsqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.shape_id())
+     *             .compartmentId(compartmentId)
+     *             .id(shapeId)
      *             .build());
      * 
      *     }

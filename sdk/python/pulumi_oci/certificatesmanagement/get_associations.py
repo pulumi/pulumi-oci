@@ -157,12 +157,12 @@ def get_associations(associated_resource_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=oci_certificates_management_associated_resource["test_associated_resource"]["id"],
-        association_id=oci_certificates_management_association["test_association"]["id"],
-        association_type=var["association_association_type"],
-        certificates_resource_id=oci_certificates_management_certificates_resource["test_certificates_resource"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["association_name"])
+    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=test_associated_resource["id"],
+        association_id=test_association["id"],
+        association_type=association_association_type,
+        certificates_resource_id=test_certificates_resource["id"],
+        compartment_id=compartment_id,
+        name=association_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -219,12 +219,12 @@ def get_associations_output(associated_resource_id: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=oci_certificates_management_associated_resource["test_associated_resource"]["id"],
-        association_id=oci_certificates_management_association["test_association"]["id"],
-        association_type=var["association_association_type"],
-        certificates_resource_id=oci_certificates_management_certificates_resource["test_certificates_resource"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["association_name"])
+    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=test_associated_resource["id"],
+        association_id=test_association["id"],
+        association_type=association_association_type,
+        certificates_resource_id=test_certificates_resource["id"],
+        compartment_id=compartment_id,
+        name=association_name)
     ```
     <!--End PulumiCodeChooser -->
 

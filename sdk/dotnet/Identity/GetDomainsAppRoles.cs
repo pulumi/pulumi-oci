@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAppRoles = Oci.Identity.GetDomainsAppRoles.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AppRoleCount = @var.App_role_app_role_count,
-        ///         AppRoleFilter = @var.App_role_app_role_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AppRoleCount = appRoleAppRoleCount,
+        ///         AppRoleFilter = appRoleAppRoleFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.App_role_authorization,
-        ///         ResourceTypeSchemaVersion = @var.App_role_resource_type_schema_version,
-        ///         StartIndex = @var.App_role_start_index,
+        ///         Authorization = appRoleAuthorization,
+        ///         ResourceTypeSchemaVersion = appRoleResourceTypeSchemaVersion,
+        ///         StartIndex = appRoleStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAppRoles = Oci.Identity.GetDomainsAppRoles.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AppRoleCount = @var.App_role_app_role_count,
-        ///         AppRoleFilter = @var.App_role_app_role_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AppRoleCount = appRoleAppRoleCount,
+        ///         AppRoleFilter = appRoleAppRoleFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.App_role_authorization,
-        ///         ResourceTypeSchemaVersion = @var.App_role_resource_type_schema_version,
-        ///         StartIndex = @var.App_role_start_index,
+        ///         Authorization = appRoleAuthorization,
+        ///         ResourceTypeSchemaVersion = appRoleResourceTypeSchemaVersion,
+        ///         StartIndex = appRoleStartIndex,
         ///     });
         /// 
         /// });

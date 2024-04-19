@@ -210,14 +210,14 @@ def get_domains_cloud_gates(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gates = oci.Identity.get_domains_cloud_gates(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        cloud_gate_count=var["cloud_gate_cloud_gate_count"],
-        cloud_gate_filter=var["cloud_gate_cloud_gate_filter"],
+    test_cloud_gates = oci.Identity.get_domains_cloud_gates(idcs_endpoint=test_domain["url"],
+        cloud_gate_count=cloud_gate_cloud_gate_count,
+        cloud_gate_filter=cloud_gate_cloud_gate_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["cloud_gate_authorization"],
-        resource_type_schema_version=var["cloud_gate_resource_type_schema_version"],
-        start_index=var["cloud_gate_start_index"])
+        authorization=cloud_gate_authorization,
+        resource_type_schema_version=cloud_gate_resource_type_schema_version,
+        start_index=cloud_gate_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_cloud_gates_output(attribute_sets: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gates = oci.Identity.get_domains_cloud_gates(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        cloud_gate_count=var["cloud_gate_cloud_gate_count"],
-        cloud_gate_filter=var["cloud_gate_cloud_gate_filter"],
+    test_cloud_gates = oci.Identity.get_domains_cloud_gates(idcs_endpoint=test_domain["url"],
+        cloud_gate_count=cloud_gate_cloud_gate_count,
+        cloud_gate_filter=cloud_gate_cloud_gate_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["cloud_gate_authorization"],
-        resource_type_schema_version=var["cloud_gate_resource_type_schema_version"],
-        start_index=var["cloud_gate_start_index"])
+        authorization=cloud_gate_authorization,
+        resource_type_schema_version=cloud_gate_resource_type_schema_version,
+        start_index=cloud_gate_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -369,10 +369,10 @@ class DrPlan(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dr_plan = oci.disaster_recovery.DrPlan("testDrPlan",
-            display_name=var["dr_plan_display_name"],
-            dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-            type=var["dr_plan_type"],
+        test_dr_plan = oci.disaster_recovery.DrPlan("test_dr_plan",
+            display_name=dr_plan_display_name,
+            dr_protection_group_id=test_dr_protection_group["id"],
+            type=dr_plan_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -420,10 +420,10 @@ class DrPlan(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dr_plan = oci.disaster_recovery.DrPlan("testDrPlan",
-            display_name=var["dr_plan_display_name"],
-            dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-            type=var["dr_plan_type"],
+        test_dr_plan = oci.disaster_recovery.DrPlan("test_dr_plan",
+            display_name=dr_plan_display_name,
+            dr_protection_group_id=test_dr_protection_group["id"],
+            type=dr_plan_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

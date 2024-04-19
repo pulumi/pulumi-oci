@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpoints = oci.DataFlow.getPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.private_endpoint_display_name,
- *     displayNameStartsWith: _var.private_endpoint_display_name_starts_with,
- *     ownerPrincipalId: _var.owner_principal_id,
- *     state: _var.private_endpoint_state,
+ *     compartmentId: compartmentId,
+ *     displayName: privateEndpointDisplayName,
+ *     displayNameStartsWith: privateEndpointDisplayNameStartsWith,
+ *     ownerPrincipalId: ownerPrincipalId,
+ *     state: privateEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetPrivateEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpoints = oci.DataFlow.getPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.private_endpoint_display_name,
- *     displayNameStartsWith: _var.private_endpoint_display_name_starts_with,
- *     ownerPrincipalId: _var.owner_principal_id,
- *     state: _var.private_endpoint_state,
+ *     compartmentId: compartmentId,
+ *     displayName: privateEndpointDisplayName,
+ *     displayNameStartsWith: privateEndpointDisplayNameStartsWith,
+ *     ownerPrincipalId: ownerPrincipalId,
+ *     state: privateEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

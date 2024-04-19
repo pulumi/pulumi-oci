@@ -39,9 +39,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUserGroupMemberships = Oci.Identity.GetUserGroupMemberships.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         GroupId = oci_identity_group.Test_group.Id,
-        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         CompartmentId = tenancyOcid,
+        ///         GroupId = testGroup.Id,
+        ///         UserId = testUser.Id,
         ///     });
         /// 
         /// });
@@ -79,9 +79,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUserGroupMemberships = Oci.Identity.GetUserGroupMemberships.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         GroupId = oci_identity_group.Test_group.Id,
-        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         CompartmentId = tenancyOcid,
+        ///         GroupId = testGroup.Id,
+        ///         UserId = testUser.Id,
         ///     });
         /// 
         /// });

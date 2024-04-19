@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetFunction(ctx, &functions.GetFunctionArgs{
-//				FunctionId: oci_functions_function.Test_function.Id,
+//				FunctionId: testFunctionOciFunctionsFunction.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafeConfiguration = new oci.datasafe.DataSafeConfiguration("testDataSafeConfiguration", {
- *     isEnabled: _var.data_safe_configuration_is_enabled,
- *     compartmentId: _var.compartment_id,
+ * const testDataSafeConfiguration = new oci.datasafe.DataSafeConfiguration("test_data_safe_configuration", {
+ *     isEnabled: dataSafeConfigurationIsEnabled,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,11 +29,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testDeployStages = Oci.DevOps.GetDeployStages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeployPipelineId = oci_devops_deploy_pipeline.Test_deploy_pipeline.Id,
-        ///         DisplayName = @var.Deploy_stage_display_name,
-        ///         Id = @var.Deploy_stage_id,
-        ///         State = @var.Deploy_stage_state,
+        ///         CompartmentId = compartmentId,
+        ///         DeployPipelineId = testDeployPipeline.Id,
+        ///         DisplayName = deployStageDisplayName,
+        ///         Id = deployStageId,
+        ///         State = deployStageState,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testDeployStages = Oci.DevOps.GetDeployStages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeployPipelineId = oci_devops_deploy_pipeline.Test_deploy_pipeline.Id,
-        ///         DisplayName = @var.Deploy_stage_display_name,
-        ///         Id = @var.Deploy_stage_id,
-        ///         State = @var.Deploy_stage_state,
+        ///         CompartmentId = compartmentId,
+        ///         DeployPipelineId = testDeployPipeline.Id,
+        ///         DisplayName = deployStageDisplayName,
+        ///         Id = deployStageId,
+        ///         State = deployStageState,
         ///     });
         /// 
         /// });

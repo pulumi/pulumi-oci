@@ -36,30 +36,30 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnect = new oci.core.CrossConnect("testCrossConnect", {
- *     compartmentId: _var.compartment_id,
- *     locationName: _var.cross_connect_location_name,
- *     portSpeedShapeName: _var.cross_connect_port_speed_shape_name,
- *     crossConnectGroupId: oci_core_cross_connect_group.test_cross_connect_group.id,
- *     customerReferenceName: _var.cross_connect_customer_reference_name,
+ * const testCrossConnect = new oci.core.CrossConnect("test_cross_connect", {
+ *     compartmentId: compartmentId,
+ *     locationName: crossConnectLocationName,
+ *     portSpeedShapeName: crossConnectPortSpeedShapeName,
+ *     crossConnectGroupId: testCrossConnectGroup.id,
+ *     customerReferenceName: crossConnectCustomerReferenceName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.cross_connect_display_name,
- *     farCrossConnectOrCrossConnectGroupId: oci_core_cross_connect_group.test_cross_connect_group.id,
+ *     displayName: crossConnectDisplayName,
+ *     farCrossConnectOrCrossConnectGroupId: testCrossConnectGroup.id,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     macsecProperties: {
- *         state: _var.cross_connect_macsec_properties_state,
- *         encryptionCipher: _var.cross_connect_macsec_properties_encryption_cipher,
- *         isUnprotectedTrafficAllowed: _var.cross_connect_macsec_properties_is_unprotected_traffic_allowed,
+ *         state: crossConnectMacsecPropertiesState,
+ *         encryptionCipher: crossConnectMacsecPropertiesEncryptionCipher,
+ *         isUnprotectedTrafficAllowed: crossConnectMacsecPropertiesIsUnprotectedTrafficAllowed,
  *         primaryKey: {
- *             connectivityAssociationKeySecretId: oci_vault_secret.test_secret.id,
- *             connectivityAssociationNameSecretId: oci_vault_secret.test_secret.id,
+ *             connectivityAssociationKeySecretId: testSecret.id,
+ *             connectivityAssociationNameSecretId: testSecret.id,
  *         },
  *     },
- *     nearCrossConnectOrCrossConnectGroupId: oci_core_cross_connect_group.test_cross_connect_group.id,
+ *     nearCrossConnectOrCrossConnectGroupId: testCrossConnectGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

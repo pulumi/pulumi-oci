@@ -31,15 +31,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Artifacts.GetContainerImages(ctx, &artifacts.GetContainerImagesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Container_image_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Container_image_display_name),
-//				ImageId:                pulumi.StringRef(oci_core_image.Test_image.Id),
-//				IsVersioned:            pulumi.BoolRef(_var.Container_image_is_versioned),
-//				RepositoryId:           pulumi.StringRef(oci_artifacts_repository.Test_repository.Id),
-//				RepositoryName:         pulumi.StringRef(oci_artifacts_repository.Test_repository.Name),
-//				State:                  pulumi.StringRef(_var.Container_image_state),
-//				Version:                pulumi.StringRef(_var.Container_image_version),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: pulumi.BoolRef(containerImageCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(containerImageDisplayName),
+//				ImageId:                pulumi.StringRef(testImage.Id),
+//				IsVersioned:            pulumi.BoolRef(containerImageIsVersioned),
+//				RepositoryId:           pulumi.StringRef(testRepository.Id),
+//				RepositoryName:         pulumi.StringRef(testRepository.Name),
+//				State:                  pulumi.StringRef(containerImageState),
+//				Version:                pulumi.StringRef(containerImageVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

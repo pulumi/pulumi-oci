@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testProblemEntities = Oci.CloudGuard.GetProblemEntities.Invoke(new()
         ///     {
-        ///         ProblemId = oci_cloud_guard_problem.Test_problem.Id,
+        ///         ProblemId = testProblem.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testProblemEntities = Oci.CloudGuard.GetProblemEntities.Invoke(new()
         ///     {
-        ///         ProblemId = oci_cloud_guard_problem.Test_problem.Id,
+        ///         ProblemId = testProblem.Id,
         ///     });
         /// 
         /// });

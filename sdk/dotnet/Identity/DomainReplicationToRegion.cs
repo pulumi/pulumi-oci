@@ -37,10 +37,10 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDomainReplicationToRegion = new Oci.Identity.DomainReplicationToRegion("testDomainReplicationToRegion", new()
+    ///     var testDomainReplicationToRegion = new Oci.Identity.DomainReplicationToRegion("test_domain_replication_to_region", new()
     ///     {
-    ///         DomainId = oci_identity_domain.Test_domain.Id,
-    ///         ReplicaRegion = @var.Domain_replication_to_region_replica_region,
+    ///         DomainId = testDomain.Id,
+    ///         ReplicaRegion = domainReplicationToRegionReplicaRegion,
     ///     });
     /// 
     /// });

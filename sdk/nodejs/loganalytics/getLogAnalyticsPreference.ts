@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsPreference = oci.LogAnalytics.getLogAnalyticsPreference({
- *     namespace: _var.log_analytics_preference_namespace,
+ *     namespace: logAnalyticsPreferenceNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -69,7 +69,7 @@ export interface GetLogAnalyticsPreferenceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsPreference = oci.LogAnalytics.getLogAnalyticsPreference({
- *     namespace: _var.log_analytics_preference_namespace,
+ *     namespace: logAnalyticsPreferenceNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

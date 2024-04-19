@@ -121,10 +121,10 @@ def get_opa_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=var["compartment_id"],
-        display_name=var["opa_instance_display_name"],
-        id=var["opa_instance_id"],
-        state=var["opa_instance_state"])
+    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=compartment_id,
+        display_name=opa_instance_display_name,
+        id=opa_instance_id,
+        state=opa_instance_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_opa_instances_output(compartment_id: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=var["compartment_id"],
-        display_name=var["opa_instance_display_name"],
-        id=var["opa_instance_id"],
-        state=var["opa_instance_state"])
+    test_opa_instances = oci.Opa.get_opa_instances(compartment_id=compartment_id,
+        display_name=opa_instance_display_name,
+        id=opa_instance_id,
+        state=opa_instance_state)
     ```
     <!--End PulumiCodeChooser -->
 

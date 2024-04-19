@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testProject = Oci.DevOps.GetProject.Invoke(new()
         ///     {
-        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///         ProjectId = testProjectOciDevopsProject.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testProject = Oci.DevOps.GetProject.Invoke(new()
         ///     {
-        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///         ProjectId = testProjectOciDevopsProject.Id,
         ///     });
         /// 
         /// });

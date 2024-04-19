@@ -32,9 +32,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGroup = new oci.identity.Group("testGroup", {
- *     compartmentId: _var.tenancy_ocid,
- *     description: _var.group_description,
+ * const testGroup = new oci.identity.Group("test_group", {
+ *     compartmentId: tenancyOcid,
+ *     description: groupDescription,
+ *     name: groupName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

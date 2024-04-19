@@ -31,25 +31,25 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewConnection(ctx, "testConnection", &DevOps.ConnectionArgs{
-//				ConnectionType: pulumi.Any(_var.Connection_connection_type),
-//				ProjectId:      pulumi.Any(oci_devops_project.Test_project.Id),
-//				AccessToken:    pulumi.Any(_var.Connection_access_token),
-//				AppPassword:    pulumi.Any(_var.Connection_app_password),
-//				BaseUrl:        pulumi.Any(_var.Connection_base_url),
+//			_, err := DevOps.NewConnection(ctx, "test_connection", &DevOps.ConnectionArgs{
+//				ConnectionType: pulumi.Any(connectionConnectionType),
+//				ProjectId:      pulumi.Any(testProject.Id),
+//				AccessToken:    pulumi.Any(connectionAccessToken),
+//				AppPassword:    pulumi.Any(connectionAppPassword),
+//				BaseUrl:        pulumi.Any(connectionBaseUrl),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Connection_description),
-//				DisplayName: pulumi.Any(_var.Connection_display_name),
+//				Description: pulumi.Any(connectionDescription),
+//				DisplayName: pulumi.Any(connectionDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				TlsVerifyConfig: &devops.ConnectionTlsVerifyConfigArgs{
-//					CaCertificateBundleId: pulumi.Any(oci_devops_ca_certificate_bundle.Test_ca_certificate_bundle.Id),
-//					TlsVerifyMode:         pulumi.Any(_var.Connection_tls_verify_config_tls_verify_mode),
+//					CaCertificateBundleId: pulumi.Any(testCaCertificateBundle.Id),
+//					TlsVerifyMode:         pulumi.Any(connectionTlsVerifyConfigTlsVerifyMode),
 //				},
-//				Username: pulumi.Any(_var.Connection_username),
+//				Username: pulumi.Any(connectionUsername),
 //			})
 //			if err != nil {
 //				return err

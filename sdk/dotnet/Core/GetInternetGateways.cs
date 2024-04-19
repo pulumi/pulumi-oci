@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInternetGateways = Oci.Core.GetInternetGateways.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Internet_gateway_display_name,
-        ///         State = @var.Internet_gateway_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = internetGatewayDisplayName,
+        ///         State = internetGatewayState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInternetGateways = Oci.Core.GetInternetGateways.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Internet_gateway_display_name,
-        ///         State = @var.Internet_gateway_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = internetGatewayDisplayName,
+        ///         State = internetGatewayState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

@@ -59,17 +59,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewIpsec(ctx, "testIpSecConnection", &Core.IpsecArgs{
-//				CompartmentId:          pulumi.Any(_var.Compartment_id),
-//				CpeId:                  pulumi.Any(oci_core_cpe.Test_cpe.Id),
-//				DrgId:                  pulumi.Any(oci_core_drg.Test_drg.Id),
-//				StaticRoutes:           pulumi.Any(_var.Ip_sec_connection_static_routes),
-//				CpeLocalIdentifier:     pulumi.Any(_var.Ip_sec_connection_cpe_local_identifier),
-//				CpeLocalIdentifierType: pulumi.Any(_var.Ip_sec_connection_cpe_local_identifier_type),
+//			_, err := Core.NewIpsec(ctx, "test_ip_sec_connection", &Core.IpsecArgs{
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				CpeId:                  pulumi.Any(testCpe.Id),
+//				DrgId:                  pulumi.Any(testDrg.Id),
+//				StaticRoutes:           pulumi.Any(ipSecConnectionStaticRoutes),
+//				CpeLocalIdentifier:     pulumi.Any(ipSecConnectionCpeLocalIdentifier),
+//				CpeLocalIdentifierType: pulumi.Any(ipSecConnectionCpeLocalIdentifierType),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Ip_sec_connection_display_name),
+//				DisplayName: pulumi.Any(ipSecConnectionDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

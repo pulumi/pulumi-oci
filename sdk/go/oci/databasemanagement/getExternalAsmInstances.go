@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalAsmInstances(ctx, &databasemanagement.GetExternalAsmInstancesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.External_asm_instance_display_name),
-//				ExternalAsmId: pulumi.StringRef(oci_database_management_external_asm.Test_external_asm.Id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(externalAsmInstanceDisplayName),
+//				ExternalAsmId: pulumi.StringRef(testExternalAsm.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

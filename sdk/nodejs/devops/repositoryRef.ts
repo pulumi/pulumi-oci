@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryRef = new oci.devops.RepositoryRef("testRepositoryRef", {
- *     refName: _var.repository_ref_ref_name,
- *     refType: _var.repository_ref_ref_type,
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     commitId: oci_devops_commit.test_commit.id,
- *     objectId: oci_objectstorage_object.test_object.id,
+ * const testRepositoryRef = new oci.devops.RepositoryRef("test_repository_ref", {
+ *     refName: repositoryRefRefName,
+ *     refType: repositoryRefRefType,
+ *     repositoryId: testRepository.id,
+ *     commitId: testCommit.id,
+ *     objectId: testObject.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

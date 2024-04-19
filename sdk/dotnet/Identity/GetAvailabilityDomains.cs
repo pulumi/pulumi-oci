@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAvailabilityDomains = Oci.Identity.GetAvailabilityDomains.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         CompartmentId = tenancyOcid,
         ///     });
         /// 
         /// });
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAvailabilityDomains = Oci.Identity.GetAvailabilityDomains.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         CompartmentId = tenancyOcid,
         ///     });
         /// 
         /// });

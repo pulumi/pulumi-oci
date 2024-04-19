@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetDedicatedVmHost(ctx, &core.GetDedicatedVmHostArgs{
-//				DedicatedVmHostId: oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
+//				DedicatedVmHostId: testDedicatedVmHostOciCoreDedicatedVmHost.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

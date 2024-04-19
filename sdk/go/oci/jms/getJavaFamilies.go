@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetJavaFamilies(ctx, &jms.GetJavaFamiliesArgs{
-//				DisplayName:        pulumi.StringRef(_var.Java_family_display_name),
-//				FamilyVersion:      pulumi.StringRef(_var.Java_family_family_version),
-//				IsSupportedVersion: pulumi.BoolRef(_var.Java_family_is_supported_version),
+//				DisplayName:        pulumi.StringRef(javaFamilyDisplayName),
+//				FamilyVersion:      pulumi.StringRef(javaFamilyFamilyVersion),
+//				IsSupportedVersion: pulumi.BoolRef(javaFamilyIsSupportedVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

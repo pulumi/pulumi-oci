@@ -33,24 +33,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSensitiveDataModel(ctx, "testSensitiveDataModel", &DataSafe.SensitiveDataModelArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				TargetId:      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-//				AppSuiteName:  pulumi.Any(_var.Sensitive_data_model_app_suite_name),
+//			_, err := DataSafe.NewSensitiveDataModel(ctx, "test_sensitive_data_model", &DataSafe.SensitiveDataModelArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				TargetId:      pulumi.Any(testTarget.Id),
+//				AppSuiteName:  pulumi.Any(sensitiveDataModelAppSuiteName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Sensitive_data_model_description),
-//				DisplayName: pulumi.Any(_var.Sensitive_data_model_display_name),
+//				Description: pulumi.Any(sensitiveDataModelDescription),
+//				DisplayName: pulumi.Any(sensitiveDataModelDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(_var.Sensitive_data_model_is_app_defined_relation_discovery_enabled),
-//				IsIncludeAllSchemas:                  pulumi.Any(_var.Sensitive_data_model_is_include_all_schemas),
-//				IsIncludeAllSensitiveTypes:           pulumi.Any(_var.Sensitive_data_model_is_include_all_sensitive_types),
-//				IsSampleDataCollectionEnabled:        pulumi.Any(_var.Sensitive_data_model_is_sample_data_collection_enabled),
-//				SchemasForDiscoveries:                pulumi.Any(_var.Sensitive_data_model_schemas_for_discovery),
-//				SensitiveTypeIdsForDiscoveries:       pulumi.Any(_var.Sensitive_data_model_sensitive_type_ids_for_discovery),
+//				IsAppDefinedRelationDiscoveryEnabled: pulumi.Any(sensitiveDataModelIsAppDefinedRelationDiscoveryEnabled),
+//				IsIncludeAllSchemas:                  pulumi.Any(sensitiveDataModelIsIncludeAllSchemas),
+//				IsIncludeAllSensitiveTypes:           pulumi.Any(sensitiveDataModelIsIncludeAllSensitiveTypes),
+//				IsSampleDataCollectionEnabled:        pulumi.Any(sensitiveDataModelIsSampleDataCollectionEnabled),
+//				SchemasForDiscoveries:                pulumi.Any(sensitiveDataModelSchemasForDiscovery),
+//				SensitiveTypeIdsForDiscoveries:       pulumi.Any(sensitiveDataModelSensitiveTypeIdsForDiscovery),
 //			})
 //			if err != nil {
 //				return err

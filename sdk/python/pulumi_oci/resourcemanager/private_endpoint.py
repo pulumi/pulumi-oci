@@ -435,21 +435,21 @@ class PrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_private_endpoint = oci.resource_manager.PrivateEndpoint("testPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["private_endpoint_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_private_endpoint = oci.resource_manager.PrivateEndpoint("test_private_endpoint",
+            compartment_id=compartment_id,
+            display_name=private_endpoint_display_name,
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["private_endpoint_description"],
-            dns_zones=var["private_endpoint_dns_zones"],
+            description=private_endpoint_description,
+            dns_zones=private_endpoint_dns_zones,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_used_with_configuration_source_provider=var["private_endpoint_is_used_with_configuration_source_provider"],
-            nsg_id_lists=var["private_endpoint_nsg_id_list"])
+            is_used_with_configuration_source_provider=private_endpoint_is_used_with_configuration_source_provider,
+            nsg_id_lists=private_endpoint_nsg_id_list)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -496,21 +496,21 @@ class PrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_private_endpoint = oci.resource_manager.PrivateEndpoint("testPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["private_endpoint_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_private_endpoint = oci.resource_manager.PrivateEndpoint("test_private_endpoint",
+            compartment_id=compartment_id,
+            display_name=private_endpoint_display_name,
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["private_endpoint_description"],
-            dns_zones=var["private_endpoint_dns_zones"],
+            description=private_endpoint_description,
+            dns_zones=private_endpoint_dns_zones,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_used_with_configuration_source_provider=var["private_endpoint_is_used_with_configuration_source_provider"],
-            nsg_id_lists=var["private_endpoint_nsg_id_list"])
+            is_used_with_configuration_source_provider=private_endpoint_is_used_with_configuration_source_provider,
+            nsg_id_lists=private_endpoint_nsg_id_list)
         ```
         <!--End PulumiCodeChooser -->
 

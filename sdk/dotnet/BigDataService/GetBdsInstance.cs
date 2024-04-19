@@ -29,7 +29,7 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testBdsInstance = Oci.BigDataService.GetBdsInstance.Invoke(new()
         ///     {
-        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         BdsInstanceId = testBdsInstanceOciBdsBdsInstance.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testBdsInstance = Oci.BigDataService.GetBdsInstance.Invoke(new()
         ///     {
-        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         BdsInstanceId = testBdsInstanceOciBdsBdsInstance.Id,
         ///     });
         /// 
         /// });

@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseBackup = new oci.database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup", {
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     displayName: _var.autonomous_database_backup_display_name,
- *     isLongTermBackup: _var.autonomous_database_backup_is_long_term_backup,
- *     retentionPeriodInDays: _var.autonomous_database_backup_retention_period_in_days,
+ * const testAutonomousDatabaseBackup = new oci.database.AutonomousDatabaseBackup("test_autonomous_database_backup", {
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     displayName: autonomousDatabaseBackupDisplayName,
+ *     isLongTermBackup: autonomousDatabaseBackupIsLongTermBackup,
+ *     retentionPeriodInDays: autonomousDatabaseBackupRetentionPeriodInDays,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

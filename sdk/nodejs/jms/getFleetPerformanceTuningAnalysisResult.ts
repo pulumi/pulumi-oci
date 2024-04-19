@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetPerformanceTuningAnalysisResult = oci.Jms.getFleetPerformanceTuningAnalysisResult({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     performanceTuningAnalysisResultId: oci_apm_synthetics_result.test_result.id,
+ *     fleetId: testFleet.id,
+ *     performanceTuningAnalysisResultId: testResult.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,8 +133,8 @@ export interface GetFleetPerformanceTuningAnalysisResultResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetPerformanceTuningAnalysisResult = oci.Jms.getFleetPerformanceTuningAnalysisResult({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     performanceTuningAnalysisResultId: oci_apm_synthetics_result.test_result.id,
+ *     fleetId: testFleet.id,
+ *     performanceTuningAnalysisResultId: testResult.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -216,17 +216,17 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=var["software_source_arch_type"],
-        availabilities=var["software_source_availability"],
-        compartment_id=var["compartment_id"],
-        display_name=var["software_source_display_name"],
-        display_name_contains=var["software_source_display_name_contains"],
-        display_name_not_equal_tos=var["software_source_display_name_not_equal_to"],
-        os_families=var["software_source_os_family"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        software_source_types=var["software_source_software_source_type"],
-        states=var["software_source_state"],
-        vendor_name=var["software_source_vendor_name"])
+    test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=software_source_arch_type,
+        availabilities=software_source_availability,
+        compartment_id=compartment_id,
+        display_name=software_source_display_name,
+        display_name_contains=software_source_display_name_contains,
+        display_name_not_equal_tos=software_source_display_name_not_equal_to,
+        os_families=software_source_os_family,
+        software_source_id=test_software_source["id"],
+        software_source_types=software_source_software_source_type,
+        states=software_source_state,
+        vendor_name=software_source_vendor_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -303,17 +303,17 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
     import pulumi
     import pulumi_oci as oci
 
-    test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=var["software_source_arch_type"],
-        availabilities=var["software_source_availability"],
-        compartment_id=var["compartment_id"],
-        display_name=var["software_source_display_name"],
-        display_name_contains=var["software_source_display_name_contains"],
-        display_name_not_equal_tos=var["software_source_display_name_not_equal_to"],
-        os_families=var["software_source_os_family"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        software_source_types=var["software_source_software_source_type"],
-        states=var["software_source_state"],
-        vendor_name=var["software_source_vendor_name"])
+    test_software_sources = oci.OsManagementHub.get_software_sources(arch_types=software_source_arch_type,
+        availabilities=software_source_availability,
+        compartment_id=compartment_id,
+        display_name=software_source_display_name,
+        display_name_contains=software_source_display_name_contains,
+        display_name_not_equal_tos=software_source_display_name_not_equal_to,
+        os_families=software_source_os_family,
+        software_source_id=test_software_source["id"],
+        software_source_types=software_source_software_source_type,
+        states=software_source_state,
+        vendor_name=software_source_vendor_name)
     ```
     <!--End PulumiCodeChooser -->
 

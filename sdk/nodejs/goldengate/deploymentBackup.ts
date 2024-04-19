@@ -16,13 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentBackup = new oci.goldengate.DeploymentBackup("testDeploymentBackup", {
- *     bucket: _var.deployment_backup_bucket,
- *     compartmentId: _var.compartment_id,
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     displayName: _var.deployment_backup_display_name,
- *     namespace: _var.deployment_backup_namespace,
- *     object: _var.deployment_backup_object,
+ * const testDeploymentBackup = new oci.goldengate.DeploymentBackup("test_deployment_backup", {
+ *     bucket: deploymentBackupBucket,
+ *     compartmentId: compartmentId,
+ *     deploymentId: testDeployment.id,
+ *     displayName: deploymentBackupDisplayName,
+ *     namespace: deploymentBackupNamespace,
+ *     object: deploymentBackupObject,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },

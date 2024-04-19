@@ -30,12 +30,12 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testSecurityZones = Oci.CloudGuard.GetSecurityZones.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Security_zone_display_name,
-        ///         Id = @var.Security_zone_id,
-        ///         IsRequiredSecurityZonesInSubtree = @var.Security_zone_is_required_security_zones_in_subtree,
-        ///         SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
-        ///         State = @var.Security_zone_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = securityZoneDisplayName,
+        ///         Id = securityZoneId,
+        ///         IsRequiredSecurityZonesInSubtree = securityZoneIsRequiredSecurityZonesInSubtree,
+        ///         SecurityRecipeId = testSecurityRecipe.Id,
+        ///         State = securityZoneState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testSecurityZones = Oci.CloudGuard.GetSecurityZones.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Security_zone_display_name,
-        ///         Id = @var.Security_zone_id,
-        ///         IsRequiredSecurityZonesInSubtree = @var.Security_zone_is_required_security_zones_in_subtree,
-        ///         SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
-        ///         State = @var.Security_zone_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = securityZoneDisplayName,
+        ///         Id = securityZoneId,
+        ///         IsRequiredSecurityZonesInSubtree = securityZoneIsRequiredSecurityZonesInSubtree,
+        ///         SecurityRecipeId = testSecurityRecipe.Id,
+        ///         State = securityZoneState,
         ///     });
         /// 
         /// });

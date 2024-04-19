@@ -586,24 +586,24 @@ class SensitiveType(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sensitive_type = oci.data_safe.SensitiveType("testSensitiveType",
-            compartment_id=var["compartment_id"],
-            entity_type=var["sensitive_type_entity_type"],
-            comment_pattern=var["sensitive_type_comment_pattern"],
-            data_pattern=var["sensitive_type_data_pattern"],
-            default_masking_format_id=oci_data_safe_default_masking_format["test_default_masking_format"]["id"],
+        test_sensitive_type = oci.data_safe.SensitiveType("test_sensitive_type",
+            compartment_id=compartment_id,
+            entity_type=sensitive_type_entity_type,
+            comment_pattern=sensitive_type_comment_pattern,
+            data_pattern=sensitive_type_data_pattern,
+            default_masking_format_id=test_default_masking_format["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["sensitive_type_description"],
-            display_name=var["sensitive_type_display_name"],
+            description=sensitive_type_description,
+            display_name=sensitive_type_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            name_pattern=var["sensitive_type_name_pattern"],
-            parent_category_id=oci_marketplace_category["test_category"]["id"],
-            search_type=var["sensitive_type_search_type"],
-            short_name=var["sensitive_type_short_name"])
+            name_pattern=sensitive_type_name_pattern,
+            parent_category_id=test_category["id"],
+            search_type=sensitive_type_search_type,
+            short_name=sensitive_type_short_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -655,24 +655,24 @@ class SensitiveType(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sensitive_type = oci.data_safe.SensitiveType("testSensitiveType",
-            compartment_id=var["compartment_id"],
-            entity_type=var["sensitive_type_entity_type"],
-            comment_pattern=var["sensitive_type_comment_pattern"],
-            data_pattern=var["sensitive_type_data_pattern"],
-            default_masking_format_id=oci_data_safe_default_masking_format["test_default_masking_format"]["id"],
+        test_sensitive_type = oci.data_safe.SensitiveType("test_sensitive_type",
+            compartment_id=compartment_id,
+            entity_type=sensitive_type_entity_type,
+            comment_pattern=sensitive_type_comment_pattern,
+            data_pattern=sensitive_type_data_pattern,
+            default_masking_format_id=test_default_masking_format["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["sensitive_type_description"],
-            display_name=var["sensitive_type_display_name"],
+            description=sensitive_type_description,
+            display_name=sensitive_type_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            name_pattern=var["sensitive_type_name_pattern"],
-            parent_category_id=oci_marketplace_category["test_category"]["id"],
-            search_type=var["sensitive_type_search_type"],
-            short_name=var["sensitive_type_short_name"])
+            name_pattern=sensitive_type_name_pattern,
+            parent_category_id=test_category["id"],
+            search_type=sensitive_type_search_type,
+            short_name=sensitive_type_short_name)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSecurityQuestion = Oci.Identity.GetDomainsSecurityQuestion.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SecurityQuestionId = oci_identity_domains_security_question.Test_security_question.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SecurityQuestionId = testSecurityQuestionOciIdentityDomainsSecurityQuestion.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Security_question_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Security_question_resource_type_schema_version,
+        ///         Authorization = securityQuestionAuthorization,
+        ///         ResourceTypeSchemaVersion = securityQuestionResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSecurityQuestion = Oci.Identity.GetDomainsSecurityQuestion.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SecurityQuestionId = oci_identity_domains_security_question.Test_security_question.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SecurityQuestionId = testSecurityQuestionOciIdentityDomainsSecurityQuestion.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Security_question_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Security_question_resource_type_schema_version,
+        ///         Authorization = securityQuestionAuthorization,
+        ///         ResourceTypeSchemaVersion = securityQuestionResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

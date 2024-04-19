@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewAwrHubSourceAwrhubsourcesManagement(ctx, "testAwrHubSourceAwrhubsourcesManagement", &Opsi.AwrHubSourceAwrhubsourcesManagementArgs{
-//				AwrHubSourceId:     pulumi.Any(oci_opsi_awr_hub_source.Test_awr_hub_source.Id),
-//				EnableAwrhubsource: pulumi.Any(_var.Enable_awrhubsource),
+//			_, err := Opsi.NewAwrHubSourceAwrhubsourcesManagement(ctx, "test_awr_hub_source_awrhubsources_management", &Opsi.AwrHubSourceAwrhubsourcesManagementArgs{
+//				AwrHubSourceId:     pulumi.Any(testAwrHubSource.Id),
+//				EnableAwrhubsource: pulumi.Any(enableAwrhubsource),
 //			})
 //			if err != nil {
 //				return err

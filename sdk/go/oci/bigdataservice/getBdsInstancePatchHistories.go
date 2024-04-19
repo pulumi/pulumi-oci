@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := BigDataService.GetBdsInstancePatchHistories(ctx, &bigdataservice.GetBdsInstancePatchHistoriesArgs{
-//				BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
-//				PatchType:     pulumi.StringRef(_var.Bds_instance_patch_history_patch_type),
-//				PatchVersion:  pulumi.StringRef(_var.Bds_instance_patch_history_patch_version),
-//				State:         pulumi.StringRef(_var.Bds_instance_patch_history_state),
+//				BdsInstanceId: testBdsInstance.Id,
+//				PatchType:     pulumi.StringRef(bdsInstancePatchHistoryPatchType),
+//				PatchVersion:  pulumi.StringRef(bdsInstancePatchHistoryPatchVersion),
+//				State:         pulumi.StringRef(bdsInstancePatchHistoryState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditTrail = Oci.DataSafe.GetAuditTrail.Invoke(new()
         ///     {
-        ///         AuditTrailId = oci_data_safe_audit_trail.Test_audit_trail.Id,
+        ///         AuditTrailId = testAuditTrailOciDataSafeAuditTrail.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditTrail = Oci.DataSafe.GetAuditTrail.Invoke(new()
         ///     {
-        ///         AuditTrailId = oci_data_safe_audit_trail.Test_audit_trail.Id,
+        ///         AuditTrailId = testAuditTrailOciDataSafeAuditTrail.Id,
         ///     });
         /// 
         /// });

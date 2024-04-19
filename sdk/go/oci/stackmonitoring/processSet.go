@@ -31,16 +31,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewProcessSet(ctx, "testProcessSet", &StackMonitoring.ProcessSetArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Process_set_display_name),
+//			_, err := StackMonitoring.NewProcessSet(ctx, "test_process_set", &StackMonitoring.ProcessSetArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(processSetDisplayName),
 //				Specification: &stackmonitoring.ProcessSetSpecificationArgs{
 //					Items: stackmonitoring.ProcessSetSpecificationItemArray{
 //						&stackmonitoring.ProcessSetSpecificationItemArgs{
-//							Label:                   pulumi.Any(_var.Process_set_specification_items_label),
-//							ProcessCommand:          pulumi.Any(_var.Process_set_specification_items_process_command),
-//							ProcessLineRegexPattern: pulumi.Any(_var.Process_set_specification_items_process_line_regex_pattern),
-//							ProcessUser:             pulumi.Any(_var.Process_set_specification_items_process_user),
+//							Label:                   pulumi.Any(processSetSpecificationItemsLabel),
+//							ProcessCommand:          pulumi.Any(processSetSpecificationItemsProcessCommand),
+//							ProcessLineRegexPattern: pulumi.Any(processSetSpecificationItemsProcessLineRegexPattern),
+//							ProcessUser:             pulumi.Any(processSetSpecificationItemsProcessUser),
 //						},
 //					},
 //				},

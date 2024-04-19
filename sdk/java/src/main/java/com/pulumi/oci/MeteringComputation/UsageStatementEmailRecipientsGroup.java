@@ -46,14 +46,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testUsageStatementEmailRecipientsGroup = new UsageStatementEmailRecipientsGroup(&#34;testUsageStatementEmailRecipientsGroup&#34;, UsageStatementEmailRecipientsGroupArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .recipientsLists(UsageStatementEmailRecipientsGroupRecipientsListArgs.builder()
- *                 .emailId(oci_metering_computation_email.test_email().id())
- *                 .state(var_.usage_statement_email_recipients_group_recipients_list_state())
- *                 .firstName(var_.usage_statement_email_recipients_group_recipients_list_first_name())
- *                 .lastName(var_.usage_statement_email_recipients_group_recipients_list_last_name())
+ *                 .emailId(testEmail.id())
+ *                 .state(usageStatementEmailRecipientsGroupRecipientsListState)
+ *                 .firstName(usageStatementEmailRecipientsGroupRecipientsListFirstName)
+ *                 .lastName(usageStatementEmailRecipientsGroupRecipientsListLastName)
  *                 .build())
- *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+ *             .subscriptionId(testSubscription.id())
  *             .build());
  * 
  *     }

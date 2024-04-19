@@ -25,19 +25,19 @@ namespace Pulumi.Oci.Kms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testGeneratedKey = new Oci.Kms.GeneratedKey("testGeneratedKey", new()
+    ///     var testGeneratedKey = new Oci.Kms.GeneratedKey("test_generated_key", new()
     ///     {
-    ///         CryptoEndpoint = @var.Generated_key_crypto_endpoint,
-    ///         IncludePlaintextKey = @var.Generated_key_include_plaintext_key,
-    ///         KeyId = oci_kms_key.Test_key.Id,
+    ///         CryptoEndpoint = generatedKeyCryptoEndpoint,
+    ///         IncludePlaintextKey = generatedKeyIncludePlaintextKey,
+    ///         KeyId = testKey.Id,
     ///         KeyShape = new Oci.Kms.Inputs.GeneratedKeyKeyShapeArgs
     ///         {
-    ///             Algorithm = @var.Generated_key_key_shape_algorithm,
-    ///             Length = @var.Generated_key_key_shape_length,
-    ///             CurveId = oci_kms_curve.Test_curve.Id,
+    ///             Algorithm = generatedKeyKeyShapeAlgorithm,
+    ///             Length = generatedKeyKeyShapeLength,
+    ///             CurveId = testCurve.Id,
     ///         },
-    ///         AssociatedData = @var.Generated_key_associated_data,
-    ///         LoggingContext = @var.Generated_key_logging_context,
+    ///         AssociatedData = generatedKeyAssociatedData,
+    ///         LoggingContext = generatedKeyLoggingContext,
     ///     });
     /// 
     /// });

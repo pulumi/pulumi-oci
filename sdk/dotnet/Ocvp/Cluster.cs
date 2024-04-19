@@ -30,51 +30,51 @@ namespace Pulumi.Oci.Ocvp
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCluster = new Oci.Ocvp.Cluster("testCluster", new()
+    ///     var testCluster = new Oci.Ocvp.Cluster("test_cluster", new()
     ///     {
-    ///         ComputeAvailabilityDomain = @var.Cluster_compute_availability_domain,
-    ///         EsxiHostsCount = @var.Cluster_esxi_hosts_count,
+    ///         ComputeAvailabilityDomain = clusterComputeAvailabilityDomain,
+    ///         EsxiHostsCount = clusterEsxiHostsCount,
     ///         NetworkConfiguration = new Oci.Ocvp.Inputs.ClusterNetworkConfigurationArgs
     ///         {
-    ///             NsxEdgeVtepVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             NsxVtepVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             ProvisioningSubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VmotionVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             VsanVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             HcxVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             NsxEdgeUplink1vlanId = oci_ocvp_nsx_edge_uplink1vlan.Test_nsx_edge_uplink1vlan.Id,
-    ///             NsxEdgeUplink2vlanId = oci_ocvp_nsx_edge_uplink2vlan.Test_nsx_edge_uplink2vlan.Id,
-    ///             ProvisioningVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             ReplicationVlanId = oci_core_vlan.Test_vlan.Id,
-    ///             VsphereVlanId = oci_core_vlan.Test_vlan.Id,
+    ///             NsxEdgeVtepVlanId = testVlan.Id,
+    ///             NsxVtepVlanId = testVlan.Id,
+    ///             ProvisioningSubnetId = testSubnet.Id,
+    ///             VmotionVlanId = testVlan.Id,
+    ///             VsanVlanId = testVlan.Id,
+    ///             HcxVlanId = testVlan.Id,
+    ///             NsxEdgeUplink1vlanId = testNsxEdgeUplink1vlan.Id,
+    ///             NsxEdgeUplink2vlanId = testNsxEdgeUplink2vlan.Id,
+    ///             ProvisioningVlanId = testVlan.Id,
+    ///             ReplicationVlanId = testVlan.Id,
+    ///             VsphereVlanId = testVlan.Id,
     ///         },
-    ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
-    ///         CapacityReservationId = oci_ocvp_capacity_reservation.Test_capacity_reservation.Id,
+    ///         SddcId = testSddc.Id,
+    ///         CapacityReservationId = testCapacityReservation.Id,
     ///         Datastores = new[]
     ///         {
     ///             new Oci.Ocvp.Inputs.ClusterDatastoreArgs
     ///             {
-    ///                 BlockVolumeIds = @var.Cluster_datastores_block_volume_ids,
-    ///                 DatastoreType = @var.Cluster_datastores_datastore_type,
+    ///                 BlockVolumeIds = clusterDatastoresBlockVolumeIds,
+    ///                 DatastoreType = clusterDatastoresDatastoreType,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Cluster_display_name,
-    ///         EsxiSoftwareVersion = @var.Cluster_esxi_software_version,
+    ///         DisplayName = clusterDisplayName,
+    ///         EsxiSoftwareVersion = clusterEsxiSoftwareVersion,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         InitialCommitment = @var.Cluster_initial_commitment,
-    ///         InitialHostOcpuCount = @var.Cluster_initial_host_ocpu_count,
-    ///         InitialHostShapeName = oci_core_shape.Test_shape.Name,
-    ///         InstanceDisplayNamePrefix = @var.Cluster_instance_display_name_prefix,
-    ///         IsShieldedInstanceEnabled = @var.Cluster_is_shielded_instance_enabled,
-    ///         VmwareSoftwareVersion = @var.Cluster_vmware_software_version,
-    ///         WorkloadNetworkCidr = @var.Cluster_workload_network_cidr,
+    ///         InitialCommitment = clusterInitialCommitment,
+    ///         InitialHostOcpuCount = clusterInitialHostOcpuCount,
+    ///         InitialHostShapeName = testShape.Name,
+    ///         InstanceDisplayNamePrefix = clusterInstanceDisplayNamePrefix,
+    ///         IsShieldedInstanceEnabled = clusterIsShieldedInstanceEnabled,
+    ///         VmwareSoftwareVersion = clusterVmwareSoftwareVersion,
+    ///         WorkloadNetworkCidr = clusterWorkloadNetworkCidr,
     ///     });
     /// 
     /// });

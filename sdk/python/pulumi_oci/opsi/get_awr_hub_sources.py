@@ -166,13 +166,13 @@ def get_awr_hub_sources(awr_hub_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_sources = oci.Opsi.get_awr_hub_sources(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        awr_hub_source_id=oci_opsi_awr_hub_source["test_awr_hub_source"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["awr_hub_source_name"],
-        source_types=var["awr_hub_source_source_type"],
-        states=var["awr_hub_source_state"],
-        statuses=var["awr_hub_source_status"])
+    test_awr_hub_sources = oci.Opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
+        awr_hub_source_id=test_awr_hub_source["id"],
+        compartment_id=compartment_id,
+        name=awr_hub_source_name,
+        source_types=awr_hub_source_source_type,
+        states=awr_hub_source_state,
+        statuses=awr_hub_source_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -232,13 +232,13 @@ def get_awr_hub_sources_output(awr_hub_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_sources = oci.Opsi.get_awr_hub_sources(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        awr_hub_source_id=oci_opsi_awr_hub_source["test_awr_hub_source"]["id"],
-        compartment_id=var["compartment_id"],
-        name=var["awr_hub_source_name"],
-        source_types=var["awr_hub_source_source_type"],
-        states=var["awr_hub_source_state"],
-        statuses=var["awr_hub_source_status"])
+    test_awr_hub_sources = oci.Opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
+        awr_hub_source_id=test_awr_hub_source["id"],
+        compartment_id=compartment_id,
+        name=awr_hub_source_name,
+        source_types=awr_hub_source_source_type,
+        states=awr_hub_source_state,
+        statuses=awr_hub_source_status)
     ```
     <!--End PulumiCodeChooser -->
 

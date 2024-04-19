@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testClusters = oci.ContainerEngine.getClusters({
- *     compartmentId: _var.compartment_id,
- *     name: _var.cluster_name,
- *     states: _var.cluster_state,
+ *     compartmentId: compartmentId,
+ *     name: clusterName,
+ *     states: clusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetClustersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testClusters = oci.ContainerEngine.getClusters({
- *     compartmentId: _var.compartment_id,
- *     name: _var.cluster_name,
- *     states: _var.cluster_state,
+ *     compartmentId: compartmentId,
+ *     name: clusterName,
+ *     states: clusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

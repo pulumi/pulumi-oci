@@ -31,14 +31,14 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlDbSystems = Oci.Mysql.GetMysqlDbSystems.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigurationId = @var.Mysql_configuration_id,
-        ///         DatabaseManagements = @var.Mysql_db_system_database_management,
-        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///         DisplayName = @var.Mysql_db_system_display_name,
-        ///         IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
-        ///         IsUpToDate = @var.Mysql_db_system_is_up_to_date,
-        ///         State = @var.Mysql_db_system_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = mysqlConfigurationId,
+        ///         DatabaseManagements = mysqlDbSystemDatabaseManagement,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DisplayName = mysqlDbSystemDisplayName,
+        ///         IsHeatWaveClusterAttached = mysqlDbSystemIsHeatWaveClusterAttached,
+        ///         IsUpToDate = mysqlDbSystemIsUpToDate,
+        ///         State = mysqlDbSystemState,
         ///     });
         /// 
         /// });
@@ -68,14 +68,14 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlDbSystems = Oci.Mysql.GetMysqlDbSystems.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigurationId = @var.Mysql_configuration_id,
-        ///         DatabaseManagements = @var.Mysql_db_system_database_management,
-        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///         DisplayName = @var.Mysql_db_system_display_name,
-        ///         IsHeatWaveClusterAttached = @var.Mysql_db_system_is_heat_wave_cluster_attached,
-        ///         IsUpToDate = @var.Mysql_db_system_is_up_to_date,
-        ///         State = @var.Mysql_db_system_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = mysqlConfigurationId,
+        ///         DatabaseManagements = mysqlDbSystemDatabaseManagement,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DisplayName = mysqlDbSystemDisplayName,
+        ///         IsHeatWaveClusterAttached = mysqlDbSystemIsHeatWaveClusterAttached,
+        ///         IsUpToDate = mysqlDbSystemIsUpToDate,
+        ///         State = mysqlDbSystemState,
         ///     });
         /// 
         /// });

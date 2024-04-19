@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagement.GetSoftwareSource(ctx, &osmanagement.GetSoftwareSourceArgs{
-//				SoftwareSourceId: oci_osmanagement_software_source.Test_software_source.Id,
+//				SoftwareSourceId: testSoftwareSourceOciOsmanagementSoftwareSource.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

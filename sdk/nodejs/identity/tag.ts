@@ -39,19 +39,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTag = new oci.identity.Tag("testTag", {
- *     description: _var.tag_description,
- *     tagNamespaceId: oci_identity_tag_namespace.test_tag_namespace.id,
+ * const testTag = new oci.identity.Tag("test_tag", {
+ *     description: tagDescription,
+ *     name: tagName,
+ *     tagNamespaceId: testTagNamespace.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isCostTracking: _var.tag_is_cost_tracking,
+ *     isCostTracking: tagIsCostTracking,
  *     validator: {
- *         validatorType: _var.tag_validator_validator_type,
- *         values: _var.tag_validator_values,
+ *         validatorType: tagValidatorValidatorType,
+ *         values: tagValidatorValues,
  *     },
  *     isRetired: false,
  * });

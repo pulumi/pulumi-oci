@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVcnDnsResolverAssociation = Oci.Core.GetCnvDnsResolverAssociation.Invoke(new()
         ///     {
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVcnDnsResolverAssociation = Oci.Core.GetCnvDnsResolverAssociation.Invoke(new()
         ///     {
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

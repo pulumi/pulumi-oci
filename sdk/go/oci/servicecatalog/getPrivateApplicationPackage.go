@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceCatalog.GetPrivateApplicationPackage(ctx, &servicecatalog.GetPrivateApplicationPackageArgs{
-//				PrivateApplicationPackageId: oci_service_catalog_private_application_package.Test_private_application_package.Id,
+//				PrivateApplicationPackageId: testPrivateApplicationPackageOciServiceCatalogPrivateApplicationPackage.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

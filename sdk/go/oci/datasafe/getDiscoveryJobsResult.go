@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetDiscoveryJobsResult(ctx, &datasafe.GetDiscoveryJobsResultArgs{
-//				DiscoveryJobId: oci_data_safe_discovery_job.Test_discovery_job.Id,
-//				ResultKey:      _var.Discovery_jobs_result_result_key,
+//				DiscoveryJobId: testDiscoveryJob.Id,
+//				ResultKey:      discoveryJobsResultResultKey,
 //			}, nil)
 //			if err != nil {
 //				return err

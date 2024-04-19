@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryFileDiff = Oci.DevOps.GetRepositoryFileDiff.Invoke(new()
         ///     {
-        ///         BaseVersion = @var.Repository_file_diff_base_version,
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         TargetVersion = @var.Repository_file_diff_target_version,
-        ///         FilePath = @var.Repository_file_diff_file_path,
-        ///         IsComparisonFromMergeBase = @var.Repository_file_diff_is_comparison_from_merge_base,
+        ///         BaseVersion = repositoryFileDiffBaseVersion,
+        ///         RepositoryId = testRepository.Id,
+        ///         TargetVersion = repositoryFileDiffTargetVersion,
+        ///         FilePath = repositoryFileDiffFilePath,
+        ///         IsComparisonFromMergeBase = repositoryFileDiffIsComparisonFromMergeBase,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryFileDiff = Oci.DevOps.GetRepositoryFileDiff.Invoke(new()
         ///     {
-        ///         BaseVersion = @var.Repository_file_diff_base_version,
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         TargetVersion = @var.Repository_file_diff_target_version,
-        ///         FilePath = @var.Repository_file_diff_file_path,
-        ///         IsComparisonFromMergeBase = @var.Repository_file_diff_is_comparison_from_merge_base,
+        ///         BaseVersion = repositoryFileDiffBaseVersion,
+        ///         RepositoryId = testRepository.Id,
+        ///         TargetVersion = repositoryFileDiffTargetVersion,
+        ///         FilePath = repositoryFileDiffFilePath,
+        ///         IsComparisonFromMergeBase = repositoryFileDiffIsComparisonFromMergeBase,
         ///     });
         /// 
         /// });

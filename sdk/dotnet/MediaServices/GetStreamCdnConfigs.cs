@@ -29,10 +29,10 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testStreamCdnConfigs = Oci.MediaServices.GetStreamCdnConfigs.Invoke(new()
         ///     {
-        ///         DistributionChannelId = oci_mysql_channel.Test_channel.Id,
-        ///         DisplayName = @var.Stream_cdn_config_display_name,
-        ///         Id = @var.Stream_cdn_config_id,
-        ///         State = @var.Stream_cdn_config_state,
+        ///         DistributionChannelId = testChannel.Id,
+        ///         DisplayName = streamCdnConfigDisplayName,
+        ///         Id = streamCdnConfigId,
+        ///         State = streamCdnConfigState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testStreamCdnConfigs = Oci.MediaServices.GetStreamCdnConfigs.Invoke(new()
         ///     {
-        ///         DistributionChannelId = oci_mysql_channel.Test_channel.Id,
-        ///         DisplayName = @var.Stream_cdn_config_display_name,
-        ///         Id = @var.Stream_cdn_config_id,
-        ///         State = @var.Stream_cdn_config_state,
+        ///         DistributionChannelId = testChannel.Id,
+        ///         DisplayName = streamCdnConfigDisplayName,
+        ///         Id = streamCdnConfigId,
+        ///         State = streamCdnConfigState,
         ///     });
         /// 
         /// });

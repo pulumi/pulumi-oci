@@ -319,9 +319,9 @@ def get_workspace_application_patch(application_key: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_patch = oci.DataIntegration.get_workspace_application_patch(application_key=var["workspace_application_patch_application_key"],
-        patch_key=var["workspace_application_patch_patch_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
+    test_workspace_application_patch = oci.DataIntegration.get_workspace_application_patch(application_key=workspace_application_patch_application_key,
+        patch_key=workspace_application_patch_patch_key,
+        workspace_id=test_workspace["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -381,9 +381,9 @@ def get_workspace_application_patch_output(application_key: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_patch = oci.DataIntegration.get_workspace_application_patch(application_key=var["workspace_application_patch_application_key"],
-        patch_key=var["workspace_application_patch_patch_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
+    test_workspace_application_patch = oci.DataIntegration.get_workspace_application_patch(application_key=workspace_application_patch_application_key,
+        patch_key=workspace_application_patch_patch_key,
+        workspace_id=test_workspace["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Mysql.NewReplica(ctx, "testReplica", &Mysql.ReplicaArgs{
-//				DbSystemId: pulumi.Any(oci_mysql_mysql_db_system.Test_mysql_db_system.Id),
+//			_, err := Mysql.NewReplica(ctx, "test_replica", &Mysql.ReplicaArgs{
+//				DbSystemId: pulumi.Any(testMysqlDbSystem.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Replica_description),
-//				DisplayName: pulumi.Any(_var.Replica_display_name),
+//				Description: pulumi.Any(replicaDescription),
+//				DisplayName: pulumi.Any(replicaDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsDeleteProtected: pulumi.Any(_var.Replica_is_delete_protected),
+//				IsDeleteProtected: pulumi.Any(replicaIsDeleteProtected),
 //				ReplicaOverrides: &mysql.ReplicaReplicaOverridesArgs{
-//					ConfigurationId: pulumi.Any(oci_mysql_mysql_configuration.Test_mysql_configuration.Id),
-//					MysqlVersion:    pulumi.Any(_var.Replica_replica_overrides_mysql_version),
-//					ShapeName:       pulumi.Any(oci_mysql_shape.Test_shape.Name),
+//					ConfigurationId: pulumi.Any(testMysqlConfiguration.Id),
+//					MysqlVersion:    pulumi.Any(replicaReplicaOverridesMysqlVersion),
+//					ShapeName:       pulumi.Any(testShape.Name),
 //				},
 //			})
 //			if err != nil {

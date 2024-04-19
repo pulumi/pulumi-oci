@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUsers = Oci.Identity.GetUsers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         ExternalIdentifier = @var.User_external_identifier,
-        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-        ///         Name = @var.User_name,
-        ///         State = @var.User_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         ExternalIdentifier = userExternalIdentifier,
+        ///         IdentityProviderId = testIdentityProvider.Id,
+        ///         Name = userName,
+        ///         State = userState,
         ///     });
         /// 
         /// });
@@ -67,11 +67,11 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUsers = Oci.Identity.GetUsers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         ExternalIdentifier = @var.User_external_identifier,
-        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-        ///         Name = @var.User_name,
-        ///         State = @var.User_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         ExternalIdentifier = userExternalIdentifier,
+        ///         IdentityProviderId = testIdentityProvider.Id,
+        ///         Name = userName,
+        ///         State = userState,
         ///     });
         /// 
         /// });

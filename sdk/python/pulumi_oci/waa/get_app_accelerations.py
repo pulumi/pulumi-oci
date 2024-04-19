@@ -134,11 +134,11 @@ def get_app_accelerations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=var["compartment_id"],
-        display_name=var["web_app_acceleration_display_name"],
-        id=var["web_app_acceleration_id"],
-        states=var["web_app_acceleration_state"],
-        web_app_acceleration_policy_id=oci_waa_web_app_acceleration_policy["test_web_app_acceleration_policy"]["id"])
+    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=compartment_id,
+        display_name=web_app_acceleration_display_name,
+        id=web_app_acceleration_id,
+        states=web_app_acceleration_state,
+        web_app_acceleration_policy_id=test_web_app_acceleration_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=var["compartment_id"],
-        display_name=var["web_app_acceleration_display_name"],
-        id=var["web_app_acceleration_id"],
-        states=var["web_app_acceleration_state"],
-        web_app_acceleration_policy_id=oci_waa_web_app_acceleration_policy["test_web_app_acceleration_policy"]["id"])
+    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=compartment_id,
+        display_name=web_app_acceleration_display_name,
+        id=web_app_acceleration_id,
+        states=web_app_acceleration_state,
+        web_app_acceleration_policy_id=test_web_app_acceleration_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 

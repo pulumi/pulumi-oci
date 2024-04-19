@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testImageShapes = Oci.Core.GetImageShapes.Invoke(new()
         ///     {
-        ///         ImageId = oci_core_image.Test_image.Id,
+        ///         ImageId = testImage.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testImageShapes = Oci.Core.GetImageShapes.Invoke(new()
         ///     {
-        ///         ImageId = oci_core_image.Test_image.Id,
+        ///         ImageId = testImage.Id,
         ///     });
         /// 
         /// });

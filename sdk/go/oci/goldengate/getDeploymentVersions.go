@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetDeploymentVersions(ctx, &goldengate.GetDeploymentVersionsArgs{
-//				CompartmentId:  _var.Compartment_id,
-//				DeploymentId:   pulumi.StringRef(oci_golden_gate_deployment.Test_deployment.Id),
-//				DeploymentType: pulumi.StringRef(_var.Deployment_version_deployment_type),
+//				CompartmentId:  compartmentId,
+//				DeploymentId:   pulumi.StringRef(testDeployment.Id),
+//				DeploymentType: pulumi.StringRef(deploymentVersionDeploymentType),
 //			}, nil)
 //			if err != nil {
 //				return err

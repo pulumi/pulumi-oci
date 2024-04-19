@@ -25,18 +25,18 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDedicatedAiCluster = new Oci.GenerativeAi.DedicatedAiCluster("testDedicatedAiCluster", new()
+    ///     var testDedicatedAiCluster = new Oci.GenerativeAi.DedicatedAiCluster("test_dedicated_ai_cluster", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Type = @var.Dedicated_ai_cluster_type,
-    ///         UnitCount = @var.Dedicated_ai_cluster_unit_count,
-    ///         UnitShape = @var.Dedicated_ai_cluster_unit_shape,
+    ///         CompartmentId = compartmentId,
+    ///         Type = dedicatedAiClusterType,
+    ///         UnitCount = dedicatedAiClusterUnitCount,
+    ///         UnitShape = dedicatedAiClusterUnitShape,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Dedicated_ai_cluster_description,
-    ///         DisplayName = @var.Dedicated_ai_cluster_display_name,
+    ///         Description = dedicatedAiClusterDescription,
+    ///         DisplayName = dedicatedAiClusterDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

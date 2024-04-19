@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetVmClusterUpdates(ctx, &database.GetVmClusterUpdatesArgs{
-//				VmClusterId: oci_database_vm_cluster.Test_vm_cluster.Id,
-//				State:       pulumi.StringRef(_var.Vm_cluster_update_state),
-//				UpdateType:  pulumi.StringRef(_var.Vm_cluster_update_update_type),
+//				VmClusterId: testVmCluster.Id,
+//				State:       pulumi.StringRef(vmClusterUpdateState),
+//				UpdateType:  pulumi.StringRef(vmClusterUpdateUpdateType),
 //			}, nil)
 //			if err != nil {
 //				return err

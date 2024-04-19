@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Budget
         /// {
         ///     var testBudget = Oci.Budget.GetBudget.Invoke(new()
         ///     {
-        ///         BudgetId = oci_budget_budget.Test_budget.Id,
+        ///         BudgetId = testBudgetOciBudgetBudget.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Budget
         /// {
         ///     var testBudget = Oci.Budget.GetBudget.Invoke(new()
         ///     {
-        ///         BudgetId = oci_budget_budget.Test_budget.Id,
+        ///         BudgetId = testBudgetOciBudgetBudget.Id,
         ///     });
         /// 
         /// });

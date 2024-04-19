@@ -30,12 +30,12 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testMountTargets = Oci.FileStorage.GetMountTargets.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Mount_target_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Mount_target_display_name,
-        ///         ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
-        ///         Id = @var.Mount_target_id,
-        ///         State = @var.Mount_target_state,
+        ///         AvailabilityDomain = mountTargetAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = mountTargetDisplayName,
+        ///         ExportSetId = testExportSet.Id,
+        ///         Id = mountTargetId,
+        ///         State = mountTargetState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testMountTargets = Oci.FileStorage.GetMountTargets.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Mount_target_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Mount_target_display_name,
-        ///         ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
-        ///         Id = @var.Mount_target_id,
-        ///         State = @var.Mount_target_state,
+        ///         AvailabilityDomain = mountTargetAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = mountTargetDisplayName,
+        ///         ExportSetId = testExportSet.Id,
+        ///         Id = mountTargetId,
+        ///         State = mountTargetState,
         ///     });
         /// 
         /// });

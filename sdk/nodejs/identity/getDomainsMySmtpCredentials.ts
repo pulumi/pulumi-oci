@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMySmtpCredentials = oci.Identity.getDomainsMySmtpCredentials({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     mySmtpCredentialCount: _var.my_smtp_credential_my_smtp_credential_count,
- *     mySmtpCredentialFilter: _var.my_smtp_credential_my_smtp_credential_filter,
- *     authorization: _var.my_smtp_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_smtp_credential_resource_type_schema_version,
- *     startIndex: _var.my_smtp_credential_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     mySmtpCredentialCount: mySmtpCredentialMySmtpCredentialCount,
+ *     mySmtpCredentialFilter: mySmtpCredentialMySmtpCredentialFilter,
+ *     authorization: mySmtpCredentialAuthorization,
+ *     resourceTypeSchemaVersion: mySmtpCredentialResourceTypeSchemaVersion,
+ *     startIndex: mySmtpCredentialStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetDomainsMySmtpCredentialsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMySmtpCredentials = oci.Identity.getDomainsMySmtpCredentials({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     mySmtpCredentialCount: _var.my_smtp_credential_my_smtp_credential_count,
- *     mySmtpCredentialFilter: _var.my_smtp_credential_my_smtp_credential_filter,
- *     authorization: _var.my_smtp_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_smtp_credential_resource_type_schema_version,
- *     startIndex: _var.my_smtp_credential_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     mySmtpCredentialCount: mySmtpCredentialMySmtpCredentialCount,
+ *     mySmtpCredentialFilter: mySmtpCredentialMySmtpCredentialFilter,
+ *     authorization: mySmtpCredentialAuthorization,
+ *     resourceTypeSchemaVersion: mySmtpCredentialResourceTypeSchemaVersion,
+ *     startIndex: mySmtpCredentialStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

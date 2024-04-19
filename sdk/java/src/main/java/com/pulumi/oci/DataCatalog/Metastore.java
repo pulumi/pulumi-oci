@@ -47,11 +47,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMetastore = new Metastore(&#34;testMetastore&#34;, MetastoreArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .defaultExternalTableLocation(var_.metastore_default_external_table_location())
- *             .defaultManagedTableLocation(var_.metastore_default_managed_table_location())
+ *             .compartmentId(compartmentId)
+ *             .defaultExternalTableLocation(metastoreDefaultExternalTableLocation)
+ *             .defaultManagedTableLocation(metastoreDefaultManagedTableLocation)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.metastore_display_name())
+ *             .displayName(metastoreDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

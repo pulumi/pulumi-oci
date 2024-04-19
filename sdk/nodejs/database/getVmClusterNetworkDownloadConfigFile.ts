@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterNetworkDownloadConfigFile = oci.Database.getVmClusterNetworkDownloadConfigFile({
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     vmClusterNetworkId: oci_database_vm_cluster_network.test_vm_cluster_network.id,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     base64EncodeContent: false,
  * });
  * ```
@@ -78,8 +78,8 @@ export interface GetVmClusterNetworkDownloadConfigFileResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterNetworkDownloadConfigFile = oci.Database.getVmClusterNetworkDownloadConfigFile({
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     vmClusterNetworkId: oci_database_vm_cluster_network.test_vm_cluster_network.id,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     base64EncodeContent: false,
  * });
  * ```

@@ -39,27 +39,27 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIpSecConnectionTunnel = new Oci.Core.IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", new()
+    ///     var testIpSecConnectionTunnel = new Oci.Core.IpsecConnectionTunnelManagement("test_ip_sec_connection_tunnel", new()
     ///     {
-    ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
-    ///         TunnelId = data.Oci_core_ipsec_connection_tunnels.Test_ip_sec_connection_tunnels.Ip_sec_connection_tunnels[0].Id,
-    ///         Routing = @var.Ip_sec_connection_tunnel_management_routing,
+    ///         IpsecId = testIpsec.Id,
+    ///         TunnelId = testIpSecConnectionTunnels.IpSecConnectionTunnels[0].Id,
+    ///         Routing = ipSecConnectionTunnelManagementRouting,
     ///         BgpSessionInfos = new[]
     ///         {
     ///             new Oci.Core.Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs
     ///             {
-    ///                 CustomerBgpAsn = @var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn,
-    ///                 CustomerInterfaceIp = @var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip,
-    ///                 OracleInterfaceIp = @var.Ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip,
+    ///                 CustomerBgpAsn = ipSecConnectionTunnelManagementBgpSessionInfoCustomerBgpAsn,
+    ///                 CustomerInterfaceIp = ipSecConnectionTunnelManagementBgpSessionInfoCustomerInterfaceIp,
+    ///                 OracleInterfaceIp = ipSecConnectionTunnelManagementBgpSessionInfoOracleInterfaceIp,
     ///             },
     ///         },
-    ///         DisplayName = @var.Ip_sec_connection_tunnel_management_display_name,
+    ///         DisplayName = ipSecConnectionTunnelManagementDisplayName,
     ///         EncryptionDomainConfig = new Oci.Core.Inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs
     ///         {
-    ///             CpeTrafficSelectors = @var.Ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector,
-    ///             OracleTrafficSelectors = @var.Ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector,
+    ///             CpeTrafficSelectors = ipSecConnectionTunnelManagementEncryptionDomainConfigCpeTrafficSelector,
+    ///             OracleTrafficSelectors = ipSecConnectionTunnelManagementEncryptionDomainConfigOracleTrafficSelector,
     ///         },
-    ///         SharedSecret = @var.Ip_sec_connection_tunnel_management_shared_secret,
+    ///         SharedSecret = ipSecConnectionTunnelManagementSharedSecret,
     ///         IkeVersion = "V1",
     ///     });
     /// 

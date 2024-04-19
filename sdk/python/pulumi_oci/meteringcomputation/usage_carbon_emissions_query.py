@@ -111,30 +111,30 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage_carbon_emissions_query = oci.metering_computation.UsageCarbonEmissionsQuery("testUsageCarbonEmissionsQuery",
-            compartment_id=var["compartment_id"],
+        test_usage_carbon_emissions_query = oci.metering_computation.UsageCarbonEmissionsQuery("test_usage_carbon_emissions_query",
+            compartment_id=compartment_id,
             query_definition=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionArgs(
                 cost_analysis_ui=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=var["usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph"],
-                    is_cumulative_graph=var["usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph"],
+                    graph=usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
+                    is_cumulative_graph=usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
                 ),
-                display_name=var["usage_carbon_emissions_query_query_definition_display_name"],
+                display_name=usage_carbon_emissions_query_query_definition_display_name,
                 report_query=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs(
-                    tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-                    compartment_depth=var["usage_carbon_emissions_query_query_definition_report_query_compartment_depth"],
-                    date_range_name=var["usage_carbon_emissions_query_query_definition_report_query_date_range_name"],
-                    group_bies=var["usage_carbon_emissions_query_query_definition_report_query_group_by"],
+                    tenant_id=test_tenant["id"],
+                    compartment_depth=usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
+                    date_range_name=usage_carbon_emissions_query_query_definition_report_query_date_range_name,
+                    group_bies=usage_carbon_emissions_query_query_definition_report_query_group_by,
                     group_by_tags=[oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=var["usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key"],
-                        namespace=var["usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace"],
-                        value=var["usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value"],
+                        key=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,
+                        namespace=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
+                        value=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
                     )],
-                    is_aggregate_by_time=var["usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time"],
-                    time_usage_ended=var["usage_carbon_emissions_query_query_definition_report_query_time_usage_ended"],
-                    time_usage_started=var["usage_carbon_emissions_query_query_definition_report_query_time_usage_started"],
-                    usage_carbon_emissions_query_filter=var["usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter"],
+                    is_aggregate_by_time=usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
+                    time_usage_ended=usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
+                    time_usage_started=usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
+                    usage_carbon_emissions_query_filter=usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
                 ),
-                version=var["usage_carbon_emissions_query_query_definition_version"],
+                version=usage_carbon_emissions_query_query_definition_version,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -170,30 +170,30 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage_carbon_emissions_query = oci.metering_computation.UsageCarbonEmissionsQuery("testUsageCarbonEmissionsQuery",
-            compartment_id=var["compartment_id"],
+        test_usage_carbon_emissions_query = oci.metering_computation.UsageCarbonEmissionsQuery("test_usage_carbon_emissions_query",
+            compartment_id=compartment_id,
             query_definition=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionArgs(
                 cost_analysis_ui=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=var["usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph"],
-                    is_cumulative_graph=var["usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph"],
+                    graph=usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
+                    is_cumulative_graph=usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
                 ),
-                display_name=var["usage_carbon_emissions_query_query_definition_display_name"],
+                display_name=usage_carbon_emissions_query_query_definition_display_name,
                 report_query=oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs(
-                    tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-                    compartment_depth=var["usage_carbon_emissions_query_query_definition_report_query_compartment_depth"],
-                    date_range_name=var["usage_carbon_emissions_query_query_definition_report_query_date_range_name"],
-                    group_bies=var["usage_carbon_emissions_query_query_definition_report_query_group_by"],
+                    tenant_id=test_tenant["id"],
+                    compartment_depth=usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
+                    date_range_name=usage_carbon_emissions_query_query_definition_report_query_date_range_name,
+                    group_bies=usage_carbon_emissions_query_query_definition_report_query_group_by,
                     group_by_tags=[oci.metering_computation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=var["usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key"],
-                        namespace=var["usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace"],
-                        value=var["usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value"],
+                        key=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,
+                        namespace=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
+                        value=usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
                     )],
-                    is_aggregate_by_time=var["usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time"],
-                    time_usage_ended=var["usage_carbon_emissions_query_query_definition_report_query_time_usage_ended"],
-                    time_usage_started=var["usage_carbon_emissions_query_query_definition_report_query_time_usage_started"],
-                    usage_carbon_emissions_query_filter=var["usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter"],
+                    is_aggregate_by_time=usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
+                    time_usage_ended=usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
+                    time_usage_started=usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
+                    usage_carbon_emissions_query_filter=usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
                 ),
-                version=var["usage_carbon_emissions_query_query_definition_version"],
+                version=usage_carbon_emissions_query_query_definition_version,
             ))
         ```
         <!--End PulumiCodeChooser -->

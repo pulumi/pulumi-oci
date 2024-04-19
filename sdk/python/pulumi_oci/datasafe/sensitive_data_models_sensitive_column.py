@@ -630,20 +630,20 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sensitive_data_models_sensitive_column = oci.data_safe.SensitiveDataModelsSensitiveColumn("testSensitiveDataModelsSensitiveColumn",
-            column_name=var["sensitive_data_models_sensitive_column_column_name"],
-            object=var["sensitive_data_models_sensitive_column_object"],
-            schema_name=var["sensitive_data_models_sensitive_column_schema_name"],
-            sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-            app_defined_child_column_keys=var["sensitive_data_models_sensitive_column_app_defined_child_column_keys"],
-            app_name=var["sensitive_data_models_sensitive_column_app_name"],
-            data_type=var["sensitive_data_models_sensitive_column_data_type"],
-            db_defined_child_column_keys=var["sensitive_data_models_sensitive_column_db_defined_child_column_keys"],
-            object_type=var["sensitive_data_models_sensitive_column_object_type"],
-            parent_column_keys=var["sensitive_data_models_sensitive_column_parent_column_keys"],
-            relation_type=var["sensitive_data_models_sensitive_column_relation_type"],
-            sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-            status=var["sensitive_data_models_sensitive_column_status"])
+        test_sensitive_data_models_sensitive_column = oci.data_safe.SensitiveDataModelsSensitiveColumn("test_sensitive_data_models_sensitive_column",
+            column_name=sensitive_data_models_sensitive_column_column_name,
+            object=sensitive_data_models_sensitive_column_object,
+            schema_name=sensitive_data_models_sensitive_column_schema_name,
+            sensitive_data_model_id=test_sensitive_data_model["id"],
+            app_defined_child_column_keys=sensitive_data_models_sensitive_column_app_defined_child_column_keys,
+            app_name=sensitive_data_models_sensitive_column_app_name,
+            data_type=sensitive_data_models_sensitive_column_data_type,
+            db_defined_child_column_keys=sensitive_data_models_sensitive_column_db_defined_child_column_keys,
+            object_type=sensitive_data_models_sensitive_column_object_type,
+            parent_column_keys=sensitive_data_models_sensitive_column_parent_column_keys,
+            relation_type=sensitive_data_models_sensitive_column_relation_type,
+            sensitive_type_id=test_sensitive_type["id"],
+            status=sensitive_data_models_sensitive_column_status)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -693,20 +693,20 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sensitive_data_models_sensitive_column = oci.data_safe.SensitiveDataModelsSensitiveColumn("testSensitiveDataModelsSensitiveColumn",
-            column_name=var["sensitive_data_models_sensitive_column_column_name"],
-            object=var["sensitive_data_models_sensitive_column_object"],
-            schema_name=var["sensitive_data_models_sensitive_column_schema_name"],
-            sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-            app_defined_child_column_keys=var["sensitive_data_models_sensitive_column_app_defined_child_column_keys"],
-            app_name=var["sensitive_data_models_sensitive_column_app_name"],
-            data_type=var["sensitive_data_models_sensitive_column_data_type"],
-            db_defined_child_column_keys=var["sensitive_data_models_sensitive_column_db_defined_child_column_keys"],
-            object_type=var["sensitive_data_models_sensitive_column_object_type"],
-            parent_column_keys=var["sensitive_data_models_sensitive_column_parent_column_keys"],
-            relation_type=var["sensitive_data_models_sensitive_column_relation_type"],
-            sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-            status=var["sensitive_data_models_sensitive_column_status"])
+        test_sensitive_data_models_sensitive_column = oci.data_safe.SensitiveDataModelsSensitiveColumn("test_sensitive_data_models_sensitive_column",
+            column_name=sensitive_data_models_sensitive_column_column_name,
+            object=sensitive_data_models_sensitive_column_object,
+            schema_name=sensitive_data_models_sensitive_column_schema_name,
+            sensitive_data_model_id=test_sensitive_data_model["id"],
+            app_defined_child_column_keys=sensitive_data_models_sensitive_column_app_defined_child_column_keys,
+            app_name=sensitive_data_models_sensitive_column_app_name,
+            data_type=sensitive_data_models_sensitive_column_data_type,
+            db_defined_child_column_keys=sensitive_data_models_sensitive_column_db_defined_child_column_keys,
+            object_type=sensitive_data_models_sensitive_column_object_type,
+            parent_column_keys=sensitive_data_models_sensitive_column_parent_column_keys,
+            relation_type=sensitive_data_models_sensitive_column_relation_type,
+            sensitive_type_id=test_sensitive_type["id"],
+            status=sensitive_data_models_sensitive_column_status)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -363,17 +363,17 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fusion_environment_family = oci.fusion_apps.FusionEnvironmentFamily("testFusionEnvironmentFamily",
-            compartment_id=var["compartment_id"],
-            display_name=var["fusion_environment_family_display_name"],
-            subscription_ids=var["fusion_environment_family_subscription_ids"],
+        test_fusion_environment_family = oci.fusion_apps.FusionEnvironmentFamily("test_fusion_environment_family",
+            compartment_id=compartment_id,
+            display_name=fusion_environment_family_display_name,
+            subscription_ids=fusion_environment_family_subscription_ids,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             family_maintenance_policy=oci.fusion_apps.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs(
-                concurrent_maintenance=var["fusion_environment_family_family_maintenance_policy_concurrent_maintenance"],
-                is_monthly_patching_enabled=var["fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled"],
-                quarterly_upgrade_begin_times=var["fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times"],
+                concurrent_maintenance=fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
+                is_monthly_patching_enabled=fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
+                quarterly_upgrade_begin_times=fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
             ),
             freeform_tags={
                 "bar-key": "value",
@@ -420,17 +420,17 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fusion_environment_family = oci.fusion_apps.FusionEnvironmentFamily("testFusionEnvironmentFamily",
-            compartment_id=var["compartment_id"],
-            display_name=var["fusion_environment_family_display_name"],
-            subscription_ids=var["fusion_environment_family_subscription_ids"],
+        test_fusion_environment_family = oci.fusion_apps.FusionEnvironmentFamily("test_fusion_environment_family",
+            compartment_id=compartment_id,
+            display_name=fusion_environment_family_display_name,
+            subscription_ids=fusion_environment_family_subscription_ids,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             family_maintenance_policy=oci.fusion_apps.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs(
-                concurrent_maintenance=var["fusion_environment_family_family_maintenance_policy_concurrent_maintenance"],
-                is_monthly_patching_enabled=var["fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled"],
-                quarterly_upgrade_begin_times=var["fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times"],
+                concurrent_maintenance=fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
+                is_monthly_patching_enabled=fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
+                quarterly_upgrade_begin_times=fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
             ),
             freeform_tags={
                 "bar-key": "value",

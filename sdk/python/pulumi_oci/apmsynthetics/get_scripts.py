@@ -117,9 +117,9 @@ def get_scripts(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scripts = oci.ApmSynthetics.get_scripts(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        content_type=var["script_content_type"],
-        display_name=var["script_display_name"])
+    test_scripts = oci.ApmSynthetics.get_scripts(apm_domain_id=test_apm_domain["id"],
+        content_type=script_content_type,
+        display_name=script_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_scripts_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scripts = oci.ApmSynthetics.get_scripts(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        content_type=var["script_content_type"],
-        display_name=var["script_display_name"])
+    test_scripts = oci.ApmSynthetics.get_scripts(apm_domain_id=test_apm_domain["id"],
+        content_type=script_content_type,
+        display_name=script_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

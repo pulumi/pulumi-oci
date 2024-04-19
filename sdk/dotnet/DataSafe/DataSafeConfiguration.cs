@@ -25,10 +25,10 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDataSafeConfiguration = new Oci.DataSafe.DataSafeConfiguration("testDataSafeConfiguration", new()
+    ///     var testDataSafeConfiguration = new Oci.DataSafe.DataSafeConfiguration("test_data_safe_configuration", new()
     ///     {
-    ///         IsEnabled = @var.Data_safe_configuration_is_enabled,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         IsEnabled = dataSafeConfigurationIsEnabled,
+    ///         CompartmentId = compartmentId,
     ///     });
     /// 
     /// });

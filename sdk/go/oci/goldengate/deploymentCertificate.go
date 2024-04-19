@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GoldenGate.NewDeploymentCertificate(ctx, "testDeploymentCertificate", &GoldenGate.DeploymentCertificateArgs{
-//				CertificateContent: pulumi.Any(_var.Deployment_certificate_certificate_content),
-//				DeploymentId:       pulumi.Any(oci_golden_gate_deployment.Test_deployment.Id),
-//				Key:                pulumi.Any(_var.Deployment_certificate_key),
+//			_, err := GoldenGate.NewDeploymentCertificate(ctx, "test_deployment_certificate", &GoldenGate.DeploymentCertificateArgs{
+//				CertificateContent: pulumi.Any(deploymentCertificateCertificateContent),
+//				DeploymentId:       pulumi.Any(testDeployment.Id),
+//				Key:                pulumi.Any(deploymentCertificateKey),
 //			})
 //			if err != nil {
 //				return err

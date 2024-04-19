@@ -34,10 +34,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseGroups(ctx, &databasemanagement.GetManagedDatabaseGroupsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Managed_database_group_id),
-//				Name:          pulumi.StringRef(_var.Managed_database_group_name),
-//				State:         pulumi.StringRef(_var.Managed_database_group_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(managedDatabaseGroupId),
+//				Name:          pulumi.StringRef(managedDatabaseGroupName),
+//				State:         pulumi.StringRef(managedDatabaseGroupState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -18,41 +18,41 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfig = new oci.apmconfig.Config("testConfig", {
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     configType: _var.config_config_type,
- *     displayName: _var.config_display_name,
+ * const testConfig = new oci.apmconfig.Config("test_config", {
+ *     apmDomainId: testApmDomain.id,
+ *     configType: configConfigType,
+ *     displayName: configDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.config_description,
+ *     description: configDescription,
  *     dimensions: [{
- *         name: _var.config_dimensions_name,
- *         valueSource: _var.config_dimensions_value_source,
+ *         name: configDimensionsName,
+ *         valueSource: configDimensionsValueSource,
  *     }],
- *     filterId: oci_apm_config_filter.test_filter.id,
- *     filterText: _var.config_filter_text,
+ *     filterId: testFilter.id,
+ *     filterText: configFilterText,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     group: _var.config_group,
+ *     group: configGroup,
  *     metrics: [{
- *         description: _var.config_metrics_description,
- *         name: _var.config_metrics_name,
- *         unit: _var.config_metrics_unit,
- *         valueSource: _var.config_metrics_value_source,
+ *         description: configMetricsDescription,
+ *         name: configMetricsName,
+ *         unit: configMetricsUnit,
+ *         valueSource: configMetricsValueSource,
  *     }],
- *     namespace: _var.config_namespace,
- *     opcDryRun: _var.config_opc_dry_run,
- *     options: _var.config_options,
+ *     namespace: configNamespace,
+ *     opcDryRun: configOpcDryRun,
+ *     options: configOptions,
  *     rules: [{
- *         displayName: _var.config_rules_display_name,
- *         filterText: _var.config_rules_filter_text,
- *         isApplyToErrorSpans: _var.config_rules_is_apply_to_error_spans,
- *         isEnabled: _var.config_rules_is_enabled,
- *         priority: _var.config_rules_priority,
- *         satisfiedResponseTime: _var.config_rules_satisfied_response_time,
- *         toleratingResponseTime: _var.config_rules_tolerating_response_time,
+ *         displayName: configRulesDisplayName,
+ *         filterText: configRulesFilterText,
+ *         isApplyToErrorSpans: configRulesIsApplyToErrorSpans,
+ *         isEnabled: configRulesIsEnabled,
+ *         priority: configRulesPriority,
+ *         satisfiedResponseTime: configRulesSatisfiedResponseTime,
+ *         toleratingResponseTime: configRulesToleratingResponseTime,
  *     }],
  * });
  * ```

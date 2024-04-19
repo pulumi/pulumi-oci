@@ -25,11 +25,11 @@ namespace Pulumi.Oci.Jms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testJavaLicenseAcceptanceRecord = new Oci.Jms.JavaDownloadsJavaLicenseAcceptanceRecord("testJavaLicenseAcceptanceRecord", new()
+    ///     var testJavaLicenseAcceptanceRecord = new Oci.Jms.JavaDownloadsJavaLicenseAcceptanceRecord("test_java_license_acceptance_record", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         LicenseAcceptanceStatus = @var.Java_license_acceptance_record_license_acceptance_status,
-    ///         LicenseType = @var.Java_license_acceptance_record_license_type,
+    ///         CompartmentId = tenancyOcid,
+    ///         LicenseAcceptanceStatus = javaLicenseAcceptanceRecordLicenseAcceptanceStatus,
+    ///         LicenseType = javaLicenseAcceptanceRecordLicenseType,
     ///     });
     /// 
     /// });

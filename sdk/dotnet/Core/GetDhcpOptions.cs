@@ -33,10 +33,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDhcpOptions = Oci.Core.GetDhcpOptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Dhcp_options_display_name,
-        ///         State = @var.Dhcp_options_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = dhcpOptionsDisplayName,
+        ///         State = dhcpOptionsState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -68,10 +68,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDhcpOptions = Oci.Core.GetDhcpOptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Dhcp_options_display_name,
-        ///         State = @var.Dhcp_options_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = dhcpOptionsDisplayName,
+        ///         State = dhcpOptionsState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

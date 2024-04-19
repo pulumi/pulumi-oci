@@ -18,13 +18,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgent = new oci.cloudbridge.Agent("testAgent", {
- *     agentType: _var.agent_agent_type,
- *     agentVersion: _var.agent_agent_version,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.agent_display_name,
- *     environmentId: oci_cloud_bridge_environment.test_environment.id,
- *     osVersion: _var.agent_os_version,
+ * const testAgent = new oci.cloudbridge.Agent("test_agent", {
+ *     agentType: agentAgentType,
+ *     agentVersion: agentAgentVersion,
+ *     compartmentId: compartmentId,
+ *     displayName: agentDisplayName,
+ *     environmentId: testEnvironment.id,
+ *     osVersion: agentOsVersion,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

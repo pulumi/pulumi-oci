@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GenericArtifactsContent.GetArtifactByPath(ctx, &genericartifactscontent.GetArtifactByPathArgs{
-//				ArtifactPath: _var.Artifact_by_path_artifact_path,
-//				RepositoryId: oci_artifacts_repository.Test_repository.Id,
-//				Version:      _var.Artifact_by_path_version,
+//				ArtifactPath: artifactByPathArtifactPath,
+//				RepositoryId: testRepository.Id,
+//				Version:      artifactByPathVersion,
 //			}, nil)
 //			if err != nil {
 //				return err

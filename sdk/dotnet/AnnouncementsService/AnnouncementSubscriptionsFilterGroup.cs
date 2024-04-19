@@ -27,17 +27,18 @@ namespace Pulumi.Oci.AnnouncementsService
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAnnouncementSubscriptionsFilterGroup = new Oci.AnnouncementsService.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup", new()
+    ///     var testAnnouncementSubscriptionsFilterGroup = new Oci.AnnouncementsService.AnnouncementSubscriptionsFilterGroup("test_announcement_subscriptions_filter_group", new()
     ///     {
-    ///         AnnouncementSubscriptionId = oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id,
+    ///         AnnouncementSubscriptionId = testAnnouncementSubscription.Id,
     ///         Filters = new[]
     ///         {
     ///             new Oci.AnnouncementsService.Inputs.AnnouncementSubscriptionsFilterGroupFilterArgs
     ///             {
-    ///                 Type = @var.Announcement_subscriptions_filter_group_filters_type,
-    ///                 Value = @var.Announcement_subscriptions_filter_group_filters_value,
+    ///                 Type = announcementSubscriptionsFilterGroupFiltersType,
+    ///                 Value = announcementSubscriptionsFilterGroupFiltersValue,
     ///             },
     ///         },
+    ///         Name = announcementSubscriptionsFilterGroupName,
     ///     });
     /// 
     /// });

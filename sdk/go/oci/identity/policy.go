@@ -43,17 +43,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewPolicy(ctx, "testPolicy", &Identity.PolicyArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-//				Description:   pulumi.Any(_var.Policy_description),
-//				Statements:    pulumi.Any(_var.Policy_statements),
+//			_, err := Identity.NewPolicy(ctx, "test_policy", &Identity.PolicyArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
+//				Description:   pulumi.Any(policyDescription),
+//				Name:          pulumi.Any(policyName),
+//				Statements:    pulumi.Any(policyStatements),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				VersionDate: pulumi.Any(_var.Policy_version_date),
+//				VersionDate: pulumi.Any(policyVersionDate),
 //			})
 //			if err != nil {
 //				return err

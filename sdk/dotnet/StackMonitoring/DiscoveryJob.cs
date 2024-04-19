@@ -25,50 +25,50 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDiscoveryJob = new Oci.StackMonitoring.DiscoveryJob("testDiscoveryJob", new()
+    ///     var testDiscoveryJob = new Oci.StackMonitoring.DiscoveryJob("test_discovery_job", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DiscoveryDetails = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsArgs
     ///         {
-    ///             AgentId = @var.Management_agent_id,
+    ///             AgentId = managementAgentId,
     ///             Properties = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsPropertiesArgs
     ///             {
-    ///                 PropertiesMap = @var.Discovery_job_discovery_details_properties_properties_map,
+    ///                 PropertiesMap = discoveryJobDiscoveryDetailsPropertiesPropertiesMap,
     ///             },
-    ///             ResourceName = @var.Discovery_job_discovery_details_resource_name,
-    ///             ResourceType = @var.Discovery_job_discovery_details_resource_type,
+    ///             ResourceName = discoveryJobDiscoveryDetailsResourceName,
+    ///             ResourceType = discoveryJobDiscoveryDetailsResourceType,
     ///             Credentials = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsCredentialsArgs
     ///             {
     ///                 Items = new[]
     ///                 {
     ///                     new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsCredentialsItemArgs
     ///                     {
-    ///                         CredentialName = @var.Discovery_job_discovery_details_credentials_items_credential_name,
-    ///                         CredentialType = @var.Discovery_job_discovery_details_credentials_items_credential_type,
+    ///                         CredentialName = discoveryJobDiscoveryDetailsCredentialsItemsCredentialName,
+    ///                         CredentialType = discoveryJobDiscoveryDetailsCredentialsItemsCredentialType,
     ///                         Properties = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs
     ///                         {
-    ///                             PropertiesMap = @var.Discovery_job_discovery_details_credentials_items_properties_properties_map,
+    ///                             PropertiesMap = discoveryJobDiscoveryDetailsCredentialsItemsPropertiesPropertiesMap,
     ///                         },
     ///                     },
     ///                 },
     ///             },
-    ///             License = @var.Discovery_job_discovery_details_license,
+    ///             License = discoveryJobDiscoveryDetailsLicense,
     ///             Tags = new Oci.StackMonitoring.Inputs.DiscoveryJobDiscoveryDetailsTagsArgs
     ///             {
-    ///                 PropertiesMap = @var.Discovery_job_discovery_details_tags_properties_map,
+    ///                 PropertiesMap = discoveryJobDiscoveryDetailsTagsPropertiesMap,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DiscoveryClient = @var.Discovery_job_discovery_client,
-    ///         DiscoveryType = @var.Discovery_job_discovery_type,
+    ///         DiscoveryClient = discoveryJobDiscoveryClient,
+    ///         DiscoveryType = discoveryJobDiscoveryType,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         ShouldPropagateTagsToDiscoveredResources = @var.Discovery_job_should_propagate_tags_to_discovered_resources,
+    ///         ShouldPropagateTagsToDiscoveredResources = discoveryJobShouldPropagateTagsToDiscoveredResources,
     ///     });
     /// 
     /// });

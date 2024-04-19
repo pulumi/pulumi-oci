@@ -43,10 +43,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditProfileAnalytic(ctx, &datasafe.GetAuditProfileAnalyticArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Audit_profile_analytic_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_profile_analytic_compartment_id_in_subtree),
-//				GroupBies:              _var.Audit_profile_analytic_group_by,
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(auditProfileAnalyticAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(auditProfileAnalyticCompartmentIdInSubtree),
+//				GroupBies:              auditProfileAnalyticGroupBy,
 //			}, nil)
 //			if err != nil {
 //				return err

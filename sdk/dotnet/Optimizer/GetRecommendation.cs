@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testRecommendation = Oci.Optimizer.GetRecommendation.Invoke(new()
         ///     {
-        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         RecommendationId = testRecommendationOciOptimizerRecommendation.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testRecommendation = Oci.Optimizer.GetRecommendation.Invoke(new()
         ///     {
-        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         RecommendationId = testRecommendationOciOptimizerRecommendation.Id,
         ///     });
         /// 
         /// });

@@ -30,10 +30,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingPolicyMaskingObjects = Oci.DataSafe.GetMaskingPolicyMaskingObjects.Invoke(new()
         ///     {
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         Objects = @var.Masking_policy_masking_object_object,
-        ///         ObjectTypes = @var.Masking_policy_masking_object_object_type,
-        ///         SchemaNames = @var.Masking_policy_masking_object_schema_name,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         Objects = maskingPolicyMaskingObjectObject,
+        ///         ObjectTypes = maskingPolicyMaskingObjectObjectType,
+        ///         SchemaNames = maskingPolicyMaskingObjectSchemaName,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingPolicyMaskingObjects = Oci.DataSafe.GetMaskingPolicyMaskingObjects.Invoke(new()
         ///     {
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         Objects = @var.Masking_policy_masking_object_object,
-        ///         ObjectTypes = @var.Masking_policy_masking_object_object_type,
-        ///         SchemaNames = @var.Masking_policy_masking_object_schema_name,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         Objects = maskingPolicyMaskingObjectObject,
+        ///         ObjectTypes = maskingPolicyMaskingObjectObjectType,
+        ///         SchemaNames = maskingPolicyMaskingObjectSchemaName,
         ///     });
         /// 
         /// });

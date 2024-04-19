@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualNodePool = new oci.containerengine.VirtualNodePool("testVirtualNodePool", {
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.virtual_node_pool_display_name,
+ * const testVirtualNodePool = new oci.containerengine.VirtualNodePool("test_virtual_node_pool", {
+ *     clusterId: testCluster.id,
+ *     compartmentId: compartmentId,
+ *     displayName: virtualNodePoolDisplayName,
  *     placementConfigurations: [{
- *         availabilityDomain: _var.virtual_node_pool_placement_configurations_availability_domain,
- *         faultDomains: _var.virtual_node_pool_placement_configurations_fault_domain,
- *         subnetId: oci_core_subnet.test_subnet.id,
+ *         availabilityDomain: virtualNodePoolPlacementConfigurationsAvailabilityDomain,
+ *         faultDomains: virtualNodePoolPlacementConfigurationsFaultDomain,
+ *         subnetId: testSubnet.id,
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -34,20 +34,20 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     initialVirtualNodeLabels: [{
- *         key: _var.virtual_node_pool_initial_virtual_node_labels_key,
- *         value: _var.virtual_node_pool_initial_virtual_node_labels_value,
+ *         key: virtualNodePoolInitialVirtualNodeLabelsKey,
+ *         value: virtualNodePoolInitialVirtualNodeLabelsValue,
  *     }],
- *     nsgIds: _var.virtual_node_pool_nsg_ids,
+ *     nsgIds: virtualNodePoolNsgIds,
  *     podConfiguration: {
- *         shape: _var.virtual_node_pool_pod_configuration_shape,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         nsgIds: _var.virtual_node_pool_pod_configuration_nsg_ids,
+ *         shape: virtualNodePoolPodConfigurationShape,
+ *         subnetId: testSubnet.id,
+ *         nsgIds: virtualNodePoolPodConfigurationNsgIds,
  *     },
- *     size: _var.virtual_node_pool_size,
+ *     size: virtualNodePoolSize,
  *     taints: [{
- *         effect: _var.virtual_node_pool_taints_effect,
- *         key: _var.virtual_node_pool_taints_key,
- *         value: _var.virtual_node_pool_taints_value,
+ *         effect: virtualNodePoolTaintsEffect,
+ *         key: virtualNodePoolTaintsKey,
+ *         value: virtualNodePoolTaintsValue,
  *     }],
  *     virtualNodeTags: {
  *         definedTags: {

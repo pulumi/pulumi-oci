@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testManagedList = Oci.CloudGuard.GetManagedList.Invoke(new()
         ///     {
-        ///         ManagedListId = oci_cloud_guard_managed_list.Test_managed_list.Id,
+        ///         ManagedListId = testManagedListOciCloudGuardManagedList.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testManagedList = Oci.CloudGuard.GetManagedList.Invoke(new()
         ///     {
-        ///         ManagedListId = oci_cloud_guard_managed_list.Test_managed_list.Id,
+        ///         ManagedListId = testManagedListOciCloudGuardManagedList.Id,
         ///     });
         /// 
         /// });

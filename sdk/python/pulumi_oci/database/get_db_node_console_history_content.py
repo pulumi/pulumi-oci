@@ -77,8 +77,8 @@ def get_db_node_console_history_content(console_history_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_history_content = oci.Database.get_db_node_console_history_content(console_history_id=oci_core_console_history["test_console_history"]["id"],
-        db_node_id=oci_database_db_node["test_db_node"]["id"])
+    test_db_node_console_history_content = oci.Database.get_db_node_console_history_content(console_history_id=test_console_history["id"],
+        db_node_id=test_db_node["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -114,8 +114,8 @@ def get_db_node_console_history_content_output(console_history_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_history_content = oci.Database.get_db_node_console_history_content(console_history_id=oci_core_console_history["test_console_history"]["id"],
-        db_node_id=oci_database_db_node["test_db_node"]["id"])
+    test_db_node_console_history_content = oci.Database.get_db_node_console_history_content(console_history_id=test_console_history["id"],
+        db_node_id=test_db_node["id"])
     ```
     <!--End PulumiCodeChooser -->
 

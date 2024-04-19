@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.NewMediaWorkflowConfiguration(ctx, "testMediaWorkflowConfiguration", &MediaServices.MediaWorkflowConfigurationArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Media_workflow_configuration_display_name),
-//				Parameters:    pulumi.Any(_var.Media_workflow_configuration_parameters),
+//			_, err := MediaServices.NewMediaWorkflowConfiguration(ctx, "test_media_workflow_configuration", &MediaServices.MediaWorkflowConfigurationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(mediaWorkflowConfigurationDisplayName),
+//				Parameters:    pulumi.Any(mediaWorkflowConfigurationParameters),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -43,11 +43,11 @@ import (
 //				},
 //				Locks: mediaservices.MediaWorkflowConfigurationLockArray{
 //					&mediaservices.MediaWorkflowConfigurationLockArgs{
-//						CompartmentId:     pulumi.Any(_var.Compartment_id),
-//						Type:              pulumi.Any(_var.Media_workflow_configuration_locks_type),
-//						Message:           pulumi.Any(_var.Media_workflow_configuration_locks_message),
-//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
-//						TimeCreated:       pulumi.Any(_var.Media_workflow_configuration_locks_time_created),
+//						CompartmentId:     pulumi.Any(compartmentId),
+//						Type:              pulumi.Any(mediaWorkflowConfigurationLocksType),
+//						Message:           pulumi.Any(mediaWorkflowConfigurationLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(mediaWorkflowConfigurationLocksTimeCreated),
 //					},
 //				},
 //			})

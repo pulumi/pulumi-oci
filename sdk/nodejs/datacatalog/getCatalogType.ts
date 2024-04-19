@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCatalogType = oci.DataCatalog.getCatalogType({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     typeKey: _var.catalog_type_type_key,
- *     fields: _var.catalog_type_fields,
+ *     catalogId: testCatalog.id,
+ *     typeKey: catalogTypeTypeKey,
+ *     fields: catalogTypeFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -124,9 +124,9 @@ export interface GetCatalogTypeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCatalogType = oci.DataCatalog.getCatalogType({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     typeKey: _var.catalog_type_type_key,
- *     fields: _var.catalog_type_fields,
+ *     catalogId: testCatalog.id,
+ *     typeKey: catalogTypeTypeKey,
+ *     fields: catalogTypeFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

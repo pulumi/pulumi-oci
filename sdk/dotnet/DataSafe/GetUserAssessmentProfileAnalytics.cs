@@ -44,12 +44,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testUserAssessmentProfileAnalytics = Oci.DataSafe.GetUserAssessmentProfileAnalytics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///         AccessLevel = @var.User_assessment_profile_analytic_access_level,
-        ///         CompartmentIdInSubtree = @var.User_assessment_profile_analytic_compartment_id_in_subtree,
-        ///         ProfileName = oci_optimizer_profile.Test_profile.Name,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///         AccessLevel = userAssessmentProfileAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = userAssessmentProfileAnalyticCompartmentIdInSubtree,
+        ///         ProfileName = testProfile.Name,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -92,12 +92,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testUserAssessmentProfileAnalytics = Oci.DataSafe.GetUserAssessmentProfileAnalytics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///         AccessLevel = @var.User_assessment_profile_analytic_access_level,
-        ///         CompartmentIdInSubtree = @var.User_assessment_profile_analytic_compartment_id_in_subtree,
-        ///         ProfileName = oci_optimizer_profile.Test_profile.Name,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         UserAssessmentId = testUserAssessment.Id,
+        ///         AccessLevel = userAssessmentProfileAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = userAssessmentProfileAnalyticCompartmentIdInSubtree,
+        ///         ProfileName = testProfile.Name,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });

@@ -1183,13 +1183,13 @@ class MysqlDbSystem(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_mysql_db_system = oci.mysql.MysqlDbSystem("testMysqlDbSystem",
-            availability_domain=var["mysql_db_system_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape_name=var["mysql_shape_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            admin_password=var["mysql_db_system_admin_password"],
-            admin_username=var["mysql_db_system_admin_username"],
+        test_mysql_db_system = oci.mysql.MysqlDbSystem("test_mysql_db_system",
+            availability_domain=mysql_db_system_availability_domain,
+            compartment_id=compartment_id,
+            shape_name=mysql_shape_name,
+            subnet_id=test_subnet["id"],
+            admin_password=mysql_db_system_admin_password,
+            admin_username=mysql_db_system_admin_username,
             backup_policy=oci.mysql.MysqlDbSystemBackupPolicyArgs(
                 defined_tags={
                     "foo-namespace.bar-key": "value",
@@ -1197,46 +1197,46 @@ class MysqlDbSystem(pulumi.CustomResource):
                 freeform_tags={
                     "bar-key": "value",
                 },
-                is_enabled=var["mysql_db_system_backup_policy_is_enabled"],
+                is_enabled=mysql_db_system_backup_policy_is_enabled,
                 pitr_policy=oci.mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs(
-                    is_enabled=var["mysql_db_system_backup_policy_pitr_policy_is_enabled"],
+                    is_enabled=mysql_db_system_backup_policy_pitr_policy_is_enabled,
                 ),
-                retention_in_days=var["mysql_db_system_backup_policy_retention_in_days"],
-                window_start_time=var["mysql_db_system_backup_policy_window_start_time"],
+                retention_in_days=mysql_db_system_backup_policy_retention_in_days,
+                window_start_time=mysql_db_system_backup_policy_window_start_time,
             ),
-            configuration_id=oci_audit_configuration["test_configuration"]["id"],
-            crash_recovery=var["mysql_db_system_crash_recovery"],
-            data_storage_size_in_gb=var["mysql_db_system_data_storage_size_in_gb"],
-            database_management=var["mysql_db_system_database_management"],
+            configuration_id=test_configuration["id"],
+            crash_recovery=mysql_db_system_crash_recovery,
+            data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
+            database_management=mysql_db_system_database_management,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             deletion_policies=[oci.mysql.MysqlDbSystemDeletionPolicyArgs(
-                automatic_backup_retention=var["mysql_db_system_deletion_policy_automatic_backup_retention"],
-                final_backup=var["mysql_db_system_deletion_policy_final_backup"],
-                is_delete_protected=var["mysql_db_system_deletion_policy_is_delete_protected"],
+                automatic_backup_retention=mysql_db_system_deletion_policy_automatic_backup_retention,
+                final_backup=mysql_db_system_deletion_policy_final_backup,
+                is_delete_protected=mysql_db_system_deletion_policy_is_delete_protected,
             )],
-            description=var["mysql_db_system_description"],
-            display_name=var["mysql_db_system_display_name"],
-            fault_domain=var["mysql_db_system_fault_domain"],
+            description=mysql_db_system_description,
+            display_name=mysql_db_system_display_name,
+            fault_domain=mysql_db_system_fault_domain,
             freeform_tags={
                 "bar-key": "value",
             },
-            hostname_label=var["mysql_db_system_hostname_label"],
-            ip_address=var["mysql_db_system_ip_address"],
-            is_highly_available=var["mysql_db_system_is_highly_available"],
+            hostname_label=mysql_db_system_hostname_label,
+            ip_address=mysql_db_system_ip_address,
+            is_highly_available=mysql_db_system_is_highly_available,
             maintenance=oci.mysql.MysqlDbSystemMaintenanceArgs(
-                window_start_time=var["mysql_db_system_maintenance_window_start_time"],
+                window_start_time=mysql_db_system_maintenance_window_start_time,
             ),
-            port=var["mysql_db_system_port"],
-            port_x=var["mysql_db_system_port_x"],
+            port=mysql_db_system_port,
+            port_x=mysql_db_system_port_x,
             secure_connections=oci.mysql.MysqlDbSystemSecureConnectionsArgs(
-                certificate_generation_type=var["mysql_db_system_secure_connections_certificate_generation_type"],
-                certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
+                certificate_generation_type=mysql_db_system_secure_connections_certificate_generation_type,
+                certificate_id=test_certificate["id"],
             ),
             source=oci.mysql.MysqlDbSystemSourceArgs(
-                source_type=var["mysql_db_system_source_source_type"],
-                backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
+                source_type=mysql_db_system_source_source_type,
+                backup_id=test_backup["id"],
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -1316,13 +1316,13 @@ class MysqlDbSystem(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_mysql_db_system = oci.mysql.MysqlDbSystem("testMysqlDbSystem",
-            availability_domain=var["mysql_db_system_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape_name=var["mysql_shape_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            admin_password=var["mysql_db_system_admin_password"],
-            admin_username=var["mysql_db_system_admin_username"],
+        test_mysql_db_system = oci.mysql.MysqlDbSystem("test_mysql_db_system",
+            availability_domain=mysql_db_system_availability_domain,
+            compartment_id=compartment_id,
+            shape_name=mysql_shape_name,
+            subnet_id=test_subnet["id"],
+            admin_password=mysql_db_system_admin_password,
+            admin_username=mysql_db_system_admin_username,
             backup_policy=oci.mysql.MysqlDbSystemBackupPolicyArgs(
                 defined_tags={
                     "foo-namespace.bar-key": "value",
@@ -1330,46 +1330,46 @@ class MysqlDbSystem(pulumi.CustomResource):
                 freeform_tags={
                     "bar-key": "value",
                 },
-                is_enabled=var["mysql_db_system_backup_policy_is_enabled"],
+                is_enabled=mysql_db_system_backup_policy_is_enabled,
                 pitr_policy=oci.mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs(
-                    is_enabled=var["mysql_db_system_backup_policy_pitr_policy_is_enabled"],
+                    is_enabled=mysql_db_system_backup_policy_pitr_policy_is_enabled,
                 ),
-                retention_in_days=var["mysql_db_system_backup_policy_retention_in_days"],
-                window_start_time=var["mysql_db_system_backup_policy_window_start_time"],
+                retention_in_days=mysql_db_system_backup_policy_retention_in_days,
+                window_start_time=mysql_db_system_backup_policy_window_start_time,
             ),
-            configuration_id=oci_audit_configuration["test_configuration"]["id"],
-            crash_recovery=var["mysql_db_system_crash_recovery"],
-            data_storage_size_in_gb=var["mysql_db_system_data_storage_size_in_gb"],
-            database_management=var["mysql_db_system_database_management"],
+            configuration_id=test_configuration["id"],
+            crash_recovery=mysql_db_system_crash_recovery,
+            data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
+            database_management=mysql_db_system_database_management,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             deletion_policies=[oci.mysql.MysqlDbSystemDeletionPolicyArgs(
-                automatic_backup_retention=var["mysql_db_system_deletion_policy_automatic_backup_retention"],
-                final_backup=var["mysql_db_system_deletion_policy_final_backup"],
-                is_delete_protected=var["mysql_db_system_deletion_policy_is_delete_protected"],
+                automatic_backup_retention=mysql_db_system_deletion_policy_automatic_backup_retention,
+                final_backup=mysql_db_system_deletion_policy_final_backup,
+                is_delete_protected=mysql_db_system_deletion_policy_is_delete_protected,
             )],
-            description=var["mysql_db_system_description"],
-            display_name=var["mysql_db_system_display_name"],
-            fault_domain=var["mysql_db_system_fault_domain"],
+            description=mysql_db_system_description,
+            display_name=mysql_db_system_display_name,
+            fault_domain=mysql_db_system_fault_domain,
             freeform_tags={
                 "bar-key": "value",
             },
-            hostname_label=var["mysql_db_system_hostname_label"],
-            ip_address=var["mysql_db_system_ip_address"],
-            is_highly_available=var["mysql_db_system_is_highly_available"],
+            hostname_label=mysql_db_system_hostname_label,
+            ip_address=mysql_db_system_ip_address,
+            is_highly_available=mysql_db_system_is_highly_available,
             maintenance=oci.mysql.MysqlDbSystemMaintenanceArgs(
-                window_start_time=var["mysql_db_system_maintenance_window_start_time"],
+                window_start_time=mysql_db_system_maintenance_window_start_time,
             ),
-            port=var["mysql_db_system_port"],
-            port_x=var["mysql_db_system_port_x"],
+            port=mysql_db_system_port,
+            port_x=mysql_db_system_port_x,
             secure_connections=oci.mysql.MysqlDbSystemSecureConnectionsArgs(
-                certificate_generation_type=var["mysql_db_system_secure_connections_certificate_generation_type"],
-                certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
+                certificate_generation_type=mysql_db_system_secure_connections_certificate_generation_type,
+                certificate_id=test_certificate["id"],
             ),
             source=oci.mysql.MysqlDbSystemSourceArgs(
-                source_type=var["mysql_db_system_source_source_type"],
-                backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
+                source_type=mysql_db_system_source_source_type,
+                backup_id=test_backup["id"],
             ))
         ```
         <!--End PulumiCodeChooser -->

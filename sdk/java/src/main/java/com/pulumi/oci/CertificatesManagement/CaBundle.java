@@ -45,10 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCaBundle = new CaBundle(&#34;testCaBundle&#34;, CaBundleArgs.builder()        
- *             .caBundlePem(var_.ca_bundle_ca_bundle_pem())
- *             .compartmentId(var_.compartment_id())
+ *             .caBundlePem(caBundleCaBundlePem)
+ *             .compartmentId(compartmentId)
+ *             .name(caBundleName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.ca_bundle_description())
+ *             .description(caBundleDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

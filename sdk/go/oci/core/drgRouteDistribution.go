@@ -34,13 +34,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDrgRouteDistribution(ctx, "testDrgRouteDistribution", &Core.DrgRouteDistributionArgs{
-//				DistributionType: pulumi.Any(_var.Drg_route_distribution_distribution_type),
-//				DrgId:            pulumi.Any(oci_core_drg.Test_drg.Id),
+//			_, err := Core.NewDrgRouteDistribution(ctx, "test_drg_route_distribution", &Core.DrgRouteDistributionArgs{
+//				DistributionType: pulumi.Any(drgRouteDistributionDistributionType),
+//				DrgId:            pulumi.Any(testDrg.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Drg_route_distribution_display_name),
+//				DisplayName: pulumi.Any(drgRouteDistributionDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

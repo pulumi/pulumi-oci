@@ -44,9 +44,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstancePatchAction = new BdsInstancePatchAction(&#34;testBdsInstancePatchAction&#34;, BdsInstancePatchActionArgs.builder()        
- *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
- *             .clusterAdminPassword(var_.bds_instance_patch_action_cluster_admin_password())
- *             .version(var_.bds_instance_patch_action_version())
+ *             .bdsInstanceId(testBdsInstance.id())
+ *             .clusterAdminPassword(bdsInstancePatchActionClusterAdminPassword)
+ *             .version(bdsInstancePatchActionVersion)
  *             .build());
  * 
  *     }

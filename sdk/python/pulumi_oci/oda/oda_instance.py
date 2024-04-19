@@ -569,19 +569,19 @@ class OdaInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oda_instance = oci.oda.OdaInstance("testOdaInstance",
-            compartment_id=var["compartment_id"],
+        test_oda_instance = oci.oda.OdaInstance("test_oda_instance",
+            compartment_id=compartment_id,
             shape_name="DEVELOPMENT",
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["oda_instance_description"],
-            display_name=var["oda_instance_display_name"],
+            description=oda_instance_description,
+            display_name=oda_instance_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            identity_domain=var["oda_instance_identity_domain"],
-            is_role_based_access=var["oda_instance_is_role_based_access"])
+            identity_domain=oda_instance_identity_domain,
+            is_role_based_access=oda_instance_is_role_based_access)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -630,19 +630,19 @@ class OdaInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oda_instance = oci.oda.OdaInstance("testOdaInstance",
-            compartment_id=var["compartment_id"],
+        test_oda_instance = oci.oda.OdaInstance("test_oda_instance",
+            compartment_id=compartment_id,
             shape_name="DEVELOPMENT",
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["oda_instance_description"],
-            display_name=var["oda_instance_display_name"],
+            description=oda_instance_description,
+            display_name=oda_instance_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            identity_domain=var["oda_instance_identity_domain"],
-            is_role_based_access=var["oda_instance_is_role_based_access"])
+            identity_domain=oda_instance_identity_domain,
+            is_role_based_access=oda_instance_is_role_based_access)
         ```
         <!--End PulumiCodeChooser -->
 

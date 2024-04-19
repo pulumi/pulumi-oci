@@ -53,9 +53,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testVmClusterAddVirtualMachine = new VmClusterAddVirtualNetwork(&#34;testVmClusterAddVirtualMachine&#34;, VmClusterAddVirtualNetworkArgs.builder()        
  *             .dbServers(VmClusterAddVirtualNetworkDbServerArgs.builder()
- *                 .dbServerId(oci_database_db_server.test_db_server().id())
+ *                 .dbServerId(testDbServer.id())
  *                 .build())
- *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+ *             .vmClusterId(testVmCluster.id())
  *             .build());
  * 
  *     }

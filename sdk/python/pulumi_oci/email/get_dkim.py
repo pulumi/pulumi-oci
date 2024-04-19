@@ -235,7 +235,7 @@ def get_dkim(dkim_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dkim = oci.Email.get_dkim(dkim_id=oci_email_dkim["test_dkim"]["id"])
+    test_dkim = oci.Email.get_dkim(dkim_id=test_dkim_oci_email_dkim["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -281,7 +281,7 @@ def get_dkim_output(dkim_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dkim = oci.Email.get_dkim(dkim_id=oci_email_dkim["test_dkim"]["id"])
+    test_dkim = oci.Email.get_dkim(dkim_id=test_dkim_oci_email_dkim["id"])
     ```
     <!--End PulumiCodeChooser -->
 

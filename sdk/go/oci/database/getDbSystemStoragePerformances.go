@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbSystemStoragePerformances(ctx, &database.GetDbSystemStoragePerformancesArgs{
-//				StorageManagement: _var.Db_system_storage_performance_storage_management,
-//				ShapeType:         pulumi.StringRef(_var.Db_system_storage_performance_shape_type),
+//				StorageManagement: dbSystemStoragePerformanceStorageManagement,
+//				ShapeType:         pulumi.StringRef(dbSystemStoragePerformanceShapeType),
 //			}, nil)
 //			if err != nil {
 //				return err

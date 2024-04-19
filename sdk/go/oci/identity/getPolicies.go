@@ -35,9 +35,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetPolicies(ctx, &identity.GetPoliciesArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				Name:          pulumi.StringRef(_var.Policy_name),
-//				State:         pulumi.StringRef(_var.Policy_state),
+//				CompartmentId: tenancyOcid,
+//				Name:          pulumi.StringRef(policyName),
+//				State:         pulumi.StringRef(policyState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -18,38 +18,38 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroupSecurityRule = new oci.core.NetworkSecurityGroupSecurityRule("testNetworkSecurityGroupSecurityRule", {
- *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
- *     direction: _var.network_security_group_security_rule_direction,
- *     protocol: _var.network_security_group_security_rule_protocol,
- *     description: _var.network_security_group_security_rule_description,
- *     destination: _var.network_security_group_security_rule_destination,
- *     destinationType: _var.network_security_group_security_rule_destination_type,
+ * const testNetworkSecurityGroupSecurityRule = new oci.core.NetworkSecurityGroupSecurityRule("test_network_security_group_security_rule", {
+ *     networkSecurityGroupId: testNetworkSecurityGroup.id,
+ *     direction: networkSecurityGroupSecurityRuleDirection,
+ *     protocol: networkSecurityGroupSecurityRuleProtocol,
+ *     description: networkSecurityGroupSecurityRuleDescription,
+ *     destination: networkSecurityGroupSecurityRuleDestination,
+ *     destinationType: networkSecurityGroupSecurityRuleDestinationType,
  *     icmpOptions: {
- *         type: _var.network_security_group_security_rule_icmp_options_type,
- *         code: _var.network_security_group_security_rule_icmp_options_code,
+ *         type: networkSecurityGroupSecurityRuleIcmpOptionsType,
+ *         code: networkSecurityGroupSecurityRuleIcmpOptionsCode,
  *     },
- *     source: _var.network_security_group_security_rule_source,
- *     sourceType: _var.network_security_group_security_rule_source_type,
- *     stateless: _var.network_security_group_security_rule_stateless,
+ *     source: networkSecurityGroupSecurityRuleSource,
+ *     sourceType: networkSecurityGroupSecurityRuleSourceType,
+ *     stateless: networkSecurityGroupSecurityRuleStateless,
  *     tcpOptions: {
  *         destinationPortRange: {
- *             max: _var.network_security_group_security_rule_tcp_options_destination_port_range_max,
- *             min: _var.network_security_group_security_rule_tcp_options_destination_port_range_min,
+ *             max: networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMax,
+ *             min: networkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeMin,
  *         },
  *         sourcePortRange: {
- *             max: _var.network_security_group_security_rule_tcp_options_source_port_range_max,
- *             min: _var.network_security_group_security_rule_tcp_options_source_port_range_min,
+ *             max: networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMax,
+ *             min: networkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeMin,
  *         },
  *     },
  *     udpOptions: {
  *         destinationPortRange: {
- *             max: _var.network_security_group_security_rule_udp_options_destination_port_range_max,
- *             min: _var.network_security_group_security_rule_udp_options_destination_port_range_min,
+ *             max: networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMax,
+ *             min: networkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeMin,
  *         },
  *         sourcePortRange: {
- *             max: _var.network_security_group_security_rule_udp_options_source_port_range_max,
- *             min: _var.network_security_group_security_rule_udp_options_source_port_range_min,
+ *             max: networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMax,
+ *             min: networkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeMin,
  *         },
  *     },
  * });

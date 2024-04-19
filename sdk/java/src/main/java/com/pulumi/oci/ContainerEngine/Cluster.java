@@ -28,6 +28,91 @@ import javax.annotation.Nullable;
  * 
  * Create a new cluster.
  * 
+ * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ContainerEngine.Cluster;
+ * import com.pulumi.oci.ContainerEngine.ClusterArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterClusterPodNetworkOptionArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterEndpointConfigArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterImagePolicyConfigArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsAddOnsArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsAdmissionControllerOptionsArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsKubernetesNetworkConfigArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsPersistentVolumeConfigArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ClusterOptionsServiceLbConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCluster = new Cluster(&#34;testCluster&#34;, ClusterArgs.builder()        
+ *             .compartmentId(compartmentId)
+ *             .kubernetesVersion(clusterKubernetesVersion)
+ *             .name(clusterName)
+ *             .vcnId(testVcn.id())
+ *             .clusterPodNetworkOptions(ClusterClusterPodNetworkOptionArgs.builder()
+ *                 .cniType(clusterClusterPodNetworkOptionsCniType)
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .endpointConfig(ClusterEndpointConfigArgs.builder()
+ *                 .isPublicIpEnabled(clusterEndpointConfigIsPublicIpEnabled)
+ *                 .nsgIds(clusterEndpointConfigNsgIds)
+ *                 .subnetId(testSubnet.id())
+ *                 .build())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .imagePolicyConfig(ClusterImagePolicyConfigArgs.builder()
+ *                 .isPolicyEnabled(clusterImagePolicyConfigIsPolicyEnabled)
+ *                 .keyDetails(ClusterImagePolicyConfigKeyDetailArgs.builder()
+ *                     .kmsKeyId(testKey.id())
+ *                     .build())
+ *                 .build())
+ *             .kmsKeyId(testKey.id())
+ *             .options(ClusterOptionsArgs.builder()
+ *                 .addOns(ClusterOptionsAddOnsArgs.builder()
+ *                     .isKubernetesDashboardEnabled(clusterOptionsAddOnsIsKubernetesDashboardEnabled)
+ *                     .isTillerEnabled(clusterOptionsAddOnsIsTillerEnabled)
+ *                     .build())
+ *                 .admissionControllerOptions(ClusterOptionsAdmissionControllerOptionsArgs.builder()
+ *                     .isPodSecurityPolicyEnabled(clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled)
+ *                     .build())
+ *                 .kubernetesNetworkConfig(ClusterOptionsKubernetesNetworkConfigArgs.builder()
+ *                     .podsCidr(clusterOptionsKubernetesNetworkConfigPodsCidr)
+ *                     .servicesCidr(clusterOptionsKubernetesNetworkConfigServicesCidr)
+ *                     .build())
+ *                 .persistentVolumeConfig(ClusterOptionsPersistentVolumeConfigArgs.builder()
+ *                     .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                     .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                     .build())
+ *                 .serviceLbConfig(ClusterOptionsServiceLbConfigArgs.builder()
+ *                     .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                     .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                     .build())
+ *                 .serviceLbSubnetIds(clusterOptionsServiceLbSubnetIds)
+ *                 .build())
+ *             .type(clusterType)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
  * ## Import
  * 
  * Clusters can be imported using the `id`, e.g.

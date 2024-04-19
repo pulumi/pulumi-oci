@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCaptureFilter = oci.Core.getCaptureFilter({
- *     captureFilterId: oci_core_capture_filter.test_capture_filter.id,
+ *     captureFilterId: testCaptureFilterOciCoreCaptureFilter.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,7 +101,7 @@ export interface GetCaptureFilterResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCaptureFilter = oci.Core.getCaptureFilter({
- *     captureFilterId: oci_core_capture_filter.test_capture_filter.id,
+ *     captureFilterId: testCaptureFilterOciCoreCaptureFilter.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

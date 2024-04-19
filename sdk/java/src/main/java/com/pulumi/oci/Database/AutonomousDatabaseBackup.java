@@ -47,10 +47,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup(&#34;testAutonomousDatabaseBackup&#34;, AutonomousDatabaseBackupArgs.builder()        
- *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
- *             .displayName(var_.autonomous_database_backup_display_name())
- *             .isLongTermBackup(var_.autonomous_database_backup_is_long_term_backup())
- *             .retentionPeriodInDays(var_.autonomous_database_backup_retention_period_in_days())
+ *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .displayName(autonomousDatabaseBackupDisplayName)
+ *             .isLongTermBackup(autonomousDatabaseBackupIsLongTermBackup)
+ *             .retentionPeriodInDays(autonomousDatabaseBackupRetentionPeriodInDays)
  *             .build());
  * 
  *     }

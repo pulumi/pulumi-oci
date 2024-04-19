@@ -341,18 +341,18 @@ class InternetGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_internet_gateway = oci.core.InternetGateway("testInternetGateway",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            enabled=var["internet_gateway_enabled"],
+        test_internet_gateway = oci.core.InternetGateway("test_internet_gateway",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
+            enabled=internet_gateway_enabled,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["internet_gateway_display_name"],
+            display_name=internet_gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -415,18 +415,18 @@ class InternetGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_internet_gateway = oci.core.InternetGateway("testInternetGateway",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            enabled=var["internet_gateway_enabled"],
+        test_internet_gateway = oci.core.InternetGateway("test_internet_gateway",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
+            enabled=internet_gateway_enabled,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["internet_gateway_display_name"],
+            display_name=internet_gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 

@@ -192,11 +192,11 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_db_system_stack_monitorings_management = oci.database_management.ExternalDbSystemStackMonitoringsManagement("testExternalDbSystemStackMonitoringsManagement",
-            external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
-            enable_stack_monitoring=var["enable_stack_monitoring"],
-            is_enabled=var["external_db_system_stack_monitorings_management_is_enabled"],
-            metadata=var["external_db_system_stack_monitorings_management_metadata"])
+        test_external_db_system_stack_monitorings_management = oci.database_management.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management",
+            external_db_system_id=test_external_db_system["id"],
+            enable_stack_monitoring=enable_stack_monitoring,
+            is_enabled=external_db_system_stack_monitorings_management_is_enabled,
+            metadata=external_db_system_stack_monitorings_management_metadata)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -230,11 +230,11 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_db_system_stack_monitorings_management = oci.database_management.ExternalDbSystemStackMonitoringsManagement("testExternalDbSystemStackMonitoringsManagement",
-            external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
-            enable_stack_monitoring=var["enable_stack_monitoring"],
-            is_enabled=var["external_db_system_stack_monitorings_management_is_enabled"],
-            metadata=var["external_db_system_stack_monitorings_management_metadata"])
+        test_external_db_system_stack_monitorings_management = oci.database_management.ExternalDbSystemStackMonitoringsManagement("test_external_db_system_stack_monitorings_management",
+            external_db_system_id=test_external_db_system["id"],
+            enable_stack_monitoring=enable_stack_monitoring,
+            is_enabled=external_db_system_stack_monitorings_management_is_enabled,
+            metadata=external_db_system_stack_monitorings_management_metadata)
         ```
         <!--End PulumiCodeChooser -->
 

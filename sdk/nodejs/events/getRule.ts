@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRule = oci.Events.getRule({
- *     ruleId: oci_events_rule.test_rule.id,
+ *     ruleId: testRuleOciEventsRule.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,7 +110,7 @@ export interface GetRuleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRule = oci.Events.getRule({
- *     ruleId: oci_events_rule.test_rule.id,
+ *     ruleId: testRuleOciEventsRule.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

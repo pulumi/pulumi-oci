@@ -31,15 +31,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetCatalogTypes(ctx, &datacatalog.GetCatalogTypesArgs{
-//				CatalogId:        oci_datacatalog_catalog.Test_catalog.Id,
-//				ExternalTypeName: pulumi.StringRef(_var.Catalog_type_external_type_name),
-//				Fields:           _var.Catalog_type_fields,
-//				IsApproved:       pulumi.StringRef(_var.Catalog_type_is_approved),
-//				IsInternal:       pulumi.StringRef(_var.Catalog_type_is_internal),
-//				IsTag:            pulumi.StringRef(_var.Catalog_type_is_tag),
-//				Name:             pulumi.StringRef(_var.Catalog_type_name),
-//				State:            pulumi.StringRef(_var.Catalog_type_state),
-//				TypeCategory:     pulumi.StringRef(_var.Catalog_type_type_category),
+//				CatalogId:        testCatalog.Id,
+//				ExternalTypeName: pulumi.StringRef(catalogTypeExternalTypeName),
+//				Fields:           catalogTypeFields,
+//				IsApproved:       pulumi.StringRef(catalogTypeIsApproved),
+//				IsInternal:       pulumi.StringRef(catalogTypeIsInternal),
+//				IsTag:            pulumi.StringRef(catalogTypeIsTag),
+//				Name:             pulumi.StringRef(catalogTypeName),
+//				State:            pulumi.StringRef(catalogTypeState),
+//				TypeCategory:     pulumi.StringRef(catalogTypeTypeCategory),
 //			}, nil)
 //			if err != nil {
 //				return err

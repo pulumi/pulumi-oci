@@ -29,9 +29,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testObjectHead = Oci.ObjectStorage.GetObjectHead.Invoke(new()
         ///     {
-        ///         Bucket = @var.Object_bucket,
-        ///         Namespace = @var.Object_namespace,
-        ///         Object = @var.Object_object,
+        ///         Bucket = objectBucket,
+        ///         Namespace = objectNamespace,
+        ///         Object = objectObject,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testObjectHead = Oci.ObjectStorage.GetObjectHead.Invoke(new()
         ///     {
-        ///         Bucket = @var.Object_bucket,
-        ///         Namespace = @var.Object_namespace,
-        ///         Object = @var.Object_object,
+        ///         Bucket = objectBucket,
+        ///         Namespace = objectNamespace,
+        ///         Object = objectObject,
         ///     });
         /// 
         /// });

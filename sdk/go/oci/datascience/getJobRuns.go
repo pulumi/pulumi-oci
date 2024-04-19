@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetJobRuns(ctx, &datascience.GetJobRunsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CreatedBy:     pulumi.StringRef(_var.Job_run_created_by),
-//				DisplayName:   pulumi.StringRef(_var.Job_run_display_name),
-//				Id:            pulumi.StringRef(_var.Job_run_id),
-//				JobId:         pulumi.StringRef(oci_datascience_job.Test_job.Id),
-//				State:         pulumi.StringRef(_var.Job_run_state),
+//				CompartmentId: compartmentId,
+//				CreatedBy:     pulumi.StringRef(jobRunCreatedBy),
+//				DisplayName:   pulumi.StringRef(jobRunDisplayName),
+//				Id:            pulumi.StringRef(jobRunId),
+//				JobId:         pulumi.StringRef(testJob.Id),
+//				State:         pulumi.StringRef(jobRunState),
 //			}, nil)
 //			if err != nil {
 //				return err

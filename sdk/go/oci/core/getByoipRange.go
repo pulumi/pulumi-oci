@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetByoipRange(ctx, &core.GetByoipRangeArgs{
-//				ByoipRangeId: oci_core_byoip_range.Test_byoip_range.Id,
+//				ByoipRangeId: testByoipRangeOciCoreByoipRange.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

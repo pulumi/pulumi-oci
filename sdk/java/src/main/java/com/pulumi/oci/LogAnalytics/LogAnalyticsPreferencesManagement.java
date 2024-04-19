@@ -47,10 +47,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLogAnalyticsPreferencesManagement = new LogAnalyticsPreferencesManagement(&#34;testLogAnalyticsPreferencesManagement&#34;, LogAnalyticsPreferencesManagementArgs.builder()        
- *             .namespace(var_.log_analytics_preferences_management_namespace())
+ *             .namespace(logAnalyticsPreferencesManagementNamespace)
  *             .items(LogAnalyticsPreferencesManagementItemArgs.builder()
- *                 .name(var_.log_analytics_preferences_management_items_name())
- *                 .value(var_.log_analytics_preferences_management_items_value())
+ *                 .name(logAnalyticsPreferencesManagementItemsName)
+ *                 .value(logAnalyticsPreferencesManagementItemsValue)
  *                 .build())
  *             .build());
  * 

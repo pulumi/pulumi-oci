@@ -32,10 +32,10 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {
         ///     var testAnnouncementSubscriptions = Oci.AnnouncementsService.GetAnnouncementSubscriptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Announcement_subscription_display_name,
-        ///         Id = @var.Announcement_subscription_id,
-        ///         State = @var.Announcement_subscription_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = announcementSubscriptionDisplayName,
+        ///         Id = announcementSubscriptionId,
+        ///         State = announcementSubscriptionState,
         ///     });
         /// 
         /// });
@@ -66,10 +66,10 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {
         ///     var testAnnouncementSubscriptions = Oci.AnnouncementsService.GetAnnouncementSubscriptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Announcement_subscription_display_name,
-        ///         Id = @var.Announcement_subscription_id,
-        ///         State = @var.Announcement_subscription_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = announcementSubscriptionDisplayName,
+        ///         Id = announcementSubscriptionId,
+        ///         State = announcementSubscriptionState,
         ///     });
         /// 
         /// });

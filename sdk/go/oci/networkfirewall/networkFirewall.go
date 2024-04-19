@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.NewNetworkFirewall(ctx, "testNetworkFirewall", &NetworkFirewall.NetworkFirewallArgs{
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				NetworkFirewallPolicyId: pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
-//				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				AvailabilityDomain:      pulumi.Any(_var.Network_firewall_availability_domain),
+//			_, err := NetworkFirewall.NewNetworkFirewall(ctx, "test_network_firewall", &NetworkFirewall.NetworkFirewallArgs{
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
+//				SubnetId:                pulumi.Any(testSubnet.Id),
+//				AvailabilityDomain:      pulumi.Any(networkFirewallAvailabilityDomain),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Network_firewall_display_name),
+//				DisplayName: pulumi.Any(networkFirewallDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Ipv4address:             pulumi.Any(_var.Network_firewall_ipv4address),
-//				Ipv6address:             pulumi.Any(_var.Network_firewall_ipv6address),
-//				NetworkSecurityGroupIds: pulumi.Any(_var.Network_firewall_network_security_group_ids),
+//				Ipv4address:             pulumi.Any(networkFirewallIpv4address),
+//				Ipv6address:             pulumi.Any(networkFirewallIpv6address),
+//				NetworkSecurityGroupIds: pulumi.Any(networkFirewallNetworkSecurityGroupIds),
 //			})
 //			if err != nil {
 //				return err

@@ -31,19 +31,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetConnections(ctx, &datacatalog.GetConnectionsArgs{
-//				CatalogId:           oci_datacatalog_catalog.Test_catalog.Id,
-//				DataAssetKey:        _var.Connection_data_asset_key,
-//				CreatedById:         pulumi.StringRef(oci_datacatalog_created_by.Test_created_by.Id),
-//				DisplayName:         pulumi.StringRef(_var.Connection_display_name),
-//				DisplayNameContains: pulumi.StringRef(_var.Connection_display_name_contains),
-//				ExternalKey:         pulumi.StringRef(_var.Connection_external_key),
-//				Fields:              _var.Connection_fields,
-//				IsDefault:           pulumi.BoolRef(_var.Connection_is_default),
-//				State:               pulumi.StringRef(_var.Connection_state),
-//				TimeCreated:         pulumi.StringRef(_var.Connection_time_created),
-//				TimeStatusUpdated:   pulumi.StringRef(_var.Connection_time_status_updated),
-//				TimeUpdated:         pulumi.StringRef(_var.Connection_time_updated),
-//				UpdatedById:         pulumi.StringRef(oci_datacatalog_updated_by.Test_updated_by.Id),
+//				CatalogId:           testCatalog.Id,
+//				DataAssetKey:        connectionDataAssetKey,
+//				CreatedById:         pulumi.StringRef(testCreatedBy.Id),
+//				DisplayName:         pulumi.StringRef(connectionDisplayName),
+//				DisplayNameContains: pulumi.StringRef(connectionDisplayNameContains),
+//				ExternalKey:         pulumi.StringRef(connectionExternalKey),
+//				Fields:              connectionFields,
+//				IsDefault:           pulumi.BoolRef(connectionIsDefault),
+//				State:               pulumi.StringRef(connectionState),
+//				TimeCreated:         pulumi.StringRef(connectionTimeCreated),
+//				TimeStatusUpdated:   pulumi.StringRef(connectionTimeStatusUpdated),
+//				TimeUpdated:         pulumi.StringRef(connectionTimeUpdated),
+//				UpdatedById:         pulumi.StringRef(testUpdatedBy.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

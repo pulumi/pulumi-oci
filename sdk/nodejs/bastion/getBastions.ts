@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBastions = oci.Bastion.getBastions({
- *     compartmentId: _var.compartment_id,
- *     bastionId: oci_bastion_bastion.test_bastion.id,
- *     bastionLifecycleState: _var.bastion_bastion_lifecycle_state,
- *     name: _var.bastion_name,
+ *     compartmentId: compartmentId,
+ *     bastionId: testBastion.id,
+ *     bastionLifecycleState: bastionBastionLifecycleState,
+ *     name: bastionName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,10 +99,10 @@ export interface GetBastionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBastions = oci.Bastion.getBastions({
- *     compartmentId: _var.compartment_id,
- *     bastionId: oci_bastion_bastion.test_bastion.id,
- *     bastionLifecycleState: _var.bastion_bastion_lifecycle_state,
- *     name: _var.bastion_name,
+ *     compartmentId: compartmentId,
+ *     bastionId: testBastion.id,
+ *     bastionLifecycleState: bastionBastionLifecycleState,
+ *     name: bastionName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

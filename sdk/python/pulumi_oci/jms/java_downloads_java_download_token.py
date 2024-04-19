@@ -498,20 +498,20 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_java_download_token = oci.jms.JavaDownloadsJavaDownloadToken("testJavaDownloadToken",
-            compartment_id=var["tenancy_ocid"],
-            description=var["java_download_token_description"],
-            display_name=var["java_download_token_display_name"],
-            java_version=var["java_download_token_java_version"],
-            license_types=var["java_download_token_license_type"],
-            time_expires=var["java_download_token_time_expires"],
+        test_java_download_token = oci.jms.JavaDownloadsJavaDownloadToken("test_java_download_token",
+            compartment_id=tenancy_ocid,
+            description=java_download_token_description,
+            display_name=java_download_token_display_name,
+            java_version=java_download_token_java_version,
+            license_types=java_download_token_license_type,
+            time_expires=java_download_token_time_expires,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=var["java_download_token_is_default"])
+            is_default=java_download_token_is_default)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -553,20 +553,20 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_java_download_token = oci.jms.JavaDownloadsJavaDownloadToken("testJavaDownloadToken",
-            compartment_id=var["tenancy_ocid"],
-            description=var["java_download_token_description"],
-            display_name=var["java_download_token_display_name"],
-            java_version=var["java_download_token_java_version"],
-            license_types=var["java_download_token_license_type"],
-            time_expires=var["java_download_token_time_expires"],
+        test_java_download_token = oci.jms.JavaDownloadsJavaDownloadToken("test_java_download_token",
+            compartment_id=tenancy_ocid,
+            description=java_download_token_description,
+            display_name=java_download_token_display_name,
+            java_version=java_download_token_java_version,
+            license_types=java_download_token_license_type,
+            time_expires=java_download_token_time_expires,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=var["java_download_token_is_default"])
+            is_default=java_download_token_is_default)
         ```
         <!--End PulumiCodeChooser -->
 

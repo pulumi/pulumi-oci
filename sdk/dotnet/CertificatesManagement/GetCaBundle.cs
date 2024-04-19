@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCaBundle = Oci.CertificatesManagement.GetCaBundle.Invoke(new()
         ///     {
-        ///         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
+        ///         CaBundleId = testCaBundleOciCertificatesManagementCaBundle.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCaBundle = Oci.CertificatesManagement.GetCaBundle.Invoke(new()
         ///     {
-        ///         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
+        ///         CaBundleId = testCaBundleOciCertificatesManagementCaBundle.Id,
         ///     });
         /// 
         /// });

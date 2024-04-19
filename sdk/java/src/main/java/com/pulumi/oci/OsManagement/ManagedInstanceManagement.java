@@ -62,18 +62,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceManagement = new ManagedInstanceManagement(&#34;testManagedInstanceManagement&#34;, ManagedInstanceManagementArgs.builder()        
- *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+ *             .managedInstanceId(testManagedInstance.id())
  *             .parentSoftwareSource(ManagedInstanceManagementParentSoftwareSourceArgs.builder()
- *                 .id(oci_osmanagement_software_source.test_parent_software_source().id())
- *                 .name(oci_osmanagement_software_source.test_parent_software_source().display_name())
+ *                 .id(testParentSoftwareSource.id())
+ *                 .name(testParentSoftwareSource.displayName())
  *                 .build())
  *             .managedInstanceGroups(ManagedInstanceManagementManagedInstanceGroupArgs.builder()
- *                 .id(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
- *                 .displayName(var_.managed_instance_group_display_name())
+ *                 .id(testManagedInstanceGroup.id())
+ *                 .displayName(managedInstanceGroupDisplayName)
  *                 .build())
  *             .childSoftwareSources(ManagedInstanceManagementChildSoftwareSourceArgs.builder()
- *                 .id(oci_osmanagement_software_source.test_software_source_child().id())
- *                 .name(oci_osmanagement_software_source.test_software_source_child().display_name())
+ *                 .id(testSoftwareSourceChild.id())
+ *                 .name(testSoftwareSourceChild.displayName())
  *                 .build())
  *             .build());
  * 

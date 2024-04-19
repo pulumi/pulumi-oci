@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLetterOfAuthority = oci.Core.getLetterOfAuthority({
- *     crossConnectId: oci_core_cross_connect.test_cross_connect.id,
+ *     crossConnectId: testCrossConnect.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -90,7 +90,7 @@ export interface GetLetterOfAuthorityResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLetterOfAuthority = oci.Core.getLetterOfAuthority({
- *     crossConnectId: oci_core_cross_connect.test_cross_connect.id,
+ *     crossConnectId: testCrossConnect.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

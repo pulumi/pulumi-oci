@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyAuthTokens = Oci.Identity.GetDomainsMyAuthTokens.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyAuthTokenCount = @var.My_auth_token_my_auth_token_count,
-        ///         MyAuthTokenFilter = @var.My_auth_token_my_auth_token_filter,
-        ///         Authorization = @var.My_auth_token_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_auth_token_resource_type_schema_version,
-        ///         StartIndex = @var.My_auth_token_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyAuthTokenCount = myAuthTokenMyAuthTokenCount,
+        ///         MyAuthTokenFilter = myAuthTokenMyAuthTokenFilter,
+        ///         Authorization = myAuthTokenAuthorization,
+        ///         ResourceTypeSchemaVersion = myAuthTokenResourceTypeSchemaVersion,
+        ///         StartIndex = myAuthTokenStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyAuthTokens = Oci.Identity.GetDomainsMyAuthTokens.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyAuthTokenCount = @var.My_auth_token_my_auth_token_count,
-        ///         MyAuthTokenFilter = @var.My_auth_token_my_auth_token_filter,
-        ///         Authorization = @var.My_auth_token_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_auth_token_resource_type_schema_version,
-        ///         StartIndex = @var.My_auth_token_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyAuthTokenCount = myAuthTokenMyAuthTokenCount,
+        ///         MyAuthTokenFilter = myAuthTokenMyAuthTokenFilter,
+        ///         Authorization = myAuthTokenAuthorization,
+        ///         ResourceTypeSchemaVersion = myAuthTokenResourceTypeSchemaVersion,
+        ///         StartIndex = myAuthTokenStartIndex,
         ///     });
         /// 
         /// });

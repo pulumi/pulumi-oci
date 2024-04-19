@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Oda.GetOdaPrivateEndpointScanProxy(ctx, &oda.GetOdaPrivateEndpointScanProxyArgs{
-//				OdaPrivateEndpointId:          oci_oda_oda_private_endpoint.Test_oda_private_endpoint.Id,
-//				OdaPrivateEndpointScanProxyId: oci_oda_oda_private_endpoint_scan_proxy.Test_oda_private_endpoint_scan_proxy.Id,
+//				OdaPrivateEndpointId:          testOdaPrivateEndpoint.Id,
+//				OdaPrivateEndpointScanProxyId: testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

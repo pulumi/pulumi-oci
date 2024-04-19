@@ -23,10 +23,10 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAppCatalogListingResourceVersionAgreement = new Oci.Core.AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement", new()
+    ///     var testAppCatalogListingResourceVersionAgreement = new Oci.Core.AppCatalogListingResourceVersionAgreement("test_app_catalog_listing_resource_version_agreement", new()
     ///     {
-    ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-    ///         ListingResourceVersion = @var.App_catalog_listing_resource_version_agreement_listing_resource_version,
+    ///         ListingId = testListing.Id,
+    ///         ListingResourceVersion = appCatalogListingResourceVersionAgreementListingResourceVersion,
     ///     });
     /// 
     /// });

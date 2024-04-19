@@ -31,18 +31,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApiGateway.NewCertificate(ctx, "testCertificate", &ApiGateway.CertificateArgs{
-//				Certificate:   pulumi.Any(_var.Certificate_certificate),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := ApiGateway.NewCertificate(ctx, "test_certificate", &ApiGateway.CertificateArgs{
+//				Certificate:   pulumi.Any(certificateCertificate),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				PrivateKey:    pulumi.Any(certificatePrivateKey),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Certificate_display_name),
+//				DisplayName: pulumi.Any(certificateDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IntermediateCertificates: pulumi.Any(_var.Certificate_intermediate_certificates),
-//				PrivateKey:               pulumi.Any(_var.Certificate_private_key),
+//				IntermediateCertificates: pulumi.Any(certificateIntermediateCertificates),
 //			})
 //			if err != nil {
 //				return err

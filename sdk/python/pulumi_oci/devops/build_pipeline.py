@@ -356,20 +356,20 @@ class BuildPipeline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_build_pipeline = oci.dev_ops.BuildPipeline("testBuildPipeline",
-            project_id=oci_devops_project["test_project"]["id"],
+        test_build_pipeline = oci.dev_ops.BuildPipeline("test_build_pipeline",
+            project_id=test_project["id"],
             build_pipeline_parameters=oci.dev_ops.BuildPipelineBuildPipelineParametersArgs(
                 items=[oci.dev_ops.BuildPipelineBuildPipelineParametersItemArgs(
-                    default_value=var["build_pipeline_build_pipeline_parameters_items_default_value"],
-                    name=var["build_pipeline_build_pipeline_parameters_items_name"],
-                    description=var["build_pipeline_build_pipeline_parameters_items_description"],
+                    default_value=build_pipeline_build_pipeline_parameters_items_default_value,
+                    name=build_pipeline_build_pipeline_parameters_items_name,
+                    description=build_pipeline_build_pipeline_parameters_items_description,
                 )],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["build_pipeline_description"],
-            display_name=var["build_pipeline_display_name"],
+            description=build_pipeline_description,
+            display_name=build_pipeline_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -415,20 +415,20 @@ class BuildPipeline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_build_pipeline = oci.dev_ops.BuildPipeline("testBuildPipeline",
-            project_id=oci_devops_project["test_project"]["id"],
+        test_build_pipeline = oci.dev_ops.BuildPipeline("test_build_pipeline",
+            project_id=test_project["id"],
             build_pipeline_parameters=oci.dev_ops.BuildPipelineBuildPipelineParametersArgs(
                 items=[oci.dev_ops.BuildPipelineBuildPipelineParametersItemArgs(
-                    default_value=var["build_pipeline_build_pipeline_parameters_items_default_value"],
-                    name=var["build_pipeline_build_pipeline_parameters_items_name"],
-                    description=var["build_pipeline_build_pipeline_parameters_items_description"],
+                    default_value=build_pipeline_build_pipeline_parameters_items_default_value,
+                    name=build_pipeline_build_pipeline_parameters_items_name,
+                    description=build_pipeline_build_pipeline_parameters_items_description,
                 )],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["build_pipeline_description"],
-            display_name=var["build_pipeline_display_name"],
+            description=build_pipeline_description,
+            display_name=build_pipeline_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

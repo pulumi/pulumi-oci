@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkPerimeter = oci.Identity.getDomainsNetworkPerimeter({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     networkPerimeterId: oci_identity_domains_network_perimeter.test_network_perimeter.id,
+ *     idcsEndpoint: testDomain.url,
+ *     networkPerimeterId: testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.network_perimeter_authorization,
- *     resourceTypeSchemaVersion: _var.network_perimeter_resource_type_schema_version,
+ *     authorization: networkPerimeterAuthorization,
+ *     resourceTypeSchemaVersion: networkPerimeterResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -164,12 +164,12 @@ export interface GetDomainsNetworkPerimeterResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkPerimeter = oci.Identity.getDomainsNetworkPerimeter({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     networkPerimeterId: oci_identity_domains_network_perimeter.test_network_perimeter.id,
+ *     idcsEndpoint: testDomain.url,
+ *     networkPerimeterId: testNetworkPerimeterOciIdentityDomainsNetworkPerimeter.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.network_perimeter_authorization,
- *     resourceTypeSchemaVersion: _var.network_perimeter_resource_type_schema_version,
+ *     authorization: networkPerimeterAuthorization,
+ *     resourceTypeSchemaVersion: networkPerimeterResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

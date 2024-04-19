@@ -43,8 +43,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRouteTableAttachment = new RouteTableAttachment(&#34;testRouteTableAttachment&#34;, RouteTableAttachmentArgs.builder()        
- *             .subnetId(oci_core_subnet.test_subnet().id())
- *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .subnetId(testSubnet.id())
+ *             .routeTableId(testRouteTable.id())
  *             .build());
  * 
  *     }

@@ -455,53 +455,53 @@ class NotebookSession(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_notebook_session = oci.data_science.NotebookSession("testNotebookSession",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
+        test_notebook_session = oci.data_science.NotebookSession("test_notebook_session",
+            compartment_id=compartment_id,
+            project_id=test_project["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["notebook_session_display_name"],
+            display_name=notebook_session_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             notebook_session_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsArgs(
-                shape=var["notebook_session_notebook_session_config_details_shape"],
-                block_storage_size_in_gbs=var["notebook_session_notebook_session_config_details_block_storage_size_in_gbs"],
+                shape=notebook_session_notebook_session_config_details_shape,
+                block_storage_size_in_gbs=notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
                 notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs"],
-                    ocpus=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus"],
+                    memory_in_gbs=notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
+                    ocpus=notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
                 ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                private_endpoint_id=test_private_endpoint["id"],
+                subnet_id=test_subnet["id"],
             ),
             notebook_session_configuration_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsArgs(
-                shape=var["notebook_session_notebook_session_configuration_details_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_storage_size_in_gbs=var["notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs"],
+                shape=notebook_session_notebook_session_configuration_details_shape,
+                subnet_id=test_subnet["id"],
+                block_storage_size_in_gbs=notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
                 notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs"],
-                    ocpus=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus"],
+                    memory_in_gbs=notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
+                    ocpus=notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
                 ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                private_endpoint_id=test_private_endpoint["id"],
             ),
             notebook_session_runtime_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs(
-                custom_environment_variables=var["notebook_session_notebook_session_runtime_config_details_custom_environment_variables"],
+                custom_environment_variables=notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
                 notebook_session_git_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs(
                     notebook_session_git_repo_config_collections=[oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs(
-                        url=var["notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url"],
+                        url=notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
                     )],
                 ),
             ),
             notebook_session_storage_mount_configuration_details_lists=[oci.data_science.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=var["notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name"],
-                storage_type=var["notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type"],
-                bucket=var["notebook_session_notebook_session_storage_mount_configuration_details_list_bucket"],
-                destination_path=var["notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path"],
-                export_id=oci_file_storage_export["test_export"]["id"],
-                mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-                namespace=var["notebook_session_notebook_session_storage_mount_configuration_details_list_namespace"],
-                prefix=var["notebook_session_notebook_session_storage_mount_configuration_details_list_prefix"],
+                destination_directory_name=notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
+                storage_type=notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
+                bucket=notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
+                destination_path=notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
+                export_id=test_export["id"],
+                mount_target_id=test_mount_target["id"],
+                namespace=notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
+                prefix=notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -549,53 +549,53 @@ class NotebookSession(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_notebook_session = oci.data_science.NotebookSession("testNotebookSession",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
+        test_notebook_session = oci.data_science.NotebookSession("test_notebook_session",
+            compartment_id=compartment_id,
+            project_id=test_project["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["notebook_session_display_name"],
+            display_name=notebook_session_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             notebook_session_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsArgs(
-                shape=var["notebook_session_notebook_session_config_details_shape"],
-                block_storage_size_in_gbs=var["notebook_session_notebook_session_config_details_block_storage_size_in_gbs"],
+                shape=notebook_session_notebook_session_config_details_shape,
+                block_storage_size_in_gbs=notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
                 notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs"],
-                    ocpus=var["notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus"],
+                    memory_in_gbs=notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
+                    ocpus=notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
                 ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                private_endpoint_id=test_private_endpoint["id"],
+                subnet_id=test_subnet["id"],
             ),
             notebook_session_configuration_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsArgs(
-                shape=var["notebook_session_notebook_session_configuration_details_shape"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_storage_size_in_gbs=var["notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs"],
+                shape=notebook_session_notebook_session_configuration_details_shape,
+                subnet_id=test_subnet["id"],
+                block_storage_size_in_gbs=notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
                 notebook_session_shape_config_details=oci.data_science.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs(
-                    memory_in_gbs=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs"],
-                    ocpus=var["notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus"],
+                    memory_in_gbs=notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
+                    ocpus=notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
                 ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                private_endpoint_id=test_private_endpoint["id"],
             ),
             notebook_session_runtime_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs(
-                custom_environment_variables=var["notebook_session_notebook_session_runtime_config_details_custom_environment_variables"],
+                custom_environment_variables=notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
                 notebook_session_git_config_details=oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs(
                     notebook_session_git_repo_config_collections=[oci.data_science.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs(
-                        url=var["notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url"],
+                        url=notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
                     )],
                 ),
             ),
             notebook_session_storage_mount_configuration_details_lists=[oci.data_science.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs(
-                destination_directory_name=var["notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name"],
-                storage_type=var["notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type"],
-                bucket=var["notebook_session_notebook_session_storage_mount_configuration_details_list_bucket"],
-                destination_path=var["notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path"],
-                export_id=oci_file_storage_export["test_export"]["id"],
-                mount_target_id=oci_file_storage_mount_target["test_mount_target"]["id"],
-                namespace=var["notebook_session_notebook_session_storage_mount_configuration_details_list_namespace"],
-                prefix=var["notebook_session_notebook_session_storage_mount_configuration_details_list_prefix"],
+                destination_directory_name=notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
+                storage_type=notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
+                bucket=notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
+                destination_path=notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
+                export_id=test_export["id"],
+                mount_target_id=test_mount_target["id"],
+                namespace=notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
+                prefix=notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
             )])
         ```
         <!--End PulumiCodeChooser -->

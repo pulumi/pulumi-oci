@@ -33,8 +33,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testListing = oci.Marketplace.getListing({
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     compartmentId: _var.compartment_id,
+ *     listingId: testListingOciMarketplaceListing.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -216,8 +216,8 @@ export interface GetListingResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testListing = oci.Marketplace.getListing({
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     compartmentId: _var.compartment_id,
+ *     listingId: testListingOciMarketplaceListing.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

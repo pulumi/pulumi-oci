@@ -224,7 +224,7 @@ def get_virtual_service_route_table(virtual_service_route_table_id: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_service_route_table = oci.ServiceMesh.get_virtual_service_route_table(virtual_service_route_table_id=oci_service_mesh_virtual_service_route_table["test_virtual_service_route_table"]["id"])
+    test_virtual_service_route_table = oci.ServiceMesh.get_virtual_service_route_table(virtual_service_route_table_id=test_virtual_service_route_table_oci_service_mesh_virtual_service_route_table["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -269,7 +269,7 @@ def get_virtual_service_route_table_output(virtual_service_route_table_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_service_route_table = oci.ServiceMesh.get_virtual_service_route_table(virtual_service_route_table_id=oci_service_mesh_virtual_service_route_table["test_virtual_service_route_table"]["id"])
+    test_virtual_service_route_table = oci.ServiceMesh.get_virtual_service_route_table(virtual_service_route_table_id=test_virtual_service_route_table_oci_service_mesh_virtual_service_route_table["id"])
     ```
     <!--End PulumiCodeChooser -->
 

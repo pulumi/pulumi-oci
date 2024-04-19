@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEmWarehouseResourceUsage = oci.EmWarehouse.getResourceUsage({
- *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
+ *     emWarehouseId: testEmWarehouse.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,7 +85,7 @@ export interface GetResourceUsageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEmWarehouseResourceUsage = oci.EmWarehouse.getResourceUsage({
- *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
+ *     emWarehouseId: testEmWarehouse.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,31 +31,32 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Marketplace.NewPublication(ctx, "testPublication", &Marketplace.PublicationArgs{
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				IsAgreementAcknowledged: pulumi.Any(_var.Publication_is_agreement_acknowledged),
-//				ListingType:             pulumi.Any(_var.Publication_listing_type),
+//			_, err := Marketplace.NewPublication(ctx, "test_publication", &Marketplace.PublicationArgs{
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				IsAgreementAcknowledged: pulumi.Any(publicationIsAgreementAcknowledged),
+//				ListingType:             pulumi.Any(publicationListingType),
+//				Name:                    pulumi.Any(publicationName),
 //				PackageDetails: &marketplace.PublicationPackageDetailsArgs{
 //					Eulas: marketplace.PublicationPackageDetailsEulaArray{
 //						&marketplace.PublicationPackageDetailsEulaArgs{
-//							EulaType:    pulumi.Any(_var.Publication_package_details_eula_eula_type),
-//							LicenseText: pulumi.Any(_var.Publication_package_details_eula_license_text),
+//							EulaType:    pulumi.Any(publicationPackageDetailsEulaEulaType),
+//							LicenseText: pulumi.Any(publicationPackageDetailsEulaLicenseText),
 //						},
 //					},
 //					OperatingSystem: &marketplace.PublicationPackageDetailsOperatingSystemArgs{
-//						Name: pulumi.Any(_var.Publication_package_details_operating_system_name),
+//						Name: pulumi.Any(publicationPackageDetailsOperatingSystemName),
 //					},
-//					PackageType:    pulumi.Any(_var.Publication_package_details_package_type),
-//					PackageVersion: pulumi.Any(_var.Publication_package_details_package_version),
-//					ImageId:        pulumi.Any(oci_core_image.Test_image.Id),
+//					PackageType:    pulumi.Any(publicationPackageDetailsPackageType),
+//					PackageVersion: pulumi.Any(publicationPackageDetailsPackageVersion),
+//					ImageId:        pulumi.Any(testImage.Id),
 //				},
-//				ShortDescription: pulumi.Any(_var.Publication_short_description),
+//				ShortDescription: pulumi.Any(publicationShortDescription),
 //				SupportContacts: marketplace.PublicationSupportContactArray{
 //					&marketplace.PublicationSupportContactArgs{
-//						Email:   pulumi.Any(_var.Publication_support_contacts_email),
-//						Name:    pulumi.Any(_var.Publication_support_contacts_name),
-//						Phone:   pulumi.Any(_var.Publication_support_contacts_phone),
-//						Subject: pulumi.Any(_var.Publication_support_contacts_subject),
+//						Email:   pulumi.Any(publicationSupportContactsEmail),
+//						Name:    pulumi.Any(publicationSupportContactsName),
+//						Phone:   pulumi.Any(publicationSupportContactsPhone),
+//						Subject: pulumi.Any(publicationSupportContactsSubject),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
@@ -64,7 +65,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				LongDescription: pulumi.Any(_var.Publication_long_description),
+//				LongDescription: pulumi.Any(publicationLongDescription),
 //			})
 //			if err != nil {
 //				return err

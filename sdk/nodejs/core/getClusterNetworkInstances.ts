@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testClusterNetworkInstances = oci.Core.getClusterNetworkInstances({
- *     clusterNetworkId: oci_core_cluster_network.test_cluster_network.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.cluster_network_instance_display_name,
+ *     clusterNetworkId: testClusterNetwork.id,
+ *     compartmentId: compartmentId,
+ *     displayName: clusterNetworkInstanceDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetClusterNetworkInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testClusterNetworkInstances = oci.Core.getClusterNetworkInstances({
- *     clusterNetworkId: oci_core_cluster_network.test_cluster_network.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.cluster_network_instance_display_name,
+ *     clusterNetworkId: testClusterNetwork.id,
+ *     compartmentId: compartmentId,
+ *     displayName: clusterNetworkInstanceDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

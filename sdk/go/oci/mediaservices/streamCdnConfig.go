@@ -31,37 +31,37 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.NewStreamCdnConfig(ctx, "testStreamCdnConfig", &MediaServices.StreamCdnConfigArgs{
+//			_, err := MediaServices.NewStreamCdnConfig(ctx, "test_stream_cdn_config", &MediaServices.StreamCdnConfigArgs{
 //				Config: &mediaservices.StreamCdnConfigConfigArgs{
-//					Type:                      pulumi.Any(_var.Stream_cdn_config_config_type),
-//					EdgeHostname:              pulumi.Any(_var.Stream_cdn_config_config_edge_hostname),
-//					EdgePathPrefix:            pulumi.Any(_var.Stream_cdn_config_config_edge_path_prefix),
-//					EdgeTokenKey:              pulumi.Any(_var.Stream_cdn_config_config_edge_token_key),
-//					EdgeTokenSalt:             pulumi.Any(_var.Stream_cdn_config_config_edge_token_salt),
-//					IsEdgeTokenAuth:           pulumi.Any(_var.Stream_cdn_config_config_is_edge_token_auth),
-//					OriginAuthSecretKeyA:      pulumi.Any(_var.Stream_cdn_config_config_origin_auth_secret_key_a),
-//					OriginAuthSecretKeyB:      pulumi.Any(_var.Stream_cdn_config_config_origin_auth_secret_key_b),
-//					OriginAuthSecretKeyNonceA: pulumi.Any(_var.Stream_cdn_config_config_origin_auth_secret_key_nonce_a),
-//					OriginAuthSecretKeyNonceB: pulumi.Any(_var.Stream_cdn_config_config_origin_auth_secret_key_nonce_b),
-//					OriginAuthSignEncryption:  pulumi.Any(_var.Stream_cdn_config_config_origin_auth_sign_encryption),
-//					OriginAuthSignType:        pulumi.Any(_var.Stream_cdn_config_config_origin_auth_sign_type),
+//					Type:                      pulumi.Any(streamCdnConfigConfigType),
+//					EdgeHostname:              pulumi.Any(streamCdnConfigConfigEdgeHostname),
+//					EdgePathPrefix:            pulumi.Any(streamCdnConfigConfigEdgePathPrefix),
+//					EdgeTokenKey:              pulumi.Any(streamCdnConfigConfigEdgeTokenKey),
+//					EdgeTokenSalt:             pulumi.Any(streamCdnConfigConfigEdgeTokenSalt),
+//					IsEdgeTokenAuth:           pulumi.Any(streamCdnConfigConfigIsEdgeTokenAuth),
+//					OriginAuthSecretKeyA:      pulumi.Any(streamCdnConfigConfigOriginAuthSecretKeyA),
+//					OriginAuthSecretKeyB:      pulumi.Any(streamCdnConfigConfigOriginAuthSecretKeyB),
+//					OriginAuthSecretKeyNonceA: pulumi.Any(streamCdnConfigConfigOriginAuthSecretKeyNonceA),
+//					OriginAuthSecretKeyNonceB: pulumi.Any(streamCdnConfigConfigOriginAuthSecretKeyNonceB),
+//					OriginAuthSignEncryption:  pulumi.Any(streamCdnConfigConfigOriginAuthSignEncryption),
+//					OriginAuthSignType:        pulumi.Any(streamCdnConfigConfigOriginAuthSignType),
 //				},
-//				DisplayName:           pulumi.Any(_var.Stream_cdn_config_display_name),
-//				DistributionChannelId: pulumi.Any(oci_mysql_channel.Test_channel.Id),
+//				DisplayName:           pulumi.Any(streamCdnConfigDisplayName),
+//				DistributionChannelId: pulumi.Any(testChannel.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsEnabled: pulumi.Any(_var.Stream_cdn_config_is_enabled),
+//				IsEnabled: pulumi.Any(streamCdnConfigIsEnabled),
 //				Locks: mediaservices.StreamCdnConfigLockArray{
 //					&mediaservices.StreamCdnConfigLockArgs{
-//						CompartmentId:     pulumi.Any(_var.Compartment_id),
-//						Type:              pulumi.Any(_var.Stream_cdn_config_locks_type),
-//						Message:           pulumi.Any(_var.Stream_cdn_config_locks_message),
-//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
-//						TimeCreated:       pulumi.Any(_var.Stream_cdn_config_locks_time_created),
+//						CompartmentId:     pulumi.Any(compartmentId),
+//						Type:              pulumi.Any(streamCdnConfigLocksType),
+//						Message:           pulumi.Any(streamCdnConfigLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(streamCdnConfigLocksTimeCreated),
 //					},
 //				},
 //			})

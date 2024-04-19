@@ -27,105 +27,106 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMonitoredResource = new Oci.StackMonitoring.MonitoredResource("testMonitoredResource", new()
+    ///     var testMonitoredResource = new Oci.StackMonitoring.MonitoredResource("test_monitored_resource", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Type = @var.Monitored_resource_type,
+    ///         CompartmentId = compartmentId,
+    ///         Name = monitoredResourceName,
+    ///         Type = monitoredResourceType,
     ///         AdditionalAliases = new[]
     ///         {
     ///             new Oci.StackMonitoring.Inputs.MonitoredResourceAdditionalAliasArgs
     ///             {
     ///                 Credential = new Oci.StackMonitoring.Inputs.MonitoredResourceAdditionalAliasCredentialArgs
     ///                 {
-    ///                     Name = @var.Monitored_resource_additional_aliases_credential_name,
-    ///                     Service = @var.Monitored_resource_additional_aliases_credential_service,
-    ///                     Source = @var.Monitored_resource_additional_aliases_credential_source,
+    ///                     Name = monitoredResourceAdditionalAliasesCredentialName,
+    ///                     Service = monitoredResourceAdditionalAliasesCredentialService,
+    ///                     Source = monitoredResourceAdditionalAliasesCredentialSource,
     ///                 },
-    ///                 Name = @var.Monitored_resource_additional_aliases_name,
-    ///                 Source = @var.Monitored_resource_additional_aliases_source,
+    ///                 Name = monitoredResourceAdditionalAliasesName,
+    ///                 Source = monitoredResourceAdditionalAliasesSource,
     ///             },
     ///         },
     ///         AdditionalCredentials = new[]
     ///         {
     ///             new Oci.StackMonitoring.Inputs.MonitoredResourceAdditionalCredentialArgs
     ///             {
-    ///                 CredentialType = @var.Monitored_resource_additional_credentials_credential_type,
-    ///                 Description = @var.Monitored_resource_additional_credentials_description,
-    ///                 KeyId = oci_kms_key.Test_key.Id,
-    ///                 Name = @var.Monitored_resource_additional_credentials_name,
+    ///                 CredentialType = monitoredResourceAdditionalCredentialsCredentialType,
+    ///                 Description = monitoredResourceAdditionalCredentialsDescription,
+    ///                 KeyId = testKey.Id,
+    ///                 Name = monitoredResourceAdditionalCredentialsName,
     ///                 Properties = new[]
     ///                 {
     ///                     new Oci.StackMonitoring.Inputs.MonitoredResourceAdditionalCredentialPropertyArgs
     ///                     {
-    ///                         Name = @var.Monitored_resource_additional_credentials_properties_name,
-    ///                         Value = @var.Monitored_resource_additional_credentials_properties_value,
+    ///                         Name = monitoredResourceAdditionalCredentialsPropertiesName,
+    ///                         Value = monitoredResourceAdditionalCredentialsPropertiesValue,
     ///                     },
     ///                 },
-    ///                 Source = @var.Monitored_resource_additional_credentials_source,
-    ///                 Type = @var.Monitored_resource_additional_credentials_type,
+    ///                 Source = monitoredResourceAdditionalCredentialsSource,
+    ///                 Type = monitoredResourceAdditionalCredentialsType,
     ///             },
     ///         },
     ///         Aliases = new Oci.StackMonitoring.Inputs.MonitoredResourceAliasesArgs
     ///         {
     ///             Credential = new Oci.StackMonitoring.Inputs.MonitoredResourceAliasesCredentialArgs
     ///             {
-    ///                 Name = @var.Monitored_resource_aliases_credential_name,
-    ///                 Service = @var.Monitored_resource_aliases_credential_service,
-    ///                 Source = @var.Monitored_resource_aliases_credential_source,
+    ///                 Name = monitoredResourceAliasesCredentialName,
+    ///                 Service = monitoredResourceAliasesCredentialService,
+    ///                 Source = monitoredResourceAliasesCredentialSource,
     ///             },
-    ///             Name = @var.Monitored_resource_aliases_name,
-    ///             Source = @var.Monitored_resource_aliases_source,
+    ///             Name = monitoredResourceAliasesName,
+    ///             Source = monitoredResourceAliasesSource,
     ///         },
     ///         Credentials = new Oci.StackMonitoring.Inputs.MonitoredResourceCredentialsArgs
     ///         {
-    ///             CredentialType = @var.Monitored_resource_credentials_credential_type,
-    ///             Description = @var.Monitored_resource_credentials_description,
-    ///             KeyId = @var.Monitored_resource_credentials_key_id,
-    ///             Name = @var.Monitored_resource_credentials_name,
+    ///             CredentialType = monitoredResourceCredentialsCredentialType,
+    ///             Description = monitoredResourceCredentialsDescription,
+    ///             KeyId = monitoredResourceCredentialsKeyId,
+    ///             Name = monitoredResourceCredentialsName,
     ///             Properties = new[]
     ///             {
     ///                 new Oci.StackMonitoring.Inputs.MonitoredResourceCredentialsPropertyArgs
     ///                 {
-    ///                     Name = @var.Monitored_resource_credentials_properties_name,
-    ///                     Value = @var.Monitored_resource_credentials_properties_value,
+    ///                     Name = monitoredResourceCredentialsPropertiesName,
+    ///                     Value = monitoredResourceCredentialsPropertiesValue,
     ///                 },
     ///             },
-    ///             Source = @var.Monitored_resource_credentials_source,
-    ///             Type = @var.Monitored_resource_credentials_type,
+    ///             Source = monitoredResourceCredentialsSource,
+    ///             Type = monitoredResourceCredentialsType,
     ///         },
     ///         DatabaseConnectionDetails = new Oci.StackMonitoring.Inputs.MonitoredResourceDatabaseConnectionDetailsArgs
     ///         {
-    ///             Port = @var.Monitored_resource_database_connection_details_port,
-    ///             Protocol = @var.Monitored_resource_database_connection_details_protocol,
-    ///             ServiceName = @var.Monitored_resource_database_service_name,
-    ///             ConnectorId = @var.Monitored_resource_database_connector_id,
-    ///             DbId = @var.Monitored_resource_database_id,
-    ///             DbUniqueName = @var.Monitored_resource_database_connection_details_db_unique_name,
-    ///             SslSecretId = oci_vault_secret.Test_secret.Id,
+    ///             Port = monitoredResourceDatabaseConnectionDetailsPort,
+    ///             Protocol = monitoredResourceDatabaseConnectionDetailsProtocol,
+    ///             ServiceName = monitoredResourceDatabaseServiceName,
+    ///             ConnectorId = monitoredResourceDatabaseConnectorId,
+    ///             DbId = monitoredResourceDatabaseId,
+    ///             DbUniqueName = monitoredResourceDatabaseConnectionDetailsDbUniqueName,
+    ///             SslSecretId = testSecret.Id,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Monitored_resource_display_name,
-    ///         ExternalResourceId = @var.Monitored_resource_external_resource_id,
-    ///         ExternalId = oci_stack_monitoring_external.Test_external.Id,
+    ///         DisplayName = monitoredResourceDisplayName,
+    ///         ExternalResourceId = monitoredResourceExternalResourceId,
+    ///         ExternalId = testExternal.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         HostName = @var.Monitored_resource_host_name,
-    ///         License = @var.Monitored_resource_license,
-    ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+    ///         HostName = monitoredResourceHostName,
+    ///         License = monitoredResourceLicense,
+    ///         ManagementAgentId = testManagementAgent.Id,
     ///         Properties = new[]
     ///         {
     ///             new Oci.StackMonitoring.Inputs.MonitoredResourcePropertyArgs
     ///             {
-    ///                 Name = @var.Monitored_resource_properties_name,
-    ///                 Value = @var.Monitored_resource_properties_value,
+    ///                 Name = monitoredResourcePropertiesName,
+    ///                 Value = monitoredResourcePropertiesValue,
     ///             },
     ///         },
-    ///         ResourceTimeZone = @var.Monitored_resource_resource_time_zone,
+    ///         ResourceTimeZone = monitoredResourceResourceTimeZone,
     ///     });
     /// 
     /// });

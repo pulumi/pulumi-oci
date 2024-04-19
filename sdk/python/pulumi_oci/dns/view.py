@@ -321,12 +321,12 @@ class View(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_view = oci.dns.View("testView",
-            compartment_id=var["compartment_id"],
+        test_view = oci.dns.View("test_view",
+            compartment_id=compartment_id,
             scope="PRIVATE",
-            defined_tags=var["view_defined_tags"],
-            display_name=var["view_display_name"],
-            freeform_tags=var["view_freeform_tags"])
+            defined_tags=view_defined_tags,
+            display_name=view_display_name,
+            freeform_tags=view_freeform_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -372,12 +372,12 @@ class View(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_view = oci.dns.View("testView",
-            compartment_id=var["compartment_id"],
+        test_view = oci.dns.View("test_view",
+            compartment_id=compartment_id,
             scope="PRIVATE",
-            defined_tags=var["view_defined_tags"],
-            display_name=var["view_display_name"],
-            freeform_tags=var["view_freeform_tags"])
+            defined_tags=view_defined_tags,
+            display_name=view_display_name,
+            freeform_tags=view_freeform_tags)
         ```
         <!--End PulumiCodeChooser -->
 

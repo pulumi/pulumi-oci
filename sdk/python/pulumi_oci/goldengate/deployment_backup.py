@@ -495,13 +495,13 @@ class DeploymentBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_deployment_backup = oci.golden_gate.DeploymentBackup("testDeploymentBackup",
-            bucket=var["deployment_backup_bucket"],
-            compartment_id=var["compartment_id"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-            display_name=var["deployment_backup_display_name"],
-            namespace=var["deployment_backup_namespace"],
-            object=var["deployment_backup_object"],
+        test_deployment_backup = oci.golden_gate.DeploymentBackup("test_deployment_backup",
+            bucket=deployment_backup_bucket,
+            compartment_id=compartment_id,
+            deployment_id=test_deployment["id"],
+            display_name=deployment_backup_display_name,
+            namespace=deployment_backup_namespace,
+            object=deployment_backup_object,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -552,13 +552,13 @@ class DeploymentBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_deployment_backup = oci.golden_gate.DeploymentBackup("testDeploymentBackup",
-            bucket=var["deployment_backup_bucket"],
-            compartment_id=var["compartment_id"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-            display_name=var["deployment_backup_display_name"],
-            namespace=var["deployment_backup_namespace"],
-            object=var["deployment_backup_object"],
+        test_deployment_backup = oci.golden_gate.DeploymentBackup("test_deployment_backup",
+            bucket=deployment_backup_bucket,
+            compartment_id=compartment_id,
+            deployment_id=test_deployment["id"],
+            display_name=deployment_backup_display_name,
+            namespace=deployment_backup_namespace,
+            object=deployment_backup_object,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },

@@ -32,8 +32,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetMediaWorkflowJobFact(ctx, &mediaservices.GetMediaWorkflowJobFactArgs{
-//				Key:                _var.Media_workflow_job_fact_key,
-//				MediaWorkflowJobId: oci_media_services_media_workflow_job.Test_media_workflow_job.Id,
+//				Key:                mediaWorkflowJobFactKey,
+//				MediaWorkflowJobId: testMediaWorkflowJob.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

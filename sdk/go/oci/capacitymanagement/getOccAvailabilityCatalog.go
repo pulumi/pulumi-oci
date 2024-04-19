@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CapacityManagement.GetOccAvailabilityCatalog(ctx, &capacitymanagement.GetOccAvailabilityCatalogArgs{
-//				OccAvailabilityCatalogId: oci_capacity_management_occ_availability_catalog.Test_occ_availability_catalog.Id,
+//				OccAvailabilityCatalogId: testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

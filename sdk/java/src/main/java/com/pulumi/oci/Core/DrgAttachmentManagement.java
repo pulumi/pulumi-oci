@@ -59,11 +59,11 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDrgRpcAttachment = new DrgAttachmentManagement(&#34;testDrgRpcAttachment&#34;, DrgAttachmentManagementArgs.builder()        
  *             .attachmentType(&#34;REMOTE_PEERING_CONNECTION&#34;)
- *             .compartmentId(var_.compartment_ocid())
- *             .networkId(oci_core_remote_peering_connection.test_rpc().id())
- *             .drgId(oci_core_drg.test_drg().id())
+ *             .compartmentId(compartmentOcid)
+ *             .networkId(testRpc.id())
+ *             .drgId(testDrg.id())
  *             .displayName(&#34;MyTestDrgAttachmentForRpc&#34;)
- *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+ *             .drgRouteTableId(testDrgRouteTable.id())
  *             .build());
  * 
  *     }

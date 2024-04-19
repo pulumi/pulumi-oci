@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDrPlans = oci.DisasterRecovery.getDrPlans({
- *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
- *     displayName: _var.dr_plan_display_name,
- *     drPlanId: oci_disaster_recovery_dr_plan.test_dr_plan.id,
- *     drPlanType: _var.dr_plan_dr_plan_type,
- *     state: _var.dr_plan_state,
+ *     drProtectionGroupId: testDrProtectionGroup.id,
+ *     displayName: drPlanDisplayName,
+ *     drPlanId: testDrPlan.id,
+ *     drPlanType: drPlanDrPlanType,
+ *     state: drPlanState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetDrPlansResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDrPlans = oci.DisasterRecovery.getDrPlans({
- *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
- *     displayName: _var.dr_plan_display_name,
- *     drPlanId: oci_disaster_recovery_dr_plan.test_dr_plan.id,
- *     drPlanType: _var.dr_plan_dr_plan_type,
- *     state: _var.dr_plan_state,
+ *     drProtectionGroupId: testDrProtectionGroup.id,
+ *     displayName: drPlanDisplayName,
+ *     drPlanId: testDrPlan.id,
+ *     drPlanType: drPlanDrPlanType,
+ *     state: drPlanState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluggableDatabasesLocalClone = new oci.database.PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone", {
- *     clonedPdbName: _var.pluggable_databases_local_clone_cloned_pdb_name,
- *     pluggableDatabaseId: oci_database_pluggable_database.test_pluggable_database.id,
- *     pdbAdminPassword: _var.pluggable_databases_local_clone_pdb_admin_password,
- *     shouldPdbAdminAccountBeLocked: _var.pluggable_databases_local_clone_should_pdb_admin_account_be_locked,
- *     targetTdeWalletPassword: _var.pluggable_databases_local_clone_target_tde_wallet_password,
+ * const testPluggableDatabasesLocalClone = new oci.database.PluggableDatabasesLocalClone("test_pluggable_databases_local_clone", {
+ *     clonedPdbName: pluggableDatabasesLocalCloneClonedPdbName,
+ *     pluggableDatabaseId: testPluggableDatabase.id,
+ *     pdbAdminPassword: pluggableDatabasesLocalClonePdbAdminPassword,
+ *     shouldPdbAdminAccountBeLocked: pluggableDatabasesLocalCloneShouldPdbAdminAccountBeLocked,
+ *     targetTdeWalletPassword: pluggableDatabasesLocalCloneTargetTdeWalletPassword,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

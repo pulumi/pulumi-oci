@@ -177,15 +177,15 @@ def get_steering_policies(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=var["compartment_id"],
-        display_name=var["steering_policy_display_name"],
-        display_name_contains=var["steering_policy_display_name_contains"],
-        health_check_monitor_id=oci_health_checks_http_monitor["test_http_monitor"]["id"],
-        id=var["steering_policy_id"],
-        state=var["steering_policy_state"],
-        template=var["steering_policy_template"],
-        time_created_greater_than_or_equal_to=var["steering_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["steering_policy_time_created_less_than"])
+    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=compartment_id,
+        display_name=steering_policy_display_name,
+        display_name_contains=steering_policy_display_name_contains,
+        health_check_monitor_id=test_http_monitor["id"],
+        id=steering_policy_id,
+        state=steering_policy_state,
+        template=steering_policy_template,
+        time_created_greater_than_or_equal_to=steering_policy_time_created_greater_than_or_equal_to,
+        time_created_less_than=steering_policy_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -252,15 +252,15 @@ def get_steering_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=var["compartment_id"],
-        display_name=var["steering_policy_display_name"],
-        display_name_contains=var["steering_policy_display_name_contains"],
-        health_check_monitor_id=oci_health_checks_http_monitor["test_http_monitor"]["id"],
-        id=var["steering_policy_id"],
-        state=var["steering_policy_state"],
-        template=var["steering_policy_template"],
-        time_created_greater_than_or_equal_to=var["steering_policy_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["steering_policy_time_created_less_than"])
+    test_steering_policies = oci.Dns.get_steering_policies(compartment_id=compartment_id,
+        display_name=steering_policy_display_name,
+        display_name_contains=steering_policy_display_name_contains,
+        health_check_monitor_id=test_http_monitor["id"],
+        id=steering_policy_id,
+        state=steering_policy_state,
+        template=steering_policy_template,
+        time_created_greater_than_or_equal_to=steering_policy_time_created_greater_than_or_equal_to,
+        time_created_less_than=steering_policy_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

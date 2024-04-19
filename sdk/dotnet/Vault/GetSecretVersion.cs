@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Vault
         /// {
         ///     var testSecretVersion = Oci.Vault.GetSecretVersion.Invoke(new()
         ///     {
-        ///         SecretId = oci_vault_secret.Test_secret.Id,
-        ///         SecretVersionNumber = @var.Secret_version_secret_version_number,
+        ///         SecretId = testSecret.Id,
+        ///         SecretVersionNumber = secretVersionSecretVersionNumber,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Vault
         /// {
         ///     var testSecretVersion = Oci.Vault.GetSecretVersion.Invoke(new()
         ///     {
-        ///         SecretId = oci_vault_secret.Test_secret.Id,
-        ///         SecretVersionNumber = @var.Secret_version_secret_version_number,
+        ///         SecretId = testSecret.Id,
+        ///         SecretVersionNumber = secretVersionSecretVersionNumber,
         ///     });
         /// 
         /// });

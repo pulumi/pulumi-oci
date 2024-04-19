@@ -36,7 +36,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Kms.GetVaultReplicas(ctx, &kms.GetVaultReplicasArgs{
-//				VaultId: oci_kms_vault.Test_vault.Id,
+//				VaultId: testVault.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

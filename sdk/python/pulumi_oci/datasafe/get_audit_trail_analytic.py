@@ -135,11 +135,11 @@ def get_audit_trail_analytic(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trail_analytic = oci.DataSafe.get_audit_trail_analytic(compartment_id=var["compartment_id"],
-        access_level=var["audit_trail_analytic_access_level"],
-        compartment_id_in_subtree=var["audit_trail_analytic_compartment_id_in_subtree"],
-        group_bies=var["audit_trail_analytic_group_by"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_audit_trail_analytic = oci.DataSafe.get_audit_trail_analytic(compartment_id=compartment_id,
+        access_level=audit_trail_analytic_access_level,
+        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree,
+        group_bies=audit_trail_analytic_group_by,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -200,11 +200,11 @@ def get_audit_trail_analytic_output(access_level: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trail_analytic = oci.DataSafe.get_audit_trail_analytic(compartment_id=var["compartment_id"],
-        access_level=var["audit_trail_analytic_access_level"],
-        compartment_id_in_subtree=var["audit_trail_analytic_compartment_id_in_subtree"],
-        group_bies=var["audit_trail_analytic_group_by"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_audit_trail_analytic = oci.DataSafe.get_audit_trail_analytic(compartment_id=compartment_id,
+        access_level=audit_trail_analytic_access_level,
+        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree,
+        group_bies=audit_trail_analytic_group_by,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 

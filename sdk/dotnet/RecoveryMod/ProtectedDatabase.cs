@@ -25,22 +25,22 @@ namespace Pulumi.Oci.RecoveryMod
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProtectedDatabase = new Oci.RecoveryMod.ProtectedDatabase("testProtectedDatabase", new()
+    ///     var testProtectedDatabase = new Oci.RecoveryMod.ProtectedDatabase("test_protected_database", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DbUniqueName = @var.Protected_database_db_unique_name,
-    ///         DisplayName = @var.Protected_database_display_name,
-    ///         Password = @var.Protected_database_password,
-    ///         ProtectionPolicyId = oci_recovery_protection_policy.Test_protection_policy.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DbUniqueName = protectedDatabaseDbUniqueName,
+    ///         DisplayName = protectedDatabaseDisplayName,
+    ///         Password = protectedDatabasePassword,
+    ///         ProtectionPolicyId = testProtectionPolicy.Id,
     ///         RecoveryServiceSubnets = new[]
     ///         {
     ///             new Oci.RecoveryMod.Inputs.ProtectedDatabaseRecoveryServiceSubnetArgs
     ///             {
-    ///                 RecoveryServiceSubnetId = oci_recovery_recovery_service_subnet.Test_recovery_service_subnet.Id,
+    ///                 RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
     ///             },
     ///         },
-    ///         DatabaseId = oci_database_database.Test_database.Id,
-    ///         DatabaseSize = @var.Protected_database_database_size,
+    ///         DatabaseId = testDatabase.Id,
+    ///         DatabaseSize = protectedDatabaseDatabaseSize,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.RecoveryMod
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsRedoLogsShipped = @var.Protected_database_is_redo_logs_shipped,
+    ///         IsRedoLogsShipped = protectedDatabaseIsRedoLogsShipped,
     ///     });
     /// 
     /// });

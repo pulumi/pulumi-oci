@@ -32,17 +32,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewAwrHub(ctx, "testAwrHub", &Opsi.AwrHubArgs{
-//				CompartmentId:                 pulumi.Any(_var.Compartment_id),
-//				DisplayName:                   pulumi.Any(_var.Awr_hub_display_name),
-//				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
+//			_, err := Opsi.NewAwrHub(ctx, "test_awr_hub", &Opsi.AwrHubArgs{
+//				CompartmentId:                 pulumi.Any(compartmentId),
+//				DisplayName:                   pulumi.Any(awrHubDisplayName),
+//				OperationsInsightsWarehouseId: pulumi.Any(testOperationsInsightsWarehouse.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				ObjectStorageBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
+//				ObjectStorageBucketName: pulumi.Any(testBucket.Name),
 //			})
 //			if err != nil {
 //				return err

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryRefs = oci.DevOps.getRepositoryRefs({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     commitId: oci_devops_commit.test_commit.id,
- *     refName: _var.repository_ref_ref_name,
- *     refType: _var.repository_ref_ref_type,
+ *     repositoryId: testRepository.id,
+ *     commitId: testCommit.id,
+ *     refName: repositoryRefRefName,
+ *     refType: repositoryRefRefType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetRepositoryRefsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryRefs = oci.DevOps.getRepositoryRefs({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     commitId: oci_devops_commit.test_commit.id,
- *     refName: _var.repository_ref_ref_name,
- *     refType: _var.repository_ref_ref_type,
+ *     repositoryId: testRepository.id,
+ *     commitId: testCommit.id,
+ *     refName: repositoryRefRefName,
+ *     refType: repositoryRefRefType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

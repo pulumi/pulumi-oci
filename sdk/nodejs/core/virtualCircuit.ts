@@ -38,40 +38,40 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuit = new oci.core.VirtualCircuit("testVirtualCircuit", {
- *     compartmentId: _var.compartment_id,
- *     type: _var.virtual_circuit_type,
- *     bandwidthShapeName: _var.virtual_circuit_bandwidth_shape_name,
- *     bgpAdminState: _var.virtual_circuit_bgp_admin_state,
+ * const testVirtualCircuit = new oci.core.VirtualCircuit("test_virtual_circuit", {
+ *     compartmentId: compartmentId,
+ *     type: virtualCircuitType,
+ *     bandwidthShapeName: virtualCircuitBandwidthShapeName,
+ *     bgpAdminState: virtualCircuitBgpAdminState,
  *     crossConnectMappings: [{
- *         bgpMd5authKey: _var.virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
- *         crossConnectOrCrossConnectGroupId: oci_core_cross_connect_or_cross_connect_group.test_cross_connect_or_cross_connect_group.id,
- *         customerBgpPeeringIp: _var.virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
- *         customerBgpPeeringIpv6: _var.virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
- *         oracleBgpPeeringIp: _var.virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
- *         oracleBgpPeeringIpv6: _var.virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
- *         vlan: _var.virtual_circuit_cross_connect_mappings_vlan,
+ *         bgpMd5authKey: virtualCircuitCrossConnectMappingsBgpMd5authKey,
+ *         crossConnectOrCrossConnectGroupId: testCrossConnectOrCrossConnectGroup.id,
+ *         customerBgpPeeringIp: virtualCircuitCrossConnectMappingsCustomerBgpPeeringIp,
+ *         customerBgpPeeringIpv6: virtualCircuitCrossConnectMappingsCustomerBgpPeeringIpv6,
+ *         oracleBgpPeeringIp: virtualCircuitCrossConnectMappingsOracleBgpPeeringIp,
+ *         oracleBgpPeeringIpv6: virtualCircuitCrossConnectMappingsOracleBgpPeeringIpv6,
+ *         vlan: virtualCircuitCrossConnectMappingsVlan,
  *     }],
- *     customerAsn: _var.virtual_circuit_customer_asn,
- *     customerBgpAsn: _var.virtual_circuit_customer_bgp_asn,
+ *     customerAsn: virtualCircuitCustomerAsn,
+ *     customerBgpAsn: virtualCircuitCustomerBgpAsn,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.virtual_circuit_display_name,
+ *     displayName: virtualCircuitDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     ipMtu: _var.virtual_circuit_ip_mtu,
- *     isBfdEnabled: _var.virtual_circuit_is_bfd_enabled,
- *     isTransportMode: _var.virtual_circuit_is_transport_mode,
- *     gatewayId: oci_core_gateway.test_gateway.id,
- *     providerServiceId: data.oci_core_fast_connect_provider_services.test_fast_connect_provider_services.fast_connect_provider_services[0].id,
- *     providerServiceKeyName: _var.virtual_circuit_provider_service_key_name,
+ *     ipMtu: virtualCircuitIpMtu,
+ *     isBfdEnabled: virtualCircuitIsBfdEnabled,
+ *     isTransportMode: virtualCircuitIsTransportMode,
+ *     gatewayId: testGateway.id,
+ *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
+ *     providerServiceKeyName: virtualCircuitProviderServiceKeyName,
  *     publicPrefixes: [{
- *         cidrBlock: _var.virtual_circuit_public_prefixes_cidr_block,
+ *         cidrBlock: virtualCircuitPublicPrefixesCidrBlock,
  *     }],
- *     region: _var.virtual_circuit_region,
- *     routingPolicies: _var.virtual_circuit_routing_policy,
+ *     region: virtualCircuitRegion,
+ *     routingPolicies: virtualCircuitRoutingPolicy,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

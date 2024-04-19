@@ -25,10 +25,10 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAwrHubSourceAwrhubsourcesManagement = new Oci.Opsi.AwrHubSourceAwrhubsourcesManagement("testAwrHubSourceAwrhubsourcesManagement", new()
+    ///     var testAwrHubSourceAwrhubsourcesManagement = new Oci.Opsi.AwrHubSourceAwrhubsourcesManagement("test_awr_hub_source_awrhubsources_management", new()
     ///     {
-    ///         AwrHubSourceId = oci_opsi_awr_hub_source.Test_awr_hub_source.Id,
-    ///         EnableAwrhubsource = @var.Enable_awrhubsource,
+    ///         AwrHubSourceId = testAwrHubSource.Id,
+    ///         EnableAwrhubsource = enableAwrhubsource,
     ///     });
     /// 
     /// });

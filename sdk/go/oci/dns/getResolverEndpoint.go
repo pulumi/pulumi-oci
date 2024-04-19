@@ -33,8 +33,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetResolverEndpoint(ctx, &dns.GetResolverEndpointArgs{
-//				ResolverEndpointName: oci_dns_resolver_endpoint.Test_resolver_endpoint.Name,
-//				ResolverId:           oci_dns_resolver.Test_resolver.Id,
+//				ResolverEndpointName: testResolverEndpointOciDnsResolverEndpoint.Name,
+//				ResolverId:           testResolver.Id,
 //				Scope:                pulumi.StringRef("PRIVATE"),
 //			}, nil)
 //			if err != nil {

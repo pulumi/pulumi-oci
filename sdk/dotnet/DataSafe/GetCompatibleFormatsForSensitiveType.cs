@@ -33,9 +33,9 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testCompatibleFormatsForSensitiveType = Oci.DataSafe.GetCompatibleFormatsForSensitiveType.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Compatible_formats_for_sensitive_type_access_level,
-        ///         CompartmentIdInSubtree = @var.Compatible_formats_for_sensitive_type_compartment_id_in_subtree,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = compatibleFormatsForSensitiveTypeAccessLevel,
+        ///         CompartmentIdInSubtree = compatibleFormatsForSensitiveTypeCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -67,9 +67,9 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testCompatibleFormatsForSensitiveType = Oci.DataSafe.GetCompatibleFormatsForSensitiveType.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Compatible_formats_for_sensitive_type_access_level,
-        ///         CompartmentIdInSubtree = @var.Compatible_formats_for_sensitive_type_compartment_id_in_subtree,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = compatibleFormatsForSensitiveTypeAccessLevel,
+        ///         CompartmentIdInSubtree = compatibleFormatsForSensitiveTypeCompartmentIdInSubtree,
         ///     });
         /// 
         /// });

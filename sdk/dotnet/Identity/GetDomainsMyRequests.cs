@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyRequests = Oci.Identity.GetDomainsMyRequests.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyRequestCount = @var.My_request_my_request_count,
-        ///         MyRequestFilter = @var.My_request_my_request_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyRequestCount = myRequestMyRequestCount,
+        ///         MyRequestFilter = myRequestMyRequestFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_request_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_request_resource_type_schema_version,
-        ///         StartIndex = @var.My_request_start_index,
+        ///         Authorization = myRequestAuthorization,
+        ///         ResourceTypeSchemaVersion = myRequestResourceTypeSchemaVersion,
+        ///         StartIndex = myRequestStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyRequests = Oci.Identity.GetDomainsMyRequests.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyRequestCount = @var.My_request_my_request_count,
-        ///         MyRequestFilter = @var.My_request_my_request_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyRequestCount = myRequestMyRequestCount,
+        ///         MyRequestFilter = myRequestMyRequestFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_request_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_request_resource_type_schema_version,
-        ///         StartIndex = @var.My_request_start_index,
+        ///         Authorization = myRequestAuthorization,
+        ///         ResourceTypeSchemaVersion = myRequestResourceTypeSchemaVersion,
+        ///         StartIndex = myRequestStartIndex,
         ///     });
         /// 
         /// });

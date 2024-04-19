@@ -399,9 +399,9 @@ def get_address(address_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address = oci.OspGateway.get_address(address_id=oci_osp_gateway_addres["test_addres"]["id"],
-        compartment_id=var["compartment_id"],
-        osp_home_region=var["address_osp_home_region"])
+    test_address = oci.OspGateway.get_address(address_id=test_addres["id"],
+        compartment_id=compartment_id,
+        osp_home_region=address_osp_home_region)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -467,9 +467,9 @@ def get_address_output(address_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address = oci.OspGateway.get_address(address_id=oci_osp_gateway_addres["test_addres"]["id"],
-        compartment_id=var["compartment_id"],
-        osp_home_region=var["address_osp_home_region"])
+    test_address = oci.OspGateway.get_address(address_id=test_addres["id"],
+        compartment_id=compartment_id,
+        osp_home_region=address_osp_home_region)
     ```
     <!--End PulumiCodeChooser -->
 

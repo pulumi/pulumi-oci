@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceEventReport = oci.OsManagement.getManagedInstanceEventReport({
- *     compartmentId: _var.compartment_id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     latestTimestampGreaterThanOrEqualTo: _var.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
- *     latestTimestampLessThan: _var.managed_instance_event_report_latest_timestamp_less_than,
+ *     compartmentId: compartmentId,
+ *     managedInstanceId: testManagedInstance.id,
+ *     latestTimestampGreaterThanOrEqualTo: managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo,
+ *     latestTimestampLessThan: managedInstanceEventReportLatestTimestampLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,10 +85,10 @@ export interface GetManagedInstanceEventReportResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceEventReport = oci.OsManagement.getManagedInstanceEventReport({
- *     compartmentId: _var.compartment_id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     latestTimestampGreaterThanOrEqualTo: _var.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
- *     latestTimestampLessThan: _var.managed_instance_event_report_latest_timestamp_less_than,
+ *     compartmentId: compartmentId,
+ *     managedInstanceId: testManagedInstance.id,
+ *     latestTimestampGreaterThanOrEqualTo: managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo,
+ *     latestTimestampLessThan: managedInstanceEventReportLatestTimestampLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

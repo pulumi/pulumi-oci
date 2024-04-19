@@ -438,23 +438,24 @@ class VirtualService(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_service = oci.service_mesh.VirtualService("testVirtualService",
-            compartment_id=var["compartment_id"],
-            mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
+        test_virtual_service = oci.service_mesh.VirtualService("test_virtual_service",
+            compartment_id=compartment_id,
+            mesh_id=test_mesh["id"],
+            name=virtual_service_name,
             default_routing_policy=oci.service_mesh.VirtualServiceDefaultRoutingPolicyArgs(
-                type=var["virtual_service_default_routing_policy_type"],
+                type=virtual_service_default_routing_policy_type,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["virtual_service_description"],
+            description=virtual_service_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            hosts=var["virtual_service_hosts"],
+            hosts=virtual_service_hosts,
             mtls=oci.service_mesh.VirtualServiceMtlsArgs(
-                mode=var["virtual_service_mtls_mode"],
-                maximum_validity=var["virtual_service_mtls_maximum_validity"],
+                mode=virtual_service_mtls_mode,
+                maximum_validity=virtual_service_mtls_maximum_validity,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -501,23 +502,24 @@ class VirtualService(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_service = oci.service_mesh.VirtualService("testVirtualService",
-            compartment_id=var["compartment_id"],
-            mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
+        test_virtual_service = oci.service_mesh.VirtualService("test_virtual_service",
+            compartment_id=compartment_id,
+            mesh_id=test_mesh["id"],
+            name=virtual_service_name,
             default_routing_policy=oci.service_mesh.VirtualServiceDefaultRoutingPolicyArgs(
-                type=var["virtual_service_default_routing_policy_type"],
+                type=virtual_service_default_routing_policy_type,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["virtual_service_description"],
+            description=virtual_service_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            hosts=var["virtual_service_hosts"],
+            hosts=virtual_service_hosts,
             mtls=oci.service_mesh.VirtualServiceMtlsArgs(
-                mode=var["virtual_service_mtls_mode"],
-                maximum_validity=var["virtual_service_mtls_maximum_validity"],
+                mode=virtual_service_mtls_mode,
+                maximum_validity=virtual_service_mtls_maximum_validity,
             ))
         ```
         <!--End PulumiCodeChooser -->

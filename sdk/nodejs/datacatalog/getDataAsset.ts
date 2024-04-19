@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataAsset = oci.DataCatalog.getDataAsset({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     dataAssetKey: _var.data_asset_data_asset_key,
- *     fields: _var.data_asset_fields,
+ *     catalogId: testCatalog.id,
+ *     dataAssetKey: dataAssetDataAssetKey,
+ *     fields: dataAssetFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,9 +133,9 @@ export interface GetDataAssetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataAsset = oci.DataCatalog.getDataAsset({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     dataAssetKey: _var.data_asset_data_asset_key,
- *     fields: _var.data_asset_fields,
+ *     catalogId: testCatalog.id,
+ *     dataAssetKey: dataAssetDataAssetKey,
+ *     fields: dataAssetFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

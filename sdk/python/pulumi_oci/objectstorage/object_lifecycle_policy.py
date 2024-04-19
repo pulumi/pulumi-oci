@@ -160,21 +160,21 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_object_lifecycle_policy = oci.object_storage.ObjectLifecyclePolicy("testObjectLifecyclePolicy",
-            bucket=var["object_lifecycle_policy_bucket"],
-            namespace=var["object_lifecycle_policy_namespace"],
+        test_object_lifecycle_policy = oci.object_storage.ObjectLifecyclePolicy("test_object_lifecycle_policy",
+            bucket=object_lifecycle_policy_bucket,
+            namespace=object_lifecycle_policy_namespace,
             rules=[oci.object_storage.ObjectLifecyclePolicyRuleArgs(
-                action=var["object_lifecycle_policy_rules_action"],
-                is_enabled=var["object_lifecycle_policy_rules_is_enabled"],
-                name=var["object_lifecycle_policy_rules_name"],
-                time_amount=var["object_lifecycle_policy_rules_time_amount"],
-                time_unit=var["object_lifecycle_policy_rules_time_unit"],
+                action=object_lifecycle_policy_rules_action,
+                is_enabled=object_lifecycle_policy_rules_is_enabled,
+                name=object_lifecycle_policy_rules_name,
+                time_amount=object_lifecycle_policy_rules_time_amount,
+                time_unit=object_lifecycle_policy_rules_time_unit,
                 object_name_filter=oci.object_storage.ObjectLifecyclePolicyRuleObjectNameFilterArgs(
-                    exclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_exclusion_patterns"],
-                    inclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_inclusion_patterns"],
-                    inclusion_prefixes=var["object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes"],
+                    exclusion_patterns=object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
+                    inclusion_patterns=object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
+                    inclusion_prefixes=object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
                 ),
-                target=var["object_lifecycle_policy_rules_target"],
+                target=object_lifecycle_policy_rules_target,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -211,21 +211,21 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_object_lifecycle_policy = oci.object_storage.ObjectLifecyclePolicy("testObjectLifecyclePolicy",
-            bucket=var["object_lifecycle_policy_bucket"],
-            namespace=var["object_lifecycle_policy_namespace"],
+        test_object_lifecycle_policy = oci.object_storage.ObjectLifecyclePolicy("test_object_lifecycle_policy",
+            bucket=object_lifecycle_policy_bucket,
+            namespace=object_lifecycle_policy_namespace,
             rules=[oci.object_storage.ObjectLifecyclePolicyRuleArgs(
-                action=var["object_lifecycle_policy_rules_action"],
-                is_enabled=var["object_lifecycle_policy_rules_is_enabled"],
-                name=var["object_lifecycle_policy_rules_name"],
-                time_amount=var["object_lifecycle_policy_rules_time_amount"],
-                time_unit=var["object_lifecycle_policy_rules_time_unit"],
+                action=object_lifecycle_policy_rules_action,
+                is_enabled=object_lifecycle_policy_rules_is_enabled,
+                name=object_lifecycle_policy_rules_name,
+                time_amount=object_lifecycle_policy_rules_time_amount,
+                time_unit=object_lifecycle_policy_rules_time_unit,
                 object_name_filter=oci.object_storage.ObjectLifecyclePolicyRuleObjectNameFilterArgs(
-                    exclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_exclusion_patterns"],
-                    inclusion_patterns=var["object_lifecycle_policy_rules_object_name_filter_inclusion_patterns"],
-                    inclusion_prefixes=var["object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes"],
+                    exclusion_patterns=object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
+                    inclusion_patterns=object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
+                    inclusion_prefixes=object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
                 ),
-                target=var["object_lifecycle_policy_rules_target"],
+                target=object_lifecycle_policy_rules_target,
             )])
         ```
         <!--End PulumiCodeChooser -->

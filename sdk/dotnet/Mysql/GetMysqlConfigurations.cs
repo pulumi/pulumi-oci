@@ -37,12 +37,12 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlConfigurations = Oci.Mysql.GetMysqlConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigurationId = @var.Mysql_configuration_id,
-        ///         DisplayName = @var.Mysql_configuration_display_name,
-        ///         ShapeName = @var.Mysql_shape_name,
-        ///         State = @var.Mysql_configuration_state,
-        ///         Types = @var.Mysql_configuration_type,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = mysqlConfigurationId,
+        ///         DisplayName = mysqlConfigurationDisplayName,
+        ///         ShapeName = mysqlShapeName,
+        ///         State = mysqlConfigurationState,
+        ///         Types = mysqlConfigurationType,
         ///     });
         /// 
         /// });
@@ -78,12 +78,12 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlConfigurations = Oci.Mysql.GetMysqlConfigurations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigurationId = @var.Mysql_configuration_id,
-        ///         DisplayName = @var.Mysql_configuration_display_name,
-        ///         ShapeName = @var.Mysql_shape_name,
-        ///         State = @var.Mysql_configuration_state,
-        ///         Types = @var.Mysql_configuration_type,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = mysqlConfigurationId,
+        ///         DisplayName = mysqlConfigurationDisplayName,
+        ///         ShapeName = mysqlShapeName,
+        ///         State = mysqlConfigurationState,
+        ///         Types = mysqlConfigurationType,
         ///     });
         /// 
         /// });

@@ -25,13 +25,13 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRepositoryRef = new Oci.DevOps.RepositoryRef("testRepositoryRef", new()
+    ///     var testRepositoryRef = new Oci.DevOps.RepositoryRef("test_repository_ref", new()
     ///     {
-    ///         RefName = @var.Repository_ref_ref_name,
-    ///         RefType = @var.Repository_ref_ref_type,
-    ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-    ///         CommitId = oci_devops_commit.Test_commit.Id,
-    ///         ObjectId = oci_objectstorage_object.Test_object.Id,
+    ///         RefName = repositoryRefRefName,
+    ///         RefType = repositoryRefRefType,
+    ///         RepositoryId = testRepository.Id,
+    ///         CommitId = testCommit.Id,
+    ///         ObjectId = testObject.Id,
     ///     });
     /// 
     /// });

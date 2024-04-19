@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceIngestTimeRules(ctx, &loganalytics.GetNamespaceIngestTimeRulesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Namespace:     _var.Namespace_ingest_time_rule_namespace,
-//				ConditionKind: pulumi.StringRef(_var.Namespace_ingest_time_rule_condition_kind),
-//				DisplayName:   pulumi.StringRef(_var.Namespace_ingest_time_rule_display_name),
-//				FieldName:     pulumi.StringRef(_var.Namespace_ingest_time_rule_field_name),
-//				FieldValue:    pulumi.StringRef(_var.Namespace_ingest_time_rule_field_value),
-//				State:         pulumi.StringRef(_var.Namespace_ingest_time_rule_state),
+//				CompartmentId: compartmentId,
+//				Namespace:     namespaceIngestTimeRuleNamespace,
+//				ConditionKind: pulumi.StringRef(namespaceIngestTimeRuleConditionKind),
+//				DisplayName:   pulumi.StringRef(namespaceIngestTimeRuleDisplayName),
+//				FieldName:     pulumi.StringRef(namespaceIngestTimeRuleFieldName),
+//				FieldValue:    pulumi.StringRef(namespaceIngestTimeRuleFieldValue),
+//				State:         pulumi.StringRef(namespaceIngestTimeRuleState),
 //			}, nil)
 //			if err != nil {
 //				return err

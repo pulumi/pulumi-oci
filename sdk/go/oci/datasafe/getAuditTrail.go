@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditTrail(ctx, &datasafe.GetAuditTrailArgs{
-//				AuditTrailId: oci_data_safe_audit_trail.Test_audit_trail.Id,
+//				AuditTrailId: testAuditTrailOciDataSafeAuditTrail.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

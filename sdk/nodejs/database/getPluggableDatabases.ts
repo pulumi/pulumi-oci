@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPluggableDatabases = oci.Database.getPluggableDatabases({
- *     compartmentId: _var.compartment_id,
- *     databaseId: oci_database_database.test_database.id,
- *     pdbName: _var.pluggable_database_pdb_name,
- *     state: _var.pluggable_database_state,
+ *     compartmentId: compartmentId,
+ *     databaseId: testDatabase.id,
+ *     pdbName: pluggableDatabasePdbName,
+ *     state: pluggableDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,10 +103,10 @@ export interface GetPluggableDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPluggableDatabases = oci.Database.getPluggableDatabases({
- *     compartmentId: _var.compartment_id,
- *     databaseId: oci_database_database.test_database.id,
- *     pdbName: _var.pluggable_database_pdb_name,
- *     state: _var.pluggable_database_state,
+ *     compartmentId: compartmentId,
+ *     databaseId: testDatabase.id,
+ *     pdbName: pluggableDatabasePdbName,
+ *     state: pluggableDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

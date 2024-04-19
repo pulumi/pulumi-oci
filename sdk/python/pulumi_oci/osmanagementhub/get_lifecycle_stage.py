@@ -248,7 +248,7 @@ def get_lifecycle_stage(lifecycle_stage_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_stage = oci.OsManagementHub.get_lifecycle_stage(lifecycle_stage_id=oci_os_management_hub_lifecycle_stage["test_lifecycle_stage"]["id"])
+    test_lifecycle_stage = oci.OsManagementHub.get_lifecycle_stage(lifecycle_stage_id=test_lifecycle_stage_oci_os_management_hub_lifecycle_stage["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -295,7 +295,7 @@ def get_lifecycle_stage_output(lifecycle_stage_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_stage = oci.OsManagementHub.get_lifecycle_stage(lifecycle_stage_id=oci_os_management_hub_lifecycle_stage["test_lifecycle_stage"]["id"])
+    test_lifecycle_stage = oci.OsManagementHub.get_lifecycle_stage(lifecycle_stage_id=test_lifecycle_stage_oci_os_management_hub_lifecycle_stage["id"])
     ```
     <!--End PulumiCodeChooser -->
 

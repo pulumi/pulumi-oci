@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testBuildPipelineStage = Oci.DevOps.GetBuildPipelineStage.Invoke(new()
         ///     {
-        ///         BuildPipelineStageId = oci_devops_build_pipeline_stage.Test_build_pipeline_stage.Id,
+        ///         BuildPipelineStageId = testBuildPipelineStageOciDevopsBuildPipelineStage.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testBuildPipelineStage = Oci.DevOps.GetBuildPipelineStage.Invoke(new()
         ///     {
-        ///         BuildPipelineStageId = oci_devops_build_pipeline_stage.Test_build_pipeline_stage.Id,
+        ///         BuildPipelineStageId = testBuildPipelineStageOciDevopsBuildPipelineStage.Id,
         ///     });
         /// 
         /// });

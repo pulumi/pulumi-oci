@@ -25,14 +25,14 @@ namespace Pulumi.Oci.Jms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testJavaDownloadToken = new Oci.Jms.JavaDownloadsJavaDownloadToken("testJavaDownloadToken", new()
+    ///     var testJavaDownloadToken = new Oci.Jms.JavaDownloadsJavaDownloadToken("test_java_download_token", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         Description = @var.Java_download_token_description,
-    ///         DisplayName = @var.Java_download_token_display_name,
-    ///         JavaVersion = @var.Java_download_token_java_version,
-    ///         LicenseTypes = @var.Java_download_token_license_type,
-    ///         TimeExpires = @var.Java_download_token_time_expires,
+    ///         CompartmentId = tenancyOcid,
+    ///         Description = javaDownloadTokenDescription,
+    ///         DisplayName = javaDownloadTokenDisplayName,
+    ///         JavaVersion = javaDownloadTokenJavaVersion,
+    ///         LicenseTypes = javaDownloadTokenLicenseType,
+    ///         TimeExpires = javaDownloadTokenTimeExpires,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Jms
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsDefault = @var.Java_download_token_is_default,
+    ///         IsDefault = javaDownloadTokenIsDefault,
     ///     });
     /// 
     /// });

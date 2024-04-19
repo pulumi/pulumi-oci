@@ -30,10 +30,10 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testDeployments = Oci.ApiGateway.GetDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Deployment_display_name,
-        ///         GatewayId = oci_apigateway_gateway.Test_gateway.Id,
-        ///         State = @var.Deployment_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = deploymentDisplayName,
+        ///         GatewayId = testGateway.Id,
+        ///         State = deploymentState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testDeployments = Oci.ApiGateway.GetDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Deployment_display_name,
-        ///         GatewayId = oci_apigateway_gateway.Test_gateway.Id,
-        ///         State = @var.Deployment_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = deploymentDisplayName,
+        ///         GatewayId = testGateway.Id,
+        ///         State = deploymentState,
         ///     });
         /// 
         /// });

@@ -467,20 +467,20 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_private_endpoint = oci.opsi.OperationsInsightsPrivateEndpoint("testOperationsInsightsPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["operations_insights_private_endpoint_display_name"],
-            is_used_for_rac_dbs=var["operations_insights_private_endpoint_is_used_for_rac_dbs"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_operations_insights_private_endpoint = oci.opsi.OperationsInsightsPrivateEndpoint("test_operations_insights_private_endpoint",
+            compartment_id=compartment_id,
+            display_name=operations_insights_private_endpoint_display_name,
+            is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["operations_insights_private_endpoint_description"],
+            description=operations_insights_private_endpoint_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=var["operations_insights_private_endpoint_nsg_ids"])
+            nsg_ids=operations_insights_private_endpoint_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -528,20 +528,20 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_private_endpoint = oci.opsi.OperationsInsightsPrivateEndpoint("testOperationsInsightsPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["operations_insights_private_endpoint_display_name"],
-            is_used_for_rac_dbs=var["operations_insights_private_endpoint_is_used_for_rac_dbs"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_operations_insights_private_endpoint = oci.opsi.OperationsInsightsPrivateEndpoint("test_operations_insights_private_endpoint",
+            compartment_id=compartment_id,
+            display_name=operations_insights_private_endpoint_display_name,
+            is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["operations_insights_private_endpoint_description"],
+            description=operations_insights_private_endpoint_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=var["operations_insights_private_endpoint_nsg_ids"])
+            nsg_ids=operations_insights_private_endpoint_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 

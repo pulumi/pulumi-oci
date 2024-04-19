@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExternalNonContainerDatabasesStackMonitoring(ctx, "testExternalnoncontainerdatabasesStackMonitoring", &Database.ExternalNonContainerDatabasesStackMonitoringArgs{
-//				ExternalDatabaseConnectorId:    pulumi.Any(oci_database_external_database_connector.Test_external_database_connector.Id),
-//				ExternalNonContainerDatabaseId: pulumi.Any(oci_database_external_non_container_database.Test_external_non_container_database.Id),
+//			_, err := Database.NewExternalNonContainerDatabasesStackMonitoring(ctx, "test_externalnoncontainerdatabases_stack_monitoring", &Database.ExternalNonContainerDatabasesStackMonitoringArgs{
+//				ExternalDatabaseConnectorId:    pulumi.Any(testExternalDatabaseConnector.Id),
+//				ExternalNonContainerDatabaseId: pulumi.Any(testExternalNonContainerDatabase.Id),
 //				EnableStackMonitoring:          pulumi.Bool(true),
 //			})
 //			if err != nil {

@@ -16,20 +16,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSoftwareImage = new oci.database.DatabaseSoftwareImage("testDatabaseSoftwareImage", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_software_image_display_name,
- *     databaseSoftwareImageOneOffPatches: _var.database_software_image_database_software_image_one_off_patches,
- *     databaseVersion: _var.database_software_image_database_version,
- *     definedTags: _var.database_software_image_defined_tags,
+ * const testDatabaseSoftwareImage = new oci.database.DatabaseSoftwareImage("test_database_software_image", {
+ *     compartmentId: compartmentId,
+ *     displayName: databaseSoftwareImageDisplayName,
+ *     databaseSoftwareImageOneOffPatches: databaseSoftwareImageDatabaseSoftwareImageOneOffPatches,
+ *     databaseVersion: databaseSoftwareImageDatabaseVersion,
+ *     definedTags: databaseSoftwareImageDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     imageShapeFamily: _var.database_software_image_image_shape_family,
- *     imageType: _var.database_software_image_image_type,
- *     lsInventory: _var.database_software_image_ls_inventory,
- *     patchSet: _var.database_software_image_patch_set,
- *     sourceDbHomeId: oci_database_db_home.test_db_home.id,
+ *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
+ *     imageType: databaseSoftwareImageImageType,
+ *     lsInventory: databaseSoftwareImageLsInventory,
+ *     patchSet: databaseSoftwareImagePatchSet,
+ *     sourceDbHomeId: testDbHome.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

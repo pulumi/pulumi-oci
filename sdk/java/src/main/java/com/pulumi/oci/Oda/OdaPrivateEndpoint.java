@@ -49,13 +49,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOdaPrivateEndpoint = new OdaPrivateEndpoint(&#34;testOdaPrivateEndpoint&#34;, OdaPrivateEndpointArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .compartmentId(compartmentId)
+ *             .subnetId(testSubnet.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.oda_private_endpoint_description())
- *             .displayName(var_.oda_private_endpoint_display_name())
+ *             .description(odaPrivateEndpointDescription)
+ *             .displayName(odaPrivateEndpointDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .nsgIds(var_.oda_private_endpoint_nsg_ids())
+ *             .nsgIds(odaPrivateEndpointNsgIds)
  *             .build());
  * 
  *     }

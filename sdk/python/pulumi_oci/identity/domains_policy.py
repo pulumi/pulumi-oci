@@ -1257,28 +1257,29 @@ class DomainsPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_policy = oci.identity.DomainsPolicy("testPolicy",
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_policy = oci.identity.DomainsPolicy("test_policy",
+            idcs_endpoint=test_domain["url"],
+            name=policy_name,
             policy_type=oci.identity.DomainsPolicyPolicyTypeArgs(
                 value="IdentityProvider",
             ),
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Policy"],
-            active=var["policy_active"],
+            active=policy_active,
             attribute_sets=["all"],
             attributes="",
-            authorization=var["policy_authorization"],
-            description=var["policy_description"],
+            authorization=policy_authorization,
+            description=policy_description,
             external_id="externalId",
-            ocid=var["policy_ocid"],
-            policy_groovy=var["policy_policy_groovy"],
-            resource_type_schema_version=var["policy_resource_type_schema_version"],
+            ocid=policy_ocid,
+            policy_groovy=policy_policy_groovy,
+            resource_type_schema_version=policy_resource_type_schema_version,
             rules=[oci.identity.DomainsPolicyRuleArgs(
-                sequence=var["policy_rules_sequence"],
+                sequence=policy_rules_sequence,
                 value="TODO",
             )],
             tags=[oci.identity.DomainsPolicyTagArgs(
-                key=var["policy_tags_key"],
-                value=var["policy_tags_value"],
+                key=policy_tags_key,
+                value=policy_tags_value,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -1426,28 +1427,29 @@ class DomainsPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_policy = oci.identity.DomainsPolicy("testPolicy",
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_policy = oci.identity.DomainsPolicy("test_policy",
+            idcs_endpoint=test_domain["url"],
+            name=policy_name,
             policy_type=oci.identity.DomainsPolicyPolicyTypeArgs(
                 value="IdentityProvider",
             ),
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Policy"],
-            active=var["policy_active"],
+            active=policy_active,
             attribute_sets=["all"],
             attributes="",
-            authorization=var["policy_authorization"],
-            description=var["policy_description"],
+            authorization=policy_authorization,
+            description=policy_description,
             external_id="externalId",
-            ocid=var["policy_ocid"],
-            policy_groovy=var["policy_policy_groovy"],
-            resource_type_schema_version=var["policy_resource_type_schema_version"],
+            ocid=policy_ocid,
+            policy_groovy=policy_policy_groovy,
+            resource_type_schema_version=policy_resource_type_schema_version,
             rules=[oci.identity.DomainsPolicyRuleArgs(
-                sequence=var["policy_rules_sequence"],
+                sequence=policy_rules_sequence,
                 value="TODO",
             )],
             tags=[oci.identity.DomainsPolicyTagArgs(
-                key=var["policy_tags_key"],
-                value=var["policy_tags_value"],
+                key=policy_tags_key,
+                value=policy_tags_value,
             )])
         ```
         <!--End PulumiCodeChooser -->

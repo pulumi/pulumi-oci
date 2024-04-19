@@ -145,12 +145,12 @@ def get_result(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        execution_time=var["result_execution_time"],
-        monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"],
-        result_content_type=var["result_result_content_type"],
-        result_type=var["result_result_type"],
-        vantage_point=var["result_vantage_point"])
+    test_result = oci.ApmSynthetics.get_result(apm_domain_id=test_apm_domain["id"],
+        execution_time=result_execution_time,
+        monitor_id=test_monitor["id"],
+        result_content_type=result_result_content_type,
+        result_type=result_result_type,
+        vantage_point=result_vantage_point)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -203,12 +203,12 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        execution_time=var["result_execution_time"],
-        monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"],
-        result_content_type=var["result_result_content_type"],
-        result_type=var["result_result_type"],
-        vantage_point=var["result_vantage_point"])
+    test_result = oci.ApmSynthetics.get_result(apm_domain_id=test_apm_domain["id"],
+        execution_time=result_execution_time,
+        monitor_id=test_monitor["id"],
+        result_content_type=result_result_content_type,
+        result_type=result_result_type,
+        vantage_point=result_vantage_point)
     ```
     <!--End PulumiCodeChooser -->
 

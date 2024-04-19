@@ -31,24 +31,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewMonitoredResourceTask(ctx, "testMonitoredResourceTask", &StackMonitoring.MonitoredResourceTaskArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := StackMonitoring.NewMonitoredResourceTask(ctx, "test_monitored_resource_task", &StackMonitoring.MonitoredResourceTaskArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				TaskDetails: &stackmonitoring.MonitoredResourceTaskTaskDetailsArgs{
-//					Namespace: pulumi.Any(_var.Monitored_resource_task_task_details_namespace),
-//					Source:    pulumi.Any(_var.Monitored_resource_task_task_details_source),
-//					Type:      pulumi.Any(_var.Monitored_resource_task_task_details_type),
-//					AvailabilityProxyMetricCollectionInterval: pulumi.Any(_var.Monitored_resource_task_task_details_availability_proxy_metric_collection_interval),
-//					AvailabilityProxyMetrics:                  pulumi.Any(_var.Monitored_resource_task_task_details_availability_proxy_metrics),
-//					ConsolePathPrefix:                         pulumi.Any(_var.Monitored_resource_task_task_details_console_path_prefix),
-//					ExternalIdMapping:                         pulumi.Any(_var.Monitored_resource_task_task_details_external_id_mapping),
-//					LifecycleStatusMappingsForUpStatuses:      pulumi.Any(_var.Monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status),
-//					ResourceGroup:                             pulumi.Any(_var.Monitored_resource_task_task_details_resource_group),
-//					ResourceNameFilter:                        pulumi.Any(_var.Monitored_resource_task_task_details_resource_name_filter),
-//					ResourceNameMapping:                       pulumi.Any(_var.Monitored_resource_task_task_details_resource_name_mapping),
-//					ResourceTypeFilter:                        pulumi.Any(_var.Monitored_resource_task_task_details_resource_type_filter),
-//					ResourceTypeMapping:                       pulumi.Any(_var.Monitored_resource_task_task_details_resource_type_mapping),
-//					ServiceBaseUrl:                            pulumi.Any(_var.Monitored_resource_task_task_details_service_base_url),
-//					ShouldUseMetricsFlowForStatus:             pulumi.Any(_var.Monitored_resource_task_task_details_should_use_metrics_flow_for_status),
+//					Namespace: pulumi.Any(monitoredResourceTaskTaskDetailsNamespace),
+//					Source:    pulumi.Any(monitoredResourceTaskTaskDetailsSource),
+//					Type:      pulumi.Any(monitoredResourceTaskTaskDetailsType),
+//					AvailabilityProxyMetricCollectionInterval: pulumi.Any(monitoredResourceTaskTaskDetailsAvailabilityProxyMetricCollectionInterval),
+//					AvailabilityProxyMetrics:                  pulumi.Any(monitoredResourceTaskTaskDetailsAvailabilityProxyMetrics),
+//					ConsolePathPrefix:                         pulumi.Any(monitoredResourceTaskTaskDetailsConsolePathPrefix),
+//					ExternalIdMapping:                         pulumi.Any(monitoredResourceTaskTaskDetailsExternalIdMapping),
+//					LifecycleStatusMappingsForUpStatuses:      pulumi.Any(monitoredResourceTaskTaskDetailsLifecycleStatusMappingsForUpStatus),
+//					ResourceGroup:                             pulumi.Any(monitoredResourceTaskTaskDetailsResourceGroup),
+//					ResourceNameFilter:                        pulumi.Any(monitoredResourceTaskTaskDetailsResourceNameFilter),
+//					ResourceNameMapping:                       pulumi.Any(monitoredResourceTaskTaskDetailsResourceNameMapping),
+//					ResourceTypeFilter:                        pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypeFilter),
+//					ResourceTypeMapping:                       pulumi.Any(monitoredResourceTaskTaskDetailsResourceTypeMapping),
+//					ServiceBaseUrl:                            pulumi.Any(monitoredResourceTaskTaskDetailsServiceBaseUrl),
+//					ShouldUseMetricsFlowForStatus:             pulumi.Any(monitoredResourceTaskTaskDetailsShouldUseMetricsFlowForStatus),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
@@ -56,6 +56,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				Name: pulumi.Any(monitoredResourceTaskName),
 //			})
 //			if err != nil {
 //				return err

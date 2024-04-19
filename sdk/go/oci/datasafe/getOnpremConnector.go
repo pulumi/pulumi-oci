@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetOnpremConnector(ctx, &datasafe.GetOnpremConnectorArgs{
-//				OnPremConnectorId: oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
+//				OnPremConnectorId: testOnPremConnectorOciDataSafeOnPremConnector.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

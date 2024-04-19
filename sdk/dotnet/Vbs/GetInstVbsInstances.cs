@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Vbs
         /// {
         ///     var testVbsInstances = Oci.Vbs.GetInstVbsInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Vbs_instance_id,
-        ///         Name = @var.Vbs_instance_name,
-        ///         State = @var.Vbs_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = vbsInstanceId,
+        ///         Name = vbsInstanceName,
+        ///         State = vbsInstanceState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Vbs
         /// {
         ///     var testVbsInstances = Oci.Vbs.GetInstVbsInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Vbs_instance_id,
-        ///         Name = @var.Vbs_instance_name,
-        ///         State = @var.Vbs_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = vbsInstanceId,
+        ///         Name = vbsInstanceName,
+        ///         State = vbsInstanceState,
         ///     });
         /// 
         /// });

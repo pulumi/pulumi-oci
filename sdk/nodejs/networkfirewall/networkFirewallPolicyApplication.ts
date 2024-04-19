@@ -16,11 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyApplication = new oci.networkfirewall.NetworkFirewallPolicyApplication("testNetworkFirewallPolicyApplication", {
- *     icmpType: _var.network_firewall_policy_application_icmp_type,
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
- *     type: _var.network_firewall_policy_application_type,
- *     icmpCode: _var.network_firewall_policy_application_icmp_code,
+ * const testNetworkFirewallPolicyApplication = new oci.networkfirewall.NetworkFirewallPolicyApplication("test_network_firewall_policy_application", {
+ *     icmpType: networkFirewallPolicyApplicationIcmpType,
+ *     name: networkFirewallPolicyApplicationName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     type: networkFirewallPolicyApplicationType,
+ *     icmpCode: networkFirewallPolicyApplicationIcmpCode,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

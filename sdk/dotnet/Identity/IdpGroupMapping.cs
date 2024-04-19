@@ -28,11 +28,11 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIdpGroupMapping = new Oci.Identity.IdpGroupMapping("testIdpGroupMapping", new()
+    ///     var testIdpGroupMapping = new Oci.Identity.IdpGroupMapping("test_idp_group_mapping", new()
     ///     {
-    ///         GroupId = oci_identity_group.Test_group.Id,
-    ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-    ///         IdpGroupName = @var.Idp_group_mapping_idp_group_name,
+    ///         GroupId = testGroup.Id,
+    ///         IdentityProviderId = testIdentityProvider.Id,
+    ///         IdpGroupName = idpGroupMappingIdpGroupName,
     ///     });
     /// 
     /// });

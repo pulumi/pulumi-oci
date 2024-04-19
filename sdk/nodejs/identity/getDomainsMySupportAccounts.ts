@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMySupportAccounts = oci.Identity.getDomainsMySupportAccounts({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     mySupportAccountCount: _var.my_support_account_my_support_account_count,
- *     mySupportAccountFilter: _var.my_support_account_my_support_account_filter,
- *     authorization: _var.my_support_account_authorization,
- *     resourceTypeSchemaVersion: _var.my_support_account_resource_type_schema_version,
- *     startIndex: _var.my_support_account_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     mySupportAccountCount: mySupportAccountMySupportAccountCount,
+ *     mySupportAccountFilter: mySupportAccountMySupportAccountFilter,
+ *     authorization: mySupportAccountAuthorization,
+ *     resourceTypeSchemaVersion: mySupportAccountResourceTypeSchemaVersion,
+ *     startIndex: mySupportAccountStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetDomainsMySupportAccountsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMySupportAccounts = oci.Identity.getDomainsMySupportAccounts({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     mySupportAccountCount: _var.my_support_account_my_support_account_count,
- *     mySupportAccountFilter: _var.my_support_account_my_support_account_filter,
- *     authorization: _var.my_support_account_authorization,
- *     resourceTypeSchemaVersion: _var.my_support_account_resource_type_schema_version,
- *     startIndex: _var.my_support_account_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     mySupportAccountCount: mySupportAccountMySupportAccountCount,
+ *     mySupportAccountFilter: mySupportAccountMySupportAccountFilter,
+ *     authorization: mySupportAccountAuthorization,
+ *     resourceTypeSchemaVersion: mySupportAccountResourceTypeSchemaVersion,
+ *     startIndex: mySupportAccountStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

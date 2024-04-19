@@ -30,17 +30,17 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testResourceActions = Oci.Optimizer.GetResourceActions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
-        ///         ChildTenancyIds = @var.Resource_action_child_tenancy_ids,
-        ///         IncludeOrganization = @var.Resource_action_include_organization,
-        ///         IncludeResourceMetadata = @var.Resource_action_include_resource_metadata,
-        ///         Name = @var.Resource_action_name,
-        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         ResourceType = @var.Resource_action_resource_type,
-        ///         State = @var.Resource_action_state,
-        ///         Status = @var.Resource_action_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = resourceActionCompartmentIdInSubtree,
+        ///         ChildTenancyIds = resourceActionChildTenancyIds,
+        ///         IncludeOrganization = resourceActionIncludeOrganization,
+        ///         IncludeResourceMetadata = resourceActionIncludeResourceMetadata,
+        ///         Name = resourceActionName,
+        ///         RecommendationId = testRecommendation.Id,
+        ///         RecommendationName = testRecommendation.Name,
+        ///         ResourceType = resourceActionResourceType,
+        ///         State = resourceActionState,
+        ///         Status = resourceActionStatus,
         ///     });
         /// 
         /// });
@@ -69,17 +69,17 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testResourceActions = Oci.Optimizer.GetResourceActions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
-        ///         ChildTenancyIds = @var.Resource_action_child_tenancy_ids,
-        ///         IncludeOrganization = @var.Resource_action_include_organization,
-        ///         IncludeResourceMetadata = @var.Resource_action_include_resource_metadata,
-        ///         Name = @var.Resource_action_name,
-        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         ResourceType = @var.Resource_action_resource_type,
-        ///         State = @var.Resource_action_state,
-        ///         Status = @var.Resource_action_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = resourceActionCompartmentIdInSubtree,
+        ///         ChildTenancyIds = resourceActionChildTenancyIds,
+        ///         IncludeOrganization = resourceActionIncludeOrganization,
+        ///         IncludeResourceMetadata = resourceActionIncludeResourceMetadata,
+        ///         Name = resourceActionName,
+        ///         RecommendationId = testRecommendation.Id,
+        ///         RecommendationName = testRecommendation.Name,
+        ///         ResourceType = resourceActionResourceType,
+        ///         State = resourceActionState,
+        ///         Status = resourceActionStatus,
         ///     });
         /// 
         /// });

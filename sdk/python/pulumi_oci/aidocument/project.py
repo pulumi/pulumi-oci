@@ -305,12 +305,12 @@ class Project(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_project = oci.ai_document.Project("testProject",
-            compartment_id=var["compartment_id"],
-            defined_tags=var["project_defined_tags"],
-            description=var["project_description"],
-            display_name=var["project_display_name"],
-            freeform_tags=var["project_freeform_tags"])
+        test_project = oci.ai_document.Project("test_project",
+            compartment_id=compartment_id,
+            defined_tags=project_defined_tags,
+            description=project_description,
+            display_name=project_display_name,
+            freeform_tags=project_freeform_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -352,12 +352,12 @@ class Project(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_project = oci.ai_document.Project("testProject",
-            compartment_id=var["compartment_id"],
-            defined_tags=var["project_defined_tags"],
-            description=var["project_description"],
-            display_name=var["project_display_name"],
-            freeform_tags=var["project_freeform_tags"])
+        test_project = oci.ai_document.Project("test_project",
+            compartment_id=compartment_id,
+            defined_tags=project_defined_tags,
+            description=project_description,
+            display_name=project_display_name,
+            freeform_tags=project_freeform_tags)
         ```
         <!--End PulumiCodeChooser -->
 

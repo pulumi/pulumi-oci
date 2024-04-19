@@ -31,25 +31,25 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApiGateway.NewUsagePlan(ctx, "testUsagePlan", &ApiGateway.UsagePlanArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := ApiGateway.NewUsagePlan(ctx, "test_usage_plan", &ApiGateway.UsagePlanArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				Entitlements: apigateway.UsagePlanEntitlementArray{
 //					&apigateway.UsagePlanEntitlementArgs{
-//						Name:        pulumi.Any(_var.Usage_plan_entitlements_name),
-//						Description: pulumi.Any(_var.Usage_plan_entitlements_description),
+//						Name:        pulumi.Any(usagePlanEntitlementsName),
+//						Description: pulumi.Any(usagePlanEntitlementsDescription),
 //						Quota: &apigateway.UsagePlanEntitlementQuotaArgs{
-//							OperationOnBreach: pulumi.Any(_var.Usage_plan_entitlements_quota_operation_on_breach),
-//							ResetPolicy:       pulumi.Any(_var.Usage_plan_entitlements_quota_reset_policy),
-//							Unit:              pulumi.Any(_var.Usage_plan_entitlements_quota_unit),
-//							Value:             pulumi.Any(_var.Usage_plan_entitlements_quota_value),
+//							OperationOnBreach: pulumi.Any(usagePlanEntitlementsQuotaOperationOnBreach),
+//							ResetPolicy:       pulumi.Any(usagePlanEntitlementsQuotaResetPolicy),
+//							Unit:              pulumi.Any(usagePlanEntitlementsQuotaUnit),
+//							Value:             pulumi.Any(usagePlanEntitlementsQuotaValue),
 //						},
 //						RateLimit: &apigateway.UsagePlanEntitlementRateLimitArgs{
-//							Unit:  pulumi.Any(_var.Usage_plan_entitlements_rate_limit_unit),
-//							Value: pulumi.Any(_var.Usage_plan_entitlements_rate_limit_value),
+//							Unit:  pulumi.Any(usagePlanEntitlementsRateLimitUnit),
+//							Value: pulumi.Any(usagePlanEntitlementsRateLimitValue),
 //						},
 //						Targets: apigateway.UsagePlanEntitlementTargetArray{
 //							&apigateway.UsagePlanEntitlementTargetArgs{
-//								DeploymentId: pulumi.Any(oci_apigateway_deployment.Test_deployment.Id),
+//								DeploymentId: pulumi.Any(testDeployment.Id),
 //							},
 //						},
 //					},
@@ -57,7 +57,7 @@ import (
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Usage_plan_display_name),
+//				DisplayName: pulumi.Any(usagePlanDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

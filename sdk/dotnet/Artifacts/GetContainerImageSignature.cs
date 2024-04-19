@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerImageSignature = Oci.Artifacts.GetContainerImageSignature.Invoke(new()
         ///     {
-        ///         ImageSignatureId = oci_artifacts_image_signature.Test_image_signature.Id,
+        ///         ImageSignatureId = testImageSignature.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerImageSignature = Oci.Artifacts.GetContainerImageSignature.Invoke(new()
         ///     {
-        ///         ImageSignatureId = oci_artifacts_image_signature.Test_image_signature.Id,
+        ///         ImageSignatureId = testImageSignature.Id,
         ///     });
         /// 
         /// });

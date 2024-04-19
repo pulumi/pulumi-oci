@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepositoryMirrorRecord(ctx, &devops.GetRepositoryMirrorRecordArgs{
-//				MirrorRecordType: _var.Repository_mirror_record_mirror_record_type,
-//				RepositoryId:     oci_devops_repository.Test_repository.Id,
+//				MirrorRecordType: repositoryMirrorRecordMirrorRecordType,
+//				RepositoryId:     testRepository.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

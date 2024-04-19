@@ -334,12 +334,13 @@ class NotificationTopic(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_notification_topic = oci.ons.NotificationTopic("testNotificationTopic",
-            compartment_id=var["compartment_id"],
+        test_notification_topic = oci.ons.NotificationTopic("test_notification_topic",
+            compartment_id=compartment_id,
+            name=notification_topic_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["notification_topic_description"],
+            description=notification_topic_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -397,12 +398,13 @@ class NotificationTopic(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_notification_topic = oci.ons.NotificationTopic("testNotificationTopic",
-            compartment_id=var["compartment_id"],
+        test_notification_topic = oci.ons.NotificationTopic("test_notification_topic",
+            compartment_id=compartment_id,
+            name=notification_topic_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["notification_topic_description"],
+            description=notification_topic_description,
             freeform_tags={
                 "Department": "Finance",
             })

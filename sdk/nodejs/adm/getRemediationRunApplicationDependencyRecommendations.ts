@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRemediationRunApplicationDependencyRecommendations = oci.Adm.getRemediationRunApplicationDependencyRecommendations({
- *     remediationRunId: oci_adm_remediation_run.test_remediation_run.id,
- *     gav: _var.remediation_run_application_dependency_recommendation_gav,
- *     purl: _var.remediation_run_application_dependency_recommendation_purl,
+ *     remediationRunId: testRemediationRun.id,
+ *     gav: remediationRunApplicationDependencyRecommendationGav,
+ *     purl: remediationRunApplicationDependencyRecommendationPurl,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRemediationRunApplicationDependencyRecommendations = oci.Adm.getRemediationRunApplicationDependencyRecommendations({
- *     remediationRunId: oci_adm_remediation_run.test_remediation_run.id,
- *     gav: _var.remediation_run_application_dependency_recommendation_gav,
- *     purl: _var.remediation_run_application_dependency_recommendation_purl,
+ *     remediationRunId: testRemediationRun.id,
+ *     gav: remediationRunApplicationDependencyRecommendationGav,
+ *     purl: remediationRunApplicationDependencyRecommendationPurl,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -50,17 +50,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testScript = new Script(&#34;testScript&#34;, ScriptArgs.builder()        
- *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
- *             .content(var_.script_content())
- *             .contentType(var_.script_content_type())
- *             .displayName(var_.script_display_name())
- *             .contentFileName(var_.script_content_file_name())
+ *             .apmDomainId(testApmDomain.id())
+ *             .content(scriptContent)
+ *             .contentType(scriptContentType)
+ *             .displayName(scriptDisplayName)
+ *             .contentFileName(scriptContentFileName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .parameters(ScriptParameterArgs.builder()
- *                 .paramName(var_.script_parameters_param_name())
- *                 .isSecret(var_.script_parameters_is_secret())
- *                 .paramValue(var_.script_parameters_param_value())
+ *                 .paramName(scriptParametersParamName)
+ *                 .isSecret(scriptParametersIsSecret)
+ *                 .paramValue(scriptParametersParamValue)
  *                 .build())
  *             .build());
  * 

@@ -305,7 +305,7 @@ def get_metric_extension(metric_extension_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_extension = oci.StackMonitoring.get_metric_extension(metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"])
+    test_metric_extension = oci.StackMonitoring.get_metric_extension(metric_extension_id=test_metric_extension_oci_stack_monitoring_metric_extension["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -357,7 +357,7 @@ def get_metric_extension_output(metric_extension_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_extension = oci.StackMonitoring.get_metric_extension(metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"])
+    test_metric_extension = oci.StackMonitoring.get_metric_extension(metric_extension_id=test_metric_extension_oci_stack_monitoring_metric_extension["id"])
     ```
     <!--End PulumiCodeChooser -->
 

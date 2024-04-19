@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeBackups = Oci.Core.GetVolumeBackups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Volume_backup_display_name,
-        ///         SourceVolumeBackupId = oci_core_volume_backup.Test_volume_backup.Id,
-        ///         State = @var.Volume_backup_state,
-        ///         VolumeId = oci_core_volume.Test_volume.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = volumeBackupDisplayName,
+        ///         SourceVolumeBackupId = testVolumeBackup.Id,
+        ///         State = volumeBackupState,
+        ///         VolumeId = testVolume.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeBackups = Oci.Core.GetVolumeBackups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Volume_backup_display_name,
-        ///         SourceVolumeBackupId = oci_core_volume_backup.Test_volume_backup.Id,
-        ///         State = @var.Volume_backup_state,
-        ///         VolumeId = oci_core_volume.Test_volume.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = volumeBackupDisplayName,
+        ///         SourceVolumeBackupId = testVolumeBackup.Id,
+        ///         State = volumeBackupState,
+        ///         VolumeId = testVolume.Id,
         ///     });
         /// 
         /// });

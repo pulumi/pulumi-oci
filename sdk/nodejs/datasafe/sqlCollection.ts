@@ -16,20 +16,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlCollection = new oci.datasafe.SqlCollection("testSqlCollection", {
- *     compartmentId: _var.compartment_id,
- *     dbUserName: oci_identity_user.test_user.name,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ * const testSqlCollection = new oci.datasafe.SqlCollection("test_sql_collection", {
+ *     compartmentId: compartmentId,
+ *     dbUserName: testUser.name,
+ *     targetId: testTarget.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.sql_collection_description,
- *     displayName: _var.sql_collection_display_name,
+ *     description: sqlCollectionDescription,
+ *     displayName: sqlCollectionDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     sqlLevel: _var.sql_collection_sql_level,
- *     status: _var.sql_collection_status,
+ *     sqlLevel: sqlCollectionSqlLevel,
+ *     status: sqlCollectionStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

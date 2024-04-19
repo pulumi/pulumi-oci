@@ -153,12 +153,12 @@ def get_logs(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_logs = oci.Logging.get_logs(log_group_id=oci_logging_log_group["test_log_group"]["id"],
-        display_name=var["log_display_name"],
-        log_type=var["log_log_type"],
-        source_resource=var["log_source_resource"],
-        source_service=var["log_source_service"],
-        state=var["log_state"])
+    test_logs = oci.Logging.get_logs(log_group_id=test_log_group["id"],
+        display_name=log_display_name,
+        log_type=log_log_type,
+        source_resource=log_source_resource,
+        source_service=log_source_service,
+        state=log_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -214,12 +214,12 @@ def get_logs_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_logs = oci.Logging.get_logs(log_group_id=oci_logging_log_group["test_log_group"]["id"],
-        display_name=var["log_display_name"],
-        log_type=var["log_log_type"],
-        source_resource=var["log_source_resource"],
-        source_service=var["log_source_service"],
-        state=var["log_state"])
+    test_logs = oci.Logging.get_logs(log_group_id=test_log_group["id"],
+        display_name=log_display_name,
+        log_type=log_log_type,
+        source_resource=log_source_resource,
+        source_service=log_source_service,
+        state=log_state)
     ```
     <!--End PulumiCodeChooser -->
 

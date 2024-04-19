@@ -144,12 +144,12 @@ def get_replications(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replications = oci.FileStorage.get_replications(availability_domain=var["replication_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["replication_display_name"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["replication_id"],
-        state=var["replication_state"])
+    test_replications = oci.FileStorage.get_replications(availability_domain=replication_availability_domain,
+        compartment_id=compartment_id,
+        display_name=replication_display_name,
+        file_system_id=test_file_system["id"],
+        id=replication_id,
+        state=replication_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -204,12 +204,12 @@ def get_replications_output(availability_domain: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_replications = oci.FileStorage.get_replications(availability_domain=var["replication_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["replication_display_name"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["replication_id"],
-        state=var["replication_state"])
+    test_replications = oci.FileStorage.get_replications(availability_domain=replication_availability_domain,
+        compartment_id=compartment_id,
+        display_name=replication_display_name,
+        file_system_id=test_file_system["id"],
+        id=replication_id,
+        state=replication_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -25,9 +25,9 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRepositoryMirror = new Oci.DevOps.RepositoryMirror("testRepositoryMirror", new()
+    ///     var testRepositoryMirror = new Oci.DevOps.RepositoryMirror("test_repository_mirror", new()
     ///     {
-    ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+    ///         RepositoryId = testRepository.Id,
     ///     });
     /// 
     /// });

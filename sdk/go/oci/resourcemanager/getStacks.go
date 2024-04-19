@@ -33,10 +33,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ResourceManager.GetStacks(ctx, &resourcemanager.GetStacksArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Stack_display_name),
-//				Id:            pulumi.StringRef(_var.Stack_id),
-//				State:         pulumi.StringRef(_var.Stack_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(stackDisplayName),
+//				Id:            pulumi.StringRef(stackId),
+//				State:         pulumi.StringRef(stackState),
 //			}, nil)
 //			if err != nil {
 //				return err

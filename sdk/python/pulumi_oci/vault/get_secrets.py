@@ -130,10 +130,10 @@ def get_secrets(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secrets = oci.Vault.get_secrets(compartment_id=var["compartment_id"],
-        name=var["secret_name"],
-        state=var["secret_state"],
-        vault_id=oci_kms_vault["test_vault"]["id"])
+    test_secrets = oci.Vault.get_secrets(compartment_id=compartment_id,
+        name=secret_name,
+        state=secret_state,
+        vault_id=test_vault["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_secrets_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secrets = oci.Vault.get_secrets(compartment_id=var["compartment_id"],
-        name=var["secret_name"],
-        state=var["secret_state"],
-        vault_id=oci_kms_vault["test_vault"]["id"])
+    test_secrets = oci.Vault.get_secrets(compartment_id=compartment_id,
+        name=secret_name,
+        state=secret_state,
+        vault_id=test_vault["id"])
     ```
     <!--End PulumiCodeChooser -->
 

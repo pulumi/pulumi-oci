@@ -16,21 +16,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateEndpoint = new oci.resourcemanager.PrivateEndpoint("testPrivateEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.private_endpoint_display_name,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ * const testPrivateEndpoint = new oci.resourcemanager.PrivateEndpoint("test_private_endpoint", {
+ *     compartmentId: compartmentId,
+ *     displayName: privateEndpointDisplayName,
+ *     subnetId: testSubnet.id,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.private_endpoint_description,
- *     dnsZones: _var.private_endpoint_dns_zones,
+ *     description: privateEndpointDescription,
+ *     dnsZones: privateEndpointDnsZones,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isUsedWithConfigurationSourceProvider: _var.private_endpoint_is_used_with_configuration_source_provider,
- *     nsgIdLists: _var.private_endpoint_nsg_id_list,
+ *     isUsedWithConfigurationSourceProvider: privateEndpointIsUsedWithConfigurationSourceProvider,
+ *     nsgIdLists: privateEndpointNsgIdList,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

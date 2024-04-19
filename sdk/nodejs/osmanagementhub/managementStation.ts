@@ -18,26 +18,26 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementStation = new oci.osmanagementhub.ManagementStation("testManagementStation", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.management_station_display_name,
- *     hostname: _var.management_station_hostname,
+ * const testManagementStation = new oci.osmanagementhub.ManagementStation("test_management_station", {
+ *     compartmentId: compartmentId,
+ *     displayName: managementStationDisplayName,
+ *     hostname: managementStationHostname,
  *     mirror: {
- *         directory: _var.management_station_mirror_directory,
- *         port: _var.management_station_mirror_port,
- *         sslport: _var.management_station_mirror_sslport,
- *         sslcert: _var.management_station_mirror_sslcert,
+ *         directory: managementStationMirrorDirectory,
+ *         port: managementStationMirrorPort,
+ *         sslport: managementStationMirrorSslport,
+ *         sslcert: managementStationMirrorSslcert,
  *     },
  *     proxy: {
- *         isEnabled: _var.management_station_proxy_is_enabled,
- *         forward: _var.management_station_proxy_forward,
- *         hosts: _var.management_station_proxy_hosts,
- *         port: _var.management_station_proxy_port,
+ *         isEnabled: managementStationProxyIsEnabled,
+ *         forward: managementStationProxyForward,
+ *         hosts: managementStationProxyHosts,
+ *         port: managementStationProxyPort,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.management_station_description,
+ *     description: managementStationDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

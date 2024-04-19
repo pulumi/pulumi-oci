@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPipeline = oci.DataScience.getPipeline({
- *     pipelineId: oci_datascience_pipeline.test_pipeline.id,
+ *     pipelineId: testPipelineOciDatasciencePipeline.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -131,7 +131,7 @@ export interface GetPipelineResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPipeline = oci.DataScience.getPipeline({
- *     pipelineId: oci_datascience_pipeline.test_pipeline.id,
+ *     pipelineId: testPipelineOciDatasciencePipeline.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

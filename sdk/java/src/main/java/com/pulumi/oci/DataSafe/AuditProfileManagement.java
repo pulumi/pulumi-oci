@@ -48,13 +48,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAuditProfileManagement = new AuditProfileManagement(&#34;testAuditProfileManagement&#34;, AuditProfileManagementArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .targetId(oci_data_safe_target_database.test_target_database().id())
+ *             .compartmentId(compartmentId)
+ *             .targetId(testTargetDatabase.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.audit_profile_management_description())
- *             .displayName(var_.audit_profile_management_display_name())
+ *             .description(auditProfileManagementDescription)
+ *             .displayName(auditProfileManagementDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .isPaidUsageEnabled(var_.audit_profile_management_is_paid_usage_enabled())
+ *             .isPaidUsageEnabled(auditProfileManagementIsPaidUsageEnabled)
  *             .changeRetentionTrigger(true)
  *             .offlineMonths(10)
  *             .onlineMonths(7)

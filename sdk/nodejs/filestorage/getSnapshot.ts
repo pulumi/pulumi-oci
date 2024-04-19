@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSnapshot = oci.FileStorage.getSnapshot({
- *     snapshotId: oci_file_storage_snapshot.test_snapshot.id,
+ *     snapshotId: testSnapshotOciFileStorageSnapshot.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,7 +118,7 @@ export interface GetSnapshotResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSnapshot = oci.FileStorage.getSnapshot({
- *     snapshotId: oci_file_storage_snapshot.test_snapshot.id,
+ *     snapshotId: testSnapshotOciFileStorageSnapshot.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

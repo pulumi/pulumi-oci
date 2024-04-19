@@ -104,8 +104,8 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[pulumi.InputTy
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        schema_names=var["masking_policy_masking_schema_schema_name"])
+    test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=test_masking_policy["id"],
+        schema_names=masking_policy_masking_schema_schema_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -145,8 +145,8 @@ def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        schema_names=var["masking_policy_masking_schema_schema_name"])
+    test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=test_masking_policy["id"],
+        schema_names=masking_policy_masking_schema_schema_name)
     ```
     <!--End PulumiCodeChooser -->
 

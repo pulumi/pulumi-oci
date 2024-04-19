@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbNodes = Oci.Database.GetDbNodes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DbServerId = oci_database_db_server.Test_db_server.Id,
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         State = @var.Db_node_state,
-        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DbServerId = testDbServer.Id,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         State = dbNodeState,
+        ///         VmClusterId = testVmCluster.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbNodes = Oci.Database.GetDbNodes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DbServerId = oci_database_db_server.Test_db_server.Id,
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         State = @var.Db_node_state,
-        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DbServerId = testDbServer.Id,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         State = dbNodeState,
+        ///         VmClusterId = testVmCluster.Id,
         ///     });
         /// 
         /// });

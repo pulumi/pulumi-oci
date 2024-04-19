@@ -870,40 +870,40 @@ class VirtualCircuit(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_circuit = oci.core.VirtualCircuit("testVirtualCircuit",
-            compartment_id=var["compartment_id"],
-            type=var["virtual_circuit_type"],
-            bandwidth_shape_name=var["virtual_circuit_bandwidth_shape_name"],
-            bgp_admin_state=var["virtual_circuit_bgp_admin_state"],
+        test_virtual_circuit = oci.core.VirtualCircuit("test_virtual_circuit",
+            compartment_id=compartment_id,
+            type=virtual_circuit_type,
+            bandwidth_shape_name=virtual_circuit_bandwidth_shape_name,
+            bgp_admin_state=virtual_circuit_bgp_admin_state,
             cross_connect_mappings=[oci.core.VirtualCircuitCrossConnectMappingArgs(
-                bgp_md5auth_key=var["virtual_circuit_cross_connect_mappings_bgp_md5auth_key"],
-                cross_connect_or_cross_connect_group_id=oci_core_cross_connect_or_cross_connect_group["test_cross_connect_or_cross_connect_group"]["id"],
-                customer_bgp_peering_ip=var["virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip"],
-                customer_bgp_peering_ipv6=var["virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6"],
-                oracle_bgp_peering_ip=var["virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip"],
-                oracle_bgp_peering_ipv6=var["virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6"],
-                vlan=var["virtual_circuit_cross_connect_mappings_vlan"],
+                bgp_md5auth_key=virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
+                cross_connect_or_cross_connect_group_id=test_cross_connect_or_cross_connect_group["id"],
+                customer_bgp_peering_ip=virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
+                customer_bgp_peering_ipv6=virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
+                oracle_bgp_peering_ip=virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
+                oracle_bgp_peering_ipv6=virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
+                vlan=virtual_circuit_cross_connect_mappings_vlan,
             )],
-            customer_asn=var["virtual_circuit_customer_asn"],
-            customer_bgp_asn=var["virtual_circuit_customer_bgp_asn"],
+            customer_asn=virtual_circuit_customer_asn,
+            customer_bgp_asn=virtual_circuit_customer_bgp_asn,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["virtual_circuit_display_name"],
+            display_name=virtual_circuit_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            ip_mtu=var["virtual_circuit_ip_mtu"],
-            is_bfd_enabled=var["virtual_circuit_is_bfd_enabled"],
-            is_transport_mode=var["virtual_circuit_is_transport_mode"],
-            gateway_id=oci_core_gateway["test_gateway"]["id"],
-            provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"],
-            provider_service_key_name=var["virtual_circuit_provider_service_key_name"],
+            ip_mtu=virtual_circuit_ip_mtu,
+            is_bfd_enabled=virtual_circuit_is_bfd_enabled,
+            is_transport_mode=virtual_circuit_is_transport_mode,
+            gateway_id=test_gateway["id"],
+            provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
+            provider_service_key_name=virtual_circuit_provider_service_key_name,
             public_prefixes=[oci.core.VirtualCircuitPublicPrefixArgs(
-                cidr_block=var["virtual_circuit_public_prefixes_cidr_block"],
+                cidr_block=virtual_circuit_public_prefixes_cidr_block,
             )],
-            region=var["virtual_circuit_region"],
-            routing_policies=var["virtual_circuit_routing_policy"])
+            region=virtual_circuit_region,
+            routing_policies=virtual_circuit_routing_policy)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -979,40 +979,40 @@ class VirtualCircuit(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_circuit = oci.core.VirtualCircuit("testVirtualCircuit",
-            compartment_id=var["compartment_id"],
-            type=var["virtual_circuit_type"],
-            bandwidth_shape_name=var["virtual_circuit_bandwidth_shape_name"],
-            bgp_admin_state=var["virtual_circuit_bgp_admin_state"],
+        test_virtual_circuit = oci.core.VirtualCircuit("test_virtual_circuit",
+            compartment_id=compartment_id,
+            type=virtual_circuit_type,
+            bandwidth_shape_name=virtual_circuit_bandwidth_shape_name,
+            bgp_admin_state=virtual_circuit_bgp_admin_state,
             cross_connect_mappings=[oci.core.VirtualCircuitCrossConnectMappingArgs(
-                bgp_md5auth_key=var["virtual_circuit_cross_connect_mappings_bgp_md5auth_key"],
-                cross_connect_or_cross_connect_group_id=oci_core_cross_connect_or_cross_connect_group["test_cross_connect_or_cross_connect_group"]["id"],
-                customer_bgp_peering_ip=var["virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip"],
-                customer_bgp_peering_ipv6=var["virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6"],
-                oracle_bgp_peering_ip=var["virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip"],
-                oracle_bgp_peering_ipv6=var["virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6"],
-                vlan=var["virtual_circuit_cross_connect_mappings_vlan"],
+                bgp_md5auth_key=virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
+                cross_connect_or_cross_connect_group_id=test_cross_connect_or_cross_connect_group["id"],
+                customer_bgp_peering_ip=virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
+                customer_bgp_peering_ipv6=virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
+                oracle_bgp_peering_ip=virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
+                oracle_bgp_peering_ipv6=virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
+                vlan=virtual_circuit_cross_connect_mappings_vlan,
             )],
-            customer_asn=var["virtual_circuit_customer_asn"],
-            customer_bgp_asn=var["virtual_circuit_customer_bgp_asn"],
+            customer_asn=virtual_circuit_customer_asn,
+            customer_bgp_asn=virtual_circuit_customer_bgp_asn,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["virtual_circuit_display_name"],
+            display_name=virtual_circuit_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            ip_mtu=var["virtual_circuit_ip_mtu"],
-            is_bfd_enabled=var["virtual_circuit_is_bfd_enabled"],
-            is_transport_mode=var["virtual_circuit_is_transport_mode"],
-            gateway_id=oci_core_gateway["test_gateway"]["id"],
-            provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"],
-            provider_service_key_name=var["virtual_circuit_provider_service_key_name"],
+            ip_mtu=virtual_circuit_ip_mtu,
+            is_bfd_enabled=virtual_circuit_is_bfd_enabled,
+            is_transport_mode=virtual_circuit_is_transport_mode,
+            gateway_id=test_gateway["id"],
+            provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
+            provider_service_key_name=virtual_circuit_provider_service_key_name,
             public_prefixes=[oci.core.VirtualCircuitPublicPrefixArgs(
-                cidr_block=var["virtual_circuit_public_prefixes_cidr_block"],
+                cidr_block=virtual_circuit_public_prefixes_cidr_block,
             )],
-            region=var["virtual_circuit_region"],
-            routing_policies=var["virtual_circuit_routing_policy"])
+            region=virtual_circuit_region,
+            routing_policies=virtual_circuit_routing_policy)
         ```
         <!--End PulumiCodeChooser -->
 

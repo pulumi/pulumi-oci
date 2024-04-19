@@ -32,14 +32,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewEncryptedData(ctx, "testEncryptedData", &Kms.EncryptedDataArgs{
-//				CryptoEndpoint:      pulumi.Any(_var.Encrypted_data_crypto_endpoint),
-//				KeyId:               pulumi.Any(oci_kms_key.Test_key.Id),
-//				Plaintext:           pulumi.Any(_var.Encrypted_data_plaintext),
-//				AssociatedData:      pulumi.Any(_var.Encrypted_data_associated_data),
-//				EncryptionAlgorithm: pulumi.Any(_var.Encrypted_data_encryption_algorithm),
-//				KeyVersionId:        pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-//				LoggingContext:      pulumi.Any(_var.Encrypted_data_logging_context),
+//			_, err := Kms.NewEncryptedData(ctx, "test_encrypted_data", &Kms.EncryptedDataArgs{
+//				CryptoEndpoint:      pulumi.Any(encryptedDataCryptoEndpoint),
+//				KeyId:               pulumi.Any(testKey.Id),
+//				Plaintext:           pulumi.Any(encryptedDataPlaintext),
+//				AssociatedData:      pulumi.Any(encryptedDataAssociatedData),
+//				EncryptionAlgorithm: pulumi.Any(encryptedDataEncryptionAlgorithm),
+//				KeyVersionId:        pulumi.Any(testKeyVersion.Id),
+//				LoggingContext:      pulumi.Any(encryptedDataLoggingContext),
 //			})
 //			if err != nil {
 //				return err

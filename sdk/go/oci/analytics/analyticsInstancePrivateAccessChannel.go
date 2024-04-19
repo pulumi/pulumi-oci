@@ -32,23 +32,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Analytics.NewAnalyticsInstancePrivateAccessChannel(ctx, "testAnalyticsInstancePrivateAccessChannel", &Analytics.AnalyticsInstancePrivateAccessChannelArgs{
-//				AnalyticsInstanceId: pulumi.Any(oci_analytics_analytics_instance.Test_analytics_instance.Id),
-//				DisplayName:         pulumi.Any(_var.Analytics_instance_private_access_channel_display_name),
+//			_, err := Analytics.NewAnalyticsInstancePrivateAccessChannel(ctx, "test_analytics_instance_private_access_channel", &Analytics.AnalyticsInstancePrivateAccessChannelArgs{
+//				AnalyticsInstanceId: pulumi.Any(testAnalyticsInstance.Id),
+//				DisplayName:         pulumi.Any(analyticsInstancePrivateAccessChannelDisplayName),
 //				PrivateSourceDnsZones: analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{
 //					&analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs{
-//						DnsZone:     pulumi.Any(_var.Analytics_instance_private_access_channel_private_source_dns_zones_dns_zone),
-//						Description: pulumi.Any(_var.Analytics_instance_private_access_channel_private_source_dns_zones_description),
+//						DnsZone:     pulumi.Any(analyticsInstancePrivateAccessChannelPrivateSourceDnsZonesDnsZone),
+//						Description: pulumi.Any(analyticsInstancePrivateAccessChannelPrivateSourceDnsZonesDescription),
 //					},
 //				},
-//				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				VcnId:                   pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				NetworkSecurityGroupIds: pulumi.Any(_var.Analytics_instance_private_access_channel_network_security_group_ids),
+//				SubnetId:                pulumi.Any(testSubnet.Id),
+//				VcnId:                   pulumi.Any(testVcn.Id),
+//				NetworkSecurityGroupIds: pulumi.Any(analyticsInstancePrivateAccessChannelNetworkSecurityGroupIds),
 //				PrivateSourceScanHosts: analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray{
 //					&analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs{
-//						ScanHostname: pulumi.Any(_var.Analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname),
-//						ScanPort:     pulumi.Any(_var.Analytics_instance_private_access_channel_private_source_scan_hosts_scan_port),
-//						Description:  pulumi.Any(_var.Analytics_instance_private_access_channel_private_source_scan_hosts_description),
+//						ScanHostname: pulumi.Any(analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanHostname),
+//						ScanPort:     pulumi.Any(analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanPort),
+//						Description:  pulumi.Any(analyticsInstancePrivateAccessChannelPrivateSourceScanHostsDescription),
 //					},
 //				},
 //			})

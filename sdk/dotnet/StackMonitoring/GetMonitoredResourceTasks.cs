@@ -30,8 +30,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testMonitoredResourceTasks = Oci.StackMonitoring.GetMonitoredResourceTasks.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Status = @var.Monitored_resource_task_status,
+        ///         CompartmentId = compartmentId,
+        ///         Status = monitoredResourceTaskStatus,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testMonitoredResourceTasks = Oci.StackMonitoring.GetMonitoredResourceTasks.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Status = @var.Monitored_resource_task_status,
+        ///         CompartmentId = compartmentId,
+        ///         Status = monitoredResourceTaskStatus,
         ///     });
         /// 
         /// });

@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAuthenticationFactorSetting = Oci.Identity.GetDomainsAuthenticationFactorSetting.Invoke(new()
         ///     {
-        ///         AuthenticationFactorSettingId = oci_identity_domains_authentication_factor_setting.Test_authentication_factor_setting.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         AuthenticationFactorSettingId = testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Authentication_factor_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Authentication_factor_setting_resource_type_schema_version,
+        ///         Authorization = authenticationFactorSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = authenticationFactorSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAuthenticationFactorSetting = Oci.Identity.GetDomainsAuthenticationFactorSetting.Invoke(new()
         ///     {
-        ///         AuthenticationFactorSettingId = oci_identity_domains_authentication_factor_setting.Test_authentication_factor_setting.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         AuthenticationFactorSettingId = testAuthenticationFactorSettingOciIdentityDomainsAuthenticationFactorSetting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Authentication_factor_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Authentication_factor_setting_resource_type_schema_version,
+        ///         Authorization = authenticationFactorSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = authenticationFactorSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

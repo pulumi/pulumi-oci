@@ -16,6 +16,93 @@ import (
 //
 // Create a new cluster.
 //
+// ## Example Usage
+//
+// <!--Start PulumiCodeChooser -->
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/ContainerEngine"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ContainerEngine.NewCluster(ctx, "test_cluster", &ContainerEngine.ClusterArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				KubernetesVersion: pulumi.Any(clusterKubernetesVersion),
+//				Name:              pulumi.Any(clusterName),
+//				VcnId:             pulumi.Any(testVcn.Id),
+//				ClusterPodNetworkOptions: containerengine.ClusterClusterPodNetworkOptionArray{
+//					&containerengine.ClusterClusterPodNetworkOptionArgs{
+//						CniType: pulumi.Any(clusterClusterPodNetworkOptionsCniType),
+//					},
+//				},
+//				DefinedTags: pulumi.Map{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				EndpointConfig: &containerengine.ClusterEndpointConfigArgs{
+//					IsPublicIpEnabled: pulumi.Any(clusterEndpointConfigIsPublicIpEnabled),
+//					NsgIds:            pulumi.Any(clusterEndpointConfigNsgIds),
+//					SubnetId:          pulumi.Any(testSubnet.Id),
+//				},
+//				FreeformTags: pulumi.Map{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				ImagePolicyConfig: &containerengine.ClusterImagePolicyConfigArgs{
+//					IsPolicyEnabled: pulumi.Any(clusterImagePolicyConfigIsPolicyEnabled),
+//					KeyDetails: containerengine.ClusterImagePolicyConfigKeyDetailArray{
+//						&containerengine.ClusterImagePolicyConfigKeyDetailArgs{
+//							KmsKeyId: pulumi.Any(testKey.Id),
+//						},
+//					},
+//				},
+//				KmsKeyId: pulumi.Any(testKey.Id),
+//				Options: &containerengine.ClusterOptionsArgs{
+//					AddOns: &containerengine.ClusterOptionsAddOnsArgs{
+//						IsKubernetesDashboardEnabled: pulumi.Any(clusterOptionsAddOnsIsKubernetesDashboardEnabled),
+//						IsTillerEnabled:              pulumi.Any(clusterOptionsAddOnsIsTillerEnabled),
+//					},
+//					AdmissionControllerOptions: &containerengine.ClusterOptionsAdmissionControllerOptionsArgs{
+//						IsPodSecurityPolicyEnabled: pulumi.Any(clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled),
+//					},
+//					KubernetesNetworkConfig: &containerengine.ClusterOptionsKubernetesNetworkConfigArgs{
+//						PodsCidr:     pulumi.Any(clusterOptionsKubernetesNetworkConfigPodsCidr),
+//						ServicesCidr: pulumi.Any(clusterOptionsKubernetesNetworkConfigServicesCidr),
+//					},
+//					PersistentVolumeConfig: &containerengine.ClusterOptionsPersistentVolumeConfigArgs{
+//						DefinedTags: pulumi.Map{
+//							"Operations.CostCenter": pulumi.Any("42"),
+//						},
+//						FreeformTags: pulumi.Map{
+//							"Department": pulumi.Any("Finance"),
+//						},
+//					},
+//					ServiceLbConfig: &containerengine.ClusterOptionsServiceLbConfigArgs{
+//						DefinedTags: pulumi.Map{
+//							"Operations.CostCenter": pulumi.Any("42"),
+//						},
+//						FreeformTags: pulumi.Map{
+//							"Department": pulumi.Any("Finance"),
+//						},
+//					},
+//					ServiceLbSubnetIds: pulumi.Any(clusterOptionsServiceLbSubnetIds),
+//				},
+//				Type: pulumi.Any(clusterType),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// <!--End PulumiCodeChooser -->
+//
 // ## Import
 //
 // Clusters can be imported using the `id`, e.g.

@@ -121,10 +121,10 @@ def get_occ_customer_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_customer_groups = oci.CapacityManagement.get_occ_customer_groups(compartment_id=var["compartment_id"],
-        display_name=var["occ_customer_group_display_name"],
-        id=var["occ_customer_group_id"],
-        status=var["occ_customer_group_status"])
+    test_occ_customer_groups = oci.CapacityManagement.get_occ_customer_groups(compartment_id=compartment_id,
+        display_name=occ_customer_group_display_name,
+        id=occ_customer_group_id,
+        status=occ_customer_group_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_occ_customer_groups_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_customer_groups = oci.CapacityManagement.get_occ_customer_groups(compartment_id=var["compartment_id"],
-        display_name=var["occ_customer_group_display_name"],
-        id=var["occ_customer_group_id"],
-        status=var["occ_customer_group_status"])
+    test_occ_customer_groups = oci.CapacityManagement.get_occ_customer_groups(compartment_id=compartment_id,
+        display_name=occ_customer_group_display_name,
+        id=occ_customer_group_id,
+        status=occ_customer_group_status)
     ```
     <!--End PulumiCodeChooser -->
 

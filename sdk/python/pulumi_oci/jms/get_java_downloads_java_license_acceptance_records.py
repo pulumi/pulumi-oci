@@ -128,11 +128,11 @@ def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license_acceptance_records = oci.Jms.get_java_downloads_java_license_acceptance_records(compartment_id=var["tenancy_ocid"],
-        id=var["java_license_acceptance_record_id"],
-        license_type=var["java_license_acceptance_record_license_type"],
-        search_by_user=var["java_license_acceptance_record_search_by_user"],
-        status=var["java_license_acceptance_record_status"])
+    test_java_license_acceptance_records = oci.Jms.get_java_downloads_java_license_acceptance_records(compartment_id=tenancy_ocid,
+        id=java_license_acceptance_record_id,
+        license_type=java_license_acceptance_record_license_type,
+        search_by_user=java_license_acceptance_record_search_by_user,
+        status=java_license_acceptance_record_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -183,11 +183,11 @@ def get_java_downloads_java_license_acceptance_records_output(compartment_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license_acceptance_records = oci.Jms.get_java_downloads_java_license_acceptance_records(compartment_id=var["tenancy_ocid"],
-        id=var["java_license_acceptance_record_id"],
-        license_type=var["java_license_acceptance_record_license_type"],
-        search_by_user=var["java_license_acceptance_record_search_by_user"],
-        status=var["java_license_acceptance_record_status"])
+    test_java_license_acceptance_records = oci.Jms.get_java_downloads_java_license_acceptance_records(compartment_id=tenancy_ocid,
+        id=java_license_acceptance_record_id,
+        license_type=java_license_acceptance_record_license_type,
+        search_by_user=java_license_acceptance_record_search_by_user,
+        status=java_license_acceptance_record_status)
     ```
     <!--End PulumiCodeChooser -->
 

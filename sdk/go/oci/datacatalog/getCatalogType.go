@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetCatalogType(ctx, &datacatalog.GetCatalogTypeArgs{
-//				CatalogId: oci_datacatalog_catalog.Test_catalog.Id,
-//				TypeKey:   _var.Catalog_type_type_key,
-//				Fields:    _var.Catalog_type_fields,
+//				CatalogId: testCatalog.Id,
+//				TypeKey:   catalogTypeTypeKey,
+//				Fields:    catalogTypeFields,
 //			}, nil)
 //			if err != nil {
 //				return err

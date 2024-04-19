@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbNodeConsoleHistoryContent = oci.Database.getDbNodeConsoleHistoryContent({
- *     consoleHistoryId: oci_core_console_history.test_console_history.id,
- *     dbNodeId: oci_database_db_node.test_db_node.id,
+ *     consoleHistoryId: testConsoleHistory.id,
+ *     dbNodeId: testDbNode.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -70,8 +70,8 @@ export interface GetDbNodeConsoleHistoryContentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbNodeConsoleHistoryContent = oci.Database.getDbNodeConsoleHistoryContent({
- *     consoleHistoryId: oci_core_console_history.test_console_history.id,
- *     dbNodeId: oci_database_db_node.test_db_node.id,
+ *     consoleHistoryId: testConsoleHistory.id,
+ *     dbNodeId: testDbNode.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

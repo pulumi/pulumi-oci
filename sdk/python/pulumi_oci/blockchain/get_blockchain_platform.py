@@ -383,7 +383,7 @@ def get_blockchain_platform(blockchain_platform_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
+    test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=test_blockchain_platform_oci_blockchain_blockchain_platform["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -442,7 +442,7 @@ def get_blockchain_platform_output(blockchain_platform_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
+    test_blockchain_platform = oci.Blockchain.get_blockchain_platform(blockchain_platform_id=test_blockchain_platform_oci_blockchain_blockchain_platform["id"])
     ```
     <!--End PulumiCodeChooser -->
 

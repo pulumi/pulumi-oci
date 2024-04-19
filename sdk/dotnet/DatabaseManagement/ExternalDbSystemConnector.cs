@@ -25,11 +25,11 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalDbSystemConnector = new Oci.DatabaseManagement.ExternalDbSystemConnector("testExternalDbSystemConnector", new()
+    ///     var testExternalDbSystemConnector = new Oci.DatabaseManagement.ExternalDbSystemConnector("test_external_db_system_connector", new()
     ///     {
-    ///         ConnectorType = @var.External_db_system_connector_connector_type,
-    ///         ExternalDbSystemId = oci_database_management_external_db_system.Test_external_db_system.Id,
-    ///         DisplayName = @var.External_db_system_connector_display_name,
+    ///         ConnectorType = externalDbSystemConnectorConnectorType,
+    ///         ExternalDbSystemId = testExternalDbSystem.Id,
+    ///         DisplayName = externalDbSystemConnectorDisplayName,
     ///     });
     /// 
     /// });

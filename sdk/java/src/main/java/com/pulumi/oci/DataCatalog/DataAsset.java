@@ -45,11 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDataAsset = new DataAsset(&#34;testDataAsset&#34;, DataAssetArgs.builder()        
- *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
- *             .displayName(var_.data_asset_display_name())
- *             .typeKey(var_.data_asset_type_key())
- *             .description(var_.data_asset_description())
- *             .properties(var_.data_asset_properties())
+ *             .catalogId(testCatalog.id())
+ *             .displayName(dataAssetDisplayName)
+ *             .typeKey(dataAssetTypeKey)
+ *             .description(dataAssetDescription)
+ *             .properties(dataAssetProperties)
  *             .build());
  * 
  *     }

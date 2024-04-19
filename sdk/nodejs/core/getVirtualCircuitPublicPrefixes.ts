@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualCircuitPublicPrefixes = oci.Core.getVirtualCircuitPublicPrefixes({
- *     virtualCircuitId: oci_core_virtual_circuit.test_virtual_circuit.id,
- *     verificationState: _var.virtual_circuit_public_prefix_verification_state,
+ *     virtualCircuitId: testVirtualCircuit.id,
+ *     verificationState: virtualCircuitPublicPrefixVerificationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,8 +86,8 @@ export interface GetVirtualCircuitPublicPrefixesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualCircuitPublicPrefixes = oci.Core.getVirtualCircuitPublicPrefixes({
- *     virtualCircuitId: oci_core_virtual_circuit.test_virtual_circuit.id,
- *     verificationState: _var.virtual_circuit_public_prefix_verification_state,
+ *     virtualCircuitId: testVirtualCircuit.id,
+ *     verificationState: virtualCircuitPublicPrefixVerificationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

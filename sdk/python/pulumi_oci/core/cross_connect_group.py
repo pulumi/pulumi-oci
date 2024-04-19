@@ -330,23 +330,23 @@ class CrossConnectGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cross_connect_group = oci.core.CrossConnectGroup("testCrossConnectGroup",
-            compartment_id=var["compartment_id"],
-            customer_reference_name=var["cross_connect_group_customer_reference_name"],
+        test_cross_connect_group = oci.core.CrossConnectGroup("test_cross_connect_group",
+            compartment_id=compartment_id,
+            customer_reference_name=cross_connect_group_customer_reference_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["cross_connect_group_display_name"],
+            display_name=cross_connect_group_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             macsec_properties=oci.core.CrossConnectGroupMacsecPropertiesArgs(
-                state=var["cross_connect_group_macsec_properties_state"],
-                encryption_cipher=var["cross_connect_group_macsec_properties_encryption_cipher"],
-                is_unprotected_traffic_allowed=var["cross_connect_group_macsec_properties_is_unprotected_traffic_allowed"],
+                state=cross_connect_group_macsec_properties_state,
+                encryption_cipher=cross_connect_group_macsec_properties_encryption_cipher,
+                is_unprotected_traffic_allowed=cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
                 primary_key=oci.core.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs(
-                    connectivity_association_key_secret_id=oci_vault_secret["test_secret"]["id"],
-                    connectivity_association_name_secret_id=oci_vault_secret["test_secret"]["id"],
+                    connectivity_association_key_secret_id=test_secret["id"],
+                    connectivity_association_name_secret_id=test_secret["id"],
                 ),
             ))
         ```
@@ -401,23 +401,23 @@ class CrossConnectGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cross_connect_group = oci.core.CrossConnectGroup("testCrossConnectGroup",
-            compartment_id=var["compartment_id"],
-            customer_reference_name=var["cross_connect_group_customer_reference_name"],
+        test_cross_connect_group = oci.core.CrossConnectGroup("test_cross_connect_group",
+            compartment_id=compartment_id,
+            customer_reference_name=cross_connect_group_customer_reference_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["cross_connect_group_display_name"],
+            display_name=cross_connect_group_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             macsec_properties=oci.core.CrossConnectGroupMacsecPropertiesArgs(
-                state=var["cross_connect_group_macsec_properties_state"],
-                encryption_cipher=var["cross_connect_group_macsec_properties_encryption_cipher"],
-                is_unprotected_traffic_allowed=var["cross_connect_group_macsec_properties_is_unprotected_traffic_allowed"],
+                state=cross_connect_group_macsec_properties_state,
+                encryption_cipher=cross_connect_group_macsec_properties_encryption_cipher,
+                is_unprotected_traffic_allowed=cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
                 primary_key=oci.core.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs(
-                    connectivity_association_key_secret_id=oci_vault_secret["test_secret"]["id"],
-                    connectivity_association_name_secret_id=oci_vault_secret["test_secret"]["id"],
+                    connectivity_association_key_secret_id=test_secret["id"],
+                    connectivity_association_name_secret_id=test_secret["id"],
                 ),
             ))
         ```

@@ -31,11 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewBaselineableMetric(ctx, "testBaselineableMetric", &StackMonitoring.BaselineableMetricArgs{
-//				Column:        pulumi.Any(_var.Baselineable_metric_column),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Namespace:     pulumi.Any(_var.Baselineable_metric_namespace),
-//				ResourceGroup: pulumi.Any(_var.Baselineable_metric_resource_group),
+//			_, err := StackMonitoring.NewBaselineableMetric(ctx, "test_baselineable_metric", &StackMonitoring.BaselineableMetricArgs{
+//				Column:        pulumi.Any(baselineableMetricColumn),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(baselineableMetricName),
+//				Namespace:     pulumi.Any(baselineableMetricNamespace),
+//				ResourceGroup: pulumi.Any(baselineableMetricResourceGroup),
 //			})
 //			if err != nil {
 //				return err

@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAppCatalogListingResourceVersion = oci.Core.getAppCatalogListingResourceVersion({
- *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
- *     resourceVersion: _var.app_catalog_listing_resource_version_resource_version,
+ *     listingId: testListing.id,
+ *     resourceVersion: appCatalogListingResourceVersionResourceVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,8 +101,8 @@ export interface GetAppCatalogListingResourceVersionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAppCatalogListingResourceVersion = oci.Core.getAppCatalogListingResourceVersion({
- *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
- *     resourceVersion: _var.app_catalog_listing_resource_version_resource_version,
+ *     listingId: testListing.id,
+ *     resourceVersion: appCatalogListingResourceVersionResourceVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

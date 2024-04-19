@@ -44,12 +44,12 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDetectorRecipes = Oci.CloudGuard.GetDetectorRecipes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Detector_recipe_access_level,
-        ///         CompartmentIdInSubtree = @var.Detector_recipe_compartment_id_in_subtree,
-        ///         DisplayName = @var.Detector_recipe_display_name,
-        ///         ResourceMetadataOnly = @var.Detector_recipe_resource_metadata_only,
-        ///         State = @var.Detector_recipe_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = detectorRecipeAccessLevel,
+        ///         CompartmentIdInSubtree = detectorRecipeCompartmentIdInSubtree,
+        ///         DisplayName = detectorRecipeDisplayName,
+        ///         ResourceMetadataOnly = detectorRecipeResourceMetadataOnly,
+        ///         State = detectorRecipeState,
         ///     });
         /// 
         /// });
@@ -92,12 +92,12 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDetectorRecipes = Oci.CloudGuard.GetDetectorRecipes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Detector_recipe_access_level,
-        ///         CompartmentIdInSubtree = @var.Detector_recipe_compartment_id_in_subtree,
-        ///         DisplayName = @var.Detector_recipe_display_name,
-        ///         ResourceMetadataOnly = @var.Detector_recipe_resource_metadata_only,
-        ///         State = @var.Detector_recipe_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = detectorRecipeAccessLevel,
+        ///         CompartmentIdInSubtree = detectorRecipeCompartmentIdInSubtree,
+        ///         DisplayName = detectorRecipeDisplayName,
+        ///         ResourceMetadataOnly = detectorRecipeResourceMetadataOnly,
+        ///         State = detectorRecipeState,
         ///     });
         /// 
         /// });

@@ -49,12 +49,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedDatabaseGroup = new ManagedDatabaseGroup(&#34;testManagedDatabaseGroup&#34;, ManagedDatabaseGroupArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
+ *             .name(managedDatabaseGroupName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.managed_database_group_description())
+ *             .description(managedDatabaseGroupDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .managedDatabases(ManagedDatabaseGroupManagedDatabaseArgs.builder()
- *                 .id(var_.managed_database_id())
+ *                 .id(managedDatabaseId)
  *                 .build())
  *             .build());
  * 

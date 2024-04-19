@@ -16,17 +16,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigration = new oci.cloudmigrations.Migration("testMigration", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.migration_display_name,
+ * const testMigration = new oci.cloudmigrations.Migration("test_migration", {
+ *     compartmentId: compartmentId,
+ *     displayName: migrationDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isCompleted: _var.migration_is_completed,
- *     replicationScheduleId: oci_cloud_migrations_replication_schedule.test_replication_schedule.id,
+ *     isCompleted: migrationIsCompleted,
+ *     replicationScheduleId: testReplicationSchedule.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

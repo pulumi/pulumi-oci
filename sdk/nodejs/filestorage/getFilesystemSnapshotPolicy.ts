@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFilesystemSnapshotPolicy = oci.FileStorage.getFilesystemSnapshotPolicy({
- *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
+ *     filesystemSnapshotPolicyId: testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,7 +101,7 @@ export interface GetFilesystemSnapshotPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFilesystemSnapshotPolicy = oci.FileStorage.getFilesystemSnapshotPolicy({
- *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
+ *     filesystemSnapshotPolicyId: testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

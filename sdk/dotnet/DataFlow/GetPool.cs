@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testPool = Oci.DataFlow.GetPool.Invoke(new()
         ///     {
-        ///         PoolId = oci_dataflow_pool.Test_pool.Id,
+        ///         PoolId = testPoolOciDataflowPool.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testPool = Oci.DataFlow.GetPool.Invoke(new()
         ///     {
-        ///         PoolId = oci_dataflow_pool.Test_pool.Id,
+        ///         PoolId = testPoolOciDataflowPool.Id,
         ///     });
         /// 
         /// });

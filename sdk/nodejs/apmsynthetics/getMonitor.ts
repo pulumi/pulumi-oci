@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitor = oci.ApmSynthetics.getMonitor({
- *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
- *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ *     apmDomainId: testApmDomain.id,
+ *     monitorId: testMonitorOciApmSyntheticsMonitor.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -160,8 +160,8 @@ export interface GetMonitorResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitor = oci.ApmSynthetics.getMonitor({
- *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
- *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ *     apmDomainId: testApmDomain.id,
+ *     monitorId: testMonitorOciApmSyntheticsMonitor.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

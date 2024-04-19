@@ -114,9 +114,9 @@ def get_compute_capacity_topology_compute_hpc_islands(availability_domain: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_hpc_islands = oci.Core.get_compute_capacity_topology_compute_hpc_islands(compute_capacity_topology_id=oci_core_compute_capacity_topology["test_compute_capacity_topology"]["id"],
-        availability_domain=var["compute_capacity_topology_compute_hpc_island_availability_domain"],
-        compartment_id=var["compartment_id"])
+    test_compute_capacity_topology_compute_hpc_islands = oci.Core.get_compute_capacity_topology_compute_hpc_islands(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+        availability_domain=compute_capacity_topology_compute_hpc_island_availability_domain,
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -160,9 +160,9 @@ def get_compute_capacity_topology_compute_hpc_islands_output(availability_domain
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_hpc_islands = oci.Core.get_compute_capacity_topology_compute_hpc_islands(compute_capacity_topology_id=oci_core_compute_capacity_topology["test_compute_capacity_topology"]["id"],
-        availability_domain=var["compute_capacity_topology_compute_hpc_island_availability_domain"],
-        compartment_id=var["compartment_id"])
+    test_compute_capacity_topology_compute_hpc_islands = oci.Core.get_compute_capacity_topology_compute_hpc_islands(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+        availability_domain=compute_capacity_topology_compute_hpc_island_availability_domain,
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

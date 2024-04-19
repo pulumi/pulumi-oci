@@ -43,13 +43,13 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testManagedLists = Oci.CloudGuard.GetManagedLists.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Managed_list_access_level,
-        ///         CompartmentIdInSubtree = @var.Managed_list_compartment_id_in_subtree,
-        ///         DisplayName = @var.Managed_list_display_name,
-        ///         ListType = @var.Managed_list_list_type,
-        ///         ResourceMetadataOnly = @var.Managed_list_resource_metadata_only,
-        ///         State = @var.Managed_list_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = managedListAccessLevel,
+        ///         CompartmentIdInSubtree = managedListCompartmentIdInSubtree,
+        ///         DisplayName = managedListDisplayName,
+        ///         ListType = managedListListType,
+        ///         ResourceMetadataOnly = managedListResourceMetadataOnly,
+        ///         State = managedListState,
         ///     });
         /// 
         /// });
@@ -91,13 +91,13 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testManagedLists = Oci.CloudGuard.GetManagedLists.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Managed_list_access_level,
-        ///         CompartmentIdInSubtree = @var.Managed_list_compartment_id_in_subtree,
-        ///         DisplayName = @var.Managed_list_display_name,
-        ///         ListType = @var.Managed_list_list_type,
-        ///         ResourceMetadataOnly = @var.Managed_list_resource_metadata_only,
-        ///         State = @var.Managed_list_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = managedListAccessLevel,
+        ///         CompartmentIdInSubtree = managedListCompartmentIdInSubtree,
+        ///         DisplayName = managedListDisplayName,
+        ///         ListType = managedListListType,
+        ///         ResourceMetadataOnly = managedListResourceMetadataOnly,
+        ///         State = managedListState,
         ///     });
         /// 
         /// });

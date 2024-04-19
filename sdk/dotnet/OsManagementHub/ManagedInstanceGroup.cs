@@ -25,27 +25,27 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagedInstanceGroup = new Oci.OsManagementHub.ManagedInstanceGroup("testManagedInstanceGroup", new()
+    ///     var testManagedInstanceGroup = new Oci.OsManagementHub.ManagedInstanceGroup("test_managed_instance_group", new()
     ///     {
-    ///         ArchType = @var.Managed_instance_group_arch_type,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Managed_instance_group_display_name,
-    ///         OsFamily = @var.Managed_instance_group_os_family,
     ///         SoftwareSourceIds = new[]
     ///         {
     ///             null,
     ///         },
-    ///         VendorName = @var.Managed_instance_group_vendor_name,
+    ///         ArchType = managedInstanceGroupArchType,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = managedInstanceGroupDisplayName,
+    ///         OsFamily = managedInstanceGroupOsFamily,
+    ///         VendorName = managedInstanceGroupVendorName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Managed_instance_group_description,
+    ///         Description = managedInstanceGroupDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         ManagedInstanceIds = @var.Managed_instance_group_managed_instance_ids,
+    ///         ManagedInstanceIds = managedInstanceGroupManagedInstanceIds,
     ///     });
     /// 
     /// });

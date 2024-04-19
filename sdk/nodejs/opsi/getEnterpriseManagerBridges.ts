@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEnterpriseManagerBridges = oci.Opsi.getEnterpriseManagerBridges({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.enterprise_manager_bridge_compartment_id_in_subtree,
- *     displayName: _var.enterprise_manager_bridge_display_name,
- *     id: _var.enterprise_manager_bridge_id,
- *     states: _var.enterprise_manager_bridge_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree,
+ *     displayName: enterpriseManagerBridgeDisplayName,
+ *     id: enterpriseManagerBridgeId,
+ *     states: enterpriseManagerBridgeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetEnterpriseManagerBridgesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEnterpriseManagerBridges = oci.Opsi.getEnterpriseManagerBridges({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.enterprise_manager_bridge_compartment_id_in_subtree,
- *     displayName: _var.enterprise_manager_bridge_display_name,
- *     id: _var.enterprise_manager_bridge_id,
- *     states: _var.enterprise_manager_bridge_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: enterpriseManagerBridgeCompartmentIdInSubtree,
+ *     displayName: enterpriseManagerBridgeDisplayName,
+ *     id: enterpriseManagerBridgeId,
+ *     states: enterpriseManagerBridgeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

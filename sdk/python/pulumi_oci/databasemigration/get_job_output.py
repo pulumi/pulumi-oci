@@ -80,7 +80,7 @@ def get_job_output(job_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_output = oci.DatabaseMigration.get_job_output(job_id=oci_database_migration_job["test_job"]["id"])
+    test_job_output = oci.DatabaseMigration.get_job_output(job_id=test_job["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -113,7 +113,7 @@ def get_job_output_output(job_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_output = oci.DatabaseMigration.get_job_output(job_id=oci_database_migration_job["test_job"]["id"])
+    test_job_output = oci.DatabaseMigration.get_job_output(job_id=test_job["id"])
     ```
     <!--End PulumiCodeChooser -->
 

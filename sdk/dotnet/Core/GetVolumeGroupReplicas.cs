@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeGroupReplicas = Oci.Core.GetVolumeGroupReplicas.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Volume_group_replica_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Volume_group_replica_display_name,
-        ///         State = @var.Volume_group_replica_state,
+        ///         AvailabilityDomain = volumeGroupReplicaAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = volumeGroupReplicaDisplayName,
+        ///         State = volumeGroupReplicaState,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeGroupReplicas = Oci.Core.GetVolumeGroupReplicas.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Volume_group_replica_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Volume_group_replica_display_name,
-        ///         State = @var.Volume_group_replica_state,
+        ///         AvailabilityDomain = volumeGroupReplicaAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = volumeGroupReplicaDisplayName,
+        ///         State = volumeGroupReplicaState,
         ///     });
         /// 
         /// });

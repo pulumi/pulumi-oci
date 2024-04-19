@@ -31,29 +31,29 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.NewMediaWorkflowJob(ctx, "testMediaWorkflowJob", &MediaServices.MediaWorkflowJobArgs{
-//				CompartmentId:          pulumi.Any(_var.Compartment_id),
-//				WorkflowIdentifierType: pulumi.Any(_var.Media_workflow_job_workflow_identifier_type),
+//			_, err := MediaServices.NewMediaWorkflowJob(ctx, "test_media_workflow_job", &MediaServices.MediaWorkflowJobArgs{
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				WorkflowIdentifierType: pulumi.Any(mediaWorkflowJobWorkflowIdentifierType),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Media_workflow_job_display_name),
+//				DisplayName: pulumi.Any(mediaWorkflowJobDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Locks: mediaservices.MediaWorkflowJobLockArray{
 //					&mediaservices.MediaWorkflowJobLockArgs{
-//						CompartmentId:     pulumi.Any(_var.Compartment_id),
-//						Type:              pulumi.Any(_var.Media_workflow_job_locks_type),
-//						Message:           pulumi.Any(_var.Media_workflow_job_locks_message),
-//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
-//						TimeCreated:       pulumi.Any(_var.Media_workflow_job_locks_time_created),
+//						CompartmentId:     pulumi.Any(compartmentId),
+//						Type:              pulumi.Any(mediaWorkflowJobLocksType),
+//						Message:           pulumi.Any(mediaWorkflowJobLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(mediaWorkflowJobLocksTimeCreated),
 //					},
 //				},
-//				MediaWorkflowConfigurationIds: pulumi.Any(_var.Media_workflow_job_media_workflow_configuration_ids),
-//				MediaWorkflowId:               pulumi.Any(oci_media_services_media_workflow.Test_media_workflow.Id),
-//				MediaWorkflowName:             pulumi.Any(oci_media_services_media_workflow.Test_media_workflow.Name),
-//				Parameters:                    pulumi.Any(_var.Media_workflow_job_parameters),
+//				MediaWorkflowConfigurationIds: pulumi.Any(mediaWorkflowJobMediaWorkflowConfigurationIds),
+//				MediaWorkflowId:               pulumi.Any(testMediaWorkflow.Id),
+//				MediaWorkflowName:             pulumi.Any(testMediaWorkflow.Name),
+//				Parameters:                    pulumi.Any(mediaWorkflowJobParameters),
 //			})
 //			if err != nil {
 //				return err

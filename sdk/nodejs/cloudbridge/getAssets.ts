@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAssets = oci.CloudBridge.getAssets({
- *     compartmentId: _var.compartment_id,
- *     assetId: oci_cloud_bridge_asset.test_asset.id,
- *     assetType: _var.asset_asset_type,
- *     displayName: _var.asset_display_name,
- *     externalAssetKey: _var.asset_external_asset_key,
- *     inventoryId: oci_cloud_bridge_inventory.test_inventory.id,
- *     sourceKey: _var.asset_source_key,
- *     state: _var.asset_state,
+ *     compartmentId: compartmentId,
+ *     assetId: testAsset.id,
+ *     assetType: assetAssetType,
+ *     displayName: assetDisplayName,
+ *     externalAssetKey: assetExternalAssetKey,
+ *     inventoryId: testInventory.id,
+ *     sourceKey: assetSourceKey,
+ *     state: assetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,14 +142,14 @@ export interface GetAssetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAssets = oci.CloudBridge.getAssets({
- *     compartmentId: _var.compartment_id,
- *     assetId: oci_cloud_bridge_asset.test_asset.id,
- *     assetType: _var.asset_asset_type,
- *     displayName: _var.asset_display_name,
- *     externalAssetKey: _var.asset_external_asset_key,
- *     inventoryId: oci_cloud_bridge_inventory.test_inventory.id,
- *     sourceKey: _var.asset_source_key,
- *     state: _var.asset_state,
+ *     compartmentId: compartmentId,
+ *     assetId: testAsset.id,
+ *     assetType: assetAssetType,
+ *     displayName: assetDisplayName,
+ *     externalAssetKey: assetExternalAssetKey,
+ *     inventoryId: testInventory.id,
+ *     sourceKey: assetSourceKey,
+ *     state: assetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -28,22 +28,22 @@ namespace Pulumi.Oci.Oda
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOdaInstance = new Oci.Oda.OdaInstance("testOdaInstance", new()
+    ///     var testOdaInstance = new Oci.Oda.OdaInstance("test_oda_instance", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         ShapeName = "DEVELOPMENT",
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Oda_instance_description,
-    ///         DisplayName = @var.Oda_instance_display_name,
+    ///         Description = odaInstanceDescription,
+    ///         DisplayName = odaInstanceDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IdentityDomain = @var.Oda_instance_identity_domain,
-    ///         IsRoleBasedAccess = @var.Oda_instance_is_role_based_access,
+    ///         IdentityDomain = odaInstanceIdentityDomain,
+    ///         IsRoleBasedAccess = odaInstanceIsRoleBasedAccess,
     ///     });
     /// 
     /// });

@@ -25,37 +25,38 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLogAnalyticsObjectCollectionRule = new Oci.LogAnalytics.LogAnalyticsObjectCollectionRule("testLogAnalyticsObjectCollectionRule", new()
+    ///     var testLogAnalyticsObjectCollectionRule = new Oci.LogAnalytics.LogAnalyticsObjectCollectionRule("test_log_analytics_object_collection_rule", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///         LogSourceName = @var.Log_analytics_object_collection_rule_log_source_name,
-    ///         Namespace = @var.Log_analytics_object_collection_rule_namespace,
-    ///         OsBucketName = oci_objectstorage_bucket.Test_bucket.Name,
-    ///         OsNamespace = @var.Log_analytics_object_collection_rule_os_namespace,
-    ///         CharEncoding = @var.Log_analytics_object_collection_rule_char_encoding,
-    ///         CollectionType = @var.Log_analytics_object_collection_rule_collection_type,
+    ///         CompartmentId = compartmentId,
+    ///         LogGroupId = testLogGroup.Id,
+    ///         LogSourceName = logAnalyticsObjectCollectionRuleLogSourceName,
+    ///         Name = logAnalyticsObjectCollectionRuleName,
+    ///         Namespace = logAnalyticsObjectCollectionRuleNamespace,
+    ///         OsBucketName = testBucket.Name,
+    ///         OsNamespace = logAnalyticsObjectCollectionRuleOsNamespace,
+    ///         CharEncoding = logAnalyticsObjectCollectionRuleCharEncoding,
+    ///         CollectionType = logAnalyticsObjectCollectionRuleCollectionType,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Log_analytics_object_collection_rule_description,
-    ///         EntityId = oci_log_analytics_entity.Test_entity.Id,
+    ///         Description = logAnalyticsObjectCollectionRuleDescription,
+    ///         EntityId = testEntity.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsEnabled = @var.Log_analytics_object_collection_rule_is_enabled,
-    ///         IsForceHistoricCollection = @var.Log_analytics_object_collection_rule_is_force_historic_collection,
-    ///         LogSet = @var.Log_analytics_object_collection_rule_log_set,
-    ///         LogSetExtRegex = @var.Log_analytics_object_collection_rule_log_set_ext_regex,
-    ///         LogSetKey = @var.Log_analytics_object_collection_rule_log_set_key,
-    ///         LogType = @var.Log_analytics_object_collection_rule_log_type,
-    ///         ObjectNameFilters = @var.Log_analytics_object_collection_rule_object_name_filters,
-    ///         Overrides = @var.Log_analytics_object_collection_rule_overrides,
-    ///         PollSince = @var.Log_analytics_object_collection_rule_poll_since,
-    ///         PollTill = @var.Log_analytics_object_collection_rule_poll_till,
-    ///         Timezone = @var.Log_analytics_object_collection_rule_timezone,
+    ///         IsEnabled = logAnalyticsObjectCollectionRuleIsEnabled,
+    ///         IsForceHistoricCollection = logAnalyticsObjectCollectionRuleIsForceHistoricCollection,
+    ///         LogSet = logAnalyticsObjectCollectionRuleLogSet,
+    ///         LogSetExtRegex = logAnalyticsObjectCollectionRuleLogSetExtRegex,
+    ///         LogSetKey = logAnalyticsObjectCollectionRuleLogSetKey,
+    ///         LogType = logAnalyticsObjectCollectionRuleLogType,
+    ///         ObjectNameFilters = logAnalyticsObjectCollectionRuleObjectNameFilters,
+    ///         Overrides = logAnalyticsObjectCollectionRuleOverrides,
+    ///         PollSince = logAnalyticsObjectCollectionRulePollSince,
+    ///         PollTill = logAnalyticsObjectCollectionRulePollTill,
+    ///         Timezone = logAnalyticsObjectCollectionRuleTimezone,
     ///     });
     /// 
     /// });

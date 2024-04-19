@@ -222,8 +222,8 @@ def get_publication_package(package_version: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_package = oci.Marketplace.get_publication_package(package_version=var["publication_package_package_version"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
+    test_publication_package = oci.Marketplace.get_publication_package(package_version=publication_package_package_version,
+        publication_id=test_publication["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -271,8 +271,8 @@ def get_publication_package_output(package_version: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_package = oci.Marketplace.get_publication_package(package_version=var["publication_package_package_version"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
+    test_publication_package = oci.Marketplace.get_publication_package(package_version=publication_package_package_version,
+        publication_id=test_publication["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -169,13 +169,13 @@ def get_masking_report_masked_columns(column_names: Optional[Sequence[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports_masked_columns = oci.DataSafe.get_masking_report_masked_columns(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"],
-        column_names=var["masking_reports_masked_column_column_name"],
-        masking_column_groups=var["masking_reports_masked_column_masking_column_group"],
-        objects=var["masking_reports_masked_column_object"],
-        object_types=var["masking_reports_masked_column_object_type"],
-        schema_names=var["masking_reports_masked_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
+    test_masking_reports_masked_columns = oci.DataSafe.get_masking_report_masked_columns(masking_report_id=test_masking_report["id"],
+        column_names=masking_reports_masked_column_column_name,
+        masking_column_groups=masking_reports_masked_column_masking_column_group,
+        objects=masking_reports_masked_column_object,
+        object_types=masking_reports_masked_column_object_type,
+        schema_names=masking_reports_masked_column_schema_name,
+        sensitive_type_id=test_sensitive_type["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -235,13 +235,13 @@ def get_masking_report_masked_columns_output(column_names: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports_masked_columns = oci.DataSafe.get_masking_report_masked_columns(masking_report_id=oci_data_safe_masking_report["test_masking_report"]["id"],
-        column_names=var["masking_reports_masked_column_column_name"],
-        masking_column_groups=var["masking_reports_masked_column_masking_column_group"],
-        objects=var["masking_reports_masked_column_object"],
-        object_types=var["masking_reports_masked_column_object_type"],
-        schema_names=var["masking_reports_masked_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"])
+    test_masking_reports_masked_columns = oci.DataSafe.get_masking_report_masked_columns(masking_report_id=test_masking_report["id"],
+        column_names=masking_reports_masked_column_column_name,
+        masking_column_groups=masking_reports_masked_column_masking_column_group,
+        objects=masking_reports_masked_column_object,
+        object_types=masking_reports_masked_column_object_type,
+        schema_names=masking_reports_masked_column_schema_name,
+        sensitive_type_id=test_sensitive_type["id"])
     ```
     <!--End PulumiCodeChooser -->
 

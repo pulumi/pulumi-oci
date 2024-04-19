@@ -31,17 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewGeneratedKey(ctx, "testGeneratedKey", &Kms.GeneratedKeyArgs{
-//				CryptoEndpoint:      pulumi.Any(_var.Generated_key_crypto_endpoint),
-//				IncludePlaintextKey: pulumi.Any(_var.Generated_key_include_plaintext_key),
-//				KeyId:               pulumi.Any(oci_kms_key.Test_key.Id),
+//			_, err := Kms.NewGeneratedKey(ctx, "test_generated_key", &Kms.GeneratedKeyArgs{
+//				CryptoEndpoint:      pulumi.Any(generatedKeyCryptoEndpoint),
+//				IncludePlaintextKey: pulumi.Any(generatedKeyIncludePlaintextKey),
+//				KeyId:               pulumi.Any(testKey.Id),
 //				KeyShape: &kms.GeneratedKeyKeyShapeArgs{
-//					Algorithm: pulumi.Any(_var.Generated_key_key_shape_algorithm),
-//					Length:    pulumi.Any(_var.Generated_key_key_shape_length),
-//					CurveId:   pulumi.Any(oci_kms_curve.Test_curve.Id),
+//					Algorithm: pulumi.Any(generatedKeyKeyShapeAlgorithm),
+//					Length:    pulumi.Any(generatedKeyKeyShapeLength),
+//					CurveId:   pulumi.Any(testCurve.Id),
 //				},
-//				AssociatedData: pulumi.Any(_var.Generated_key_associated_data),
-//				LoggingContext: pulumi.Any(_var.Generated_key_logging_context),
+//				AssociatedData: pulumi.Any(generatedKeyAssociatedData),
+//				LoggingContext: pulumi.Any(generatedKeyLoggingContext),
 //			})
 //			if err != nil {
 //				return err

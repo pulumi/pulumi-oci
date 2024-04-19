@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEmailDomain = oci.Email.getEmailDomain({
- *     emailDomainId: oci_email_email_domain.test_email_domain.id,
+ *     emailDomainId: testEmailDomainOciEmailEmailDomain.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,7 +103,7 @@ export interface GetEmailDomainResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEmailDomain = oci.Email.getEmailDomain({
- *     emailDomainId: oci_email_email_domain.test_email_domain.id,
+ *     emailDomainId: testEmailDomainOciEmailEmailDomain.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetTargetDatabaseRoles(ctx, &datasafe.GetTargetDatabaseRolesArgs{
-//				TargetDatabaseId:   oci_data_safe_target_database.Test_target_database.Id,
-//				AuthenticationType: pulumi.StringRef(_var.Target_database_role_authentication_type),
-//				IsOracleMaintained: pulumi.BoolRef(_var.Target_database_role_is_oracle_maintained),
-//				RoleNames:          _var.Target_database_role_role_name,
-//				RoleNameContains:   pulumi.StringRef(_var.Target_database_role_role_name_contains),
+//				TargetDatabaseId:   testTargetDatabase.Id,
+//				AuthenticationType: pulumi.StringRef(targetDatabaseRoleAuthenticationType),
+//				IsOracleMaintained: pulumi.BoolRef(targetDatabaseRoleIsOracleMaintained),
+//				RoleNames:          targetDatabaseRoleRoleName,
+//				RoleNameContains:   pulumi.StringRef(targetDatabaseRoleRoleNameContains),
 //			}, nil)
 //			if err != nil {
 //				return err

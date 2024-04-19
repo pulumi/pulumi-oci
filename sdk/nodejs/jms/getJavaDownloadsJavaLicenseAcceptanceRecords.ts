@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaLicenseAcceptanceRecords = oci.Jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
- *     compartmentId: _var.tenancy_ocid,
- *     id: _var.java_license_acceptance_record_id,
- *     licenseType: _var.java_license_acceptance_record_license_type,
- *     searchByUser: _var.java_license_acceptance_record_search_by_user,
- *     status: _var.java_license_acceptance_record_status,
+ *     compartmentId: tenancyOcid,
+ *     id: javaLicenseAcceptanceRecordId,
+ *     licenseType: javaLicenseAcceptanceRecordLicenseType,
+ *     searchByUser: javaLicenseAcceptanceRecordSearchByUser,
+ *     status: javaLicenseAcceptanceRecordStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,11 +105,11 @@ export interface GetJavaDownloadsJavaLicenseAcceptanceRecordsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaLicenseAcceptanceRecords = oci.Jms.getJavaDownloadsJavaLicenseAcceptanceRecords({
- *     compartmentId: _var.tenancy_ocid,
- *     id: _var.java_license_acceptance_record_id,
- *     licenseType: _var.java_license_acceptance_record_license_type,
- *     searchByUser: _var.java_license_acceptance_record_search_by_user,
- *     status: _var.java_license_acceptance_record_status,
+ *     compartmentId: tenancyOcid,
+ *     id: javaLicenseAcceptanceRecordId,
+ *     licenseType: javaLicenseAcceptanceRecordLicenseType,
+ *     searchByUser: javaLicenseAcceptanceRecordSearchByUser,
+ *     status: javaLicenseAcceptanceRecordStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

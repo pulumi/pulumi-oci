@@ -25,48 +25,49 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkLoadBalancersBackendSetsUnified = new Oci.NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnified("testNetworkLoadBalancersBackendSetsUnified", new()
+    ///     var testNetworkLoadBalancersBackendSetsUnified = new Oci.NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnified("test_network_load_balancers_backend_sets_unified", new()
     ///     {
     ///         HealthChecker = new Oci.NetworkLoadBalancer.Inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs
     ///         {
-    ///             Protocol = @var.Network_load_balancers_backend_sets_unified_health_checker_protocol,
+    ///             Protocol = networkLoadBalancersBackendSetsUnifiedHealthCheckerProtocol,
     ///             Dns = new Oci.NetworkLoadBalancer.Inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsArgs
     ///             {
-    ///                 DomainName = oci_identity_domain.Test_domain.Name,
-    ///                 QueryClass = @var.Network_load_balancers_backend_sets_unified_health_checker_dns_query_class,
-    ///                 QueryType = @var.Network_load_balancers_backend_sets_unified_health_checker_dns_query_type,
-    ///                 Rcodes = @var.Network_load_balancers_backend_sets_unified_health_checker_dns_rcodes,
-    ///                 TransportProtocol = @var.Network_load_balancers_backend_sets_unified_health_checker_dns_transport_protocol,
+    ///                 DomainName = testDomain.Name,
+    ///                 QueryClass = networkLoadBalancersBackendSetsUnifiedHealthCheckerDnsQueryClass,
+    ///                 QueryType = networkLoadBalancersBackendSetsUnifiedHealthCheckerDnsQueryType,
+    ///                 Rcodes = networkLoadBalancersBackendSetsUnifiedHealthCheckerDnsRcodes,
+    ///                 TransportProtocol = networkLoadBalancersBackendSetsUnifiedHealthCheckerDnsTransportProtocol,
     ///             },
-    ///             IntervalInMillis = @var.Network_load_balancers_backend_sets_unified_health_checker_interval_in_millis,
-    ///             Port = @var.Network_load_balancers_backend_sets_unified_health_checker_port,
-    ///             RequestData = @var.Network_load_balancers_backend_sets_unified_health_checker_request_data,
-    ///             ResponseBodyRegex = @var.Network_load_balancers_backend_sets_unified_health_checker_response_body_regex,
-    ///             ResponseData = @var.Network_load_balancers_backend_sets_unified_health_checker_response_data,
-    ///             Retries = @var.Network_load_balancers_backend_sets_unified_health_checker_retries,
-    ///             ReturnCode = @var.Network_load_balancers_backend_sets_unified_health_checker_return_code,
-    ///             TimeoutInMillis = @var.Network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis,
-    ///             UrlPath = @var.Network_load_balancers_backend_sets_unified_health_checker_url_path,
+    ///             IntervalInMillis = networkLoadBalancersBackendSetsUnifiedHealthCheckerIntervalInMillis,
+    ///             Port = networkLoadBalancersBackendSetsUnifiedHealthCheckerPort,
+    ///             RequestData = networkLoadBalancersBackendSetsUnifiedHealthCheckerRequestData,
+    ///             ResponseBodyRegex = networkLoadBalancersBackendSetsUnifiedHealthCheckerResponseBodyRegex,
+    ///             ResponseData = networkLoadBalancersBackendSetsUnifiedHealthCheckerResponseData,
+    ///             Retries = networkLoadBalancersBackendSetsUnifiedHealthCheckerRetries,
+    ///             ReturnCode = networkLoadBalancersBackendSetsUnifiedHealthCheckerReturnCode,
+    ///             TimeoutInMillis = networkLoadBalancersBackendSetsUnifiedHealthCheckerTimeoutInMillis,
+    ///             UrlPath = networkLoadBalancersBackendSetsUnifiedHealthCheckerUrlPath,
     ///         },
-    ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-    ///         Policy = @var.Network_load_balancers_backend_sets_unified_policy,
+    ///         Name = networkLoadBalancersBackendSetsUnifiedName,
+    ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+    ///         Policy = networkLoadBalancersBackendSetsUnifiedPolicy,
     ///         Backends = new[]
     ///         {
     ///             new Oci.NetworkLoadBalancer.Inputs.NetworkLoadBalancersBackendSetsUnifiedBackendArgs
     ///             {
-    ///                 Port = @var.Network_load_balancers_backend_sets_unified_backends_port,
-    ///                 IpAddress = @var.Network_load_balancers_backend_sets_unified_backends_ip_address,
-    ///                 IsBackup = @var.Network_load_balancers_backend_sets_unified_backends_is_backup,
-    ///                 IsDrain = @var.Network_load_balancers_backend_sets_unified_backends_is_drain,
-    ///                 IsOffline = @var.Network_load_balancers_backend_sets_unified_backends_is_offline,
-    ///                 Name = @var.Network_load_balancers_backend_sets_unified_backends_name,
-    ///                 TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///                 Weight = @var.Network_load_balancers_backend_sets_unified_backends_weight,
+    ///                 Port = networkLoadBalancersBackendSetsUnifiedBackendsPort,
+    ///                 IpAddress = networkLoadBalancersBackendSetsUnifiedBackendsIpAddress,
+    ///                 IsBackup = networkLoadBalancersBackendSetsUnifiedBackendsIsBackup,
+    ///                 IsDrain = networkLoadBalancersBackendSetsUnifiedBackendsIsDrain,
+    ///                 IsOffline = networkLoadBalancersBackendSetsUnifiedBackendsIsOffline,
+    ///                 Name = networkLoadBalancersBackendSetsUnifiedBackendsName,
+    ///                 TargetId = testTarget.Id,
+    ///                 Weight = networkLoadBalancersBackendSetsUnifiedBackendsWeight,
     ///             },
     ///         },
-    ///         IpVersion = @var.Network_load_balancers_backend_sets_unified_ip_version,
-    ///         IsFailOpen = @var.Network_load_balancers_backend_sets_unified_is_fail_open,
-    ///         IsPreserveSource = @var.Network_load_balancers_backend_sets_unified_is_preserve_source,
+    ///         IpVersion = networkLoadBalancersBackendSetsUnifiedIpVersion,
+    ///         IsFailOpen = networkLoadBalancersBackendSetsUnifiedIsFailOpen,
+    ///         IsPreserveSource = networkLoadBalancersBackendSetsUnifiedIsPreserveSource,
     ///     });
     /// 
     /// });

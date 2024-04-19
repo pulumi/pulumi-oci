@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbNodes(ctx, &database.GetDbNodesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DbServerId:    pulumi.StringRef(oci_database_db_server.Test_db_server.Id),
-//				DbSystemId:    pulumi.StringRef(oci_database_db_system.Test_db_system.Id),
-//				State:         pulumi.StringRef(_var.Db_node_state),
-//				VmClusterId:   pulumi.StringRef(oci_database_vm_cluster.Test_vm_cluster.Id),
+//				CompartmentId: compartmentId,
+//				DbServerId:    pulumi.StringRef(testDbServer.Id),
+//				DbSystemId:    pulumi.StringRef(testDbSystem.Id),
+//				State:         pulumi.StringRef(dbNodeState),
+//				VmClusterId:   pulumi.StringRef(testVmCluster.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

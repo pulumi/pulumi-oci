@@ -307,22 +307,22 @@ class RouteTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_route_table = oci.core.RouteTable("testRouteTable",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_route_table = oci.core.RouteTable("test_route_table",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["route_table_display_name"],
+            display_name=route_table_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             route_rules=[oci.core.RouteTableRouteRuleArgs(
-                network_entity_id=oci_core_internet_gateway["test_internet_gateway"]["id"],
-                cidr_block=var["route_table_route_rules_cidr_block"],
-                description=var["route_table_route_rules_description"],
-                destination=var["route_table_route_rules_destination"],
-                destination_type=var["route_table_route_rules_destination_type"],
+                network_entity_id=test_internet_gateway["id"],
+                cidr_block=route_table_route_rules_cidr_block,
+                description=route_table_route_rules_description,
+                destination=route_table_route_rules_destination,
+                destination_type=route_table_route_rules_destination_type,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -382,22 +382,22 @@ class RouteTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_route_table = oci.core.RouteTable("testRouteTable",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_route_table = oci.core.RouteTable("test_route_table",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["route_table_display_name"],
+            display_name=route_table_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             route_rules=[oci.core.RouteTableRouteRuleArgs(
-                network_entity_id=oci_core_internet_gateway["test_internet_gateway"]["id"],
-                cidr_block=var["route_table_route_rules_cidr_block"],
-                description=var["route_table_route_rules_description"],
-                destination=var["route_table_route_rules_destination"],
-                destination_type=var["route_table_route_rules_destination_type"],
+                network_entity_id=test_internet_gateway["id"],
+                cidr_block=route_table_route_rules_cidr_block,
+                description=route_table_route_rules_description,
+                destination=route_table_route_rules_destination,
+                destination_type=route_table_route_rules_destination_type,
             )])
         ```
         <!--End PulumiCodeChooser -->

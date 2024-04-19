@@ -45,11 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testProject = new Project(&#34;testProject&#34;, ProjectArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .definedTags(var_.project_defined_tags())
- *             .description(var_.project_description())
- *             .displayName(var_.project_display_name())
- *             .freeformTags(var_.project_freeform_tags())
+ *             .compartmentId(compartmentId)
+ *             .definedTags(projectDefinedTags)
+ *             .description(projectDescription)
+ *             .displayName(projectDisplayName)
+ *             .freeformTags(projectFreeformTags)
  *             .build());
  * 
  *     }

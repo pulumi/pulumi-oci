@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSource = oci.OsManagement.getSoftwareSource({
- *     softwareSourceId: oci_osmanagement_software_source.test_software_source.id,
+ *     softwareSourceId: testSoftwareSourceOciOsmanagementSoftwareSource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -149,7 +149,7 @@ export interface GetSoftwareSourceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSource = oci.OsManagement.getSoftwareSource({
- *     softwareSourceId: oci_osmanagement_software_source.test_software_source.id,
+ *     softwareSourceId: testSoftwareSourceOciOsmanagementSoftwareSource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

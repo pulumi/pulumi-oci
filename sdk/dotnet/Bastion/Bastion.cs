@@ -25,24 +25,25 @@ namespace Pulumi.Oci.Bastion
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBastion = new Oci.Bastion.Bastion("testBastion", new()
+    ///     var testBastion = new Oci.Bastion.Bastion("test_bastion", new()
     ///     {
-    ///         BastionType = @var.Bastion_bastion_type,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         TargetSubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         ClientCidrBlockAllowLists = @var.Bastion_client_cidr_block_allow_list,
+    ///         BastionType = bastionBastionType,
+    ///         CompartmentId = compartmentId,
+    ///         TargetSubnetId = testSubnet.Id,
+    ///         ClientCidrBlockAllowLists = bastionClientCidrBlockAllowList,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DnsProxyStatus = @var.Bastion_dns_proxy_status,
+    ///         DnsProxyStatus = bastionDnsProxyStatus,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         MaxSessionTtlInSeconds = @var.Bastion_max_session_ttl_in_seconds,
-    ///         PhoneBookEntry = @var.Bastion_phone_book_entry,
-    ///         StaticJumpHostIpAddresses = @var.Bastion_static_jump_host_ip_addresses,
+    ///         MaxSessionTtlInSeconds = bastionMaxSessionTtlInSeconds,
+    ///         Name = bastionName,
+    ///         PhoneBookEntry = bastionPhoneBookEntry,
+    ///         StaticJumpHostIpAddresses = bastionStaticJumpHostIpAddresses,
     ///     });
     /// 
     /// });

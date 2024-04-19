@@ -45,13 +45,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPeer = new Peer(&#34;testPeer&#34;, PeerArgs.builder()        
- *             .ad(var_.peer_ad())
- *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+ *             .ad(peerAd)
+ *             .blockchainPlatformId(testBlockchainPlatform.id())
  *             .ocpuAllocationParam(PeerOcpuAllocationParamArgs.builder()
- *                 .ocpuAllocationNumber(var_.peer_ocpu_allocation_param_ocpu_allocation_number())
+ *                 .ocpuAllocationNumber(peerOcpuAllocationParamOcpuAllocationNumber)
  *                 .build())
- *             .role(var_.peer_role())
- *             .alias(var_.peer_alias())
+ *             .role(peerRole)
+ *             .alias(peerAlias)
  *             .build());
  * 
  *     }

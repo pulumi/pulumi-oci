@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbHome = oci.Database.getDbHome({
- *     dbHomeId: _var.db_home_id,
+ *     dbHomeId: dbHomeId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -126,7 +126,7 @@ export interface GetDbHomeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbHome = oci.Database.getDbHome({
- *     dbHomeId: _var.db_home_id,
+ *     dbHomeId: dbHomeId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

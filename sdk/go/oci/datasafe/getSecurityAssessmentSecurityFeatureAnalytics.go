@@ -38,10 +38,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityAssessmentSecurityFeatureAnalytics(ctx, &datasafe.GetSecurityAssessmentSecurityFeatureAnalyticsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Security_assessment_security_feature_analytic_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Security_assessment_security_feature_analytic_compartment_id_in_subtree),
-//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(securityAssessmentSecurityFeatureAnalyticAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree),
+//				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

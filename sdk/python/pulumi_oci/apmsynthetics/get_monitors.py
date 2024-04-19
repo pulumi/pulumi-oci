@@ -173,14 +173,14 @@ def get_monitors(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        display_name=var["monitor_display_name"],
-        is_maintenance_window_active=var["monitor_is_maintenance_window_active"],
-        is_maintenance_window_set=var["monitor_is_maintenance_window_set"],
-        monitor_type=var["monitor_monitor_type"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"],
-        status=var["monitor_status"],
-        vantage_point=var["monitor_vantage_point"])
+    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
+        display_name=monitor_display_name,
+        is_maintenance_window_active=monitor_is_maintenance_window_active,
+        is_maintenance_window_set=monitor_is_maintenance_window_set,
+        monitor_type=monitor_monitor_type,
+        script_id=test_script["id"],
+        status=monitor_status,
+        vantage_point=monitor_vantage_point)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -244,14 +244,14 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-        display_name=var["monitor_display_name"],
-        is_maintenance_window_active=var["monitor_is_maintenance_window_active"],
-        is_maintenance_window_set=var["monitor_is_maintenance_window_set"],
-        monitor_type=var["monitor_monitor_type"],
-        script_id=oci_apm_synthetics_script["test_script"]["id"],
-        status=var["monitor_status"],
-        vantage_point=var["monitor_vantage_point"])
+    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
+        display_name=monitor_display_name,
+        is_maintenance_window_active=monitor_is_maintenance_window_active,
+        is_maintenance_window_set=monitor_is_maintenance_window_set,
+        monitor_type=monitor_monitor_type,
+        script_id=test_script["id"],
+        status=monitor_status,
+        vantage_point=monitor_vantage_point)
     ```
     <!--End PulumiCodeChooser -->
 

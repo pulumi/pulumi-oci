@@ -47,9 +47,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSnapshot = new Snapshot(&#34;testSnapshot&#34;, SnapshotArgs.builder()        
- *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+ *             .fileSystemId(testFileSystem.id())
+ *             .name(snapshotName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .expirationTime(var_.snapshot_expiration_time())
+ *             .expirationTime(snapshotExpirationTime)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

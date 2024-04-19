@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSessions = oci.Bastion.getSessions({
- *     bastionId: oci_bastion_bastion.test_bastion.id,
- *     displayName: _var.session_display_name,
- *     sessionId: oci_bastion_session.test_session.id,
- *     sessionLifecycleState: _var.session_session_lifecycle_state,
+ *     bastionId: testBastion.id,
+ *     displayName: sessionDisplayName,
+ *     sessionId: testSession.id,
+ *     sessionLifecycleState: sessionSessionLifecycleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,10 +99,10 @@ export interface GetSessionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSessions = oci.Bastion.getSessions({
- *     bastionId: oci_bastion_bastion.test_bastion.id,
- *     displayName: _var.session_display_name,
- *     sessionId: oci_bastion_session.test_session.id,
- *     sessionLifecycleState: _var.session_session_lifecycle_state,
+ *     bastionId: testBastion.id,
+ *     displayName: sessionDisplayName,
+ *     sessionId: testSession.id,
+ *     sessionLifecycleState: sessionSessionLifecycleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -44,17 +44,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyDecryptionProfile = new NetworkFirewallPolicyDecryptionProfile(&#34;testNetworkFirewallPolicyDecryptionProfile&#34;, NetworkFirewallPolicyDecryptionProfileArgs.builder()        
- *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
- *             .type(var_.network_firewall_policy_decryption_profile_type())
- *             .areCertificateExtensionsRestricted(var_.network_firewall_policy_decryption_profile_are_certificate_extensions_restricted())
- *             .isAutoIncludeAltName(var_.network_firewall_policy_decryption_profile_is_auto_include_alt_name())
- *             .isExpiredCertificateBlocked(var_.network_firewall_policy_decryption_profile_is_expired_certificate_blocked())
- *             .isOutOfCapacityBlocked(var_.network_firewall_policy_decryption_profile_is_out_of_capacity_blocked())
- *             .isRevocationStatusTimeoutBlocked(var_.network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked())
- *             .isUnknownRevocationStatusBlocked(var_.network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked())
- *             .isUnsupportedCipherBlocked(var_.network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked())
- *             .isUnsupportedVersionBlocked(var_.network_firewall_policy_decryption_profile_is_unsupported_version_blocked())
- *             .isUntrustedIssuerBlocked(var_.network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked())
+ *             .name(networkFirewallPolicyDecryptionProfileName)
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .type(networkFirewallPolicyDecryptionProfileType)
+ *             .areCertificateExtensionsRestricted(networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted)
+ *             .isAutoIncludeAltName(networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName)
+ *             .isExpiredCertificateBlocked(networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked)
+ *             .isOutOfCapacityBlocked(networkFirewallPolicyDecryptionProfileIsOutOfCapacityBlocked)
+ *             .isRevocationStatusTimeoutBlocked(networkFirewallPolicyDecryptionProfileIsRevocationStatusTimeoutBlocked)
+ *             .isUnknownRevocationStatusBlocked(networkFirewallPolicyDecryptionProfileIsUnknownRevocationStatusBlocked)
+ *             .isUnsupportedCipherBlocked(networkFirewallPolicyDecryptionProfileIsUnsupportedCipherBlocked)
+ *             .isUnsupportedVersionBlocked(networkFirewallPolicyDecryptionProfileIsUnsupportedVersionBlocked)
+ *             .isUntrustedIssuerBlocked(networkFirewallPolicyDecryptionProfileIsUntrustedIssuerBlocked)
  *             .build());
  * 
  *     }

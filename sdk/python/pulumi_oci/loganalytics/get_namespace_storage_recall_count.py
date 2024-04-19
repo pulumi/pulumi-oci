@@ -127,7 +127,7 @@ def get_namespace_storage_recall_count(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_recall_count = oci.LogAnalytics.get_namespace_storage_recall_count(namespace=var["namespace_storage_recall_count_namespace"])
+    test_namespace_storage_recall_count = oci.LogAnalytics.get_namespace_storage_recall_count(namespace=namespace_storage_recall_count_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -164,7 +164,7 @@ def get_namespace_storage_recall_count_output(namespace: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_recall_count = oci.LogAnalytics.get_namespace_storage_recall_count(namespace=var["namespace_storage_recall_count_namespace"])
+    test_namespace_storage_recall_count = oci.LogAnalytics.get_namespace_storage_recall_count(namespace=namespace_storage_recall_count_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

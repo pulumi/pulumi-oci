@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testCertificate = Oci.ApiGateway.GetCertificate.Invoke(new()
         ///     {
-        ///         CertificateId = oci_apigateway_certificate.Test_certificate.Id,
+        ///         CertificateId = testCertificateOciApigatewayCertificate.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testCertificate = Oci.ApiGateway.GetCertificate.Invoke(new()
         ///     {
-        ///         CertificateId = oci_apigateway_certificate.Test_certificate.Id,
+        ///         CertificateId = testCertificateOciApigatewayCertificate.Id,
         ///     });
         /// 
         /// });

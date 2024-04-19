@@ -26,18 +26,18 @@ namespace Pulumi.Oci.Marketplace
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAcceptedAgreement = new Oci.Marketplace.AcceptedAgreement("testAcceptedAgreement", new()
+    ///     var testAcceptedAgreement = new Oci.Marketplace.AcceptedAgreement("test_accepted_agreement", new()
     ///     {
-    ///         AgreementId = oci_marketplace_agreement.Test_agreement.Id,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ListingId = oci_marketplace_listing.Test_listing.Id,
-    ///         PackageVersion = @var.Accepted_agreement_package_version,
-    ///         Signature = @var.Accepted_agreement_signature,
+    ///         AgreementId = testAgreement.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ListingId = testListing.Id,
+    ///         PackageVersion = acceptedAgreementPackageVersion,
+    ///         Signature = acceptedAgreementSignature,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Accepted_agreement_display_name,
+    ///         DisplayName = acceptedAgreementDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

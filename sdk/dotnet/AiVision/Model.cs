@@ -25,47 +25,47 @@ namespace Pulumi.Oci.AiVision
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testModel = new Oci.AiVision.Model("testModel", new()
+    ///     var testModel = new Oci.AiVision.Model("test_model", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ModelType = @var.Model_model_type,
-    ///         ProjectId = oci_ai_vision_project.Test_project.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ModelType = modelModelType,
+    ///         ProjectId = testProject.Id,
     ///         TrainingDataset = new Oci.AiVision.Inputs.ModelTrainingDatasetArgs
     ///         {
-    ///             DatasetType = @var.Model_training_dataset_dataset_type,
-    ///             Bucket = @var.Model_training_dataset_bucket,
-    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///             NamespaceName = @var.Model_training_dataset_namespace,
-    ///             Object = @var.Model_training_dataset_object,
+    ///             DatasetType = modelTrainingDatasetDatasetType,
+    ///             Bucket = modelTrainingDatasetBucket,
+    ///             DatasetId = testDataset.Id,
+    ///             NamespaceName = modelTrainingDatasetNamespace,
+    ///             Object = modelTrainingDatasetObject,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Model_description,
-    ///         DisplayName = @var.Model_display_name,
+    ///         Description = modelDescription,
+    ///         DisplayName = modelDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsQuickMode = @var.Model_is_quick_mode,
-    ///         MaxTrainingDurationInHours = @var.Model_max_training_duration_in_hours,
-    ///         ModelVersion = @var.Model_model_version,
+    ///         IsQuickMode = modelIsQuickMode,
+    ///         MaxTrainingDurationInHours = modelMaxTrainingDurationInHours,
+    ///         ModelVersion = modelModelVersion,
     ///         TestingDataset = new Oci.AiVision.Inputs.ModelTestingDatasetArgs
     ///         {
-    ///             DatasetType = @var.Model_testing_dataset_dataset_type,
-    ///             Bucket = @var.Model_testing_dataset_bucket,
-    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///             NamespaceName = @var.Model_testing_dataset_namespace,
-    ///             Object = @var.Model_testing_dataset_object,
+    ///             DatasetType = modelTestingDatasetDatasetType,
+    ///             Bucket = modelTestingDatasetBucket,
+    ///             DatasetId = testDataset.Id,
+    ///             NamespaceName = modelTestingDatasetNamespace,
+    ///             Object = modelTestingDatasetObject,
     ///         },
     ///         ValidationDataset = new Oci.AiVision.Inputs.ModelValidationDatasetArgs
     ///         {
-    ///             DatasetType = @var.Model_validation_dataset_dataset_type,
-    ///             Bucket = @var.Model_validation_dataset_bucket,
-    ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-    ///             NamespaceName = @var.Model_validation_dataset_namespace,
-    ///             Object = @var.Model_validation_dataset_object,
+    ///             DatasetType = modelValidationDatasetDatasetType,
+    ///             Bucket = modelValidationDatasetBucket,
+    ///             DatasetId = testDataset.Id,
+    ///             NamespaceName = modelValidationDatasetNamespace,
+    ///             Object = modelValidationDatasetObject,
     ///         },
     ///     });
     /// 

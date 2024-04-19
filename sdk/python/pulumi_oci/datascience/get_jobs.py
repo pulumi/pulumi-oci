@@ -147,12 +147,12 @@ def get_jobs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_jobs = oci.DataScience.get_jobs(compartment_id=var["compartment_id"],
-        created_by=var["job_created_by"],
-        display_name=var["job_display_name"],
-        id=var["job_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["job_state"])
+    test_jobs = oci.DataScience.get_jobs(compartment_id=compartment_id,
+        created_by=job_created_by,
+        display_name=job_display_name,
+        id=job_id,
+        project_id=test_project["id"],
+        state=job_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,12 +207,12 @@ def get_jobs_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_jobs = oci.DataScience.get_jobs(compartment_id=var["compartment_id"],
-        created_by=var["job_created_by"],
-        display_name=var["job_display_name"],
-        id=var["job_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["job_state"])
+    test_jobs = oci.DataScience.get_jobs(compartment_id=compartment_id,
+        created_by=job_created_by,
+        display_name=job_display_name,
+        id=job_id,
+        project_id=test_project["id"],
+        state=job_state)
     ```
     <!--End PulumiCodeChooser -->
 

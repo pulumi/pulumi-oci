@@ -35,10 +35,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVolumeAttachments(ctx, &core.GetVolumeAttachmentsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Volume_attachment_availability_domain),
-//				InstanceId:         pulumi.StringRef(oci_core_instance.Test_instance.Id),
-//				VolumeId:           pulumi.StringRef(oci_core_volume.Test_volume.Id),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(volumeAttachmentAvailabilityDomain),
+//				InstanceId:         pulumi.StringRef(testInstance.Id),
+//				VolumeId:           pulumi.StringRef(testVolume.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

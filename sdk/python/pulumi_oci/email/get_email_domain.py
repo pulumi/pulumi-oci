@@ -187,7 +187,7 @@ def get_email_domain(email_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_domain = oci.Email.get_email_domain(email_domain_id=oci_email_email_domain["test_email_domain"]["id"])
+    test_email_domain = oci.Email.get_email_domain(email_domain_id=test_email_domain_oci_email_email_domain["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -229,7 +229,7 @@ def get_email_domain_output(email_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_domain = oci.Email.get_email_domain(email_domain_id=oci_email_email_domain["test_email_domain"]["id"])
+    test_email_domain = oci.Email.get_email_domain(email_domain_id=test_email_domain_oci_email_email_domain["id"])
     ```
     <!--End PulumiCodeChooser -->
 

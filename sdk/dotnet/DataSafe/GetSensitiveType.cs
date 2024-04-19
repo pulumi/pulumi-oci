@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveType = Oci.DataSafe.GetSensitiveType.Invoke(new()
         ///     {
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///         SensitiveTypeId = testSensitiveTypeOciDataSafeSensitiveType.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveType = Oci.DataSafe.GetSensitiveType.Invoke(new()
         ///     {
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+        ///         SensitiveTypeId = testSensitiveTypeOciDataSafeSensitiveType.Id,
         ///     });
         /// 
         /// });

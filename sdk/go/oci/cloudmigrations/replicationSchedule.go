@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudMigrations.NewReplicationSchedule(ctx, "testReplicationSchedule", &CloudMigrations.ReplicationScheduleArgs{
-//				CompartmentId:        pulumi.Any(_var.Compartment_id),
-//				DisplayName:          pulumi.Any(_var.Replication_schedule_display_name),
-//				ExecutionRecurrences: pulumi.Any(_var.Replication_schedule_execution_recurrences),
+//			_, err := CloudMigrations.NewReplicationSchedule(ctx, "test_replication_schedule", &CloudMigrations.ReplicationScheduleArgs{
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				DisplayName:          pulumi.Any(replicationScheduleDisplayName),
+//				ExecutionRecurrences: pulumi.Any(replicationScheduleExecutionRecurrences),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},

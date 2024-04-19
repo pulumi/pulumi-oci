@@ -30,21 +30,21 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessmentSecurityFeatures = Oci.DataSafe.GetSecurityAssessmentSecurityFeatures.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_assessment_security_feature_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_security_feature_compartment_id_in_subtree,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TargetsWithColumnEncryption = @var.Security_assessment_security_feature_targets_with_column_encryption,
-        ///         TargetsWithDatabaseVault = @var.Security_assessment_security_feature_targets_with_database_vault,
-        ///         TargetsWithExternalAuthentication = @var.Security_assessment_security_feature_targets_with_external_authentication,
-        ///         TargetsWithFineGrainedAudit = @var.Security_assessment_security_feature_targets_with_fine_grained_audit,
-        ///         TargetsWithGlobalAuthentication = @var.Security_assessment_security_feature_targets_with_global_authentication,
-        ///         TargetsWithNetworkEncryption = @var.Security_assessment_security_feature_targets_with_network_encryption,
-        ///         TargetsWithPasswordAuthentication = @var.Security_assessment_security_feature_targets_with_password_authentication,
-        ///         TargetsWithPrivilegeAnalysis = @var.Security_assessment_security_feature_targets_with_privilege_analysis,
-        ///         TargetsWithTablespaceEncryption = @var.Security_assessment_security_feature_targets_with_tablespace_encryption,
-        ///         TargetsWithTraditionalAudit = @var.Security_assessment_security_feature_targets_with_traditional_audit,
-        ///         TargetsWithUnifiedAudit = @var.Security_assessment_security_feature_targets_with_unified_audit,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentSecurityFeatureAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentSecurityFeatureCompartmentIdInSubtree,
+        ///         TargetId = testTarget.Id,
+        ///         TargetsWithColumnEncryption = securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
+        ///         TargetsWithDatabaseVault = securityAssessmentSecurityFeatureTargetsWithDatabaseVault,
+        ///         TargetsWithExternalAuthentication = securityAssessmentSecurityFeatureTargetsWithExternalAuthentication,
+        ///         TargetsWithFineGrainedAudit = securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit,
+        ///         TargetsWithGlobalAuthentication = securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication,
+        ///         TargetsWithNetworkEncryption = securityAssessmentSecurityFeatureTargetsWithNetworkEncryption,
+        ///         TargetsWithPasswordAuthentication = securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication,
+        ///         TargetsWithPrivilegeAnalysis = securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis,
+        ///         TargetsWithTablespaceEncryption = securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption,
+        ///         TargetsWithTraditionalAudit = securityAssessmentSecurityFeatureTargetsWithTraditionalAudit,
+        ///         TargetsWithUnifiedAudit = securityAssessmentSecurityFeatureTargetsWithUnifiedAudit,
         ///     });
         /// 
         /// });
@@ -73,21 +73,21 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessmentSecurityFeatures = Oci.DataSafe.GetSecurityAssessmentSecurityFeatures.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_assessment_security_feature_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_security_feature_compartment_id_in_subtree,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TargetsWithColumnEncryption = @var.Security_assessment_security_feature_targets_with_column_encryption,
-        ///         TargetsWithDatabaseVault = @var.Security_assessment_security_feature_targets_with_database_vault,
-        ///         TargetsWithExternalAuthentication = @var.Security_assessment_security_feature_targets_with_external_authentication,
-        ///         TargetsWithFineGrainedAudit = @var.Security_assessment_security_feature_targets_with_fine_grained_audit,
-        ///         TargetsWithGlobalAuthentication = @var.Security_assessment_security_feature_targets_with_global_authentication,
-        ///         TargetsWithNetworkEncryption = @var.Security_assessment_security_feature_targets_with_network_encryption,
-        ///         TargetsWithPasswordAuthentication = @var.Security_assessment_security_feature_targets_with_password_authentication,
-        ///         TargetsWithPrivilegeAnalysis = @var.Security_assessment_security_feature_targets_with_privilege_analysis,
-        ///         TargetsWithTablespaceEncryption = @var.Security_assessment_security_feature_targets_with_tablespace_encryption,
-        ///         TargetsWithTraditionalAudit = @var.Security_assessment_security_feature_targets_with_traditional_audit,
-        ///         TargetsWithUnifiedAudit = @var.Security_assessment_security_feature_targets_with_unified_audit,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentSecurityFeatureAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentSecurityFeatureCompartmentIdInSubtree,
+        ///         TargetId = testTarget.Id,
+        ///         TargetsWithColumnEncryption = securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
+        ///         TargetsWithDatabaseVault = securityAssessmentSecurityFeatureTargetsWithDatabaseVault,
+        ///         TargetsWithExternalAuthentication = securityAssessmentSecurityFeatureTargetsWithExternalAuthentication,
+        ///         TargetsWithFineGrainedAudit = securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit,
+        ///         TargetsWithGlobalAuthentication = securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication,
+        ///         TargetsWithNetworkEncryption = securityAssessmentSecurityFeatureTargetsWithNetworkEncryption,
+        ///         TargetsWithPasswordAuthentication = securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication,
+        ///         TargetsWithPrivilegeAnalysis = securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis,
+        ///         TargetsWithTablespaceEncryption = securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption,
+        ///         TargetsWithTraditionalAudit = securityAssessmentSecurityFeatureTargetsWithTraditionalAudit,
+        ///         TargetsWithUnifiedAudit = securityAssessmentSecurityFeatureTargetsWithUnifiedAudit,
         ///     });
         /// 
         /// });

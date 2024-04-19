@@ -44,9 +44,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNamespaceIngestTimeRulesManagement = new NamespaceIngestTimeRulesManagement(&#34;testNamespaceIngestTimeRulesManagement&#34;, NamespaceIngestTimeRulesManagementArgs.builder()        
- *             .ingestTimeRuleId(oci_events_rule.test_rule().id())
- *             .namespace(var_.namespace_ingest_time_rules_management_namespace())
- *             .enableIngestTimeRule(var_.enable_ingest_time_rule())
+ *             .ingestTimeRuleId(testRule.id())
+ *             .namespace(namespaceIngestTimeRulesManagementNamespace)
+ *             .enableIngestTimeRule(enableIngestTimeRule)
  *             .build());
  * 
  *     }

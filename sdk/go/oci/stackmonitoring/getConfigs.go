@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetConfigs(ctx, &stackmonitoring.GetConfigsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Config_display_name),
-//				State:         pulumi.StringRef(_var.Config_state),
-//				Type:          pulumi.StringRef(_var.Config_type),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(configDisplayName),
+//				State:         pulumi.StringRef(configState),
+//				Type:          pulumi.StringRef(configType),
 //			}, nil)
 //			if err != nil {
 //				return err

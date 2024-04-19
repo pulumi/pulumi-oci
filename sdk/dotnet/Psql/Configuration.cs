@@ -25,35 +25,35 @@ namespace Pulumi.Oci.Psql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConfiguration = new Oci.Psql.Configuration("testConfiguration", new()
+    ///     var testConfiguration = new Oci.Psql.Configuration("test_configuration", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DbConfigurationOverrides = new Oci.Psql.Inputs.ConfigurationDbConfigurationOverridesArgs
     ///         {
     ///             Items = new[]
     ///             {
     ///                 new Oci.Psql.Inputs.ConfigurationDbConfigurationOverridesItemArgs
     ///                 {
-    ///                     ConfigKey = @var.Configuration_db_configuration_overrides_items_config_key,
-    ///                     OverridenConfigValue = @var.Configuration_db_configuration_overrides_items_overriden_config_value,
+    ///                     ConfigKey = configurationDbConfigurationOverridesItemsConfigKey,
+    ///                     OverridenConfigValue = configurationDbConfigurationOverridesItemsOverridenConfigValue,
     ///                 },
     ///             },
     ///         },
-    ///         DbVersion = @var.Configuration_db_version,
-    ///         DisplayName = @var.Configuration_display_name,
-    ///         InstanceMemorySizeInGbs = @var.Configuration_instance_memory_size_in_gbs,
-    ///         InstanceOcpuCount = @var.Configuration_instance_ocpu_count,
-    ///         Shape = @var.Configuration_shape,
+    ///         DbVersion = configurationDbVersion,
+    ///         DisplayName = configurationDisplayName,
+    ///         InstanceMemorySizeInGbs = configurationInstanceMemorySizeInGbs,
+    ///         InstanceOcpuCount = configurationInstanceOcpuCount,
+    ///         Shape = configurationShape,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Configuration_description,
+    ///         Description = configurationDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         SystemTags = @var.Configuration_system_tags,
+    ///         SystemTags = configurationSystemTags,
     ///     });
     /// 
     /// });

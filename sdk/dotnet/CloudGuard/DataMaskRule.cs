@@ -25,28 +25,28 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDataMaskRule = new Oci.CloudGuard.DataMaskRule("testDataMaskRule", new()
+    ///     var testDataMaskRule = new Oci.CloudGuard.DataMaskRule("test_data_mask_rule", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DataMaskCategories = @var.Data_mask_rule_data_mask_categories,
-    ///         DisplayName = @var.Data_mask_rule_display_name,
-    ///         IamGroupId = oci_identity_group.Test_group.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DataMaskCategories = dataMaskRuleDataMaskCategories,
+    ///         DisplayName = dataMaskRuleDisplayName,
+    ///         IamGroupId = testGroup.Id,
     ///         TargetSelected = new Oci.CloudGuard.Inputs.DataMaskRuleTargetSelectedArgs
     ///         {
-    ///             Kind = @var.Data_mask_rule_target_selected_kind,
-    ///             Values = @var.Data_mask_rule_target_selected_values,
+    ///             Kind = dataMaskRuleTargetSelectedKind,
+    ///             Values = dataMaskRuleTargetSelectedValues,
     ///         },
-    ///         DataMaskRuleStatus = @var.Data_mask_rule_data_mask_rule_status,
+    ///         DataMaskRuleStatus = dataMaskRuleDataMaskRuleStatus,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Data_mask_rule_description,
+    ///         Description = dataMaskRuleDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         State = @var.Data_mask_rule_state,
+    ///         State = dataMaskRuleState,
     ///     });
     /// 
     /// });

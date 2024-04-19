@@ -27,10 +27,10 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVolumeBackupPolicyAssignment = new Oci.Core.VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment", new()
+    ///     var testVolumeBackupPolicyAssignment = new Oci.Core.VolumeBackupPolicyAssignment("test_volume_backup_policy_assignment", new()
     ///     {
-    ///         AssetId = oci_core_volume.Test_volume.Id,
-    ///         PolicyId = oci_core_volume_backup_policy.Test_volume_backup_policy.Id,
+    ///         AssetId = testVolume.Id,
+    ///         PolicyId = testVolumeBackupPolicy.Id,
     ///     });
     /// 
     /// });

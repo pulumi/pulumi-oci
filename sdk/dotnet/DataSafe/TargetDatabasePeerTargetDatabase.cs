@@ -25,31 +25,31 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTargetDatabasePeerTargetDatabase = new Oci.DataSafe.TargetDatabasePeerTargetDatabase("testTargetDatabasePeerTargetDatabase", new()
+    ///     var testTargetDatabasePeerTargetDatabase = new Oci.DataSafe.TargetDatabasePeerTargetDatabase("test_target_database_peer_target_database", new()
     ///     {
     ///         DatabaseDetails = new Oci.DataSafe.Inputs.TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs
     ///         {
-    ///             DatabaseType = @var.Target_database_peer_target_database_database_details_database_type,
-    ///             InfrastructureType = @var.Target_database_peer_target_database_database_details_infrastructure_type,
-    ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-    ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///             InstanceId = oci_core_instance.Test_instance.Id,
-    ///             IpAddresses = @var.Target_database_peer_target_database_database_details_ip_addresses,
-    ///             ListenerPort = @var.Target_database_peer_target_database_database_details_listener_port,
-    ///             ServiceName = oci_core_service.Test_service.Name,
-    ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+    ///             DatabaseType = targetDatabasePeerTargetDatabaseDatabaseDetailsDatabaseType,
+    ///             InfrastructureType = targetDatabasePeerTargetDatabaseDatabaseDetailsInfrastructureType,
+    ///             AutonomousDatabaseId = testAutonomousDatabase.Id,
+    ///             DbSystemId = testDbSystem.Id,
+    ///             InstanceId = testInstance.Id,
+    ///             IpAddresses = targetDatabasePeerTargetDatabaseDatabaseDetailsIpAddresses,
+    ///             ListenerPort = targetDatabasePeerTargetDatabaseDatabaseDetailsListenerPort,
+    ///             ServiceName = testService.Name,
+    ///             VmClusterId = testVmCluster.Id,
     ///         },
-    ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-    ///         DataguardAssociationId = oci_certificates_management_association.Test_association.Id,
-    ///         Description = @var.Target_database_peer_target_database_description,
-    ///         DisplayName = @var.Target_database_peer_target_database_display_name,
+    ///         TargetDatabaseId = testTargetDatabase.Id,
+    ///         DataguardAssociationId = testAssociation.Id,
+    ///         Description = targetDatabasePeerTargetDatabaseDescription,
+    ///         DisplayName = targetDatabasePeerTargetDatabaseDisplayName,
     ///         TlsConfig = new Oci.DataSafe.Inputs.TargetDatabasePeerTargetDatabaseTlsConfigArgs
     ///         {
-    ///             Status = @var.Target_database_peer_target_database_tls_config_status,
-    ///             CertificateStoreType = @var.Target_database_peer_target_database_tls_config_certificate_store_type,
-    ///             KeyStoreContent = @var.Target_database_peer_target_database_tls_config_key_store_content,
-    ///             StorePassword = @var.Target_database_peer_target_database_tls_config_store_password,
-    ///             TrustStoreContent = @var.Target_database_peer_target_database_tls_config_trust_store_content,
+    ///             Status = targetDatabasePeerTargetDatabaseTlsConfigStatus,
+    ///             CertificateStoreType = targetDatabasePeerTargetDatabaseTlsConfigCertificateStoreType,
+    ///             KeyStoreContent = targetDatabasePeerTargetDatabaseTlsConfigKeyStoreContent,
+    ///             StorePassword = targetDatabasePeerTargetDatabaseTlsConfigStorePassword,
+    ///             TrustStoreContent = targetDatabasePeerTargetDatabaseTlsConfigTrustStoreContent,
     ///         },
     ///     });
     /// 

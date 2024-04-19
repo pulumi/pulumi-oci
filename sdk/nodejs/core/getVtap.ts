@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVtap = oci.Core.getVtap({
- *     vtapId: oci_core_vtap.test_vtap.id,
+ *     vtapId: testVtapOciCoreVtap.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -147,7 +147,7 @@ export interface GetVtapResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVtap = oci.Core.getVtap({
- *     vtapId: oci_core_vtap.test_vtap.id,
+ *     vtapId: testVtapOciCoreVtap.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

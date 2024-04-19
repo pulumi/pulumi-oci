@@ -176,11 +176,11 @@ class Osn(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_osn = oci.blockchain.Osn("testOsn",
-            ad=var["osn_ad"],
-            blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
+        test_osn = oci.blockchain.Osn("test_osn",
+            ad=osn_ad,
+            blockchain_platform_id=test_blockchain_platform["id"],
             ocpu_allocation_param=oci.blockchain.OsnOcpuAllocationParamArgs(
-                ocpu_allocation_number=var["osn_ocpu_allocation_param_ocpu_allocation_number"],
+                ocpu_allocation_number=osn_ocpu_allocation_param_ocpu_allocation_number,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -217,11 +217,11 @@ class Osn(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_osn = oci.blockchain.Osn("testOsn",
-            ad=var["osn_ad"],
-            blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
+        test_osn = oci.blockchain.Osn("test_osn",
+            ad=osn_ad,
+            blockchain_platform_id=test_blockchain_platform["id"],
             ocpu_allocation_param=oci.blockchain.OsnOcpuAllocationParamArgs(
-                ocpu_allocation_number=var["osn_ocpu_allocation_param_ocpu_allocation_number"],
+                ocpu_allocation_number=osn_ocpu_allocation_param_ocpu_allocation_number,
             ))
         ```
         <!--End PulumiCodeChooser -->

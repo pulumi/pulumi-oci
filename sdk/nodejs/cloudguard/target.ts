@@ -18,44 +18,44 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTarget = new oci.cloudguard.Target("testTarget", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.target_display_name,
- *     targetResourceId: oci_cloud_guard_target_resource.test_target_resource.id,
- *     targetResourceType: _var.target_target_resource_type,
+ * const testTarget = new oci.cloudguard.Target("test_target", {
+ *     compartmentId: compartmentId,
+ *     displayName: targetDisplayName,
+ *     targetResourceId: testTargetResource.id,
+ *     targetResourceType: targetTargetResourceType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.target_description,
+ *     description: targetDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     state: _var.target_state,
+ *     state: targetState,
  *     targetDetectorRecipes: [{
- *         detectorRecipeId: oci_cloud_guard_detector_recipe.test_detector_recipe.id,
+ *         detectorRecipeId: testDetectorRecipe.id,
  *         detectorRules: [{
  *             details: {
  *                 conditionGroups: [{
- *                     compartmentId: _var.compartment_id,
- *                     condition: _var.target_target_detector_recipes_detector_rules_details_condition_groups_condition,
+ *                     compartmentId: compartmentId,
+ *                     condition: targetTargetDetectorRecipesDetectorRulesDetailsConditionGroupsCondition,
  *                 }],
  *             },
- *             detectorRuleId: oci_events_rule.test_rule.id,
+ *             detectorRuleId: testRule.id,
  *         }],
  *     }],
  *     targetResponderRecipes: [{
- *         responderRecipeId: oci_cloud_guard_responder_recipe.test_responder_recipe.id,
+ *         responderRecipeId: testResponderRecipe.id,
  *         responderRules: [{
  *             details: {
- *                 condition: _var.target_target_responder_recipes_responder_rules_details_condition,
+ *                 condition: targetTargetResponderRecipesResponderRulesDetailsCondition,
  *                 configurations: [{
- *                     configKey: _var.target_target_responder_recipes_responder_rules_details_configurations_config_key,
- *                     name: _var.target_target_responder_recipes_responder_rules_details_configurations_name,
- *                     value: _var.target_target_responder_recipes_responder_rules_details_configurations_value,
+ *                     configKey: targetTargetResponderRecipesResponderRulesDetailsConfigurationsConfigKey,
+ *                     name: targetTargetResponderRecipesResponderRulesDetailsConfigurationsName,
+ *                     value: targetTargetResponderRecipesResponderRulesDetailsConfigurationsValue,
  *                 }],
- *                 mode: _var.target_target_responder_recipes_responder_rules_details_mode,
+ *                 mode: targetTargetResponderRecipesResponderRulesDetailsMode,
  *             },
- *             responderRuleId: oci_events_rule.test_rule.id,
+ *             responderRuleId: testRule.id,
  *         }],
  *     }],
  * });

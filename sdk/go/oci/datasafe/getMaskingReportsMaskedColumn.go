@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetMaskingReportsMaskedColumn(ctx, &datasafe.GetMaskingReportsMaskedColumnArgs{
-//				MaskingReportId:     oci_data_safe_masking_report.Test_masking_report.Id,
-//				ColumnNames:         _var.Masking_reports_masked_column_column_name,
-//				MaskingColumnGroups: _var.Masking_reports_masked_column_masking_column_group,
-//				Objects:             _var.Masking_reports_masked_column_object,
-//				ObjectTypes:         _var.Masking_reports_masked_column_object_type,
-//				SchemaNames:         _var.Masking_reports_masked_column_schema_name,
-//				SensitiveTypeId:     pulumi.StringRef(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
+//				MaskingReportId:     testMaskingReport.Id,
+//				ColumnNames:         maskingReportsMaskedColumnColumnName,
+//				MaskingColumnGroups: maskingReportsMaskedColumnMaskingColumnGroup,
+//				Objects:             maskingReportsMaskedColumnObject,
+//				ObjectTypes:         maskingReportsMaskedColumnObjectType,
+//				SchemaNames:         maskingReportsMaskedColumnSchemaName,
+//				SensitiveTypeId:     pulumi.StringRef(testSensitiveType.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

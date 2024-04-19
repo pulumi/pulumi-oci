@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Email.GetDkim(ctx, &email.GetDkimArgs{
-//				DkimId: oci_email_dkim.Test_dkim.Id,
+//				DkimId: testDkimOciEmailDkim.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

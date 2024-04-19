@@ -26,13 +26,13 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPluggableDatabasesLocalClone = new Oci.Database.PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone", new()
+    ///     var testPluggableDatabasesLocalClone = new Oci.Database.PluggableDatabasesLocalClone("test_pluggable_databases_local_clone", new()
     ///     {
-    ///         ClonedPdbName = @var.Pluggable_databases_local_clone_cloned_pdb_name,
-    ///         PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
-    ///         PdbAdminPassword = @var.Pluggable_databases_local_clone_pdb_admin_password,
-    ///         ShouldPdbAdminAccountBeLocked = @var.Pluggable_databases_local_clone_should_pdb_admin_account_be_locked,
-    ///         TargetTdeWalletPassword = @var.Pluggable_databases_local_clone_target_tde_wallet_password,
+    ///         ClonedPdbName = pluggableDatabasesLocalCloneClonedPdbName,
+    ///         PluggableDatabaseId = testPluggableDatabase.Id,
+    ///         PdbAdminPassword = pluggableDatabasesLocalClonePdbAdminPassword,
+    ///         ShouldPdbAdminAccountBeLocked = pluggableDatabasesLocalCloneShouldPdbAdminAccountBeLocked,
+    ///         TargetTdeWalletPassword = pluggableDatabasesLocalCloneTargetTdeWalletPassword,
     ///     });
     /// 
     /// });

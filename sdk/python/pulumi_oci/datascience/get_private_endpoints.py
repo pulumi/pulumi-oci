@@ -146,11 +146,11 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=var["compartment_id"],
-        created_by=var["data_science_private_endpoint_created_by"],
-        data_science_resource_type=var["data_science_private_endpoint_data_science_resource_type"],
-        display_name=var["data_science_private_endpoint_display_name"],
-        state=var["data_science_private_endpoint_state"])
+    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=compartment_id,
+        created_by=data_science_private_endpoint_created_by,
+        data_science_resource_type=data_science_private_endpoint_data_science_resource_type,
+        display_name=data_science_private_endpoint_display_name,
+        state=data_science_private_endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -202,11 +202,11 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=var["compartment_id"],
-        created_by=var["data_science_private_endpoint_created_by"],
-        data_science_resource_type=var["data_science_private_endpoint_data_science_resource_type"],
-        display_name=var["data_science_private_endpoint_display_name"],
-        state=var["data_science_private_endpoint_state"])
+    test_data_science_private_endpoints = oci.DataScience.get_private_endpoints(compartment_id=compartment_id,
+        created_by=data_science_private_endpoint_created_by,
+        data_science_resource_type=data_science_private_endpoint_data_science_resource_type,
+        display_name=data_science_private_endpoint_display_name,
+        state=data_science_private_endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 

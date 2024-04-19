@@ -18,18 +18,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlBackup = new oci.mysql.MysqlBackup("testMysqlBackup", {
- *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
- *     backupType: _var.mysql_backup_backup_type,
+ * const testMysqlBackup = new oci.mysql.MysqlBackup("test_mysql_backup", {
+ *     dbSystemId: testDbSystem.id,
+ *     backupType: mysqlBackupBackupType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.mysql_backup_description,
- *     displayName: _var.mysql_backup_display_name,
+ *     description: mysqlBackupDescription,
+ *     displayName: mysqlBackupDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionInDays: _var.mysql_backup_retention_in_days,
+ *     retentionInDays: mysqlBackupRetentionInDays,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,21 +19,21 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessmentSecurityFeatures = oci.DataSafe.getSecurityAssessmentSecurityFeatures({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_assessment_security_feature_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_security_feature_compartment_id_in_subtree,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     targetsWithColumnEncryption: _var.security_assessment_security_feature_targets_with_column_encryption,
- *     targetsWithDatabaseVault: _var.security_assessment_security_feature_targets_with_database_vault,
- *     targetsWithExternalAuthentication: _var.security_assessment_security_feature_targets_with_external_authentication,
- *     targetsWithFineGrainedAudit: _var.security_assessment_security_feature_targets_with_fine_grained_audit,
- *     targetsWithGlobalAuthentication: _var.security_assessment_security_feature_targets_with_global_authentication,
- *     targetsWithNetworkEncryption: _var.security_assessment_security_feature_targets_with_network_encryption,
- *     targetsWithPasswordAuthentication: _var.security_assessment_security_feature_targets_with_password_authentication,
- *     targetsWithPrivilegeAnalysis: _var.security_assessment_security_feature_targets_with_privilege_analysis,
- *     targetsWithTablespaceEncryption: _var.security_assessment_security_feature_targets_with_tablespace_encryption,
- *     targetsWithTraditionalAudit: _var.security_assessment_security_feature_targets_with_traditional_audit,
- *     targetsWithUnifiedAudit: _var.security_assessment_security_feature_targets_with_unified_audit,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityAssessmentSecurityFeatureAccessLevel,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree,
+ *     targetId: testTarget.id,
+ *     targetsWithColumnEncryption: securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
+ *     targetsWithDatabaseVault: securityAssessmentSecurityFeatureTargetsWithDatabaseVault,
+ *     targetsWithExternalAuthentication: securityAssessmentSecurityFeatureTargetsWithExternalAuthentication,
+ *     targetsWithFineGrainedAudit: securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit,
+ *     targetsWithGlobalAuthentication: securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication,
+ *     targetsWithNetworkEncryption: securityAssessmentSecurityFeatureTargetsWithNetworkEncryption,
+ *     targetsWithPasswordAuthentication: securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication,
+ *     targetsWithPrivilegeAnalysis: securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis,
+ *     targetsWithTablespaceEncryption: securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption,
+ *     targetsWithTraditionalAudit: securityAssessmentSecurityFeatureTargetsWithTraditionalAudit,
+ *     targetsWithUnifiedAudit: securityAssessmentSecurityFeatureTargetsWithUnifiedAudit,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -176,21 +176,21 @@ export interface GetSecurityAssessmentSecurityFeaturesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessmentSecurityFeatures = oci.DataSafe.getSecurityAssessmentSecurityFeatures({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_assessment_security_feature_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_security_feature_compartment_id_in_subtree,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     targetsWithColumnEncryption: _var.security_assessment_security_feature_targets_with_column_encryption,
- *     targetsWithDatabaseVault: _var.security_assessment_security_feature_targets_with_database_vault,
- *     targetsWithExternalAuthentication: _var.security_assessment_security_feature_targets_with_external_authentication,
- *     targetsWithFineGrainedAudit: _var.security_assessment_security_feature_targets_with_fine_grained_audit,
- *     targetsWithGlobalAuthentication: _var.security_assessment_security_feature_targets_with_global_authentication,
- *     targetsWithNetworkEncryption: _var.security_assessment_security_feature_targets_with_network_encryption,
- *     targetsWithPasswordAuthentication: _var.security_assessment_security_feature_targets_with_password_authentication,
- *     targetsWithPrivilegeAnalysis: _var.security_assessment_security_feature_targets_with_privilege_analysis,
- *     targetsWithTablespaceEncryption: _var.security_assessment_security_feature_targets_with_tablespace_encryption,
- *     targetsWithTraditionalAudit: _var.security_assessment_security_feature_targets_with_traditional_audit,
- *     targetsWithUnifiedAudit: _var.security_assessment_security_feature_targets_with_unified_audit,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityAssessmentSecurityFeatureAccessLevel,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree,
+ *     targetId: testTarget.id,
+ *     targetsWithColumnEncryption: securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
+ *     targetsWithDatabaseVault: securityAssessmentSecurityFeatureTargetsWithDatabaseVault,
+ *     targetsWithExternalAuthentication: securityAssessmentSecurityFeatureTargetsWithExternalAuthentication,
+ *     targetsWithFineGrainedAudit: securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit,
+ *     targetsWithGlobalAuthentication: securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication,
+ *     targetsWithNetworkEncryption: securityAssessmentSecurityFeatureTargetsWithNetworkEncryption,
+ *     targetsWithPasswordAuthentication: securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication,
+ *     targetsWithPrivilegeAnalysis: securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis,
+ *     targetsWithTablespaceEncryption: securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption,
+ *     targetsWithTraditionalAudit: securityAssessmentSecurityFeatureTargetsWithTraditionalAudit,
+ *     targetsWithUnifiedAudit: securityAssessmentSecurityFeatureTargetsWithUnifiedAudit,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

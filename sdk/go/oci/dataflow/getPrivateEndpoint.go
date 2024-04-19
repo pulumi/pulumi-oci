@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataFlow.GetPrivateEndpoint(ctx, &dataflow.GetPrivateEndpointArgs{
-//				PrivateEndpointId: oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+//				PrivateEndpointId: testPrivateEndpointOciDataflowPrivateEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

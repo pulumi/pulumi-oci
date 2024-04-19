@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MeteringComputation.GetCustomTables(ctx, &meteringcomputation.GetCustomTablesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				SavedReportId: oci_metering_computation_saved_report.Test_saved_report.Id,
+//				CompartmentId: compartmentId,
+//				SavedReportId: testSavedReport.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

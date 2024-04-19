@@ -59,7 +59,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
-     *             .drPlanId(oci_disaster_recovery_dr_plan.test_dr_plan().id())
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
      *             .build());
      * 
      *     }
@@ -101,7 +101,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
-     *             .drPlanId(oci_disaster_recovery_dr_plan.test_dr_plan().id())
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
      *             .build());
      * 
      *     }
@@ -143,7 +143,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
-     *             .drPlanId(oci_disaster_recovery_dr_plan.test_dr_plan().id())
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
      *             .build());
      * 
      *     }
@@ -185,7 +185,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlan = DisasterRecoveryFunctions.getDrPlan(GetDrPlanArgs.builder()
-     *             .drPlanId(oci_disaster_recovery_dr_plan.test_dr_plan().id())
+     *             .drPlanId(testDrPlanOciDisasterRecoveryDrPlan.id())
      *             .build());
      * 
      *     }
@@ -227,7 +227,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
-     *             .drPlanExecutionId(oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution().id())
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
      *             .build());
      * 
      *     }
@@ -269,7 +269,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
-     *             .drPlanExecutionId(oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution().id())
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
      *             .build());
      * 
      *     }
@@ -311,7 +311,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
-     *             .drPlanExecutionId(oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution().id())
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
      *             .build());
      * 
      *     }
@@ -353,7 +353,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecution = DisasterRecoveryFunctions.getDrPlanExecution(GetDrPlanExecutionArgs.builder()
-     *             .drPlanExecutionId(oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution().id())
+     *             .drPlanExecutionId(testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id())
      *             .build());
      * 
      *     }
@@ -395,11 +395,11 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .displayName(var_.dr_plan_execution_display_name())
-     *             .drPlanExecutionId(oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution().id())
-     *             .drPlanExecutionType(var_.dr_plan_execution_dr_plan_execution_type())
-     *             .state(var_.dr_plan_execution_state())
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanExecutionDisplayName)
+     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .drPlanExecutionType(drPlanExecutionDrPlanExecutionType)
+     *             .state(drPlanExecutionState)
      *             .build());
      * 
      *     }
@@ -441,11 +441,11 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .displayName(var_.dr_plan_execution_display_name())
-     *             .drPlanExecutionId(oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution().id())
-     *             .drPlanExecutionType(var_.dr_plan_execution_dr_plan_execution_type())
-     *             .state(var_.dr_plan_execution_state())
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanExecutionDisplayName)
+     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .drPlanExecutionType(drPlanExecutionDrPlanExecutionType)
+     *             .state(drPlanExecutionState)
      *             .build());
      * 
      *     }
@@ -487,11 +487,11 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .displayName(var_.dr_plan_execution_display_name())
-     *             .drPlanExecutionId(oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution().id())
-     *             .drPlanExecutionType(var_.dr_plan_execution_dr_plan_execution_type())
-     *             .state(var_.dr_plan_execution_state())
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanExecutionDisplayName)
+     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .drPlanExecutionType(drPlanExecutionDrPlanExecutionType)
+     *             .state(drPlanExecutionState)
      *             .build());
      * 
      *     }
@@ -533,11 +533,11 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlanExecutions = DisasterRecoveryFunctions.getDrPlanExecutions(GetDrPlanExecutionsArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .displayName(var_.dr_plan_execution_display_name())
-     *             .drPlanExecutionId(oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution().id())
-     *             .drPlanExecutionType(var_.dr_plan_execution_dr_plan_execution_type())
-     *             .state(var_.dr_plan_execution_state())
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanExecutionDisplayName)
+     *             .drPlanExecutionId(testDrPlanExecution.id())
+     *             .drPlanExecutionType(drPlanExecutionDrPlanExecutionType)
+     *             .state(drPlanExecutionState)
      *             .build());
      * 
      *     }
@@ -579,11 +579,11 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .displayName(var_.dr_plan_display_name())
-     *             .drPlanId(oci_disaster_recovery_dr_plan.test_dr_plan().id())
-     *             .drPlanType(var_.dr_plan_dr_plan_type())
-     *             .state(var_.dr_plan_state())
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanDisplayName)
+     *             .drPlanId(testDrPlan.id())
+     *             .drPlanType(drPlanDrPlanType)
+     *             .state(drPlanState)
      *             .build());
      * 
      *     }
@@ -625,11 +625,11 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .displayName(var_.dr_plan_display_name())
-     *             .drPlanId(oci_disaster_recovery_dr_plan.test_dr_plan().id())
-     *             .drPlanType(var_.dr_plan_dr_plan_type())
-     *             .state(var_.dr_plan_state())
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanDisplayName)
+     *             .drPlanId(testDrPlan.id())
+     *             .drPlanType(drPlanDrPlanType)
+     *             .state(drPlanState)
      *             .build());
      * 
      *     }
@@ -671,11 +671,11 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .displayName(var_.dr_plan_display_name())
-     *             .drPlanId(oci_disaster_recovery_dr_plan.test_dr_plan().id())
-     *             .drPlanType(var_.dr_plan_dr_plan_type())
-     *             .state(var_.dr_plan_state())
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanDisplayName)
+     *             .drPlanId(testDrPlan.id())
+     *             .drPlanType(drPlanDrPlanType)
+     *             .state(drPlanState)
      *             .build());
      * 
      *     }
@@ -717,11 +717,11 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrPlans = DisasterRecoveryFunctions.getDrPlans(GetDrPlansArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .displayName(var_.dr_plan_display_name())
-     *             .drPlanId(oci_disaster_recovery_dr_plan.test_dr_plan().id())
-     *             .drPlanType(var_.dr_plan_dr_plan_type())
-     *             .state(var_.dr_plan_state())
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .displayName(drPlanDisplayName)
+     *             .drPlanId(testDrPlan.id())
+     *             .drPlanType(drPlanDrPlanType)
+     *             .state(drPlanState)
      *             .build());
      * 
      *     }
@@ -763,7 +763,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
      *             .build());
      * 
      *     }
@@ -805,7 +805,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
      *             .build());
      * 
      *     }
@@ -847,7 +847,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
      *             .build());
      * 
      *     }
@@ -889,7 +889,7 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroup = DisasterRecoveryFunctions.getDrProtectionGroup(GetDrProtectionGroupArgs.builder()
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
+     *             .drProtectionGroupId(testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id())
      *             .build());
      * 
      *     }
@@ -931,12 +931,12 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dr_protection_group_display_name())
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .lifecycleSubState(var_.dr_protection_group_lifecycle_sub_state())
-     *             .role(var_.dr_protection_group_role())
-     *             .state(var_.dr_protection_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(drProtectionGroupDisplayName)
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
+     *             .role(drProtectionGroupRole)
+     *             .state(drProtectionGroupState)
      *             .build());
      * 
      *     }
@@ -978,12 +978,12 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dr_protection_group_display_name())
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .lifecycleSubState(var_.dr_protection_group_lifecycle_sub_state())
-     *             .role(var_.dr_protection_group_role())
-     *             .state(var_.dr_protection_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(drProtectionGroupDisplayName)
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
+     *             .role(drProtectionGroupRole)
+     *             .state(drProtectionGroupState)
      *             .build());
      * 
      *     }
@@ -1025,12 +1025,12 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dr_protection_group_display_name())
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .lifecycleSubState(var_.dr_protection_group_lifecycle_sub_state())
-     *             .role(var_.dr_protection_group_role())
-     *             .state(var_.dr_protection_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(drProtectionGroupDisplayName)
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
+     *             .role(drProtectionGroupRole)
+     *             .state(drProtectionGroupState)
      *             .build());
      * 
      *     }
@@ -1072,12 +1072,12 @@ public final class DisasterRecoveryFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrProtectionGroups = DisasterRecoveryFunctions.getDrProtectionGroups(GetDrProtectionGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dr_protection_group_display_name())
-     *             .drProtectionGroupId(oci_disaster_recovery_dr_protection_group.test_dr_protection_group().id())
-     *             .lifecycleSubState(var_.dr_protection_group_lifecycle_sub_state())
-     *             .role(var_.dr_protection_group_role())
-     *             .state(var_.dr_protection_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(drProtectionGroupDisplayName)
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .lifecycleSubState(drProtectionGroupLifecycleSubState)
+     *             .role(drProtectionGroupRole)
+     *             .state(drProtectionGroupState)
      *             .build());
      * 
      *     }

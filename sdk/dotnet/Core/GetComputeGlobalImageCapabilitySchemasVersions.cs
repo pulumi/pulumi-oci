@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeGlobalImageCapabilitySchemasVersions = Oci.Core.GetComputeGlobalImageCapabilitySchemasVersions.Invoke(new()
         ///     {
-        ///         ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
-        ///         DisplayName = @var.Compute_global_image_capability_schemas_version_display_name,
+        ///         ComputeGlobalImageCapabilitySchemaId = testComputeGlobalImageCapabilitySchema.Id,
+        ///         DisplayName = computeGlobalImageCapabilitySchemasVersionDisplayName,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeGlobalImageCapabilitySchemasVersions = Oci.Core.GetComputeGlobalImageCapabilitySchemasVersions.Invoke(new()
         ///     {
-        ///         ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
-        ///         DisplayName = @var.Compute_global_image_capability_schemas_version_display_name,
+        ///         ComputeGlobalImageCapabilitySchemaId = testComputeGlobalImageCapabilitySchema.Id,
+        ///         DisplayName = computeGlobalImageCapabilitySchemasVersionDisplayName,
         ///     });
         /// 
         /// });

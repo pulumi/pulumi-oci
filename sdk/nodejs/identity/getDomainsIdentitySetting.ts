@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentitySetting = oci.Identity.getDomainsIdentitySetting({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identitySettingId: oci_identity_domains_identity_setting.test_identity_setting.id,
+ *     idcsEndpoint: testDomain.url,
+ *     identitySettingId: testIdentitySettingOciIdentityDomainsIdentitySetting.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.identity_setting_authorization,
- *     resourceTypeSchemaVersion: _var.identity_setting_resource_type_schema_version,
+ *     authorization: identitySettingAuthorization,
+ *     resourceTypeSchemaVersion: identitySettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -188,12 +188,12 @@ export interface GetDomainsIdentitySettingResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentitySetting = oci.Identity.getDomainsIdentitySetting({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identitySettingId: oci_identity_domains_identity_setting.test_identity_setting.id,
+ *     idcsEndpoint: testDomain.url,
+ *     identitySettingId: testIdentitySettingOciIdentityDomainsIdentitySetting.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.identity_setting_authorization,
- *     resourceTypeSchemaVersion: _var.identity_setting_resource_type_schema_version,
+ *     authorization: identitySettingAuthorization,
+ *     resourceTypeSchemaVersion: identitySettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Events.GetRule(ctx, &events.GetRuleArgs{
-//				RuleId: oci_events_rule.Test_rule.Id,
+//				RuleId: testRuleOciEventsRule.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

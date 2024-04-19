@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityTopologyComputeNetworkBlocks = Oci.Core.GetComputeCapacityTopologyComputeNetworkBlocks.Invoke(new()
         ///     {
-        ///         ComputeCapacityTopologyId = oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
-        ///         AvailabilityDomain = @var.Compute_capacity_topology_compute_network_block_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputeHpcIslandId = oci_core_compute_hpc_island.Test_compute_hpc_island.Id,
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopology.Id,
+        ///         AvailabilityDomain = computeCapacityTopologyComputeNetworkBlockAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeHpcIslandId = testComputeHpcIsland.Id,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityTopologyComputeNetworkBlocks = Oci.Core.GetComputeCapacityTopologyComputeNetworkBlocks.Invoke(new()
         ///     {
-        ///         ComputeCapacityTopologyId = oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
-        ///         AvailabilityDomain = @var.Compute_capacity_topology_compute_network_block_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputeHpcIslandId = oci_core_compute_hpc_island.Test_compute_hpc_island.Id,
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopology.Id,
+        ///         AvailabilityDomain = computeCapacityTopologyComputeNetworkBlockAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeHpcIslandId = testComputeHpcIsland.Id,
         ///     });
         /// 
         /// });

@@ -59,7 +59,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoint = ResourceManagerFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .privateEndpointId(testPrivateEndpointOciResourcemanagerPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -101,7 +101,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoint = ResourceManagerFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .privateEndpointId(testPrivateEndpointOciResourcemanagerPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -143,7 +143,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoint = ResourceManagerFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .privateEndpointId(testPrivateEndpointOciResourcemanagerPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -185,7 +185,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoint = ResourceManagerFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .privateEndpointId(testPrivateEndpointOciResourcemanagerPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -227,8 +227,8 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpointReachableIp = ResourceManagerFunctions.getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs.builder()
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .privateIp(var_.private_endpoint_reachable_ip_private_ip())
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .privateIp(privateEndpointReachableIpPrivateIp)
      *             .build());
      * 
      *     }
@@ -270,8 +270,8 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpointReachableIp = ResourceManagerFunctions.getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs.builder()
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .privateIp(var_.private_endpoint_reachable_ip_private_ip())
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .privateIp(privateEndpointReachableIpPrivateIp)
      *             .build());
      * 
      *     }
@@ -313,8 +313,8 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpointReachableIp = ResourceManagerFunctions.getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs.builder()
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .privateIp(var_.private_endpoint_reachable_ip_private_ip())
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .privateIp(privateEndpointReachableIpPrivateIp)
      *             .build());
      * 
      *     }
@@ -356,8 +356,8 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpointReachableIp = ResourceManagerFunctions.getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs.builder()
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .privateIp(var_.private_endpoint_reachable_ip_private_ip())
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .privateIp(privateEndpointReachableIpPrivateIp)
      *             .build());
      * 
      *     }
@@ -401,10 +401,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_endpoint_display_name())
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateEndpointDisplayName)
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -448,10 +448,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_endpoint_display_name())
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateEndpointDisplayName)
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -495,10 +495,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_endpoint_display_name())
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateEndpointDisplayName)
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -542,10 +542,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_endpoint_display_name())
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateEndpointDisplayName)
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -589,10 +589,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_endpoint_display_name())
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateEndpointDisplayName)
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -636,10 +636,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_endpoint_display_name())
-     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateEndpointDisplayName)
+     *             .privateEndpointId(testPrivateEndpoint.id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -681,7 +681,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStack = ResourceManagerFunctions.getStack(GetStackArgs.builder()
-     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .stackId(testStackOciResourcemanagerStack.id())
      *             .build());
      * 
      *     }
@@ -723,7 +723,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStack = ResourceManagerFunctions.getStack(GetStackArgs.builder()
-     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .stackId(testStackOciResourcemanagerStack.id())
      *             .build());
      * 
      *     }
@@ -765,7 +765,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStack = ResourceManagerFunctions.getStack(GetStackArgs.builder()
-     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .stackId(testStackOciResourcemanagerStack.id())
      *             .build());
      * 
      *     }
@@ -807,7 +807,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStack = ResourceManagerFunctions.getStack(GetStackArgs.builder()
-     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .stackId(testStackOciResourcemanagerStack.id())
      *             .build());
      * 
      *     }
@@ -845,7 +845,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStackTfState = ResourceManagerFunctions.getStackTfState(GetStackTfStateArgs.builder()
-     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .stackId(testStack.id())
      *             .build());
      * 
      *     }
@@ -883,7 +883,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStackTfState = ResourceManagerFunctions.getStackTfState(GetStackTfStateArgs.builder()
-     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .stackId(testStack.id())
      *             .build());
      * 
      *     }
@@ -921,7 +921,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStackTfState = ResourceManagerFunctions.getStackTfState(GetStackTfStateArgs.builder()
-     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .stackId(testStack.id())
      *             .build());
      * 
      *     }
@@ -959,7 +959,7 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStackTfState = ResourceManagerFunctions.getStackTfState(GetStackTfStateArgs.builder()
-     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .stackId(testStack.id())
      *             .build());
      * 
      *     }
@@ -1003,10 +1003,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStacks = ResourceManagerFunctions.getStacks(GetStacksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stack_display_name())
-     *             .id(var_.stack_id())
-     *             .state(var_.stack_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
      *             .build());
      * 
      *     }
@@ -1050,10 +1050,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStacks = ResourceManagerFunctions.getStacks(GetStacksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stack_display_name())
-     *             .id(var_.stack_id())
-     *             .state(var_.stack_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
      *             .build());
      * 
      *     }
@@ -1097,10 +1097,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStacks = ResourceManagerFunctions.getStacks(GetStacksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stack_display_name())
-     *             .id(var_.stack_id())
-     *             .state(var_.stack_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
      *             .build());
      * 
      *     }
@@ -1144,10 +1144,10 @@ public final class ResourceManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStacks = ResourceManagerFunctions.getStacks(GetStacksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.stack_display_name())
-     *             .id(var_.stack_id())
-     *             .state(var_.stack_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(stackDisplayName)
+     *             .id(stackId)
+     *             .state(stackState)
      *             .build());
      * 
      *     }

@@ -30,11 +30,11 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testAccessPolicies = Oci.ServiceMesh.GetAccessPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Access_policy_id,
-        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///         Name = @var.Access_policy_name,
-        ///         State = @var.Access_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = accessPolicyId,
+        ///         MeshId = testMesh.Id,
+        ///         Name = accessPolicyName,
+        ///         State = accessPolicyState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testAccessPolicies = Oci.ServiceMesh.GetAccessPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Access_policy_id,
-        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///         Name = @var.Access_policy_name,
-        ///         State = @var.Access_policy_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = accessPolicyId,
+        ///         MeshId = testMesh.Id,
+        ///         Name = accessPolicyName,
+        ///         State = accessPolicyState,
         ///     });
         /// 
         /// });

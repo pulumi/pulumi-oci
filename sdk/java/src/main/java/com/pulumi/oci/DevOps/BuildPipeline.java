@@ -47,17 +47,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBuildPipeline = new BuildPipeline(&#34;testBuildPipeline&#34;, BuildPipelineArgs.builder()        
- *             .projectId(oci_devops_project.test_project().id())
+ *             .projectId(testProject.id())
  *             .buildPipelineParameters(BuildPipelineBuildPipelineParametersArgs.builder()
  *                 .items(BuildPipelineBuildPipelineParametersItemArgs.builder()
- *                     .defaultValue(var_.build_pipeline_build_pipeline_parameters_items_default_value())
- *                     .name(var_.build_pipeline_build_pipeline_parameters_items_name())
- *                     .description(var_.build_pipeline_build_pipeline_parameters_items_description())
+ *                     .defaultValue(buildPipelineBuildPipelineParametersItemsDefaultValue)
+ *                     .name(buildPipelineBuildPipelineParametersItemsName)
+ *                     .description(buildPipelineBuildPipelineParametersItemsDescription)
  *                     .build())
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.build_pipeline_description())
- *             .displayName(var_.build_pipeline_display_name())
+ *             .description(buildPipelineDescription)
+ *             .displayName(buildPipelineDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

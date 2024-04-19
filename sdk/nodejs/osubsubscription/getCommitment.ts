@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCommitment = oci.OsubSubscription.getCommitment({
- *     commitmentId: oci_osub_subscription_commitment.test_commitment.id,
- *     xOneGatewaySubscriptionId: _var.commitment_x_one_gateway_subscription_id,
- *     xOneOriginRegion: _var.commitment_x_one_origin_region,
+ *     commitmentId: testCommitmentOciOsubSubscriptionCommitment.id,
+ *     xOneGatewaySubscriptionId: commitmentXOneGatewaySubscriptionId,
+ *     xOneOriginRegion: commitmentXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,9 +101,9 @@ export interface GetCommitmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCommitment = oci.OsubSubscription.getCommitment({
- *     commitmentId: oci_osub_subscription_commitment.test_commitment.id,
- *     xOneGatewaySubscriptionId: _var.commitment_x_one_gateway_subscription_id,
- *     xOneOriginRegion: _var.commitment_x_one_origin_region,
+ *     commitmentId: testCommitmentOciOsubSubscriptionCommitment.id,
+ *     xOneGatewaySubscriptionId: commitmentXOneGatewaySubscriptionId,
+ *     xOneOriginRegion: commitmentXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

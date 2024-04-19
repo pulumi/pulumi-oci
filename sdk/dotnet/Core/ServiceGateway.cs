@@ -33,27 +33,27 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testServiceGateway = new Oci.Core.ServiceGateway("testServiceGateway", new()
+    ///     var testServiceGateway = new Oci.Core.ServiceGateway("test_service_gateway", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Services = new[]
     ///         {
     ///             new Oci.Core.Inputs.ServiceGatewayServiceArgs
     ///             {
-    ///                 ServiceId = data.Oci_core_services.Test_services.Services[0].Id,
+    ///                 ServiceId = testServices.Services[0].Id,
     ///             },
     ///         },
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Service_gateway_display_name,
+    ///         DisplayName = serviceGatewayDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///         RouteTableId = testRouteTable.Id,
     ///     });
     /// 
     /// });

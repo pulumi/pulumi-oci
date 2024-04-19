@@ -47,17 +47,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDatabaseSoftwareImage = new DatabaseSoftwareImage(&#34;testDatabaseSoftwareImage&#34;, DatabaseSoftwareImageArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.database_software_image_display_name())
- *             .databaseSoftwareImageOneOffPatches(var_.database_software_image_database_software_image_one_off_patches())
- *             .databaseVersion(var_.database_software_image_database_version())
- *             .definedTags(var_.database_software_image_defined_tags())
+ *             .compartmentId(compartmentId)
+ *             .displayName(databaseSoftwareImageDisplayName)
+ *             .databaseSoftwareImageOneOffPatches(databaseSoftwareImageDatabaseSoftwareImageOneOffPatches)
+ *             .databaseVersion(databaseSoftwareImageDatabaseVersion)
+ *             .definedTags(databaseSoftwareImageDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .imageShapeFamily(var_.database_software_image_image_shape_family())
- *             .imageType(var_.database_software_image_image_type())
- *             .lsInventory(var_.database_software_image_ls_inventory())
- *             .patchSet(var_.database_software_image_patch_set())
- *             .sourceDbHomeId(oci_database_db_home.test_db_home().id())
+ *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
+ *             .imageType(databaseSoftwareImageImageType)
+ *             .lsInventory(databaseSoftwareImageLsInventory)
+ *             .patchSet(databaseSoftwareImagePatchSet)
+ *             .sourceDbHomeId(testDbHome.id())
  *             .build());
  * 
  *     }

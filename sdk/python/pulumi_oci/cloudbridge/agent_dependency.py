@@ -498,22 +498,22 @@ class AgentDependency(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_agent_dependency = oci.cloud_bridge.AgentDependency("testAgentDependency",
-            bucket=var["agent_dependency_bucket"],
-            compartment_id=var["compartment_id"],
-            dependency_name=var["agent_dependency_dependency_name"],
-            display_name=var["agent_dependency_display_name"],
-            namespace=var["agent_dependency_namespace"],
-            object=var["agent_dependency_object"],
+        test_agent_dependency = oci.cloud_bridge.AgentDependency("test_agent_dependency",
+            bucket=agent_dependency_bucket,
+            compartment_id=compartment_id,
+            dependency_name=agent_dependency_dependency_name,
+            display_name=agent_dependency_display_name,
+            namespace=agent_dependency_namespace,
+            object=agent_dependency_object,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            dependency_version=var["agent_dependency_dependency_version"],
-            description=var["agent_dependency_description"],
+            dependency_version=agent_dependency_dependency_version,
+            description=agent_dependency_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            system_tags=var["agent_dependency_system_tags"])
+            system_tags=agent_dependency_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -561,22 +561,22 @@ class AgentDependency(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_agent_dependency = oci.cloud_bridge.AgentDependency("testAgentDependency",
-            bucket=var["agent_dependency_bucket"],
-            compartment_id=var["compartment_id"],
-            dependency_name=var["agent_dependency_dependency_name"],
-            display_name=var["agent_dependency_display_name"],
-            namespace=var["agent_dependency_namespace"],
-            object=var["agent_dependency_object"],
+        test_agent_dependency = oci.cloud_bridge.AgentDependency("test_agent_dependency",
+            bucket=agent_dependency_bucket,
+            compartment_id=compartment_id,
+            dependency_name=agent_dependency_dependency_name,
+            display_name=agent_dependency_display_name,
+            namespace=agent_dependency_namespace,
+            object=agent_dependency_object,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            dependency_version=var["agent_dependency_dependency_version"],
-            description=var["agent_dependency_description"],
+            dependency_version=agent_dependency_dependency_version,
+            description=agent_dependency_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            system_tags=var["agent_dependency_system_tags"])
+            system_tags=agent_dependency_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 

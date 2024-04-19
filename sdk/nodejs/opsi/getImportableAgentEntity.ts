@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testImportableAgentEntity = oci.Opsi.getImportableAgentEntity({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,7 +77,7 @@ export interface GetImportableAgentEntityResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testImportableAgentEntity = oci.Opsi.getImportableAgentEntity({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

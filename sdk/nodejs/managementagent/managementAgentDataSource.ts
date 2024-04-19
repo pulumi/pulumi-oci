@@ -18,23 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentDataSource = new oci.managementagent.ManagementAgentDataSource("testManagementAgentDataSource", {
- *     compartmentId: _var.compartment_id,
- *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
- *     type: _var.management_agent_data_source_type,
- *     url: _var.management_agent_data_source_url,
- *     allowMetrics: _var.management_agent_data_source_allow_metrics,
- *     connectionTimeout: _var.management_agent_data_source_connection_timeout,
+ * const testManagementAgentDataSource = new oci.managementagent.ManagementAgentDataSource("test_management_agent_data_source", {
+ *     compartmentId: compartmentId,
+ *     managementAgentId: testManagementAgent.id,
+ *     name: managementAgentDataSourceName,
+ *     type: managementAgentDataSourceType,
+ *     url: managementAgentDataSourceUrl,
+ *     allowMetrics: managementAgentDataSourceAllowMetrics,
+ *     connectionTimeout: managementAgentDataSourceConnectionTimeout,
  *     metricDimensions: [{
- *         name: _var.management_agent_data_source_metric_dimensions_name,
- *         value: _var.management_agent_data_source_metric_dimensions_value,
+ *         name: managementAgentDataSourceMetricDimensionsName,
+ *         value: managementAgentDataSourceMetricDimensionsValue,
  *     }],
- *     namespace: _var.management_agent_data_source_namespace,
- *     proxyUrl: _var.management_agent_data_source_proxy_url,
- *     readDataLimitInKilobytes: _var.management_agent_data_source_read_data_limit_in_kilobytes,
- *     readTimeout: _var.management_agent_data_source_read_timeout,
- *     resourceGroup: _var.management_agent_data_source_resource_group,
- *     scheduleMins: _var.management_agent_data_source_schedule_mins,
+ *     namespace: managementAgentDataSourceNamespace,
+ *     proxyUrl: managementAgentDataSourceProxyUrl,
+ *     readDataLimitInKilobytes: managementAgentDataSourceReadDataLimitInKilobytes,
+ *     readTimeout: managementAgentDataSourceReadTimeout,
+ *     resourceGroup: managementAgentDataSourceResourceGroup,
+ *     scheduleMins: managementAgentDataSourceScheduleMins,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

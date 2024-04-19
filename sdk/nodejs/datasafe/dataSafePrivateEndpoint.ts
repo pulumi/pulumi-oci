@@ -16,20 +16,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafePrivateEndpoint = new oci.datasafe.DataSafePrivateEndpoint("testDataSafePrivateEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.data_safe_private_endpoint_display_name,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ * const testDataSafePrivateEndpoint = new oci.datasafe.DataSafePrivateEndpoint("test_data_safe_private_endpoint", {
+ *     compartmentId: compartmentId,
+ *     displayName: dataSafePrivateEndpointDisplayName,
+ *     subnetId: testSubnet.id,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.data_safe_private_endpoint_description,
+ *     description: dataSafePrivateEndpointDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     nsgIds: _var.data_safe_private_endpoint_nsg_ids,
- *     privateEndpointIp: _var.data_safe_private_endpoint_private_endpoint_ip,
+ *     nsgIds: dataSafePrivateEndpointNsgIds,
+ *     privateEndpointIp: dataSafePrivateEndpointPrivateEndpointIp,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

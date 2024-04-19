@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceApplicationPatch(ctx, &dataintegration.GetWorkspaceApplicationPatchArgs{
-//				ApplicationKey: _var.Workspace_application_patch_application_key,
-//				PatchKey:       _var.Workspace_application_patch_patch_key,
-//				WorkspaceId:    oci_dataintegration_workspace.Test_workspace.Id,
+//				ApplicationKey: workspaceApplicationPatchApplicationKey,
+//				PatchKey:       workspaceApplicationPatchPatchKey,
+//				WorkspaceId:    testWorkspace.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

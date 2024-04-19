@@ -549,21 +549,22 @@ class Bastion(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bastion = oci.bastion.Bastion("testBastion",
-            bastion_type=var["bastion_bastion_type"],
-            compartment_id=var["compartment_id"],
-            target_subnet_id=oci_core_subnet["test_subnet"]["id"],
-            client_cidr_block_allow_lists=var["bastion_client_cidr_block_allow_list"],
+        test_bastion = oci.bastion.Bastion("test_bastion",
+            bastion_type=bastion_bastion_type,
+            compartment_id=compartment_id,
+            target_subnet_id=test_subnet["id"],
+            client_cidr_block_allow_lists=bastion_client_cidr_block_allow_list,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            dns_proxy_status=var["bastion_dns_proxy_status"],
+            dns_proxy_status=bastion_dns_proxy_status,
             freeform_tags={
                 "bar-key": "value",
             },
-            max_session_ttl_in_seconds=var["bastion_max_session_ttl_in_seconds"],
-            phone_book_entry=var["bastion_phone_book_entry"],
-            static_jump_host_ip_addresses=var["bastion_static_jump_host_ip_addresses"])
+            max_session_ttl_in_seconds=bastion_max_session_ttl_in_seconds,
+            name=bastion_name,
+            phone_book_entry=bastion_phone_book_entry,
+            static_jump_host_ip_addresses=bastion_static_jump_host_ip_addresses)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -611,21 +612,22 @@ class Bastion(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bastion = oci.bastion.Bastion("testBastion",
-            bastion_type=var["bastion_bastion_type"],
-            compartment_id=var["compartment_id"],
-            target_subnet_id=oci_core_subnet["test_subnet"]["id"],
-            client_cidr_block_allow_lists=var["bastion_client_cidr_block_allow_list"],
+        test_bastion = oci.bastion.Bastion("test_bastion",
+            bastion_type=bastion_bastion_type,
+            compartment_id=compartment_id,
+            target_subnet_id=test_subnet["id"],
+            client_cidr_block_allow_lists=bastion_client_cidr_block_allow_list,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            dns_proxy_status=var["bastion_dns_proxy_status"],
+            dns_proxy_status=bastion_dns_proxy_status,
             freeform_tags={
                 "bar-key": "value",
             },
-            max_session_ttl_in_seconds=var["bastion_max_session_ttl_in_seconds"],
-            phone_book_entry=var["bastion_phone_book_entry"],
-            static_jump_host_ip_addresses=var["bastion_static_jump_host_ip_addresses"])
+            max_session_ttl_in_seconds=bastion_max_session_ttl_in_seconds,
+            name=bastion_name,
+            phone_book_entry=bastion_phone_book_entry,
+            static_jump_host_ip_addresses=bastion_static_jump_host_ip_addresses)
         ```
         <!--End PulumiCodeChooser -->
 

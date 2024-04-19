@@ -618,18 +618,18 @@ class AuditTrailManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_audit_trail_management = oci.data_safe.AuditTrailManagement("testAuditTrailManagement",
-            compartment_id=var["compartment_id"],
-            target_id=oci_data_safe_target_database["test_target_database"]["id"],
+        test_audit_trail_management = oci.data_safe.AuditTrailManagement("test_audit_trail_management",
+            compartment_id=compartment_id,
+            target_id=test_target_database["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["audit_trail_management_description"],
-            display_name=var["audit_trail_management_display_name"],
+            description=audit_trail_management_description,
+            display_name=audit_trail_management_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_purge_enabled=var["audit_trail_management_is_auto_purge_enabled"])
+            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -675,18 +675,18 @@ class AuditTrailManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_audit_trail_management = oci.data_safe.AuditTrailManagement("testAuditTrailManagement",
-            compartment_id=var["compartment_id"],
-            target_id=oci_data_safe_target_database["test_target_database"]["id"],
+        test_audit_trail_management = oci.data_safe.AuditTrailManagement("test_audit_trail_management",
+            compartment_id=compartment_id,
+            target_id=test_target_database["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["audit_trail_management_description"],
-            display_name=var["audit_trail_management_display_name"],
+            description=audit_trail_management_description,
+            display_name=audit_trail_management_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_purge_enabled=var["audit_trail_management_is_auto_purge_enabled"])
+            is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled)
         ```
         <!--End PulumiCodeChooser -->
 

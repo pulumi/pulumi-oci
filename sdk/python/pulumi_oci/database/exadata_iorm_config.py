@@ -199,12 +199,12 @@ class ExadataIormConfig(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_exadata_iorm_config = oci.database.ExadataIormConfig("testExadataIormConfig",
+        test_exadata_iorm_config = oci.database.ExadataIormConfig("test_exadata_iorm_config",
             db_plans=[oci.database.ExadataIormConfigDbPlanArgs(
-                db_name=var["exadata_iorm_config_db_plans_db_name"],
-                share=var["exadata_iorm_config_db_plans_share"],
+                db_name=exadata_iorm_config_db_plans_db_name,
+                share=exadata_iorm_config_db_plans_share,
             )],
-            db_system_id=oci_database_db_system["test_db_system"]["id"],
+            db_system_id=test_db_system["id"],
             objective="AUTO")
         ```
         <!--End PulumiCodeChooser -->
@@ -248,12 +248,12 @@ class ExadataIormConfig(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_exadata_iorm_config = oci.database.ExadataIormConfig("testExadataIormConfig",
+        test_exadata_iorm_config = oci.database.ExadataIormConfig("test_exadata_iorm_config",
             db_plans=[oci.database.ExadataIormConfigDbPlanArgs(
-                db_name=var["exadata_iorm_config_db_plans_db_name"],
-                share=var["exadata_iorm_config_db_plans_share"],
+                db_name=exadata_iorm_config_db_plans_db_name,
+                share=exadata_iorm_config_db_plans_share,
             )],
-            db_system_id=oci_database_db_system["test_db_system"]["id"],
+            db_system_id=test_db_system["id"],
             objective="AUTO")
         ```
         <!--End PulumiCodeChooser -->

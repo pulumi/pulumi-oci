@@ -32,19 +32,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewLoadBalancerRoutingPolicy(ctx, "testLoadBalancerRoutingPolicy", &LoadBalancer.LoadBalancerRoutingPolicyArgs{
-//				ConditionLanguageVersion: pulumi.Any(_var.Load_balancer_routing_policy_condition_language_version),
-//				LoadBalancerId:           pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//			_, err := LoadBalancer.NewLoadBalancerRoutingPolicy(ctx, "test_load_balancer_routing_policy", &LoadBalancer.LoadBalancerRoutingPolicyArgs{
+//				ConditionLanguageVersion: pulumi.Any(loadBalancerRoutingPolicyConditionLanguageVersion),
+//				LoadBalancerId:           pulumi.Any(testLoadBalancer.Id),
+//				Name:                     pulumi.Any(loadBalancerRoutingPolicyName),
 //				Rules: loadbalancer.LoadBalancerRoutingPolicyRuleArray{
 //					&loadbalancer.LoadBalancerRoutingPolicyRuleArgs{
 //						Actions: loadbalancer.LoadBalancerRoutingPolicyRuleActionArray{
 //							&loadbalancer.LoadBalancerRoutingPolicyRuleActionArgs{
-//								BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-//								Name:           pulumi.Any(_var.Load_balancer_routing_policy_rules_actions_name),
+//								BackendSetName: pulumi.Any(testBackendSet.Name),
+//								Name:           pulumi.Any(loadBalancerRoutingPolicyRulesActionsName),
 //							},
 //						},
-//						Condition: pulumi.Any(_var.Load_balancer_routing_policy_rules_condition),
-//						Name:      pulumi.Any(_var.Load_balancer_routing_policy_rules_name),
+//						Condition: pulumi.Any(loadBalancerRoutingPolicyRulesCondition),
+//						Name:      pulumi.Any(loadBalancerRoutingPolicyRulesName),
 //					},
 //				},
 //			})

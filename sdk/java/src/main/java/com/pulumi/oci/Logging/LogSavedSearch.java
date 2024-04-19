@@ -45,10 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLogSavedSearch = new LogSavedSearch(&#34;testLogSavedSearch&#34;, LogSavedSearchArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .query(var_.log_saved_search_query())
+ *             .compartmentId(compartmentId)
+ *             .name(logSavedSearchName)
+ *             .query(logSavedSearchQuery)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.log_saved_search_description())
+ *             .description(logSavedSearchDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

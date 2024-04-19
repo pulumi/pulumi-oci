@@ -25,14 +25,14 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testEnvironment = new Oci.CloudBridge.Environment("testEnvironment", new()
+    ///     var testEnvironment = new Oci.CloudBridge.Environment("test_environment", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Environment_display_name,
+    ///         DisplayName = environmentDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testNetworkSecurityGroupSecurityRules = Oci.Core.GetNetworkSecurityGroupSecurityRules.Invoke(new()
         ///     {
-        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
-        ///         Direction = @var.Network_security_group_security_rule_direction,
+        ///         NetworkSecurityGroupId = testNetworkSecurityGroup.Id,
+        ///         Direction = networkSecurityGroupSecurityRuleDirection,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testNetworkSecurityGroupSecurityRules = Oci.Core.GetNetworkSecurityGroupSecurityRules.Invoke(new()
         ///     {
-        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
-        ///         Direction = @var.Network_security_group_security_rule_direction,
+        ///         NetworkSecurityGroupId = testNetworkSecurityGroup.Id,
+        ///         Direction = networkSecurityGroupSecurityRuleDirection,
         ///     });
         /// 
         /// });

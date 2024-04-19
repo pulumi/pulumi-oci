@@ -27,53 +27,53 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDatabase = new Oci.Database.Database("testDatabase", new()
+    ///     var testDatabase = new Oci.Database.Database("test_database", new()
     ///     {
     ///         DatabaseName = new Oci.Database.Inputs.DatabaseDatabaseArgs
     ///         {
-    ///             AdminPassword = @var.Database_database_admin_password,
-    ///             DbName = @var.Database_database_db_name,
-    ///             BackupId = oci_database_backup.Test_backup.Id,
-    ///             BackupTdePassword = @var.Database_database_backup_tde_password,
-    ///             CharacterSet = @var.Database_database_character_set,
-    ///             DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
+    ///             AdminPassword = databaseDatabaseAdminPassword,
+    ///             DbName = databaseDatabaseDbName,
+    ///             BackupId = testBackup.Id,
+    ///             BackupTdePassword = databaseDatabaseBackupTdePassword,
+    ///             CharacterSet = databaseDatabaseCharacterSet,
+    ///             DatabaseSoftwareImageId = testDatabaseSoftwareImage.Id,
     ///             DbBackupConfig = new Oci.Database.Inputs.DatabaseDatabaseDbBackupConfigArgs
     ///             {
-    ///                 AutoBackupEnabled = @var.Database_database_db_backup_config_auto_backup_enabled,
-    ///                 AutoBackupWindow = @var.Database_database_db_backup_config_auto_backup_window,
-    ///                 AutoFullBackupDay = @var.Database_database_db_backup_config_auto_full_backup_day,
-    ///                 AutoFullBackupWindow = @var.Database_database_db_backup_config_auto_full_backup_window,
-    ///                 BackupDeletionPolicy = @var.Database_database_db_backup_config_backup_deletion_policy,
+    ///                 AutoBackupEnabled = databaseDatabaseDbBackupConfigAutoBackupEnabled,
+    ///                 AutoBackupWindow = databaseDatabaseDbBackupConfigAutoBackupWindow,
+    ///                 AutoFullBackupDay = databaseDatabaseDbBackupConfigAutoFullBackupDay,
+    ///                 AutoFullBackupWindow = databaseDatabaseDbBackupConfigAutoFullBackupWindow,
+    ///                 BackupDeletionPolicy = databaseDatabaseDbBackupConfigBackupDeletionPolicy,
     ///                 BackupDestinationDetails = new[]
     ///                 {
     ///                     new Oci.Database.Inputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs
     ///                     {
-    ///                         DbrsPolicyId = oci_identity_policy.Test_policy.Id,
-    ///                         Id = @var.Database_database_db_backup_config_backup_destination_details_id,
-    ///                         Type = @var.Database_database_db_backup_config_backup_destination_details_type,
+    ///                         DbrsPolicyId = testPolicy.Id,
+    ///                         Id = databaseDatabaseDbBackupConfigBackupDestinationDetailsId,
+    ///                         Type = databaseDatabaseDbBackupConfigBackupDestinationDetailsType,
     ///                     },
     ///                 },
-    ///                 RecoveryWindowInDays = @var.Database_database_db_backup_config_recovery_window_in_days,
-    ///                 RunImmediateFullBackup = @var.Database_database_db_backup_config_run_immediate_full_backup,
+    ///                 RecoveryWindowInDays = databaseDatabaseDbBackupConfigRecoveryWindowInDays,
+    ///                 RunImmediateFullBackup = databaseDatabaseDbBackupConfigRunImmediateFullBackup,
     ///             },
-    ///             DbUniqueName = @var.Database_database_db_unique_name,
-    ///             DbWorkload = @var.Database_database_db_workload,
-    ///             DefinedTags = @var.Database_database_defined_tags,
-    ///             FreeformTags = @var.Database_database_freeform_tags,
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
-    ///             KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///             NcharacterSet = @var.Database_database_ncharacter_set,
-    ///             PdbName = @var.Database_database_pdb_name,
-    ///             PluggableDatabases = @var.Database_database_pluggable_databases,
-    ///             SidPrefix = @var.Database_database_sid_prefix,
-    ///             TdeWalletPassword = @var.Database_database_tde_wallet_password,
-    ///             VaultId = oci_kms_vault.Test_vault.Id,
+    ///             DbUniqueName = databaseDatabaseDbUniqueName,
+    ///             DbWorkload = databaseDatabaseDbWorkload,
+    ///             DefinedTags = databaseDatabaseDefinedTags,
+    ///             FreeformTags = databaseDatabaseFreeformTags,
+    ///             KmsKeyId = testKey.Id,
+    ///             KmsKeyVersionId = testKeyVersion.Id,
+    ///             NcharacterSet = databaseDatabaseNcharacterSet,
+    ///             PdbName = databaseDatabasePdbName,
+    ///             PluggableDatabases = databaseDatabasePluggableDatabases,
+    ///             SidPrefix = databaseDatabaseSidPrefix,
+    ///             TdeWalletPassword = databaseDatabaseTdeWalletPassword,
+    ///             VaultId = testVault.Id,
     ///         },
-    ///         DbHomeId = oci_database_db_home.Test_db_home.Id,
-    ///         Source = @var.Database_source,
-    ///         DbVersion = @var.Database_db_version,
-    ///         KmsKeyId = oci_kms_key.Test_key.Id,
-    ///         KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
+    ///         DbHomeId = testDbHome.Id,
+    ///         Source = databaseSource,
+    ///         DbVersion = databaseDbVersion,
+    ///         KmsKeyId = testKey.Id,
+    ///         KmsKeyVersionId = testKeyVersion.Id,
     ///     });
     /// 
     /// });

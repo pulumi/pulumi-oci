@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityTopologyComputeBareMetalHosts = Oci.Core.GetComputeCapacityTopologyComputeBareMetalHosts.Invoke(new()
         ///     {
-        ///         ComputeCapacityTopologyId = oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
-        ///         AvailabilityDomain = @var.Compute_capacity_topology_compute_bare_metal_host_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputeHpcIslandId = oci_core_compute_hpc_island.Test_compute_hpc_island.Id,
-        ///         ComputeLocalBlockId = oci_core_compute_local_block.Test_compute_local_block.Id,
-        ///         ComputeNetworkBlockId = oci_core_compute_network_block.Test_compute_network_block.Id,
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopology.Id,
+        ///         AvailabilityDomain = computeCapacityTopologyComputeBareMetalHostAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeHpcIslandId = testComputeHpcIsland.Id,
+        ///         ComputeLocalBlockId = testComputeLocalBlock.Id,
+        ///         ComputeNetworkBlockId = testComputeNetworkBlock.Id,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityTopologyComputeBareMetalHosts = Oci.Core.GetComputeCapacityTopologyComputeBareMetalHosts.Invoke(new()
         ///     {
-        ///         ComputeCapacityTopologyId = oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
-        ///         AvailabilityDomain = @var.Compute_capacity_topology_compute_bare_metal_host_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputeHpcIslandId = oci_core_compute_hpc_island.Test_compute_hpc_island.Id,
-        ///         ComputeLocalBlockId = oci_core_compute_local_block.Test_compute_local_block.Id,
-        ///         ComputeNetworkBlockId = oci_core_compute_network_block.Test_compute_network_block.Id,
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopology.Id,
+        ///         AvailabilityDomain = computeCapacityTopologyComputeBareMetalHostAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         ComputeHpcIslandId = testComputeHpcIsland.Id,
+        ///         ComputeLocalBlockId = testComputeLocalBlock.Id,
+        ///         ComputeNetworkBlockId = testComputeNetworkBlock.Id,
         ///     });
         /// 
         /// });

@@ -112,9 +112,9 @@ def get_resources(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resources = oci.UsageProxy.get_resources(compartment_id=var["compartment_id"],
-        service_name=oci_core_service["test_service"]["name"],
-        entitlement_id=oci_usage_proxy_entitlement["test_entitlement"]["id"])
+    test_resources = oci.UsageProxy.get_resources(compartment_id=compartment_id,
+        service_name=test_service["name"],
+        entitlement_id=test_entitlement["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -159,9 +159,9 @@ def get_resources_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resources = oci.UsageProxy.get_resources(compartment_id=var["compartment_id"],
-        service_name=oci_core_service["test_service"]["name"],
-        entitlement_id=oci_usage_proxy_entitlement["test_entitlement"]["id"])
+    test_resources = oci.UsageProxy.get_resources(compartment_id=compartment_id,
+        service_name=test_service["name"],
+        entitlement_id=test_entitlement["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyApps = oci.Identity.getDomainsMyApps({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myAppCount: _var.my_app_my_app_count,
- *     myAppFilter: _var.my_app_my_app_filter,
- *     authorization: _var.my_app_authorization,
- *     resourceTypeSchemaVersion: _var.my_app_resource_type_schema_version,
- *     startIndex: _var.my_app_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myAppCount: myAppMyAppCount,
+ *     myAppFilter: myAppMyAppFilter,
+ *     authorization: myAppAuthorization,
+ *     resourceTypeSchemaVersion: myAppResourceTypeSchemaVersion,
+ *     startIndex: myAppStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -128,12 +128,12 @@ export interface GetDomainsMyAppsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyApps = oci.Identity.getDomainsMyApps({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myAppCount: _var.my_app_my_app_count,
- *     myAppFilter: _var.my_app_my_app_filter,
- *     authorization: _var.my_app_authorization,
- *     resourceTypeSchemaVersion: _var.my_app_resource_type_schema_version,
- *     startIndex: _var.my_app_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myAppCount: myAppMyAppCount,
+ *     myAppFilter: myAppMyAppFilter,
+ *     authorization: myAppAuthorization,
+ *     resourceTypeSchemaVersion: myAppResourceTypeSchemaVersion,
+ *     startIndex: myAppStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

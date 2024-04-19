@@ -31,34 +31,35 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.NewWorkspaceApplication(ctx, "testWorkspaceApplication", &DataIntegration.WorkspaceApplicationArgs{
-//				Identifier:  pulumi.Any(_var.Workspace_application_identifier),
-//				WorkspaceId: pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
-//				ModelType:   pulumi.Any(_var.Workspace_application_model_type),
+//			_, err := DataIntegration.NewWorkspaceApplication(ctx, "test_workspace_application", &DataIntegration.WorkspaceApplicationArgs{
+//				Identifier:  pulumi.Any(workspaceApplicationIdentifier),
+//				Name:        pulumi.Any(workspaceApplicationName),
+//				WorkspaceId: pulumi.Any(testWorkspace.Id),
+//				ModelType:   pulumi.Any(workspaceApplicationModelType),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Workspace_application_description),
-//				DisplayName: pulumi.Any(_var.Workspace_application_display_name),
+//				Description: pulumi.Any(workspaceApplicationDescription),
+//				DisplayName: pulumi.Any(workspaceApplicationDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Key:          pulumi.Any(_var.Workspace_application_key),
-//				ModelVersion: pulumi.Any(_var.Workspace_application_model_version),
-//				ObjectStatus: pulumi.Any(_var.Workspace_application_object_status),
+//				Key:          pulumi.Any(workspaceApplicationKey),
+//				ModelVersion: pulumi.Any(workspaceApplicationModelVersion),
+//				ObjectStatus: pulumi.Any(workspaceApplicationObjectStatus),
 //				RegistryMetadata: &dataintegration.WorkspaceApplicationRegistryMetadataArgs{
-//					AggregatorKey:   pulumi.Any(_var.Workspace_application_registry_metadata_aggregator_key),
-//					IsFavorite:      pulumi.Any(_var.Workspace_application_registry_metadata_is_favorite),
-//					Key:             pulumi.Any(_var.Workspace_application_registry_metadata_key),
-//					Labels:          pulumi.Any(_var.Workspace_application_registry_metadata_labels),
-//					RegistryVersion: pulumi.Any(_var.Workspace_application_registry_metadata_registry_version),
+//					AggregatorKey:   pulumi.Any(workspaceApplicationRegistryMetadataAggregatorKey),
+//					IsFavorite:      pulumi.Any(workspaceApplicationRegistryMetadataIsFavorite),
+//					Key:             pulumi.Any(workspaceApplicationRegistryMetadataKey),
+//					Labels:          pulumi.Any(workspaceApplicationRegistryMetadataLabels),
+//					RegistryVersion: pulumi.Any(workspaceApplicationRegistryMetadataRegistryVersion),
 //				},
 //				SourceApplicationInfo: &dataintegration.WorkspaceApplicationSourceApplicationInfoArgs{
-//					ApplicationKey: pulumi.Any(_var.Workspace_application_source_application_info_application_key),
-//					CopyType:       pulumi.Any(_var.Workspace_application_source_application_info_copy_type),
-//					WorkspaceId:    pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
+//					ApplicationKey: pulumi.Any(workspaceApplicationSourceApplicationInfoApplicationKey),
+//					CopyType:       pulumi.Any(workspaceApplicationSourceApplicationInfoCopyType),
+//					WorkspaceId:    pulumi.Any(testWorkspace.Id),
 //				},
-//				State: pulumi.Any(_var.Workspace_application_state),
+//				State: pulumi.Any(workspaceApplicationState),
 //			})
 //			if err != nil {
 //				return err

@@ -18,35 +18,36 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIngressGatewayRouteTable = new oci.servicemesh.IngressGatewayRouteTable("testIngressGatewayRouteTable", {
- *     compartmentId: _var.compartment_id,
- *     ingressGatewayId: oci_service_mesh_ingress_gateway.test_ingress_gateway.id,
+ * const testIngressGatewayRouteTable = new oci.servicemesh.IngressGatewayRouteTable("test_ingress_gateway_route_table", {
+ *     compartmentId: compartmentId,
+ *     ingressGatewayId: testIngressGateway.id,
+ *     name: ingressGatewayRouteTableName,
  *     routeRules: [{
  *         destinations: [{
- *             virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
- *             port: _var.ingress_gateway_route_table_route_rules_destinations_port,
- *             weight: _var.ingress_gateway_route_table_route_rules_destinations_weight,
+ *             virtualServiceId: testVirtualService.id,
+ *             port: ingressGatewayRouteTableRouteRulesDestinationsPort,
+ *             weight: ingressGatewayRouteTableRouteRulesDestinationsWeight,
  *         }],
- *         type: _var.ingress_gateway_route_table_route_rules_type,
+ *         type: ingressGatewayRouteTableRouteRulesType,
  *         ingressGatewayHost: {
- *             name: _var.ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
- *             port: _var.ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
+ *             name: ingressGatewayRouteTableRouteRulesIngressGatewayHostName,
+ *             port: ingressGatewayRouteTableRouteRulesIngressGatewayHostPort,
  *         },
- *         isGrpc: _var.ingress_gateway_route_table_route_rules_is_grpc,
- *         isHostRewriteEnabled: _var.ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
- *         isPathRewriteEnabled: _var.ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
- *         path: _var.ingress_gateway_route_table_route_rules_path,
- *         pathType: _var.ingress_gateway_route_table_route_rules_path_type,
- *         requestTimeoutInMs: _var.ingress_gateway_route_table_route_rules_request_timeout_in_ms,
+ *         isGrpc: ingressGatewayRouteTableRouteRulesIsGrpc,
+ *         isHostRewriteEnabled: ingressGatewayRouteTableRouteRulesIsHostRewriteEnabled,
+ *         isPathRewriteEnabled: ingressGatewayRouteTableRouteRulesIsPathRewriteEnabled,
+ *         path: ingressGatewayRouteTableRouteRulesPath,
+ *         pathType: ingressGatewayRouteTableRouteRulesPathType,
+ *         requestTimeoutInMs: ingressGatewayRouteTableRouteRulesRequestTimeoutInMs,
  *     }],
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.ingress_gateway_route_table_description,
+ *     description: ingressGatewayRouteTableDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     priority: _var.ingress_gateway_route_table_priority,
+ *     priority: ingressGatewayRouteTablePriority,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

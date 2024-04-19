@@ -34,28 +34,28 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVolumeBackupPolicy(ctx, "testVolumeBackupPolicy", &Core.VolumeBackupPolicyArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewVolumeBackupPolicy(ctx, "test_volume_backup_policy", &Core.VolumeBackupPolicyArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DestinationRegion: pulumi.Any(_var.Volume_backup_policy_destination_region),
-//				DisplayName:       pulumi.Any(_var.Volume_backup_policy_display_name),
+//				DestinationRegion: pulumi.Any(volumeBackupPolicyDestinationRegion),
+//				DisplayName:       pulumi.Any(volumeBackupPolicyDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				Schedules: core.VolumeBackupPolicyScheduleArray{
 //					&core.VolumeBackupPolicyScheduleArgs{
-//						BackupType:       pulumi.Any(_var.Volume_backup_policy_schedules_backup_type),
-//						Period:           pulumi.Any(_var.Volume_backup_policy_schedules_period),
-//						RetentionSeconds: pulumi.Any(_var.Volume_backup_policy_schedules_retention_seconds),
-//						DayOfMonth:       pulumi.Any(_var.Volume_backup_policy_schedules_day_of_month),
-//						DayOfWeek:        pulumi.Any(_var.Volume_backup_policy_schedules_day_of_week),
-//						HourOfDay:        pulumi.Any(_var.Volume_backup_policy_schedules_hour_of_day),
-//						Month:            pulumi.Any(_var.Volume_backup_policy_schedules_month),
-//						OffsetSeconds:    pulumi.Any(_var.Volume_backup_policy_schedules_offset_seconds),
-//						OffsetType:       pulumi.Any(_var.Volume_backup_policy_schedules_offset_type),
-//						TimeZone:         pulumi.Any(_var.Volume_backup_policy_schedules_time_zone),
+//						BackupType:       pulumi.Any(volumeBackupPolicySchedulesBackupType),
+//						Period:           pulumi.Any(volumeBackupPolicySchedulesPeriod),
+//						RetentionSeconds: pulumi.Any(volumeBackupPolicySchedulesRetentionSeconds),
+//						DayOfMonth:       pulumi.Any(volumeBackupPolicySchedulesDayOfMonth),
+//						DayOfWeek:        pulumi.Any(volumeBackupPolicySchedulesDayOfWeek),
+//						HourOfDay:        pulumi.Any(volumeBackupPolicySchedulesHourOfDay),
+//						Month:            pulumi.Any(volumeBackupPolicySchedulesMonth),
+//						OffsetSeconds:    pulumi.Any(volumeBackupPolicySchedulesOffsetSeconds),
+//						OffsetType:       pulumi.Any(volumeBackupPolicySchedulesOffsetType),
+//						TimeZone:         pulumi.Any(volumeBackupPolicySchedulesTimeZone),
 //					},
 //				},
 //			})

@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeCapacityTopologies(ctx, &core.GetComputeCapacityTopologiesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Compute_capacity_topology_availability_domain),
-//				DisplayName:        pulumi.StringRef(_var.Compute_capacity_topology_display_name),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(computeCapacityTopologyAvailabilityDomain),
+//				DisplayName:        pulumi.StringRef(computeCapacityTopologyDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

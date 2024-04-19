@@ -134,11 +134,11 @@ def get_virtual_services(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_services = oci.ServiceMesh.get_virtual_services(compartment_id=var["compartment_id"],
-        id=var["virtual_service_id"],
-        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-        name=var["virtual_service_name"],
-        state=var["virtual_service_state"])
+    test_virtual_services = oci.ServiceMesh.get_virtual_services(compartment_id=compartment_id,
+        id=virtual_service_id,
+        mesh_id=test_mesh["id"],
+        name=virtual_service_name,
+        state=virtual_service_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_virtual_services_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_services = oci.ServiceMesh.get_virtual_services(compartment_id=var["compartment_id"],
-        id=var["virtual_service_id"],
-        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-        name=var["virtual_service_name"],
-        state=var["virtual_service_state"])
+    test_virtual_services = oci.ServiceMesh.get_virtual_services(compartment_id=compartment_id,
+        id=virtual_service_id,
+        mesh_id=test_mesh["id"],
+        name=virtual_service_name,
+        state=virtual_service_state)
     ```
     <!--End PulumiCodeChooser -->
 

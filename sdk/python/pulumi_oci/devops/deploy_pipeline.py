@@ -388,20 +388,20 @@ class DeployPipeline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_deploy_pipeline = oci.dev_ops.DeployPipeline("testDeployPipeline",
-            project_id=oci_devops_project["test_project"]["id"],
+        test_deploy_pipeline = oci.dev_ops.DeployPipeline("test_deploy_pipeline",
+            project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             deploy_pipeline_parameters=oci.dev_ops.DeployPipelineDeployPipelineParametersArgs(
                 items=[oci.dev_ops.DeployPipelineDeployPipelineParametersItemArgs(
-                    name=var["deploy_pipeline_deploy_pipeline_parameters_items_name"],
-                    default_value=var["deploy_pipeline_deploy_pipeline_parameters_items_default_value"],
-                    description=var["deploy_pipeline_deploy_pipeline_parameters_items_description"],
+                    name=deploy_pipeline_deploy_pipeline_parameters_items_name,
+                    default_value=deploy_pipeline_deploy_pipeline_parameters_items_default_value,
+                    description=deploy_pipeline_deploy_pipeline_parameters_items_description,
                 )],
             ),
-            description=var["deploy_pipeline_description"],
-            display_name=var["deploy_pipeline_display_name"],
+            description=deploy_pipeline_description,
+            display_name=deploy_pipeline_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -447,20 +447,20 @@ class DeployPipeline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_deploy_pipeline = oci.dev_ops.DeployPipeline("testDeployPipeline",
-            project_id=oci_devops_project["test_project"]["id"],
+        test_deploy_pipeline = oci.dev_ops.DeployPipeline("test_deploy_pipeline",
+            project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             deploy_pipeline_parameters=oci.dev_ops.DeployPipelineDeployPipelineParametersArgs(
                 items=[oci.dev_ops.DeployPipelineDeployPipelineParametersItemArgs(
-                    name=var["deploy_pipeline_deploy_pipeline_parameters_items_name"],
-                    default_value=var["deploy_pipeline_deploy_pipeline_parameters_items_default_value"],
-                    description=var["deploy_pipeline_deploy_pipeline_parameters_items_description"],
+                    name=deploy_pipeline_deploy_pipeline_parameters_items_name,
+                    default_value=deploy_pipeline_deploy_pipeline_parameters_items_default_value,
+                    description=deploy_pipeline_deploy_pipeline_parameters_items_description,
                 )],
             ),
-            description=var["deploy_pipeline_description"],
-            display_name=var["deploy_pipeline_display_name"],
+            description=deploy_pipeline_description,
+            display_name=deploy_pipeline_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

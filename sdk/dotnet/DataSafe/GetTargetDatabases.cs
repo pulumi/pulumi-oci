@@ -30,15 +30,15 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabases = Oci.DataSafe.GetTargetDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Target_database_access_level,
-        ///         AssociatedResourceId = oci_data_safe_associated_resource.Test_associated_resource.Id,
-        ///         CompartmentIdInSubtree = @var.Target_database_compartment_id_in_subtree,
-        ///         DatabaseType = @var.Target_database_database_type,
-        ///         DisplayName = @var.Target_database_display_name,
-        ///         InfrastructureType = @var.Target_database_infrastructure_type,
-        ///         State = @var.Target_database_state,
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetDatabaseAccessLevel,
+        ///         AssociatedResourceId = testAssociatedResource.Id,
+        ///         CompartmentIdInSubtree = targetDatabaseCompartmentIdInSubtree,
+        ///         DatabaseType = targetDatabaseDatabaseType,
+        ///         DisplayName = targetDatabaseDisplayName,
+        ///         InfrastructureType = targetDatabaseInfrastructureType,
+        ///         State = targetDatabaseState,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
         ///     });
         /// 
         /// });
@@ -67,15 +67,15 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabases = Oci.DataSafe.GetTargetDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Target_database_access_level,
-        ///         AssociatedResourceId = oci_data_safe_associated_resource.Test_associated_resource.Id,
-        ///         CompartmentIdInSubtree = @var.Target_database_compartment_id_in_subtree,
-        ///         DatabaseType = @var.Target_database_database_type,
-        ///         DisplayName = @var.Target_database_display_name,
-        ///         InfrastructureType = @var.Target_database_infrastructure_type,
-        ///         State = @var.Target_database_state,
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetDatabaseAccessLevel,
+        ///         AssociatedResourceId = testAssociatedResource.Id,
+        ///         CompartmentIdInSubtree = targetDatabaseCompartmentIdInSubtree,
+        ///         DatabaseType = targetDatabaseDatabaseType,
+        ///         DisplayName = targetDatabaseDisplayName,
+        ///         InfrastructureType = targetDatabaseInfrastructureType,
+        ///         State = targetDatabaseState,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
         ///     });
         /// 
         /// });

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInvoices = oci.OneSubsription.getInvoices({
- *     arCustomerTransactionId: oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction.id,
- *     compartmentId: _var.compartment_id,
- *     fields: _var.invoice_fields,
- *     timeFrom: _var.invoice_time_from,
- *     timeTo: _var.invoice_time_to,
+ *     arCustomerTransactionId: testArCustomerTransaction.id,
+ *     compartmentId: compartmentId,
+ *     fields: invoiceFields,
+ *     timeFrom: invoiceTimeFrom,
+ *     timeTo: invoiceTimeTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -100,11 +100,11 @@ export interface GetInvoicesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInvoices = oci.OneSubsription.getInvoices({
- *     arCustomerTransactionId: oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction.id,
- *     compartmentId: _var.compartment_id,
- *     fields: _var.invoice_fields,
- *     timeFrom: _var.invoice_time_from,
- *     timeTo: _var.invoice_time_to,
+ *     arCustomerTransactionId: testArCustomerTransaction.id,
+ *     compartmentId: compartmentId,
+ *     fields: invoiceFields,
+ *     timeFrom: invoiceTimeFrom,
+ *     timeTo: invoiceTimeTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

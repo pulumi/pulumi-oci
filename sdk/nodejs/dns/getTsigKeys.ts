@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTsigKeys = oci.Dns.getTsigKeys({
- *     compartmentId: _var.compartment_id,
- *     id: _var.tsig_key_id,
- *     name: _var.tsig_key_name,
- *     state: _var.tsig_key_state,
+ *     compartmentId: compartmentId,
+ *     id: tsigKeyId,
+ *     name: tsigKeyName,
+ *     state: tsigKeyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetTsigKeysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTsigKeys = oci.Dns.getTsigKeys({
- *     compartmentId: _var.compartment_id,
- *     id: _var.tsig_key_id,
- *     name: _var.tsig_key_name,
- *     state: _var.tsig_key_state,
+ *     compartmentId: compartmentId,
+ *     id: tsigKeyId,
+ *     name: tsigKeyName,
+ *     state: tsigKeyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

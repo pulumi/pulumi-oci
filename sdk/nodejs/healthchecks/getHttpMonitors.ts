@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpMonitors = oci.HealthChecks.getHttpMonitors({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.http_monitor_display_name,
- *     homeRegion: _var.http_monitor_home_region,
+ *     compartmentId: compartmentId,
+ *     displayName: httpMonitorDisplayName,
+ *     homeRegion: httpMonitorHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetHttpMonitorsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpMonitors = oci.HealthChecks.getHttpMonitors({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.http_monitor_display_name,
- *     homeRegion: _var.http_monitor_home_region,
+ *     compartmentId: compartmentId,
+ *     displayName: httpMonitorDisplayName,
+ *     homeRegion: httpMonitorHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

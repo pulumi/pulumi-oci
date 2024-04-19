@@ -30,9 +30,9 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testCatalogPrivateEndpoints = Oci.DataCatalog.GetCatalogPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Catalog_private_endpoint_display_name,
-        ///         State = @var.Catalog_private_endpoint_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = catalogPrivateEndpointDisplayName,
+        ///         State = catalogPrivateEndpointState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testCatalogPrivateEndpoints = Oci.DataCatalog.GetCatalogPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Catalog_private_endpoint_display_name,
-        ///         State = @var.Catalog_private_endpoint_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = catalogPrivateEndpointDisplayName,
+        ///         State = catalogPrivateEndpointState,
         ///     });
         /// 
         /// });

@@ -225,16 +225,16 @@ def get_zones(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_zones = oci.Dns.get_zones(compartment_id=var["compartment_id"],
-        name=var["zone_name"],
-        name_contains=var["zone_name_contains"],
-        scope=var["zone_scope"],
-        state=var["zone_state"],
-        time_created_greater_than_or_equal_to=var["zone_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["zone_time_created_less_than"],
-        tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
-        view_id=oci_dns_view["test_view"]["id"],
-        zone_type=var["zone_zone_type"])
+    test_zones = oci.Dns.get_zones(compartment_id=compartment_id,
+        name=zone_name,
+        name_contains=zone_name_contains,
+        scope=zone_scope,
+        state=zone_state,
+        time_created_greater_than_or_equal_to=zone_time_created_greater_than_or_equal_to,
+        time_created_less_than=zone_time_created_less_than,
+        tsig_key_id=test_tsig_key["id"],
+        view_id=test_view["id"],
+        zone_type=zone_zone_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -318,16 +318,16 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_zones = oci.Dns.get_zones(compartment_id=var["compartment_id"],
-        name=var["zone_name"],
-        name_contains=var["zone_name_contains"],
-        scope=var["zone_scope"],
-        state=var["zone_state"],
-        time_created_greater_than_or_equal_to=var["zone_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["zone_time_created_less_than"],
-        tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
-        view_id=oci_dns_view["test_view"]["id"],
-        zone_type=var["zone_zone_type"])
+    test_zones = oci.Dns.get_zones(compartment_id=compartment_id,
+        name=zone_name,
+        name_contains=zone_name_contains,
+        scope=zone_scope,
+        state=zone_state,
+        time_created_greater_than_or_equal_to=zone_time_created_greater_than_or_equal_to,
+        time_created_less_than=zone_time_created_less_than,
+        tsig_key_id=test_tsig_key["id"],
+        view_id=test_view["id"],
+        zone_type=zone_zone_type)
     ```
     <!--End PulumiCodeChooser -->
 

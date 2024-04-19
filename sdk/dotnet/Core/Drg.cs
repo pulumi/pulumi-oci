@@ -36,14 +36,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrg = new Oci.Core.Drg("testDrg", new()
+    ///     var testDrg = new Oci.Core.Drg("test_drg", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Drg_display_name,
+    ///         DisplayName = drgDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

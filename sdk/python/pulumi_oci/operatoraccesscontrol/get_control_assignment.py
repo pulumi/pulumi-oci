@@ -424,7 +424,7 @@ def get_control_assignment(operator_control_assignment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignment = oci.OperatorAccessControl.get_control_assignment(operator_control_assignment_id=oci_operator_access_control_operator_control_assignment["test_operator_control_assignment"]["id"])
+    test_operator_control_assignment = oci.OperatorAccessControl.get_control_assignment(operator_control_assignment_id=test_operator_control_assignment_oci_operator_access_control_operator_control_assignment["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -486,7 +486,7 @@ def get_control_assignment_output(operator_control_assignment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignment = oci.OperatorAccessControl.get_control_assignment(operator_control_assignment_id=oci_operator_access_control_operator_control_assignment["test_operator_control_assignment"]["id"])
+    test_operator_control_assignment = oci.OperatorAccessControl.get_control_assignment(operator_control_assignment_id=test_operator_control_assignment_oci_operator_access_control_operator_control_assignment["id"])
     ```
     <!--End PulumiCodeChooser -->
 

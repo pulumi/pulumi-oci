@@ -25,10 +25,10 @@ namespace Pulumi.Oci.IdentityDataPlane
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testGenerateScopedAccessToken = new Oci.IdentityDataPlane.GeneratedScopedAccessToken("testGenerateScopedAccessToken", new()
+    ///     var testGenerateScopedAccessToken = new Oci.IdentityDataPlane.GeneratedScopedAccessToken("test_generate_scoped_access_token", new()
     ///     {
-    ///         PublicKey = @var.Generate_scoped_access_token_public_key,
-    ///         Scope = @var.Generate_scoped_access_token_scope,
+    ///         PublicKey = generateScopedAccessTokenPublicKey,
+    ///         Scope = generateScopedAccessTokenScope,
     ///     });
     /// 
     /// });

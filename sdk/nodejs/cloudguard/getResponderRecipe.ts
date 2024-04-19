@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResponderRecipe = oci.CloudGuard.getResponderRecipe({
- *     responderRecipeId: oci_cloud_guard_responder_recipe.test_responder_recipe.id,
+ *     responderRecipeId: testResponderRecipeOciCloudGuardResponderRecipe.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetResponderRecipeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResponderRecipe = oci.CloudGuard.getResponderRecipe({
- *     responderRecipeId: oci_cloud_guard_responder_recipe.test_responder_recipe.id,
+ *     responderRecipeId: testResponderRecipeOciCloudGuardResponderRecipe.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testKnowledgeBase = Oci.Adm.GetKnowledgebase.Invoke(new()
         ///     {
-        ///         KnowledgeBaseId = oci_adm_knowledge_base.Test_knowledge_base.Id,
+        ///         KnowledgeBaseId = testKnowledgeBaseOciAdmKnowledgeBase.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testKnowledgeBase = Oci.Adm.GetKnowledgebase.Invoke(new()
         ///     {
-        ///         KnowledgeBaseId = oci_adm_knowledge_base.Test_knowledge_base.Id,
+        ///         KnowledgeBaseId = testKnowledgeBaseOciAdmKnowledgeBase.Id,
         ///     });
         /// 
         /// });

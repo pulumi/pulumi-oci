@@ -19,17 +19,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroupBackup = new oci.core.VolumeGroupBackup("testVolumeGroupBackup", {
- *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
- *     compartmentId: _var.compartment_id,
+ * const testVolumeGroupBackup = new oci.core.VolumeGroupBackup("test_volume_group_backup", {
+ *     volumeGroupId: testVolumeGroup.id,
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.volume_group_backup_display_name,
+ *     displayName: volumeGroupBackupDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     type: _var.volume_group_backup_type,
+ *     type: volumeGroupBackupType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

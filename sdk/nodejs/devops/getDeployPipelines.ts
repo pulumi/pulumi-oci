@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployPipelines = oci.DevOps.getDeployPipelines({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deploy_pipeline_display_name,
- *     id: _var.deploy_pipeline_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.deploy_pipeline_state,
+ *     compartmentId: compartmentId,
+ *     displayName: deployPipelineDisplayName,
+ *     id: deployPipelineId,
+ *     projectId: testProject.id,
+ *     state: deployPipelineState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetDeployPipelinesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployPipelines = oci.DevOps.getDeployPipelines({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deploy_pipeline_display_name,
- *     id: _var.deploy_pipeline_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.deploy_pipeline_state,
+ *     compartmentId: compartmentId,
+ *     displayName: deployPipelineDisplayName,
+ *     id: deployPipelineId,
+ *     projectId: testProject.id,
+ *     state: deployPipelineState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

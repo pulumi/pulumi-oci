@@ -15,8 +15,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPassword = oci.Ocvp.getRetrievePassword({
- *     sddcId: _var.compartment_id,
- *     type: _var.password_type,
+ *     sddcId: compartmentId,
+ *     type: passwordType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -70,8 +70,8 @@ export interface GetRetrievePasswordResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPassword = oci.Ocvp.getRetrievePassword({
- *     sddcId: _var.compartment_id,
- *     type: _var.password_type,
+ *     sddcId: compartmentId,
+ *     type: passwordType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

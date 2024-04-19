@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.NewAgentPlugin(ctx, "testAgentPlugin", &CloudBridge.AgentPluginArgs{
-//				AgentId:      pulumi.Any(oci_cloud_bridge_agent.Test_agent.Id),
-//				PluginName:   pulumi.Any(_var.Agent_plugin_plugin_name),
-//				DesiredState: pulumi.Any(_var.Agent_plugin_desired_state),
+//			_, err := CloudBridge.NewAgentPlugin(ctx, "test_agent_plugin", &CloudBridge.AgentPluginArgs{
+//				AgentId:      pulumi.Any(testAgent.Id),
+//				PluginName:   pulumi.Any(agentPluginPluginName),
+//				DesiredState: pulumi.Any(agentPluginDesiredState),
 //			})
 //			if err != nil {
 //				return err

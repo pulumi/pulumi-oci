@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testScripts = oci.ApmSynthetics.getScripts({
- *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
- *     contentType: _var.script_content_type,
- *     displayName: _var.script_display_name,
+ *     apmDomainId: testApmDomain.id,
+ *     contentType: scriptContentType,
+ *     displayName: scriptDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetScriptsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testScripts = oci.ApmSynthetics.getScripts({
- *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
- *     contentType: _var.script_content_type,
- *     displayName: _var.script_display_name,
+ *     apmDomainId: testApmDomain.id,
+ *     contentType: scriptContentType,
+ *     displayName: scriptDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

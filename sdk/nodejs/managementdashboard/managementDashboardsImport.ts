@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementDashboardsImport = new oci.managementdashboard.ManagementDashboardsImport("testManagementDashboardsImport", {
- *     importDetails: _var.sample_import_details,
- *     importDetailsFile: _var.sample_import_details_file_path,
+ * const testManagementDashboardsImport = new oci.managementdashboard.ManagementDashboardsImport("test_management_dashboards_import", {
+ *     importDetails: sampleImportDetails,
+ *     importDetailsFile: sampleImportDetailsFilePath,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

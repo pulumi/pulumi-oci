@@ -24,14 +24,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDrgAttachments = oci.Core.getDrgAttachments({
- *     compartmentId: _var.compartment_id,
- *     attachmentType: _var.drg_attachment_attachment_type,
- *     displayName: _var.drg_attachment_display_name,
- *     drgId: oci_core_drg.test_drg.id,
- *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
- *     networkId: oci_core_network.test_network.id,
- *     state: _var.drg_attachment_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     attachmentType: drgAttachmentAttachmentType,
+ *     displayName: drgAttachmentDisplayName,
+ *     drgId: testDrg.id,
+ *     drgRouteTableId: testDrgRouteTable.id,
+ *     networkId: testNetwork.id,
+ *     state: drgAttachmentState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -149,14 +149,14 @@ export interface GetDrgAttachmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDrgAttachments = oci.Core.getDrgAttachments({
- *     compartmentId: _var.compartment_id,
- *     attachmentType: _var.drg_attachment_attachment_type,
- *     displayName: _var.drg_attachment_display_name,
- *     drgId: oci_core_drg.test_drg.id,
- *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
- *     networkId: oci_core_network.test_network.id,
- *     state: _var.drg_attachment_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     attachmentType: drgAttachmentAttachmentType,
+ *     displayName: drgAttachmentDisplayName,
+ *     drgId: testDrg.id,
+ *     drgRouteTableId: testDrgRouteTable.id,
+ *     networkId: testNetwork.id,
+ *     state: drgAttachmentState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

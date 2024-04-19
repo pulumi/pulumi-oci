@@ -27,27 +27,27 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProfile = new Oci.OsManagementHub.Profile("testProfile", new()
+    ///     var testProfile = new Oci.OsManagementHub.Profile("test_profile", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Profile_display_name,
-    ///         ProfileType = @var.Profile_profile_type,
-    ///         ArchType = @var.Profile_arch_type,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = profileDisplayName,
+    ///         ProfileType = profileProfileType,
+    ///         ArchType = profileArchType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Profile_description,
+    ///         Description = profileDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         LifecycleStageId = oci_os_management_hub_lifecycle_stage.Test_lifecycle_stage.Id,
-    ///         ManagedInstanceGroupId = oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-    ///         ManagementStationId = oci_os_management_hub_management_station.Test_management_station.Id,
-    ///         OsFamily = @var.Profile_os_family,
-    ///         SoftwareSourceIds = @var.Profile_software_source_ids,
-    ///         VendorName = @var.Profile_vendor_name,
+    ///         LifecycleStageId = testLifecycleStage.Id,
+    ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+    ///         ManagementStationId = testManagementStation.Id,
+    ///         OsFamily = profileOsFamily,
+    ///         SoftwareSourceIds = profileSoftwareSourceIds,
+    ///         VendorName = profileVendorName,
     ///     });
     /// 
     /// });

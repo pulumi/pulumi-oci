@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Budget.GetBudget(ctx, &budget.GetBudgetArgs{
-//				BudgetId: oci_budget_budget.Test_budget.Id,
+//				BudgetId: testBudgetOciBudgetBudget.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

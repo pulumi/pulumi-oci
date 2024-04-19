@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSender = new oci.email.Sender("testSender", {
- *     compartmentId: _var.compartment_id,
- *     emailAddress: _var.sender_email_address,
+ * const testSender = new oci.email.Sender("test_sender", {
+ *     compartmentId: compartmentId,
+ *     emailAddress: senderEmailAddress,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

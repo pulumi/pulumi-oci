@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testBuildRun = Oci.DevOps.GetBuildRun.Invoke(new()
         ///     {
-        ///         BuildRunId = oci_devops_build_run.Test_build_run.Id,
+        ///         BuildRunId = testBuildRunOciDevopsBuildRun.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testBuildRun = Oci.DevOps.GetBuildRun.Invoke(new()
         ///     {
-        ///         BuildRunId = oci_devops_build_run.Test_build_run.Id,
+        ///         BuildRunId = testBuildRunOciDevopsBuildRun.Id,
         ///     });
         /// 
         /// });

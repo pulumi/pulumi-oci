@@ -53,7 +53,7 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAcceleration = WaaFunctions.getAppAcceleration(GetAppAccelerationArgs.builder()
-     *             .webAppAccelerationId(oci_waa_web_app_acceleration.test_web_app_acceleration().id())
+     *             .webAppAccelerationId(testWebAppAccelerationOciWaaWebAppAcceleration.id())
      *             .build());
      * 
      *     }
@@ -95,7 +95,7 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAcceleration = WaaFunctions.getAppAcceleration(GetAppAccelerationArgs.builder()
-     *             .webAppAccelerationId(oci_waa_web_app_acceleration.test_web_app_acceleration().id())
+     *             .webAppAccelerationId(testWebAppAccelerationOciWaaWebAppAcceleration.id())
      *             .build());
      * 
      *     }
@@ -137,7 +137,7 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAcceleration = WaaFunctions.getAppAcceleration(GetAppAccelerationArgs.builder()
-     *             .webAppAccelerationId(oci_waa_web_app_acceleration.test_web_app_acceleration().id())
+     *             .webAppAccelerationId(testWebAppAccelerationOciWaaWebAppAcceleration.id())
      *             .build());
      * 
      *     }
@@ -179,7 +179,7 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAcceleration = WaaFunctions.getAppAcceleration(GetAppAccelerationArgs.builder()
-     *             .webAppAccelerationId(oci_waa_web_app_acceleration.test_web_app_acceleration().id())
+     *             .webAppAccelerationId(testWebAppAccelerationOciWaaWebAppAcceleration.id())
      *             .build());
      * 
      *     }
@@ -221,10 +221,10 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerationPolicies = WaaFunctions.getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_acceleration_policy_display_name())
-     *             .id(var_.web_app_acceleration_policy_id())
-     *             .states(var_.web_app_acceleration_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppAccelerationPolicyDisplayName)
+     *             .id(webAppAccelerationPolicyId)
+     *             .states(webAppAccelerationPolicyState)
      *             .build());
      * 
      *     }
@@ -266,10 +266,10 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerationPolicies = WaaFunctions.getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_acceleration_policy_display_name())
-     *             .id(var_.web_app_acceleration_policy_id())
-     *             .states(var_.web_app_acceleration_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppAccelerationPolicyDisplayName)
+     *             .id(webAppAccelerationPolicyId)
+     *             .states(webAppAccelerationPolicyState)
      *             .build());
      * 
      *     }
@@ -311,10 +311,10 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerationPolicies = WaaFunctions.getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_acceleration_policy_display_name())
-     *             .id(var_.web_app_acceleration_policy_id())
-     *             .states(var_.web_app_acceleration_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppAccelerationPolicyDisplayName)
+     *             .id(webAppAccelerationPolicyId)
+     *             .states(webAppAccelerationPolicyState)
      *             .build());
      * 
      *     }
@@ -356,10 +356,10 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerationPolicies = WaaFunctions.getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_acceleration_policy_display_name())
-     *             .id(var_.web_app_acceleration_policy_id())
-     *             .states(var_.web_app_acceleration_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppAccelerationPolicyDisplayName)
+     *             .id(webAppAccelerationPolicyId)
+     *             .states(webAppAccelerationPolicyState)
      *             .build());
      * 
      *     }
@@ -401,7 +401,7 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerationPolicy = WaaFunctions.getAppAccelerationPolicy(GetAppAccelerationPolicyArgs.builder()
-     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicyOciWaaWebAppAccelerationPolicy.id())
      *             .build());
      * 
      *     }
@@ -443,7 +443,7 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerationPolicy = WaaFunctions.getAppAccelerationPolicy(GetAppAccelerationPolicyArgs.builder()
-     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicyOciWaaWebAppAccelerationPolicy.id())
      *             .build());
      * 
      *     }
@@ -485,7 +485,7 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerationPolicy = WaaFunctions.getAppAccelerationPolicy(GetAppAccelerationPolicyArgs.builder()
-     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicyOciWaaWebAppAccelerationPolicy.id())
      *             .build());
      * 
      *     }
@@ -527,7 +527,7 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerationPolicy = WaaFunctions.getAppAccelerationPolicy(GetAppAccelerationPolicyArgs.builder()
-     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicyOciWaaWebAppAccelerationPolicy.id())
      *             .build());
      * 
      *     }
@@ -569,11 +569,11 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerations = WaaFunctions.getAppAccelerations(GetAppAccelerationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_acceleration_display_name())
-     *             .id(var_.web_app_acceleration_id())
-     *             .states(var_.web_app_acceleration_state())
-     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppAccelerationDisplayName)
+     *             .id(webAppAccelerationId)
+     *             .states(webAppAccelerationState)
+     *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicy.id())
      *             .build());
      * 
      *     }
@@ -615,11 +615,11 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerations = WaaFunctions.getAppAccelerations(GetAppAccelerationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_acceleration_display_name())
-     *             .id(var_.web_app_acceleration_id())
-     *             .states(var_.web_app_acceleration_state())
-     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppAccelerationDisplayName)
+     *             .id(webAppAccelerationId)
+     *             .states(webAppAccelerationState)
+     *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicy.id())
      *             .build());
      * 
      *     }
@@ -661,11 +661,11 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerations = WaaFunctions.getAppAccelerations(GetAppAccelerationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_acceleration_display_name())
-     *             .id(var_.web_app_acceleration_id())
-     *             .states(var_.web_app_acceleration_state())
-     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppAccelerationDisplayName)
+     *             .id(webAppAccelerationId)
+     *             .states(webAppAccelerationState)
+     *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicy.id())
      *             .build());
      * 
      *     }
@@ -707,11 +707,11 @@ public final class WaaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppAccelerations = WaaFunctions.getAppAccelerations(GetAppAccelerationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_acceleration_display_name())
-     *             .id(var_.web_app_acceleration_id())
-     *             .states(var_.web_app_acceleration_state())
-     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppAccelerationDisplayName)
+     *             .id(webAppAccelerationId)
+     *             .states(webAppAccelerationState)
+     *             .webAppAccelerationPolicyId(testWebAppAccelerationPolicy.id())
      *             .build());
      * 
      *     }

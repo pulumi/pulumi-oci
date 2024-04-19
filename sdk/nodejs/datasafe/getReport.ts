@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReport = oci.DataSafe.getReport({
- *     reportId: oci_data_safe_report.test_report.id,
+ *     reportId: testReportOciDataSafeReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,7 +107,7 @@ export interface GetReportResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReport = oci.DataSafe.getReport({
- *     reportId: oci_data_safe_report.test_report.id,
+ *     reportId: testReportOciDataSafeReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

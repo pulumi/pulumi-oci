@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpSecConnectionTunnels = oci.Core.getIpsecConnectionTunnels({
- *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ *     ipsecId: testIpsec.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetIpsecConnectionTunnelsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIpSecConnectionTunnels = oci.Core.getIpsecConnectionTunnels({
- *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ *     ipsecId: testIpsec.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

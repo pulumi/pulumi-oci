@@ -30,13 +30,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceEffectiveProperties = Oci.LogAnalytics.GetNamespaceEffectiveProperties.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_effective_property_namespace,
-        ///         AgentId = oci_cloud_bridge_agent.Test_agent.Id,
-        ///         EntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
-        ///         IsIncludePatterns = @var.Namespace_effective_property_is_include_patterns,
-        ///         Name = @var.Namespace_effective_property_name,
-        ///         PatternId = oci_log_analytics_pattern.Test_pattern.Id,
-        ///         SourceName = @var.Namespace_effective_property_source_name,
+        ///         Namespace = namespaceEffectivePropertyNamespace,
+        ///         AgentId = testAgent.Id,
+        ///         EntityId = testLogAnalyticsEntity.Id,
+        ///         IsIncludePatterns = namespaceEffectivePropertyIsIncludePatterns,
+        ///         Name = namespaceEffectivePropertyName,
+        ///         PatternId = testPattern.Id,
+        ///         SourceName = namespaceEffectivePropertySourceName,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceEffectiveProperties = Oci.LogAnalytics.GetNamespaceEffectiveProperties.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_effective_property_namespace,
-        ///         AgentId = oci_cloud_bridge_agent.Test_agent.Id,
-        ///         EntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
-        ///         IsIncludePatterns = @var.Namespace_effective_property_is_include_patterns,
-        ///         Name = @var.Namespace_effective_property_name,
-        ///         PatternId = oci_log_analytics_pattern.Test_pattern.Id,
-        ///         SourceName = @var.Namespace_effective_property_source_name,
+        ///         Namespace = namespaceEffectivePropertyNamespace,
+        ///         AgentId = testAgent.Id,
+        ///         EntityId = testLogAnalyticsEntity.Id,
+        ///         IsIncludePatterns = namespaceEffectivePropertyIsIncludePatterns,
+        ///         Name = namespaceEffectivePropertyName,
+        ///         PatternId = testPattern.Id,
+        ///         SourceName = namespaceEffectivePropertySourceName,
         ///     });
         /// 
         /// });

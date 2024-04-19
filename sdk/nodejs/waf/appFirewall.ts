@@ -16,19 +16,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppFirewall = new oci.waf.AppFirewall("testWebAppFirewall", {
- *     backendType: _var.web_app_firewall_backend_type,
- *     compartmentId: _var.compartment_id,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     webAppFirewallPolicyId: oci_waf_web_app_firewall_policy.test_web_app_firewall_policy.id,
+ * const testWebAppFirewall = new oci.waf.AppFirewall("test_web_app_firewall", {
+ *     backendType: webAppFirewallBackendType,
+ *     compartmentId: compartmentId,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     webAppFirewallPolicyId: testWebAppFirewallPolicy.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.web_app_firewall_display_name,
+ *     displayName: webAppFirewallDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     systemTags: _var.web_app_firewall_system_tags,
+ *     systemTags: webAppFirewallSystemTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

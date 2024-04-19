@@ -30,12 +30,12 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testMaintenanceRunHistories = Oci.Database.GetDatabaseMaintenanceRunHistories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Maintenance_run_history_availability_domain,
-        ///         MaintenanceType = @var.Maintenance_run_history_maintenance_type,
-        ///         State = @var.Maintenance_run_history_state,
-        ///         TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
-        ///         TargetResourceType = @var.Maintenance_run_history_target_resource_type,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = maintenanceRunHistoryAvailabilityDomain,
+        ///         MaintenanceType = maintenanceRunHistoryMaintenanceType,
+        ///         State = maintenanceRunHistoryState,
+        ///         TargetResourceId = testTargetResource.Id,
+        ///         TargetResourceType = maintenanceRunHistoryTargetResourceType,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testMaintenanceRunHistories = Oci.Database.GetDatabaseMaintenanceRunHistories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Maintenance_run_history_availability_domain,
-        ///         MaintenanceType = @var.Maintenance_run_history_maintenance_type,
-        ///         State = @var.Maintenance_run_history_state,
-        ///         TargetResourceId = oci_database_target_resource.Test_target_resource.Id,
-        ///         TargetResourceType = @var.Maintenance_run_history_target_resource_type,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = maintenanceRunHistoryAvailabilityDomain,
+        ///         MaintenanceType = maintenanceRunHistoryMaintenanceType,
+        ///         State = maintenanceRunHistoryState,
+        ///         TargetResourceId = testTargetResource.Id,
+        ///         TargetResourceType = maintenanceRunHistoryTargetResourceType,
         ///     });
         /// 
         /// });

@@ -55,15 +55,16 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUser = new Oci.Identity.User("testUser", new()
+    ///     var testUser = new Oci.Identity.User("test_user", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         Description = @var.User_description,
+    ///         CompartmentId = tenancyOcid,
+    ///         Description = userDescription,
+    ///         Name = userName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Email = @var.User_email,
+    ///         Email = userEmail,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

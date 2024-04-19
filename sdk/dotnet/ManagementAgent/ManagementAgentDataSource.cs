@@ -25,28 +25,29 @@ namespace Pulumi.Oci.ManagementAgent
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagementAgentDataSource = new Oci.ManagementAgent.ManagementAgentDataSource("testManagementAgentDataSource", new()
+    ///     var testManagementAgentDataSource = new Oci.ManagementAgent.ManagementAgentDataSource("test_management_agent_data_source", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-    ///         Type = @var.Management_agent_data_source_type,
-    ///         Url = @var.Management_agent_data_source_url,
-    ///         AllowMetrics = @var.Management_agent_data_source_allow_metrics,
-    ///         ConnectionTimeout = @var.Management_agent_data_source_connection_timeout,
+    ///         CompartmentId = compartmentId,
+    ///         ManagementAgentId = testManagementAgent.Id,
+    ///         Name = managementAgentDataSourceName,
+    ///         Type = managementAgentDataSourceType,
+    ///         Url = managementAgentDataSourceUrl,
+    ///         AllowMetrics = managementAgentDataSourceAllowMetrics,
+    ///         ConnectionTimeout = managementAgentDataSourceConnectionTimeout,
     ///         MetricDimensions = new[]
     ///         {
     ///             new Oci.ManagementAgent.Inputs.ManagementAgentDataSourceMetricDimensionArgs
     ///             {
-    ///                 Name = @var.Management_agent_data_source_metric_dimensions_name,
-    ///                 Value = @var.Management_agent_data_source_metric_dimensions_value,
+    ///                 Name = managementAgentDataSourceMetricDimensionsName,
+    ///                 Value = managementAgentDataSourceMetricDimensionsValue,
     ///             },
     ///         },
-    ///         Namespace = @var.Management_agent_data_source_namespace,
-    ///         ProxyUrl = @var.Management_agent_data_source_proxy_url,
-    ///         ReadDataLimitInKilobytes = @var.Management_agent_data_source_read_data_limit_in_kilobytes,
-    ///         ReadTimeout = @var.Management_agent_data_source_read_timeout,
-    ///         ResourceGroup = @var.Management_agent_data_source_resource_group,
-    ///         ScheduleMins = @var.Management_agent_data_source_schedule_mins,
+    ///         Namespace = managementAgentDataSourceNamespace,
+    ///         ProxyUrl = managementAgentDataSourceProxyUrl,
+    ///         ReadDataLimitInKilobytes = managementAgentDataSourceReadDataLimitInKilobytes,
+    ///         ReadTimeout = managementAgentDataSourceReadTimeout,
+    ///         ResourceGroup = managementAgentDataSourceResourceGroup,
+    ///         ScheduleMins = managementAgentDataSourceScheduleMins,
     ///     });
     /// 
     /// });

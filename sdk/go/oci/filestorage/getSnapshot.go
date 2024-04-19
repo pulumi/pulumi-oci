@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetSnapshot(ctx, &filestorage.GetSnapshotArgs{
-//				SnapshotId: oci_file_storage_snapshot.Test_snapshot.Id,
+//				SnapshotId: testSnapshotOciFileStorageSnapshot.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

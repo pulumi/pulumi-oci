@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseAttentionLogCounts(ctx, &databasemanagement.GetManagedDatabaseAttentionLogCountsArgs{
-//				ManagedDatabaseId:        oci_database_management_managed_database.Test_managed_database.Id,
-//				GroupBy:                  pulumi.StringRef(_var.Managed_database_attention_log_count_group_by),
-//				IsRegularExpression:      pulumi.BoolRef(_var.Managed_database_attention_log_count_is_regular_expression),
-//				LogSearchText:            pulumi.StringRef(_var.Managed_database_attention_log_count_log_search_text),
-//				TimeGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_database_attention_log_count_time_greater_than_or_equal_to),
-//				TimeLessThanOrEqualTo:    pulumi.StringRef(_var.Managed_database_attention_log_count_time_less_than_or_equal_to),
-//				TypeFilter:               pulumi.StringRef(_var.Managed_database_attention_log_count_type_filter),
-//				UrgencyFilter:            pulumi.StringRef(_var.Managed_database_attention_log_count_urgency_filter),
+//				ManagedDatabaseId:        testManagedDatabase.Id,
+//				GroupBy:                  pulumi.StringRef(managedDatabaseAttentionLogCountGroupBy),
+//				IsRegularExpression:      pulumi.BoolRef(managedDatabaseAttentionLogCountIsRegularExpression),
+//				LogSearchText:            pulumi.StringRef(managedDatabaseAttentionLogCountLogSearchText),
+//				TimeGreaterThanOrEqualTo: pulumi.StringRef(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo),
+//				TimeLessThanOrEqualTo:    pulumi.StringRef(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo),
+//				TypeFilter:               pulumi.StringRef(managedDatabaseAttentionLogCountTypeFilter),
+//				UrgencyFilter:            pulumi.StringRef(managedDatabaseAttentionLogCountUrgencyFilter),
 //			}, nil)
 //			if err != nil {
 //				return err

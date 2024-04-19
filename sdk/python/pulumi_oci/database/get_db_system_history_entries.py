@@ -91,7 +91,7 @@ def get_db_system_history_entries(db_system_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_patch_history_entries = oci.Database.get_db_system_history_entries(db_system_id=oci_database_db_system["test_db_system"]["id"])
+    test_db_system_patch_history_entries = oci.Database.get_db_system_history_entries(db_system_id=test_db_system["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_db_system_history_entries_output(db_system_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_patch_history_entries = oci.Database.get_db_system_history_entries(db_system_id=oci_database_db_system["test_db_system"]["id"])
+    test_db_system_patch_history_entries = oci.Database.get_db_system_history_entries(db_system_id=test_db_system["id"])
     ```
     <!--End PulumiCodeChooser -->
 

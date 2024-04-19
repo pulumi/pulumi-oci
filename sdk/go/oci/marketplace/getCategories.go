@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetCategories(ctx, &marketplace.GetCategoriesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
 //			}, nil)
 //			if err != nil {
 //				return err

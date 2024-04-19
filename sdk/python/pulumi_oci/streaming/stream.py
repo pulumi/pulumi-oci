@@ -359,15 +359,16 @@ class Stream(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_stream = oci.streaming.Stream("testStream",
-            partitions=var["stream_partitions"],
-            compartment_id=var["compartment_id"],
-            defined_tags=var["stream_defined_tags"],
+        test_stream = oci.streaming.Stream("test_stream",
+            name=stream_name,
+            partitions=stream_partitions,
+            compartment_id=compartment_id,
+            defined_tags=stream_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            retention_in_hours=var["stream_retention_in_hours"],
-            stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
+            retention_in_hours=stream_retention_in_hours,
+            stream_pool_id=test_stream_pool["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -415,15 +416,16 @@ class Stream(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_stream = oci.streaming.Stream("testStream",
-            partitions=var["stream_partitions"],
-            compartment_id=var["compartment_id"],
-            defined_tags=var["stream_defined_tags"],
+        test_stream = oci.streaming.Stream("test_stream",
+            name=stream_name,
+            partitions=stream_partitions,
+            compartment_id=compartment_id,
+            defined_tags=stream_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            retention_in_hours=var["stream_retention_in_hours"],
-            stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
+            retention_in_hours=stream_retention_in_hours,
+            stream_pool_id=test_stream_pool["id"])
         ```
         <!--End PulumiCodeChooser -->
 

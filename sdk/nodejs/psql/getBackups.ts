@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBackups = oci.Psql.getBackups({
- *     backupId: oci_psql_backup.test_backup.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.backup_display_name,
- *     id: _var.backup_id,
- *     state: _var.backup_state,
- *     timeEnded: _var.backup_time_ended,
- *     timeStarted: _var.backup_time_started,
+ *     backupId: testBackup.id,
+ *     compartmentId: compartmentId,
+ *     displayName: backupDisplayName,
+ *     id: backupId,
+ *     state: backupState,
+ *     timeEnded: backupTimeEnded,
+ *     timeStarted: backupTimeStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -123,13 +123,13 @@ export interface GetBackupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBackups = oci.Psql.getBackups({
- *     backupId: oci_psql_backup.test_backup.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.backup_display_name,
- *     id: _var.backup_id,
- *     state: _var.backup_state,
- *     timeEnded: _var.backup_time_ended,
- *     timeStarted: _var.backup_time_started,
+ *     backupId: testBackup.id,
+ *     compartmentId: compartmentId,
+ *     displayName: backupDisplayName,
+ *     id: backupId,
+ *     state: backupState,
+ *     timeEnded: backupTimeEnded,
+ *     timeStarted: backupTimeStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

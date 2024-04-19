@@ -31,19 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.NewWorkspaceProject(ctx, "testWorkspaceProject", &DataIntegration.WorkspaceProjectArgs{
-//				Identifier:   pulumi.Any(_var.Workspace_project_identifier),
-//				WorkspaceId:  pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
-//				Description:  pulumi.Any(_var.Workspace_project_description),
-//				Key:          pulumi.Any(_var.Workspace_project_key),
-//				ModelVersion: pulumi.Any(_var.Workspace_project_model_version),
-//				ObjectStatus: pulumi.Any(_var.Workspace_project_object_status),
+//			_, err := DataIntegration.NewWorkspaceProject(ctx, "test_workspace_project", &DataIntegration.WorkspaceProjectArgs{
+//				Identifier:   pulumi.Any(workspaceProjectIdentifier),
+//				Name:         pulumi.Any(workspaceProjectName),
+//				WorkspaceId:  pulumi.Any(testWorkspace.Id),
+//				Description:  pulumi.Any(workspaceProjectDescription),
+//				Key:          pulumi.Any(workspaceProjectKey),
+//				ModelVersion: pulumi.Any(workspaceProjectModelVersion),
+//				ObjectStatus: pulumi.Any(workspaceProjectObjectStatus),
 //				RegistryMetadata: &dataintegration.WorkspaceProjectRegistryMetadataArgs{
-//					AggregatorKey:   pulumi.Any(_var.Workspace_project_registry_metadata_aggregator_key),
-//					IsFavorite:      pulumi.Any(_var.Workspace_project_registry_metadata_is_favorite),
-//					Key:             pulumi.Any(_var.Workspace_project_registry_metadata_key),
-//					Labels:          pulumi.Any(_var.Workspace_project_registry_metadata_labels),
-//					RegistryVersion: pulumi.Any(_var.Workspace_project_registry_metadata_registry_version),
+//					AggregatorKey:   pulumi.Any(workspaceProjectRegistryMetadataAggregatorKey),
+//					IsFavorite:      pulumi.Any(workspaceProjectRegistryMetadataIsFavorite),
+//					Key:             pulumi.Any(workspaceProjectRegistryMetadataKey),
+//					Labels:          pulumi.Any(workspaceProjectRegistryMetadataLabels),
+//					RegistryVersion: pulumi.Any(workspaceProjectRegistryMetadataRegistryVersion),
 //				},
 //			})
 //			if err != nil {

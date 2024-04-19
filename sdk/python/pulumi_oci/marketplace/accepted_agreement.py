@@ -337,16 +337,16 @@ class AcceptedAgreement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_accepted_agreement = oci.marketplace.AcceptedAgreement("testAcceptedAgreement",
-            agreement_id=oci_marketplace_agreement["test_agreement"]["id"],
-            compartment_id=var["compartment_id"],
-            listing_id=oci_marketplace_listing["test_listing"]["id"],
-            package_version=var["accepted_agreement_package_version"],
-            signature=var["accepted_agreement_signature"],
+        test_accepted_agreement = oci.marketplace.AcceptedAgreement("test_accepted_agreement",
+            agreement_id=test_agreement["id"],
+            compartment_id=compartment_id,
+            listing_id=test_listing["id"],
+            package_version=accepted_agreement_package_version,
+            signature=accepted_agreement_signature,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["accepted_agreement_display_name"],
+            display_name=accepted_agreement_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -395,16 +395,16 @@ class AcceptedAgreement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_accepted_agreement = oci.marketplace.AcceptedAgreement("testAcceptedAgreement",
-            agreement_id=oci_marketplace_agreement["test_agreement"]["id"],
-            compartment_id=var["compartment_id"],
-            listing_id=oci_marketplace_listing["test_listing"]["id"],
-            package_version=var["accepted_agreement_package_version"],
-            signature=var["accepted_agreement_signature"],
+        test_accepted_agreement = oci.marketplace.AcceptedAgreement("test_accepted_agreement",
+            agreement_id=test_agreement["id"],
+            compartment_id=compartment_id,
+            listing_id=test_listing["id"],
+            package_version=accepted_agreement_package_version,
+            signature=accepted_agreement_signature,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["accepted_agreement_display_name"],
+            display_name=accepted_agreement_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

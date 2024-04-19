@@ -204,11 +204,11 @@ def get_repository_diff(base_version: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_diff = oci.DevOps.get_repository_diff(base_version=var["repository_diff_base_version"],
-        file_path=var["repository_diff_file_path"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        target_version=var["repository_diff_target_version"],
-        is_comparison_from_merge_base=var["repository_diff_is_comparison_from_merge_base"])
+    test_repository_diff = oci.DevOps.get_repository_diff(base_version=repository_diff_base_version,
+        file_path=repository_diff_file_path,
+        repository_id=test_repository["id"],
+        target_version=repository_diff_target_version,
+        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -264,11 +264,11 @@ def get_repository_diff_output(base_version: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_diff = oci.DevOps.get_repository_diff(base_version=var["repository_diff_base_version"],
-        file_path=var["repository_diff_file_path"],
-        repository_id=oci_devops_repository["test_repository"]["id"],
-        target_version=var["repository_diff_target_version"],
-        is_comparison_from_merge_base=var["repository_diff_is_comparison_from_merge_base"])
+    test_repository_diff = oci.DevOps.get_repository_diff(base_version=repository_diff_base_version,
+        file_path=repository_diff_file_path,
+        repository_id=test_repository["id"],
+        target_version=repository_diff_target_version,
+        is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetAwrHubSources(ctx, &opsi.GetAwrHubSourcesArgs{
-//				AwrHubId:       oci_opsi_awr_hub.Test_awr_hub.Id,
-//				AwrHubSourceId: pulumi.StringRef(oci_opsi_awr_hub_source.Test_awr_hub_source.Id),
-//				CompartmentId:  pulumi.StringRef(_var.Compartment_id),
-//				Name:           pulumi.StringRef(_var.Awr_hub_source_name),
-//				SourceTypes:    _var.Awr_hub_source_source_type,
-//				States:         _var.Awr_hub_source_state,
-//				Statuses:       _var.Awr_hub_source_status,
+//				AwrHubId:       testAwrHub.Id,
+//				AwrHubSourceId: pulumi.StringRef(testAwrHubSource.Id),
+//				CompartmentId:  pulumi.StringRef(compartmentId),
+//				Name:           pulumi.StringRef(awrHubSourceName),
+//				SourceTypes:    awrHubSourceSourceType,
+//				States:         awrHubSourceState,
+//				Statuses:       awrHubSourceStatus,
 //			}, nil)
 //			if err != nil {
 //				return err

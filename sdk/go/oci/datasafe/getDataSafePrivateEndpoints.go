@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetDataSafePrivateEndpoints(ctx, &datasafe.GetDataSafePrivateEndpointsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Data_safe_private_endpoint_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Data_safe_private_endpoint_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Data_safe_private_endpoint_display_name),
-//				State:                  pulumi.StringRef(_var.Data_safe_private_endpoint_state),
-//				VcnId:                  pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(dataSafePrivateEndpointAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(dataSafePrivateEndpointCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(dataSafePrivateEndpointDisplayName),
+//				State:                  pulumi.StringRef(dataSafePrivateEndpointState),
+//				VcnId:                  pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

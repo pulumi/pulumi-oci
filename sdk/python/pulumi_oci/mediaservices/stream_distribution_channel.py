@@ -315,9 +315,9 @@ class StreamDistributionChannel(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_stream_distribution_channel = oci.media_services.StreamDistributionChannel("testStreamDistributionChannel",
-            compartment_id=var["compartment_id"],
-            display_name=var["stream_distribution_channel_display_name"],
+        test_stream_distribution_channel = oci.media_services.StreamDistributionChannel("test_stream_distribution_channel",
+            compartment_id=compartment_id,
+            display_name=stream_distribution_channel_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -325,11 +325,11 @@ class StreamDistributionChannel(pulumi.CustomResource):
                 "bar-key": "value",
             },
             locks=[oci.media_services.StreamDistributionChannelLockArgs(
-                compartment_id=var["compartment_id"],
-                type=var["stream_distribution_channel_locks_type"],
-                message=var["stream_distribution_channel_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["stream_distribution_channel_locks_time_created"],
+                compartment_id=compartment_id,
+                type=stream_distribution_channel_locks_type,
+                message=stream_distribution_channel_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=stream_distribution_channel_locks_time_created,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -368,9 +368,9 @@ class StreamDistributionChannel(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_stream_distribution_channel = oci.media_services.StreamDistributionChannel("testStreamDistributionChannel",
-            compartment_id=var["compartment_id"],
-            display_name=var["stream_distribution_channel_display_name"],
+        test_stream_distribution_channel = oci.media_services.StreamDistributionChannel("test_stream_distribution_channel",
+            compartment_id=compartment_id,
+            display_name=stream_distribution_channel_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -378,11 +378,11 @@ class StreamDistributionChannel(pulumi.CustomResource):
                 "bar-key": "value",
             },
             locks=[oci.media_services.StreamDistributionChannelLockArgs(
-                compartment_id=var["compartment_id"],
-                type=var["stream_distribution_channel_locks_type"],
-                message=var["stream_distribution_channel_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["stream_distribution_channel_locks_time_created"],
+                compartment_id=compartment_id,
+                type=stream_distribution_channel_locks_type,
+                message=stream_distribution_channel_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=stream_distribution_channel_locks_time_created,
             )])
         ```
         <!--End PulumiCodeChooser -->

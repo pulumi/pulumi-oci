@@ -31,33 +31,33 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataFlow.NewPool(ctx, "testPool", &DataFlow.PoolArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := DataFlow.NewPool(ctx, "test_pool", &DataFlow.PoolArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				Configurations: dataflow.PoolConfigurationArray{
 //					&dataflow.PoolConfigurationArgs{
-//						Max:   pulumi.Any(_var.Pool_configurations_max),
-//						Min:   pulumi.Any(_var.Pool_configurations_min),
-//						Shape: pulumi.Any(_var.Pool_configurations_shape),
+//						Max:   pulumi.Any(poolConfigurationsMax),
+//						Min:   pulumi.Any(poolConfigurationsMin),
+//						Shape: pulumi.Any(poolConfigurationsShape),
 //						ShapeConfig: &dataflow.PoolConfigurationShapeConfigArgs{
-//							MemoryInGbs: pulumi.Any(_var.Pool_configurations_shape_config_memory_in_gbs),
-//							Ocpus:       pulumi.Any(_var.Pool_configurations_shape_config_ocpus),
+//							MemoryInGbs: pulumi.Any(poolConfigurationsShapeConfigMemoryInGbs),
+//							Ocpus:       pulumi.Any(poolConfigurationsShapeConfigOcpus),
 //						},
 //					},
 //				},
-//				DisplayName: pulumi.Any(_var.Pool_display_name),
+//				DisplayName: pulumi.Any(poolDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Pool_description),
+//				Description: pulumi.Any(poolDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IdleTimeoutInMinutes: pulumi.Any(_var.Pool_idle_timeout_in_minutes),
+//				IdleTimeoutInMinutes: pulumi.Any(poolIdleTimeoutInMinutes),
 //				Schedules: dataflow.PoolScheduleArray{
 //					&dataflow.PoolScheduleArgs{
-//						DayOfWeek: pulumi.Any(_var.Pool_schedules_day_of_week),
-//						StartTime: pulumi.Any(_var.Pool_schedules_start_time),
-//						StopTime:  pulumi.Any(_var.Pool_schedules_stop_time),
+//						DayOfWeek: pulumi.Any(poolSchedulesDayOfWeek),
+//						StartTime: pulumi.Any(poolSchedulesStartTime),
+//						StopTime:  pulumi.Any(poolSchedulesStopTime),
 //					},
 //				},
 //			})

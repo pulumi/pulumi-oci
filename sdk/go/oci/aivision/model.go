@@ -31,41 +31,41 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiVision.NewModel(ctx, "testModel", &AiVision.ModelArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ModelType:     pulumi.Any(_var.Model_model_type),
-//				ProjectId:     pulumi.Any(oci_ai_vision_project.Test_project.Id),
+//			_, err := AiVision.NewModel(ctx, "test_model", &AiVision.ModelArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ModelType:     pulumi.Any(modelModelType),
+//				ProjectId:     pulumi.Any(testProject.Id),
 //				TrainingDataset: &aivision.ModelTrainingDatasetArgs{
-//					DatasetType:   pulumi.Any(_var.Model_training_dataset_dataset_type),
-//					Bucket:        pulumi.Any(_var.Model_training_dataset_bucket),
-//					DatasetId:     pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
-//					NamespaceName: pulumi.Any(_var.Model_training_dataset_namespace),
-//					Object:        pulumi.Any(_var.Model_training_dataset_object),
+//					DatasetType:   pulumi.Any(modelTrainingDatasetDatasetType),
+//					Bucket:        pulumi.Any(modelTrainingDatasetBucket),
+//					DatasetId:     pulumi.Any(testDataset.Id),
+//					NamespaceName: pulumi.Any(modelTrainingDatasetNamespace),
+//					Object:        pulumi.Any(modelTrainingDatasetObject),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Model_description),
-//				DisplayName: pulumi.Any(_var.Model_display_name),
+//				Description: pulumi.Any(modelDescription),
+//				DisplayName: pulumi.Any(modelDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsQuickMode:                pulumi.Any(_var.Model_is_quick_mode),
-//				MaxTrainingDurationInHours: pulumi.Any(_var.Model_max_training_duration_in_hours),
-//				ModelVersion:               pulumi.Any(_var.Model_model_version),
+//				IsQuickMode:                pulumi.Any(modelIsQuickMode),
+//				MaxTrainingDurationInHours: pulumi.Any(modelMaxTrainingDurationInHours),
+//				ModelVersion:               pulumi.Any(modelModelVersion),
 //				TestingDataset: &aivision.ModelTestingDatasetArgs{
-//					DatasetType:   pulumi.Any(_var.Model_testing_dataset_dataset_type),
-//					Bucket:        pulumi.Any(_var.Model_testing_dataset_bucket),
-//					DatasetId:     pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
-//					NamespaceName: pulumi.Any(_var.Model_testing_dataset_namespace),
-//					Object:        pulumi.Any(_var.Model_testing_dataset_object),
+//					DatasetType:   pulumi.Any(modelTestingDatasetDatasetType),
+//					Bucket:        pulumi.Any(modelTestingDatasetBucket),
+//					DatasetId:     pulumi.Any(testDataset.Id),
+//					NamespaceName: pulumi.Any(modelTestingDatasetNamespace),
+//					Object:        pulumi.Any(modelTestingDatasetObject),
 //				},
 //				ValidationDataset: &aivision.ModelValidationDatasetArgs{
-//					DatasetType:   pulumi.Any(_var.Model_validation_dataset_dataset_type),
-//					Bucket:        pulumi.Any(_var.Model_validation_dataset_bucket),
-//					DatasetId:     pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
-//					NamespaceName: pulumi.Any(_var.Model_validation_dataset_namespace),
-//					Object:        pulumi.Any(_var.Model_validation_dataset_object),
+//					DatasetType:   pulumi.Any(modelValidationDatasetDatasetType),
+//					Bucket:        pulumi.Any(modelValidationDatasetBucket),
+//					DatasetId:     pulumi.Any(testDataset.Id),
+//					NamespaceName: pulumi.Any(modelValidationDatasetNamespace),
+//					Object:        pulumi.Any(modelValidationDatasetObject),
 //				},
 //			})
 //			if err != nil {

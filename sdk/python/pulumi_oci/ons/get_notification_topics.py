@@ -120,10 +120,10 @@ def get_notification_topics(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=var["compartment_id"],
-        id=var["notification_topic_id"],
-        name=var["notification_topic_name"],
-        state=var["notification_topic_state"])
+    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=compartment_id,
+        id=notification_topic_id,
+        name=notification_topic_name,
+        state=notification_topic_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -172,10 +172,10 @@ def get_notification_topics_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=var["compartment_id"],
-        id=var["notification_topic_id"],
-        name=var["notification_topic_name"],
-        state=var["notification_topic_state"])
+    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=compartment_id,
+        id=notification_topic_id,
+        name=notification_topic_name,
+        state=notification_topic_state)
     ```
     <!--End PulumiCodeChooser -->
 

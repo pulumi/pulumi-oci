@@ -31,8 +31,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewBackupCancelManagement(ctx, "testBackupCancelManagement", &Database.BackupCancelManagementArgs{
-//				BackupId:            pulumi.Any(oci_database_backup.Test_backup.Id),
+//			_, err := Database.NewBackupCancelManagement(ctx, "test_backup_cancel_management", &Database.BackupCancelManagementArgs{
+//				BackupId:            pulumi.Any(testBackup.Id),
 //				CancelBackupTrigger: pulumi.Int(1),
 //			})
 //			if err != nil {

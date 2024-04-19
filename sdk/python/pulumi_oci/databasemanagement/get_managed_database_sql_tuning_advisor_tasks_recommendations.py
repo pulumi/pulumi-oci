@@ -135,11 +135,11 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=oci_database_management_execution["test_execution"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        opc_named_credential_id=var["managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id"])
+    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=test_execution["id"],
+        managed_database_id=test_managed_database["id"],
+        sql_object_id=test_object["id"],
+        sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
+        opc_named_credential_id=managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -192,11 +192,11 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendations_output(executi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=oci_database_management_execution["test_execution"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        sql_object_id=oci_objectstorage_object["test_object"]["id"],
-        sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"],
-        opc_named_credential_id=var["managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id"])
+    test_managed_database_sql_tuning_advisor_tasks_recommendations = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_recommendations(execution_id=test_execution["id"],
+        managed_database_id=test_managed_database["id"],
+        sql_object_id=test_object["id"],
+        sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
+        opc_named_credential_id=managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 

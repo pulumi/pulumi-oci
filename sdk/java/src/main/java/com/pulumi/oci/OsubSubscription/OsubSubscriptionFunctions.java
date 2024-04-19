@@ -53,9 +53,9 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(oci_osub_subscription_commitment.test_commitment().id())
-     *             .xOneGatewaySubscriptionId(var_.commitment_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.commitment_x_one_origin_region())
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -97,9 +97,9 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(oci_osub_subscription_commitment.test_commitment().id())
-     *             .xOneGatewaySubscriptionId(var_.commitment_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.commitment_x_one_origin_region())
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -141,9 +141,9 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(oci_osub_subscription_commitment.test_commitment().id())
-     *             .xOneGatewaySubscriptionId(var_.commitment_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.commitment_x_one_origin_region())
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -185,9 +185,9 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(oci_osub_subscription_commitment.test_commitment().id())
-     *             .xOneGatewaySubscriptionId(var_.commitment_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.commitment_x_one_origin_region())
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -229,10 +229,10 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscribedServiceId(oci_core_service.test_service().id())
-     *             .xOneGatewaySubscriptionId(var_.commitment_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.commitment_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testService.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -274,10 +274,10 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscribedServiceId(oci_core_service.test_service().id())
-     *             .xOneGatewaySubscriptionId(var_.commitment_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.commitment_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testService.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -319,10 +319,10 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscribedServiceId(oci_core_service.test_service().id())
-     *             .xOneGatewaySubscriptionId(var_.commitment_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.commitment_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testService.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -364,10 +364,10 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscribedServiceId(oci_core_service.test_service().id())
-     *             .xOneGatewaySubscriptionId(var_.commitment_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.commitment_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscribedServiceId(testService.id())
+     *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -410,12 +410,12 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_osub_subscription_subscription.test_subscription().id())
-     *             .partNumber(var_.ratecard_part_number())
-     *             .timeFrom(var_.ratecard_time_from())
-     *             .timeTo(var_.ratecard_time_to())
-     *             .xOneOriginRegion(var_.ratecard_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
+     *             .xOneOriginRegion(ratecardXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -458,12 +458,12 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_osub_subscription_subscription.test_subscription().id())
-     *             .partNumber(var_.ratecard_part_number())
-     *             .timeFrom(var_.ratecard_time_from())
-     *             .timeTo(var_.ratecard_time_to())
-     *             .xOneOriginRegion(var_.ratecard_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
+     *             .xOneOriginRegion(ratecardXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -506,12 +506,12 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_osub_subscription_subscription.test_subscription().id())
-     *             .partNumber(var_.ratecard_part_number())
-     *             .timeFrom(var_.ratecard_time_from())
-     *             .timeTo(var_.ratecard_time_to())
-     *             .xOneOriginRegion(var_.ratecard_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
+     *             .xOneOriginRegion(ratecardXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -554,12 +554,12 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_osub_subscription_subscription.test_subscription().id())
-     *             .partNumber(var_.ratecard_part_number())
-     *             .timeFrom(var_.ratecard_time_from())
-     *             .timeTo(var_.ratecard_time_to())
-     *             .xOneOriginRegion(var_.ratecard_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .partNumber(ratecardPartNumber)
+     *             .timeFrom(ratecardTimeFrom)
+     *             .timeTo(ratecardTimeTo)
+     *             .xOneOriginRegion(ratecardXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -604,13 +604,13 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OsubSubscriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .buyerEmail(var_.subscription_buyer_email())
-     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
-     *             .planNumber(var_.subscription_plan_number())
-     *             .subscriptionId(oci_osub_subscription_subscription.test_subscription().id())
-     *             .xOneGatewaySubscriptionId(var_.subscription_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.subscription_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
+     *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(subscriptionXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -655,13 +655,13 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OsubSubscriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .buyerEmail(var_.subscription_buyer_email())
-     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
-     *             .planNumber(var_.subscription_plan_number())
-     *             .subscriptionId(oci_osub_subscription_subscription.test_subscription().id())
-     *             .xOneGatewaySubscriptionId(var_.subscription_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.subscription_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
+     *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(subscriptionXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -706,13 +706,13 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OsubSubscriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .buyerEmail(var_.subscription_buyer_email())
-     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
-     *             .planNumber(var_.subscription_plan_number())
-     *             .subscriptionId(oci_osub_subscription_subscription.test_subscription().id())
-     *             .xOneGatewaySubscriptionId(var_.subscription_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.subscription_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
+     *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(subscriptionXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -757,13 +757,13 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OsubSubscriptionFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .buyerEmail(var_.subscription_buyer_email())
-     *             .isCommitInfoRequired(var_.subscription_is_commit_info_required())
-     *             .planNumber(var_.subscription_plan_number())
-     *             .subscriptionId(oci_osub_subscription_subscription.test_subscription().id())
-     *             .xOneGatewaySubscriptionId(var_.subscription_x_one_gateway_subscription_id())
-     *             .xOneOriginRegion(var_.subscription_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .buyerEmail(subscriptionBuyerEmail)
+     *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
+     *             .planNumber(subscriptionPlanNumber)
+     *             .subscriptionId(testSubscription.id())
+     *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
+     *             .xOneOriginRegion(subscriptionXOneOriginRegion)
      *             .build());
      * 
      *     }

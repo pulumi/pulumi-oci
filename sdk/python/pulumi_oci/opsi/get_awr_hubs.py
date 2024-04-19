@@ -134,11 +134,11 @@ def get_awr_hubs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["awr_hub_display_name"],
-        id=var["awr_hub_id"],
-        states=var["awr_hub_state"])
+    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+        compartment_id=compartment_id,
+        display_name=awr_hub_display_name,
+        id=awr_hub_id,
+        states=awr_hub_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_awr_hubs_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["awr_hub_display_name"],
-        id=var["awr_hub_id"],
-        states=var["awr_hub_state"])
+    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+        compartment_id=compartment_id,
+        display_name=awr_hub_display_name,
+        id=awr_hub_id,
+        states=awr_hub_state)
     ```
     <!--End PulumiCodeChooser -->
 

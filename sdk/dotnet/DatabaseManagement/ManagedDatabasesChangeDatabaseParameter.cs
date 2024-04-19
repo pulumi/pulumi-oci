@@ -37,34 +37,34 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagedDatabasesChangeDatabaseParameter = new Oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter", new()
+    ///     var testManagedDatabasesChangeDatabaseParameter = new Oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameter("test_managed_databases_change_database_parameter", new()
     ///     {
-    ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+    ///         ManagedDatabaseId = testManagedDatabase.Id,
     ///         Parameters = new[]
     ///         {
     ///             new Oci.DatabaseManagement.Inputs.ManagedDatabasesChangeDatabaseParameterParameterArgs
     ///             {
-    ///                 Name = @var.Managed_databases_change_database_parameter_parameters_name,
-    ///                 Value = @var.Managed_databases_change_database_parameter_parameters_value,
-    ///                 UpdateComment = @var.Managed_databases_change_database_parameter_parameters_update_comment,
+    ///                 Name = managedDatabasesChangeDatabaseParameterParametersName,
+    ///                 Value = managedDatabasesChangeDatabaseParameterParametersValue,
+    ///                 UpdateComment = managedDatabasesChangeDatabaseParameterParametersUpdateComment,
     ///             },
     ///         },
-    ///         Scope = @var.Managed_databases_change_database_parameter_scope,
+    ///         Scope = managedDatabasesChangeDatabaseParameterScope,
     ///         Credentials = new Oci.DatabaseManagement.Inputs.ManagedDatabasesChangeDatabaseParameterCredentialsArgs
     ///         {
-    ///             Password = @var.Managed_databases_change_database_parameter_credentials_password,
-    ///             Role = @var.Managed_databases_change_database_parameter_credentials_role,
-    ///             SecretId = oci_vault_secret.Test_secret.Id,
-    ///             UserName = oci_identity_user.Test_user.Name,
+    ///             Password = managedDatabasesChangeDatabaseParameterCredentialsPassword,
+    ///             Role = managedDatabasesChangeDatabaseParameterCredentialsRole,
+    ///             SecretId = testSecret.Id,
+    ///             UserName = testUser.Name,
     ///         },
     ///         DatabaseCredential = new Oci.DatabaseManagement.Inputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs
     ///         {
-    ///             CredentialType = @var.Managed_databases_change_database_parameter_database_credential_credential_type,
-    ///             NamedCredentialId = oci_database_management_named_credential.Test_named_credential.Id,
-    ///             Password = @var.Managed_databases_change_database_parameter_database_credential_password,
-    ///             PasswordSecretId = oci_vault_secret.Test_secret.Id,
-    ///             Role = @var.Managed_databases_change_database_parameter_database_credential_role,
-    ///             Username = @var.Managed_databases_change_database_parameter_database_credential_username,
+    ///             CredentialType = managedDatabasesChangeDatabaseParameterDatabaseCredentialCredentialType,
+    ///             NamedCredentialId = testNamedCredential.Id,
+    ///             Password = managedDatabasesChangeDatabaseParameterDatabaseCredentialPassword,
+    ///             PasswordSecretId = testSecret.Id,
+    ///             Role = managedDatabasesChangeDatabaseParameterDatabaseCredentialRole,
+    ///             Username = managedDatabasesChangeDatabaseParameterDatabaseCredentialUsername,
     ///         },
     ///     });
     /// 

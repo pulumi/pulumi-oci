@@ -31,46 +31,47 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewSchedule(ctx, "testSchedule", &MeteringComputation.ScheduleArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := MeteringComputation.NewSchedule(ctx, "test_schedule", &MeteringComputation.ScheduleArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(scheduleName),
 //				ResultLocation: &meteringcomputation.ScheduleResultLocationArgs{
-//					Bucket:       pulumi.Any(_var.Schedule_result_location_bucket),
-//					LocationType: pulumi.Any(_var.Schedule_result_location_location_type),
-//					Namespace:    pulumi.Any(_var.Schedule_result_location_namespace),
-//					Region:       pulumi.Any(_var.Schedule_result_location_region),
+//					Bucket:       pulumi.Any(scheduleResultLocationBucket),
+//					LocationType: pulumi.Any(scheduleResultLocationLocationType),
+//					Namespace:    pulumi.Any(scheduleResultLocationNamespace),
+//					Region:       pulumi.Any(scheduleResultLocationRegion),
 //				},
-//				ScheduleRecurrences: pulumi.Any(_var.Schedule_schedule_recurrences),
-//				TimeScheduled:       pulumi.Any(_var.Schedule_time_scheduled),
+//				ScheduleRecurrences: pulumi.Any(scheduleScheduleRecurrences),
+//				TimeScheduled:       pulumi.Any(scheduleTimeScheduled),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Schedule_description),
+//				Description: pulumi.Any(scheduleDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				OutputFileFormat: pulumi.Any(_var.Schedule_output_file_format),
+//				OutputFileFormat: pulumi.Any(scheduleOutputFileFormat),
 //				QueryProperties: &meteringcomputation.ScheduleQueryPropertiesArgs{
 //					DateRange: &meteringcomputation.ScheduleQueryPropertiesDateRangeArgs{
-//						DateRangeType:        pulumi.Any(_var.Schedule_query_properties_date_range_date_range_type),
-//						DynamicDateRangeType: pulumi.Any(_var.Schedule_query_properties_date_range_dynamic_date_range_type),
-//						TimeUsageEnded:       pulumi.Any(_var.Schedule_query_properties_date_range_time_usage_ended),
-//						TimeUsageStarted:     pulumi.Any(_var.Schedule_query_properties_date_range_time_usage_started),
+//						DateRangeType:        pulumi.Any(scheduleQueryPropertiesDateRangeDateRangeType),
+//						DynamicDateRangeType: pulumi.Any(scheduleQueryPropertiesDateRangeDynamicDateRangeType),
+//						TimeUsageEnded:       pulumi.Any(scheduleQueryPropertiesDateRangeTimeUsageEnded),
+//						TimeUsageStarted:     pulumi.Any(scheduleQueryPropertiesDateRangeTimeUsageStarted),
 //					},
-//					Granularity:      pulumi.Any(_var.Schedule_query_properties_granularity),
-//					CompartmentDepth: pulumi.Any(_var.Schedule_query_properties_compartment_depth),
-//					Filter:           pulumi.Any(_var.Schedule_query_properties_filter),
-//					GroupBies:        pulumi.Any(_var.Schedule_query_properties_group_by),
+//					Granularity:      pulumi.Any(scheduleQueryPropertiesGranularity),
+//					CompartmentDepth: pulumi.Any(scheduleQueryPropertiesCompartmentDepth),
+//					Filter:           pulumi.Any(scheduleQueryPropertiesFilter),
+//					GroupBies:        pulumi.Any(scheduleQueryPropertiesGroupBy),
 //					GroupByTags: meteringcomputation.ScheduleQueryPropertiesGroupByTagArray{
 //						&meteringcomputation.ScheduleQueryPropertiesGroupByTagArgs{
-//							Key:       pulumi.Any(_var.Schedule_query_properties_group_by_tag_key),
-//							Namespace: pulumi.Any(_var.Schedule_query_properties_group_by_tag_namespace),
-//							Value:     pulumi.Any(_var.Schedule_query_properties_group_by_tag_value),
+//							Key:       pulumi.Any(scheduleQueryPropertiesGroupByTagKey),
+//							Namespace: pulumi.Any(scheduleQueryPropertiesGroupByTagNamespace),
+//							Value:     pulumi.Any(scheduleQueryPropertiesGroupByTagValue),
 //						},
 //					},
-//					IsAggregateByTime: pulumi.Any(_var.Schedule_query_properties_is_aggregate_by_time),
-//					QueryType:         pulumi.Any(_var.Schedule_query_properties_query_type),
+//					IsAggregateByTime: pulumi.Any(scheduleQueryPropertiesIsAggregateByTime),
+//					QueryType:         pulumi.Any(scheduleQueryPropertiesQueryType),
 //				},
-//				SavedReportId: pulumi.Any(oci_data_safe_report.Test_report.Id),
+//				SavedReportId: pulumi.Any(testReport.Id),
 //			})
 //			if err != nil {
 //				return err

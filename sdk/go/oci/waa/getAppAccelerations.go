@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waa.GetAppAccelerations(ctx, &waa.GetAppAccelerationsArgs{
-//				CompartmentId:              _var.Compartment_id,
-//				DisplayName:                pulumi.StringRef(_var.Web_app_acceleration_display_name),
-//				Id:                         pulumi.StringRef(_var.Web_app_acceleration_id),
-//				States:                     _var.Web_app_acceleration_state,
-//				WebAppAccelerationPolicyId: pulumi.StringRef(oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id),
+//				CompartmentId:              compartmentId,
+//				DisplayName:                pulumi.StringRef(webAppAccelerationDisplayName),
+//				Id:                         pulumi.StringRef(webAppAccelerationId),
+//				States:                     webAppAccelerationState,
+//				WebAppAccelerationPolicyId: pulumi.StringRef(testWebAppAccelerationPolicy.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

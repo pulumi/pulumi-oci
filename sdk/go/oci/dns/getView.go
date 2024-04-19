@@ -33,7 +33,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetView(ctx, &dns.GetViewArgs{
-//				ViewId: pulumi.StringRef(oci_dns_view.Test_view.Id),
+//				ViewId: pulumi.StringRef(testViewOciDnsView.Id),
 //				Scope:  pulumi.StringRef("PRIVATE"),
 //			}, nil)
 //			if err != nil {

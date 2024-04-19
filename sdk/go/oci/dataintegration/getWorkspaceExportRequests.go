@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceExportRequests(ctx, &dataintegration.GetWorkspaceExportRequestsArgs{
-//				WorkspaceId:         oci_dataintegration_workspace.Test_workspace.Id,
-//				ExportStatus:        pulumi.StringRef(_var.Workspace_export_request_export_status),
-//				Name:                pulumi.StringRef(_var.Workspace_export_request_name),
-//				Projection:          pulumi.StringRef(_var.Workspace_export_request_projection),
-//				TimeEndedInMillis:   pulumi.StringRef(_var.Workspace_export_request_time_ended_in_millis),
-//				TimeStartedInMillis: pulumi.StringRef(_var.Workspace_export_request_time_started_in_millis),
+//				WorkspaceId:         testWorkspace.Id,
+//				ExportStatus:        pulumi.StringRef(workspaceExportRequestExportStatus),
+//				Name:                pulumi.StringRef(workspaceExportRequestName),
+//				Projection:          pulumi.StringRef(workspaceExportRequestProjection),
+//				TimeEndedInMillis:   pulumi.StringRef(workspaceExportRequestTimeEndedInMillis),
+//				TimeStartedInMillis: pulumi.StringRef(workspaceExportRequestTimeStartedInMillis),
 //			}, nil)
 //			if err != nil {
 //				return err

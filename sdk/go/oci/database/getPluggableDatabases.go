@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetPluggableDatabases(ctx, &database.GetPluggableDatabasesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DatabaseId:    pulumi.StringRef(oci_database_database.Test_database.Id),
-//				PdbName:       pulumi.StringRef(_var.Pluggable_database_pdb_name),
-//				State:         pulumi.StringRef(_var.Pluggable_database_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DatabaseId:    pulumi.StringRef(testDatabase.Id),
+//				PdbName:       pulumi.StringRef(pluggableDatabasePdbName),
+//				State:         pulumi.StringRef(pluggableDatabaseState),
 //			}, nil)
 //			if err != nil {
 //				return err

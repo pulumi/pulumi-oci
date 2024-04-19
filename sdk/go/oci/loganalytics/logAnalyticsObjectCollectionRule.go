@@ -31,34 +31,35 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewLogAnalyticsObjectCollectionRule(ctx, "testLogAnalyticsObjectCollectionRule", &LogAnalytics.LogAnalyticsObjectCollectionRuleArgs{
-//				CompartmentId:  pulumi.Any(_var.Compartment_id),
-//				LogGroupId:     pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//				LogSourceName:  pulumi.Any(_var.Log_analytics_object_collection_rule_log_source_name),
-//				Namespace:      pulumi.Any(_var.Log_analytics_object_collection_rule_namespace),
-//				OsBucketName:   pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
-//				OsNamespace:    pulumi.Any(_var.Log_analytics_object_collection_rule_os_namespace),
-//				CharEncoding:   pulumi.Any(_var.Log_analytics_object_collection_rule_char_encoding),
-//				CollectionType: pulumi.Any(_var.Log_analytics_object_collection_rule_collection_type),
+//			_, err := LogAnalytics.NewLogAnalyticsObjectCollectionRule(ctx, "test_log_analytics_object_collection_rule", &LogAnalytics.LogAnalyticsObjectCollectionRuleArgs{
+//				CompartmentId:  pulumi.Any(compartmentId),
+//				LogGroupId:     pulumi.Any(testLogGroup.Id),
+//				LogSourceName:  pulumi.Any(logAnalyticsObjectCollectionRuleLogSourceName),
+//				Name:           pulumi.Any(logAnalyticsObjectCollectionRuleName),
+//				Namespace:      pulumi.Any(logAnalyticsObjectCollectionRuleNamespace),
+//				OsBucketName:   pulumi.Any(testBucket.Name),
+//				OsNamespace:    pulumi.Any(logAnalyticsObjectCollectionRuleOsNamespace),
+//				CharEncoding:   pulumi.Any(logAnalyticsObjectCollectionRuleCharEncoding),
+//				CollectionType: pulumi.Any(logAnalyticsObjectCollectionRuleCollectionType),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Log_analytics_object_collection_rule_description),
-//				EntityId:    pulumi.Any(oci_log_analytics_entity.Test_entity.Id),
+//				Description: pulumi.Any(logAnalyticsObjectCollectionRuleDescription),
+//				EntityId:    pulumi.Any(testEntity.Id),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsEnabled:                 pulumi.Any(_var.Log_analytics_object_collection_rule_is_enabled),
-//				IsForceHistoricCollection: pulumi.Any(_var.Log_analytics_object_collection_rule_is_force_historic_collection),
-//				LogSet:                    pulumi.Any(_var.Log_analytics_object_collection_rule_log_set),
-//				LogSetExtRegex:            pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_ext_regex),
-//				LogSetKey:                 pulumi.Any(_var.Log_analytics_object_collection_rule_log_set_key),
-//				LogType:                   pulumi.Any(_var.Log_analytics_object_collection_rule_log_type),
-//				ObjectNameFilters:         pulumi.Any(_var.Log_analytics_object_collection_rule_object_name_filters),
-//				Overrides:                 pulumi.Any(_var.Log_analytics_object_collection_rule_overrides),
-//				PollSince:                 pulumi.Any(_var.Log_analytics_object_collection_rule_poll_since),
-//				PollTill:                  pulumi.Any(_var.Log_analytics_object_collection_rule_poll_till),
-//				Timezone:                  pulumi.Any(_var.Log_analytics_object_collection_rule_timezone),
+//				IsEnabled:                 pulumi.Any(logAnalyticsObjectCollectionRuleIsEnabled),
+//				IsForceHistoricCollection: pulumi.Any(logAnalyticsObjectCollectionRuleIsForceHistoricCollection),
+//				LogSet:                    pulumi.Any(logAnalyticsObjectCollectionRuleLogSet),
+//				LogSetExtRegex:            pulumi.Any(logAnalyticsObjectCollectionRuleLogSetExtRegex),
+//				LogSetKey:                 pulumi.Any(logAnalyticsObjectCollectionRuleLogSetKey),
+//				LogType:                   pulumi.Any(logAnalyticsObjectCollectionRuleLogType),
+//				ObjectNameFilters:         pulumi.Any(logAnalyticsObjectCollectionRuleObjectNameFilters),
+//				Overrides:                 pulumi.Any(logAnalyticsObjectCollectionRuleOverrides),
+//				PollSince:                 pulumi.Any(logAnalyticsObjectCollectionRulePollSince),
+//				PollTill:                  pulumi.Any(logAnalyticsObjectCollectionRulePollTill),
+//				Timezone:                  pulumi.Any(logAnalyticsObjectCollectionRuleTimezone),
 //			})
 //			if err != nil {
 //				return err

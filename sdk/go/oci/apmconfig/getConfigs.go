@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmConfig.GetConfigs(ctx, &apmconfig.GetConfigsArgs{
-//				ApmDomainId:       oci_apm_apm_domain.Test_apm_domain.Id,
-//				ConfigType:        pulumi.StringRef(_var.Config_config_type),
-//				DefinedTagEquals:  _var.Config_defined_tag_equals,
-//				DefinedTagExists:  _var.Config_defined_tag_exists,
-//				DisplayName:       pulumi.StringRef(_var.Config_display_name),
-//				FreeformTagEquals: _var.Config_freeform_tag_equals,
-//				FreeformTagExists: _var.Config_freeform_tag_exists,
-//				OptionsGroup:      pulumi.StringRef(_var.Config_options_group),
+//				ApmDomainId:       testApmDomain.Id,
+//				ConfigType:        pulumi.StringRef(configConfigType),
+//				DefinedTagEquals:  configDefinedTagEquals,
+//				DefinedTagExists:  configDefinedTagExists,
+//				DisplayName:       pulumi.StringRef(configDisplayName),
+//				FreeformTagEquals: configFreeformTagEquals,
+//				FreeformTagExists: configFreeformTagExists,
+//				OptionsGroup:      pulumi.StringRef(configOptionsGroup),
 //			}, nil)
 //			if err != nil {
 //				return err

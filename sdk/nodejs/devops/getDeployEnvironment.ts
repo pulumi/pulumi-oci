@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployEnvironment = oci.DevOps.getDeployEnvironment({
- *     deployEnvironmentId: oci_devops_deploy_environment.test_deploy_environment.id,
+ *     deployEnvironmentId: testDeployEnvironmentOciDevopsDeployEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,7 +129,7 @@ export interface GetDeployEnvironmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployEnvironment = oci.DevOps.getDeployEnvironment({
- *     deployEnvironmentId: oci_devops_deploy_environment.test_deploy_environment.id,
+ *     deployEnvironmentId: testDeployEnvironmentOciDevopsDeployEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

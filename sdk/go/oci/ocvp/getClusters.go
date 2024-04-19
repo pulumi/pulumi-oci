@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetClusters(ctx, &ocvp.GetClustersArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Cluster_display_name),
-//				SddcId:        pulumi.StringRef(oci_ocvp_sddc.Test_sddc.Id),
-//				State:         pulumi.StringRef(_var.Cluster_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(clusterDisplayName),
+//				SddcId:        pulumi.StringRef(testSddc.Id),
+//				State:         pulumi.StringRef(clusterState),
 //			}, nil)
 //			if err != nil {
 //				return err

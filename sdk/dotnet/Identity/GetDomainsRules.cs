@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testRules = Oci.Identity.GetDomainsRules.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         RuleCount = @var.Rule_rule_count,
-        ///         RuleFilter = @var.Rule_rule_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         RuleCount = ruleRuleCount,
+        ///         RuleFilter = ruleRuleFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Rule_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Rule_resource_type_schema_version,
-        ///         StartIndex = @var.Rule_start_index,
+        ///         Authorization = ruleAuthorization,
+        ///         ResourceTypeSchemaVersion = ruleResourceTypeSchemaVersion,
+        ///         StartIndex = ruleStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testRules = Oci.Identity.GetDomainsRules.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         RuleCount = @var.Rule_rule_count,
-        ///         RuleFilter = @var.Rule_rule_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         RuleCount = ruleRuleCount,
+        ///         RuleFilter = ruleRuleFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Rule_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Rule_resource_type_schema_version,
-        ///         StartIndex = @var.Rule_start_index,
+        ///         Authorization = ruleAuthorization,
+        ///         ResourceTypeSchemaVersion = ruleResourceTypeSchemaVersion,
+        ///         StartIndex = ruleStartIndex,
         ///     });
         /// 
         /// });

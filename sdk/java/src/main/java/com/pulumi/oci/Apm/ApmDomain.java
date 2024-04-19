@@ -46,12 +46,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testApmDomain = new ApmDomain(&#34;testApmDomain&#34;, ApmDomainArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.apm_domain_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(apmDomainDisplayName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.apm_domain_description())
+ *             .description(apmDomainDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .isFreeTier(var_.apm_domain_is_free_tier())
+ *             .isFreeTier(apmDomainIsFreeTier)
  *             .build());
  * 
  *     }

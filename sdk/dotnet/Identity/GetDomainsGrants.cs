@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testGrants = Oci.Identity.GetDomainsGrants.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         GrantCount = @var.Grant_grant_count,
-        ///         GrantFilter = @var.Grant_grant_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         GrantCount = grantGrantCount,
+        ///         GrantFilter = grantGrantFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Grant_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Grant_resource_type_schema_version,
-        ///         StartIndex = @var.Grant_start_index,
+        ///         Authorization = grantAuthorization,
+        ///         ResourceTypeSchemaVersion = grantResourceTypeSchemaVersion,
+        ///         StartIndex = grantStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testGrants = Oci.Identity.GetDomainsGrants.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         GrantCount = @var.Grant_grant_count,
-        ///         GrantFilter = @var.Grant_grant_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         GrantCount = grantGrantCount,
+        ///         GrantFilter = grantGrantFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Grant_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Grant_resource_type_schema_version,
-        ///         StartIndex = @var.Grant_start_index,
+        ///         Authorization = grantAuthorization,
+        ///         ResourceTypeSchemaVersion = grantResourceTypeSchemaVersion,
+        ///         StartIndex = grantStartIndex,
         ///     });
         /// 
         /// });

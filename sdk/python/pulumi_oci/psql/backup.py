@@ -451,18 +451,18 @@ class Backup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backup = oci.psql.Backup("testBackup",
-            compartment_id=var["compartment_id"],
-            db_system_id=oci_psql_db_system["test_db_system"]["id"],
-            display_name=var["backup_display_name"],
+        test_backup = oci.psql.Backup("test_backup",
+            compartment_id=compartment_id,
+            db_system_id=test_db_system["id"],
+            display_name=backup_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["backup_description"],
+            description=backup_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_period=var["backup_retention_period"])
+            retention_period=backup_retention_period)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -506,18 +506,18 @@ class Backup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backup = oci.psql.Backup("testBackup",
-            compartment_id=var["compartment_id"],
-            db_system_id=oci_psql_db_system["test_db_system"]["id"],
-            display_name=var["backup_display_name"],
+        test_backup = oci.psql.Backup("test_backup",
+            compartment_id=compartment_id,
+            db_system_id=test_db_system["id"],
+            display_name=backup_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["backup_description"],
+            description=backup_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            retention_period=var["backup_retention_period"])
+            retention_period=backup_retention_period)
         ```
         <!--End PulumiCodeChooser -->
 

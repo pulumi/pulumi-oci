@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployments = oci.DevOps.getDeployments({
- *     compartmentId: _var.compartment_id,
- *     deployPipelineId: oci_devops_deploy_pipeline.test_deploy_pipeline.id,
- *     displayName: _var.deployment_display_name,
- *     id: _var.deployment_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.deployment_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.deployment_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.deployment_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     deployPipelineId: testDeployPipeline.id,
+ *     displayName: deploymentDisplayName,
+ *     id: deploymentId,
+ *     projectId: testProject.id,
+ *     state: deploymentState,
+ *     timeCreatedGreaterThanOrEqualTo: deploymentTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: deploymentTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -136,14 +136,14 @@ export interface GetDeploymentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployments = oci.DevOps.getDeployments({
- *     compartmentId: _var.compartment_id,
- *     deployPipelineId: oci_devops_deploy_pipeline.test_deploy_pipeline.id,
- *     displayName: _var.deployment_display_name,
- *     id: _var.deployment_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.deployment_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.deployment_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.deployment_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     deployPipelineId: testDeployPipeline.id,
+ *     displayName: deploymentDisplayName,
+ *     id: deploymentId,
+ *     projectId: testProject.id,
+ *     state: deploymentState,
+ *     timeCreatedGreaterThanOrEqualTo: deploymentTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: deploymentTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

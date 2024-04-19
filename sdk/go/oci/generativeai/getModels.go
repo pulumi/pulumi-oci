@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GenerativeAi.GetModels(ctx, &generativeai.GetModelsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Capabilities:  _var.Model_capability,
-//				DisplayName:   pulumi.StringRef(_var.Model_display_name),
-//				Id:            pulumi.StringRef(_var.Model_id),
-//				State:         pulumi.StringRef(_var.Model_state),
-//				Vendor:        pulumi.StringRef(_var.Model_vendor),
+//				CompartmentId: compartmentId,
+//				Capabilities:  modelCapability,
+//				DisplayName:   pulumi.StringRef(modelDisplayName),
+//				Id:            pulumi.StringRef(modelId),
+//				State:         pulumi.StringRef(modelState),
+//				Vendor:        pulumi.StringRef(modelVendor),
 //			}, nil)
 //			if err != nil {
 //				return err

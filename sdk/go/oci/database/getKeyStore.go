@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetKeyStore(ctx, &database.GetKeyStoreArgs{
-//				KeyStoreId: oci_database_key_store.Test_key_store.Id,
+//				KeyStoreId: testKeyStoreOciDatabaseKeyStore.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

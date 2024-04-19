@@ -29,7 +29,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testProtectedDatabase = Oci.RecoveryMod.GetProtectedDatabase.Invoke(new()
         ///     {
-        ///         ProtectedDatabaseId = oci_recovery_protected_database.Test_protected_database.Id,
+        ///         ProtectedDatabaseId = testProtectedDatabaseOciRecoveryProtectedDatabase.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testProtectedDatabase = Oci.RecoveryMod.GetProtectedDatabase.Invoke(new()
         ///     {
-        ///         ProtectedDatabaseId = oci_recovery_protected_database.Test_protected_database.Id,
+        ///         ProtectedDatabaseId = testProtectedDatabaseOciRecoveryProtectedDatabase.Id,
         ///     });
         /// 
         /// });

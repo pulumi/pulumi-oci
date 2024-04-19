@@ -47,11 +47,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testView = new View(&#34;testView&#34;, ViewArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .scope(&#34;PRIVATE&#34;)
- *             .definedTags(var_.view_defined_tags())
- *             .displayName(var_.view_display_name())
- *             .freeformTags(var_.view_freeform_tags())
+ *             .definedTags(viewDefinedTags)
+ *             .displayName(viewDisplayName)
+ *             .freeformTags(viewFreeformTags)
  *             .build());
  * 
  *     }

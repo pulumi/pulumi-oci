@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testDataSciencePrivateEndpoint = Oci.DataScience.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         DataSciencePrivateEndpointId = oci_datascience_private_endpoint.Test_data_science_private_endpoint.Id,
+        ///         DataSciencePrivateEndpointId = testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testDataSciencePrivateEndpoint = Oci.DataScience.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         DataSciencePrivateEndpointId = oci_datascience_private_endpoint.Test_data_science_private_endpoint.Id,
+        ///         DataSciencePrivateEndpointId = testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.Id,
         ///     });
         /// 
         /// });

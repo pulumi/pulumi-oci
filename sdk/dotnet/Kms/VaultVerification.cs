@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Kms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testReplication = new Oci.Kms.VaultVerification("testReplication", new()
+    ///     var testReplication = new Oci.Kms.VaultVerification("test_replication", new()
     ///     {
-    ///         VaultId = oci_kms_vault.Test_vault.Id,
-    ///         ReplicaRegion = @var.Replica_region,
+    ///         VaultId = testVault.Id,
+    ///         ReplicaRegion = replicaRegion,
     ///     });
     /// 
     /// });

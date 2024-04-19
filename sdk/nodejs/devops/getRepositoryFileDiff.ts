@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryFileDiff = oci.DevOps.getRepositoryFileDiff({
- *     baseVersion: _var.repository_file_diff_base_version,
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     targetVersion: _var.repository_file_diff_target_version,
- *     filePath: _var.repository_file_diff_file_path,
- *     isComparisonFromMergeBase: _var.repository_file_diff_is_comparison_from_merge_base,
+ *     baseVersion: repositoryFileDiffBaseVersion,
+ *     repositoryId: testRepository.id,
+ *     targetVersion: repositoryFileDiffTargetVersion,
+ *     filePath: repositoryFileDiffFilePath,
+ *     isComparisonFromMergeBase: repositoryFileDiffIsComparisonFromMergeBase,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,11 +125,11 @@ export interface GetRepositoryFileDiffResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryFileDiff = oci.DevOps.getRepositoryFileDiff({
- *     baseVersion: _var.repository_file_diff_base_version,
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     targetVersion: _var.repository_file_diff_target_version,
- *     filePath: _var.repository_file_diff_file_path,
- *     isComparisonFromMergeBase: _var.repository_file_diff_is_comparison_from_merge_base,
+ *     baseVersion: repositoryFileDiffBaseVersion,
+ *     repositoryId: testRepository.id,
+ *     targetVersion: repositoryFileDiffTargetVersion,
+ *     filePath: repositoryFileDiffFilePath,
+ *     isComparisonFromMergeBase: repositoryFileDiffIsComparisonFromMergeBase,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

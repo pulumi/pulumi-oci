@@ -18,15 +18,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteDistributionStatement = new oci.core.DrgRouteDistributionStatement("testDrgRouteDistributionStatement", {
- *     drgRouteDistributionId: oci_core_drg_route_distribution.test_drg_route_distribution.id,
- *     action: _var.drg_route_distribution_statement_statements_action,
+ * const testDrgRouteDistributionStatement = new oci.core.DrgRouteDistributionStatement("test_drg_route_distribution_statement", {
+ *     drgRouteDistributionId: testDrgRouteDistribution.id,
+ *     action: drgRouteDistributionStatementStatementsAction,
  *     matchCriteria: {
- *         matchType: _var.drg_route_distribution_statement_statements_match_criteria_match_type,
- *         attachmentType: _var.drg_route_distribution_statement_statements_match_criteria_attachment_type,
- *         drgAttachmentId: oci_core_drg_attachment.test_drg_attachment.id,
+ *         matchType: drgRouteDistributionStatementStatementsMatchCriteriaMatchType,
+ *         attachmentType: drgRouteDistributionStatementStatementsMatchCriteriaAttachmentType,
+ *         drgAttachmentId: testDrgAttachment.id,
  *     },
- *     priority: _var.drg_route_distribution_statement_statements_priority,
+ *     priority: drgRouteDistributionStatementStatementsPriority,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

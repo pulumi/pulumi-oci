@@ -190,9 +190,10 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_application_group = oci.network_firewall.NetworkFirewallPolicyApplicationGroup("testNetworkFirewallPolicyApplicationGroup",
-            apps=var["network_firewall_policy_application_group_apps"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"])
+        test_network_firewall_policy_application_group = oci.network_firewall.NetworkFirewallPolicyApplicationGroup("test_network_firewall_policy_application_group",
+            apps=network_firewall_policy_application_group_apps,
+            name=network_firewall_policy_application_group_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -232,9 +233,10 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_application_group = oci.network_firewall.NetworkFirewallPolicyApplicationGroup("testNetworkFirewallPolicyApplicationGroup",
-            apps=var["network_firewall_policy_application_group_apps"],
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"])
+        test_network_firewall_policy_application_group = oci.network_firewall.NetworkFirewallPolicyApplicationGroup("test_network_firewall_policy_application_group",
+            apps=network_firewall_policy_application_group_apps,
+            name=network_firewall_policy_application_group_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"])
         ```
         <!--End PulumiCodeChooser -->
 

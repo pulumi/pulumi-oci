@@ -334,7 +334,7 @@ def get_budget(budget_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_budget = oci.Budget.get_budget(budget_id=oci_budget_budget["test_budget"]["id"])
+    test_budget = oci.Budget.get_budget(budget_id=test_budget_oci_budget_budget["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -388,7 +388,7 @@ def get_budget_output(budget_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_budget = oci.Budget.get_budget(budget_id=oci_budget_budget["test_budget"]["id"])
+    test_budget = oci.Budget.get_budget(budget_id=test_budget_oci_budget_budget["id"])
     ```
     <!--End PulumiCodeChooser -->
 

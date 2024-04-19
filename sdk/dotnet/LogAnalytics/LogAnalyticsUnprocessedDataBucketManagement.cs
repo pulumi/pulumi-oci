@@ -27,10 +27,10 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLogAnalyticsUnprocessedDataBucketManagement = new Oci.LogAnalytics.LogAnalyticsUnprocessedDataBucketManagement("testLogAnalyticsUnprocessedDataBucketManagement", new()
+    ///     var testLogAnalyticsUnprocessedDataBucketManagement = new Oci.LogAnalytics.LogAnalyticsUnprocessedDataBucketManagement("test_log_analytics_unprocessed_data_bucket_management", new()
     ///     {
-    ///         Bucket = @var.Log_analytics_unprocessed_data_bucket_management_bucket,
-    ///         Namespace = @var.Log_analytics_unprocessed_data_bucket_management_namespace,
+    ///         Bucket = logAnalyticsUnprocessedDataBucketManagementBucket,
+    ///         Namespace = logAnalyticsUnprocessedDataBucketManagementNamespace,
     ///     });
     /// 
     /// });

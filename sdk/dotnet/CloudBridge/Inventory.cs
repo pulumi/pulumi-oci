@@ -25,10 +25,10 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testInventory = new Oci.CloudBridge.Inventory("testInventory", new()
+    ///     var testInventory = new Oci.CloudBridge.Inventory("test_inventory", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Inventory_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = inventoryDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

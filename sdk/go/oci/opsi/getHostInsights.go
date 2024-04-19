@@ -32,14 +32,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetHostInsights(ctx, &opsi.GetHostInsightsArgs{
-//				CompartmentId:             pulumi.StringRef(_var.Compartment_id),
-//				CompartmentIdInSubtree:    pulumi.BoolRef(_var.Host_insight_compartment_id_in_subtree),
-//				EnterpriseManagerBridgeId: pulumi.StringRef(oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id),
-//				ExadataInsightId:          pulumi.StringRef(oci_opsi_exadata_insight.Test_exadata_insight.Id),
-//				HostTypes:                 _var.Host_insight_host_type,
-//				Id:                        pulumi.StringRef(_var.Host_insight_id),
-//				States:                    _var.Host_insight_state,
-//				Statuses:                  _var.Host_insight_status,
+//				CompartmentId:             pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree:    pulumi.BoolRef(hostInsightCompartmentIdInSubtree),
+//				EnterpriseManagerBridgeId: pulumi.StringRef(testEnterpriseManagerBridge.Id),
+//				ExadataInsightId:          pulumi.StringRef(testExadataInsight.Id),
+//				HostTypes:                 hostInsightHostType,
+//				Id:                        pulumi.StringRef(hostInsightId),
+//				States:                    hostInsightState,
+//				Statuses:                  hostInsightStatus,
 //			}, nil)
 //			if err != nil {
 //				return err

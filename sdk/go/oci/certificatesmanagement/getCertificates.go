@@ -32,11 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CertificatesManagement.GetCertificates(ctx, &certificatesmanagement.GetCertificatesArgs{
-//				CertificateId:                pulumi.StringRef(oci_certificates_management_certificate.Test_certificate.Id),
-//				CompartmentId:                pulumi.StringRef(_var.Compartment_id),
-//				IssuerCertificateAuthorityId: pulumi.StringRef(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
-//				Name:                         pulumi.StringRef(_var.Certificate_name),
-//				State:                        pulumi.StringRef(_var.Certificate_state),
+//				CertificateId:                pulumi.StringRef(testCertificate.Id),
+//				CompartmentId:                pulumi.StringRef(compartmentId),
+//				IssuerCertificateAuthorityId: pulumi.StringRef(testCertificateAuthority.Id),
+//				Name:                         pulumi.StringRef(certificateName),
+//				State:                        pulumi.StringRef(certificateState),
 //			}, nil)
 //			if err != nil {
 //				return err

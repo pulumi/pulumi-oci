@@ -133,11 +133,11 @@ def get_exports(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_exports = oci.FileStorage.get_exports(compartment_id=var["compartment_id"],
-        export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["export_id"],
-        state=var["export_state"])
+    test_exports = oci.FileStorage.get_exports(compartment_id=compartment_id,
+        export_set_id=test_export_set["id"],
+        file_system_id=test_file_system["id"],
+        id=export_id,
+        state=export_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -190,11 +190,11 @@ def get_exports_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_exports = oci.FileStorage.get_exports(compartment_id=var["compartment_id"],
-        export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-        file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-        id=var["export_id"],
-        state=var["export_state"])
+    test_exports = oci.FileStorage.get_exports(compartment_id=compartment_id,
+        export_set_id=test_export_set["id"],
+        file_system_id=test_file_system["id"],
+        id=export_id,
+        state=export_state)
     ```
     <!--End PulumiCodeChooser -->
 

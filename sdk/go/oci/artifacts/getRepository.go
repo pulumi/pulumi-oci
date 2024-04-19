@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Artifacts.GetRepository(ctx, &artifacts.GetRepositoryArgs{
-//				RepositoryId: oci_artifacts_repository.Test_repository.Id,
+//				RepositoryId: testRepositoryOciArtifactsRepository.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -53,7 +53,7 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationTopic = OnsFunctions.getNotificationTopic(GetNotificationTopicArgs.builder()
-     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .topicId(testNotificationTopicOciOnsNotificationTopic.id())
      *             .build());
      * 
      *     }
@@ -95,7 +95,7 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationTopic = OnsFunctions.getNotificationTopic(GetNotificationTopicArgs.builder()
-     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .topicId(testNotificationTopicOciOnsNotificationTopic.id())
      *             .build());
      * 
      *     }
@@ -137,7 +137,7 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationTopic = OnsFunctions.getNotificationTopic(GetNotificationTopicArgs.builder()
-     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .topicId(testNotificationTopicOciOnsNotificationTopic.id())
      *             .build());
      * 
      *     }
@@ -179,7 +179,7 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationTopic = OnsFunctions.getNotificationTopic(GetNotificationTopicArgs.builder()
-     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .topicId(testNotificationTopicOciOnsNotificationTopic.id())
      *             .build());
      * 
      *     }
@@ -223,10 +223,10 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationTopics = OnsFunctions.getNotificationTopics(GetNotificationTopicsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.notification_topic_id())
-     *             .name(var_.notification_topic_name())
-     *             .state(var_.notification_topic_state())
+     *             .compartmentId(compartmentId)
+     *             .id(notificationTopicId)
+     *             .name(notificationTopicName)
+     *             .state(notificationTopicState)
      *             .build());
      * 
      *     }
@@ -270,10 +270,10 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationTopics = OnsFunctions.getNotificationTopics(GetNotificationTopicsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.notification_topic_id())
-     *             .name(var_.notification_topic_name())
-     *             .state(var_.notification_topic_state())
+     *             .compartmentId(compartmentId)
+     *             .id(notificationTopicId)
+     *             .name(notificationTopicName)
+     *             .state(notificationTopicState)
      *             .build());
      * 
      *     }
@@ -317,10 +317,10 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationTopics = OnsFunctions.getNotificationTopics(GetNotificationTopicsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.notification_topic_id())
-     *             .name(var_.notification_topic_name())
-     *             .state(var_.notification_topic_state())
+     *             .compartmentId(compartmentId)
+     *             .id(notificationTopicId)
+     *             .name(notificationTopicName)
+     *             .state(notificationTopicState)
      *             .build());
      * 
      *     }
@@ -364,10 +364,10 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotificationTopics = OnsFunctions.getNotificationTopics(GetNotificationTopicsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.notification_topic_id())
-     *             .name(var_.notification_topic_name())
-     *             .state(var_.notification_topic_state())
+     *             .compartmentId(compartmentId)
+     *             .id(notificationTopicId)
+     *             .name(notificationTopicName)
+     *             .state(notificationTopicState)
      *             .build());
      * 
      *     }
@@ -411,7 +411,7 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = OnsFunctions.getSubscription(GetSubscriptionArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .subscriptionId(testSubscriptionOciOnsSubscription.id())
      *             .build());
      * 
      *     }
@@ -455,7 +455,7 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = OnsFunctions.getSubscription(GetSubscriptionArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .subscriptionId(testSubscriptionOciOnsSubscription.id())
      *             .build());
      * 
      *     }
@@ -499,7 +499,7 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = OnsFunctions.getSubscription(GetSubscriptionArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .subscriptionId(testSubscriptionOciOnsSubscription.id())
      *             .build());
      * 
      *     }
@@ -543,7 +543,7 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = OnsFunctions.getSubscription(GetSubscriptionArgs.builder()
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .subscriptionId(testSubscriptionOciOnsSubscription.id())
      *             .build());
      * 
      *     }
@@ -587,8 +587,8 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OnsFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .compartmentId(compartmentId)
+     *             .topicId(testNotificationTopic.id())
      *             .build());
      * 
      *     }
@@ -632,8 +632,8 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OnsFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .compartmentId(compartmentId)
+     *             .topicId(testNotificationTopic.id())
      *             .build());
      * 
      *     }
@@ -677,8 +677,8 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OnsFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .compartmentId(compartmentId)
+     *             .topicId(testNotificationTopic.id())
      *             .build());
      * 
      *     }
@@ -722,8 +722,8 @@ public final class OnsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptions = OnsFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .compartmentId(compartmentId)
+     *             .topicId(testNotificationTopic.id())
      *             .build());
      * 
      *     }

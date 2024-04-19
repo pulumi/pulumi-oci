@@ -50,11 +50,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAuditPolicyManagement = new AuditPolicyManagement(&#34;testAuditPolicyManagement&#34;, AuditPolicyManagementArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .targetId(oci_data_safe_target_database.test_target_database().id())
+ *             .compartmentId(compartmentId)
+ *             .targetId(testTargetDatabase.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.audit_policy_management_description())
- *             .displayName(var_.audit_policy_management_display_name())
+ *             .description(auditPolicyManagementDescription)
+ *             .displayName(auditPolicyManagementDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .retrieveFromTargetTrigger(true)
  *             .build());

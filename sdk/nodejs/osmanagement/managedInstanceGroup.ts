@@ -20,18 +20,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroup = new oci.osmanagement.ManagedInstanceGroup("testManagedInstanceGroup", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.managed_instance_group_display_name,
+ * const testManagedInstanceGroup = new oci.osmanagement.ManagedInstanceGroup("test_managed_instance_group", {
+ *     compartmentId: compartmentId,
+ *     displayName: managedInstanceGroupDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.managed_instance_group_description,
+ *     description: managedInstanceGroupDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     osFamily: _var.managed_instance_group_os_family,
- *     managedInstanceIds: _var.managed_instance_group_managed_instance_ids,
+ *     osFamily: managedInstanceGroupOsFamily,
+ *     managedInstanceIds: managedInstanceGroupManagedInstanceIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

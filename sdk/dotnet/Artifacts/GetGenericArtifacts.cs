@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testGenericArtifacts = Oci.Artifacts.GetGenericArtifacts.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         ArtifactPath = @var.Generic_artifact_artifact_path,
-        ///         DisplayName = @var.Generic_artifact_display_name,
-        ///         Id = @var.Generic_artifact_id,
-        ///         Sha256 = @var.Generic_artifact_sha256,
-        ///         State = @var.Generic_artifact_state,
-        ///         Version = @var.Generic_artifact_version,
+        ///         CompartmentId = compartmentId,
+        ///         RepositoryId = testRepository.Id,
+        ///         ArtifactPath = genericArtifactArtifactPath,
+        ///         DisplayName = genericArtifactDisplayName,
+        ///         Id = genericArtifactId,
+        ///         Sha256 = genericArtifactSha256,
+        ///         State = genericArtifactState,
+        ///         Version = genericArtifactVersion,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testGenericArtifacts = Oci.Artifacts.GetGenericArtifacts.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         ArtifactPath = @var.Generic_artifact_artifact_path,
-        ///         DisplayName = @var.Generic_artifact_display_name,
-        ///         Id = @var.Generic_artifact_id,
-        ///         Sha256 = @var.Generic_artifact_sha256,
-        ///         State = @var.Generic_artifact_state,
-        ///         Version = @var.Generic_artifact_version,
+        ///         CompartmentId = compartmentId,
+        ///         RepositoryId = testRepository.Id,
+        ///         ArtifactPath = genericArtifactArtifactPath,
+        ///         DisplayName = genericArtifactDisplayName,
+        ///         Id = genericArtifactId,
+        ///         Sha256 = genericArtifactSha256,
+        ///         State = genericArtifactState,
+        ///         Version = genericArtifactVersion,
         ///     });
         /// 
         /// });

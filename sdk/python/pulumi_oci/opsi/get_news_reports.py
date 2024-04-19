@@ -140,11 +140,11 @@ def get_news_reports(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_news_reports = oci.Opsi.get_news_reports(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["news_report_compartment_id_in_subtree"],
-        news_report_id=oci_opsi_news_report["test_news_report"]["id"],
-        states=var["news_report_state"],
-        statuses=var["news_report_status"])
+    test_news_reports = oci.Opsi.get_news_reports(compartment_id=compartment_id,
+        compartment_id_in_subtree=news_report_compartment_id_in_subtree,
+        news_report_id=test_news_report["id"],
+        states=news_report_state,
+        statuses=news_report_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_news_reports_output(compartment_id: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_news_reports = oci.Opsi.get_news_reports(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["news_report_compartment_id_in_subtree"],
-        news_report_id=oci_opsi_news_report["test_news_report"]["id"],
-        states=var["news_report_state"],
-        statuses=var["news_report_status"])
+    test_news_reports = oci.Opsi.get_news_reports(compartment_id=compartment_id,
+        compartment_id_in_subtree=news_report_compartment_id_in_subtree,
+        news_report_id=test_news_report["id"],
+        states=news_report_state,
+        statuses=news_report_status)
     ```
     <!--End PulumiCodeChooser -->
 

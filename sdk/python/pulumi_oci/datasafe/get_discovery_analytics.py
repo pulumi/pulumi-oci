@@ -162,13 +162,13 @@ def get_discovery_analytics(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["discovery_analytic_compartment_id_in_subtree"],
-        group_by=var["discovery_analytic_group_by"],
-        is_common=var["discovery_analytic_is_common"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
+        group_by=discovery_analytic_group_by,
+        is_common=discovery_analytic_is_common,
+        sensitive_data_model_id=test_sensitive_data_model["id"],
+        sensitive_type_id=test_sensitive_type["id"],
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -230,13 +230,13 @@ def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["discovery_analytic_compartment_id_in_subtree"],
-        group_by=var["discovery_analytic_group_by"],
-        is_common=var["discovery_analytic_is_common"],
-        sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
+        group_by=discovery_analytic_group_by,
+        is_common=discovery_analytic_is_common,
+        sensitive_data_model_id=test_sensitive_data_model["id"],
+        sensitive_type_id=test_sensitive_type["id"],
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testListingPackageAgreements = oci.Marketplace.getListingPackageAgreements({
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     packageVersion: _var.listing_package_agreement_package_version,
- *     compartmentId: _var.compartment_id,
+ *     listingId: testListing.id,
+ *     packageVersion: listingPackageAgreementPackageVersion,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetListingPackageAgreementsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testListingPackageAgreements = oci.Marketplace.getListingPackageAgreements({
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     packageVersion: _var.listing_package_agreement_package_version,
- *     compartmentId: _var.compartment_id,
+ *     listingId: testListing.id,
+ *     packageVersion: listingPackageAgreementPackageVersion,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

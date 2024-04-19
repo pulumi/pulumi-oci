@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagement.GetSoftwareSourceModuleStream(ctx, &osmanagement.GetSoftwareSourceModuleStreamArgs{
-//				ModuleName:       _var.Software_source_module_stream_module_name,
-//				SoftwareSourceId: _var.Software_source.Id,
-//				StreamName:       _var.Software_source_module_stream_name,
+//				ModuleName:       softwareSourceModuleStreamModuleName,
+//				SoftwareSourceId: softwareSource.Id,
+//				StreamName:       softwareSourceModuleStreamName,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModels = oci.GenerativeAi.getModels({
- *     compartmentId: _var.compartment_id,
- *     capabilities: _var.model_capability,
- *     displayName: _var.model_display_name,
- *     id: _var.model_id,
- *     state: _var.model_state,
- *     vendor: _var.model_vendor,
+ *     compartmentId: compartmentId,
+ *     capabilities: modelCapability,
+ *     displayName: modelDisplayName,
+ *     id: modelId,
+ *     state: modelState,
+ *     vendor: modelVendor,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,12 +118,12 @@ export interface GetModelsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModels = oci.GenerativeAi.getModels({
- *     compartmentId: _var.compartment_id,
- *     capabilities: _var.model_capability,
- *     displayName: _var.model_display_name,
- *     id: _var.model_id,
- *     state: _var.model_state,
- *     vendor: _var.model_vendor,
+ *     compartmentId: compartmentId,
+ *     capabilities: modelCapability,
+ *     displayName: modelDisplayName,
+ *     id: modelId,
+ *     state: modelState,
+ *     vendor: modelVendor,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

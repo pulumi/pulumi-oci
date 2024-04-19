@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testKmsiSetting = Oci.Identity.GetDomainsKmsiSetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         KmsiSettingId = oci_identity_domains_kmsi_setting.Test_kmsi_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         KmsiSettingId = testKmsiSettingOciIdentityDomainsKmsiSetting.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Kmsi_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Kmsi_setting_resource_type_schema_version,
+        ///         Authorization = kmsiSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = kmsiSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testKmsiSetting = Oci.Identity.GetDomainsKmsiSetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         KmsiSettingId = oci_identity_domains_kmsi_setting.Test_kmsi_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         KmsiSettingId = testKmsiSettingOciIdentityDomainsKmsiSetting.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Kmsi_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Kmsi_setting_resource_type_schema_version,
+        ///         Authorization = kmsiSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = kmsiSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

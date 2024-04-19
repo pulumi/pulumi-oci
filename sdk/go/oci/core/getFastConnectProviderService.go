@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetFastConnectProviderService(ctx, &core.GetFastConnectProviderServiceArgs{
-//				ProviderServiceId: data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+//				ProviderServiceId: testFastConnectProviderServices.FastConnectProviderServices[0].Id,
 //			}, nil)
 //			if err != nil {
 //				return err

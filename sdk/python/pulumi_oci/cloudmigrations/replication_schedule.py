@@ -303,10 +303,10 @@ class ReplicationSchedule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replication_schedule = oci.cloud_migrations.ReplicationSchedule("testReplicationSchedule",
-            compartment_id=var["compartment_id"],
-            display_name=var["replication_schedule_display_name"],
-            execution_recurrences=var["replication_schedule_execution_recurrences"],
+        test_replication_schedule = oci.cloud_migrations.ReplicationSchedule("test_replication_schedule",
+            compartment_id=compartment_id,
+            display_name=replication_schedule_display_name,
+            execution_recurrences=replication_schedule_execution_recurrences,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -354,10 +354,10 @@ class ReplicationSchedule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replication_schedule = oci.cloud_migrations.ReplicationSchedule("testReplicationSchedule",
-            compartment_id=var["compartment_id"],
-            display_name=var["replication_schedule_display_name"],
-            execution_recurrences=var["replication_schedule_execution_recurrences"],
+        test_replication_schedule = oci.cloud_migrations.ReplicationSchedule("test_replication_schedule",
+            compartment_id=compartment_id,
+            display_name=replication_schedule_display_name,
+            execution_recurrences=replication_schedule_execution_recurrences,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },

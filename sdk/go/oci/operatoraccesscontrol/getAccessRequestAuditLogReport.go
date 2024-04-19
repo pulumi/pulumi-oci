@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OperatorAccessControl.GetAccessRequestAuditLogReport(ctx, &operatoraccesscontrol.GetAccessRequestAuditLogReportArgs{
-//				AccessRequestId:   oci_operator_access_control_access_request.Test_access_request.Id,
-//				EnableProcessTree: pulumi.IntRef(_var.Access_request_audit_log_report_enable_process_tree),
+//				AccessRequestId:   testAccessRequest.Id,
+//				EnableProcessTree: pulumi.IntRef(accessRequestAuditLogReportEnableProcessTree),
 //			}, nil)
 //			if err != nil {
 //				return err

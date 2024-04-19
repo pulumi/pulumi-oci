@@ -289,10 +289,10 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_node_console_connection = oci.database.DbNodeConsoleConnection("testDbNodeConsoleConnection",
-            db_node_id=oci_database_db_node["test_db_node"]["id"],
-            public_key=var["db_node_console_connection_public_key"],
-            defined_tags=var["db_node_console_connection_defined_tags"],
+        test_db_node_console_connection = oci.database.DbNodeConsoleConnection("test_db_node_console_connection",
+            db_node_id=test_db_node["id"],
+            public_key=db_node_console_connection_public_key,
+            defined_tags=db_node_console_connection_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -338,10 +338,10 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_node_console_connection = oci.database.DbNodeConsoleConnection("testDbNodeConsoleConnection",
-            db_node_id=oci_database_db_node["test_db_node"]["id"],
-            public_key=var["db_node_console_connection_public_key"],
-            defined_tags=var["db_node_console_connection_defined_tags"],
+        test_db_node_console_connection = oci.database.DbNodeConsoleConnection("test_db_node_console_connection",
+            db_node_id=test_db_node["id"],
+            public_key=db_node_console_connection_public_key,
+            defined_tags=db_node_console_connection_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })

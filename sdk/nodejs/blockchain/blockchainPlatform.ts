@@ -18,23 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBlockchainPlatform = new oci.blockchain.BlockchainPlatform("testBlockchainPlatform", {
- *     compartmentId: _var.compartment_id,
- *     computeShape: _var.blockchain_platform_compute_shape,
- *     displayName: _var.blockchain_platform_display_name,
- *     idcsAccessToken: _var.blockchain_platform_idcs_access_token,
- *     platformRole: _var.blockchain_platform_platform_role,
- *     caCertArchiveText: _var.blockchain_platform_ca_cert_archive_text,
+ * const testBlockchainPlatform = new oci.blockchain.BlockchainPlatform("test_blockchain_platform", {
+ *     compartmentId: compartmentId,
+ *     computeShape: blockchainPlatformComputeShape,
+ *     displayName: blockchainPlatformDisplayName,
+ *     idcsAccessToken: blockchainPlatformIdcsAccessToken,
+ *     platformRole: blockchainPlatformPlatformRole,
+ *     caCertArchiveText: blockchainPlatformCaCertArchiveText,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.blockchain_platform_description,
- *     federatedUserId: oci_identity_user.test_user.id,
+ *     description: blockchainPlatformDescription,
+ *     federatedUserId: testUser.id,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isByol: _var.blockchain_platform_is_byol,
- *     platformVersion: _var.blockchain_platform_platform_version,
+ *     isByol: blockchainPlatformIsByol,
+ *     platformVersion: blockchainPlatformPlatformVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

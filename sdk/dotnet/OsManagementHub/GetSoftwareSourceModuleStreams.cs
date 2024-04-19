@@ -31,11 +31,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourceModuleStreams = Oci.OsManagementHub.GetSoftwareSourceModuleStreams.Invoke(new()
         ///     {
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         IsLatest = @var.Software_source_module_stream_is_latest,
-        ///         ModuleName = @var.Software_source_module_stream_module_name,
-        ///         ModuleNameContains = @var.Software_source_module_stream_module_name_contains,
-        ///         Name = @var.Software_source_module_stream_name,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         IsLatest = softwareSourceModuleStreamIsLatest,
+        ///         ModuleName = softwareSourceModuleStreamModuleName,
+        ///         ModuleNameContains = softwareSourceModuleStreamModuleNameContains,
+        ///         Name = softwareSourceModuleStreamName,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourceModuleStreams = Oci.OsManagementHub.GetSoftwareSourceModuleStreams.Invoke(new()
         ///     {
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         IsLatest = @var.Software_source_module_stream_is_latest,
-        ///         ModuleName = @var.Software_source_module_stream_module_name,
-        ///         ModuleNameContains = @var.Software_source_module_stream_module_name_contains,
-        ///         Name = @var.Software_source_module_stream_name,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         IsLatest = softwareSourceModuleStreamIsLatest,
+        ///         ModuleName = softwareSourceModuleStreamModuleName,
+        ///         ModuleNameContains = softwareSourceModuleStreamModuleNameContains,
+        ///         Name = softwareSourceModuleStreamName,
         ///     });
         /// 
         /// });

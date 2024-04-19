@@ -18,29 +18,30 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualServiceRouteTable = new oci.servicemesh.VirtualServiceRouteTable("testVirtualServiceRouteTable", {
- *     compartmentId: _var.compartment_id,
+ * const testVirtualServiceRouteTable = new oci.servicemesh.VirtualServiceRouteTable("test_virtual_service_route_table", {
+ *     compartmentId: compartmentId,
+ *     name: virtualServiceRouteTableName,
  *     routeRules: [{
  *         destinations: [{
- *             virtualDeploymentId: oci_service_mesh_virtual_deployment.test_virtual_deployment.id,
- *             weight: _var.virtual_service_route_table_route_rules_destinations_weight,
- *             port: _var.virtual_service_route_table_route_rules_destinations_port,
+ *             virtualDeploymentId: testVirtualDeployment.id,
+ *             weight: virtualServiceRouteTableRouteRulesDestinationsWeight,
+ *             port: virtualServiceRouteTableRouteRulesDestinationsPort,
  *         }],
- *         type: _var.virtual_service_route_table_route_rules_type,
- *         isGrpc: _var.virtual_service_route_table_route_rules_is_grpc,
- *         path: _var.virtual_service_route_table_route_rules_path,
- *         pathType: _var.virtual_service_route_table_route_rules_path_type,
- *         requestTimeoutInMs: _var.virtual_service_route_table_route_rules_request_timeout_in_ms,
+ *         type: virtualServiceRouteTableRouteRulesType,
+ *         isGrpc: virtualServiceRouteTableRouteRulesIsGrpc,
+ *         path: virtualServiceRouteTableRouteRulesPath,
+ *         pathType: virtualServiceRouteTableRouteRulesPathType,
+ *         requestTimeoutInMs: virtualServiceRouteTableRouteRulesRequestTimeoutInMs,
  *     }],
- *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ *     virtualServiceId: testVirtualService.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.virtual_service_route_table_description,
+ *     description: virtualServiceRouteTableDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     priority: _var.virtual_service_route_table_priority,
+ *     priority: virtualServiceRouteTablePriority,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

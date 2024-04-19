@@ -31,27 +31,28 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Oce.NewInstance(ctx, "testOceInstance", &Oce.InstanceArgs{
-//				AdminEmail:             pulumi.Any(_var.Oce_instance_admin_email),
-//				CompartmentId:          pulumi.Any(_var.Compartment_id),
-//				IdcsAccessToken:        pulumi.Any(_var.Oce_instance_idcs_access_token),
-//				ObjectStorageNamespace: pulumi.Any(_var.Oce_instance_object_storage_namespace),
-//				TenancyId:              pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
-//				TenancyName:            pulumi.Any(oci_identity_tenancy.Test_tenancy.Name),
-//				AddOnFeatures:          pulumi.Any(_var.Oce_instance_add_on_features),
+//			_, err := Oce.NewInstance(ctx, "test_oce_instance", &Oce.InstanceArgs{
+//				AdminEmail:             pulumi.Any(oceInstanceAdminEmail),
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				IdcsAccessToken:        pulumi.Any(oceInstanceIdcsAccessToken),
+//				Name:                   pulumi.Any(oceInstanceName),
+//				ObjectStorageNamespace: pulumi.Any(oceInstanceObjectStorageNamespace),
+//				TenancyId:              pulumi.Any(testTenancy.Id),
+//				TenancyName:            pulumi.Any(testTenancy.Name),
+//				AddOnFeatures:          pulumi.Any(oceInstanceAddOnFeatures),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Oce_instance_description),
-//				DrRegion:    pulumi.Any(_var.Oce_instance_dr_region),
+//				Description: pulumi.Any(oceInstanceDescription),
+//				DrRegion:    pulumi.Any(oceInstanceDrRegion),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				InstanceAccessType:  pulumi.Any(_var.Oce_instance_instance_access_type),
-//				InstanceLicenseType: pulumi.Any(_var.Oce_instance_instance_license_type),
-//				InstanceUsageType:   pulumi.Any(_var.Oce_instance_instance_usage_type),
-//				UpgradeSchedule:     pulumi.Any(_var.Oce_instance_upgrade_schedule),
-//				WafPrimaryDomain:    pulumi.Any(_var.Oce_instance_waf_primary_domain),
+//				InstanceAccessType:  pulumi.Any(oceInstanceInstanceAccessType),
+//				InstanceLicenseType: pulumi.Any(oceInstanceInstanceLicenseType),
+//				InstanceUsageType:   pulumi.Any(oceInstanceInstanceUsageType),
+//				UpgradeSchedule:     pulumi.Any(oceInstanceUpgradeSchedule),
+//				WafPrimaryDomain:    pulumi.Any(oceInstanceWafPrimaryDomain),
 //			})
 //			if err != nil {
 //				return err

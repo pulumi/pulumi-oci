@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsResourceCategoriesList = oci.LogAnalytics.getLogAnalyticsResourceCategoriesList({
- *     namespace: _var.log_analytics_resource_categories_list_namespace,
- *     resourceIds: _var.log_analytics_resource_categories_list_resource_ids,
- *     resourceTypes: _var.log_analytics_resource_categories_list_resource_types,
- *     resourceCategories: _var.log_analytics_resource_categories_list_resource_categories,
+ *     namespace: logAnalyticsResourceCategoriesListNamespace,
+ *     resourceIds: logAnalyticsResourceCategoriesListResourceIds,
+ *     resourceTypes: logAnalyticsResourceCategoriesListResourceTypes,
+ *     resourceCategories: logAnalyticsResourceCategoriesListResourceCategories,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -94,10 +94,10 @@ export interface GetLogAnalyticsResourceCategoriesListResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsResourceCategoriesList = oci.LogAnalytics.getLogAnalyticsResourceCategoriesList({
- *     namespace: _var.log_analytics_resource_categories_list_namespace,
- *     resourceIds: _var.log_analytics_resource_categories_list_resource_ids,
- *     resourceTypes: _var.log_analytics_resource_categories_list_resource_types,
- *     resourceCategories: _var.log_analytics_resource_categories_list_resource_categories,
+ *     namespace: logAnalyticsResourceCategoriesListNamespace,
+ *     resourceIds: logAnalyticsResourceCategoriesListResourceIds,
+ *     resourceTypes: logAnalyticsResourceCategoriesListResourceTypes,
+ *     resourceCategories: logAnalyticsResourceCategoriesListResourceCategories,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

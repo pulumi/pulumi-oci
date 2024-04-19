@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testInstancePoolInstance = new Oci.Core.InstancePoolInstance("testInstancePoolInstance", new()
+    ///     var testInstancePoolInstance = new Oci.Core.InstancePoolInstance("test_instance_pool_instance", new()
     ///     {
-    ///         InstanceId = oci_core_instance.Test_instance.Id,
-    ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
+    ///         InstanceId = testInstance.Id,
+    ///         InstancePoolId = testInstancePool.Id,
     ///     });
     /// 
     /// });

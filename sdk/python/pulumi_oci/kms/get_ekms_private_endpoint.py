@@ -223,7 +223,7 @@ def get_ekms_private_endpoint(ekms_private_endpoint_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ekms_private_endpoint = oci.Kms.get_ekms_private_endpoint(ekms_private_endpoint_id=oci_kms_ekms_private_endpoint["test_ekms_private_endpoint"]["id"])
+    test_ekms_private_endpoint = oci.Kms.get_ekms_private_endpoint(ekms_private_endpoint_id=test_ekms_private_endpoint_oci_kms_ekms_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -268,7 +268,7 @@ def get_ekms_private_endpoint_output(ekms_private_endpoint_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_ekms_private_endpoint = oci.Kms.get_ekms_private_endpoint(ekms_private_endpoint_id=oci_kms_ekms_private_endpoint["test_ekms_private_endpoint"]["id"])
+    test_ekms_private_endpoint = oci.Kms.get_ekms_private_endpoint(ekms_private_endpoint_id=test_ekms_private_endpoint_oci_kms_ekms_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 

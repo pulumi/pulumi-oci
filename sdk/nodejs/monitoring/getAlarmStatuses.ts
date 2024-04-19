@@ -30,13 +30,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAlarmStatuses = oci.Monitoring.getAlarmStatuses({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.alarm_status_compartment_id_in_subtree,
- *     displayName: _var.alarm_status_display_name,
- *     entityId: oci_monitoring_entity.test_entity.id,
- *     resourceId: oci_monitoring_resource.test_resource.id,
- *     serviceName: oci_core_service.test_service.name,
- *     status: _var.alarm_status_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree,
+ *     displayName: alarmStatusDisplayName,
+ *     entityId: testEntity.id,
+ *     resourceId: testResource.id,
+ *     serviceName: testService.name,
+ *     status: alarmStatusStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,13 +142,13 @@ export interface GetAlarmStatusesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAlarmStatuses = oci.Monitoring.getAlarmStatuses({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.alarm_status_compartment_id_in_subtree,
- *     displayName: _var.alarm_status_display_name,
- *     entityId: oci_monitoring_entity.test_entity.id,
- *     resourceId: oci_monitoring_resource.test_resource.id,
- *     serviceName: oci_core_service.test_service.name,
- *     status: _var.alarm_status_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree,
+ *     displayName: alarmStatusDisplayName,
+ *     entityId: testEntity.id,
+ *     resourceId: testResource.id,
+ *     serviceName: testService.name,
+ *     status: alarmStatusStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

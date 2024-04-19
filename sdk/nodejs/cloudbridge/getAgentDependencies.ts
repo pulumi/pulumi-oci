@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAgentDependencies = oci.CloudBridge.getAgentDependencies({
- *     compartmentId: _var.compartment_id,
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
- *     displayName: _var.agent_dependency_display_name,
- *     environmentId: oci_cloud_bridge_environment.test_environment.id,
- *     state: _var.agent_dependency_state,
+ *     compartmentId: compartmentId,
+ *     agentId: testAgent.id,
+ *     displayName: agentDependencyDisplayName,
+ *     environmentId: testEnvironment.id,
+ *     state: agentDependencyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetAgentDependenciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAgentDependencies = oci.CloudBridge.getAgentDependencies({
- *     compartmentId: _var.compartment_id,
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
- *     displayName: _var.agent_dependency_display_name,
- *     environmentId: oci_cloud_bridge_environment.test_environment.id,
- *     state: _var.agent_dependency_state,
+ *     compartmentId: compartmentId,
+ *     agentId: testAgent.id,
+ *     displayName: agentDependencyDisplayName,
+ *     environmentId: testEnvironment.id,
+ *     state: agentDependencyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

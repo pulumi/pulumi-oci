@@ -33,8 +33,8 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIamWorkRequests = Oci.Identity.GetIamWorkRequests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ResourceIdentifier = @var.Iam_work_request_resource_identifier,
+        ///         CompartmentId = compartmentId,
+        ///         ResourceIdentifier = iamWorkRequestResourceIdentifier,
         ///     });
         /// 
         /// });
@@ -66,8 +66,8 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIamWorkRequests = Oci.Identity.GetIamWorkRequests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ResourceIdentifier = @var.Iam_work_request_resource_identifier,
+        ///         CompartmentId = compartmentId,
+        ///         ResourceIdentifier = iamWorkRequestResourceIdentifier,
         ///     });
         /// 
         /// });

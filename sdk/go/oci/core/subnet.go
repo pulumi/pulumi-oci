@@ -61,26 +61,26 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewSubnet(ctx, "testSubnet", &Core.SubnetArgs{
-//				CidrBlock:          pulumi.Any(_var.Subnet_cidr_block),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				VcnId:              pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				AvailabilityDomain: pulumi.Any(_var.Subnet_availability_domain),
+//			_, err := Core.NewSubnet(ctx, "test_subnet", &Core.SubnetArgs{
+//				CidrBlock:          pulumi.Any(subnetCidrBlock),
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				VcnId:              pulumi.Any(testVcn.Id),
+//				AvailabilityDomain: pulumi.Any(subnetAvailabilityDomain),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DhcpOptionsId: pulumi.Any(oci_core_dhcp_options.Test_dhcp_options.Id),
-//				DisplayName:   pulumi.Any(_var.Subnet_display_name),
-//				DnsLabel:      pulumi.Any(_var.Subnet_dns_label),
+//				DhcpOptionsId: pulumi.Any(testDhcpOptions.Id),
+//				DisplayName:   pulumi.Any(subnetDisplayName),
+//				DnsLabel:      pulumi.Any(subnetDnsLabel),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Ipv6cidrBlock:           pulumi.Any(_var.Subnet_ipv6cidr_block),
-//				Ipv6cidrBlocks:          pulumi.Any(_var.Subnet_ipv6cidr_blocks),
-//				ProhibitInternetIngress: pulumi.Any(_var.Subnet_prohibit_internet_ingress),
-//				ProhibitPublicIpOnVnic:  pulumi.Any(_var.Subnet_prohibit_public_ip_on_vnic),
-//				RouteTableId:            pulumi.Any(oci_core_route_table.Test_route_table.Id),
-//				SecurityListIds:         pulumi.Any(_var.Subnet_security_list_ids),
+//				Ipv6cidrBlock:           pulumi.Any(subnetIpv6cidrBlock),
+//				Ipv6cidrBlocks:          pulumi.Any(subnetIpv6cidrBlocks),
+//				ProhibitInternetIngress: pulumi.Any(subnetProhibitInternetIngress),
+//				ProhibitPublicIpOnVnic:  pulumi.Any(subnetProhibitPublicIpOnVnic),
+//				RouteTableId:            pulumi.Any(testRouteTable.Id),
+//				SecurityListIds:         pulumi.Any(subnetSecurityListIds),
 //			})
 //			if err != nil {
 //				return err

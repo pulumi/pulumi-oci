@@ -37,14 +37,14 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testObjectVersions = Oci.ObjectStorage.GetObjectVersions.Invoke(new()
         ///     {
-        ///         Bucket = @var.Object_version_bucket,
-        ///         Namespace = @var.Object_version_namespace,
-        ///         Delimiter = @var.Object_version_delimiter,
-        ///         End = @var.Object_version_end,
-        ///         Fields = @var.Object_version_fields,
-        ///         Prefix = @var.Object_version_prefix,
-        ///         Start = @var.Object_version_start,
-        ///         StartAfter = @var.Object_version_start_after,
+        ///         Bucket = objectVersionBucket,
+        ///         Namespace = objectVersionNamespace,
+        ///         Delimiter = objectVersionDelimiter,
+        ///         End = objectVersionEnd,
+        ///         Fields = objectVersionFields,
+        ///         Prefix = objectVersionPrefix,
+        ///         Start = objectVersionStart,
+        ///         StartAfter = objectVersionStartAfter,
         ///     });
         /// 
         /// });
@@ -80,14 +80,14 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testObjectVersions = Oci.ObjectStorage.GetObjectVersions.Invoke(new()
         ///     {
-        ///         Bucket = @var.Object_version_bucket,
-        ///         Namespace = @var.Object_version_namespace,
-        ///         Delimiter = @var.Object_version_delimiter,
-        ///         End = @var.Object_version_end,
-        ///         Fields = @var.Object_version_fields,
-        ///         Prefix = @var.Object_version_prefix,
-        ///         Start = @var.Object_version_start,
-        ///         StartAfter = @var.Object_version_start_after,
+        ///         Bucket = objectVersionBucket,
+        ///         Namespace = objectVersionNamespace,
+        ///         Delimiter = objectVersionDelimiter,
+        ///         End = objectVersionEnd,
+        ///         Fields = objectVersionFields,
+        ///         Prefix = objectVersionPrefix,
+        ///         Start = objectVersionStart,
+        ///         StartAfter = objectVersionStartAfter,
         ///     });
         /// 
         /// });

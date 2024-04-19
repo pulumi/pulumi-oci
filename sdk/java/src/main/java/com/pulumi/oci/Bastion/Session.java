@@ -50,21 +50,21 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSession = new Session(&#34;testSession&#34;, SessionArgs.builder()        
- *             .bastionId(oci_bastion_bastion.test_bastion().id())
+ *             .bastionId(testBastion.id())
  *             .keyDetails(SessionKeyDetailsArgs.builder()
- *                 .publicKeyContent(var_.session_key_details_public_key_content())
+ *                 .publicKeyContent(sessionKeyDetailsPublicKeyContent)
  *                 .build())
  *             .targetResourceDetails(SessionTargetResourceDetailsArgs.builder()
- *                 .sessionType(var_.session_target_resource_details_session_type())
- *                 .targetResourceFqdn(var_.session_target_resource_details_target_resource_fqdn())
- *                 .targetResourceId(oci_bastion_target_resource.test_target_resource().id())
- *                 .targetResourceOperatingSystemUserName(oci_identity_user.test_user().name())
- *                 .targetResourcePort(var_.session_target_resource_details_target_resource_port())
- *                 .targetResourcePrivateIpAddress(var_.session_target_resource_details_target_resource_private_ip_address())
+ *                 .sessionType(sessionTargetResourceDetailsSessionType)
+ *                 .targetResourceFqdn(sessionTargetResourceDetailsTargetResourceFqdn)
+ *                 .targetResourceId(testTargetResource.id())
+ *                 .targetResourceOperatingSystemUserName(testUser.name())
+ *                 .targetResourcePort(sessionTargetResourceDetailsTargetResourcePort)
+ *                 .targetResourcePrivateIpAddress(sessionTargetResourceDetailsTargetResourcePrivateIpAddress)
  *                 .build())
- *             .displayName(var_.session_display_name())
- *             .keyType(var_.session_key_type())
- *             .sessionTtlInSeconds(var_.session_session_ttl_in_seconds())
+ *             .displayName(sessionDisplayName)
+ *             .keyType(sessionKeyType)
+ *             .sessionTtlInSeconds(sessionSessionTtlInSeconds)
  *             .build());
  * 
  *     }

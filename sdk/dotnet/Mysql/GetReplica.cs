@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testReplica = Oci.Mysql.GetReplica.Invoke(new()
         ///     {
-        ///         ReplicaId = oci_mysql_replica.Test_replica.Id,
+        ///         ReplicaId = testReplicaOciMysqlReplica.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testReplica = Oci.Mysql.GetReplica.Invoke(new()
         ///     {
-        ///         ReplicaId = oci_mysql_replica.Test_replica.Id,
+        ///         ReplicaId = testReplicaOciMysqlReplica.Id,
         ///     });
         /// 
         /// });

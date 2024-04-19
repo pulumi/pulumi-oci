@@ -140,11 +140,11 @@ def get_masking_reports(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=var["compartment_id"],
-        access_level=var["masking_report_access_level"],
-        compartment_id_in_subtree=var["masking_report_compartment_id_in_subtree"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=compartment_id,
+        access_level=masking_report_access_level,
+        compartment_id_in_subtree=masking_report_compartment_id_in_subtree,
+        masking_policy_id=test_masking_policy["id"],
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=var["compartment_id"],
-        access_level=var["masking_report_access_level"],
-        compartment_id_in_subtree=var["masking_report_compartment_id_in_subtree"],
-        masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=compartment_id,
+        access_level=masking_report_access_level,
+        compartment_id_in_subtree=masking_report_compartment_id_in_subtree,
+        masking_policy_id=test_masking_policy["id"],
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 

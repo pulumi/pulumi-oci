@@ -18,17 +18,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGeneratedKey = new oci.kms.GeneratedKey("testGeneratedKey", {
- *     cryptoEndpoint: _var.generated_key_crypto_endpoint,
- *     includePlaintextKey: _var.generated_key_include_plaintext_key,
- *     keyId: oci_kms_key.test_key.id,
+ * const testGeneratedKey = new oci.kms.GeneratedKey("test_generated_key", {
+ *     cryptoEndpoint: generatedKeyCryptoEndpoint,
+ *     includePlaintextKey: generatedKeyIncludePlaintextKey,
+ *     keyId: testKey.id,
  *     keyShape: {
- *         algorithm: _var.generated_key_key_shape_algorithm,
- *         length: _var.generated_key_key_shape_length,
- *         curveId: oci_kms_curve.test_curve.id,
+ *         algorithm: generatedKeyKeyShapeAlgorithm,
+ *         length: generatedKeyKeyShapeLength,
+ *         curveId: testCurve.id,
  *     },
- *     associatedData: _var.generated_key_associated_data,
- *     loggingContext: _var.generated_key_logging_context,
+ *     associatedData: generatedKeyAssociatedData,
+ *     loggingContext: generatedKeyLoggingContext,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

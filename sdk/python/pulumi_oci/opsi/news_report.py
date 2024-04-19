@@ -533,30 +533,31 @@ class NewsReport(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_news_report = oci.opsi.NewsReport("testNewsReport",
-            compartment_id=var["compartment_id"],
+        test_news_report = oci.opsi.NewsReport("test_news_report",
+            compartment_id=compartment_id,
             content_types=oci.opsi.NewsReportContentTypesArgs(
-                capacity_planning_resources=var["news_report_content_types_capacity_planning_resources"],
-                sql_insights_fleet_analysis_resources=var["news_report_content_types_sql_insights_fleet_analysis_resources"],
-                sql_insights_performance_degradation_resources=var["news_report_content_types_sql_insights_performance_degradation_resources"],
-                sql_insights_plan_changes_resources=var["news_report_content_types_sql_insights_plan_changes_resources"],
-                sql_insights_top_databases_resources=var["news_report_content_types_sql_insights_top_databases_resources"],
-                sql_insights_top_sql_by_insights_resources=var["news_report_content_types_sql_insights_top_sql_by_insights_resources"],
-                sql_insights_top_sql_resources=var["news_report_content_types_sql_insights_top_sql_resources"],
+                capacity_planning_resources=news_report_content_types_capacity_planning_resources,
+                sql_insights_fleet_analysis_resources=news_report_content_types_sql_insights_fleet_analysis_resources,
+                sql_insights_performance_degradation_resources=news_report_content_types_sql_insights_performance_degradation_resources,
+                sql_insights_plan_changes_resources=news_report_content_types_sql_insights_plan_changes_resources,
+                sql_insights_top_databases_resources=news_report_content_types_sql_insights_top_databases_resources,
+                sql_insights_top_sql_by_insights_resources=news_report_content_types_sql_insights_top_sql_by_insights_resources,
+                sql_insights_top_sql_resources=news_report_content_types_sql_insights_top_sql_resources,
             ),
-            description=var["news_report_description"],
-            locale=var["news_report_locale"],
-            news_frequency=var["news_report_news_frequency"],
-            ons_topic_id=oci_opsi_ons_topic["test_ons_topic"]["id"],
-            are_child_compartments_included=var["news_report_are_child_compartments_included"],
-            day_of_week=var["news_report_day_of_week"],
+            description=news_report_description,
+            locale=news_report_locale,
+            name=news_report_name,
+            news_frequency=news_report_news_frequency,
+            ons_topic_id=test_ons_topic["id"],
+            are_child_compartments_included=news_report_are_child_compartments_included,
+            day_of_week=news_report_day_of_week,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            status=var["news_report_status"])
+            status=news_report_status)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -605,30 +606,31 @@ class NewsReport(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_news_report = oci.opsi.NewsReport("testNewsReport",
-            compartment_id=var["compartment_id"],
+        test_news_report = oci.opsi.NewsReport("test_news_report",
+            compartment_id=compartment_id,
             content_types=oci.opsi.NewsReportContentTypesArgs(
-                capacity_planning_resources=var["news_report_content_types_capacity_planning_resources"],
-                sql_insights_fleet_analysis_resources=var["news_report_content_types_sql_insights_fleet_analysis_resources"],
-                sql_insights_performance_degradation_resources=var["news_report_content_types_sql_insights_performance_degradation_resources"],
-                sql_insights_plan_changes_resources=var["news_report_content_types_sql_insights_plan_changes_resources"],
-                sql_insights_top_databases_resources=var["news_report_content_types_sql_insights_top_databases_resources"],
-                sql_insights_top_sql_by_insights_resources=var["news_report_content_types_sql_insights_top_sql_by_insights_resources"],
-                sql_insights_top_sql_resources=var["news_report_content_types_sql_insights_top_sql_resources"],
+                capacity_planning_resources=news_report_content_types_capacity_planning_resources,
+                sql_insights_fleet_analysis_resources=news_report_content_types_sql_insights_fleet_analysis_resources,
+                sql_insights_performance_degradation_resources=news_report_content_types_sql_insights_performance_degradation_resources,
+                sql_insights_plan_changes_resources=news_report_content_types_sql_insights_plan_changes_resources,
+                sql_insights_top_databases_resources=news_report_content_types_sql_insights_top_databases_resources,
+                sql_insights_top_sql_by_insights_resources=news_report_content_types_sql_insights_top_sql_by_insights_resources,
+                sql_insights_top_sql_resources=news_report_content_types_sql_insights_top_sql_resources,
             ),
-            description=var["news_report_description"],
-            locale=var["news_report_locale"],
-            news_frequency=var["news_report_news_frequency"],
-            ons_topic_id=oci_opsi_ons_topic["test_ons_topic"]["id"],
-            are_child_compartments_included=var["news_report_are_child_compartments_included"],
-            day_of_week=var["news_report_day_of_week"],
+            description=news_report_description,
+            locale=news_report_locale,
+            name=news_report_name,
+            news_frequency=news_report_news_frequency,
+            ons_topic_id=test_ons_topic["id"],
+            are_child_compartments_included=news_report_are_child_compartments_included,
+            day_of_week=news_report_day_of_week,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            status=var["news_report_status"])
+            status=news_report_status)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogAnalyticsUnprocessedDataBucket = Oci.LogAnalytics.GetLogAnalyticsUnprocessedDataBucket.Invoke(new()
         ///     {
-        ///         Namespace = @var.Log_analytics_unprocessed_data_bucket_namespace,
+        ///         Namespace = logAnalyticsUnprocessedDataBucketNamespace,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogAnalyticsUnprocessedDataBucket = Oci.LogAnalytics.GetLogAnalyticsUnprocessedDataBucket.Invoke(new()
         ///     {
-        ///         Namespace = @var.Log_analytics_unprocessed_data_bucket_namespace,
+        ///         Namespace = logAnalyticsUnprocessedDataBucketNamespace,
         ///     });
         /// 
         /// });

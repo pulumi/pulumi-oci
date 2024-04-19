@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetDeployStages(ctx, &devops.GetDeployStagesArgs{
-//				CompartmentId:    pulumi.StringRef(_var.Compartment_id),
-//				DeployPipelineId: pulumi.StringRef(oci_devops_deploy_pipeline.Test_deploy_pipeline.Id),
-//				DisplayName:      pulumi.StringRef(_var.Deploy_stage_display_name),
-//				Id:               pulumi.StringRef(_var.Deploy_stage_id),
-//				State:            pulumi.StringRef(_var.Deploy_stage_state),
+//				CompartmentId:    pulumi.StringRef(compartmentId),
+//				DeployPipelineId: pulumi.StringRef(testDeployPipeline.Id),
+//				DisplayName:      pulumi.StringRef(deployStageDisplayName),
+//				Id:               pulumi.StringRef(deployStageId),
+//				State:            pulumi.StringRef(deployStageState),
 //			}, nil)
 //			if err != nil {
 //				return err

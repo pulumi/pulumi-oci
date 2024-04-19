@@ -215,9 +215,9 @@ class CustomerSecretKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_customer_secret_key = oci.identity.CustomerSecretKey("testCustomerSecretKey",
-            display_name=var["customer_secret_key_display_name"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_customer_secret_key = oci.identity.CustomerSecretKey("test_customer_secret_key",
+            display_name=customer_secret_key_display_name,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -266,9 +266,9 @@ class CustomerSecretKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_customer_secret_key = oci.identity.CustomerSecretKey("testCustomerSecretKey",
-            display_name=var["customer_secret_key_display_name"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_customer_secret_key = oci.identity.CustomerSecretKey("test_customer_secret_key",
+            display_name=customer_secret_key_display_name,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 

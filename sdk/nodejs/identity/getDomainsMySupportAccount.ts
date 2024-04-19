@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMySupportAccount = oci.Identity.getDomainsMySupportAccount({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     mySupportAccountId: oci_identity_domains_my_support_account.test_my_support_account.id,
- *     authorization: _var.my_support_account_authorization,
- *     resourceTypeSchemaVersion: _var.my_support_account_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     mySupportAccountId: testMySupportAccountOciIdentityDomainsMySupportAccount.id,
+ *     authorization: mySupportAccountAuthorization,
+ *     resourceTypeSchemaVersion: mySupportAccountResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -150,10 +150,10 @@ export interface GetDomainsMySupportAccountResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMySupportAccount = oci.Identity.getDomainsMySupportAccount({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     mySupportAccountId: oci_identity_domains_my_support_account.test_my_support_account.id,
- *     authorization: _var.my_support_account_authorization,
- *     resourceTypeSchemaVersion: _var.my_support_account_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     mySupportAccountId: testMySupportAccountOciIdentityDomainsMySupportAccount.id,
+ *     authorization: mySupportAccountAuthorization,
+ *     resourceTypeSchemaVersion: mySupportAccountResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyRequestableGroups = oci.Identity.getDomainsMyRequestableGroups({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myRequestableGroupCount: _var.my_requestable_group_my_requestable_group_count,
- *     myRequestableGroupFilter: _var.my_requestable_group_my_requestable_group_filter,
- *     authorization: _var.my_requestable_group_authorization,
- *     resourceTypeSchemaVersion: _var.my_requestable_group_resource_type_schema_version,
- *     startIndex: _var.my_requestable_group_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myRequestableGroupCount: myRequestableGroupMyRequestableGroupCount,
+ *     myRequestableGroupFilter: myRequestableGroupMyRequestableGroupFilter,
+ *     authorization: myRequestableGroupAuthorization,
+ *     resourceTypeSchemaVersion: myRequestableGroupResourceTypeSchemaVersion,
+ *     startIndex: myRequestableGroupStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -128,12 +128,12 @@ export interface GetDomainsMyRequestableGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyRequestableGroups = oci.Identity.getDomainsMyRequestableGroups({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myRequestableGroupCount: _var.my_requestable_group_my_requestable_group_count,
- *     myRequestableGroupFilter: _var.my_requestable_group_my_requestable_group_filter,
- *     authorization: _var.my_requestable_group_authorization,
- *     resourceTypeSchemaVersion: _var.my_requestable_group_resource_type_schema_version,
- *     startIndex: _var.my_requestable_group_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myRequestableGroupCount: myRequestableGroupMyRequestableGroupCount,
+ *     myRequestableGroupFilter: myRequestableGroupMyRequestableGroupFilter,
+ *     authorization: myRequestableGroupAuthorization,
+ *     resourceTypeSchemaVersion: myRequestableGroupResourceTypeSchemaVersion,
+ *     startIndex: myRequestableGroupStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

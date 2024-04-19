@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnectionAssignments = oci.GoldenGate.getConnectionAssignments({
- *     compartmentId: _var.compartment_id,
- *     connectionId: oci_golden_gate_connection.test_connection.id,
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     name: _var.connection_assignment_name,
- *     state: _var.connection_assignment_state,
+ *     compartmentId: compartmentId,
+ *     connectionId: testConnection.id,
+ *     deploymentId: testDeployment.id,
+ *     name: connectionAssignmentName,
+ *     state: connectionAssignmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetConnectionAssignmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnectionAssignments = oci.GoldenGate.getConnectionAssignments({
- *     compartmentId: _var.compartment_id,
- *     connectionId: oci_golden_gate_connection.test_connection.id,
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     name: _var.connection_assignment_name,
- *     state: _var.connection_assignment_state,
+ *     compartmentId: compartmentId,
+ *     connectionId: testConnection.id,
+ *     deploymentId: testDeployment.id,
+ *     name: connectionAssignmentName,
+ *     state: connectionAssignmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

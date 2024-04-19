@@ -31,14 +31,14 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagedInstanceGroups = Oci.OsManagementHub.GetManagedInstanceGroups.Invoke(new()
         ///     {
-        ///         ArchType = @var.Managed_instance_group_arch_type,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Managed_instance_group_display_name,
-        ///         DisplayNameContains = @var.Managed_instance_group_display_name_contains,
-        ///         ManagedInstanceGroupId = oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-        ///         OsFamily = @var.Managed_instance_group_os_family,
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         State = @var.Managed_instance_group_state,
+        ///         ArchType = managedInstanceGroupArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupDisplayNameContains,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         OsFamily = managedInstanceGroupOsFamily,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         State = managedInstanceGroupState,
         ///     });
         /// 
         /// });
@@ -68,14 +68,14 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagedInstanceGroups = Oci.OsManagementHub.GetManagedInstanceGroups.Invoke(new()
         ///     {
-        ///         ArchType = @var.Managed_instance_group_arch_type,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Managed_instance_group_display_name,
-        ///         DisplayNameContains = @var.Managed_instance_group_display_name_contains,
-        ///         ManagedInstanceGroupId = oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-        ///         OsFamily = @var.Managed_instance_group_os_family,
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         State = @var.Managed_instance_group_state,
+        ///         ArchType = managedInstanceGroupArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = managedInstanceGroupDisplayName,
+        ///         DisplayNameContains = managedInstanceGroupDisplayNameContains,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         OsFamily = managedInstanceGroupOsFamily,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         State = managedInstanceGroupState,
         ///     });
         /// 
         /// });

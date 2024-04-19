@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedVmHostsInstances = oci.Core.getDedicatedVmHostInstances({
- *     compartmentId: _var.compartment_id,
- *     dedicatedVmHostId: oci_core_dedicated_vm_host.test_dedicated_vm_host.id,
- *     availabilityDomain: _var.dedicated_vm_hosts_instance_availability_domain,
+ *     compartmentId: compartmentId,
+ *     dedicatedVmHostId: testDedicatedVmHost.id,
+ *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetDedicatedVmHostInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedVmHostsInstances = oci.Core.getDedicatedVmHostInstances({
- *     compartmentId: _var.compartment_id,
- *     dedicatedVmHostId: oci_core_dedicated_vm_host.test_dedicated_vm_host.id,
- *     availabilityDomain: _var.dedicated_vm_hosts_instance_availability_domain,
+ *     compartmentId: compartmentId,
+ *     dedicatedVmHostId: testDedicatedVmHost.id,
+ *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

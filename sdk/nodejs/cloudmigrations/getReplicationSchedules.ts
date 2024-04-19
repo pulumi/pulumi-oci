@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationSchedules = oci.CloudMigrations.getReplicationSchedules({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.replication_schedule_display_name,
- *     replicationScheduleId: oci_cloud_migrations_replication_schedule.test_replication_schedule.id,
- *     state: _var.replication_schedule_state,
+ *     compartmentId: compartmentId,
+ *     displayName: replicationScheduleDisplayName,
+ *     replicationScheduleId: testReplicationSchedule.id,
+ *     state: replicationScheduleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,10 +103,10 @@ export interface GetReplicationSchedulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationSchedules = oci.CloudMigrations.getReplicationSchedules({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.replication_schedule_display_name,
- *     replicationScheduleId: oci_cloud_migrations_replication_schedule.test_replication_schedule.id,
- *     state: _var.replication_schedule_state,
+ *     compartmentId: compartmentId,
+ *     displayName: replicationScheduleDisplayName,
+ *     replicationScheduleId: testReplicationSchedule.id,
+ *     state: replicationScheduleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

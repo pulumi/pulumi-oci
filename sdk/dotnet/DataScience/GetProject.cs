@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testProject = Oci.DataScience.GetProject.Invoke(new()
         ///     {
-        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///         ProjectId = testProjectOciDatascienceProject.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testProject = Oci.DataScience.GetProject.Invoke(new()
         ///     {
-        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///         ProjectId = testProjectOciDatascienceProject.Id,
         ///     });
         /// 
         /// });

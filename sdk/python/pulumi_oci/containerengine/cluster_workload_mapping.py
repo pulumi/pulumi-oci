@@ -271,10 +271,10 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cluster_workload_mapping = oci.container_engine.ClusterWorkloadMapping("testClusterWorkloadMapping",
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            mapped_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            namespace=var["cluster_workload_mapping_namespace"],
+        test_cluster_workload_mapping = oci.container_engine.ClusterWorkloadMapping("test_cluster_workload_mapping",
+            cluster_id=test_cluster["id"],
+            mapped_compartment_id=test_compartment["id"],
+            namespace=cluster_workload_mapping_namespace,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -322,10 +322,10 @@ class ClusterWorkloadMapping(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cluster_workload_mapping = oci.container_engine.ClusterWorkloadMapping("testClusterWorkloadMapping",
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            mapped_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            namespace=var["cluster_workload_mapping_namespace"],
+        test_cluster_workload_mapping = oci.container_engine.ClusterWorkloadMapping("test_cluster_workload_mapping",
+            cluster_id=test_cluster["id"],
+            mapped_compartment_id=test_compartment["id"],
+            namespace=cluster_workload_mapping_namespace,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaDownloadToken = oci.Jms.getJavaDownloadsJavaDownloadToken({
- *     javaDownloadTokenId: oci_jms_java_downloads_java_download_token.test_java_download_token.id,
+ *     javaDownloadTokenId: testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetJavaDownloadsJavaDownloadTokenResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaDownloadToken = oci.Jms.getJavaDownloadsJavaDownloadToken({
- *     javaDownloadTokenId: oci_jms_java_downloads_java_download_token.test_java_download_token.id,
+ *     javaDownloadTokenId: testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

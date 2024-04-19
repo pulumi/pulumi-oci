@@ -30,8 +30,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testObjectLifecyclePolicy = Oci.ObjectStorage.GetObjectLifecyclePolicy.Invoke(new()
         ///     {
-        ///         Bucket = @var.Object_lifecycle_policy_bucket,
-        ///         Namespace = @var.Object_lifecycle_policy_namespace,
+        ///         Bucket = objectLifecyclePolicyBucket,
+        ///         Namespace = objectLifecyclePolicyNamespace,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testObjectLifecyclePolicy = Oci.ObjectStorage.GetObjectLifecyclePolicy.Invoke(new()
         ///     {
-        ///         Bucket = @var.Object_lifecycle_policy_bucket,
-        ///         Namespace = @var.Object_lifecycle_policy_namespace,
+        ///         Bucket = objectLifecyclePolicyBucket,
+        ///         Namespace = objectLifecyclePolicyNamespace,
         ///     });
         /// 
         /// });

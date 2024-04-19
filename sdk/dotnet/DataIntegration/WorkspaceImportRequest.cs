@@ -25,21 +25,21 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWorkspaceImportRequest = new Oci.DataIntegration.WorkspaceImportRequest("testWorkspaceImportRequest", new()
+    ///     var testWorkspaceImportRequest = new Oci.DataIntegration.WorkspaceImportRequest("test_workspace_import_request", new()
     ///     {
-    ///         Bucket = @var.Workspace_import_request_bucket,
-    ///         FileName = @var.Workspace_import_request_file_name,
-    ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-    ///         AreDataAssetReferencesIncluded = @var.Workspace_import_request_are_data_asset_references_included,
+    ///         Bucket = workspaceImportRequestBucket,
+    ///         FileName = workspaceImportRequestFileName,
+    ///         WorkspaceId = testWorkspace.Id,
+    ///         AreDataAssetReferencesIncluded = workspaceImportRequestAreDataAssetReferencesIncluded,
     ///         ImportConflictResolution = new Oci.DataIntegration.Inputs.WorkspaceImportRequestImportConflictResolutionArgs
     ///         {
-    ///             ImportConflictResolutionType = @var.Workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
-    ///             DuplicatePrefix = @var.Workspace_import_request_import_conflict_resolution_duplicate_prefix,
-    ///             DuplicateSuffix = @var.Workspace_import_request_import_conflict_resolution_duplicate_suffix,
+    ///             ImportConflictResolutionType = workspaceImportRequestImportConflictResolutionImportConflictResolutionType,
+    ///             DuplicatePrefix = workspaceImportRequestImportConflictResolutionDuplicatePrefix,
+    ///             DuplicateSuffix = workspaceImportRequestImportConflictResolutionDuplicateSuffix,
     ///         },
-    ///         ObjectKeyForImport = @var.Workspace_import_request_object_key_for_import,
-    ///         ObjectStorageRegion = @var.Workspace_import_request_object_storage_region,
-    ///         ObjectStorageTenancyId = oci_identity_tenancy.Test_tenancy.Id,
+    ///         ObjectKeyForImport = workspaceImportRequestObjectKeyForImport,
+    ///         ObjectStorageRegion = workspaceImportRequestObjectStorageRegion,
+    ///         ObjectStorageTenancyId = testTenancy.Id,
     ///     });
     /// 
     /// });

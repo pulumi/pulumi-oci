@@ -27,27 +27,27 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSensitiveType = new Oci.DataSafe.SensitiveType("testSensitiveType", new()
+    ///     var testSensitiveType = new Oci.DataSafe.SensitiveType("test_sensitive_type", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         EntityType = @var.Sensitive_type_entity_type,
-    ///         CommentPattern = @var.Sensitive_type_comment_pattern,
-    ///         DataPattern = @var.Sensitive_type_data_pattern,
-    ///         DefaultMaskingFormatId = oci_data_safe_default_masking_format.Test_default_masking_format.Id,
+    ///         CompartmentId = compartmentId,
+    ///         EntityType = sensitiveTypeEntityType,
+    ///         CommentPattern = sensitiveTypeCommentPattern,
+    ///         DataPattern = sensitiveTypeDataPattern,
+    ///         DefaultMaskingFormatId = testDefaultMaskingFormat.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Sensitive_type_description,
-    ///         DisplayName = @var.Sensitive_type_display_name,
+    ///         Description = sensitiveTypeDescription,
+    ///         DisplayName = sensitiveTypeDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         NamePattern = @var.Sensitive_type_name_pattern,
-    ///         ParentCategoryId = oci_marketplace_category.Test_category.Id,
-    ///         SearchType = @var.Sensitive_type_search_type,
-    ///         ShortName = @var.Sensitive_type_short_name,
+    ///         NamePattern = sensitiveTypeNamePattern,
+    ///         ParentCategoryId = testCategory.Id,
+    ///         SearchType = sensitiveTypeSearchType,
+    ///         ShortName = sensitiveTypeShortName,
     ///     });
     /// 
     /// });

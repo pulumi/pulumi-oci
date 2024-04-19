@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamDistributionChannels = oci.MediaServices.getStreamDistributionChannels({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.stream_distribution_channel_display_name,
- *     id: _var.stream_distribution_channel_id,
- *     state: _var.stream_distribution_channel_state,
+ *     compartmentId: compartmentId,
+ *     displayName: streamDistributionChannelDisplayName,
+ *     id: streamDistributionChannelId,
+ *     state: streamDistributionChannelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetStreamDistributionChannelsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamDistributionChannels = oci.MediaServices.getStreamDistributionChannels({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.stream_distribution_channel_display_name,
- *     id: _var.stream_distribution_channel_id,
- *     state: _var.stream_distribution_channel_state,
+ *     compartmentId: compartmentId,
+ *     displayName: streamDistributionChannelDisplayName,
+ *     id: streamDistributionChannelId,
+ *     state: streamDistributionChannelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

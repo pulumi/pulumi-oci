@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamCdnConfig = oci.MediaServices.getStreamCdnConfig({
- *     streamCdnConfigId: oci_media_services_stream_cdn_config.test_stream_cdn_config.id,
+ *     streamCdnConfigId: testStreamCdnConfigOciMediaServicesStreamCdnConfig.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,7 +118,7 @@ export interface GetStreamCdnConfigResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamCdnConfig = oci.MediaServices.getStreamCdnConfig({
- *     streamCdnConfigId: oci_media_services_stream_cdn_config.test_stream_cdn_config.id,
+ *     streamCdnConfigId: testStreamCdnConfigOciMediaServicesStreamCdnConfig.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

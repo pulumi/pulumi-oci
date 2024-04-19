@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyTrustedUserAgent = oci.Identity.getDomainsMyTrustedUserAgent({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myTrustedUserAgentId: oci_cloud_bridge_agent.test_agent.id,
+ *     idcsEndpoint: testDomain.url,
+ *     myTrustedUserAgentId: testAgent.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_trusted_user_agent_authorization,
- *     resourceTypeSchemaVersion: _var.my_trusted_user_agent_resource_type_schema_version,
+ *     authorization: myTrustedUserAgentAuthorization,
+ *     resourceTypeSchemaVersion: myTrustedUserAgentResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -184,12 +184,12 @@ export interface GetDomainsMyTrustedUserAgentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyTrustedUserAgent = oci.Identity.getDomainsMyTrustedUserAgent({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myTrustedUserAgentId: oci_cloud_bridge_agent.test_agent.id,
+ *     idcsEndpoint: testDomain.url,
+ *     myTrustedUserAgentId: testAgent.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_trusted_user_agent_authorization,
- *     resourceTypeSchemaVersion: _var.my_trusted_user_agent_resource_type_schema_version,
+ *     authorization: myTrustedUserAgentAuthorization,
+ *     resourceTypeSchemaVersion: myTrustedUserAgentResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

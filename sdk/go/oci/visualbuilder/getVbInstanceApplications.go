@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := VisualBuilder.GetVbInstanceApplications(ctx, &visualbuilder.GetVbInstanceApplicationsArgs{
-//				VbInstanceId: oci_visual_builder_vb_instance.Test_vb_instance.Id,
+//				VbInstanceId: testVbInstance.Id,
 //				IdcsOpenId:   pulumi.StringRef("idcs_open_id_value"),
 //			}, nil)
 //			if err != nil {

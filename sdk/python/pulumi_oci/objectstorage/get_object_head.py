@@ -157,9 +157,9 @@ def get_object_head(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"])
+    test_object_head = oci.ObjectStorage.get_object_head(bucket=object_bucket,
+        namespace=object_namespace,
+        object=object_object)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -205,9 +205,9 @@ def get_object_head_output(bucket: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_head = oci.ObjectStorage.get_object_head(bucket=var["object_bucket"],
-        namespace=var["object_namespace"],
-        object=var["object_object"])
+    test_object_head = oci.ObjectStorage.get_object_head(bucket=object_bucket,
+        namespace=object_namespace,
+        object=object_object)
     ```
     <!--End PulumiCodeChooser -->
 

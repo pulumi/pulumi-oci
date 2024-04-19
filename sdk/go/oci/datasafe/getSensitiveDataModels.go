@@ -31,15 +31,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSensitiveDataModels(ctx, &datasafe.GetSensitiveDataModelsArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				AccessLevel:                     pulumi.StringRef(_var.Sensitive_data_model_access_level),
-//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Sensitive_data_model_compartment_id_in_subtree),
-//				DisplayName:                     pulumi.StringRef(_var.Sensitive_data_model_display_name),
-//				SensitiveDataModelId:            pulumi.StringRef(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-//				State:                           pulumi.StringRef(_var.Sensitive_data_model_state),
-//				TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_data_model_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Sensitive_data_model_time_created_less_than),
+//				CompartmentId:                   compartmentId,
+//				AccessLevel:                     pulumi.StringRef(sensitiveDataModelAccessLevel),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(sensitiveDataModelCompartmentIdInSubtree),
+//				DisplayName:                     pulumi.StringRef(sensitiveDataModelDisplayName),
+//				SensitiveDataModelId:            pulumi.StringRef(testSensitiveDataModel.Id),
+//				State:                           pulumi.StringRef(sensitiveDataModelState),
+//				TargetId:                        pulumi.StringRef(testTarget.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(sensitiveDataModelTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

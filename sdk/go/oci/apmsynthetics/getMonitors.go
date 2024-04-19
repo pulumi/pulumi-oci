@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmSynthetics.GetMonitors(ctx, &apmsynthetics.GetMonitorsArgs{
-//				ApmDomainId:               oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-//				DisplayName:               pulumi.StringRef(_var.Monitor_display_name),
-//				IsMaintenanceWindowActive: pulumi.BoolRef(_var.Monitor_is_maintenance_window_active),
-//				IsMaintenanceWindowSet:    pulumi.BoolRef(_var.Monitor_is_maintenance_window_set),
-//				MonitorType:               pulumi.StringRef(_var.Monitor_monitor_type),
-//				ScriptId:                  pulumi.StringRef(oci_apm_synthetics_script.Test_script.Id),
-//				Status:                    pulumi.StringRef(_var.Monitor_status),
-//				VantagePoint:              pulumi.StringRef(_var.Monitor_vantage_point),
+//				ApmDomainId:               testApmDomain.Id,
+//				DisplayName:               pulumi.StringRef(monitorDisplayName),
+//				IsMaintenanceWindowActive: pulumi.BoolRef(monitorIsMaintenanceWindowActive),
+//				IsMaintenanceWindowSet:    pulumi.BoolRef(monitorIsMaintenanceWindowSet),
+//				MonitorType:               pulumi.StringRef(monitorMonitorType),
+//				ScriptId:                  pulumi.StringRef(testScript.Id),
+//				Status:                    pulumi.StringRef(monitorStatus),
+//				VantagePoint:              pulumi.StringRef(monitorVantagePoint),
 //			}, nil)
 //			if err != nil {
 //				return err

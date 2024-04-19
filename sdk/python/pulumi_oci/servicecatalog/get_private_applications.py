@@ -117,9 +117,9 @@ def get_private_applications(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_applications = oci.ServiceCatalog.get_private_applications(compartment_id=var["compartment_id"],
-        display_name=var["private_application_display_name"],
-        private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
+    test_private_applications = oci.ServiceCatalog.get_private_applications(compartment_id=compartment_id,
+        display_name=private_application_display_name,
+        private_application_id=test_private_application["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_private_applications_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_private_applications = oci.ServiceCatalog.get_private_applications(compartment_id=var["compartment_id"],
-        display_name=var["private_application_display_name"],
-        private_application_id=oci_service_catalog_private_application["test_private_application"]["id"])
+    test_private_applications = oci.ServiceCatalog.get_private_applications(compartment_id=compartment_id,
+        display_name=private_application_display_name,
+        private_application_id=test_private_application["id"])
     ```
     <!--End PulumiCodeChooser -->
 

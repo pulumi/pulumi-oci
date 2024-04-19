@@ -25,24 +25,24 @@ namespace Pulumi.Oci.VisualBuilder
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVbInstance = new Oci.VisualBuilder.VbInstance("testVbInstance", new()
+    ///     var testVbInstance = new Oci.VisualBuilder.VbInstance("test_vb_instance", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Vb_instance_display_name,
-    ///         NodeCount = @var.Vb_instance_node_count,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = vbInstanceDisplayName,
+    ///         NodeCount = vbInstanceNodeCount,
     ///         AlternateCustomEndpoints = new[]
     ///         {
     ///             new Oci.VisualBuilder.Inputs.VbInstanceAlternateCustomEndpointArgs
     ///             {
-    ///                 Hostname = @var.Vb_instance_alternate_custom_endpoints_hostname,
-    ///                 CertificateSecretId = oci_vault_secret.Test_secret.Id,
+    ///                 Hostname = vbInstanceAlternateCustomEndpointsHostname,
+    ///                 CertificateSecretId = testSecret.Id,
     ///             },
     ///         },
-    ///         ConsumptionModel = @var.Vb_instance_consumption_model,
+    ///         ConsumptionModel = vbInstanceConsumptionModel,
     ///         CustomEndpoint = new Oci.VisualBuilder.Inputs.VbInstanceCustomEndpointArgs
     ///         {
-    ///             Hostname = @var.Vb_instance_custom_endpoint_hostname,
-    ///             CertificateSecretId = oci_vault_secret.Test_secret.Id,
+    ///             Hostname = vbInstanceCustomEndpointHostname,
+    ///             CertificateSecretId = testSecret.Id,
     ///         },
     ///         DefinedTags = 
     ///         {
@@ -52,8 +52,8 @@ namespace Pulumi.Oci.VisualBuilder
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IdcsOpenId = oci_visual_builder_idcs_open.Test_idcs_open.Id,
-    ///         IsVisualBuilderEnabled = @var.Vb_instance_is_visual_builder_enabled,
+    ///         IdcsOpenId = testIdcsOpen.Id,
+    ///         IsVisualBuilderEnabled = vbInstanceIsVisualBuilderEnabled,
     ///     });
     /// 
     /// });

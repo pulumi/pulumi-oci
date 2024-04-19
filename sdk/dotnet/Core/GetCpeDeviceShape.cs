@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCpeDeviceShape = Oci.Core.GetCpeDeviceShape.Invoke(new()
         ///     {
-        ///         CpeDeviceShapeId = oci_core_cpe_device_shape.Test_cpe_device_shape.Id,
+        ///         CpeDeviceShapeId = testCpeDeviceShapeOciCoreCpeDeviceShape.Id,
         ///     });
         /// 
         /// });
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCpeDeviceShape = Oci.Core.GetCpeDeviceShape.Invoke(new()
         ///     {
-        ///         CpeDeviceShapeId = oci_core_cpe_device_shape.Test_cpe_device_shape.Id,
+        ///         CpeDeviceShapeId = testCpeDeviceShapeOciCoreCpeDeviceShape.Id,
         ///     });
         /// 
         /// });

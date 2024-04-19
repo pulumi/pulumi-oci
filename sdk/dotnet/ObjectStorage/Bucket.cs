@@ -26,12 +26,13 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBucket = new Oci.ObjectStorage.Bucket("testBucket", new()
+    ///     var testBucket = new Oci.ObjectStorage.Bucket("test_bucket", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Namespace = @var.Bucket_namespace,
-    ///         AccessType = @var.Bucket_access_type,
-    ///         AutoTiering = @var.Bucket_auto_tiering,
+    ///         CompartmentId = compartmentId,
+    ///         Name = bucketName,
+    ///         Namespace = bucketNamespace,
+    ///         AccessType = bucketAccessType,
+    ///         AutoTiering = bucketAutoTiering,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -40,24 +41,24 @@ namespace Pulumi.Oci.ObjectStorage
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         KmsKeyId = oci_kms_key.Test_key.Id,
-    ///         Metadata = @var.Bucket_metadata,
-    ///         ObjectEventsEnabled = @var.Bucket_object_events_enabled,
-    ///         StorageTier = @var.Bucket_storage_tier,
+    ///         KmsKeyId = testKey.Id,
+    ///         Metadata = bucketMetadata,
+    ///         ObjectEventsEnabled = bucketObjectEventsEnabled,
+    ///         StorageTier = bucketStorageTier,
     ///         RetentionRules = new[]
     ///         {
     ///             new Oci.ObjectStorage.Inputs.BucketRetentionRuleArgs
     ///             {
-    ///                 DisplayName = @var.Retention_rule_display_name,
+    ///                 DisplayName = retentionRuleDisplayName,
     ///                 Duration = new Oci.ObjectStorage.Inputs.BucketRetentionRuleDurationArgs
     ///                 {
-    ///                     TimeAmount = @var.Retention_rule_duration_time_amount,
-    ///                     TimeUnit = @var.Retention_rule_duration_time_unit,
+    ///                     TimeAmount = retentionRuleDurationTimeAmount,
+    ///                     TimeUnit = retentionRuleDurationTimeUnit,
     ///                 },
-    ///                 TimeRuleLocked = @var.Retention_rule_time_rule_locked,
+    ///                 TimeRuleLocked = retentionRuleTimeRuleLocked,
     ///             },
     ///         },
-    ///         Versioning = @var.Bucket_versioning,
+    ///         Versioning = bucketVersioning,
     ///     });
     /// 
     /// });

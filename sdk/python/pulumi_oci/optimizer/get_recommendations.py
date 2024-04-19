@@ -186,15 +186,15 @@ def get_recommendations(category_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_compartment_id_in_subtree"],
-        category_id=oci_optimizer_category["test_category"]["id"],
-        category_name=oci_optimizer_category["test_category"]["name"],
-        child_tenancy_ids=var["recommendation_child_tenancy_ids"],
-        include_organization=var["recommendation_include_organization"],
-        name=var["recommendation_name"],
-        state=var["recommendation_state"],
-        status=var["recommendation_status"])
+    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_compartment_id_in_subtree,
+        category_id=test_category["id"],
+        category_name=test_category["name"],
+        child_tenancy_ids=recommendation_child_tenancy_ids,
+        include_organization=recommendation_include_organization,
+        name=recommendation_name,
+        state=recommendation_state,
+        status=recommendation_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -274,15 +274,15 @@ def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_compartment_id_in_subtree"],
-        category_id=oci_optimizer_category["test_category"]["id"],
-        category_name=oci_optimizer_category["test_category"]["name"],
-        child_tenancy_ids=var["recommendation_child_tenancy_ids"],
-        include_organization=var["recommendation_include_organization"],
-        name=var["recommendation_name"],
-        state=var["recommendation_state"],
-        status=var["recommendation_status"])
+    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_compartment_id_in_subtree,
+        category_id=test_category["id"],
+        category_name=test_category["name"],
+        child_tenancy_ids=recommendation_child_tenancy_ids,
+        include_organization=recommendation_include_organization,
+        name=recommendation_name,
+        state=recommendation_state,
+        status=recommendation_status)
     ```
     <!--End PulumiCodeChooser -->
 

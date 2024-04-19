@@ -134,11 +134,11 @@ def get_replication_targets(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_targets = oci.FileStorage.get_replication_targets(availability_domain=var["replication_target_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["replication_target_display_name"],
-        id=var["replication_target_id"],
-        state=var["replication_target_state"])
+    test_replication_targets = oci.FileStorage.get_replication_targets(availability_domain=replication_target_availability_domain,
+        compartment_id=compartment_id,
+        display_name=replication_target_display_name,
+        id=replication_target_id,
+        state=replication_target_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_replication_targets_output(availability_domain: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_targets = oci.FileStorage.get_replication_targets(availability_domain=var["replication_target_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["replication_target_display_name"],
-        id=var["replication_target_id"],
-        state=var["replication_target_state"])
+    test_replication_targets = oci.FileStorage.get_replication_targets(availability_domain=replication_target_availability_domain,
+        compartment_id=compartment_id,
+        display_name=replication_target_display_name,
+        id=replication_target_id,
+        state=replication_target_state)
     ```
     <!--End PulumiCodeChooser -->
 

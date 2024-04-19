@@ -31,23 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.NewMesh(ctx, "testMesh", &ServiceMesh.MeshArgs{
+//			_, err := ServiceMesh.NewMesh(ctx, "test_mesh", &ServiceMesh.MeshArgs{
 //				CertificateAuthorities: servicemesh.MeshCertificateAuthorityArray{
 //					&servicemesh.MeshCertificateAuthorityArgs{
-//						Id: pulumi.Any(_var.Mesh_certificate_authorities_id),
+//						Id: pulumi.Any(meshCertificateAuthoritiesId),
 //					},
 //				},
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Mesh_display_name),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(meshDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Mesh_description),
+//				Description: pulumi.Any(meshDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Mtls: &servicemesh.MeshMtlsArgs{
-//					Minimum: pulumi.Any(_var.Mesh_mtls_minimum),
+//					Minimum: pulumi.Any(meshMtlsMinimum),
 //				},
 //			})
 //			if err != nil {

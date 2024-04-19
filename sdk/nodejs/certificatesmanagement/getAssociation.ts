@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAssociation = oci.CertificatesManagement.getAssociation({
- *     associationId: oci_certificates_management_association.test_association.id,
+ *     associationId: testAssociationOciCertificatesManagementAssociation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,7 +91,7 @@ export interface GetAssociationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAssociation = oci.CertificatesManagement.getAssociation({
- *     associationId: oci_certificates_management_association.test_association.id,
+ *     associationId: testAssociationOciCertificatesManagementAssociation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

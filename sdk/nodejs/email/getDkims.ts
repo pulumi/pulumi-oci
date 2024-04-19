@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDkims = oci.Email.getDkims({
- *     emailDomainId: oci_email_email_domain.test_email_domain.id,
- *     id: _var.dkim_id,
- *     name: _var.dkim_name,
- *     state: _var.dkim_state,
+ *     emailDomainId: testEmailDomain.id,
+ *     id: dkimId,
+ *     name: dkimName,
+ *     state: dkimState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetDkimsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDkims = oci.Email.getDkims({
- *     emailDomainId: oci_email_email_domain.test_email_domain.id,
- *     id: _var.dkim_id,
- *     name: _var.dkim_name,
- *     state: _var.dkim_state,
+ *     emailDomainId: testEmailDomain.id,
+ *     id: dkimId,
+ *     name: dkimName,
+ *     state: dkimState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

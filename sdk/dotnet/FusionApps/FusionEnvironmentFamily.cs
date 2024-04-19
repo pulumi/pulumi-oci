@@ -25,20 +25,20 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testFusionEnvironmentFamily = new Oci.FusionApps.FusionEnvironmentFamily("testFusionEnvironmentFamily", new()
+    ///     var testFusionEnvironmentFamily = new Oci.FusionApps.FusionEnvironmentFamily("test_fusion_environment_family", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Fusion_environment_family_display_name,
-    ///         SubscriptionIds = @var.Fusion_environment_family_subscription_ids,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = fusionEnvironmentFamilyDisplayName,
+    ///         SubscriptionIds = fusionEnvironmentFamilySubscriptionIds,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
     ///         FamilyMaintenancePolicy = new Oci.FusionApps.Inputs.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs
     ///         {
-    ///             ConcurrentMaintenance = @var.Fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
-    ///             IsMonthlyPatchingEnabled = @var.Fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
-    ///             QuarterlyUpgradeBeginTimes = @var.Fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
+    ///             ConcurrentMaintenance = fusionEnvironmentFamilyFamilyMaintenancePolicyConcurrentMaintenance,
+    ///             IsMonthlyPatchingEnabled = fusionEnvironmentFamilyFamilyMaintenancePolicyIsMonthlyPatchingEnabled,
+    ///             QuarterlyUpgradeBeginTimes = fusionEnvironmentFamilyFamilyMaintenancePolicyQuarterlyUpgradeBeginTimes,
     ///         },
     ///         FreeformTags = 
     ///         {

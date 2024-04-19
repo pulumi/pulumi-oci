@@ -18,26 +18,26 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDatabaseConnector = new oci.database.ExternalDatabaseConnector("testExternalDatabaseConnector", {
+ * const testExternalDatabaseConnector = new oci.database.ExternalDatabaseConnector("test_external_database_connector", {
  *     connectionCredentials: {
- *         credentialName: _var.external_database_connector_connection_credentials_credential_name,
- *         credentialType: _var.external_database_connector_connection_credentials_credential_type,
- *         password: _var.external_database_connector_connection_credentials_password,
- *         role: _var.external_database_connector_connection_credentials_role,
- *         sslSecretId: oci_vault_secret.test_secret.id,
- *         username: _var.external_database_connector_connection_credentials_username,
+ *         credentialName: externalDatabaseConnectorConnectionCredentialsCredentialName,
+ *         credentialType: externalDatabaseConnectorConnectionCredentialsCredentialType,
+ *         password: externalDatabaseConnectorConnectionCredentialsPassword,
+ *         role: externalDatabaseConnectorConnectionCredentialsRole,
+ *         sslSecretId: testSecret.id,
+ *         username: externalDatabaseConnectorConnectionCredentialsUsername,
  *     },
  *     connectionString: {
- *         hostname: _var.external_database_connector_connection_string_hostname,
- *         port: _var.external_database_connector_connection_string_port,
- *         protocol: _var.external_database_connector_connection_string_protocol,
- *         service: _var.external_database_connector_connection_string_service,
+ *         hostname: externalDatabaseConnectorConnectionStringHostname,
+ *         port: externalDatabaseConnectorConnectionStringPort,
+ *         protocol: externalDatabaseConnectorConnectionStringProtocol,
+ *         service: externalDatabaseConnectorConnectionStringService,
  *     },
- *     connectorAgentId: oci_database_connector_agent.test_connector_agent.id,
- *     displayName: _var.external_database_connector_display_name,
- *     externalDatabaseId: oci_database_database.test_database.id,
- *     connectorType: _var.external_database_connector_connector_type,
- *     definedTags: _var.external_database_connector_defined_tags,
+ *     connectorAgentId: testConnectorAgent.id,
+ *     displayName: externalDatabaseConnectorDisplayName,
+ *     externalDatabaseId: testDatabase.id,
+ *     connectorType: externalDatabaseConnectorConnectorType,
+ *     definedTags: externalDatabaseConnectorDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

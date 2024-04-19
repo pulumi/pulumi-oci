@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProfile = oci.OsManagementHub.getProfile({
- *     profileId: oci_os_management_hub_profile.test_profile.id,
+ *     profileId: testProfileOciOsManagementHubProfile.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -136,7 +136,7 @@ export interface GetProfileResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProfile = oci.OsManagementHub.getProfile({
- *     profileId: oci_os_management_hub_profile.test_profile.id,
+ *     profileId: testProfileOciOsManagementHubProfile.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -28,13 +28,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCluster = new oci.core.ComputeCluster("testComputeCluster", {
- *     availabilityDomain: _var.compute_cluster_availability_domain,
- *     compartmentId: _var.compartment_id,
+ * const testComputeCluster = new oci.core.ComputeCluster("test_compute_cluster", {
+ *     availabilityDomain: computeClusterAvailabilityDomain,
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.compute_cluster_display_name,
+ *     displayName: computeClusterDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

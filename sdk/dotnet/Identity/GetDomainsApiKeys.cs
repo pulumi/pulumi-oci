@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApiKeys = Oci.Identity.GetDomainsApiKeys.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ApiKeyCount = @var.Api_key_api_key_count,
-        ///         ApiKeyFilter = @var.Api_key_api_key_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApiKeyCount = apiKeyApiKeyCount,
+        ///         ApiKeyFilter = apiKeyApiKeyFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Api_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Api_key_resource_type_schema_version,
-        ///         StartIndex = @var.Api_key_start_index,
+        ///         Authorization = apiKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = apiKeyResourceTypeSchemaVersion,
+        ///         StartIndex = apiKeyStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApiKeys = Oci.Identity.GetDomainsApiKeys.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ApiKeyCount = @var.Api_key_api_key_count,
-        ///         ApiKeyFilter = @var.Api_key_api_key_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApiKeyCount = apiKeyApiKeyCount,
+        ///         ApiKeyFilter = apiKeyApiKeyFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Api_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Api_key_resource_type_schema_version,
-        ///         StartIndex = @var.Api_key_start_index,
+        ///         Authorization = apiKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = apiKeyResourceTypeSchemaVersion,
+        ///         StartIndex = apiKeyStartIndex,
         ///     });
         /// 
         /// });

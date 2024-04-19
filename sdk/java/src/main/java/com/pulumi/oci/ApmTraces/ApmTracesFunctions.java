@@ -54,7 +54,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .apmDomainId(testApmDomain.id())
      *             .build());
      * 
      *     }
@@ -97,7 +97,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .apmDomainId(testApmDomain.id())
      *             .build());
      * 
      *     }
@@ -140,7 +140,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .apmDomainId(testApmDomain.id())
      *             .build());
      * 
      *     }
@@ -183,7 +183,7 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQueryQuickPicks = ApmTracesFunctions.getQueryQuickPicks(GetQueryQuickPicksArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .apmDomainId(testApmDomain.id())
      *             .build());
      * 
      *     }
@@ -225,11 +225,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_trace_key())
-     *             .timeTraceStartedGreaterThanOrEqualTo(var_.trace_time_trace_started_greater_than_or_equal_to())
-     *             .timeTraceStartedLessThan(var_.trace_time_trace_started_less_than())
-     *             .traceNamespace(var_.trace_trace_namespace())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceTraceKey)
+     *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
+     *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
+     *             .traceNamespace(traceTraceNamespace)
      *             .build());
      * 
      *     }
@@ -271,11 +271,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_trace_key())
-     *             .timeTraceStartedGreaterThanOrEqualTo(var_.trace_time_trace_started_greater_than_or_equal_to())
-     *             .timeTraceStartedLessThan(var_.trace_time_trace_started_less_than())
-     *             .traceNamespace(var_.trace_trace_namespace())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceTraceKey)
+     *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
+     *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
+     *             .traceNamespace(traceTraceNamespace)
      *             .build());
      * 
      *     }
@@ -317,11 +317,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_trace_key())
-     *             .timeTraceStartedGreaterThanOrEqualTo(var_.trace_time_trace_started_greater_than_or_equal_to())
-     *             .timeTraceStartedLessThan(var_.trace_time_trace_started_less_than())
-     *             .traceNamespace(var_.trace_trace_namespace())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceTraceKey)
+     *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
+     *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
+     *             .traceNamespace(traceTraceNamespace)
      *             .build());
      * 
      *     }
@@ -363,11 +363,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrace = ApmTracesFunctions.getTrace(GetTraceArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_trace_key())
-     *             .timeTraceStartedGreaterThanOrEqualTo(var_.trace_time_trace_started_greater_than_or_equal_to())
-     *             .timeTraceStartedLessThan(var_.trace_time_trace_started_less_than())
-     *             .traceNamespace(var_.trace_trace_namespace())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceTraceKey)
+     *             .timeTraceStartedGreaterThanOrEqualTo(traceTimeTraceStartedGreaterThanOrEqualTo)
+     *             .timeTraceStartedLessThan(traceTimeTraceStartedLessThan)
+     *             .traceNamespace(traceTraceNamespace)
      *             .build());
      * 
      *     }
@@ -409,12 +409,12 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
-     *             .serverName(var_.trace_aggregated_snapshot_data_server_name())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .spanKey(var_.trace_aggregated_snapshot_data_span_key())
-     *             .spanName(var_.trace_aggregated_snapshot_data_span_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceAggregatedSnapshotDataTraceKey)
+     *             .serverName(traceAggregatedSnapshotDataServerName)
+     *             .serviceName(testService.name())
+     *             .spanKey(traceAggregatedSnapshotDataSpanKey)
+     *             .spanName(traceAggregatedSnapshotDataSpanName)
      *             .build());
      * 
      *     }
@@ -456,12 +456,12 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
-     *             .serverName(var_.trace_aggregated_snapshot_data_server_name())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .spanKey(var_.trace_aggregated_snapshot_data_span_key())
-     *             .spanName(var_.trace_aggregated_snapshot_data_span_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceAggregatedSnapshotDataTraceKey)
+     *             .serverName(traceAggregatedSnapshotDataServerName)
+     *             .serviceName(testService.name())
+     *             .spanKey(traceAggregatedSnapshotDataSpanKey)
+     *             .spanName(traceAggregatedSnapshotDataSpanName)
      *             .build());
      * 
      *     }
@@ -503,12 +503,12 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
-     *             .serverName(var_.trace_aggregated_snapshot_data_server_name())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .spanKey(var_.trace_aggregated_snapshot_data_span_key())
-     *             .spanName(var_.trace_aggregated_snapshot_data_span_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceAggregatedSnapshotDataTraceKey)
+     *             .serverName(traceAggregatedSnapshotDataServerName)
+     *             .serviceName(testService.name())
+     *             .spanKey(traceAggregatedSnapshotDataSpanKey)
+     *             .spanName(traceAggregatedSnapshotDataSpanName)
      *             .build());
      * 
      *     }
@@ -550,12 +550,12 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceAggregatedSnapshotData = ApmTracesFunctions.getTraceAggregatedSnapshotData(GetTraceAggregatedSnapshotDataArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_aggregated_snapshot_data_trace_key())
-     *             .serverName(var_.trace_aggregated_snapshot_data_server_name())
-     *             .serviceName(oci_core_service.test_service().name())
-     *             .spanKey(var_.trace_aggregated_snapshot_data_span_key())
-     *             .spanName(var_.trace_aggregated_snapshot_data_span_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceAggregatedSnapshotDataTraceKey)
+     *             .serverName(traceAggregatedSnapshotDataServerName)
+     *             .serviceName(testService.name())
+     *             .spanKey(traceAggregatedSnapshotDataSpanKey)
+     *             .spanName(traceAggregatedSnapshotDataSpanName)
      *             .build());
      * 
      *     }
@@ -597,11 +597,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_snapshot_data_trace_key())
-     *             .isSummarized(var_.trace_snapshot_data_is_summarized())
-     *             .snapshotTime(var_.trace_snapshot_data_snapshot_time())
-     *             .threadId(oci_apm_traces_thread.test_thread().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceSnapshotDataTraceKey)
+     *             .isSummarized(traceSnapshotDataIsSummarized)
+     *             .snapshotTime(traceSnapshotDataSnapshotTime)
+     *             .threadId(testThread.id())
      *             .build());
      * 
      *     }
@@ -643,11 +643,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_snapshot_data_trace_key())
-     *             .isSummarized(var_.trace_snapshot_data_is_summarized())
-     *             .snapshotTime(var_.trace_snapshot_data_snapshot_time())
-     *             .threadId(oci_apm_traces_thread.test_thread().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceSnapshotDataTraceKey)
+     *             .isSummarized(traceSnapshotDataIsSummarized)
+     *             .snapshotTime(traceSnapshotDataSnapshotTime)
+     *             .threadId(testThread.id())
      *             .build());
      * 
      *     }
@@ -689,11 +689,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_snapshot_data_trace_key())
-     *             .isSummarized(var_.trace_snapshot_data_is_summarized())
-     *             .snapshotTime(var_.trace_snapshot_data_snapshot_time())
-     *             .threadId(oci_apm_traces_thread.test_thread().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceSnapshotDataTraceKey)
+     *             .isSummarized(traceSnapshotDataIsSummarized)
+     *             .snapshotTime(traceSnapshotDataSnapshotTime)
+     *             .threadId(testThread.id())
      *             .build());
      * 
      *     }
@@ -735,11 +735,11 @@ public final class ApmTracesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTraceSnapshotData = ApmTracesFunctions.getTraceSnapshotData(GetTraceSnapshotDataArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .traceKey(var_.trace_snapshot_data_trace_key())
-     *             .isSummarized(var_.trace_snapshot_data_is_summarized())
-     *             .snapshotTime(var_.trace_snapshot_data_snapshot_time())
-     *             .threadId(oci_apm_traces_thread.test_thread().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .traceKey(traceSnapshotDataTraceKey)
+     *             .isSummarized(traceSnapshotDataIsSummarized)
+     *             .snapshotTime(traceSnapshotDataSnapshotTime)
+     *             .threadId(testThread.id())
      *             .build());
      * 
      *     }

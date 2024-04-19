@@ -134,11 +134,11 @@ def get_ingress_gateways(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=var["compartment_id"],
-        id=var["ingress_gateway_id"],
-        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-        name=var["ingress_gateway_name"],
-        state=var["ingress_gateway_state"])
+    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=compartment_id,
+        id=ingress_gateway_id,
+        mesh_id=test_mesh["id"],
+        name=ingress_gateway_name,
+        state=ingress_gateway_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_ingress_gateways_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=var["compartment_id"],
-        id=var["ingress_gateway_id"],
-        mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-        name=var["ingress_gateway_name"],
-        state=var["ingress_gateway_state"])
+    test_ingress_gateways = oci.ServiceMesh.get_ingress_gateways(compartment_id=compartment_id,
+        id=ingress_gateway_id,
+        mesh_id=test_mesh["id"],
+        name=ingress_gateway_name,
+        state=ingress_gateway_state)
     ```
     <!--End PulumiCodeChooser -->
 

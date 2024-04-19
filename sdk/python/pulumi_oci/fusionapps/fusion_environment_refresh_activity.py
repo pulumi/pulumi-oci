@@ -299,9 +299,9 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fusion_environment_refresh_activity = oci.fusion_apps.FusionEnvironmentRefreshActivity("testFusionEnvironmentRefreshActivity",
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            source_fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
+        test_fusion_environment_refresh_activity = oci.fusion_apps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
+            fusion_environment_id=test_fusion_environment["id"],
+            source_fusion_environment_id=test_fusion_environment["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -340,9 +340,9 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fusion_environment_refresh_activity = oci.fusion_apps.FusionEnvironmentRefreshActivity("testFusionEnvironmentRefreshActivity",
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            source_fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
+        test_fusion_environment_refresh_activity = oci.fusion_apps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
+            fusion_environment_id=test_fusion_environment["id"],
+            source_fusion_environment_id=test_fusion_environment["id"])
         ```
         <!--End PulumiCodeChooser -->
 

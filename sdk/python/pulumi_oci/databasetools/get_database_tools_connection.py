@@ -320,7 +320,7 @@ def get_database_tools_connection(database_tools_connection_id: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=oci_database_tools_database_tools_connection["test_database_tools_connection"]["id"])
+    test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=test_database_tools_connection_oci_database_tools_database_tools_connection["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -373,7 +373,7 @@ def get_database_tools_connection_output(database_tools_connection_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=oci_database_tools_database_tools_connection["test_database_tools_connection"]["id"])
+    test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=test_database_tools_connection_oci_database_tools_database_tools_connection["id"])
     ```
     <!--End PulumiCodeChooser -->
 

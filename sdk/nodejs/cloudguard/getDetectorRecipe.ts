@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDetectorRecipe = oci.CloudGuard.getDetectorRecipe({
- *     detectorRecipeId: oci_cloud_guard_detector_recipe.test_detector_recipe.id,
+ *     detectorRecipeId: testDetectorRecipeOciCloudGuardDetectorRecipe.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,7 +125,7 @@ export interface GetDetectorRecipeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDetectorRecipe = oci.CloudGuard.getDetectorRecipe({
- *     detectorRecipeId: oci_cloud_guard_detector_recipe.test_detector_recipe.id,
+ *     detectorRecipeId: testDetectorRecipeOciCloudGuardDetectorRecipe.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

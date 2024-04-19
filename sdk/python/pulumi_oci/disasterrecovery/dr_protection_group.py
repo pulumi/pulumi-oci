@@ -461,6 +461,98 @@ class DrProtectionGroup(pulumi.CustomResource):
 
         Create a DR protection group.
 
+        ## Example Usage
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        config = pulumi.Config()
+        disassociate_trigger = config.get_float("disassociateTrigger")
+        if disassociate_trigger is None:
+            disassociate_trigger = 0
+        test_dr_protection_group = oci.disaster_recovery.DrProtectionGroup("test_dr_protection_group",
+            compartment_id=compartment_id,
+            display_name=dr_protection_group_display_name,
+            log_location=oci.disaster_recovery.DrProtectionGroupLogLocationArgs(
+                bucket=dr_protection_group_log_location_bucket,
+                namespace=dr_protection_group_log_location_namespace,
+            ),
+            association=oci.disaster_recovery.DrProtectionGroupAssociationArgs(
+                role=dr_protection_group_association_role,
+                peer_id=dr_protection_group_association_peer_id,
+                peer_region=dr_protection_group_association_peer_region,
+            ),
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            freeform_tags={
+                "Department": "Finance",
+            },
+            disassociate_trigger=disassociate_trigger,
+            members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
+                member_id=dr_protection_group_members_member_id,
+                member_type=dr_protection_group_members_member_type,
+                backend_set_mappings=[oci.disaster_recovery.DrProtectionGroupMemberBackendSetMappingArgs(
+                    destination_backend_set_name=test_backend_set["name"],
+                    is_backend_set_for_non_movable=dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
+                    source_backend_set_name=test_backend_set["name"],
+                )],
+                block_volume_operations=[oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationArgs(
+                    attachment_details=oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs(
+                        volume_attachment_reference_instance_id=test_instance["id"],
+                    ),
+                    block_volume_id=test_volume["id"],
+                    mount_details=oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs(
+                        mount_point=dr_protection_group_members_block_volume_operations_mount_details_mount_point,
+                    ),
+                )],
+                destination_availability_domain=dr_protection_group_members_destination_availability_domain,
+                destination_capacity_reservation_id=destination_capacity_reservation_id,
+                destination_compartment_id=test_compartment["id"],
+                destination_dedicated_vm_host_id=test_dedicated_vm_host["id"],
+                destination_load_balancer_id=test_load_balancer["id"],
+                destination_network_load_balancer_id=test_network_load_balancer["id"],
+                export_mappings=[oci.disaster_recovery.DrProtectionGroupMemberExportMappingArgs(
+                    destination_mount_target_id=test_mount_target["id"],
+                    export_id=test_export["id"],
+                )],
+                file_system_operations=[oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationArgs(
+                    export_path=dr_protection_group_members_file_system_operations_export_path,
+                    mount_details=oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationMountDetailsArgs(
+                        mount_target_id=test_mount_target["id"],
+                    ),
+                    mount_point=dr_protection_group_members_file_system_operations_mount_point,
+                    mount_target_id=test_mount_target["id"],
+                    unmount_details=oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs(
+                        mount_target_id=test_mount_target["id"],
+                    ),
+                )],
+                is_movable=dr_protection_group_members_is_movable,
+                is_retain_fault_domain=dr_protection_group_members_is_retain_fault_domain,
+                is_start_stop_enabled=dr_protection_group_members_is_start_stop_enabled,
+                password_vault_secret_id=password_vault_secret_id,
+                vnic_mappings=[
+                    oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
+                        destination_nsg_id_lists=dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
+                        destination_primary_private_ip_address=dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
+                        destination_primary_private_ip_hostname_label=dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
+                        destination_subnet_id=test_subnet["id"],
+                        source_vnic_id=test_vnic["id"],
+                    ),
+                    oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
+                        destination_nsg_id_lists=dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
+                        destination_primary_private_ip_address=dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
+                        destination_primary_private_ip_hostname_label=dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        destination_subnet_id=test_subnet["id"],
+                        source_vnic_id=test_vnic["id"],
+                    ),
+                ],
+            )])
+        ```
+        <!--End PulumiCodeChooser -->
+
         ## Create
 
         Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
@@ -502,6 +594,98 @@ class DrProtectionGroup(pulumi.CustomResource):
         This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
 
         Create a DR protection group.
+
+        ## Example Usage
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        config = pulumi.Config()
+        disassociate_trigger = config.get_float("disassociateTrigger")
+        if disassociate_trigger is None:
+            disassociate_trigger = 0
+        test_dr_protection_group = oci.disaster_recovery.DrProtectionGroup("test_dr_protection_group",
+            compartment_id=compartment_id,
+            display_name=dr_protection_group_display_name,
+            log_location=oci.disaster_recovery.DrProtectionGroupLogLocationArgs(
+                bucket=dr_protection_group_log_location_bucket,
+                namespace=dr_protection_group_log_location_namespace,
+            ),
+            association=oci.disaster_recovery.DrProtectionGroupAssociationArgs(
+                role=dr_protection_group_association_role,
+                peer_id=dr_protection_group_association_peer_id,
+                peer_region=dr_protection_group_association_peer_region,
+            ),
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            freeform_tags={
+                "Department": "Finance",
+            },
+            disassociate_trigger=disassociate_trigger,
+            members=[oci.disaster_recovery.DrProtectionGroupMemberArgs(
+                member_id=dr_protection_group_members_member_id,
+                member_type=dr_protection_group_members_member_type,
+                backend_set_mappings=[oci.disaster_recovery.DrProtectionGroupMemberBackendSetMappingArgs(
+                    destination_backend_set_name=test_backend_set["name"],
+                    is_backend_set_for_non_movable=dr_protection_group_members_backend_set_mappings_is_backend_set_for_non_movable,
+                    source_backend_set_name=test_backend_set["name"],
+                )],
+                block_volume_operations=[oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationArgs(
+                    attachment_details=oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs(
+                        volume_attachment_reference_instance_id=test_instance["id"],
+                    ),
+                    block_volume_id=test_volume["id"],
+                    mount_details=oci.disaster_recovery.DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs(
+                        mount_point=dr_protection_group_members_block_volume_operations_mount_details_mount_point,
+                    ),
+                )],
+                destination_availability_domain=dr_protection_group_members_destination_availability_domain,
+                destination_capacity_reservation_id=destination_capacity_reservation_id,
+                destination_compartment_id=test_compartment["id"],
+                destination_dedicated_vm_host_id=test_dedicated_vm_host["id"],
+                destination_load_balancer_id=test_load_balancer["id"],
+                destination_network_load_balancer_id=test_network_load_balancer["id"],
+                export_mappings=[oci.disaster_recovery.DrProtectionGroupMemberExportMappingArgs(
+                    destination_mount_target_id=test_mount_target["id"],
+                    export_id=test_export["id"],
+                )],
+                file_system_operations=[oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationArgs(
+                    export_path=dr_protection_group_members_file_system_operations_export_path,
+                    mount_details=oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationMountDetailsArgs(
+                        mount_target_id=test_mount_target["id"],
+                    ),
+                    mount_point=dr_protection_group_members_file_system_operations_mount_point,
+                    mount_target_id=test_mount_target["id"],
+                    unmount_details=oci.disaster_recovery.DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs(
+                        mount_target_id=test_mount_target["id"],
+                    ),
+                )],
+                is_movable=dr_protection_group_members_is_movable,
+                is_retain_fault_domain=dr_protection_group_members_is_retain_fault_domain,
+                is_start_stop_enabled=dr_protection_group_members_is_start_stop_enabled,
+                password_vault_secret_id=password_vault_secret_id,
+                vnic_mappings=[
+                    oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
+                        destination_nsg_id_lists=dr_protection_group_members_vnic_mapping_destination_nsg_id_list,
+                        destination_primary_private_ip_address=dr_protection_group_members_vnic_mapping_destination_primary_private_ip_address,
+                        destination_primary_private_ip_hostname_label=dr_protection_group_members_vnic_mapping_destination_primary_private_ip_hostname_label,
+                        destination_subnet_id=test_subnet["id"],
+                        source_vnic_id=test_vnic["id"],
+                    ),
+                    oci.disaster_recovery.DrProtectionGroupMemberVnicMappingArgs(
+                        destination_nsg_id_lists=dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
+                        destination_primary_private_ip_address=dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
+                        destination_primary_private_ip_hostname_label=dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        destination_subnet_id=test_subnet["id"],
+                        source_vnic_id=test_vnic["id"],
+                    ),
+                ],
+            )])
+        ```
+        <!--End PulumiCodeChooser -->
 
         ## Create
 

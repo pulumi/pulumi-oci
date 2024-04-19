@@ -199,12 +199,12 @@ def get_domains_my_apps(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_apps = oci.Identity.get_domains_my_apps(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_app_count=var["my_app_my_app_count"],
-        my_app_filter=var["my_app_my_app_filter"],
-        authorization=var["my_app_authorization"],
-        resource_type_schema_version=var["my_app_resource_type_schema_version"],
-        start_index=var["my_app_start_index"])
+    test_my_apps = oci.Identity.get_domains_my_apps(idcs_endpoint=test_domain["url"],
+        my_app_count=my_app_my_app_count,
+        my_app_filter=my_app_my_app_filter,
+        authorization=my_app_authorization,
+        resource_type_schema_version=my_app_resource_type_schema_version,
+        start_index=my_app_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -269,12 +269,12 @@ def get_domains_my_apps_output(authorization: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_my_apps = oci.Identity.get_domains_my_apps(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_app_count=var["my_app_my_app_count"],
-        my_app_filter=var["my_app_my_app_filter"],
-        authorization=var["my_app_authorization"],
-        resource_type_schema_version=var["my_app_resource_type_schema_version"],
-        start_index=var["my_app_start_index"])
+    test_my_apps = oci.Identity.get_domains_my_apps(idcs_endpoint=test_domain["url"],
+        my_app_count=my_app_my_app_count,
+        my_app_filter=my_app_my_app_filter,
+        authorization=my_app_authorization,
+        resource_type_schema_version=my_app_resource_type_schema_version,
+        start_index=my_app_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

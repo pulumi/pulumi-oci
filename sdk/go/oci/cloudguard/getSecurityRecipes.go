@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetSecurityRecipes(ctx, &cloudguard.GetSecurityRecipesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Security_recipe_display_name),
-//				Id:            pulumi.StringRef(_var.Security_recipe_id),
-//				State:         pulumi.StringRef(_var.Security_recipe_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(securityRecipeDisplayName),
+//				Id:            pulumi.StringRef(securityRecipeId),
+//				State:         pulumi.StringRef(securityRecipeState),
 //			}, nil)
 //			if err != nil {
 //				return err

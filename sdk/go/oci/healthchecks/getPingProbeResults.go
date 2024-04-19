@@ -37,10 +37,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := HealthChecks.GetPingProbeResults(ctx, &healthchecks.GetPingProbeResultsArgs{
-//				ProbeConfigurationId:          oci_health_checks_probe_configuration.Test_probe_configuration.Id,
-//				StartTimeGreaterThanOrEqualTo: pulumi.Float64Ref(_var.Ping_probe_result_start_time_greater_than_or_equal_to),
-//				StartTimeLessThanOrEqualTo:    pulumi.Float64Ref(_var.Ping_probe_result_start_time_less_than_or_equal_to),
-//				Target:                        pulumi.StringRef(_var.Ping_probe_result_target),
+//				ProbeConfigurationId:          testProbeConfiguration.Id,
+//				StartTimeGreaterThanOrEqualTo: pulumi.Float64Ref(pingProbeResultStartTimeGreaterThanOrEqualTo),
+//				StartTimeLessThanOrEqualTo:    pulumi.Float64Ref(pingProbeResultStartTimeLessThanOrEqualTo),
+//				Target:                        pulumi.StringRef(pingProbeResultTarget),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {
         ///     var testServiceCatalogAssociation = Oci.ServiceCatalog.GetServiceCatalogAssociation.Invoke(new()
         ///     {
-        ///         ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
+        ///         ServiceCatalogAssociationId = testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {
         ///     var testServiceCatalogAssociation = Oci.ServiceCatalog.GetServiceCatalogAssociation.Invoke(new()
         ///     {
-        ///         ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
+        ///         ServiceCatalogAssociationId = testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.Id,
         ///     });
         /// 
         /// });

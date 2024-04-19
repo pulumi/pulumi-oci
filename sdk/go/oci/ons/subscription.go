@@ -35,11 +35,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ons.NewSubscription(ctx, "testSubscription", &Ons.SubscriptionArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Endpoint:      pulumi.Any(_var.Subscription_endpoint),
-//				Protocol:      pulumi.Any(_var.Subscription_protocol),
-//				TopicId:       pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
+//			_, err := Ons.NewSubscription(ctx, "test_subscription", &Ons.SubscriptionArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Endpoint:      pulumi.Any(subscriptionEndpoint),
+//				Protocol:      pulumi.Any(subscriptionProtocol),
+//				TopicId:       pulumi.Any(testNotificationTopic.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

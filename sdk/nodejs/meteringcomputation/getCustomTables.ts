@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCustomTables = oci.MeteringComputation.getCustomTables({
- *     compartmentId: _var.compartment_id,
- *     savedReportId: oci_metering_computation_saved_report.test_saved_report.id,
+ *     compartmentId: compartmentId,
+ *     savedReportId: testSavedReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetCustomTablesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCustomTables = oci.MeteringComputation.getCustomTables({
- *     compartmentId: _var.compartment_id,
- *     savedReportId: oci_metering_computation_saved_report.test_saved_report.id,
+ *     compartmentId: compartmentId,
+ *     savedReportId: testSavedReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -35,15 +35,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.NewDkim(ctx, "testDkim", &Email.DkimArgs{
-//				EmailDomainId: pulumi.Any(oci_email_email_domain.Test_email_domain.Id),
+//			_, err := Email.NewDkim(ctx, "test_dkim", &Email.DkimArgs{
+//				EmailDomainId: pulumi.Any(testEmailDomain.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Dkim_description),
+//				Description: pulumi.Any(dkimDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
+//				Name: pulumi.Any(dkimName),
 //			})
 //			if err != nil {
 //				return err

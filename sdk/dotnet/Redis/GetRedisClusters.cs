@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Redis
         /// {
         ///     var testRedisClusters = Oci.Redis.GetRedisClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Redis_cluster_display_name,
-        ///         Id = @var.Redis_cluster_id,
-        ///         State = @var.Redis_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = redisClusterDisplayName,
+        ///         Id = redisClusterId,
+        ///         State = redisClusterState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Redis
         /// {
         ///     var testRedisClusters = Oci.Redis.GetRedisClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Redis_cluster_display_name,
-        ///         Id = @var.Redis_cluster_id,
-        ///         State = @var.Redis_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = redisClusterDisplayName,
+        ///         Id = redisClusterId,
+        ///         State = redisClusterState,
         ///     });
         /// 
         /// });

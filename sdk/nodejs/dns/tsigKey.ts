@@ -17,12 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTsigKey = new oci.dns.TsigKey("testTsigKey", {
- *     algorithm: _var.tsig_key_algorithm,
- *     compartmentId: _var.compartment_id,
- *     secret: _var.tsig_key_secret,
- *     definedTags: _var.tsig_key_defined_tags,
- *     freeformTags: _var.tsig_key_freeform_tags,
+ * const testTsigKey = new oci.dns.TsigKey("test_tsig_key", {
+ *     algorithm: tsigKeyAlgorithm,
+ *     compartmentId: compartmentId,
+ *     name: tsigKeyName,
+ *     secret: tsigKeySecret,
+ *     definedTags: tsigKeyDefinedTags,
+ *     freeformTags: tsigKeyFreeformTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

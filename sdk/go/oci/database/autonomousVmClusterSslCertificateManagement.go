@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousVmClusterSslCertificateManagement(ctx, "testAutonomousVmClusterSslCertificateManagement", &Database.AutonomousVmClusterSslCertificateManagementArgs{
-//				AutonomousVmClusterId:     pulumi.Any(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
-//				CertificateGenerationType: pulumi.Any(_var.Autonomous_vm_cluster_ssl_certificate_management_certificate_generation_type),
-//				CaBundleId:                pulumi.Any(oci_certificates_management_ca_bundle.Test_ca_bundle.Id),
-//				CertificateAuthorityId:    pulumi.Any(oci_certificates_management_certificate_authority.Test_certificate_authority.Id),
-//				CertificateId:             pulumi.Any(oci_apigateway_certificate.Test_certificate.Id),
+//			_, err := Database.NewAutonomousVmClusterSslCertificateManagement(ctx, "test_autonomous_vm_cluster_ssl_certificate_management", &Database.AutonomousVmClusterSslCertificateManagementArgs{
+//				AutonomousVmClusterId:     pulumi.Any(testAutonomousVmCluster.Id),
+//				CertificateGenerationType: pulumi.Any(autonomousVmClusterSslCertificateManagementCertificateGenerationType),
+//				CaBundleId:                pulumi.Any(testCaBundle.Id),
+//				CertificateAuthorityId:    pulumi.Any(testCertificateAuthority.Id),
+//				CertificateId:             pulumi.Any(testCertificate.Id),
 //			})
 //			if err != nil {
 //				return err

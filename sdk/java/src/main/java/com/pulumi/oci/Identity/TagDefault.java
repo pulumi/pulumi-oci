@@ -51,10 +51,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testTagDefault = new TagDefault(&#34;testTagDefault&#34;, TagDefaultArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
- *             .value(var_.tag_default_value())
- *             .isRequired(var_.tag_default_is_required())
+ *             .compartmentId(compartmentId)
+ *             .tagDefinitionId(testTagDefinition.id())
+ *             .value(tagDefaultValue)
+ *             .isRequired(tagDefaultIsRequired)
  *             .build());
  * 
  *     }

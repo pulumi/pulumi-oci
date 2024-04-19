@@ -31,15 +31,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetRecommendations(ctx, &optimizer.GetRecommendationsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: _var.Recommendation_compartment_id_in_subtree,
-//				CategoryId:             pulumi.StringRef(oci_optimizer_category.Test_category.Id),
-//				CategoryName:           pulumi.StringRef(oci_optimizer_category.Test_category.Name),
-//				ChildTenancyIds:        _var.Recommendation_child_tenancy_ids,
-//				IncludeOrganization:    pulumi.BoolRef(_var.Recommendation_include_organization),
-//				Name:                   pulumi.StringRef(_var.Recommendation_name),
-//				State:                  pulumi.StringRef(_var.Recommendation_state),
-//				Status:                 pulumi.StringRef(_var.Recommendation_status),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: recommendationCompartmentIdInSubtree,
+//				CategoryId:             pulumi.StringRef(testCategory.Id),
+//				CategoryName:           pulumi.StringRef(testCategory.Name),
+//				ChildTenancyIds:        recommendationChildTenancyIds,
+//				IncludeOrganization:    pulumi.BoolRef(recommendationIncludeOrganization),
+//				Name:                   pulumi.StringRef(recommendationName),
+//				State:                  pulumi.StringRef(recommendationState),
+//				Status:                 pulumi.StringRef(recommendationStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -65,17 +65,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRouteTable = new RouteTable(&#34;testRouteTable&#34;, RouteTableArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .compartmentId(compartmentId)
+ *             .vcnId(testVcn.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.route_table_display_name())
+ *             .displayName(routeTableDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .routeRules(RouteTableRouteRuleArgs.builder()
- *                 .networkEntityId(oci_core_internet_gateway.test_internet_gateway().id())
- *                 .cidrBlock(var_.route_table_route_rules_cidr_block())
- *                 .description(var_.route_table_route_rules_description())
- *                 .destination(var_.route_table_route_rules_destination())
- *                 .destinationType(var_.route_table_route_rules_destination_type())
+ *                 .networkEntityId(testInternetGateway.id())
+ *                 .cidrBlock(routeTableRouteRulesCidrBlock)
+ *                 .description(routeTableRouteRulesDescription)
+ *                 .destination(routeTableRouteRulesDestination)
+ *                 .destinationType(routeTableRouteRulesDestinationType)
  *                 .build())
  *             .build());
  * 

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testEkmsPrivateEndpoint = Oci.Kms.GetEkmsPrivateEndpoint.Invoke(new()
         ///     {
-        ///         EkmsPrivateEndpointId = oci_kms_ekms_private_endpoint.Test_ekms_private_endpoint.Id,
+        ///         EkmsPrivateEndpointId = testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testEkmsPrivateEndpoint = Oci.Kms.GetEkmsPrivateEndpoint.Invoke(new()
         ///     {
-        ///         EkmsPrivateEndpointId = oci_kms_ekms_private_endpoint.Test_ekms_private_endpoint.Id,
+        ///         EkmsPrivateEndpointId = testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.Id,
         ///     });
         /// 
         /// });

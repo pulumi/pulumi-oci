@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetReplicas(ctx, &mysql.GetReplicasArgs{
-//				CompartmentId:   _var.Compartment_id,
-//				ConfigurationId: pulumi.StringRef(oci_mysql_mysql_configuration.Test_mysql_configuration.Id),
-//				DbSystemId:      pulumi.StringRef(oci_mysql_mysql_db_system.Test_mysql_db_system.Id),
-//				DisplayName:     pulumi.StringRef(_var.Replica_display_name),
-//				IsUpToDate:      pulumi.BoolRef(_var.Replica_is_up_to_date),
-//				ReplicaId:       pulumi.StringRef(oci_mysql_replica.Test_replica.Id),
-//				State:           pulumi.StringRef(_var.Replica_state),
+//				CompartmentId:   compartmentId,
+//				ConfigurationId: pulumi.StringRef(testMysqlConfiguration.Id),
+//				DbSystemId:      pulumi.StringRef(testMysqlDbSystem.Id),
+//				DisplayName:     pulumi.StringRef(replicaDisplayName),
+//				IsUpToDate:      pulumi.BoolRef(replicaIsUpToDate),
+//				ReplicaId:       pulumi.StringRef(testReplica.Id),
+//				State:           pulumi.StringRef(replicaState),
 //			}, nil)
 //			if err != nil {
 //				return err

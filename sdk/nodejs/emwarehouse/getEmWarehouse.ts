@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEmWarehouse = oci.EmWarehouse.getEmWarehouse({
- *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
+ *     emWarehouseId: testEmWarehouseOciEmWarehouseEmWarehouse.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -123,7 +123,7 @@ export interface GetEmWarehouseResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEmWarehouse = oci.EmWarehouse.getEmWarehouse({
- *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
+ *     emWarehouseId: testEmWarehouseOciEmWarehouseEmWarehouse.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

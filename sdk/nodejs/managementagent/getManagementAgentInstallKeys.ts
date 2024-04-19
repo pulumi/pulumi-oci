@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentInstallKeys = oci.ManagementAgent.getManagementAgentInstallKeys({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.management_agent_install_key_access_level,
- *     compartmentIdInSubtree: _var.management_agent_install_key_compartment_id_in_subtree,
- *     displayName: _var.management_agent_install_key_display_name,
- *     state: _var.management_agent_install_key_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: managementAgentInstallKeyAccessLevel,
+ *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree,
+ *     displayName: managementAgentInstallKeyDisplayName,
+ *     state: managementAgentInstallKeyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetManagementAgentInstallKeysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentInstallKeys = oci.ManagementAgent.getManagementAgentInstallKeys({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.management_agent_install_key_access_level,
- *     compartmentIdInSubtree: _var.management_agent_install_key_compartment_id_in_subtree,
- *     displayName: _var.management_agent_install_key_display_name,
- *     state: _var.management_agent_install_key_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: managementAgentInstallKeyAccessLevel,
+ *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree,
+ *     displayName: managementAgentInstallKeyDisplayName,
+ *     state: managementAgentInstallKeyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

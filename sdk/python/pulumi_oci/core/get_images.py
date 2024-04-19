@@ -186,14 +186,14 @@ def get_images(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_images = oci.Core.get_images(compartment_id=var["compartment_id"],
-        display_name=var["image_display_name"],
-        operating_system=var["image_operating_system"],
-        operating_system_version=var["image_operating_system_version"],
-        shape=var["image_shape"],
-        state=var["image_state"],
-        sort_by=var["image_sort_by"],
-        sort_order=var["image_sort_order"])
+    test_images = oci.Core.get_images(compartment_id=compartment_id,
+        display_name=image_display_name,
+        operating_system=image_operating_system,
+        operating_system_version=image_operating_system_version,
+        shape=image_shape,
+        state=image_state,
+        sort_by=image_sort_by,
+        sort_order=image_sort_order)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -267,14 +267,14 @@ def get_images_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_images = oci.Core.get_images(compartment_id=var["compartment_id"],
-        display_name=var["image_display_name"],
-        operating_system=var["image_operating_system"],
-        operating_system_version=var["image_operating_system_version"],
-        shape=var["image_shape"],
-        state=var["image_state"],
-        sort_by=var["image_sort_by"],
-        sort_order=var["image_sort_order"])
+    test_images = oci.Core.get_images(compartment_id=compartment_id,
+        display_name=image_display_name,
+        operating_system=image_operating_system,
+        operating_system_version=image_operating_system_version,
+        shape=image_shape,
+        state=image_state,
+        sort_by=image_sort_by,
+        sort_order=image_sort_order)
     ```
     <!--End PulumiCodeChooser -->
 

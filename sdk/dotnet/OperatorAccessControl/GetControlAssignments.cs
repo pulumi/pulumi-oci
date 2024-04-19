@@ -29,11 +29,11 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testOperatorControlAssignments = Oci.OperatorAccessControl.GetControlAssignments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         OperatorControlName = oci_operator_access_control_operator_control.Test_operator_control.Name,
-        ///         ResourceName = @var.Operator_control_assignment_resource_name,
-        ///         ResourceType = @var.Operator_control_assignment_resource_type,
-        ///         State = @var.Operator_control_assignment_state,
+        ///         CompartmentId = compartmentId,
+        ///         OperatorControlName = testOperatorControl.Name,
+        ///         ResourceName = operatorControlAssignmentResourceName,
+        ///         ResourceType = operatorControlAssignmentResourceType,
+        ///         State = operatorControlAssignmentState,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testOperatorControlAssignments = Oci.OperatorAccessControl.GetControlAssignments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         OperatorControlName = oci_operator_access_control_operator_control.Test_operator_control.Name,
-        ///         ResourceName = @var.Operator_control_assignment_resource_name,
-        ///         ResourceType = @var.Operator_control_assignment_resource_type,
-        ///         State = @var.Operator_control_assignment_state,
+        ///         CompartmentId = compartmentId,
+        ///         OperatorControlName = testOperatorControl.Name,
+        ///         ResourceName = operatorControlAssignmentResourceName,
+        ///         ResourceType = operatorControlAssignmentResourceType,
+        ///         State = operatorControlAssignmentState,
         ///     });
         /// 
         /// });

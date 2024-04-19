@@ -45,12 +45,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFusionEnvironmentAdminUser = new FusionEnvironmentAdminUser(&#34;testFusionEnvironmentAdminUser&#34;, FusionEnvironmentAdminUserArgs.builder()        
- *             .emailAddress(var_.fusion_environment_admin_user_email_address())
- *             .firstName(var_.fusion_environment_admin_user_first_name())
- *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
- *             .lastName(var_.fusion_environment_admin_user_last_name())
- *             .password(var_.fusion_environment_admin_user_password())
- *             .username(var_.fusion_environment_admin_user_username())
+ *             .emailAddress(fusionEnvironmentAdminUserEmailAddress)
+ *             .firstName(fusionEnvironmentAdminUserFirstName)
+ *             .fusionEnvironmentId(testFusionEnvironment.id())
+ *             .lastName(fusionEnvironmentAdminUserLastName)
+ *             .password(fusionEnvironmentAdminUserPassword)
+ *             .username(fusionEnvironmentAdminUserUsername)
  *             .build());
  * 
  *     }

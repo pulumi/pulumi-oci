@@ -101,9 +101,9 @@ def get_console_history_data(console_history_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_console_history_data = oci.Core.get_console_history_data(console_history_id=oci_core_console_history["test_console_history"]["id"],
-        length=var["console_history_content_length"],
-        offset=var["console_history_content_offset"])
+    test_console_history_data = oci.Core.get_console_history_data(console_history_id=test_console_history["id"],
+        length=console_history_content_length,
+        offset=console_history_content_offset)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -146,9 +146,9 @@ def get_console_history_data_output(console_history_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_console_history_data = oci.Core.get_console_history_data(console_history_id=oci_core_console_history["test_console_history"]["id"],
-        length=var["console_history_content_length"],
-        offset=var["console_history_content_offset"])
+    test_console_history_data = oci.Core.get_console_history_data(console_history_id=test_console_history["id"],
+        length=console_history_content_length,
+        offset=console_history_content_offset)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -25,10 +25,10 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testStreamDistributionChannel = new Oci.MediaServices.StreamDistributionChannel("testStreamDistributionChannel", new()
+    ///     var testStreamDistributionChannel = new Oci.MediaServices.StreamDistributionChannel("test_stream_distribution_channel", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Stream_distribution_channel_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = streamDistributionChannelDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -41,11 +41,11 @@ namespace Pulumi.Oci.MediaServices
     ///         {
     ///             new Oci.MediaServices.Inputs.StreamDistributionChannelLockArgs
     ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 Type = @var.Stream_distribution_channel_locks_type,
-    ///                 Message = @var.Stream_distribution_channel_locks_message,
-    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
-    ///                 TimeCreated = @var.Stream_distribution_channel_locks_time_created,
+    ///                 CompartmentId = compartmentId,
+    ///                 Type = streamDistributionChannelLocksType,
+    ///                 Message = streamDistributionChannelLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = streamDistributionChannelLocksTimeCreated,
     ///             },
     ///         },
     ///     });

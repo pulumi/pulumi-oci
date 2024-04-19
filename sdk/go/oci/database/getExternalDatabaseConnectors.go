@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetExternalDatabaseConnectors(ctx, &database.GetExternalDatabaseConnectorsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				ExternalDatabaseId: oci_database_database.Test_database.Id,
-//				DisplayName:        pulumi.StringRef(_var.External_database_connector_display_name),
-//				State:              pulumi.StringRef(_var.External_database_connector_state),
+//				CompartmentId:      compartmentId,
+//				ExternalDatabaseId: testDatabase.Id,
+//				DisplayName:        pulumi.StringRef(externalDatabaseConnectorDisplayName),
+//				State:              pulumi.StringRef(externalDatabaseConnectorState),
 //			}, nil)
 //			if err != nil {
 //				return err

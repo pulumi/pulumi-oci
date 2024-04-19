@@ -750,57 +750,57 @@ class BuildPipelineStage(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_build_pipeline_stage = oci.dev_ops.BuildPipelineStage("testBuildPipelineStage",
-            build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
+        test_build_pipeline_stage = oci.dev_ops.BuildPipelineStage("test_build_pipeline_stage",
+            build_pipeline_id=test_build_pipeline["id"],
             build_pipeline_stage_predecessor_collection=oci.dev_ops.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs(
-                    id=var["build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id"],
+                    id=build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id,
                 )],
             ),
-            build_pipeline_stage_type=var["build_pipeline_stage_build_pipeline_stage_type"],
+            build_pipeline_stage_type=build_pipeline_stage_build_pipeline_stage_type,
             build_runner_shape_config=oci.dev_ops.BuildPipelineStageBuildRunnerShapeConfigArgs(
-                build_runner_type=var["build_pipeline_stage_build_runner_shape_config_build_runner_type"],
-                memory_in_gbs=var["build_pipeline_stage_build_runner_shape_config_memory_in_gbs"],
-                ocpus=var["build_pipeline_stage_build_runner_shape_config_ocpus"],
+                build_runner_type=build_pipeline_stage_build_runner_shape_config_build_runner_type,
+                memory_in_gbs=build_pipeline_stage_build_runner_shape_config_memory_in_gbs,
+                ocpus=build_pipeline_stage_build_runner_shape_config_ocpus,
             ),
             build_source_collection=oci.dev_ops.BuildPipelineStageBuildSourceCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildSourceCollectionItemArgs(
-                    connection_type=var["build_pipeline_stage_build_source_collection_items_connection_type"],
-                    branch=var["build_pipeline_stage_build_source_collection_items_branch"],
-                    connection_id=oci_devops_connection["test_connection"]["id"],
-                    name=var["build_pipeline_stage_build_source_collection_items_name"],
-                    repository_id=oci_artifacts_repository["test_repository"]["id"],
-                    repository_url=var["build_pipeline_stage_build_source_collection_items_repository_url"],
+                    connection_type=build_pipeline_stage_build_source_collection_items_connection_type,
+                    branch=build_pipeline_stage_build_source_collection_items_branch,
+                    connection_id=test_connection["id"],
+                    name=build_pipeline_stage_build_source_collection_items_name,
+                    repository_id=test_repository["id"],
+                    repository_url=build_pipeline_stage_build_source_collection_items_repository_url,
                 )],
             ),
-            build_spec_file=var["build_pipeline_stage_build_spec_file"],
+            build_spec_file=build_pipeline_stage_build_spec_file,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             deliver_artifact_collection=oci.dev_ops.BuildPipelineStageDeliverArtifactCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageDeliverArtifactCollectionItemArgs(
-                    artifact_id=oci_devops_artifact["test_artifact"]["id"],
-                    artifact_name=var["build_pipeline_stage_deliver_artifact_collection_items_artifact_name"],
+                    artifact_id=test_artifact["id"],
+                    artifact_name=build_pipeline_stage_deliver_artifact_collection_items_artifact_name,
                 )],
             ),
-            deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-            description=var["build_pipeline_stage_description"],
-            display_name=var["build_pipeline_stage_display_name"],
+            deploy_pipeline_id=test_deploy_pipeline["id"],
+            description=build_pipeline_stage_description,
+            display_name=build_pipeline_stage_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            image=var["build_pipeline_stage_image"],
-            is_pass_all_parameters_enabled=var["build_pipeline_stage_is_pass_all_parameters_enabled"],
-            primary_build_source=var["build_pipeline_stage_primary_build_source"],
+            image=build_pipeline_stage_image,
+            is_pass_all_parameters_enabled=build_pipeline_stage_is_pass_all_parameters_enabled,
+            primary_build_source=build_pipeline_stage_primary_build_source,
             private_access_config=oci.dev_ops.BuildPipelineStagePrivateAccessConfigArgs(
-                network_channel_type=var["build_pipeline_stage_private_access_config_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["build_pipeline_stage_private_access_config_nsg_ids"],
+                network_channel_type=build_pipeline_stage_private_access_config_network_channel_type,
+                subnet_id=test_subnet["id"],
+                nsg_ids=build_pipeline_stage_private_access_config_nsg_ids,
             ),
-            stage_execution_timeout_in_seconds=var["build_pipeline_stage_stage_execution_timeout_in_seconds"],
+            stage_execution_timeout_in_seconds=build_pipeline_stage_stage_execution_timeout_in_seconds,
             wait_criteria=oci.dev_ops.BuildPipelineStageWaitCriteriaArgs(
-                wait_duration=var["build_pipeline_stage_wait_criteria_wait_duration"],
-                wait_type=var["build_pipeline_stage_wait_criteria_wait_type"],
+                wait_duration=build_pipeline_stage_wait_criteria_wait_duration,
+                wait_type=build_pipeline_stage_wait_criteria_wait_type,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -852,57 +852,57 @@ class BuildPipelineStage(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_build_pipeline_stage = oci.dev_ops.BuildPipelineStage("testBuildPipelineStage",
-            build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"],
+        test_build_pipeline_stage = oci.dev_ops.BuildPipelineStage("test_build_pipeline_stage",
+            build_pipeline_id=test_build_pipeline["id"],
             build_pipeline_stage_predecessor_collection=oci.dev_ops.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs(
-                    id=var["build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id"],
+                    id=build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id,
                 )],
             ),
-            build_pipeline_stage_type=var["build_pipeline_stage_build_pipeline_stage_type"],
+            build_pipeline_stage_type=build_pipeline_stage_build_pipeline_stage_type,
             build_runner_shape_config=oci.dev_ops.BuildPipelineStageBuildRunnerShapeConfigArgs(
-                build_runner_type=var["build_pipeline_stage_build_runner_shape_config_build_runner_type"],
-                memory_in_gbs=var["build_pipeline_stage_build_runner_shape_config_memory_in_gbs"],
-                ocpus=var["build_pipeline_stage_build_runner_shape_config_ocpus"],
+                build_runner_type=build_pipeline_stage_build_runner_shape_config_build_runner_type,
+                memory_in_gbs=build_pipeline_stage_build_runner_shape_config_memory_in_gbs,
+                ocpus=build_pipeline_stage_build_runner_shape_config_ocpus,
             ),
             build_source_collection=oci.dev_ops.BuildPipelineStageBuildSourceCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageBuildSourceCollectionItemArgs(
-                    connection_type=var["build_pipeline_stage_build_source_collection_items_connection_type"],
-                    branch=var["build_pipeline_stage_build_source_collection_items_branch"],
-                    connection_id=oci_devops_connection["test_connection"]["id"],
-                    name=var["build_pipeline_stage_build_source_collection_items_name"],
-                    repository_id=oci_artifacts_repository["test_repository"]["id"],
-                    repository_url=var["build_pipeline_stage_build_source_collection_items_repository_url"],
+                    connection_type=build_pipeline_stage_build_source_collection_items_connection_type,
+                    branch=build_pipeline_stage_build_source_collection_items_branch,
+                    connection_id=test_connection["id"],
+                    name=build_pipeline_stage_build_source_collection_items_name,
+                    repository_id=test_repository["id"],
+                    repository_url=build_pipeline_stage_build_source_collection_items_repository_url,
                 )],
             ),
-            build_spec_file=var["build_pipeline_stage_build_spec_file"],
+            build_spec_file=build_pipeline_stage_build_spec_file,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             deliver_artifact_collection=oci.dev_ops.BuildPipelineStageDeliverArtifactCollectionArgs(
                 items=[oci.dev_ops.BuildPipelineStageDeliverArtifactCollectionItemArgs(
-                    artifact_id=oci_devops_artifact["test_artifact"]["id"],
-                    artifact_name=var["build_pipeline_stage_deliver_artifact_collection_items_artifact_name"],
+                    artifact_id=test_artifact["id"],
+                    artifact_name=build_pipeline_stage_deliver_artifact_collection_items_artifact_name,
                 )],
             ),
-            deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-            description=var["build_pipeline_stage_description"],
-            display_name=var["build_pipeline_stage_display_name"],
+            deploy_pipeline_id=test_deploy_pipeline["id"],
+            description=build_pipeline_stage_description,
+            display_name=build_pipeline_stage_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            image=var["build_pipeline_stage_image"],
-            is_pass_all_parameters_enabled=var["build_pipeline_stage_is_pass_all_parameters_enabled"],
-            primary_build_source=var["build_pipeline_stage_primary_build_source"],
+            image=build_pipeline_stage_image,
+            is_pass_all_parameters_enabled=build_pipeline_stage_is_pass_all_parameters_enabled,
+            primary_build_source=build_pipeline_stage_primary_build_source,
             private_access_config=oci.dev_ops.BuildPipelineStagePrivateAccessConfigArgs(
-                network_channel_type=var["build_pipeline_stage_private_access_config_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["build_pipeline_stage_private_access_config_nsg_ids"],
+                network_channel_type=build_pipeline_stage_private_access_config_network_channel_type,
+                subnet_id=test_subnet["id"],
+                nsg_ids=build_pipeline_stage_private_access_config_nsg_ids,
             ),
-            stage_execution_timeout_in_seconds=var["build_pipeline_stage_stage_execution_timeout_in_seconds"],
+            stage_execution_timeout_in_seconds=build_pipeline_stage_stage_execution_timeout_in_seconds,
             wait_criteria=oci.dev_ops.BuildPipelineStageWaitCriteriaArgs(
-                wait_duration=var["build_pipeline_stage_wait_criteria_wait_duration"],
-                wait_type=var["build_pipeline_stage_wait_criteria_wait_type"],
+                wait_duration=build_pipeline_stage_wait_criteria_wait_duration,
+                wait_type=build_pipeline_stage_wait_criteria_wait_type,
             ))
         ```
         <!--End PulumiCodeChooser -->

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OspGateway.GetAddress(ctx, &ospgateway.GetAddressArgs{
-//				AddressId:     oci_osp_gateway_addres.Test_addres.Id,
-//				CompartmentId: _var.Compartment_id,
-//				OspHomeRegion: _var.Address_osp_home_region,
+//				AddressId:     testAddres.Id,
+//				CompartmentId: compartmentId,
+//				OspHomeRegion: addressOspHomeRegion,
 //			}, nil)
 //			if err != nil {
 //				return err

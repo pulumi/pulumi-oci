@@ -31,32 +31,33 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewListener(ctx, "testListener", &LoadBalancer.ListenerArgs{
-//				DefaultBackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-//				LoadBalancerId:        pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-//				Port:                  pulumi.Any(_var.Listener_port),
-//				Protocol:              pulumi.Any(_var.Listener_protocol),
+//			_, err := LoadBalancer.NewListener(ctx, "test_listener", &LoadBalancer.ListenerArgs{
+//				DefaultBackendSetName: pulumi.Any(testBackendSet.Name),
+//				LoadBalancerId:        pulumi.Any(testLoadBalancer.Id),
+//				Name:                  pulumi.Any(listenerName),
+//				Port:                  pulumi.Any(listenerPort),
+//				Protocol:              pulumi.Any(listenerProtocol),
 //				ConnectionConfiguration: &loadbalancer.ListenerConnectionConfigurationArgs{
-//					IdleTimeoutInSeconds:           pulumi.Any(_var.Listener_connection_configuration_idle_timeout_in_seconds),
-//					BackendTcpProxyProtocolVersion: pulumi.Any(_var.Listener_connection_configuration_backend_tcp_proxy_protocol_version),
+//					IdleTimeoutInSeconds:           pulumi.Any(listenerConnectionConfigurationIdleTimeoutInSeconds),
+//					BackendTcpProxyProtocolVersion: pulumi.Any(listenerConnectionConfigurationBackendTcpProxyProtocolVersion),
 //				},
 //				HostnameNames: pulumi.StringArray{
-//					oci_load_balancer_hostname.Test_hostname.Name,
+//					testHostname.Name,
 //				},
-//				PathRouteSetName:  pulumi.Any(oci_load_balancer_path_route_set.Test_path_route_set.Name),
-//				RoutingPolicyName: pulumi.Any(oci_load_balancer_load_balancer_routing_policy.Test_load_balancer_routing_policy.Name),
+//				PathRouteSetName:  pulumi.Any(testPathRouteSet.Name),
+//				RoutingPolicyName: pulumi.Any(testLoadBalancerRoutingPolicy.Name),
 //				RuleSetNames: pulumi.StringArray{
-//					oci_load_balancer_rule_set.Test_rule_set.Name,
+//					testRuleSet.Name,
 //				},
 //				SslConfiguration: &loadbalancer.ListenerSslConfigurationArgs{
-//					CertificateName:                pulumi.Any(oci_load_balancer_certificate.Test_certificate.Name),
-//					CertificateIds:                 pulumi.Any(_var.Listener_ssl_configuration_certificate_ids),
-//					CipherSuiteName:                pulumi.Any(_var.Listener_ssl_configuration_cipher_suite_name),
-//					Protocols:                      pulumi.Any(_var.Listener_ssl_configuration_protocols),
-//					ServerOrderPreference:          pulumi.Any(_var.Listener_ssl_configuration_server_order_preference),
-//					TrustedCertificateAuthorityIds: pulumi.Any(_var.Listener_ssl_configuration_trusted_certificate_authority_ids),
-//					VerifyDepth:                    pulumi.Any(_var.Listener_ssl_configuration_verify_depth),
-//					VerifyPeerCertificate:          pulumi.Any(_var.Listener_ssl_configuration_verify_peer_certificate),
+//					CertificateName:                pulumi.Any(testCertificate.Name),
+//					CertificateIds:                 pulumi.Any(listenerSslConfigurationCertificateIds),
+//					CipherSuiteName:                pulumi.Any(listenerSslConfigurationCipherSuiteName),
+//					Protocols:                      pulumi.Any(listenerSslConfigurationProtocols),
+//					ServerOrderPreference:          pulumi.Any(listenerSslConfigurationServerOrderPreference),
+//					TrustedCertificateAuthorityIds: pulumi.Any(listenerSslConfigurationTrustedCertificateAuthorityIds),
+//					VerifyDepth:                    pulumi.Any(listenerSslConfigurationVerifyDepth),
+//					VerifyPeerCertificate:          pulumi.Any(listenerSslConfigurationVerifyPeerCertificate),
 //				},
 //			})
 //			if err != nil {

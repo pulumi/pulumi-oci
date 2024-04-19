@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalAsmInstance = oci.DatabaseManagement.getExternalAsmInstance({
- *     externalAsmInstanceId: oci_database_management_external_asm_instance.test_external_asm_instance.id,
+ *     externalAsmInstanceId: testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,7 +119,7 @@ export interface GetExternalAsmInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalAsmInstance = oci.DatabaseManagement.getExternalAsmInstance({
- *     externalAsmInstanceId: oci_database_management_external_asm_instance.test_external_asm_instance.id,
+ *     externalAsmInstanceId: testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

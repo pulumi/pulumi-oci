@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMountTargets = oci.FileStorage.getMountTargets({
- *     availabilityDomain: _var.mount_target_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.mount_target_display_name,
- *     exportSetId: oci_file_storage_export_set.test_export_set.id,
- *     id: _var.mount_target_id,
- *     state: _var.mount_target_state,
+ *     availabilityDomain: mountTargetAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: mountTargetDisplayName,
+ *     exportSetId: testExportSet.id,
+ *     id: mountTargetId,
+ *     state: mountTargetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetMountTargetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMountTargets = oci.FileStorage.getMountTargets({
- *     availabilityDomain: _var.mount_target_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.mount_target_display_name,
- *     exportSetId: oci_file_storage_export_set.test_export_set.id,
- *     id: _var.mount_target_id,
- *     state: _var.mount_target_state,
+ *     availabilityDomain: mountTargetAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: mountTargetDisplayName,
+ *     exportSetId: testExportSet.id,
+ *     id: mountTargetId,
+ *     state: mountTargetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

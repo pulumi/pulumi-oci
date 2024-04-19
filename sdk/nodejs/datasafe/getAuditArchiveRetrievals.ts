@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditArchiveRetrievals = oci.DataSafe.getAuditArchiveRetrievals({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_archive_retrieval_access_level,
- *     auditArchiveRetrievalId: oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval.id,
- *     compartmentIdInSubtree: _var.audit_archive_retrieval_compartment_id_in_subtree,
- *     displayName: _var.audit_archive_retrieval_display_name,
- *     state: _var.audit_archive_retrieval_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeOfExpiry: _var.audit_archive_retrieval_time_of_expiry,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditArchiveRetrievalAccessLevel,
+ *     auditArchiveRetrievalId: testAuditArchiveRetrieval.id,
+ *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree,
+ *     displayName: auditArchiveRetrievalDisplayName,
+ *     state: auditArchiveRetrievalState,
+ *     targetId: testTarget.id,
+ *     timeOfExpiry: auditArchiveRetrievalTimeOfExpiry,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -136,14 +136,14 @@ export interface GetAuditArchiveRetrievalsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditArchiveRetrievals = oci.DataSafe.getAuditArchiveRetrievals({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_archive_retrieval_access_level,
- *     auditArchiveRetrievalId: oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval.id,
- *     compartmentIdInSubtree: _var.audit_archive_retrieval_compartment_id_in_subtree,
- *     displayName: _var.audit_archive_retrieval_display_name,
- *     state: _var.audit_archive_retrieval_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeOfExpiry: _var.audit_archive_retrieval_time_of_expiry,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditArchiveRetrievalAccessLevel,
+ *     auditArchiveRetrievalId: testAuditArchiveRetrieval.id,
+ *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree,
+ *     displayName: auditArchiveRetrievalDisplayName,
+ *     state: auditArchiveRetrievalState,
+ *     targetId: testTarget.id,
+ *     timeOfExpiry: auditArchiveRetrievalTimeOfExpiry,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

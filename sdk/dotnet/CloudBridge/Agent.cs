@@ -25,14 +25,14 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAgent = new Oci.CloudBridge.Agent("testAgent", new()
+    ///     var testAgent = new Oci.CloudBridge.Agent("test_agent", new()
     ///     {
-    ///         AgentType = @var.Agent_agent_type,
-    ///         AgentVersion = @var.Agent_agent_version,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Agent_display_name,
-    ///         EnvironmentId = oci_cloud_bridge_environment.Test_environment.Id,
-    ///         OsVersion = @var.Agent_os_version,
+    ///         AgentType = agentAgentType,
+    ///         AgentVersion = agentAgentVersion,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = agentDisplayName,
+    ///         EnvironmentId = testEnvironment.Id,
+    ///         OsVersion = agentOsVersion,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

@@ -510,23 +510,24 @@ class Zone(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_zone = oci.dns.Zone("testZone",
-            compartment_id=var["compartment_id"],
-            zone_type=var["zone_zone_type"],
-            defined_tags=var["zone_defined_tags"],
+        test_zone = oci.dns.Zone("test_zone",
+            compartment_id=compartment_id,
+            name=zone_name,
+            zone_type=zone_zone_type,
+            defined_tags=zone_defined_tags,
             external_downstreams=[oci.dns.ZoneExternalDownstreamArgs(
-                address=var["zone_external_downstreams_address"],
-                port=var["zone_external_downstreams_port"],
-                tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
+                address=zone_external_downstreams_address,
+                port=zone_external_downstreams_port,
+                tsig_key_id=test_tsig_key["id"],
             )],
             external_masters=[oci.dns.ZoneExternalMasterArgs(
-                address=var["zone_external_masters_address"],
-                port=var["zone_external_masters_port"],
-                tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
+                address=zone_external_masters_address,
+                port=zone_external_masters_port,
+                tsig_key_id=test_tsig_key["id"],
             )],
-            freeform_tags=var["zone_freeform_tags"],
-            scope=var["zone_scope"],
-            view_id=oci_dns_view["test_view"]["id"])
+            freeform_tags=zone_freeform_tags,
+            scope=zone_scope,
+            view_id=test_view["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -581,23 +582,24 @@ class Zone(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_zone = oci.dns.Zone("testZone",
-            compartment_id=var["compartment_id"],
-            zone_type=var["zone_zone_type"],
-            defined_tags=var["zone_defined_tags"],
+        test_zone = oci.dns.Zone("test_zone",
+            compartment_id=compartment_id,
+            name=zone_name,
+            zone_type=zone_zone_type,
+            defined_tags=zone_defined_tags,
             external_downstreams=[oci.dns.ZoneExternalDownstreamArgs(
-                address=var["zone_external_downstreams_address"],
-                port=var["zone_external_downstreams_port"],
-                tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
+                address=zone_external_downstreams_address,
+                port=zone_external_downstreams_port,
+                tsig_key_id=test_tsig_key["id"],
             )],
             external_masters=[oci.dns.ZoneExternalMasterArgs(
-                address=var["zone_external_masters_address"],
-                port=var["zone_external_masters_port"],
-                tsig_key_id=oci_dns_tsig_key["test_tsig_key"]["id"],
+                address=zone_external_masters_address,
+                port=zone_external_masters_port,
+                tsig_key_id=test_tsig_key["id"],
             )],
-            freeform_tags=var["zone_freeform_tags"],
-            scope=var["zone_scope"],
-            view_id=oci_dns_view["test_view"]["id"])
+            freeform_tags=zone_freeform_tags,
+            scope=zone_scope,
+            view_id=test_view["id"])
         ```
         <!--End PulumiCodeChooser -->
 

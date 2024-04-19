@@ -403,23 +403,23 @@ class PrivateApplication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_private_application = oci.service_catalog.PrivateApplication("testPrivateApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["private_application_display_name"],
+        test_private_application = oci.service_catalog.PrivateApplication("test_private_application",
+            compartment_id=compartment_id,
+            display_name=private_application_display_name,
             package_details=oci.service_catalog.PrivateApplicationPackageDetailsArgs(
-                package_type=var["private_application_package_details_package_type"],
-                version=var["private_application_package_details_version"],
-                zip_file_base64encoded=var["private_application_package_details_zip_file_base64encoded"],
+                package_type=private_application_package_details_package_type,
+                version=private_application_package_details_version,
+                zip_file_base64encoded=private_application_package_details_zip_file_base64encoded,
             ),
-            short_description=var["private_application_short_description"],
+            short_description=private_application_short_description,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            logo_file_base64encoded=var["private_application_logo_file_base64encoded"],
-            long_description=var["private_application_long_description"])
+            logo_file_base64encoded=private_application_logo_file_base64encoded,
+            long_description=private_application_long_description)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -464,23 +464,23 @@ class PrivateApplication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_private_application = oci.service_catalog.PrivateApplication("testPrivateApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["private_application_display_name"],
+        test_private_application = oci.service_catalog.PrivateApplication("test_private_application",
+            compartment_id=compartment_id,
+            display_name=private_application_display_name,
             package_details=oci.service_catalog.PrivateApplicationPackageDetailsArgs(
-                package_type=var["private_application_package_details_package_type"],
-                version=var["private_application_package_details_version"],
-                zip_file_base64encoded=var["private_application_package_details_zip_file_base64encoded"],
+                package_type=private_application_package_details_package_type,
+                version=private_application_package_details_version,
+                zip_file_base64encoded=private_application_package_details_zip_file_base64encoded,
             ),
-            short_description=var["private_application_short_description"],
+            short_description=private_application_short_description,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            logo_file_base64encoded=var["private_application_logo_file_base64encoded"],
-            long_description=var["private_application_long_description"])
+            logo_file_base64encoded=private_application_logo_file_base64encoded,
+            long_description=private_application_long_description)
         ```
         <!--End PulumiCodeChooser -->
 

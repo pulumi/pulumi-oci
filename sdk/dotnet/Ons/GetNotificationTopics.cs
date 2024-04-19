@@ -32,10 +32,10 @@ namespace Pulumi.Oci.Ons
         /// {
         ///     var testNotificationTopics = Oci.Ons.GetNotificationTopics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Notification_topic_id,
-        ///         Name = @var.Notification_topic_name,
-        ///         State = @var.Notification_topic_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = notificationTopicId,
+        ///         Name = notificationTopicName,
+        ///         State = notificationTopicState,
         ///     });
         /// 
         /// });
@@ -66,10 +66,10 @@ namespace Pulumi.Oci.Ons
         /// {
         ///     var testNotificationTopics = Oci.Ons.GetNotificationTopics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Notification_topic_id,
-        ///         Name = @var.Notification_topic_name,
-        ///         State = @var.Notification_topic_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = notificationTopicId,
+        ///         Name = notificationTopicName,
+        ///         State = notificationTopicState,
         ///     });
         /// 
         /// });

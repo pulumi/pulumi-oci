@@ -30,7 +30,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// {
         ///     var testVbInstanceApplications = Oci.VisualBuilder.GetVbInstanceApplications.Invoke(new()
         ///     {
-        ///         VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
+        ///         VbInstanceId = testVbInstance.Id,
         ///         IdcsOpenId = "idcs_open_id_value",
         ///     });
         /// 
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// {
         ///     var testVbInstanceApplications = Oci.VisualBuilder.GetVbInstanceApplications.Invoke(new()
         ///     {
-        ///         VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
+        ///         VbInstanceId = testVbInstance.Id,
         ///         IdcsOpenId = "idcs_open_id_value",
         ///     });
         /// 

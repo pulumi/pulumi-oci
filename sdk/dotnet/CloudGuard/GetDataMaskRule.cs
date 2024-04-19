@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataMaskRule = Oci.CloudGuard.GetDataMaskRule.Invoke(new()
         ///     {
-        ///         DataMaskRuleId = oci_cloud_guard_data_mask_rule.Test_data_mask_rule.Id,
+        ///         DataMaskRuleId = testDataMaskRuleOciCloudGuardDataMaskRule.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataMaskRule = Oci.CloudGuard.GetDataMaskRule.Invoke(new()
         ///     {
-        ///         DataMaskRuleId = oci_cloud_guard_data_mask_rule.Test_data_mask_rule.Id,
+        ///         DataMaskRuleId = testDataMaskRuleOciCloudGuardDataMaskRule.Id,
         ///     });
         /// 
         /// });

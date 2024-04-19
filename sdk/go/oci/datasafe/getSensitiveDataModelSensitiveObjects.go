@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSensitiveDataModelSensitiveObjects(ctx, &datasafe.GetSensitiveDataModelSensitiveObjectsArgs{
-//				SensitiveDataModelId: oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-//				Objects:              _var.Sensitive_data_model_sensitive_object_object,
-//				ObjectTypes:          _var.Sensitive_data_model_sensitive_object_object_type,
-//				SchemaNames:          _var.Sensitive_data_model_sensitive_object_schema_name,
+//				SensitiveDataModelId: testSensitiveDataModel.Id,
+//				Objects:              sensitiveDataModelSensitiveObjectObject,
+//				ObjectTypes:          sensitiveDataModelSensitiveObjectObjectType,
+//				SchemaNames:          sensitiveDataModelSensitiveObjectSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err

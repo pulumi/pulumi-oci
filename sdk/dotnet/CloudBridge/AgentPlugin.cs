@@ -25,11 +25,11 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAgentPlugin = new Oci.CloudBridge.AgentPlugin("testAgentPlugin", new()
+    ///     var testAgentPlugin = new Oci.CloudBridge.AgentPlugin("test_agent_plugin", new()
     ///     {
-    ///         AgentId = oci_cloud_bridge_agent.Test_agent.Id,
-    ///         PluginName = @var.Agent_plugin_plugin_name,
-    ///         DesiredState = @var.Agent_plugin_desired_state,
+    ///         AgentId = testAgent.Id,
+    ///         PluginName = agentPluginPluginName,
+    ///         DesiredState = agentPluginDesiredState,
     ///     });
     /// 
     /// });

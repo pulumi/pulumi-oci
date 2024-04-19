@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousVirtualMachine(ctx, &database.GetAutonomousVirtualMachineArgs{
-//				AutonomousVirtualMachineId: oci_database_autonomous_virtual_machine.Test_autonomous_virtual_machine.Id,
+//				AutonomousVirtualMachineId: testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

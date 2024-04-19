@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Analytics
         /// {
         ///     var testAnalyticsInstances = Oci.Analytics.GetAnalyticsInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CapacityType = @var.Analytics_instance_capacity_type,
-        ///         FeatureSet = @var.Analytics_instance_feature_set,
-        ///         Name = @var.Analytics_instance_name,
-        ///         State = @var.Analytics_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         CapacityType = analyticsInstanceCapacityType,
+        ///         FeatureSet = analyticsInstanceFeatureSet,
+        ///         Name = analyticsInstanceName,
+        ///         State = analyticsInstanceState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Analytics
         /// {
         ///     var testAnalyticsInstances = Oci.Analytics.GetAnalyticsInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CapacityType = @var.Analytics_instance_capacity_type,
-        ///         FeatureSet = @var.Analytics_instance_feature_set,
-        ///         Name = @var.Analytics_instance_name,
-        ///         State = @var.Analytics_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         CapacityType = analyticsInstanceCapacityType,
+        ///         FeatureSet = analyticsInstanceFeatureSet,
+        ///         Name = analyticsInstanceName,
+        ///         State = analyticsInstanceState,
         ///     });
         /// 
         /// });

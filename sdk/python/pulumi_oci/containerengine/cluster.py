@@ -529,6 +529,73 @@ class Cluster(pulumi.CustomResource):
 
         Create a new cluster.
 
+        ## Example Usage
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cluster = oci.container_engine.Cluster("test_cluster",
+            compartment_id=compartment_id,
+            kubernetes_version=cluster_kubernetes_version,
+            name=cluster_name,
+            vcn_id=test_vcn["id"],
+            cluster_pod_network_options=[oci.container_engine.ClusterClusterPodNetworkOptionArgs(
+                cni_type=cluster_cluster_pod_network_options_cni_type,
+            )],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            endpoint_config=oci.container_engine.ClusterEndpointConfigArgs(
+                is_public_ip_enabled=cluster_endpoint_config_is_public_ip_enabled,
+                nsg_ids=cluster_endpoint_config_nsg_ids,
+                subnet_id=test_subnet["id"],
+            ),
+            freeform_tags={
+                "Department": "Finance",
+            },
+            image_policy_config=oci.container_engine.ClusterImagePolicyConfigArgs(
+                is_policy_enabled=cluster_image_policy_config_is_policy_enabled,
+                key_details=[oci.container_engine.ClusterImagePolicyConfigKeyDetailArgs(
+                    kms_key_id=test_key["id"],
+                )],
+            ),
+            kms_key_id=test_key["id"],
+            options=oci.container_engine.ClusterOptionsArgs(
+                add_ons=oci.container_engine.ClusterOptionsAddOnsArgs(
+                    is_kubernetes_dashboard_enabled=cluster_options_add_ons_is_kubernetes_dashboard_enabled,
+                    is_tiller_enabled=cluster_options_add_ons_is_tiller_enabled,
+                ),
+                admission_controller_options=oci.container_engine.ClusterOptionsAdmissionControllerOptionsArgs(
+                    is_pod_security_policy_enabled=cluster_options_admission_controller_options_is_pod_security_policy_enabled,
+                ),
+                kubernetes_network_config=oci.container_engine.ClusterOptionsKubernetesNetworkConfigArgs(
+                    pods_cidr=cluster_options_kubernetes_network_config_pods_cidr,
+                    services_cidr=cluster_options_kubernetes_network_config_services_cidr,
+                ),
+                persistent_volume_config=oci.container_engine.ClusterOptionsPersistentVolumeConfigArgs(
+                    defined_tags={
+                        "Operations.CostCenter": "42",
+                    },
+                    freeform_tags={
+                        "Department": "Finance",
+                    },
+                ),
+                service_lb_config=oci.container_engine.ClusterOptionsServiceLbConfigArgs(
+                    defined_tags={
+                        "Operations.CostCenter": "42",
+                    },
+                    freeform_tags={
+                        "Department": "Finance",
+                    },
+                ),
+                service_lb_subnet_ids=cluster_options_service_lb_subnet_ids,
+            ),
+            type=cluster_type)
+        ```
+        <!--End PulumiCodeChooser -->
+
         ## Import
 
         Clusters can be imported using the `id`, e.g.
@@ -566,6 +633,73 @@ class Cluster(pulumi.CustomResource):
         This resource provides the Cluster resource in Oracle Cloud Infrastructure Container Engine service.
 
         Create a new cluster.
+
+        ## Example Usage
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cluster = oci.container_engine.Cluster("test_cluster",
+            compartment_id=compartment_id,
+            kubernetes_version=cluster_kubernetes_version,
+            name=cluster_name,
+            vcn_id=test_vcn["id"],
+            cluster_pod_network_options=[oci.container_engine.ClusterClusterPodNetworkOptionArgs(
+                cni_type=cluster_cluster_pod_network_options_cni_type,
+            )],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            endpoint_config=oci.container_engine.ClusterEndpointConfigArgs(
+                is_public_ip_enabled=cluster_endpoint_config_is_public_ip_enabled,
+                nsg_ids=cluster_endpoint_config_nsg_ids,
+                subnet_id=test_subnet["id"],
+            ),
+            freeform_tags={
+                "Department": "Finance",
+            },
+            image_policy_config=oci.container_engine.ClusterImagePolicyConfigArgs(
+                is_policy_enabled=cluster_image_policy_config_is_policy_enabled,
+                key_details=[oci.container_engine.ClusterImagePolicyConfigKeyDetailArgs(
+                    kms_key_id=test_key["id"],
+                )],
+            ),
+            kms_key_id=test_key["id"],
+            options=oci.container_engine.ClusterOptionsArgs(
+                add_ons=oci.container_engine.ClusterOptionsAddOnsArgs(
+                    is_kubernetes_dashboard_enabled=cluster_options_add_ons_is_kubernetes_dashboard_enabled,
+                    is_tiller_enabled=cluster_options_add_ons_is_tiller_enabled,
+                ),
+                admission_controller_options=oci.container_engine.ClusterOptionsAdmissionControllerOptionsArgs(
+                    is_pod_security_policy_enabled=cluster_options_admission_controller_options_is_pod_security_policy_enabled,
+                ),
+                kubernetes_network_config=oci.container_engine.ClusterOptionsKubernetesNetworkConfigArgs(
+                    pods_cidr=cluster_options_kubernetes_network_config_pods_cidr,
+                    services_cidr=cluster_options_kubernetes_network_config_services_cidr,
+                ),
+                persistent_volume_config=oci.container_engine.ClusterOptionsPersistentVolumeConfigArgs(
+                    defined_tags={
+                        "Operations.CostCenter": "42",
+                    },
+                    freeform_tags={
+                        "Department": "Finance",
+                    },
+                ),
+                service_lb_config=oci.container_engine.ClusterOptionsServiceLbConfigArgs(
+                    defined_tags={
+                        "Operations.CostCenter": "42",
+                    },
+                    freeform_tags={
+                        "Department": "Finance",
+                    },
+                ),
+                service_lb_subnet_ids=cluster_options_service_lb_subnet_ids,
+            ),
+            type=cluster_type)
+        ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -389,18 +389,19 @@ class NetworkSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_source = oci.identity.NetworkSource("testNetworkSource",
-            compartment_id=var["tenancy_ocid"],
-            description=var["network_source_description"],
+        test_network_source = oci.identity.NetworkSource("test_network_source",
+            compartment_id=tenancy_ocid,
+            description=network_source_description,
+            name=network_source_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            public_source_lists=var["network_source_public_source_list"],
-            services=var["network_source_services"],
-            virtual_source_lists=var["network_source_virtual_source_list"])
+            public_source_lists=network_source_public_source_list,
+            services=network_source_services,
+            virtual_source_lists=network_source_virtual_source_list)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -461,18 +462,19 @@ class NetworkSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_source = oci.identity.NetworkSource("testNetworkSource",
-            compartment_id=var["tenancy_ocid"],
-            description=var["network_source_description"],
+        test_network_source = oci.identity.NetworkSource("test_network_source",
+            compartment_id=tenancy_ocid,
+            description=network_source_description,
+            name=network_source_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            public_source_lists=var["network_source_public_source_list"],
-            services=var["network_source_services"],
-            virtual_source_lists=var["network_source_virtual_source_list"])
+            public_source_lists=network_source_public_source_list,
+            services=network_source_services,
+            virtual_source_lists=network_source_virtual_source_list)
         ```
         <!--End PulumiCodeChooser -->
 

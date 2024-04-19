@@ -77,14 +77,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFileSystem = new FileSystem(&#34;testFileSystem&#34;, FileSystemArgs.builder()        
- *             .availabilityDomain(var_.file_system_availability_domain())
- *             .compartmentId(var_.compartment_id())
+ *             .availabilityDomain(fileSystemAvailabilityDomain)
+ *             .compartmentId(compartmentId)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.file_system_display_name())
- *             .filesystemSnapshotPolicyId(oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy().id())
+ *             .displayName(fileSystemDisplayName)
+ *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .kmsKeyId(oci_kms_key.test_key().id())
- *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
+ *             .kmsKeyId(testKey.id())
+ *             .sourceSnapshotId(testSnapshot.id())
  *             .build());
  * 
  *     }

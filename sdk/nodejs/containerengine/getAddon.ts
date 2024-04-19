@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAddon = oci.ContainerEngine.getAddon({
- *     addonName: oci_containerengine_addon.test_addon.name,
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
+ *     addonName: testAddonOciContainerengineAddon.name,
+ *     clusterId: testCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,8 +97,8 @@ export interface GetAddonResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAddon = oci.ContainerEngine.getAddon({
- *     addonName: oci_containerengine_addon.test_addon.name,
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
+ *     addonName: testAddonOciContainerengineAddon.name,
+ *     clusterId: testCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

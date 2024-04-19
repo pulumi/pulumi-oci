@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAverageCarbonEmission = oci.MeteringComputation.getAverageCarbonEmission({
- *     skuPartNumber: _var.average_carbon_emission_sku_part_number,
+ *     skuPartNumber: averageCarbonEmissionSkuPartNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -70,7 +70,7 @@ export interface GetAverageCarbonEmissionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAverageCarbonEmission = oci.MeteringComputation.getAverageCarbonEmission({
- *     skuPartNumber: _var.average_carbon_emission_sku_part_number,
+ *     skuPartNumber: averageCarbonEmissionSkuPartNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,23 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmSynthetics.NewDedicatedVantagePoint(ctx, "testDedicatedVantagePoint", &ApmSynthetics.DedicatedVantagePointArgs{
-//				ApmDomainId: pulumi.Any(oci_apm_apm_domain.Test_apm_domain.Id),
-//				DisplayName: pulumi.Any(_var.Dedicated_vantage_point_display_name),
+//			_, err := ApmSynthetics.NewDedicatedVantagePoint(ctx, "test_dedicated_vantage_point", &ApmSynthetics.DedicatedVantagePointArgs{
+//				ApmDomainId: pulumi.Any(testApmDomain.Id),
+//				DisplayName: pulumi.Any(dedicatedVantagePointDisplayName),
 //				DvpStackDetails: &apmsynthetics.DedicatedVantagePointDvpStackDetailsArgs{
-//					DvpStackId:   pulumi.Any(oci_resourcemanager_stack.Test_stack.Id),
-//					DvpStackType: pulumi.Any(_var.Dedicated_vantage_point_dvp_stack_details_dvp_stack_type),
-//					DvpStreamId:  pulumi.Any(oci_streaming_stream.Test_stream.Id),
-//					DvpVersion:   pulumi.Any(_var.Dedicated_vantage_point_dvp_stack_details_dvp_version),
+//					DvpStackId:   pulumi.Any(testStack.Id),
+//					DvpStackType: pulumi.Any(dedicatedVantagePointDvpStackDetailsDvpStackType),
+//					DvpStreamId:  pulumi.Any(testStream.Id),
+//					DvpVersion:   pulumi.Any(dedicatedVantagePointDvpStackDetailsDvpVersion),
 //				},
-//				Region: pulumi.Any(_var.Dedicated_vantage_point_region),
+//				Region: pulumi.Any(dedicatedVantagePointRegion),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Status: pulumi.Any(_var.Dedicated_vantage_point_status),
+//				Status: pulumi.Any(dedicatedVantagePointStatus),
 //			})
 //			if err != nil {
 //				return err

@@ -28,10 +28,10 @@ namespace Pulumi.Oci.Oda
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOdaPrivateEndpointAttachment = new Oci.Oda.OdaPrivateEndpointAttachment("testOdaPrivateEndpointAttachment", new()
+    ///     var testOdaPrivateEndpointAttachment = new Oci.Oda.OdaPrivateEndpointAttachment("test_oda_private_endpoint_attachment", new()
     ///     {
-    ///         OdaInstanceId = oci_oda_oda_instance.Test_oda_instance.Id,
-    ///         OdaPrivateEndpointId = oci_oda_oda_private_endpoint.Test_oda_private_endpoint.Id,
+    ///         OdaInstanceId = testOdaInstance.Id,
+    ///         OdaPrivateEndpointId = testOdaPrivateEndpoint.Id,
     ///     });
     /// 
     /// });

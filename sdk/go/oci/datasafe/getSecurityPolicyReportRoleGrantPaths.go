@@ -33,9 +33,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityPolicyReportRoleGrantPaths(ctx, &datasafe.GetSecurityPolicyReportRoleGrantPathsArgs{
-//				GrantedRole:            _var.Security_policy_report_role_grant_path_granted_role,
-//				Grantee:                _var.Security_policy_report_role_grant_path_grantee,
-//				SecurityPolicyReportId: oci_data_safe_security_policy_report.Test_security_policy_report.Id,
+//				GrantedRole:            securityPolicyReportRoleGrantPathGrantedRole,
+//				Grantee:                securityPolicyReportRoleGrantPathGrantee,
+//				SecurityPolicyReportId: testSecurityPolicyReport.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

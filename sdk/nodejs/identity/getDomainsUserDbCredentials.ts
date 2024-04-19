@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUserDbCredentials = oci.Identity.getDomainsUserDbCredentials({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     userDbCredentialCount: _var.user_db_credential_user_db_credential_count,
- *     userDbCredentialFilter: _var.user_db_credential_user_db_credential_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     userDbCredentialCount: userDbCredentialUserDbCredentialCount,
+ *     userDbCredentialFilter: userDbCredentialUserDbCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.user_db_credential_authorization,
- *     resourceTypeSchemaVersion: _var.user_db_credential_resource_type_schema_version,
- *     startIndex: _var.user_db_credential_start_index,
+ *     authorization: userDbCredentialAuthorization,
+ *     resourceTypeSchemaVersion: userDbCredentialResourceTypeSchemaVersion,
+ *     startIndex: userDbCredentialStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsUserDbCredentialsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUserDbCredentials = oci.Identity.getDomainsUserDbCredentials({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     userDbCredentialCount: _var.user_db_credential_user_db_credential_count,
- *     userDbCredentialFilter: _var.user_db_credential_user_db_credential_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     userDbCredentialCount: userDbCredentialUserDbCredentialCount,
+ *     userDbCredentialFilter: userDbCredentialUserDbCredentialFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.user_db_credential_authorization,
- *     resourceTypeSchemaVersion: _var.user_db_credential_resource_type_schema_version,
- *     startIndex: _var.user_db_credential_start_index,
+ *     authorization: userDbCredentialAuthorization,
+ *     resourceTypeSchemaVersion: userDbCredentialResourceTypeSchemaVersion,
+ *     startIndex: userDbCredentialStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

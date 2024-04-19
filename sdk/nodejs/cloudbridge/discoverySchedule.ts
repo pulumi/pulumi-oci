@@ -16,13 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoverySchedule = new oci.cloudbridge.DiscoverySchedule("testDiscoverySchedule", {
- *     compartmentId: _var.compartment_id,
- *     executionRecurrences: _var.discovery_schedule_execution_recurrences,
+ * const testDiscoverySchedule = new oci.cloudbridge.DiscoverySchedule("test_discovery_schedule", {
+ *     compartmentId: compartmentId,
+ *     executionRecurrences: discoveryScheduleExecutionRecurrences,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.discovery_schedule_display_name,
+ *     displayName: discoveryScheduleDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

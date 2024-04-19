@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVtaps = oci.Core.getVtaps({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vtap_display_name,
- *     isVtapEnabled: _var.vtap_is_vtap_enabled,
- *     source: _var.vtap_source,
- *     state: _var.vtap_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     targetIp: _var.vtap_target_ip,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: vtapDisplayName,
+ *     isVtapEnabled: vtapIsVtapEnabled,
+ *     source: vtapSource,
+ *     state: vtapState,
+ *     targetId: testTarget.id,
+ *     targetIp: vtapTargetIp,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -144,14 +144,14 @@ export interface GetVtapsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVtaps = oci.Core.getVtaps({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vtap_display_name,
- *     isVtapEnabled: _var.vtap_is_vtap_enabled,
- *     source: _var.vtap_source,
- *     state: _var.vtap_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     targetIp: _var.vtap_target_ip,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: vtapDisplayName,
+ *     isVtapEnabled: vtapIsVtapEnabled,
+ *     source: vtapSource,
+ *     state: vtapState,
+ *     targetId: testTarget.id,
+ *     targetIp: vtapTargetIp,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

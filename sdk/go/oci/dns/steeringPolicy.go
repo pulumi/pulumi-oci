@@ -32,50 +32,50 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewSteeringPolicy(ctx, "testSteeringPolicy", &Dns.SteeringPolicyArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Steering_policy_display_name),
-//				Template:      pulumi.Any(_var.Steering_policy_template),
+//			_, err := Dns.NewSteeringPolicy(ctx, "test_steering_policy", &Dns.SteeringPolicyArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(steeringPolicyDisplayName),
+//				Template:      pulumi.Any(steeringPolicyTemplate),
 //				Answers: dns.SteeringPolicyAnswerArray{
 //					&dns.SteeringPolicyAnswerArgs{
-//						Name:       pulumi.Any(_var.Steering_policy_answers_name),
-//						Rdata:      pulumi.Any(_var.Steering_policy_answers_rdata),
-//						Rtype:      pulumi.Any(_var.Steering_policy_answers_rtype),
-//						IsDisabled: pulumi.Any(_var.Steering_policy_answers_is_disabled),
-//						Pool:       pulumi.Any(_var.Steering_policy_answers_pool),
+//						Name:       pulumi.Any(steeringPolicyAnswersName),
+//						Rdata:      pulumi.Any(steeringPolicyAnswersRdata),
+//						Rtype:      pulumi.Any(steeringPolicyAnswersRtype),
+//						IsDisabled: pulumi.Any(steeringPolicyAnswersIsDisabled),
+//						Pool:       pulumi.Any(steeringPolicyAnswersPool),
 //					},
 //				},
-//				DefinedTags:          pulumi.Any(_var.Steering_policy_defined_tags),
-//				FreeformTags:         pulumi.Any(_var.Steering_policy_freeform_tags),
-//				HealthCheckMonitorId: pulumi.Any(oci_health_checks_http_monitor.Test_http_monitor.Id),
+//				DefinedTags:          pulumi.Any(steeringPolicyDefinedTags),
+//				FreeformTags:         pulumi.Any(steeringPolicyFreeformTags),
+//				HealthCheckMonitorId: pulumi.Any(testHttpMonitor.Id),
 //				Rules: dns.SteeringPolicyRuleArray{
 //					&dns.SteeringPolicyRuleArgs{
-//						RuleType: pulumi.Any(_var.Steering_policy_rules_rule_type),
+//						RuleType: pulumi.Any(steeringPolicyRulesRuleType),
 //						Cases: dns.SteeringPolicyRuleCaseArray{
 //							&dns.SteeringPolicyRuleCaseArgs{
 //								AnswerDatas: dns.SteeringPolicyRuleCaseAnswerDataArray{
 //									&dns.SteeringPolicyRuleCaseAnswerDataArgs{
-//										AnswerCondition: pulumi.Any(_var.Steering_policy_rules_cases_answer_data_answer_condition),
-//										ShouldKeep:      pulumi.Any(_var.Steering_policy_rules_cases_answer_data_should_keep),
-//										Value:           pulumi.Any(_var.Steering_policy_rules_cases_answer_data_value),
+//										AnswerCondition: pulumi.Any(steeringPolicyRulesCasesAnswerDataAnswerCondition),
+//										ShouldKeep:      pulumi.Any(steeringPolicyRulesCasesAnswerDataShouldKeep),
+//										Value:           pulumi.Any(steeringPolicyRulesCasesAnswerDataValue),
 //									},
 //								},
-//								CaseCondition: pulumi.Any(_var.Steering_policy_rules_cases_case_condition),
-//								Count:         pulumi.Any(_var.Steering_policy_rules_cases_count),
+//								CaseCondition: pulumi.Any(steeringPolicyRulesCasesCaseCondition),
+//								Count:         pulumi.Any(steeringPolicyRulesCasesCount),
 //							},
 //						},
 //						DefaultAnswerDatas: dns.SteeringPolicyRuleDefaultAnswerDataArray{
 //							&dns.SteeringPolicyRuleDefaultAnswerDataArgs{
-//								AnswerCondition: pulumi.Any(_var.Steering_policy_rules_default_answer_data_answer_condition),
-//								ShouldKeep:      pulumi.Any(_var.Steering_policy_rules_default_answer_data_should_keep),
-//								Value:           pulumi.Any(_var.Steering_policy_rules_default_answer_data_value),
+//								AnswerCondition: pulumi.Any(steeringPolicyRulesDefaultAnswerDataAnswerCondition),
+//								ShouldKeep:      pulumi.Any(steeringPolicyRulesDefaultAnswerDataShouldKeep),
+//								Value:           pulumi.Any(steeringPolicyRulesDefaultAnswerDataValue),
 //							},
 //						},
-//						DefaultCount: pulumi.Any(_var.Steering_policy_rules_default_count),
-//						Description:  pulumi.Any(_var.Steering_policy_rules_description),
+//						DefaultCount: pulumi.Any(steeringPolicyRulesDefaultCount),
+//						Description:  pulumi.Any(steeringPolicyRulesDescription),
 //					},
 //				},
-//				Ttl: pulumi.Any(_var.Steering_policy_ttl),
+//				Ttl: pulumi.Any(steeringPolicyTtl),
 //			})
 //			if err != nil {
 //				return err

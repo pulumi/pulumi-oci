@@ -25,10 +25,11 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRule = new Oci.Identity.DomainsRule("testRule", new()
+    ///     var testRule = new Oci.Identity.DomainsRule("test_rule", new()
     ///     {
-    ///         Condition = @var.Rule_condition,
-    ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+    ///         Condition = ruleCondition,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Name = ruleName,
     ///         PolicyType = new Oci.Identity.Inputs.DomainsRulePolicyTypeArgs
     ///         {
     ///             Value = "SignOn",
@@ -37,39 +38,39 @@ namespace Pulumi.Oci.Identity
     ///         {
     ///             new Oci.Identity.Inputs.DomainsRuleReturnArgs
     ///             {
-    ///                 Name = @var.Rule_return_name,
-    ///                 Value = @var.Rule_return_value,
-    ///                 ReturnGroovy = @var.Rule_return_return_groovy,
+    ///                 Name = ruleReturnName,
+    ///                 Value = ruleReturnValue,
+    ///                 ReturnGroovy = ruleReturnReturnGroovy,
     ///             },
     ///         },
     ///         Schemas = new[]
     ///         {
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:Rule",
     ///         },
-    ///         Active = @var.Rule_active,
+    ///         Active = ruleActive,
     ///         AttributeSets = new[]
     ///         {
     ///             "all",
     ///         },
     ///         Attributes = "",
-    ///         Authorization = @var.Rule_authorization,
+    ///         Authorization = ruleAuthorization,
     ///         ConditionGroup = new Oci.Identity.Inputs.DomainsRuleConditionGroupArgs
     ///         {
     ///             Type = "Condition",
-    ///             Value = @var.Rule_condition_group_value,
+    ///             Value = ruleConditionGroupValue,
     ///         },
-    ///         Description = @var.Rule_description,
+    ///         Description = ruleDescription,
     ///         ExternalId = "externalId",
-    ///         Locked = @var.Rule_locked,
-    ///         Ocid = @var.Rule_ocid,
-    ///         ResourceTypeSchemaVersion = @var.Rule_resource_type_schema_version,
-    ///         RuleGroovy = @var.Rule_rule_groovy,
+    ///         Locked = ruleLocked,
+    ///         Ocid = ruleOcid,
+    ///         ResourceTypeSchemaVersion = ruleResourceTypeSchemaVersion,
+    ///         RuleGroovy = ruleRuleGroovy,
     ///         Tags = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsRuleTagArgs
     ///             {
-    ///                 Key = @var.Rule_tags_key,
-    ///                 Value = @var.Rule_tags_value,
+    ///                 Key = ruleTagsKey,
+    ///                 Value = ruleTagsValue,
     ///             },
     ///         },
     ///     });

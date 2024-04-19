@@ -22,30 +22,30 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityReservation = new oci.core.ComputeCapacityReservation("testComputeCapacityReservation", {
- *     availabilityDomain: _var.compute_capacity_reservation_availability_domain,
- *     compartmentId: _var.compartment_id,
+ * const testComputeCapacityReservation = new oci.core.ComputeCapacityReservation("test_compute_capacity_reservation", {
+ *     availabilityDomain: computeCapacityReservationAvailabilityDomain,
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.compute_capacity_reservation_display_name,
+ *     displayName: computeCapacityReservationDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     instanceReservationConfigs: [{
- *         instanceShape: _var.compute_capacity_reservation_instance_reservation_configs_instance_shape,
- *         reservedCount: _var.compute_capacity_reservation_instance_reservation_configs_reserved_count,
+ *         instanceShape: computeCapacityReservationInstanceReservationConfigsInstanceShape,
+ *         reservedCount: computeCapacityReservationInstanceReservationConfigsReservedCount,
  *         clusterConfig: {
- *             hpcIslandId: oci_core_hpc_island.test_hpc_island.id,
- *             networkBlockIds: _var.compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids,
+ *             hpcIslandId: testHpcIsland.id,
+ *             networkBlockIds: computeCapacityReservationInstanceReservationConfigsClusterConfigNetworkBlockIds,
  *         },
- *         faultDomain: _var.compute_capacity_reservation_instance_reservation_configs_fault_domain,
+ *         faultDomain: computeCapacityReservationInstanceReservationConfigsFaultDomain,
  *         instanceShapeConfig: {
- *             memoryInGbs: _var.compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs,
- *             ocpus: _var.compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus,
+ *             memoryInGbs: computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigMemoryInGbs,
+ *             ocpus: computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigOcpus,
  *         },
  *     }],
- *     isDefaultReservation: _var.compute_capacity_reservation_is_default_reservation,
+ *     isDefaultReservation: computeCapacityReservationIsDefaultReservation,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -397,9 +397,9 @@ def get_workspace_application_task_schedule(application_key: Optional[str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_task_schedule = oci.DataIntegration.get_workspace_application_task_schedule(application_key=var["workspace_application_task_schedule_application_key"],
-        task_schedule_key=var["workspace_application_task_schedule_task_schedule_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
+    test_workspace_application_task_schedule = oci.DataIntegration.get_workspace_application_task_schedule(application_key=workspace_application_task_schedule_application_key,
+        task_schedule_key=workspace_application_task_schedule_task_schedule_key,
+        workspace_id=test_workspace["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -466,9 +466,9 @@ def get_workspace_application_task_schedule_output(application_key: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_task_schedule = oci.DataIntegration.get_workspace_application_task_schedule(application_key=var["workspace_application_task_schedule_application_key"],
-        task_schedule_key=var["workspace_application_task_schedule_task_schedule_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
+    test_workspace_application_task_schedule = oci.DataIntegration.get_workspace_application_task_schedule(application_key=workspace_application_task_schedule_application_key,
+        task_schedule_key=workspace_application_task_schedule_task_schedule_key,
+        workspace_id=test_workspace["id"])
     ```
     <!--End PulumiCodeChooser -->
 

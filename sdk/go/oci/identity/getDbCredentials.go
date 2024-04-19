@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDbCredentials(ctx, &identity.GetDbCredentialsArgs{
-//				UserId: oci_identity_user.Test_user.Id,
-//				Name:   pulumi.StringRef(_var.Db_credential_name),
-//				State:  pulumi.StringRef(_var.Db_credential_state),
+//				UserId: testUser.Id,
+//				Name:   pulumi.StringRef(dbCredentialName),
+//				State:  pulumi.StringRef(dbCredentialState),
 //			}, nil)
 //			if err != nil {
 //				return err

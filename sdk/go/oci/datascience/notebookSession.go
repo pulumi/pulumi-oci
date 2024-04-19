@@ -31,56 +31,56 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewNotebookSession(ctx, "testNotebookSession", &DataScience.NotebookSessionArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
+//			_, err := DataScience.NewNotebookSession(ctx, "test_notebook_session", &DataScience.NotebookSessionArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ProjectId:     pulumi.Any(testProject.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Notebook_session_display_name),
+//				DisplayName: pulumi.Any(notebookSessionDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				NotebookSessionConfigDetails: &datascience.NotebookSessionNotebookSessionConfigDetailsArgs{
-//					Shape:                 pulumi.Any(_var.Notebook_session_notebook_session_config_details_shape),
-//					BlockStorageSizeInGbs: pulumi.Any(_var.Notebook_session_notebook_session_config_details_block_storage_size_in_gbs),
+//					Shape:                 pulumi.Any(notebookSessionNotebookSessionConfigDetailsShape),
+//					BlockStorageSizeInGbs: pulumi.Any(notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs),
 //					NotebookSessionShapeConfigDetails: &datascience.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{
-//						MemoryInGbs: pulumi.Any(_var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs),
-//						Ocpus:       pulumi.Any(_var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus),
+//						MemoryInGbs: pulumi.Any(notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsMemoryInGbs),
+//						Ocpus:       pulumi.Any(notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOcpus),
 //					},
-//					PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-//					SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					PrivateEndpointId: pulumi.Any(testPrivateEndpoint.Id),
+//					SubnetId:          pulumi.Any(testSubnet.Id),
 //				},
 //				NotebookSessionConfigurationDetails: &datascience.NotebookSessionNotebookSessionConfigurationDetailsArgs{
-//					Shape:                 pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_shape),
-//					SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					BlockStorageSizeInGbs: pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs),
+//					Shape:                 pulumi.Any(notebookSessionNotebookSessionConfigurationDetailsShape),
+//					SubnetId:              pulumi.Any(testSubnet.Id),
+//					BlockStorageSizeInGbs: pulumi.Any(notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs),
 //					NotebookSessionShapeConfigDetails: &datascience.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{
-//						MemoryInGbs: pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs),
-//						Ocpus:       pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus),
+//						MemoryInGbs: pulumi.Any(notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsMemoryInGbs),
+//						Ocpus:       pulumi.Any(notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOcpus),
 //					},
-//					PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//					PrivateEndpointId: pulumi.Any(testPrivateEndpoint.Id),
 //				},
 //				NotebookSessionRuntimeConfigDetails: &datascience.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs{
-//					CustomEnvironmentVariables: pulumi.Any(_var.Notebook_session_notebook_session_runtime_config_details_custom_environment_variables),
+//					CustomEnvironmentVariables: pulumi.Any(notebookSessionNotebookSessionRuntimeConfigDetailsCustomEnvironmentVariables),
 //					NotebookSessionGitConfigDetails: &datascience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs{
 //						NotebookSessionGitRepoConfigCollections: datascience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArray{
 //							&datascience.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs{
-//								Url: pulumi.Any(_var.Notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url),
+//								Url: pulumi.Any(notebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionUrl),
 //							},
 //						},
 //					},
 //				},
 //				NotebookSessionStorageMountConfigurationDetailsLists: datascience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArray{
 //					&datascience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs{
-//						DestinationDirectoryName: pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name),
-//						StorageType:              pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type),
-//						Bucket:                   pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_bucket),
-//						DestinationPath:          pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path),
-//						ExportId:                 pulumi.Any(oci_file_storage_export.Test_export.Id),
-//						MountTargetId:            pulumi.Any(oci_file_storage_mount_target.Test_mount_target.Id),
-//						Namespace:                pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_namespace),
-//						Prefix:                   pulumi.Any(_var.Notebook_session_notebook_session_storage_mount_configuration_details_list_prefix),
+//						DestinationDirectoryName: pulumi.Any(notebookSessionNotebookSessionStorageMountConfigurationDetailsListDestinationDirectoryName),
+//						StorageType:              pulumi.Any(notebookSessionNotebookSessionStorageMountConfigurationDetailsListStorageType),
+//						Bucket:                   pulumi.Any(notebookSessionNotebookSessionStorageMountConfigurationDetailsListBucket),
+//						DestinationPath:          pulumi.Any(notebookSessionNotebookSessionStorageMountConfigurationDetailsListDestinationPath),
+//						ExportId:                 pulumi.Any(testExport.Id),
+//						MountTargetId:            pulumi.Any(testMountTarget.Id),
+//						Namespace:                pulumi.Any(notebookSessionNotebookSessionStorageMountConfigurationDetailsListNamespace),
+//						Prefix:                   pulumi.Any(notebookSessionNotebookSessionStorageMountConfigurationDetailsListPrefix),
 //					},
 //				},
 //			})

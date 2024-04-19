@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepositoryCommits(ctx, &devops.GetRepositoryCommitsArgs{
-//				RepositoryId:                  oci_devops_repository.Test_repository.Id,
-//				AuthorName:                    pulumi.StringRef(_var.Repository_commit_author_name),
-//				CommitMessage:                 pulumi.StringRef(_var.Repository_commit_commit_message),
-//				ExcludeRefName:                pulumi.StringRef(_var.Repository_commit_exclude_ref_name),
-//				FilePath:                      pulumi.StringRef(_var.Repository_commit_file_path),
-//				RefName:                       pulumi.StringRef(_var.Repository_commit_ref_name),
-//				TimestampGreaterThanOrEqualTo: pulumi.StringRef(_var.Repository_commit_timestamp_greater_than_or_equal_to),
-//				TimestampLessThanOrEqualTo:    pulumi.StringRef(_var.Repository_commit_timestamp_less_than_or_equal_to),
+//				RepositoryId:                  testRepository.Id,
+//				AuthorName:                    pulumi.StringRef(repositoryCommitAuthorName),
+//				CommitMessage:                 pulumi.StringRef(repositoryCommitCommitMessage),
+//				ExcludeRefName:                pulumi.StringRef(repositoryCommitExcludeRefName),
+//				FilePath:                      pulumi.StringRef(repositoryCommitFilePath),
+//				RefName:                       pulumi.StringRef(repositoryCommitRefName),
+//				TimestampGreaterThanOrEqualTo: pulumi.StringRef(repositoryCommitTimestampGreaterThanOrEqualTo),
+//				TimestampLessThanOrEqualTo:    pulumi.StringRef(repositoryCommitTimestampLessThanOrEqualTo),
 //			}, nil)
 //			if err != nil {
 //				return err

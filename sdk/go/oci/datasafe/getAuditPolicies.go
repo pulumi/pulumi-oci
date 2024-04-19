@@ -45,13 +45,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditPolicies(ctx, &datasafe.GetAuditPoliciesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Audit_policy_access_level),
-//				AuditPolicyId:          pulumi.StringRef(oci_data_safe_audit_policy.Test_audit_policy.Id),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_policy_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Audit_policy_display_name),
-//				State:                  pulumi.StringRef(_var.Audit_policy_state),
-//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(auditPolicyAccessLevel),
+//				AuditPolicyId:          pulumi.StringRef(testAuditPolicy.Id),
+//				CompartmentIdInSubtree: pulumi.BoolRef(auditPolicyCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(auditPolicyDisplayName),
+//				State:                  pulumi.StringRef(auditPolicyState),
+//				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

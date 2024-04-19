@@ -29,7 +29,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceStorageEncryptionKeyInfo = Oci.LogAnalytics.GetNamespaceStorageEncryptionKeyInfo.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_storage_encryption_key_info_namespace,
+        ///         Namespace = namespaceStorageEncryptionKeyInfoNamespace,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceStorageEncryptionKeyInfo = Oci.LogAnalytics.GetNamespaceStorageEncryptionKeyInfo.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_storage_encryption_key_info_namespace,
+        ///         Namespace = namespaceStorageEncryptionKeyInfoNamespace,
         ///     });
         /// 
         /// });

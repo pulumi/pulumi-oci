@@ -31,11 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewLogAnalyticsImportCustomContent(ctx, "testLogAnalyticsImportCustomContent", &LogAnalytics.LogAnalyticsImportCustomContentArgs{
-//				ImportCustomContentFile: pulumi.Any(_var.Log_analytics_import_custom_content_import_custom_content_file),
-//				Namespace:               pulumi.Any(_var.Log_analytics_import_custom_content_namespace),
-//				Expect:                  pulumi.Any(_var.Log_analytics_import_custom_content_expect),
-//				IsOverwrite:             pulumi.Any(_var.Log_analytics_import_custom_content_is_overwrite),
+//			_, err := LogAnalytics.NewLogAnalyticsImportCustomContent(ctx, "test_log_analytics_import_custom_content", &LogAnalytics.LogAnalyticsImportCustomContentArgs{
+//				ImportCustomContentFile: pulumi.Any(logAnalyticsImportCustomContentImportCustomContentFile),
+//				Namespace:               pulumi.Any(logAnalyticsImportCustomContentNamespace),
+//				Expect:                  pulumi.Any(logAnalyticsImportCustomContentExpect),
+//				IsOverwrite:             pulumi.Any(logAnalyticsImportCustomContentIsOverwrite),
 //			})
 //			if err != nil {
 //				return err

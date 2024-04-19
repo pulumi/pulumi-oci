@@ -306,31 +306,32 @@ class MonitoredResourceTask(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resource_task = oci.stack_monitoring.MonitoredResourceTask("testMonitoredResourceTask",
-            compartment_id=var["compartment_id"],
+        test_monitored_resource_task = oci.stack_monitoring.MonitoredResourceTask("test_monitored_resource_task",
+            compartment_id=compartment_id,
             task_details=oci.stack_monitoring.MonitoredResourceTaskTaskDetailsArgs(
-                namespace=var["monitored_resource_task_task_details_namespace"],
-                source=var["monitored_resource_task_task_details_source"],
-                type=var["monitored_resource_task_task_details_type"],
-                availability_proxy_metric_collection_interval=var["monitored_resource_task_task_details_availability_proxy_metric_collection_interval"],
-                availability_proxy_metrics=var["monitored_resource_task_task_details_availability_proxy_metrics"],
-                console_path_prefix=var["monitored_resource_task_task_details_console_path_prefix"],
-                external_id_mapping=var["monitored_resource_task_task_details_external_id_mapping"],
-                lifecycle_status_mappings_for_up_statuses=var["monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status"],
-                resource_group=var["monitored_resource_task_task_details_resource_group"],
-                resource_name_filter=var["monitored_resource_task_task_details_resource_name_filter"],
-                resource_name_mapping=var["monitored_resource_task_task_details_resource_name_mapping"],
-                resource_type_filter=var["monitored_resource_task_task_details_resource_type_filter"],
-                resource_type_mapping=var["monitored_resource_task_task_details_resource_type_mapping"],
-                service_base_url=var["monitored_resource_task_task_details_service_base_url"],
-                should_use_metrics_flow_for_status=var["monitored_resource_task_task_details_should_use_metrics_flow_for_status"],
+                namespace=monitored_resource_task_task_details_namespace,
+                source=monitored_resource_task_task_details_source,
+                type=monitored_resource_task_task_details_type,
+                availability_proxy_metric_collection_interval=monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
+                availability_proxy_metrics=monitored_resource_task_task_details_availability_proxy_metrics,
+                console_path_prefix=monitored_resource_task_task_details_console_path_prefix,
+                external_id_mapping=monitored_resource_task_task_details_external_id_mapping,
+                lifecycle_status_mappings_for_up_statuses=monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
+                resource_group=monitored_resource_task_task_details_resource_group,
+                resource_name_filter=monitored_resource_task_task_details_resource_name_filter,
+                resource_name_mapping=monitored_resource_task_task_details_resource_name_mapping,
+                resource_type_filter=monitored_resource_task_task_details_resource_type_filter,
+                resource_type_mapping=monitored_resource_task_task_details_resource_type_mapping,
+                service_base_url=monitored_resource_task_task_details_service_base_url,
+                should_use_metrics_flow_for_status=monitored_resource_task_task_details_should_use_metrics_flow_for_status,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            name=monitored_resource_task_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -368,31 +369,32 @@ class MonitoredResourceTask(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resource_task = oci.stack_monitoring.MonitoredResourceTask("testMonitoredResourceTask",
-            compartment_id=var["compartment_id"],
+        test_monitored_resource_task = oci.stack_monitoring.MonitoredResourceTask("test_monitored_resource_task",
+            compartment_id=compartment_id,
             task_details=oci.stack_monitoring.MonitoredResourceTaskTaskDetailsArgs(
-                namespace=var["monitored_resource_task_task_details_namespace"],
-                source=var["monitored_resource_task_task_details_source"],
-                type=var["monitored_resource_task_task_details_type"],
-                availability_proxy_metric_collection_interval=var["monitored_resource_task_task_details_availability_proxy_metric_collection_interval"],
-                availability_proxy_metrics=var["monitored_resource_task_task_details_availability_proxy_metrics"],
-                console_path_prefix=var["monitored_resource_task_task_details_console_path_prefix"],
-                external_id_mapping=var["monitored_resource_task_task_details_external_id_mapping"],
-                lifecycle_status_mappings_for_up_statuses=var["monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status"],
-                resource_group=var["monitored_resource_task_task_details_resource_group"],
-                resource_name_filter=var["monitored_resource_task_task_details_resource_name_filter"],
-                resource_name_mapping=var["monitored_resource_task_task_details_resource_name_mapping"],
-                resource_type_filter=var["monitored_resource_task_task_details_resource_type_filter"],
-                resource_type_mapping=var["monitored_resource_task_task_details_resource_type_mapping"],
-                service_base_url=var["monitored_resource_task_task_details_service_base_url"],
-                should_use_metrics_flow_for_status=var["monitored_resource_task_task_details_should_use_metrics_flow_for_status"],
+                namespace=monitored_resource_task_task_details_namespace,
+                source=monitored_resource_task_task_details_source,
+                type=monitored_resource_task_task_details_type,
+                availability_proxy_metric_collection_interval=monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
+                availability_proxy_metrics=monitored_resource_task_task_details_availability_proxy_metrics,
+                console_path_prefix=monitored_resource_task_task_details_console_path_prefix,
+                external_id_mapping=monitored_resource_task_task_details_external_id_mapping,
+                lifecycle_status_mappings_for_up_statuses=monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
+                resource_group=monitored_resource_task_task_details_resource_group,
+                resource_name_filter=monitored_resource_task_task_details_resource_name_filter,
+                resource_name_mapping=monitored_resource_task_task_details_resource_name_mapping,
+                resource_type_filter=monitored_resource_task_task_details_resource_type_filter,
+                resource_type_mapping=monitored_resource_task_task_details_resource_type_mapping,
+                service_base_url=monitored_resource_task_task_details_service_base_url,
+                should_use_metrics_flow_for_status=monitored_resource_task_task_details_should_use_metrics_flow_for_status,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            name=monitored_resource_task_name)
         ```
         <!--End PulumiCodeChooser -->
 

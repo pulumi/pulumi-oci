@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApiGateway.GetSubscribers(ctx, &apigateway.GetSubscribersArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Subscriber_display_name),
-//				State:         pulumi.StringRef(_var.Subscriber_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(subscriberDisplayName),
+//				State:         pulumi.StringRef(subscriberState),
 //			}, nil)
 //			if err != nil {
 //				return err

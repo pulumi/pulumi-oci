@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaces(ctx, &dataintegration.GetWorkspacesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Workspace_name),
-//				State:         pulumi.StringRef(_var.Workspace_state),
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(workspaceName),
+//				State:         pulumi.StringRef(workspaceState),
 //			}, nil)
 //			if err != nil {
 //				return err

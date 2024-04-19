@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflowAssignments = Oci.Identity.GetDomainsApprovalWorkflowAssignments.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ApprovalWorkflowAssignmentCount = @var.Approval_workflow_assignment_approval_workflow_assignment_count,
-        ///         ApprovalWorkflowAssignmentFilter = @var.Approval_workflow_assignment_approval_workflow_assignment_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApprovalWorkflowAssignmentCount = approvalWorkflowAssignmentApprovalWorkflowAssignmentCount,
+        ///         ApprovalWorkflowAssignmentFilter = approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_assignment_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_assignment_resource_type_schema_version,
-        ///         StartIndex = @var.Approval_workflow_assignment_start_index,
+        ///         Authorization = approvalWorkflowAssignmentAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowAssignmentResourceTypeSchemaVersion,
+        ///         StartIndex = approvalWorkflowAssignmentStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testApprovalWorkflowAssignments = Oci.Identity.GetDomainsApprovalWorkflowAssignments.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         ApprovalWorkflowAssignmentCount = @var.Approval_workflow_assignment_approval_workflow_assignment_count,
-        ///         ApprovalWorkflowAssignmentFilter = @var.Approval_workflow_assignment_approval_workflow_assignment_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         ApprovalWorkflowAssignmentCount = approvalWorkflowAssignmentApprovalWorkflowAssignmentCount,
+        ///         ApprovalWorkflowAssignmentFilter = approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Approval_workflow_assignment_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Approval_workflow_assignment_resource_type_schema_version,
-        ///         StartIndex = @var.Approval_workflow_assignment_start_index,
+        ///         Authorization = approvalWorkflowAssignmentAuthorization,
+        ///         ResourceTypeSchemaVersion = approvalWorkflowAssignmentResourceTypeSchemaVersion,
+        ///         StartIndex = approvalWorkflowAssignmentStartIndex,
         ///     });
         /// 
         /// });

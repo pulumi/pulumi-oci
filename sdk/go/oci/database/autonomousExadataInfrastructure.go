@@ -31,41 +31,41 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousExadataInfrastructure(ctx, "testAutonomousExadataInfrastructure", &Database.AutonomousExadataInfrastructureArgs{
-//				AvailabilityDomain: pulumi.Any(_var.Autonomous_exadata_infrastructure_availability_domain),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				Shape:              pulumi.Any(_var.Autonomous_exadata_infrastructure_shape),
-//				SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//			_, err := Database.NewAutonomousExadataInfrastructure(ctx, "test_autonomous_exadata_infrastructure", &Database.AutonomousExadataInfrastructureArgs{
+//				AvailabilityDomain: pulumi.Any(autonomousExadataInfrastructureAvailabilityDomain),
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				Shape:              pulumi.Any(autonomousExadataInfrastructureShape),
+//				SubnetId:           pulumi.Any(testSubnet.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Autonomous_exadata_infrastructure_display_name),
-//				Domain:      pulumi.Any(_var.Autonomous_exadata_infrastructure_domain),
+//				DisplayName: pulumi.Any(autonomousExadataInfrastructureDisplayName),
+//				Domain:      pulumi.Any(autonomousExadataInfrastructureDomain),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				LicenseModel: pulumi.Any(_var.Autonomous_exadata_infrastructure_license_model),
+//				LicenseModel: pulumi.Any(autonomousExadataInfrastructureLicenseModel),
 //				MaintenanceWindowDetails: &database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs{
-//					CustomActionTimeoutInMins: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins),
+//					CustomActionTimeoutInMins: pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsCustomActionTimeoutInMins),
 //					DaysOfWeeks: database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArray{
 //						&database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs{
-//							Name: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name),
+//							Name: pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekName),
 //						},
 //					},
-//					HoursOfDays:                  pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day),
-//					IsCustomActionTimeoutEnabled: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled),
-//					IsMonthlyPatchingEnabled:     pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled),
-//					LeadTimeInWeeks:              pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks),
+//					HoursOfDays:                  pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsHoursOfDay),
+//					IsCustomActionTimeoutEnabled: pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsIsCustomActionTimeoutEnabled),
+//					IsMonthlyPatchingEnabled:     pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsIsMonthlyPatchingEnabled),
+//					LeadTimeInWeeks:              pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsLeadTimeInWeeks),
 //					Months: database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArray{
 //						&database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs{
-//							Name: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_months_name),
+//							Name: pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsMonthsName),
 //						},
 //					},
-//					PatchingMode:  pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_patching_mode),
-//					Preference:    pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_preference),
-//					WeeksOfMonths: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month),
+//					PatchingMode:  pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsPatchingMode),
+//					Preference:    pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsPreference),
+//					WeeksOfMonths: pulumi.Any(autonomousExadataInfrastructureMaintenanceWindowDetailsWeeksOfMonth),
 //				},
-//				NsgIds: pulumi.Any(_var.Autonomous_exadata_infrastructure_nsg_ids),
+//				NsgIds: pulumi.Any(autonomousExadataInfrastructureNsgIds),
 //			})
 //			if err != nil {
 //				return err

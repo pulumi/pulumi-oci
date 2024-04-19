@@ -25,11 +25,11 @@ namespace Pulumi.Oci.Waas
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAddressList = new Oci.Waas.AddressList("testAddressList", new()
+    ///     var testAddressList = new Oci.Waas.AddressList("test_address_list", new()
     ///     {
-    ///         Addresses = @var.Address_list_addresses,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Address_list_display_name,
+    ///         Addresses = addressListAddresses,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = addressListDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

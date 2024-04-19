@@ -27,12 +27,12 @@ namespace Pulumi.Oci.Dns
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testActionCreateZoneFromZoneFile = new Oci.Dns.ActionCreateZoneFromZoneFile("testActionCreateZoneFromZoneFile", new()
+    ///     var testActionCreateZoneFromZoneFile = new Oci.Dns.ActionCreateZoneFromZoneFile("test_action_create_zone_from_zone_file", new()
     ///     {
-    ///         CreateZoneFromZoneFileDetails = @var.Action_create_zone_from_zone_file_create_zone_from_zone_file_details,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Scope = @var.Action_create_zone_from_zone_file_scope,
-    ///         ViewId = oci_dns_view.Test_view.Id,
+    ///         CreateZoneFromZoneFileDetails = actionCreateZoneFromZoneFileCreateZoneFromZoneFileDetails,
+    ///         CompartmentId = compartmentId,
+    ///         Scope = actionCreateZoneFromZoneFileScope,
+    ///         ViewId = testView.Id,
     ///     });
     /// 
     /// });

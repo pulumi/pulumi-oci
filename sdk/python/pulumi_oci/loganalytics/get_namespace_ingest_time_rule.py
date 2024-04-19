@@ -213,8 +213,8 @@ def get_namespace_ingest_time_rule(ingest_time_rule_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=oci_events_rule["test_rule"]["id"],
-        namespace=var["namespace_ingest_time_rule_namespace"])
+    test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=test_rule["id"],
+        namespace=namespace_ingest_time_rule_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -261,8 +261,8 @@ def get_namespace_ingest_time_rule_output(ingest_time_rule_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=oci_events_rule["test_rule"]["id"],
-        namespace=var["namespace_ingest_time_rule_namespace"])
+    test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=test_rule["id"],
+        namespace=namespace_ingest_time_rule_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

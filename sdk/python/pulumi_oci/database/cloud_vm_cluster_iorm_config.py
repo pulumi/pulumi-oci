@@ -178,12 +178,12 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("testCloudVmClusterIormConfig",
+        test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config",
             db_plans=[oci.database.CloudVmClusterIormConfigDbPlanArgs(
-                db_name=var["cloud_vm_cluster_iorm_config_db_plans_db_name"],
-                share=var["cloud_vm_cluster_iorm_config_db_plans_share"],
+                db_name=cloud_vm_cluster_iorm_config_db_plans_db_name,
+                share=cloud_vm_cluster_iorm_config_db_plans_share,
             )],
-            cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
+            cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")
         ```
         <!--End PulumiCodeChooser -->
@@ -222,12 +222,12 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("testCloudVmClusterIormConfig",
+        test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config",
             db_plans=[oci.database.CloudVmClusterIormConfigDbPlanArgs(
-                db_name=var["cloud_vm_cluster_iorm_config_db_plans_db_name"],
-                share=var["cloud_vm_cluster_iorm_config_db_plans_share"],
+                db_name=cloud_vm_cluster_iorm_config_db_plans_db_name,
+                share=cloud_vm_cluster_iorm_config_db_plans_share,
             )],
-            cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"],
+            cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")
         ```
         <!--End PulumiCodeChooser -->

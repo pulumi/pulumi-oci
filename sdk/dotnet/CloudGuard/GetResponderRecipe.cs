@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testResponderRecipe = Oci.CloudGuard.GetResponderRecipe.Invoke(new()
         ///     {
-        ///         ResponderRecipeId = oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
+        ///         ResponderRecipeId = testResponderRecipeOciCloudGuardResponderRecipe.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testResponderRecipe = Oci.CloudGuard.GetResponderRecipe.Invoke(new()
         ///     {
-        ///         ResponderRecipeId = oci_cloud_guard_responder_recipe.Test_responder_recipe.Id,
+        ///         ResponderRecipeId = testResponderRecipeOciCloudGuardResponderRecipe.Id,
         ///     });
         /// 
         /// });

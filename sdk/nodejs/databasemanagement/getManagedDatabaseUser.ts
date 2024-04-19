@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUser = oci.DatabaseManagement.getManagedDatabaseUser({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     opcNamedCredentialId: _var.managed_database_user_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     opcNamedCredentialId: managedDatabaseUserOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -173,9 +173,9 @@ export interface GetManagedDatabaseUserResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUser = oci.DatabaseManagement.getManagedDatabaseUser({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     opcNamedCredentialId: _var.managed_database_user_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     opcNamedCredentialId: managedDatabaseUserOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

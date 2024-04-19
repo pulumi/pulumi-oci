@@ -775,10 +775,11 @@ class NodePool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_node_pool = oci.container_engine.NodePool("testNodePool",
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            compartment_id=var["compartment_id"],
-            node_shape=var["node_pool_node_shape"],
+        test_node_pool = oci.container_engine.NodePool("test_node_pool",
+            cluster_id=test_cluster["id"],
+            compartment_id=compartment_id,
+            name=node_pool_name,
+            node_shape=node_pool_node_shape,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -786,31 +787,31 @@ class NodePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_node_labels=[oci.container_engine.NodePoolInitialNodeLabelArgs(
-                key=var["node_pool_initial_node_labels_key"],
-                value=var["node_pool_initial_node_labels_value"],
+                key=node_pool_initial_node_labels_key,
+                value=node_pool_initial_node_labels_value,
             )],
-            kubernetes_version=var["node_pool_kubernetes_version"],
+            kubernetes_version=node_pool_kubernetes_version,
             node_config_details=oci.container_engine.NodePoolNodeConfigDetailsArgs(
                 placement_configs=[oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
-                    availability_domain=var["node_pool_node_config_details_placement_configs_availability_domain"],
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
-                    fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
+                    availability_domain=node_pool_node_config_details_placement_configs_availability_domain,
+                    subnet_id=test_subnet["id"],
+                    capacity_reservation_id=test_capacity_reservation["id"],
+                    fault_domains=node_pool_node_config_details_placement_configs_fault_domains,
                     preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
                         preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
-                            type=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type"],
-                            is_preserve_boot_volume=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume"],
+                            type=node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
+                            is_preserve_boot_volume=node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
                         ),
                     ),
                 )],
-                size=var["node_pool_node_config_details_size"],
-                is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                size=node_pool_node_config_details_size,
+                is_pv_encryption_in_transit_enabled=node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
+                kms_key_id=test_key["id"],
                 node_pool_pod_network_option_details=oci.container_engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
-                    cni_type=var["node_pool_node_config_details_node_pool_pod_network_option_details_cni_type"],
-                    max_pods_per_node=var["node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node"],
-                    pod_nsg_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids"],
-                    pod_subnet_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids"],
+                    cni_type=node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
+                    max_pods_per_node=node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
+                    pod_nsg_ids=node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
+                    pod_subnet_ids=node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
                 ),
                 defined_tags={
                     "Operations.CostCenter": "42",
@@ -818,31 +819,31 @@ class NodePool(pulumi.CustomResource):
                 freeform_tags={
                     "Department": "Finance",
                 },
-                nsg_ids=var["node_pool_node_config_details_nsg_ids"],
+                nsg_ids=node_pool_node_config_details_nsg_ids,
             ),
             node_eviction_node_pool_settings=oci.container_engine.NodePoolNodeEvictionNodePoolSettingsArgs(
-                eviction_grace_duration=var["node_pool_node_eviction_node_pool_settings_eviction_grace_duration"],
-                is_force_delete_after_grace_duration=var["node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration"],
+                eviction_grace_duration=node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
+                is_force_delete_after_grace_duration=node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
             ),
-            node_image_name=oci_core_image["test_image"]["name"],
-            node_metadata=var["node_pool_node_metadata"],
+            node_image_name=test_image["name"],
+            node_metadata=node_pool_node_metadata,
             node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
-                is_node_cycling_enabled=var["node_pool_node_pool_cycling_details_is_node_cycling_enabled"],
-                maximum_surge=var["node_pool_node_pool_cycling_details_maximum_surge"],
-                maximum_unavailable=var["node_pool_node_pool_cycling_details_maximum_unavailable"],
+                is_node_cycling_enabled=node_pool_node_pool_cycling_details_is_node_cycling_enabled,
+                maximum_surge=node_pool_node_pool_cycling_details_maximum_surge,
+                maximum_unavailable=node_pool_node_pool_cycling_details_maximum_unavailable,
             ),
             node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
-                memory_in_gbs=var["node_pool_node_shape_config_memory_in_gbs"],
-                ocpus=var["node_pool_node_shape_config_ocpus"],
+                memory_in_gbs=node_pool_node_shape_config_memory_in_gbs,
+                ocpus=node_pool_node_shape_config_ocpus,
             ),
             node_source_details=oci.container_engine.NodePoolNodeSourceDetailsArgs(
-                image_id=oci_core_image["test_image"]["id"],
-                source_type=var["node_pool_node_source_details_source_type"],
-                boot_volume_size_in_gbs=var["node_pool_node_source_details_boot_volume_size_in_gbs"],
+                image_id=test_image["id"],
+                source_type=node_pool_node_source_details_source_type,
+                boot_volume_size_in_gbs=node_pool_node_source_details_boot_volume_size_in_gbs,
             ),
-            quantity_per_subnet=var["node_pool_quantity_per_subnet"],
-            ssh_public_key=var["node_pool_ssh_public_key"],
-            subnet_ids=var["node_pool_subnet_ids"])
+            quantity_per_subnet=node_pool_quantity_per_subnet,
+            ssh_public_key=node_pool_ssh_public_key,
+            subnet_ids=node_pool_subnet_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -898,10 +899,11 @@ class NodePool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_node_pool = oci.container_engine.NodePool("testNodePool",
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-            compartment_id=var["compartment_id"],
-            node_shape=var["node_pool_node_shape"],
+        test_node_pool = oci.container_engine.NodePool("test_node_pool",
+            cluster_id=test_cluster["id"],
+            compartment_id=compartment_id,
+            name=node_pool_name,
+            node_shape=node_pool_node_shape,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -909,31 +911,31 @@ class NodePool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             initial_node_labels=[oci.container_engine.NodePoolInitialNodeLabelArgs(
-                key=var["node_pool_initial_node_labels_key"],
-                value=var["node_pool_initial_node_labels_value"],
+                key=node_pool_initial_node_labels_key,
+                value=node_pool_initial_node_labels_value,
             )],
-            kubernetes_version=var["node_pool_kubernetes_version"],
+            kubernetes_version=node_pool_kubernetes_version,
             node_config_details=oci.container_engine.NodePoolNodeConfigDetailsArgs(
                 placement_configs=[oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigArgs(
-                    availability_domain=var["node_pool_node_config_details_placement_configs_availability_domain"],
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    capacity_reservation_id=oci_containerengine_capacity_reservation["test_capacity_reservation"]["id"],
-                    fault_domains=var["node_pool_node_config_details_placement_configs_fault_domains"],
+                    availability_domain=node_pool_node_config_details_placement_configs_availability_domain,
+                    subnet_id=test_subnet["id"],
+                    capacity_reservation_id=test_capacity_reservation["id"],
+                    fault_domains=node_pool_node_config_details_placement_configs_fault_domains,
                     preemptible_node_config=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs(
                         preemption_action=oci.container_engine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs(
-                            type=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type"],
-                            is_preserve_boot_volume=var["node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume"],
+                            type=node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
+                            is_preserve_boot_volume=node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
                         ),
                     ),
                 )],
-                size=var["node_pool_node_config_details_size"],
-                is_pv_encryption_in_transit_enabled=var["node_pool_node_config_details_is_pv_encryption_in_transit_enabled"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                size=node_pool_node_config_details_size,
+                is_pv_encryption_in_transit_enabled=node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
+                kms_key_id=test_key["id"],
                 node_pool_pod_network_option_details=oci.container_engine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs(
-                    cni_type=var["node_pool_node_config_details_node_pool_pod_network_option_details_cni_type"],
-                    max_pods_per_node=var["node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node"],
-                    pod_nsg_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids"],
-                    pod_subnet_ids=var["node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids"],
+                    cni_type=node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
+                    max_pods_per_node=node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
+                    pod_nsg_ids=node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
+                    pod_subnet_ids=node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
                 ),
                 defined_tags={
                     "Operations.CostCenter": "42",
@@ -941,31 +943,31 @@ class NodePool(pulumi.CustomResource):
                 freeform_tags={
                     "Department": "Finance",
                 },
-                nsg_ids=var["node_pool_node_config_details_nsg_ids"],
+                nsg_ids=node_pool_node_config_details_nsg_ids,
             ),
             node_eviction_node_pool_settings=oci.container_engine.NodePoolNodeEvictionNodePoolSettingsArgs(
-                eviction_grace_duration=var["node_pool_node_eviction_node_pool_settings_eviction_grace_duration"],
-                is_force_delete_after_grace_duration=var["node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration"],
+                eviction_grace_duration=node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
+                is_force_delete_after_grace_duration=node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
             ),
-            node_image_name=oci_core_image["test_image"]["name"],
-            node_metadata=var["node_pool_node_metadata"],
+            node_image_name=test_image["name"],
+            node_metadata=node_pool_node_metadata,
             node_pool_cycling_details=oci.container_engine.NodePoolNodePoolCyclingDetailsArgs(
-                is_node_cycling_enabled=var["node_pool_node_pool_cycling_details_is_node_cycling_enabled"],
-                maximum_surge=var["node_pool_node_pool_cycling_details_maximum_surge"],
-                maximum_unavailable=var["node_pool_node_pool_cycling_details_maximum_unavailable"],
+                is_node_cycling_enabled=node_pool_node_pool_cycling_details_is_node_cycling_enabled,
+                maximum_surge=node_pool_node_pool_cycling_details_maximum_surge,
+                maximum_unavailable=node_pool_node_pool_cycling_details_maximum_unavailable,
             ),
             node_shape_config=oci.container_engine.NodePoolNodeShapeConfigArgs(
-                memory_in_gbs=var["node_pool_node_shape_config_memory_in_gbs"],
-                ocpus=var["node_pool_node_shape_config_ocpus"],
+                memory_in_gbs=node_pool_node_shape_config_memory_in_gbs,
+                ocpus=node_pool_node_shape_config_ocpus,
             ),
             node_source_details=oci.container_engine.NodePoolNodeSourceDetailsArgs(
-                image_id=oci_core_image["test_image"]["id"],
-                source_type=var["node_pool_node_source_details_source_type"],
-                boot_volume_size_in_gbs=var["node_pool_node_source_details_boot_volume_size_in_gbs"],
+                image_id=test_image["id"],
+                source_type=node_pool_node_source_details_source_type,
+                boot_volume_size_in_gbs=node_pool_node_source_details_boot_volume_size_in_gbs,
             ),
-            quantity_per_subnet=var["node_pool_quantity_per_subnet"],
-            ssh_public_key=var["node_pool_ssh_public_key"],
-            subnet_ids=var["node_pool_subnet_ids"])
+            quantity_per_subnet=node_pool_quantity_per_subnet,
+            ssh_public_key=node_pool_ssh_public_key,
+            subnet_ids=node_pool_subnet_ids)
         ```
         <!--End PulumiCodeChooser -->
 

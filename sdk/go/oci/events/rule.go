@@ -31,27 +31,27 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Events.NewRule(ctx, "testRule", &Events.RuleArgs{
+//			_, err := Events.NewRule(ctx, "test_rule", &Events.RuleArgs{
 //				Actions: &events.RuleActionsArgs{
 //					Actions: events.RuleActionsActionArray{
 //						&events.RuleActionsActionArgs{
-//							ActionType:  pulumi.Any(_var.Rule_actions_actions_action_type),
-//							IsEnabled:   pulumi.Any(_var.Rule_actions_actions_is_enabled),
-//							Description: pulumi.Any(_var.Rule_actions_actions_description),
-//							FunctionId:  pulumi.Any(oci_functions_function.Test_function.Id),
-//							StreamId:    pulumi.Any(oci_streaming_stream.Test_stream.Id),
-//							TopicId:     pulumi.Any(oci_ons_notification_topic.Test_topic.Id),
+//							ActionType:  pulumi.Any(ruleActionsActionsActionType),
+//							IsEnabled:   pulumi.Any(ruleActionsActionsIsEnabled),
+//							Description: pulumi.Any(ruleActionsActionsDescription),
+//							FunctionId:  pulumi.Any(testFunction.Id),
+//							StreamId:    pulumi.Any(testStream.Id),
+//							TopicId:     pulumi.Any(testTopic.Id),
 //						},
 //					},
 //				},
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Condition:     pulumi.Any(_var.Rule_condition),
-//				DisplayName:   pulumi.Any(_var.Rule_display_name),
-//				IsEnabled:     pulumi.Any(_var.Rule_is_enabled),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Condition:     pulumi.Any(ruleCondition),
+//				DisplayName:   pulumi.Any(ruleDisplayName),
+//				IsEnabled:     pulumi.Any(ruleIsEnabled),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Rule_description),
+//				Description: pulumi.Any(ruleDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

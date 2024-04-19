@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testNetworkSecurityGroup = Oci.Core.GetNetworkSecurityGroup.Invoke(new()
         ///     {
-        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///         NetworkSecurityGroupId = testNetworkSecurityGroupOciCoreNetworkSecurityGroup.Id,
         ///     });
         /// 
         /// });
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testNetworkSecurityGroup = Oci.Core.GetNetworkSecurityGroup.Invoke(new()
         ///     {
-        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///         NetworkSecurityGroupId = testNetworkSecurityGroupOciCoreNetworkSecurityGroup.Id,
         ///     });
         /// 
         /// });

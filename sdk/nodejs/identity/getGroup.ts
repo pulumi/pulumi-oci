@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testGroup = oci.Identity.getGroup({
- *     groupId: oci_identity_group.test_group.id,
+ *     groupId: testGroupOciIdentityGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,7 +103,7 @@ export interface GetGroupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testGroup = oci.Identity.getGroup({
- *     groupId: oci_identity_group.test_group.id,
+ *     groupId: testGroupOciIdentityGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

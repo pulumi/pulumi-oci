@@ -30,8 +30,8 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testInventories = Oci.CloudBridge.GetInventories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         State = @var.Inventory_state,
+        ///         CompartmentId = compartmentId,
+        ///         State = inventoryState,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testInventories = Oci.CloudBridge.GetInventories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         State = @var.Inventory_state,
+        ///         CompartmentId = compartmentId,
+        ///         State = inventoryState,
         ///     });
         /// 
         /// });

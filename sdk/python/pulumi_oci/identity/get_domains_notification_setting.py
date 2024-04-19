@@ -358,12 +358,12 @@ def get_domains_notification_setting(attribute_sets: Optional[Sequence[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_setting = oci.Identity.get_domains_notification_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        notification_setting_id=oci_identity_domains_notification_setting["test_notification_setting"]["id"],
+    test_notification_setting = oci.Identity.get_domains_notification_setting(idcs_endpoint=test_domain["url"],
+        notification_setting_id=test_notification_setting_oci_identity_domains_notification_setting["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["notification_setting_authorization"],
-        resource_type_schema_version=var["notification_setting_resource_type_schema_version"])
+        authorization=notification_setting_authorization,
+        resource_type_schema_version=notification_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -435,12 +435,12 @@ def get_domains_notification_setting_output(attribute_sets: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_setting = oci.Identity.get_domains_notification_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        notification_setting_id=oci_identity_domains_notification_setting["test_notification_setting"]["id"],
+    test_notification_setting = oci.Identity.get_domains_notification_setting(idcs_endpoint=test_domain["url"],
+        notification_setting_id=test_notification_setting_oci_identity_domains_notification_setting["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["notification_setting_authorization"],
-        resource_type_schema_version=var["notification_setting_resource_type_schema_version"])
+        authorization=notification_setting_authorization,
+        resource_type_schema_version=notification_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

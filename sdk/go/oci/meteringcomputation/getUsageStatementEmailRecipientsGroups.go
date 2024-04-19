@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MeteringComputation.GetUsageStatementEmailRecipientsGroups(ctx, &meteringcomputation.GetUsageStatementEmailRecipientsGroupsArgs{
-//				CompartmentId:  _var.Compartment_id,
-//				SubscriptionId: oci_onesubscription_subscription.Test_subscription.Id,
+//				CompartmentId:  compartmentId,
+//				SubscriptionId: testSubscription.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDataSafePrivateEndpoint = Oci.DataSafe.GetDataSafePrivateEndpoint.Invoke(new()
         ///     {
-        ///         DataSafePrivateEndpointId = oci_data_safe_data_safe_private_endpoint.Test_data_safe_private_endpoint.Id,
+        ///         DataSafePrivateEndpointId = testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDataSafePrivateEndpoint = Oci.DataSafe.GetDataSafePrivateEndpoint.Invoke(new()
         ///     {
-        ///         DataSafePrivateEndpointId = oci_data_safe_data_safe_private_endpoint.Test_data_safe_private_endpoint.Id,
+        ///         DataSafePrivateEndpointId = testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.Id,
         ///     });
         /// 
         /// });

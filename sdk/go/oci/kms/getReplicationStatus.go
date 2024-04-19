@@ -34,8 +34,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Kms.GetReplicationStatus(ctx, &kms.GetReplicationStatusArgs{
-//				ReplicationId:      oci_kms_replication.Test_replication.Id,
-//				ManagementEndpoint: _var.Replication_status_management_endpoint,
+//				ReplicationId:      testReplication.Id,
+//				ManagementEndpoint: replicationStatusManagementEndpoint,
 //			}, nil)
 //			if err != nil {
 //				return err

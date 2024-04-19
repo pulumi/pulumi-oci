@@ -39,14 +39,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessmentFindingAnalytics = Oci.DataSafe.GetSecurityAssessmentFindingAnalytics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_assessment_finding_analytic_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_finding_analytic_compartment_id_in_subtree,
-        ///         FindingKey = @var.Security_assessment_finding_analytic_finding_key,
-        ///         GroupBy = @var.Security_assessment_finding_analytic_group_by,
-        ///         IsTopFinding = @var.Security_assessment_finding_analytic_is_top_finding,
-        ///         Severity = @var.Security_assessment_finding_analytic_severity,
-        ///         TopFindingStatus = @var.Security_assessment_finding_analytic_top_finding_status,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentFindingAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentFindingAnalyticCompartmentIdInSubtree,
+        ///         FindingKey = securityAssessmentFindingAnalyticFindingKey,
+        ///         GroupBy = securityAssessmentFindingAnalyticGroupBy,
+        ///         IsTopFinding = securityAssessmentFindingAnalyticIsTopFinding,
+        ///         Severity = securityAssessmentFindingAnalyticSeverity,
+        ///         TopFindingStatus = securityAssessmentFindingAnalyticTopFindingStatus,
         ///     });
         /// 
         /// });
@@ -84,14 +84,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessmentFindingAnalytics = Oci.DataSafe.GetSecurityAssessmentFindingAnalytics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_assessment_finding_analytic_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_assessment_finding_analytic_compartment_id_in_subtree,
-        ///         FindingKey = @var.Security_assessment_finding_analytic_finding_key,
-        ///         GroupBy = @var.Security_assessment_finding_analytic_group_by,
-        ///         IsTopFinding = @var.Security_assessment_finding_analytic_is_top_finding,
-        ///         Severity = @var.Security_assessment_finding_analytic_severity,
-        ///         TopFindingStatus = @var.Security_assessment_finding_analytic_top_finding_status,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityAssessmentFindingAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = securityAssessmentFindingAnalyticCompartmentIdInSubtree,
+        ///         FindingKey = securityAssessmentFindingAnalyticFindingKey,
+        ///         GroupBy = securityAssessmentFindingAnalyticGroupBy,
+        ///         IsTopFinding = securityAssessmentFindingAnalyticIsTopFinding,
+        ///         Severity = securityAssessmentFindingAnalyticSeverity,
+        ///         TopFindingStatus = securityAssessmentFindingAnalyticTopFindingStatus,
         ///     });
         /// 
         /// });

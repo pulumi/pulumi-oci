@@ -288,14 +288,14 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_analytics_instance_vanity_url = oci.analytics.AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl",
-            analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
-            ca_certificate=var["analytics_instance_vanity_url_ca_certificate"],
-            hosts=var["analytics_instance_vanity_url_hosts"],
-            private_key=var["analytics_instance_vanity_url_private_key"],
-            public_certificate=var["analytics_instance_vanity_url_public_certificate"],
-            description=var["analytics_instance_vanity_url_description"],
-            passphrase=var["analytics_instance_vanity_url_passphrase"])
+        test_analytics_instance_vanity_url = oci.analytics.AnalyticsInstanceVanityUrl("test_analytics_instance_vanity_url",
+            analytics_instance_id=test_analytics_instance["id"],
+            ca_certificate=analytics_instance_vanity_url_ca_certificate,
+            hosts=analytics_instance_vanity_url_hosts,
+            private_key=analytics_instance_vanity_url_private_key,
+            public_certificate=analytics_instance_vanity_url_public_certificate,
+            description=analytics_instance_vanity_url_description,
+            passphrase=analytics_instance_vanity_url_passphrase)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -340,14 +340,14 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_analytics_instance_vanity_url = oci.analytics.AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl",
-            analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
-            ca_certificate=var["analytics_instance_vanity_url_ca_certificate"],
-            hosts=var["analytics_instance_vanity_url_hosts"],
-            private_key=var["analytics_instance_vanity_url_private_key"],
-            public_certificate=var["analytics_instance_vanity_url_public_certificate"],
-            description=var["analytics_instance_vanity_url_description"],
-            passphrase=var["analytics_instance_vanity_url_passphrase"])
+        test_analytics_instance_vanity_url = oci.analytics.AnalyticsInstanceVanityUrl("test_analytics_instance_vanity_url",
+            analytics_instance_id=test_analytics_instance["id"],
+            ca_certificate=analytics_instance_vanity_url_ca_certificate,
+            hosts=analytics_instance_vanity_url_hosts,
+            private_key=analytics_instance_vanity_url_private_key,
+            public_certificate=analytics_instance_vanity_url_public_certificate,
+            description=analytics_instance_vanity_url_description,
+            passphrase=analytics_instance_vanity_url_passphrase)
         ```
         <!--End PulumiCodeChooser -->
 

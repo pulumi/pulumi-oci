@@ -26,26 +26,26 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExport = new Oci.FileStorage.Export("testExport", new()
+    ///     var testExport = new Oci.FileStorage.Export("test_export", new()
     ///     {
-    ///         ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
-    ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-    ///         Path = @var.Export_path,
+    ///         ExportSetId = testExportSet.Id,
+    ///         FileSystemId = testFileSystem.Id,
+    ///         Path = exportPath,
     ///         ExportOptions = new[]
     ///         {
     ///             new Oci.FileStorage.Inputs.ExportExportOptionArgs
     ///             {
-    ///                 Source = @var.Export_export_options_source,
-    ///                 Access = @var.Export_export_options_access,
-    ///                 AllowedAuths = @var.Export_export_options_allowed_auth,
-    ///                 AnonymousGid = @var.Export_export_options_anonymous_gid,
-    ///                 AnonymousUid = @var.Export_export_options_anonymous_uid,
-    ///                 IdentitySquash = @var.Export_export_options_identity_squash,
-    ///                 IsAnonymousAccessAllowed = @var.Export_export_options_is_anonymous_access_allowed,
-    ///                 RequirePrivilegedSourcePort = @var.Export_export_options_require_privileged_source_port,
+    ///                 Source = exportExportOptionsSource,
+    ///                 Access = exportExportOptionsAccess,
+    ///                 AllowedAuths = exportExportOptionsAllowedAuth,
+    ///                 AnonymousGid = exportExportOptionsAnonymousGid,
+    ///                 AnonymousUid = exportExportOptionsAnonymousUid,
+    ///                 IdentitySquash = exportExportOptionsIdentitySquash,
+    ///                 IsAnonymousAccessAllowed = exportExportOptionsIsAnonymousAccessAllowed,
+    ///                 RequirePrivilegedSourcePort = exportExportOptionsRequirePrivilegedSourcePort,
     ///             },
     ///         },
-    ///         IsIdmapGroupsForSysAuth = @var.Export_is_idmap_groups_for_sys_auth,
+    ///         IsIdmapGroupsForSysAuth = exportIsIdmapGroupsForSysAuth,
     ///     });
     /// 
     /// });

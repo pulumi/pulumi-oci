@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityAssessmentComparison(ctx, &datasafe.GetSecurityAssessmentComparisonArgs{
-//				ComparisonSecurityAssessmentId: oci_data_safe_security_assessment.Test_security_assessment.Id,
-//				SecurityAssessmentId:           oci_data_safe_security_assessment.Test_security_assessment.Id,
+//				ComparisonSecurityAssessmentId: testSecurityAssessment.Id,
+//				SecurityAssessmentId:           testSecurityAssessment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

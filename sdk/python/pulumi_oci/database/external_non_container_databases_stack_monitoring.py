@@ -157,9 +157,9 @@ class ExternalNonContainerDatabasesStackMonitoring(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_externalnoncontainerdatabases_stack_monitoring = oci.database.ExternalNonContainerDatabasesStackMonitoring("testExternalnoncontainerdatabasesStackMonitoring",
-            external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"],
-            external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"],
+        test_externalnoncontainerdatabases_stack_monitoring = oci.database.ExternalNonContainerDatabasesStackMonitoring("test_externalnoncontainerdatabases_stack_monitoring",
+            external_database_connector_id=test_external_database_connector["id"],
+            external_non_container_database_id=test_external_non_container_database["id"],
             enable_stack_monitoring=True)
         ```
         <!--End PulumiCodeChooser -->
@@ -196,9 +196,9 @@ class ExternalNonContainerDatabasesStackMonitoring(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_externalnoncontainerdatabases_stack_monitoring = oci.database.ExternalNonContainerDatabasesStackMonitoring("testExternalnoncontainerdatabasesStackMonitoring",
-            external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"],
-            external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"],
+        test_externalnoncontainerdatabases_stack_monitoring = oci.database.ExternalNonContainerDatabasesStackMonitoring("test_externalnoncontainerdatabases_stack_monitoring",
+            external_database_connector_id=test_external_database_connector["id"],
+            external_non_container_database_id=test_external_non_container_database["id"],
             enable_stack_monitoring=True)
         ```
         <!--End PulumiCodeChooser -->

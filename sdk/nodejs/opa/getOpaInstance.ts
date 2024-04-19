@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOpaInstance = oci.Opa.getOpaInstance({
- *     opaInstanceId: oci_opa_opa_instance.test_opa_instance.id,
+ *     opaInstanceId: testOpaInstanceOciOpaOpaInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,7 +142,7 @@ export interface GetOpaInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOpaInstance = oci.Opa.getOpaInstance({
- *     opaInstanceId: oci_opa_opa_instance.test_opa_instance.id,
+ *     opaInstanceId: testOpaInstanceOciOpaOpaInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

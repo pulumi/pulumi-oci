@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProductLicense = new oci.licensemanager.ProductLicense("testProductLicense", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.product_license_display_name,
- *     isVendorOracle: _var.product_license_is_vendor_oracle,
- *     licenseUnit: _var.product_license_license_unit,
+ * const testProductLicense = new oci.licensemanager.ProductLicense("test_product_license", {
+ *     compartmentId: compartmentId,
+ *     displayName: productLicenseDisplayName,
+ *     isVendorOracle: productLicenseIsVendorOracle,
+ *     licenseUnit: productLicenseLicenseUnit,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     images: [{
- *         listingId: oci_marketplace_listing.test_listing.id,
- *         packageVersion: _var.product_license_images_package_version,
+ *         listingId: testListing.id,
+ *         packageVersion: productLicenseImagesPackageVersion,
  *     }],
- *     vendorName: _var.product_license_vendor_name,
+ *     vendorName: productLicenseVendorName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

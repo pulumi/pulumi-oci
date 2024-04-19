@@ -17,19 +17,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNatGateway = new oci.core.NatGateway("testNatGateway", {
- *     compartmentId: _var.compartment_id,
- *     vcnId: oci_core_vcn.test_vcn.id,
- *     blockTraffic: _var.nat_gateway_block_traffic,
+ * const testNatGateway = new oci.core.NatGateway("test_nat_gateway", {
+ *     compartmentId: compartmentId,
+ *     vcnId: testVcn.id,
+ *     blockTraffic: natGatewayBlockTraffic,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.nat_gateway_display_name,
+ *     displayName: natGatewayDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     publicIpId: oci_core_public_ip.test_public_ip.id,
- *     routeTableId: oci_core_route_table.test_route_table.id,
+ *     publicIpId: testPublicIp.id,
+ *     routeTableId: testRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

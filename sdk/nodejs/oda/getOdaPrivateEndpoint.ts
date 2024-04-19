@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaPrivateEndpoint = oci.Oda.getOdaPrivateEndpoint({
- *     odaPrivateEndpointId: oci_oda_oda_private_endpoint.test_oda_private_endpoint.id,
+ *     odaPrivateEndpointId: testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,7 +103,7 @@ export interface GetOdaPrivateEndpointResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaPrivateEndpoint = oci.Oda.getOdaPrivateEndpoint({
- *     odaPrivateEndpointId: oci_oda_oda_private_endpoint.test_oda_private_endpoint.id,
+ *     odaPrivateEndpointId: testOdaPrivateEndpointOciOdaOdaPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

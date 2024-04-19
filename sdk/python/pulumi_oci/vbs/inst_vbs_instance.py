@@ -419,18 +419,19 @@ class InstVbsInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vbs_instance = oci.vbs.InstVbsInstance("testVbsInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["vbs_instance_display_name"],
+        test_vbs_instance = oci.vbs.InstVbsInstance("test_vbs_instance",
+            compartment_id=compartment_id,
+            display_name=vbs_instance_display_name,
+            name=vbs_instance_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            idcs_access_token=var["vbs_instance_idcs_access_token"],
-            is_resource_usage_agreement_granted=var["vbs_instance_is_resource_usage_agreement_granted"],
-            resource_compartment_id=var["resource_compartment_id"])
+            idcs_access_token=vbs_instance_idcs_access_token,
+            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted,
+            resource_compartment_id=resource_compartment_id)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -475,18 +476,19 @@ class InstVbsInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vbs_instance = oci.vbs.InstVbsInstance("testVbsInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["vbs_instance_display_name"],
+        test_vbs_instance = oci.vbs.InstVbsInstance("test_vbs_instance",
+            compartment_id=compartment_id,
+            display_name=vbs_instance_display_name,
+            name=vbs_instance_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            idcs_access_token=var["vbs_instance_idcs_access_token"],
-            is_resource_usage_agreement_granted=var["vbs_instance_is_resource_usage_agreement_granted"],
-            resource_compartment_id=var["resource_compartment_id"])
+            idcs_access_token=vbs_instance_idcs_access_token,
+            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted,
+            resource_compartment_id=resource_compartment_id)
         ```
         <!--End PulumiCodeChooser -->
 

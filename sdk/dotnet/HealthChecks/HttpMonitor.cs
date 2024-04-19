@@ -27,13 +27,13 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testHttpMonitor = new Oci.HealthChecks.HttpMonitor("testHttpMonitor", new()
+    ///     var testHttpMonitor = new Oci.HealthChecks.HttpMonitor("test_http_monitor", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Http_monitor_display_name,
-    ///         IntervalInSeconds = @var.Http_monitor_interval_in_seconds,
-    ///         Protocol = @var.Http_monitor_protocol,
-    ///         Targets = @var.Http_monitor_targets,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = httpMonitorDisplayName,
+    ///         IntervalInSeconds = httpMonitorIntervalInSeconds,
+    ///         Protocol = httpMonitorProtocol,
+    ///         Targets = httpMonitorTargets,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -42,13 +42,13 @@ namespace Pulumi.Oci.HealthChecks
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Headers = @var.Http_monitor_headers,
-    ///         IsEnabled = @var.Http_monitor_is_enabled,
-    ///         Method = @var.Http_monitor_method,
-    ///         Path = @var.Http_monitor_path,
-    ///         Port = @var.Http_monitor_port,
-    ///         TimeoutInSeconds = @var.Http_monitor_timeout_in_seconds,
-    ///         VantagePointNames = @var.Http_monitor_vantage_point_names,
+    ///         Headers = httpMonitorHeaders,
+    ///         IsEnabled = httpMonitorIsEnabled,
+    ///         Method = httpMonitorMethod,
+    ///         Path = httpMonitorPath,
+    ///         Port = httpMonitorPort,
+    ///         TimeoutInSeconds = httpMonitorTimeoutInSeconds,
+    ///         VantagePointNames = httpMonitorVantagePointNames,
     ///     });
     /// 
     /// });

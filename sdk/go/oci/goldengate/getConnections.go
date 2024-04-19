@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetConnections(ctx, &goldengate.GetConnectionsArgs{
-//				CompartmentId:            _var.Compartment_id,
-//				AssignableDeploymentId:   pulumi.StringRef(oci_golden_gate_deployment.Test_deployment.Id),
-//				AssignableDeploymentType: pulumi.StringRef(_var.Connection_assignable_deployment_type),
-//				AssignedDeploymentId:     pulumi.StringRef(oci_golden_gate_deployment.Test_deployment.Id),
-//				ConnectionTypes:          _var.Connection_connection_type,
-//				DisplayName:              pulumi.StringRef(_var.Connection_display_name),
-//				State:                    pulumi.StringRef(_var.Connection_state),
-//				TechnologyTypes:          _var.Connection_technology_type,
+//				CompartmentId:            compartmentId,
+//				AssignableDeploymentId:   pulumi.StringRef(testDeployment.Id),
+//				AssignableDeploymentType: pulumi.StringRef(connectionAssignableDeploymentType),
+//				AssignedDeploymentId:     pulumi.StringRef(testDeployment.Id),
+//				ConnectionTypes:          connectionConnectionType,
+//				DisplayName:              pulumi.StringRef(connectionDisplayName),
+//				State:                    pulumi.StringRef(connectionState),
+//				TechnologyTypes:          connectionTechnologyType,
 //			}, nil)
 //			if err != nil {
 //				return err

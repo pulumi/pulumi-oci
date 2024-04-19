@@ -16,25 +16,25 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBudget = new oci.budget.Budget("testBudget", {
- *     amount: _var.budget_amount,
- *     compartmentId: _var.tenancy_ocid,
- *     resetPeriod: _var.budget_reset_period,
- *     budgetProcessingPeriodStartOffset: _var.budget_budget_processing_period_start_offset,
+ * const testBudget = new oci.budget.Budget("test_budget", {
+ *     amount: budgetAmount,
+ *     compartmentId: tenancyOcid,
+ *     resetPeriod: budgetResetPeriod,
+ *     budgetProcessingPeriodStartOffset: budgetBudgetProcessingPeriodStartOffset,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.budget_description,
- *     displayName: _var.budget_display_name,
- *     endDate: _var.budget_end_date,
+ *     description: budgetDescription,
+ *     displayName: budgetDisplayName,
+ *     endDate: budgetEndDate,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     processingPeriodType: _var.budget_processing_period_type,
- *     startDate: _var.budget_start_date,
- *     targetCompartmentId: oci_identity_compartment.test_compartment.id,
- *     targetType: _var.budget_target_type,
- *     targets: _var.budget_targets,
+ *     processingPeriodType: budgetProcessingPeriodType,
+ *     startDate: budgetStartDate,
+ *     targetCompartmentId: testCompartment.id,
+ *     targetType: budgetTargetType,
+ *     targets: budgetTargets,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

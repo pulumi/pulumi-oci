@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetJobExecutionsStatuses(ctx, &databasemanagement.GetJobExecutionsStatusesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				EndTime:                _var.Job_executions_status_end_time,
-//				StartTime:              _var.Job_executions_status_start_time,
-//				Id:                     pulumi.StringRef(_var.Job_executions_status_id),
-//				ManagedDatabaseGroupId: pulumi.StringRef(oci_database_management_managed_database_group.Test_managed_database_group.Id),
-//				ManagedDatabaseId:      pulumi.StringRef(oci_database_management_managed_database.Test_managed_database.Id),
-//				Name:                   pulumi.StringRef(_var.Job_executions_status_name),
+//				CompartmentId:          compartmentId,
+//				EndTime:                jobExecutionsStatusEndTime,
+//				StartTime:              jobExecutionsStatusStartTime,
+//				Id:                     pulumi.StringRef(jobExecutionsStatusId),
+//				ManagedDatabaseGroupId: pulumi.StringRef(testManagedDatabaseGroup.Id),
+//				ManagedDatabaseId:      pulumi.StringRef(testManagedDatabase.Id),
+//				Name:                   pulumi.StringRef(jobExecutionsStatusName),
 //			}, nil)
 //			if err != nil {
 //				return err

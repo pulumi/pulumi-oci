@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAlertPolicyRules(ctx, &datasafe.GetAlertPolicyRulesArgs{
-//				AlertPolicyId: oci_data_safe_alert_policy.Test_alert_policy.Id,
+//				AlertPolicyId: testAlertPolicy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

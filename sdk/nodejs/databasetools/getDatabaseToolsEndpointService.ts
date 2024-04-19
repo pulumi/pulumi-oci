@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsEndpointService = oci.DatabaseTools.getDatabaseToolsEndpointService({
- *     databaseToolsEndpointServiceId: oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service.id,
+ *     databaseToolsEndpointServiceId: testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,7 +107,7 @@ export interface GetDatabaseToolsEndpointServiceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsEndpointService = oci.DatabaseTools.getDatabaseToolsEndpointService({
- *     databaseToolsEndpointServiceId: oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service.id,
+ *     databaseToolsEndpointServiceId: testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

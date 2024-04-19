@@ -52,8 +52,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAuthToken = new AuthToken(&#34;testAuthToken&#34;, AuthTokenArgs.builder()        
- *             .description(var_.auth_token_description())
- *             .userId(oci_identity_user.test_user().id())
+ *             .description(authTokenDescription)
+ *             .userId(testUser.id())
  *             .build());
  * 
  *     }

@@ -36,12 +36,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetInstances(ctx, &core.GetInstancesArgs{
-//				CompartmentId:         _var.Compartment_id,
-//				AvailabilityDomain:    pulumi.StringRef(_var.Instance_availability_domain),
-//				CapacityReservationId: pulumi.StringRef(oci_core_capacity_reservation.Test_capacity_reservation.Id),
-//				ComputeClusterId:      pulumi.StringRef(oci_core_compute_cluster.Test_compute_cluster.Id),
-//				DisplayName:           pulumi.StringRef(_var.Instance_display_name),
-//				State:                 pulumi.StringRef(_var.Instance_state),
+//				CompartmentId:         compartmentId,
+//				AvailabilityDomain:    pulumi.StringRef(instanceAvailabilityDomain),
+//				CapacityReservationId: pulumi.StringRef(testCapacityReservation.Id),
+//				ComputeClusterId:      pulumi.StringRef(testComputeCluster.Id),
+//				DisplayName:           pulumi.StringRef(instanceDisplayName),
+//				State:                 pulumi.StringRef(instanceState),
 //			}, nil)
 //			if err != nil {
 //				return err

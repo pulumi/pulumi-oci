@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Email.GetSuppression(ctx, &email.GetSuppressionArgs{
-//				SuppressionId: oci_email_suppression.Test_suppression.Id,
+//				SuppressionId: testSuppressionOciEmailSuppression.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

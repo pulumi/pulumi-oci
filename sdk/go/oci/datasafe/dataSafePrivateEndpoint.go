@@ -31,20 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewDataSafePrivateEndpoint(ctx, "testDataSafePrivateEndpoint", &DataSafe.DataSafePrivateEndpointArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Data_safe_private_endpoint_display_name),
-//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//			_, err := DataSafe.NewDataSafePrivateEndpoint(ctx, "test_data_safe_private_endpoint", &DataSafe.DataSafePrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(dataSafePrivateEndpointDisplayName),
+//				SubnetId:      pulumi.Any(testSubnet.Id),
+//				VcnId:         pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Data_safe_private_endpoint_description),
+//				Description: pulumi.Any(dataSafePrivateEndpointDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				NsgIds:            pulumi.Any(_var.Data_safe_private_endpoint_nsg_ids),
-//				PrivateEndpointIp: pulumi.Any(_var.Data_safe_private_endpoint_private_endpoint_ip),
+//				NsgIds:            pulumi.Any(dataSafePrivateEndpointNsgIds),
+//				PrivateEndpointIp: pulumi.Any(dataSafePrivateEndpointPrivateEndpointIp),
 //			})
 //			if err != nil {
 //				return err

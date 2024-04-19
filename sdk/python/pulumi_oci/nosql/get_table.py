@@ -285,8 +285,8 @@ def get_table(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_table = oci.Nosql.get_table(table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"])
+    test_table = oci.Nosql.get_table(table_name_or_id=test_table_name_or["id"],
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -339,8 +339,8 @@ def get_table_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_table = oci.Nosql.get_table(table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-        compartment_id=var["compartment_id"])
+    test_table = oci.Nosql.get_table(table_name_or_id=test_table_name_or["id"],
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

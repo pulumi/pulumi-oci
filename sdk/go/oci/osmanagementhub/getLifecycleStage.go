@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetLifecycleStage(ctx, &osmanagementhub.GetLifecycleStageArgs{
-//				LifecycleStageId: oci_os_management_hub_lifecycle_stage.Test_lifecycle_stage.Id,
+//				LifecycleStageId: testLifecycleStageOciOsManagementHubLifecycleStage.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

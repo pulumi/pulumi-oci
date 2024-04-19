@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetJob(ctx, &datascience.GetJobArgs{
-//				JobId: oci_datascience_job.Test_job.Id,
+//				JobId: testJobOciDatascienceJob.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

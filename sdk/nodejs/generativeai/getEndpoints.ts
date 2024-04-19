@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEndpoints = oci.GenerativeAi.getEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.endpoint_display_name,
- *     id: _var.endpoint_id,
- *     state: _var.endpoint_state,
+ *     compartmentId: compartmentId,
+ *     displayName: endpointDisplayName,
+ *     id: endpointId,
+ *     state: endpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEndpoints = oci.GenerativeAi.getEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.endpoint_display_name,
- *     id: _var.endpoint_id,
- *     state: _var.endpoint_state,
+ *     compartmentId: compartmentId,
+ *     displayName: endpointDisplayName,
+ *     id: endpointId,
+ *     state: endpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

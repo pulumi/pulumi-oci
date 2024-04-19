@@ -486,36 +486,36 @@ class Gateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_gateway = oci.api_gateway.Gateway("testGateway",
-            compartment_id=var["compartment_id"],
-            endpoint_type=var["gateway_endpoint_type"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
+        test_gateway = oci.api_gateway.Gateway("test_gateway",
+            compartment_id=compartment_id,
+            endpoint_type=gateway_endpoint_type,
+            subnet_id=test_subnet["id"],
+            certificate_id=test_certificate["id"],
             ca_bundles=[oci.api_gateway.GatewayCaBundleArgs(
-                type=var["gateway_ca_bundles_type"],
-                ca_bundle_id=oci_apigateway_ca_bundle["test_ca_bundle"]["id"],
-                certificate_authority_id=oci_apigateway_certificate_authority["test_certificate_authority"]["id"],
+                type=gateway_ca_bundles_type,
+                ca_bundle_id=test_ca_bundle["id"],
+                certificate_authority_id=test_certificate_authority["id"],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["gateway_display_name"],
+            display_name=gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            network_security_group_ids=var["gateway_network_security_group_ids"],
+            network_security_group_ids=gateway_network_security_group_ids,
             response_cache_details=oci.api_gateway.GatewayResponseCacheDetailsArgs(
-                type=var["gateway_response_cache_details_type"],
-                authentication_secret_id=oci_vault_secret["test_secret"]["id"],
-                authentication_secret_version_number=var["gateway_response_cache_details_authentication_secret_version_number"],
-                connect_timeout_in_ms=var["gateway_response_cache_details_connect_timeout_in_ms"],
-                is_ssl_enabled=var["gateway_response_cache_details_is_ssl_enabled"],
-                is_ssl_verify_disabled=var["gateway_response_cache_details_is_ssl_verify_disabled"],
-                read_timeout_in_ms=var["gateway_response_cache_details_read_timeout_in_ms"],
-                send_timeout_in_ms=var["gateway_response_cache_details_send_timeout_in_ms"],
+                type=gateway_response_cache_details_type,
+                authentication_secret_id=test_secret["id"],
+                authentication_secret_version_number=gateway_response_cache_details_authentication_secret_version_number,
+                connect_timeout_in_ms=gateway_response_cache_details_connect_timeout_in_ms,
+                is_ssl_enabled=gateway_response_cache_details_is_ssl_enabled,
+                is_ssl_verify_disabled=gateway_response_cache_details_is_ssl_verify_disabled,
+                read_timeout_in_ms=gateway_response_cache_details_read_timeout_in_ms,
+                send_timeout_in_ms=gateway_response_cache_details_send_timeout_in_ms,
                 servers=[oci.api_gateway.GatewayResponseCacheDetailsServerArgs(
-                    host=var["gateway_response_cache_details_servers_host"],
-                    port=var["gateway_response_cache_details_servers_port"],
+                    host=gateway_response_cache_details_servers_host,
+                    port=gateway_response_cache_details_servers_port,
                 )],
             ))
         ```
@@ -564,36 +564,36 @@ class Gateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_gateway = oci.api_gateway.Gateway("testGateway",
-            compartment_id=var["compartment_id"],
-            endpoint_type=var["gateway_endpoint_type"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            certificate_id=oci_apigateway_certificate["test_certificate"]["id"],
+        test_gateway = oci.api_gateway.Gateway("test_gateway",
+            compartment_id=compartment_id,
+            endpoint_type=gateway_endpoint_type,
+            subnet_id=test_subnet["id"],
+            certificate_id=test_certificate["id"],
             ca_bundles=[oci.api_gateway.GatewayCaBundleArgs(
-                type=var["gateway_ca_bundles_type"],
-                ca_bundle_id=oci_apigateway_ca_bundle["test_ca_bundle"]["id"],
-                certificate_authority_id=oci_apigateway_certificate_authority["test_certificate_authority"]["id"],
+                type=gateway_ca_bundles_type,
+                ca_bundle_id=test_ca_bundle["id"],
+                certificate_authority_id=test_certificate_authority["id"],
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["gateway_display_name"],
+            display_name=gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            network_security_group_ids=var["gateway_network_security_group_ids"],
+            network_security_group_ids=gateway_network_security_group_ids,
             response_cache_details=oci.api_gateway.GatewayResponseCacheDetailsArgs(
-                type=var["gateway_response_cache_details_type"],
-                authentication_secret_id=oci_vault_secret["test_secret"]["id"],
-                authentication_secret_version_number=var["gateway_response_cache_details_authentication_secret_version_number"],
-                connect_timeout_in_ms=var["gateway_response_cache_details_connect_timeout_in_ms"],
-                is_ssl_enabled=var["gateway_response_cache_details_is_ssl_enabled"],
-                is_ssl_verify_disabled=var["gateway_response_cache_details_is_ssl_verify_disabled"],
-                read_timeout_in_ms=var["gateway_response_cache_details_read_timeout_in_ms"],
-                send_timeout_in_ms=var["gateway_response_cache_details_send_timeout_in_ms"],
+                type=gateway_response_cache_details_type,
+                authentication_secret_id=test_secret["id"],
+                authentication_secret_version_number=gateway_response_cache_details_authentication_secret_version_number,
+                connect_timeout_in_ms=gateway_response_cache_details_connect_timeout_in_ms,
+                is_ssl_enabled=gateway_response_cache_details_is_ssl_enabled,
+                is_ssl_verify_disabled=gateway_response_cache_details_is_ssl_verify_disabled,
+                read_timeout_in_ms=gateway_response_cache_details_read_timeout_in_ms,
+                send_timeout_in_ms=gateway_response_cache_details_send_timeout_in_ms,
                 servers=[oci.api_gateway.GatewayResponseCacheDetailsServerArgs(
-                    host=var["gateway_response_cache_details_servers_host"],
-                    port=var["gateway_response_cache_details_servers_port"],
+                    host=gateway_response_cache_details_servers_host,
+                    port=gateway_response_cache_details_servers_port,
                 )],
             ))
         ```

@@ -33,12 +33,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessmentProfileAnalytics = oci.DataSafe.getUserAssessmentProfileAnalytics({
- *     compartmentId: _var.compartment_id,
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
- *     accessLevel: _var.user_assessment_profile_analytic_access_level,
- *     compartmentIdInSubtree: _var.user_assessment_profile_analytic_compartment_id_in_subtree,
- *     profileName: oci_optimizer_profile.test_profile.name,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     userAssessmentId: testUserAssessment.id,
+ *     accessLevel: userAssessmentProfileAnalyticAccessLevel,
+ *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree,
+ *     profileName: testProfile.name,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -135,12 +135,12 @@ export interface GetUserAssessmentProfileAnalyticsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessmentProfileAnalytics = oci.DataSafe.getUserAssessmentProfileAnalytics({
- *     compartmentId: _var.compartment_id,
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
- *     accessLevel: _var.user_assessment_profile_analytic_access_level,
- *     compartmentIdInSubtree: _var.user_assessment_profile_analytic_compartment_id_in_subtree,
- *     profileName: oci_optimizer_profile.test_profile.name,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     userAssessmentId: testUserAssessment.id,
+ *     accessLevel: userAssessmentProfileAnalyticAccessLevel,
+ *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree,
+ *     profileName: testProfile.name,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -80,10 +80,10 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
-     *             .ciphertext(var_.decrypted_data_ciphertext())
-     *             .cryptoEndpoint(var_.decrypted_data_crypto_endpoint())
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .associatedData(var_.decrypted_data_associated_data())
+     *             .ciphertext(decryptedDataCiphertext)
+     *             .cryptoEndpoint(decryptedDataCryptoEndpoint)
+     *             .keyId(testKey.id())
+     *             .associatedData(decryptedDataAssociatedData)
      *             .build());
      * 
      *     }
@@ -125,10 +125,10 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
-     *             .ciphertext(var_.decrypted_data_ciphertext())
-     *             .cryptoEndpoint(var_.decrypted_data_crypto_endpoint())
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .associatedData(var_.decrypted_data_associated_data())
+     *             .ciphertext(decryptedDataCiphertext)
+     *             .cryptoEndpoint(decryptedDataCryptoEndpoint)
+     *             .keyId(testKey.id())
+     *             .associatedData(decryptedDataAssociatedData)
      *             .build());
      * 
      *     }
@@ -170,10 +170,10 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
-     *             .ciphertext(var_.decrypted_data_ciphertext())
-     *             .cryptoEndpoint(var_.decrypted_data_crypto_endpoint())
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .associatedData(var_.decrypted_data_associated_data())
+     *             .ciphertext(decryptedDataCiphertext)
+     *             .cryptoEndpoint(decryptedDataCryptoEndpoint)
+     *             .keyId(testKey.id())
+     *             .associatedData(decryptedDataAssociatedData)
      *             .build());
      * 
      *     }
@@ -215,10 +215,10 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
-     *             .ciphertext(var_.decrypted_data_ciphertext())
-     *             .cryptoEndpoint(var_.decrypted_data_crypto_endpoint())
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .associatedData(var_.decrypted_data_associated_data())
+     *             .ciphertext(decryptedDataCiphertext)
+     *             .cryptoEndpoint(decryptedDataCryptoEndpoint)
+     *             .keyId(testKey.id())
+     *             .associatedData(decryptedDataAssociatedData)
      *             .build());
      * 
      *     }
@@ -260,7 +260,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
-     *             .ekmsPrivateEndpointId(oci_kms_ekms_private_endpoint.test_ekms_private_endpoint().id())
+     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -302,7 +302,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
-     *             .ekmsPrivateEndpointId(oci_kms_ekms_private_endpoint.test_ekms_private_endpoint().id())
+     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -344,7 +344,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
-     *             .ekmsPrivateEndpointId(oci_kms_ekms_private_endpoint.test_ekms_private_endpoint().id())
+     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -386,7 +386,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
-     *             .ekmsPrivateEndpointId(oci_kms_ekms_private_endpoint.test_ekms_private_endpoint().id())
+     *             .ekmsPrivateEndpointId(testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -428,7 +428,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoints = KmsFunctions.getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -470,7 +470,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoints = KmsFunctions.getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -512,7 +512,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoints = KmsFunctions.getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -554,7 +554,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEkmsPrivateEndpoints = KmsFunctions.getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -598,10 +598,10 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
-     *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .plaintext(var_.encrypted_data_plaintext())
-     *             .associatedData(var_.encrypted_data_associated_data())
+     *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
+     *             .keyId(testKey.id())
+     *             .plaintext(encryptedDataPlaintext)
+     *             .associatedData(encryptedDataAssociatedData)
      *             .build());
      * 
      *     }
@@ -645,10 +645,10 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
-     *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .plaintext(var_.encrypted_data_plaintext())
-     *             .associatedData(var_.encrypted_data_associated_data())
+     *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
+     *             .keyId(testKey.id())
+     *             .plaintext(encryptedDataPlaintext)
+     *             .associatedData(encryptedDataAssociatedData)
      *             .build());
      * 
      *     }
@@ -692,10 +692,10 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
-     *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .plaintext(var_.encrypted_data_plaintext())
-     *             .associatedData(var_.encrypted_data_associated_data())
+     *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
+     *             .keyId(testKey.id())
+     *             .plaintext(encryptedDataPlaintext)
+     *             .associatedData(encryptedDataAssociatedData)
      *             .build());
      * 
      *     }
@@ -739,10 +739,10 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
-     *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .plaintext(var_.encrypted_data_plaintext())
-     *             .associatedData(var_.encrypted_data_associated_data())
+     *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
+     *             .keyId(testKey.id())
+     *             .plaintext(encryptedDataPlaintext)
+     *             .associatedData(encryptedDataAssociatedData)
      *             .build());
      * 
      *     }
@@ -789,8 +789,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .keyId(testKeyOciKmsKey.id())
+     *             .managementEndpoint(keyManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -837,8 +837,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .keyId(testKeyOciKmsKey.id())
+     *             .managementEndpoint(keyManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -885,8 +885,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .keyId(testKeyOciKmsKey.id())
+     *             .managementEndpoint(keyManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -933,8 +933,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .keyId(testKeyOciKmsKey.id())
+     *             .managementEndpoint(keyManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -981,9 +981,9 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .keyVersionId(oci_kms_key_version.test_key_version().id())
-     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .keyId(testKey.id())
+     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.id())
+     *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1030,9 +1030,9 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .keyVersionId(oci_kms_key_version.test_key_version().id())
-     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .keyId(testKey.id())
+     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.id())
+     *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1079,9 +1079,9 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .keyVersionId(oci_kms_key_version.test_key_version().id())
-     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .keyId(testKey.id())
+     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.id())
+     *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1128,9 +1128,9 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .keyVersionId(oci_kms_key_version.test_key_version().id())
-     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .keyId(testKey.id())
+     *             .keyVersionId(testKeyVersionOciKmsKeyVersion.id())
+     *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1178,8 +1178,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .keyId(testKey.id())
+     *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1227,8 +1227,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .keyId(testKey.id())
+     *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1276,8 +1276,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .keyId(testKey.id())
+     *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1325,8 +1325,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
-     *             .keyId(oci_kms_key.test_key().id())
-     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .keyId(testKey.id())
+     *             .managementEndpoint(keyVersionManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1373,12 +1373,12 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeys = KmsFunctions.getKeys(GetKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .managementEndpoint(var_.key_management_endpoint())
-     *             .algorithm(var_.key_algorithm())
-     *             .length(var_.key_length())
-     *             .curveId(oci_kms_curve.test_curve().id())
-     *             .protectionMode(var_.key_protection_mode())
+     *             .compartmentId(compartmentId)
+     *             .managementEndpoint(keyManagementEndpoint)
+     *             .algorithm(keyAlgorithm)
+     *             .length(keyLength)
+     *             .curveId(testCurve.id())
+     *             .protectionMode(keyProtectionMode)
      *             .build());
      * 
      *     }
@@ -1425,12 +1425,12 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeys = KmsFunctions.getKeys(GetKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .managementEndpoint(var_.key_management_endpoint())
-     *             .algorithm(var_.key_algorithm())
-     *             .length(var_.key_length())
-     *             .curveId(oci_kms_curve.test_curve().id())
-     *             .protectionMode(var_.key_protection_mode())
+     *             .compartmentId(compartmentId)
+     *             .managementEndpoint(keyManagementEndpoint)
+     *             .algorithm(keyAlgorithm)
+     *             .length(keyLength)
+     *             .curveId(testCurve.id())
+     *             .protectionMode(keyProtectionMode)
      *             .build());
      * 
      *     }
@@ -1477,12 +1477,12 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeys = KmsFunctions.getKeys(GetKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .managementEndpoint(var_.key_management_endpoint())
-     *             .algorithm(var_.key_algorithm())
-     *             .length(var_.key_length())
-     *             .curveId(oci_kms_curve.test_curve().id())
-     *             .protectionMode(var_.key_protection_mode())
+     *             .compartmentId(compartmentId)
+     *             .managementEndpoint(keyManagementEndpoint)
+     *             .algorithm(keyAlgorithm)
+     *             .length(keyLength)
+     *             .curveId(testCurve.id())
+     *             .protectionMode(keyProtectionMode)
      *             .build());
      * 
      *     }
@@ -1529,12 +1529,12 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeys = KmsFunctions.getKeys(GetKeysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .managementEndpoint(var_.key_management_endpoint())
-     *             .algorithm(var_.key_algorithm())
-     *             .length(var_.key_length())
-     *             .curveId(oci_kms_curve.test_curve().id())
-     *             .protectionMode(var_.key_protection_mode())
+     *             .compartmentId(compartmentId)
+     *             .managementEndpoint(keyManagementEndpoint)
+     *             .algorithm(keyAlgorithm)
+     *             .length(keyLength)
+     *             .curveId(testCurve.id())
+     *             .protectionMode(keyProtectionMode)
      *             .build());
      * 
      *     }
@@ -1579,8 +1579,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
-     *             .replicationId(oci_kms_replication.test_replication().id())
-     *             .managementEndpoint(var_.replication_status_management_endpoint())
+     *             .replicationId(testReplication.id())
+     *             .managementEndpoint(replicationStatusManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1625,8 +1625,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
-     *             .replicationId(oci_kms_replication.test_replication().id())
-     *             .managementEndpoint(var_.replication_status_management_endpoint())
+     *             .replicationId(testReplication.id())
+     *             .managementEndpoint(replicationStatusManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1671,8 +1671,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
-     *             .replicationId(oci_kms_replication.test_replication().id())
-     *             .managementEndpoint(var_.replication_status_management_endpoint())
+     *             .replicationId(testReplication.id())
+     *             .managementEndpoint(replicationStatusManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1717,8 +1717,8 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
-     *             .replicationId(oci_kms_replication.test_replication().id())
-     *             .managementEndpoint(var_.replication_status_management_endpoint())
+     *             .replicationId(testReplication.id())
+     *             .managementEndpoint(replicationStatusManagementEndpoint)
      *             .build());
      * 
      *     }
@@ -1765,7 +1765,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVaultOciKmsVault.id())
      *             .build());
      * 
      *     }
@@ -1812,7 +1812,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVaultOciKmsVault.id())
      *             .build());
      * 
      *     }
@@ -1859,7 +1859,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVaultOciKmsVault.id())
      *             .build());
      * 
      *     }
@@ -1906,7 +1906,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVaultOciKmsVault.id())
      *             .build());
      * 
      *     }
@@ -1953,7 +1953,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVault.id())
      *             .build());
      * 
      *     }
@@ -2000,7 +2000,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVault.id())
      *             .build());
      * 
      *     }
@@ -2047,7 +2047,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVault.id())
      *             .build());
      * 
      *     }
@@ -2094,7 +2094,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVault.id())
      *             .build());
      * 
      *     }
@@ -2136,7 +2136,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVault.id())
      *             .build());
      * 
      *     }
@@ -2178,7 +2178,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVault.id())
      *             .build());
      * 
      *     }
@@ -2220,7 +2220,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVault.id())
      *             .build());
      * 
      *     }
@@ -2262,7 +2262,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
-     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .vaultId(testVault.id())
      *             .build());
      * 
      *     }
@@ -2309,7 +2309,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaults = KmsFunctions.getVaults(GetVaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2356,7 +2356,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaults = KmsFunctions.getVaults(GetVaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2403,7 +2403,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaults = KmsFunctions.getVaults(GetVaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2450,7 +2450,7 @@ public final class KmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVaults = KmsFunctions.getVaults(GetVaultsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }

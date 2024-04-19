@@ -341,9 +341,9 @@ class InstancePoolInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_instance_pool_instance = oci.core.InstancePoolInstance("testInstancePoolInstance",
-            instance_id=oci_core_instance["test_instance"]["id"],
-            instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
+        test_instance_pool_instance = oci.core.InstancePoolInstance("test_instance_pool_instance",
+            instance_id=test_instance["id"],
+            instance_pool_id=test_instance_pool["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -386,9 +386,9 @@ class InstancePoolInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_instance_pool_instance = oci.core.InstancePoolInstance("testInstancePoolInstance",
-            instance_id=oci_core_instance["test_instance"]["id"],
-            instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
+        test_instance_pool_instance = oci.core.InstancePoolInstance("test_instance_pool_instance",
+            instance_id=test_instance["id"],
+            instance_pool_id=test_instance_pool["id"])
         ```
         <!--End PulumiCodeChooser -->
 

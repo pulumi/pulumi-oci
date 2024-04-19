@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeCapacityTopology(ctx, &core.GetComputeCapacityTopologyArgs{
-//				ComputeCapacityTopologyId: oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
+//				ComputeCapacityTopologyId: testComputeCapacityTopologyOciCoreComputeCapacityTopology.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

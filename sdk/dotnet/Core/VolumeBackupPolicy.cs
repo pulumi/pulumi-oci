@@ -28,15 +28,15 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVolumeBackupPolicy = new Oci.Core.VolumeBackupPolicy("testVolumeBackupPolicy", new()
+    ///     var testVolumeBackupPolicy = new Oci.Core.VolumeBackupPolicy("test_volume_backup_policy", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DestinationRegion = @var.Volume_backup_policy_destination_region,
-    ///         DisplayName = @var.Volume_backup_policy_display_name,
+    ///         DestinationRegion = volumeBackupPolicyDestinationRegion,
+    ///         DisplayName = volumeBackupPolicyDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -45,16 +45,16 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             new Oci.Core.Inputs.VolumeBackupPolicyScheduleArgs
     ///             {
-    ///                 BackupType = @var.Volume_backup_policy_schedules_backup_type,
-    ///                 Period = @var.Volume_backup_policy_schedules_period,
-    ///                 RetentionSeconds = @var.Volume_backup_policy_schedules_retention_seconds,
-    ///                 DayOfMonth = @var.Volume_backup_policy_schedules_day_of_month,
-    ///                 DayOfWeek = @var.Volume_backup_policy_schedules_day_of_week,
-    ///                 HourOfDay = @var.Volume_backup_policy_schedules_hour_of_day,
-    ///                 Month = @var.Volume_backup_policy_schedules_month,
-    ///                 OffsetSeconds = @var.Volume_backup_policy_schedules_offset_seconds,
-    ///                 OffsetType = @var.Volume_backup_policy_schedules_offset_type,
-    ///                 TimeZone = @var.Volume_backup_policy_schedules_time_zone,
+    ///                 BackupType = volumeBackupPolicySchedulesBackupType,
+    ///                 Period = volumeBackupPolicySchedulesPeriod,
+    ///                 RetentionSeconds = volumeBackupPolicySchedulesRetentionSeconds,
+    ///                 DayOfMonth = volumeBackupPolicySchedulesDayOfMonth,
+    ///                 DayOfWeek = volumeBackupPolicySchedulesDayOfWeek,
+    ///                 HourOfDay = volumeBackupPolicySchedulesHourOfDay,
+    ///                 Month = volumeBackupPolicySchedulesMonth,
+    ///                 OffsetSeconds = volumeBackupPolicySchedulesOffsetSeconds,
+    ///                 OffsetType = volumeBackupPolicySchedulesOffsetType,
+    ///                 TimeZone = volumeBackupPolicySchedulesTimeZone,
     ///             },
     ///         },
     ///     });

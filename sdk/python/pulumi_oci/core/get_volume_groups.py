@@ -134,10 +134,10 @@ def get_volume_groups(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_groups = oci.Core.get_volume_groups(compartment_id=var["compartment_id"],
-        availability_domain=var["volume_group_availability_domain"],
-        display_name=var["volume_group_display_name"],
-        state=var["volume_group_state"])
+    test_volume_groups = oci.Core.get_volume_groups(compartment_id=compartment_id,
+        availability_domain=volume_group_availability_domain,
+        display_name=volume_group_display_name,
+        state=volume_group_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -186,10 +186,10 @@ def get_volume_groups_output(availability_domain: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_groups = oci.Core.get_volume_groups(compartment_id=var["compartment_id"],
-        availability_domain=var["volume_group_availability_domain"],
-        display_name=var["volume_group_display_name"],
-        state=var["volume_group_state"])
+    test_volume_groups = oci.Core.get_volume_groups(compartment_id=compartment_id,
+        availability_domain=volume_group_availability_domain,
+        display_name=volume_group_display_name,
+        state=volume_group_state)
     ```
     <!--End PulumiCodeChooser -->
 

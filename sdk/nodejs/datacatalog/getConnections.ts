@@ -19,19 +19,19 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnections = oci.DataCatalog.getConnections({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     dataAssetKey: _var.connection_data_asset_key,
- *     createdById: oci_datacatalog_created_by.test_created_by.id,
- *     displayName: _var.connection_display_name,
- *     displayNameContains: _var.connection_display_name_contains,
- *     externalKey: _var.connection_external_key,
- *     fields: _var.connection_fields,
- *     isDefault: _var.connection_is_default,
- *     state: _var.connection_state,
- *     timeCreated: _var.connection_time_created,
- *     timeStatusUpdated: _var.connection_time_status_updated,
- *     timeUpdated: _var.connection_time_updated,
- *     updatedById: oci_datacatalog_updated_by.test_updated_by.id,
+ *     catalogId: testCatalog.id,
+ *     dataAssetKey: connectionDataAssetKey,
+ *     createdById: testCreatedBy.id,
+ *     displayName: connectionDisplayName,
+ *     displayNameContains: connectionDisplayNameContains,
+ *     externalKey: connectionExternalKey,
+ *     fields: connectionFields,
+ *     isDefault: connectionIsDefault,
+ *     state: connectionState,
+ *     timeCreated: connectionTimeCreated,
+ *     timeStatusUpdated: connectionTimeStatusUpdated,
+ *     timeUpdated: connectionTimeUpdated,
+ *     updatedById: testUpdatedBy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -186,19 +186,19 @@ export interface GetConnectionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnections = oci.DataCatalog.getConnections({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     dataAssetKey: _var.connection_data_asset_key,
- *     createdById: oci_datacatalog_created_by.test_created_by.id,
- *     displayName: _var.connection_display_name,
- *     displayNameContains: _var.connection_display_name_contains,
- *     externalKey: _var.connection_external_key,
- *     fields: _var.connection_fields,
- *     isDefault: _var.connection_is_default,
- *     state: _var.connection_state,
- *     timeCreated: _var.connection_time_created,
- *     timeStatusUpdated: _var.connection_time_status_updated,
- *     timeUpdated: _var.connection_time_updated,
- *     updatedById: oci_datacatalog_updated_by.test_updated_by.id,
+ *     catalogId: testCatalog.id,
+ *     dataAssetKey: connectionDataAssetKey,
+ *     createdById: testCreatedBy.id,
+ *     displayName: connectionDisplayName,
+ *     displayNameContains: connectionDisplayNameContains,
+ *     externalKey: connectionExternalKey,
+ *     fields: connectionFields,
+ *     isDefault: connectionIsDefault,
+ *     state: connectionState,
+ *     timeCreated: connectionTimeCreated,
+ *     timeStatusUpdated: connectionTimeStatusUpdated,
+ *     timeUpdated: connectionTimeUpdated,
+ *     updatedById: testUpdatedBy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

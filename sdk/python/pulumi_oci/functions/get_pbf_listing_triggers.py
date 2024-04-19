@@ -94,7 +94,7 @@ def get_pbf_listing_triggers(filters: Optional[Sequence[pulumi.InputType['GetPbf
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=var["pbf_listing_trigger_name"])
+    test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=pbf_listing_trigger_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -130,7 +130,7 @@ def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=var["pbf_listing_trigger_name"])
+    test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=pbf_listing_trigger_name)
     ```
     <!--End PulumiCodeChooser -->
 

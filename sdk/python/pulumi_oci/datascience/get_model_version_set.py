@@ -199,7 +199,7 @@ def get_model_version_set(model_version_set_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_set = oci.DataScience.get_model_version_set(model_version_set_id=oci_datascience_model_version_set["test_model_version_set"]["id"])
+    test_model_version_set = oci.DataScience.get_model_version_set(model_version_set_id=test_model_version_set_oci_datascience_model_version_set["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -242,7 +242,7 @@ def get_model_version_set_output(model_version_set_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_set = oci.DataScience.get_model_version_set(model_version_set_id=oci_datascience_model_version_set["test_model_version_set"]["id"])
+    test_model_version_set = oci.DataScience.get_model_version_set(model_version_set_id=test_model_version_set_oci_datascience_model_version_set["id"])
     ```
     <!--End PulumiCodeChooser -->
 

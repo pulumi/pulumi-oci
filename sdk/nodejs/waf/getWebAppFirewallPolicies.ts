@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppFirewallPolicies = oci.Waf.getWebAppFirewallPolicies({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.web_app_firewall_policy_display_name,
- *     id: _var.web_app_firewall_policy_id,
- *     states: _var.web_app_firewall_policy_state,
+ *     compartmentId: compartmentId,
+ *     displayName: webAppFirewallPolicyDisplayName,
+ *     id: webAppFirewallPolicyId,
+ *     states: webAppFirewallPolicyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetWebAppFirewallPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppFirewallPolicies = oci.Waf.getWebAppFirewallPolicies({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.web_app_firewall_policy_display_name,
- *     id: _var.web_app_firewall_policy_id,
- *     states: _var.web_app_firewall_policy_state,
+ *     compartmentId: compartmentId,
+ *     displayName: webAppFirewallPolicyDisplayName,
+ *     id: webAppFirewallPolicyId,
+ *     states: webAppFirewallPolicyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

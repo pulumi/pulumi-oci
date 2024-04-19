@@ -31,37 +31,37 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewJobRun(ctx, "testJobRun", &DataScience.JobRunArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				JobId:         pulumi.Any(oci_datascience_job.Test_job.Id),
-//				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
-//				Asynchronous:  pulumi.Any(_var.Asynchronous),
+//			_, err := DataScience.NewJobRun(ctx, "test_job_run", &DataScience.JobRunArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				JobId:         pulumi.Any(testJob.Id),
+//				ProjectId:     pulumi.Any(testProject.Id),
+//				Asynchronous:  pulumi.Any(asynchronous),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Job_run_display_name),
+//				DisplayName: pulumi.Any(jobRunDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				JobConfigurationOverrideDetails: &datascience.JobRunJobConfigurationOverrideDetailsArgs{
-//					JobType:                 pulumi.Any(_var.Job_run_job_configuration_override_details_job_type),
-//					CommandLineArguments:    pulumi.Any(_var.Job_run_job_configuration_override_details_command_line_arguments),
-//					EnvironmentVariables:    pulumi.Any(_var.Job_run_job_configuration_override_details_environment_variables),
-//					MaximumRuntimeInMinutes: pulumi.Any(_var.Job_run_job_configuration_override_details_maximum_runtime_in_minutes),
+//					JobType:                 pulumi.Any(jobRunJobConfigurationOverrideDetailsJobType),
+//					CommandLineArguments:    pulumi.Any(jobRunJobConfigurationOverrideDetailsCommandLineArguments),
+//					EnvironmentVariables:    pulumi.Any(jobRunJobConfigurationOverrideDetailsEnvironmentVariables),
+//					MaximumRuntimeInMinutes: pulumi.Any(jobRunJobConfigurationOverrideDetailsMaximumRuntimeInMinutes),
 //				},
 //				JobEnvironmentConfigurationOverrideDetails: &datascience.JobRunJobEnvironmentConfigurationOverrideDetailsArgs{
-//					Image:              pulumi.Any(_var.Job_run_job_environment_configuration_override_details_image),
-//					JobEnvironmentType: pulumi.Any(_var.Job_run_job_environment_configuration_override_details_job_environment_type),
-//					Cmds:               pulumi.Any(_var.Job_run_job_environment_configuration_override_details_cmd),
-//					Entrypoints:        pulumi.Any(_var.Job_run_job_environment_configuration_override_details_entrypoint),
-//					ImageDigest:        pulumi.Any(_var.Job_run_job_environment_configuration_override_details_image_digest),
-//					ImageSignatureId:   pulumi.Any(oci_datascience_image_signature.Test_image_signature.Id),
+//					Image:              pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsImage),
+//					JobEnvironmentType: pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsJobEnvironmentType),
+//					Cmds:               pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsCmd),
+//					Entrypoints:        pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsEntrypoint),
+//					ImageDigest:        pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsImageDigest),
+//					ImageSignatureId:   pulumi.Any(testImageSignature.Id),
 //				},
 //				JobLogConfigurationOverrideDetails: &datascience.JobRunJobLogConfigurationOverrideDetailsArgs{
-//					EnableAutoLogCreation: pulumi.Any(_var.Job_run_job_log_configuration_override_details_enable_auto_log_creation),
-//					EnableLogging:         pulumi.Any(_var.Job_run_job_log_configuration_override_details_enable_logging),
-//					LogGroupId:            pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//					LogId:                 pulumi.Any(oci_logging_log.Test_log.Id),
+//					EnableAutoLogCreation: pulumi.Any(jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation),
+//					EnableLogging:         pulumi.Any(jobRunJobLogConfigurationOverrideDetailsEnableLogging),
+//					LogGroupId:            pulumi.Any(testLogGroup.Id),
+//					LogId:                 pulumi.Any(testLog.Id),
 //				},
 //			})
 //			if err != nil {

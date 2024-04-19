@@ -33,14 +33,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetJavaDownloadsJavaDownloadRecords(ctx, &jms.GetJavaDownloadsJavaDownloadRecordsArgs{
-//				CompartmentId:     _var.Compartment_id,
-//				Architecture:      pulumi.StringRef(_var.Java_download_record_architecture),
-//				FamilyVersion:     pulumi.StringRef(_var.Java_download_record_family_version),
-//				OsFamily:          pulumi.StringRef(_var.Java_download_record_os_family),
-//				PackageTypeDetail: pulumi.StringRef(_var.Java_download_record_package_type_detail),
-//				ReleaseVersion:    pulumi.StringRef(_var.Java_download_record_release_version),
-//				TimeEnd:           pulumi.StringRef(_var.Java_download_record_time_end),
-//				TimeStart:         pulumi.StringRef(_var.Java_download_record_time_start),
+//				CompartmentId:     compartmentId,
+//				Architecture:      pulumi.StringRef(javaDownloadRecordArchitecture),
+//				FamilyVersion:     pulumi.StringRef(javaDownloadRecordFamilyVersion),
+//				OsFamily:          pulumi.StringRef(javaDownloadRecordOsFamily),
+//				PackageTypeDetail: pulumi.StringRef(javaDownloadRecordPackageTypeDetail),
+//				ReleaseVersion:    pulumi.StringRef(javaDownloadRecordReleaseVersion),
+//				TimeEnd:           pulumi.StringRef(javaDownloadRecordTimeEnd),
+//				TimeStart:         pulumi.StringRef(javaDownloadRecordTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err

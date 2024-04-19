@@ -21,8 +21,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlPlanBaselineConfiguration = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineConfiguration({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     opcNamedCredentialId: _var.managed_database_sql_plan_baseline_configuration_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,8 +116,8 @@ export interface GetManagedDatabaseSqlPlanBaselineConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlPlanBaselineConfiguration = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineConfiguration({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     opcNamedCredentialId: _var.managed_database_sql_plan_baseline_configuration_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

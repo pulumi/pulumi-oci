@@ -31,23 +31,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.NewVirtualService(ctx, "testVirtualService", &ServiceMesh.VirtualServiceArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				MeshId:        pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
+//			_, err := ServiceMesh.NewVirtualService(ctx, "test_virtual_service", &ServiceMesh.VirtualServiceArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				MeshId:        pulumi.Any(testMesh.Id),
+//				Name:          pulumi.Any(virtualServiceName),
 //				DefaultRoutingPolicy: &servicemesh.VirtualServiceDefaultRoutingPolicyArgs{
-//					Type: pulumi.Any(_var.Virtual_service_default_routing_policy_type),
+//					Type: pulumi.Any(virtualServiceDefaultRoutingPolicyType),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Virtual_service_description),
+//				Description: pulumi.Any(virtualServiceDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Hosts: pulumi.Any(_var.Virtual_service_hosts),
+//				Hosts: pulumi.Any(virtualServiceHosts),
 //				Mtls: &servicemesh.VirtualServiceMtlsArgs{
-//					Mode:            pulumi.Any(_var.Virtual_service_mtls_mode),
-//					MaximumValidity: pulumi.Any(_var.Virtual_service_mtls_maximum_validity),
+//					Mode:            pulumi.Any(virtualServiceMtlsMode),
+//					MaximumValidity: pulumi.Any(virtualServiceMtlsMaximumValidity),
 //				},
 //			})
 //			if err != nil {

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryMirrorRecords = Oci.DevOps.GetRepositoryMirrorRecords.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         RepositoryId = testRepository.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryMirrorRecords = Oci.DevOps.GetRepositoryMirrorRecords.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         RepositoryId = testRepository.Id,
         ///     });
         /// 
         /// });

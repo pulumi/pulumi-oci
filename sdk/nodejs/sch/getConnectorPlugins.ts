@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnectorPlugins = oci.Sch.getConnectorPlugins({
- *     displayName: _var.connector_plugin_display_name,
- *     name: _var.connector_plugin_name,
- *     state: _var.connector_plugin_state,
+ *     displayName: connectorPluginDisplayName,
+ *     name: connectorPluginName,
+ *     state: connectorPluginState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,9 +96,9 @@ export interface GetConnectorPluginsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnectorPlugins = oci.Sch.getConnectorPlugins({
- *     displayName: _var.connector_plugin_display_name,
- *     name: _var.connector_plugin_name,
- *     state: _var.connector_plugin_state,
+ *     displayName: connectorPluginDisplayName,
+ *     name: connectorPluginName,
+ *     state: connectorPluginState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

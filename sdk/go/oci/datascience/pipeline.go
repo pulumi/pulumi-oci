@@ -31,59 +31,59 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewPipeline(ctx, "testPipeline", &DataScience.PipelineArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
+//			_, err := DataScience.NewPipeline(ctx, "test_pipeline", &DataScience.PipelineArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ProjectId:     pulumi.Any(testProject.Id),
 //				StepDetails: datascience.PipelineStepDetailArray{
 //					&datascience.PipelineStepDetailArgs{
-//						StepName:           pulumi.Any(_var.Pipeline_step_details_step_name),
-//						StepType:           pulumi.Any(_var.Pipeline_step_details_step_type),
-//						DependsOns:         pulumi.Any(_var.Pipeline_step_details_depends_on),
-//						Description:        pulumi.Any(_var.Pipeline_step_details_description),
-//						IsArtifactUploaded: pulumi.Any(_var.Pipeline_step_details_is_artifact_uploaded),
-//						JobId:              pulumi.Any(oci_datascience_job.Test_job.Id),
+//						StepName:           pulumi.Any(pipelineStepDetailsStepName),
+//						StepType:           pulumi.Any(pipelineStepDetailsStepType),
+//						DependsOns:         pulumi.Any(pipelineStepDetailsDependsOn),
+//						Description:        pulumi.Any(pipelineStepDetailsDescription),
+//						IsArtifactUploaded: pulumi.Any(pipelineStepDetailsIsArtifactUploaded),
+//						JobId:              pulumi.Any(testJob.Id),
 //						StepConfigurationDetails: &datascience.PipelineStepDetailStepConfigurationDetailsArgs{
-//							CommandLineArguments:    pulumi.Any(_var.Pipeline_step_details_step_configuration_details_command_line_arguments),
-//							EnvironmentVariables:    pulumi.Any(_var.Pipeline_step_details_step_configuration_details_environment_variables),
-//							MaximumRuntimeInMinutes: pulumi.Any(_var.Pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes),
+//							CommandLineArguments:    pulumi.Any(pipelineStepDetailsStepConfigurationDetailsCommandLineArguments),
+//							EnvironmentVariables:    pulumi.Any(pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables),
+//							MaximumRuntimeInMinutes: pulumi.Any(pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes),
 //						},
 //						StepInfrastructureConfigurationDetails: &datascience.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs{
-//							BlockStorageSizeInGbs: pulumi.Any(_var.Pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs),
+//							BlockStorageSizeInGbs: pulumi.Any(pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
 //							ShapeConfigDetails: &datascience.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{
-//								MemoryInGbs: pulumi.Any(_var.Pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs),
-//								Ocpus:       pulumi.Any(_var.Pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus),
+//								MemoryInGbs: pulumi.Any(pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs),
+//								Ocpus:       pulumi.Any(pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus),
 //							},
-//							ShapeName: pulumi.Any(oci_core_shape.Test_shape.Name),
+//							ShapeName: pulumi.Any(testShape.Name),
 //						},
 //					},
 //				},
 //				ConfigurationDetails: &datascience.PipelineConfigurationDetailsArgs{
-//					Type:                    pulumi.Any(_var.Pipeline_configuration_details_type),
-//					CommandLineArguments:    pulumi.Any(_var.Pipeline_configuration_details_command_line_arguments),
-//					EnvironmentVariables:    pulumi.Any(_var.Pipeline_configuration_details_environment_variables),
-//					MaximumRuntimeInMinutes: pulumi.Any(_var.Pipeline_configuration_details_maximum_runtime_in_minutes),
+//					Type:                    pulumi.Any(pipelineConfigurationDetailsType),
+//					CommandLineArguments:    pulumi.Any(pipelineConfigurationDetailsCommandLineArguments),
+//					EnvironmentVariables:    pulumi.Any(pipelineConfigurationDetailsEnvironmentVariables),
+//					MaximumRuntimeInMinutes: pulumi.Any(pipelineConfigurationDetailsMaximumRuntimeInMinutes),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Pipeline_description),
-//				DisplayName: pulumi.Any(_var.Pipeline_display_name),
+//				Description: pulumi.Any(pipelineDescription),
+//				DisplayName: pulumi.Any(pipelineDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				InfrastructureConfigurationDetails: &datascience.PipelineInfrastructureConfigurationDetailsArgs{
-//					BlockStorageSizeInGbs: pulumi.Any(_var.Pipeline_infrastructure_configuration_details_block_storage_size_in_gbs),
-//					ShapeName:             pulumi.Any(oci_core_shape.Test_shape.Name),
+//					BlockStorageSizeInGbs: pulumi.Any(pipelineInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//					ShapeName:             pulumi.Any(testShape.Name),
 //					ShapeConfigDetails: &datascience.PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs{
-//						MemoryInGbs: pulumi.Any(_var.Pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs),
-//						Ocpus:       pulumi.Any(_var.Pipeline_infrastructure_configuration_details_shape_config_details_ocpus),
+//						MemoryInGbs: pulumi.Any(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs),
+//						Ocpus:       pulumi.Any(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus),
 //					},
 //				},
 //				LogConfigurationDetails: &datascience.PipelineLogConfigurationDetailsArgs{
-//					EnableAutoLogCreation: pulumi.Any(_var.Pipeline_log_configuration_details_enable_auto_log_creation),
-//					EnableLogging:         pulumi.Any(_var.Pipeline_log_configuration_details_enable_logging),
-//					LogGroupId:            pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//					LogId:                 pulumi.Any(oci_logging_log.Test_log.Id),
+//					EnableAutoLogCreation: pulumi.Any(pipelineLogConfigurationDetailsEnableAutoLogCreation),
+//					EnableLogging:         pulumi.Any(pipelineLogConfigurationDetailsEnableLogging),
+//					LogGroupId:            pulumi.Any(testLogGroup.Id),
+//					LogId:                 pulumi.Any(testLog.Id),
 //				},
 //			})
 //			if err != nil {

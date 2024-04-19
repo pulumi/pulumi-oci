@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetDiagnoses = Oci.Jms.GetFleetDiagnoses.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         FleetId = testFleet.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetDiagnoses = Oci.Jms.GetFleetDiagnoses.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         FleetId = testFleet.Id,
         ///     });
         /// 
         /// });

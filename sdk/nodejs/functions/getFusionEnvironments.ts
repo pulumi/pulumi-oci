@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironments = oci.Functions.getFusionEnvironments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.fusion_environment_display_name,
- *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
- *     state: _var.fusion_environment_state,
+ *     compartmentId: compartmentId,
+ *     displayName: fusionEnvironmentDisplayName,
+ *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
+ *     state: fusionEnvironmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetFusionEnvironmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironments = oci.Functions.getFusionEnvironments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.fusion_environment_display_name,
- *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
- *     state: _var.fusion_environment_state,
+ *     compartmentId: compartmentId,
+ *     displayName: fusionEnvironmentDisplayName,
+ *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
+ *     state: fusionEnvironmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

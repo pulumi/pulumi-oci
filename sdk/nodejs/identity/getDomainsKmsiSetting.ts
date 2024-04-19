@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testKmsiSetting = oci.Identity.getDomainsKmsiSetting({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     kmsiSettingId: oci_identity_domains_kmsi_setting.test_kmsi_setting.id,
+ *     idcsEndpoint: testDomain.url,
+ *     kmsiSettingId: testKmsiSettingOciIdentityDomainsKmsiSetting.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.kmsi_setting_authorization,
- *     resourceTypeSchemaVersion: _var.kmsi_setting_resource_type_schema_version,
+ *     authorization: kmsiSettingAuthorization,
+ *     resourceTypeSchemaVersion: kmsiSettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -180,12 +180,12 @@ export interface GetDomainsKmsiSettingResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testKmsiSetting = oci.Identity.getDomainsKmsiSetting({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     kmsiSettingId: oci_identity_domains_kmsi_setting.test_kmsi_setting.id,
+ *     idcsEndpoint: testDomain.url,
+ *     kmsiSettingId: testKmsiSettingOciIdentityDomainsKmsiSetting.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.kmsi_setting_authorization,
- *     resourceTypeSchemaVersion: _var.kmsi_setting_resource_type_schema_version,
+ *     authorization: kmsiSettingAuthorization,
+ *     resourceTypeSchemaVersion: kmsiSettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

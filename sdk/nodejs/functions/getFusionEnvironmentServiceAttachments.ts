@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentServiceAttachments = oci.Functions.getFusionEnvironmentServiceAttachments({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     displayName: _var.fusion_environment_service_attachment_display_name,
- *     serviceInstanceType: _var.fusion_environment_service_attachment_service_instance_type,
- *     state: _var.fusion_environment_service_attachment_state,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     displayName: fusionEnvironmentServiceAttachmentDisplayName,
+ *     serviceInstanceType: fusionEnvironmentServiceAttachmentServiceInstanceType,
+ *     state: fusionEnvironmentServiceAttachmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetFusionEnvironmentServiceAttachmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentServiceAttachments = oci.Functions.getFusionEnvironmentServiceAttachments({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     displayName: _var.fusion_environment_service_attachment_display_name,
- *     serviceInstanceType: _var.fusion_environment_service_attachment_service_instance_type,
- *     state: _var.fusion_environment_service_attachment_state,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     displayName: fusionEnvironmentServiceAttachmentDisplayName,
+ *     serviceInstanceType: fusionEnvironmentServiceAttachmentServiceInstanceType,
+ *     state: fusionEnvironmentServiceAttachmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

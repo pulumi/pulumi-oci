@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSdmMaskingPolicyDifferenceDifferenceColumns(ctx, &datasafe.GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs{
-//				SdmMaskingPolicyDifferenceId: oci_data_safe_sdm_masking_policy_difference.Test_sdm_masking_policy_difference.Id,
-//				ColumnNames:                  _var.Sdm_masking_policy_difference_difference_column_column_name,
-//				DifferenceType:               pulumi.StringRef(_var.Sdm_masking_policy_difference_difference_column_difference_type),
-//				Objects:                      _var.Sdm_masking_policy_difference_difference_column_object,
-//				PlannedAction:                pulumi.StringRef(_var.Sdm_masking_policy_difference_difference_column_planned_action),
-//				SchemaNames:                  _var.Sdm_masking_policy_difference_difference_column_schema_name,
-//				SyncStatus:                   pulumi.StringRef(_var.Sdm_masking_policy_difference_difference_column_sync_status),
+//				SdmMaskingPolicyDifferenceId: testSdmMaskingPolicyDifference.Id,
+//				ColumnNames:                  sdmMaskingPolicyDifferenceDifferenceColumnColumnName,
+//				DifferenceType:               pulumi.StringRef(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType),
+//				Objects:                      sdmMaskingPolicyDifferenceDifferenceColumnObject,
+//				PlannedAction:                pulumi.StringRef(sdmMaskingPolicyDifferenceDifferenceColumnPlannedAction),
+//				SchemaNames:                  sdmMaskingPolicyDifferenceDifferenceColumnSchemaName,
+//				SyncStatus:                   pulumi.StringRef(sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -94,7 +94,7 @@ def get_secretbundle_versions(filters: Optional[Sequence[pulumi.InputType['GetSe
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=oci_vault_secret["test_secret"]["id"])
+    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=test_secret["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -130,7 +130,7 @@ def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=oci_vault_secret["test_secret"]["id"])
+    test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=test_secret["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -140,11 +140,11 @@ def get_management_agent_install_keys(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_install_keys = oci.ManagementAgent.get_management_agent_install_keys(compartment_id=var["compartment_id"],
-        access_level=var["management_agent_install_key_access_level"],
-        compartment_id_in_subtree=var["management_agent_install_key_compartment_id_in_subtree"],
-        display_name=var["management_agent_install_key_display_name"],
-        state=var["management_agent_install_key_state"])
+    test_management_agent_install_keys = oci.ManagementAgent.get_management_agent_install_keys(compartment_id=compartment_id,
+        access_level=management_agent_install_key_access_level,
+        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree,
+        display_name=management_agent_install_key_display_name,
+        state=management_agent_install_key_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_install_keys = oci.ManagementAgent.get_management_agent_install_keys(compartment_id=var["compartment_id"],
-        access_level=var["management_agent_install_key_access_level"],
-        compartment_id_in_subtree=var["management_agent_install_key_compartment_id_in_subtree"],
-        display_name=var["management_agent_install_key_display_name"],
-        state=var["management_agent_install_key_state"])
+    test_management_agent_install_keys = oci.ManagementAgent.get_management_agent_install_keys(compartment_id=compartment_id,
+        access_level=management_agent_install_key_access_level,
+        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree,
+        display_name=management_agent_install_key_display_name,
+        state=management_agent_install_key_state)
     ```
     <!--End PulumiCodeChooser -->
 

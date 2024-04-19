@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApiGateway.GetApiValidation(ctx, &apigateway.GetApiValidationArgs{
-//				ApiId: oci_apigateway_api.Test_api.Id,
+//				ApiId: testApi.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

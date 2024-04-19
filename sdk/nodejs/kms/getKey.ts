@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testKey = oci.Kms.getKey({
- *     keyId: oci_kms_key.test_key.id,
- *     managementEndpoint: _var.key_management_endpoint,
+ *     keyId: testKeyOciKmsKey.id,
+ *     managementEndpoint: keyManagementEndpoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -164,8 +164,8 @@ export interface GetKeyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testKey = oci.Kms.getKey({
- *     keyId: oci_kms_key.test_key.id,
- *     managementEndpoint: _var.key_management_endpoint,
+ *     keyId: testKeyOciKmsKey.id,
+ *     managementEndpoint: keyManagementEndpoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

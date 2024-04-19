@@ -134,8 +134,8 @@ def get_listener(listener_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=oci_network_load_balancer_listener["test_listener"]["name"],
-        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
+    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=test_listener_oci_network_load_balancer_listener["name"],
+        network_load_balancer_id=test_network_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -176,8 +176,8 @@ def get_listener_output(listener_name: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=oci_network_load_balancer_listener["test_listener"]["name"],
-        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
+    test_listener = oci.NetworkLoadBalancer.get_listener(listener_name=test_listener_oci_network_load_balancer_listener["name"],
+        network_load_balancer_id=test_network_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 

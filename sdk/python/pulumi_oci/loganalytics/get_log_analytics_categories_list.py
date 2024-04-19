@@ -113,10 +113,10 @@ def get_log_analytics_categories_list(category_display_text: Optional[str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=var["log_analytics_categories_list_namespace"],
-        category_display_text=var["log_analytics_categories_list_category_display_text"],
-        category_type=var["log_analytics_categories_list_category_type"],
-        name=var["log_analytics_categories_list_name"])
+    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
+        category_display_text=log_analytics_categories_list_category_display_text,
+        category_type=log_analytics_categories_list_category_type,
+        name=log_analytics_categories_list_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -161,10 +161,10 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=var["log_analytics_categories_list_namespace"],
-        category_display_text=var["log_analytics_categories_list_category_display_text"],
-        category_type=var["log_analytics_categories_list_category_type"],
-        name=var["log_analytics_categories_list_name"])
+    test_log_analytics_categories_list = oci.LogAnalytics.get_log_analytics_categories_list(namespace=log_analytics_categories_list_namespace,
+        category_display_text=log_analytics_categories_list_category_display_text,
+        category_type=log_analytics_categories_list_category_type,
+        name=log_analytics_categories_list_name)
     ```
     <!--End PulumiCodeChooser -->
 

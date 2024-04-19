@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testPrivateEndpoint = Oci.ResourceManager.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+        ///         PrivateEndpointId = testPrivateEndpointOciResourcemanagerPrivateEndpoint.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testPrivateEndpoint = Oci.ResourceManager.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+        ///         PrivateEndpointId = testPrivateEndpointOciResourcemanagerPrivateEndpoint.Id,
         ///     });
         /// 
         /// });

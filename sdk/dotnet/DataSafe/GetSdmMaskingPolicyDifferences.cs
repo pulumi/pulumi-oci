@@ -29,13 +29,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSdmMaskingPolicyDifferences = Oci.DataSafe.GetSdmMaskingPolicyDifferences.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Sdm_masking_policy_difference_compartment_id_in_subtree,
-        ///         DifferenceAccessLevel = @var.Sdm_masking_policy_difference_difference_access_level,
-        ///         DisplayName = @var.Sdm_masking_policy_difference_display_name,
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         State = @var.Sdm_masking_policy_difference_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = sdmMaskingPolicyDifferenceCompartmentIdInSubtree,
+        ///         DifferenceAccessLevel = sdmMaskingPolicyDifferenceDifferenceAccessLevel,
+        ///         DisplayName = sdmMaskingPolicyDifferenceDisplayName,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         State = sdmMaskingPolicyDifferenceState,
         ///     });
         /// 
         /// });
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSdmMaskingPolicyDifferences = Oci.DataSafe.GetSdmMaskingPolicyDifferences.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Sdm_masking_policy_difference_compartment_id_in_subtree,
-        ///         DifferenceAccessLevel = @var.Sdm_masking_policy_difference_difference_access_level,
-        ///         DisplayName = @var.Sdm_masking_policy_difference_display_name,
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         State = @var.Sdm_masking_policy_difference_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = sdmMaskingPolicyDifferenceCompartmentIdInSubtree,
+        ///         DifferenceAccessLevel = sdmMaskingPolicyDifferenceDifferenceAccessLevel,
+        ///         DisplayName = sdmMaskingPolicyDifferenceDisplayName,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         State = sdmMaskingPolicyDifferenceState,
         ///     });
         /// 
         /// });

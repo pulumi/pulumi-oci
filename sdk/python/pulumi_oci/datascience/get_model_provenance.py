@@ -136,7 +136,7 @@ def get_model_provenance(model_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_provenance = oci.DataScience.get_model_provenance(model_id=oci_datascience_model["test_model"]["id"])
+    test_model_provenance = oci.DataScience.get_model_provenance(model_id=test_model["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -174,7 +174,7 @@ def get_model_provenance_output(model_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_provenance = oci.DataScience.get_model_provenance(model_id=oci_datascience_model["test_model"]["id"])
+    test_model_provenance = oci.DataScience.get_model_provenance(model_id=test_model["id"])
     ```
     <!--End PulumiCodeChooser -->
 

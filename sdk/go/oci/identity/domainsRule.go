@@ -31,42 +31,43 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsRule(ctx, "testRule", &Identity.DomainsRuleArgs{
-//				Condition:    pulumi.Any(_var.Rule_condition),
-//				IdcsEndpoint: pulumi.Any(data.Oci_identity_domain.Test_domain.Url),
+//			_, err := Identity.NewDomainsRule(ctx, "test_rule", &Identity.DomainsRuleArgs{
+//				Condition:    pulumi.Any(ruleCondition),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Name:         pulumi.Any(ruleName),
 //				PolicyType: &identity.DomainsRulePolicyTypeArgs{
 //					Value: pulumi.String("SignOn"),
 //				},
 //				Returns: identity.DomainsRuleReturnArray{
 //					&identity.DomainsRuleReturnArgs{
-//						Name:         pulumi.Any(_var.Rule_return_name),
-//						Value:        pulumi.Any(_var.Rule_return_value),
-//						ReturnGroovy: pulumi.Any(_var.Rule_return_return_groovy),
+//						Name:         pulumi.Any(ruleReturnName),
+//						Value:        pulumi.Any(ruleReturnValue),
+//						ReturnGroovy: pulumi.Any(ruleReturnReturnGroovy),
 //					},
 //				},
 //				Schemas: pulumi.StringArray{
 //					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:Rule"),
 //				},
-//				Active: pulumi.Any(_var.Rule_active),
+//				Active: pulumi.Any(ruleActive),
 //				AttributeSets: pulumi.StringArray{
 //					pulumi.String("all"),
 //				},
 //				Attributes:    pulumi.String(""),
-//				Authorization: pulumi.Any(_var.Rule_authorization),
+//				Authorization: pulumi.Any(ruleAuthorization),
 //				ConditionGroup: &identity.DomainsRuleConditionGroupArgs{
 //					Type:  pulumi.String("Condition"),
-//					Value: pulumi.Any(_var.Rule_condition_group_value),
+//					Value: pulumi.Any(ruleConditionGroupValue),
 //				},
-//				Description:               pulumi.Any(_var.Rule_description),
+//				Description:               pulumi.Any(ruleDescription),
 //				ExternalId:                pulumi.String("externalId"),
-//				Locked:                    pulumi.Any(_var.Rule_locked),
-//				Ocid:                      pulumi.Any(_var.Rule_ocid),
-//				ResourceTypeSchemaVersion: pulumi.Any(_var.Rule_resource_type_schema_version),
-//				RuleGroovy:                pulumi.Any(_var.Rule_rule_groovy),
+//				Locked:                    pulumi.Any(ruleLocked),
+//				Ocid:                      pulumi.Any(ruleOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(ruleResourceTypeSchemaVersion),
+//				RuleGroovy:                pulumi.Any(ruleRuleGroovy),
 //				Tags: identity.DomainsRuleTagArray{
 //					&identity.DomainsRuleTagArgs{
-//						Key:   pulumi.Any(_var.Rule_tags_key),
-//						Value: pulumi.Any(_var.Rule_tags_value),
+//						Key:   pulumi.Any(ruleTagsKey),
+//						Value: pulumi.Any(ruleTagsValue),
 //					},
 //				},
 //			})

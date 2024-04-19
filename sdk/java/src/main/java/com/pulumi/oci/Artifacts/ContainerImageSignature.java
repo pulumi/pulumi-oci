@@ -45,13 +45,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testContainerImageSignature = new ContainerImageSignature(&#34;testContainerImageSignature&#34;, ContainerImageSignatureArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .imageId(oci_core_image.test_image().id())
- *             .kmsKeyId(oci_kms_key.test_key().id())
- *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
- *             .message(var_.container_image_signature_message())
- *             .signature(var_.container_image_signature_signature())
- *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+ *             .compartmentId(compartmentId)
+ *             .imageId(testImage.id())
+ *             .kmsKeyId(testKey.id())
+ *             .kmsKeyVersionId(testKeyVersion.id())
+ *             .message(containerImageSignatureMessage)
+ *             .signature(containerImageSignatureSignature)
+ *             .signingAlgorithm(containerImageSignatureSigningAlgorithm)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());

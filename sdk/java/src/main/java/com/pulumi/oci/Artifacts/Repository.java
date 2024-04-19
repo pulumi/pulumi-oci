@@ -46,12 +46,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRepository = new Repository(&#34;testRepository&#34;, RepositoryArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .isImmutable(var_.repository_is_immutable())
- *             .repositoryType(var_.repository_repository_type())
+ *             .compartmentId(compartmentId)
+ *             .isImmutable(repositoryIsImmutable)
+ *             .repositoryType(repositoryRepositoryType)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.repository_description())
- *             .displayName(var_.repository_display_name())
+ *             .description(repositoryDescription)
+ *             .displayName(repositoryDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

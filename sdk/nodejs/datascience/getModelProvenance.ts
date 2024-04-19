@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModelProvenance = oci.DataScience.getModelProvenance({
- *     modelId: oci_datascience_model.test_model.id,
+ *     modelId: testModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -84,7 +84,7 @@ export interface GetModelProvenanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModelProvenance = oci.DataScience.getModelProvenance({
- *     modelId: oci_datascience_model.test_model.id,
+ *     modelId: testModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

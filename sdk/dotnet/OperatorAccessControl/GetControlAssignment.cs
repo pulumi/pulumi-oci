@@ -29,7 +29,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testOperatorControlAssignment = Oci.OperatorAccessControl.GetControlAssignment.Invoke(new()
         ///     {
-        ///         OperatorControlAssignmentId = oci_operator_access_control_operator_control_assignment.Test_operator_control_assignment.Id,
+        ///         OperatorControlAssignmentId = testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testOperatorControlAssignment = Oci.OperatorAccessControl.GetControlAssignment.Invoke(new()
         ///     {
-        ///         OperatorControlAssignmentId = oci_operator_access_control_operator_control_assignment.Test_operator_control_assignment.Id,
+        ///         OperatorControlAssignmentId = testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.Id,
         ///     });
         /// 
         /// });

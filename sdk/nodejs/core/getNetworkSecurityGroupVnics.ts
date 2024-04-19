@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSecurityGroupVnics = oci.Core.getNetworkSecurityGroupVnics({
- *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
+ *     networkSecurityGroupId: testNetworkSecurityGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetNetworkSecurityGroupVnicsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSecurityGroupVnics = oci.Core.getNetworkSecurityGroupVnics({
- *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
+ *     networkSecurityGroupId: testNetworkSecurityGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

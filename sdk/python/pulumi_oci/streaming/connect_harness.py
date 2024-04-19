@@ -242,9 +242,10 @@ class ConnectHarness(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connect_harness = oci.streaming.ConnectHarness("testConnectHarness",
-            compartment_id=var["compartment_id"],
-            defined_tags=var["connect_harness_defined_tags"],
+        test_connect_harness = oci.streaming.ConnectHarness("test_connect_harness",
+            compartment_id=compartment_id,
+            name=connect_harness_name,
+            defined_tags=connect_harness_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -290,9 +291,10 @@ class ConnectHarness(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connect_harness = oci.streaming.ConnectHarness("testConnectHarness",
-            compartment_id=var["compartment_id"],
-            defined_tags=var["connect_harness_defined_tags"],
+        test_connect_harness = oci.streaming.ConnectHarness("test_connect_harness",
+            compartment_id=compartment_id,
+            name=connect_harness_name,
+            defined_tags=connect_harness_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })

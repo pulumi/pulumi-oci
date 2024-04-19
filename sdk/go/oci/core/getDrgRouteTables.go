@@ -33,10 +33,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetDrgRouteTables(ctx, &core.GetDrgRouteTablesArgs{
-//				DrgId:                        oci_core_drg.Test_drg.Id,
-//				DisplayName:                  pulumi.StringRef(_var.Drg_route_table_display_name),
-//				ImportDrgRouteDistributionId: pulumi.StringRef(oci_core_drg_route_distribution.Test_drg_route_distribution.Id),
-//				State:                        pulumi.StringRef(_var.Drg_route_table_state),
+//				DrgId:                        testDrg.Id,
+//				DisplayName:                  pulumi.StringRef(drgRouteTableDisplayName),
+//				ImportDrgRouteDistributionId: pulumi.StringRef(testDrgRouteDistribution.Id),
+//				State:                        pulumi.StringRef(drgRouteTableState),
 //			}, nil)
 //			if err != nil {
 //				return err

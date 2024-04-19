@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasksRecommendation = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksRecommendation({
- *     executionId: oci_database_management_execution.test_execution.id,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     sqlObjectId: oci_objectstorage_object.test_object.id,
- *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
+ *     executionId: testExecution.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     sqlObjectId: testObject.id,
+ *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,10 +95,10 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasksRecommendation = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksRecommendation({
- *     executionId: oci_database_management_execution.test_execution.id,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     sqlObjectId: oci_objectstorage_object.test_object.id,
- *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
+ *     executionId: testExecution.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     sqlObjectId: testObject.id,
+ *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

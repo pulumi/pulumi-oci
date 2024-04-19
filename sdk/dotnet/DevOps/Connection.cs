@@ -25,29 +25,29 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConnection = new Oci.DevOps.Connection("testConnection", new()
+    ///     var testConnection = new Oci.DevOps.Connection("test_connection", new()
     ///     {
-    ///         ConnectionType = @var.Connection_connection_type,
-    ///         ProjectId = oci_devops_project.Test_project.Id,
-    ///         AccessToken = @var.Connection_access_token,
-    ///         AppPassword = @var.Connection_app_password,
-    ///         BaseUrl = @var.Connection_base_url,
+    ///         ConnectionType = connectionConnectionType,
+    ///         ProjectId = testProject.Id,
+    ///         AccessToken = connectionAccessToken,
+    ///         AppPassword = connectionAppPassword,
+    ///         BaseUrl = connectionBaseUrl,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Connection_description,
-    ///         DisplayName = @var.Connection_display_name,
+    ///         Description = connectionDescription,
+    ///         DisplayName = connectionDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
     ///         TlsVerifyConfig = new Oci.DevOps.Inputs.ConnectionTlsVerifyConfigArgs
     ///         {
-    ///             CaCertificateBundleId = oci_devops_ca_certificate_bundle.Test_ca_certificate_bundle.Id,
-    ///             TlsVerifyMode = @var.Connection_tls_verify_config_tls_verify_mode,
+    ///             CaCertificateBundleId = testCaCertificateBundle.Id,
+    ///             TlsVerifyMode = connectionTlsVerifyConfigTlsVerifyMode,
     ///         },
-    ///         Username = @var.Connection_username,
+    ///         Username = connectionUsername,
     ///     });
     /// 
     /// });

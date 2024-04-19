@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogAnalyticsUnprocessedDataBucket(ctx, &loganalytics.GetLogAnalyticsUnprocessedDataBucketArgs{
-//				Namespace: _var.Log_analytics_unprocessed_data_bucket_namespace,
+//				Namespace: logAnalyticsUnprocessedDataBucketNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

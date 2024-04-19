@@ -34,8 +34,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetIamWorkRequests(ctx, &identity.GetIamWorkRequestsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				ResourceIdentifier: pulumi.StringRef(_var.Iam_work_request_resource_identifier),
+//				CompartmentId:      compartmentId,
+//				ResourceIdentifier: pulumi.StringRef(iamWorkRequestResourceIdentifier),
 //			}, nil)
 //			if err != nil {
 //				return err

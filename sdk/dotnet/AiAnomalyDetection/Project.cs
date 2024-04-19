@@ -25,15 +25,15 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProject = new Oci.AiAnomalyDetection.Project("testProject", new()
+    ///     var testProject = new Oci.AiAnomalyDetection.Project("test_project", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Project_description,
-    ///         DisplayName = @var.Project_display_name,
+    ///         Description = projectDescription,
+    ///         DisplayName = projectDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

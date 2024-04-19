@@ -518,12 +518,12 @@ def get_domains_self_registration_profile(attribute_sets: Optional[Sequence[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_self_registration_profile = oci.Identity.get_domains_self_registration_profile(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        self_registration_profile_id=oci_optimizer_profile["test_profile"]["id"],
+    test_self_registration_profile = oci.Identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
+        self_registration_profile_id=test_profile["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["self_registration_profile_authorization"],
-        resource_type_schema_version=var["self_registration_profile_resource_type_schema_version"])
+        authorization=self_registration_profile_authorization,
+        resource_type_schema_version=self_registration_profile_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -607,12 +607,12 @@ def get_domains_self_registration_profile_output(attribute_sets: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_self_registration_profile = oci.Identity.get_domains_self_registration_profile(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        self_registration_profile_id=oci_optimizer_profile["test_profile"]["id"],
+    test_self_registration_profile = oci.Identity.get_domains_self_registration_profile(idcs_endpoint=test_domain["url"],
+        self_registration_profile_id=test_profile["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["self_registration_profile_authorization"],
-        resource_type_schema_version=var["self_registration_profile_resource_type_schema_version"])
+        authorization=self_registration_profile_authorization,
+        resource_type_schema_version=self_registration_profile_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

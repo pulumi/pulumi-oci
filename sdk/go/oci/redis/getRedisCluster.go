@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Redis.GetRedisCluster(ctx, &redis.GetRedisClusterArgs{
-//				RedisClusterId: oci_redis_redis_cluster.Test_redis_cluster.Id,
+//				RedisClusterId: testRedisClusterOciRedisRedisCluster.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseMigration.GetJobAdvisorReport(ctx, &databasemigration.GetJobAdvisorReportArgs{
-//				JobId: oci_database_migration_job.Test_job.Id,
+//				JobId: testJob.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

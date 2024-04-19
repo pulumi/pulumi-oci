@@ -134,10 +134,10 @@ def get_boot_volume_attachments(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=var["boot_volume_attachment_availability_domain"],
-        compartment_id=var["compartment_id"],
-        boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-        instance_id=oci_core_instance["test_instance"]["id"])
+    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
+        compartment_id=compartment_id,
+        boot_volume_id=test_boot_volume["id"],
+        instance_id=test_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
     For more detailed implementation refer the instance example
@@ -187,10 +187,10 @@ def get_boot_volume_attachments_output(availability_domain: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=var["boot_volume_attachment_availability_domain"],
-        compartment_id=var["compartment_id"],
-        boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
-        instance_id=oci_core_instance["test_instance"]["id"])
+    test_boot_volume_attachments = oci.Core.get_boot_volume_attachments(availability_domain=boot_volume_attachment_availability_domain,
+        compartment_id=compartment_id,
+        boot_volume_id=test_boot_volume["id"],
+        instance_id=test_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
     For more detailed implementation refer the instance example

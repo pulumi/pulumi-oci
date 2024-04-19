@@ -28,17 +28,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPolicy = new oci.identity.Policy("testPolicy", {
- *     compartmentId: _var.tenancy_ocid,
- *     description: _var.policy_description,
- *     statements: _var.policy_statements,
+ * const testPolicy = new oci.identity.Policy("test_policy", {
+ *     compartmentId: tenancyOcid,
+ *     description: policyDescription,
+ *     name: policyName,
+ *     statements: policyStatements,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     versionDate: _var.policy_version_date,
+ *     versionDate: policyVersionDate,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

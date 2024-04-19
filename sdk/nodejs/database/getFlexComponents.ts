@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFlexComponents = oci.Database.getFlexComponents({
- *     compartmentId: _var.compartment_id,
- *     name: _var.flex_component_name,
+ *     compartmentId: compartmentId,
+ *     name: flexComponentName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetFlexComponentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFlexComponents = oci.Database.getFlexComponents({
- *     compartmentId: _var.compartment_id,
- *     name: _var.flex_component_name,
+ *     compartmentId: compartmentId,
+ *     name: flexComponentName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

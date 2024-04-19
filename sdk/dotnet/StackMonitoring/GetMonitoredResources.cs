@@ -29,10 +29,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testMonitoredResources = Oci.StackMonitoring.GetMonitoredResources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Monitored_resource_name,
-        ///         Status = @var.Monitored_resource_status,
-        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = monitoredResourceName,
+        ///         Status = monitoredResourceStatus,
+        ///         WorkRequestId = testWorkRequest.Id,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testMonitoredResources = Oci.StackMonitoring.GetMonitoredResources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Monitored_resource_name,
-        ///         Status = @var.Monitored_resource_status,
-        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = monitoredResourceName,
+        ///         Status = monitoredResourceStatus,
+        ///         WorkRequestId = testWorkRequest.Id,
         ///     });
         /// 
         /// });

@@ -284,7 +284,7 @@ def get_audit_profile(audit_profile_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile = oci.DataSafe.get_audit_profile(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"])
+    test_audit_profile = oci.DataSafe.get_audit_profile(audit_profile_id=test_audit_profile_oci_data_safe_audit_profile["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -334,7 +334,7 @@ def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile = oci.DataSafe.get_audit_profile(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"])
+    test_audit_profile = oci.DataSafe.get_audit_profile(audit_profile_id=test_audit_profile_oci_data_safe_audit_profile["id"])
     ```
     <!--End PulumiCodeChooser -->
 

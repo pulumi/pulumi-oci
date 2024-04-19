@@ -27,10 +27,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAlarmHistoryCollection = oci.Monitoring.getAlarmHistoryCollection({
- *     alarmId: oci_monitoring_alarm.test_alarm.id,
- *     alarmHistorytype: _var.alarm_history_collection_alarm_historytype,
- *     timestampGreaterThanOrEqualTo: _var.alarm_history_collection_timestamp_greater_than_or_equal_to,
- *     timestampLessThan: _var.alarm_history_collection_timestamp_less_than,
+ *     alarmId: testAlarm.id,
+ *     alarmHistorytype: alarmHistoryCollectionAlarmHistorytype,
+ *     timestampGreaterThanOrEqualTo: alarmHistoryCollectionTimestampGreaterThanOrEqualTo,
+ *     timestampLessThan: alarmHistoryCollectionTimestampLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,10 +113,10 @@ export interface GetAlarmHistoryCollectionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAlarmHistoryCollection = oci.Monitoring.getAlarmHistoryCollection({
- *     alarmId: oci_monitoring_alarm.test_alarm.id,
- *     alarmHistorytype: _var.alarm_history_collection_alarm_historytype,
- *     timestampGreaterThanOrEqualTo: _var.alarm_history_collection_timestamp_greater_than_or_equal_to,
- *     timestampLessThan: _var.alarm_history_collection_timestamp_less_than,
+ *     alarmId: testAlarm.id,
+ *     alarmHistorytype: alarmHistoryCollectionAlarmHistorytype,
+ *     timestampGreaterThanOrEqualTo: alarmHistoryCollectionTimestampGreaterThanOrEqualTo,
+ *     timestampLessThan: alarmHistoryCollectionTimestampLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

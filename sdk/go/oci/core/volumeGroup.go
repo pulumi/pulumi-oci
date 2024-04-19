@@ -27,31 +27,31 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVolumeGroup(ctx, "testVolumeGroup", &Core.VolumeGroupArgs{
-//				AvailabilityDomain: pulumi.Any(_var.Volume_group_availability_domain),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewVolumeGroup(ctx, "test_volume_group", &Core.VolumeGroupArgs{
+//				AvailabilityDomain: pulumi.Any(volumeGroupAvailabilityDomain),
+//				CompartmentId:      pulumi.Any(compartmentId),
 //				SourceDetails: &core.VolumeGroupSourceDetailsArgs{
 //					Type: pulumi.String("volumeIds"),
 //					VolumeIds: pulumi.StringArray{
-//						_var.Volume_group_source_id,
+//						volumeGroupSourceId,
 //					},
 //				},
-//				BackupPolicyId: pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
+//				BackupPolicyId: pulumi.Any(testVolumeBackupPolicies.VolumeBackupPolicies[0].Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Volume_group_display_name),
+//				DisplayName: pulumi.Any(volumeGroupDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				VolumeGroupReplicas: core.VolumeGroupVolumeGroupReplicaArray{
 //					&core.VolumeGroupVolumeGroupReplicaArgs{
-//						AvailabilityDomain: pulumi.Any(_var.Volume_group_volume_group_replicas_availability_domain),
-//						DisplayName:        pulumi.Any(_var.Volume_group_volume_group_replicas_display_name),
+//						AvailabilityDomain: pulumi.Any(volumeGroupVolumeGroupReplicasAvailabilityDomain),
+//						DisplayName:        pulumi.Any(volumeGroupVolumeGroupReplicasDisplayName),
 //					},
 //				},
 //				VolumeIds: pulumi.StringArray{
-//					_var.Volume_group_source_id,
+//					volumeGroupSourceId,
 //				},
 //			})
 //			if err != nil {

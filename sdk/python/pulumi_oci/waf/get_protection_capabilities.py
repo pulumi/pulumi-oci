@@ -155,12 +155,12 @@ def get_protection_capabilities(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=var["compartment_id"],
-        display_name=var["protection_capability_display_name"],
-        group_tags=var["protection_capability_group_tag"],
-        is_latest_versions=var["protection_capability_is_latest_version"],
-        key=var["protection_capability_key"],
-        type=var["protection_capability_type"])
+    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=compartment_id,
+        display_name=protection_capability_display_name,
+        group_tags=protection_capability_group_tag,
+        is_latest_versions=protection_capability_is_latest_version,
+        key=protection_capability_key,
+        type=protection_capability_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -216,12 +216,12 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=var["compartment_id"],
-        display_name=var["protection_capability_display_name"],
-        group_tags=var["protection_capability_group_tag"],
-        is_latest_versions=var["protection_capability_is_latest_version"],
-        key=var["protection_capability_key"],
-        type=var["protection_capability_type"])
+    test_protection_capabilities = oci.Waf.get_protection_capabilities(compartment_id=compartment_id,
+        display_name=protection_capability_display_name,
+        group_tags=protection_capability_group_tag,
+        is_latest_versions=protection_capability_is_latest_version,
+        key=protection_capability_key,
+        type=protection_capability_type)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -32,12 +32,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResponderRecipes = oci.CloudGuard.getResponderRecipes({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.responder_recipe_access_level,
- *     compartmentIdInSubtree: _var.responder_recipe_compartment_id_in_subtree,
- *     displayName: _var.responder_recipe_display_name,
- *     resourceMetadataOnly: _var.responder_recipe_resource_metadata_only,
- *     state: _var.responder_recipe_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: responderRecipeAccessLevel,
+ *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree,
+ *     displayName: responderRecipeDisplayName,
+ *     resourceMetadataOnly: responderRecipeResourceMetadataOnly,
+ *     state: responderRecipeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,12 +142,12 @@ export interface GetResponderRecipesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResponderRecipes = oci.CloudGuard.getResponderRecipes({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.responder_recipe_access_level,
- *     compartmentIdInSubtree: _var.responder_recipe_compartment_id_in_subtree,
- *     displayName: _var.responder_recipe_display_name,
- *     resourceMetadataOnly: _var.responder_recipe_resource_metadata_only,
- *     state: _var.responder_recipe_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: responderRecipeAccessLevel,
+ *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree,
+ *     displayName: responderRecipeDisplayName,
+ *     resourceMetadataOnly: responderRecipeResourceMetadataOnly,
+ *     state: responderRecipeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

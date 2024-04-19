@@ -623,26 +623,26 @@ class LoadBalancer(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_load_balancer = oci.load_balancer.LoadBalancer("testLoadBalancer",
-            compartment_id=var["compartment_id"],
-            display_name=var["load_balancer_display_name"],
-            shape=var["load_balancer_shape"],
-            subnet_ids=var["load_balancer_subnet_ids"],
+        test_load_balancer = oci.load_balancer.LoadBalancer("test_load_balancer",
+            compartment_id=compartment_id,
+            display_name=load_balancer_display_name,
+            shape=load_balancer_shape,
+            subnet_ids=load_balancer_subnet_ids,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            ip_mode=var["load_balancer_ip_mode"],
-            is_private=var["load_balancer_is_private"],
-            network_security_group_ids=var["load_balancer_network_security_group_ids"],
+            ip_mode=load_balancer_ip_mode,
+            is_private=load_balancer_is_private,
+            network_security_group_ids=load_balancer_network_security_group_ids,
             reserved_ips=[oci.load_balancer.LoadBalancerReservedIpArgs(
-                id=var["load_balancer_reserved_ips_id"],
+                id=load_balancer_reserved_ips_id,
             )],
             shape_details=oci.load_balancer.LoadBalancerShapeDetailsArgs(
-                maximum_bandwidth_in_mbps=var["load_balancer_shape_details_maximum_bandwidth_in_mbps"],
-                minimum_bandwidth_in_mbps=var["load_balancer_shape_details_minimum_bandwidth_in_mbps"],
+                maximum_bandwidth_in_mbps=load_balancer_shape_details_maximum_bandwidth_in_mbps,
+                minimum_bandwidth_in_mbps=load_balancer_shape_details_minimum_bandwidth_in_mbps,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -740,26 +740,26 @@ class LoadBalancer(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_load_balancer = oci.load_balancer.LoadBalancer("testLoadBalancer",
-            compartment_id=var["compartment_id"],
-            display_name=var["load_balancer_display_name"],
-            shape=var["load_balancer_shape"],
-            subnet_ids=var["load_balancer_subnet_ids"],
+        test_load_balancer = oci.load_balancer.LoadBalancer("test_load_balancer",
+            compartment_id=compartment_id,
+            display_name=load_balancer_display_name,
+            shape=load_balancer_shape,
+            subnet_ids=load_balancer_subnet_ids,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            ip_mode=var["load_balancer_ip_mode"],
-            is_private=var["load_balancer_is_private"],
-            network_security_group_ids=var["load_balancer_network_security_group_ids"],
+            ip_mode=load_balancer_ip_mode,
+            is_private=load_balancer_is_private,
+            network_security_group_ids=load_balancer_network_security_group_ids,
             reserved_ips=[oci.load_balancer.LoadBalancerReservedIpArgs(
-                id=var["load_balancer_reserved_ips_id"],
+                id=load_balancer_reserved_ips_id,
             )],
             shape_details=oci.load_balancer.LoadBalancerShapeDetailsArgs(
-                maximum_bandwidth_in_mbps=var["load_balancer_shape_details_maximum_bandwidth_in_mbps"],
-                minimum_bandwidth_in_mbps=var["load_balancer_shape_details_minimum_bandwidth_in_mbps"],
+                maximum_bandwidth_in_mbps=load_balancer_shape_details_maximum_bandwidth_in_mbps,
+                minimum_bandwidth_in_mbps=load_balancer_shape_details_minimum_bandwidth_in_mbps,
             ))
         ```
         <!--End PulumiCodeChooser -->

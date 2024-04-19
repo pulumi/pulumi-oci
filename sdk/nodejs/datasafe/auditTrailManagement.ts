@@ -16,18 +16,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditTrailManagement = new oci.datasafe.AuditTrailManagement("testAuditTrailManagement", {
- *     compartmentId: _var.compartment_id,
- *     targetId: oci_data_safe_target_database.test_target_database.id,
+ * const testAuditTrailManagement = new oci.datasafe.AuditTrailManagement("test_audit_trail_management", {
+ *     compartmentId: compartmentId,
+ *     targetId: testTargetDatabase.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.audit_trail_management_description,
- *     displayName: _var.audit_trail_management_display_name,
+ *     description: auditTrailManagementDescription,
+ *     displayName: auditTrailManagementDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoPurgeEnabled: _var.audit_trail_management_is_auto_purge_enabled,
+ *     isAutoPurgeEnabled: auditTrailManagementIsAutoPurgeEnabled,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

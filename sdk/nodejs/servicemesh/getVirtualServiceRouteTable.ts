@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualServiceRouteTable = oci.ServiceMesh.getVirtualServiceRouteTable({
- *     virtualServiceRouteTableId: oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table.id,
+ *     virtualServiceRouteTableId: testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,7 +117,7 @@ export interface GetVirtualServiceRouteTableResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualServiceRouteTable = oci.ServiceMesh.getVirtualServiceRouteTable({
- *     virtualServiceRouteTableId: oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table.id,
+ *     virtualServiceRouteTableId: testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

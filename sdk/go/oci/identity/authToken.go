@@ -40,9 +40,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewAuthToken(ctx, "testAuthToken", &Identity.AuthTokenArgs{
-//				Description: pulumi.Any(_var.Auth_token_description),
-//				UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
+//			_, err := Identity.NewAuthToken(ctx, "test_auth_token", &Identity.AuthTokenArgs{
+//				Description: pulumi.Any(authTokenDescription),
+//				UserId:      pulumi.Any(testUser.Id),
 //			})
 //			if err != nil {
 //				return err

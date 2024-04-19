@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespace = oci.ObjectStorage.getNamespace({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -80,7 +80,7 @@ export interface GetNamespaceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespace = oci.ObjectStorage.getNamespace({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

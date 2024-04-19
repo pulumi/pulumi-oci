@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityPolicyReportDatabaseViewAccessEntry(ctx, &datasafe.GetSecurityPolicyReportDatabaseViewAccessEntryArgs{
-//				DatabaseViewAccessEntryKey: _var.Security_policy_report_database_view_access_entry_database_view_access_entry_key,
-//				SecurityPolicyReportId:     oci_data_safe_security_policy_report.Test_security_policy_report.Id,
+//				DatabaseViewAccessEntryKey: securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey,
+//				SecurityPolicyReportId:     testSecurityPolicyReport.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

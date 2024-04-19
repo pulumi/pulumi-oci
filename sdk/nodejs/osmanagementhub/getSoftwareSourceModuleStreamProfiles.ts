@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourceModuleStreamProfiles = oci.OsManagementHub.getSoftwareSourceModuleStreamProfiles({
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
- *     moduleName: _var.software_source_module_stream_profile_module_name,
- *     name: _var.software_source_module_stream_profile_name,
- *     streamName: oci_streaming_stream.test_stream.name,
+ *     softwareSourceId: testSoftwareSource.id,
+ *     moduleName: softwareSourceModuleStreamProfileModuleName,
+ *     name: softwareSourceModuleStreamProfileName,
+ *     streamName: testStream.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -104,10 +104,10 @@ export interface GetSoftwareSourceModuleStreamProfilesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourceModuleStreamProfiles = oci.OsManagementHub.getSoftwareSourceModuleStreamProfiles({
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
- *     moduleName: _var.software_source_module_stream_profile_module_name,
- *     name: _var.software_source_module_stream_profile_name,
- *     streamName: oci_streaming_stream.test_stream.name,
+ *     softwareSourceId: testSoftwareSource.id,
+ *     moduleName: softwareSourceModuleStreamProfileModuleName,
+ *     name: softwareSourceModuleStreamProfileName,
+ *     streamName: testStream.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

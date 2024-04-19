@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualDeployment = Oci.ServiceMesh.GetVirtualDeployment.Invoke(new()
         ///     {
-        ///         VirtualDeploymentId = oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
+        ///         VirtualDeploymentId = testVirtualDeploymentOciServiceMeshVirtualDeployment.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualDeployment = Oci.ServiceMesh.GetVirtualDeployment.Invoke(new()
         ///     {
-        ///         VirtualDeploymentId = oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
+        ///         VirtualDeploymentId = testVirtualDeploymentOciServiceMeshVirtualDeployment.Id,
         ///     });
         /// 
         /// });

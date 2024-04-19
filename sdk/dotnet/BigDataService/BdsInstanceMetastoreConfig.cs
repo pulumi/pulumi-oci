@@ -25,14 +25,14 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBdsInstanceMetastoreConfig = new Oci.BigDataService.BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig", new()
+    ///     var testBdsInstanceMetastoreConfig = new Oci.BigDataService.BdsInstanceMetastoreConfig("test_bds_instance_metastore_config", new()
     ///     {
-    ///         BdsApiKeyId = oci_identity_api_key.Test_api_key.Id,
-    ///         BdsApiKeyPassphrase = @var.Bds_instance_metastore_config_bds_api_key_passphrase,
-    ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-    ///         ClusterAdminPassword = @var.Bds_instance_metastore_config_cluster_admin_password,
-    ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
-    ///         DisplayName = @var.Bds_instance_metastore_config_display_name,
+    ///         BdsApiKeyId = testApiKey.Id,
+    ///         BdsApiKeyPassphrase = bdsInstanceMetastoreConfigBdsApiKeyPassphrase,
+    ///         BdsInstanceId = testBdsInstance.Id,
+    ///         ClusterAdminPassword = bdsInstanceMetastoreConfigClusterAdminPassword,
+    ///         MetastoreId = testMetastore.Id,
+    ///         DisplayName = bdsInstanceMetastoreConfigDisplayName,
     ///     });
     /// 
     /// });

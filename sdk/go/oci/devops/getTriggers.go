@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetTriggers(ctx, &devops.GetTriggersArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Trigger_display_name),
-//				Id:            pulumi.StringRef(_var.Trigger_id),
-//				ProjectId:     pulumi.StringRef(oci_devops_project.Test_project.Id),
-//				State:         pulumi.StringRef(_var.Trigger_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(triggerDisplayName),
+//				Id:            pulumi.StringRef(triggerId),
+//				ProjectId:     pulumi.StringRef(testProject.Id),
+//				State:         pulumi.StringRef(triggerState),
 //			}, nil)
 //			if err != nil {
 //				return err

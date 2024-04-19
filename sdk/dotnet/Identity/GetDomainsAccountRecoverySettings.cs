@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAccountRecoverySettings = Oci.Identity.GetDomainsAccountRecoverySettings.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Account_recovery_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Account_recovery_setting_resource_type_schema_version,
+        ///         Authorization = accountRecoverySettingAuthorization,
+        ///         ResourceTypeSchemaVersion = accountRecoverySettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAccountRecoverySettings = Oci.Identity.GetDomainsAccountRecoverySettings.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Account_recovery_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Account_recovery_setting_resource_type_schema_version,
+        ///         Authorization = accountRecoverySettingAuthorization,
+        ///         ResourceTypeSchemaVersion = accountRecoverySettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

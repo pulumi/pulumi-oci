@@ -37,11 +37,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperations(ctx, &databasemanagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs{
-//				ManagedDatabaseId:             oci_database_management_managed_database.Test_managed_database.Id,
-//				EndTimeLessThanOrEqualTo:      pulumi.StringRef(_var.Managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to),
-//				FilterBy:                      pulumi.StringRef(_var.Managed_database_optimizer_statistics_collection_operation_filter_by),
-//				StartTimeGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to),
-//				TaskType:                      pulumi.StringRef(_var.Managed_database_optimizer_statistics_collection_operation_task_type),
+//				ManagedDatabaseId:             testManagedDatabase.Id,
+//				EndTimeLessThanOrEqualTo:      pulumi.StringRef(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo),
+//				FilterBy:                      pulumi.StringRef(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy),
+//				StartTimeGreaterThanOrEqualTo: pulumi.StringRef(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo),
+//				TaskType:                      pulumi.StringRef(managedDatabaseOptimizerStatisticsCollectionOperationTaskType),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -49,16 +49,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkAddressList = new NetworkAddressList(&#34;testNetworkAddressList&#34;, NetworkAddressListArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .type(var_.network_address_list_type())
- *             .addresses(var_.network_address_list_addresses())
+ *             .compartmentId(compartmentId)
+ *             .type(networkAddressListType)
+ *             .addresses(networkAddressListAddresses)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.network_address_list_display_name())
+ *             .displayName(networkAddressListDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .systemTags(var_.network_address_list_system_tags())
+ *             .systemTags(networkAddressListSystemTags)
  *             .vcnAddresses(NetworkAddressListVcnAddressArgs.builder()
- *                 .addresses(var_.network_address_list_vcn_addresses_addresses())
- *                 .vcnId(oci_core_vcn.test_vcn().id())
+ *                 .addresses(networkAddressListVcnAddressesAddresses)
+ *                 .vcnId(testVcn.id())
  *                 .build())
  *             .build());
  * 

@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetNamedCredentials(ctx, &databasemanagement.GetNamedCredentialsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AssociatedResource: pulumi.StringRef(_var.Named_credential_associated_resource),
-//				Name:               pulumi.StringRef(_var.Named_credential_name),
-//				Scope:              pulumi.StringRef(_var.Named_credential_scope),
-//				Type:               pulumi.StringRef(_var.Named_credential_type),
+//				CompartmentId:      compartmentId,
+//				AssociatedResource: pulumi.StringRef(namedCredentialAssociatedResource),
+//				Name:               pulumi.StringRef(namedCredentialName),
+//				Scope:              pulumi.StringRef(namedCredentialScope),
+//				Type:               pulumi.StringRef(namedCredentialType),
 //			}, nil)
 //			if err != nil {
 //				return err

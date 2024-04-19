@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudAutonomousVmClusters = oci.Database.getCloudAutonomousVmClusters({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.cloud_autonomous_vm_cluster_availability_domain,
- *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
- *     displayName: _var.cloud_autonomous_vm_cluster_display_name,
- *     state: _var.cloud_autonomous_vm_cluster_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: cloudAutonomousVmClusterAvailabilityDomain,
+ *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
+ *     displayName: cloudAutonomousVmClusterDisplayName,
+ *     state: cloudAutonomousVmClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetCloudAutonomousVmClustersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudAutonomousVmClusters = oci.Database.getCloudAutonomousVmClusters({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.cloud_autonomous_vm_cluster_availability_domain,
- *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
- *     displayName: _var.cloud_autonomous_vm_cluster_display_name,
- *     state: _var.cloud_autonomous_vm_cluster_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: cloudAutonomousVmClusterAvailabilityDomain,
+ *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
+ *     displayName: cloudAutonomousVmClusterDisplayName,
+ *     state: cloudAutonomousVmClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

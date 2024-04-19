@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Psql.GetBackup(ctx, &psql.GetBackupArgs{
-//				BackupId: oci_psql_backup.Test_backup.Id,
+//				BackupId: testBackupOciPsqlBackup.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

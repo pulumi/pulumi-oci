@@ -95,7 +95,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetric = StackMonitoringFunctions.getBaselineableMetric(GetBaselineableMetricArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .baselineableMetricId(testBaselineableMetricOciStackMonitoringBaselineableMetric.id())
      *             .build());
      * 
      *     }
@@ -137,7 +137,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetric = StackMonitoringFunctions.getBaselineableMetric(GetBaselineableMetricArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .baselineableMetricId(testBaselineableMetricOciStackMonitoringBaselineableMetric.id())
      *             .build());
      * 
      *     }
@@ -179,7 +179,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetric = StackMonitoringFunctions.getBaselineableMetric(GetBaselineableMetricArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .baselineableMetricId(testBaselineableMetricOciStackMonitoringBaselineableMetric.id())
      *             .build());
      * 
      *     }
@@ -221,7 +221,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetric = StackMonitoringFunctions.getBaselineableMetric(GetBaselineableMetricArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .baselineableMetricId(testBaselineableMetricOciStackMonitoringBaselineableMetric.id())
      *             .build());
      * 
      *     }
@@ -263,11 +263,11 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
-     *             .name(var_.baselineable_metric_name())
-     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .baselineableMetricId(testBaselineableMetric.id())
+     *             .compartmentId(compartmentId)
+     *             .metricNamespace(baselineableMetricMetricNamespace)
+     *             .name(baselineableMetricName)
+     *             .resourceGroup(baselineableMetricResourceGroup)
      *             .build());
      * 
      *     }
@@ -309,11 +309,11 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
-     *             .name(var_.baselineable_metric_name())
-     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .baselineableMetricId(testBaselineableMetric.id())
+     *             .compartmentId(compartmentId)
+     *             .metricNamespace(baselineableMetricMetricNamespace)
+     *             .name(baselineableMetricName)
+     *             .resourceGroup(baselineableMetricResourceGroup)
      *             .build());
      * 
      *     }
@@ -355,11 +355,11 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
-     *             .name(var_.baselineable_metric_name())
-     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .baselineableMetricId(testBaselineableMetric.id())
+     *             .compartmentId(compartmentId)
+     *             .metricNamespace(baselineableMetricMetricNamespace)
+     *             .name(baselineableMetricName)
+     *             .resourceGroup(baselineableMetricResourceGroup)
      *             .build());
      * 
      *     }
@@ -401,11 +401,11 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
-     *             .name(var_.baselineable_metric_name())
-     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .baselineableMetricId(testBaselineableMetric.id())
+     *             .compartmentId(compartmentId)
+     *             .metricNamespace(baselineableMetricMetricNamespace)
+     *             .name(baselineableMetricName)
+     *             .resourceGroup(baselineableMetricResourceGroup)
      *             .build());
      * 
      *     }
@@ -447,11 +447,11 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
-     *             .name(var_.baselineable_metric_name())
-     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .baselineableMetricId(testBaselineableMetric.id())
+     *             .compartmentId(compartmentId)
+     *             .metricNamespace(baselineableMetricMetricNamespace)
+     *             .name(baselineableMetricName)
+     *             .resourceGroup(baselineableMetricResourceGroup)
      *             .build());
      * 
      *     }
@@ -493,11 +493,11 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetrics = StackMonitoringFunctions.getBaselineableMetrics(GetBaselineableMetricsArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .metricNamespace(var_.baselineable_metric_metric_namespace())
-     *             .name(var_.baselineable_metric_name())
-     *             .resourceGroup(var_.baselineable_metric_resource_group())
+     *             .baselineableMetricId(testBaselineableMetric.id())
+     *             .compartmentId(compartmentId)
+     *             .metricNamespace(baselineableMetricMetricNamespace)
+     *             .name(baselineableMetricName)
+     *             .resourceGroup(baselineableMetricResourceGroup)
      *             .build());
      * 
      *     }
@@ -539,19 +539,19 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetricsEvaluate = StackMonitoringFunctions.getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .baselineableMetricId(testBaselineableMetric.id())
      *             .items(GetBaselineableMetricsEvaluateItemArgs.builder()
      *                 .evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs.builder()
-     *                     .timestamp(var_.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp())
-     *                     .value(var_.baselineable_metrics_evaluate_items_evaluation_data_points_value())
+     *                     .timestamp(baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsEvaluationDataPointsValue)
      *                     .build())
      *                 .trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPointArgs.builder()
-     *                     .timestamp(var_.baselineable_metrics_evaluate_items_training_data_points_timestamp())
-     *                     .value(var_.baselineable_metrics_evaluate_items_training_data_points_value())
+     *                     .timestamp(baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsTrainingDataPointsValue)
      *                     .build())
-     *                 .dimensions(var_.baselineable_metrics_evaluate_items_dimensions())
+     *                 .dimensions(baselineableMetricsEvaluateItemsDimensions)
      *                 .build())
-     *             .resourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -593,19 +593,19 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetricsEvaluate = StackMonitoringFunctions.getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .baselineableMetricId(testBaselineableMetric.id())
      *             .items(GetBaselineableMetricsEvaluateItemArgs.builder()
      *                 .evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs.builder()
-     *                     .timestamp(var_.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp())
-     *                     .value(var_.baselineable_metrics_evaluate_items_evaluation_data_points_value())
+     *                     .timestamp(baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsEvaluationDataPointsValue)
      *                     .build())
      *                 .trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPointArgs.builder()
-     *                     .timestamp(var_.baselineable_metrics_evaluate_items_training_data_points_timestamp())
-     *                     .value(var_.baselineable_metrics_evaluate_items_training_data_points_value())
+     *                     .timestamp(baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsTrainingDataPointsValue)
      *                     .build())
-     *                 .dimensions(var_.baselineable_metrics_evaluate_items_dimensions())
+     *                 .dimensions(baselineableMetricsEvaluateItemsDimensions)
      *                 .build())
-     *             .resourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -647,19 +647,19 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetricsEvaluate = StackMonitoringFunctions.getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .baselineableMetricId(testBaselineableMetric.id())
      *             .items(GetBaselineableMetricsEvaluateItemArgs.builder()
      *                 .evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs.builder()
-     *                     .timestamp(var_.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp())
-     *                     .value(var_.baselineable_metrics_evaluate_items_evaluation_data_points_value())
+     *                     .timestamp(baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsEvaluationDataPointsValue)
      *                     .build())
      *                 .trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPointArgs.builder()
-     *                     .timestamp(var_.baselineable_metrics_evaluate_items_training_data_points_timestamp())
-     *                     .value(var_.baselineable_metrics_evaluate_items_training_data_points_value())
+     *                     .timestamp(baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsTrainingDataPointsValue)
      *                     .build())
-     *                 .dimensions(var_.baselineable_metrics_evaluate_items_dimensions())
+     *                 .dimensions(baselineableMetricsEvaluateItemsDimensions)
      *                 .build())
-     *             .resourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -701,19 +701,19 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBaselineableMetricsEvaluate = StackMonitoringFunctions.getBaselineableMetricsEvaluate(GetBaselineableMetricsEvaluateArgs.builder()
-     *             .baselineableMetricId(oci_stack_monitoring_baselineable_metric.test_baselineable_metric().id())
+     *             .baselineableMetricId(testBaselineableMetric.id())
      *             .items(GetBaselineableMetricsEvaluateItemArgs.builder()
      *                 .evaluationDataPoints(GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs.builder()
-     *                     .timestamp(var_.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp())
-     *                     .value(var_.baselineable_metrics_evaluate_items_evaluation_data_points_value())
+     *                     .timestamp(baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsEvaluationDataPointsValue)
      *                     .build())
      *                 .trainingDataPoints(GetBaselineableMetricsEvaluateItemTrainingDataPointArgs.builder()
-     *                     .timestamp(var_.baselineable_metrics_evaluate_items_training_data_points_timestamp())
-     *                     .value(var_.baselineable_metrics_evaluate_items_training_data_points_value())
+     *                     .timestamp(baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp)
+     *                     .value(baselineableMetricsEvaluateItemsTrainingDataPointsValue)
      *                     .build())
-     *                 .dimensions(var_.baselineable_metrics_evaluate_items_dimensions())
+     *                 .dimensions(baselineableMetricsEvaluateItemsDimensions)
      *                 .build())
-     *             .resourceId(oci_usage_proxy_resource.test_resource().id())
+     *             .resourceId(testResource.id())
      *             .build());
      * 
      *     }
@@ -755,7 +755,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = StackMonitoringFunctions.getConfig(GetConfigArgs.builder()
-     *             .configId(oci_stack_monitoring_config.test_config().id())
+     *             .configId(testConfigOciStackMonitoringConfig.id())
      *             .build());
      * 
      *     }
@@ -797,7 +797,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = StackMonitoringFunctions.getConfig(GetConfigArgs.builder()
-     *             .configId(oci_stack_monitoring_config.test_config().id())
+     *             .configId(testConfigOciStackMonitoringConfig.id())
      *             .build());
      * 
      *     }
@@ -839,7 +839,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = StackMonitoringFunctions.getConfig(GetConfigArgs.builder()
-     *             .configId(oci_stack_monitoring_config.test_config().id())
+     *             .configId(testConfigOciStackMonitoringConfig.id())
      *             .build());
      * 
      *     }
@@ -881,7 +881,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfig = StackMonitoringFunctions.getConfig(GetConfigArgs.builder()
-     *             .configId(oci_stack_monitoring_config.test_config().id())
+     *             .configId(testConfigOciStackMonitoringConfig.id())
      *             .build());
      * 
      *     }
@@ -923,10 +923,10 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = StackMonitoringFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.config_display_name())
-     *             .state(var_.config_state())
-     *             .type(var_.config_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(configDisplayName)
+     *             .state(configState)
+     *             .type(configType)
      *             .build());
      * 
      *     }
@@ -968,10 +968,10 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = StackMonitoringFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.config_display_name())
-     *             .state(var_.config_state())
-     *             .type(var_.config_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(configDisplayName)
+     *             .state(configState)
+     *             .type(configType)
      *             .build());
      * 
      *     }
@@ -1013,10 +1013,10 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = StackMonitoringFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.config_display_name())
-     *             .state(var_.config_state())
-     *             .type(var_.config_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(configDisplayName)
+     *             .state(configState)
+     *             .type(configType)
      *             .build());
      * 
      *     }
@@ -1058,10 +1058,10 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfigs = StackMonitoringFunctions.getConfigs(GetConfigsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.config_display_name())
-     *             .state(var_.config_state())
-     *             .type(var_.config_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(configDisplayName)
+     *             .state(configState)
+     *             .type(configType)
      *             .build());
      * 
      *     }
@@ -1103,7 +1103,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = StackMonitoringFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .discoveryJobId(testDiscoveryJobOciStackMonitoringDiscoveryJob.id())
      *             .build());
      * 
      *     }
@@ -1145,7 +1145,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = StackMonitoringFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .discoveryJobId(testDiscoveryJobOciStackMonitoringDiscoveryJob.id())
      *             .build());
      * 
      *     }
@@ -1187,7 +1187,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = StackMonitoringFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .discoveryJobId(testDiscoveryJobOciStackMonitoringDiscoveryJob.id())
      *             .build());
      * 
      *     }
@@ -1229,7 +1229,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = StackMonitoringFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .discoveryJobId(testDiscoveryJobOciStackMonitoringDiscoveryJob.id())
      *             .build());
      * 
      *     }
@@ -1271,8 +1271,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobLogs = StackMonitoringFunctions.getDiscoveryJobLogs(GetDiscoveryJobLogsArgs.builder()
-     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
-     *             .logType(var_.discovery_job_log_log_type())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .logType(discoveryJobLogLogType)
      *             .build());
      * 
      *     }
@@ -1314,8 +1314,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobLogs = StackMonitoringFunctions.getDiscoveryJobLogs(GetDiscoveryJobLogsArgs.builder()
-     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
-     *             .logType(var_.discovery_job_log_log_type())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .logType(discoveryJobLogLogType)
      *             .build());
      * 
      *     }
@@ -1357,8 +1357,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobLogs = StackMonitoringFunctions.getDiscoveryJobLogs(GetDiscoveryJobLogsArgs.builder()
-     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
-     *             .logType(var_.discovery_job_log_log_type())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .logType(discoveryJobLogLogType)
      *             .build());
      * 
      *     }
@@ -1400,8 +1400,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobLogs = StackMonitoringFunctions.getDiscoveryJobLogs(GetDiscoveryJobLogsArgs.builder()
-     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
-     *             .logType(var_.discovery_job_log_log_type())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .logType(discoveryJobLogLogType)
      *             .build());
      * 
      *     }
@@ -1443,8 +1443,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobs = StackMonitoringFunctions.getDiscoveryJobs(GetDiscoveryJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.discovery_job_name())
+     *             .compartmentId(compartmentId)
+     *             .name(discoveryJobName)
      *             .build());
      * 
      *     }
@@ -1486,8 +1486,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobs = StackMonitoringFunctions.getDiscoveryJobs(GetDiscoveryJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.discovery_job_name())
+     *             .compartmentId(compartmentId)
+     *             .name(discoveryJobName)
      *             .build());
      * 
      *     }
@@ -1529,8 +1529,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobs = StackMonitoringFunctions.getDiscoveryJobs(GetDiscoveryJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.discovery_job_name())
+     *             .compartmentId(compartmentId)
+     *             .name(discoveryJobName)
      *             .build());
      * 
      *     }
@@ -1572,8 +1572,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobs = StackMonitoringFunctions.getDiscoveryJobs(GetDiscoveryJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.discovery_job_name())
+     *             .compartmentId(compartmentId)
+     *             .name(discoveryJobName)
      *             .build());
      * 
      *     }
@@ -1615,7 +1615,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricExtension = StackMonitoringFunctions.getMetricExtension(GetMetricExtensionArgs.builder()
-     *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
+     *             .metricExtensionId(testMetricExtensionOciStackMonitoringMetricExtension.id())
      *             .build());
      * 
      *     }
@@ -1657,7 +1657,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricExtension = StackMonitoringFunctions.getMetricExtension(GetMetricExtensionArgs.builder()
-     *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
+     *             .metricExtensionId(testMetricExtensionOciStackMonitoringMetricExtension.id())
      *             .build());
      * 
      *     }
@@ -1699,7 +1699,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricExtension = StackMonitoringFunctions.getMetricExtension(GetMetricExtensionArgs.builder()
-     *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
+     *             .metricExtensionId(testMetricExtensionOciStackMonitoringMetricExtension.id())
      *             .build());
      * 
      *     }
@@ -1741,7 +1741,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricExtension = StackMonitoringFunctions.getMetricExtension(GetMetricExtensionArgs.builder()
-     *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
+     *             .metricExtensionId(testMetricExtensionOciStackMonitoringMetricExtension.id())
      *             .build());
      * 
      *     }
@@ -1783,12 +1783,12 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .enabledOnResourceId(oci_usage_proxy_resource.test_resource().id())
-     *             .name(var_.metric_extension_name())
-     *             .resourceType(var_.metric_extension_resource_type())
-     *             .state(var_.metric_extension_state())
-     *             .status(var_.metric_extension_status())
+     *             .compartmentId(compartmentId)
+     *             .enabledOnResourceId(testResource.id())
+     *             .name(metricExtensionName)
+     *             .resourceType(metricExtensionResourceType)
+     *             .state(metricExtensionState)
+     *             .status(metricExtensionStatus)
      *             .build());
      * 
      *     }
@@ -1830,12 +1830,12 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .enabledOnResourceId(oci_usage_proxy_resource.test_resource().id())
-     *             .name(var_.metric_extension_name())
-     *             .resourceType(var_.metric_extension_resource_type())
-     *             .state(var_.metric_extension_state())
-     *             .status(var_.metric_extension_status())
+     *             .compartmentId(compartmentId)
+     *             .enabledOnResourceId(testResource.id())
+     *             .name(metricExtensionName)
+     *             .resourceType(metricExtensionResourceType)
+     *             .state(metricExtensionState)
+     *             .status(metricExtensionStatus)
      *             .build());
      * 
      *     }
@@ -1877,12 +1877,12 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .enabledOnResourceId(oci_usage_proxy_resource.test_resource().id())
-     *             .name(var_.metric_extension_name())
-     *             .resourceType(var_.metric_extension_resource_type())
-     *             .state(var_.metric_extension_state())
-     *             .status(var_.metric_extension_status())
+     *             .compartmentId(compartmentId)
+     *             .enabledOnResourceId(testResource.id())
+     *             .name(metricExtensionName)
+     *             .resourceType(metricExtensionResourceType)
+     *             .state(metricExtensionState)
+     *             .status(metricExtensionStatus)
      *             .build());
      * 
      *     }
@@ -1924,12 +1924,12 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetricExtensions = StackMonitoringFunctions.getMetricExtensions(GetMetricExtensionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .enabledOnResourceId(oci_usage_proxy_resource.test_resource().id())
-     *             .name(var_.metric_extension_name())
-     *             .resourceType(var_.metric_extension_resource_type())
-     *             .state(var_.metric_extension_state())
-     *             .status(var_.metric_extension_status())
+     *             .compartmentId(compartmentId)
+     *             .enabledOnResourceId(testResource.id())
+     *             .name(metricExtensionName)
+     *             .resourceType(metricExtensionResourceType)
+     *             .state(metricExtensionState)
+     *             .status(metricExtensionStatus)
      *             .build());
      * 
      *     }
@@ -1971,7 +1971,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResource = StackMonitoringFunctions.getMonitoredResource(GetMonitoredResourceArgs.builder()
-     *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
+     *             .monitoredResourceId(testMonitoredResourceOciStackMonitoringMonitoredResource.id())
      *             .build());
      * 
      *     }
@@ -2013,7 +2013,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResource = StackMonitoringFunctions.getMonitoredResource(GetMonitoredResourceArgs.builder()
-     *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
+     *             .monitoredResourceId(testMonitoredResourceOciStackMonitoringMonitoredResource.id())
      *             .build());
      * 
      *     }
@@ -2055,7 +2055,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResource = StackMonitoringFunctions.getMonitoredResource(GetMonitoredResourceArgs.builder()
-     *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
+     *             .monitoredResourceId(testMonitoredResourceOciStackMonitoringMonitoredResource.id())
      *             .build());
      * 
      *     }
@@ -2097,7 +2097,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResource = StackMonitoringFunctions.getMonitoredResource(GetMonitoredResourceArgs.builder()
-     *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
+     *             .monitoredResourceId(testMonitoredResourceOciStackMonitoringMonitoredResource.id())
      *             .build());
      * 
      *     }
@@ -2139,7 +2139,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTask = StackMonitoringFunctions.getMonitoredResourceTask(GetMonitoredResourceTaskArgs.builder()
-     *             .monitoredResourceTaskId(oci_stack_monitoring_monitored_resource_task.test_monitored_resource_task().id())
+     *             .monitoredResourceTaskId(testMonitoredResourceTaskOciStackMonitoringMonitoredResourceTask.id())
      *             .build());
      * 
      *     }
@@ -2181,7 +2181,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTask = StackMonitoringFunctions.getMonitoredResourceTask(GetMonitoredResourceTaskArgs.builder()
-     *             .monitoredResourceTaskId(oci_stack_monitoring_monitored_resource_task.test_monitored_resource_task().id())
+     *             .monitoredResourceTaskId(testMonitoredResourceTaskOciStackMonitoringMonitoredResourceTask.id())
      *             .build());
      * 
      *     }
@@ -2223,7 +2223,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTask = StackMonitoringFunctions.getMonitoredResourceTask(GetMonitoredResourceTaskArgs.builder()
-     *             .monitoredResourceTaskId(oci_stack_monitoring_monitored_resource_task.test_monitored_resource_task().id())
+     *             .monitoredResourceTaskId(testMonitoredResourceTaskOciStackMonitoringMonitoredResourceTask.id())
      *             .build());
      * 
      *     }
@@ -2265,7 +2265,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTask = StackMonitoringFunctions.getMonitoredResourceTask(GetMonitoredResourceTaskArgs.builder()
-     *             .monitoredResourceTaskId(oci_stack_monitoring_monitored_resource_task.test_monitored_resource_task().id())
+     *             .monitoredResourceTaskId(testMonitoredResourceTaskOciStackMonitoringMonitoredResourceTask.id())
      *             .build());
      * 
      *     }
@@ -2307,8 +2307,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTasks = StackMonitoringFunctions.getMonitoredResourceTasks(GetMonitoredResourceTasksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .status(var_.monitored_resource_task_status())
+     *             .compartmentId(compartmentId)
+     *             .status(monitoredResourceTaskStatus)
      *             .build());
      * 
      *     }
@@ -2350,8 +2350,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTasks = StackMonitoringFunctions.getMonitoredResourceTasks(GetMonitoredResourceTasksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .status(var_.monitored_resource_task_status())
+     *             .compartmentId(compartmentId)
+     *             .status(monitoredResourceTaskStatus)
      *             .build());
      * 
      *     }
@@ -2393,8 +2393,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTasks = StackMonitoringFunctions.getMonitoredResourceTasks(GetMonitoredResourceTasksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .status(var_.monitored_resource_task_status())
+     *             .compartmentId(compartmentId)
+     *             .status(monitoredResourceTaskStatus)
      *             .build());
      * 
      *     }
@@ -2436,8 +2436,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTasks = StackMonitoringFunctions.getMonitoredResourceTasks(GetMonitoredResourceTasksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .status(var_.monitored_resource_task_status())
+     *             .compartmentId(compartmentId)
+     *             .status(monitoredResourceTaskStatus)
      *             .build());
      * 
      *     }
@@ -2479,7 +2479,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceType = StackMonitoringFunctions.getMonitoredResourceType(GetMonitoredResourceTypeArgs.builder()
-     *             .monitoredResourceTypeId(oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type().id())
+     *             .monitoredResourceTypeId(testMonitoredResourceTypeOciStackMonitoringMonitoredResourceType.id())
      *             .build());
      * 
      *     }
@@ -2521,7 +2521,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceType = StackMonitoringFunctions.getMonitoredResourceType(GetMonitoredResourceTypeArgs.builder()
-     *             .monitoredResourceTypeId(oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type().id())
+     *             .monitoredResourceTypeId(testMonitoredResourceTypeOciStackMonitoringMonitoredResourceType.id())
      *             .build());
      * 
      *     }
@@ -2563,7 +2563,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceType = StackMonitoringFunctions.getMonitoredResourceType(GetMonitoredResourceTypeArgs.builder()
-     *             .monitoredResourceTypeId(oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type().id())
+     *             .monitoredResourceTypeId(testMonitoredResourceTypeOciStackMonitoringMonitoredResourceType.id())
      *             .build());
      * 
      *     }
@@ -2605,7 +2605,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceType = StackMonitoringFunctions.getMonitoredResourceType(GetMonitoredResourceTypeArgs.builder()
-     *             .monitoredResourceTypeId(oci_stack_monitoring_monitored_resource_type.test_monitored_resource_type().id())
+     *             .monitoredResourceTypeId(testMonitoredResourceTypeOciStackMonitoringMonitoredResourceType.id())
      *             .build());
      * 
      *     }
@@ -2652,13 +2652,13 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTypes = StackMonitoringFunctions.getMonitoredResourceTypes(GetMonitoredResourceTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .excludeFields(var_.monitored_resource_type_exclude_fields())
-     *             .fields(var_.monitored_resource_type_fields())
-     *             .isExcludeSystemTypes(var_.monitored_resource_type_is_exclude_system_types())
-     *             .metricNamespace(var_.monitored_resource_type_metric_namespace())
-     *             .name(var_.monitored_resource_type_name())
-     *             .status(var_.monitored_resource_type_status())
+     *             .compartmentId(compartmentId)
+     *             .excludeFields(monitoredResourceTypeExcludeFields)
+     *             .fields(monitoredResourceTypeFields)
+     *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
+     *             .metricNamespace(monitoredResourceTypeMetricNamespace)
+     *             .name(monitoredResourceTypeName)
+     *             .status(monitoredResourceTypeStatus)
      *             .build());
      * 
      *     }
@@ -2705,13 +2705,13 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTypes = StackMonitoringFunctions.getMonitoredResourceTypes(GetMonitoredResourceTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .excludeFields(var_.monitored_resource_type_exclude_fields())
-     *             .fields(var_.monitored_resource_type_fields())
-     *             .isExcludeSystemTypes(var_.monitored_resource_type_is_exclude_system_types())
-     *             .metricNamespace(var_.monitored_resource_type_metric_namespace())
-     *             .name(var_.monitored_resource_type_name())
-     *             .status(var_.monitored_resource_type_status())
+     *             .compartmentId(compartmentId)
+     *             .excludeFields(monitoredResourceTypeExcludeFields)
+     *             .fields(monitoredResourceTypeFields)
+     *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
+     *             .metricNamespace(monitoredResourceTypeMetricNamespace)
+     *             .name(monitoredResourceTypeName)
+     *             .status(monitoredResourceTypeStatus)
      *             .build());
      * 
      *     }
@@ -2758,13 +2758,13 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTypes = StackMonitoringFunctions.getMonitoredResourceTypes(GetMonitoredResourceTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .excludeFields(var_.monitored_resource_type_exclude_fields())
-     *             .fields(var_.monitored_resource_type_fields())
-     *             .isExcludeSystemTypes(var_.monitored_resource_type_is_exclude_system_types())
-     *             .metricNamespace(var_.monitored_resource_type_metric_namespace())
-     *             .name(var_.monitored_resource_type_name())
-     *             .status(var_.monitored_resource_type_status())
+     *             .compartmentId(compartmentId)
+     *             .excludeFields(monitoredResourceTypeExcludeFields)
+     *             .fields(monitoredResourceTypeFields)
+     *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
+     *             .metricNamespace(monitoredResourceTypeMetricNamespace)
+     *             .name(monitoredResourceTypeName)
+     *             .status(monitoredResourceTypeStatus)
      *             .build());
      * 
      *     }
@@ -2811,13 +2811,13 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResourceTypes = StackMonitoringFunctions.getMonitoredResourceTypes(GetMonitoredResourceTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .excludeFields(var_.monitored_resource_type_exclude_fields())
-     *             .fields(var_.monitored_resource_type_fields())
-     *             .isExcludeSystemTypes(var_.monitored_resource_type_is_exclude_system_types())
-     *             .metricNamespace(var_.monitored_resource_type_metric_namespace())
-     *             .name(var_.monitored_resource_type_name())
-     *             .status(var_.monitored_resource_type_status())
+     *             .compartmentId(compartmentId)
+     *             .excludeFields(monitoredResourceTypeExcludeFields)
+     *             .fields(monitoredResourceTypeFields)
+     *             .isExcludeSystemTypes(monitoredResourceTypeIsExcludeSystemTypes)
+     *             .metricNamespace(monitoredResourceTypeMetricNamespace)
+     *             .name(monitoredResourceTypeName)
+     *             .status(monitoredResourceTypeStatus)
      *             .build());
      * 
      *     }
@@ -2859,10 +2859,10 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.monitored_resource_name())
-     *             .status(var_.monitored_resource_status())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .name(monitoredResourceName)
+     *             .status(monitoredResourceStatus)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -2904,10 +2904,10 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.monitored_resource_name())
-     *             .status(var_.monitored_resource_status())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .name(monitoredResourceName)
+     *             .status(monitoredResourceStatus)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -2949,10 +2949,10 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.monitored_resource_name())
-     *             .status(var_.monitored_resource_status())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .name(monitoredResourceName)
+     *             .status(monitoredResourceStatus)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -2994,10 +2994,10 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredResources = StackMonitoringFunctions.getMonitoredResources(GetMonitoredResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.monitored_resource_name())
-     *             .status(var_.monitored_resource_status())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .compartmentId(compartmentId)
+     *             .name(monitoredResourceName)
+     *             .status(monitoredResourceStatus)
+     *             .workRequestId(testWorkRequest.id())
      *             .build());
      * 
      *     }
@@ -3039,7 +3039,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessSet = StackMonitoringFunctions.getProcessSet(GetProcessSetArgs.builder()
-     *             .processSetId(oci_stack_monitoring_process_set.test_process_set().id())
+     *             .processSetId(testProcessSetOciStackMonitoringProcessSet.id())
      *             .build());
      * 
      *     }
@@ -3081,7 +3081,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessSet = StackMonitoringFunctions.getProcessSet(GetProcessSetArgs.builder()
-     *             .processSetId(oci_stack_monitoring_process_set.test_process_set().id())
+     *             .processSetId(testProcessSetOciStackMonitoringProcessSet.id())
      *             .build());
      * 
      *     }
@@ -3123,7 +3123,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessSet = StackMonitoringFunctions.getProcessSet(GetProcessSetArgs.builder()
-     *             .processSetId(oci_stack_monitoring_process_set.test_process_set().id())
+     *             .processSetId(testProcessSetOciStackMonitoringProcessSet.id())
      *             .build());
      * 
      *     }
@@ -3165,7 +3165,7 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessSet = StackMonitoringFunctions.getProcessSet(GetProcessSetArgs.builder()
-     *             .processSetId(oci_stack_monitoring_process_set.test_process_set().id())
+     *             .processSetId(testProcessSetOciStackMonitoringProcessSet.id())
      *             .build());
      * 
      *     }
@@ -3207,8 +3207,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessSets = StackMonitoringFunctions.getProcessSets(GetProcessSetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.process_set_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(processSetDisplayName)
      *             .build());
      * 
      *     }
@@ -3250,8 +3250,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessSets = StackMonitoringFunctions.getProcessSets(GetProcessSetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.process_set_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(processSetDisplayName)
      *             .build());
      * 
      *     }
@@ -3293,8 +3293,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessSets = StackMonitoringFunctions.getProcessSets(GetProcessSetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.process_set_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(processSetDisplayName)
      *             .build());
      * 
      *     }
@@ -3336,8 +3336,8 @@ public final class StackMonitoringFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessSets = StackMonitoringFunctions.getProcessSets(GetProcessSetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.process_set_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(processSetDisplayName)
      *             .build());
      * 
      *     }

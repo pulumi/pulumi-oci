@@ -352,7 +352,7 @@ def get_audit_trail(audit_trail_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"])
+    test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=test_audit_trail_oci_data_safe_audit_trail["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -408,7 +408,7 @@ def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=oci_data_safe_audit_trail["test_audit_trail"]["id"])
+    test_audit_trail = oci.DataSafe.get_audit_trail(audit_trail_id=test_audit_trail_oci_data_safe_audit_trail["id"])
     ```
     <!--End PulumiCodeChooser -->
 

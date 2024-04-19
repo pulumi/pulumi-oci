@@ -31,19 +31,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogAnalyticsEntities(ctx, &loganalytics.GetLogAnalyticsEntitiesArgs{
-//				CompartmentId:            _var.Compartment_id,
-//				Namespace:                _var.Log_analytics_entity_namespace,
-//				CloudResourceId:          pulumi.StringRef(oci_log_analytics_cloud_resource.Test_cloud_resource.Id),
-//				EntityTypeNames:          _var.Log_analytics_entity_entity_type_name,
-//				Hostname:                 pulumi.StringRef(_var.Log_analytics_entity_hostname),
-//				HostnameContains:         pulumi.StringRef(_var.Log_analytics_entity_hostname_contains),
-//				IsManagementAgentIdNull:  pulumi.StringRef(_var.Log_analytics_entity_is_management_agent_id_null),
-//				LifecycleDetailsContains: pulumi.StringRef(_var.Log_analytics_entity_lifecycle_details_contains),
-//				MetadataEquals:           _var.Log_analytics_entity_metadata_equals,
-//				Name:                     pulumi.StringRef(_var.Log_analytics_entity_name),
-//				NameContains:             pulumi.StringRef(_var.Log_analytics_entity_name_contains),
-//				SourceId:                 pulumi.StringRef(oci_log_analytics_source.Test_source.Id),
-//				State:                    pulumi.StringRef(_var.Log_analytics_entity_state),
+//				CompartmentId:            compartmentId,
+//				Namespace:                logAnalyticsEntityNamespace,
+//				CloudResourceId:          pulumi.StringRef(testCloudResource.Id),
+//				EntityTypeNames:          logAnalyticsEntityEntityTypeName,
+//				Hostname:                 pulumi.StringRef(logAnalyticsEntityHostname),
+//				HostnameContains:         pulumi.StringRef(logAnalyticsEntityHostnameContains),
+//				IsManagementAgentIdNull:  pulumi.StringRef(logAnalyticsEntityIsManagementAgentIdNull),
+//				LifecycleDetailsContains: pulumi.StringRef(logAnalyticsEntityLifecycleDetailsContains),
+//				MetadataEquals:           logAnalyticsEntityMetadataEquals,
+//				Name:                     pulumi.StringRef(logAnalyticsEntityName),
+//				NameContains:             pulumi.StringRef(logAnalyticsEntityNameContains),
+//				SourceId:                 pulumi.StringRef(testSource.Id),
+//				State:                    pulumi.StringRef(logAnalyticsEntityState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testUsageCarbonEmissionsQuery = Oci.MeteringComputation.GetUsageCarbonEmissionsQuery.Invoke(new()
         ///     {
-        ///         UsageCarbonEmissionsQueryId = oci_metering_computation_usage_carbon_emissions_query.Test_usage_carbon_emissions_query.Id,
+        ///         UsageCarbonEmissionsQueryId = testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testUsageCarbonEmissionsQuery = Oci.MeteringComputation.GetUsageCarbonEmissionsQuery.Invoke(new()
         ///     {
-        ///         UsageCarbonEmissionsQueryId = oci_metering_computation_usage_carbon_emissions_query.Test_usage_carbon_emissions_query.Id,
+        ///         UsageCarbonEmissionsQueryId = testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.Id,
         ///     });
         /// 
         /// });

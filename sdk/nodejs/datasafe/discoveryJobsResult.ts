@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobsResult = new oci.datasafe.DiscoveryJobsResult("testDiscoveryJobsResult", {});
+ * const testDiscoveryJobsResult = new oci.datasafe.DiscoveryJobsResult("test_discovery_jobs_result", {});
  * ```
  * <!--End PulumiCodeChooser -->
  *

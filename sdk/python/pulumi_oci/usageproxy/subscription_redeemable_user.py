@@ -192,15 +192,15 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_subscription_redeemable_user = oci.usage_proxy.SubscriptionRedeemableUser("testSubscriptionRedeemableUser",
-            subscription_id=oci_ons_subscription["test_subscription"]["id"],
-            tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
+        test_subscription_redeemable_user = oci.usage_proxy.SubscriptionRedeemableUser("test_subscription_redeemable_user",
+            subscription_id=test_subscription["id"],
+            tenancy_id=test_tenancy["id"],
             items=[oci.usage_proxy.SubscriptionRedeemableUserItemArgs(
-                email_id=oci_usage_proxy_email["test_email"]["id"],
-                first_name=var["subscription_redeemable_user_items_first_name"],
-                last_name=var["subscription_redeemable_user_items_last_name"],
+                email_id=test_email["id"],
+                first_name=subscription_redeemable_user_items_first_name,
+                last_name=subscription_redeemable_user_items_last_name,
             )],
-            user_id=oci_identity_user["test_user"]["id"])
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -241,15 +241,15 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_subscription_redeemable_user = oci.usage_proxy.SubscriptionRedeemableUser("testSubscriptionRedeemableUser",
-            subscription_id=oci_ons_subscription["test_subscription"]["id"],
-            tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
+        test_subscription_redeemable_user = oci.usage_proxy.SubscriptionRedeemableUser("test_subscription_redeemable_user",
+            subscription_id=test_subscription["id"],
+            tenancy_id=test_tenancy["id"],
             items=[oci.usage_proxy.SubscriptionRedeemableUserItemArgs(
-                email_id=oci_usage_proxy_email["test_email"]["id"],
-                first_name=var["subscription_redeemable_user_items_first_name"],
-                last_name=var["subscription_redeemable_user_items_last_name"],
+                email_id=test_email["id"],
+                first_name=subscription_redeemable_user_items_first_name,
+                last_name=subscription_redeemable_user_items_last_name,
             )],
-            user_id=oci_identity_user["test_user"]["id"])
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 

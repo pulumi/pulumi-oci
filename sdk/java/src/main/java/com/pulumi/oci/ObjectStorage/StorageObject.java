@@ -55,19 +55,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testObject = new StorageObject(&#34;testObject&#34;, StorageObjectArgs.builder()        
- *             .bucket(var_.object_bucket())
- *             .content(var_.object_content())
- *             .namespace(var_.object_namespace())
- *             .object(var_.object_object())
- *             .cacheControl(var_.object_cache_control())
- *             .contentDisposition(var_.object_content_disposition())
- *             .contentEncoding(var_.object_content_encoding())
- *             .contentLanguage(var_.object_content_language())
- *             .contentType(var_.object_content_type())
- *             .deleteAllObjectVersions(var_.object_delete_all_object_versions())
- *             .metadata(var_.object_metadata())
- *             .storageTier(var_.object_storage_tier())
- *             .opcSseKmsKeyId(var_.object_opc_sse_kms_key_id())
+ *             .bucket(objectBucket)
+ *             .content(objectContent)
+ *             .namespace(objectNamespace)
+ *             .object(objectObject)
+ *             .cacheControl(objectCacheControl)
+ *             .contentDisposition(objectContentDisposition)
+ *             .contentEncoding(objectContentEncoding)
+ *             .contentLanguage(objectContentLanguage)
+ *             .contentType(objectContentType)
+ *             .deleteAllObjectVersions(objectDeleteAllObjectVersions)
+ *             .metadata(objectMetadata)
+ *             .storageTier(objectStorageTier)
+ *             .opcSseKmsKeyId(objectOpcSseKmsKeyId)
  *             .build());
  * 
  *     }

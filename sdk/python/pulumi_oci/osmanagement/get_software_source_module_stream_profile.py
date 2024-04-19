@@ -142,10 +142,10 @@ def get_software_source_module_stream_profile(module_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream_profile = oci.OsManagement.get_software_source_module_stream_profile(module_name=var["software_source_module_name"],
-        profile_name=var["software_source_module_stream_profile_name"],
-        software_source_id=var["software_source"]["id"],
-        stream_name=var["software_source_module_stream_name"])
+    test_software_source_module_stream_profile = oci.OsManagement.get_software_source_module_stream_profile(module_name=software_source_module_name,
+        profile_name=software_source_module_stream_profile_name,
+        software_source_id=software_source["id"],
+        stream_name=software_source_module_stream_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -192,10 +192,10 @@ def get_software_source_module_stream_profile_output(module_name: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream_profile = oci.OsManagement.get_software_source_module_stream_profile(module_name=var["software_source_module_name"],
-        profile_name=var["software_source_module_stream_profile_name"],
-        software_source_id=var["software_source"]["id"],
-        stream_name=var["software_source_module_stream_name"])
+    test_software_source_module_stream_profile = oci.OsManagement.get_software_source_module_stream_profile(module_name=software_source_module_name,
+        profile_name=software_source_module_stream_profile_name,
+        software_source_id=software_source["id"],
+        stream_name=software_source_module_stream_name)
     ```
     <!--End PulumiCodeChooser -->
 

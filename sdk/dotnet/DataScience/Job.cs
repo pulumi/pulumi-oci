@@ -25,67 +25,67 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testJob = new Oci.DataScience.Job("testJob", new()
+    ///     var testJob = new Oci.DataScience.Job("test_job", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         JobConfigurationDetails = new Oci.DataScience.Inputs.JobJobConfigurationDetailsArgs
     ///         {
-    ///             JobType = @var.Job_job_configuration_details_job_type,
-    ///             CommandLineArguments = @var.Job_job_configuration_details_command_line_arguments,
-    ///             EnvironmentVariables = @var.Job_job_configuration_details_environment_variables,
-    ///             MaximumRuntimeInMinutes = @var.Job_job_configuration_details_maximum_runtime_in_minutes,
+    ///             JobType = jobJobConfigurationDetailsJobType,
+    ///             CommandLineArguments = jobJobConfigurationDetailsCommandLineArguments,
+    ///             EnvironmentVariables = jobJobConfigurationDetailsEnvironmentVariables,
+    ///             MaximumRuntimeInMinutes = jobJobConfigurationDetailsMaximumRuntimeInMinutes,
     ///         },
     ///         JobInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsArgs
     ///         {
-    ///             BlockStorageSizeInGbs = @var.Job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
-    ///             JobInfrastructureType = @var.Job_job_infrastructure_configuration_details_job_infrastructure_type,
-    ///             ShapeName = oci_core_shape.Test_shape.Name,
+    ///             BlockStorageSizeInGbs = jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+    ///             JobInfrastructureType = jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
+    ///             ShapeName = testShape.Name,
     ///             JobShapeConfigDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
     ///             {
-    ///                 MemoryInGbs = @var.Job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
-    ///                 Ocpus = @var.Job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+    ///                 MemoryInGbs = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+    ///                 Ocpus = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
     ///             },
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             SubnetId = testSubnet.Id,
     ///         },
-    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         ProjectId = testProject.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Job_description,
-    ///         DisplayName = @var.Job_display_name,
+    ///         Description = jobDescription,
+    ///         DisplayName = jobDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         JobEnvironmentConfigurationDetails = new Oci.DataScience.Inputs.JobJobEnvironmentConfigurationDetailsArgs
     ///         {
-    ///             Image = @var.Job_job_environment_configuration_details_image,
-    ///             JobEnvironmentType = @var.Job_job_environment_configuration_details_job_environment_type,
-    ///             Cmds = @var.Job_job_environment_configuration_details_cmd,
-    ///             Entrypoints = @var.Job_job_environment_configuration_details_entrypoint,
-    ///             ImageDigest = @var.Job_job_environment_configuration_details_image_digest,
-    ///             ImageSignatureId = oci_datascience_image_signature.Test_image_signature.Id,
+    ///             Image = jobJobEnvironmentConfigurationDetailsImage,
+    ///             JobEnvironmentType = jobJobEnvironmentConfigurationDetailsJobEnvironmentType,
+    ///             Cmds = jobJobEnvironmentConfigurationDetailsCmd,
+    ///             Entrypoints = jobJobEnvironmentConfigurationDetailsEntrypoint,
+    ///             ImageDigest = jobJobEnvironmentConfigurationDetailsImageDigest,
+    ///             ImageSignatureId = testImageSignature.Id,
     ///         },
     ///         JobLogConfigurationDetails = new Oci.DataScience.Inputs.JobJobLogConfigurationDetailsArgs
     ///         {
-    ///             EnableAutoLogCreation = @var.Job_job_log_configuration_details_enable_auto_log_creation,
-    ///             EnableLogging = @var.Job_job_log_configuration_details_enable_logging,
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogId = oci_logging_log.Test_log.Id,
+    ///             EnableAutoLogCreation = jobJobLogConfigurationDetailsEnableAutoLogCreation,
+    ///             EnableLogging = jobJobLogConfigurationDetailsEnableLogging,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogId = testLog.Id,
     ///         },
     ///         JobStorageMountConfigurationDetailsLists = new[]
     ///         {
     ///             new Oci.DataScience.Inputs.JobJobStorageMountConfigurationDetailsListArgs
     ///             {
-    ///                 DestinationDirectoryName = @var.Job_job_storage_mount_configuration_details_list_destination_directory_name,
-    ///                 StorageType = @var.Job_job_storage_mount_configuration_details_list_storage_type,
-    ///                 Bucket = @var.Job_job_storage_mount_configuration_details_list_bucket,
-    ///                 DestinationPath = @var.Job_job_storage_mount_configuration_details_list_destination_path,
-    ///                 ExportId = oci_file_storage_export.Test_export.Id,
-    ///                 MountTargetId = oci_file_storage_mount_target.Test_mount_target.Id,
-    ///                 Namespace = @var.Job_job_storage_mount_configuration_details_list_namespace,
-    ///                 Prefix = @var.Job_job_storage_mount_configuration_details_list_prefix,
+    ///                 DestinationDirectoryName = jobJobStorageMountConfigurationDetailsListDestinationDirectoryName,
+    ///                 StorageType = jobJobStorageMountConfigurationDetailsListStorageType,
+    ///                 Bucket = jobJobStorageMountConfigurationDetailsListBucket,
+    ///                 DestinationPath = jobJobStorageMountConfigurationDetailsListDestinationPath,
+    ///                 ExportId = testExport.Id,
+    ///                 MountTargetId = testMountTarget.Id,
+    ///                 Namespace = jobJobStorageMountConfigurationDetailsListNamespace,
+    ///                 Prefix = jobJobStorageMountConfigurationDetailsListPrefix,
     ///             },
     ///         },
     ///     });

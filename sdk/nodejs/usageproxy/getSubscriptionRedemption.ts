@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptionRedemption = oci.UsageProxy.getSubscriptionRedemption({
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
- *     timeRedeemedGreaterThanOrEqualTo: _var.subscription_redemption_time_redeemed_greater_than_or_equal_to,
- *     timeRedeemedLessThan: _var.subscription_redemption_time_redeemed_less_than,
+ *     subscriptionId: testSubscription.id,
+ *     tenancyId: testTenancy.id,
+ *     timeRedeemedGreaterThanOrEqualTo: subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo,
+ *     timeRedeemedLessThan: subscriptionRedemptionTimeRedeemedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -90,10 +90,10 @@ export interface GetSubscriptionRedemptionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptionRedemption = oci.UsageProxy.getSubscriptionRedemption({
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
- *     timeRedeemedGreaterThanOrEqualTo: _var.subscription_redemption_time_redeemed_greater_than_or_equal_to,
- *     timeRedeemedLessThan: _var.subscription_redemption_time_redeemed_less_than,
+ *     subscriptionId: testSubscription.id,
+ *     tenancyId: testTenancy.id,
+ *     timeRedeemedGreaterThanOrEqualTo: subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo,
+ *     timeRedeemedLessThan: subscriptionRedemptionTimeRedeemedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -47,15 +47,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy(&#34;testLoadBalancerRoutingPolicy&#34;, LoadBalancerRoutingPolicyArgs.builder()        
- *             .conditionLanguageVersion(var_.load_balancer_routing_policy_condition_language_version())
- *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .conditionLanguageVersion(loadBalancerRoutingPolicyConditionLanguageVersion)
+ *             .loadBalancerId(testLoadBalancer.id())
+ *             .name(loadBalancerRoutingPolicyName)
  *             .rules(LoadBalancerRoutingPolicyRuleArgs.builder()
  *                 .actions(LoadBalancerRoutingPolicyRuleActionArgs.builder()
- *                     .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
- *                     .name(var_.load_balancer_routing_policy_rules_actions_name())
+ *                     .backendSetName(testBackendSet.name())
+ *                     .name(loadBalancerRoutingPolicyRulesActionsName)
  *                     .build())
- *                 .condition(var_.load_balancer_routing_policy_rules_condition())
- *                 .name(var_.load_balancer_routing_policy_rules_name())
+ *                 .condition(loadBalancerRoutingPolicyRulesCondition)
+ *                 .name(loadBalancerRoutingPolicyRulesName)
  *                 .build())
  *             .build());
  * 

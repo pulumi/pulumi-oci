@@ -65,11 +65,11 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewalls = WafFunctions.getFirewalls(GetFirewallsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_firewall_display_name())
-     *             .id(var_.web_app_firewall_id())
-     *             .states(var_.web_app_firewall_state())
-     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallDisplayName)
+     *             .id(webAppFirewallId)
+     *             .states(webAppFirewallState)
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -111,11 +111,11 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewalls = WafFunctions.getFirewalls(GetFirewallsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_firewall_display_name())
-     *             .id(var_.web_app_firewall_id())
-     *             .states(var_.web_app_firewall_state())
-     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallDisplayName)
+     *             .id(webAppFirewallId)
+     *             .states(webAppFirewallState)
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -157,11 +157,11 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewalls = WafFunctions.getFirewalls(GetFirewallsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_firewall_display_name())
-     *             .id(var_.web_app_firewall_id())
-     *             .states(var_.web_app_firewall_state())
-     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallDisplayName)
+     *             .id(webAppFirewallId)
+     *             .states(webAppFirewallState)
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -203,11 +203,11 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewalls = WafFunctions.getFirewalls(GetFirewallsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_firewall_display_name())
-     *             .id(var_.web_app_firewall_id())
-     *             .states(var_.web_app_firewall_state())
-     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallDisplayName)
+     *             .id(webAppFirewallId)
+     *             .states(webAppFirewallState)
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -249,7 +249,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
-     *             .networkAddressListId(oci_waf_network_address_list.test_network_address_list().id())
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
      *             .build());
      * 
      *     }
@@ -291,7 +291,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
-     *             .networkAddressListId(oci_waf_network_address_list.test_network_address_list().id())
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
      *             .build());
      * 
      *     }
@@ -333,7 +333,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
-     *             .networkAddressListId(oci_waf_network_address_list.test_network_address_list().id())
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
      *             .build());
      * 
      *     }
@@ -375,7 +375,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
-     *             .networkAddressListId(oci_waf_network_address_list.test_network_address_list().id())
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
      *             .build());
      * 
      *     }
@@ -417,10 +417,10 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressLists = WafFunctions.getNetworkAddressLists(GetNetworkAddressListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_address_list_display_name())
-     *             .id(var_.network_address_list_id())
-     *             .states(var_.network_address_list_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkAddressListDisplayName)
+     *             .id(networkAddressListId)
+     *             .states(networkAddressListState)
      *             .build());
      * 
      *     }
@@ -462,10 +462,10 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressLists = WafFunctions.getNetworkAddressLists(GetNetworkAddressListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_address_list_display_name())
-     *             .id(var_.network_address_list_id())
-     *             .states(var_.network_address_list_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkAddressListDisplayName)
+     *             .id(networkAddressListId)
+     *             .states(networkAddressListState)
      *             .build());
      * 
      *     }
@@ -507,10 +507,10 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressLists = WafFunctions.getNetworkAddressLists(GetNetworkAddressListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_address_list_display_name())
-     *             .id(var_.network_address_list_id())
-     *             .states(var_.network_address_list_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkAddressListDisplayName)
+     *             .id(networkAddressListId)
+     *             .states(networkAddressListState)
      *             .build());
      * 
      *     }
@@ -552,10 +552,10 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressLists = WafFunctions.getNetworkAddressLists(GetNetworkAddressListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_address_list_display_name())
-     *             .id(var_.network_address_list_id())
-     *             .states(var_.network_address_list_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkAddressListDisplayName)
+     *             .id(networkAddressListId)
+     *             .states(networkAddressListState)
      *             .build());
      * 
      *     }
@@ -597,12 +597,12 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionCapabilities = WafFunctions.getProtectionCapabilities(GetProtectionCapabilitiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protection_capability_display_name())
-     *             .groupTags(var_.protection_capability_group_tag())
-     *             .isLatestVersions(var_.protection_capability_is_latest_version())
-     *             .key(var_.protection_capability_key())
-     *             .type(var_.protection_capability_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionCapabilityDisplayName)
+     *             .groupTags(protectionCapabilityGroupTag)
+     *             .isLatestVersions(protectionCapabilityIsLatestVersion)
+     *             .key(protectionCapabilityKey)
+     *             .type(protectionCapabilityType)
      *             .build());
      * 
      *     }
@@ -644,12 +644,12 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionCapabilities = WafFunctions.getProtectionCapabilities(GetProtectionCapabilitiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protection_capability_display_name())
-     *             .groupTags(var_.protection_capability_group_tag())
-     *             .isLatestVersions(var_.protection_capability_is_latest_version())
-     *             .key(var_.protection_capability_key())
-     *             .type(var_.protection_capability_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionCapabilityDisplayName)
+     *             .groupTags(protectionCapabilityGroupTag)
+     *             .isLatestVersions(protectionCapabilityIsLatestVersion)
+     *             .key(protectionCapabilityKey)
+     *             .type(protectionCapabilityType)
      *             .build());
      * 
      *     }
@@ -691,12 +691,12 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionCapabilities = WafFunctions.getProtectionCapabilities(GetProtectionCapabilitiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protection_capability_display_name())
-     *             .groupTags(var_.protection_capability_group_tag())
-     *             .isLatestVersions(var_.protection_capability_is_latest_version())
-     *             .key(var_.protection_capability_key())
-     *             .type(var_.protection_capability_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionCapabilityDisplayName)
+     *             .groupTags(protectionCapabilityGroupTag)
+     *             .isLatestVersions(protectionCapabilityIsLatestVersion)
+     *             .key(protectionCapabilityKey)
+     *             .type(protectionCapabilityType)
      *             .build());
      * 
      *     }
@@ -738,12 +738,12 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionCapabilities = WafFunctions.getProtectionCapabilities(GetProtectionCapabilitiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.protection_capability_display_name())
-     *             .groupTags(var_.protection_capability_group_tag())
-     *             .isLatestVersions(var_.protection_capability_is_latest_version())
-     *             .key(var_.protection_capability_key())
-     *             .type(var_.protection_capability_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(protectionCapabilityDisplayName)
+     *             .groupTags(protectionCapabilityGroupTag)
+     *             .isLatestVersions(protectionCapabilityIsLatestVersion)
+     *             .key(protectionCapabilityKey)
+     *             .type(protectionCapabilityType)
      *             .build());
      * 
      *     }
@@ -785,9 +785,9 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionCapabilityGroupTags = WafFunctions.getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.protection_capability_group_tag_name())
-     *             .type(var_.protection_capability_group_tag_type())
+     *             .compartmentId(compartmentId)
+     *             .name(protectionCapabilityGroupTagName)
+     *             .type(protectionCapabilityGroupTagType)
      *             .build());
      * 
      *     }
@@ -829,9 +829,9 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionCapabilityGroupTags = WafFunctions.getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.protection_capability_group_tag_name())
-     *             .type(var_.protection_capability_group_tag_type())
+     *             .compartmentId(compartmentId)
+     *             .name(protectionCapabilityGroupTagName)
+     *             .type(protectionCapabilityGroupTagType)
      *             .build());
      * 
      *     }
@@ -873,9 +873,9 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionCapabilityGroupTags = WafFunctions.getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.protection_capability_group_tag_name())
-     *             .type(var_.protection_capability_group_tag_type())
+     *             .compartmentId(compartmentId)
+     *             .name(protectionCapabilityGroupTagName)
+     *             .type(protectionCapabilityGroupTagType)
      *             .build());
      * 
      *     }
@@ -917,9 +917,9 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionCapabilityGroupTags = WafFunctions.getProtectionCapabilityGroupTags(GetProtectionCapabilityGroupTagsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.protection_capability_group_tag_name())
-     *             .type(var_.protection_capability_group_tag_type())
+     *             .compartmentId(compartmentId)
+     *             .name(protectionCapabilityGroupTagName)
+     *             .type(protectionCapabilityGroupTagType)
      *             .build());
      * 
      *     }
@@ -961,7 +961,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
-     *             .webAppFirewallId(oci_waf_web_app_firewall.test_web_app_firewall().id())
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
      *             .build());
      * 
      *     }
@@ -1003,7 +1003,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
-     *             .webAppFirewallId(oci_waf_web_app_firewall.test_web_app_firewall().id())
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
      *             .build());
      * 
      *     }
@@ -1045,7 +1045,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
-     *             .webAppFirewallId(oci_waf_web_app_firewall.test_web_app_firewall().id())
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
      *             .build());
      * 
      *     }
@@ -1087,7 +1087,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
-     *             .webAppFirewallId(oci_waf_web_app_firewall.test_web_app_firewall().id())
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
      *             .build());
      * 
      *     }
@@ -1129,10 +1129,10 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicies = WafFunctions.getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_firewall_policy_display_name())
-     *             .id(var_.web_app_firewall_policy_id())
-     *             .states(var_.web_app_firewall_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallPolicyDisplayName)
+     *             .id(webAppFirewallPolicyId)
+     *             .states(webAppFirewallPolicyState)
      *             .build());
      * 
      *     }
@@ -1174,10 +1174,10 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicies = WafFunctions.getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_firewall_policy_display_name())
-     *             .id(var_.web_app_firewall_policy_id())
-     *             .states(var_.web_app_firewall_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallPolicyDisplayName)
+     *             .id(webAppFirewallPolicyId)
+     *             .states(webAppFirewallPolicyState)
      *             .build());
      * 
      *     }
@@ -1219,10 +1219,10 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicies = WafFunctions.getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_firewall_policy_display_name())
-     *             .id(var_.web_app_firewall_policy_id())
-     *             .states(var_.web_app_firewall_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallPolicyDisplayName)
+     *             .id(webAppFirewallPolicyId)
+     *             .states(webAppFirewallPolicyState)
      *             .build());
      * 
      *     }
@@ -1264,10 +1264,10 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicies = WafFunctions.getWebAppFirewallPolicies(GetWebAppFirewallPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.web_app_firewall_policy_display_name())
-     *             .id(var_.web_app_firewall_policy_id())
-     *             .states(var_.web_app_firewall_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(webAppFirewallPolicyDisplayName)
+     *             .id(webAppFirewallPolicyId)
+     *             .states(webAppFirewallPolicyState)
      *             .build());
      * 
      *     }
@@ -1309,7 +1309,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
-     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1351,7 +1351,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
-     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1393,7 +1393,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
-     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1435,7 +1435,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
-     *             .webAppFirewallPolicyId(oci_waf_web_app_firewall_policy.test_web_app_firewall_policy().id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
      *             .build());
      * 
      *     }

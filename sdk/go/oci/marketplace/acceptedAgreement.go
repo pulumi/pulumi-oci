@@ -32,16 +32,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Marketplace.NewAcceptedAgreement(ctx, "testAcceptedAgreement", &Marketplace.AcceptedAgreementArgs{
-//				AgreementId:    pulumi.Any(oci_marketplace_agreement.Test_agreement.Id),
-//				CompartmentId:  pulumi.Any(_var.Compartment_id),
-//				ListingId:      pulumi.Any(oci_marketplace_listing.Test_listing.Id),
-//				PackageVersion: pulumi.Any(_var.Accepted_agreement_package_version),
-//				Signature:      pulumi.Any(_var.Accepted_agreement_signature),
+//			_, err := Marketplace.NewAcceptedAgreement(ctx, "test_accepted_agreement", &Marketplace.AcceptedAgreementArgs{
+//				AgreementId:    pulumi.Any(testAgreement.Id),
+//				CompartmentId:  pulumi.Any(compartmentId),
+//				ListingId:      pulumi.Any(testListing.Id),
+//				PackageVersion: pulumi.Any(acceptedAgreementPackageVersion),
+//				Signature:      pulumi.Any(acceptedAgreementSignature),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Accepted_agreement_display_name),
+//				DisplayName: pulumi.Any(acceptedAgreementDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

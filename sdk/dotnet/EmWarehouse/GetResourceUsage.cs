@@ -29,7 +29,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// {
         ///     var testEmWarehouseResourceUsage = Oci.EmWarehouse.GetResourceUsage.Invoke(new()
         ///     {
-        ///         EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+        ///         EmWarehouseId = testEmWarehouse.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// {
         ///     var testEmWarehouseResourceUsage = Oci.EmWarehouse.GetResourceUsage.Invoke(new()
         ///     {
-        ///         EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+        ///         EmWarehouseId = testEmWarehouse.Id,
         ///     });
         /// 
         /// });

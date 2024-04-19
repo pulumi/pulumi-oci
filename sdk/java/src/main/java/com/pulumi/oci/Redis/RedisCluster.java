@@ -49,15 +49,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRedisCluster = new RedisCluster(&#34;testRedisCluster&#34;, RedisClusterArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.redis_cluster_display_name())
- *             .nodeCount(var_.redis_cluster_node_count())
- *             .nodeMemoryInGbs(var_.redis_cluster_node_memory_in_gbs())
- *             .softwareVersion(var_.redis_cluster_software_version())
- *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .compartmentId(compartmentId)
+ *             .displayName(redisClusterDisplayName)
+ *             .nodeCount(redisClusterNodeCount)
+ *             .nodeMemoryInGbs(redisClusterNodeMemoryInGbs)
+ *             .softwareVersion(redisClusterSoftwareVersion)
+ *             .subnetId(testSubnet.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .nsgIds(var_.redis_cluster_nsg_ids())
+ *             .nsgIds(redisClusterNsgIds)
  *             .build());
  * 
  *     }

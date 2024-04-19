@@ -20,12 +20,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPbfListings = oci.Functions.getPbfListings({
- *     name: _var.pbf_listing_name,
- *     nameContains: _var.pbf_listing_name_contains,
- *     nameStartsWith: _var.pbf_listing_name_starts_with,
- *     pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
- *     state: _var.pbf_listing_state,
- *     triggers: _var.pbf_listing_trigger,
+ *     name: pbfListingName,
+ *     nameContains: pbfListingNameContains,
+ *     nameStartsWith: pbfListingNameStartsWith,
+ *     pbfListingId: testPbfListing.id,
+ *     state: pbfListingState,
+ *     triggers: pbfListingTrigger,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,12 +116,12 @@ export interface GetPbfListingsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPbfListings = oci.Functions.getPbfListings({
- *     name: _var.pbf_listing_name,
- *     nameContains: _var.pbf_listing_name_contains,
- *     nameStartsWith: _var.pbf_listing_name_starts_with,
- *     pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
- *     state: _var.pbf_listing_state,
- *     triggers: _var.pbf_listing_trigger,
+ *     name: pbfListingName,
+ *     nameContains: pbfListingNameContains,
+ *     nameStartsWith: pbfListingNameStartsWith,
+ *     pbfListingId: testPbfListing.id,
+ *     state: pbfListingState,
+ *     triggers: pbfListingTrigger,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

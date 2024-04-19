@@ -33,10 +33,10 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testShapes = Oci.Mysql.GetShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Shape_availability_domain,
-        ///         IsSupportedFors = @var.Shape_is_supported_for,
-        ///         Name = @var.Shape_name,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = shapeAvailabilityDomain,
+        ///         IsSupportedFors = shapeIsSupportedFor,
+        ///         Name = shapeName,
         ///     });
         /// 
         /// });
@@ -68,10 +68,10 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testShapes = Oci.Mysql.GetShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Shape_availability_domain,
-        ///         IsSupportedFors = @var.Shape_is_supported_for,
-        ///         Name = @var.Shape_name,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = shapeAvailabilityDomain,
+        ///         IsSupportedFors = shapeIsSupportedFor,
+        ///         Name = shapeName,
         ///     });
         /// 
         /// });

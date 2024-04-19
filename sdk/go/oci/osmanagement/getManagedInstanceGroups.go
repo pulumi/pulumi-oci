@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagement.GetManagedInstanceGroups(ctx, &osmanagement.GetManagedInstanceGroupsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Managed_instance_group_display_name),
-//				OsFamily:      pulumi.StringRef(_var.Managed_instance_group_os_family),
-//				State:         pulumi.StringRef(_var.Managed_instance_group_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(managedInstanceGroupDisplayName),
+//				OsFamily:      pulumi.StringRef(managedInstanceGroupOsFamily),
+//				State:         pulumi.StringRef(managedInstanceGroupState),
 //			}, nil)
 //			if err != nil {
 //				return err

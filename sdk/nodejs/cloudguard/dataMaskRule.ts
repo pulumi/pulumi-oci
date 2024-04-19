@@ -18,24 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataMaskRule = new oci.cloudguard.DataMaskRule("testDataMaskRule", {
- *     compartmentId: _var.compartment_id,
- *     dataMaskCategories: _var.data_mask_rule_data_mask_categories,
- *     displayName: _var.data_mask_rule_display_name,
- *     iamGroupId: oci_identity_group.test_group.id,
+ * const testDataMaskRule = new oci.cloudguard.DataMaskRule("test_data_mask_rule", {
+ *     compartmentId: compartmentId,
+ *     dataMaskCategories: dataMaskRuleDataMaskCategories,
+ *     displayName: dataMaskRuleDisplayName,
+ *     iamGroupId: testGroup.id,
  *     targetSelected: {
- *         kind: _var.data_mask_rule_target_selected_kind,
- *         values: _var.data_mask_rule_target_selected_values,
+ *         kind: dataMaskRuleTargetSelectedKind,
+ *         values: dataMaskRuleTargetSelectedValues,
  *     },
- *     dataMaskRuleStatus: _var.data_mask_rule_data_mask_rule_status,
+ *     dataMaskRuleStatus: dataMaskRuleDataMaskRuleStatus,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.data_mask_rule_description,
+ *     description: dataMaskRuleDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     state: _var.data_mask_rule_state,
+ *     state: dataMaskRuleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -18,26 +18,26 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsPrivateEndpoint = new oci.databasetools.DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_tools_private_endpoint_display_name,
- *     endpointServiceId: oci_core_service.test_service.id,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testDatabaseToolsPrivateEndpoint = new oci.databasetools.DatabaseToolsPrivateEndpoint("test_database_tools_private_endpoint", {
+ *     compartmentId: compartmentId,
+ *     displayName: databaseToolsPrivateEndpointDisplayName,
+ *     endpointServiceId: testService.id,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.database_tools_private_endpoint_description,
+ *     description: databaseToolsPrivateEndpointDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     locks: [{
- *         type: _var.database_tools_private_endpoint_locks_type,
- *         message: _var.database_tools_private_endpoint_locks_message,
- *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
- *         timeCreated: _var.database_tools_private_endpoint_locks_time_created,
+ *         type: databaseToolsPrivateEndpointLocksType,
+ *         message: databaseToolsPrivateEndpointLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: databaseToolsPrivateEndpointLocksTimeCreated,
  *     }],
- *     nsgIds: _var.database_tools_private_endpoint_nsg_ids,
- *     privateEndpointIp: _var.database_tools_private_endpoint_private_endpoint_ip,
+ *     nsgIds: databaseToolsPrivateEndpointNsgIds,
+ *     privateEndpointIp: databaseToolsPrivateEndpointPrivateEndpointIp,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

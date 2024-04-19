@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDomain = oci.Identity.getDomain({
- *     domainId: oci_identity_domain.test_domain.id,
+ *     domainId: testDomainOciIdentityDomain.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetDomainResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDomain = oci.Identity.getDomain({
- *     domainId: oci_identity_domain.test_domain.id,
+ *     domainId: testDomainOciIdentityDomain.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

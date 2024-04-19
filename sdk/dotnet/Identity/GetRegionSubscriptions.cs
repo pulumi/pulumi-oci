@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testRegionSubscriptions = Oci.Identity.GetRegionSubscriptions.Invoke(new()
         ///     {
-        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///         TenancyId = testTenancy.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testRegionSubscriptions = Oci.Identity.GetRegionSubscriptions.Invoke(new()
         ///     {
-        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///         TenancyId = testTenancy.Id,
         ///     });
         /// 
         /// });

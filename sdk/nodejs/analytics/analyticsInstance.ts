@@ -19,34 +19,35 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstance = new oci.analytics.AnalyticsInstance("testAnalyticsInstance", {
+ * const testAnalyticsInstance = new oci.analytics.AnalyticsInstance("test_analytics_instance", {
  *     capacity: {
- *         capacityType: _var.analytics_instance_capacity_capacity_type,
- *         capacityValue: _var.analytics_instance_capacity_capacity_value,
+ *         capacityType: analyticsInstanceCapacityCapacityType,
+ *         capacityValue: analyticsInstanceCapacityCapacityValue,
  *     },
- *     compartmentId: _var.compartment_id,
- *     featureSet: _var.analytics_instance_feature_set,
- *     idcsAccessToken: _var.analytics_instance_idcs_access_token,
- *     licenseType: _var.analytics_instance_license_type,
+ *     compartmentId: compartmentId,
+ *     featureSet: analyticsInstanceFeatureSet,
+ *     idcsAccessToken: analyticsInstanceIdcsAccessToken,
+ *     licenseType: analyticsInstanceLicenseType,
+ *     name: analyticsInstanceName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.analytics_instance_description,
- *     emailNotification: _var.analytics_instance_email_notification,
+ *     description: analyticsInstanceDescription,
+ *     emailNotification: analyticsInstanceEmailNotification,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     kmsKeyId: oci_kms_key.test_key.id,
+ *     kmsKeyId: testKey.id,
  *     networkEndpointDetails: {
- *         networkEndpointType: _var.analytics_instance_network_endpoint_details_network_endpoint_type,
- *         networkSecurityGroupIds: _var.analytics_instance_network_endpoint_details_network_security_group_ids,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         vcnId: oci_core_vcn.test_vcn.id,
- *         whitelistedIps: _var.analytics_instance_network_endpoint_details_whitelisted_ips,
- *         whitelistedServices: _var.analytics_instance_network_endpoint_details_whitelisted_services,
+ *         networkEndpointType: analyticsInstanceNetworkEndpointDetailsNetworkEndpointType,
+ *         networkSecurityGroupIds: analyticsInstanceNetworkEndpointDetailsNetworkSecurityGroupIds,
+ *         subnetId: testSubnet.id,
+ *         vcnId: testVcn.id,
+ *         whitelistedIps: analyticsInstanceNetworkEndpointDetailsWhitelistedIps,
+ *         whitelistedServices: analyticsInstanceNetworkEndpointDetailsWhitelistedServices,
  *         whitelistedVcns: [{
- *             id: _var.analytics_instance_network_endpoint_details_whitelisted_vcns_id,
- *             whitelistedIps: _var.analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
+ *             id: analyticsInstanceNetworkEndpointDetailsWhitelistedVcnsId,
+ *             whitelistedIps: analyticsInstanceNetworkEndpointDetailsWhitelistedVcnsWhitelistedIps,
  *         }],
  *     },
  * });

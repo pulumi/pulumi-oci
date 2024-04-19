@@ -271,7 +271,7 @@ def get_license_record(license_record_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_license_record = oci.LicenseManager.get_license_record(license_record_id=oci_license_manager_license_record["test_license_record"]["id"])
+    test_license_record = oci.LicenseManager.get_license_record(license_record_id=test_license_record_oci_license_manager_license_record["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -320,7 +320,7 @@ def get_license_record_output(license_record_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_license_record = oci.LicenseManager.get_license_record(license_record_id=oci_license_manager_license_record["test_license_record"]["id"])
+    test_license_record = oci.LicenseManager.get_license_record(license_record_id=test_license_record_oci_license_manager_license_record["id"])
     ```
     <!--End PulumiCodeChooser -->
 

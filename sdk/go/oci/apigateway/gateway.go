@@ -31,39 +31,39 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApiGateway.NewGateway(ctx, "testGateway", &ApiGateway.GatewayArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				EndpointType:  pulumi.Any(_var.Gateway_endpoint_type),
-//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				CertificateId: pulumi.Any(oci_apigateway_certificate.Test_certificate.Id),
+//			_, err := ApiGateway.NewGateway(ctx, "test_gateway", &ApiGateway.GatewayArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				EndpointType:  pulumi.Any(gatewayEndpointType),
+//				SubnetId:      pulumi.Any(testSubnet.Id),
+//				CertificateId: pulumi.Any(testCertificate.Id),
 //				CaBundles: apigateway.GatewayCaBundleArray{
 //					&apigateway.GatewayCaBundleArgs{
-//						Type:                   pulumi.Any(_var.Gateway_ca_bundles_type),
-//						CaBundleId:             pulumi.Any(oci_apigateway_ca_bundle.Test_ca_bundle.Id),
-//						CertificateAuthorityId: pulumi.Any(oci_apigateway_certificate_authority.Test_certificate_authority.Id),
+//						Type:                   pulumi.Any(gatewayCaBundlesType),
+//						CaBundleId:             pulumi.Any(testCaBundle.Id),
+//						CertificateAuthorityId: pulumi.Any(testCertificateAuthority.Id),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Gateway_display_name),
+//				DisplayName: pulumi.Any(gatewayDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				NetworkSecurityGroupIds: pulumi.Any(_var.Gateway_network_security_group_ids),
+//				NetworkSecurityGroupIds: pulumi.Any(gatewayNetworkSecurityGroupIds),
 //				ResponseCacheDetails: &apigateway.GatewayResponseCacheDetailsArgs{
-//					Type:                              pulumi.Any(_var.Gateway_response_cache_details_type),
-//					AuthenticationSecretId:            pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					AuthenticationSecretVersionNumber: pulumi.Any(_var.Gateway_response_cache_details_authentication_secret_version_number),
-//					ConnectTimeoutInMs:                pulumi.Any(_var.Gateway_response_cache_details_connect_timeout_in_ms),
-//					IsSslEnabled:                      pulumi.Any(_var.Gateway_response_cache_details_is_ssl_enabled),
-//					IsSslVerifyDisabled:               pulumi.Any(_var.Gateway_response_cache_details_is_ssl_verify_disabled),
-//					ReadTimeoutInMs:                   pulumi.Any(_var.Gateway_response_cache_details_read_timeout_in_ms),
-//					SendTimeoutInMs:                   pulumi.Any(_var.Gateway_response_cache_details_send_timeout_in_ms),
+//					Type:                              pulumi.Any(gatewayResponseCacheDetailsType),
+//					AuthenticationSecretId:            pulumi.Any(testSecret.Id),
+//					AuthenticationSecretVersionNumber: pulumi.Any(gatewayResponseCacheDetailsAuthenticationSecretVersionNumber),
+//					ConnectTimeoutInMs:                pulumi.Any(gatewayResponseCacheDetailsConnectTimeoutInMs),
+//					IsSslEnabled:                      pulumi.Any(gatewayResponseCacheDetailsIsSslEnabled),
+//					IsSslVerifyDisabled:               pulumi.Any(gatewayResponseCacheDetailsIsSslVerifyDisabled),
+//					ReadTimeoutInMs:                   pulumi.Any(gatewayResponseCacheDetailsReadTimeoutInMs),
+//					SendTimeoutInMs:                   pulumi.Any(gatewayResponseCacheDetailsSendTimeoutInMs),
 //					Servers: apigateway.GatewayResponseCacheDetailsServerArray{
 //						&apigateway.GatewayResponseCacheDetailsServerArgs{
-//							Host: pulumi.Any(_var.Gateway_response_cache_details_servers_host),
-//							Port: pulumi.Any(_var.Gateway_response_cache_details_servers_port),
+//							Host: pulumi.Any(gatewayResponseCacheDetailsServersHost),
+//							Port: pulumi.Any(gatewayResponseCacheDetailsServersPort),
 //						},
 //					},
 //				},

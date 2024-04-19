@@ -157,11 +157,11 @@ def get_compartments(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compartments = oci.Identity.get_compartments(compartment_id=var["compartment_id"],
-        access_level=var["compartment_access_level"],
-        compartment_id_in_subtree=var["compartment_compartment_id_in_subtree"],
-        name=var["compartment_name"],
-        state=var["compartment_state"])
+    test_compartments = oci.Identity.get_compartments(compartment_id=compartment_id,
+        access_level=compartment_access_level,
+        compartment_id_in_subtree=compartment_compartment_id_in_subtree,
+        name=compartment_name,
+        state=compartment_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -232,11 +232,11 @@ def get_compartments_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_compartments = oci.Identity.get_compartments(compartment_id=var["compartment_id"],
-        access_level=var["compartment_access_level"],
-        compartment_id_in_subtree=var["compartment_compartment_id_in_subtree"],
-        name=var["compartment_name"],
-        state=var["compartment_state"])
+    test_compartments = oci.Identity.get_compartments(compartment_id=compartment_id,
+        access_level=compartment_access_level,
+        compartment_id_in_subtree=compartment_compartment_id_in_subtree,
+        name=compartment_name,
+        state=compartment_state)
     ```
     <!--End PulumiCodeChooser -->
 

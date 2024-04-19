@@ -201,9 +201,9 @@ def get_preauthrequest(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_request = oci.ObjectStorage.get_preauthrequest(bucket=var["preauthenticated_request_bucket"],
-        namespace=var["preauthenticated_request_namespace"],
-        par_id=oci_objectstorage_preauthrequest["test_par"]["id"])
+    test_preauthenticated_request = oci.ObjectStorage.get_preauthrequest(bucket=preauthenticated_request_bucket,
+        namespace=preauthenticated_request_namespace,
+        par_id=test_par["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -252,9 +252,9 @@ def get_preauthrequest_output(bucket: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_request = oci.ObjectStorage.get_preauthrequest(bucket=var["preauthenticated_request_bucket"],
-        namespace=var["preauthenticated_request_namespace"],
-        par_id=oci_objectstorage_preauthrequest["test_par"]["id"])
+    test_preauthenticated_request = oci.ObjectStorage.get_preauthrequest(bucket=preauthenticated_request_bucket,
+        namespace=preauthenticated_request_namespace,
+        par_id=test_par["id"])
     ```
     <!--End PulumiCodeChooser -->
 

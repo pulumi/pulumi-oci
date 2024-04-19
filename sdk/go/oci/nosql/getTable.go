@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Nosql.GetTable(ctx, &nosql.GetTableArgs{
-//				TableNameOrId: oci_nosql_table_name_or.Test_table_name_or.Id,
-//				CompartmentId: _var.Compartment_id,
+//				TableNameOrId: testTableNameOr.Id,
+//				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err

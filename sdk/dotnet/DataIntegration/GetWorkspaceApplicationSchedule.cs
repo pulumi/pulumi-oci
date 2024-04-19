@@ -29,9 +29,9 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceApplicationSchedule = Oci.DataIntegration.GetWorkspaceApplicationSchedule.Invoke(new()
         ///     {
-        ///         ApplicationKey = @var.Workspace_application_schedule_application_key,
-        ///         ScheduleKey = @var.Workspace_application_schedule_schedule_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         ApplicationKey = workspaceApplicationScheduleApplicationKey,
+        ///         ScheduleKey = workspaceApplicationScheduleScheduleKey,
+        ///         WorkspaceId = testWorkspace.Id,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceApplicationSchedule = Oci.DataIntegration.GetWorkspaceApplicationSchedule.Invoke(new()
         ///     {
-        ///         ApplicationKey = @var.Workspace_application_schedule_application_key,
-        ///         ScheduleKey = @var.Workspace_application_schedule_schedule_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         ApplicationKey = workspaceApplicationScheduleApplicationKey,
+        ///         ScheduleKey = workspaceApplicationScheduleScheduleKey,
+        ///         WorkspaceId = testWorkspace.Id,
         ///     });
         /// 
         /// });

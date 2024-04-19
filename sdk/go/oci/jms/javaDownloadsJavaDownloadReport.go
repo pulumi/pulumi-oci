@@ -32,11 +32,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.NewJavaDownloadsJavaDownloadReport(ctx, "testJavaDownloadReport", &Jms.JavaDownloadsJavaDownloadReportArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-//				Format:        pulumi.Any(_var.Java_download_report_format),
-//				TimeEnd:       pulumi.Any(_var.Java_download_report_time_end),
-//				TimeStart:     pulumi.Any(_var.Java_download_report_time_start),
+//			_, err := Jms.NewJavaDownloadsJavaDownloadReport(ctx, "test_java_download_report", &Jms.JavaDownloadsJavaDownloadReportArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
+//				Format:        pulumi.Any(javaDownloadReportFormat),
+//				TimeEnd:       pulumi.Any(javaDownloadReportTimeEnd),
+//				TimeStart:     pulumi.Any(javaDownloadReportTimeStart),
 //			})
 //			if err != nil {
 //				return err

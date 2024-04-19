@@ -90,8 +90,8 @@ def get_repository_author(ref_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_author = oci.DevOps.get_repository_author(repository_id=oci_devops_repository["test_repository"]["id"],
-        ref_name=var["repository_author_ref_name"])
+    test_repository_author = oci.DevOps.get_repository_author(repository_id=test_repository["id"],
+        ref_name=repository_author_ref_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -128,8 +128,8 @@ def get_repository_author_output(ref_name: Optional[pulumi.Input[Optional[str]]]
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_author = oci.DevOps.get_repository_author(repository_id=oci_devops_repository["test_repository"]["id"],
-        ref_name=var["repository_author_ref_name"])
+    test_repository_author = oci.DevOps.get_repository_author(repository_id=test_repository["id"],
+        ref_name=repository_author_ref_name)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -438,18 +438,18 @@ class PublicIp(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_public_ip = oci.core.PublicIp("testPublicIp",
-            compartment_id=var["compartment_id"],
-            lifetime=var["public_ip_lifetime"],
+        test_public_ip = oci.core.PublicIp("test_public_ip",
+            compartment_id=compartment_id,
+            lifetime=public_ip_lifetime,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["public_ip_display_name"],
+            display_name=public_ip_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            private_ip_id=oci_core_private_ip["test_private_ip"]["id"],
-            public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
+            private_ip_id=test_private_ip["id"],
+            public_ip_pool_id=test_public_ip_pool["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -517,18 +517,18 @@ class PublicIp(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_public_ip = oci.core.PublicIp("testPublicIp",
-            compartment_id=var["compartment_id"],
-            lifetime=var["public_ip_lifetime"],
+        test_public_ip = oci.core.PublicIp("test_public_ip",
+            compartment_id=compartment_id,
+            lifetime=public_ip_lifetime,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["public_ip_display_name"],
+            display_name=public_ip_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            private_ip_id=oci_core_private_ip["test_private_ip"]["id"],
-            public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
+            private_ip_id=test_private_ip["id"],
+            public_ip_pool_id=test_public_ip_pool["id"])
         ```
         <!--End PulumiCodeChooser -->
 

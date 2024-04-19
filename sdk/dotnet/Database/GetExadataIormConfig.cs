@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testExadataIormConfig = Oci.Database.GetExadataIormConfig.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         DbSystemId = testDbSystem.Id,
         ///     });
         /// 
         /// });
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testExadataIormConfig = Oci.Database.GetExadataIormConfig.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         DbSystemId = testDbSystem.Id,
         ///     });
         /// 
         /// });

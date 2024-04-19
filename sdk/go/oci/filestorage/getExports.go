@@ -33,11 +33,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetExports(ctx, &filestorage.GetExportsArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				ExportSetId:   pulumi.StringRef(oci_file_storage_export_set.Test_export_set.Id),
-//				FileSystemId:  pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
-//				Id:            pulumi.StringRef(_var.Export_id),
-//				State:         pulumi.StringRef(_var.Export_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				ExportSetId:   pulumi.StringRef(testExportSet.Id),
+//				FileSystemId:  pulumi.StringRef(testFileSystem.Id),
+//				Id:            pulumi.StringRef(exportId),
+//				State:         pulumi.StringRef(exportState),
 //			}, nil)
 //			if err != nil {
 //				return err

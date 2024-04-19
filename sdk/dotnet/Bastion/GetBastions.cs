@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Bastion
         /// {
         ///     var testBastions = Oci.Bastion.GetBastions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
-        ///         BastionLifecycleState = @var.Bastion_bastion_lifecycle_state,
-        ///         Name = @var.Bastion_name,
+        ///         CompartmentId = compartmentId,
+        ///         BastionId = testBastion.Id,
+        ///         BastionLifecycleState = bastionBastionLifecycleState,
+        ///         Name = bastionName,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Bastion
         /// {
         ///     var testBastions = Oci.Bastion.GetBastions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
-        ///         BastionLifecycleState = @var.Bastion_bastion_lifecycle_state,
-        ///         Name = @var.Bastion_name,
+        ///         CompartmentId = compartmentId,
+        ///         BastionId = testBastion.Id,
+        ///         BastionLifecycleState = bastionBastionLifecycleState,
+        ///         Name = bastionName,
         ///     });
         /// 
         /// });

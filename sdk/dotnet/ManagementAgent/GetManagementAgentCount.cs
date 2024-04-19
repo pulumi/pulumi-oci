@@ -31,10 +31,10 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentCount = Oci.ManagementAgent.GetManagementAgentCount.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         GroupBies = @var.Management_agent_count_group_by,
-        ///         HasPlugins = @var.Management_agent_count_has_plugins,
-        ///         InstallType = @var.Management_agent_count_install_type,
+        ///         CompartmentId = compartmentId,
+        ///         GroupBies = managementAgentCountGroupBy,
+        ///         HasPlugins = managementAgentCountHasPlugins,
+        ///         InstallType = managementAgentCountInstallType,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentCount = Oci.ManagementAgent.GetManagementAgentCount.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         GroupBies = @var.Management_agent_count_group_by,
-        ///         HasPlugins = @var.Management_agent_count_has_plugins,
-        ///         InstallType = @var.Management_agent_count_install_type,
+        ///         CompartmentId = compartmentId,
+        ///         GroupBies = managementAgentCountGroupBy,
+        ///         HasPlugins = managementAgentCountHasPlugins,
+        ///         InstallType = managementAgentCountInstallType,
         ///     });
         /// 
         /// });

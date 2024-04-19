@@ -52,18 +52,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBlockchainPlatform = new BlockchainPlatform(&#34;testBlockchainPlatform&#34;, BlockchainPlatformArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .computeShape(var_.blockchain_platform_compute_shape())
- *             .displayName(var_.blockchain_platform_display_name())
- *             .idcsAccessToken(var_.blockchain_platform_idcs_access_token())
- *             .platformRole(var_.blockchain_platform_platform_role())
- *             .caCertArchiveText(var_.blockchain_platform_ca_cert_archive_text())
+ *             .compartmentId(compartmentId)
+ *             .computeShape(blockchainPlatformComputeShape)
+ *             .displayName(blockchainPlatformDisplayName)
+ *             .idcsAccessToken(blockchainPlatformIdcsAccessToken)
+ *             .platformRole(blockchainPlatformPlatformRole)
+ *             .caCertArchiveText(blockchainPlatformCaCertArchiveText)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.blockchain_platform_description())
- *             .federatedUserId(oci_identity_user.test_user().id())
+ *             .description(blockchainPlatformDescription)
+ *             .federatedUserId(testUser.id())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .isByol(var_.blockchain_platform_is_byol())
- *             .platformVersion(var_.blockchain_platform_platform_version())
+ *             .isByol(blockchainPlatformIsByol)
+ *             .platformVersion(blockchainPlatformPlatformVersion)
  *             .build());
  * 
  *     }

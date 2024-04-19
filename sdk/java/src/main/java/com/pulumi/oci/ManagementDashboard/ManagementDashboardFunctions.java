@@ -46,7 +46,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementDashboardsExport = ManagementDashboardFunctions.getManagementDashboardsExport(GetManagementDashboardsExportArgs.builder()
-     *             .exportDashboardId(oci_management_dashboard_export_dashboard.test_export_dashboard().id())
+     *             .exportDashboardId(testExportDashboard.id())
      *             .build());
      * 
      *     }
@@ -90,7 +90,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementDashboardsExport = ManagementDashboardFunctions.getManagementDashboardsExport(GetManagementDashboardsExportArgs.builder()
-     *             .exportDashboardId(oci_management_dashboard_export_dashboard.test_export_dashboard().id())
+     *             .exportDashboardId(testExportDashboard.id())
      *             .build());
      * 
      *     }
@@ -134,7 +134,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementDashboardsExport = ManagementDashboardFunctions.getManagementDashboardsExport(GetManagementDashboardsExportArgs.builder()
-     *             .exportDashboardId(oci_management_dashboard_export_dashboard.test_export_dashboard().id())
+     *             .exportDashboardId(testExportDashboard.id())
      *             .build());
      * 
      *     }
@@ -178,7 +178,7 @@ public final class ManagementDashboardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementDashboardsExport = ManagementDashboardFunctions.getManagementDashboardsExport(GetManagementDashboardsExportArgs.builder()
-     *             .exportDashboardId(oci_management_dashboard_export_dashboard.test_export_dashboard().id())
+     *             .exportDashboardId(testExportDashboard.id())
      *             .build());
      * 
      *     }

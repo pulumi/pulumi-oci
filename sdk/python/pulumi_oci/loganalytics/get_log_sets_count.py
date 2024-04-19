@@ -79,7 +79,7 @@ def get_log_sets_count(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=var["log_sets_count_namespace"])
+    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=log_sets_count_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -112,7 +112,7 @@ def get_log_sets_count_output(namespace: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=var["log_sets_count_namespace"])
+    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=log_sets_count_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,19 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewPluggableDatabaseManagementsManagement(ctx, "testPluggableDatabasePluggabledatabasemanagementsManagement", &Database.PluggableDatabaseManagementsManagementArgs{
-//				PluggableDatabaseId:               pulumi.Any(oci_database_pluggable_database.Test_pluggable_database.Id),
-//				EnablePluggabledatabasemanagement: pulumi.Any(_var.Enable_pluggabledatabasemanagement),
+//			_, err := Database.NewPluggableDatabaseManagementsManagement(ctx, "test_pluggable_database_pluggabledatabasemanagements_management", &Database.PluggableDatabaseManagementsManagementArgs{
+//				PluggableDatabaseId:               pulumi.Any(testPluggableDatabase.Id),
+//				EnablePluggabledatabasemanagement: pulumi.Any(enablePluggabledatabasemanagement),
 //				CredentialDetails: &database.PluggableDatabaseManagementsManagementCredentialDetailsArgs{
-//					PasswordSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					UserName:         pulumi.Any(oci_identity_user.Test_user.Name),
+//					PasswordSecretId: pulumi.Any(testSecret.Id),
+//					UserName:         pulumi.Any(testUser.Name),
 //				},
-//				PrivateEndPointId: pulumi.Any(oci_database_private_end_point.Test_private_end_point.Id),
-//				ServiceName:       pulumi.Any(oci_core_service.Test_service.Name),
-//				Port:              pulumi.Any(_var.Pluggable_database_pluggabledatabasemanagements_management_port),
-//				Protocol:          pulumi.Any(_var.Pluggable_database_pluggabledatabasemanagements_management_protocol),
-//				Role:              pulumi.Any(_var.Pluggable_database_pluggabledatabasemanagements_management_role),
-//				SslSecretId:       pulumi.Any(oci_vault_secret.Test_secret.Id),
+//				PrivateEndPointId: pulumi.Any(testPrivateEndPoint.Id),
+//				ServiceName:       pulumi.Any(testService.Name),
+//				Port:              pulumi.Any(pluggableDatabasePluggabledatabasemanagementsManagementPort),
+//				Protocol:          pulumi.Any(pluggableDatabasePluggabledatabasemanagementsManagementProtocol),
+//				Role:              pulumi.Any(pluggableDatabasePluggabledatabasemanagementsManagementRole),
+//				SslSecretId:       pulumi.Any(testSecret.Id),
 //			})
 //			if err != nil {
 //				return err

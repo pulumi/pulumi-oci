@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaFamily = oci.Jms.getJavaFamily({
- *     familyVersion: _var.java_family_family_version,
+ *     familyVersion: javaFamilyFamilyVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,7 +96,7 @@ export interface GetJavaFamilyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaFamily = oci.Jms.getJavaFamily({
- *     familyVersion: _var.java_family_family_version,
+ *     familyVersion: javaFamilyFamilyVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

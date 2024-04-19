@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApplications = oci.DataFlow.getApplications({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.application_display_name,
- *     displayNameStartsWith: _var.application_display_name_starts_with,
- *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
- *     sparkVersion: _var.application_spark_version,
+ *     compartmentId: compartmentId,
+ *     displayName: applicationDisplayName,
+ *     displayNameStartsWith: applicationDisplayNameStartsWith,
+ *     ownerPrincipalId: testOwnerPrincipal.id,
+ *     sparkVersion: applicationSparkVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetApplicationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApplications = oci.DataFlow.getApplications({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.application_display_name,
- *     displayNameStartsWith: _var.application_display_name_starts_with,
- *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
- *     sparkVersion: _var.application_spark_version,
+ *     compartmentId: compartmentId,
+ *     displayName: applicationDisplayName,
+ *     displayNameStartsWith: applicationDisplayNameStartsWith,
+ *     ownerPrincipalId: testOwnerPrincipal.id,
+ *     sparkVersion: applicationSparkVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

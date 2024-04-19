@@ -29,17 +29,18 @@ namespace Pulumi.Oci.Streaming
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testStream = new Oci.Streaming.Stream("testStream", new()
+    ///     var testStream = new Oci.Streaming.Stream("test_stream", new()
     ///     {
-    ///         Partitions = @var.Stream_partitions,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DefinedTags = @var.Stream_defined_tags,
+    ///         Name = streamName,
+    ///         Partitions = streamPartitions,
+    ///         CompartmentId = compartmentId,
+    ///         DefinedTags = streamDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         RetentionInHours = @var.Stream_retention_in_hours,
-    ///         StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
+    ///         RetentionInHours = streamRetentionInHours,
+    ///         StreamPoolId = testStreamPool.Id,
     ///     });
     /// 
     /// });

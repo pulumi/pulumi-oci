@@ -18,13 +18,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentAdminUser = new oci.fusionapps.FusionEnvironmentAdminUser("testFusionEnvironmentAdminUser", {
- *     emailAddress: _var.fusion_environment_admin_user_email_address,
- *     firstName: _var.fusion_environment_admin_user_first_name,
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     lastName: _var.fusion_environment_admin_user_last_name,
- *     password: _var.fusion_environment_admin_user_password,
- *     username: _var.fusion_environment_admin_user_username,
+ * const testFusionEnvironmentAdminUser = new oci.fusionapps.FusionEnvironmentAdminUser("test_fusion_environment_admin_user", {
+ *     emailAddress: fusionEnvironmentAdminUserEmailAddress,
+ *     firstName: fusionEnvironmentAdminUserFirstName,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     lastName: fusionEnvironmentAdminUserLastName,
+ *     password: fusionEnvironmentAdminUserPassword,
+ *     username: fusionEnvironmentAdminUserUsername,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -339,11 +339,11 @@ def get_trace(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_trace_key"],
-        time_trace_started_greater_than_or_equal_to=var["trace_time_trace_started_greater_than_or_equal_to"],
-        time_trace_started_less_than=var["trace_time_trace_started_less_than"],
-        trace_namespace=var["trace_trace_namespace"])
+    test_trace = oci.ApmTraces.get_trace(apm_domain_id=test_apm_domain["id"],
+        trace_key=trace_trace_key,
+        time_trace_started_greater_than_or_equal_to=trace_time_trace_started_greater_than_or_equal_to,
+        time_trace_started_less_than=trace_time_trace_started_less_than,
+        trace_namespace=trace_trace_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -410,11 +410,11 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace = oci.ApmTraces.get_trace(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_trace_key"],
-        time_trace_started_greater_than_or_equal_to=var["trace_time_trace_started_greater_than_or_equal_to"],
-        time_trace_started_less_than=var["trace_time_trace_started_less_than"],
-        trace_namespace=var["trace_trace_namespace"])
+    test_trace = oci.ApmTraces.get_trace(apm_domain_id=test_apm_domain["id"],
+        trace_key=trace_trace_key,
+        time_trace_started_greater_than_or_equal_to=trace_time_trace_started_greater_than_or_equal_to,
+        time_trace_started_less_than=trace_time_trace_started_less_than,
+        trace_namespace=trace_trace_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

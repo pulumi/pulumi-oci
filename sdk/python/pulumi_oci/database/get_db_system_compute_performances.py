@@ -91,7 +91,7 @@ def get_db_system_compute_performances(db_system_shape: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=var["db_system_compute_performance_db_system_shape"])
+    test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=db_system_compute_performance_db_system_shape)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_db_system_compute_performances_output(db_system_shape: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=var["db_system_compute_performance_db_system_shape"])
+    test_db_system_compute_performances = oci.Database.get_db_system_compute_performances(db_system_shape=db_system_compute_performance_db_system_shape)
     ```
     <!--End PulumiCodeChooser -->
 

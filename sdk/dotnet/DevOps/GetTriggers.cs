@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testTriggers = Oci.DevOps.GetTriggers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Trigger_display_name,
-        ///         Id = @var.Trigger_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Trigger_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = triggerDisplayName,
+        ///         Id = triggerId,
+        ///         ProjectId = testProject.Id,
+        ///         State = triggerState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testTriggers = Oci.DevOps.GetTriggers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Trigger_display_name,
-        ///         Id = @var.Trigger_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Trigger_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = triggerDisplayName,
+        ///         Id = triggerId,
+        ///         ProjectId = testProject.Id,
+        ///         State = triggerState,
         ///     });
         /// 
         /// });

@@ -47,13 +47,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testEncryptedData = new EncryptedData(&#34;testEncryptedData&#34;, EncryptedDataArgs.builder()        
- *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
- *             .keyId(oci_kms_key.test_key().id())
- *             .plaintext(var_.encrypted_data_plaintext())
- *             .associatedData(var_.encrypted_data_associated_data())
- *             .encryptionAlgorithm(var_.encrypted_data_encryption_algorithm())
- *             .keyVersionId(oci_kms_key_version.test_key_version().id())
- *             .loggingContext(var_.encrypted_data_logging_context())
+ *             .cryptoEndpoint(encryptedDataCryptoEndpoint)
+ *             .keyId(testKey.id())
+ *             .plaintext(encryptedDataPlaintext)
+ *             .associatedData(encryptedDataAssociatedData)
+ *             .encryptionAlgorithm(encryptedDataEncryptionAlgorithm)
+ *             .keyVersionId(testKeyVersion.id())
+ *             .loggingContext(encryptedDataLoggingContext)
  *             .build());
  * 
  *     }

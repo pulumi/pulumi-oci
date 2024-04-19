@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAlert(ctx, &datasafe.GetAlertArgs{
-//				AlertId: oci_data_safe_alert.Test_alert.Id,
+//				AlertId: testAlertOciDataSafeAlert.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

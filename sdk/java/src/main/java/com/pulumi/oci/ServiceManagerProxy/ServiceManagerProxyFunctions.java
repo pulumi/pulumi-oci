@@ -47,8 +47,8 @@ public final class ServiceManagerProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .compartmentId(compartmentId)
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
      *             .build());
      * 
      *     }
@@ -90,8 +90,8 @@ public final class ServiceManagerProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .compartmentId(compartmentId)
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
      *             .build());
      * 
      *     }
@@ -133,8 +133,8 @@ public final class ServiceManagerProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .compartmentId(compartmentId)
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
      *             .build());
      * 
      *     }
@@ -176,8 +176,8 @@ public final class ServiceManagerProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironment = ServiceManagerProxyFunctions.getServiceEnvironment(GetServiceEnvironmentArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
+     *             .compartmentId(compartmentId)
+     *             .serviceEnvironmentId(testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id())
      *             .build());
      * 
      *     }
@@ -220,10 +220,10 @@ public final class ServiceManagerProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_environment_display_name())
-     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
-     *             .serviceEnvironmentType(var_.service_environment_service_environment_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceEnvironmentDisplayName)
+     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
      *             .build());
      * 
      *     }
@@ -266,10 +266,10 @@ public final class ServiceManagerProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_environment_display_name())
-     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
-     *             .serviceEnvironmentType(var_.service_environment_service_environment_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceEnvironmentDisplayName)
+     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
      *             .build());
      * 
      *     }
@@ -312,10 +312,10 @@ public final class ServiceManagerProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_environment_display_name())
-     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
-     *             .serviceEnvironmentType(var_.service_environment_service_environment_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceEnvironmentDisplayName)
+     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
      *             .build());
      * 
      *     }
@@ -358,10 +358,10 @@ public final class ServiceManagerProxyFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceEnvironments = ServiceManagerProxyFunctions.getServiceEnvironments(GetServiceEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_environment_display_name())
-     *             .serviceEnvironmentId(oci_service_manager_proxy_service_environment.test_service_environment().id())
-     *             .serviceEnvironmentType(var_.service_environment_service_environment_type())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceEnvironmentDisplayName)
+     *             .serviceEnvironmentId(testServiceEnvironment.id())
+     *             .serviceEnvironmentType(serviceEnvironmentServiceEnvironmentType)
      *             .build());
      * 
      *     }

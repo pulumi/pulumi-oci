@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetProject(ctx, &devops.GetProjectArgs{
-//				ProjectId: oci_devops_project.Test_project.Id,
+//				ProjectId: testProjectOciDevopsProject.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

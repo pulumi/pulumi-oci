@@ -30,10 +30,10 @@ namespace Pulumi.Oci.OsubSubscription
         /// {
         ///     var testCommitments = Oci.OsubSubscription.GetCommitments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscribedServiceId = oci_core_service.Test_service.Id,
-        ///         XOneGatewaySubscriptionId = @var.Commitment_x_one_gateway_subscription_id,
-        ///         XOneOriginRegion = @var.Commitment_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         SubscribedServiceId = testService.Id,
+        ///         XOneGatewaySubscriptionId = commitmentXOneGatewaySubscriptionId,
+        ///         XOneOriginRegion = commitmentXOneOriginRegion,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.OsubSubscription
         /// {
         ///     var testCommitments = Oci.OsubSubscription.GetCommitments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscribedServiceId = oci_core_service.Test_service.Id,
-        ///         XOneGatewaySubscriptionId = @var.Commitment_x_one_gateway_subscription_id,
-        ///         XOneOriginRegion = @var.Commitment_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         SubscribedServiceId = testService.Id,
+        ///         XOneGatewaySubscriptionId = commitmentXOneGatewaySubscriptionId,
+        ///         XOneOriginRegion = commitmentXOneOriginRegion,
         ///     });
         /// 
         /// });

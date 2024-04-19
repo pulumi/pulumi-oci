@@ -22,10 +22,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityReservations = oci.Core.getComputeCapacityReservations({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.compute_capacity_reservation_availability_domain,
- *     displayName: _var.compute_capacity_reservation_display_name,
- *     state: _var.compute_capacity_reservation_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: computeCapacityReservationAvailabilityDomain,
+ *     displayName: computeCapacityReservationDisplayName,
+ *     state: computeCapacityReservationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,10 +111,10 @@ export interface GetComputeCapacityReservationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityReservations = oci.Core.getComputeCapacityReservations({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.compute_capacity_reservation_availability_domain,
- *     displayName: _var.compute_capacity_reservation_display_name,
- *     state: _var.compute_capacity_reservation_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: computeCapacityReservationAvailabilityDomain,
+ *     displayName: computeCapacityReservationDisplayName,
+ *     state: computeCapacityReservationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptionProduct = oci.UsageProxy.getSubscriptionProduct({
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
- *     usagePeriodKey: _var.subscription_product_usage_period_key,
- *     producttype: _var.subscription_product_producttype,
+ *     subscriptionId: testSubscription.id,
+ *     tenancyId: testTenancy.id,
+ *     usagePeriodKey: subscriptionProductUsagePeriodKey,
+ *     producttype: subscriptionProductProducttype,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -90,10 +90,10 @@ export interface GetSubscriptionProductResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptionProduct = oci.UsageProxy.getSubscriptionProduct({
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
- *     usagePeriodKey: _var.subscription_product_usage_period_key,
- *     producttype: _var.subscription_product_producttype,
+ *     subscriptionId: testSubscription.id,
+ *     tenancyId: testTenancy.id,
+ *     usagePeriodKey: subscriptionProductUsagePeriodKey,
+ *     producttype: subscriptionProductProducttype,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

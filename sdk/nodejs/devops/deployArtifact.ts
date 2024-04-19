@@ -18,32 +18,32 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployArtifact = new oci.devops.DeployArtifact("testDeployArtifact", {
- *     argumentSubstitutionMode: _var.deploy_artifact_argument_substitution_mode,
+ * const testDeployArtifact = new oci.devops.DeployArtifact("test_deploy_artifact", {
+ *     argumentSubstitutionMode: deployArtifactArgumentSubstitutionMode,
  *     deployArtifactSource: {
- *         deployArtifactSourceType: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
- *         base64encodedContent: _var.deploy_artifact_deploy_artifact_source_base64encoded_content,
- *         chartUrl: _var.deploy_artifact_deploy_artifact_source_chart_url,
- *         deployArtifactPath: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_path,
- *         deployArtifactVersion: _var.deploy_artifact_deploy_artifact_source_deploy_artifact_version,
- *         helmArtifactSourceType: _var.deploy_artifact_deploy_artifact_source_helm_artifact_source_type,
+ *         deployArtifactSourceType: deployArtifactDeployArtifactSourceDeployArtifactSourceType,
+ *         base64encodedContent: deployArtifactDeployArtifactSourceBase64encodedContent,
+ *         chartUrl: deployArtifactDeployArtifactSourceChartUrl,
+ *         deployArtifactPath: deployArtifactDeployArtifactSourceDeployArtifactPath,
+ *         deployArtifactVersion: deployArtifactDeployArtifactSourceDeployArtifactVersion,
+ *         helmArtifactSourceType: deployArtifactDeployArtifactSourceHelmArtifactSourceType,
  *         helmVerificationKeySource: {
- *             verificationKeySourceType: _var.deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,
- *             currentPublicKey: _var.deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key,
- *             previousPublicKey: _var.deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key,
- *             vaultSecretId: oci_vault_secret.test_secret.id,
+ *             verificationKeySourceType: deployArtifactDeployArtifactSourceHelmVerificationKeySourceVerificationKeySourceType,
+ *             currentPublicKey: deployArtifactDeployArtifactSourceHelmVerificationKeySourceCurrentPublicKey,
+ *             previousPublicKey: deployArtifactDeployArtifactSourceHelmVerificationKeySourcePreviousPublicKey,
+ *             vaultSecretId: testSecret.id,
  *         },
- *         imageDigest: _var.deploy_artifact_deploy_artifact_source_image_digest,
- *         imageUri: _var.deploy_artifact_deploy_artifact_source_image_uri,
- *         repositoryId: oci_devops_repository.test_repository.id,
+ *         imageDigest: deployArtifactDeployArtifactSourceImageDigest,
+ *         imageUri: deployArtifactDeployArtifactSourceImageUri,
+ *         repositoryId: testRepository.id,
  *     },
- *     deployArtifactType: _var.deploy_artifact_deploy_artifact_type,
- *     projectId: oci_devops_project.test_project.id,
+ *     deployArtifactType: deployArtifactDeployArtifactType,
+ *     projectId: testProject.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.deploy_artifact_description,
- *     displayName: _var.deploy_artifact_display_name,
+ *     description: deployArtifactDescription,
+ *     displayName: deployArtifactDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

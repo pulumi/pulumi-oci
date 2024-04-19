@@ -134,11 +134,11 @@ def get_usagelimits(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=var["compartment_id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        limit_type=var["usagelimit_limit_type"],
-        resource_type=var["usagelimit_resource_type"],
-        service_type=var["usagelimit_service_type"])
+    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=compartment_id,
+        subscription_id=test_subscription["id"],
+        limit_type=usagelimit_limit_type,
+        resource_type=usagelimit_resource_type,
+        service_type=usagelimit_service_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -190,11 +190,11 @@ def get_usagelimits_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=var["compartment_id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        limit_type=var["usagelimit_limit_type"],
-        resource_type=var["usagelimit_resource_type"],
-        service_type=var["usagelimit_service_type"])
+    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=compartment_id,
+        subscription_id=test_subscription["id"],
+        limit_type=usagelimit_limit_type,
+        resource_type=usagelimit_resource_type,
+        service_type=usagelimit_service_type)
     ```
     <!--End PulumiCodeChooser -->
 

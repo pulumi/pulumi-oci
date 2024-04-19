@@ -32,15 +32,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExternalPluggableDatabase(ctx, "testExternalPluggableDatabase", &Database.ExternalPluggableDatabaseArgs{
-//				CompartmentId:               pulumi.Any(_var.Compartment_id),
-//				DisplayName:                 pulumi.Any(_var.External_pluggable_database_display_name),
-//				ExternalContainerDatabaseId: pulumi.Any(oci_database_external_container_database.Test_external_container_database.Id),
-//				DefinedTags:                 pulumi.Any(_var.External_pluggable_database_defined_tags),
+//			_, err := Database.NewExternalPluggableDatabase(ctx, "test_external_pluggable_database", &Database.ExternalPluggableDatabaseArgs{
+//				CompartmentId:               pulumi.Any(compartmentId),
+//				DisplayName:                 pulumi.Any(externalPluggableDatabaseDisplayName),
+//				ExternalContainerDatabaseId: pulumi.Any(testExternalContainerDatabase.Id),
+//				DefinedTags:                 pulumi.Any(externalPluggableDatabaseDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				SourceId: pulumi.Any(oci_database_source.Test_source.Id),
+//				SourceId: pulumi.Any(testSource.Id),
 //			})
 //			if err != nil {
 //				return err

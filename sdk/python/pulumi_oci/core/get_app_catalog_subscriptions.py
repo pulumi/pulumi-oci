@@ -107,8 +107,8 @@ def get_app_catalog_subscriptions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=var["compartment_id"],
-        listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
+    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=compartment_id,
+        listing_id=test_listing["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -148,8 +148,8 @@ def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=var["compartment_id"],
-        listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
+    test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=compartment_id,
+        listing_id=test_listing["id"])
     ```
     <!--End PulumiCodeChooser -->
 

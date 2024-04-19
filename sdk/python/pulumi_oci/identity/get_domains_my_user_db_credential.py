@@ -374,10 +374,10 @@ def get_domains_my_user_db_credential(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credential = oci.Identity.get_domains_my_user_db_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_user_db_credential_id=oci_identity_db_credential["test_db_credential"]["id"],
-        authorization=var["my_user_db_credential_authorization"],
-        resource_type_schema_version=var["my_user_db_credential_resource_type_schema_version"])
+    test_my_user_db_credential = oci.Identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
+        my_user_db_credential_id=test_db_credential["id"],
+        authorization=my_user_db_credential_authorization,
+        resource_type_schema_version=my_user_db_credential_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -444,10 +444,10 @@ def get_domains_my_user_db_credential_output(authorization: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credential = oci.Identity.get_domains_my_user_db_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_user_db_credential_id=oci_identity_db_credential["test_db_credential"]["id"],
-        authorization=var["my_user_db_credential_authorization"],
-        resource_type_schema_version=var["my_user_db_credential_resource_type_schema_version"])
+    test_my_user_db_credential = oci.Identity.get_domains_my_user_db_credential(idcs_endpoint=test_domain["url"],
+        my_user_db_credential_id=test_db_credential["id"],
+        authorization=my_user_db_credential_authorization,
+        resource_type_schema_version=my_user_db_credential_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

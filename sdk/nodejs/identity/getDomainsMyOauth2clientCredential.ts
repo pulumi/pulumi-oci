@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyOauth2clientCredential = oci.Identity.getDomainsMyOauth2clientCredential({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myOauth2clientCredentialId: oci_identity_domains_my_oauth2client_credential.test_my_oauth2client_credential.id,
- *     authorization: _var.my_oauth2client_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_oauth2client_credential_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myOauth2clientCredentialId: testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id,
+ *     authorization: myOauth2clientCredentialAuthorization,
+ *     resourceTypeSchemaVersion: myOauth2clientCredentialResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -162,10 +162,10 @@ export interface GetDomainsMyOauth2clientCredentialResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyOauth2clientCredential = oci.Identity.getDomainsMyOauth2clientCredential({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myOauth2clientCredentialId: oci_identity_domains_my_oauth2client_credential.test_my_oauth2client_credential.id,
- *     authorization: _var.my_oauth2client_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_oauth2client_credential_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myOauth2clientCredentialId: testMyOauth2clientCredentialOciIdentityDomainsMyOauth2clientCredential.id,
+ *     authorization: myOauth2clientCredentialAuthorization,
+ *     resourceTypeSchemaVersion: myOauth2clientCredentialResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

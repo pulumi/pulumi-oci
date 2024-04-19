@@ -35,9 +35,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Oda.GetOdaPrivateEndpointAttachments(ctx, &oda.GetOdaPrivateEndpointAttachmentsArgs{
-//				CompartmentId:        _var.Compartment_id,
-//				OdaPrivateEndpointId: oci_oda_oda_private_endpoint.Test_oda_private_endpoint.Id,
-//				State:                pulumi.StringRef(_var.Oda_private_endpoint_attachment_state),
+//				CompartmentId:        compartmentId,
+//				OdaPrivateEndpointId: testOdaPrivateEndpoint.Id,
+//				State:                pulumi.StringRef(odaPrivateEndpointAttachmentState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -25,38 +25,38 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUsageCarbonEmissionsQuery = new Oci.MeteringComputation.UsageCarbonEmissionsQuery("testUsageCarbonEmissionsQuery", new()
+    ///     var testUsageCarbonEmissionsQuery = new Oci.MeteringComputation.UsageCarbonEmissionsQuery("test_usage_carbon_emissions_query", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         QueryDefinition = new Oci.MeteringComputation.Inputs.UsageCarbonEmissionsQueryQueryDefinitionArgs
     ///         {
     ///             CostAnalysisUi = new Oci.MeteringComputation.Inputs.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs
     ///             {
-    ///                 Graph = @var.Usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
-    ///                 IsCumulativeGraph = @var.Usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
+    ///                 Graph = usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiGraph,
+    ///                 IsCumulativeGraph = usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiIsCumulativeGraph,
     ///             },
-    ///             DisplayName = @var.Usage_carbon_emissions_query_query_definition_display_name,
+    ///             DisplayName = usageCarbonEmissionsQueryQueryDefinitionDisplayName,
     ///             ReportQuery = new Oci.MeteringComputation.Inputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs
     ///             {
-    ///                 TenantId = oci_metering_computation_tenant.Test_tenant.Id,
-    ///                 CompartmentDepth = @var.Usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
-    ///                 DateRangeName = @var.Usage_carbon_emissions_query_query_definition_report_query_date_range_name,
-    ///                 GroupBies = @var.Usage_carbon_emissions_query_query_definition_report_query_group_by,
+    ///                 TenantId = testTenant.Id,
+    ///                 CompartmentDepth = usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth,
+    ///                 DateRangeName = usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName,
+    ///                 GroupBies = usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupBy,
     ///                 GroupByTags = new[]
     ///                 {
     ///                     new Oci.MeteringComputation.Inputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs
     ///                     {
-    ///                         Key = @var.Usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key,
-    ///                         Namespace = @var.Usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
-    ///                         Value = @var.Usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
+    ///                         Key = usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagKey,
+    ///                         Namespace = usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagNamespace,
+    ///                         Value = usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagValue,
     ///                     },
     ///                 },
-    ///                 IsAggregateByTime = @var.Usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
-    ///                 TimeUsageEnded = @var.Usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
-    ///                 TimeUsageStarted = @var.Usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
-    ///                 UsageCarbonEmissionsQueryFilter = @var.Usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
+    ///                 IsAggregateByTime = usageCarbonEmissionsQueryQueryDefinitionReportQueryIsAggregateByTime,
+    ///                 TimeUsageEnded = usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageEnded,
+    ///                 TimeUsageStarted = usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageStarted,
+    ///                 UsageCarbonEmissionsQueryFilter = usageCarbonEmissionsQueryQueryDefinitionReportQueryUsageCarbonEmissionsQueryFilter,
     ///             },
-    ///             Version = @var.Usage_carbon_emissions_query_query_definition_version,
+    ///             Version = usageCarbonEmissionsQueryQueryDefinitionVersion,
     ///         },
     ///     });
     /// 

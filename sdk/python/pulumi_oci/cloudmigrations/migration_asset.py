@@ -497,25 +497,6 @@ class MigrationAsset(pulumi.CustomResource):
 
         Creates a migration asset.
 
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_migration_asset = oci.cloud_migrations.MigrationAsset("testMigrationAsset",
-            availability_domain=var["migration_asset_availability_domain"],
-            inventory_asset_id=oci_cloud_migrations_inventory_asset["test_inventory_asset"]["id"],
-            migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-            replication_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            snap_shot_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            display_name=var["migration_asset_display_name"],
-            replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
-            opts=pulumi.ResourceOptions(depends_on=var["migration_asset_depends_on"]))
-        ```
-        <!--End PulumiCodeChooser -->
-
         ## Import
 
         MigrationAssets can be imported using the `id`, e.g.
@@ -548,25 +529,6 @@ class MigrationAsset(pulumi.CustomResource):
         This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
 
         Creates a migration asset.
-
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_migration_asset = oci.cloud_migrations.MigrationAsset("testMigrationAsset",
-            availability_domain=var["migration_asset_availability_domain"],
-            inventory_asset_id=oci_cloud_migrations_inventory_asset["test_inventory_asset"]["id"],
-            migration_id=oci_cloud_migrations_migration["test_migration"]["id"],
-            replication_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            snap_shot_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            display_name=var["migration_asset_display_name"],
-            replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
-            opts=pulumi.ResourceOptions(depends_on=var["migration_asset_depends_on"]))
-        ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

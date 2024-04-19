@@ -29,8 +29,8 @@ namespace Pulumi.Oci.ContainerInstances
         /// {
         ///     var testContainerInstanceShapes = Oci.ContainerInstances.GetContainerInstanceShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Container_instance_shape_availability_domain,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = containerInstanceShapeAvailabilityDomain,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.ContainerInstances
         /// {
         ///     var testContainerInstanceShapes = Oci.ContainerInstances.GetContainerInstanceShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Container_instance_shape_availability_domain,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = containerInstanceShapeAvailabilityDomain,
         ///     });
         /// 
         /// });

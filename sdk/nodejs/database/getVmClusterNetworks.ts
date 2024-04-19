@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterNetworks = oci.Database.getVmClusterNetworks({
- *     compartmentId: _var.compartment_id,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     displayName: _var.vm_cluster_network_display_name,
- *     state: _var.vm_cluster_network_state,
+ *     compartmentId: compartmentId,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     displayName: vmClusterNetworkDisplayName,
+ *     state: vmClusterNetworkState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetVmClusterNetworksResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterNetworks = oci.Database.getVmClusterNetworks({
- *     compartmentId: _var.compartment_id,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     displayName: _var.vm_cluster_network_display_name,
- *     state: _var.vm_cluster_network_state,
+ *     compartmentId: compartmentId,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     displayName: vmClusterNetworkDisplayName,
+ *     state: vmClusterNetworkState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

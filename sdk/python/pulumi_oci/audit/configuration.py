@@ -123,9 +123,9 @@ class Configuration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_configuration = oci.audit.Configuration("testConfiguration",
-            compartment_id=var["tenancy_ocid"],
-            retention_period_days=var["configuration_retention_period_days"])
+        test_configuration = oci.audit.Configuration("test_configuration",
+            compartment_id=tenancy_ocid,
+            retention_period_days=configuration_retention_period_days)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -158,9 +158,9 @@ class Configuration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_configuration = oci.audit.Configuration("testConfiguration",
-            compartment_id=var["tenancy_ocid"],
-            retention_period_days=var["configuration_retention_period_days"])
+        test_configuration = oci.audit.Configuration("test_configuration",
+            compartment_id=tenancy_ocid,
+            retention_period_days=configuration_retention_period_days)
         ```
         <!--End PulumiCodeChooser -->
 

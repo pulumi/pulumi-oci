@@ -167,14 +167,14 @@ def get_deployments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.DevOps.get_deployments(compartment_id=var["compartment_id"],
-        deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-        display_name=var["deployment_display_name"],
-        id=var["deployment_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deployment_state"],
-        time_created_greater_than_or_equal_to=var["deployment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["deployment_time_created_less_than"])
+    test_deployments = oci.DevOps.get_deployments(compartment_id=compartment_id,
+        deploy_pipeline_id=test_deploy_pipeline["id"],
+        display_name=deployment_display_name,
+        id=deployment_id,
+        project_id=test_project["id"],
+        state=deployment_state,
+        time_created_greater_than_or_equal_to=deployment_time_created_greater_than_or_equal_to,
+        time_created_less_than=deployment_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -237,14 +237,14 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[Optional[str]]]
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.DevOps.get_deployments(compartment_id=var["compartment_id"],
-        deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"],
-        display_name=var["deployment_display_name"],
-        id=var["deployment_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deployment_state"],
-        time_created_greater_than_or_equal_to=var["deployment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["deployment_time_created_less_than"])
+    test_deployments = oci.DevOps.get_deployments(compartment_id=compartment_id,
+        deploy_pipeline_id=test_deploy_pipeline["id"],
+        display_name=deployment_display_name,
+        id=deployment_id,
+        project_id=test_project["id"],
+        state=deployment_state,
+        time_created_greater_than_or_equal_to=deployment_time_created_greater_than_or_equal_to,
+        time_created_less_than=deployment_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

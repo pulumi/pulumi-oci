@@ -241,19 +241,19 @@ def get_connections(catalog_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DataCatalog.get_connections(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["connection_data_asset_key"],
-        created_by_id=oci_datacatalog_created_by["test_created_by"]["id"],
-        display_name=var["connection_display_name"],
-        display_name_contains=var["connection_display_name_contains"],
-        external_key=var["connection_external_key"],
-        fields=var["connection_fields"],
-        is_default=var["connection_is_default"],
-        state=var["connection_state"],
-        time_created=var["connection_time_created"],
-        time_status_updated=var["connection_time_status_updated"],
-        time_updated=var["connection_time_updated"],
-        updated_by_id=oci_datacatalog_updated_by["test_updated_by"]["id"])
+    test_connections = oci.DataCatalog.get_connections(catalog_id=test_catalog["id"],
+        data_asset_key=connection_data_asset_key,
+        created_by_id=test_created_by["id"],
+        display_name=connection_display_name,
+        display_name_contains=connection_display_name_contains,
+        external_key=connection_external_key,
+        fields=connection_fields,
+        is_default=connection_is_default,
+        state=connection_state,
+        time_created=connection_time_created,
+        time_status_updated=connection_time_status_updated,
+        time_updated=connection_time_updated,
+        updated_by_id=test_updated_by["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -337,19 +337,19 @@ def get_connections_output(catalog_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DataCatalog.get_connections(catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-        data_asset_key=var["connection_data_asset_key"],
-        created_by_id=oci_datacatalog_created_by["test_created_by"]["id"],
-        display_name=var["connection_display_name"],
-        display_name_contains=var["connection_display_name_contains"],
-        external_key=var["connection_external_key"],
-        fields=var["connection_fields"],
-        is_default=var["connection_is_default"],
-        state=var["connection_state"],
-        time_created=var["connection_time_created"],
-        time_status_updated=var["connection_time_status_updated"],
-        time_updated=var["connection_time_updated"],
-        updated_by_id=oci_datacatalog_updated_by["test_updated_by"]["id"])
+    test_connections = oci.DataCatalog.get_connections(catalog_id=test_catalog["id"],
+        data_asset_key=connection_data_asset_key,
+        created_by_id=test_created_by["id"],
+        display_name=connection_display_name,
+        display_name_contains=connection_display_name_contains,
+        external_key=connection_external_key,
+        fields=connection_fields,
+        is_default=connection_is_default,
+        state=connection_state,
+        time_created=connection_time_created,
+        time_status_updated=connection_time_status_updated,
+        time_updated=connection_time_updated,
+        updated_by_id=test_updated_by["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -16,14 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsLogGroup = new oci.loganalytics.LogAnalyticsLogGroup("testLogAnalyticsLogGroup", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.log_analytics_log_group_display_name,
- *     namespace: _var.log_analytics_log_group_namespace,
+ * const testLogAnalyticsLogGroup = new oci.loganalytics.LogAnalyticsLogGroup("test_log_analytics_log_group", {
+ *     compartmentId: compartmentId,
+ *     displayName: logAnalyticsLogGroupDisplayName,
+ *     namespace: logAnalyticsLogGroupNamespace,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.log_analytics_log_group_description,
+ *     description: logAnalyticsLogGroupDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

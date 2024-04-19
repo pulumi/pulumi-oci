@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetGiVersions(ctx, &database.GetGiVersionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Shape:         pulumi.StringRef(_var.Gi_version_shape),
+//				CompartmentId: compartmentId,
+//				Shape:         pulumi.StringRef(giVersionShape),
 //			}, nil)
 //			if err != nil {
 //				return err

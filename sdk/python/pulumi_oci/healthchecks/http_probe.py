@@ -414,16 +414,16 @@ class HttpProbe(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_http_probe = oci.health_checks.HttpProbe("testHttpProbe",
-            compartment_id=var["compartment_id"],
-            protocol=var["http_probe_protocol"],
-            targets=var["http_probe_targets"],
-            headers=var["http_probe_headers"],
-            method=var["http_probe_method"],
-            path=var["http_probe_path"],
-            port=var["http_probe_port"],
-            timeout_in_seconds=var["http_probe_timeout_in_seconds"],
-            vantage_point_names=var["http_probe_vantage_point_names"])
+        test_http_probe = oci.health_checks.HttpProbe("test_http_probe",
+            compartment_id=compartment_id,
+            protocol=http_probe_protocol,
+            targets=http_probe_targets,
+            headers=http_probe_headers,
+            method=http_probe_method,
+            path=http_probe_path,
+            port=http_probe_port,
+            timeout_in_seconds=http_probe_timeout_in_seconds,
+            vantage_point_names=http_probe_vantage_point_names)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -474,16 +474,16 @@ class HttpProbe(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_http_probe = oci.health_checks.HttpProbe("testHttpProbe",
-            compartment_id=var["compartment_id"],
-            protocol=var["http_probe_protocol"],
-            targets=var["http_probe_targets"],
-            headers=var["http_probe_headers"],
-            method=var["http_probe_method"],
-            path=var["http_probe_path"],
-            port=var["http_probe_port"],
-            timeout_in_seconds=var["http_probe_timeout_in_seconds"],
-            vantage_point_names=var["http_probe_vantage_point_names"])
+        test_http_probe = oci.health_checks.HttpProbe("test_http_probe",
+            compartment_id=compartment_id,
+            protocol=http_probe_protocol,
+            targets=http_probe_targets,
+            headers=http_probe_headers,
+            method=http_probe_method,
+            path=http_probe_path,
+            port=http_probe_port,
+            timeout_in_seconds=http_probe_timeout_in_seconds,
+            vantage_point_names=http_probe_vantage_point_names)
         ```
         <!--End PulumiCodeChooser -->
 

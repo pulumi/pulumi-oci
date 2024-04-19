@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetApplianceImage(ctx, &cloudbridge.GetApplianceImageArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Appliance_image_display_name),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(applianceImageDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

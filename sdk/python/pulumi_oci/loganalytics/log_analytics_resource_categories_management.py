@@ -189,11 +189,11 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_resource_categories_management = oci.log_analytics.LogAnalyticsResourceCategoriesManagement("testLogAnalyticsResourceCategoriesManagement",
-            namespace=var["log_analytics_resource_categories_management_namespace"],
+        test_log_analytics_resource_categories_management = oci.log_analytics.LogAnalyticsResourceCategoriesManagement("test_log_analytics_resource_categories_management",
+            namespace=log_analytics_resource_categories_management_namespace,
             resource_id=oci_log_analytics_resource_categories_management_resource_id,
-            resource_type=var["log_analytics_resource_categories_management_resource_type"],
-            resource_categories=var["log_analytics_resource_categories_management_resource_categories"])
+            resource_type=log_analytics_resource_categories_management_resource_type,
+            resource_categories=log_analytics_resource_categories_management_resource_categories)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -230,11 +230,11 @@ class LogAnalyticsResourceCategoriesManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_resource_categories_management = oci.log_analytics.LogAnalyticsResourceCategoriesManagement("testLogAnalyticsResourceCategoriesManagement",
-            namespace=var["log_analytics_resource_categories_management_namespace"],
+        test_log_analytics_resource_categories_management = oci.log_analytics.LogAnalyticsResourceCategoriesManagement("test_log_analytics_resource_categories_management",
+            namespace=log_analytics_resource_categories_management_namespace,
             resource_id=oci_log_analytics_resource_categories_management_resource_id,
-            resource_type=var["log_analytics_resource_categories_management_resource_type"],
-            resource_categories=var["log_analytics_resource_categories_management_resource_categories"])
+            resource_type=log_analytics_resource_categories_management_resource_type,
+            resource_categories=log_analytics_resource_categories_management_resource_categories)
         ```
         <!--End PulumiCodeChooser -->
 

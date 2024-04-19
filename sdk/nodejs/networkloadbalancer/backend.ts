@@ -16,16 +16,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackend = new oci.networkloadbalancer.Backend("testBackend", {
- *     backendSetName: oci_network_load_balancer_backend_set.test_backend_set.name,
- *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
- *     port: _var.backend_port,
- *     ipAddress: _var.backend_ip_address,
- *     isBackup: _var.backend_is_backup,
- *     isDrain: _var.backend_is_drain,
- *     isOffline: _var.backend_is_offline,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     weight: _var.backend_weight,
+ * const testBackend = new oci.networkloadbalancer.Backend("test_backend", {
+ *     backendSetName: testBackendSet.name,
+ *     networkLoadBalancerId: testNetworkLoadBalancer.id,
+ *     port: backendPort,
+ *     ipAddress: backendIpAddress,
+ *     isBackup: backendIsBackup,
+ *     isDrain: backendIsDrain,
+ *     isOffline: backendIsOffline,
+ *     name: backendName,
+ *     targetId: testTarget.id,
+ *     weight: backendWeight,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

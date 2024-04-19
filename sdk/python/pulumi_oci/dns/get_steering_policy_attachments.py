@@ -187,16 +187,16 @@ def get_steering_policy_attachments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=var["compartment_id"],
-        display_name=var["steering_policy_attachment_display_name"],
-        domain=var["steering_policy_attachment_domain"],
-        domain_contains=var["steering_policy_attachment_domain_contains"],
-        id=var["steering_policy_attachment_id"],
-        state=var["steering_policy_attachment_state"],
-        steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"],
-        time_created_greater_than_or_equal_to=var["steering_policy_attachment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["steering_policy_attachment_time_created_less_than"],
-        zone_id=oci_dns_zone["test_zone"]["id"])
+    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=compartment_id,
+        display_name=steering_policy_attachment_display_name,
+        domain=steering_policy_attachment_domain,
+        domain_contains=steering_policy_attachment_domain_contains,
+        id=steering_policy_attachment_id,
+        state=steering_policy_attachment_state,
+        steering_policy_id=test_steering_policy["id"],
+        time_created_greater_than_or_equal_to=steering_policy_attachment_time_created_greater_than_or_equal_to,
+        time_created_less_than=steering_policy_attachment_time_created_less_than,
+        zone_id=test_zone["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -267,16 +267,16 @@ def get_steering_policy_attachments_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=var["compartment_id"],
-        display_name=var["steering_policy_attachment_display_name"],
-        domain=var["steering_policy_attachment_domain"],
-        domain_contains=var["steering_policy_attachment_domain_contains"],
-        id=var["steering_policy_attachment_id"],
-        state=var["steering_policy_attachment_state"],
-        steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"],
-        time_created_greater_than_or_equal_to=var["steering_policy_attachment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["steering_policy_attachment_time_created_less_than"],
-        zone_id=oci_dns_zone["test_zone"]["id"])
+    test_steering_policy_attachments = oci.Dns.get_steering_policy_attachments(compartment_id=compartment_id,
+        display_name=steering_policy_attachment_display_name,
+        domain=steering_policy_attachment_domain,
+        domain_contains=steering_policy_attachment_domain_contains,
+        id=steering_policy_attachment_id,
+        state=steering_policy_attachment_state,
+        steering_policy_id=test_steering_policy["id"],
+        time_created_greater_than_or_equal_to=steering_policy_attachment_time_created_greater_than_or_equal_to,
+        time_created_less_than=steering_policy_attachment_time_created_less_than,
+        zone_id=test_zone["id"])
     ```
     <!--End PulumiCodeChooser -->
 

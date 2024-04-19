@@ -30,8 +30,8 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testRunStatements = Oci.DataFlow.GetRunStatements.Invoke(new()
         ///     {
-        ///         RunId = oci_dataflow_run.Test_run.Id,
-        ///         State = @var.Run_statement_state,
+        ///         RunId = testRun.Id,
+        ///         State = runStatementState,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testRunStatements = Oci.DataFlow.GetRunStatements.Invoke(new()
         ///     {
-        ///         RunId = oci_dataflow_run.Test_run.Id,
-        ///         State = @var.Run_statement_state,
+        ///         RunId = testRun.Id,
+        ///         State = runStatementState,
         ///     });
         /// 
         /// });

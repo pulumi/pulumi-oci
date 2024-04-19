@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testClusterWorkloadMappings = Oci.ContainerEngine.GetClusterWorkloadMappings.Invoke(new()
         ///     {
-        ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+        ///         ClusterId = testCluster.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testClusterWorkloadMappings = Oci.ContainerEngine.GetClusterWorkloadMappings.Invoke(new()
         ///     {
-        ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+        ///         ClusterId = testCluster.Id,
         ///     });
         /// 
         /// });

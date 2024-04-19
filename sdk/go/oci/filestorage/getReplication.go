@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetReplication(ctx, &filestorage.GetReplicationArgs{
-//				ReplicationId: oci_file_storage_replication.Test_replication.Id,
+//				ReplicationId: testReplicationOciFileStorageReplication.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

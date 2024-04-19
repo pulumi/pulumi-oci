@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetPbfListingVersion(ctx, &functions.GetPbfListingVersionArgs{
-//				PbfListingVersionId: oci_functions_pbf_listing_version.Test_pbf_listing_version.Id,
+//				PbfListingVersionId: testPbfListingVersionOciFunctionsPbfListingVersion.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

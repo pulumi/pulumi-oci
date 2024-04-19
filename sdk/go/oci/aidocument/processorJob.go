@@ -31,40 +31,40 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiDocument.NewProcessorJob(ctx, "testProcessorJob", &AiDocument.ProcessorJobArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := AiDocument.NewProcessorJob(ctx, "test_processor_job", &AiDocument.ProcessorJobArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				InputLocation: &aidocument.ProcessorJobInputLocationArgs{
-//					SourceType: pulumi.Any(_var.Processor_job_input_location_source_type),
-//					Data:       pulumi.Any(_var.Processor_job_input_location_data),
+//					SourceType: pulumi.Any(processorJobInputLocationSourceType),
+//					Data:       pulumi.Any(processorJobInputLocationData),
 //					ObjectLocations: aidocument.ProcessorJobInputLocationObjectLocationArray{
 //						&aidocument.ProcessorJobInputLocationObjectLocationArgs{
-//							Bucket:    pulumi.Any(_var.Processor_job_input_location_object_locations_bucket),
-//							Namespace: pulumi.Any(_var.Processor_job_input_location_object_locations_namespace),
-//							Object:    pulumi.Any(_var.Processor_job_input_location_object_locations_object),
+//							Bucket:    pulumi.Any(processorJobInputLocationObjectLocationsBucket),
+//							Namespace: pulumi.Any(processorJobInputLocationObjectLocationsNamespace),
+//							Object:    pulumi.Any(processorJobInputLocationObjectLocationsObject),
 //						},
 //					},
 //				},
 //				OutputLocation: &aidocument.ProcessorJobOutputLocationArgs{
-//					Bucket:    pulumi.Any(_var.Processor_job_output_location_bucket),
-//					Namespace: pulumi.Any(_var.Processor_job_output_location_namespace),
-//					Prefix:    pulumi.Any(_var.Processor_job_output_location_prefix),
+//					Bucket:    pulumi.Any(processorJobOutputLocationBucket),
+//					Namespace: pulumi.Any(processorJobOutputLocationNamespace),
+//					Prefix:    pulumi.Any(processorJobOutputLocationPrefix),
 //				},
 //				ProcessorConfig: &aidocument.ProcessorJobProcessorConfigArgs{
 //					Features: aidocument.ProcessorJobProcessorConfigFeatureArray{
 //						&aidocument.ProcessorJobProcessorConfigFeatureArgs{
-//							FeatureType:           pulumi.Any(_var.Processor_job_processor_config_features_feature_type),
-//							GenerateSearchablePdf: pulumi.Any(_var.Processor_job_processor_config_features_generate_searchable_pdf),
-//							MaxResults:            pulumi.Any(_var.Processor_job_processor_config_features_max_results),
-//							ModelId:               pulumi.Any(oci_ai_document_model.Test_model.Id),
-//							TenancyId:             pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
+//							FeatureType:           pulumi.Any(processorJobProcessorConfigFeaturesFeatureType),
+//							GenerateSearchablePdf: pulumi.Any(processorJobProcessorConfigFeaturesGenerateSearchablePdf),
+//							MaxResults:            pulumi.Any(processorJobProcessorConfigFeaturesMaxResults),
+//							ModelId:               pulumi.Any(testModel.Id),
+//							TenancyId:             pulumi.Any(testTenancy.Id),
 //						},
 //					},
-//					ProcessorType:      pulumi.Any(_var.Processor_job_processor_config_processor_type),
-//					DocumentType:       pulumi.Any(_var.Processor_job_processor_config_document_type),
-//					IsZipOutputEnabled: pulumi.Any(_var.Processor_job_processor_config_is_zip_output_enabled),
-//					Language:           pulumi.Any(_var.Processor_job_processor_config_language),
+//					ProcessorType:      pulumi.Any(processorJobProcessorConfigProcessorType),
+//					DocumentType:       pulumi.Any(processorJobProcessorConfigDocumentType),
+//					IsZipOutputEnabled: pulumi.Any(processorJobProcessorConfigIsZipOutputEnabled),
+//					Language:           pulumi.Any(processorJobProcessorConfigLanguage),
 //				},
-//				DisplayName: pulumi.Any(_var.Processor_job_display_name),
+//				DisplayName: pulumi.Any(processorJobDisplayName),
 //			})
 //			if err != nil {
 //				return err

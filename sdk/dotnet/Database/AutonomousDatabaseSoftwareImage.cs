@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAutonomousDatabaseSoftwareImage = new Oci.Database.AutonomousDatabaseSoftwareImage("testAutonomousDatabaseSoftwareImage", new()
+    ///     var testAutonomousDatabaseSoftwareImage = new Oci.Database.AutonomousDatabaseSoftwareImage("test_autonomous_database_software_image", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Autonomous_database_software_image_display_name,
-    ///         ImageShapeFamily = @var.Autonomous_database_software_image_image_shape_family,
-    ///         SourceCdbId = oci_database_source_cdb.Test_source_cdb.Id,
-    ///         DefinedTags = @var.Autonomous_database_software_image_defined_tags,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = autonomousDatabaseSoftwareImageDisplayName,
+    ///         ImageShapeFamily = autonomousDatabaseSoftwareImageImageShapeFamily,
+    ///         SourceCdbId = testSourceCdb.Id,
+    ///         DefinedTags = autonomousDatabaseSoftwareImageDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

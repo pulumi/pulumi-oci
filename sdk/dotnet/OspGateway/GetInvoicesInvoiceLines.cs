@@ -29,9 +29,9 @@ namespace Pulumi.Oci.OspGateway
         /// {
         ///     var testInvoicesInvoiceLines = Oci.OspGateway.GetInvoicesInvoiceLines.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         InternalInvoiceId = oci_osp_gateway_invoice.Test_invoice.Id,
-        ///         OspHomeRegion = @var.Invoices_invoice_line_osp_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         InternalInvoiceId = testInvoice.Id,
+        ///         OspHomeRegion = invoicesInvoiceLineOspHomeRegion,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.OspGateway
         /// {
         ///     var testInvoicesInvoiceLines = Oci.OspGateway.GetInvoicesInvoiceLines.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         InternalInvoiceId = oci_osp_gateway_invoice.Test_invoice.Id,
-        ///         OspHomeRegion = @var.Invoices_invoice_line_osp_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         InternalInvoiceId = testInvoice.Id,
+        ///         OspHomeRegion = invoicesInvoiceLineOspHomeRegion,
         ///     });
         /// 
         /// });

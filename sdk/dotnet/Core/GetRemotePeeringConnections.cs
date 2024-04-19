@@ -31,8 +31,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testRemotePeeringConnections = Oci.Core.GetRemotePeeringConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DrgId = testDrg.Id,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testRemotePeeringConnections = Oci.Core.GetRemotePeeringConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DrgId = testDrg.Id,
         ///     });
         /// 
         /// });

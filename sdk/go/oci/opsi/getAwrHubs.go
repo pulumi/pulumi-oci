@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetAwrHubs(ctx, &opsi.GetAwrHubsArgs{
-//				OperationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-//				CompartmentId:                 pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:                   pulumi.StringRef(_var.Awr_hub_display_name),
-//				Id:                            pulumi.StringRef(_var.Awr_hub_id),
-//				States:                        _var.Awr_hub_state,
+//				OperationsInsightsWarehouseId: testOperationsInsightsWarehouse.Id,
+//				CompartmentId:                 pulumi.StringRef(compartmentId),
+//				DisplayName:                   pulumi.StringRef(awrHubDisplayName),
+//				Id:                            pulumi.StringRef(awrHubId),
+//				States:                        awrHubState,
 //			}, nil)
 //			if err != nil {
 //				return err

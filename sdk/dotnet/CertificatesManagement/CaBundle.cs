@@ -25,15 +25,16 @@ namespace Pulumi.Oci.CertificatesManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCaBundle = new Oci.CertificatesManagement.CaBundle("testCaBundle", new()
+    ///     var testCaBundle = new Oci.CertificatesManagement.CaBundle("test_ca_bundle", new()
     ///     {
-    ///         CaBundlePem = @var.Ca_bundle_ca_bundle_pem,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CaBundlePem = caBundleCaBundlePem,
+    ///         CompartmentId = compartmentId,
+    ///         Name = caBundleName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Ca_bundle_description,
+    ///         Description = caBundleDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

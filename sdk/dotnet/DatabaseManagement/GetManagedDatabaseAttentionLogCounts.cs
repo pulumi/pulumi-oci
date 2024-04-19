@@ -30,14 +30,14 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseAttentionLogCounts = Oci.DatabaseManagement.GetManagedDatabaseAttentionLogCounts.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         GroupBy = @var.Managed_database_attention_log_count_group_by,
-        ///         IsRegularExpression = @var.Managed_database_attention_log_count_is_regular_expression,
-        ///         LogSearchText = @var.Managed_database_attention_log_count_log_search_text,
-        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_attention_log_count_time_greater_than_or_equal_to,
-        ///         TimeLessThanOrEqualTo = @var.Managed_database_attention_log_count_time_less_than_or_equal_to,
-        ///         TypeFilter = @var.Managed_database_attention_log_count_type_filter,
-        ///         UrgencyFilter = @var.Managed_database_attention_log_count_urgency_filter,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         GroupBy = managedDatabaseAttentionLogCountGroupBy,
+        ///         IsRegularExpression = managedDatabaseAttentionLogCountIsRegularExpression,
+        ///         LogSearchText = managedDatabaseAttentionLogCountLogSearchText,
+        ///         TimeGreaterThanOrEqualTo = managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = managedDatabaseAttentionLogCountTimeLessThanOrEqualTo,
+        ///         TypeFilter = managedDatabaseAttentionLogCountTypeFilter,
+        ///         UrgencyFilter = managedDatabaseAttentionLogCountUrgencyFilter,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseAttentionLogCounts = Oci.DatabaseManagement.GetManagedDatabaseAttentionLogCounts.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         GroupBy = @var.Managed_database_attention_log_count_group_by,
-        ///         IsRegularExpression = @var.Managed_database_attention_log_count_is_regular_expression,
-        ///         LogSearchText = @var.Managed_database_attention_log_count_log_search_text,
-        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_attention_log_count_time_greater_than_or_equal_to,
-        ///         TimeLessThanOrEqualTo = @var.Managed_database_attention_log_count_time_less_than_or_equal_to,
-        ///         TypeFilter = @var.Managed_database_attention_log_count_type_filter,
-        ///         UrgencyFilter = @var.Managed_database_attention_log_count_urgency_filter,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         GroupBy = managedDatabaseAttentionLogCountGroupBy,
+        ///         IsRegularExpression = managedDatabaseAttentionLogCountIsRegularExpression,
+        ///         LogSearchText = managedDatabaseAttentionLogCountLogSearchText,
+        ///         TimeGreaterThanOrEqualTo = managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = managedDatabaseAttentionLogCountTimeLessThanOrEqualTo,
+        ///         TypeFilter = managedDatabaseAttentionLogCountTypeFilter,
+        ///         UrgencyFilter = managedDatabaseAttentionLogCountUrgencyFilter,
         ///     });
         /// 
         /// });

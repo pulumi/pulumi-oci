@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetInfrastructureTargetVersion(ctx, &database.GetInfrastructureTargetVersionArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				TargetResourceId:   pulumi.StringRef(oci_database_target_resource.Test_target_resource.Id),
-//				TargetResourceType: pulumi.StringRef(_var.Infrastructure_target_version_target_resource_type),
+//				CompartmentId:      compartmentId,
+//				TargetResourceId:   pulumi.StringRef(testTargetResource.Id),
+//				TargetResourceType: pulumi.StringRef(infrastructureTargetVersionTargetResourceType),
 //			}, nil)
 //			if err != nil {
 //				return err

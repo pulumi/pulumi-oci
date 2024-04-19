@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUsageStatementEmailRecipientsGroups = oci.MeteringComputation.getUsageStatementEmailRecipientsGroups({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetUsageStatementEmailRecipientsGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUsageStatementEmailRecipientsGroups = oci.MeteringComputation.getUsageStatementEmailRecipientsGroups({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

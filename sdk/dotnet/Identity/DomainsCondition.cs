@@ -25,12 +25,13 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCondition = new Oci.Identity.DomainsCondition("testCondition", new()
+    ///     var testCondition = new Oci.Identity.DomainsCondition("test_condition", new()
     ///     {
-    ///         AttributeName = @var.Condition_attribute_name,
-    ///         AttributeValue = @var.Condition_attribute_value,
-    ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-    ///         Operator = @var.Condition_operator,
+    ///         AttributeName = conditionAttributeName,
+    ///         AttributeValue = conditionAttributeValue,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Name = conditionName,
+    ///         Operator = conditionOperator,
     ///         Schemas = new[]
     ///         {
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:Condition",
@@ -40,18 +41,18 @@ namespace Pulumi.Oci.Identity
     ///             "all",
     ///         },
     ///         Attributes = "",
-    ///         Authorization = @var.Condition_authorization,
-    ///         Description = @var.Condition_description,
-    ///         EvaluateConditionIf = @var.Condition_evaluate_condition_if,
+    ///         Authorization = conditionAuthorization,
+    ///         Description = conditionDescription,
+    ///         EvaluateConditionIf = conditionEvaluateConditionIf,
     ///         ExternalId = "externalId",
-    ///         Ocid = @var.Condition_ocid,
-    ///         ResourceTypeSchemaVersion = @var.Condition_resource_type_schema_version,
+    ///         Ocid = conditionOcid,
+    ///         ResourceTypeSchemaVersion = conditionResourceTypeSchemaVersion,
     ///         Tags = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsConditionTagArgs
     ///             {
-    ///                 Key = @var.Condition_tags_key,
-    ///                 Value = @var.Condition_tags_value,
+    ///                 Key = conditionTagsKey,
+    ///                 Value = conditionTagsValue,
     ///             },
     ///         },
     ///     });

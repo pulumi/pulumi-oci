@@ -140,11 +140,11 @@ def get_baselineable_metrics(baselineable_metric_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"],
-        compartment_id=var["compartment_id"],
-        metric_namespace=var["baselineable_metric_metric_namespace"],
-        name=var["baselineable_metric_name"],
-        resource_group=var["baselineable_metric_resource_group"])
+    test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
+        compartment_id=compartment_id,
+        metric_namespace=baselineable_metric_metric_namespace,
+        name=baselineable_metric_name,
+        resource_group=baselineable_metric_resource_group)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"],
-        compartment_id=var["compartment_id"],
-        metric_namespace=var["baselineable_metric_metric_namespace"],
-        name=var["baselineable_metric_name"],
-        resource_group=var["baselineable_metric_resource_group"])
+    test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
+        compartment_id=compartment_id,
+        metric_namespace=baselineable_metric_metric_namespace,
+        name=baselineable_metric_name,
+        resource_group=baselineable_metric_resource_group)
     ```
     <!--End PulumiCodeChooser -->
 

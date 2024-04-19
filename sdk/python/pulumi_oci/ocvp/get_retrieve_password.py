@@ -87,8 +87,8 @@ def get_retrieve_password(sddc_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_password = oci.Ocvp.get_retrieve_password(sddc_id=var["compartment_id"],
-        type=var["password_type"])
+    test_password = oci.Ocvp.get_retrieve_password(sddc_id=compartment_id,
+        type=password_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -123,8 +123,8 @@ def get_retrieve_password_output(sddc_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_password = oci.Ocvp.get_retrieve_password(sddc_id=var["compartment_id"],
-        type=var["password_type"])
+    test_password = oci.Ocvp.get_retrieve_password(sddc_id=compartment_id,
+        type=password_type)
     ```
     <!--End PulumiCodeChooser -->
 

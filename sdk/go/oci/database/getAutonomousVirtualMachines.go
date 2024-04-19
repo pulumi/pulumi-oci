@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousVirtualMachines(ctx, &database.GetAutonomousVirtualMachinesArgs{
-//				AutonomousVmClusterId: oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-//				CompartmentId:         _var.Compartment_id,
-//				State:                 pulumi.StringRef(_var.Autonomous_virtual_machine_state),
+//				AutonomousVmClusterId: testAutonomousVmCluster.Id,
+//				CompartmentId:         compartmentId,
+//				State:                 pulumi.StringRef(autonomousVirtualMachineState),
 //			}, nil)
 //			if err != nil {
 //				return err

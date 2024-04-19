@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := HealthChecks.GetHttpMonitor(ctx, &healthchecks.GetHttpMonitorArgs{
-//				MonitorId: oci_apm_synthetics_monitor.Test_monitor.Id,
+//				MonitorId: testMonitor.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

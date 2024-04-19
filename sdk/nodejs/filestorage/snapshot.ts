@@ -17,12 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSnapshot = new oci.filestorage.Snapshot("testSnapshot", {
- *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
+ * const testSnapshot = new oci.filestorage.Snapshot("test_snapshot", {
+ *     fileSystemId: testFileSystem.id,
+ *     name: snapshotName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     expirationTime: _var.snapshot_expiration_time,
+ *     expirationTime: snapshotExpirationTime,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

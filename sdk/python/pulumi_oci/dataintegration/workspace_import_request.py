@@ -468,19 +468,19 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_import_request = oci.data_integration.WorkspaceImportRequest("testWorkspaceImportRequest",
-            bucket=var["workspace_import_request_bucket"],
-            file_name=var["workspace_import_request_file_name"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            are_data_asset_references_included=var["workspace_import_request_are_data_asset_references_included"],
+        test_workspace_import_request = oci.data_integration.WorkspaceImportRequest("test_workspace_import_request",
+            bucket=workspace_import_request_bucket,
+            file_name=workspace_import_request_file_name,
+            workspace_id=test_workspace["id"],
+            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included,
             import_conflict_resolution=oci.data_integration.WorkspaceImportRequestImportConflictResolutionArgs(
-                import_conflict_resolution_type=var["workspace_import_request_import_conflict_resolution_import_conflict_resolution_type"],
-                duplicate_prefix=var["workspace_import_request_import_conflict_resolution_duplicate_prefix"],
-                duplicate_suffix=var["workspace_import_request_import_conflict_resolution_duplicate_suffix"],
+                import_conflict_resolution_type=workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
+                duplicate_prefix=workspace_import_request_import_conflict_resolution_duplicate_prefix,
+                duplicate_suffix=workspace_import_request_import_conflict_resolution_duplicate_suffix,
             ),
-            object_key_for_import=var["workspace_import_request_object_key_for_import"],
-            object_storage_region=var["workspace_import_request_object_storage_region"],
-            object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
+            object_key_for_import=workspace_import_request_object_key_for_import,
+            object_storage_region=workspace_import_request_object_storage_region,
+            object_storage_tenancy_id=test_tenancy["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -525,19 +525,19 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_import_request = oci.data_integration.WorkspaceImportRequest("testWorkspaceImportRequest",
-            bucket=var["workspace_import_request_bucket"],
-            file_name=var["workspace_import_request_file_name"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            are_data_asset_references_included=var["workspace_import_request_are_data_asset_references_included"],
+        test_workspace_import_request = oci.data_integration.WorkspaceImportRequest("test_workspace_import_request",
+            bucket=workspace_import_request_bucket,
+            file_name=workspace_import_request_file_name,
+            workspace_id=test_workspace["id"],
+            are_data_asset_references_included=workspace_import_request_are_data_asset_references_included,
             import_conflict_resolution=oci.data_integration.WorkspaceImportRequestImportConflictResolutionArgs(
-                import_conflict_resolution_type=var["workspace_import_request_import_conflict_resolution_import_conflict_resolution_type"],
-                duplicate_prefix=var["workspace_import_request_import_conflict_resolution_duplicate_prefix"],
-                duplicate_suffix=var["workspace_import_request_import_conflict_resolution_duplicate_suffix"],
+                import_conflict_resolution_type=workspace_import_request_import_conflict_resolution_import_conflict_resolution_type,
+                duplicate_prefix=workspace_import_request_import_conflict_resolution_duplicate_prefix,
+                duplicate_suffix=workspace_import_request_import_conflict_resolution_duplicate_suffix,
             ),
-            object_key_for_import=var["workspace_import_request_object_key_for_import"],
-            object_storage_region=var["workspace_import_request_object_storage_region"],
-            object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
+            object_key_for_import=workspace_import_request_object_key_for_import,
+            object_storage_region=workspace_import_request_object_storage_region,
+            object_storage_tenancy_id=test_tenancy["id"])
         ```
         <!--End PulumiCodeChooser -->
 

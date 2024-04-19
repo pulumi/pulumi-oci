@@ -647,20 +647,20 @@ class StorageObject(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_object = oci.object_storage.StorageObject("testObject",
-            bucket=var["object_bucket"],
-            content=var["object_content"],
-            namespace=var["object_namespace"],
-            object=var["object_object"],
-            cache_control=var["object_cache_control"],
-            content_disposition=var["object_content_disposition"],
-            content_encoding=var["object_content_encoding"],
-            content_language=var["object_content_language"],
-            content_type=var["object_content_type"],
-            delete_all_object_versions=var["object_delete_all_object_versions"],
-            metadata=var["object_metadata"],
-            storage_tier=var["object_storage_tier"],
-            opc_sse_kms_key_id=var["object_opc_sse_kms_key_id"])
+        test_object = oci.object_storage.StorageObject("test_object",
+            bucket=object_bucket,
+            content=object_content,
+            namespace=object_namespace,
+            object=object_object,
+            cache_control=object_cache_control,
+            content_disposition=object_content_disposition,
+            content_encoding=object_content_encoding,
+            content_language=object_content_language,
+            content_type=object_content_type,
+            delete_all_object_versions=object_delete_all_object_versions,
+            metadata=object_metadata,
+            storage_tier=object_storage_tier,
+            opc_sse_kms_key_id=object_opc_sse_kms_key_id)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -720,20 +720,20 @@ class StorageObject(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_object = oci.object_storage.StorageObject("testObject",
-            bucket=var["object_bucket"],
-            content=var["object_content"],
-            namespace=var["object_namespace"],
-            object=var["object_object"],
-            cache_control=var["object_cache_control"],
-            content_disposition=var["object_content_disposition"],
-            content_encoding=var["object_content_encoding"],
-            content_language=var["object_content_language"],
-            content_type=var["object_content_type"],
-            delete_all_object_versions=var["object_delete_all_object_versions"],
-            metadata=var["object_metadata"],
-            storage_tier=var["object_storage_tier"],
-            opc_sse_kms_key_id=var["object_opc_sse_kms_key_id"])
+        test_object = oci.object_storage.StorageObject("test_object",
+            bucket=object_bucket,
+            content=object_content,
+            namespace=object_namespace,
+            object=object_object,
+            cache_control=object_cache_control,
+            content_disposition=object_content_disposition,
+            content_encoding=object_content_encoding,
+            content_language=object_content_language,
+            content_type=object_content_type,
+            delete_all_object_versions=object_delete_all_object_versions,
+            metadata=object_metadata,
+            storage_tier=object_storage_tier,
+            opc_sse_kms_key_id=object_opc_sse_kms_key_id)
         ```
         <!--End PulumiCodeChooser -->
 

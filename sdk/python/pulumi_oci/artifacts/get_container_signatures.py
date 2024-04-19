@@ -199,16 +199,16 @@ def get_container_signatures(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["container_image_signature_compartment_id_in_subtree"],
-        display_name=var["container_image_signature_display_name"],
-        image_digest=var["container_image_signature_image_digest"],
-        image_id=oci_core_image["test_image"]["id"],
-        kms_key_id=oci_kms_key["test_key"]["id"],
-        kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        repository_name=oci_artifacts_repository["test_repository"]["name"],
-        signing_algorithm=var["container_image_signature_signing_algorithm"])
+    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree,
+        display_name=container_image_signature_display_name,
+        image_digest=container_image_signature_image_digest,
+        image_id=test_image["id"],
+        kms_key_id=test_key["id"],
+        kms_key_version_id=test_key_version["id"],
+        repository_id=test_repository["id"],
+        repository_name=test_repository["name"],
+        signing_algorithm=container_image_signature_signing_algorithm)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -280,16 +280,16 @@ def get_container_signatures_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["container_image_signature_compartment_id_in_subtree"],
-        display_name=var["container_image_signature_display_name"],
-        image_digest=var["container_image_signature_image_digest"],
-        image_id=oci_core_image["test_image"]["id"],
-        kms_key_id=oci_kms_key["test_key"]["id"],
-        kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        repository_name=oci_artifacts_repository["test_repository"]["name"],
-        signing_algorithm=var["container_image_signature_signing_algorithm"])
+    test_container_image_signatures = oci.Artifacts.get_container_signatures(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree,
+        display_name=container_image_signature_display_name,
+        image_digest=container_image_signature_image_digest,
+        image_id=test_image["id"],
+        kms_key_id=test_key["id"],
+        kms_key_version_id=test_key_version["id"],
+        repository_id=test_repository["id"],
+        repository_name=test_repository["name"],
+        signing_algorithm=container_image_signature_signing_algorithm)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUsagelimits = oci.UsageProxy.getUsagelimits({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     limitType: _var.usagelimit_limit_type,
- *     resourceType: _var.usagelimit_resource_type,
- *     serviceType: _var.usagelimit_service_type,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     limitType: usagelimitLimitType,
+ *     resourceType: usagelimitResourceType,
+ *     serviceType: usagelimitServiceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,11 +103,11 @@ export interface GetUsagelimitsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUsagelimits = oci.UsageProxy.getUsagelimits({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     limitType: _var.usagelimit_limit_type,
- *     resourceType: _var.usagelimit_resource_type,
- *     serviceType: _var.usagelimit_service_type,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     limitType: usagelimitLimitType,
+ *     resourceType: usagelimitResourceType,
+ *     serviceType: usagelimitServiceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

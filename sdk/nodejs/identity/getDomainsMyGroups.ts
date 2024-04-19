@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyGroups = oci.Identity.getDomainsMyGroups({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myGroupCount: _var.my_group_my_group_count,
- *     myGroupFilter: _var.my_group_my_group_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     myGroupCount: myGroupMyGroupCount,
+ *     myGroupFilter: myGroupMyGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_group_authorization,
- *     resourceTypeSchemaVersion: _var.my_group_resource_type_schema_version,
- *     startIndex: _var.my_group_start_index,
+ *     authorization: myGroupAuthorization,
+ *     resourceTypeSchemaVersion: myGroupResourceTypeSchemaVersion,
+ *     startIndex: myGroupStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,14 +142,14 @@ export interface GetDomainsMyGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyGroups = oci.Identity.getDomainsMyGroups({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myGroupCount: _var.my_group_my_group_count,
- *     myGroupFilter: _var.my_group_my_group_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     myGroupCount: myGroupMyGroupCount,
+ *     myGroupFilter: myGroupMyGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_group_authorization,
- *     resourceTypeSchemaVersion: _var.my_group_resource_type_schema_version,
- *     startIndex: _var.my_group_start_index,
+ *     authorization: myGroupAuthorization,
+ *     resourceTypeSchemaVersion: myGroupResourceTypeSchemaVersion,
+ *     startIndex: myGroupStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

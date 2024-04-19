@@ -16,14 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogSubscription = new oci.core.AppCatalogSubscription("testAppCatalogSubscription", {
- *     compartmentId: _var.compartment_id,
- *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
- *     listingResourceVersion: _var.app_catalog_subscription_listing_resource_version,
- *     oracleTermsOfUseLink: _var.app_catalog_subscription_oracle_terms_of_use_link,
- *     signature: _var.app_catalog_subscription_signature,
- *     timeRetrieved: _var.app_catalog_subscription_time_retrieved,
- *     eulaLink: _var.app_catalog_subscription_eula_link,
+ * const testAppCatalogSubscription = new oci.core.AppCatalogSubscription("test_app_catalog_subscription", {
+ *     compartmentId: compartmentId,
+ *     listingId: testListing.id,
+ *     listingResourceVersion: appCatalogSubscriptionListingResourceVersion,
+ *     oracleTermsOfUseLink: appCatalogSubscriptionOracleTermsOfUseLink,
+ *     signature: appCatalogSubscriptionSignature,
+ *     timeRetrieved: appCatalogSubscriptionTimeRetrieved,
+ *     eulaLink: appCatalogSubscriptionEulaLink,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

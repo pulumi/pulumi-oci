@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testTsigKey = Oci.Dns.GetTsigKey.Invoke(new()
         ///     {
-        ///         TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
+        ///         TsigKeyId = testTsigKeyOciDnsTsigKey.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testTsigKey = Oci.Dns.GetTsigKey.Invoke(new()
         ///     {
-        ///         TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
+        ///         TsigKeyId = testTsigKeyOciDnsTsigKey.Id,
         ///     });
         /// 
         /// });

@@ -295,7 +295,7 @@ def get_deployment_backup(deployment_backup_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_backup = oci.GoldenGate.get_deployment_backup(deployment_backup_id=oci_golden_gate_deployment_backup["test_deployment_backup"]["id"])
+    test_deployment_backup = oci.GoldenGate.get_deployment_backup(deployment_backup_id=test_deployment_backup_oci_golden_gate_deployment_backup["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -346,7 +346,7 @@ def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_backup = oci.GoldenGate.get_deployment_backup(deployment_backup_id=oci_golden_gate_deployment_backup["test_deployment_backup"]["id"])
+    test_deployment_backup = oci.GoldenGate.get_deployment_backup(deployment_backup_id=test_deployment_backup_oci_golden_gate_deployment_backup["id"])
     ```
     <!--End PulumiCodeChooser -->
 

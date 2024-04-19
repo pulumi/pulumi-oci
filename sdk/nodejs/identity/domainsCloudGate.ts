@@ -18,23 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGate = new oci.identity.DomainsCloudGate("testCloudGate", {
- *     displayName: _var.cloud_gate_display_name,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ * const testCloudGate = new oci.identity.DomainsCloudGate("test_cloud_gate", {
+ *     displayName: cloudGateDisplayName,
+ *     idcsEndpoint: testDomain.url,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:CloudGate"],
- *     active: _var.cloud_gate_active,
+ *     active: cloudGateActive,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.cloud_gate_authorization,
- *     description: _var.cloud_gate_description,
+ *     authorization: cloudGateAuthorization,
+ *     description: cloudGateDescription,
  *     lastModifiedTime: "2000-01-01T00:00:00Z",
- *     ocid: _var.cloud_gate_ocid,
- *     resourceTypeSchemaVersion: _var.cloud_gate_resource_type_schema_version,
+ *     ocid: cloudGateOcid,
+ *     resourceTypeSchemaVersion: cloudGateResourceTypeSchemaVersion,
  *     tags: [{
- *         key: _var.cloud_gate_tags_key,
- *         value: _var.cloud_gate_tags_value,
+ *         key: cloudGateTagsKey,
+ *         value: cloudGateTagsValue,
  *     }],
- *     type: _var.cloud_gate_type,
+ *     type: cloudGateType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

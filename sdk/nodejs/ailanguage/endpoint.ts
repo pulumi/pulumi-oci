@@ -16,18 +16,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEndpoint = new oci.ailanguage.Endpoint("testEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     modelId: oci_ai_language_model.test_model.id,
+ * const testEndpoint = new oci.ailanguage.Endpoint("test_endpoint", {
+ *     compartmentId: compartmentId,
+ *     modelId: testModel.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.endpoint_description,
- *     displayName: _var.endpoint_display_name,
+ *     description: endpointDescription,
+ *     displayName: endpointDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     inferenceUnits: _var.endpoint_inference_units,
+ *     inferenceUnits: endpointInferenceUnits,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

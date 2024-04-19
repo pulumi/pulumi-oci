@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsConnection = oci.DatabaseTools.getDatabaseToolsConnection({
- *     databaseToolsConnectionId: oci_database_tools_database_tools_connection.test_database_tools_connection.id,
+ *     databaseToolsConnectionId: testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -149,7 +149,7 @@ export interface GetDatabaseToolsConnectionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsConnection = oci.DatabaseTools.getDatabaseToolsConnection({
- *     databaseToolsConnectionId: oci_database_tools_database_tools_connection.test_database_tools_connection.id,
+ *     databaseToolsConnectionId: testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

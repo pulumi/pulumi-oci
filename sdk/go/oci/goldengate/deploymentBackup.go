@@ -31,13 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GoldenGate.NewDeploymentBackup(ctx, "testDeploymentBackup", &GoldenGate.DeploymentBackupArgs{
-//				Bucket:        pulumi.Any(_var.Deployment_backup_bucket),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DeploymentId:  pulumi.Any(oci_golden_gate_deployment.Test_deployment.Id),
-//				DisplayName:   pulumi.Any(_var.Deployment_backup_display_name),
-//				Namespace:     pulumi.Any(_var.Deployment_backup_namespace),
-//				Object:        pulumi.Any(_var.Deployment_backup_object),
+//			_, err := GoldenGate.NewDeploymentBackup(ctx, "test_deployment_backup", &GoldenGate.DeploymentBackupArgs{
+//				Bucket:        pulumi.Any(deploymentBackupBucket),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DeploymentId:  pulumi.Any(testDeployment.Id),
+//				DisplayName:   pulumi.Any(deploymentBackupDisplayName),
+//				Namespace:     pulumi.Any(deploymentBackupNamespace),
+//				Object:        pulumi.Any(deploymentBackupObject),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},

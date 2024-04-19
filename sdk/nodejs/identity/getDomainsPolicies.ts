@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPolicies = oci.Identity.getDomainsPolicies({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     policyCount: _var.policy_policy_count,
- *     policyFilter: _var.policy_policy_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     policyCount: policyPolicyCount,
+ *     policyFilter: policyPolicyFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.policy_authorization,
- *     resourceTypeSchemaVersion: _var.policy_resource_type_schema_version,
- *     startIndex: _var.policy_start_index,
+ *     authorization: policyAuthorization,
+ *     resourceTypeSchemaVersion: policyResourceTypeSchemaVersion,
+ *     startIndex: policyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPolicies = oci.Identity.getDomainsPolicies({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     policyCount: _var.policy_policy_count,
- *     policyFilter: _var.policy_policy_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     policyCount: policyPolicyCount,
+ *     policyFilter: policyPolicyFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.policy_authorization,
- *     resourceTypeSchemaVersion: _var.policy_resource_type_schema_version,
- *     startIndex: _var.policy_start_index,
+ *     authorization: policyAuthorization,
+ *     resourceTypeSchemaVersion: policyResourceTypeSchemaVersion,
+ *     startIndex: policyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

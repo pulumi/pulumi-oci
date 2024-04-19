@@ -25,21 +25,21 @@ namespace Pulumi.Oci.AiLanguage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testEndpoint = new Oci.AiLanguage.Endpoint("testEndpoint", new()
+    ///     var testEndpoint = new Oci.AiLanguage.Endpoint("test_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ModelId = oci_ai_language_model.Test_model.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ModelId = testModel.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Endpoint_description,
-    ///         DisplayName = @var.Endpoint_display_name,
+    ///         Description = endpointDescription,
+    ///         DisplayName = endpointDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         InferenceUnits = @var.Endpoint_inference_units,
+    ///         InferenceUnits = endpointInferenceUnits,
     ///     });
     /// 
     /// });

@@ -29,8 +29,8 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceFolder = Oci.DataIntegration.GetWorkspaceFolder.Invoke(new()
         ///     {
-        ///         FolderKey = @var.Workspace_folder_folder_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         FolderKey = workspaceFolderFolderKey,
+        ///         WorkspaceId = testWorkspace.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceFolder = Oci.DataIntegration.GetWorkspaceFolder.Invoke(new()
         ///     {
-        ///         FolderKey = @var.Workspace_folder_folder_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         FolderKey = workspaceFolderFolderKey,
+        ///         WorkspaceId = testWorkspace.Id,
         ///     });
         /// 
         /// });

@@ -236,7 +236,7 @@ def get_monitored_resource_type(monitored_resource_type_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_type = oci.StackMonitoring.get_monitored_resource_type(monitored_resource_type_id=oci_stack_monitoring_monitored_resource_type["test_monitored_resource_type"]["id"])
+    test_monitored_resource_type = oci.StackMonitoring.get_monitored_resource_type(monitored_resource_type_id=test_monitored_resource_type_oci_stack_monitoring_monitored_resource_type["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -282,7 +282,7 @@ def get_monitored_resource_type_output(monitored_resource_type_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_type = oci.StackMonitoring.get_monitored_resource_type(monitored_resource_type_id=oci_stack_monitoring_monitored_resource_type["test_monitored_resource_type"]["id"])
+    test_monitored_resource_type = oci.StackMonitoring.get_monitored_resource_type(monitored_resource_type_id=test_monitored_resource_type_oci_stack_monitoring_monitored_resource_type["id"])
     ```
     <!--End PulumiCodeChooser -->
 

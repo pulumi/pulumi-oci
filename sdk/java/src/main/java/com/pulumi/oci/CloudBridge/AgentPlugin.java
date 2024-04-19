@@ -45,9 +45,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAgentPlugin = new AgentPlugin(&#34;testAgentPlugin&#34;, AgentPluginArgs.builder()        
- *             .agentId(oci_cloud_bridge_agent.test_agent().id())
- *             .pluginName(var_.agent_plugin_plugin_name())
- *             .desiredState(var_.agent_plugin_desired_state())
+ *             .agentId(testAgent.id())
+ *             .pluginName(agentPluginPluginName)
+ *             .desiredState(agentPluginDesiredState)
  *             .build());
  * 
  *     }

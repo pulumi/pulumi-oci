@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSenders = oci.Email.getSenders({
- *     compartmentId: _var.compartment_id,
- *     domain: _var.sender_domain,
- *     emailAddress: _var.sender_email_address,
- *     state: _var.sender_state,
+ *     compartmentId: compartmentId,
+ *     domain: senderDomain,
+ *     emailAddress: senderEmailAddress,
+ *     state: senderState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetSendersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSenders = oci.Email.getSenders({
- *     compartmentId: _var.compartment_id,
- *     domain: _var.sender_domain,
- *     emailAddress: _var.sender_email_address,
- *     state: _var.sender_state,
+ *     compartmentId: compartmentId,
+ *     domain: senderDomain,
+ *     emailAddress: senderEmailAddress,
+ *     state: senderState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

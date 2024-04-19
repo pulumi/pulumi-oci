@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNotificationTopics = oci.Ons.getNotificationTopics({
- *     compartmentId: _var.compartment_id,
- *     id: _var.notification_topic_id,
- *     name: _var.notification_topic_name,
- *     state: _var.notification_topic_state,
+ *     compartmentId: compartmentId,
+ *     id: notificationTopicId,
+ *     name: notificationTopicName,
+ *     state: notificationTopicState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetNotificationTopicsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNotificationTopics = oci.Ons.getNotificationTopics({
- *     compartmentId: _var.compartment_id,
- *     id: _var.notification_topic_id,
- *     name: _var.notification_topic_name,
- *     state: _var.notification_topic_state,
+ *     compartmentId: compartmentId,
+ *     id: notificationTopicId,
+ *     name: notificationTopicName,
+ *     state: notificationTopicState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

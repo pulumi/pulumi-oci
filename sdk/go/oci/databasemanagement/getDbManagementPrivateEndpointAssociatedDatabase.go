@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabase(ctx, &databasemanagement.GetDbManagementPrivateEndpointAssociatedDatabaseArgs{
-//				CompartmentId:                 _var.Compartment_id,
-//				DbManagementPrivateEndpointId: oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
+//				CompartmentId:                 compartmentId,
+//				DbManagementPrivateEndpointId: testDbManagementPrivateEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

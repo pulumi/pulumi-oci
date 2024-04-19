@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsOauthPartnerCertificates(ctx, &identity.GetDomainsOauthPartnerCertificatesArgs{
-//				IdcsEndpoint:                  data.Oci_identity_domain.Test_domain.Url,
-//				OauthPartnerCertificateCount:  pulumi.IntRef(_var.Oauth_partner_certificate_oauth_partner_certificate_count),
-//				OauthPartnerCertificateFilter: pulumi.StringRef(_var.Oauth_partner_certificate_oauth_partner_certificate_filter),
-//				Authorization:                 pulumi.StringRef(_var.Oauth_partner_certificate_authorization),
-//				ResourceTypeSchemaVersion:     pulumi.StringRef(_var.Oauth_partner_certificate_resource_type_schema_version),
-//				StartIndex:                    pulumi.IntRef(_var.Oauth_partner_certificate_start_index),
+//				IdcsEndpoint:                  testDomain.Url,
+//				OauthPartnerCertificateCount:  pulumi.IntRef(oauthPartnerCertificateOauthPartnerCertificateCount),
+//				OauthPartnerCertificateFilter: pulumi.StringRef(oauthPartnerCertificateOauthPartnerCertificateFilter),
+//				Authorization:                 pulumi.StringRef(oauthPartnerCertificateAuthorization),
+//				ResourceTypeSchemaVersion:     pulumi.StringRef(oauthPartnerCertificateResourceTypeSchemaVersion),
+//				StartIndex:                    pulumi.IntRef(oauthPartnerCertificateStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

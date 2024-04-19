@@ -25,31 +25,31 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBuildRun = new Oci.DevOps.BuildRun("testBuildRun", new()
+    ///     var testBuildRun = new Oci.DevOps.BuildRun("test_build_run", new()
     ///     {
-    ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+    ///         BuildPipelineId = testBuildPipeline.Id,
     ///         BuildRunArguments = new Oci.DevOps.Inputs.BuildRunBuildRunArgumentsArgs
     ///         {
     ///             Items = new[]
     ///             {
     ///                 new Oci.DevOps.Inputs.BuildRunBuildRunArgumentsItemArgs
     ///                 {
-    ///                     Name = @var.Build_run_build_run_arguments_items_name,
-    ///                     Value = @var.Build_run_build_run_arguments_items_value,
+    ///                     Name = buildRunBuildRunArgumentsItemsName,
+    ///                     Value = buildRunBuildRunArgumentsItemsValue,
     ///                 },
     ///             },
     ///         },
     ///         CommitInfo = new Oci.DevOps.Inputs.BuildRunCommitInfoArgs
     ///         {
-    ///             CommitHash = @var.Build_run_commit_info_commit_hash,
-    ///             RepositoryBranch = @var.Build_run_commit_info_repository_branch,
-    ///             RepositoryUrl = @var.Build_run_commit_info_repository_url,
+    ///             CommitHash = buildRunCommitInfoCommitHash,
+    ///             RepositoryBranch = buildRunCommitInfoRepositoryBranch,
+    ///             RepositoryUrl = buildRunCommitInfoRepositoryUrl,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Build_run_display_name,
+    ///         DisplayName = buildRunDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

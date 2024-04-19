@@ -49,10 +49,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDkim = new Dkim(&#34;testDkim&#34;, DkimArgs.builder()        
- *             .emailDomainId(oci_email_email_domain.test_email_domain().id())
+ *             .emailDomainId(testEmailDomain.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.dkim_description())
+ *             .description(dkimDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .name(dkimName)
  *             .build());
  * 
  *     }

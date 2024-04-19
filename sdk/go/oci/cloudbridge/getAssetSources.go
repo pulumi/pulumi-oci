@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetAssetSources(ctx, &cloudbridge.GetAssetSourcesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				AssetSourceId: pulumi.StringRef(oci_cloud_bridge_asset_source.Test_asset_source.Id),
-//				DisplayName:   pulumi.StringRef(_var.Asset_source_display_name),
-//				State:         pulumi.StringRef(_var.Asset_source_state),
+//				CompartmentId: compartmentId,
+//				AssetSourceId: pulumi.StringRef(testAssetSource.Id),
+//				DisplayName:   pulumi.StringRef(assetSourceDisplayName),
+//				State:         pulumi.StringRef(assetSourceState),
 //			}, nil)
 //			if err != nil {
 //				return err

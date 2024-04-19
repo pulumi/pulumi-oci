@@ -54,12 +54,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagement.GetManagedInstanceStreamProfile(ctx, &osmanagement.GetManagedInstanceStreamProfileArgs{
-//				ManagedInstanceId: _var.Managed_instance_id,
-//				CompartmentId:     pulumi.StringRef(_var.Compartment_id),
-//				ModuleName:        pulumi.StringRef(_var.Managed_instance_module_name),
-//				ProfileName:       pulumi.StringRef(_var.Managed_instance_module_stream_profile_name),
-//				ProfileStatus:     pulumi.StringRef(_var.Managed_instance_profile_status),
-//				StreamName:        pulumi.StringRef(_var.Managed_instance_module_stream_name),
+//				ManagedInstanceId: managedInstanceId,
+//				CompartmentId:     pulumi.StringRef(compartmentId),
+//				ModuleName:        pulumi.StringRef(managedInstanceModuleName),
+//				ProfileName:       pulumi.StringRef(managedInstanceModuleStreamProfileName),
+//				ProfileStatus:     pulumi.StringRef(managedInstanceProfileStatus),
+//				StreamName:        pulumi.StringRef(managedInstanceModuleStreamName),
 //			}, nil)
 //			if err != nil {
 //				return err

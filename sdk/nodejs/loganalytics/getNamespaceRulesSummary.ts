@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceRulesSummary = oci.LogAnalytics.getNamespaceRulesSummary({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.namespace_rules_summary_namespace,
+ *     compartmentId: compartmentId,
+ *     namespace: namespaceRulesSummaryNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetNamespaceRulesSummaryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceRulesSummary = oci.LogAnalytics.getNamespaceRulesSummary({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.namespace_rules_summary_namespace,
+ *     compartmentId: compartmentId,
+ *     namespace: namespaceRulesSummaryNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

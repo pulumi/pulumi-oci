@@ -35,32 +35,32 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewComputeCapacityReservation(ctx, "testComputeCapacityReservation", &Core.ComputeCapacityReservationArgs{
-//				AvailabilityDomain: pulumi.Any(_var.Compute_capacity_reservation_availability_domain),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewComputeCapacityReservation(ctx, "test_compute_capacity_reservation", &Core.ComputeCapacityReservationArgs{
+//				AvailabilityDomain: pulumi.Any(computeCapacityReservationAvailabilityDomain),
+//				CompartmentId:      pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Compute_capacity_reservation_display_name),
+//				DisplayName: pulumi.Any(computeCapacityReservationDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				InstanceReservationConfigs: core.ComputeCapacityReservationInstanceReservationConfigArray{
 //					&core.ComputeCapacityReservationInstanceReservationConfigArgs{
-//						InstanceShape: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape),
-//						ReservedCount: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_reserved_count),
+//						InstanceShape: pulumi.Any(computeCapacityReservationInstanceReservationConfigsInstanceShape),
+//						ReservedCount: pulumi.Any(computeCapacityReservationInstanceReservationConfigsReservedCount),
 //						ClusterConfig: &core.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs{
-//							HpcIslandId:     pulumi.Any(oci_core_hpc_island.Test_hpc_island.Id),
-//							NetworkBlockIds: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids),
+//							HpcIslandId:     pulumi.Any(testHpcIsland.Id),
+//							NetworkBlockIds: pulumi.Any(computeCapacityReservationInstanceReservationConfigsClusterConfigNetworkBlockIds),
 //						},
-//						FaultDomain: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_fault_domain),
+//						FaultDomain: pulumi.Any(computeCapacityReservationInstanceReservationConfigsFaultDomain),
 //						InstanceShapeConfig: &core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs{
-//							MemoryInGbs: pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs),
-//							Ocpus:       pulumi.Any(_var.Compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus),
+//							MemoryInGbs: pulumi.Any(computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigMemoryInGbs),
+//							Ocpus:       pulumi.Any(computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigOcpus),
 //						},
 //					},
 //				},
-//				IsDefaultReservation: pulumi.Any(_var.Compute_capacity_reservation_is_default_reservation),
+//				IsDefaultReservation: pulumi.Any(computeCapacityReservationIsDefaultReservation),
 //			})
 //			if err != nil {
 //				return err

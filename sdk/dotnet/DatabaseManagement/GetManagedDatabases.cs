@@ -35,12 +35,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabases = Oci.DatabaseManagement.GetManagedDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeploymentType = @var.Managed_database_deployment_type,
-        ///         ExternalExadataInfrastructureId = oci_database_management_external_exadata_infrastructure.Test_external_exadata_infrastructure.Id,
-        ///         Id = @var.Managed_database_id,
-        ///         ManagementOption = @var.Managed_database_management_option,
-        ///         Name = @var.Managed_database_name,
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentType = managedDatabaseDeploymentType,
+        ///         ExternalExadataInfrastructureId = testExternalExadataInfrastructure.Id,
+        ///         Id = managedDatabaseId,
+        ///         ManagementOption = managedDatabaseManagementOption,
+        ///         Name = managedDatabaseName,
         ///     });
         /// 
         /// });
@@ -74,12 +74,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabases = Oci.DatabaseManagement.GetManagedDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeploymentType = @var.Managed_database_deployment_type,
-        ///         ExternalExadataInfrastructureId = oci_database_management_external_exadata_infrastructure.Test_external_exadata_infrastructure.Id,
-        ///         Id = @var.Managed_database_id,
-        ///         ManagementOption = @var.Managed_database_management_option,
-        ///         Name = @var.Managed_database_name,
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentType = managedDatabaseDeploymentType,
+        ///         ExternalExadataInfrastructureId = testExternalExadataInfrastructure.Id,
+        ///         Id = managedDatabaseId,
+        ///         ManagementOption = managedDatabaseManagementOption,
+        ///         Name = managedDatabaseName,
         ///     });
         /// 
         /// });

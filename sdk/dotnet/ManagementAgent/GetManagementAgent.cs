@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgent = Oci.ManagementAgent.GetManagementAgent.Invoke(new()
         ///     {
-        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+        ///         ManagementAgentId = testManagementAgentOciManagementAgentManagementAgent.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgent = Oci.ManagementAgent.GetManagementAgent.Invoke(new()
         ///     {
-        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+        ///         ManagementAgentId = testManagementAgentOciManagementAgentManagementAgent.Id,
         ///     });
         /// 
         /// });

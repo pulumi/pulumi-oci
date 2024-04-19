@@ -138,9 +138,9 @@ class DomainReplicationToRegion(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_domain_replication_to_region = oci.identity.DomainReplicationToRegion("testDomainReplicationToRegion",
-            domain_id=oci_identity_domain["test_domain"]["id"],
-            replica_region=var["domain_replication_to_region_replica_region"])
+        test_domain_replication_to_region = oci.identity.DomainReplicationToRegion("test_domain_replication_to_region",
+            domain_id=test_domain["id"],
+            replica_region=domain_replication_to_region_replica_region)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -187,9 +187,9 @@ class DomainReplicationToRegion(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_domain_replication_to_region = oci.identity.DomainReplicationToRegion("testDomainReplicationToRegion",
-            domain_id=oci_identity_domain["test_domain"]["id"],
-            replica_region=var["domain_replication_to_region_replica_region"])
+        test_domain_replication_to_region = oci.identity.DomainReplicationToRegion("test_domain_replication_to_region",
+            domain_id=test_domain["id"],
+            replica_region=domain_replication_to_region_replica_region)
         ```
         <!--End PulumiCodeChooser -->
 

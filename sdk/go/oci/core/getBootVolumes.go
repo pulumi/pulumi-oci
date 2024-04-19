@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetBootVolumes(ctx, &core.GetBootVolumesArgs{
-//				AvailabilityDomain: pulumi.StringRef(_var.Boot_volume_availability_domain),
-//				CompartmentId:      pulumi.StringRef(_var.Compartment_id),
-//				VolumeGroupId:      pulumi.StringRef(oci_core_volume_group.Test_volume_group.Id),
+//				AvailabilityDomain: pulumi.StringRef(bootVolumeAvailabilityDomain),
+//				CompartmentId:      pulumi.StringRef(compartmentId),
+//				VolumeGroupId:      pulumi.StringRef(testVolumeGroup.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

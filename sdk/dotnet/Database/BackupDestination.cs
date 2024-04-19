@@ -25,26 +25,26 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBackupDestination = new Oci.Database.BackupDestination("testBackupDestination", new()
+    ///     var testBackupDestination = new Oci.Database.BackupDestination("test_backup_destination", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Backup_destination_display_name,
-    ///         Type = @var.Backup_destination_type,
-    ///         ConnectionString = @var.Backup_destination_connection_string,
-    ///         DefinedTags = @var.Backup_destination_defined_tags,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = backupDestinationDisplayName,
+    ///         Type = backupDestinationType,
+    ///         ConnectionString = backupDestinationConnectionString,
+    ///         DefinedTags = backupDestinationDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         LocalMountPointPath = @var.Backup_destination_local_mount_point_path,
+    ///         LocalMountPointPath = backupDestinationLocalMountPointPath,
     ///         MountTypeDetails = new Oci.Database.Inputs.BackupDestinationMountTypeDetailsArgs
     ///         {
-    ///             MountType = @var.Backup_destination_mount_type_details_mount_type,
-    ///             LocalMountPointPath = @var.Backup_destination_mount_type_details_local_mount_point_path,
-    ///             NfsServers = @var.Backup_destination_mount_type_details_nfs_server,
-    ///             NfsServerExport = @var.Backup_destination_mount_type_details_nfs_server_export,
+    ///             MountType = backupDestinationMountTypeDetailsMountType,
+    ///             LocalMountPointPath = backupDestinationMountTypeDetailsLocalMountPointPath,
+    ///             NfsServers = backupDestinationMountTypeDetailsNfsServer,
+    ///             NfsServerExport = backupDestinationMountTypeDetailsNfsServerExport,
     ///         },
-    ///         VpcUsers = @var.Backup_destination_vpc_users,
+    ///         VpcUsers = backupDestinationVpcUsers,
     ///     });
     /// 
     /// });

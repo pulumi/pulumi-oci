@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAddressList = oci.Waas.getAddressList({
- *     addressListId: oci_waas_address_list.test_address_list.id,
+ *     addressListId: testAddressListOciWaasAddressList.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,7 +95,7 @@ export interface GetAddressListResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAddressList = oci.Waas.getAddressList({
- *     addressListId: oci_waas_address_list.test_address_list.id,
+ *     addressListId: testAddressListOciWaasAddressList.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,8 +31,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVirtualCircuitPublicPrefixes = Oci.Core.GetVirtualCircuitPublicPrefixes.Invoke(new()
         ///     {
-        ///         VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
-        ///         VerificationState = @var.Virtual_circuit_public_prefix_verification_state,
+        ///         VirtualCircuitId = testVirtualCircuit.Id,
+        ///         VerificationState = virtualCircuitPublicPrefixVerificationState,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVirtualCircuitPublicPrefixes = Oci.Core.GetVirtualCircuitPublicPrefixes.Invoke(new()
         ///     {
-        ///         VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
-        ///         VerificationState = @var.Virtual_circuit_public_prefix_verification_state,
+        ///         VirtualCircuitId = testVirtualCircuit.Id,
+        ///         VerificationState = virtualCircuitPublicPrefixVerificationState,
         ///     });
         /// 
         /// });

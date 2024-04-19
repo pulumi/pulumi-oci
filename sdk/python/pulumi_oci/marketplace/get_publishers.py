@@ -101,8 +101,8 @@ def get_publishers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publishers = oci.Marketplace.get_publishers(compartment_id=var["compartment_id"],
-        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
+    test_publishers = oci.Marketplace.get_publishers(compartment_id=compartment_id,
+        publisher_id=test_publisher["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,8 +142,8 @@ def get_publishers_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_publishers = oci.Marketplace.get_publishers(compartment_id=var["compartment_id"],
-        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
+    test_publishers = oci.Marketplace.get_publishers(compartment_id=compartment_id,
+        publisher_id=test_publisher["id"])
     ```
     <!--End PulumiCodeChooser -->
 

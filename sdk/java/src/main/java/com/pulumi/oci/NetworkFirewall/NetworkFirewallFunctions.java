@@ -113,7 +113,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
-     *             .networkFirewallId(oci_network_firewall_network_firewall.test_network_firewall().id())
+     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.id())
      *             .build());
      * 
      *     }
@@ -155,7 +155,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
-     *             .networkFirewallId(oci_network_firewall_network_firewall.test_network_firewall().id())
+     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.id())
      *             .build());
      * 
      *     }
@@ -197,7 +197,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
-     *             .networkFirewallId(oci_network_firewall_network_firewall.test_network_firewall().id())
+     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.id())
      *             .build());
      * 
      *     }
@@ -239,7 +239,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewall = NetworkFirewallFunctions.getNetworkFirewall(GetNetworkFirewallArgs.builder()
-     *             .networkFirewallId(oci_network_firewall_network_firewall.test_network_firewall().id())
+     *             .networkFirewallId(testNetworkFirewallOciNetworkFirewallNetworkFirewall.id())
      *             .build());
      * 
      *     }
@@ -281,10 +281,10 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicies = NetworkFirewallFunctions.getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_firewall_policy_display_name())
-     *             .id(var_.network_firewall_policy_id())
-     *             .state(var_.network_firewall_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkFirewallPolicyDisplayName)
+     *             .id(networkFirewallPolicyId)
+     *             .state(networkFirewallPolicyState)
      *             .build());
      * 
      *     }
@@ -326,10 +326,10 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicies = NetworkFirewallFunctions.getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_firewall_policy_display_name())
-     *             .id(var_.network_firewall_policy_id())
-     *             .state(var_.network_firewall_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkFirewallPolicyDisplayName)
+     *             .id(networkFirewallPolicyId)
+     *             .state(networkFirewallPolicyState)
      *             .build());
      * 
      *     }
@@ -371,10 +371,10 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicies = NetworkFirewallFunctions.getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_firewall_policy_display_name())
-     *             .id(var_.network_firewall_policy_id())
-     *             .state(var_.network_firewall_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkFirewallPolicyDisplayName)
+     *             .id(networkFirewallPolicyId)
+     *             .state(networkFirewallPolicyState)
      *             .build());
      * 
      *     }
@@ -416,10 +416,10 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicies = NetworkFirewallFunctions.getNetworkFirewallPolicies(GetNetworkFirewallPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_firewall_policy_display_name())
-     *             .id(var_.network_firewall_policy_id())
-     *             .state(var_.network_firewall_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkFirewallPolicyDisplayName)
+     *             .id(networkFirewallPolicyId)
+     *             .state(networkFirewallPolicyState)
      *             .build());
      * 
      *     }
@@ -461,7 +461,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -503,7 +503,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -545,7 +545,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -587,7 +587,7 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicy = NetworkFirewallFunctions.getNetworkFirewallPolicy(GetNetworkFirewallPolicyArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicyOciNetworkFirewallNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -629,8 +629,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
-     *             .addressListName(oci_waas_address_list.test_address_list().name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .addressListName(testAddressList.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -672,8 +672,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
-     *             .addressListName(oci_waas_address_list.test_address_list().name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .addressListName(testAddressList.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -715,8 +715,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
-     *             .addressListName(oci_waas_address_list.test_address_list().name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .addressListName(testAddressList.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -758,8 +758,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
-     *             .addressListName(oci_waas_address_list.test_address_list().name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .addressListName(testAddressList.name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -801,8 +801,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_address_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyAddressListDisplayName)
      *             .build());
      * 
      *     }
@@ -844,8 +844,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_address_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyAddressListDisplayName)
      *             .build());
      * 
      *     }
@@ -887,8 +887,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_address_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyAddressListDisplayName)
      *             .build());
      * 
      *     }
@@ -930,8 +930,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyAddressLists = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressLists(GetNetworkFirewallPolicyAddressListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_address_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyAddressListDisplayName)
      *             .build());
      * 
      *     }
@@ -973,8 +973,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
-     *             .applicationName(var_.network_firewall_policy_application_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .applicationName(networkFirewallPolicyApplicationName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1016,8 +1016,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
-     *             .applicationName(var_.network_firewall_policy_application_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .applicationName(networkFirewallPolicyApplicationName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1059,8 +1059,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
-     *             .applicationName(var_.network_firewall_policy_application_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .applicationName(networkFirewallPolicyApplicationName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1102,8 +1102,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
-     *             .applicationName(var_.network_firewall_policy_application_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .applicationName(networkFirewallPolicyApplicationName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1145,8 +1145,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
-     *             .applicationGroupName(var_.network_firewall_policy_application_group_display_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .applicationGroupName(networkFirewallPolicyApplicationGroupDisplayName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1188,8 +1188,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
-     *             .applicationGroupName(var_.network_firewall_policy_application_group_display_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .applicationGroupName(networkFirewallPolicyApplicationGroupDisplayName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1231,8 +1231,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
-     *             .applicationGroupName(var_.network_firewall_policy_application_group_display_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .applicationGroupName(networkFirewallPolicyApplicationGroupDisplayName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1274,8 +1274,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
-     *             .applicationGroupName(var_.network_firewall_policy_application_group_display_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .applicationGroupName(networkFirewallPolicyApplicationGroupDisplayName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1317,8 +1317,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_application_group_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyApplicationGroupDisplayName)
      *             .build());
      * 
      *     }
@@ -1360,8 +1360,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_application_group_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyApplicationGroupDisplayName)
      *             .build());
      * 
      *     }
@@ -1403,8 +1403,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_application_group_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyApplicationGroupDisplayName)
      *             .build());
      * 
      *     }
@@ -1446,8 +1446,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplicationGroups = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroups(GetNetworkFirewallPolicyApplicationGroupsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_application_group_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyApplicationGroupDisplayName)
      *             .build());
      * 
      *     }
@@ -1489,8 +1489,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_application_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyApplicationDisplayName)
      *             .build());
      * 
      *     }
@@ -1532,8 +1532,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_application_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyApplicationDisplayName)
      *             .build());
      * 
      *     }
@@ -1575,8 +1575,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_application_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyApplicationDisplayName)
      *             .build());
      * 
      *     }
@@ -1618,8 +1618,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyApplications = NetworkFirewallFunctions.getNetworkFirewallPolicyApplications(GetNetworkFirewallPolicyApplicationsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_application_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyApplicationDisplayName)
      *             .build());
      * 
      *     }
@@ -1661,8 +1661,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
-     *             .decryptionProfileName(var_.oci_network_firewall_network_firewall_policy_decryption_profile_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionProfileName(ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1704,8 +1704,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
-     *             .decryptionProfileName(var_.oci_network_firewall_network_firewall_policy_decryption_profile_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionProfileName(ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1747,8 +1747,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
-     *             .decryptionProfileName(var_.oci_network_firewall_network_firewall_policy_decryption_profile_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionProfileName(ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1790,8 +1790,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
-     *             .decryptionProfileName(var_.oci_network_firewall_network_firewall_policy_decryption_profile_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionProfileName(ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -1833,8 +1833,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_decryption_profile_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyDecryptionProfileDisplayName)
      *             .build());
      * 
      *     }
@@ -1876,8 +1876,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_decryption_profile_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyDecryptionProfileDisplayName)
      *             .build());
      * 
      *     }
@@ -1919,8 +1919,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_decryption_profile_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyDecryptionProfileDisplayName)
      *             .build());
      * 
      *     }
@@ -1962,8 +1962,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionProfiles = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfiles(GetNetworkFirewallPolicyDecryptionProfilesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_decryption_profile_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyDecryptionProfileDisplayName)
      *             .build());
      * 
      *     }
@@ -2005,8 +2005,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
-     *             .decryptionRuleName(var_.oci_network_firewall_network_firewall_policy_decryption_rule_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionRuleName(ociNetworkFirewallNetworkFirewallPolicyDecryptionRuleName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -2048,8 +2048,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
-     *             .decryptionRuleName(var_.oci_network_firewall_network_firewall_policy_decryption_rule_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionRuleName(ociNetworkFirewallNetworkFirewallPolicyDecryptionRuleName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -2091,8 +2091,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
-     *             .decryptionRuleName(var_.oci_network_firewall_network_firewall_policy_decryption_rule_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionRuleName(ociNetworkFirewallNetworkFirewallPolicyDecryptionRuleName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -2134,8 +2134,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
-     *             .decryptionRuleName(var_.oci_network_firewall_network_firewall_policy_decryption_rule_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .decryptionRuleName(ociNetworkFirewallNetworkFirewallPolicyDecryptionRuleName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -2177,9 +2177,9 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .decryptionRulePriorityOrder(var_.network_firewall_policy_decryption_rule_decryption_rule_priority_order())
-     *             .displayName(var_.network_firewall_policy_decryption_rule_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .decryptionRulePriorityOrder(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder)
+     *             .displayName(networkFirewallPolicyDecryptionRuleDisplayName)
      *             .build());
      * 
      *     }
@@ -2221,9 +2221,9 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .decryptionRulePriorityOrder(var_.network_firewall_policy_decryption_rule_decryption_rule_priority_order())
-     *             .displayName(var_.network_firewall_policy_decryption_rule_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .decryptionRulePriorityOrder(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder)
+     *             .displayName(networkFirewallPolicyDecryptionRuleDisplayName)
      *             .build());
      * 
      *     }
@@ -2265,9 +2265,9 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .decryptionRulePriorityOrder(var_.network_firewall_policy_decryption_rule_decryption_rule_priority_order())
-     *             .displayName(var_.network_firewall_policy_decryption_rule_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .decryptionRulePriorityOrder(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder)
+     *             .displayName(networkFirewallPolicyDecryptionRuleDisplayName)
      *             .build());
      * 
      *     }
@@ -2309,9 +2309,9 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyDecryptionRules = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRules(GetNetworkFirewallPolicyDecryptionRulesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .decryptionRulePriorityOrder(var_.network_firewall_policy_decryption_rule_decryption_rule_priority_order())
-     *             .displayName(var_.network_firewall_policy_decryption_rule_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .decryptionRulePriorityOrder(networkFirewallPolicyDecryptionRuleDecryptionRulePriorityOrder)
+     *             .displayName(networkFirewallPolicyDecryptionRuleDisplayName)
      *             .build());
      * 
      *     }
@@ -2353,8 +2353,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
-     *             .mappedSecretName(var_.oci_network_firewall_network_firewall_policy_mapped_secret_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .mappedSecretName(ociNetworkFirewallNetworkFirewallPolicyMappedSecretName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -2396,8 +2396,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
-     *             .mappedSecretName(var_.oci_network_firewall_network_firewall_policy_mapped_secret_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .mappedSecretName(ociNetworkFirewallNetworkFirewallPolicyMappedSecretName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -2439,8 +2439,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
-     *             .mappedSecretName(var_.oci_network_firewall_network_firewall_policy_mapped_secret_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .mappedSecretName(ociNetworkFirewallNetworkFirewallPolicyMappedSecretName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -2482,8 +2482,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
-     *             .mappedSecretName(var_.oci_network_firewall_network_firewall_policy_mapped_secret_name())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+     *             .mappedSecretName(ociNetworkFirewallNetworkFirewallPolicyMappedSecretName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
      *             .build());
      * 
      *     }
@@ -2525,8 +2525,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_mapped_secret_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyMappedSecretDisplayName)
      *             .build());
      * 
      *     }
@@ -2568,8 +2568,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_mapped_secret_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyMappedSecretDisplayName)
      *             .build());
      * 
      *     }
@@ -2611,8 +2611,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_mapped_secret_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyMappedSecretDisplayName)
      *             .build());
      * 
      *     }
@@ -2654,8 +2654,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyMappedSecrets = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecrets(GetNetworkFirewallPolicyMappedSecretsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_mapped_secret_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyMappedSecretDisplayName)
      *             .build());
      * 
      *     }
@@ -2697,8 +2697,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .securityRuleName(var_.oci_network_firewall_network_firewall_policy_security_rule_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .securityRuleName(ociNetworkFirewallNetworkFirewallPolicySecurityRuleName)
      *             .build());
      * 
      *     }
@@ -2740,8 +2740,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .securityRuleName(var_.oci_network_firewall_network_firewall_policy_security_rule_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .securityRuleName(ociNetworkFirewallNetworkFirewallPolicySecurityRuleName)
      *             .build());
      * 
      *     }
@@ -2783,8 +2783,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .securityRuleName(var_.oci_network_firewall_network_firewall_policy_security_rule_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .securityRuleName(ociNetworkFirewallNetworkFirewallPolicySecurityRuleName)
      *             .build());
      * 
      *     }
@@ -2826,8 +2826,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .securityRuleName(var_.oci_network_firewall_network_firewall_policy_security_rule_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .securityRuleName(ociNetworkFirewallNetworkFirewallPolicySecurityRuleName)
      *             .build());
      * 
      *     }
@@ -2869,9 +2869,9 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_security_rule_display_name())
-     *             .securityRulePriorityOrder(var_.network_firewall_policy_security_rule_security_rule_priority_order())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicySecurityRuleDisplayName)
+     *             .securityRulePriorityOrder(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder)
      *             .build());
      * 
      *     }
@@ -2913,9 +2913,9 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_security_rule_display_name())
-     *             .securityRulePriorityOrder(var_.network_firewall_policy_security_rule_security_rule_priority_order())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicySecurityRuleDisplayName)
+     *             .securityRulePriorityOrder(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder)
      *             .build());
      * 
      *     }
@@ -2957,9 +2957,9 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_security_rule_display_name())
-     *             .securityRulePriorityOrder(var_.network_firewall_policy_security_rule_security_rule_priority_order())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicySecurityRuleDisplayName)
+     *             .securityRulePriorityOrder(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder)
      *             .build());
      * 
      *     }
@@ -3001,9 +3001,9 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicySecurityRules = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRules(GetNetworkFirewallPolicySecurityRulesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_security_rule_display_name())
-     *             .securityRulePriorityOrder(var_.network_firewall_policy_security_rule_security_rule_priority_order())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicySecurityRuleDisplayName)
+     *             .securityRulePriorityOrder(networkFirewallPolicySecurityRuleSecurityRulePriorityOrder)
      *             .build());
      * 
      *     }
@@ -3045,8 +3045,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .serviceName(var_.oci_network_firewall_network_firewall_policy_service_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .serviceName(ociNetworkFirewallNetworkFirewallPolicyServiceName)
      *             .build());
      * 
      *     }
@@ -3088,8 +3088,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .serviceName(var_.oci_network_firewall_network_firewall_policy_service_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .serviceName(ociNetworkFirewallNetworkFirewallPolicyServiceName)
      *             .build());
      * 
      *     }
@@ -3131,8 +3131,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .serviceName(var_.oci_network_firewall_network_firewall_policy_service_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .serviceName(ociNetworkFirewallNetworkFirewallPolicyServiceName)
      *             .build());
      * 
      *     }
@@ -3174,8 +3174,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .serviceName(var_.oci_network_firewall_network_firewall_policy_service_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .serviceName(ociNetworkFirewallNetworkFirewallPolicyServiceName)
      *             .build());
      * 
      *     }
@@ -3217,8 +3217,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .serviceListName(var_.network_firewall_policy_service_list_service_list_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .serviceListName(networkFirewallPolicyServiceListServiceListName)
      *             .build());
      * 
      *     }
@@ -3260,8 +3260,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .serviceListName(var_.network_firewall_policy_service_list_service_list_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .serviceListName(networkFirewallPolicyServiceListServiceListName)
      *             .build());
      * 
      *     }
@@ -3303,8 +3303,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .serviceListName(var_.network_firewall_policy_service_list_service_list_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .serviceListName(networkFirewallPolicyServiceListServiceListName)
      *             .build());
      * 
      *     }
@@ -3346,8 +3346,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .serviceListName(var_.network_firewall_policy_service_list_service_list_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .serviceListName(networkFirewallPolicyServiceListServiceListName)
      *             .build());
      * 
      *     }
@@ -3389,8 +3389,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_service_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyServiceListDisplayName)
      *             .build());
      * 
      *     }
@@ -3432,8 +3432,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_service_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyServiceListDisplayName)
      *             .build());
      * 
      *     }
@@ -3475,8 +3475,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_service_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyServiceListDisplayName)
      *             .build());
      * 
      *     }
@@ -3518,8 +3518,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServiceLists = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceLists(GetNetworkFirewallPolicyServiceListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_service_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyServiceListDisplayName)
      *             .build());
      * 
      *     }
@@ -3561,8 +3561,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_service_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyServiceDisplayName)
      *             .build());
      * 
      *     }
@@ -3604,8 +3604,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_service_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyServiceDisplayName)
      *             .build());
      * 
      *     }
@@ -3647,8 +3647,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_service_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyServiceDisplayName)
      *             .build());
      * 
      *     }
@@ -3690,8 +3690,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyServices = NetworkFirewallFunctions.getNetworkFirewallPolicyServices(GetNetworkFirewallPolicyServicesArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_service_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyServiceDisplayName)
      *             .build());
      * 
      *     }
@@ -3733,8 +3733,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .urlListName(var_.network_firewall_policy_url_list_url_list_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .urlListName(networkFirewallPolicyUrlListUrlListName)
      *             .build());
      * 
      *     }
@@ -3776,8 +3776,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .urlListName(var_.network_firewall_policy_url_list_url_list_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .urlListName(networkFirewallPolicyUrlListUrlListName)
      *             .build());
      * 
      *     }
@@ -3819,8 +3819,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .urlListName(var_.network_firewall_policy_url_list_url_list_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .urlListName(networkFirewallPolicyUrlListUrlListName)
      *             .build());
      * 
      *     }
@@ -3862,8 +3862,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .urlListName(var_.network_firewall_policy_url_list_url_list_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .urlListName(networkFirewallPolicyUrlListUrlListName)
      *             .build());
      * 
      *     }
@@ -3905,8 +3905,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_url_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyUrlListDisplayName)
      *             .build());
      * 
      *     }
@@ -3948,8 +3948,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_url_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyUrlListDisplayName)
      *             .build());
      * 
      *     }
@@ -3991,8 +3991,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_url_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyUrlListDisplayName)
      *             .build());
      * 
      *     }
@@ -4034,8 +4034,8 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewallPolicyUrlLists = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlLists(GetNetworkFirewallPolicyUrlListsArgs.builder()
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .displayName(var_.network_firewall_policy_url_list_display_name())
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .displayName(networkFirewallPolicyUrlListDisplayName)
      *             .build());
      * 
      *     }
@@ -4077,12 +4077,12 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewalls = NetworkFirewallFunctions.getNetworkFirewalls(GetNetworkFirewallsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.network_firewall_availability_domain())
-     *             .displayName(var_.network_firewall_display_name())
-     *             .id(var_.network_firewall_id())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .state(var_.network_firewall_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(networkFirewallAvailabilityDomain)
+     *             .displayName(networkFirewallDisplayName)
+     *             .id(networkFirewallId)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .state(networkFirewallState)
      *             .build());
      * 
      *     }
@@ -4124,12 +4124,12 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewalls = NetworkFirewallFunctions.getNetworkFirewalls(GetNetworkFirewallsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.network_firewall_availability_domain())
-     *             .displayName(var_.network_firewall_display_name())
-     *             .id(var_.network_firewall_id())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .state(var_.network_firewall_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(networkFirewallAvailabilityDomain)
+     *             .displayName(networkFirewallDisplayName)
+     *             .id(networkFirewallId)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .state(networkFirewallState)
      *             .build());
      * 
      *     }
@@ -4171,12 +4171,12 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewalls = NetworkFirewallFunctions.getNetworkFirewalls(GetNetworkFirewallsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.network_firewall_availability_domain())
-     *             .displayName(var_.network_firewall_display_name())
-     *             .id(var_.network_firewall_id())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .state(var_.network_firewall_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(networkFirewallAvailabilityDomain)
+     *             .displayName(networkFirewallDisplayName)
+     *             .id(networkFirewallId)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .state(networkFirewallState)
      *             .build());
      * 
      *     }
@@ -4218,12 +4218,12 @@ public final class NetworkFirewallFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkFirewalls = NetworkFirewallFunctions.getNetworkFirewalls(GetNetworkFirewallsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.network_firewall_availability_domain())
-     *             .displayName(var_.network_firewall_display_name())
-     *             .id(var_.network_firewall_id())
-     *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
-     *             .state(var_.network_firewall_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(networkFirewallAvailabilityDomain)
+     *             .displayName(networkFirewallDisplayName)
+     *             .id(networkFirewallId)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+     *             .state(networkFirewallState)
      *             .build());
      * 
      *     }

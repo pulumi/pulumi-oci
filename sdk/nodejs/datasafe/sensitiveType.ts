@@ -18,24 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveType = new oci.datasafe.SensitiveType("testSensitiveType", {
- *     compartmentId: _var.compartment_id,
- *     entityType: _var.sensitive_type_entity_type,
- *     commentPattern: _var.sensitive_type_comment_pattern,
- *     dataPattern: _var.sensitive_type_data_pattern,
- *     defaultMaskingFormatId: oci_data_safe_default_masking_format.test_default_masking_format.id,
+ * const testSensitiveType = new oci.datasafe.SensitiveType("test_sensitive_type", {
+ *     compartmentId: compartmentId,
+ *     entityType: sensitiveTypeEntityType,
+ *     commentPattern: sensitiveTypeCommentPattern,
+ *     dataPattern: sensitiveTypeDataPattern,
+ *     defaultMaskingFormatId: testDefaultMaskingFormat.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.sensitive_type_description,
- *     displayName: _var.sensitive_type_display_name,
+ *     description: sensitiveTypeDescription,
+ *     displayName: sensitiveTypeDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     namePattern: _var.sensitive_type_name_pattern,
- *     parentCategoryId: oci_marketplace_category.test_category.id,
- *     searchType: _var.sensitive_type_search_type,
- *     shortName: _var.sensitive_type_short_name,
+ *     namePattern: sensitiveTypeNamePattern,
+ *     parentCategoryId: testCategory.id,
+ *     searchType: sensitiveTypeSearchType,
+ *     shortName: sensitiveTypeShortName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

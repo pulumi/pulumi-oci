@@ -385,16 +385,16 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_target_alert_policy_association = oci.data_safe.TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation",
-            compartment_id=var["compartment_id"],
-            is_enabled=var["target_alert_policy_association_is_enabled"],
-            policy_id=oci_identity_policy["test_policy"]["id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_target_alert_policy_association = oci.data_safe.TargetAlertPolicyAssociation("test_target_alert_policy_association",
+            compartment_id=compartment_id,
+            is_enabled=target_alert_policy_association_is_enabled,
+            policy_id=test_policy["id"],
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["target_alert_policy_association_description"],
-            display_name=var["target_alert_policy_association_display_name"],
+            description=target_alert_policy_association_description,
+            display_name=target_alert_policy_association_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -442,16 +442,16 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_target_alert_policy_association = oci.data_safe.TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation",
-            compartment_id=var["compartment_id"],
-            is_enabled=var["target_alert_policy_association_is_enabled"],
-            policy_id=oci_identity_policy["test_policy"]["id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_target_alert_policy_association = oci.data_safe.TargetAlertPolicyAssociation("test_target_alert_policy_association",
+            compartment_id=compartment_id,
+            is_enabled=target_alert_policy_association_is_enabled,
+            policy_id=test_policy["id"],
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["target_alert_policy_association_description"],
-            display_name=var["target_alert_policy_association_display_name"],
+            description=target_alert_policy_association_description,
+            display_name=target_alert_policy_association_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

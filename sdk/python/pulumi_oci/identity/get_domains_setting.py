@@ -838,12 +838,12 @@ def get_domains_setting(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_setting = oci.Identity.get_domains_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_setting = oci.Identity.get_domains_setting(idcs_endpoint=test_domain["url"],
         setting_id="Settings",
         attribute_sets=["all"],
         attributes="",
-        authorization=var["setting_authorization"],
-        resource_type_schema_version=var["setting_resource_type_schema_version"])
+        authorization=setting_authorization,
+        resource_type_schema_version=setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -955,12 +955,12 @@ def get_domains_setting_output(attribute_sets: Optional[pulumi.Input[Optional[Se
     import pulumi
     import pulumi_oci as oci
 
-    test_setting = oci.Identity.get_domains_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_setting = oci.Identity.get_domains_setting(idcs_endpoint=test_domain["url"],
         setting_id="Settings",
         attribute_sets=["all"],
         attributes="",
-        authorization=var["setting_authorization"],
-        resource_type_schema_version=var["setting_resource_type_schema_version"])
+        authorization=setting_authorization,
+        resource_type_schema_version=setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

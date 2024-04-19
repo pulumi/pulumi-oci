@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptionRewards = oci.UsageProxy.getSubscriptionRewards({
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     subscriptionId: testSubscription.id,
+ *     tenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetSubscriptionRewardsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptionRewards = oci.UsageProxy.getSubscriptionRewards({
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     subscriptionId: testSubscription.id,
+ *     tenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

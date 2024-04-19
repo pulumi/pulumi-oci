@@ -29,11 +29,11 @@ namespace Pulumi.Oci.DisasterRecovery
         /// {
         ///     var testDrPlanExecutions = Oci.DisasterRecovery.GetDrPlanExecutions.Invoke(new()
         ///     {
-        ///         DrProtectionGroupId = oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
-        ///         DisplayName = @var.Dr_plan_execution_display_name,
-        ///         DrPlanExecutionId = oci_disaster_recovery_dr_plan_execution.Test_dr_plan_execution.Id,
-        ///         DrPlanExecutionType = @var.Dr_plan_execution_dr_plan_execution_type,
-        ///         State = @var.Dr_plan_execution_state,
+        ///         DrProtectionGroupId = testDrProtectionGroup.Id,
+        ///         DisplayName = drPlanExecutionDisplayName,
+        ///         DrPlanExecutionId = testDrPlanExecution.Id,
+        ///         DrPlanExecutionType = drPlanExecutionDrPlanExecutionType,
+        ///         State = drPlanExecutionState,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.DisasterRecovery
         /// {
         ///     var testDrPlanExecutions = Oci.DisasterRecovery.GetDrPlanExecutions.Invoke(new()
         ///     {
-        ///         DrProtectionGroupId = oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
-        ///         DisplayName = @var.Dr_plan_execution_display_name,
-        ///         DrPlanExecutionId = oci_disaster_recovery_dr_plan_execution.Test_dr_plan_execution.Id,
-        ///         DrPlanExecutionType = @var.Dr_plan_execution_dr_plan_execution_type,
-        ///         State = @var.Dr_plan_execution_state,
+        ///         DrProtectionGroupId = testDrProtectionGroup.Id,
+        ///         DisplayName = drPlanExecutionDisplayName,
+        ///         DrPlanExecutionId = testDrPlanExecution.Id,
+        ///         DrPlanExecutionType = drPlanExecutionDrPlanExecutionType,
+        ///         State = drPlanExecutionState,
         ///     });
         /// 
         /// });

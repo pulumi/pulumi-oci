@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRemediationRecipe = oci.Adm.getRemediationRecipe({
- *     remediationRecipeId: oci_adm_remediation_recipe.test_remediation_recipe.id,
+ *     remediationRecipeId: testRemediationRecipeOciAdmRemediationRecipe.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetRemediationRecipeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRemediationRecipe = oci.Adm.getRemediationRecipe({
- *     remediationRecipeId: oci_adm_remediation_recipe.test_remediation_recipe.id,
+ *     remediationRecipeId: testRemediationRecipeOciAdmRemediationRecipe.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -18,25 +18,25 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpMonitor = new oci.healthchecks.HttpMonitor("testHttpMonitor", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.http_monitor_display_name,
- *     intervalInSeconds: _var.http_monitor_interval_in_seconds,
- *     protocol: _var.http_monitor_protocol,
- *     targets: _var.http_monitor_targets,
+ * const testHttpMonitor = new oci.healthchecks.HttpMonitor("test_http_monitor", {
+ *     compartmentId: compartmentId,
+ *     displayName: httpMonitorDisplayName,
+ *     intervalInSeconds: httpMonitorIntervalInSeconds,
+ *     protocol: httpMonitorProtocol,
+ *     targets: httpMonitorTargets,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     headers: _var.http_monitor_headers,
- *     isEnabled: _var.http_monitor_is_enabled,
- *     method: _var.http_monitor_method,
- *     path: _var.http_monitor_path,
- *     port: _var.http_monitor_port,
- *     timeoutInSeconds: _var.http_monitor_timeout_in_seconds,
- *     vantagePointNames: _var.http_monitor_vantage_point_names,
+ *     headers: httpMonitorHeaders,
+ *     isEnabled: httpMonitorIsEnabled,
+ *     method: httpMonitorMethod,
+ *     path: httpMonitorPath,
+ *     port: httpMonitorPort,
+ *     timeoutInSeconds: httpMonitorTimeoutInSeconds,
+ *     vantagePointNames: httpMonitorVantagePointNames,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVirtualCircuitAssociatedTunnels = Oci.Core.GetVirtualCircuitAssociatedTunnels.Invoke(new()
         ///     {
-        ///         VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
+        ///         VirtualCircuitId = testVirtualCircuit.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVirtualCircuitAssociatedTunnels = Oci.Core.GetVirtualCircuitAssociatedTunnels.Invoke(new()
         ///     {
-        ///         VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
+        ///         VirtualCircuitId = testVirtualCircuit.Id,
         ///     });
         /// 
         /// });

@@ -30,9 +30,9 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testTrailFiles = Oci.GoldenGate.GetTrailFiles.Invoke(new()
         ///     {
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         TrailFileId = oci_golden_gate_trail_file.Test_trail_file.Id,
-        ///         DisplayName = @var.Trail_file_display_name,
+        ///         DeploymentId = testDeployment.Id,
+        ///         TrailFileId = testTrailFile.Id,
+        ///         DisplayName = trailFileDisplayName,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testTrailFiles = Oci.GoldenGate.GetTrailFiles.Invoke(new()
         ///     {
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         TrailFileId = oci_golden_gate_trail_file.Test_trail_file.Id,
-        ///         DisplayName = @var.Trail_file_display_name,
+        ///         DeploymentId = testDeployment.Id,
+        ///         TrailFileId = testTrailFile.Id,
+        ///         DisplayName = trailFileDisplayName,
         ///     });
         /// 
         /// });

@@ -284,7 +284,7 @@ def get_managed_database(managed_database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
+    test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=test_managed_database_oci_database_management_managed_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -334,7 +334,7 @@ def get_managed_database_output(managed_database_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
+    test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=test_managed_database_oci_database_management_managed_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

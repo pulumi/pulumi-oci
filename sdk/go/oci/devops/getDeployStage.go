@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetDeployStage(ctx, &devops.GetDeployStageArgs{
-//				DeployStageId: oci_devops_deploy_stage.Test_deploy_stage.Id,
+//				DeployStageId: testDeployStageOciDevopsDeployStage.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

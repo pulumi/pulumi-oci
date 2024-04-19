@@ -289,11 +289,11 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_route_table_route_rule = oci.core.DrgRouteTableRouteRule("testDrgRouteTableRouteRule",
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-            destination=var["drg_route_table_route_rule_route_rules_destination"],
-            destination_type=var["drg_route_table_route_rule_route_rules_destination_type"],
-            next_hop_drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"])
+        test_drg_route_table_route_rule = oci.core.DrgRouteTableRouteRule("test_drg_route_table_route_rule",
+            drg_route_table_id=test_drg_route_table["id"],
+            destination=drg_route_table_route_rule_route_rules_destination,
+            destination_type=drg_route_table_route_rule_route_rules_destination_type,
+            next_hop_drg_attachment_id=test_drg_attachment["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -339,11 +339,11 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_route_table_route_rule = oci.core.DrgRouteTableRouteRule("testDrgRouteTableRouteRule",
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
-            destination=var["drg_route_table_route_rule_route_rules_destination"],
-            destination_type=var["drg_route_table_route_rule_route_rules_destination_type"],
-            next_hop_drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"])
+        test_drg_route_table_route_rule = oci.core.DrgRouteTableRouteRule("test_drg_route_table_route_rule",
+            drg_route_table_id=test_drg_route_table["id"],
+            destination=drg_route_table_route_rule_route_rules_destination,
+            destination_type=drg_route_table_route_rule_route_rules_destination_type,
+            next_hop_drg_attachment_id=test_drg_attachment["id"])
         ```
         <!--End PulumiCodeChooser -->
 

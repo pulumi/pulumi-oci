@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCompartment = oci.Identity.getCompartment({
- *     id: _var.compartment_id,
+ *     id: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,7 +112,7 @@ export interface GetCompartmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCompartment = oci.Identity.getCompartment({
- *     id: _var.compartment_id,
+ *     id: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

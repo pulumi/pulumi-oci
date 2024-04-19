@@ -698,34 +698,34 @@ class Volume(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume = oci.core.Volume("testVolume",
-            compartment_id=var["compartment_id"],
+        test_volume = oci.core.Volume("test_volume",
+            compartment_id=compartment_id,
             autotune_policies=[oci.core.VolumeAutotunePolicyArgs(
-                autotune_type=var["volume_autotune_policies_autotune_type"],
-                max_vpus_per_gb=var["volume_autotune_policies_max_vpus_per_gb"],
+                autotune_type=volume_autotune_policies_autotune_type,
+                max_vpus_per_gb=volume_autotune_policies_max_vpus_per_gb,
             )],
-            availability_domain=var["volume_availability_domain"],
-            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
+            availability_domain=volume_availability_domain,
+            backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
             block_volume_replicas=[oci.core.VolumeBlockVolumeReplicaArgs(
-                availability_domain=var["volume_block_volume_replicas_availability_domain"],
-                display_name=var["volume_block_volume_replicas_display_name"],
+                availability_domain=volume_block_volume_replicas_availability_domain,
+                display_name=volume_block_volume_replicas_display_name,
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["volume_display_name"],
+            display_name=volume_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_tune_enabled=var["volume_is_auto_tune_enabled"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            size_in_gbs=var["volume_size_in_gbs"],
-            size_in_mbs=var["volume_size_in_mbs"],
+            is_auto_tune_enabled=volume_is_auto_tune_enabled,
+            kms_key_id=test_key["id"],
+            size_in_gbs=volume_size_in_gbs,
+            size_in_mbs=volume_size_in_mbs,
             source_details=oci.core.VolumeSourceDetailsArgs(
-                id=var["volume_source_details_id"],
-                type=var["volume_source_details_type"],
+                id=volume_source_details_id,
+                type=volume_source_details_type,
             ),
-            vpus_per_gb=var["volume_vpus_per_gb"],
+            vpus_per_gb=volume_vpus_per_gb,
             block_volume_replicas_deletion=True)
         ```
         <!--End PulumiCodeChooser -->
@@ -788,34 +788,34 @@ class Volume(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume = oci.core.Volume("testVolume",
-            compartment_id=var["compartment_id"],
+        test_volume = oci.core.Volume("test_volume",
+            compartment_id=compartment_id,
             autotune_policies=[oci.core.VolumeAutotunePolicyArgs(
-                autotune_type=var["volume_autotune_policies_autotune_type"],
-                max_vpus_per_gb=var["volume_autotune_policies_max_vpus_per_gb"],
+                autotune_type=volume_autotune_policies_autotune_type,
+                max_vpus_per_gb=volume_autotune_policies_max_vpus_per_gb,
             )],
-            availability_domain=var["volume_availability_domain"],
-            backup_policy_id=data["oci_core_volume_backup_policies"]["test_volume_backup_policies"]["volume_backup_policies"][0]["id"],
+            availability_domain=volume_availability_domain,
+            backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
             block_volume_replicas=[oci.core.VolumeBlockVolumeReplicaArgs(
-                availability_domain=var["volume_block_volume_replicas_availability_domain"],
-                display_name=var["volume_block_volume_replicas_display_name"],
+                availability_domain=volume_block_volume_replicas_availability_domain,
+                display_name=volume_block_volume_replicas_display_name,
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["volume_display_name"],
+            display_name=volume_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_auto_tune_enabled=var["volume_is_auto_tune_enabled"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            size_in_gbs=var["volume_size_in_gbs"],
-            size_in_mbs=var["volume_size_in_mbs"],
+            is_auto_tune_enabled=volume_is_auto_tune_enabled,
+            kms_key_id=test_key["id"],
+            size_in_gbs=volume_size_in_gbs,
+            size_in_mbs=volume_size_in_mbs,
             source_details=oci.core.VolumeSourceDetailsArgs(
-                id=var["volume_source_details_id"],
-                type=var["volume_source_details_type"],
+                id=volume_source_details_id,
+                type=volume_source_details_type,
             ),
-            vpus_per_gb=var["volume_vpus_per_gb"],
+            vpus_per_gb=volume_vpus_per_gb,
             block_volume_replicas_deletion=True)
         ```
         <!--End PulumiCodeChooser -->

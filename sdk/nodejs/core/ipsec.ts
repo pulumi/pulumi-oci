@@ -44,17 +44,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnection = new oci.core.Ipsec("testIpSecConnection", {
- *     compartmentId: _var.compartment_id,
- *     cpeId: oci_core_cpe.test_cpe.id,
- *     drgId: oci_core_drg.test_drg.id,
- *     staticRoutes: _var.ip_sec_connection_static_routes,
- *     cpeLocalIdentifier: _var.ip_sec_connection_cpe_local_identifier,
- *     cpeLocalIdentifierType: _var.ip_sec_connection_cpe_local_identifier_type,
+ * const testIpSecConnection = new oci.core.Ipsec("test_ip_sec_connection", {
+ *     compartmentId: compartmentId,
+ *     cpeId: testCpe.id,
+ *     drgId: testDrg.id,
+ *     staticRoutes: ipSecConnectionStaticRoutes,
+ *     cpeLocalIdentifier: ipSecConnectionCpeLocalIdentifier,
+ *     cpeLocalIdentifierType: ipSecConnectionCpeLocalIdentifierType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.ip_sec_connection_display_name,
+ *     displayName: ipSecConnectionDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

@@ -30,8 +30,8 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testPrivateEndpointReachableIp = Oci.ResourceManager.GetPrivateEndpointReachableIp.Invoke(new()
         ///     {
-        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///         PrivateIp = @var.Private_endpoint_reachable_ip_private_ip,
+        ///         PrivateEndpointId = testPrivateEndpoint.Id,
+        ///         PrivateIp = privateEndpointReachableIpPrivateIp,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testPrivateEndpointReachableIp = Oci.ResourceManager.GetPrivateEndpointReachableIp.Invoke(new()
         ///     {
-        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///         PrivateIp = @var.Private_endpoint_reachable_ip_private_ip,
+        ///         PrivateEndpointId = testPrivateEndpoint.Id,
+        ///         PrivateIp = privateEndpointReachableIpPrivateIp,
         ///     });
         /// 
         /// });

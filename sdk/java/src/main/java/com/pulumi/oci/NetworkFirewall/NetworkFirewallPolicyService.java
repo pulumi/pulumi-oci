@@ -46,12 +46,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyService = new NetworkFirewallPolicyService(&#34;testNetworkFirewallPolicyService&#34;, NetworkFirewallPolicyServiceArgs.builder()        
- *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
+ *             .name(networkFirewallPolicyServiceName)
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
  *             .portRanges(NetworkFirewallPolicyServicePortRangeArgs.builder()
- *                 .minimumPort(var_.network_firewall_policy_service_port_ranges_minimum_port())
- *                 .maximumPort(var_.network_firewall_policy_service_port_ranges_maximum_port())
+ *                 .minimumPort(networkFirewallPolicyServicePortRangesMinimumPort)
+ *                 .maximumPort(networkFirewallPolicyServicePortRangesMaximumPort)
  *                 .build())
- *             .type(var_.network_firewall_policy_service_type())
+ *             .type(networkFirewallPolicyServiceType)
  *             .build());
  * 
  *     }

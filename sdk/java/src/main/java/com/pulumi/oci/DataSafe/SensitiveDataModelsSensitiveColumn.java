@@ -44,19 +44,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSensitiveDataModelsSensitiveColumn = new SensitiveDataModelsSensitiveColumn(&#34;testSensitiveDataModelsSensitiveColumn&#34;, SensitiveDataModelsSensitiveColumnArgs.builder()        
- *             .columnName(var_.sensitive_data_models_sensitive_column_column_name())
- *             .object(var_.sensitive_data_models_sensitive_column_object())
- *             .schemaName(var_.sensitive_data_models_sensitive_column_schema_name())
- *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
- *             .appDefinedChildColumnKeys(var_.sensitive_data_models_sensitive_column_app_defined_child_column_keys())
- *             .appName(var_.sensitive_data_models_sensitive_column_app_name())
- *             .dataType(var_.sensitive_data_models_sensitive_column_data_type())
- *             .dbDefinedChildColumnKeys(var_.sensitive_data_models_sensitive_column_db_defined_child_column_keys())
- *             .objectType(var_.sensitive_data_models_sensitive_column_object_type())
- *             .parentColumnKeys(var_.sensitive_data_models_sensitive_column_parent_column_keys())
- *             .relationType(var_.sensitive_data_models_sensitive_column_relation_type())
- *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
- *             .status(var_.sensitive_data_models_sensitive_column_status())
+ *             .columnName(sensitiveDataModelsSensitiveColumnColumnName)
+ *             .object(sensitiveDataModelsSensitiveColumnObject)
+ *             .schemaName(sensitiveDataModelsSensitiveColumnSchemaName)
+ *             .sensitiveDataModelId(testSensitiveDataModel.id())
+ *             .appDefinedChildColumnKeys(sensitiveDataModelsSensitiveColumnAppDefinedChildColumnKeys)
+ *             .appName(sensitiveDataModelsSensitiveColumnAppName)
+ *             .dataType(sensitiveDataModelsSensitiveColumnDataType)
+ *             .dbDefinedChildColumnKeys(sensitiveDataModelsSensitiveColumnDbDefinedChildColumnKeys)
+ *             .objectType(sensitiveDataModelsSensitiveColumnObjectType)
+ *             .parentColumnKeys(sensitiveDataModelsSensitiveColumnParentColumnKeys)
+ *             .relationType(sensitiveDataModelsSensitiveColumnRelationType)
+ *             .sensitiveTypeId(testSensitiveType.id())
+ *             .status(sensitiveDataModelsSensitiveColumnStatus)
  *             .build());
  * 
  *     }

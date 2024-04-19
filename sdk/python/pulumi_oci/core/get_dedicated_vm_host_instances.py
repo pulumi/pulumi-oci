@@ -117,9 +117,9 @@ def get_dedicated_vm_host_instances(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=var["compartment_id"],
-        dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-        availability_domain=var["dedicated_vm_hosts_instance_availability_domain"])
+    test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
+        dedicated_vm_host_id=test_dedicated_vm_host["id"],
+        availability_domain=dedicated_vm_hosts_instance_availability_domain)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_dedicated_vm_host_instances_output(availability_domain: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=var["compartment_id"],
-        dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"],
-        availability_domain=var["dedicated_vm_hosts_instance_availability_domain"])
+    test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
+        dedicated_vm_host_id=test_dedicated_vm_host["id"],
+        availability_domain=dedicated_vm_hosts_instance_availability_domain)
     ```
     <!--End PulumiCodeChooser -->
 

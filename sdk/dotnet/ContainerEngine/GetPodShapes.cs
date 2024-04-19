@@ -29,9 +29,9 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testPodShapes = Oci.ContainerEngine.GetPodShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Pod_shape_availability_domain,
-        ///         Name = @var.Pod_shape_name,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = podShapeAvailabilityDomain,
+        ///         Name = podShapeName,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testPodShapes = Oci.ContainerEngine.GetPodShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Pod_shape_availability_domain,
-        ///         Name = @var.Pod_shape_name,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = podShapeAvailabilityDomain,
+        ///         Name = podShapeName,
         ///     });
         /// 
         /// });

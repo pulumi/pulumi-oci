@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := RecoveryMod.GetProtectedDatabases(ctx, &recoverymod.GetProtectedDatabasesArgs{
-//				CompartmentId:           _var.Compartment_id,
-//				DisplayName:             pulumi.StringRef(_var.Protected_database_display_name),
-//				Id:                      pulumi.StringRef(_var.Protected_database_id),
-//				ProtectionPolicyId:      pulumi.StringRef(oci_recovery_protection_policy.Test_protection_policy.Id),
-//				RecoveryServiceSubnetId: pulumi.StringRef(oci_recovery_recovery_service_subnet.Test_recovery_service_subnet.Id),
-//				State:                   pulumi.StringRef(_var.Protected_database_state),
+//				CompartmentId:           compartmentId,
+//				DisplayName:             pulumi.StringRef(protectedDatabaseDisplayName),
+//				Id:                      pulumi.StringRef(protectedDatabaseId),
+//				ProtectionPolicyId:      pulumi.StringRef(testProtectionPolicy.Id),
+//				RecoveryServiceSubnetId: pulumi.StringRef(testRecoveryServiceSubnet.Id),
+//				State:                   pulumi.StringRef(protectedDatabaseState),
 //			}, nil)
 //			if err != nil {
 //				return err

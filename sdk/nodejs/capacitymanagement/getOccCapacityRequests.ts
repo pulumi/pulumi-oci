@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOccCapacityRequests = oci.CapacityManagement.getOccCapacityRequests({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.occ_capacity_request_display_name,
- *     id: _var.occ_capacity_request_id,
- *     namespace: _var.occ_capacity_request_namespace,
- *     occAvailabilityCatalogId: oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog.id,
+ *     compartmentId: compartmentId,
+ *     displayName: occCapacityRequestDisplayName,
+ *     id: occCapacityRequestId,
+ *     namespace: occCapacityRequestNamespace,
+ *     occAvailabilityCatalogId: testOccAvailabilityCatalog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetOccCapacityRequestsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOccCapacityRequests = oci.CapacityManagement.getOccCapacityRequests({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.occ_capacity_request_display_name,
- *     id: _var.occ_capacity_request_id,
- *     namespace: _var.occ_capacity_request_namespace,
- *     occAvailabilityCatalogId: oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog.id,
+ *     compartmentId: compartmentId,
+ *     displayName: occCapacityRequestDisplayName,
+ *     id: occCapacityRequestId,
+ *     namespace: occCapacityRequestNamespace,
+ *     occAvailabilityCatalogId: testOccAvailabilityCatalog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

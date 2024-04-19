@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstancePatchHistories = oci.BigDataService.getBdsInstancePatchHistories({
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     patchType: _var.bds_instance_patch_history_patch_type,
- *     patchVersion: _var.bds_instance_patch_history_patch_version,
- *     state: _var.bds_instance_patch_history_state,
+ *     bdsInstanceId: testBdsInstance.id,
+ *     patchType: bdsInstancePatchHistoryPatchType,
+ *     patchVersion: bdsInstancePatchHistoryPatchVersion,
+ *     state: bdsInstancePatchHistoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,10 +99,10 @@ export interface GetBdsInstancePatchHistoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstancePatchHistories = oci.BigDataService.getBdsInstancePatchHistories({
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     patchType: _var.bds_instance_patch_history_patch_type,
- *     patchVersion: _var.bds_instance_patch_history_patch_version,
- *     state: _var.bds_instance_patch_history_state,
+ *     bdsInstanceId: testBdsInstance.id,
+ *     patchType: bdsInstancePatchHistoryPatchType,
+ *     patchVersion: bdsInstancePatchHistoryPatchVersion,
+ *     state: bdsInstancePatchHistoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

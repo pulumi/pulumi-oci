@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstancePool = Oci.Core.GetInstancePool.Invoke(new()
         ///     {
-        ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
+        ///         InstancePoolId = testInstancePoolOciCoreInstancePool.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstancePool = Oci.Core.GetInstancePool.Invoke(new()
         ///     {
-        ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
+        ///         InstancePoolId = testInstancePoolOciCoreInstancePool.Id,
         ///     });
         /// 
         /// });

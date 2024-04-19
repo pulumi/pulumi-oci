@@ -18,32 +18,32 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssetSource = new oci.cloudbridge.AssetSource("testAssetSource", {
- *     assetsCompartmentId: oci_identity_compartment.test_compartment.id,
- *     compartmentId: _var.compartment_id,
+ * const testAssetSource = new oci.cloudbridge.AssetSource("test_asset_source", {
+ *     assetsCompartmentId: testCompartment.id,
+ *     compartmentId: compartmentId,
  *     discoveryCredentials: {
- *         secretId: oci_vault_secret.test_secret.id,
- *         type: _var.asset_source_discovery_credentials_type,
+ *         secretId: testSecret.id,
+ *         type: assetSourceDiscoveryCredentialsType,
  *     },
- *     environmentId: oci_cloud_bridge_environment.test_environment.id,
- *     inventoryId: oci_cloud_bridge_inventory.test_inventory.id,
- *     type: _var.asset_source_type,
- *     vcenterEndpoint: _var.asset_source_vcenter_endpoint,
- *     areHistoricalMetricsCollected: _var.asset_source_are_historical_metrics_collected,
- *     areRealtimeMetricsCollected: _var.asset_source_are_realtime_metrics_collected,
+ *     environmentId: testEnvironment.id,
+ *     inventoryId: testInventory.id,
+ *     type: assetSourceType,
+ *     vcenterEndpoint: assetSourceVcenterEndpoint,
+ *     areHistoricalMetricsCollected: assetSourceAreHistoricalMetricsCollected,
+ *     areRealtimeMetricsCollected: assetSourceAreRealtimeMetricsCollected,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     discoveryScheduleId: oci_cloud_bridge_discovery_schedule.test_discovery_schedule.id,
- *     displayName: _var.asset_source_display_name,
+ *     discoveryScheduleId: testDiscoverySchedule.id,
+ *     displayName: assetSourceDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     replicationCredentials: {
- *         secretId: oci_vault_secret.test_secret.id,
- *         type: _var.asset_source_replication_credentials_type,
+ *         secretId: testSecret.id,
+ *         type: assetSourceReplicationCredentialsType,
  *     },
- *     systemTags: _var.asset_source_system_tags,
+ *     systemTags: assetSourceSystemTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

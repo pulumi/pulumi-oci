@@ -558,18 +558,18 @@ class UserAssessment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_user_assessment = oci.data_safe.UserAssessment("testUserAssessment",
-            compartment_id=var["compartment_id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_user_assessment = oci.data_safe.UserAssessment("test_user_assessment",
+            compartment_id=compartment_id,
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["user_assessment_description"],
-            display_name=var["user_assessment_display_name"],
+            description=user_assessment_description,
+            display_name=user_assessment_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            schedule=var["user_assessment_schedule"])
+            schedule=user_assessment_schedule)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -617,18 +617,18 @@ class UserAssessment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_user_assessment = oci.data_safe.UserAssessment("testUserAssessment",
-            compartment_id=var["compartment_id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_user_assessment = oci.data_safe.UserAssessment("test_user_assessment",
+            compartment_id=compartment_id,
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["user_assessment_description"],
-            display_name=var["user_assessment_display_name"],
+            description=user_assessment_description,
+            display_name=user_assessment_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            schedule=var["user_assessment_schedule"])
+            schedule=user_assessment_schedule)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -18,18 +18,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthenticationPolicy = new oci.identity.AuthenticationPolicy("testAuthenticationPolicy", {
- *     compartmentId: _var.tenancy_ocid,
+ * const testAuthenticationPolicy = new oci.identity.AuthenticationPolicy("test_authentication_policy", {
+ *     compartmentId: tenancyOcid,
  *     networkPolicy: {
- *         networkSourceIds: _var.authentication_policy_network_policy_network_source_ids,
+ *         networkSourceIds: authenticationPolicyNetworkPolicyNetworkSourceIds,
  *     },
  *     passwordPolicy: {
- *         isLowercaseCharactersRequired: _var.authentication_policy_password_policy_is_lowercase_characters_required,
- *         isNumericCharactersRequired: _var.authentication_policy_password_policy_is_numeric_characters_required,
- *         isSpecialCharactersRequired: _var.authentication_policy_password_policy_is_special_characters_required,
- *         isUppercaseCharactersRequired: _var.authentication_policy_password_policy_is_uppercase_characters_required,
- *         isUsernameContainmentAllowed: _var.authentication_policy_password_policy_is_username_containment_allowed,
- *         minimumPasswordLength: _var.authentication_policy_password_policy_minimum_password_length,
+ *         isLowercaseCharactersRequired: authenticationPolicyPasswordPolicyIsLowercaseCharactersRequired,
+ *         isNumericCharactersRequired: authenticationPolicyPasswordPolicyIsNumericCharactersRequired,
+ *         isSpecialCharactersRequired: authenticationPolicyPasswordPolicyIsSpecialCharactersRequired,
+ *         isUppercaseCharactersRequired: authenticationPolicyPasswordPolicyIsUppercaseCharactersRequired,
+ *         isUsernameContainmentAllowed: authenticationPolicyPasswordPolicyIsUsernameContainmentAllowed,
+ *         minimumPasswordLength: authenticationPolicyPasswordPolicyMinimumPasswordLength,
  *     },
  * });
  * ```

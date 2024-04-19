@@ -28,9 +28,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCompartment = Oci.Identity.GetAvailabilityDomain.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Id = @var.Id,
-        ///         AdNumber = @var.Ad_number,
+        ///         CompartmentId = tenancyOcid,
+        ///         Id = id,
+        ///         AdNumber = adNumber,
         ///     });
         /// 
         /// });
@@ -57,9 +57,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCompartment = Oci.Identity.GetAvailabilityDomain.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Id = @var.Id,
-        ///         AdNumber = @var.Ad_number,
+        ///         CompartmentId = tenancyOcid,
+        ///         Id = id,
+        ///         AdNumber = adNumber,
         ///     });
         /// 
         /// });

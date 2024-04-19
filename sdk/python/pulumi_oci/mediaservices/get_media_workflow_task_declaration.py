@@ -116,10 +116,10 @@ def get_media_workflow_task_declaration(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=var["compartment_id"],
-        is_current=var["media_workflow_task_declaration_is_current"],
-        name=var["media_workflow_task_declaration_name"],
-        version=var["media_workflow_task_declaration_version"])
+    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=compartment_id,
+        is_current=media_workflow_task_declaration_is_current,
+        name=media_workflow_task_declaration_name,
+        version=media_workflow_task_declaration_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -164,10 +164,10 @@ def get_media_workflow_task_declaration_output(compartment_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=var["compartment_id"],
-        is_current=var["media_workflow_task_declaration_is_current"],
-        name=var["media_workflow_task_declaration_name"],
-        version=var["media_workflow_task_declaration_version"])
+    test_media_workflow_task_declaration = oci.MediaServices.get_media_workflow_task_declaration(compartment_id=compartment_id,
+        is_current=media_workflow_task_declaration_is_current,
+        name=media_workflow_task_declaration_name,
+        version=media_workflow_task_declaration_version)
     ```
     <!--End PulumiCodeChooser -->
 

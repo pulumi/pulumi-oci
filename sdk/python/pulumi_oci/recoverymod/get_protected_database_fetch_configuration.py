@@ -99,9 +99,9 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[b
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_database_fetch_configuration = oci.RecoveryMod.get_protected_database_fetch_configuration(protected_database_id=oci_recovery_protected_database["test_protected_database"]["id"],
+    test_protected_database_fetch_configuration = oci.RecoveryMod.get_protected_database_fetch_configuration(protected_database_id=test_protected_database["id"],
         base64_encode_content=True,
-        configuration_type=var["protected_database_fetch_configuration_configuration_type"])
+        configuration_type=protected_database_fetch_configuration_configuration_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -141,9 +141,9 @@ def get_protected_database_fetch_configuration_output(base64_encode_content: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_database_fetch_configuration = oci.RecoveryMod.get_protected_database_fetch_configuration(protected_database_id=oci_recovery_protected_database["test_protected_database"]["id"],
+    test_protected_database_fetch_configuration = oci.RecoveryMod.get_protected_database_fetch_configuration(protected_database_id=test_protected_database["id"],
         base64_encode_content=True,
-        configuration_type=var["protected_database_fetch_configuration_configuration_type"])
+        configuration_type=protected_database_fetch_configuration_configuration_type)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -49,15 +49,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testQuota = new Quota(&#34;testQuota&#34;, QuotaArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
- *             .description(var_.quota_description())
- *             .statements(var_.quota_statements())
+ *             .compartmentId(tenancyOcid)
+ *             .description(quotaDescription)
+ *             .name(quotaName)
+ *             .statements(quotaStatements)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .locks(QuotaLockArgs.builder()
- *                 .type(var_.quota_locks_type())
- *                 .message(var_.quota_locks_message())
- *                 .relatedResourceId(oci_limits_related_resource.test_related_resource().id())
+ *                 .type(quotaLocksType)
+ *                 .message(quotaLocksMessage)
+ *                 .relatedResourceId(testRelatedResource.id())
  *                 .build())
  *             .build());
  * 

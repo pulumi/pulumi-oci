@@ -1462,35 +1462,36 @@ class DomainsRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_rule = oci.identity.DomainsRule("testRule",
-            condition=var["rule_condition"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_rule = oci.identity.DomainsRule("test_rule",
+            condition=rule_condition,
+            idcs_endpoint=test_domain["url"],
+            name=rule_name,
             policy_type=oci.identity.DomainsRulePolicyTypeArgs(
                 value="SignOn",
             ),
             returns=[oci.identity.DomainsRuleReturnArgs(
-                name=var["rule_return_name"],
-                value=var["rule_return_value"],
-                return_groovy=var["rule_return_return_groovy"],
+                name=rule_return_name,
+                value=rule_return_value,
+                return_groovy=rule_return_return_groovy,
             )],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Rule"],
-            active=var["rule_active"],
+            active=rule_active,
             attribute_sets=["all"],
             attributes="",
-            authorization=var["rule_authorization"],
+            authorization=rule_authorization,
             condition_group=oci.identity.DomainsRuleConditionGroupArgs(
                 type="Condition",
-                value=var["rule_condition_group_value"],
+                value=rule_condition_group_value,
             ),
-            description=var["rule_description"],
+            description=rule_description,
             external_id="externalId",
-            locked=var["rule_locked"],
-            ocid=var["rule_ocid"],
-            resource_type_schema_version=var["rule_resource_type_schema_version"],
-            rule_groovy=var["rule_rule_groovy"],
+            locked=rule_locked,
+            ocid=rule_ocid,
+            resource_type_schema_version=rule_resource_type_schema_version,
+            rule_groovy=rule_rule_groovy,
             tags=[oci.identity.DomainsRuleTagArgs(
-                key=var["rule_tags_key"],
-                value=var["rule_tags_value"],
+                key=rule_tags_key,
+                value=rule_tags_value,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -1668,35 +1669,36 @@ class DomainsRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_rule = oci.identity.DomainsRule("testRule",
-            condition=var["rule_condition"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_rule = oci.identity.DomainsRule("test_rule",
+            condition=rule_condition,
+            idcs_endpoint=test_domain["url"],
+            name=rule_name,
             policy_type=oci.identity.DomainsRulePolicyTypeArgs(
                 value="SignOn",
             ),
             returns=[oci.identity.DomainsRuleReturnArgs(
-                name=var["rule_return_name"],
-                value=var["rule_return_value"],
-                return_groovy=var["rule_return_return_groovy"],
+                name=rule_return_name,
+                value=rule_return_value,
+                return_groovy=rule_return_return_groovy,
             )],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Rule"],
-            active=var["rule_active"],
+            active=rule_active,
             attribute_sets=["all"],
             attributes="",
-            authorization=var["rule_authorization"],
+            authorization=rule_authorization,
             condition_group=oci.identity.DomainsRuleConditionGroupArgs(
                 type="Condition",
-                value=var["rule_condition_group_value"],
+                value=rule_condition_group_value,
             ),
-            description=var["rule_description"],
+            description=rule_description,
             external_id="externalId",
-            locked=var["rule_locked"],
-            ocid=var["rule_ocid"],
-            resource_type_schema_version=var["rule_resource_type_schema_version"],
-            rule_groovy=var["rule_rule_groovy"],
+            locked=rule_locked,
+            ocid=rule_ocid,
+            resource_type_schema_version=rule_resource_type_schema_version,
+            rule_groovy=rule_rule_groovy,
             tags=[oci.identity.DomainsRuleTagArgs(
-                key=var["rule_tags_key"],
-                value=var["rule_tags_value"],
+                key=rule_tags_key,
+                value=rule_tags_value,
             )])
         ```
         <!--End PulumiCodeChooser -->

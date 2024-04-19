@@ -25,31 +25,31 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOauthPartnerCertificate = new Oci.Identity.DomainsOauthPartnerCertificate("testOauthPartnerCertificate", new()
+    ///     var testOauthPartnerCertificate = new Oci.Identity.DomainsOauthPartnerCertificate("test_oauth_partner_certificate", new()
     ///     {
-    ///         CertificateAlias = @var.Oauth_partner_certificate_certificate_alias,
-    ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+    ///         CertificateAlias = oauthPartnerCertificateCertificateAlias,
+    ///         IdcsEndpoint = testDomain.Url,
     ///         Schemas = new[]
     ///         {
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:OAuthPartnerCertificate",
     ///         },
-    ///         Authorization = @var.Oauth_partner_certificate_authorization,
+    ///         Authorization = oauthPartnerCertificateAuthorization,
     ///         ExternalId = "externalId",
-    ///         KeyStoreId = oci_database_key_store.Test_key_store.Id,
-    ///         KeyStoreName = oci_database_key_store.Test_key_store.Name,
-    ///         KeyStorePassword = @var.Oauth_partner_certificate_key_store_password,
-    ///         Map = @var.Oauth_partner_certificate_map,
-    ///         Ocid = @var.Oauth_partner_certificate_ocid,
-    ///         ResourceTypeSchemaVersion = @var.Oauth_partner_certificate_resource_type_schema_version,
+    ///         KeyStoreId = testKeyStore.Id,
+    ///         KeyStoreName = testKeyStore.Name,
+    ///         KeyStorePassword = oauthPartnerCertificateKeyStorePassword,
+    ///         Map = oauthPartnerCertificateMap,
+    ///         Ocid = oauthPartnerCertificateOcid,
+    ///         ResourceTypeSchemaVersion = oauthPartnerCertificateResourceTypeSchemaVersion,
     ///         Tags = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsOauthPartnerCertificateTagArgs
     ///             {
-    ///                 Key = @var.Oauth_partner_certificate_tags_key,
-    ///                 Value = @var.Oauth_partner_certificate_tags_value,
+    ///                 Key = oauthPartnerCertificateTagsKey,
+    ///                 Value = oauthPartnerCertificateTagsValue,
     ///             },
     ///         },
-    ///         X509base64certificate = @var.Oauth_partner_certificate_x509base64certificate,
+    ///         X509base64certificate = oauthPartnerCertificateX509base64certificate,
     ///     });
     /// 
     /// });

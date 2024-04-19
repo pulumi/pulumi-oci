@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourcesListMember = new oci.stackmonitoring.MonitoredResourcesListMember("testMonitoredResourcesListMember", {
- *     monitoredResourceId: oci_stack_monitoring_monitored_resource.test_monitored_resource.id,
- *     destinationResourceId: oci_stack_monitoring_destination_resource.test_destination_resource.id,
- *     limitLevel: _var.monitored_resources_list_member_limit_level,
+ * const testMonitoredResourcesListMember = new oci.stackmonitoring.MonitoredResourcesListMember("test_monitored_resources_list_member", {
+ *     monitoredResourceId: testMonitoredResource.id,
+ *     destinationResourceId: testDestinationResource.id,
+ *     limitLevel: monitoredResourcesListMemberLimitLevel,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

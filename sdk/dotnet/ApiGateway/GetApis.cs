@@ -30,9 +30,9 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testApis = Oci.ApiGateway.GetApis.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Api_display_name,
-        ///         State = @var.Api_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = apiDisplayName,
+        ///         State = apiState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testApis = Oci.ApiGateway.GetApis.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Api_display_name,
-        ///         State = @var.Api_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = apiDisplayName,
+        ///         State = apiState,
         ///     });
         /// 
         /// });

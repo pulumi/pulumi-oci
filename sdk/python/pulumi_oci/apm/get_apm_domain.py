@@ -187,7 +187,7 @@ def get_apm_domain(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_apm_domain = oci.Apm.get_apm_domain(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"])
+    test_apm_domain = oci.Apm.get_apm_domain(apm_domain_id=test_apm_domain_oci_apm_apm_domain["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -229,7 +229,7 @@ def get_apm_domain_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_apm_domain = oci.Apm.get_apm_domain(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"])
+    test_apm_domain = oci.Apm.get_apm_domain(apm_domain_id=test_apm_domain_oci_apm_apm_domain["id"])
     ```
     <!--End PulumiCodeChooser -->
 

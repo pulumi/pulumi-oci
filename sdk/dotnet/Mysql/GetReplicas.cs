@@ -29,13 +29,13 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testReplicas = Oci.Mysql.GetReplicas.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigurationId = oci_mysql_mysql_configuration.Test_mysql_configuration.Id,
-        ///         DbSystemId = oci_mysql_mysql_db_system.Test_mysql_db_system.Id,
-        ///         DisplayName = @var.Replica_display_name,
-        ///         IsUpToDate = @var.Replica_is_up_to_date,
-        ///         ReplicaId = oci_mysql_replica.Test_replica.Id,
-        ///         State = @var.Replica_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = testMysqlConfiguration.Id,
+        ///         DbSystemId = testMysqlDbSystem.Id,
+        ///         DisplayName = replicaDisplayName,
+        ///         IsUpToDate = replicaIsUpToDate,
+        ///         ReplicaId = testReplica.Id,
+        ///         State = replicaState,
         ///     });
         /// 
         /// });
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testReplicas = Oci.Mysql.GetReplicas.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigurationId = oci_mysql_mysql_configuration.Test_mysql_configuration.Id,
-        ///         DbSystemId = oci_mysql_mysql_db_system.Test_mysql_db_system.Id,
-        ///         DisplayName = @var.Replica_display_name,
-        ///         IsUpToDate = @var.Replica_is_up_to_date,
-        ///         ReplicaId = oci_mysql_replica.Test_replica.Id,
-        ///         State = @var.Replica_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigurationId = testMysqlConfiguration.Id,
+        ///         DbSystemId = testMysqlDbSystem.Id,
+        ///         DisplayName = replicaDisplayName,
+        ///         IsUpToDate = replicaIsUpToDate,
+        ///         ReplicaId = testReplica.Id,
+        ///         State = replicaState,
         ///     });
         /// 
         /// });

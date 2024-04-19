@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetReplicationTargets(ctx, &filestorage.GetReplicationTargetsArgs{
-//				AvailabilityDomain: _var.Replication_target_availability_domain,
-//				CompartmentId:      _var.Compartment_id,
-//				DisplayName:        pulumi.StringRef(_var.Replication_target_display_name),
-//				Id:                 pulumi.StringRef(_var.Replication_target_id),
-//				State:              pulumi.StringRef(_var.Replication_target_state),
+//				AvailabilityDomain: replicationTargetAvailabilityDomain,
+//				CompartmentId:      compartmentId,
+//				DisplayName:        pulumi.StringRef(replicationTargetDisplayName),
+//				Id:                 pulumi.StringRef(replicationTargetId),
+//				State:              pulumi.StringRef(replicationTargetState),
 //			}, nil)
 //			if err != nil {
 //				return err

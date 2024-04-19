@@ -50,17 +50,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDeployPipeline = new DeployPipeline(&#34;testDeployPipeline&#34;, DeployPipelineArgs.builder()        
- *             .projectId(oci_devops_project.test_project().id())
+ *             .projectId(testProject.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .deployPipelineParameters(DeployPipelineDeployPipelineParametersArgs.builder()
  *                 .items(DeployPipelineDeployPipelineParametersItemArgs.builder()
- *                     .name(var_.deploy_pipeline_deploy_pipeline_parameters_items_name())
- *                     .defaultValue(var_.deploy_pipeline_deploy_pipeline_parameters_items_default_value())
- *                     .description(var_.deploy_pipeline_deploy_pipeline_parameters_items_description())
+ *                     .name(deployPipelineDeployPipelineParametersItemsName)
+ *                     .defaultValue(deployPipelineDeployPipelineParametersItemsDefaultValue)
+ *                     .description(deployPipelineDeployPipelineParametersItemsDescription)
  *                     .build())
  *                 .build())
- *             .description(var_.deploy_pipeline_description())
- *             .displayName(var_.deploy_pipeline_display_name())
+ *             .description(deployPipelineDescription)
+ *             .displayName(deployPipelineDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

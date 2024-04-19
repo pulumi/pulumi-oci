@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeClusters(ctx, &core.GetComputeClustersArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Compute_cluster_availability_domain),
-//				DisplayName:        pulumi.StringRef(_var.Compute_cluster_display_name),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(computeClusterAvailabilityDomain),
+//				DisplayName:        pulumi.StringRef(computeClusterDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

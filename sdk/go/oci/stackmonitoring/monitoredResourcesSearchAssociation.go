@@ -31,15 +31,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewMonitoredResourcesSearchAssociation(ctx, "testMonitoredResourcesSearchAssociation", &StackMonitoring.MonitoredResourcesSearchAssociationArgs{
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				AssociationType:         pulumi.Any(_var.Monitored_resources_search_association_association_type),
-//				DestinationResourceId:   pulumi.Any(oci_stack_monitoring_destination_resource.Test_destination_resource.Id),
-//				DestinationResourceName: pulumi.Any(_var.Monitored_resources_search_association_destination_resource_name),
-//				DestinationResourceType: pulumi.Any(_var.Monitored_resources_search_association_destination_resource_type),
-//				SourceResourceId:        pulumi.Any(oci_stack_monitoring_source_resource.Test_source_resource.Id),
-//				SourceResourceName:      pulumi.Any(_var.Monitored_resources_search_association_source_resource_name),
-//				SourceResourceType:      pulumi.Any(_var.Monitored_resources_search_association_source_resource_type),
+//			_, err := StackMonitoring.NewMonitoredResourcesSearchAssociation(ctx, "test_monitored_resources_search_association", &StackMonitoring.MonitoredResourcesSearchAssociationArgs{
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				AssociationType:         pulumi.Any(monitoredResourcesSearchAssociationAssociationType),
+//				DestinationResourceId:   pulumi.Any(testDestinationResource.Id),
+//				DestinationResourceName: pulumi.Any(monitoredResourcesSearchAssociationDestinationResourceName),
+//				DestinationResourceType: pulumi.Any(monitoredResourcesSearchAssociationDestinationResourceType),
+//				SourceResourceId:        pulumi.Any(testSourceResource.Id),
+//				SourceResourceName:      pulumi.Any(monitoredResourcesSearchAssociationSourceResourceName),
+//				SourceResourceType:      pulumi.Any(monitoredResourcesSearchAssociationSourceResourceType),
 //			})
 //			if err != nil {
 //				return err

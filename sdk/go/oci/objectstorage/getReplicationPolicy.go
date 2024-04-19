@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.GetReplicationPolicy(ctx, &objectstorage.GetReplicationPolicyArgs{
-//				Bucket:        _var.Replication_policy_bucket,
-//				Namespace:     _var.Replication_policy_namespace,
-//				ReplicationId: oci_objectstorage_replication.Test_replication.Id,
+//				Bucket:        replicationPolicyBucket,
+//				Namespace:     replicationPolicyNamespace,
+//				ReplicationId: testReplication.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

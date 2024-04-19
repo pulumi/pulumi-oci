@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBaselineableMetrics = oci.StackMonitoring.getBaselineableMetrics({
- *     baselineableMetricId: oci_stack_monitoring_baselineable_metric.test_baselineable_metric.id,
- *     compartmentId: _var.compartment_id,
- *     metricNamespace: _var.baselineable_metric_metric_namespace,
- *     name: _var.baselineable_metric_name,
- *     resourceGroup: _var.baselineable_metric_resource_group,
+ *     baselineableMetricId: testBaselineableMetric.id,
+ *     compartmentId: compartmentId,
+ *     metricNamespace: baselineableMetricMetricNamespace,
+ *     name: baselineableMetricName,
+ *     resourceGroup: baselineableMetricResourceGroup,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,11 +110,11 @@ export interface GetBaselineableMetricsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBaselineableMetrics = oci.StackMonitoring.getBaselineableMetrics({
- *     baselineableMetricId: oci_stack_monitoring_baselineable_metric.test_baselineable_metric.id,
- *     compartmentId: _var.compartment_id,
- *     metricNamespace: _var.baselineable_metric_metric_namespace,
- *     name: _var.baselineable_metric_name,
- *     resourceGroup: _var.baselineable_metric_resource_group,
+ *     baselineableMetricId: testBaselineableMetric.id,
+ *     compartmentId: compartmentId,
+ *     metricNamespace: baselineableMetricMetricNamespace,
+ *     name: baselineableMetricName,
+ *     resourceGroup: baselineableMetricResourceGroup,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

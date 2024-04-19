@@ -101,8 +101,8 @@ def get_network_firewall_policy_decryption_profiles(display_name: Optional[str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_decryption_profiles = oci.NetworkFirewall.get_network_firewall_policy_decryption_profiles(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_decryption_profile_display_name"])
+    test_network_firewall_policy_decryption_profiles = oci.NetworkFirewall.get_network_firewall_policy_decryption_profiles(network_firewall_policy_id=test_network_firewall_policy["id"],
+        display_name=network_firewall_policy_decryption_profile_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,8 +142,8 @@ def get_network_firewall_policy_decryption_profiles_output(display_name: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_decryption_profiles = oci.NetworkFirewall.get_network_firewall_policy_decryption_profiles(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_decryption_profile_display_name"])
+    test_network_firewall_policy_decryption_profiles = oci.NetworkFirewall.get_network_firewall_policy_decryption_profiles(network_firewall_policy_id=test_network_firewall_policy["id"],
+        display_name=network_firewall_policy_decryption_profile_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

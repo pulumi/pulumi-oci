@@ -322,17 +322,17 @@ class Subscriber(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_subscriber = oci.api_gateway.Subscriber("testSubscriber",
+        test_subscriber = oci.api_gateway.Subscriber("test_subscriber",
             clients=[oci.api_gateway.SubscriberClientArgs(
-                name=var["subscriber_clients_name"],
-                token=var["subscriber_clients_token"],
+                name=subscriber_clients_name,
+                token=subscriber_clients_token,
             )],
-            compartment_id=var["compartment_id"],
-            usage_plans=var["subscriber_usage_plans"],
+            compartment_id=compartment_id,
+            usage_plans=subscriber_usage_plans,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["subscriber_display_name"],
+            display_name=subscriber_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -378,17 +378,17 @@ class Subscriber(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_subscriber = oci.api_gateway.Subscriber("testSubscriber",
+        test_subscriber = oci.api_gateway.Subscriber("test_subscriber",
             clients=[oci.api_gateway.SubscriberClientArgs(
-                name=var["subscriber_clients_name"],
-                token=var["subscriber_clients_token"],
+                name=subscriber_clients_name,
+                token=subscriber_clients_token,
             )],
-            compartment_id=var["compartment_id"],
-            usage_plans=var["subscriber_usage_plans"],
+            compartment_id=compartment_id,
+            usage_plans=subscriber_usage_plans,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["subscriber_display_name"],
+            display_name=subscriber_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

@@ -30,9 +30,9 @@ namespace Pulumi.Oci.VnMonitoring
         /// {
         ///     var testPathAnalyzerTests = Oci.VnMonitoring.GetPathAnalyzerTests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Path_analyzer_test_display_name,
-        ///         State = @var.Path_analyzer_test_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = pathAnalyzerTestDisplayName,
+        ///         State = pathAnalyzerTestState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.VnMonitoring
         /// {
         ///     var testPathAnalyzerTests = Oci.VnMonitoring.GetPathAnalyzerTests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Path_analyzer_test_display_name,
-        ///         State = @var.Path_analyzer_test_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = pathAnalyzerTestDisplayName,
+        ///         State = pathAnalyzerTestState,
         ///     });
         /// 
         /// });

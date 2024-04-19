@@ -18,38 +18,38 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineRun = new oci.datascience.PipelineRun("testPipelineRun", {
- *     compartmentId: _var.compartment_id,
- *     pipelineId: oci_datascience_pipeline.test_pipeline.id,
+ * const testPipelineRun = new oci.datascience.PipelineRun("test_pipeline_run", {
+ *     compartmentId: compartmentId,
+ *     pipelineId: testPipeline.id,
  *     configurationOverrideDetails: {
- *         type: _var.pipeline_run_configuration_override_details_type,
- *         commandLineArguments: _var.pipeline_run_configuration_override_details_command_line_arguments,
- *         environmentVariables: _var.pipeline_run_configuration_override_details_environment_variables,
- *         maximumRuntimeInMinutes: _var.pipeline_run_configuration_override_details_maximum_runtime_in_minutes,
+ *         type: pipelineRunConfigurationOverrideDetailsType,
+ *         commandLineArguments: pipelineRunConfigurationOverrideDetailsCommandLineArguments,
+ *         environmentVariables: pipelineRunConfigurationOverrideDetailsEnvironmentVariables,
+ *         maximumRuntimeInMinutes: pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.pipeline_run_display_name,
+ *     displayName: pipelineRunDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     logConfigurationOverrideDetails: {
- *         enableAutoLogCreation: _var.pipeline_run_log_configuration_override_details_enable_auto_log_creation,
- *         enableLogging: _var.pipeline_run_log_configuration_override_details_enable_logging,
- *         logGroupId: oci_logging_log_group.test_log_group.id,
- *         logId: oci_logging_log.test_log.id,
+ *         enableAutoLogCreation: pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation,
+ *         enableLogging: pipelineRunLogConfigurationOverrideDetailsEnableLogging,
+ *         logGroupId: testLogGroup.id,
+ *         logId: testLog.id,
  *     },
- *     projectId: oci_datascience_project.test_project.id,
+ *     projectId: testProject.id,
  *     stepOverrideDetails: [{
  *         stepConfigurationDetails: {
- *             commandLineArguments: _var.pipeline_run_step_override_details_step_configuration_details_command_line_arguments,
- *             environmentVariables: _var.pipeline_run_step_override_details_step_configuration_details_environment_variables,
- *             maximumRuntimeInMinutes: _var.pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes,
+ *             commandLineArguments: pipelineRunStepOverrideDetailsStepConfigurationDetailsCommandLineArguments,
+ *             environmentVariables: pipelineRunStepOverrideDetailsStepConfigurationDetailsEnvironmentVariables,
+ *             maximumRuntimeInMinutes: pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
  *         },
- *         stepName: _var.pipeline_run_step_override_details_step_name,
+ *         stepName: pipelineRunStepOverrideDetailsStepName,
  *     }],
- *     systemTags: _var.pipeline_run_system_tags,
+ *     systemTags: pipelineRunSystemTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBlockchainPlatforms = oci.Blockchain.getBlockchainPlatforms({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.blockchain_platform_display_name,
- *     state: _var.blockchain_platform_state,
+ *     compartmentId: compartmentId,
+ *     displayName: blockchainPlatformDisplayName,
+ *     state: blockchainPlatformState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetBlockchainPlatformsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBlockchainPlatforms = oci.Blockchain.getBlockchainPlatforms({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.blockchain_platform_display_name,
- *     state: _var.blockchain_platform_state,
+ *     compartmentId: compartmentId,
+ *     displayName: blockchainPlatformDisplayName,
+ *     state: blockchainPlatformState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

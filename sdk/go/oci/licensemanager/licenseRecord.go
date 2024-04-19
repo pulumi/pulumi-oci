@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LicenseManager.NewLicenseRecord(ctx, "testLicenseRecord", &LicenseManager.LicenseRecordArgs{
-//				DisplayName:      pulumi.Any(_var.License_record_display_name),
-//				IsPerpetual:      pulumi.Any(_var.License_record_is_perpetual),
-//				IsUnlimited:      pulumi.Any(_var.License_record_is_unlimited),
-//				ProductLicenseId: pulumi.Any(oci_license_manager_product_license.Test_product_license.Id),
+//			_, err := LicenseManager.NewLicenseRecord(ctx, "test_license_record", &LicenseManager.LicenseRecordArgs{
+//				DisplayName:      pulumi.Any(licenseRecordDisplayName),
+//				IsPerpetual:      pulumi.Any(licenseRecordIsPerpetual),
+//				IsUnlimited:      pulumi.Any(licenseRecordIsUnlimited),
+//				ProductLicenseId: pulumi.Any(testProductLicense.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				ExpirationDate: pulumi.Any(_var.License_record_expiration_date),
+//				ExpirationDate: pulumi.Any(licenseRecordExpirationDate),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				LicenseCount:   pulumi.Any(_var.License_record_license_count),
-//				ProductId:      pulumi.Any(oci_license_manager_product.Test_product.Id),
-//				SupportEndDate: pulumi.Any(_var.License_record_support_end_date),
+//				LicenseCount:   pulumi.Any(licenseRecordLicenseCount),
+//				ProductId:      pulumi.Any(testProduct.Id),
+//				SupportEndDate: pulumi.Any(licenseRecordSupportEndDate),
 //			})
 //			if err != nil {
 //				return err

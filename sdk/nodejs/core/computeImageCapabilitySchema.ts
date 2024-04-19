@@ -16,20 +16,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeImageCapabilitySchema = new oci.core.ComputeImageCapabilitySchema("testComputeImageCapabilitySchema", {
- *     compartmentId: _var.compartment_id,
- *     computeGlobalImageCapabilitySchemaVersionName: _var.compute_image_capability_schema_compute_global_image_capability_schema_version_name,
- *     imageId: oci_core_image.test_image.id,
+ * const testComputeImageCapabilitySchema = new oci.core.ComputeImageCapabilitySchema("test_compute_image_capability_schema", {
+ *     compartmentId: compartmentId,
+ *     computeGlobalImageCapabilitySchemaVersionName: computeImageCapabilitySchemaComputeGlobalImageCapabilitySchemaVersionName,
+ *     imageId: testImage.id,
  *     schemaData: [{
- *         descriptorType: _var.compute_image_capability_schema_schema_data_descriptor_type,
- *         source: _var.compute_image_capability_schema_schema_data_source,
- *         defaultValue: _var.compute_image_capability_schema_schema_data_default_value,
- *         values: _var.compute_image_capability_schema_schema_data_values,
+ *         descriptorType: computeImageCapabilitySchemaSchemaDataDescriptorType,
+ *         source: computeImageCapabilitySchemaSchemaDataSource,
+ *         defaultValue: computeImageCapabilitySchemaSchemaDataDefaultValue,
+ *         values: computeImageCapabilitySchemaSchemaDataValues,
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.compute_image_capability_schema_display_name,
+ *     displayName: computeImageCapabilitySchemaDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

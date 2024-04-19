@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDataGuardAssociations = Oci.Database.GetDataGuardAssociations.Invoke(new()
         ///     {
-        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///         DatabaseId = testDatabase.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDataGuardAssociations = Oci.Database.GetDataGuardAssociations.Invoke(new()
         ///     {
-        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///         DatabaseId = testDatabase.Id,
         ///     });
         /// 
         /// });

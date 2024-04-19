@@ -130,10 +130,10 @@ def get_opensearch_clusters(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_clusters = oci.Opensearch.get_opensearch_clusters(compartment_id=var["compartment_id"],
-        display_name=var["opensearch_cluster_display_name"],
-        id=var["opensearch_cluster_id"],
-        state=var["opensearch_cluster_state"])
+    test_opensearch_clusters = oci.Opensearch.get_opensearch_clusters(compartment_id=compartment_id,
+        display_name=opensearch_cluster_display_name,
+        id=opensearch_cluster_id,
+        state=opensearch_cluster_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,10 +189,10 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_clusters = oci.Opensearch.get_opensearch_clusters(compartment_id=var["compartment_id"],
-        display_name=var["opensearch_cluster_display_name"],
-        id=var["opensearch_cluster_id"],
-        state=var["opensearch_cluster_state"])
+    test_opensearch_clusters = oci.Opensearch.get_opensearch_clusters(compartment_id=compartment_id,
+        display_name=opensearch_cluster_display_name,
+        id=opensearch_cluster_id,
+        state=opensearch_cluster_state)
     ```
     <!--End PulumiCodeChooser -->
 

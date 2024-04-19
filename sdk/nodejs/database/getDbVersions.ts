@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbVersions = oci.Database.getDbVersions({
- *     compartmentId: _var.compartment_id,
- *     dbSystemId: oci_database_db_system.test_db_system.id,
- *     dbSystemShape: _var.db_version_db_system_shape,
- *     isDatabaseSoftwareImageSupported: _var.db_version_is_database_software_image_supported,
- *     isUpgradeSupported: _var.db_version_is_upgrade_supported,
- *     storageManagement: _var.db_version_storage_management,
+ *     compartmentId: compartmentId,
+ *     dbSystemId: testDbSystem.id,
+ *     dbSystemShape: dbVersionDbSystemShape,
+ *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported,
+ *     isUpgradeSupported: dbVersionIsUpgradeSupported,
+ *     storageManagement: dbVersionStorageManagement,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,12 +112,12 @@ export interface GetDbVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbVersions = oci.Database.getDbVersions({
- *     compartmentId: _var.compartment_id,
- *     dbSystemId: oci_database_db_system.test_db_system.id,
- *     dbSystemShape: _var.db_version_db_system_shape,
- *     isDatabaseSoftwareImageSupported: _var.db_version_is_database_software_image_supported,
- *     isUpgradeSupported: _var.db_version_is_upgrade_supported,
- *     storageManagement: _var.db_version_storage_management,
+ *     compartmentId: compartmentId,
+ *     dbSystemId: testDbSystem.id,
+ *     dbSystemShape: dbVersionDbSystemShape,
+ *     isDatabaseSoftwareImageSupported: dbVersionIsDatabaseSoftwareImageSupported,
+ *     isUpgradeSupported: dbVersionIsUpgradeSupported,
+ *     storageManagement: dbVersionStorageManagement,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

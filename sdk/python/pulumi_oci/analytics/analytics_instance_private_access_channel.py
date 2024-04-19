@@ -338,20 +338,20 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_analytics_instance_private_access_channel = oci.analytics.AnalyticsInstancePrivateAccessChannel("testAnalyticsInstancePrivateAccessChannel",
-            analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
-            display_name=var["analytics_instance_private_access_channel_display_name"],
+        test_analytics_instance_private_access_channel = oci.analytics.AnalyticsInstancePrivateAccessChannel("test_analytics_instance_private_access_channel",
+            analytics_instance_id=test_analytics_instance["id"],
+            display_name=analytics_instance_private_access_channel_display_name,
             private_source_dns_zones=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs(
-                dns_zone=var["analytics_instance_private_access_channel_private_source_dns_zones_dns_zone"],
-                description=var["analytics_instance_private_access_channel_private_source_dns_zones_description"],
+                dns_zone=analytics_instance_private_access_channel_private_source_dns_zones_dns_zone,
+                description=analytics_instance_private_access_channel_private_source_dns_zones_description,
             )],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            network_security_group_ids=var["analytics_instance_private_access_channel_network_security_group_ids"],
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
+            network_security_group_ids=analytics_instance_private_access_channel_network_security_group_ids,
             private_source_scan_hosts=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs(
-                scan_hostname=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname"],
-                scan_port=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_port"],
-                description=var["analytics_instance_private_access_channel_private_source_scan_hosts_description"],
+                scan_hostname=analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname,
+                scan_port=analytics_instance_private_access_channel_private_source_scan_hosts_scan_port,
+                description=analytics_instance_private_access_channel_private_source_scan_hosts_description,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -397,20 +397,20 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_analytics_instance_private_access_channel = oci.analytics.AnalyticsInstancePrivateAccessChannel("testAnalyticsInstancePrivateAccessChannel",
-            analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
-            display_name=var["analytics_instance_private_access_channel_display_name"],
+        test_analytics_instance_private_access_channel = oci.analytics.AnalyticsInstancePrivateAccessChannel("test_analytics_instance_private_access_channel",
+            analytics_instance_id=test_analytics_instance["id"],
+            display_name=analytics_instance_private_access_channel_display_name,
             private_source_dns_zones=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs(
-                dns_zone=var["analytics_instance_private_access_channel_private_source_dns_zones_dns_zone"],
-                description=var["analytics_instance_private_access_channel_private_source_dns_zones_description"],
+                dns_zone=analytics_instance_private_access_channel_private_source_dns_zones_dns_zone,
+                description=analytics_instance_private_access_channel_private_source_dns_zones_description,
             )],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            network_security_group_ids=var["analytics_instance_private_access_channel_network_security_group_ids"],
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
+            network_security_group_ids=analytics_instance_private_access_channel_network_security_group_ids,
             private_source_scan_hosts=[oci.analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs(
-                scan_hostname=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname"],
-                scan_port=var["analytics_instance_private_access_channel_private_source_scan_hosts_scan_port"],
-                description=var["analytics_instance_private_access_channel_private_source_scan_hosts_description"],
+                scan_hostname=analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname,
+                scan_port=analytics_instance_private_access_channel_private_source_scan_hosts_scan_port,
+                description=analytics_instance_private_access_channel_private_source_scan_hosts_description,
             )])
         ```
         <!--End PulumiCodeChooser -->

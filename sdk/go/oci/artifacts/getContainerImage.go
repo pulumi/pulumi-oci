@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Artifacts.GetContainerImage(ctx, &artifacts.GetContainerImageArgs{
-//				ImageId: _var.Container_image_id,
+//				ImageId: containerImageId,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewApplicationVip(ctx, "testApplicationVip", &Database.ApplicationVipArgs{
-//				CloudVmClusterId: pulumi.Any(oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id),
-//				HostnameLabel:    pulumi.Any(_var.Application_vip_hostname_label),
-//				SubnetId:         pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				DbNodeId:         pulumi.Any(oci_database_db_node.Test_db_node.Id),
-//				IpAddress:        pulumi.Any(_var.Application_vip_ip_address),
+//			_, err := Database.NewApplicationVip(ctx, "test_application_vip", &Database.ApplicationVipArgs{
+//				CloudVmClusterId: pulumi.Any(testCloudVmCluster.Id),
+//				HostnameLabel:    pulumi.Any(applicationVipHostnameLabel),
+//				SubnetId:         pulumi.Any(testSubnet.Id),
+//				DbNodeId:         pulumi.Any(testDbNode.Id),
+//				IpAddress:        pulumi.Any(applicationVipIpAddress),
 //			})
 //			if err != nil {
 //				return err

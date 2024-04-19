@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Sch
         /// {
         ///     var testConnectorPlugin = Oci.Sch.GetConnectorPlugin.Invoke(new()
         ///     {
-        ///         ConnectorPluginName = oci_sch_connector_plugin.Test_connector_plugin.Name,
+        ///         ConnectorPluginName = testConnectorPluginOciSchConnectorPlugin.Name,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Sch
         /// {
         ///     var testConnectorPlugin = Oci.Sch.GetConnectorPlugin.Invoke(new()
         ///     {
-        ///         ConnectorPluginName = oci_sch_connector_plugin.Test_connector_plugin.Name,
+        ///         ConnectorPluginName = testConnectorPluginOciSchConnectorPlugin.Name,
         ///     });
         /// 
         /// });

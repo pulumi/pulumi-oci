@@ -305,17 +305,17 @@ class GeneratedKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_generated_key = oci.kms.GeneratedKey("testGeneratedKey",
-            crypto_endpoint=var["generated_key_crypto_endpoint"],
-            include_plaintext_key=var["generated_key_include_plaintext_key"],
-            key_id=oci_kms_key["test_key"]["id"],
+        test_generated_key = oci.kms.GeneratedKey("test_generated_key",
+            crypto_endpoint=generated_key_crypto_endpoint,
+            include_plaintext_key=generated_key_include_plaintext_key,
+            key_id=test_key["id"],
             key_shape=oci.kms.GeneratedKeyKeyShapeArgs(
-                algorithm=var["generated_key_key_shape_algorithm"],
-                length=var["generated_key_key_shape_length"],
-                curve_id=oci_kms_curve["test_curve"]["id"],
+                algorithm=generated_key_key_shape_algorithm,
+                length=generated_key_key_shape_length,
+                curve_id=test_curve["id"],
             ),
-            associated_data=var["generated_key_associated_data"],
-            logging_context=var["generated_key_logging_context"])
+            associated_data=generated_key_associated_data,
+            logging_context=generated_key_logging_context)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -354,17 +354,17 @@ class GeneratedKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_generated_key = oci.kms.GeneratedKey("testGeneratedKey",
-            crypto_endpoint=var["generated_key_crypto_endpoint"],
-            include_plaintext_key=var["generated_key_include_plaintext_key"],
-            key_id=oci_kms_key["test_key"]["id"],
+        test_generated_key = oci.kms.GeneratedKey("test_generated_key",
+            crypto_endpoint=generated_key_crypto_endpoint,
+            include_plaintext_key=generated_key_include_plaintext_key,
+            key_id=test_key["id"],
             key_shape=oci.kms.GeneratedKeyKeyShapeArgs(
-                algorithm=var["generated_key_key_shape_algorithm"],
-                length=var["generated_key_key_shape_length"],
-                curve_id=oci_kms_curve["test_curve"]["id"],
+                algorithm=generated_key_key_shape_algorithm,
+                length=generated_key_key_shape_length,
+                curve_id=test_curve["id"],
             ),
-            associated_data=var["generated_key_associated_data"],
-            logging_context=var["generated_key_logging_context"])
+            associated_data=generated_key_associated_data,
+            logging_context=generated_key_logging_context)
         ```
         <!--End PulumiCodeChooser -->
 

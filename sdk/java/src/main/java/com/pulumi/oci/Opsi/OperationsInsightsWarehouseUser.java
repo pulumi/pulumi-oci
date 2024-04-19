@@ -48,14 +48,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOperationsInsightsWarehouseUser = new OperationsInsightsWarehouseUser(&#34;testOperationsInsightsWarehouseUser&#34;, OperationsInsightsWarehouseUserArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .connectionPassword(var_.operations_insights_warehouse_user_connection_password())
- *             .isAwrDataAccess(var_.operations_insights_warehouse_user_is_awr_data_access())
- *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+ *             .compartmentId(compartmentId)
+ *             .connectionPassword(operationsInsightsWarehouseUserConnectionPassword)
+ *             .isAwrDataAccess(operationsInsightsWarehouseUserIsAwrDataAccess)
+ *             .name(operationsInsightsWarehouseUserName)
+ *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .isEmDataAccess(var_.operations_insights_warehouse_user_is_em_data_access())
- *             .isOpsiDataAccess(var_.operations_insights_warehouse_user_is_opsi_data_access())
+ *             .isEmDataAccess(operationsInsightsWarehouseUserIsEmDataAccess)
+ *             .isOpsiDataAccess(operationsInsightsWarehouseUserIsOpsiDataAccess)
  *             .build());
  * 
  *     }

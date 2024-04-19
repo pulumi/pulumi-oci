@@ -19,33 +19,34 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRuleSet = new oci.loadbalancer.RuleSet("testRuleSet", {
+ * const testRuleSet = new oci.loadbalancer.RuleSet("test_rule_set", {
  *     items: [{
- *         action: _var.rule_set_items_action,
- *         allowedMethods: _var.rule_set_items_allowed_methods,
- *         areInvalidCharactersAllowed: _var.rule_set_items_are_invalid_characters_allowed,
+ *         action: ruleSetItemsAction,
+ *         allowedMethods: ruleSetItemsAllowedMethods,
+ *         areInvalidCharactersAllowed: ruleSetItemsAreInvalidCharactersAllowed,
  *         conditions: [{
- *             attributeName: _var.rule_set_items_conditions_attribute_name,
- *             attributeValue: _var.rule_set_items_conditions_attribute_value,
- *             operator: _var.rule_set_items_conditions_operator,
+ *             attributeName: ruleSetItemsConditionsAttributeName,
+ *             attributeValue: ruleSetItemsConditionsAttributeValue,
+ *             operator: ruleSetItemsConditionsOperator,
  *         }],
- *         description: _var.rule_set_items_description,
- *         header: _var.rule_set_items_header,
- *         httpLargeHeaderSizeInKb: _var.rule_set_items_http_large_header_size_in_kb,
- *         prefix: _var.rule_set_items_prefix,
+ *         description: ruleSetItemsDescription,
+ *         header: ruleSetItemsHeader,
+ *         httpLargeHeaderSizeInKb: ruleSetItemsHttpLargeHeaderSizeInKb,
+ *         prefix: ruleSetItemsPrefix,
  *         redirectUri: {
- *             host: _var.rule_set_items_redirect_uri_host,
- *             path: _var.rule_set_items_redirect_uri_path,
- *             port: _var.rule_set_items_redirect_uri_port,
- *             protocol: _var.rule_set_items_redirect_uri_protocol,
- *             query: _var.rule_set_items_redirect_uri_query,
+ *             host: ruleSetItemsRedirectUriHost,
+ *             path: ruleSetItemsRedirectUriPath,
+ *             port: ruleSetItemsRedirectUriPort,
+ *             protocol: ruleSetItemsRedirectUriProtocol,
+ *             query: ruleSetItemsRedirectUriQuery,
  *         },
- *         responseCode: _var.rule_set_items_response_code,
- *         statusCode: _var.rule_set_items_status_code,
- *         suffix: _var.rule_set_items_suffix,
- *         value: _var.rule_set_items_value,
+ *         responseCode: ruleSetItemsResponseCode,
+ *         statusCode: ruleSetItemsStatusCode,
+ *         suffix: ruleSetItemsSuffix,
+ *         value: ruleSetItemsValue,
  *     }],
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     name: ruleSetName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

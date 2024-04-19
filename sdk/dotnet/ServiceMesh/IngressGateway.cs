@@ -25,9 +25,9 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIngressGateway = new Oci.ServiceMesh.IngressGateway("testIngressGateway", new()
+    ///     var testIngressGateway = new Oci.ServiceMesh.IngressGateway("test_ingress_gateway", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Hosts = new[]
     ///         {
     ///             new Oci.ServiceMesh.Inputs.IngressGatewayHostArgs
@@ -36,51 +36,52 @@ namespace Pulumi.Oci.ServiceMesh
     ///                 {
     ///                     new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerArgs
     ///                     {
-    ///                         Port = @var.Ingress_gateway_hosts_listeners_port,
-    ///                         Protocol = @var.Ingress_gateway_hosts_listeners_protocol,
+    ///                         Port = ingressGatewayHostsListenersPort,
+    ///                         Protocol = ingressGatewayHostsListenersProtocol,
     ///                         Tls = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsArgs
     ///                         {
-    ///                             Mode = @var.Ingress_gateway_hosts_listeners_tls_mode,
+    ///                             Mode = ingressGatewayHostsListenersTlsMode,
     ///                             ClientValidation = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsClientValidationArgs
     ///                             {
-    ///                                 SubjectAlternateNames = @var.Ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
+    ///                                 SubjectAlternateNames = ingressGatewayHostsListenersTlsClientValidationSubjectAlternateNames,
     ///                                 TrustedCaBundle = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs
     ///                                 {
-    ///                                     Type = @var.Ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
-    ///                                     CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-    ///                                     SecretName = oci_vault_secret.Test_secret.Name,
+    ///                                     Type = ingressGatewayHostsListenersTlsClientValidationTrustedCaBundleType,
+    ///                                     CaBundleId = testCaBundle.Id,
+    ///                                     SecretName = testSecret.Name,
     ///                                 },
     ///                             },
     ///                             ServerCertificate = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsServerCertificateArgs
     ///                             {
-    ///                                 Type = @var.Ingress_gateway_hosts_listeners_tls_server_certificate_type,
-    ///                                 CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
-    ///                                 SecretName = oci_vault_secret.Test_secret.Name,
+    ///                                 Type = ingressGatewayHostsListenersTlsServerCertificateType,
+    ///                                 CertificateId = testCertificate.Id,
+    ///                                 SecretName = testSecret.Name,
     ///                             },
     ///                         },
     ///                     },
     ///                 },
-    ///                 Name = @var.Ingress_gateway_hosts_name,
-    ///                 Hostnames = @var.Ingress_gateway_hosts_hostnames,
+    ///                 Name = ingressGatewayHostsName,
+    ///                 Hostnames = ingressGatewayHostsHostnames,
     ///             },
     ///         },
-    ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+    ///         MeshId = testMesh.Id,
+    ///         Name = ingressGatewayName,
     ///         AccessLogging = new Oci.ServiceMesh.Inputs.IngressGatewayAccessLoggingArgs
     ///         {
-    ///             IsEnabled = @var.Ingress_gateway_access_logging_is_enabled,
+    ///             IsEnabled = ingressGatewayAccessLoggingIsEnabled,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Ingress_gateway_description,
+    ///         Description = ingressGatewayDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
     ///         Mtls = new Oci.ServiceMesh.Inputs.IngressGatewayMtlsArgs
     ///         {
-    ///             MaximumValidity = @var.Ingress_gateway_mtls_maximum_validity,
+    ///             MaximumValidity = ingressGatewayMtlsMaximumValidity,
     ///         },
     ///     });
     /// 

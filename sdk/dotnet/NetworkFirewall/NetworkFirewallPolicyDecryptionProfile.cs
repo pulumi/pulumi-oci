@@ -25,19 +25,20 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkFirewallPolicyDecryptionProfile = new Oci.NetworkFirewall.NetworkFirewallPolicyDecryptionProfile("testNetworkFirewallPolicyDecryptionProfile", new()
+    ///     var testNetworkFirewallPolicyDecryptionProfile = new Oci.NetworkFirewall.NetworkFirewallPolicyDecryptionProfile("test_network_firewall_policy_decryption_profile", new()
     ///     {
-    ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-    ///         Type = @var.Network_firewall_policy_decryption_profile_type,
-    ///         AreCertificateExtensionsRestricted = @var.Network_firewall_policy_decryption_profile_are_certificate_extensions_restricted,
-    ///         IsAutoIncludeAltName = @var.Network_firewall_policy_decryption_profile_is_auto_include_alt_name,
-    ///         IsExpiredCertificateBlocked = @var.Network_firewall_policy_decryption_profile_is_expired_certificate_blocked,
-    ///         IsOutOfCapacityBlocked = @var.Network_firewall_policy_decryption_profile_is_out_of_capacity_blocked,
-    ///         IsRevocationStatusTimeoutBlocked = @var.Network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked,
-    ///         IsUnknownRevocationStatusBlocked = @var.Network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked,
-    ///         IsUnsupportedCipherBlocked = @var.Network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked,
-    ///         IsUnsupportedVersionBlocked = @var.Network_firewall_policy_decryption_profile_is_unsupported_version_blocked,
-    ///         IsUntrustedIssuerBlocked = @var.Network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked,
+    ///         Name = networkFirewallPolicyDecryptionProfileName,
+    ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         Type = networkFirewallPolicyDecryptionProfileType,
+    ///         AreCertificateExtensionsRestricted = networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted,
+    ///         IsAutoIncludeAltName = networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName,
+    ///         IsExpiredCertificateBlocked = networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked,
+    ///         IsOutOfCapacityBlocked = networkFirewallPolicyDecryptionProfileIsOutOfCapacityBlocked,
+    ///         IsRevocationStatusTimeoutBlocked = networkFirewallPolicyDecryptionProfileIsRevocationStatusTimeoutBlocked,
+    ///         IsUnknownRevocationStatusBlocked = networkFirewallPolicyDecryptionProfileIsUnknownRevocationStatusBlocked,
+    ///         IsUnsupportedCipherBlocked = networkFirewallPolicyDecryptionProfileIsUnsupportedCipherBlocked,
+    ///         IsUnsupportedVersionBlocked = networkFirewallPolicyDecryptionProfileIsUnsupportedVersionBlocked,
+    ///         IsUntrustedIssuerBlocked = networkFirewallPolicyDecryptionProfileIsUntrustedIssuerBlocked,
     ///     });
     /// 
     /// });

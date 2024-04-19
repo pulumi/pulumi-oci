@@ -31,34 +31,34 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolume = new oci.core.Volume("testVolume", {
- *     compartmentId: _var.compartment_id,
+ * const testVolume = new oci.core.Volume("test_volume", {
+ *     compartmentId: compartmentId,
  *     autotunePolicies: [{
- *         autotuneType: _var.volume_autotune_policies_autotune_type,
- *         maxVpusPerGb: _var.volume_autotune_policies_max_vpus_per_gb,
+ *         autotuneType: volumeAutotunePoliciesAutotuneType,
+ *         maxVpusPerGb: volumeAutotunePoliciesMaxVpusPerGb,
  *     }],
- *     availabilityDomain: _var.volume_availability_domain,
- *     backupPolicyId: data.oci_core_volume_backup_policies.test_volume_backup_policies.volume_backup_policies[0].id,
+ *     availabilityDomain: volumeAvailabilityDomain,
+ *     backupPolicyId: testVolumeBackupPolicies.volumeBackupPolicies[0].id,
  *     blockVolumeReplicas: [{
- *         availabilityDomain: _var.volume_block_volume_replicas_availability_domain,
- *         displayName: _var.volume_block_volume_replicas_display_name,
+ *         availabilityDomain: volumeBlockVolumeReplicasAvailabilityDomain,
+ *         displayName: volumeBlockVolumeReplicasDisplayName,
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.volume_display_name,
+ *     displayName: volumeDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoTuneEnabled: _var.volume_is_auto_tune_enabled,
- *     kmsKeyId: oci_kms_key.test_key.id,
- *     sizeInGbs: _var.volume_size_in_gbs,
- *     sizeInMbs: _var.volume_size_in_mbs,
+ *     isAutoTuneEnabled: volumeIsAutoTuneEnabled,
+ *     kmsKeyId: testKey.id,
+ *     sizeInGbs: volumeSizeInGbs,
+ *     sizeInMbs: volumeSizeInMbs,
  *     sourceDetails: {
- *         id: _var.volume_source_details_id,
- *         type: _var.volume_source_details_type,
+ *         id: volumeSourceDetailsId,
+ *         type: volumeSourceDetailsType,
  *     },
- *     vpusPerGb: _var.volume_vpus_per_gb,
+ *     vpusPerGb: volumeVpusPerGb,
  *     blockVolumeReplicasDeletion: true,
  * });
  * ```

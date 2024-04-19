@@ -171,14 +171,14 @@ def get_host_insights(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_host_insights = oci.Opsi.get_host_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["host_insight_compartment_id_in_subtree"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
-        host_types=var["host_insight_host_type"],
-        id=var["host_insight_id"],
-        states=var["host_insight_state"],
-        statuses=var["host_insight_status"])
+    test_host_insights = oci.Opsi.get_host_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=host_insight_compartment_id_in_subtree,
+        enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
+        exadata_insight_id=test_exadata_insight["id"],
+        host_types=host_insight_host_type,
+        id=host_insight_id,
+        states=host_insight_state,
+        statuses=host_insight_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -242,14 +242,14 @@ def get_host_insights_output(compartment_id: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_host_insights = oci.Opsi.get_host_insights(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["host_insight_compartment_id_in_subtree"],
-        enterprise_manager_bridge_id=oci_opsi_enterprise_manager_bridge["test_enterprise_manager_bridge"]["id"],
-        exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"],
-        host_types=var["host_insight_host_type"],
-        id=var["host_insight_id"],
-        states=var["host_insight_state"],
-        statuses=var["host_insight_status"])
+    test_host_insights = oci.Opsi.get_host_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=host_insight_compartment_id_in_subtree,
+        enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
+        exadata_insight_id=test_exadata_insight["id"],
+        host_types=host_insight_host_type,
+        id=host_insight_id,
+        states=host_insight_state,
+        statuses=host_insight_status)
     ```
     <!--End PulumiCodeChooser -->
 

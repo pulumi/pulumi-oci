@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryJobLogs = oci.StackMonitoring.getDiscoveryJobLogs({
- *     discoveryJobId: oci_stack_monitoring_discovery_job.test_discovery_job.id,
- *     logType: _var.discovery_job_log_log_type,
+ *     discoveryJobId: testDiscoveryJob.id,
+ *     logType: discoveryJobLogLogType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetDiscoveryJobLogsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryJobLogs = oci.StackMonitoring.getDiscoveryJobLogs({
- *     discoveryJobId: oci_stack_monitoring_discovery_job.test_discovery_job.id,
- *     logType: _var.discovery_job_log_log_type,
+ *     discoveryJobId: testDiscoveryJob.id,
+ *     logType: discoveryJobLogLogType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

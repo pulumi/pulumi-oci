@@ -25,11 +25,11 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMetricExtensionMetricExtensionOnGivenResourcesManagement = new Oci.StackMonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("testMetricExtensionMetricExtensionOnGivenResourcesManagement", new()
+    ///     var testMetricExtensionMetricExtensionOnGivenResourcesManagement = new Oci.StackMonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management", new()
     ///     {
-    ///         MetricExtensionId = oci_stack_monitoring_metric_extension.Test_metric_extension.Id,
-    ///         ResourceIds = @var.Metric_extension_metric_extension_on_given_resources_management_resource_ids,
-    ///         EnableMetricExtensionOnGivenResources = @var.Enable_metric_extension_on_given_resources,
+    ///         MetricExtensionId = testMetricExtension.Id,
+    ///         ResourceIds = metricExtensionMetricExtensionOnGivenResourcesManagementResourceIds[0],
+    ///         EnableMetricExtensionOnGivenResources = enableMetricExtensionOnGivenResources,
     ///     });
     /// 
     /// });

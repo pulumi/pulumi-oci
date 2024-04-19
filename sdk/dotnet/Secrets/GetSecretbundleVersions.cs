@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Secrets
         /// {
         ///     var testSecretbundleVersions = Oci.Secrets.GetSecretbundleVersions.Invoke(new()
         ///     {
-        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///         SecretId = testSecret.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Secrets
         /// {
         ///     var testSecretbundleVersions = Oci.Secrets.GetSecretbundleVersions.Invoke(new()
         ///     {
-        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///         SecretId = testSecret.Id,
         ///     });
         /// 
         /// });

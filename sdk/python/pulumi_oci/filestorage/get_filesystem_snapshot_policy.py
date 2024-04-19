@@ -176,7 +176,7 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"])
+    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=test_filesystem_snapshot_policy_oci_file_storage_filesystem_snapshot_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -217,7 +217,7 @@ def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"])
+    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=test_filesystem_snapshot_policy_oci_file_storage_filesystem_snapshot_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 

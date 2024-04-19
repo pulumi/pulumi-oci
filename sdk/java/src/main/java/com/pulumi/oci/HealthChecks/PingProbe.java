@@ -48,12 +48,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPingProbe = new PingProbe(&#34;testPingProbe&#34;, PingProbeArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .protocol(var_.ping_probe_protocol())
- *             .targets(var_.ping_probe_targets())
- *             .port(var_.ping_probe_port())
- *             .timeoutInSeconds(var_.ping_probe_timeout_in_seconds())
- *             .vantagePointNames(var_.ping_probe_vantage_point_names())
+ *             .compartmentId(compartmentId)
+ *             .protocol(pingProbeProtocol)
+ *             .targets(pingProbeTargets)
+ *             .port(pingProbePort)
+ *             .timeoutInSeconds(pingProbeTimeoutInSeconds)
+ *             .vantagePointNames(pingProbeVantagePointNames)
  *             .build());
  * 
  *     }

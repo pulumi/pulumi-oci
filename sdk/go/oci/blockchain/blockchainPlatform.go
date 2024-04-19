@@ -31,23 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Blockchain.NewBlockchainPlatform(ctx, "testBlockchainPlatform", &Blockchain.BlockchainPlatformArgs{
-//				CompartmentId:     pulumi.Any(_var.Compartment_id),
-//				ComputeShape:      pulumi.Any(_var.Blockchain_platform_compute_shape),
-//				DisplayName:       pulumi.Any(_var.Blockchain_platform_display_name),
-//				IdcsAccessToken:   pulumi.Any(_var.Blockchain_platform_idcs_access_token),
-//				PlatformRole:      pulumi.Any(_var.Blockchain_platform_platform_role),
-//				CaCertArchiveText: pulumi.Any(_var.Blockchain_platform_ca_cert_archive_text),
+//			_, err := Blockchain.NewBlockchainPlatform(ctx, "test_blockchain_platform", &Blockchain.BlockchainPlatformArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				ComputeShape:      pulumi.Any(blockchainPlatformComputeShape),
+//				DisplayName:       pulumi.Any(blockchainPlatformDisplayName),
+//				IdcsAccessToken:   pulumi.Any(blockchainPlatformIdcsAccessToken),
+//				PlatformRole:      pulumi.Any(blockchainPlatformPlatformRole),
+//				CaCertArchiveText: pulumi.Any(blockchainPlatformCaCertArchiveText),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description:     pulumi.Any(_var.Blockchain_platform_description),
-//				FederatedUserId: pulumi.Any(oci_identity_user.Test_user.Id),
+//				Description:     pulumi.Any(blockchainPlatformDescription),
+//				FederatedUserId: pulumi.Any(testUser.Id),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsByol:          pulumi.Any(_var.Blockchain_platform_is_byol),
-//				PlatformVersion: pulumi.Any(_var.Blockchain_platform_platform_version),
+//				IsByol:          pulumi.Any(blockchainPlatformIsByol),
+//				PlatformVersion: pulumi.Any(blockchainPlatformPlatformVersion),
 //			})
 //			if err != nil {
 //				return err

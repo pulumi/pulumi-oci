@@ -31,11 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewCloudGuardConfiguration(ctx, "testCloudGuardConfiguration", &CloudGuard.CloudGuardConfigurationArgs{
-//				CompartmentId:       pulumi.Any(_var.Compartment_id),
-//				ReportingRegion:     pulumi.Any(_var.Cloud_guard_configuration_reporting_region),
-//				Status:              pulumi.Any(_var.Cloud_guard_configuration_status),
-//				SelfManageResources: pulumi.Any(_var.Cloud_guard_configuration_self_manage_resources),
+//			_, err := CloudGuard.NewCloudGuardConfiguration(ctx, "test_cloud_guard_configuration", &CloudGuard.CloudGuardConfigurationArgs{
+//				CompartmentId:       pulumi.Any(compartmentId),
+//				ReportingRegion:     pulumi.Any(cloudGuardConfigurationReportingRegion),
+//				Status:              pulumi.Any(cloudGuardConfigurationStatus),
+//				SelfManageResources: pulumi.Any(cloudGuardConfigurationSelfManageResources),
 //			})
 //			if err != nil {
 //				return err

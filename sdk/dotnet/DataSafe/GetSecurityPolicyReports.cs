@@ -43,13 +43,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyReports = Oci.DataSafe.GetSecurityPolicyReports.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_policy_report_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_policy_report_compartment_id_in_subtree,
-        ///         DisplayName = @var.Security_policy_report_display_name,
-        ///         SecurityPolicyReportId = oci_data_safe_security_policy_report.Test_security_policy_report.Id,
-        ///         State = @var.Security_policy_report_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityPolicyReportAccessLevel,
+        ///         CompartmentIdInSubtree = securityPolicyReportCompartmentIdInSubtree,
+        ///         DisplayName = securityPolicyReportDisplayName,
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
+        ///         State = securityPolicyReportState,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -91,13 +91,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyReports = Oci.DataSafe.GetSecurityPolicyReports.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_policy_report_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_policy_report_compartment_id_in_subtree,
-        ///         DisplayName = @var.Security_policy_report_display_name,
-        ///         SecurityPolicyReportId = oci_data_safe_security_policy_report.Test_security_policy_report.Id,
-        ///         State = @var.Security_policy_report_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityPolicyReportAccessLevel,
+        ///         CompartmentIdInSubtree = securityPolicyReportCompartmentIdInSubtree,
+        ///         DisplayName = securityPolicyReportDisplayName,
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
+        ///         State = securityPolicyReportState,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });

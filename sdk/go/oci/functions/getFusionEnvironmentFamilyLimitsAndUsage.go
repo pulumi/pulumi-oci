@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetFusionEnvironmentFamilyLimitsAndUsage(ctx, &functions.GetFusionEnvironmentFamilyLimitsAndUsageArgs{
-//				FusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id,
+//				FusionEnvironmentFamilyId: testFusionEnvironmentFamily.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -74,7 +74,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
+     *             .clusterId(testClusterOciOcvpCluster.id())
      *             .build());
      * 
      *     }
@@ -116,7 +116,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
+     *             .clusterId(testClusterOciOcvpCluster.id())
      *             .build());
      * 
      *     }
@@ -158,7 +158,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
+     *             .clusterId(testClusterOciOcvpCluster.id())
      *             .build());
      * 
      *     }
@@ -200,7 +200,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
+     *             .clusterId(testClusterOciOcvpCluster.id())
      *             .build());
      * 
      *     }
@@ -242,10 +242,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_display_name())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterDisplayName)
+     *             .sddcId(testSddc.id())
+     *             .state(clusterState)
      *             .build());
      * 
      *     }
@@ -287,10 +287,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_display_name())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterDisplayName)
+     *             .sddcId(testSddc.id())
+     *             .state(clusterState)
      *             .build());
      * 
      *     }
@@ -332,10 +332,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_display_name())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterDisplayName)
+     *             .sddcId(testSddc.id())
+     *             .state(clusterState)
      *             .build());
      * 
      *     }
@@ -377,10 +377,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_display_name())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterDisplayName)
+     *             .sddcId(testSddc.id())
+     *             .state(clusterState)
      *             .build());
      * 
      *     }
@@ -422,10 +422,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_display_name())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterDisplayName)
+     *             .sddcId(testSddc.id())
+     *             .state(clusterState)
      *             .build());
      * 
      *     }
@@ -467,10 +467,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_display_name())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterDisplayName)
+     *             .sddcId(testSddc.id())
+     *             .state(clusterState)
      *             .build());
      * 
      *     }
@@ -512,7 +512,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
-     *             .esxiHostId(oci_ocvp_esxi_host.test_esxi_host().id())
+     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.id())
      *             .build());
      * 
      *     }
@@ -554,7 +554,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
-     *             .esxiHostId(oci_ocvp_esxi_host.test_esxi_host().id())
+     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.id())
      *             .build());
      * 
      *     }
@@ -596,7 +596,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
-     *             .esxiHostId(oci_ocvp_esxi_host.test_esxi_host().id())
+     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.id())
      *             .build());
      * 
      *     }
@@ -638,7 +638,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
-     *             .esxiHostId(oci_ocvp_esxi_host.test_esxi_host().id())
+     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.id())
      *             .build());
      * 
      *     }
@@ -688,14 +688,14 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeInstanceId(oci_core_instance.test_instance().id())
-     *             .displayName(var_.esxi_host_display_name())
-     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
-     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.esxi_host_state())
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .computeInstanceId(testInstance.id())
+     *             .displayName(esxiHostDisplayName)
+     *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
+     *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
+     *             .sddcId(testSddc.id())
+     *             .state(esxiHostState)
      *             .build());
      * 
      *     }
@@ -745,14 +745,14 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeInstanceId(oci_core_instance.test_instance().id())
-     *             .displayName(var_.esxi_host_display_name())
-     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
-     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.esxi_host_state())
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .computeInstanceId(testInstance.id())
+     *             .displayName(esxiHostDisplayName)
+     *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
+     *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
+     *             .sddcId(testSddc.id())
+     *             .state(esxiHostState)
      *             .build());
      * 
      *     }
@@ -802,14 +802,14 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeInstanceId(oci_core_instance.test_instance().id())
-     *             .displayName(var_.esxi_host_display_name())
-     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
-     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.esxi_host_state())
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .computeInstanceId(testInstance.id())
+     *             .displayName(esxiHostDisplayName)
+     *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
+     *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
+     *             .sddcId(testSddc.id())
+     *             .state(esxiHostState)
      *             .build());
      * 
      *     }
@@ -859,14 +859,14 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeInstanceId(oci_core_instance.test_instance().id())
-     *             .displayName(var_.esxi_host_display_name())
-     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
-     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.esxi_host_state())
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .computeInstanceId(testInstance.id())
+     *             .displayName(esxiHostDisplayName)
+     *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
+     *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
+     *             .sddcId(testSddc.id())
+     *             .state(esxiHostState)
      *             .build());
      * 
      *     }
@@ -916,14 +916,14 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeInstanceId(oci_core_instance.test_instance().id())
-     *             .displayName(var_.esxi_host_display_name())
-     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
-     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.esxi_host_state())
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .computeInstanceId(testInstance.id())
+     *             .displayName(esxiHostDisplayName)
+     *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
+     *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
+     *             .sddcId(testSddc.id())
+     *             .state(esxiHostState)
      *             .build());
      * 
      *     }
@@ -973,14 +973,14 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeInstanceId(oci_core_instance.test_instance().id())
-     *             .displayName(var_.esxi_host_display_name())
-     *             .isBillingDonorsOnly(var_.esxi_host_is_billing_donors_only())
-     *             .isSwapBillingOnly(var_.esxi_host_is_swap_billing_only())
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
-     *             .state(var_.esxi_host_state())
+     *             .clusterId(testCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .computeInstanceId(testInstance.id())
+     *             .displayName(esxiHostDisplayName)
+     *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
+     *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
+     *             .sddcId(testSddc.id())
+     *             .state(esxiHostState)
      *             .build());
      * 
      *     }
@@ -1020,8 +1020,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPassword = OcvpFunctions.getRetrievePassword(GetRetrievePasswordArgs.builder()
-     *             .sddcId(var_.compartment_id())
-     *             .type(var_.password_type())
+     *             .sddcId(compartmentId)
+     *             .type(passwordType)
      *             .build());
      * 
      *     }
@@ -1061,8 +1061,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPassword = OcvpFunctions.getRetrievePassword(GetRetrievePasswordArgs.builder()
-     *             .sddcId(var_.compartment_id())
-     *             .type(var_.password_type())
+     *             .sddcId(compartmentId)
+     *             .type(passwordType)
      *             .build());
      * 
      *     }
@@ -1102,8 +1102,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPassword = OcvpFunctions.getRetrievePassword(GetRetrievePasswordArgs.builder()
-     *             .sddcId(var_.compartment_id())
-     *             .type(var_.password_type())
+     *             .sddcId(compartmentId)
+     *             .type(passwordType)
      *             .build());
      * 
      *     }
@@ -1143,8 +1143,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPassword = OcvpFunctions.getRetrievePassword(GetRetrievePasswordArgs.builder()
-     *             .sddcId(var_.compartment_id())
-     *             .type(var_.password_type())
+     *             .sddcId(compartmentId)
+     *             .type(passwordType)
      *             .build());
      * 
      *     }
@@ -1186,7 +1186,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .sddcId(testSddcOciOcvpSddc.id())
      *             .build());
      * 
      *     }
@@ -1228,7 +1228,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .sddcId(testSddcOciOcvpSddc.id())
      *             .build());
      * 
      *     }
@@ -1270,7 +1270,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .sddcId(testSddcOciOcvpSddc.id())
      *             .build());
      * 
      *     }
@@ -1312,7 +1312,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
-     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .sddcId(testSddcOciOcvpSddc.id())
      *             .build());
      * 
      *     }
@@ -1355,10 +1355,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddcs = OcvpFunctions.getSddcs(GetSddcsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computeAvailabilityDomain(var_.sddc_compute_availability_domain())
-     *             .displayName(var_.sddc_display_name())
-     *             .state(var_.sddc_state())
+     *             .compartmentId(compartmentId)
+     *             .computeAvailabilityDomain(sddcComputeAvailabilityDomain)
+     *             .displayName(sddcDisplayName)
+     *             .state(sddcState)
      *             .build());
      * 
      *     }
@@ -1401,10 +1401,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddcs = OcvpFunctions.getSddcs(GetSddcsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computeAvailabilityDomain(var_.sddc_compute_availability_domain())
-     *             .displayName(var_.sddc_display_name())
-     *             .state(var_.sddc_state())
+     *             .compartmentId(compartmentId)
+     *             .computeAvailabilityDomain(sddcComputeAvailabilityDomain)
+     *             .displayName(sddcDisplayName)
+     *             .state(sddcState)
      *             .build());
      * 
      *     }
@@ -1447,10 +1447,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddcs = OcvpFunctions.getSddcs(GetSddcsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computeAvailabilityDomain(var_.sddc_compute_availability_domain())
-     *             .displayName(var_.sddc_display_name())
-     *             .state(var_.sddc_state())
+     *             .compartmentId(compartmentId)
+     *             .computeAvailabilityDomain(sddcComputeAvailabilityDomain)
+     *             .displayName(sddcDisplayName)
+     *             .state(sddcState)
      *             .build());
      * 
      *     }
@@ -1493,10 +1493,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddcs = OcvpFunctions.getSddcs(GetSddcsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computeAvailabilityDomain(var_.sddc_compute_availability_domain())
-     *             .displayName(var_.sddc_display_name())
-     *             .state(var_.sddc_state())
+     *             .compartmentId(compartmentId)
+     *             .computeAvailabilityDomain(sddcComputeAvailabilityDomain)
+     *             .displayName(sddcDisplayName)
+     *             .state(sddcState)
      *             .build());
      * 
      *     }
@@ -1538,8 +1538,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -1581,8 +1581,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -1624,8 +1624,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -1667,8 +1667,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -1710,10 +1710,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .initialHostShapeName(oci_core_shape.test_shape().name())
-     *             .isSingleHostSddcSupported(var_.supported_host_shape_is_single_host_sddc_supported())
-     *             .name(var_.supported_host_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .initialHostShapeName(testShape.name())
+     *             .isSingleHostSddcSupported(supportedHostShapeIsSingleHostSddcSupported)
+     *             .name(supportedHostShapeName)
      *             .build());
      * 
      *     }
@@ -1755,10 +1755,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .initialHostShapeName(oci_core_shape.test_shape().name())
-     *             .isSingleHostSddcSupported(var_.supported_host_shape_is_single_host_sddc_supported())
-     *             .name(var_.supported_host_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .initialHostShapeName(testShape.name())
+     *             .isSingleHostSddcSupported(supportedHostShapeIsSingleHostSddcSupported)
+     *             .name(supportedHostShapeName)
      *             .build());
      * 
      *     }
@@ -1800,10 +1800,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .initialHostShapeName(oci_core_shape.test_shape().name())
-     *             .isSingleHostSddcSupported(var_.supported_host_shape_is_single_host_sddc_supported())
-     *             .name(var_.supported_host_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .initialHostShapeName(testShape.name())
+     *             .isSingleHostSddcSupported(supportedHostShapeIsSingleHostSddcSupported)
+     *             .name(supportedHostShapeName)
      *             .build());
      * 
      *     }
@@ -1845,10 +1845,10 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .initialHostShapeName(oci_core_shape.test_shape().name())
-     *             .isSingleHostSddcSupported(var_.supported_host_shape_is_single_host_sddc_supported())
-     *             .name(var_.supported_host_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .initialHostShapeName(testShape.name())
+     *             .isSingleHostSddcSupported(supportedHostShapeIsSingleHostSddcSupported)
+     *             .name(supportedHostShapeName)
      *             .build());
      * 
      *     }
@@ -1891,8 +1891,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -1935,8 +1935,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -1979,8 +1979,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -2023,8 +2023,8 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -2067,9 +2067,9 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
-     *             .version(var_.supported_vmware_software_version_version())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
+     *             .version(supportedVmwareSoftwareVersionVersion)
      *             .build());
      * 
      *     }
@@ -2112,9 +2112,9 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
-     *             .version(var_.supported_vmware_software_version_version())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
+     *             .version(supportedVmwareSoftwareVersionVersion)
      *             .build());
      * 
      *     }
@@ -2157,9 +2157,9 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
-     *             .version(var_.supported_vmware_software_version_version())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
+     *             .version(supportedVmwareSoftwareVersionVersion)
      *             .build());
      * 
      *     }
@@ -2202,9 +2202,9 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .hostShapeName(oci_core_shape.test_shape().name())
-     *             .version(var_.supported_vmware_software_version_version())
+     *             .compartmentId(compartmentId)
+     *             .hostShapeName(testShape.name())
+     *             .version(supportedVmwareSoftwareVersionVersion)
      *             .build());
      * 
      *     }

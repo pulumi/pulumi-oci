@@ -30,12 +30,12 @@ namespace Pulumi.Oci.ApmTraces
         /// {
         ///     var testTraceAggregatedSnapshotData = Oci.ApmTraces.GetTraceAggregatedSnapshotData.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         TraceKey = @var.Trace_aggregated_snapshot_data_trace_key,
-        ///         ServerName = @var.Trace_aggregated_snapshot_data_server_name,
-        ///         ServiceName = oci_core_service.Test_service.Name,
-        ///         SpanKey = @var.Trace_aggregated_snapshot_data_span_key,
-        ///         SpanName = @var.Trace_aggregated_snapshot_data_span_name,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         TraceKey = traceAggregatedSnapshotDataTraceKey,
+        ///         ServerName = traceAggregatedSnapshotDataServerName,
+        ///         ServiceName = testService.Name,
+        ///         SpanKey = traceAggregatedSnapshotDataSpanKey,
+        ///         SpanName = traceAggregatedSnapshotDataSpanName,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.ApmTraces
         /// {
         ///     var testTraceAggregatedSnapshotData = Oci.ApmTraces.GetTraceAggregatedSnapshotData.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         TraceKey = @var.Trace_aggregated_snapshot_data_trace_key,
-        ///         ServerName = @var.Trace_aggregated_snapshot_data_server_name,
-        ///         ServiceName = oci_core_service.Test_service.Name,
-        ///         SpanKey = @var.Trace_aggregated_snapshot_data_span_key,
-        ///         SpanName = @var.Trace_aggregated_snapshot_data_span_name,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         TraceKey = traceAggregatedSnapshotDataTraceKey,
+        ///         ServerName = traceAggregatedSnapshotDataServerName,
+        ///         ServiceName = testService.Name,
+        ///         SpanKey = traceAggregatedSnapshotDataSpanKey,
+        ///         SpanName = traceAggregatedSnapshotDataSpanName,
         ///     });
         /// 
         /// });

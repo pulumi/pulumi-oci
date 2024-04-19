@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceMaintenanceReboot = Oci.Core.GetInstanceMaintenanceReboot.Invoke(new()
         ///     {
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         InstanceId = testInstance.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceMaintenanceReboot = Oci.Core.GetInstanceMaintenanceReboot.Invoke(new()
         ///     {
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         InstanceId = testInstance.Id,
         ///     });
         /// 
         /// });

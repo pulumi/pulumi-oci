@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJobExecutionsStatuses = oci.DatabaseManagement.getJobExecutionsStatuses({
- *     compartmentId: _var.compartment_id,
- *     endTime: _var.job_executions_status_end_time,
- *     startTime: _var.job_executions_status_start_time,
- *     id: _var.job_executions_status_id,
- *     managedDatabaseGroupId: oci_database_management_managed_database_group.test_managed_database_group.id,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     name: _var.job_executions_status_name,
+ *     compartmentId: compartmentId,
+ *     endTime: jobExecutionsStatusEndTime,
+ *     startTime: jobExecutionsStatusStartTime,
+ *     id: jobExecutionsStatusId,
+ *     managedDatabaseGroupId: testManagedDatabaseGroup.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     name: jobExecutionsStatusName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,13 +110,13 @@ export interface GetJobExecutionsStatusesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJobExecutionsStatuses = oci.DatabaseManagement.getJobExecutionsStatuses({
- *     compartmentId: _var.compartment_id,
- *     endTime: _var.job_executions_status_end_time,
- *     startTime: _var.job_executions_status_start_time,
- *     id: _var.job_executions_status_id,
- *     managedDatabaseGroupId: oci_database_management_managed_database_group.test_managed_database_group.id,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     name: _var.job_executions_status_name,
+ *     compartmentId: compartmentId,
+ *     endTime: jobExecutionsStatusEndTime,
+ *     startTime: jobExecutionsStatusStartTime,
+ *     id: jobExecutionsStatusId,
+ *     managedDatabaseGroupId: testManagedDatabaseGroup.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     name: jobExecutionsStatusName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

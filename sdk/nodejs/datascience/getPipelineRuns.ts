@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPipelineRuns = oci.DataScience.getPipelineRuns({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.pipeline_run_created_by,
- *     displayName: _var.pipeline_run_display_name,
- *     id: _var.pipeline_run_id,
- *     pipelineId: oci_datascience_pipeline.test_pipeline.id,
- *     state: _var.pipeline_run_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: pipelineRunCreatedBy,
+ *     displayName: pipelineRunDisplayName,
+ *     id: pipelineRunId,
+ *     pipelineId: testPipeline.id,
+ *     state: pipelineRunState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetPipelineRunsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPipelineRuns = oci.DataScience.getPipelineRuns({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.pipeline_run_created_by,
- *     displayName: _var.pipeline_run_display_name,
- *     id: _var.pipeline_run_id,
- *     pipelineId: oci_datascience_pipeline.test_pipeline.id,
- *     state: _var.pipeline_run_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: pipelineRunCreatedBy,
+ *     displayName: pipelineRunDisplayName,
+ *     id: pipelineRunId,
+ *     pipelineId: testPipeline.id,
+ *     state: pipelineRunState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

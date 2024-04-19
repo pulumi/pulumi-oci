@@ -25,25 +25,26 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNamedCredential = new Oci.DatabaseManagement.NamedCredential("testNamedCredential", new()
+    ///     var testNamedCredential = new Oci.DatabaseManagement.NamedCredential("test_named_credential", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Content = new Oci.DatabaseManagement.Inputs.NamedCredentialContentArgs
     ///         {
-    ///             CredentialType = @var.Named_credential_content_credential_type,
-    ///             PasswordSecretAccessMode = @var.Named_credential_content_password_secret_access_mode,
-    ///             PasswordSecretId = oci_vault_secret.Test_secret.Id,
-    ///             Role = @var.Named_credential_content_role,
-    ///             UserName = oci_identity_user.Test_user.Name,
+    ///             CredentialType = namedCredentialContentCredentialType,
+    ///             PasswordSecretAccessMode = namedCredentialContentPasswordSecretAccessMode,
+    ///             PasswordSecretId = testSecret.Id,
+    ///             Role = namedCredentialContentRole,
+    ///             UserName = testUser.Name,
     ///         },
-    ///         Scope = @var.Named_credential_scope,
-    ///         Type = @var.Named_credential_type,
-    ///         AssociatedResource = @var.Named_credential_associated_resource,
+    ///         Name = namedCredentialName,
+    ///         Scope = namedCredentialScope,
+    ///         Type = namedCredentialType,
+    ///         AssociatedResource = namedCredentialAssociatedResource,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Named_credential_description,
+    ///         Description = namedCredentialDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

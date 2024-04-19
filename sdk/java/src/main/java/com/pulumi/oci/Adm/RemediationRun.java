@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRemediationRun = new RemediationRun(&#34;testRemediationRun&#34;, RemediationRunArgs.builder()        
- *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+ *             .remediationRecipeId(testRemediationRecipe.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.remediation_run_display_name())
+ *             .displayName(remediationRunDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

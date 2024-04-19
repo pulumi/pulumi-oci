@@ -305,13 +305,13 @@ class Project(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_project = oci.ai_vision.Project("testProject",
-            compartment_id=var["compartment_id"],
+        test_project = oci.ai_vision.Project("test_project",
+            compartment_id=compartment_id,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["project_description"],
-            display_name=var["project_display_name"],
+            description=project_description,
+            display_name=project_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -356,13 +356,13 @@ class Project(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_project = oci.ai_vision.Project("testProject",
-            compartment_id=var["compartment_id"],
+        test_project = oci.ai_vision.Project("test_project",
+            compartment_id=compartment_id,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["project_description"],
-            display_name=var["project_display_name"],
+            description=project_description,
+            display_name=project_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

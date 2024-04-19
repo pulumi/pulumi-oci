@@ -48,12 +48,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOperationsInsightsWarehouse = new OperationsInsightsWarehouse(&#34;testOperationsInsightsWarehouse&#34;, OperationsInsightsWarehouseArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .cpuAllocated(var_.operations_insights_warehouse_cpu_allocated())
- *             .displayName(var_.operations_insights_warehouse_display_name())
+ *             .compartmentId(compartmentId)
+ *             .cpuAllocated(operationsInsightsWarehouseCpuAllocated)
+ *             .displayName(operationsInsightsWarehouseDisplayName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .storageAllocatedInGbs(var_.operations_insights_warehouse_storage_allocated_in_gbs())
+ *             .storageAllocatedInGbs(operationsInsightsWarehouseStorageAllocatedInGbs)
  *             .build());
  * 
  *     }

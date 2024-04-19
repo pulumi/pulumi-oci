@@ -30,9 +30,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {
         ///     var testNetworkFirewallPolicySecurityRules = Oci.NetworkFirewall.GetNetworkFirewallPolicySecurityRules.Invoke(new()
         ///     {
-        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-        ///         DisplayName = @var.Network_firewall_policy_security_rule_display_name,
-        ///         SecurityRulePriorityOrder = @var.Network_firewall_policy_security_rule_security_rule_priority_order,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         DisplayName = networkFirewallPolicySecurityRuleDisplayName,
+        ///         SecurityRulePriorityOrder = networkFirewallPolicySecurityRuleSecurityRulePriorityOrder,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {
         ///     var testNetworkFirewallPolicySecurityRules = Oci.NetworkFirewall.GetNetworkFirewallPolicySecurityRules.Invoke(new()
         ///     {
-        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-        ///         DisplayName = @var.Network_firewall_policy_security_rule_display_name,
-        ///         SecurityRulePriorityOrder = @var.Network_firewall_policy_security_rule_security_rule_priority_order,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         DisplayName = networkFirewallPolicySecurityRuleDisplayName,
+        ///         SecurityRulePriorityOrder = networkFirewallPolicySecurityRuleSecurityRulePriorityOrder,
         ///     });
         /// 
         /// });

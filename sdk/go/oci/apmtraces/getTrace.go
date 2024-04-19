@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmTraces.GetTrace(ctx, &apmtraces.GetTraceArgs{
-//				ApmDomainId:                          oci_apm_apm_domain.Test_apm_domain.Id,
-//				TraceKey:                             _var.Trace_trace_key,
-//				TimeTraceStartedGreaterThanOrEqualTo: pulumi.StringRef(_var.Trace_time_trace_started_greater_than_or_equal_to),
-//				TimeTraceStartedLessThan:             pulumi.StringRef(_var.Trace_time_trace_started_less_than),
-//				TraceNamespace:                       pulumi.StringRef(_var.Trace_trace_namespace),
+//				ApmDomainId:                          testApmDomain.Id,
+//				TraceKey:                             traceTraceKey,
+//				TimeTraceStartedGreaterThanOrEqualTo: pulumi.StringRef(traceTimeTraceStartedGreaterThanOrEqualTo),
+//				TimeTraceStartedLessThan:             pulumi.StringRef(traceTimeTraceStartedLessThan),
+//				TraceNamespace:                       pulumi.StringRef(traceTraceNamespace),
 //			}, nil)
 //			if err != nil {
 //				return err

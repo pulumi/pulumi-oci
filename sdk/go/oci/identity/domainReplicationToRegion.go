@@ -43,9 +43,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainReplicationToRegion(ctx, "testDomainReplicationToRegion", &Identity.DomainReplicationToRegionArgs{
-//				DomainId:      pulumi.Any(oci_identity_domain.Test_domain.Id),
-//				ReplicaRegion: pulumi.Any(_var.Domain_replication_to_region_replica_region),
+//			_, err := Identity.NewDomainReplicationToRegion(ctx, "test_domain_replication_to_region", &Identity.DomainReplicationToRegionArgs{
+//				DomainId:      pulumi.Any(testDomain.Id),
+//				ReplicaRegion: pulumi.Any(domainReplicationToRegionReplicaRegion),
 //			})
 //			if err != nil {
 //				return err

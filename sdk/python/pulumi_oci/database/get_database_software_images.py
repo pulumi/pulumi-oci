@@ -159,12 +159,12 @@ def get_database_software_images(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=var["compartment_id"],
-        display_name=var["database_software_image_display_name"],
-        image_shape_family=var["database_software_image_image_shape_family"],
-        image_type=var["database_software_image_image_type"],
-        is_upgrade_supported=var["database_software_image_is_upgrade_supported"],
-        state=var["database_software_image_state"])
+    test_database_software_images = oci.Database.get_database_software_images(compartment_id=compartment_id,
+        display_name=database_software_image_display_name,
+        image_shape_family=database_software_image_image_shape_family,
+        image_type=database_software_image_image_type,
+        is_upgrade_supported=database_software_image_is_upgrade_supported,
+        state=database_software_image_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -220,12 +220,12 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=var["compartment_id"],
-        display_name=var["database_software_image_display_name"],
-        image_shape_family=var["database_software_image_image_shape_family"],
-        image_type=var["database_software_image_image_type"],
-        is_upgrade_supported=var["database_software_image_is_upgrade_supported"],
-        state=var["database_software_image_state"])
+    test_database_software_images = oci.Database.get_database_software_images(compartment_id=compartment_id,
+        display_name=database_software_image_display_name,
+        image_shape_family=database_software_image_image_shape_family,
+        image_type=database_software_image_image_type,
+        is_upgrade_supported=database_software_image_is_upgrade_supported,
+        state=database_software_image_state)
     ```
     <!--End PulumiCodeChooser -->
 

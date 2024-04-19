@@ -136,10 +136,10 @@ def get_audit_events(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.DataSafe.get_audit_events(compartment_id=var["compartment_id"],
-        access_level=var["audit_event_access_level"],
-        compartment_id_in_subtree=var["audit_event_compartment_id_in_subtree"],
-        scim_query=var["audit_event_scim_query"])
+    test_audit_events = oci.DataSafe.get_audit_events(compartment_id=compartment_id,
+        access_level=audit_event_access_level,
+        compartment_id_in_subtree=audit_event_compartment_id_in_subtree,
+        scim_query=audit_event_scim_query)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -201,10 +201,10 @@ def get_audit_events_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_events = oci.DataSafe.get_audit_events(compartment_id=var["compartment_id"],
-        access_level=var["audit_event_access_level"],
-        compartment_id_in_subtree=var["audit_event_compartment_id_in_subtree"],
-        scim_query=var["audit_event_scim_query"])
+    test_audit_events = oci.DataSafe.get_audit_events(compartment_id=compartment_id,
+        access_level=audit_event_access_level,
+        compartment_id_in_subtree=audit_event_compartment_id_in_subtree,
+        scim_query=audit_event_scim_query)
     ```
     <!--End PulumiCodeChooser -->
 

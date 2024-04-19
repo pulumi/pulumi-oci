@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSafePrivateEndpoints = oci.DataSafe.getDataSafePrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.data_safe_private_endpoint_access_level,
- *     compartmentIdInSubtree: _var.data_safe_private_endpoint_compartment_id_in_subtree,
- *     displayName: _var.data_safe_private_endpoint_display_name,
- *     state: _var.data_safe_private_endpoint_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: dataSafePrivateEndpointAccessLevel,
+ *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree,
+ *     displayName: dataSafePrivateEndpointDisplayName,
+ *     state: dataSafePrivateEndpointState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetDataSafePrivateEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSafePrivateEndpoints = oci.DataSafe.getDataSafePrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.data_safe_private_endpoint_access_level,
- *     compartmentIdInSubtree: _var.data_safe_private_endpoint_compartment_id_in_subtree,
- *     displayName: _var.data_safe_private_endpoint_display_name,
- *     state: _var.data_safe_private_endpoint_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: dataSafePrivateEndpointAccessLevel,
+ *     compartmentIdInSubtree: dataSafePrivateEndpointCompartmentIdInSubtree,
+ *     displayName: dataSafePrivateEndpointDisplayName,
+ *     state: dataSafePrivateEndpointState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

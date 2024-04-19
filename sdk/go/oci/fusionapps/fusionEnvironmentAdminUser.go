@@ -31,13 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FusionApps.NewFusionEnvironmentAdminUser(ctx, "testFusionEnvironmentAdminUser", &FusionApps.FusionEnvironmentAdminUserArgs{
-//				EmailAddress:        pulumi.Any(_var.Fusion_environment_admin_user_email_address),
-//				FirstName:           pulumi.Any(_var.Fusion_environment_admin_user_first_name),
-//				FusionEnvironmentId: pulumi.Any(oci_fusion_apps_fusion_environment.Test_fusion_environment.Id),
-//				LastName:            pulumi.Any(_var.Fusion_environment_admin_user_last_name),
-//				Password:            pulumi.Any(_var.Fusion_environment_admin_user_password),
-//				Username:            pulumi.Any(_var.Fusion_environment_admin_user_username),
+//			_, err := FusionApps.NewFusionEnvironmentAdminUser(ctx, "test_fusion_environment_admin_user", &FusionApps.FusionEnvironmentAdminUserArgs{
+//				EmailAddress:        pulumi.Any(fusionEnvironmentAdminUserEmailAddress),
+//				FirstName:           pulumi.Any(fusionEnvironmentAdminUserFirstName),
+//				FusionEnvironmentId: pulumi.Any(testFusionEnvironment.Id),
+//				LastName:            pulumi.Any(fusionEnvironmentAdminUserLastName),
+//				Password:            pulumi.Any(fusionEnvironmentAdminUserPassword),
+//				Username:            pulumi.Any(fusionEnvironmentAdminUserUsername),
 //			})
 //			if err != nil {
 //				return err

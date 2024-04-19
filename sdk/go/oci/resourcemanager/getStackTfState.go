@@ -27,7 +27,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ResourceManager.GetStackTfState(ctx, &resourcemanager.GetStackTfStateArgs{
-//				StackId: oci_resourcemanager_stack.Test_stack.Id,
+//				StackId: testStack.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

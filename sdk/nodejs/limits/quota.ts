@@ -18,10 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQuota = new oci.limits.Quota("testQuota", {
- *     compartmentId: _var.tenancy_ocid,
- *     description: _var.quota_description,
- *     statements: _var.quota_statements,
+ * const testQuota = new oci.limits.Quota("test_quota", {
+ *     compartmentId: tenancyOcid,
+ *     description: quotaDescription,
+ *     name: quotaName,
+ *     statements: quotaStatements,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -29,9 +30,9 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     locks: [{
- *         type: _var.quota_locks_type,
- *         message: _var.quota_locks_message,
- *         relatedResourceId: oci_limits_related_resource.test_related_resource.id,
+ *         type: quotaLocksType,
+ *         message: quotaLocksMessage,
+ *         relatedResourceId: testRelatedResource.id,
  *     }],
  * });
  * ```

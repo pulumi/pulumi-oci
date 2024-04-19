@@ -34,10 +34,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetResolverEndpoints(ctx, &dns.GetResolverEndpointsArgs{
-//				ResolverId: oci_dns_resolver.Test_resolver.Id,
+//				ResolverId: testResolver.Id,
 //				Scope:      "PRIVATE",
-//				Name:       pulumi.StringRef(_var.Resolver_endpoint_name),
-//				State:      pulumi.StringRef(_var.Resolver_endpoint_state),
+//				Name:       pulumi.StringRef(resolverEndpointName),
+//				State:      pulumi.StringRef(resolverEndpointState),
 //			}, nil)
 //			if err != nil {
 //				return err

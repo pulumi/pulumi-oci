@@ -25,58 +25,58 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testInvokeRun = new Oci.DataFlow.InvokeRun("testInvokeRun", new()
+    ///     var testInvokeRun = new Oci.DataFlow.InvokeRun("test_invoke_run", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ApplicationId = testApplication.Id,
     ///         ApplicationLogConfig = new Oci.DataFlow.Inputs.InvokeRunApplicationLogConfigArgs
     ///         {
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogId = oci_logging_log.Test_log.Id,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogId = testLog.Id,
     ///         },
-    ///         ArchiveUri = @var.Invoke_run_archive_uri,
-    ///         Arguments = @var.Invoke_run_arguments,
-    ///         Configuration = @var.Invoke_run_configuration,
+    ///         ArchiveUri = invokeRunArchiveUri,
+    ///         Arguments = invokeRunArguments,
+    ///         Configuration = invokeRunConfiguration,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Invoke_run_display_name,
-    ///         DriverShape = @var.Invoke_run_driver_shape,
+    ///         DisplayName = invokeRunDisplayName,
+    ///         DriverShape = invokeRunDriverShape,
     ///         DriverShapeConfig = new Oci.DataFlow.Inputs.InvokeRunDriverShapeConfigArgs
     ///         {
-    ///             MemoryInGbs = @var.Invoke_run_driver_shape_config_memory_in_gbs,
-    ///             Ocpus = @var.Invoke_run_driver_shape_config_ocpus,
+    ///             MemoryInGbs = invokeRunDriverShapeConfigMemoryInGbs,
+    ///             Ocpus = invokeRunDriverShapeConfigOcpus,
     ///         },
-    ///         Execute = @var.Invoke_run_execute,
-    ///         ExecutorShape = @var.Invoke_run_executor_shape,
+    ///         Execute = invokeRunExecute,
+    ///         ExecutorShape = invokeRunExecutorShape,
     ///         ExecutorShapeConfig = new Oci.DataFlow.Inputs.InvokeRunExecutorShapeConfigArgs
     ///         {
-    ///             MemoryInGbs = @var.Invoke_run_executor_shape_config_memory_in_gbs,
-    ///             Ocpus = @var.Invoke_run_executor_shape_config_ocpus,
+    ///             MemoryInGbs = invokeRunExecutorShapeConfigMemoryInGbs,
+    ///             Ocpus = invokeRunExecutorShapeConfigOcpus,
     ///         },
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IdleTimeoutInMinutes = @var.Invoke_run_idle_timeout_in_minutes,
-    ///         LogsBucketUri = @var.Invoke_run_logs_bucket_uri,
-    ///         MaxDurationInMinutes = @var.Invoke_run_max_duration_in_minutes,
-    ///         MetastoreId = @var.Metastore_id,
-    ///         NumExecutors = @var.Invoke_run_num_executors,
-    ///         OpcParentRptUrl = @var.Invoke_run_opc_parent_rpt_url,
+    ///         IdleTimeoutInMinutes = invokeRunIdleTimeoutInMinutes,
+    ///         LogsBucketUri = invokeRunLogsBucketUri,
+    ///         MaxDurationInMinutes = invokeRunMaxDurationInMinutes,
+    ///         MetastoreId = metastoreId,
+    ///         NumExecutors = invokeRunNumExecutors,
+    ///         OpcParentRptUrl = invokeRunOpcParentRptUrl,
     ///         Parameters = new[]
     ///         {
     ///             new Oci.DataFlow.Inputs.InvokeRunParameterArgs
     ///             {
-    ///                 Name = @var.Invoke_run_parameters_name,
-    ///                 Value = @var.Invoke_run_parameters_value,
+    ///                 Name = invokeRunParametersName,
+    ///                 Value = invokeRunParametersValue,
     ///             },
     ///         },
-    ///         PoolId = oci_dataflow_pool.Test_pool.Id,
-    ///         SparkVersion = @var.Invoke_run_spark_version,
-    ///         Type = @var.Invoke_run_type,
-    ///         WarehouseBucketUri = @var.Invoke_run_warehouse_bucket_uri,
+    ///         PoolId = testPool.Id,
+    ///         SparkVersion = invokeRunSparkVersion,
+    ///         Type = invokeRunType,
+    ///         WarehouseBucketUri = invokeRunWarehouseBucketUri,
     ///     });
     /// 
     /// });

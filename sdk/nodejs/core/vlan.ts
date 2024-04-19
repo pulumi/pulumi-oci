@@ -16,21 +16,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVlan = new oci.core.Vlan("testVlan", {
- *     cidrBlock: _var.vlan_cidr_block,
- *     compartmentId: _var.compartment_id,
- *     vcnId: oci_core_vcn.test_vcn.id,
- *     availabilityDomain: _var.vlan_availability_domain,
+ * const testVlan = new oci.core.Vlan("test_vlan", {
+ *     cidrBlock: vlanCidrBlock,
+ *     compartmentId: compartmentId,
+ *     vcnId: testVcn.id,
+ *     availabilityDomain: vlanAvailabilityDomain,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.vlan_display_name,
+ *     displayName: vlanDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     nsgIds: _var.vlan_nsg_ids,
- *     routeTableId: oci_core_route_table.test_route_table.id,
- *     vlanTag: _var.vlan_vlan_tag,
+ *     nsgIds: vlanNsgIds,
+ *     routeTableId: testRouteTable.id,
+ *     vlanTag: vlanVlanTag,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,20 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.NewContainerRepository(ctx, "testContainerRepository", &Artifacts.ContainerRepositoryArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Container_repository_display_name),
+//			_, err := Artifacts.NewContainerRepository(ctx, "test_container_repository", &Artifacts.ContainerRepositoryArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(containerRepositoryDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsImmutable: pulumi.Any(_var.Container_repository_is_immutable),
-//				IsPublic:    pulumi.Any(_var.Container_repository_is_public),
+//				IsImmutable: pulumi.Any(containerRepositoryIsImmutable),
+//				IsPublic:    pulumi.Any(containerRepositoryIsPublic),
 //				Readme: &artifacts.ContainerRepositoryReadmeArgs{
-//					Content: pulumi.Any(_var.Container_repository_readme_content),
-//					Format:  pulumi.Any(_var.Container_repository_readme_format),
+//					Content: pulumi.Any(containerRepositoryReadmeContent),
+//					Format:  pulumi.Any(containerRepositoryReadmeFormat),
 //				},
 //			})
 //			if err != nil {

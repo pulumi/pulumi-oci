@@ -26,17 +26,17 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalPluggableDatabase = new Oci.Database.ExternalPluggableDatabase("testExternalPluggableDatabase", new()
+    ///     var testExternalPluggableDatabase = new Oci.Database.ExternalPluggableDatabase("test_external_pluggable_database", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.External_pluggable_database_display_name,
-    ///         ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
-    ///         DefinedTags = @var.External_pluggable_database_defined_tags,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = externalPluggableDatabaseDisplayName,
+    ///         ExternalContainerDatabaseId = testExternalContainerDatabase.Id,
+    ///         DefinedTags = externalPluggableDatabaseDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         SourceId = oci_database_source.Test_source.Id,
+    ///         SourceId = testSource.Id,
     ///     });
     /// 
     /// });

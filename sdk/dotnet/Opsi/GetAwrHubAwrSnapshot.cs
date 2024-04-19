@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHubAwrSnapshot = Oci.Opsi.GetAwrHubAwrSnapshot.Invoke(new()
         ///     {
-        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///         AwrSourceDatabaseIdentifier = @var.Awr_hub_awr_snapshot_awr_source_database_identifier,
-        ///         TimeGreaterThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_greater_than_or_equal_to,
-        ///         TimeLessThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_less_than_or_equal_to,
+        ///         AwrHubId = testAwrHub.Id,
+        ///         AwrSourceDatabaseIdentifier = awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
+        ///         TimeGreaterThanOrEqualTo = awrHubAwrSnapshotTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = awrHubAwrSnapshotTimeLessThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHubAwrSnapshot = Oci.Opsi.GetAwrHubAwrSnapshot.Invoke(new()
         ///     {
-        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///         AwrSourceDatabaseIdentifier = @var.Awr_hub_awr_snapshot_awr_source_database_identifier,
-        ///         TimeGreaterThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_greater_than_or_equal_to,
-        ///         TimeLessThanOrEqualTo = @var.Awr_hub_awr_snapshot_time_less_than_or_equal_to,
+        ///         AwrHubId = testAwrHub.Id,
+        ///         AwrSourceDatabaseIdentifier = awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
+        ///         TimeGreaterThanOrEqualTo = awrHubAwrSnapshotTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = awrHubAwrSnapshotTimeLessThanOrEqualTo,
         ///     });
         /// 
         /// });

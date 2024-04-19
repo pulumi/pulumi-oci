@@ -287,10 +287,10 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_java_license_acceptance_record = oci.jms.JavaDownloadsJavaLicenseAcceptanceRecord("testJavaLicenseAcceptanceRecord",
-            compartment_id=var["tenancy_ocid"],
-            license_acceptance_status=var["java_license_acceptance_record_license_acceptance_status"],
-            license_type=var["java_license_acceptance_record_license_type"])
+        test_java_license_acceptance_record = oci.jms.JavaDownloadsJavaLicenseAcceptanceRecord("test_java_license_acceptance_record",
+            compartment_id=tenancy_ocid,
+            license_acceptance_status=java_license_acceptance_record_license_acceptance_status,
+            license_type=java_license_acceptance_record_license_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -326,10 +326,10 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_java_license_acceptance_record = oci.jms.JavaDownloadsJavaLicenseAcceptanceRecord("testJavaLicenseAcceptanceRecord",
-            compartment_id=var["tenancy_ocid"],
-            license_acceptance_status=var["java_license_acceptance_record_license_acceptance_status"],
-            license_type=var["java_license_acceptance_record_license_type"])
+        test_java_license_acceptance_record = oci.jms.JavaDownloadsJavaLicenseAcceptanceRecord("test_java_license_acceptance_record",
+            compartment_id=tenancy_ocid,
+            license_acceptance_status=java_license_acceptance_record_license_acceptance_status,
+            license_type=java_license_acceptance_record_license_type)
         ```
         <!--End PulumiCodeChooser -->
 

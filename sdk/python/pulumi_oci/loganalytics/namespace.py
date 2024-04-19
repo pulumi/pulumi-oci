@@ -141,10 +141,10 @@ class Namespace(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_namespace = oci.log_analytics.Namespace("testNamespace",
-            compartment_id=var["compartment_id"],
-            is_onboarded=var["is_onboarded"],
-            namespace=var["namespace_namespace"])
+        test_namespace = oci.log_analytics.Namespace("test_namespace",
+            compartment_id=compartment_id,
+            is_onboarded=is_onboarded,
+            namespace=namespace_namespace)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -180,10 +180,10 @@ class Namespace(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_namespace = oci.log_analytics.Namespace("testNamespace",
-            compartment_id=var["compartment_id"],
-            is_onboarded=var["is_onboarded"],
-            namespace=var["namespace_namespace"])
+        test_namespace = oci.log_analytics.Namespace("test_namespace",
+            compartment_id=compartment_id,
+            is_onboarded=is_onboarded,
+            namespace=namespace_namespace)
         ```
         <!--End PulumiCodeChooser -->
 

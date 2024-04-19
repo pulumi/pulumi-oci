@@ -282,8 +282,8 @@ def get_resource_action(include_resource_metadata: Optional[bool] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"],
-        include_resource_metadata=var["resource_action_include_resource_metadata"])
+    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=test_resource_action_oci_optimizer_resource_action["id"],
+        include_resource_metadata=resource_action_include_resource_metadata)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -336,8 +336,8 @@ def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"],
-        include_resource_metadata=var["resource_action_include_resource_metadata"])
+    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=test_resource_action_oci_optimizer_resource_action["id"],
+        include_resource_metadata=resource_action_include_resource_metadata)
     ```
     <!--End PulumiCodeChooser -->
 

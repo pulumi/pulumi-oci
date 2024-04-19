@@ -29,8 +29,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryJobsResult = Oci.DataSafe.GetDiscoveryJobsResult.Invoke(new()
         ///     {
-        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
-        ///         ResultKey = @var.Discovery_jobs_result_result_key,
+        ///         DiscoveryJobId = testDiscoveryJob.Id,
+        ///         ResultKey = discoveryJobsResultResultKey,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryJobsResult = Oci.DataSafe.GetDiscoveryJobsResult.Invoke(new()
         ///     {
-        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
-        ///         ResultKey = @var.Discovery_jobs_result_result_key,
+        ///         DiscoveryJobId = testDiscoveryJob.Id,
+        ///         ResultKey = discoveryJobsResultResultKey,
         ///     });
         /// 
         /// });

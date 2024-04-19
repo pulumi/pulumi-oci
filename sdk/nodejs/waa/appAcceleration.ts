@@ -16,19 +16,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppAcceleration = new oci.waa.AppAcceleration("testWebAppAcceleration", {
- *     backendType: _var.web_app_acceleration_backend_type,
- *     compartmentId: _var.compartment_id,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     webAppAccelerationPolicyId: oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy.id,
+ * const testWebAppAcceleration = new oci.waa.AppAcceleration("test_web_app_acceleration", {
+ *     backendType: webAppAccelerationBackendType,
+ *     compartmentId: compartmentId,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     webAppAccelerationPolicyId: testWebAppAccelerationPolicy.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.web_app_acceleration_display_name,
+ *     displayName: webAppAccelerationDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     systemTags: _var.web_app_acceleration_system_tags,
+ *     systemTags: webAppAccelerationSystemTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

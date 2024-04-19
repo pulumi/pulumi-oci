@@ -382,11 +382,12 @@ class BaselineableMetric(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_baselineable_metric = oci.stack_monitoring.BaselineableMetric("testBaselineableMetric",
-            column=var["baselineable_metric_column"],
-            compartment_id=var["compartment_id"],
-            namespace=var["baselineable_metric_namespace"],
-            resource_group=var["baselineable_metric_resource_group"])
+        test_baselineable_metric = oci.stack_monitoring.BaselineableMetric("test_baselineable_metric",
+            column=baselineable_metric_column,
+            compartment_id=compartment_id,
+            name=baselineable_metric_name,
+            namespace=baselineable_metric_namespace,
+            resource_group=baselineable_metric_resource_group)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -428,11 +429,12 @@ class BaselineableMetric(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_baselineable_metric = oci.stack_monitoring.BaselineableMetric("testBaselineableMetric",
-            column=var["baselineable_metric_column"],
-            compartment_id=var["compartment_id"],
-            namespace=var["baselineable_metric_namespace"],
-            resource_group=var["baselineable_metric_resource_group"])
+        test_baselineable_metric = oci.stack_monitoring.BaselineableMetric("test_baselineable_metric",
+            column=baselineable_metric_column,
+            compartment_id=compartment_id,
+            name=baselineable_metric_name,
+            namespace=baselineable_metric_namespace,
+            resource_group=baselineable_metric_resource_group)
         ```
         <!--End PulumiCodeChooser -->
 

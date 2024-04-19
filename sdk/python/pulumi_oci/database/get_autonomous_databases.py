@@ -250,18 +250,18 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=var["compartment_id"],
-        autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
-        db_version=var["autonomous_database_db_version"],
-        db_workload=var["autonomous_database_db_workload"],
-        display_name=var["autonomous_database_display_name"],
-        infrastructure_type=var["autonomous_database_infrastructure_type"],
-        is_data_guard_enabled=var["autonomous_database_is_data_guard_enabled"],
-        is_free_tier=var["autonomous_database_is_free_tier"],
-        is_refreshable_clone=var["autonomous_database_is_refreshable_clone"],
-        is_resource_pool_leader=var["autonomous_database_is_resource_pool_leader"],
-        resource_pool_leader_id=oci_database_resource_pool_leader["test_resource_pool_leader"]["id"],
-        state=var["autonomous_database_state"])
+    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
+        autonomous_container_database_id=test_autonomous_container_database["id"],
+        db_version=autonomous_database_db_version,
+        db_workload=autonomous_database_db_workload,
+        display_name=autonomous_database_display_name,
+        infrastructure_type=autonomous_database_infrastructure_type,
+        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
+        is_free_tier=autonomous_database_is_free_tier,
+        is_refreshable_clone=autonomous_database_is_refreshable_clone,
+        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
+        resource_pool_leader_id=test_resource_pool_leader["id"],
+        state=autonomous_database_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -353,18 +353,18 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=var["compartment_id"],
-        autonomous_container_database_id=oci_database_autonomous_container_database["test_autonomous_container_database"]["id"],
-        db_version=var["autonomous_database_db_version"],
-        db_workload=var["autonomous_database_db_workload"],
-        display_name=var["autonomous_database_display_name"],
-        infrastructure_type=var["autonomous_database_infrastructure_type"],
-        is_data_guard_enabled=var["autonomous_database_is_data_guard_enabled"],
-        is_free_tier=var["autonomous_database_is_free_tier"],
-        is_refreshable_clone=var["autonomous_database_is_refreshable_clone"],
-        is_resource_pool_leader=var["autonomous_database_is_resource_pool_leader"],
-        resource_pool_leader_id=oci_database_resource_pool_leader["test_resource_pool_leader"]["id"],
-        state=var["autonomous_database_state"])
+    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
+        autonomous_container_database_id=test_autonomous_container_database["id"],
+        db_version=autonomous_database_db_version,
+        db_workload=autonomous_database_db_workload,
+        display_name=autonomous_database_display_name,
+        infrastructure_type=autonomous_database_infrastructure_type,
+        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
+        is_free_tier=autonomous_database_is_free_tier,
+        is_refreshable_clone=autonomous_database_is_refreshable_clone,
+        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
+        resource_pool_leader_id=test_resource_pool_leader["id"],
+        state=autonomous_database_state)
     ```
     <!--End PulumiCodeChooser -->
 

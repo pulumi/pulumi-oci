@@ -47,12 +47,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testProject = new Project(&#34;testProject&#34;, ProjectArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
+ *             .name(projectName)
  *             .notificationConfig(ProjectNotificationConfigArgs.builder()
- *                 .topicId(oci_ons_notification_topic.test_notification_topic().id())
+ *                 .topicId(testNotificationTopic.id())
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.project_description())
+ *             .description(projectDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

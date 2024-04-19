@@ -260,8 +260,8 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_user_capabilities_management = oci.identity.UserCapabilitiesManagement("testUserCapabilitiesManagement",
-            user_id=oci_identity_user["user1"]["id"],
+        test_user_capabilities_management = oci.identity.UserCapabilitiesManagement("test_user_capabilities_management",
+            user_id=user1["id"],
             can_use_api_keys=True,
             can_use_auth_tokens=True,
             can_use_console_password=False,
@@ -311,8 +311,8 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_user_capabilities_management = oci.identity.UserCapabilitiesManagement("testUserCapabilitiesManagement",
-            user_id=oci_identity_user["user1"]["id"],
+        test_user_capabilities_management = oci.identity.UserCapabilitiesManagement("test_user_capabilities_management",
+            user_id=user1["id"],
             can_use_api_keys=True,
             can_use_auth_tokens=True,
             can_use_console_password=False,

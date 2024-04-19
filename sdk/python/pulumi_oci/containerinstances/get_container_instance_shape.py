@@ -90,8 +90,8 @@ def get_container_instance_shape(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instance_shape = oci.ContainerInstances.get_container_instance_shape(compartment_id=var["compartment_id"],
-        availability_domain=var["container_instance_shape_availability_domain"])
+    test_container_instance_shape = oci.ContainerInstances.get_container_instance_shape(compartment_id=compartment_id,
+        availability_domain=container_instance_shape_availability_domain)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -128,8 +128,8 @@ def get_container_instance_shape_output(availability_domain: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instance_shape = oci.ContainerInstances.get_container_instance_shape(compartment_id=var["compartment_id"],
-        availability_domain=var["container_instance_shape_availability_domain"])
+    test_container_instance_shape = oci.ContainerInstances.get_container_instance_shape(compartment_id=compartment_id,
+        availability_domain=container_instance_shape_availability_domain)
     ```
     <!--End PulumiCodeChooser -->
 

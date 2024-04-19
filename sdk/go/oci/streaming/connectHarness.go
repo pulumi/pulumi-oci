@@ -33,9 +33,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Streaming.NewConnectHarness(ctx, "testConnectHarness", &Streaming.ConnectHarnessArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags:   pulumi.Any(_var.Connect_harness_defined_tags),
+//			_, err := Streaming.NewConnectHarness(ctx, "test_connect_harness", &Streaming.ConnectHarnessArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(connectHarnessName),
+//				DefinedTags:   pulumi.Any(connectHarnessDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

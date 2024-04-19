@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testGenericArtifact = Oci.Artifacts.GetGenericArtifact.Invoke(new()
         ///     {
-        ///         ArtifactId = oci_artifacts_artifact.Test_artifact.Id,
+        ///         ArtifactId = testArtifact.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testGenericArtifact = Oci.Artifacts.GetGenericArtifact.Invoke(new()
         ///     {
-        ///         ArtifactId = oci_artifacts_artifact.Test_artifact.Id,
+        ///         ArtifactId = testArtifact.Id,
         ///     });
         /// 
         /// });

@@ -18,28 +18,28 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasePeerTargetDatabase = new oci.datasafe.TargetDatabasePeerTargetDatabase("testTargetDatabasePeerTargetDatabase", {
+ * const testTargetDatabasePeerTargetDatabase = new oci.datasafe.TargetDatabasePeerTargetDatabase("test_target_database_peer_target_database", {
  *     databaseDetails: {
- *         databaseType: _var.target_database_peer_target_database_database_details_database_type,
- *         infrastructureType: _var.target_database_peer_target_database_database_details_infrastructure_type,
- *         autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *         dbSystemId: oci_database_db_system.test_db_system.id,
- *         instanceId: oci_core_instance.test_instance.id,
- *         ipAddresses: _var.target_database_peer_target_database_database_details_ip_addresses,
- *         listenerPort: _var.target_database_peer_target_database_database_details_listener_port,
- *         serviceName: oci_core_service.test_service.name,
- *         vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *         databaseType: targetDatabasePeerTargetDatabaseDatabaseDetailsDatabaseType,
+ *         infrastructureType: targetDatabasePeerTargetDatabaseDatabaseDetailsInfrastructureType,
+ *         autonomousDatabaseId: testAutonomousDatabase.id,
+ *         dbSystemId: testDbSystem.id,
+ *         instanceId: testInstance.id,
+ *         ipAddresses: targetDatabasePeerTargetDatabaseDatabaseDetailsIpAddresses,
+ *         listenerPort: targetDatabasePeerTargetDatabaseDatabaseDetailsListenerPort,
+ *         serviceName: testService.name,
+ *         vmClusterId: testVmCluster.id,
  *     },
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     dataguardAssociationId: oci_certificates_management_association.test_association.id,
- *     description: _var.target_database_peer_target_database_description,
- *     displayName: _var.target_database_peer_target_database_display_name,
+ *     targetDatabaseId: testTargetDatabase.id,
+ *     dataguardAssociationId: testAssociation.id,
+ *     description: targetDatabasePeerTargetDatabaseDescription,
+ *     displayName: targetDatabasePeerTargetDatabaseDisplayName,
  *     tlsConfig: {
- *         status: _var.target_database_peer_target_database_tls_config_status,
- *         certificateStoreType: _var.target_database_peer_target_database_tls_config_certificate_store_type,
- *         keyStoreContent: _var.target_database_peer_target_database_tls_config_key_store_content,
- *         storePassword: _var.target_database_peer_target_database_tls_config_store_password,
- *         trustStoreContent: _var.target_database_peer_target_database_tls_config_trust_store_content,
+ *         status: targetDatabasePeerTargetDatabaseTlsConfigStatus,
+ *         certificateStoreType: targetDatabasePeerTargetDatabaseTlsConfigCertificateStoreType,
+ *         keyStoreContent: targetDatabasePeerTargetDatabaseTlsConfigKeyStoreContent,
+ *         storePassword: targetDatabasePeerTargetDatabaseTlsConfigStorePassword,
+ *         trustStoreContent: targetDatabasePeerTargetDatabaseTlsConfigTrustStoreContent,
  *     },
  * });
  * ```

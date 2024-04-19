@@ -35,10 +35,10 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCustomerSecretKey = new Oci.Identity.CustomerSecretKey("testCustomerSecretKey", new()
+    ///     var testCustomerSecretKey = new Oci.Identity.CustomerSecretKey("test_customer_secret_key", new()
     ///     {
-    ///         DisplayName = @var.Customer_secret_key_display_name,
-    ///         UserId = oci_identity_user.Test_user.Id,
+    ///         DisplayName = customerSecretKeyDisplayName,
+    ///         UserId = testUser.Id,
     ///     });
     /// 
     /// });

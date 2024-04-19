@@ -597,41 +597,41 @@ class SoftwareSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_software_source = oci.os_management_hub.SoftwareSource("testSoftwareSource",
-            compartment_id=var["compartment_id"],
-            display_name=var["software_source_display_name"],
-            software_source_type=var["software_source_software_source_type"],
+        test_software_source = oci.os_management_hub.SoftwareSource("test_software_source",
+            compartment_id=compartment_id,
+            display_name=software_source_display_name,
+            software_source_type=software_source_software_source_type,
             vendor_software_sources=[oci.os_management_hub.SoftwareSourceVendorSoftwareSourceArgs(
-                display_name=var["software_source_vendor_software_sources_display_name"],
-                id=var["software_source_vendor_software_sources_id"],
+                display_name=software_source_vendor_software_sources_display_name,
+                id=software_source_vendor_software_sources_id,
             )],
             custom_software_source_filter=oci.os_management_hub.SoftwareSourceCustomSoftwareSourceFilterArgs(
                 module_stream_profile_filters=[oci.os_management_hub.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs(
-                    filter_type=var["software_source_custom_software_source_filter_module_stream_profile_filters_filter_type"],
-                    module_name=var["software_source_custom_software_source_filter_module_stream_profile_filters_module_name"],
-                    profile_name=oci_os_management_hub_profile["test_profile"]["name"],
-                    stream_name=oci_streaming_stream["test_stream"]["name"],
+                    filter_type=software_source_custom_software_source_filter_module_stream_profile_filters_filter_type,
+                    module_name=software_source_custom_software_source_filter_module_stream_profile_filters_module_name,
+                    profile_name=test_profile["name"],
+                    stream_name=test_stream["name"],
                 )],
                 package_filters=[oci.os_management_hub.SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs(
-                    filter_type=var["software_source_custom_software_source_filter_package_filters_filter_type"],
-                    package_name=var["software_source_custom_software_source_filter_package_filters_package_name"],
-                    package_name_pattern=var["software_source_custom_software_source_filter_package_filters_package_name_pattern"],
-                    package_version=var["software_source_custom_software_source_filter_package_filters_package_version"],
+                    filter_type=software_source_custom_software_source_filter_package_filters_filter_type,
+                    package_name=software_source_custom_software_source_filter_package_filters_package_name,
+                    package_name_pattern=software_source_custom_software_source_filter_package_filters_package_name_pattern,
+                    package_version=software_source_custom_software_source_filter_package_filters_package_version,
                 )],
                 package_group_filters=[oci.os_management_hub.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs(
-                    filter_type=var["software_source_custom_software_source_filter_package_group_filters_filter_type"],
-                    package_groups=var["software_source_custom_software_source_filter_package_group_filters_package_groups"],
+                    filter_type=software_source_custom_software_source_filter_package_group_filters_filter_type,
+                    package_groups=software_source_custom_software_source_filter_package_group_filters_package_groups,
                 )],
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["software_source_description"],
+            description=software_source_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_automatically_updated=var["software_source_is_automatically_updated"],
-            software_source_version=var["software_source_software_source_version"])
+            is_automatically_updated=software_source_is_automatically_updated,
+            software_source_version=software_source_software_source_version)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -674,41 +674,41 @@ class SoftwareSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_software_source = oci.os_management_hub.SoftwareSource("testSoftwareSource",
-            compartment_id=var["compartment_id"],
-            display_name=var["software_source_display_name"],
-            software_source_type=var["software_source_software_source_type"],
+        test_software_source = oci.os_management_hub.SoftwareSource("test_software_source",
+            compartment_id=compartment_id,
+            display_name=software_source_display_name,
+            software_source_type=software_source_software_source_type,
             vendor_software_sources=[oci.os_management_hub.SoftwareSourceVendorSoftwareSourceArgs(
-                display_name=var["software_source_vendor_software_sources_display_name"],
-                id=var["software_source_vendor_software_sources_id"],
+                display_name=software_source_vendor_software_sources_display_name,
+                id=software_source_vendor_software_sources_id,
             )],
             custom_software_source_filter=oci.os_management_hub.SoftwareSourceCustomSoftwareSourceFilterArgs(
                 module_stream_profile_filters=[oci.os_management_hub.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs(
-                    filter_type=var["software_source_custom_software_source_filter_module_stream_profile_filters_filter_type"],
-                    module_name=var["software_source_custom_software_source_filter_module_stream_profile_filters_module_name"],
-                    profile_name=oci_os_management_hub_profile["test_profile"]["name"],
-                    stream_name=oci_streaming_stream["test_stream"]["name"],
+                    filter_type=software_source_custom_software_source_filter_module_stream_profile_filters_filter_type,
+                    module_name=software_source_custom_software_source_filter_module_stream_profile_filters_module_name,
+                    profile_name=test_profile["name"],
+                    stream_name=test_stream["name"],
                 )],
                 package_filters=[oci.os_management_hub.SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs(
-                    filter_type=var["software_source_custom_software_source_filter_package_filters_filter_type"],
-                    package_name=var["software_source_custom_software_source_filter_package_filters_package_name"],
-                    package_name_pattern=var["software_source_custom_software_source_filter_package_filters_package_name_pattern"],
-                    package_version=var["software_source_custom_software_source_filter_package_filters_package_version"],
+                    filter_type=software_source_custom_software_source_filter_package_filters_filter_type,
+                    package_name=software_source_custom_software_source_filter_package_filters_package_name,
+                    package_name_pattern=software_source_custom_software_source_filter_package_filters_package_name_pattern,
+                    package_version=software_source_custom_software_source_filter_package_filters_package_version,
                 )],
                 package_group_filters=[oci.os_management_hub.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs(
-                    filter_type=var["software_source_custom_software_source_filter_package_group_filters_filter_type"],
-                    package_groups=var["software_source_custom_software_source_filter_package_group_filters_package_groups"],
+                    filter_type=software_source_custom_software_source_filter_package_group_filters_filter_type,
+                    package_groups=software_source_custom_software_source_filter_package_group_filters_package_groups,
                 )],
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["software_source_description"],
+            description=software_source_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_automatically_updated=var["software_source_is_automatically_updated"],
-            software_source_version=var["software_source_software_source_version"])
+            is_automatically_updated=software_source_is_automatically_updated,
+            software_source_version=software_source_software_source_version)
         ```
         <!--End PulumiCodeChooser -->
 

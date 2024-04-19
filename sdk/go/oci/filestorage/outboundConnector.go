@@ -50,26 +50,26 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewOutboundConnector(ctx, "testOutboundConnector", &FileStorage.OutboundConnectorArgs{
-//				AvailabilityDomain:    pulumi.Any(_var.Outbound_connector_availability_domain),
-//				BindDistinguishedName: pulumi.Any(_var.Outbound_connector_bind_distinguished_name),
-//				CompartmentId:         pulumi.Any(_var.Compartment_id),
-//				ConnectorType:         pulumi.Any(_var.Outbound_connector_connector_type),
+//			_, err := FileStorage.NewOutboundConnector(ctx, "test_outbound_connector", &FileStorage.OutboundConnectorArgs{
+//				AvailabilityDomain:    pulumi.Any(outboundConnectorAvailabilityDomain),
+//				BindDistinguishedName: pulumi.Any(outboundConnectorBindDistinguishedName),
+//				CompartmentId:         pulumi.Any(compartmentId),
+//				ConnectorType:         pulumi.Any(outboundConnectorConnectorType),
 //				Endpoints: filestorage.OutboundConnectorEndpointArray{
 //					&filestorage.OutboundConnectorEndpointArgs{
-//						Hostname: pulumi.Any(_var.Outbound_connector_endpoints_hostname),
-//						Port:     pulumi.Any(_var.Outbound_connector_endpoints_port),
+//						Hostname: pulumi.Any(outboundConnectorEndpointsHostname),
+//						Port:     pulumi.Any(outboundConnectorEndpointsPort),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Outbound_connector_display_name),
+//				DisplayName: pulumi.Any(outboundConnectorDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				PasswordSecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
-//				PasswordSecretVersion: pulumi.Any(_var.Outbound_connector_password_secret_version),
+//				PasswordSecretId:      pulumi.Any(testSecret.Id),
+//				PasswordSecretVersion: pulumi.Any(outboundConnectorPasswordSecretVersion),
 //			})
 //			if err != nil {
 //				return err

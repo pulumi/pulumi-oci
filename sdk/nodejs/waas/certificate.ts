@@ -20,18 +20,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificate = new oci.waas.Certificate("testCertificate", {
- *     certificateData: _var.certificate_certificate_data,
- *     compartmentId: _var.compartment_id,
- *     privateKeyData: _var.certificate_private_key_data,
+ * const testCertificate = new oci.waas.Certificate("test_certificate", {
+ *     certificateData: certificateCertificateData,
+ *     compartmentId: compartmentId,
+ *     privateKeyData: certificatePrivateKeyData,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.certificate_display_name,
+ *     displayName: certificateDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isTrustVerificationDisabled: _var.certificate_is_trust_verification_disabled,
+ *     isTrustVerificationDisabled: certificateIsTrustVerificationDisabled,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

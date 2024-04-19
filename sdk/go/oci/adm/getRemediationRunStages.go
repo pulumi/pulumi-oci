@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Adm.GetRemediationRunStages(ctx, &adm.GetRemediationRunStagesArgs{
-//				RemediationRunId: oci_adm_remediation_run.Test_remediation_run.Id,
-//				Status:           pulumi.StringRef(_var.Remediation_run_stage_status),
-//				Type:             pulumi.StringRef(_var.Remediation_run_stage_type),
+//				RemediationRunId: testRemediationRun.Id,
+//				Status:           pulumi.StringRef(remediationRunStageStatus),
+//				Type:             pulumi.StringRef(remediationRunStageType),
 //			}, nil)
 //			if err != nil {
 //				return err

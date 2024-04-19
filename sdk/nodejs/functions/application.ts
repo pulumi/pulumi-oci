@@ -14,29 +14,29 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplication = new oci.functions.Application("testApplication", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.application_display_name,
- *     subnetIds: _var.application_subnet_ids,
- *     config: _var.application_config,
+ * const testApplication = new oci.functions.Application("test_application", {
+ *     compartmentId: compartmentId,
+ *     displayName: applicationDisplayName,
+ *     subnetIds: applicationSubnetIds,
+ *     config: applicationConfig,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     networkSecurityGroupIds: _var.application_network_security_group_ids,
+ *     networkSecurityGroupIds: applicationNetworkSecurityGroupIds,
  *     imagePolicyConfig: {
- *         isPolicyEnabled: _var.application_image_policy_config_is_policy_enabled,
+ *         isPolicyEnabled: applicationImagePolicyConfigIsPolicyEnabled,
  *         keyDetails: [{
- *             kmsKeyId: oci_kms_key.test_key.id,
+ *             kmsKeyId: testKey.id,
  *         }],
  *     },
- *     shape: _var.application_shape,
- *     syslogUrl: _var.application_syslog_url,
+ *     shape: applicationShape,
+ *     syslogUrl: applicationSyslogUrl,
  *     traceConfig: {
- *         domainId: oci_functions_domain.test_domain.id,
- *         isEnabled: _var.application_trace_config_is_enabled,
+ *         domainId: testDomain.id,
+ *         isEnabled: applicationTraceConfigIsEnabled,
  *     },
  * });
  * ```

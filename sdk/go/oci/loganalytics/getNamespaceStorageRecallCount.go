@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceStorageRecallCount(ctx, &loganalytics.GetNamespaceStorageRecallCountArgs{
-//				Namespace: _var.Namespace_storage_recall_count_namespace,
+//				Namespace: namespaceStorageRecallCountNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

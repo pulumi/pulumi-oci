@@ -28,14 +28,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessmentFindingAnalytics = oci.DataSafe.getSecurityAssessmentFindingAnalytics({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_assessment_finding_analytic_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_finding_analytic_compartment_id_in_subtree,
- *     findingKey: _var.security_assessment_finding_analytic_finding_key,
- *     groupBy: _var.security_assessment_finding_analytic_group_by,
- *     isTopFinding: _var.security_assessment_finding_analytic_is_top_finding,
- *     severity: _var.security_assessment_finding_analytic_severity,
- *     topFindingStatus: _var.security_assessment_finding_analytic_top_finding_status,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityAssessmentFindingAnalyticAccessLevel,
+ *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree,
+ *     findingKey: securityAssessmentFindingAnalyticFindingKey,
+ *     groupBy: securityAssessmentFindingAnalyticGroupBy,
+ *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding,
+ *     severity: securityAssessmentFindingAnalyticSeverity,
+ *     topFindingStatus: securityAssessmentFindingAnalyticTopFindingStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -145,14 +145,14 @@ export interface GetSecurityAssessmentFindingAnalyticsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessmentFindingAnalytics = oci.DataSafe.getSecurityAssessmentFindingAnalytics({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_assessment_finding_analytic_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_finding_analytic_compartment_id_in_subtree,
- *     findingKey: _var.security_assessment_finding_analytic_finding_key,
- *     groupBy: _var.security_assessment_finding_analytic_group_by,
- *     isTopFinding: _var.security_assessment_finding_analytic_is_top_finding,
- *     severity: _var.security_assessment_finding_analytic_severity,
- *     topFindingStatus: _var.security_assessment_finding_analytic_top_finding_status,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityAssessmentFindingAnalyticAccessLevel,
+ *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree,
+ *     findingKey: securityAssessmentFindingAnalyticFindingKey,
+ *     groupBy: securityAssessmentFindingAnalyticGroupBy,
+ *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding,
+ *     severity: securityAssessmentFindingAnalyticSeverity,
+ *     topFindingStatus: securityAssessmentFindingAnalyticTopFindingStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testDefaultConfiguration = Oci.Psql.GetDefaultConfiguration.Invoke(new()
         ///     {
-        ///         DefaultConfigurationId = oci_psql_default_configuration.Test_default_configuration.Id,
+        ///         DefaultConfigurationId = testDefaultConfigurationOciPsqlDefaultConfiguration.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testDefaultConfiguration = Oci.Psql.GetDefaultConfiguration.Invoke(new()
         ///     {
-        ///         DefaultConfigurationId = oci_psql_default_configuration.Test_default_configuration.Id,
+        ///         DefaultConfigurationId = testDefaultConfigurationOciPsqlDefaultConfiguration.Id,
         ///     });
         /// 
         /// });

@@ -304,13 +304,13 @@ class DiscoverySchedule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_discovery_schedule = oci.cloud_bridge.DiscoverySchedule("testDiscoverySchedule",
-            compartment_id=var["compartment_id"],
-            execution_recurrences=var["discovery_schedule_execution_recurrences"],
+        test_discovery_schedule = oci.cloud_bridge.DiscoverySchedule("test_discovery_schedule",
+            compartment_id=compartment_id,
+            execution_recurrences=discovery_schedule_execution_recurrences,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["discovery_schedule_display_name"],
+            display_name=discovery_schedule_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -355,13 +355,13 @@ class DiscoverySchedule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_discovery_schedule = oci.cloud_bridge.DiscoverySchedule("testDiscoverySchedule",
-            compartment_id=var["compartment_id"],
-            execution_recurrences=var["discovery_schedule_execution_recurrences"],
+        test_discovery_schedule = oci.cloud_bridge.DiscoverySchedule("test_discovery_schedule",
+            compartment_id=compartment_id,
+            execution_recurrences=discovery_schedule_execution_recurrences,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["discovery_schedule_display_name"],
+            display_name=discovery_schedule_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

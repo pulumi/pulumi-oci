@@ -37,10 +37,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Budget.GetBudgets(ctx, &budget.GetBudgetsArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				DisplayName:   pulumi.StringRef(_var.Budget_display_name),
-//				State:         pulumi.StringRef(_var.Budget_state),
-//				TargetType:    pulumi.StringRef(_var.Budget_target_type),
+//				CompartmentId: tenancyOcid,
+//				DisplayName:   pulumi.StringRef(budgetDisplayName),
+//				State:         pulumi.StringRef(budgetState),
+//				TargetType:    pulumi.StringRef(budgetTargetType),
 //			}, nil)
 //			if err != nil {
 //				return err

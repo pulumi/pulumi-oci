@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CapacityManagement.GetOccCustomerGroups(ctx, &capacitymanagement.GetOccCustomerGroupsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Occ_customer_group_display_name),
-//				Id:            pulumi.StringRef(_var.Occ_customer_group_id),
-//				Status:        pulumi.StringRef(_var.Occ_customer_group_status),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(occCustomerGroupDisplayName),
+//				Id:            pulumi.StringRef(occCustomerGroupId),
+//				Status:        pulumi.StringRef(occCustomerGroupStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

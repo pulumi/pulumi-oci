@@ -44,11 +44,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyMappedSecret = new NetworkFirewallPolicyMappedSecret(&#34;testNetworkFirewallPolicyMappedSecret&#34;, NetworkFirewallPolicyMappedSecretArgs.builder()        
- *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
- *             .source(var_.network_firewall_policy_mapped_secret_source())
- *             .type(var_.network_firewall_policy_mapped_secret_type())
- *             .vaultSecretId(oci_vault_secret.test_secret().id())
- *             .versionNumber(var_.network_firewall_policy_mapped_secret_version_number())
+ *             .name(networkFirewallPolicyMappedSecretName)
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .source(networkFirewallPolicyMappedSecretSource)
+ *             .type(networkFirewallPolicyMappedSecretType)
+ *             .vaultSecretId(testSecret.id())
+ *             .versionNumber(networkFirewallPolicyMappedSecretVersionNumber)
  *             .build());
  * 
  *     }

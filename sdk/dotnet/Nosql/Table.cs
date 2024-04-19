@@ -25,22 +25,23 @@ namespace Pulumi.Oci.Nosql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTable = new Oci.Nosql.Table("testTable", new()
+    ///     var testTable = new Oci.Nosql.Table("test_table", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DdlStatement = @var.Table_ddl_statement,
-    ///         DefinedTags = @var.Table_defined_tags,
+    ///         CompartmentId = compartmentId,
+    ///         DdlStatement = tableDdlStatement,
+    ///         Name = tableName,
+    ///         DefinedTags = tableDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsAutoReclaimable = @var.Table_is_auto_reclaimable,
+    ///         IsAutoReclaimable = tableIsAutoReclaimable,
     ///         TableLimits = new Oci.Nosql.Inputs.TableTableLimitsArgs
     ///         {
-    ///             MaxReadUnits = @var.Table_table_limits_max_read_units,
-    ///             MaxStorageInGbs = @var.Table_table_limits_max_storage_in_gbs,
-    ///             MaxWriteUnits = @var.Table_table_limits_max_write_units,
-    ///             CapacityMode = @var.Table_table_limits_capacity_mode,
+    ///             MaxReadUnits = tableTableLimitsMaxReadUnits,
+    ///             MaxStorageInGbs = tableTableLimitsMaxStorageInGbs,
+    ///             MaxWriteUnits = tableTableLimitsMaxWriteUnits,
+    ///             CapacityMode = tableTableLimitsCapacityMode,
     ///         },
     ///     });
     /// 

@@ -32,12 +32,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsoleHistory = new oci.core.ConsoleHistory("testConsoleHistory", {
- *     instanceId: oci_core_instance.test_instance.id,
+ * const testConsoleHistory = new oci.core.ConsoleHistory("test_console_history", {
+ *     instanceId: testInstance.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.console_history_display_name,
+ *     displayName: consoleHistoryDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

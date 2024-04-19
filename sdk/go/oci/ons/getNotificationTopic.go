@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ons.GetNotificationTopic(ctx, &ons.GetNotificationTopicArgs{
-//				TopicId: oci_ons_notification_topic.Test_notification_topic.Id,
+//				TopicId: testNotificationTopicOciOnsNotificationTopic.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

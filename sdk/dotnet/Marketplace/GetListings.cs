@@ -44,17 +44,17 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testListings = Oci.Marketplace.GetListings.Invoke(new()
         ///     {
-        ///         Categories = @var.Listing_category,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ImageId = oci_core_image.Test_image.Id,
-        ///         IsFeatured = @var.Listing_is_featured,
-        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///         ListingTypes = @var.Listing_listing_types,
-        ///         Names = @var.Listing_name,
-        ///         OperatingSystems = @var.Listing_operating_systems,
-        ///         PackageType = @var.Listing_package_type,
-        ///         Pricings = @var.Listing_pricing,
-        ///         PublisherId = oci_marketplace_publisher.Test_publisher.Id,
+        ///         Categories = listingCategory,
+        ///         CompartmentId = compartmentId,
+        ///         ImageId = testImage.Id,
+        ///         IsFeatured = listingIsFeatured,
+        ///         ListingId = testListing.Id,
+        ///         ListingTypes = listingListingTypes,
+        ///         Names = listingName,
+        ///         OperatingSystems = listingOperatingSystems,
+        ///         PackageType = listingPackageType,
+        ///         Pricings = listingPricing,
+        ///         PublisherId = testPublisher.Id,
         ///     });
         /// 
         /// });
@@ -97,17 +97,17 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testListings = Oci.Marketplace.GetListings.Invoke(new()
         ///     {
-        ///         Categories = @var.Listing_category,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ImageId = oci_core_image.Test_image.Id,
-        ///         IsFeatured = @var.Listing_is_featured,
-        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///         ListingTypes = @var.Listing_listing_types,
-        ///         Names = @var.Listing_name,
-        ///         OperatingSystems = @var.Listing_operating_systems,
-        ///         PackageType = @var.Listing_package_type,
-        ///         Pricings = @var.Listing_pricing,
-        ///         PublisherId = oci_marketplace_publisher.Test_publisher.Id,
+        ///         Categories = listingCategory,
+        ///         CompartmentId = compartmentId,
+        ///         ImageId = testImage.Id,
+        ///         IsFeatured = listingIsFeatured,
+        ///         ListingId = testListing.Id,
+        ///         ListingTypes = listingListingTypes,
+        ///         Names = listingName,
+        ///         OperatingSystems = listingOperatingSystems,
+        ///         PackageType = listingPackageType,
+        ///         Pricings = listingPricing,
+        ///         PublisherId = testPublisher.Id,
         ///     });
         /// 
         /// });

@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamDistributionChannel = new oci.mediaservices.StreamDistributionChannel("testStreamDistributionChannel", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.stream_distribution_channel_display_name,
+ * const testStreamDistributionChannel = new oci.mediaservices.StreamDistributionChannel("test_stream_distribution_channel", {
+ *     compartmentId: compartmentId,
+ *     displayName: streamDistributionChannelDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -28,11 +28,11 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     locks: [{
- *         compartmentId: _var.compartment_id,
- *         type: _var.stream_distribution_channel_locks_type,
- *         message: _var.stream_distribution_channel_locks_message,
- *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
- *         timeCreated: _var.stream_distribution_channel_locks_time_created,
+ *         compartmentId: compartmentId,
+ *         type: streamDistributionChannelLocksType,
+ *         message: streamDistributionChannelLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: streamDistributionChannelLocksTimeCreated,
  *     }],
  * });
  * ```

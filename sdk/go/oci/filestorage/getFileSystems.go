@@ -32,14 +32,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetFileSystems(ctx, &filestorage.GetFileSystemsArgs{
-//				AvailabilityDomain:         _var.File_system_availability_domain,
-//				CompartmentId:              _var.Compartment_id,
-//				DisplayName:                pulumi.StringRef(_var.File_system_display_name),
-//				FilesystemSnapshotPolicyId: pulumi.StringRef(oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id),
-//				Id:                         pulumi.StringRef(_var.File_system_id),
-//				ParentFileSystemId:         pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
-//				SourceSnapshotId:           pulumi.StringRef(oci_file_storage_snapshot.Test_snapshot.Id),
-//				State:                      pulumi.StringRef(_var.File_system_state),
+//				AvailabilityDomain:         fileSystemAvailabilityDomain,
+//				CompartmentId:              compartmentId,
+//				DisplayName:                pulumi.StringRef(fileSystemDisplayName),
+//				FilesystemSnapshotPolicyId: pulumi.StringRef(testFilesystemSnapshotPolicy.Id),
+//				Id:                         pulumi.StringRef(fileSystemId),
+//				ParentFileSystemId:         pulumi.StringRef(testFileSystem.Id),
+//				SourceSnapshotId:           pulumi.StringRef(testSnapshot.Id),
+//				State:                      pulumi.StringRef(fileSystemState),
 //			}, nil)
 //			if err != nil {
 //				return err

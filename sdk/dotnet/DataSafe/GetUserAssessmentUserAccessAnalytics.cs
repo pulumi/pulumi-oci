@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testUserAssessmentUserAccessAnalytics = Oci.DataSafe.GetUserAssessmentUserAccessAnalytics.Invoke(new()
         ///     {
-        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+        ///         UserAssessmentId = testUserAssessment.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testUserAssessmentUserAccessAnalytics = Oci.DataSafe.GetUserAssessmentUserAccessAnalytics.Invoke(new()
         ///     {
-        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+        ///         UserAssessmentId = testUserAssessment.Id,
         ///     });
         /// 
         /// });

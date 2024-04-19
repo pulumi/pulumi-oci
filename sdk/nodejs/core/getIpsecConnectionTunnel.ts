@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpSecConnectionTunnel = oci.Core.getIpsecConnectionTunnel({
- *     ipsecId: oci_core_ipsec.test_ipsec.id,
- *     tunnelId: data.oci_core_ipsec_connection_tunnels.test_ip_sec_connection_tunnels.ip_sec_connection_tunnels[0].id,
+ *     ipsecId: testIpsec.id,
+ *     tunnelId: testIpSecConnectionTunnels.ipSecConnectionTunnels[0].id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -147,8 +147,8 @@ export interface GetIpsecConnectionTunnelResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIpSecConnectionTunnel = oci.Core.getIpsecConnectionTunnel({
- *     ipsecId: oci_core_ipsec.test_ipsec.id,
- *     tunnelId: data.oci_core_ipsec_connection_tunnels.test_ip_sec_connection_tunnels.ip_sec_connection_tunnels[0].id,
+ *     ipsecId: testIpsec.id,
+ *     tunnelId: testIpSecConnectionTunnels.ipSecConnectionTunnels[0].id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

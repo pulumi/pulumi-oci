@@ -25,32 +25,32 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUsage = new Oci.MeteringComputation.Usage("testUsage", new()
+    ///     var testUsage = new Oci.MeteringComputation.Usage("test_usage", new()
     ///     {
-    ///         Granularity = @var.Usage_granularity,
-    ///         TenantId = oci_metering_computation_tenant.Test_tenant.Id,
-    ///         TimeUsageEnded = @var.Usage_time_usage_ended,
-    ///         TimeUsageStarted = @var.Usage_time_usage_started,
-    ///         CompartmentDepth = @var.Usage_compartment_depth,
-    ///         Filter = @var.Usage_filter,
+    ///         Granularity = usageGranularity,
+    ///         TenantId = testTenant.Id,
+    ///         TimeUsageEnded = usageTimeUsageEnded,
+    ///         TimeUsageStarted = usageTimeUsageStarted,
+    ///         CompartmentDepth = usageCompartmentDepth,
+    ///         Filter = usageFilter,
     ///         Forecast = new Oci.MeteringComputation.Inputs.UsageForecastArgs
     ///         {
-    ///             TimeForecastEnded = @var.Usage_forecast_time_forecast_ended,
-    ///             ForecastType = @var.Usage_forecast_forecast_type,
-    ///             TimeForecastStarted = @var.Usage_forecast_time_forecast_started,
+    ///             TimeForecastEnded = usageForecastTimeForecastEnded,
+    ///             ForecastType = usageForecastForecastType,
+    ///             TimeForecastStarted = usageForecastTimeForecastStarted,
     ///         },
-    ///         GroupBies = @var.Usage_group_by,
+    ///         GroupBies = usageGroupBy,
     ///         GroupByTags = new[]
     ///         {
     ///             new Oci.MeteringComputation.Inputs.UsageGroupByTagArgs
     ///             {
-    ///                 Key = @var.Usage_group_by_tag_key,
-    ///                 Namespace = @var.Usage_group_by_tag_namespace,
-    ///                 Value = @var.Usage_group_by_tag_value,
+    ///                 Key = usageGroupByTagKey,
+    ///                 Namespace = usageGroupByTagNamespace,
+    ///                 Value = usageGroupByTagValue,
     ///             },
     ///         },
-    ///         IsAggregateByTime = @var.Usage_is_aggregate_by_time,
-    ///         QueryType = @var.Usage_query_type,
+    ///         IsAggregateByTime = usageIsAggregateByTime,
+    ///         QueryType = usageQueryType,
     ///     });
     /// 
     /// });

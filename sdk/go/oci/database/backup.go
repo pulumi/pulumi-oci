@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewBackup(ctx, "testBackup", &Database.BackupArgs{
-//				DatabaseId:  pulumi.Any(oci_database_database.Test_database.Id),
-//				DisplayName: pulumi.Any(_var.Backup_display_name),
+//			_, err := Database.NewBackup(ctx, "test_backup", &Database.BackupArgs{
+//				DatabaseId:  pulumi.Any(testDatabase.Id),
+//				DisplayName: pulumi.Any(backupDisplayName),
 //			})
 //			if err != nil {
 //				return err

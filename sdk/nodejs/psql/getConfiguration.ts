@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConfiguration = oci.Psql.getConfiguration({
- *     configurationId: oci_psql_configuration.test_configuration.id,
+ *     configurationId: testConfigurationOciPsqlConfiguration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,7 +122,7 @@ export interface GetConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConfiguration = oci.Psql.getConfiguration({
- *     configurationId: oci_psql_configuration.test_configuration.id,
+ *     configurationId: testConfigurationOciPsqlConfiguration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

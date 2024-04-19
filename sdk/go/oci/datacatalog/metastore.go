@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataCatalog.NewMetastore(ctx, "testMetastore", &DataCatalog.MetastoreArgs{
-//				CompartmentId:                pulumi.Any(_var.Compartment_id),
-//				DefaultExternalTableLocation: pulumi.Any(_var.Metastore_default_external_table_location),
-//				DefaultManagedTableLocation:  pulumi.Any(_var.Metastore_default_managed_table_location),
+//			_, err := DataCatalog.NewMetastore(ctx, "test_metastore", &DataCatalog.MetastoreArgs{
+//				CompartmentId:                pulumi.Any(compartmentId),
+//				DefaultExternalTableLocation: pulumi.Any(metastoreDefaultExternalTableLocation),
+//				DefaultManagedTableLocation:  pulumi.Any(metastoreDefaultManagedTableLocation),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Metastore_display_name),
+//				DisplayName: pulumi.Any(metastoreDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataGuardAssociations = oci.Database.getDataGuardAssociations({
- *     databaseId: oci_database_database.test_database.id,
+ *     databaseId: testDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -75,7 +75,7 @@ export interface GetDataGuardAssociationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataGuardAssociations = oci.Database.getDataGuardAssociations({
- *     databaseId: oci_database_database.test_database.id,
+ *     databaseId: testDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

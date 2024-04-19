@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testNewsReports = Oci.Opsi.GetNewsReports.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.News_report_compartment_id_in_subtree,
-        ///         NewsReportId = oci_opsi_news_report.Test_news_report.Id,
-        ///         States = @var.News_report_state,
-        ///         Statuses = @var.News_report_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = newsReportCompartmentIdInSubtree,
+        ///         NewsReportId = testNewsReport.Id,
+        ///         States = newsReportState,
+        ///         Statuses = newsReportStatus,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testNewsReports = Oci.Opsi.GetNewsReports.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.News_report_compartment_id_in_subtree,
-        ///         NewsReportId = oci_opsi_news_report.Test_news_report.Id,
-        ///         States = @var.News_report_state,
-        ///         Statuses = @var.News_report_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = newsReportCompartmentIdInSubtree,
+        ///         NewsReportId = testNewsReport.Id,
+        ///         States = newsReportState,
+        ///         Statuses = newsReportStatus,
         ///     });
         /// 
         /// });

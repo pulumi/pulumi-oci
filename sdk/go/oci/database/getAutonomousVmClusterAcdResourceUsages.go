@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousVmClusterAcdResourceUsages(ctx, &database.GetAutonomousVmClusterAcdResourceUsagesArgs{
-//				AutonomousVmClusterId: oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-//				CompartmentId:         pulumi.StringRef(_var.Compartment_id),
+//				AutonomousVmClusterId: testAutonomousVmCluster.Id,
+//				CompartmentId:         pulumi.StringRef(compartmentId),
 //			}, nil)
 //			if err != nil {
 //				return err

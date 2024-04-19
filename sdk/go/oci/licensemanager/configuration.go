@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LicenseManager.NewConfiguration(ctx, "testConfiguration", &LicenseManager.ConfigurationArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				EmailIds:      pulumi.Any(_var.Configuration_email_ids),
+//			_, err := LicenseManager.NewConfiguration(ctx, "test_configuration", &LicenseManager.ConfigurationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				EmailIds:      pulumi.Any(configurationEmailIds),
 //			})
 //			if err != nil {
 //				return err

@@ -45,8 +45,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalPluggableDatabaseOperationsInsightsManagement = new ExternalPluggableDatabaseOperationsInsightsManagement(&#34;testExternalPluggableDatabaseOperationsInsightsManagement&#34;, ExternalPluggableDatabaseOperationsInsightsManagementArgs.builder()        
- *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
- *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+ *             .externalDatabaseConnectorId(testExternalDatabaseConnector.id())
+ *             .externalPluggableDatabaseId(testExternalPluggableDatabase.id())
  *             .enableOperationsInsights(true)
  *             .build());
  * 

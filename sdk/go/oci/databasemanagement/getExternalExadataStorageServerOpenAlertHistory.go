@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalExadataStorageServerOpenAlertHistory(ctx, &databasemanagement.GetExternalExadataStorageServerOpenAlertHistoryArgs{
-//				ExternalExadataStorageServerId: oci_database_management_external_exadata_storage_server.Test_external_exadata_storage_server.Id,
+//				ExternalExadataStorageServerId: testExternalExadataStorageServer.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

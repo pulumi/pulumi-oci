@@ -133,10 +133,10 @@ def get_vlans(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vlans = oci.Core.get_vlans(compartment_id=var["compartment_id"],
-        display_name=var["vlan_display_name"],
-        state=var["vlan_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_vlans = oci.Core.get_vlans(compartment_id=compartment_id,
+        display_name=vlan_display_name,
+        state=vlan_state,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_vlans_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vlans = oci.Core.get_vlans(compartment_id=var["compartment_id"],
-        display_name=var["vlan_display_name"],
-        state=var["vlan_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_vlans = oci.Core.get_vlans(compartment_id=compartment_id,
+        display_name=vlan_display_name,
+        state=vlan_state,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 

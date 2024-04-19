@@ -30,9 +30,9 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testComputedUsage = Oci.OneSubsription.GetComputedUsage.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputedUsageId = oci_onesubscription_computed_usage.Test_computed_usage.Id,
-        ///         Fields = @var.Computed_usage_fields,
+        ///         CompartmentId = compartmentId,
+        ///         ComputedUsageId = testComputedUsageOciOnesubscriptionComputedUsage.Id,
+        ///         Fields = computedUsageFields,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testComputedUsage = Oci.OneSubsription.GetComputedUsage.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ComputedUsageId = oci_onesubscription_computed_usage.Test_computed_usage.Id,
-        ///         Fields = @var.Computed_usage_fields,
+        ///         CompartmentId = compartmentId,
+        ///         ComputedUsageId = testComputedUsageOciOnesubscriptionComputedUsage.Id,
+        ///         Fields = computedUsageFields,
         ///     });
         /// 
         /// });

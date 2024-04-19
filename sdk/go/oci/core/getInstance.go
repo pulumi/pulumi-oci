@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetInstance(ctx, &core.GetInstanceArgs{
-//				InstanceId: oci_core_instance.Test_instance.Id,
+//				InstanceId: testInstanceOciCoreInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualServiceRouteTable = Oci.ServiceMesh.GetVirtualServiceRouteTable.Invoke(new()
         ///     {
-        ///         VirtualServiceRouteTableId = oci_service_mesh_virtual_service_route_table.Test_virtual_service_route_table.Id,
+        ///         VirtualServiceRouteTableId = testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualServiceRouteTable = Oci.ServiceMesh.GetVirtualServiceRouteTable.Invoke(new()
         ///     {
-        ///         VirtualServiceRouteTableId = oci_service_mesh_virtual_service_route_table.Test_virtual_service_route_table.Id,
+        ///         VirtualServiceRouteTableId = testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.Id,
         ///     });
         /// 
         /// });

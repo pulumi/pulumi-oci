@@ -31,27 +31,27 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsOauthPartnerCertificate(ctx, "testOauthPartnerCertificate", &Identity.DomainsOauthPartnerCertificateArgs{
-//				CertificateAlias: pulumi.Any(_var.Oauth_partner_certificate_certificate_alias),
-//				IdcsEndpoint:     pulumi.Any(data.Oci_identity_domain.Test_domain.Url),
+//			_, err := Identity.NewDomainsOauthPartnerCertificate(ctx, "test_oauth_partner_certificate", &Identity.DomainsOauthPartnerCertificateArgs{
+//				CertificateAlias: pulumi.Any(oauthPartnerCertificateCertificateAlias),
+//				IdcsEndpoint:     pulumi.Any(testDomain.Url),
 //				Schemas: pulumi.StringArray{
 //					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:OAuthPartnerCertificate"),
 //				},
-//				Authorization:             pulumi.Any(_var.Oauth_partner_certificate_authorization),
+//				Authorization:             pulumi.Any(oauthPartnerCertificateAuthorization),
 //				ExternalId:                pulumi.String("externalId"),
-//				KeyStoreId:                pulumi.Any(oci_database_key_store.Test_key_store.Id),
-//				KeyStoreName:              pulumi.Any(oci_database_key_store.Test_key_store.Name),
-//				KeyStorePassword:          pulumi.Any(_var.Oauth_partner_certificate_key_store_password),
-//				Map:                       pulumi.Any(_var.Oauth_partner_certificate_map),
-//				Ocid:                      pulumi.Any(_var.Oauth_partner_certificate_ocid),
-//				ResourceTypeSchemaVersion: pulumi.Any(_var.Oauth_partner_certificate_resource_type_schema_version),
+//				KeyStoreId:                pulumi.Any(testKeyStore.Id),
+//				KeyStoreName:              pulumi.Any(testKeyStore.Name),
+//				KeyStorePassword:          pulumi.Any(oauthPartnerCertificateKeyStorePassword),
+//				Map:                       pulumi.Any(oauthPartnerCertificateMap),
+//				Ocid:                      pulumi.Any(oauthPartnerCertificateOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(oauthPartnerCertificateResourceTypeSchemaVersion),
 //				Tags: identity.DomainsOauthPartnerCertificateTagArray{
 //					&identity.DomainsOauthPartnerCertificateTagArgs{
-//						Key:   pulumi.Any(_var.Oauth_partner_certificate_tags_key),
-//						Value: pulumi.Any(_var.Oauth_partner_certificate_tags_value),
+//						Key:   pulumi.Any(oauthPartnerCertificateTagsKey),
+//						Value: pulumi.Any(oauthPartnerCertificateTagsValue),
 //					},
 //				},
-//				X509base64certificate: pulumi.Any(_var.Oauth_partner_certificate_x509base64certificate),
+//				X509base64certificate: pulumi.Any(oauthPartnerCertificateX509base64certificate),
 //			})
 //			if err != nil {
 //				return err

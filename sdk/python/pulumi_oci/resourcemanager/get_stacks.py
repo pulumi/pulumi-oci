@@ -123,10 +123,10 @@ def get_stacks(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stacks = oci.ResourceManager.get_stacks(compartment_id=var["compartment_id"],
-        display_name=var["stack_display_name"],
-        id=var["stack_id"],
-        state=var["stack_state"])
+    test_stacks = oci.ResourceManager.get_stacks(compartment_id=compartment_id,
+        display_name=stack_display_name,
+        id=stack_id,
+        state=stack_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_stacks_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stacks = oci.ResourceManager.get_stacks(compartment_id=var["compartment_id"],
-        display_name=var["stack_display_name"],
-        id=var["stack_id"],
-        state=var["stack_state"])
+    test_stacks = oci.ResourceManager.get_stacks(compartment_id=compartment_id,
+        display_name=stack_display_name,
+        id=stack_id,
+        state=stack_state)
     ```
     <!--End PulumiCodeChooser -->
 

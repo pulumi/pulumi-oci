@@ -30,15 +30,15 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testRecommendations = Oci.Optimizer.GetRecommendations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Recommendation_compartment_id_in_subtree,
-        ///         CategoryId = oci_optimizer_category.Test_category.Id,
-        ///         CategoryName = oci_optimizer_category.Test_category.Name,
-        ///         ChildTenancyIds = @var.Recommendation_child_tenancy_ids,
-        ///         IncludeOrganization = @var.Recommendation_include_organization,
-        ///         Name = @var.Recommendation_name,
-        ///         State = @var.Recommendation_state,
-        ///         Status = @var.Recommendation_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = recommendationCompartmentIdInSubtree,
+        ///         CategoryId = testCategory.Id,
+        ///         CategoryName = testCategory.Name,
+        ///         ChildTenancyIds = recommendationChildTenancyIds,
+        ///         IncludeOrganization = recommendationIncludeOrganization,
+        ///         Name = recommendationName,
+        ///         State = recommendationState,
+        ///         Status = recommendationStatus,
         ///     });
         /// 
         /// });
@@ -67,15 +67,15 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testRecommendations = Oci.Optimizer.GetRecommendations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Recommendation_compartment_id_in_subtree,
-        ///         CategoryId = oci_optimizer_category.Test_category.Id,
-        ///         CategoryName = oci_optimizer_category.Test_category.Name,
-        ///         ChildTenancyIds = @var.Recommendation_child_tenancy_ids,
-        ///         IncludeOrganization = @var.Recommendation_include_organization,
-        ///         Name = @var.Recommendation_name,
-        ///         State = @var.Recommendation_state,
-        ///         Status = @var.Recommendation_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = recommendationCompartmentIdInSubtree,
+        ///         CategoryId = testCategory.Id,
+        ///         CategoryName = testCategory.Name,
+        ///         ChildTenancyIds = recommendationChildTenancyIds,
+        ///         IncludeOrganization = recommendationIncludeOrganization,
+        ///         Name = recommendationName,
+        ///         State = recommendationState,
+        ///         Status = recommendationStatus,
         ///     });
         /// 
         /// });

@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDataGuardAssociation = Oci.Database.GetDataGuardAssociation.Invoke(new()
         ///     {
-        ///         DataGuardAssociationId = oci_database_data_guard_association.Test_data_guard_association.Id,
-        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///         DataGuardAssociationId = testDataGuardAssociationOciDatabaseDataGuardAssociation.Id,
+        ///         DatabaseId = testDatabase.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDataGuardAssociation = Oci.Database.GetDataGuardAssociation.Invoke(new()
         ///     {
-        ///         DataGuardAssociationId = oci_database_data_guard_association.Test_data_guard_association.Id,
-        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///         DataGuardAssociationId = testDataGuardAssociationOciDatabaseDataGuardAssociation.Id,
+        ///         DatabaseId = testDatabase.Id,
         ///     });
         /// 
         /// });

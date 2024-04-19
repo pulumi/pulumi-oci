@@ -200,8 +200,8 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        opc_named_credential_id=var["managed_database_sql_plan_baseline_configuration_opc_named_credential_id"])
+    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=test_managed_database["id"],
+        opc_named_credential_id=managed_database_sql_plan_baseline_configuration_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -249,8 +249,8 @@ def get_managed_database_sql_plan_baseline_configuration_output(managed_database
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        opc_named_credential_id=var["managed_database_sql_plan_baseline_configuration_opc_named_credential_id"])
+    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=test_managed_database["id"],
+        opc_named_credential_id=managed_database_sql_plan_baseline_configuration_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 

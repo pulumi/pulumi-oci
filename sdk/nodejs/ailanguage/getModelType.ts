@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModelType = oci.AiLanguage.getModelType({
- *     modelType: _var.model_type_model_type,
+ *     modelType: modelTypeModelType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -71,7 +71,7 @@ export interface GetModelTypeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModelType = oci.AiLanguage.getModelType({
- *     modelType: _var.model_type_model_type,
+ *     modelType: modelTypeModelType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

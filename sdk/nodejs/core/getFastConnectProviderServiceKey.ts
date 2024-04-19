@@ -18,8 +18,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFastConnectProviderServiceKey = oci.Core.getFastConnectProviderServiceKey({
- *     providerServiceId: data.oci_core_fast_connect_provider_services.test_fast_connect_provider_services.fast_connect_provider_services[0].id,
- *     providerServiceKeyName: _var.fast_connect_provider_service_key_provider_service_key_name,
+ *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
+ *     providerServiceKeyName: fastConnectProviderServiceKeyProviderServiceKeyName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -84,8 +84,8 @@ export interface GetFastConnectProviderServiceKeyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFastConnectProviderServiceKey = oci.Core.getFastConnectProviderServiceKey({
- *     providerServiceId: data.oci_core_fast_connect_provider_services.test_fast_connect_provider_services.fast_connect_provider_services[0].id,
- *     providerServiceKeyName: _var.fast_connect_provider_service_key_provider_service_key_name,
+ *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
+ *     providerServiceKeyName: fastConnectProviderServiceKeyProviderServiceKeyName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

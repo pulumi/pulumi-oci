@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testOnPremConnector = Oci.DataSafe.GetOnpremConnector.Invoke(new()
         ///     {
-        ///         OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
+        ///         OnPremConnectorId = testOnPremConnectorOciDataSafeOnPremConnector.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testOnPremConnector = Oci.DataSafe.GetOnpremConnector.Invoke(new()
         ///     {
-        ///         OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
+        ///         OnPremConnectorId = testOnPremConnectorOciDataSafeOnPremConnector.Id,
         ///     });
         /// 
         /// });

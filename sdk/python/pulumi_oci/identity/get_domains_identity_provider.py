@@ -814,12 +814,12 @@ def get_domains_identity_provider(attribute_sets: Optional[Sequence[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
+    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
+        identity_provider_id=test_identity_provider_oci_identity_identity_provider["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["identity_provider_authorization"],
-        resource_type_schema_version=var["identity_provider_resource_type_schema_version"])
+        authorization=identity_provider_authorization,
+        resource_type_schema_version=identity_provider_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -929,12 +929,12 @@ def get_domains_identity_provider_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
+    test_identity_provider = oci.Identity.get_domains_identity_provider(idcs_endpoint=test_domain["url"],
+        identity_provider_id=test_identity_provider_oci_identity_identity_provider["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["identity_provider_authorization"],
-        resource_type_schema_version=var["identity_provider_resource_type_schema_version"])
+        authorization=identity_provider_authorization,
+        resource_type_schema_version=identity_provider_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

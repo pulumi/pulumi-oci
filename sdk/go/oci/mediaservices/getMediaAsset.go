@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetMediaAsset(ctx, &mediaservices.GetMediaAssetArgs{
-//				MediaAssetId: oci_media_services_media_asset.Test_media_asset.Id,
+//				MediaAssetId: testMediaAssetOciMediaServicesMediaAsset.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

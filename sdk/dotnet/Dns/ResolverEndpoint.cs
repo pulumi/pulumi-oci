@@ -25,17 +25,18 @@ namespace Pulumi.Oci.Dns
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testResolverEndpoint = new Oci.Dns.ResolverEndpoint("testResolverEndpoint", new()
+    ///     var testResolverEndpoint = new Oci.Dns.ResolverEndpoint("test_resolver_endpoint", new()
     ///     {
-    ///         IsForwarding = @var.Resolver_endpoint_is_forwarding,
-    ///         IsListening = @var.Resolver_endpoint_is_listening,
-    ///         ResolverId = oci_dns_resolver.Test_resolver.Id,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         IsForwarding = resolverEndpointIsForwarding,
+    ///         IsListening = resolverEndpointIsListening,
+    ///         Name = resolverEndpointName,
+    ///         ResolverId = testResolver.Id,
+    ///         SubnetId = testSubnet.Id,
     ///         Scope = "PRIVATE",
-    ///         EndpointType = @var.Resolver_endpoint_endpoint_type,
-    ///         ForwardingAddress = @var.Resolver_endpoint_forwarding_address,
-    ///         ListeningAddress = @var.Resolver_endpoint_listening_address,
-    ///         NsgIds = @var.Resolver_endpoint_nsg_ids,
+    ///         EndpointType = resolverEndpointEndpointType,
+    ///         ForwardingAddress = resolverEndpointForwardingAddress,
+    ///         ListeningAddress = resolverEndpointListeningAddress,
+    ///         NsgIds = resolverEndpointNsgIds,
     ///     });
     /// 
     /// });

@@ -18,8 +18,8 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserCapabilitiesManagement = new oci.identity.UserCapabilitiesManagement("testUserCapabilitiesManagement", {
- *     userId: oci_identity_user.user1.id,
+ * const testUserCapabilitiesManagement = new oci.identity.UserCapabilitiesManagement("test_user_capabilities_management", {
+ *     userId: user1.id,
  *     canUseApiKeys: true,
  *     canUseAuthTokens: true,
  *     canUseConsolePassword: false,

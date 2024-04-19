@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingReports = oci.DataSafe.getMaskingReports({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.masking_report_access_level,
- *     compartmentIdInSubtree: _var.masking_report_compartment_id_in_subtree,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: maskingReportAccessLevel,
+ *     compartmentIdInSubtree: maskingReportCompartmentIdInSubtree,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetMaskingReportsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingReports = oci.DataSafe.getMaskingReports({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.masking_report_access_level,
- *     compartmentIdInSubtree: _var.masking_report_compartment_id_in_subtree,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: maskingReportAccessLevel,
+ *     compartmentIdInSubtree: maskingReportCompartmentIdInSubtree,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

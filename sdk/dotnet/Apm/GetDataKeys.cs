@@ -31,8 +31,8 @@ namespace Pulumi.Oci.Apm
         /// {
         ///     var testDataKeys = Oci.Apm.GetDataKeys.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         DataKeyType = @var.Data_key_data_key_type,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DataKeyType = dataKeyDataKeyType,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.Apm
         /// {
         ///     var testDataKeys = Oci.Apm.GetDataKeys.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         DataKeyType = @var.Data_key_data_key_type,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DataKeyType = dataKeyDataKeyType,
         ///     });
         /// 
         /// });

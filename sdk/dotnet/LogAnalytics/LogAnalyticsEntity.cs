@@ -25,12 +25,13 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLogAnalyticsEntity = new Oci.LogAnalytics.LogAnalyticsEntity("testLogAnalyticsEntity", new()
+    ///     var testLogAnalyticsEntity = new Oci.LogAnalytics.LogAnalyticsEntity("test_log_analytics_entity", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         EntityTypeName = @var.Log_analytics_entity_entity_type_name,
-    ///         Namespace = @var.Log_analytics_entity_namespace,
-    ///         CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
+    ///         CompartmentId = compartmentId,
+    ///         EntityTypeName = logAnalyticsEntityEntityTypeName,
+    ///         Name = logAnalyticsEntityName,
+    ///         Namespace = logAnalyticsEntityNamespace,
+    ///         CloudResourceId = testCloudResource.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -39,24 +40,24 @@ namespace Pulumi.Oci.LogAnalytics
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Hostname = @var.Log_analytics_entity_hostname,
-    ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+    ///         Hostname = logAnalyticsEntityHostname,
+    ///         ManagementAgentId = testManagementAgent.Id,
     ///         Metadata = new Oci.LogAnalytics.Inputs.LogAnalyticsEntityMetadataArgs
     ///         {
     ///             Items = new[]
     ///             {
     ///                 new Oci.LogAnalytics.Inputs.LogAnalyticsEntityMetadataItemArgs
     ///                 {
-    ///                     Name = @var.Log_analytics_entity_metadata_items_name,
-    ///                     Type = @var.Log_analytics_entity_metadata_items_type,
-    ///                     Value = @var.Log_analytics_entity_metadata_items_value,
+    ///                     Name = logAnalyticsEntityMetadataItemsName,
+    ///                     Type = logAnalyticsEntityMetadataItemsType,
+    ///                     Value = logAnalyticsEntityMetadataItemsValue,
     ///                 },
     ///             },
     ///         },
-    ///         Properties = @var.Log_analytics_entity_properties,
-    ///         SourceId = oci_log_analytics_source.Test_source.Id,
-    ///         TimeLastDiscovered = @var.Log_analytics_entity_time_last_discovered,
-    ///         TimezoneRegion = @var.Log_analytics_entity_timezone_region,
+    ///         Properties = logAnalyticsEntityProperties,
+    ///         SourceId = testSource.Id,
+    ///         TimeLastDiscovered = logAnalyticsEntityTimeLastDiscovered,
+    ///         TimezoneRegion = logAnalyticsEntityTimezoneRegion,
     ///     });
     /// 
     /// });

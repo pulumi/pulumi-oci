@@ -30,15 +30,15 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testLibraryMaskingFormats = Oci.DataSafe.GetLibraryMaskingFormats.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Library_masking_format_access_level,
-        ///         CompartmentIdInSubtree = @var.Library_masking_format_compartment_id_in_subtree,
-        ///         DisplayName = @var.Library_masking_format_display_name,
-        ///         LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
-        ///         LibraryMaskingFormatSource = @var.Library_masking_format_library_masking_format_source,
-        ///         State = @var.Library_masking_format_state,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Library_masking_format_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Library_masking_format_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = libraryMaskingFormatAccessLevel,
+        ///         CompartmentIdInSubtree = libraryMaskingFormatCompartmentIdInSubtree,
+        ///         DisplayName = libraryMaskingFormatDisplayName,
+        ///         LibraryMaskingFormatId = testLibraryMaskingFormat.Id,
+        ///         LibraryMaskingFormatSource = libraryMaskingFormatLibraryMaskingFormatSource,
+        ///         State = libraryMaskingFormatState,
+        ///         TimeCreatedGreaterThanOrEqualTo = libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = libraryMaskingFormatTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -67,15 +67,15 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testLibraryMaskingFormats = Oci.DataSafe.GetLibraryMaskingFormats.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Library_masking_format_access_level,
-        ///         CompartmentIdInSubtree = @var.Library_masking_format_compartment_id_in_subtree,
-        ///         DisplayName = @var.Library_masking_format_display_name,
-        ///         LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
-        ///         LibraryMaskingFormatSource = @var.Library_masking_format_library_masking_format_source,
-        ///         State = @var.Library_masking_format_state,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Library_masking_format_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Library_masking_format_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = libraryMaskingFormatAccessLevel,
+        ///         CompartmentIdInSubtree = libraryMaskingFormatCompartmentIdInSubtree,
+        ///         DisplayName = libraryMaskingFormatDisplayName,
+        ///         LibraryMaskingFormatId = testLibraryMaskingFormat.Id,
+        ///         LibraryMaskingFormatSource = libraryMaskingFormatLibraryMaskingFormatSource,
+        ///         State = libraryMaskingFormatState,
+        ///         TimeCreatedGreaterThanOrEqualTo = libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = libraryMaskingFormatTimeCreatedLessThan,
         ///     });
         /// 
         /// });

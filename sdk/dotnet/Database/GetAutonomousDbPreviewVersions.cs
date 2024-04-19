@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousDbPreviewVersions = Oci.Database.GetAutonomousDbPreviewVersions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousDbPreviewVersions = Oci.Database.GetAutonomousDbPreviewVersions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

@@ -25,96 +25,96 @@ namespace Pulumi.Oci.CloudMigrations
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTargetAsset = new Oci.CloudMigrations.TargetAsset("testTargetAsset", new()
+    ///     var testTargetAsset = new Oci.CloudMigrations.TargetAsset("test_target_asset", new()
     ///     {
-    ///         IsExcludedFromExecution = @var.Target_asset_is_excluded_from_execution,
-    ///         MigrationPlanId = oci_cloud_migrations_migration_plan.Test_migration_plan.Id,
-    ///         PreferredShapeType = @var.Target_asset_preferred_shape_type,
-    ///         Type = @var.Target_asset_type,
+    ///         IsExcludedFromExecution = targetAssetIsExcludedFromExecution,
+    ///         MigrationPlanId = testMigrationPlan.Id,
+    ///         PreferredShapeType = targetAssetPreferredShapeType,
+    ///         Type = targetAssetType,
     ///         UserSpec = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecArgs
     ///         {
     ///             AgentConfig = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecAgentConfigArgs
     ///             {
-    ///                 AreAllPluginsDisabled = @var.Target_asset_user_spec_agent_config_are_all_plugins_disabled,
-    ///                 IsManagementDisabled = @var.Target_asset_user_spec_agent_config_is_management_disabled,
-    ///                 IsMonitoringDisabled = @var.Target_asset_user_spec_agent_config_is_monitoring_disabled,
+    ///                 AreAllPluginsDisabled = targetAssetUserSpecAgentConfigAreAllPluginsDisabled,
+    ///                 IsManagementDisabled = targetAssetUserSpecAgentConfigIsManagementDisabled,
+    ///                 IsMonitoringDisabled = targetAssetUserSpecAgentConfigIsMonitoringDisabled,
     ///                 PluginsConfigs = new[]
     ///                 {
     ///                     new Oci.CloudMigrations.Inputs.TargetAssetUserSpecAgentConfigPluginsConfigArgs
     ///                     {
-    ///                         DesiredState = @var.Target_asset_user_spec_agent_config_plugins_config_desired_state,
-    ///                         Name = @var.Target_asset_user_spec_agent_config_plugins_config_name,
+    ///                         DesiredState = targetAssetUserSpecAgentConfigPluginsConfigDesiredState,
+    ///                         Name = targetAssetUserSpecAgentConfigPluginsConfigName,
     ///                     },
     ///                 },
     ///             },
-    ///             AvailabilityDomain = @var.Target_asset_user_spec_availability_domain,
-    ///             CapacityReservationId = oci_cloud_migrations_capacity_reservation.Test_capacity_reservation.Id,
-    ///             CompartmentId = @var.Compartment_id,
+    ///             AvailabilityDomain = targetAssetUserSpecAvailabilityDomain,
+    ///             CapacityReservationId = testCapacityReservation.Id,
+    ///             CompartmentId = compartmentId,
     ///             CreateVnicDetails = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecCreateVnicDetailsArgs
     ///             {
-    ///                 AssignPrivateDnsRecord = @var.Target_asset_user_spec_create_vnic_details_assign_private_dns_record,
-    ///                 AssignPublicIp = @var.Target_asset_user_spec_create_vnic_details_assign_public_ip,
+    ///                 AssignPrivateDnsRecord = targetAssetUserSpecCreateVnicDetailsAssignPrivateDnsRecord,
+    ///                 AssignPublicIp = targetAssetUserSpecCreateVnicDetailsAssignPublicIp,
     ///                 DefinedTags = 
     ///                 {
     ///                     { "foo-namespace.bar-key", "value" },
     ///                 },
-    ///                 DisplayName = @var.Target_asset_user_spec_create_vnic_details_display_name,
+    ///                 DisplayName = targetAssetUserSpecCreateVnicDetailsDisplayName,
     ///                 FreeformTags = 
     ///                 {
     ///                     { "bar-key", "value" },
     ///                 },
-    ///                 HostnameLabel = @var.Target_asset_user_spec_create_vnic_details_hostname_label,
-    ///                 NsgIds = @var.Target_asset_user_spec_create_vnic_details_nsg_ids,
-    ///                 PrivateIp = @var.Target_asset_user_spec_create_vnic_details_private_ip,
-    ///                 SkipSourceDestCheck = @var.Target_asset_user_spec_create_vnic_details_skip_source_dest_check,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 VlanId = oci_core_vlan.Test_vlan.Id,
+    ///                 HostnameLabel = targetAssetUserSpecCreateVnicDetailsHostnameLabel,
+    ///                 NsgIds = targetAssetUserSpecCreateVnicDetailsNsgIds,
+    ///                 PrivateIp = targetAssetUserSpecCreateVnicDetailsPrivateIp,
+    ///                 SkipSourceDestCheck = targetAssetUserSpecCreateVnicDetailsSkipSourceDestCheck,
+    ///                 SubnetId = testSubnet.Id,
+    ///                 VlanId = testVlan.Id,
     ///             },
-    ///             DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
+    ///             DedicatedVmHostId = testDedicatedVmHost.Id,
     ///             DefinedTags = 
     ///             {
     ///                 { "foo-namespace.bar-key", "value" },
     ///             },
-    ///             DisplayName = @var.Target_asset_user_spec_display_name,
-    ///             FaultDomain = @var.Target_asset_user_spec_fault_domain,
+    ///             DisplayName = targetAssetUserSpecDisplayName,
+    ///             FaultDomain = targetAssetUserSpecFaultDomain,
     ///             FreeformTags = 
     ///             {
     ///                 { "bar-key", "value" },
     ///             },
-    ///             HostnameLabel = @var.Target_asset_user_spec_hostname_label,
+    ///             HostnameLabel = targetAssetUserSpecHostnameLabel,
     ///             InstanceOptions = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecInstanceOptionsArgs
     ///             {
-    ///                 AreLegacyImdsEndpointsDisabled = @var.Target_asset_user_spec_instance_options_are_legacy_imds_endpoints_disabled,
+    ///                 AreLegacyImdsEndpointsDisabled = targetAssetUserSpecInstanceOptionsAreLegacyImdsEndpointsDisabled,
     ///             },
-    ///             IpxeScript = @var.Target_asset_user_spec_ipxe_script,
-    ///             IsPvEncryptionInTransitEnabled = @var.Target_asset_user_spec_is_pv_encryption_in_transit_enabled,
+    ///             IpxeScript = targetAssetUserSpecIpxeScript,
+    ///             IsPvEncryptionInTransitEnabled = targetAssetUserSpecIsPvEncryptionInTransitEnabled,
     ///             PreemptibleInstanceConfig = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecPreemptibleInstanceConfigArgs
     ///             {
     ///                 PreemptionAction = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs
     ///                 {
-    ///                     Type = @var.Target_asset_user_spec_preemptible_instance_config_preemption_action_type,
-    ///                     PreserveBootVolume = @var.Target_asset_user_spec_preemptible_instance_config_preemption_action_preserve_boot_volume,
+    ///                     Type = targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionType,
+    ///                     PreserveBootVolume = targetAssetUserSpecPreemptibleInstanceConfigPreemptionActionPreserveBootVolume,
     ///                 },
     ///             },
-    ///             Shape = @var.Target_asset_user_spec_shape,
+    ///             Shape = targetAssetUserSpecShape,
     ///             ShapeConfig = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecShapeConfigArgs
     ///             {
-    ///                 BaselineOcpuUtilization = @var.Target_asset_user_spec_shape_config_baseline_ocpu_utilization,
-    ///                 MemoryInGbs = @var.Target_asset_user_spec_shape_config_memory_in_gbs,
-    ///                 Ocpus = @var.Target_asset_user_spec_shape_config_ocpus,
+    ///                 BaselineOcpuUtilization = targetAssetUserSpecShapeConfigBaselineOcpuUtilization,
+    ///                 MemoryInGbs = targetAssetUserSpecShapeConfigMemoryInGbs,
+    ///                 Ocpus = targetAssetUserSpecShapeConfigOcpus,
     ///             },
     ///             SourceDetails = new Oci.CloudMigrations.Inputs.TargetAssetUserSpecSourceDetailsArgs
     ///             {
-    ///                 SourceType = @var.Target_asset_user_spec_source_details_source_type,
-    ///                 BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-    ///                 BootVolumeSizeInGbs = @var.Target_asset_user_spec_source_details_boot_volume_size_in_gbs,
-    ///                 BootVolumeVpusPerGb = @var.Target_asset_user_spec_source_details_boot_volume_vpus_per_gb,
-    ///                 ImageId = oci_core_image.Test_image.Id,
-    ///                 KmsKeyId = oci_kms_key.Test_key.Id,
+    ///                 SourceType = targetAssetUserSpecSourceDetailsSourceType,
+    ///                 BootVolumeId = testBootVolume.Id,
+    ///                 BootVolumeSizeInGbs = targetAssetUserSpecSourceDetailsBootVolumeSizeInGbs,
+    ///                 BootVolumeVpusPerGb = targetAssetUserSpecSourceDetailsBootVolumeVpusPerGb,
+    ///                 ImageId = testImage.Id,
+    ///                 KmsKeyId = testKey.Id,
     ///             },
     ///         },
-    ///         BlockVolumesPerformance = @var.Target_asset_block_volumes_performance,
-    ///         MsLicense = @var.Target_asset_ms_license,
+    ///         BlockVolumesPerformance = targetAssetBlockVolumesPerformance,
+    ///         MsLicense = targetAssetMsLicense,
     ///     });
     /// 
     /// });

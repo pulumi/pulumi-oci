@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNodePoolOption = oci.ContainerEngine.getNodePoolOption({
- *     nodePoolOptionId: oci_containerengine_node_pool_option.test_node_pool_option.id,
- *     compartmentId: _var.compartment_id,
+ *     nodePoolOptionId: testNodePoolOptionOciContainerengineNodePoolOption.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -88,8 +88,8 @@ export interface GetNodePoolOptionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNodePoolOption = oci.ContainerEngine.getNodePoolOption({
- *     nodePoolOptionId: oci_containerengine_node_pool_option.test_node_pool_option.id,
- *     compartmentId: _var.compartment_id,
+ *     nodePoolOptionId: testNodePoolOptionOciContainerengineNodePoolOption.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

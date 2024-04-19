@@ -486,44 +486,45 @@ class Schedule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_schedule = oci.metering_computation.Schedule("testSchedule",
-            compartment_id=var["compartment_id"],
+        test_schedule = oci.metering_computation.Schedule("test_schedule",
+            compartment_id=compartment_id,
+            name=schedule_name,
             result_location=oci.metering_computation.ScheduleResultLocationArgs(
-                bucket=var["schedule_result_location_bucket"],
-                location_type=var["schedule_result_location_location_type"],
-                namespace=var["schedule_result_location_namespace"],
-                region=var["schedule_result_location_region"],
+                bucket=schedule_result_location_bucket,
+                location_type=schedule_result_location_location_type,
+                namespace=schedule_result_location_namespace,
+                region=schedule_result_location_region,
             ),
-            schedule_recurrences=var["schedule_schedule_recurrences"],
-            time_scheduled=var["schedule_time_scheduled"],
+            schedule_recurrences=schedule_schedule_recurrences,
+            time_scheduled=schedule_time_scheduled,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["schedule_description"],
+            description=schedule_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            output_file_format=var["schedule_output_file_format"],
+            output_file_format=schedule_output_file_format,
             query_properties=oci.metering_computation.ScheduleQueryPropertiesArgs(
                 date_range=oci.metering_computation.ScheduleQueryPropertiesDateRangeArgs(
-                    date_range_type=var["schedule_query_properties_date_range_date_range_type"],
-                    dynamic_date_range_type=var["schedule_query_properties_date_range_dynamic_date_range_type"],
-                    time_usage_ended=var["schedule_query_properties_date_range_time_usage_ended"],
-                    time_usage_started=var["schedule_query_properties_date_range_time_usage_started"],
+                    date_range_type=schedule_query_properties_date_range_date_range_type,
+                    dynamic_date_range_type=schedule_query_properties_date_range_dynamic_date_range_type,
+                    time_usage_ended=schedule_query_properties_date_range_time_usage_ended,
+                    time_usage_started=schedule_query_properties_date_range_time_usage_started,
                 ),
-                granularity=var["schedule_query_properties_granularity"],
-                compartment_depth=var["schedule_query_properties_compartment_depth"],
-                filter=var["schedule_query_properties_filter"],
-                group_bies=var["schedule_query_properties_group_by"],
+                granularity=schedule_query_properties_granularity,
+                compartment_depth=schedule_query_properties_compartment_depth,
+                filter=schedule_query_properties_filter,
+                group_bies=schedule_query_properties_group_by,
                 group_by_tags=[oci.metering_computation.ScheduleQueryPropertiesGroupByTagArgs(
-                    key=var["schedule_query_properties_group_by_tag_key"],
-                    namespace=var["schedule_query_properties_group_by_tag_namespace"],
-                    value=var["schedule_query_properties_group_by_tag_value"],
+                    key=schedule_query_properties_group_by_tag_key,
+                    namespace=schedule_query_properties_group_by_tag_namespace,
+                    value=schedule_query_properties_group_by_tag_value,
                 )],
-                is_aggregate_by_time=var["schedule_query_properties_is_aggregate_by_time"],
-                query_type=var["schedule_query_properties_query_type"],
+                is_aggregate_by_time=schedule_query_properties_is_aggregate_by_time,
+                query_type=schedule_query_properties_query_type,
             ),
-            saved_report_id=oci_data_safe_report["test_report"]["id"])
+            saved_report_id=test_report["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -571,44 +572,45 @@ class Schedule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_schedule = oci.metering_computation.Schedule("testSchedule",
-            compartment_id=var["compartment_id"],
+        test_schedule = oci.metering_computation.Schedule("test_schedule",
+            compartment_id=compartment_id,
+            name=schedule_name,
             result_location=oci.metering_computation.ScheduleResultLocationArgs(
-                bucket=var["schedule_result_location_bucket"],
-                location_type=var["schedule_result_location_location_type"],
-                namespace=var["schedule_result_location_namespace"],
-                region=var["schedule_result_location_region"],
+                bucket=schedule_result_location_bucket,
+                location_type=schedule_result_location_location_type,
+                namespace=schedule_result_location_namespace,
+                region=schedule_result_location_region,
             ),
-            schedule_recurrences=var["schedule_schedule_recurrences"],
-            time_scheduled=var["schedule_time_scheduled"],
+            schedule_recurrences=schedule_schedule_recurrences,
+            time_scheduled=schedule_time_scheduled,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["schedule_description"],
+            description=schedule_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            output_file_format=var["schedule_output_file_format"],
+            output_file_format=schedule_output_file_format,
             query_properties=oci.metering_computation.ScheduleQueryPropertiesArgs(
                 date_range=oci.metering_computation.ScheduleQueryPropertiesDateRangeArgs(
-                    date_range_type=var["schedule_query_properties_date_range_date_range_type"],
-                    dynamic_date_range_type=var["schedule_query_properties_date_range_dynamic_date_range_type"],
-                    time_usage_ended=var["schedule_query_properties_date_range_time_usage_ended"],
-                    time_usage_started=var["schedule_query_properties_date_range_time_usage_started"],
+                    date_range_type=schedule_query_properties_date_range_date_range_type,
+                    dynamic_date_range_type=schedule_query_properties_date_range_dynamic_date_range_type,
+                    time_usage_ended=schedule_query_properties_date_range_time_usage_ended,
+                    time_usage_started=schedule_query_properties_date_range_time_usage_started,
                 ),
-                granularity=var["schedule_query_properties_granularity"],
-                compartment_depth=var["schedule_query_properties_compartment_depth"],
-                filter=var["schedule_query_properties_filter"],
-                group_bies=var["schedule_query_properties_group_by"],
+                granularity=schedule_query_properties_granularity,
+                compartment_depth=schedule_query_properties_compartment_depth,
+                filter=schedule_query_properties_filter,
+                group_bies=schedule_query_properties_group_by,
                 group_by_tags=[oci.metering_computation.ScheduleQueryPropertiesGroupByTagArgs(
-                    key=var["schedule_query_properties_group_by_tag_key"],
-                    namespace=var["schedule_query_properties_group_by_tag_namespace"],
-                    value=var["schedule_query_properties_group_by_tag_value"],
+                    key=schedule_query_properties_group_by_tag_key,
+                    namespace=schedule_query_properties_group_by_tag_namespace,
+                    value=schedule_query_properties_group_by_tag_value,
                 )],
-                is_aggregate_by_time=var["schedule_query_properties_is_aggregate_by_time"],
-                query_type=var["schedule_query_properties_query_type"],
+                is_aggregate_by_time=schedule_query_properties_is_aggregate_by_time,
+                query_type=schedule_query_properties_query_type,
             ),
-            saved_report_id=oci_data_safe_report["test_report"]["id"])
+            saved_report_id=test_report["id"])
         ```
         <!--End PulumiCodeChooser -->
 

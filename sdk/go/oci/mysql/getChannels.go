@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetChannels(ctx, &mysql.GetChannelsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				ChannelId:     pulumi.StringRef(oci_mysql_channel.Test_channel.Id),
-//				DbSystemId:    pulumi.StringRef(oci_database_db_system.Test_db_system.Id),
-//				DisplayName:   pulumi.StringRef(_var.Channel_display_name),
-//				IsEnabled:     pulumi.BoolRef(_var.Channel_is_enabled),
-//				State:         pulumi.StringRef(_var.Channel_state),
+//				CompartmentId: compartmentId,
+//				ChannelId:     pulumi.StringRef(testChannel.Id),
+//				DbSystemId:    pulumi.StringRef(testDbSystem.Id),
+//				DisplayName:   pulumi.StringRef(channelDisplayName),
+//				IsEnabled:     pulumi.BoolRef(channelIsEnabled),
+//				State:         pulumi.StringRef(channelState),
 //			}, nil)
 //			if err != nil {
 //				return err

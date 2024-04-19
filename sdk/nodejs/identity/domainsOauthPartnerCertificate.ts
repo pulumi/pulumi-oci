@@ -18,23 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthPartnerCertificate = new oci.identity.DomainsOauthPartnerCertificate("testOauthPartnerCertificate", {
- *     certificateAlias: _var.oauth_partner_certificate_certificate_alias,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ * const testOauthPartnerCertificate = new oci.identity.DomainsOauthPartnerCertificate("test_oauth_partner_certificate", {
+ *     certificateAlias: oauthPartnerCertificateCertificateAlias,
+ *     idcsEndpoint: testDomain.url,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:OAuthPartnerCertificate"],
- *     authorization: _var.oauth_partner_certificate_authorization,
+ *     authorization: oauthPartnerCertificateAuthorization,
  *     externalId: "externalId",
- *     keyStoreId: oci_database_key_store.test_key_store.id,
- *     keyStoreName: oci_database_key_store.test_key_store.name,
- *     keyStorePassword: _var.oauth_partner_certificate_key_store_password,
- *     map: _var.oauth_partner_certificate_map,
- *     ocid: _var.oauth_partner_certificate_ocid,
- *     resourceTypeSchemaVersion: _var.oauth_partner_certificate_resource_type_schema_version,
+ *     keyStoreId: testKeyStore.id,
+ *     keyStoreName: testKeyStore.name,
+ *     keyStorePassword: oauthPartnerCertificateKeyStorePassword,
+ *     map: oauthPartnerCertificateMap,
+ *     ocid: oauthPartnerCertificateOcid,
+ *     resourceTypeSchemaVersion: oauthPartnerCertificateResourceTypeSchemaVersion,
  *     tags: [{
- *         key: _var.oauth_partner_certificate_tags_key,
- *         value: _var.oauth_partner_certificate_tags_value,
+ *         key: oauthPartnerCertificateTagsKey,
+ *         value: oauthPartnerCertificateTagsValue,
  *     }],
- *     x509base64certificate: _var.oauth_partner_certificate_x509base64certificate,
+ *     x509base64certificate: oauthPartnerCertificateX509base64certificate,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

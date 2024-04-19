@@ -166,13 +166,13 @@ def get_reports(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_reports = oci.DataSafe.get_reports(compartment_id=var["compartment_id"],
-        access_level=var["report_access_level"],
-        compartment_id_in_subtree=var["report_compartment_id_in_subtree"],
-        display_name=var["report_display_name"],
-        report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"],
-        state=var["report_state"],
-        type=var["report_type"])
+    test_reports = oci.DataSafe.get_reports(compartment_id=compartment_id,
+        access_level=report_access_level,
+        compartment_id_in_subtree=report_compartment_id_in_subtree,
+        display_name=report_display_name,
+        report_definition_id=test_report_definition["id"],
+        state=report_state,
+        type=report_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -232,13 +232,13 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_reports = oci.DataSafe.get_reports(compartment_id=var["compartment_id"],
-        access_level=var["report_access_level"],
-        compartment_id_in_subtree=var["report_compartment_id_in_subtree"],
-        display_name=var["report_display_name"],
-        report_definition_id=oci_data_safe_report_definition["test_report_definition"]["id"],
-        state=var["report_state"],
-        type=var["report_type"])
+    test_reports = oci.DataSafe.get_reports(compartment_id=compartment_id,
+        access_level=report_access_level,
+        compartment_id_in_subtree=report_compartment_id_in_subtree,
+        display_name=report_display_name,
+        report_definition_id=test_report_definition["id"],
+        state=report_state,
+        type=report_type)
     ```
     <!--End PulumiCodeChooser -->
 

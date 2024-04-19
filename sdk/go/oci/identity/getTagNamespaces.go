@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetTagNamespaces(ctx, &identity.GetTagNamespacesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				IncludeSubcompartments: pulumi.BoolRef(_var.Tag_namespace_include_subcompartments),
-//				State:                  pulumi.StringRef(_var.Tag_namespace_state),
+//				CompartmentId:          compartmentId,
+//				IncludeSubcompartments: pulumi.BoolRef(tagNamespaceIncludeSubcompartments),
+//				State:                  pulumi.StringRef(tagNamespaceState),
 //			}, nil)
 //			if err != nil {
 //				return err

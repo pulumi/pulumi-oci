@@ -570,24 +570,24 @@ class ProtectedDatabase(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_protected_database = oci.recovery_mod.ProtectedDatabase("testProtectedDatabase",
-            compartment_id=var["compartment_id"],
-            db_unique_name=var["protected_database_db_unique_name"],
-            display_name=var["protected_database_display_name"],
-            password=var["protected_database_password"],
-            protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
+        test_protected_database = oci.recovery_mod.ProtectedDatabase("test_protected_database",
+            compartment_id=compartment_id,
+            db_unique_name=protected_database_db_unique_name,
+            display_name=protected_database_display_name,
+            password=protected_database_password,
+            protection_policy_id=test_protection_policy["id"],
             recovery_service_subnets=[oci.recovery_mod.ProtectedDatabaseRecoveryServiceSubnetArgs(
-                recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
+                recovery_service_subnet_id=test_recovery_service_subnet["id"],
             )],
-            database_id=oci_database_database["test_database"]["id"],
-            database_size=var["protected_database_database_size"],
+            database_id=test_database["id"],
+            database_size=protected_database_database_size,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_redo_logs_shipped=var["protected_database_is_redo_logs_shipped"])
+            is_redo_logs_shipped=protected_database_is_redo_logs_shipped)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -631,24 +631,24 @@ class ProtectedDatabase(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_protected_database = oci.recovery_mod.ProtectedDatabase("testProtectedDatabase",
-            compartment_id=var["compartment_id"],
-            db_unique_name=var["protected_database_db_unique_name"],
-            display_name=var["protected_database_display_name"],
-            password=var["protected_database_password"],
-            protection_policy_id=oci_recovery_protection_policy["test_protection_policy"]["id"],
+        test_protected_database = oci.recovery_mod.ProtectedDatabase("test_protected_database",
+            compartment_id=compartment_id,
+            db_unique_name=protected_database_db_unique_name,
+            display_name=protected_database_display_name,
+            password=protected_database_password,
+            protection_policy_id=test_protection_policy["id"],
             recovery_service_subnets=[oci.recovery_mod.ProtectedDatabaseRecoveryServiceSubnetArgs(
-                recovery_service_subnet_id=oci_recovery_recovery_service_subnet["test_recovery_service_subnet"]["id"],
+                recovery_service_subnet_id=test_recovery_service_subnet["id"],
             )],
-            database_id=oci_database_database["test_database"]["id"],
-            database_size=var["protected_database_database_size"],
+            database_id=test_database["id"],
+            database_size=protected_database_database_size,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_redo_logs_shipped=var["protected_database_is_redo_logs_shipped"])
+            is_redo_logs_shipped=protected_database_is_redo_logs_shipped)
         ```
         <!--End PulumiCodeChooser -->
 

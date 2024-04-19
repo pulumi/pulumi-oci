@@ -31,11 +31,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourcePackageGroups = Oci.OsManagementHub.GetSoftwareSourcePackageGroups.Invoke(new()
         ///     {
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         GroupTypes = @var.Software_source_package_group_group_type,
-        ///         Name = @var.Software_source_package_group_name,
-        ///         NameContains = @var.Software_source_package_group_name_contains,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         GroupTypes = softwareSourcePackageGroupGroupType,
+        ///         Name = softwareSourcePackageGroupName,
+        ///         NameContains = softwareSourcePackageGroupNameContains,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourcePackageGroups = Oci.OsManagementHub.GetSoftwareSourcePackageGroups.Invoke(new()
         ///     {
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         GroupTypes = @var.Software_source_package_group_group_type,
-        ///         Name = @var.Software_source_package_group_name,
-        ///         NameContains = @var.Software_source_package_group_name_contains,
+        ///         SoftwareSourceId = testSoftwareSource.Id,
+        ///         CompartmentId = compartmentId,
+        ///         GroupTypes = softwareSourcePackageGroupGroupType,
+        ///         Name = softwareSourcePackageGroupName,
+        ///         NameContains = softwareSourcePackageGroupNameContains,
         ///     });
         /// 
         /// });

@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOpensearchVersions = oci.Opensearch.getOpensearchVersions({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -90,7 +90,7 @@ export interface GetOpensearchVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOpensearchVersions = oci.Opensearch.getOpensearchVersions({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

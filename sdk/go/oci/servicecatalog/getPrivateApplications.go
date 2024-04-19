@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceCatalog.GetPrivateApplications(ctx, &servicecatalog.GetPrivateApplicationsArgs{
-//				CompartmentId:        _var.Compartment_id,
-//				DisplayName:          pulumi.StringRef(_var.Private_application_display_name),
-//				PrivateApplicationId: pulumi.StringRef(oci_service_catalog_private_application.Test_private_application.Id),
+//				CompartmentId:        compartmentId,
+//				DisplayName:          pulumi.StringRef(privateApplicationDisplayName),
+//				PrivateApplicationId: pulumi.StringRef(testPrivateApplication.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

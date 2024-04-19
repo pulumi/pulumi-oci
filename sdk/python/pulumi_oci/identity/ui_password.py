@@ -167,7 +167,7 @@ class UiPassword(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ui_password = oci.identity.UiPassword("testUiPassword", user_id=oci_identity_user["test_user"]["id"])
+        test_ui_password = oci.identity.UiPassword("test_ui_password", user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -211,7 +211,7 @@ class UiPassword(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ui_password = oci.identity.UiPassword("testUiPassword", user_id=oci_identity_user["test_user"]["id"])
+        test_ui_password = oci.identity.UiPassword("test_ui_password", user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 

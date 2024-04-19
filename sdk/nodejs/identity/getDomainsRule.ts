@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRule = oci.Identity.getDomainsRule({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     ruleId: oci_events_rule.test_rule.id,
+ *     idcsEndpoint: testDomain.url,
+ *     ruleId: testRuleOciEventsRule.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.rule_authorization,
- *     resourceTypeSchemaVersion: _var.rule_resource_type_schema_version,
+ *     authorization: ruleAuthorization,
+ *     resourceTypeSchemaVersion: ruleResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -188,12 +188,12 @@ export interface GetDomainsRuleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRule = oci.Identity.getDomainsRule({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     ruleId: oci_events_rule.test_rule.id,
+ *     idcsEndpoint: testDomain.url,
+ *     ruleId: testRuleOciEventsRule.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.rule_authorization,
- *     resourceTypeSchemaVersion: _var.rule_resource_type_schema_version,
+ *     authorization: ruleAuthorization,
+ *     resourceTypeSchemaVersion: ruleResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

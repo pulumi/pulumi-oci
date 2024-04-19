@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCrossConnectGroup = oci.Core.getCrossConnectGroup({
- *     crossConnectGroupId: oci_core_cross_connect_group.test_cross_connect_group.id,
+ *     crossConnectGroupId: testCrossConnectGroupOciCoreCrossConnectGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,7 +105,7 @@ export interface GetCrossConnectGroupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCrossConnectGroup = oci.Core.getCrossConnectGroup({
- *     crossConnectGroupId: oci_core_cross_connect_group.test_cross_connect_group.id,
+ *     crossConnectGroupId: testCrossConnectGroupOciCoreCrossConnectGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

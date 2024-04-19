@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Bastion.GetSessions(ctx, &bastion.GetSessionsArgs{
-//				BastionId:             oci_bastion_bastion.Test_bastion.Id,
-//				DisplayName:           pulumi.StringRef(_var.Session_display_name),
-//				SessionId:             pulumi.StringRef(oci_bastion_session.Test_session.Id),
-//				SessionLifecycleState: pulumi.StringRef(_var.Session_session_lifecycle_state),
+//				BastionId:             testBastion.Id,
+//				DisplayName:           pulumi.StringRef(sessionDisplayName),
+//				SessionId:             pulumi.StringRef(testSession.Id),
+//				SessionLifecycleState: pulumi.StringRef(sessionSessionLifecycleState),
 //			}, nil)
 //			if err != nil {
 //				return err

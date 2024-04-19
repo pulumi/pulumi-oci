@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPurgeCache = new oci.waas.PurgeCache("testPurgeCache", {
- *     waasPolicyId: oci_waas_waas_policy.test_waas_policy.id,
- *     resources: _var.purge_cache_resources,
+ * const testPurgeCache = new oci.waas.PurgeCache("test_purge_cache", {
+ *     waasPolicyId: testWaasPolicy.id,
+ *     resources: purgeCacheResources,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -534,37 +534,37 @@ class JobRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_job_run = oci.data_science.JobRun("testJobRun",
-            compartment_id=var["compartment_id"],
-            job_id=oci_datascience_job["test_job"]["id"],
-            project_id=oci_datascience_project["test_project"]["id"],
-            asynchronous=var["asynchronous"],
+        test_job_run = oci.data_science.JobRun("test_job_run",
+            compartment_id=compartment_id,
+            job_id=test_job["id"],
+            project_id=test_project["id"],
+            asynchronous=asynchronous,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["job_run_display_name"],
+            display_name=job_run_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             job_configuration_override_details=oci.data_science.JobRunJobConfigurationOverrideDetailsArgs(
-                job_type=var["job_run_job_configuration_override_details_job_type"],
-                command_line_arguments=var["job_run_job_configuration_override_details_command_line_arguments"],
-                environment_variables=var["job_run_job_configuration_override_details_environment_variables"],
-                maximum_runtime_in_minutes=var["job_run_job_configuration_override_details_maximum_runtime_in_minutes"],
+                job_type=job_run_job_configuration_override_details_job_type,
+                command_line_arguments=job_run_job_configuration_override_details_command_line_arguments,
+                environment_variables=job_run_job_configuration_override_details_environment_variables,
+                maximum_runtime_in_minutes=job_run_job_configuration_override_details_maximum_runtime_in_minutes,
             ),
             job_environment_configuration_override_details=oci.data_science.JobRunJobEnvironmentConfigurationOverrideDetailsArgs(
-                image=var["job_run_job_environment_configuration_override_details_image"],
-                job_environment_type=var["job_run_job_environment_configuration_override_details_job_environment_type"],
-                cmds=var["job_run_job_environment_configuration_override_details_cmd"],
-                entrypoints=var["job_run_job_environment_configuration_override_details_entrypoint"],
-                image_digest=var["job_run_job_environment_configuration_override_details_image_digest"],
-                image_signature_id=oci_datascience_image_signature["test_image_signature"]["id"],
+                image=job_run_job_environment_configuration_override_details_image,
+                job_environment_type=job_run_job_environment_configuration_override_details_job_environment_type,
+                cmds=job_run_job_environment_configuration_override_details_cmd,
+                entrypoints=job_run_job_environment_configuration_override_details_entrypoint,
+                image_digest=job_run_job_environment_configuration_override_details_image_digest,
+                image_signature_id=test_image_signature["id"],
             ),
             job_log_configuration_override_details=oci.data_science.JobRunJobLogConfigurationOverrideDetailsArgs(
-                enable_auto_log_creation=var["job_run_job_log_configuration_override_details_enable_auto_log_creation"],
-                enable_logging=var["job_run_job_log_configuration_override_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                enable_auto_log_creation=job_run_job_log_configuration_override_details_enable_auto_log_creation,
+                enable_logging=job_run_job_log_configuration_override_details_enable_logging,
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -612,37 +612,37 @@ class JobRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_job_run = oci.data_science.JobRun("testJobRun",
-            compartment_id=var["compartment_id"],
-            job_id=oci_datascience_job["test_job"]["id"],
-            project_id=oci_datascience_project["test_project"]["id"],
-            asynchronous=var["asynchronous"],
+        test_job_run = oci.data_science.JobRun("test_job_run",
+            compartment_id=compartment_id,
+            job_id=test_job["id"],
+            project_id=test_project["id"],
+            asynchronous=asynchronous,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["job_run_display_name"],
+            display_name=job_run_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             job_configuration_override_details=oci.data_science.JobRunJobConfigurationOverrideDetailsArgs(
-                job_type=var["job_run_job_configuration_override_details_job_type"],
-                command_line_arguments=var["job_run_job_configuration_override_details_command_line_arguments"],
-                environment_variables=var["job_run_job_configuration_override_details_environment_variables"],
-                maximum_runtime_in_minutes=var["job_run_job_configuration_override_details_maximum_runtime_in_minutes"],
+                job_type=job_run_job_configuration_override_details_job_type,
+                command_line_arguments=job_run_job_configuration_override_details_command_line_arguments,
+                environment_variables=job_run_job_configuration_override_details_environment_variables,
+                maximum_runtime_in_minutes=job_run_job_configuration_override_details_maximum_runtime_in_minutes,
             ),
             job_environment_configuration_override_details=oci.data_science.JobRunJobEnvironmentConfigurationOverrideDetailsArgs(
-                image=var["job_run_job_environment_configuration_override_details_image"],
-                job_environment_type=var["job_run_job_environment_configuration_override_details_job_environment_type"],
-                cmds=var["job_run_job_environment_configuration_override_details_cmd"],
-                entrypoints=var["job_run_job_environment_configuration_override_details_entrypoint"],
-                image_digest=var["job_run_job_environment_configuration_override_details_image_digest"],
-                image_signature_id=oci_datascience_image_signature["test_image_signature"]["id"],
+                image=job_run_job_environment_configuration_override_details_image,
+                job_environment_type=job_run_job_environment_configuration_override_details_job_environment_type,
+                cmds=job_run_job_environment_configuration_override_details_cmd,
+                entrypoints=job_run_job_environment_configuration_override_details_entrypoint,
+                image_digest=job_run_job_environment_configuration_override_details_image_digest,
+                image_signature_id=test_image_signature["id"],
             ),
             job_log_configuration_override_details=oci.data_science.JobRunJobLogConfigurationOverrideDetailsArgs(
-                enable_auto_log_creation=var["job_run_job_log_configuration_override_details_enable_auto_log_creation"],
-                enable_logging=var["job_run_job_log_configuration_override_details_enable_logging"],
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                enable_auto_log_creation=job_run_job_log_configuration_override_details_enable_auto_log_creation,
+                enable_logging=job_run_job_log_configuration_override_details_enable_logging,
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ))
         ```
         <!--End PulumiCodeChooser -->

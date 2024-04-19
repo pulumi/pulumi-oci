@@ -21,10 +21,10 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExportSet = new Oci.FileStorage.ExportSet("testExportSet", new()
+    ///     var testExportSet = new Oci.FileStorage.ExportSet("test_export_set", new()
     ///     {
-    ///         MountTargetId = oci_file_storage_mount_target.Test_mount_target.Id,
-    ///         DisplayName = @var.Export_set_name,
+    ///         MountTargetId = testMountTarget.Id,
+    ///         DisplayName = exportSetName,
     ///         MaxFsStatBytes = "23843202333",
     ///         MaxFsStatFiles = "223442",
     ///     });

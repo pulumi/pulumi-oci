@@ -21,11 +21,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExports = oci.FileStorage.getExports({
- *     compartmentId: _var.compartment_id,
- *     exportSetId: oci_file_storage_export_set.test_export_set.id,
- *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
- *     id: _var.export_id,
- *     state: _var.export_state,
+ *     compartmentId: compartmentId,
+ *     exportSetId: testExportSet.id,
+ *     fileSystemId: testFileSystem.id,
+ *     id: exportId,
+ *     state: exportState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,11 +113,11 @@ export interface GetExportsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExports = oci.FileStorage.getExports({
- *     compartmentId: _var.compartment_id,
- *     exportSetId: oci_file_storage_export_set.test_export_set.id,
- *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
- *     id: _var.export_id,
- *     state: _var.export_state,
+ *     compartmentId: compartmentId,
+ *     exportSetId: testExportSet.id,
+ *     fileSystemId: testFileSystem.id,
+ *     id: exportId,
+ *     state: exportState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

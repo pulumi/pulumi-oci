@@ -49,19 +49,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLifecycleEnvironment = new LifecycleEnvironment(&#34;testLifecycleEnvironment&#34;, LifecycleEnvironmentArgs.builder()        
- *             .archType(var_.lifecycle_environment_arch_type())
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.lifecycle_environment_display_name())
- *             .osFamily(var_.lifecycle_environment_os_family())
+ *             .archType(lifecycleEnvironmentArchType)
+ *             .compartmentId(compartmentId)
+ *             .displayName(lifecycleEnvironmentDisplayName)
+ *             .osFamily(lifecycleEnvironmentOsFamily)
  *             .stages(LifecycleEnvironmentStageArgs.builder()
- *                 .displayName(var_.lifecycle_environment_stages_display_name())
- *                 .rank(var_.lifecycle_environment_stages_rank())
+ *                 .displayName(lifecycleEnvironmentStagesDisplayName)
+ *                 .rank(lifecycleEnvironmentStagesRank)
  *                 .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *                 .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *                 .build())
- *             .vendorName(var_.lifecycle_environment_vendor_name())
+ *             .vendorName(lifecycleEnvironmentVendorName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.lifecycle_environment_description())
+ *             .description(lifecycleEnvironmentDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

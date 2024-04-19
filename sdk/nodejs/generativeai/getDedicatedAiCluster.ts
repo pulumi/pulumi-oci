@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedAiCluster = oci.GenerativeAi.getDedicatedAiCluster({
- *     dedicatedAiClusterId: oci_generative_ai_dedicated_ai_cluster.test_dedicated_ai_cluster.id,
+ *     dedicatedAiClusterId: testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetDedicatedAiClusterResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDedicatedAiCluster = oci.GenerativeAi.getDedicatedAiCluster({
- *     dedicatedAiClusterId: oci_generative_ai_dedicated_ai_cluster.test_dedicated_ai_cluster.id,
+ *     dedicatedAiClusterId: testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -18,31 +18,31 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployEnvironment = new oci.devops.DeployEnvironment("testDeployEnvironment", {
- *     deployEnvironmentType: _var.deploy_environment_deploy_environment_type,
- *     projectId: oci_devops_project.test_project.id,
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
+ * const testDeployEnvironment = new oci.devops.DeployEnvironment("test_deploy_environment", {
+ *     deployEnvironmentType: deployEnvironmentDeployEnvironmentType,
+ *     projectId: testProject.id,
+ *     clusterId: testCluster.id,
  *     computeInstanceGroupSelectors: {
  *         items: [{
- *             selectorType: _var.deploy_environment_compute_instance_group_selectors_items_selector_type,
- *             computeInstanceIds: _var.deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
- *             query: _var.deploy_environment_compute_instance_group_selectors_items_query,
- *             region: _var.deploy_environment_compute_instance_group_selectors_items_region,
+ *             selectorType: deployEnvironmentComputeInstanceGroupSelectorsItemsSelectorType,
+ *             computeInstanceIds: deployEnvironmentComputeInstanceGroupSelectorsItemsComputeInstanceIds,
+ *             query: deployEnvironmentComputeInstanceGroupSelectorsItemsQuery,
+ *             region: deployEnvironmentComputeInstanceGroupSelectorsItemsRegion,
  *         }],
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.deploy_environment_description,
- *     displayName: _var.deploy_environment_display_name,
+ *     description: deployEnvironmentDescription,
+ *     displayName: deployEnvironmentDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     functionId: oci_functions_function.test_function.id,
+ *     functionId: testFunction.id,
  *     networkChannel: {
- *         networkChannelType: _var.deploy_environment_network_channel_network_channel_type,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         nsgIds: _var.deploy_environment_network_channel_nsg_ids,
+ *         networkChannelType: deployEnvironmentNetworkChannelNetworkChannelType,
+ *         subnetId: testSubnet.id,
+ *         nsgIds: deployEnvironmentNetworkChannelNsgIds,
  *     },
  * });
  * ```

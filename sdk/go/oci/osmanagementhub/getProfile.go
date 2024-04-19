@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetProfile(ctx, &osmanagementhub.GetProfileArgs{
-//				ProfileId: oci_os_management_hub_profile.Test_profile.Id,
+//				ProfileId: testProfileOciOsManagementHubProfile.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

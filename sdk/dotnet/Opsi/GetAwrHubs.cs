@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHubs = Oci.Opsi.GetAwrHubs.Invoke(new()
         ///     {
-        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Awr_hub_display_name,
-        ///         Id = @var.Awr_hub_id,
-        ///         States = @var.Awr_hub_state,
+        ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = awrHubDisplayName,
+        ///         Id = awrHubId,
+        ///         States = awrHubState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHubs = Oci.Opsi.GetAwrHubs.Invoke(new()
         ///     {
-        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Awr_hub_display_name,
-        ///         Id = @var.Awr_hub_id,
-        ///         States = @var.Awr_hub_state,
+        ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = awrHubDisplayName,
+        ///         Id = awrHubId,
+        ///         States = awrHubState,
         ///     });
         /// 
         /// });

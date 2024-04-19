@@ -31,43 +31,43 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewCloudExadataInfrastructure(ctx, "testCloudExadataInfrastructure", &Database.CloudExadataInfrastructureArgs{
-//				AvailabilityDomain:      pulumi.Any(_var.Cloud_exadata_infrastructure_availability_domain),
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				DisplayName:             pulumi.Any(_var.Cloud_exadata_infrastructure_display_name),
-//				Shape:                   pulumi.Any(_var.Cloud_exadata_infrastructure_shape),
-//				ClusterPlacementGroupId: pulumi.Any(_var.Cloud_exadata_infrastructure_cluster_placement_group_id),
-//				ComputeCount:            pulumi.Any(_var.Cloud_exadata_infrastructure_compute_count),
+//			_, err := Database.NewCloudExadataInfrastructure(ctx, "test_cloud_exadata_infrastructure", &Database.CloudExadataInfrastructureArgs{
+//				AvailabilityDomain:      pulumi.Any(cloudExadataInfrastructureAvailabilityDomain),
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				DisplayName:             pulumi.Any(cloudExadataInfrastructureDisplayName),
+//				Shape:                   pulumi.Any(cloudExadataInfrastructureShape),
+//				ClusterPlacementGroupId: pulumi.Any(cloudExadataInfrastructureClusterPlacementGroupId),
+//				ComputeCount:            pulumi.Any(cloudExadataInfrastructureComputeCount),
 //				CustomerContacts: database.CloudExadataInfrastructureCustomerContactArray{
 //					&database.CloudExadataInfrastructureCustomerContactArgs{
-//						Email: pulumi.Any(_var.Cloud_exadata_infrastructure_customer_contacts_email),
+//						Email: pulumi.Any(cloudExadataInfrastructureCustomerContactsEmail),
 //					},
 //				},
-//				DefinedTags: pulumi.Any(_var.Cloud_exadata_infrastructure_defined_tags),
+//				DefinedTags: pulumi.Any(cloudExadataInfrastructureDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				MaintenanceWindow: &database.CloudExadataInfrastructureMaintenanceWindowArgs{
-//					CustomActionTimeoutInMins: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
+//					CustomActionTimeoutInMins: pulumi.Any(cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
 //					DaysOfWeeks: database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{
 //						&database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{
-//							Name: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_days_of_week_name),
+//							Name: pulumi.Any(cloudExadataInfrastructureMaintenanceWindowDaysOfWeekName),
 //						},
 //					},
-//					HoursOfDays:                  pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_hours_of_day),
-//					IsCustomActionTimeoutEnabled: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled),
-//					IsMonthlyPatchingEnabled:     pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_is_monthly_patching_enabled),
-//					LeadTimeInWeeks:              pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks),
+//					HoursOfDays:                  pulumi.Any(cloudExadataInfrastructureMaintenanceWindowHoursOfDay),
+//					IsCustomActionTimeoutEnabled: pulumi.Any(cloudExadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled),
+//					IsMonthlyPatchingEnabled:     pulumi.Any(cloudExadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled),
+//					LeadTimeInWeeks:              pulumi.Any(cloudExadataInfrastructureMaintenanceWindowLeadTimeInWeeks),
 //					Months: database.CloudExadataInfrastructureMaintenanceWindowMonthArray{
 //						&database.CloudExadataInfrastructureMaintenanceWindowMonthArgs{
-//							Name: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_months_name),
+//							Name: pulumi.Any(cloudExadataInfrastructureMaintenanceWindowMonthsName),
 //						},
 //					},
-//					PatchingMode:  pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_patching_mode),
-//					Preference:    pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_preference),
-//					WeeksOfMonths: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_weeks_of_month),
+//					PatchingMode:  pulumi.Any(cloudExadataInfrastructureMaintenanceWindowPatchingMode),
+//					Preference:    pulumi.Any(cloudExadataInfrastructureMaintenanceWindowPreference),
+//					WeeksOfMonths: pulumi.Any(cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth),
 //				},
-//				StorageCount: pulumi.Any(_var.Cloud_exadata_infrastructure_storage_count),
+//				StorageCount: pulumi.Any(cloudExadataInfrastructureStorageCount),
 //			})
 //			if err != nil {
 //				return err

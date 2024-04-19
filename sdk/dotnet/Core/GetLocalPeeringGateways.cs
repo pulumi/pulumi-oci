@@ -31,8 +31,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testLocalPeeringGateways = Oci.Core.GetLocalPeeringGateways.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testLocalPeeringGateways = Oci.Core.GetLocalPeeringGateways.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

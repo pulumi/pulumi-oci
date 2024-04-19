@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetExportStatus = oci.Jms.getFleetExportStatus({
- *     fleetId: oci_jms_fleet.test_fleet.id,
+ *     fleetId: testFleet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -78,7 +78,7 @@ export interface GetFleetExportStatusResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetExportStatus = oci.Jms.getFleetExportStatus({
- *     fleetId: oci_jms_fleet.test_fleet.id,
+ *     fleetId: testFleet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificates = oci.ApiGateway.getCertificates({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.certificate_display_name,
- *     state: _var.certificate_state,
+ *     compartmentId: compartmentId,
+ *     displayName: certificateDisplayName,
+ *     state: certificateState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetCertificatesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificates = oci.ApiGateway.getCertificates({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.certificate_display_name,
- *     state: _var.certificate_state,
+ *     compartmentId: compartmentId,
+ *     displayName: certificateDisplayName,
+ *     state: certificateState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

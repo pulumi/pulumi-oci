@@ -23,9 +23,9 @@ namespace Pulumi.Oci.ManagementAgent
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagementAgent = new Oci.ManagementAgent.ManagementAgent("testManagementAgent", new()
+    ///     var testManagementAgent = new Oci.ManagementAgent.ManagementAgent("test_management_agent", new()
     ///     {
-    ///         ManagedAgentId = oci_management_agent_managed_agent.Test_managed_agent.Id,
+    ///         ManagedAgentId = testManagedAgent.Id,
     ///     });
     /// 
     /// });

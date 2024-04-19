@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbHomePatches = oci.Database.getDbHomePatches({
- *     dbHomeId: oci_database_db_home.test_db_home.id,
+ *     dbHomeId: testDbHome.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetDbHomePatchesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbHomePatches = oci.Database.getDbHomePatches({
- *     dbHomeId: oci_database_db_home.test_db_home.id,
+ *     dbHomeId: testDbHome.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUser = oci.Identity.getDomainsUser({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     userId: oci_identity_user.test_user.id,
+ *     idcsEndpoint: testDomain.url,
+ *     userId: testUserOciIdentityUser.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.user_authorization,
- *     resourceTypeSchemaVersion: _var.user_resource_type_schema_version,
+ *     authorization: userAuthorization,
+ *     resourceTypeSchemaVersion: userResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -323,12 +323,12 @@ export interface GetDomainsUserResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUser = oci.Identity.getDomainsUser({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     userId: oci_identity_user.test_user.id,
+ *     idcsEndpoint: testDomain.url,
+ *     userId: testUserOciIdentityUser.id,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.user_authorization,
- *     resourceTypeSchemaVersion: _var.user_resource_type_schema_version,
+ *     authorization: userAuthorization,
+ *     resourceTypeSchemaVersion: userResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

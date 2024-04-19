@@ -23,11 +23,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystems = oci.Database.getDbSystems({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.db_system_availability_domain,
- *     backupId: oci_database_backup.test_backup.id,
- *     displayName: _var.db_system_display_name,
- *     state: _var.db_system_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: dbSystemAvailabilityDomain,
+ *     backupId: testBackup.id,
+ *     displayName: dbSystemDisplayName,
+ *     state: dbSystemState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -120,11 +120,11 @@ export interface GetDbSystemsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystems = oci.Database.getDbSystems({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.db_system_availability_domain,
- *     backupId: oci_database_backup.test_backup.id,
- *     displayName: _var.db_system_display_name,
- *     state: _var.db_system_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: dbSystemAvailabilityDomain,
+ *     backupId: testBackup.id,
+ *     displayName: dbSystemDisplayName,
+ *     state: dbSystemState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

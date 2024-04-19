@@ -644,18 +644,18 @@ class VolumeAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_attachment = oci.core.VolumeAttachment("testVolumeAttachment",
-            attachment_type=var["volume_attachment_attachment_type"],
-            instance_id=oci_core_instance["test_instance"]["id"],
-            volume_id=oci_core_volume["test_volume"]["id"],
-            device=var["volume_attachment_device"],
-            display_name=var["volume_attachment_display_name"],
-            encryption_in_transit_type=var["volume_attachment_encryption_in_transit_type"],
-            is_agent_auto_iscsi_login_enabled=var["volume_attachment_is_agent_auto_iscsi_login_enabled"],
-            is_pv_encryption_in_transit_enabled=var["volume_attachment_is_pv_encryption_in_transit_enabled"],
-            is_read_only=var["volume_attachment_is_read_only"],
-            is_shareable=var["volume_attachment_is_shareable"],
-            use_chap=var["volume_attachment_use_chap"])
+        test_volume_attachment = oci.core.VolumeAttachment("test_volume_attachment",
+            attachment_type=volume_attachment_attachment_type,
+            instance_id=test_instance["id"],
+            volume_id=test_volume["id"],
+            device=volume_attachment_device,
+            display_name=volume_attachment_display_name,
+            encryption_in_transit_type=volume_attachment_encryption_in_transit_type,
+            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled,
+            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled,
+            is_read_only=volume_attachment_is_read_only,
+            is_shareable=volume_attachment_is_shareable,
+            use_chap=volume_attachment_use_chap)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -704,18 +704,18 @@ class VolumeAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_attachment = oci.core.VolumeAttachment("testVolumeAttachment",
-            attachment_type=var["volume_attachment_attachment_type"],
-            instance_id=oci_core_instance["test_instance"]["id"],
-            volume_id=oci_core_volume["test_volume"]["id"],
-            device=var["volume_attachment_device"],
-            display_name=var["volume_attachment_display_name"],
-            encryption_in_transit_type=var["volume_attachment_encryption_in_transit_type"],
-            is_agent_auto_iscsi_login_enabled=var["volume_attachment_is_agent_auto_iscsi_login_enabled"],
-            is_pv_encryption_in_transit_enabled=var["volume_attachment_is_pv_encryption_in_transit_enabled"],
-            is_read_only=var["volume_attachment_is_read_only"],
-            is_shareable=var["volume_attachment_is_shareable"],
-            use_chap=var["volume_attachment_use_chap"])
+        test_volume_attachment = oci.core.VolumeAttachment("test_volume_attachment",
+            attachment_type=volume_attachment_attachment_type,
+            instance_id=test_instance["id"],
+            volume_id=test_volume["id"],
+            device=volume_attachment_device,
+            display_name=volume_attachment_display_name,
+            encryption_in_transit_type=volume_attachment_encryption_in_transit_type,
+            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled,
+            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled,
+            is_read_only=volume_attachment_is_read_only,
+            is_shareable=volume_attachment_is_shareable,
+            use_chap=volume_attachment_use_chap)
         ```
         <!--End PulumiCodeChooser -->
 

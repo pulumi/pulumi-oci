@@ -16,14 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImageSignature = new oci.artifacts.ContainerImageSignature("testContainerImageSignature", {
- *     compartmentId: _var.compartment_id,
- *     imageId: oci_core_image.test_image.id,
- *     kmsKeyId: oci_kms_key.test_key.id,
- *     kmsKeyVersionId: oci_kms_key_version.test_key_version.id,
- *     message: _var.container_image_signature_message,
- *     signature: _var.container_image_signature_signature,
- *     signingAlgorithm: _var.container_image_signature_signing_algorithm,
+ * const testContainerImageSignature = new oci.artifacts.ContainerImageSignature("test_container_image_signature", {
+ *     compartmentId: compartmentId,
+ *     imageId: testImage.id,
+ *     kmsKeyId: testKey.id,
+ *     kmsKeyVersionId: testKeyVersion.id,
+ *     message: containerImageSignatureMessage,
+ *     signature: containerImageSignatureSignature,
+ *     signingAlgorithm: containerImageSignatureSigningAlgorithm,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

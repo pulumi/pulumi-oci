@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Budget.GetAlertRule(ctx, &budget.GetAlertRuleArgs{
-//				AlertRuleId: oci_budget_alert_rule.Test_alert_rule.Id,
-//				BudgetId:    oci_budget_budget.Test_budget.Id,
+//				AlertRuleId: testAlertRuleOciBudgetAlertRule.Id,
+//				BudgetId:    testBudget.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOperatorActions = oci.OperatorAccessControl.getActions({
- *     compartmentId: _var.compartment_id,
- *     name: _var.operator_action_name,
- *     resourceType: _var.operator_action_resource_type,
- *     state: _var.operator_action_state,
+ *     compartmentId: compartmentId,
+ *     name: operatorActionName,
+ *     resourceType: operatorActionResourceType,
+ *     state: operatorActionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,10 +99,10 @@ export interface GetActionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOperatorActions = oci.OperatorAccessControl.getActions({
- *     compartmentId: _var.compartment_id,
- *     name: _var.operator_action_name,
- *     resourceType: _var.operator_action_resource_type,
- *     state: _var.operator_action_state,
+ *     compartmentId: compartmentId,
+ *     name: operatorActionName,
+ *     resourceType: operatorActionResourceType,
+ *     state: operatorActionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

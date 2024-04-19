@@ -121,10 +121,10 @@ def get_applications(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.Functions.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        id=var["application_id"],
-        state=var["application_state"])
+    test_applications = oci.Functions.get_applications(compartment_id=compartment_id,
+        display_name=application_display_name,
+        id=application_id,
+        state=application_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_applications_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_applications = oci.Functions.get_applications(compartment_id=var["compartment_id"],
-        display_name=var["application_display_name"],
-        id=var["application_id"],
-        state=var["application_state"])
+    test_applications = oci.Functions.get_applications(compartment_id=compartment_id,
+        display_name=application_display_name,
+        id=application_id,
+        state=application_state)
     ```
     <!--End PulumiCodeChooser -->
 

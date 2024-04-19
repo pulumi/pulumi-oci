@@ -29,7 +29,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testBaselineableMetric = Oci.StackMonitoring.GetBaselineableMetric.Invoke(new()
         ///     {
-        ///         BaselineableMetricId = oci_stack_monitoring_baselineable_metric.Test_baselineable_metric.Id,
+        ///         BaselineableMetricId = testBaselineableMetricOciStackMonitoringBaselineableMetric.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testBaselineableMetric = Oci.StackMonitoring.GetBaselineableMetric.Invoke(new()
         ///     {
-        ///         BaselineableMetricId = oci_stack_monitoring_baselineable_metric.Test_baselineable_metric.Id,
+        ///         BaselineableMetricId = testBaselineableMetricOciStackMonitoringBaselineableMetric.Id,
         ///     });
         /// 
         /// });

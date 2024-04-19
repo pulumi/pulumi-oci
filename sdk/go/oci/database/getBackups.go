@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetBackups(ctx, &database.GetBackupsArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DatabaseId:    pulumi.StringRef(oci_database_database.Test_database.Id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DatabaseId:    pulumi.StringRef(testDatabase.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

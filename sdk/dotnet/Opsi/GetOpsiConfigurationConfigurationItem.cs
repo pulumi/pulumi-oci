@@ -31,11 +31,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOpsiConfigurationConfigurationItem = Oci.Opsi.GetOpsiConfigurationConfigurationItem.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigItemFields = @var.Opsi_configuration_configuration_item_config_item_field,
-        ///         ConfigItemsApplicableContexts = @var.Opsi_configuration_configuration_item_config_items_applicable_context,
-        ///         Name = @var.Opsi_configuration_configuration_item_name,
-        ///         OpsiConfigType = @var.Opsi_configuration_configuration_item_opsi_config_type,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigItemFields = opsiConfigurationConfigurationItemConfigItemField,
+        ///         ConfigItemsApplicableContexts = opsiConfigurationConfigurationItemConfigItemsApplicableContext,
+        ///         Name = opsiConfigurationConfigurationItemName,
+        ///         OpsiConfigType = opsiConfigurationConfigurationItemOpsiConfigType,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOpsiConfigurationConfigurationItem = Oci.Opsi.GetOpsiConfigurationConfigurationItem.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConfigItemFields = @var.Opsi_configuration_configuration_item_config_item_field,
-        ///         ConfigItemsApplicableContexts = @var.Opsi_configuration_configuration_item_config_items_applicable_context,
-        ///         Name = @var.Opsi_configuration_configuration_item_name,
-        ///         OpsiConfigType = @var.Opsi_configuration_configuration_item_opsi_config_type,
+        ///         CompartmentId = compartmentId,
+        ///         ConfigItemFields = opsiConfigurationConfigurationItemConfigItemField,
+        ///         ConfigItemsApplicableContexts = opsiConfigurationConfigurationItemConfigItemsApplicableContext,
+        ///         Name = opsiConfigurationConfigurationItemName,
+        ///         OpsiConfigType = opsiConfigurationConfigurationItemOpsiConfigType,
         ///     });
         /// 
         /// });

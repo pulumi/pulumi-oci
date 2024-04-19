@@ -29,13 +29,13 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testJobExecutionsStatuses = Oci.DatabaseManagement.GetJobExecutionsStatuses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         EndTime = @var.Job_executions_status_end_time,
-        ///         StartTime = @var.Job_executions_status_start_time,
-        ///         Id = @var.Job_executions_status_id,
-        ///         ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         Name = @var.Job_executions_status_name,
+        ///         CompartmentId = compartmentId,
+        ///         EndTime = jobExecutionsStatusEndTime,
+        ///         StartTime = jobExecutionsStatusStartTime,
+        ///         Id = jobExecutionsStatusId,
+        ///         ManagedDatabaseGroupId = testManagedDatabaseGroup.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         Name = jobExecutionsStatusName,
         ///     });
         /// 
         /// });
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testJobExecutionsStatuses = Oci.DatabaseManagement.GetJobExecutionsStatuses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         EndTime = @var.Job_executions_status_end_time,
-        ///         StartTime = @var.Job_executions_status_start_time,
-        ///         Id = @var.Job_executions_status_id,
-        ///         ManagedDatabaseGroupId = oci_database_management_managed_database_group.Test_managed_database_group.Id,
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         Name = @var.Job_executions_status_name,
+        ///         CompartmentId = compartmentId,
+        ///         EndTime = jobExecutionsStatusEndTime,
+        ///         StartTime = jobExecutionsStatusStartTime,
+        ///         Id = jobExecutionsStatusId,
+        ///         ManagedDatabaseGroupId = testManagedDatabaseGroup.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         Name = jobExecutionsStatusName,
         ///     });
         /// 
         /// });

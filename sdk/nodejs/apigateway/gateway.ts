@@ -18,36 +18,36 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGateway = new oci.apigateway.Gateway("testGateway", {
- *     compartmentId: _var.compartment_id,
- *     endpointType: _var.gateway_endpoint_type,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     certificateId: oci_apigateway_certificate.test_certificate.id,
+ * const testGateway = new oci.apigateway.Gateway("test_gateway", {
+ *     compartmentId: compartmentId,
+ *     endpointType: gatewayEndpointType,
+ *     subnetId: testSubnet.id,
+ *     certificateId: testCertificate.id,
  *     caBundles: [{
- *         type: _var.gateway_ca_bundles_type,
- *         caBundleId: oci_apigateway_ca_bundle.test_ca_bundle.id,
- *         certificateAuthorityId: oci_apigateway_certificate_authority.test_certificate_authority.id,
+ *         type: gatewayCaBundlesType,
+ *         caBundleId: testCaBundle.id,
+ *         certificateAuthorityId: testCertificateAuthority.id,
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.gateway_display_name,
+ *     displayName: gatewayDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     networkSecurityGroupIds: _var.gateway_network_security_group_ids,
+ *     networkSecurityGroupIds: gatewayNetworkSecurityGroupIds,
  *     responseCacheDetails: {
- *         type: _var.gateway_response_cache_details_type,
- *         authenticationSecretId: oci_vault_secret.test_secret.id,
- *         authenticationSecretVersionNumber: _var.gateway_response_cache_details_authentication_secret_version_number,
- *         connectTimeoutInMs: _var.gateway_response_cache_details_connect_timeout_in_ms,
- *         isSslEnabled: _var.gateway_response_cache_details_is_ssl_enabled,
- *         isSslVerifyDisabled: _var.gateway_response_cache_details_is_ssl_verify_disabled,
- *         readTimeoutInMs: _var.gateway_response_cache_details_read_timeout_in_ms,
- *         sendTimeoutInMs: _var.gateway_response_cache_details_send_timeout_in_ms,
+ *         type: gatewayResponseCacheDetailsType,
+ *         authenticationSecretId: testSecret.id,
+ *         authenticationSecretVersionNumber: gatewayResponseCacheDetailsAuthenticationSecretVersionNumber,
+ *         connectTimeoutInMs: gatewayResponseCacheDetailsConnectTimeoutInMs,
+ *         isSslEnabled: gatewayResponseCacheDetailsIsSslEnabled,
+ *         isSslVerifyDisabled: gatewayResponseCacheDetailsIsSslVerifyDisabled,
+ *         readTimeoutInMs: gatewayResponseCacheDetailsReadTimeoutInMs,
+ *         sendTimeoutInMs: gatewayResponseCacheDetailsSendTimeoutInMs,
  *         servers: [{
- *             host: _var.gateway_response_cache_details_servers_host,
- *             port: _var.gateway_response_cache_details_servers_port,
+ *             host: gatewayResponseCacheDetailsServersHost,
+ *             port: gatewayResponseCacheDetailsServersPort,
  *         }],
  *     },
  * });

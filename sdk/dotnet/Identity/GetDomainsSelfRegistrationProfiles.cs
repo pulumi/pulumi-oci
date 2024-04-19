@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSelfRegistrationProfiles = Oci.Identity.GetDomainsSelfRegistrationProfiles.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SelfRegistrationProfileCount = @var.Self_registration_profile_self_registration_profile_count,
-        ///         SelfRegistrationProfileFilter = @var.Self_registration_profile_self_registration_profile_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SelfRegistrationProfileCount = selfRegistrationProfileSelfRegistrationProfileCount,
+        ///         SelfRegistrationProfileFilter = selfRegistrationProfileSelfRegistrationProfileFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Self_registration_profile_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Self_registration_profile_resource_type_schema_version,
-        ///         StartIndex = @var.Self_registration_profile_start_index,
+        ///         Authorization = selfRegistrationProfileAuthorization,
+        ///         ResourceTypeSchemaVersion = selfRegistrationProfileResourceTypeSchemaVersion,
+        ///         StartIndex = selfRegistrationProfileStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testSelfRegistrationProfiles = Oci.Identity.GetDomainsSelfRegistrationProfiles.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         SelfRegistrationProfileCount = @var.Self_registration_profile_self_registration_profile_count,
-        ///         SelfRegistrationProfileFilter = @var.Self_registration_profile_self_registration_profile_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         SelfRegistrationProfileCount = selfRegistrationProfileSelfRegistrationProfileCount,
+        ///         SelfRegistrationProfileFilter = selfRegistrationProfileSelfRegistrationProfileFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Self_registration_profile_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Self_registration_profile_resource_type_schema_version,
-        ///         StartIndex = @var.Self_registration_profile_start_index,
+        ///         Authorization = selfRegistrationProfileAuthorization,
+        ///         ResourceTypeSchemaVersion = selfRegistrationProfileResourceTypeSchemaVersion,
+        ///         StartIndex = selfRegistrationProfileStartIndex,
         ///     });
         /// 
         /// });

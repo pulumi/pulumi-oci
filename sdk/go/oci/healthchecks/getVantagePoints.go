@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := HealthChecks.GetVantagePoints(ctx, &healthchecks.GetVantagePointsArgs{
-//				DisplayName: pulumi.StringRef(_var.Vantage_point_display_name),
-//				Name:        pulumi.StringRef(_var.Vantage_point_name),
+//				DisplayName: pulumi.StringRef(vantagePointDisplayName),
+//				Name:        pulumi.StringRef(vantagePointName),
 //			}, nil)
 //			if err != nil {
 //				return err

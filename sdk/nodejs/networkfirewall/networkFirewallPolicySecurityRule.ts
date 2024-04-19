@@ -18,20 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicySecurityRule = new oci.networkfirewall.NetworkFirewallPolicySecurityRule("testNetworkFirewallPolicySecurityRule", {
- *     action: _var.network_firewall_policy_security_rule_action,
+ * const testNetworkFirewallPolicySecurityRule = new oci.networkfirewall.NetworkFirewallPolicySecurityRule("test_network_firewall_policy_security_rule", {
+ *     action: networkFirewallPolicySecurityRuleAction,
+ *     name: networkFirewallPolicySecurityRuleName,
  *     condition: {
- *         applications: _var.network_firewall_policy_security_rule_condition_application,
- *         destinationAddresses: _var.network_firewall_policy_security_rule_condition_destination_address,
- *         services: _var.network_firewall_policy_security_rule_condition_service,
- *         sourceAddresses: _var.network_firewall_policy_security_rule_condition_source_address,
- *         urls: _var.network_firewall_policy_security_rule_condition_url,
+ *         applications: networkFirewallPolicySecurityRuleConditionApplication,
+ *         destinationAddresses: networkFirewallPolicySecurityRuleConditionDestinationAddress,
+ *         services: networkFirewallPolicySecurityRuleConditionService,
+ *         sourceAddresses: networkFirewallPolicySecurityRuleConditionSourceAddress,
+ *         urls: networkFirewallPolicySecurityRuleConditionUrl,
  *     },
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
- *     inspection: _var.network_firewall_policy_security_rule_inspection,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     inspection: networkFirewallPolicySecurityRuleInspection,
  *     positions: [{
- *         afterRule: _var.network_firewall_policy_security_rule_position_after_rule,
- *         beforeRule: _var.network_firewall_policy_security_rule_position_before_rule,
+ *         afterRule: networkFirewallPolicySecurityRulePositionAfterRule,
+ *         beforeRule: networkFirewallPolicySecurityRulePositionBeforeRule,
  *     }],
  * });
  * ```

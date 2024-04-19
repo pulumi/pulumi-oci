@@ -25,30 +25,30 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagementStation = new Oci.OsManagementHub.ManagementStation("testManagementStation", new()
+    ///     var testManagementStation = new Oci.OsManagementHub.ManagementStation("test_management_station", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Management_station_display_name,
-    ///         Hostname = @var.Management_station_hostname,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = managementStationDisplayName,
+    ///         Hostname = managementStationHostname,
     ///         Mirror = new Oci.OsManagementHub.Inputs.ManagementStationMirrorArgs
     ///         {
-    ///             Directory = @var.Management_station_mirror_directory,
-    ///             Port = @var.Management_station_mirror_port,
-    ///             Sslport = @var.Management_station_mirror_sslport,
-    ///             Sslcert = @var.Management_station_mirror_sslcert,
+    ///             Directory = managementStationMirrorDirectory,
+    ///             Port = managementStationMirrorPort,
+    ///             Sslport = managementStationMirrorSslport,
+    ///             Sslcert = managementStationMirrorSslcert,
     ///         },
     ///         Proxy = new Oci.OsManagementHub.Inputs.ManagementStationProxyArgs
     ///         {
-    ///             IsEnabled = @var.Management_station_proxy_is_enabled,
-    ///             Forward = @var.Management_station_proxy_forward,
-    ///             Hosts = @var.Management_station_proxy_hosts,
-    ///             Port = @var.Management_station_proxy_port,
+    ///             IsEnabled = managementStationProxyIsEnabled,
+    ///             Forward = managementStationProxyForward,
+    ///             Hosts = managementStationProxyHosts,
+    ///             Port = managementStationProxyPort,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Management_station_description,
+    ///         Description = managementStationDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

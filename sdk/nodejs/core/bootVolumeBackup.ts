@@ -23,17 +23,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolumeBackup = new oci.core.BootVolumeBackup("testBootVolumeBackup", {
- *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
+ * const testBootVolumeBackup = new oci.core.BootVolumeBackup("test_boot_volume_backup", {
+ *     bootVolumeId: testBootVolume.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.boot_volume_backup_display_name,
+ *     displayName: bootVolumeBackupDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     kmsKeyId: oci_kms_key.test_key.id,
- *     type: _var.boot_volume_backup_type,
+ *     kmsKeyId: testKey.id,
+ *     type: bootVolumeBackupType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

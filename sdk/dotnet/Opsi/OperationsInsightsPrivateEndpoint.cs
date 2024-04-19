@@ -26,23 +26,23 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOperationsInsightsPrivateEndpoint = new Oci.Opsi.OperationsInsightsPrivateEndpoint("testOperationsInsightsPrivateEndpoint", new()
+    ///     var testOperationsInsightsPrivateEndpoint = new Oci.Opsi.OperationsInsightsPrivateEndpoint("test_operations_insights_private_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Operations_insights_private_endpoint_display_name,
-    ///         IsUsedForRacDbs = @var.Operations_insights_private_endpoint_is_used_for_rac_dbs,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = operationsInsightsPrivateEndpointDisplayName,
+    ///         IsUsedForRacDbs = operationsInsightsPrivateEndpointIsUsedForRacDbs,
+    ///         SubnetId = testSubnet.Id,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Operations_insights_private_endpoint_description,
+    ///         Description = operationsInsightsPrivateEndpointDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         NsgIds = @var.Operations_insights_private_endpoint_nsg_ids,
+    ///         NsgIds = operationsInsightsPrivateEndpointNsgIds,
     ///     });
     /// 
     /// });

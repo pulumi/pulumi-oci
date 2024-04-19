@@ -53,8 +53,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCustomerSecretKey = new CustomerSecretKey(&#34;testCustomerSecretKey&#34;, CustomerSecretKeyArgs.builder()        
- *             .displayName(var_.customer_secret_key_display_name())
- *             .userId(oci_identity_user.test_user().id())
+ *             .displayName(customerSecretKeyDisplayName)
+ *             .userId(testUser.id())
  *             .build());
  * 
  *     }

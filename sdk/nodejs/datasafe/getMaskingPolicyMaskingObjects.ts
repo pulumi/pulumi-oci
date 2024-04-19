@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPolicyMaskingObjects = oci.DataSafe.getMaskingPolicyMaskingObjects({
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     objects: _var.masking_policy_masking_object_object,
- *     objectTypes: _var.masking_policy_masking_object_object_type,
- *     schemaNames: _var.masking_policy_masking_object_schema_name,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     objects: maskingPolicyMaskingObjectObject,
+ *     objectTypes: maskingPolicyMaskingObjectObjectType,
+ *     schemaNames: maskingPolicyMaskingObjectSchemaName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetMaskingPolicyMaskingObjectsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPolicyMaskingObjects = oci.DataSafe.getMaskingPolicyMaskingObjects({
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     objects: _var.masking_policy_masking_object_object,
- *     objectTypes: _var.masking_policy_masking_object_object_type,
- *     schemaNames: _var.masking_policy_masking_object_schema_name,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     objects: maskingPolicyMaskingObjectObject,
+ *     objectTypes: maskingPolicyMaskingObjectObjectType,
+ *     schemaNames: maskingPolicyMaskingObjectSchemaName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

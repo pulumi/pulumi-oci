@@ -59,19 +59,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewFileSystem(ctx, "testFileSystem", &FileStorage.FileSystemArgs{
-//				AvailabilityDomain: pulumi.Any(_var.File_system_availability_domain),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//			_, err := FileStorage.NewFileSystem(ctx, "test_file_system", &FileStorage.FileSystemArgs{
+//				AvailabilityDomain: pulumi.Any(fileSystemAvailabilityDomain),
+//				CompartmentId:      pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName:                pulumi.Any(_var.File_system_display_name),
-//				FilesystemSnapshotPolicyId: pulumi.Any(oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id),
+//				DisplayName:                pulumi.Any(fileSystemDisplayName),
+//				FilesystemSnapshotPolicyId: pulumi.Any(testFilesystemSnapshotPolicy.Id),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				KmsKeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
-//				SourceSnapshotId: pulumi.Any(oci_file_storage_snapshot.Test_snapshot.Id),
+//				KmsKeyId:         pulumi.Any(testKey.Id),
+//				SourceSnapshotId: pulumi.Any(testSnapshot.Id),
 //			})
 //			if err != nil {
 //				return err

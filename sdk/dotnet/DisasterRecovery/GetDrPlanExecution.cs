@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// {
         ///     var testDrPlanExecution = Oci.DisasterRecovery.GetDrPlanExecution.Invoke(new()
         ///     {
-        ///         DrPlanExecutionId = oci_disaster_recovery_dr_plan_execution.Test_dr_plan_execution.Id,
+        ///         DrPlanExecutionId = testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// {
         ///     var testDrPlanExecution = Oci.DisasterRecovery.GetDrPlanExecution.Invoke(new()
         ///     {
-        ///         DrPlanExecutionId = oci_disaster_recovery_dr_plan_execution.Test_dr_plan_execution.Id,
+        ///         DrPlanExecutionId = testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.Id,
         ///     });
         /// 
         /// });

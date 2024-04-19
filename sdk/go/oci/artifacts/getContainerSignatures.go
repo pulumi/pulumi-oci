@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Artifacts.GetContainerSignatures(ctx, &artifacts.GetContainerSignaturesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Container_image_signature_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Container_image_signature_display_name),
-//				ImageDigest:            pulumi.StringRef(_var.Container_image_signature_image_digest),
-//				ImageId:                pulumi.StringRef(oci_core_image.Test_image.Id),
-//				KmsKeyId:               pulumi.StringRef(oci_kms_key.Test_key.Id),
-//				KmsKeyVersionId:        pulumi.StringRef(oci_kms_key_version.Test_key_version.Id),
-//				RepositoryId:           pulumi.StringRef(oci_artifacts_repository.Test_repository.Id),
-//				RepositoryName:         pulumi.StringRef(oci_artifacts_repository.Test_repository.Name),
-//				SigningAlgorithm:       pulumi.StringRef(_var.Container_image_signature_signing_algorithm),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: pulumi.BoolRef(containerImageSignatureCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(containerImageSignatureDisplayName),
+//				ImageDigest:            pulumi.StringRef(containerImageSignatureImageDigest),
+//				ImageId:                pulumi.StringRef(testImage.Id),
+//				KmsKeyId:               pulumi.StringRef(testKey.Id),
+//				KmsKeyVersionId:        pulumi.StringRef(testKeyVersion.Id),
+//				RepositoryId:           pulumi.StringRef(testRepository.Id),
+//				RepositoryName:         pulumi.StringRef(testRepository.Name),
+//				SigningAlgorithm:       pulumi.StringRef(containerImageSignatureSigningAlgorithm),
 //			}, nil)
 //			if err != nil {
 //				return err

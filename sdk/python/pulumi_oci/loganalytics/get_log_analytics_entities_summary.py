@@ -116,8 +116,8 @@ def get_log_analytics_entities_summary(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_entities_summary_namespace"])
+    test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=compartment_id,
+        namespace=log_analytics_entities_summary_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -156,8 +156,8 @@ def get_log_analytics_entities_summary_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=var["compartment_id"],
-        namespace=var["log_analytics_entities_summary_namespace"])
+    test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=compartment_id,
+        namespace=log_analytics_entities_summary_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

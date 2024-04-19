@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpSecConnectionDeviceStatus = oci.Core.getIpsecStatus({
- *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ *     ipsecId: testIpsec.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,7 +82,7 @@ export interface GetIpsecStatusResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIpSecConnectionDeviceStatus = oci.Core.getIpsecStatus({
- *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ *     ipsecId: testIpsec.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

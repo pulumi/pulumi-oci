@@ -27,21 +27,21 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testEndpoint = new Oci.GenerativeAi.Endpoint("testEndpoint", new()
+    ///     var testEndpoint = new Oci.GenerativeAi.Endpoint("test_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DedicatedAiClusterId = oci_generative_ai_dedicated_ai_cluster.Test_dedicated_ai_cluster.Id,
-    ///         ModelId = oci_generative_ai_model.Test_model.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DedicatedAiClusterId = testDedicatedAiCluster.Id,
+    ///         ModelId = testModel.Id,
     ///         ContentModerationConfig = new Oci.GenerativeAi.Inputs.EndpointContentModerationConfigArgs
     ///         {
-    ///             IsEnabled = @var.Endpoint_content_moderation_config_is_enabled,
+    ///             IsEnabled = endpointContentModerationConfigIsEnabled,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Endpoint_description,
-    ///         DisplayName = @var.Endpoint_display_name,
+    ///         Description = endpointDescription,
+    ///         DisplayName = endpointDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

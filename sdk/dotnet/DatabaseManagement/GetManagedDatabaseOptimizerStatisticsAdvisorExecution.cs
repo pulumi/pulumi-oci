@@ -31,9 +31,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecution = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecution.Invoke(new()
         ///     {
-        ///         ExecutionName = @var.Managed_database_optimizer_statistics_advisor_execution_execution_name,
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         TaskName = @var.Managed_database_optimizer_statistics_advisor_execution_task_name,
+        ///         ExecutionName = managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         TaskName = managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecution = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecution.Invoke(new()
         ///     {
-        ///         ExecutionName = @var.Managed_database_optimizer_statistics_advisor_execution_execution_name,
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         TaskName = @var.Managed_database_optimizer_statistics_advisor_execution_task_name,
+        ///         ExecutionName = managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         TaskName = managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName,
         ///     });
         /// 
         /// });

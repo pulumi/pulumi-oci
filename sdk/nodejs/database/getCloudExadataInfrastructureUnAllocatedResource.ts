@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudExadataInfrastructureUnAllocatedResource = oci.Database.getCloudExadataInfrastructureUnAllocatedResource({
- *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
- *     dbServers: _var.cloud_exadata_infrastructure_un_allocated_resource_db_servers,
+ *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
+ *     dbServers: cloudExadataInfrastructureUnAllocatedResourceDbServers,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,8 +99,8 @@ export interface GetCloudExadataInfrastructureUnAllocatedResourceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudExadataInfrastructureUnAllocatedResource = oci.Database.getCloudExadataInfrastructureUnAllocatedResource({
- *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
- *     dbServers: _var.cloud_exadata_infrastructure_un_allocated_resource_db_servers,
+ *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
+ *     dbServers: cloudExadataInfrastructureUnAllocatedResourceDbServers,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

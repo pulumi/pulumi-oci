@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsMyDevices(ctx, &identity.GetDomainsMyDevicesArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
-//				MyDeviceCount:             pulumi.IntRef(_var.My_device_my_device_count),
-//				MyDeviceFilter:            pulumi.StringRef(_var.My_device_my_device_filter),
+//				IdcsEndpoint:              testDomain.Url,
+//				MyDeviceCount:             pulumi.IntRef(myDeviceMyDeviceCount),
+//				MyDeviceFilter:            pulumi.StringRef(myDeviceMyDeviceFilter),
 //				AttributeSets:             []interface{}{},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.My_device_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.My_device_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.My_device_start_index),
+//				Authorization:             pulumi.StringRef(myDeviceAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(myDeviceResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(myDeviceStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

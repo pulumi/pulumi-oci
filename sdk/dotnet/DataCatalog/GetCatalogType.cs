@@ -29,9 +29,9 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testCatalogType = Oci.DataCatalog.GetCatalogType.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         TypeKey = @var.Catalog_type_type_key,
-        ///         Fields = @var.Catalog_type_fields,
+        ///         CatalogId = testCatalog.Id,
+        ///         TypeKey = catalogTypeTypeKey,
+        ///         Fields = catalogTypeFields,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testCatalogType = Oci.DataCatalog.GetCatalogType.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         TypeKey = @var.Catalog_type_type_key,
-        ///         Fields = @var.Catalog_type_fields,
+        ///         CatalogId = testCatalog.Id,
+        ///         TypeKey = catalogTypeTypeKey,
+        ///         Fields = catalogTypeFields,
         ///     });
         /// 
         /// });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetProfile(ctx, &optimizer.GetProfileArgs{
-//				ProfileId: oci_optimizer_profile.Test_profile.Id,
+//				ProfileId: testProfileOciOptimizerProfile.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

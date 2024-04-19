@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAddressList = new AddressList(&#34;testAddressList&#34;, AddressListArgs.builder()        
- *             .addresses(var_.address_list_addresses())
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.address_list_display_name())
+ *             .addresses(addressListAddresses)
+ *             .compartmentId(compartmentId)
+ *             .displayName(addressListDisplayName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());

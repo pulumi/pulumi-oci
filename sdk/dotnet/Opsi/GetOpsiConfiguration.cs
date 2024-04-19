@@ -32,11 +32,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOpsiConfiguration = Oci.Opsi.GetOpsiConfiguration.Invoke(new()
         ///     {
-        ///         OpsiConfigurationId = oci_opsi_opsi_configuration.Test_opsi_configuration.Id,
-        ///         ConfigItemCustomStatuses = @var.Opsi_configuration_config_item_custom_status,
-        ///         ConfigItemFields = @var.Opsi_configuration_config_item_field,
-        ///         ConfigItemsApplicableContexts = @var.Opsi_configuration_config_items_applicable_context,
-        ///         OpsiConfigFields = @var.Opsi_configuration_opsi_config_field,
+        ///         OpsiConfigurationId = testOpsiConfigurationOciOpsiOpsiConfiguration.Id,
+        ///         ConfigItemCustomStatuses = opsiConfigurationConfigItemCustomStatus,
+        ///         ConfigItemFields = opsiConfigurationConfigItemField,
+        ///         ConfigItemsApplicableContexts = opsiConfigurationConfigItemsApplicableContext,
+        ///         OpsiConfigFields = opsiConfigurationOpsiConfigField,
         ///     });
         /// 
         /// });
@@ -67,11 +67,11 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOpsiConfiguration = Oci.Opsi.GetOpsiConfiguration.Invoke(new()
         ///     {
-        ///         OpsiConfigurationId = oci_opsi_opsi_configuration.Test_opsi_configuration.Id,
-        ///         ConfigItemCustomStatuses = @var.Opsi_configuration_config_item_custom_status,
-        ///         ConfigItemFields = @var.Opsi_configuration_config_item_field,
-        ///         ConfigItemsApplicableContexts = @var.Opsi_configuration_config_items_applicable_context,
-        ///         OpsiConfigFields = @var.Opsi_configuration_opsi_config_field,
+        ///         OpsiConfigurationId = testOpsiConfigurationOciOpsiOpsiConfiguration.Id,
+        ///         ConfigItemCustomStatuses = opsiConfigurationConfigItemCustomStatus,
+        ///         ConfigItemFields = opsiConfigurationConfigItemField,
+        ///         ConfigItemsApplicableContexts = opsiConfigurationConfigItemsApplicableContext,
+        ///         OpsiConfigFields = opsiConfigurationOpsiConfigField,
         ///     });
         /// 
         /// });

@@ -30,18 +30,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCpe = new oci.core.Cpe("testCpe", {
- *     compartmentId: _var.compartment_id,
- *     ipAddress: _var.cpe_ip_address,
- *     cpeDeviceShapeId: data.oci_core_cpe_device_shapes.test_cpe_device_shapes.cpe_device_shapes[0].cpe_device_shape_id,
+ * const testCpe = new oci.core.Cpe("test_cpe", {
+ *     compartmentId: compartmentId,
+ *     ipAddress: cpeIpAddress,
+ *     cpeDeviceShapeId: testCpeDeviceShapes.cpeDeviceShapes[0].cpeDeviceShapeId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.cpe_display_name,
+ *     displayName: cpeDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isPrivate: _var.cpe_is_private,
+ *     isPrivate: cpeIsPrivate,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

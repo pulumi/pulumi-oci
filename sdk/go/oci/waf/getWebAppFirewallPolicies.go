@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waf.GetWebAppFirewallPolicies(ctx, &waf.GetWebAppFirewallPoliciesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Web_app_firewall_policy_display_name),
-//				Id:            pulumi.StringRef(_var.Web_app_firewall_policy_id),
-//				States:        _var.Web_app_firewall_policy_state,
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(webAppFirewallPolicyDisplayName),
+//				Id:            pulumi.StringRef(webAppFirewallPolicyId),
+//				States:        webAppFirewallPolicyState,
 //			}, nil)
 //			if err != nil {
 //				return err

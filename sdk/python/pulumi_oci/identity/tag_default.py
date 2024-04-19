@@ -277,11 +277,11 @@ class TagDefault(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_tag_default = oci.identity.TagDefault("testTagDefault",
-            compartment_id=var["compartment_id"],
-            tag_definition_id=oci_identity_tag_definition["test_tag_definition"]["id"],
-            value=var["tag_default_value"],
-            is_required=var["tag_default_is_required"])
+        test_tag_default = oci.identity.TagDefault("test_tag_default",
+            compartment_id=compartment_id,
+            tag_definition_id=test_tag_definition["id"],
+            value=tag_default_value,
+            is_required=tag_default_is_required)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -333,11 +333,11 @@ class TagDefault(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_tag_default = oci.identity.TagDefault("testTagDefault",
-            compartment_id=var["compartment_id"],
-            tag_definition_id=oci_identity_tag_definition["test_tag_definition"]["id"],
-            value=var["tag_default_value"],
-            is_required=var["tag_default_is_required"])
+        test_tag_default = oci.identity.TagDefault("test_tag_default",
+            compartment_id=compartment_id,
+            tag_definition_id=test_tag_definition["id"],
+            value=tag_default_value,
+            is_required=tag_default_is_required)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnection = oci.DataCatalog.getConnection({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     connectionKey: _var.connection_connection_key,
- *     dataAssetKey: _var.connection_data_asset_key,
- *     fields: _var.connection_fields,
+ *     catalogId: testCatalog.id,
+ *     connectionKey: connectionConnectionKey,
+ *     dataAssetKey: connectionDataAssetKey,
+ *     fields: connectionFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -141,10 +141,10 @@ export interface GetConnectionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnection = oci.DataCatalog.getConnection({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     connectionKey: _var.connection_connection_key,
- *     dataAssetKey: _var.connection_data_asset_key,
- *     fields: _var.connection_fields,
+ *     catalogId: testCatalog.id,
+ *     connectionKey: connectionConnectionKey,
+ *     dataAssetKey: connectionDataAssetKey,
+ *     fields: connectionFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

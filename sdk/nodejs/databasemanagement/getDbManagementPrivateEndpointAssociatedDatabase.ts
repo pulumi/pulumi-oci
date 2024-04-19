@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbManagementPrivateEndpointAssociatedDatabase = oci.DatabaseManagement.getDbManagementPrivateEndpointAssociatedDatabase({
- *     compartmentId: _var.compartment_id,
- *     dbManagementPrivateEndpointId: oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint.id,
+ *     compartmentId: compartmentId,
+ *     dbManagementPrivateEndpointId: testDbManagementPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetDbManagementPrivateEndpointAssociatedDatabaseResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbManagementPrivateEndpointAssociatedDatabase = oci.DatabaseManagement.getDbManagementPrivateEndpointAssociatedDatabase({
- *     compartmentId: _var.compartment_id,
- *     dbManagementPrivateEndpointId: oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint.id,
+ *     compartmentId: compartmentId,
+ *     dbManagementPrivateEndpointId: testDbManagementPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

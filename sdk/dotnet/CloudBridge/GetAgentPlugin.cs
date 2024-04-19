@@ -29,8 +29,8 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAgentPlugin = Oci.CloudBridge.GetAgentPlugin.Invoke(new()
         ///     {
-        ///         AgentId = oci_cloud_bridge_agent.Test_agent.Id,
-        ///         PluginName = @var.Agent_plugin_plugin_name,
+        ///         AgentId = testAgent.Id,
+        ///         PluginName = agentPluginPluginName,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAgentPlugin = Oci.CloudBridge.GetAgentPlugin.Invoke(new()
         ///     {
-        ///         AgentId = oci_cloud_bridge_agent.Test_agent.Id,
-        ///         PluginName = @var.Agent_plugin_plugin_name,
+        ///         AgentId = testAgent.Id,
+        ///         PluginName = agentPluginPluginName,
         ///     });
         /// 
         /// });

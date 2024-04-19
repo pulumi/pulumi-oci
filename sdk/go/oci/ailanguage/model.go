@@ -31,57 +31,57 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiLanguage.NewModel(ctx, "testModel", &AiLanguage.ModelArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := AiLanguage.NewModel(ctx, "test_model", &AiLanguage.ModelArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				ModelDetails: &ailanguage.ModelModelDetailsArgs{
-//					ModelType: pulumi.Any(_var.Model_model_details_model_type),
+//					ModelType: pulumi.Any(modelModelDetailsModelType),
 //					ClassificationMode: &ailanguage.ModelModelDetailsClassificationModeArgs{
-//						ClassificationMode: pulumi.Any(_var.Model_model_details_classification_mode_classification_mode),
-//						Version:            pulumi.Any(_var.Model_model_details_classification_mode_version),
+//						ClassificationMode: pulumi.Any(modelModelDetailsClassificationModeClassificationMode),
+//						Version:            pulumi.Any(modelModelDetailsClassificationModeVersion),
 //					},
-//					LanguageCode: pulumi.Any(_var.Model_model_details_language_code),
-//					Version:      pulumi.Any(_var.Model_model_details_version),
+//					LanguageCode: pulumi.Any(modelModelDetailsLanguageCode),
+//					Version:      pulumi.Any(modelModelDetailsVersion),
 //				},
-//				ProjectId: pulumi.Any(oci_ai_language_project.Test_project.Id),
+//				ProjectId: pulumi.Any(testProject.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Model_description),
-//				DisplayName: pulumi.Any(_var.Model_display_name),
+//				Description: pulumi.Any(modelDescription),
+//				DisplayName: pulumi.Any(modelDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				TestStrategy: &ailanguage.ModelTestStrategyArgs{
-//					StrategyType: pulumi.Any(_var.Model_test_strategy_strategy_type),
+//					StrategyType: pulumi.Any(modelTestStrategyStrategyType),
 //					TestingDataset: &ailanguage.ModelTestStrategyTestingDatasetArgs{
-//						DatasetType: pulumi.Any(_var.Model_test_strategy_testing_dataset_dataset_type),
-//						DatasetId:   pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
+//						DatasetType: pulumi.Any(modelTestStrategyTestingDatasetDatasetType),
+//						DatasetId:   pulumi.Any(testDataset.Id),
 //						LocationDetails: &ailanguage.ModelTestStrategyTestingDatasetLocationDetailsArgs{
-//							Bucket:       pulumi.Any(_var.Model_test_strategy_testing_dataset_location_details_bucket),
-//							LocationType: pulumi.Any(_var.Model_test_strategy_testing_dataset_location_details_location_type),
-//							Namespace:    pulumi.Any(_var.Model_test_strategy_testing_dataset_location_details_namespace),
-//							ObjectNames:  pulumi.Any(_var.Model_test_strategy_testing_dataset_location_details_object_names),
+//							Bucket:       pulumi.Any(modelTestStrategyTestingDatasetLocationDetailsBucket),
+//							LocationType: pulumi.Any(modelTestStrategyTestingDatasetLocationDetailsLocationType),
+//							Namespace:    pulumi.Any(modelTestStrategyTestingDatasetLocationDetailsNamespace),
+//							ObjectNames:  pulumi.Any(modelTestStrategyTestingDatasetLocationDetailsObjectNames),
 //						},
 //					},
 //					ValidationDataset: &ailanguage.ModelTestStrategyValidationDatasetArgs{
-//						DatasetType: pulumi.Any(_var.Model_test_strategy_validation_dataset_dataset_type),
-//						DatasetId:   pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
+//						DatasetType: pulumi.Any(modelTestStrategyValidationDatasetDatasetType),
+//						DatasetId:   pulumi.Any(testDataset.Id),
 //						LocationDetails: &ailanguage.ModelTestStrategyValidationDatasetLocationDetailsArgs{
-//							Bucket:       pulumi.Any(_var.Model_test_strategy_validation_dataset_location_details_bucket),
-//							LocationType: pulumi.Any(_var.Model_test_strategy_validation_dataset_location_details_location_type),
-//							Namespace:    pulumi.Any(_var.Model_test_strategy_validation_dataset_location_details_namespace),
-//							ObjectNames:  pulumi.Any(_var.Model_test_strategy_validation_dataset_location_details_object_names),
+//							Bucket:       pulumi.Any(modelTestStrategyValidationDatasetLocationDetailsBucket),
+//							LocationType: pulumi.Any(modelTestStrategyValidationDatasetLocationDetailsLocationType),
+//							Namespace:    pulumi.Any(modelTestStrategyValidationDatasetLocationDetailsNamespace),
+//							ObjectNames:  pulumi.Any(modelTestStrategyValidationDatasetLocationDetailsObjectNames),
 //						},
 //					},
 //				},
 //				TrainingDataset: &ailanguage.ModelTrainingDatasetArgs{
-//					DatasetType: pulumi.Any(_var.Model_training_dataset_dataset_type),
-//					DatasetId:   pulumi.Any(oci_data_labeling_service_dataset.Test_dataset.Id),
+//					DatasetType: pulumi.Any(modelTrainingDatasetDatasetType),
+//					DatasetId:   pulumi.Any(testDataset.Id),
 //					LocationDetails: &ailanguage.ModelTrainingDatasetLocationDetailsArgs{
-//						Bucket:       pulumi.Any(_var.Model_training_dataset_location_details_bucket),
-//						LocationType: pulumi.Any(_var.Model_training_dataset_location_details_location_type),
-//						Namespace:    pulumi.Any(_var.Model_training_dataset_location_details_namespace),
-//						ObjectNames:  pulumi.Any(_var.Model_training_dataset_location_details_object_names),
+//						Bucket:       pulumi.Any(modelTrainingDatasetLocationDetailsBucket),
+//						LocationType: pulumi.Any(modelTrainingDatasetLocationDetailsLocationType),
+//						Namespace:    pulumi.Any(modelTrainingDatasetLocationDetailsNamespace),
+//						ObjectNames:  pulumi.Any(modelTrainingDatasetLocationDetailsObjectNames),
 //					},
 //				},
 //			})

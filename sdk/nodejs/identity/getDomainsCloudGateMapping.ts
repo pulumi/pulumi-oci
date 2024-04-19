@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGateMapping = oci.Identity.getDomainsCloudGateMapping({
- *     cloudGateMappingId: oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     cloudGateMappingId: testCloudGateMappingOciIdentityDomainsCloudGateMapping.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.cloud_gate_mapping_authorization,
- *     resourceTypeSchemaVersion: _var.cloud_gate_mapping_resource_type_schema_version,
+ *     authorization: cloudGateMappingAuthorization,
+ *     resourceTypeSchemaVersion: cloudGateMappingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -188,12 +188,12 @@ export interface GetDomainsCloudGateMappingResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGateMapping = oci.Identity.getDomainsCloudGateMapping({
- *     cloudGateMappingId: oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     cloudGateMappingId: testCloudGateMappingOciIdentityDomainsCloudGateMapping.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.cloud_gate_mapping_authorization,
- *     resourceTypeSchemaVersion: _var.cloud_gate_mapping_resource_type_schema_version,
+ *     authorization: cloudGateMappingAuthorization,
+ *     resourceTypeSchemaVersion: cloudGateMappingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

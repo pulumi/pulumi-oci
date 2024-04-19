@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystem = oci.Psql.getDbSystem({
- *     dbSystemId: oci_psql_db_system.test_db_system.id,
- *     excludedFields: _var.db_system_excluded_fields,
+ *     dbSystemId: testDbSystemOciPsqlDbSystem.id,
+ *     excludedFields: dbSystemExcludedFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -168,8 +168,8 @@ export interface GetDbSystemResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystem = oci.Psql.getDbSystem({
- *     dbSystemId: oci_psql_db_system.test_db_system.id,
- *     excludedFields: _var.db_system_excluded_fields,
+ *     dbSystemId: testDbSystemOciPsqlDbSystem.id,
+ *     excludedFields: dbSystemExcludedFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

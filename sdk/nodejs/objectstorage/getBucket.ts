@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBucket = oci.ObjectStorage.getBucket({
- *     name: _var.bucket_name,
- *     namespace: _var.bucket_namespace,
+ *     name: bucketName,
+ *     namespace: bucketNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -155,8 +155,8 @@ export interface GetBucketResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBucket = oci.ObjectStorage.getBucket({
- *     name: _var.bucket_name,
- *     namespace: _var.bucket_namespace,
+ *     name: bucketName,
+ *     namespace: bucketNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

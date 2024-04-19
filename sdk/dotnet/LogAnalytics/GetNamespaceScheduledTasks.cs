@@ -29,11 +29,11 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceScheduledTasks = Oci.LogAnalytics.GetNamespaceScheduledTasks.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Namespace_scheduled_task_namespace,
-        ///         DisplayName = @var.Namespace_scheduled_task_display_name,
-        ///         TargetService = @var.Namespace_scheduled_task_target_service,
-        ///         TaskType = @var.Namespace_scheduled_task_task_type,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceScheduledTaskNamespace,
+        ///         DisplayName = namespaceScheduledTaskDisplayName,
+        ///         TargetService = namespaceScheduledTaskTargetService,
+        ///         TaskType = namespaceScheduledTaskTaskType,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceScheduledTasks = Oci.LogAnalytics.GetNamespaceScheduledTasks.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Namespace_scheduled_task_namespace,
-        ///         DisplayName = @var.Namespace_scheduled_task_display_name,
-        ///         TargetService = @var.Namespace_scheduled_task_target_service,
-        ///         TaskType = @var.Namespace_scheduled_task_task_type,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceScheduledTaskNamespace,
+        ///         DisplayName = namespaceScheduledTaskDisplayName,
+        ///         TargetService = namespaceScheduledTaskTargetService,
+        ///         TaskType = namespaceScheduledTaskTaskType,
         ///     });
         /// 
         /// });

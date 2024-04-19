@@ -135,12 +135,12 @@ def get_alerts(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alerts = oci.DataSafe.get_alerts(compartment_id=var["compartment_id"],
-        access_level=var["alert_access_level"],
-        compartment_id_in_subtree=var["alert_compartment_id_in_subtree"],
-        fields=var["alert_field"],
-        id=var["alert_id"],
-        scim_query=var["alert_scim_query"])
+    test_alerts = oci.DataSafe.get_alerts(compartment_id=compartment_id,
+        access_level=alert_access_level,
+        compartment_id_in_subtree=alert_compartment_id_in_subtree,
+        fields=alert_field,
+        id=alert_id,
+        scim_query=alert_scim_query)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -197,12 +197,12 @@ def get_alerts_output(access_level: Optional[pulumi.Input[Optional[str]]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_alerts = oci.DataSafe.get_alerts(compartment_id=var["compartment_id"],
-        access_level=var["alert_access_level"],
-        compartment_id_in_subtree=var["alert_compartment_id_in_subtree"],
-        fields=var["alert_field"],
-        id=var["alert_id"],
-        scim_query=var["alert_scim_query"])
+    test_alerts = oci.DataSafe.get_alerts(compartment_id=compartment_id,
+        access_level=alert_access_level,
+        compartment_id_in_subtree=alert_compartment_id_in_subtree,
+        fields=alert_field,
+        id=alert_id,
+        scim_query=alert_scim_query)
     ```
     <!--End PulumiCodeChooser -->
 

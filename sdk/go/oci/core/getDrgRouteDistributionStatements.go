@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetDrgRouteDistributionStatements(ctx, &core.GetDrgRouteDistributionStatementsArgs{
-//				DrgRouteDistributionId: oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
+//				DrgRouteDistributionId: testDrgRouteDistribution.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

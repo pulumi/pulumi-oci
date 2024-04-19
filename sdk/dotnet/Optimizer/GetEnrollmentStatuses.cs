@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testEnrollmentStatuses = Oci.Optimizer.GetEnrollmentStatuses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         State = @var.Enrollment_status_state,
-        ///         Status = @var.Enrollment_status_status,
+        ///         CompartmentId = compartmentId,
+        ///         State = enrollmentStatusState,
+        ///         Status = enrollmentStatusStatus,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testEnrollmentStatuses = Oci.Optimizer.GetEnrollmentStatuses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         State = @var.Enrollment_status_state,
-        ///         Status = @var.Enrollment_status_status,
+        ///         CompartmentId = compartmentId,
+        ///         State = enrollmentStatusState,
+        ///         Status = enrollmentStatusStatus,
         ///     });
         /// 
         /// });

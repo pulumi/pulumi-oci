@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentServiceAttachment = new oci.fusionapps.FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment", {
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     serviceInstanceId: oci_core_instance.test_instance.id,
- *     serviceInstanceType: _var.fusion_environment_service_attachment_service_instance_type,
+ * const testFusionEnvironmentServiceAttachment = new oci.fusionapps.FusionEnvironmentServiceAttachment("test_fusion_environment_service_attachment", {
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     serviceInstanceId: testInstance.id,
+ *     serviceInstanceType: fusionEnvironmentServiceAttachmentServiceInstanceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

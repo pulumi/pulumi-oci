@@ -25,34 +25,34 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOpsiConfiguration = new Oci.Opsi.OpsiConfiguration("testOpsiConfiguration", new()
+    ///     var testOpsiConfiguration = new Oci.Opsi.OpsiConfiguration("test_opsi_configuration", new()
     ///     {
-    ///         OpsiConfigType = @var.Opsi_configuration_opsi_config_type,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ConfigItemCustomStatuses = @var.Opsi_configuration_config_item_custom_status,
-    ///         ConfigItemFields = @var.Opsi_configuration_config_item_field,
+    ///         OpsiConfigType = opsiConfigurationOpsiConfigType,
+    ///         CompartmentId = compartmentId,
+    ///         ConfigItemCustomStatuses = opsiConfigurationConfigItemCustomStatus,
+    ///         ConfigItemFields = opsiConfigurationConfigItemField,
     ///         ConfigItems = new[]
     ///         {
     ///             new Oci.Opsi.Inputs.OpsiConfigurationConfigItemArgs
     ///             {
-    ///                 ConfigItemType = @var.Opsi_configuration_config_items_config_item_type,
-    ///                 Name = @var.Opsi_configuration_config_items_name,
-    ///                 Value = @var.Opsi_configuration_config_items_value,
+    ///                 ConfigItemType = opsiConfigurationConfigItemsConfigItemType,
+    ///                 Name = opsiConfigurationConfigItemsName,
+    ///                 Value = opsiConfigurationConfigItemsValue,
     ///             },
     ///         },
-    ///         ConfigItemsApplicableContexts = @var.Opsi_configuration_config_items_applicable_context,
+    ///         ConfigItemsApplicableContexts = opsiConfigurationConfigItemsApplicableContext,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Opsi_configuration_description,
-    ///         DisplayName = @var.Opsi_configuration_display_name,
+    ///         Description = opsiConfigurationDescription,
+    ///         DisplayName = opsiConfigurationDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         OpsiConfigFields = @var.Opsi_configuration_opsi_config_field,
-    ///         SystemTags = @var.Opsi_configuration_system_tags,
+    ///         OpsiConfigFields = opsiConfigurationOpsiConfigField,
+    ///         SystemTags = opsiConfigurationSystemTags,
     ///     });
     /// 
     /// });

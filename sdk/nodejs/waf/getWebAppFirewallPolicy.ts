@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppFirewallPolicy = oci.Waf.getWebAppFirewallPolicy({
- *     webAppFirewallPolicyId: oci_waf_web_app_firewall_policy.test_web_app_firewall_policy.id,
+ *     webAppFirewallPolicyId: testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,7 +125,7 @@ export interface GetWebAppFirewallPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppFirewallPolicy = oci.Waf.getWebAppFirewallPolicy({
- *     webAppFirewallPolicyId: oci_waf_web_app_firewall_policy.test_web_app_firewall_policy.id,
+ *     webAppFirewallPolicyId: testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

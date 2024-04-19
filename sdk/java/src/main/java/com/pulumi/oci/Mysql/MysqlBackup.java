@@ -48,13 +48,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMysqlBackup = new MysqlBackup(&#34;testMysqlBackup&#34;, MysqlBackupArgs.builder()        
- *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
- *             .backupType(var_.mysql_backup_backup_type())
+ *             .dbSystemId(testDbSystem.id())
+ *             .backupType(mysqlBackupBackupType)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.mysql_backup_description())
- *             .displayName(var_.mysql_backup_display_name())
+ *             .description(mysqlBackupDescription)
+ *             .displayName(mysqlBackupDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .retentionInDays(var_.mysql_backup_retention_in_days())
+ *             .retentionInDays(mysqlBackupRetentionInDays)
  *             .build());
  * 
  *     }

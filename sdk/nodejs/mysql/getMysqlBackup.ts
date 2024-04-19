@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlBackup = oci.Mysql.getMysqlBackup({
- *     backupId: oci_mysql_mysql_backup.test_backup.id,
+ *     backupId: testBackup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetMysqlBackupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlBackup = oci.Mysql.getMysqlBackup({
- *     backupId: oci_mysql_mysql_backup.test_backup.id,
+ *     backupId: testBackup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -32,9 +32,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutions.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to,
-        ///         StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         EndTimeLessThanOrEqualTo = managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo,
+        ///         StartTimeGreaterThanOrEqualTo = managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -65,9 +65,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutions.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to,
-        ///         StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         EndTimeLessThanOrEqualTo = managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo,
+        ///         StartTimeGreaterThanOrEqualTo = managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo,
         ///     });
         /// 
         /// });

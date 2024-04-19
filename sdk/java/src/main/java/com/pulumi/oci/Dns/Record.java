@@ -52,12 +52,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRecord = new Record(&#34;testRecord&#34;, RecordArgs.builder()        
- *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
- *             .domain(var_.record_items_domain())
- *             .rtype(var_.record_items_rtype())
- *             .compartmentId(var_.compartment_id())
- *             .rdata(var_.record_items_rdata())
- *             .ttl(var_.record_items_ttl())
+ *             .zoneNameOrId(testZoneNameOr.id())
+ *             .domain(recordItemsDomain)
+ *             .rtype(recordItemsRtype)
+ *             .compartmentId(compartmentId)
+ *             .rdata(recordItemsRdata)
+ *             .ttl(recordItemsTtl)
  *             .build());
  * 
  *     }

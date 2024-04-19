@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityZones = oci.CloudGuard.getSecurityZones({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.security_zone_display_name,
- *     id: _var.security_zone_id,
- *     isRequiredSecurityZonesInSubtree: _var.security_zone_is_required_security_zones_in_subtree,
- *     securityRecipeId: oci_cloud_guard_security_recipe.test_security_recipe.id,
- *     state: _var.security_zone_state,
+ *     compartmentId: compartmentId,
+ *     displayName: securityZoneDisplayName,
+ *     id: securityZoneId,
+ *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree,
+ *     securityRecipeId: testSecurityRecipe.id,
+ *     state: securityZoneState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,12 +115,12 @@ export interface GetSecurityZonesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityZones = oci.CloudGuard.getSecurityZones({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.security_zone_display_name,
- *     id: _var.security_zone_id,
- *     isRequiredSecurityZonesInSubtree: _var.security_zone_is_required_security_zones_in_subtree,
- *     securityRecipeId: oci_cloud_guard_security_recipe.test_security_recipe.id,
- *     state: _var.security_zone_state,
+ *     compartmentId: compartmentId,
+ *     displayName: securityZoneDisplayName,
+ *     id: securityZoneId,
+ *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree,
+ *     securityRecipeId: testSecurityRecipe.id,
+ *     state: securityZoneState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -91,7 +91,7 @@ def get_model_type(model_type: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_type = oci.AiLanguage.get_model_type(model_type=var["model_type_model_type"])
+    test_model_type = oci.AiLanguage.get_model_type(model_type=model_type_model_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -125,7 +125,7 @@ def get_model_type_output(model_type: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_type = oci.AiLanguage.get_model_type(model_type=var["model_type_model_type"])
+    test_model_type = oci.AiLanguage.get_model_type(model_type=model_type_model_type)
     ```
     <!--End PulumiCodeChooser -->
 

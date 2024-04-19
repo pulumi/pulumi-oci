@@ -124,10 +124,10 @@ def get_managed_database_user_roles(filters: Optional[Sequence[pulumi.InputType[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_roles = oci.DatabaseManagement.get_managed_database_user_roles(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_role_name"],
-        opc_named_credential_id=var["managed_database_user_role_opc_named_credential_id"])
+    test_managed_database_user_roles = oci.DatabaseManagement.get_managed_database_user_roles(managed_database_id=test_managed_database["id"],
+        user_name=test_user["name"],
+        name=managed_database_user_role_name,
+        opc_named_credential_id=managed_database_user_role_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -175,10 +175,10 @@ def get_managed_database_user_roles_output(filters: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_roles = oci.DatabaseManagement.get_managed_database_user_roles(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_role_name"],
-        opc_named_credential_id=var["managed_database_user_role_opc_named_credential_id"])
+    test_managed_database_user_roles = oci.DatabaseManagement.get_managed_database_user_roles(managed_database_id=test_managed_database["id"],
+        user_name=test_user["name"],
+        name=managed_database_user_role_name,
+        opc_named_credential_id=managed_database_user_role_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 

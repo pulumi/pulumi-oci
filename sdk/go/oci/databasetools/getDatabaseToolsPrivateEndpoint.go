@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseTools.GetDatabaseToolsPrivateEndpoint(ctx, &databasetools.GetDatabaseToolsPrivateEndpointArgs{
-//				DatabaseToolsPrivateEndpointId: oci_database_tools_database_tools_private_endpoint.Test_database_tools_private_endpoint.Id,
+//				DatabaseToolsPrivateEndpointId: testDatabaseToolsPrivateEndpointOciDatabaseToolsDatabaseToolsPrivateEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

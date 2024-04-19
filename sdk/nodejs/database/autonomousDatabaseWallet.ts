@@ -21,12 +21,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseWallet = new oci.database.AutonomousDatabaseWallet("testAutonomousDatabaseWallet", {
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     password: _var.autonomous_database_wallet_password,
+ * const testAutonomousDatabaseWallet = new oci.database.AutonomousDatabaseWallet("test_autonomous_database_wallet", {
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     password: autonomousDatabaseWalletPassword,
  *     base64EncodeContent: false,
- *     generateType: _var.autonomous_database_wallet_generate_type,
- *     isRegional: _var.autonomous_database_wallet_is_regional,
+ *     generateType: autonomousDatabaseWalletGenerateType,
+ *     isRegional: autonomousDatabaseWalletIsRegional,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceStorageRecallCount = Oci.LogAnalytics.GetNamespaceStorageRecallCount.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_storage_recall_count_namespace,
+        ///         Namespace = namespaceStorageRecallCountNamespace,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceStorageRecallCount = Oci.LogAnalytics.GetNamespaceStorageRecallCount.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_storage_recall_count_namespace,
+        ///         Namespace = namespaceStorageRecallCountNamespace,
         ///     });
         /// 
         /// });

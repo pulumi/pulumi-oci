@@ -31,18 +31,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewExternalExadataStorageConnector(ctx, "testExternalExadataStorageConnector", &DatabaseManagement.ExternalExadataStorageConnectorArgs{
-//				AgentId:       pulumi.Any(oci_cloud_bridge_agent.Test_agent.Id),
-//				ConnectionUri: pulumi.Any(_var.External_exadata_storage_connector_connection_uri),
-//				ConnectorName: pulumi.Any(_var.External_exadata_storage_connector_connector_name),
+//			_, err := DatabaseManagement.NewExternalExadataStorageConnector(ctx, "test_external_exadata_storage_connector", &DatabaseManagement.ExternalExadataStorageConnectorArgs{
+//				AgentId:       pulumi.Any(testAgent.Id),
+//				ConnectionUri: pulumi.Any(externalExadataStorageConnectorConnectionUri),
+//				ConnectorName: pulumi.Any(externalExadataStorageConnectorConnectorName),
 //				CredentialInfo: &databasemanagement.ExternalExadataStorageConnectorCredentialInfoArgs{
-//					Password:              pulumi.Any(_var.External_exadata_storage_connector_credential_info_password),
-//					Username:              pulumi.Any(_var.External_exadata_storage_connector_credential_info_username),
-//					SslTrustStoreLocation: pulumi.Any(_var.External_exadata_storage_connector_credential_info_ssl_trust_store_location),
-//					SslTrustStorePassword: pulumi.Any(_var.External_exadata_storage_connector_credential_info_ssl_trust_store_password),
-//					SslTrustStoreType:     pulumi.Any(_var.External_exadata_storage_connector_credential_info_ssl_trust_store_type),
+//					Password:              pulumi.Any(externalExadataStorageConnectorCredentialInfoPassword),
+//					Username:              pulumi.Any(externalExadataStorageConnectorCredentialInfoUsername),
+//					SslTrustStoreLocation: pulumi.Any(externalExadataStorageConnectorCredentialInfoSslTrustStoreLocation),
+//					SslTrustStorePassword: pulumi.Any(externalExadataStorageConnectorCredentialInfoSslTrustStorePassword),
+//					SslTrustStoreType:     pulumi.Any(externalExadataStorageConnectorCredentialInfoSslTrustStoreType),
 //				},
-//				StorageServerId: pulumi.Any(oci_database_management_storage_server.Test_storage_server.Id),
+//				StorageServerId: pulumi.Any(testStorageServer.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

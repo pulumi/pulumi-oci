@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetMysqlConfiguration(ctx, &mysql.GetMysqlConfigurationArgs{
-//				ConfigurationId: _var.Mysql_configuration_id,
+//				ConfigurationId: mysqlConfigurationId,
 //			}, nil)
 //			if err != nil {
 //				return err

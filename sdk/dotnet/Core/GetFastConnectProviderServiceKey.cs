@@ -31,8 +31,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testFastConnectProviderServiceKey = Oci.Core.GetFastConnectProviderServiceKey.Invoke(new()
         ///     {
-        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-        ///         ProviderServiceKeyName = @var.Fast_connect_provider_service_key_provider_service_key_name,
+        ///         ProviderServiceId = testFastConnectProviderServices.FastConnectProviderServices[0].Id,
+        ///         ProviderServiceKeyName = fastConnectProviderServiceKeyProviderServiceKeyName,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testFastConnectProviderServiceKey = Oci.Core.GetFastConnectProviderServiceKey.Invoke(new()
         ///     {
-        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-        ///         ProviderServiceKeyName = @var.Fast_connect_provider_service_key_provider_service_key_name,
+        ///         ProviderServiceId = testFastConnectProviderServices.FastConnectProviderServices[0].Id,
+        ///         ProviderServiceKeyName = fastConnectProviderServiceKeyProviderServiceKeyName,
         ///     });
         /// 
         /// });

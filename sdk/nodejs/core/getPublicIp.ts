@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOciCorePublicIpById = oci.Core.getPublicIp({
- *     id: _var.test_public_ip_id,
+ *     id: testPublicIpId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -40,7 +40,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOciCorePublicIpByPrivateIpId = oci.Core.getPublicIp({
- *     privateIpId: _var.test_public_ip_private_ip_id,
+ *     privateIpId: testPublicIpPrivateIpId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -52,7 +52,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOciCorePublicIpByIp = oci.Core.getPublicIp({
- *     ipAddress: _var.test_public_ip_ip_address,
+ *     ipAddress: testPublicIpIpAddress,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -175,7 +175,7 @@ export interface GetPublicIpResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOciCorePublicIpById = oci.Core.getPublicIp({
- *     id: _var.test_public_ip_id,
+ *     id: testPublicIpId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -187,7 +187,7 @@ export interface GetPublicIpResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOciCorePublicIpByPrivateIpId = oci.Core.getPublicIp({
- *     privateIpId: _var.test_public_ip_private_ip_id,
+ *     privateIpId: testPublicIpPrivateIpId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -199,7 +199,7 @@ export interface GetPublicIpResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOciCorePublicIpByIp = oci.Core.getPublicIp({
- *     ipAddress: _var.test_public_ip_ip_address,
+ *     ipAddress: testPublicIpIpAddress,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

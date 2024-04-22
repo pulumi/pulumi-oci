@@ -32,7 +32,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///     {
     ///         DependsOn =
     ///         {
-    ///             testClusterStartCredentialRotationManagement, 
+    ///             testClusterStartCredentialRotationManagement,
     ///         },
     ///     });
     /// 

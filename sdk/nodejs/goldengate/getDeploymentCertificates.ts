@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     state: deploymentCertificateState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentCertificates(args: GetDeploymentCertificatesArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentCertificatesResult> {
 
@@ -76,7 +74,6 @@ export interface GetDeploymentCertificatesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetDeploymentCertificatesResult {
  *     state: deploymentCertificateState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentCertificatesOutput(args: GetDeploymentCertificatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentCertificatesResult> {
     return pulumi.output(args).apply((a: any) => getDeploymentCertificates(a, opts))

@@ -200,7 +200,6 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -218,7 +217,6 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
                 name=load_balancer_routing_policy_rules_name,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -253,7 +251,6 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -271,7 +268,6 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
                 name=load_balancer_routing_policy_rules_name,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

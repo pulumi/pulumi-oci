@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Logging
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.Logging
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUnifiedAgentConfigurationResult> InvokeAsync(GetUnifiedAgentConfigurationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUnifiedAgentConfigurationResult>("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", args ?? new GetUnifiedAgentConfigurationArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.Logging
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.Logging
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUnifiedAgentConfigurationResult> Invoke(GetUnifiedAgentConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUnifiedAgentConfigurationResult>("oci:Logging/getUnifiedAgentConfiguration:getUnifiedAgentConfiguration", args ?? new GetUnifiedAgentConfigurationInvokeArgs(), options.WithDefaults());

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     securityRecipeId: testSecurityRecipeOciCloudGuardSecurityRecipe.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityRecipe(args: GetSecurityRecipeArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityRecipeResult> {
 
@@ -101,7 +99,6 @@ export interface GetSecurityRecipeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,7 +107,6 @@ export interface GetSecurityRecipeResult {
  *     securityRecipeId: testSecurityRecipeOciCloudGuardSecurityRecipe.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityRecipeOutput(args: GetSecurityRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityRecipeResult> {
     return pulumi.output(args).apply((a: any) => getSecurityRecipe(a, opts))

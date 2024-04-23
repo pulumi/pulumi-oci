@@ -217,7 +217,6 @@ def get_publication_package(package_version: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -225,7 +224,6 @@ def get_publication_package(package_version: Optional[str] = None,
     test_publication_package = oci.Marketplace.get_publication_package(package_version=publication_package_package_version,
         publication_id=test_publication["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str package_version: The version of the package. Package versions are unique within a listing.
@@ -266,7 +264,6 @@ def get_publication_package_output(package_version: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -274,7 +271,6 @@ def get_publication_package_output(package_version: Optional[pulumi.Input[str]] 
     test_publication_package = oci.Marketplace.get_publication_package(package_version=publication_package_package_version,
         publication_id=test_publication["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str package_version: The version of the package. Package versions are unique within a listing.

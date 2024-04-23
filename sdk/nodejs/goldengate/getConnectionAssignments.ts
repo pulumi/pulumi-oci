@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: connectionAssignmentState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConnectionAssignments(args: GetConnectionAssignmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionAssignmentsResult> {
 
@@ -106,7 +104,6 @@ export interface GetConnectionAssignmentsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -119,7 +116,6 @@ export interface GetConnectionAssignmentsResult {
  *     state: connectionAssignmentState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConnectionAssignmentsOutput(args: GetConnectionAssignmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionAssignmentsResult> {
     return pulumi.output(args).apply((a: any) => getConnectionAssignments(a, opts))

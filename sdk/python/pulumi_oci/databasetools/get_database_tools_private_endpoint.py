@@ -303,14 +303,12 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=test_database_tools_private_endpoint_oci_database_tools_database_tools_private_endpoint["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_tools_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
@@ -355,14 +353,12 @@ def get_database_tools_private_endpoint_output(database_tools_private_endpoint_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=test_database_tools_private_endpoint_oci_database_tools_database_tools_private_endpoint["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_tools_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.

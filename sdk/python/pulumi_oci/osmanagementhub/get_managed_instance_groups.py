@@ -172,7 +172,6 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +185,6 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
         software_source_id=test_software_source["id"],
         state=managed_instance_group_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.
@@ -244,7 +242,6 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -258,7 +255,6 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
         software_source_id=test_software_source["id"],
         state=managed_instance_group_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.

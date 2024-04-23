@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetWorkspaceFoldersResult> InvokeAsync(GetWorkspaceFoldersArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceFoldersResult>("oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders", args ?? new GetWorkspaceFoldersArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetWorkspaceFoldersResult> Invoke(GetWorkspaceFoldersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceFoldersResult>("oci:DataIntegration/getWorkspaceFolders:getWorkspaceFolders", args ?? new GetWorkspaceFoldersInvokeArgs(), options.WithDefaults());

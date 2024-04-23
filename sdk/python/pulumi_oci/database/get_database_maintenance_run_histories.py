@@ -151,7 +151,6 @@ def get_database_maintenance_run_histories(availability_domain: Optional[str] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,7 +162,6 @@ def get_database_maintenance_run_histories(availability_domain: Optional[str] = 
         target_resource_id=test_target_resource["id"],
         target_resource_type=maintenance_run_history_target_resource_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
@@ -212,7 +210,6 @@ def get_database_maintenance_run_histories_output(availability_domain: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -224,7 +221,6 @@ def get_database_maintenance_run_histories_output(availability_domain: Optional[
         target_resource_id=test_target_resource["id"],
         target_resource_type=maintenance_run_history_target_resource_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that match the given availability domain exactly.

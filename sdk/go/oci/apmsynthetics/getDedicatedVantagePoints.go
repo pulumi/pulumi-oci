@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDedicatedVantagePoints(ctx *pulumi.Context, args *GetDedicatedVantagePointsArgs, opts ...pulumi.InvokeOption) (*GetDedicatedVantagePointsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDedicatedVantagePointsResult

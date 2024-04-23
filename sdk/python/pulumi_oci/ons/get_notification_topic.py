@@ -182,14 +182,12 @@ def get_notification_topic(topic_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_notification_topic = oci.Ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
@@ -226,14 +224,12 @@ def get_notification_topic_output(topic_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_notification_topic = oci.Ons.get_notification_topic(topic_id=test_notification_topic_oci_ons_notification_topic["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.

@@ -279,14 +279,12 @@ def get_managed_database(managed_database_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=test_managed_database_oci_database_management_managed_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -329,14 +327,12 @@ def get_managed_database_output(managed_database_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=test_managed_database_oci_database_management_managed_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

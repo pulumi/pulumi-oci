@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,7 +31,6 @@ import * as utilities from "../utilities";
  *     state: alarmSuppressionState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAlarmSuppressions(args: GetAlarmSuppressionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmSuppressionsResult> {
 
@@ -105,7 +103,6 @@ export interface GetAlarmSuppressionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,7 +113,6 @@ export interface GetAlarmSuppressionsResult {
  *     state: alarmSuppressionState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAlarmSuppressionsOutput(args: GetAlarmSuppressionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmSuppressionsResult> {
     return pulumi.output(args).apply((a: any) => getAlarmSuppressions(a, opts))

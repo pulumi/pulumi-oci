@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousContainerDatabaseResourceUsageResult> InvokeAsync(GetAutonomousContainerDatabaseResourceUsageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousContainerDatabaseResourceUsageResult>("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args ?? new GetAutonomousContainerDatabaseResourceUsageArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousContainerDatabaseResourceUsageResult> Invoke(GetAutonomousContainerDatabaseResourceUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseResourceUsageResult>("oci:Database/getAutonomousContainerDatabaseResourceUsage:getAutonomousContainerDatabaseResourceUsage", args ?? new GetAutonomousContainerDatabaseResourceUsageInvokeArgs(), options.WithDefaults());

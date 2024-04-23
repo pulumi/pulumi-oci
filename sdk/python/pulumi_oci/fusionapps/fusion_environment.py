@@ -689,7 +689,6 @@ class FusionEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -728,7 +727,6 @@ class FusionEnvironment(pulumi.CustomResource):
                 description=fusion_environment_rules_description,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -766,7 +764,6 @@ class FusionEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -805,7 +802,6 @@ class FusionEnvironment(pulumi.CustomResource):
                 description=fusion_environment_rules_description,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

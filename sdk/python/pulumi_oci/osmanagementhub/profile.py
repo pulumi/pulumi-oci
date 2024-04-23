@@ -598,7 +598,6 @@ class Profile(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -622,7 +621,6 @@ class Profile(pulumi.CustomResource):
             software_source_ids=profile_software_source_ids,
             vendor_name=profile_vendor_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -667,7 +665,6 @@ class Profile(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -691,7 +688,6 @@ class Profile(pulumi.CustomResource):
             software_source_ids=profile_software_source_ids,
             vendor_name=profile_vendor_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

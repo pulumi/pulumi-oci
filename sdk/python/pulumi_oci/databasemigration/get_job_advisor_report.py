@@ -135,14 +135,12 @@ def get_job_advisor_report(job_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=test_job["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str job_id: The OCID of the job
@@ -173,14 +171,12 @@ def get_job_advisor_report_output(job_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_job_advisor_report = oci.DatabaseMigration.get_job_advisor_report(job_id=test_job["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str job_id: The OCID of the job

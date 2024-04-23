@@ -86,14 +86,12 @@ def get_db_home_patches(db_home_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_home_patches = oci.Database.get_db_home_patches(db_home_id=test_db_home["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -122,14 +120,12 @@ def get_db_home_patches_output(db_home_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_home_patches = oci.Database.get_db_home_patches(db_home_id=test_db_home["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

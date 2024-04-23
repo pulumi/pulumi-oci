@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOperationsInsightsWarehouseUserResult> InvokeAsync(GetOperationsInsightsWarehouseUserArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOperationsInsightsWarehouseUserResult>("oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser", args ?? new GetOperationsInsightsWarehouseUserArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOperationsInsightsWarehouseUserResult> Invoke(GetOperationsInsightsWarehouseUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsWarehouseUserResult>("oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser", args ?? new GetOperationsInsightsWarehouseUserInvokeArgs(), options.WithDefaults());

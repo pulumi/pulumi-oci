@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     aiPrivateEndpointId: testAiPrivateEndpointOciAiAnomalyDetectionAiPrivateEndpoint.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAiPrivateEndpoint(args: GetAiPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetAiPrivateEndpointResult> {
 
@@ -105,7 +103,6 @@ export interface GetAiPrivateEndpointResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetAiPrivateEndpointResult {
  *     aiPrivateEndpointId: testAiPrivateEndpointOciAiAnomalyDetectionAiPrivateEndpoint.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAiPrivateEndpointOutput(args: GetAiPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAiPrivateEndpointResult> {
     return pulumi.output(args).apply((a: any) => getAiPrivateEndpoint(a, opts))

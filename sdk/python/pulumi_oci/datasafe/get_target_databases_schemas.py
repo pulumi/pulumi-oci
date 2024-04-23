@@ -122,7 +122,6 @@ def get_target_databases_schemas(filters: Optional[Sequence[pulumi.InputType['Ge
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -132,7 +131,6 @@ def get_target_databases_schemas(filters: Optional[Sequence[pulumi.InputType['Ge
         schema_names=target_databases_schema_schema_name,
         schema_name_contains=target_databases_schema_schema_name_contains)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param bool is_oracle_maintained: A filter to return only items related to specific type of schema.
@@ -173,7 +171,6 @@ def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,7 +180,6 @@ def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[
         schema_names=target_databases_schema_schema_name,
         schema_name_contains=target_databases_schema_schema_name_contains)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param bool is_oracle_maintained: A filter to return only items related to specific type of schema.

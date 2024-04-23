@@ -806,7 +806,6 @@ class Subnet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -832,7 +831,6 @@ class Subnet(pulumi.CustomResource):
             route_table_id=test_route_table["id"],
             security_list_ids=subnet_security_list_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -940,7 +938,6 @@ class Subnet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -966,7 +963,6 @@ class Subnet(pulumi.CustomResource):
             route_table_id=test_route_table["id"],
             security_list_ids=subnet_security_list_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

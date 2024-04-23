@@ -265,7 +265,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -278,7 +277,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
             vault_secret_id=test_secret["id"],
             version_number=network_firewall_policy_mapped_secret_version_number)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -314,7 +312,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -327,7 +324,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
             vault_secret_id=test_secret["id"],
             version_number=network_firewall_policy_mapped_secret_version_number)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

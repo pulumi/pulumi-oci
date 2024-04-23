@@ -206,14 +206,12 @@ def get_app_acceleration(web_app_acceleration_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_web_app_acceleration = oci.Waa.get_app_acceleration(web_app_acceleration_id=test_web_app_acceleration_oci_waa_web_app_acceleration["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str web_app_acceleration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.
@@ -250,14 +248,12 @@ def get_app_acceleration_output(web_app_acceleration_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_web_app_acceleration = oci.Waa.get_app_acceleration(web_app_acceleration_id=test_web_app_acceleration_oci_waa_web_app_acceleration["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str web_app_acceleration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppAcceleration.

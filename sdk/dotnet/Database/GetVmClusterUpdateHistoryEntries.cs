@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVmClusterUpdateHistoryEntriesResult> InvokeAsync(GetVmClusterUpdateHistoryEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterUpdateHistoryEntriesResult>("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", args ?? new GetVmClusterUpdateHistoryEntriesArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVmClusterUpdateHistoryEntriesResult> Invoke(GetVmClusterUpdateHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterUpdateHistoryEntriesResult>("oci:Database/getVmClusterUpdateHistoryEntries:getVmClusterUpdateHistoryEntries", args ?? new GetVmClusterUpdateHistoryEntriesInvokeArgs(), options.WithDefaults());

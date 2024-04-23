@@ -243,14 +243,12 @@ def get_external_exadata_storage_grid(external_exadata_storage_grid_id: Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=test_external_exadata_storage_grid_oci_database_management_external_exadata_storage_grid["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_exadata_storage_grid_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.
@@ -290,14 +288,12 @@ def get_external_exadata_storage_grid_output(external_exadata_storage_grid_id: O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=test_external_exadata_storage_grid_oci_database_management_external_exadata_storage_grid["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_exadata_storage_grid_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.

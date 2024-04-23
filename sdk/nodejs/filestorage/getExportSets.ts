@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: exportSetState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExportSets(args: GetExportSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetExportSetsResult> {
 
@@ -105,7 +103,6 @@ export interface GetExportSetsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,7 +115,6 @@ export interface GetExportSetsResult {
  *     state: exportSetState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExportSetsOutput(args: GetExportSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExportSetsResult> {
     return pulumi.output(args).apply((a: any) => getExportSets(a, opts))

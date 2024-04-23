@@ -84,7 +84,6 @@ def get_exadata_infrastructure_download_config_file(base64_encode_content: Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -92,7 +91,6 @@ def get_exadata_infrastructure_download_config_file(base64_encode_content: Optio
     test_exadata_infrastructure_download_config_file = oci.Database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         base64_encode_content=False)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -121,7 +119,6 @@ def get_exadata_infrastructure_download_config_file_output(base64_encode_content
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -129,7 +126,6 @@ def get_exadata_infrastructure_download_config_file_output(base64_encode_content
     test_exadata_infrastructure_download_config_file = oci.Database.get_exadata_infrastructure_download_config_file(exadata_infrastructure_id=test_exadata_infrastructure["id"],
         base64_encode_content=False)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

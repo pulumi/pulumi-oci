@@ -129,7 +129,6 @@ def get_datasets(annotation_format: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_datasets(annotation_format: Optional[str] = None,
         id=dataset_id,
         state=dataset_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str annotation_format: A filter to return only resources that match the entire annotation format given.
@@ -184,7 +182,6 @@ def get_datasets_output(annotation_format: Optional[pulumi.Input[Optional[str]]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +192,6 @@ def get_datasets_output(annotation_format: Optional[pulumi.Input[Optional[str]]]
         id=dataset_id,
         state=dataset_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str annotation_format: A filter to return only resources that match the entire annotation format given.

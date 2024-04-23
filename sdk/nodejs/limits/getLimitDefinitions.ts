@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     serviceName: testService.name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLimitDefinitions(args: GetLimitDefinitionsArgs, opts?: pulumi.InvokeOptions): Promise<GetLimitDefinitionsResult> {
 
@@ -90,7 +88,6 @@ export interface GetLimitDefinitionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -101,7 +98,6 @@ export interface GetLimitDefinitionsResult {
  *     serviceName: testService.name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLimitDefinitionsOutput(args: GetLimitDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLimitDefinitionsResult> {
     return pulumi.output(args).apply((a: any) => getLimitDefinitions(a, opts))

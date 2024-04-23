@@ -314,7 +314,6 @@ def get_workspace_application_patch(application_key: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -323,7 +322,6 @@ def get_workspace_application_patch(application_key: Optional[str] = None,
         patch_key=workspace_application_patch_patch_key,
         workspace_id=test_workspace["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_key: The application key.
@@ -376,7 +374,6 @@ def get_workspace_application_patch_output(application_key: Optional[pulumi.Inpu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -385,7 +382,6 @@ def get_workspace_application_patch_output(application_key: Optional[pulumi.Inpu
         patch_key=workspace_application_patch_patch_key,
         workspace_id=test_workspace["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_key: The application key.

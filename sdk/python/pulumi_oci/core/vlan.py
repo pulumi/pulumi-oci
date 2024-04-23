@@ -455,7 +455,6 @@ class Vlan(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -476,7 +475,6 @@ class Vlan(pulumi.CustomResource):
             route_table_id=test_route_table["id"],
             vlan_tag=vlan_vlan_tag)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -526,7 +524,6 @@ class Vlan(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -547,7 +544,6 @@ class Vlan(pulumi.CustomResource):
             route_table_id=test_route_table["id"],
             vlan_tag=vlan_vlan_tag)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

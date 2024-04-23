@@ -129,7 +129,6 @@ def get_virtual_services(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_virtual_services(compartment_id: Optional[str] = None,
         name=virtual_service_name,
         state=virtual_service_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -184,7 +182,6 @@ def get_virtual_services_output(compartment_id: Optional[pulumi.Input[str]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +192,6 @@ def get_virtual_services_output(compartment_id: Optional[pulumi.Input[str]] = No
         name=virtual_service_name,
         state=virtual_service_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

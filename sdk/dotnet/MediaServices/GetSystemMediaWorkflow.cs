@@ -19,7 +19,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSystemMediaWorkflowResult> InvokeAsync(GetSystemMediaWorkflowArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSystemMediaWorkflowResult>("oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow", args ?? new GetSystemMediaWorkflowArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSystemMediaWorkflowResult> Invoke(GetSystemMediaWorkflowInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSystemMediaWorkflowResult>("oci:MediaServices/getSystemMediaWorkflow:getSystemMediaWorkflow", args ?? new GetSystemMediaWorkflowInvokeArgs(), options.WithDefaults());

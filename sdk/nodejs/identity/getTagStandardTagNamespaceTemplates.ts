@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTagStandardTagNamespaceTemplates(args: GetTagStandardTagNamespaceTemplatesArgs, opts?: pulumi.InvokeOptions): Promise<GetTagStandardTagNamespaceTemplatesResult> {
 
@@ -66,7 +64,6 @@ export interface GetTagStandardTagNamespaceTemplatesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetTagStandardTagNamespaceTemplatesResult {
  *     compartmentId: compartmentId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTagStandardTagNamespaceTemplatesOutput(args: GetTagStandardTagNamespaceTemplatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagStandardTagNamespaceTemplatesResult> {
     return pulumi.output(args).apply((a: any) => getTagStandardTagNamespaceTemplates(a, opts))

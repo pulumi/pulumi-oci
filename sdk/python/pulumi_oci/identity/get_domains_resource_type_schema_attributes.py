@@ -214,7 +214,6 @@ def get_domains_resource_type_schema_attributes(attribute_sets: Optional[Sequenc
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -228,7 +227,6 @@ def get_domains_resource_type_schema_attributes(attribute_sets: Optional[Sequenc
         resource_type_schema_version=resource_type_schema_attribute_resource_type_schema_version,
         start_index=resource_type_schema_attribute_start_index)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -294,7 +292,6 @@ def get_domains_resource_type_schema_attributes_output(attribute_sets: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -308,7 +305,6 @@ def get_domains_resource_type_schema_attributes_output(attribute_sets: Optional[
         resource_type_schema_version=resource_type_schema_attribute_resource_type_schema_version,
         start_index=resource_type_schema_attribute_start_index)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.

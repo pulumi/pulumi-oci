@@ -211,7 +211,6 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -228,7 +227,6 @@ def get_software_sources(arch_types: Optional[Sequence[str]] = None,
         states=software_source_state,
         vendor_name=software_source_vendor_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.
@@ -298,7 +296,6 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -315,7 +312,6 @@ def get_software_sources_output(arch_types: Optional[pulumi.Input[Optional[Seque
         states=software_source_state,
         vendor_name=software_source_vendor_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] arch_types: A filter to return only instances whose architecture type matches the given architecture.

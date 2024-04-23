@@ -494,7 +494,6 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -509,7 +508,6 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
             },
             source_id=test_source["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -546,7 +544,6 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -561,7 +558,6 @@ class ExternalPluggableDatabase(pulumi.CustomResource):
             },
             source_id=test_source["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: certificateAuthorityState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCertificateAuthorities(args?: GetCertificateAuthoritiesArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthoritiesResult> {
     args = args || {};
@@ -112,7 +110,6 @@ export interface GetCertificateAuthoritiesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -125,7 +122,6 @@ export interface GetCertificateAuthoritiesResult {
  *     state: certificateAuthorityState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCertificateAuthoritiesOutput(args?: GetCertificateAuthoritiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthoritiesResult> {
     return pulumi.output(args).apply((a: any) => getCertificateAuthorities(a, opts))

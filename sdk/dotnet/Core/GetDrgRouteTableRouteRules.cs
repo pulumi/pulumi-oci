@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDrgRouteTableRouteRulesResult> InvokeAsync(GetDrgRouteTableRouteRulesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrgRouteTableRouteRulesResult>("oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules", args ?? new GetDrgRouteTableRouteRulesArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDrgRouteTableRouteRulesResult> Invoke(GetDrgRouteTableRouteRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrgRouteTableRouteRulesResult>("oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules", args ?? new GetDrgRouteTableRouteRulesInvokeArgs(), options.WithDefaults());

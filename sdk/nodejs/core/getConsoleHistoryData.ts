@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     offset: consoleHistoryContentOffset,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConsoleHistoryData(args: GetConsoleHistoryDataArgs, opts?: pulumi.InvokeOptions): Promise<GetConsoleHistoryDataResult> {
 
@@ -79,7 +77,6 @@ export interface GetConsoleHistoryDataResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,7 +87,6 @@ export interface GetConsoleHistoryDataResult {
  *     offset: consoleHistoryContentOffset,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConsoleHistoryDataOutput(args: GetConsoleHistoryDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConsoleHistoryDataResult> {
     return pulumi.output(args).apply((a: any) => getConsoleHistoryData(a, opts))

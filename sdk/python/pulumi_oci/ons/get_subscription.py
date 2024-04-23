@@ -184,14 +184,12 @@ def get_subscription(subscription_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_subscription = oci.Ons.get_subscription(subscription_id=test_subscription_oci_ons_subscription["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to retrieve.
@@ -228,14 +226,12 @@ def get_subscription_output(subscription_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_subscription = oci.Ons.get_subscription(subscription_id=test_subscription_oci_ons_subscription["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to retrieve.

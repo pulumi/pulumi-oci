@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     triggerId: testTriggerOciDevopsTrigger.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTrigger(args: GetTriggerArgs, opts?: pulumi.InvokeOptions): Promise<GetTriggerResult> {
 
@@ -120,7 +118,6 @@ export interface GetTriggerResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -129,7 +126,6 @@ export interface GetTriggerResult {
  *     triggerId: testTriggerOciDevopsTrigger.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTriggerOutput(args: GetTriggerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTriggerResult> {
     return pulumi.output(args).apply((a: any) => getTrigger(a, opts))

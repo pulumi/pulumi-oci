@@ -121,7 +121,6 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -130,7 +129,6 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
             security_assessment_id=test_security_assessment["id"],
             assessment_ids=set_security_assessment_baseline_assessment_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -162,7 +160,6 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -171,7 +168,6 @@ class SetSecurityAssessmentBaseline(pulumi.CustomResource):
             security_assessment_id=test_security_assessment["id"],
             assessment_ids=set_security_assessment_baseline_assessment_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -39,7 +39,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -59,7 +58,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedInstanceModuleStreamsResult> InvokeAsync(GetManagedInstanceModuleStreamsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceModuleStreamsResult>("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args ?? new GetManagedInstanceModuleStreamsArgs(), options.WithDefaults());
@@ -92,7 +90,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -112,7 +109,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedInstanceModuleStreamsResult> Invoke(GetManagedInstanceModuleStreamsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceModuleStreamsResult>("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args ?? new GetManagedInstanceModuleStreamsInvokeArgs(), options.WithDefaults());

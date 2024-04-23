@@ -19,14 +19,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testCompatibleFormatsForDataType = oci.DataSafe.getCompatibleFormatsForDataType({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCompatibleFormatsForDataType(opts?: pulumi.InvokeOptions): Promise<GetCompatibleFormatsForDataTypeResult> {
 
@@ -61,14 +59,12 @@ export interface GetCompatibleFormatsForDataTypeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testCompatibleFormatsForDataType = oci.DataSafe.getCompatibleFormatsForDataType({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCompatibleFormatsForDataTypeOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetCompatibleFormatsForDataTypeResult> {
     return pulumi.output(getCompatibleFormatsForDataType(opts))

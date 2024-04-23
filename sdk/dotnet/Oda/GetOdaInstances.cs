@@ -24,7 +24,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOdaInstancesResult> InvokeAsync(GetOdaInstancesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOdaInstancesResult>("oci:Oda/getOdaInstances:getOdaInstances", args ?? new GetOdaInstancesArgs(), options.WithDefaults());
@@ -60,7 +58,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +75,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOdaInstancesResult> Invoke(GetOdaInstancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaInstancesResult>("oci:Oda/getOdaInstances:getOdaInstances", args ?? new GetOdaInstancesInvokeArgs(), options.WithDefaults());

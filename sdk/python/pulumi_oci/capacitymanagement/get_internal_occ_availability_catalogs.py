@@ -142,7 +142,6 @@ def get_internal_occ_availability_catalogs(catalog_state: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -154,7 +153,6 @@ def get_internal_occ_availability_catalogs(catalog_state: Optional[str] = None,
         namespace=internal_occ_availability_catalog_namespace,
         occ_customer_group_id=test_occ_customer_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_state: Filter the list of availability catalogs based on the catalog state.
@@ -202,7 +200,6 @@ def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -214,7 +211,6 @@ def get_internal_occ_availability_catalogs_output(catalog_state: Optional[pulumi
         namespace=internal_occ_availability_catalog_namespace,
         occ_customer_group_id=test_occ_customer_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_state: Filter the list of availability catalogs based on the catalog state.

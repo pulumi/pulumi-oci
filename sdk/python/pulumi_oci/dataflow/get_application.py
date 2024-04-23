@@ -459,14 +459,12 @@ def get_application(application_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_application = oci.DataFlow.get_application(application_id=test_application_oci_dataflow_application["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The unique ID for an application.
@@ -524,14 +522,12 @@ def get_application_output(application_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_application = oci.DataFlow.get_application(application_id=test_application_oci_dataflow_application["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The unique ID for an application.

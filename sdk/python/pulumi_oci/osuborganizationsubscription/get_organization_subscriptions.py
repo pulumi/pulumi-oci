@@ -106,7 +106,6 @@ def get_organization_subscriptions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -115,7 +114,6 @@ def get_organization_subscriptions(compartment_id: Optional[str] = None,
         subscription_ids=organization_subscription_subscription_ids,
         x_one_origin_region=organization_subscription_x_one_origin_region)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -152,7 +150,6 @@ def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,7 +158,6 @@ def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[
         subscription_ids=organization_subscription_subscription_ids,
         x_one_origin_region=organization_subscription_x_one_origin_region)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     userId: testUser.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSmtpCredentials(args: GetSmtpCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetSmtpCredentialsResult> {
 
@@ -71,7 +69,6 @@ export interface GetSmtpCredentialsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,7 +77,6 @@ export interface GetSmtpCredentialsResult {
  *     userId: testUser.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSmtpCredentialsOutput(args: GetSmtpCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSmtpCredentialsResult> {
     return pulumi.output(args).apply((a: any) => getSmtpCredentials(a, opts))

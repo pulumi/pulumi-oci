@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: notificationTopicState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNotificationTopics(args: GetNotificationTopicsArgs, opts?: pulumi.InvokeOptions): Promise<GetNotificationTopicsResult> {
 
@@ -96,7 +94,6 @@ export interface GetNotificationTopicsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetNotificationTopicsResult {
  *     state: notificationTopicState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNotificationTopicsOutput(args: GetNotificationTopicsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotificationTopicsResult> {
     return pulumi.output(args).apply((a: any) => getNotificationTopics(a, opts))

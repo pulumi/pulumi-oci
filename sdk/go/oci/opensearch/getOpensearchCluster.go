@@ -26,7 +26,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetOpensearchCluster(ctx *pulumi.Context, args *GetOpensearchClusterArgs, opts ...pulumi.InvokeOption) (*GetOpensearchClusterResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOpensearchClusterResult

@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// For more detailed implementation refer the instance example
         /// </summary>
         public static Task<GetBootVolumeAttachmentsResult> InvokeAsync(GetBootVolumeAttachmentsArgs args, InvokeOptions? options = null)
@@ -54,7 +52,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,7 +70,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// For more detailed implementation refer the instance example
         /// </summary>
         public static Output<GetBootVolumeAttachmentsResult> Invoke(GetBootVolumeAttachmentsInvokeArgs args, InvokeOptions? options = null)

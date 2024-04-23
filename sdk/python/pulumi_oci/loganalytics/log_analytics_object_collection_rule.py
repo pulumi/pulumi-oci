@@ -908,7 +908,6 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -943,7 +942,6 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             poll_till=log_analytics_object_collection_rule_poll_till,
             timezone=log_analytics_object_collection_rule_timezone)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -997,7 +995,6 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1032,7 +1029,6 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             poll_till=log_analytics_object_collection_rule_poll_till,
             timezone=log_analytics_object_collection_rule_timezone)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

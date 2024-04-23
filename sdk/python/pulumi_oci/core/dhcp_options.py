@@ -333,7 +333,6 @@ class DhcpOptions(pulumi.CustomResource):
 
         ### VCN Local with Internet
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -353,11 +352,9 @@ class DhcpOptions(pulumi.CustomResource):
             vcn_id=test_vcn["id"],
             display_name=dhcp_options_display_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ### Custom DNS Server
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -389,7 +386,6 @@ class DhcpOptions(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -441,7 +437,6 @@ class DhcpOptions(pulumi.CustomResource):
 
         ### VCN Local with Internet
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -461,11 +456,9 @@ class DhcpOptions(pulumi.CustomResource):
             vcn_id=test_vcn["id"],
             display_name=dhcp_options_display_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ### Custom DNS Server
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -497,7 +490,6 @@ class DhcpOptions(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

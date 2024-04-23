@@ -102,7 +102,6 @@ def get_backups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_backups(compartment_id: Optional[str] = None,
     test_backups = oci.Database.get_backups(compartment_id=compartment_id,
         database_id=test_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -143,7 +141,6 @@ def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +148,6 @@ def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     test_backups = oci.Database.get_backups(compartment_id=compartment_id,
         database_id=test_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

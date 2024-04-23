@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     state: databasePdbConversionHistoryEntryState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabasePdbConversionHistoryEntries(args: GetDatabasePdbConversionHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabasePdbConversionHistoryEntriesResult> {
 
@@ -83,7 +81,6 @@ export interface GetDatabasePdbConversionHistoryEntriesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetDatabasePdbConversionHistoryEntriesResult {
  *     state: databasePdbConversionHistoryEntryState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabasePdbConversionHistoryEntriesOutput(args: GetDatabasePdbConversionHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabasePdbConversionHistoryEntriesResult> {
     return pulumi.output(args).apply((a: any) => getDatabasePdbConversionHistoryEntries(a, opts))

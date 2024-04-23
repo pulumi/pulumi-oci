@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     jobId: testJob.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJobAdvisorReport(args: GetJobAdvisorReportArgs, opts?: pulumi.InvokeOptions): Promise<GetJobAdvisorReportResult> {
 
@@ -83,7 +81,6 @@ export interface GetJobAdvisorReportResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -92,7 +89,6 @@ export interface GetJobAdvisorReportResult {
  *     jobId: testJob.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJobAdvisorReportOutput(args: GetJobAdvisorReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobAdvisorReportResult> {
     return pulumi.output(args).apply((a: any) => getJobAdvisorReport(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,7 +33,6 @@ import * as utilities from "../utilities";
  *     state: logAnalyticsEntityState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsEntities(args: GetLogAnalyticsEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsEntitiesResult> {
 
@@ -171,7 +169,6 @@ export interface GetLogAnalyticsEntitiesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -192,7 +189,6 @@ export interface GetLogAnalyticsEntitiesResult {
  *     state: logAnalyticsEntityState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsEntitiesOutput(args: GetLogAnalyticsEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsEntitiesResult> {
     return pulumi.output(args).apply((a: any) => getLogAnalyticsEntities(a, opts))

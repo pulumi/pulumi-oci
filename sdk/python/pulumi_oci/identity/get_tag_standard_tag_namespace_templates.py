@@ -86,14 +86,12 @@ def get_tag_standard_tag_namespace_templates(compartment_id: Optional[str] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -122,14 +120,12 @@ def get_tag_standard_tag_namespace_templates_output(compartment_id: Optional[pul
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_tag_standard_tag_namespace_templates = oci.Identity.get_tag_standard_tag_namespace_templates(compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).

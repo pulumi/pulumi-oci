@@ -103,7 +103,6 @@ class ManagementDashboardsImport(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -112,7 +111,6 @@ class ManagementDashboardsImport(pulumi.CustomResource):
             import_details=sample_import_details,
             import_details_file=sample_import_details_file_path)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -144,7 +142,6 @@ class ManagementDashboardsImport(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -153,7 +150,6 @@ class ManagementDashboardsImport(pulumi.CustomResource):
             import_details=sample_import_details,
             import_details_file=sample_import_details_file_path)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

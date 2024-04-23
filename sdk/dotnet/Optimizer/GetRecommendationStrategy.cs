@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRecommendationStrategyResult> InvokeAsync(GetRecommendationStrategyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecommendationStrategyResult>("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", args ?? new GetRecommendationStrategyArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRecommendationStrategyResult> Invoke(GetRecommendationStrategyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecommendationStrategyResult>("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", args ?? new GetRecommendationStrategyInvokeArgs(), options.WithDefaults());

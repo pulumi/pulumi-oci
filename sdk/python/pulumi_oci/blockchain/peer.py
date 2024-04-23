@@ -267,7 +267,6 @@ class Peer(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -281,7 +280,6 @@ class Peer(pulumi.CustomResource):
             role=peer_role,
             alias=peer_alias)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -316,7 +314,6 @@ class Peer(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -330,7 +327,6 @@ class Peer(pulumi.CustomResource):
             role=peer_role,
             alias=peer_alias)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

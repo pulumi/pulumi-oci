@@ -19,7 +19,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSubscriptionProductResult> InvokeAsync(GetSubscriptionProductArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionProductResult>("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", args ?? new GetSubscriptionProductArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubscriptionProductResult> Invoke(GetSubscriptionProductInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionProductResult>("oci:UsageProxy/getSubscriptionProduct:getSubscriptionProduct", args ?? new GetSubscriptionProductInvokeArgs(), options.WithDefaults());

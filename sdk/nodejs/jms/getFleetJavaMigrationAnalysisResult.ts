@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     javaMigrationAnalysisResultId: testResult.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetJavaMigrationAnalysisResult(args: GetFleetJavaMigrationAnalysisResultArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetJavaMigrationAnalysisResultResult> {
 
@@ -127,7 +125,6 @@ export interface GetFleetJavaMigrationAnalysisResultResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -137,7 +134,6 @@ export interface GetFleetJavaMigrationAnalysisResultResult {
  *     javaMigrationAnalysisResultId: testResult.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetJavaMigrationAnalysisResultOutput(args: GetFleetJavaMigrationAnalysisResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetJavaMigrationAnalysisResultResult> {
     return pulumi.output(args).apply((a: any) => getFleetJavaMigrationAnalysisResult(a, opts))

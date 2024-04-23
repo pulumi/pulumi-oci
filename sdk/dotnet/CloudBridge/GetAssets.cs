@@ -19,7 +19,6 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAssetsResult> InvokeAsync(GetAssetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAssetsResult>("oci:CloudBridge/getAssets:getAssets", args ?? new GetAssetsArgs(), options.WithDefaults());
@@ -55,7 +53,6 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +75,6 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAssetsResult> Invoke(GetAssetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAssetsResult>("oci:CloudBridge/getAssets:getAssets", args ?? new GetAssetsInvokeArgs(), options.WithDefaults());

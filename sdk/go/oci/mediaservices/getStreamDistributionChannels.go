@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetStreamDistributionChannels(ctx *pulumi.Context, args *GetStreamDistributionChannelsArgs, opts ...pulumi.InvokeOption) (*GetStreamDistributionChannelsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStreamDistributionChannelsResult

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetMigrationPlanAvailableShape(ctx *pulumi.Context, args *GetMigrationPlanAvailableShapeArgs, opts ...pulumi.InvokeOption) (*GetMigrationPlanAvailableShapeResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMigrationPlanAvailableShapeResult

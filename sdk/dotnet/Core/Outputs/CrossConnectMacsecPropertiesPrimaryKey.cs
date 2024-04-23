@@ -14,9 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class CrossConnectMacsecPropertiesPrimaryKey
     {
         /// <summary>
-        /// (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-        /// 
-        /// NOTE: Only the latest secret version will be used.
+        /// Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
         /// </summary>
         public readonly string ConnectivityAssociationKeySecretId;
         /// <summary>
@@ -24,9 +22,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? ConnectivityAssociationKeySecretVersion;
         /// <summary>
-        /// (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-        /// 
-        /// NOTE: Only the latest secret version will be used.
+        /// Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
         /// </summary>
         public readonly string ConnectivityAssociationNameSecretId;
         /// <summary>

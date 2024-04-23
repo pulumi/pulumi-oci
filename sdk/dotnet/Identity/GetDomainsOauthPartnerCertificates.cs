@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsOauthPartnerCertificatesResult> InvokeAsync(GetDomainsOauthPartnerCertificatesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsOauthPartnerCertificatesResult>("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", args ?? new GetDomainsOauthPartnerCertificatesArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsOauthPartnerCertificatesResult> Invoke(GetDomainsOauthPartnerCertificatesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsOauthPartnerCertificatesResult>("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", args ?? new GetDomainsOauthPartnerCertificatesInvokeArgs(), options.WithDefaults());

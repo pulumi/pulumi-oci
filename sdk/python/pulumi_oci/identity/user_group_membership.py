@@ -201,7 +201,6 @@ class UserGroupMembership(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -210,7 +209,6 @@ class UserGroupMembership(pulumi.CustomResource):
             group_id=test_group["id"],
             user_id=test_user["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -243,7 +241,6 @@ class UserGroupMembership(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -252,7 +249,6 @@ class UserGroupMembership(pulumi.CustomResource):
             group_id=test_group["id"],
             user_id=test_user["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

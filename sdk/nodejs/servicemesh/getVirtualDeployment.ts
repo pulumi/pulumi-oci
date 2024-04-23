@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     virtualDeploymentId: testVirtualDeploymentOciServiceMeshVirtualDeployment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualDeployment(args: GetVirtualDeploymentArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualDeploymentResult> {
 
@@ -115,7 +113,6 @@ export interface GetVirtualDeploymentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,7 +121,6 @@ export interface GetVirtualDeploymentResult {
  *     virtualDeploymentId: testVirtualDeploymentOciServiceMeshVirtualDeployment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualDeploymentOutput(args: GetVirtualDeploymentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualDeploymentResult> {
     return pulumi.output(args).apply((a: any) => getVirtualDeployment(a, opts))

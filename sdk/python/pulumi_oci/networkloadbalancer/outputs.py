@@ -526,14 +526,6 @@ class NetworkLoadBalancerIpAddressReservedIp(dict):
                  id: Optional[str] = None):
         """
         :param str id: OCID of the reserved public IP address created with the virtual cloud network.
-               
-               Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
-               
-               Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
-               
-               Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
-               
-               Example: "ocid1.publicip.oc1.phx.unique_ID"
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -543,14 +535,6 @@ class NetworkLoadBalancerIpAddressReservedIp(dict):
     def id(self) -> Optional[str]:
         """
         OCID of the reserved public IP address created with the virtual cloud network.
-
-        Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
-
-        Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
-
-        Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
-
-        Example: "ocid1.publicip.oc1.phx.unique_ID"
         """
         return pulumi.get(self, "id")
 

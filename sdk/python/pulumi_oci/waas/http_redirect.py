@@ -302,7 +302,6 @@ class HttpRedirect(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -326,7 +325,6 @@ class HttpRedirect(pulumi.CustomResource):
             },
             response_code=http_redirect_response_code)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -359,7 +357,6 @@ class HttpRedirect(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -383,7 +380,6 @@ class HttpRedirect(pulumi.CustomResource):
             },
             response_code=http_redirect_response_code)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.GenericArtifactsContent
     /// 
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.GenericArtifactsContent
     /// 
     /// });
     /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [OciResourceType("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath")]
     public partial class ArtifactByPath : global::Pulumi.CustomResource

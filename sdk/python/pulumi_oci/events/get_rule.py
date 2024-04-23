@@ -196,14 +196,12 @@ def get_rule(rule_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_rule = oci.Events.get_rule(rule_id=test_rule_oci_events_rule["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str rule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
@@ -239,14 +237,12 @@ def get_rule_output(rule_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_rule = oci.Events.get_rule(rule_id=test_rule_oci_events_rule["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str rule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.

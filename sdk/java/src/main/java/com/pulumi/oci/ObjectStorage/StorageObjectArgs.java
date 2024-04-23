@@ -21,14 +21,14 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
     public static final StorageObjectArgs Empty = new StorageObjectArgs();
 
     /**
-     * The name of the bucket for the source object.
+     * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
     @Import(name="bucket", required=true)
     private Output<String> bucket;
 
     /**
-     * @return The name of the bucket for the source object.
+     * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
     public Output<String> bucket() {
@@ -177,14 +177,14 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The top-level namespace of the source object.
+     * The Object Storage namespace used for the request.
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return The top-level namespace of the source object.
+     * @return The Object Storage namespace used for the request.
      * 
      */
     public Output<String> namespace() {
@@ -192,14 +192,14 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name of the source object.
+     * (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      * 
      */
     @Import(name="object", required=true)
     private Output<String> object;
 
     /**
-     * @return The name of the source object.
+     * @return (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      * 
      */
     public Output<String> object() {
@@ -308,7 +308,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bucket The name of the bucket for the source object.
+         * @param bucket The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bucket The name of the bucket for the source object.
+         * @param bucket The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace The top-level namespace of the source object.
+         * @param namespace The Object Storage namespace used for the request.
          * 
          * @return builder
          * 
@@ -535,7 +535,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace The top-level namespace of the source object.
+         * @param namespace The Object Storage namespace used for the request.
          * 
          * @return builder
          * 
@@ -545,7 +545,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param object The name of the source object.
+         * @param object (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param object The name of the source object.
+         * @param object (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
          * 
          * @return builder
          * 

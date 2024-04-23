@@ -130,14 +130,12 @@ def get_network_load_balancer_health(network_load_balancer_id: Optional[str] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_load_balancer_health = oci.NetworkLoadBalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -167,14 +165,12 @@ def get_network_load_balancer_health_output(network_load_balancer_id: Optional[p
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_load_balancer_health = oci.NetworkLoadBalancer.get_network_load_balancer_health(network_load_balancer_id=test_network_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.

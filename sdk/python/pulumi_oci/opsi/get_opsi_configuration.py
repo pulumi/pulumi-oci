@@ -249,7 +249,6 @@ def get_opsi_configuration(config_item_custom_statuses: Optional[Sequence[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -260,7 +259,6 @@ def get_opsi_configuration(config_item_custom_statuses: Optional[Sequence[str]] 
         config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,
         opsi_config_fields=opsi_configuration_opsi_config_field)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
@@ -315,7 +313,6 @@ def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -326,7 +323,6 @@ def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.I
         config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,
         opsi_config_fields=opsi_configuration_opsi_config_field)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] config_item_custom_statuses: Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.

@@ -494,7 +494,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -515,7 +514,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             },
             managed_instance_ids=managed_instance_group_managed_instance_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -555,7 +553,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -576,7 +573,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             },
             managed_instance_ids=managed_instance_group_managed_instance_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -283,7 +283,6 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -297,7 +296,6 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
             description=analytics_instance_vanity_url_description,
             passphrase=analytics_instance_vanity_url_passphrase)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -335,7 +333,6 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -349,7 +346,6 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
             description=analytics_instance_vanity_url_description,
             passphrase=analytics_instance_vanity_url_passphrase)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

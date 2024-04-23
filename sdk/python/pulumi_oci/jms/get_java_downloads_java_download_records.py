@@ -173,7 +173,6 @@ def get_java_downloads_java_download_records(architecture: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -187,7 +186,6 @@ def get_java_downloads_java_download_records(architecture: Optional[str] = None,
         time_end=java_download_record_time_end,
         time_start=java_download_record_time_start)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str architecture: Target Operating System architecture of the artifact.
@@ -246,7 +244,6 @@ def get_java_downloads_java_download_records_output(architecture: Optional[pulum
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -260,7 +257,6 @@ def get_java_downloads_java_download_records_output(architecture: Optional[pulum
         time_end=java_download_record_time_end,
         time_start=java_download_record_time_start)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str architecture: Target Operating System architecture of the artifact.

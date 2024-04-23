@@ -18,7 +18,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDetectionProjectResult> InvokeAsync(GetDetectionProjectArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDetectionProjectResult>("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", args ?? new GetDetectionProjectArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDetectionProjectResult> Invoke(GetDetectionProjectInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDetectionProjectResult>("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", args ?? new GetDetectionProjectInvokeArgs(), options.WithDefaults());

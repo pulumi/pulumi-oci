@@ -13,14 +13,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitorPluginManagement = new oci.appmgmtcontrol.MonitorPluginManagement("test_monitor_plugin_management", {monitoredInstanceId: testMonitoredInstance.id});
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

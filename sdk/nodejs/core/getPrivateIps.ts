@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -38,8 +37,6 @@ import * as utilities from "../utilities";
  *     subnetId: privateIpSubnetId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -49,8 +46,6 @@ import * as utilities from "../utilities";
  *     vnicId: testVnic.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -63,7 +58,6 @@ import * as utilities from "../utilities";
  *     vnicId: testVnicAttachment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPrivateIps(args?: GetPrivateIpsArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateIpsResult> {
     args = args || {};
@@ -153,7 +147,6 @@ export interface GetPrivateIpsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -163,8 +156,6 @@ export interface GetPrivateIpsResult {
  *     subnetId: privateIpSubnetId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -174,8 +165,6 @@ export interface GetPrivateIpsResult {
  *     vnicId: testVnic.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -188,7 +177,6 @@ export interface GetPrivateIpsResult {
  *     vnicId: testVnicAttachment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPrivateIpsOutput(args?: GetPrivateIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateIpsResult> {
     return pulumi.output(args).apply((a: any) => getPrivateIps(a, opts))

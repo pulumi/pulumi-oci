@@ -206,14 +206,12 @@ def get_db_management_private_endpoint(db_management_private_endpoint_id: Option
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_management_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
@@ -250,14 +248,12 @@ def get_db_management_private_endpoint_output(db_management_private_endpoint_id:
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_management_private_endpoint = oci.DatabaseManagement.get_db_management_private_endpoint(db_management_private_endpoint_id=test_db_management_private_endpoint_oci_database_management_db_management_private_endpoint["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_management_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.

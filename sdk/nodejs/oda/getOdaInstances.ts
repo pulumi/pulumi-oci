@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     state: odaInstanceState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOdaInstances(args: GetOdaInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetOdaInstancesResult> {
 
@@ -99,7 +97,6 @@ export interface GetOdaInstancesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,7 +107,6 @@ export interface GetOdaInstancesResult {
  *     state: odaInstanceState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOdaInstancesOutput(args: GetOdaInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaInstancesResult> {
     return pulumi.output(args).apply((a: any) => getOdaInstances(a, opts))

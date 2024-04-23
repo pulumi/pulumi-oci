@@ -390,14 +390,12 @@ def get_management_agent(management_agent_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_management_agent = oci.ManagementAgent.get_management_agent(management_agent_id=test_management_agent_oci_management_agent_management_agent["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str management_agent_id: Unique Management Agent identifier
@@ -450,14 +448,12 @@ def get_management_agent_output(management_agent_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_management_agent = oci.ManagementAgent.get_management_agent(management_agent_id=test_management_agent_oci_management_agent_management_agent["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str management_agent_id: Unique Management Agent identifier

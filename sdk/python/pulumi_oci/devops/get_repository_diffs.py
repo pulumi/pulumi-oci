@@ -116,7 +116,6 @@ def get_repository_diffs(base_version: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_repository_diffs(base_version: Optional[str] = None,
         target_version=repository_diff_target_version,
         is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str base_version: The commit or reference name to compare changes against.
@@ -167,7 +165,6 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,7 +174,6 @@ def get_repository_diffs_output(base_version: Optional[pulumi.Input[str]] = None
         target_version=repository_diff_target_version,
         is_comparison_from_merge_base=repository_diff_is_comparison_from_merge_base)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str base_version: The commit or reference name to compare changes against.

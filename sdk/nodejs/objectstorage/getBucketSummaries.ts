@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,7 +30,6 @@ import * as utilities from "../utilities";
  *     namespace: bucketNamespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBucketSummaries(args: GetBucketSummariesArgs, opts?: pulumi.InvokeOptions): Promise<GetBucketSummariesResult> {
 
@@ -95,7 +93,6 @@ export interface GetBucketSummariesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -105,7 +102,6 @@ export interface GetBucketSummariesResult {
  *     namespace: bucketNamespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBucketSummariesOutput(args: GetBucketSummariesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBucketSummariesResult> {
     return pulumi.output(args).apply((a: any) => getBucketSummaries(a, opts))

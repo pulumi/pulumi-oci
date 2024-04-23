@@ -836,7 +836,6 @@ class Migration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -989,7 +988,6 @@ class Migration(pulumi.CustomResource):
                 vault_id=test_vault["id"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1036,7 +1034,6 @@ class Migration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1189,7 +1186,6 @@ class Migration(pulumi.CustomResource):
                 vault_id=test_vault["id"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

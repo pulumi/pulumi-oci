@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetWorkspaceApplicationPatchesResult> InvokeAsync(GetWorkspaceApplicationPatchesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceApplicationPatchesResult>("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", args ?? new GetWorkspaceApplicationPatchesArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetWorkspaceApplicationPatchesResult> Invoke(GetWorkspaceApplicationPatchesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceApplicationPatchesResult>("oci:DataIntegration/getWorkspaceApplicationPatches:getWorkspaceApplicationPatches", args ?? new GetWorkspaceApplicationPatchesInvokeArgs(), options.WithDefaults());

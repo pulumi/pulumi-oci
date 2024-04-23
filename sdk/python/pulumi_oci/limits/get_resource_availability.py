@@ -155,7 +155,6 @@ def get_resource_availability(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -165,7 +164,6 @@ def get_resource_availability(availability_domain: Optional[str] = None,
         service_name=test_service["name"],
         availability_domain=resource_availability_availability_domain)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: This field is mandatory if the scopeType of the target resource limit is AD. Otherwise, this field should be omitted. If the above requirements are not met, the API returns a 400 - InvalidParameter response.
@@ -210,7 +208,6 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -220,7 +217,6 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
         service_name=test_service["name"],
         availability_domain=resource_availability_availability_domain)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: This field is mandatory if the scopeType of the target resource limit is AD. Otherwise, this field should be omitted. If the above requirements are not met, the API returns a 400 - InvalidParameter response.

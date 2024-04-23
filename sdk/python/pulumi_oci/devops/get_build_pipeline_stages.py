@@ -129,7 +129,6 @@ def get_build_pipeline_stages(build_pipeline_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_build_pipeline_stages(build_pipeline_id: Optional[str] = None,
         id=build_pipeline_stage_id,
         state=build_pipeline_stage_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str build_pipeline_id: The OCID of the parent build pipeline.
@@ -184,7 +182,6 @@ def get_build_pipeline_stages_output(build_pipeline_id: Optional[pulumi.Input[Op
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +192,6 @@ def get_build_pipeline_stages_output(build_pipeline_id: Optional[pulumi.Input[Op
         id=build_pipeline_stage_id,
         state=build_pipeline_stage_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str build_pipeline_id: The OCID of the parent build pipeline.

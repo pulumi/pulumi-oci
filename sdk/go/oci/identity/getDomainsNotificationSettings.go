@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsNotificationSettings(ctx *pulumi.Context, args *GetDomainsNotificationSettingsArgs, opts ...pulumi.InvokeOption) (*GetDomainsNotificationSettingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsNotificationSettingsResult

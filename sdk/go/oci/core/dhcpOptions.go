@@ -33,7 +33,6 @@ import (
 //
 // ### VCN Local with Internet
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -71,11 +70,9 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ### Custom DNS Server
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -125,7 +122,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //

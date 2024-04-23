@@ -393,7 +393,6 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -429,7 +428,6 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -467,7 +465,6 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -503,7 +500,6 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -204,7 +204,6 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -221,7 +220,6 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
         state=resource_action_state,
         status=resource_action_status)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 
@@ -302,7 +300,6 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -319,7 +316,6 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
         state=resource_action_state,
         status=resource_action_status)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] child_tenancy_ids: A list of child tenancies for which the respective data will be returned. Please note that  the parent tenancy id can also be included in this list. For example, if there is a parent P with two children A and B, to return results of only parent P and child A, this list should be populated with  tenancy id of parent P and child A. 

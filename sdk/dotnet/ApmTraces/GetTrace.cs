@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTraceResult> InvokeAsync(GetTraceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTraceResult>("oci:ApmTraces/getTrace:getTrace", args ?? new GetTraceArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTraceResult> Invoke(GetTraceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTraceResult>("oci:ApmTraces/getTrace:getTrace", args ?? new GetTraceInvokeArgs(), options.WithDefaults());

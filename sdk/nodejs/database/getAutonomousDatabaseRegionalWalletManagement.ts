@@ -11,14 +11,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseRegionalWalletManagement = oci.Database.getAutonomousDatabaseRegionalWalletManagement({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseRegionalWalletManagement(opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseRegionalWalletManagementResult> {
 
@@ -50,14 +48,12 @@ export interface GetAutonomousDatabaseRegionalWalletManagementResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseRegionalWalletManagement = oci.Database.getAutonomousDatabaseRegionalWalletManagement({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseRegionalWalletManagementOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseRegionalWalletManagementResult> {
     return pulumi.output(getAutonomousDatabaseRegionalWalletManagement(opts))

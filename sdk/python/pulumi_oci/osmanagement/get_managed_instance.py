@@ -363,14 +363,12 @@ def get_managed_instance(managed_instance_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_instance = oci.OsManagement.get_managed_instance(managed_instance_id=test_managed_instance_oci_osmanagement_managed_instance["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_instance_id: OCID for the managed instance
@@ -420,14 +418,12 @@ def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_instance = oci.OsManagement.get_managed_instance(managed_instance_id=test_managed_instance_oci_osmanagement_managed_instance["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_instance_id: OCID for the managed instance

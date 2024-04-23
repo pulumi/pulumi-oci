@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     alertPolicyId: testAlertPolicy.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAlertPolicyRules(args: GetAlertPolicyRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertPolicyRulesResult> {
 
@@ -68,7 +66,6 @@ export interface GetAlertPolicyRulesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,7 +74,6 @@ export interface GetAlertPolicyRulesResult {
  *     alertPolicyId: testAlertPolicy.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAlertPolicyRulesOutput(args: GetAlertPolicyRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertPolicyRulesResult> {
     return pulumi.output(args).apply((a: any) => getAlertPolicyRules(a, opts))

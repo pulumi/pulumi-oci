@@ -562,7 +562,6 @@ class OpaInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -583,7 +582,6 @@ class OpaInstance(pulumi.CustomResource):
             is_breakglass_enabled=opa_instance_is_breakglass_enabled,
             metering_type=opa_instance_metering_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -624,7 +622,6 @@ class OpaInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -645,7 +642,6 @@ class OpaInstance(pulumi.CustomResource):
             is_breakglass_enabled=opa_instance_is_breakglass_enabled,
             metering_type=opa_instance_metering_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetVmClusterUpdates(ctx *pulumi.Context, args *GetVmClusterUpdatesArgs, opts ...pulumi.InvokeOption) (*GetVmClusterUpdatesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVmClusterUpdatesResult

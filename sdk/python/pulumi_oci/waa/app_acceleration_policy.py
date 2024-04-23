@@ -368,7 +368,6 @@ class AppAccelerationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -392,7 +391,6 @@ class AppAccelerationPolicy(pulumi.CustomResource):
             ),
             system_tags=web_app_acceleration_policy_system_tags)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -433,7 +431,6 @@ class AppAccelerationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -457,7 +454,6 @@ class AppAccelerationPolicy(pulumi.CustomResource):
             ),
             system_tags=web_app_acceleration_policy_system_tags)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

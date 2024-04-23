@@ -101,14 +101,12 @@ def get_fleet_export_status(fleet_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fleet_export_status = oci.Jms.get_fleet_export_status(fleet_id=test_fleet["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -136,14 +134,12 @@ def get_fleet_export_status_output(fleet_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fleet_export_status = oci.Jms.get_fleet_export_status(fleet_id=test_fleet["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.

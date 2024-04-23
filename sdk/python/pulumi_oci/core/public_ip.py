@@ -433,7 +433,6 @@ class PublicIp(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -451,7 +450,6 @@ class PublicIp(pulumi.CustomResource):
             private_ip_id=test_private_ip["id"],
             public_ip_pool_id=test_public_ip_pool["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -512,7 +510,6 @@ class PublicIp(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -530,7 +527,6 @@ class PublicIp(pulumi.CustomResource):
             private_ip_id=test_private_ip["id"],
             public_ip_pool_id=test_public_ip_pool["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

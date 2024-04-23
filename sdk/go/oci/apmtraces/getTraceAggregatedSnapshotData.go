@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetTraceAggregatedSnapshotData(ctx *pulumi.Context, args *GetTraceAggregatedSnapshotDataArgs, opts ...pulumi.InvokeOption) (*GetTraceAggregatedSnapshotDataResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTraceAggregatedSnapshotDataResult

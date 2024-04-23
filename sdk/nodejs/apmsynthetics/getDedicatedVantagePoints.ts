@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     status: dedicatedVantagePointStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDedicatedVantagePoints(args: GetDedicatedVantagePointsArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVantagePointsResult> {
 
@@ -96,7 +94,6 @@ export interface GetDedicatedVantagePointsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetDedicatedVantagePointsResult {
  *     status: dedicatedVantagePointStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDedicatedVantagePointsOutput(args: GetDedicatedVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVantagePointsResult> {
     return pulumi.output(args).apply((a: any) => getDedicatedVantagePoints(a, opts))

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetFusionEnvironmentDataMaskingActivity(ctx *pulumi.Context, args *GetFusionEnvironmentDataMaskingActivityArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentDataMaskingActivityResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentDataMaskingActivityResult

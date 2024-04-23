@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDataSafePrivateEndpoint(ctx *pulumi.Context, args *LookupDataSafePrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupDataSafePrivateEndpointResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDataSafePrivateEndpointResult

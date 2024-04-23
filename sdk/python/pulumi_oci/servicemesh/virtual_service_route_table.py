@@ -399,7 +399,6 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -429,7 +428,6 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
             },
             priority=virtual_service_route_table_priority)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -467,7 +465,6 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -497,7 +494,6 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
             },
             priority=virtual_service_route_table_priority)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -221,7 +221,6 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -236,7 +235,6 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             )],
             scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -273,7 +271,6 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -288,7 +285,6 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             )],
             scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

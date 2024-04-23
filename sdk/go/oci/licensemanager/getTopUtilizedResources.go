@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetTopUtilizedResources(ctx *pulumi.Context, args *GetTopUtilizedResourcesArgs, opts ...pulumi.InvokeOption) (*GetTopUtilizedResourcesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTopUtilizedResourcesResult

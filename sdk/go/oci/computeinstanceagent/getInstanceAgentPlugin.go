@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetInstanceAgentPlugin(ctx *pulumi.Context, args *GetInstanceAgentPluginArgs, opts ...pulumi.InvokeOption) (*GetInstanceAgentPluginResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetInstanceAgentPluginResult

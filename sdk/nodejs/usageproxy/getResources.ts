@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     entitlementId: testEntitlement.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getResources(args: GetResourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetResourcesResult> {
 
@@ -82,7 +80,6 @@ export interface GetResourcesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -93,7 +90,6 @@ export interface GetResourcesResult {
  *     entitlementId: testEntitlement.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getResourcesOutput(args: GetResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourcesResult> {
     return pulumi.output(args).apply((a: any) => getResources(a, opts))

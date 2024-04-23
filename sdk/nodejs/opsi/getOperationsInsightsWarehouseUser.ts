@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     operationsInsightsWarehouseUserId: testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOperationsInsightsWarehouseUser(args: GetOperationsInsightsWarehouseUserArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsWarehouseUserResult> {
 
@@ -113,7 +111,6 @@ export interface GetOperationsInsightsWarehouseUserResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -122,7 +119,6 @@ export interface GetOperationsInsightsWarehouseUserResult {
  *     operationsInsightsWarehouseUserId: testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOperationsInsightsWarehouseUserOutput(args: GetOperationsInsightsWarehouseUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehouseUserResult> {
     return pulumi.output(args).apply((a: any) => getOperationsInsightsWarehouseUser(a, opts))

@@ -102,7 +102,6 @@ def get_tags(filters: Optional[Sequence[pulumi.InputType['GetTagsFilterArgs']]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_tags(filters: Optional[Sequence[pulumi.InputType['GetTagsFilterArgs']]] 
     test_tags = oci.Identity.get_tags(tag_namespace_id=test_tag_namespace["id"],
         state=tag_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
@@ -143,7 +141,6 @@ def get_tags_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.Inpu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +148,6 @@ def get_tags_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.Inpu
     test_tags = oci.Identity.get_tags(tag_namespace_id=test_tag_namespace["id"],
         state=tag_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.

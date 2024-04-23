@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: deployArtifactState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeployArtifacts(args?: GetDeployArtifactsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployArtifactsResult> {
     args = args || {};
@@ -106,7 +104,6 @@ export interface GetDeployArtifactsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -119,7 +116,6 @@ export interface GetDeployArtifactsResult {
  *     state: deployArtifactState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeployArtifactsOutput(args?: GetDeployArtifactsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployArtifactsResult> {
     return pulumi.output(args).apply((a: any) => getDeployArtifacts(a, opts))

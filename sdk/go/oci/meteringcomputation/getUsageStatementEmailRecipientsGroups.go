@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetUsageStatementEmailRecipientsGroups(ctx *pulumi.Context, args *GetUsageStatementEmailRecipientsGroupsArgs, opts ...pulumi.InvokeOption) (*GetUsageStatementEmailRecipientsGroupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUsageStatementEmailRecipientsGroupsResult

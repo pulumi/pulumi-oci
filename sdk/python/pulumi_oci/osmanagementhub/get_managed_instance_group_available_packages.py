@@ -133,7 +133,6 @@ def get_managed_instance_group_available_packages(compartment_id: Optional[str] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -144,7 +143,6 @@ def get_managed_instance_group_available_packages(compartment_id: Optional[str] 
         display_name_contains=managed_instance_group_available_package_display_name_contains,
         is_latest=managed_instance_group_available_package_is_latest)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list.
@@ -190,7 +188,6 @@ def get_managed_instance_group_available_packages_output(compartment_id: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -201,7 +198,6 @@ def get_managed_instance_group_available_packages_output(compartment_id: Optiona
         display_name_contains=managed_instance_group_available_package_display_name_contains,
         is_latest=managed_instance_group_available_package_is_latest)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list.

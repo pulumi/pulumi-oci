@@ -11,14 +11,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgent = new oci.managementagent.ManagementAgent("test_management_agent", {managedAgentId: testManagedAgent.id});
  * ```
- * <!--End PulumiCodeChooser -->
  * ***
  * Add plugin to Management Agent created via OCI Compute instance.
  *

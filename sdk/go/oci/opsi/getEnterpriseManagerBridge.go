@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupEnterpriseManagerBridge(ctx *pulumi.Context, args *LookupEnterpriseManagerBridgeArgs, opts ...pulumi.InvokeOption) (*LookupEnterpriseManagerBridgeResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupEnterpriseManagerBridgeResult

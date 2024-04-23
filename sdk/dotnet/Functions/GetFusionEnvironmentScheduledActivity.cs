@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentScheduledActivityResult> InvokeAsync(GetFusionEnvironmentScheduledActivityArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentScheduledActivityResult>("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", args ?? new GetFusionEnvironmentScheduledActivityArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentScheduledActivityResult> Invoke(GetFusionEnvironmentScheduledActivityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentScheduledActivityResult>("oci:Functions/getFusionEnvironmentScheduledActivity:getFusionEnvironmentScheduledActivity", args ?? new GetFusionEnvironmentScheduledActivityInvokeArgs(), options.WithDefaults());

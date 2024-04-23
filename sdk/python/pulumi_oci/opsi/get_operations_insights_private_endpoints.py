@@ -161,7 +161,6 @@ def get_operations_insights_private_endpoints(compartment_id: Optional[str] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -174,7 +173,6 @@ def get_operations_insights_private_endpoints(compartment_id: Optional[str] = No
         states=operations_insights_private_endpoint_state,
         vcn_id=test_vcn["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -227,7 +225,6 @@ def get_operations_insights_private_endpoints_output(compartment_id: Optional[pu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -240,7 +237,6 @@ def get_operations_insights_private_endpoints_output(compartment_id: Optional[pu
         states=operations_insights_private_endpoint_state,
         vcn_id=test_vcn["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

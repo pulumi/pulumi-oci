@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     listingId: testListing.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAppCatalogListing(args: GetAppCatalogListingArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogListingResult> {
 
@@ -88,7 +86,6 @@ export interface GetAppCatalogListingResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetAppCatalogListingResult {
  *     listingId: testListing.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAppCatalogListingOutput(args: GetAppCatalogListingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingResult> {
     return pulumi.output(args).apply((a: any) => getAppCatalogListing(a, opts))

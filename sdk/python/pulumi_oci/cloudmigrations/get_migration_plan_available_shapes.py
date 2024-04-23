@@ -129,7 +129,6 @@ def get_migration_plan_available_shapes(availability_domain: Optional[str] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_migration_plan_available_shapes(availability_domain: Optional[str] = Non
         dvh_host_id=test_dvh_host["id"],
         reserved_capacity_id=test_reserved_capacity["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The availability domain in which to list resources.
@@ -185,7 +183,6 @@ def get_migration_plan_available_shapes_output(availability_domain: Optional[pul
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,7 +193,6 @@ def get_migration_plan_available_shapes_output(availability_domain: Optional[pul
         dvh_host_id=test_dvh_host["id"],
         reserved_capacity_id=test_reserved_capacity["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The availability domain in which to list resources.

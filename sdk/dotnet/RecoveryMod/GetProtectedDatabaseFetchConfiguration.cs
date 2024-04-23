@@ -18,7 +18,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProtectedDatabaseFetchConfigurationResult> InvokeAsync(GetProtectedDatabaseFetchConfigurationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectedDatabaseFetchConfigurationResult>("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", args ?? new GetProtectedDatabaseFetchConfigurationArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectedDatabaseFetchConfigurationResult> Invoke(GetProtectedDatabaseFetchConfigurationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabaseFetchConfigurationResult>("oci:RecoveryMod/getProtectedDatabaseFetchConfiguration:getProtectedDatabaseFetchConfiguration", args ?? new GetProtectedDatabaseFetchConfigurationInvokeArgs(), options.WithDefaults());

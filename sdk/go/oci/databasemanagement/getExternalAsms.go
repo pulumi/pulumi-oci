@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetExternalAsms(ctx *pulumi.Context, args *GetExternalAsmsArgs, opts ...pulumi.InvokeOption) (*GetExternalAsmsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalAsmsResult

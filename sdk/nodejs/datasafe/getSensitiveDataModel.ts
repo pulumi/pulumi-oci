@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     sensitiveDataModelId: testSensitiveDataModelOciDataSafeSensitiveDataModel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveDataModel(args: GetSensitiveDataModelArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelResult> {
 
@@ -125,7 +123,6 @@ export interface GetSensitiveDataModelResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -134,7 +131,6 @@ export interface GetSensitiveDataModelResult {
  *     sensitiveDataModelId: testSensitiveDataModelOciDataSafeSensitiveDataModel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveDataModelOutput(args: GetSensitiveDataModelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelResult> {
     return pulumi.output(args).apply((a: any) => getSensitiveDataModel(a, opts))

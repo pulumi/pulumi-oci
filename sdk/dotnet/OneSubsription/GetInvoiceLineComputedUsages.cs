@@ -19,7 +19,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetInvoiceLineComputedUsagesResult> InvokeAsync(GetInvoiceLineComputedUsagesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetInvoiceLineComputedUsagesResult>("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args ?? new GetInvoiceLineComputedUsagesArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetInvoiceLineComputedUsagesResult> Invoke(GetInvoiceLineComputedUsagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvoiceLineComputedUsagesResult>("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", args ?? new GetInvoiceLineComputedUsagesInvokeArgs(), options.WithDefaults());

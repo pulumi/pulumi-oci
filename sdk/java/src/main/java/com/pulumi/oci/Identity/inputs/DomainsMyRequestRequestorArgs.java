@@ -83,13 +83,14 @@ public final class DomainsMyRequestRequestorArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * Value of the tag.
+     * User identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: requestor_id
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -100,13 +101,14 @@ public final class DomainsMyRequestRequestorArgs extends com.pulumi.resources.Re
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return User identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: requestor_id
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -222,13 +224,14 @@ public final class DomainsMyRequestRequestorArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value User identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: requestor_id
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -243,13 +246,14 @@ public final class DomainsMyRequestRequestorArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value User identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: requestor_id
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string

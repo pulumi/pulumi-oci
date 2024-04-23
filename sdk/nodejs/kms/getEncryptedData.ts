@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     associatedData: encryptedDataAssociatedData,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEncryptedData(args: GetEncryptedDataArgs, opts?: pulumi.InvokeOptions): Promise<GetEncryptedDataResult> {
 
@@ -86,7 +84,6 @@ export interface GetEncryptedDataResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,7 +95,6 @@ export interface GetEncryptedDataResult {
  *     associatedData: encryptedDataAssociatedData,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEncryptedDataOutput(args: GetEncryptedDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEncryptedDataResult> {
     return pulumi.output(args).apply((a: any) => getEncryptedData(a, opts))

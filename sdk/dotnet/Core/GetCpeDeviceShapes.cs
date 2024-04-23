@@ -31,7 +31,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCpeDeviceShapesResult> InvokeAsync(GetCpeDeviceShapesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCpeDeviceShapesResult>("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", args ?? new GetCpeDeviceShapesArgs(), options.WithDefaults());
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -82,7 +79,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCpeDeviceShapesResult> Invoke(GetCpeDeviceShapesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCpeDeviceShapesResult>("oci:Core/getCpeDeviceShapes:getCpeDeviceShapes", args ?? new GetCpeDeviceShapesInvokeArgs(), options.WithDefaults());

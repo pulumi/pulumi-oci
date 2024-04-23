@@ -159,7 +159,6 @@ def get_keys(algorithm: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -171,7 +170,6 @@ def get_keys(algorithm: Optional[str] = None,
         curve_id=test_curve["id"],
         protection_mode=key_protection_mode)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str algorithm: The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
@@ -225,7 +223,6 @@ def get_keys_output(algorithm: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -237,7 +234,6 @@ def get_keys_output(algorithm: Optional[pulumi.Input[Optional[str]]] = None,
         curve_id=test_curve["id"],
         protection_mode=key_protection_mode)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str algorithm: The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.

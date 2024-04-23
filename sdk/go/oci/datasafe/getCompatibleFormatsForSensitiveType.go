@@ -20,7 +20,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetCompatibleFormatsForSensitiveType(ctx *pulumi.Context, args *GetCompatibleFormatsForSensitiveTypeArgs, opts ...pulumi.InvokeOption) (*GetCompatibleFormatsForSensitiveTypeResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCompatibleFormatsForSensitiveTypeResult

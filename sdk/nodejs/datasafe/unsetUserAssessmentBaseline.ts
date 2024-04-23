@@ -12,14 +12,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testUnsetUserAssessmentBaseline = new oci.datasafe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline", {userAssessmentId: testUserAssessment.id});
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

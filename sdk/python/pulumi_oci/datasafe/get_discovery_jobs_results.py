@@ -167,7 +167,6 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -180,7 +179,6 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[str]] = None,
         planned_action=discovery_jobs_result_planned_action,
         schema_names=discovery_jobs_result_schema_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.
@@ -233,7 +231,6 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -246,7 +243,6 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
         planned_action=discovery_jobs_result_planned_action,
         schema_names=discovery_jobs_result_schema_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] column_names: A filter to return only a specific column based on column name.

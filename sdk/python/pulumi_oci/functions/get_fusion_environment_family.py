@@ -204,14 +204,12 @@ def get_fusion_environment_family(fusion_environment_family_id: Optional[str] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=test_fusion_environment_family_oci_fusion_apps_fusion_environment_family["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_family_id: The unique identifier (OCID) of the FusionEnvironmentFamily.
@@ -248,14 +246,12 @@ def get_fusion_environment_family_output(fusion_environment_family_id: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fusion_environment_family = oci.Functions.get_fusion_environment_family(fusion_environment_family_id=test_fusion_environment_family_oci_fusion_apps_fusion_environment_family["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_family_id: The unique identifier (OCID) of the FusionEnvironmentFamily.

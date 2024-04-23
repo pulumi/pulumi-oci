@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,7 +31,6 @@ import * as utilities from "../utilities";
  *     protectionMode: keyProtectionMode,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getKeys(args: GetKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetKeysResult> {
 
@@ -129,7 +127,6 @@ export interface GetKeysResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -143,7 +140,6 @@ export interface GetKeysResult {
  *     protectionMode: keyProtectionMode,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getKeysOutput(args: GetKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeysResult> {
     return pulumi.output(args).apply((a: any) => getKeys(a, opts))

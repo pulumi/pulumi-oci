@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     externalDatabaseConnectorId: testExternalDatabaseConnectorOciDatabaseExternalDatabaseConnector.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalDatabaseConnector(args: GetExternalDatabaseConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDatabaseConnectorResult> {
 
@@ -115,7 +113,6 @@ export interface GetExternalDatabaseConnectorResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,7 +121,6 @@ export interface GetExternalDatabaseConnectorResult {
  *     externalDatabaseConnectorId: testExternalDatabaseConnectorOciDatabaseExternalDatabaseConnector.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalDatabaseConnectorOutput(args: GetExternalDatabaseConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDatabaseConnectorResult> {
     return pulumi.output(args).apply((a: any) => getExternalDatabaseConnector(a, opts))

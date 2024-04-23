@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: indexState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIndexes(args: GetIndexesArgs, opts?: pulumi.InvokeOptions): Promise<GetIndexesResult> {
 
@@ -96,7 +94,6 @@ export interface GetIndexesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetIndexesResult {
  *     state: indexState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIndexesOutput(args: GetIndexesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIndexesResult> {
     return pulumi.output(args).apply((a: any) => getIndexes(a, opts))

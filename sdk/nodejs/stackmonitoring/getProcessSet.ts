@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     processSetId: testProcessSetOciStackMonitoringProcessSet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProcessSet(args: GetProcessSetArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessSetResult> {
 
@@ -99,7 +97,6 @@ export interface GetProcessSetResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetProcessSetResult {
  *     processSetId: testProcessSetOciStackMonitoringProcessSet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProcessSetOutput(args: GetProcessSetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessSetResult> {
     return pulumi.output(args).apply((a: any) => getProcessSet(a, opts))

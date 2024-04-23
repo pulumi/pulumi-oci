@@ -128,7 +128,6 @@ def get_vm_cluster_networks(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_vm_cluster_networks(compartment_id: Optional[str] = None,
         display_name=vm_cluster_network_display_name,
         state=vm_cluster_network_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -179,7 +177,6 @@ def get_vm_cluster_networks_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_vm_cluster_networks_output(compartment_id: Optional[pulumi.Input[str]] =
         display_name=vm_cluster_network_display_name,
         state=vm_cluster_network_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

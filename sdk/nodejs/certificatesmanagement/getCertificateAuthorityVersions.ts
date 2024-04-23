@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     versionNumber: certificateAuthorityVersionVersionNumber,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCertificateAuthorityVersions(args: GetCertificateAuthorityVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityVersionsResult> {
 
@@ -81,7 +79,6 @@ export interface GetCertificateAuthorityVersionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,7 +88,6 @@ export interface GetCertificateAuthorityVersionsResult {
  *     versionNumber: certificateAuthorityVersionVersionNumber,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCertificateAuthorityVersionsOutput(args: GetCertificateAuthorityVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthorityVersionsResult> {
     return pulumi.output(args).apply((a: any) => getCertificateAuthorityVersions(a, opts))

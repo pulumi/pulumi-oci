@@ -255,14 +255,12 @@ def get_migration_plan(migration_plan_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_migration_plan = oci.CloudMigrations.get_migration_plan(migration_plan_id=test_migration_plan_oci_cloud_migrations_migration_plan["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str migration_plan_id: Unique migration plan identifier
@@ -303,14 +301,12 @@ def get_migration_plan_output(migration_plan_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_migration_plan = oci.CloudMigrations.get_migration_plan(migration_plan_id=test_migration_plan_oci_cloud_migrations_migration_plan["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str migration_plan_id: Unique migration plan identifier

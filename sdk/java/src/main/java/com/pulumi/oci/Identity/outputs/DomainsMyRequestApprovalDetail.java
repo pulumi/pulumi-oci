@@ -58,17 +58,17 @@ public final class DomainsMyRequestApprovalDetail {
      */
     private @Nullable String approverId;
     /**
-     * @return justification
+     * @return (Updatable) Approval Justification
+     * 
+     * **Added In:** 2307071836
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * idcsSearchable: false
      * * returned: default
      * * type: string
      * * uniqueness: none
+     * * mutability: readOnly
      * 
      */
     private @Nullable String justification;
@@ -88,17 +88,17 @@ public final class DomainsMyRequestApprovalDetail {
      */
     private @Nullable Integer order;
     /**
-     * @return (Updatable) status.
+     * @return (Updatable) Approval Status
+     * 
+     * **Added In:** 2307071836
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
+     * * mutability: readOnly
      * 
      */
     private @Nullable String status;
@@ -171,17 +171,17 @@ public final class DomainsMyRequestApprovalDetail {
         return Optional.ofNullable(this.approverId);
     }
     /**
-     * @return justification
+     * @return (Updatable) Approval Justification
+     * 
+     * **Added In:** 2307071836
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * idcsSearchable: false
      * * returned: default
      * * type: string
      * * uniqueness: none
+     * * mutability: readOnly
      * 
      */
     public Optional<String> justification() {
@@ -205,17 +205,17 @@ public final class DomainsMyRequestApprovalDetail {
         return Optional.ofNullable(this.order);
     }
     /**
-     * @return (Updatable) status.
+     * @return (Updatable) Approval Status
+     * 
+     * **Added In:** 2307071836
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
+     * * mutability: readOnly
      * 
      */
     public Optional<String> status() {

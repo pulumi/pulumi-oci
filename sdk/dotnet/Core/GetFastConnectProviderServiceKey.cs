@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFastConnectProviderServiceKeyResult> InvokeAsync(GetFastConnectProviderServiceKeyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFastConnectProviderServiceKeyResult>("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args ?? new GetFastConnectProviderServiceKeyArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFastConnectProviderServiceKeyResult> Invoke(GetFastConnectProviderServiceKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFastConnectProviderServiceKeyResult>("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", args ?? new GetFastConnectProviderServiceKeyInvokeArgs(), options.WithDefaults());

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTargetAlertPolicyAssociationsResult> InvokeAsync(GetTargetAlertPolicyAssociationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsArgs(), options.WithDefaults());
@@ -56,7 +54,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -80,7 +77,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTargetAlertPolicyAssociationsResult> Invoke(GetTargetAlertPolicyAssociationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsInvokeArgs(), options.WithDefaults());

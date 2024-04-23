@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,7 +29,6 @@ import * as utilities from "../utilities";
  *     state: fileSystemState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFileSystems(args: GetFileSystemsArgs, opts?: pulumi.InvokeOptions): Promise<GetFileSystemsResult> {
 
@@ -137,7 +135,6 @@ export interface GetFileSystemsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -153,7 +150,6 @@ export interface GetFileSystemsResult {
  *     state: fileSystemState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFileSystemsOutput(args: GetFileSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFileSystemsResult> {
     return pulumi.output(args).apply((a: any) => getFileSystems(a, opts))

@@ -447,7 +447,6 @@ class DataMaskRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -471,7 +470,6 @@ class DataMaskRule(pulumi.CustomResource):
             },
             state=data_mask_rule_state)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -511,7 +509,6 @@ class DataMaskRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -535,7 +532,6 @@ class DataMaskRule(pulumi.CustomResource):
             },
             state=data_mask_rule_state)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

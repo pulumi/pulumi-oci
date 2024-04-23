@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetLogSetsCount(ctx *pulumi.Context, args *GetLogSetsCountArgs, opts ...pulumi.InvokeOption) (*GetLogSetsCountResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogSetsCountResult

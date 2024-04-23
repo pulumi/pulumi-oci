@@ -267,14 +267,12 @@ def get_connection(connection_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connection = oci.DevOps.get_connection(connection_id=test_connection_oci_devops_connection["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str connection_id: Unique connection identifier.
@@ -316,14 +314,12 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connection = oci.DevOps.get_connection(connection_id=test_connection_oci_devops_connection["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str connection_id: Unique connection identifier.

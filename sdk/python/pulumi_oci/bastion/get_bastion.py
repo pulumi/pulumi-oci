@@ -290,14 +290,12 @@ def get_bastion(bastion_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_bastion = oci.Bastion.get_bastion(bastion_id=test_bastion_oci_bastion_bastion["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bastion_id: The unique identifier (OCID) of the bastion.
@@ -341,14 +339,12 @@ def get_bastion_output(bastion_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_bastion = oci.Bastion.get_bastion(bastion_id=test_bastion_oci_bastion_bastion["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bastion_id: The unique identifier (OCID) of the bastion.

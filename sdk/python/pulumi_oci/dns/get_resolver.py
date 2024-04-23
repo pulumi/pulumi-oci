@@ -243,7 +243,6 @@ def get_resolver(resolver_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -251,7 +250,6 @@ def get_resolver(resolver_id: Optional[str] = None,
     test_resolver = oci.Dns.get_resolver(resolver_id=test_resolver_oci_dns_resolver["id"],
         scope="PRIVATE")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str resolver_id: The OCID of the target resolver.
@@ -296,7 +294,6 @@ def get_resolver_output(resolver_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -304,7 +301,6 @@ def get_resolver_output(resolver_id: Optional[pulumi.Input[str]] = None,
     test_resolver = oci.Dns.get_resolver(resolver_id=test_resolver_oci_dns_resolver["id"],
         scope="PRIVATE")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str resolver_id: The OCID of the target resolver.

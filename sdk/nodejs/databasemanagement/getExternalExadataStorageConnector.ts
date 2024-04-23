@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     externalExadataStorageConnectorId: testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageConnector(args: GetExternalExadataStorageConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageConnectorResult> {
 
@@ -121,7 +119,6 @@ export interface GetExternalExadataStorageConnectorResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -130,7 +127,6 @@ export interface GetExternalExadataStorageConnectorResult {
  *     externalExadataStorageConnectorId: testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageConnectorOutput(args: GetExternalExadataStorageConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageConnectorResult> {
     return pulumi.output(args).apply((a: any) => getExternalExadataStorageConnector(a, opts))

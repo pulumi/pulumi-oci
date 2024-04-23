@@ -21,14 +21,14 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
     public static final CloudAutonomousVmClusterMaintenanceWindowArgs Empty = new CloudAutonomousVmClusterMaintenanceWindowArgs();
 
     /**
-     * (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+     * Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
      * 
      */
     @Import(name="customActionTimeoutInMins")
     private @Nullable Output<Integer> customActionTimeoutInMins;
 
     /**
-     * @return (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+     * @return Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
      * 
      */
     public Optional<Output<Integer>> customActionTimeoutInMins() {
@@ -36,14 +36,14 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
     }
 
     /**
-     * (Updatable) Days during the week when maintenance should be performed.
+     * Days during the week when maintenance should be performed.
      * 
      */
     @Import(name="daysOfWeeks")
     private @Nullable Output<List<CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs>> daysOfWeeks;
 
     /**
-     * @return (Updatable) Days during the week when maintenance should be performed.
+     * @return Days during the week when maintenance should be performed.
      * 
      */
     public Optional<Output<List<CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs>>> daysOfWeeks() {
@@ -51,7 +51,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
     }
 
     /**
-     * (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+     * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
@@ -59,7 +59,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
     private @Nullable Output<List<Integer>> hoursOfDays;
 
     /**
-     * @return (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+     * @return The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
@@ -68,14 +68,14 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
     }
 
     /**
-     * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+     * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
      * 
      */
     @Import(name="isCustomActionTimeoutEnabled")
     private @Nullable Output<Boolean> isCustomActionTimeoutEnabled;
 
     /**
-     * @return (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+     * @return If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
      * 
      */
     public Optional<Output<Boolean>> isCustomActionTimeoutEnabled() {
@@ -83,14 +83,14 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
     }
 
     /**
-     * (Updatable) If true, enables the monthly patching option.
+     * If true, enables the monthly patching option.
      * 
      */
     @Import(name="isMonthlyPatchingEnabled")
     private @Nullable Output<Boolean> isMonthlyPatchingEnabled;
 
     /**
-     * @return (Updatable) If true, enables the monthly patching option.
+     * @return If true, enables the monthly patching option.
      * 
      */
     public Optional<Output<Boolean>> isMonthlyPatchingEnabled() {
@@ -98,14 +98,14 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
     }
 
     /**
-     * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+     * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
     @Import(name="leadTimeInWeeks")
     private @Nullable Output<Integer> leadTimeInWeeks;
 
     /**
-     * @return (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+     * @return Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
     public Optional<Output<Integer>> leadTimeInWeeks() {
@@ -113,14 +113,14 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
     }
 
     /**
-     * (Updatable) Months during the year when maintenance should be performed.
+     * Months during the year when maintenance should be performed.
      * 
      */
     @Import(name="months")
     private @Nullable Output<List<CloudAutonomousVmClusterMaintenanceWindowMonthArgs>> months;
 
     /**
-     * @return (Updatable) Months during the year when maintenance should be performed.
+     * @return Months during the year when maintenance should be performed.
      * 
      */
     public Optional<Output<List<CloudAutonomousVmClusterMaintenanceWindowMonthArgs>>> months() {
@@ -128,18 +128,14 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
     }
 
     /**
-     * (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-     * 
-     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     * Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
      */
     @Import(name="patchingMode")
     private @Nullable Output<String> patchingMode;
 
     /**
-     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-     * 
-     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     * @return Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
      */
     public Optional<Output<String>> patchingMode() {
@@ -218,7 +214,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param customActionTimeoutInMins (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+         * @param customActionTimeoutInMins Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
          * 
          * @return builder
          * 
@@ -229,7 +225,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param customActionTimeoutInMins (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+         * @param customActionTimeoutInMins Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
          * 
          * @return builder
          * 
@@ -239,7 +235,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param daysOfWeeks (Updatable) Days during the week when maintenance should be performed.
+         * @param daysOfWeeks Days during the week when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -250,7 +246,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param daysOfWeeks (Updatable) Days during the week when maintenance should be performed.
+         * @param daysOfWeeks Days during the week when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -260,7 +256,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param daysOfWeeks (Updatable) Days during the week when maintenance should be performed.
+         * @param daysOfWeeks Days during the week when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -270,7 +266,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param hoursOfDays (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          * 
          * @return builder
@@ -282,7 +278,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param hoursOfDays (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          * 
          * @return builder
@@ -293,7 +289,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param hoursOfDays (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          * 
          * @return builder
@@ -304,7 +300,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param isCustomActionTimeoutEnabled (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+         * @param isCustomActionTimeoutEnabled If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          * 
          * @return builder
          * 
@@ -315,7 +311,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param isCustomActionTimeoutEnabled (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+         * @param isCustomActionTimeoutEnabled If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          * 
          * @return builder
          * 
@@ -325,7 +321,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param isMonthlyPatchingEnabled (Updatable) If true, enables the monthly patching option.
+         * @param isMonthlyPatchingEnabled If true, enables the monthly patching option.
          * 
          * @return builder
          * 
@@ -336,7 +332,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param isMonthlyPatchingEnabled (Updatable) If true, enables the monthly patching option.
+         * @param isMonthlyPatchingEnabled If true, enables the monthly patching option.
          * 
          * @return builder
          * 
@@ -346,7 +342,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param leadTimeInWeeks (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+         * @param leadTimeInWeeks Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          * 
          * @return builder
          * 
@@ -357,7 +353,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param leadTimeInWeeks (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+         * @param leadTimeInWeeks Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          * 
          * @return builder
          * 
@@ -367,7 +363,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param months (Updatable) Months during the year when maintenance should be performed.
+         * @param months Months during the year when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -378,7 +374,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param months (Updatable) Months during the year when maintenance should be performed.
+         * @param months Months during the year when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -388,7 +384,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param months (Updatable) Months during the year when maintenance should be performed.
+         * @param months Months during the year when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -398,9 +394,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-         * 
-         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+         * @param patchingMode Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
          * 
          * @return builder
          * 
@@ -411,9 +405,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowArgs extends com.pul
         }
 
         /**
-         * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-         * 
-         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+         * @param patchingMode Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
          * 
          * @return builder
          * 

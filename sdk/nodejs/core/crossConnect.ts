@@ -31,7 +31,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -62,7 +61,6 @@ import * as utilities from "../utilities";
  *     nearCrossConnectOrCrossConnectGroupId: testCrossConnectGroup.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
@@ -165,7 +163,7 @@ export class CrossConnect extends pulumi.CustomResource {
      */
     public readonly portSpeedShapeName!: pulumi.Output<string>;
     /**
-     * (Updatable) Indicates whether or not MACsec is enabled.
+     * The cross-connect's current state.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -306,7 +304,7 @@ export interface CrossConnectState {
      */
     portSpeedShapeName?: pulumi.Input<string>;
     /**
-     * (Updatable) Indicates whether or not MACsec is enabled.
+     * The cross-connect's current state.
      */
     state?: pulumi.Input<string>;
     /**

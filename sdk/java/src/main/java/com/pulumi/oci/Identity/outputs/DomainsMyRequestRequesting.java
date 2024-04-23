@@ -29,10 +29,10 @@ public final class DomainsMyRequestRequesting {
      */
     private @Nullable String description;
     /**
-     * @return User display name
+     * @return Resource display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -43,7 +43,7 @@ public final class DomainsMyRequestRequesting {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) User URI
+     * @return (Updatable) Resource URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -74,13 +74,14 @@ public final class DomainsMyRequestRequesting {
      */
     private String type;
     /**
-     * @return Value of the tag.
+     * @return Resource identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: requesting_id
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -109,10 +110,10 @@ public final class DomainsMyRequestRequesting {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return User display name
+     * @return Resource display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -125,7 +126,7 @@ public final class DomainsMyRequestRequesting {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) User URI
+     * @return (Updatable) Resource URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -160,13 +161,14 @@ public final class DomainsMyRequestRequesting {
         return this.type;
     }
     /**
-     * @return Value of the tag.
+     * @return Resource identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: requesting_id
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string

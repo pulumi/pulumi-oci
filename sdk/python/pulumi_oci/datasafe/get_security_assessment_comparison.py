@@ -121,7 +121,6 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -129,7 +128,6 @@ def get_security_assessment_comparison(comparison_security_assessment_id: Option
     test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str comparison_security_assessment_id: The OCID of the security assessment baseline.
@@ -162,7 +160,6 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_security_assessment_comparison_output(comparison_security_assessment_id:
     test_security_assessment_comparison = oci.DataSafe.get_security_assessment_comparison(comparison_security_assessment_id=test_security_assessment["id"],
         security_assessment_id=test_security_assessment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str comparison_security_assessment_id: The OCID of the security assessment baseline.

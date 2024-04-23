@@ -304,14 +304,12 @@ def get_at_customer_ccc_infrastructure(ccc_infrastructure_id: Optional[str] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ccc_infrastructure = oci.ComputeCloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ccc_infrastructure_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.
@@ -357,14 +355,12 @@ def get_at_customer_ccc_infrastructure_output(ccc_infrastructure_id: Optional[pu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ccc_infrastructure = oci.ComputeCloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ccc_infrastructure_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a  Compute Cloud@Customer Infrastructure.

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     name: supportedHostShapeName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSupportedHostShapes(args: GetSupportedHostShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedHostShapesResult> {
 
@@ -104,7 +102,6 @@ export interface GetSupportedHostShapesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,7 +113,6 @@ export interface GetSupportedHostShapesResult {
  *     name: supportedHostShapeName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSupportedHostShapesOutput(args: GetSupportedHostShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedHostShapesResult> {
     return pulumi.output(args).apply((a: any) => getSupportedHostShapes(a, opts))

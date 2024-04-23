@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetByoipRanges(ctx *pulumi.Context, args *GetByoipRangesArgs, opts ...pulumi.InvokeOption) (*GetByoipRangesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetByoipRangesResult

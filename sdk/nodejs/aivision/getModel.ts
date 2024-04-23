@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     modelId: testModelOciAiVisionModel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getModel(args: GetModelArgs, opts?: pulumi.InvokeOptions): Promise<GetModelResult> {
 
@@ -163,7 +161,6 @@ export interface GetModelResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -172,7 +169,6 @@ export interface GetModelResult {
  *     modelId: testModelOciAiVisionModel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getModelOutput(args: GetModelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelResult> {
     return pulumi.output(args).apply((a: any) => getModel(a, opts))

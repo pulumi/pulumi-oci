@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsIdentityPropagationTrust(args: GetDomainsIdentityPropagationTrustArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsIdentityPropagationTrustResult> {
 
@@ -214,7 +212,6 @@ export interface GetDomainsIdentityPropagationTrustResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -228,7 +225,6 @@ export interface GetDomainsIdentityPropagationTrustResult {
  *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsIdentityPropagationTrustOutput(args: GetDomainsIdentityPropagationTrustOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsIdentityPropagationTrustResult> {
     return pulumi.output(args).apply((a: any) => getDomainsIdentityPropagationTrust(a, opts))

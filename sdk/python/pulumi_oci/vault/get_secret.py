@@ -300,14 +300,12 @@ def get_secret(secret_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_secret = oci.Vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str secret_id: The OCID of the secret.
@@ -352,14 +350,12 @@ def get_secret_output(secret_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_secret = oci.Vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str secret_id: The OCID of the secret.

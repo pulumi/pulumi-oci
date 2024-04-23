@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAuditProfileCollectedAuditVolumes(ctx *pulumi.Context, args *GetAuditProfileCollectedAuditVolumesArgs, opts ...pulumi.InvokeOption) (*GetAuditProfileCollectedAuditVolumesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuditProfileCollectedAuditVolumesResult

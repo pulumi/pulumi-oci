@@ -28,7 +28,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -58,7 +57,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAlarmStatuses(ctx *pulumi.Context, args *GetAlarmStatusesArgs, opts ...pulumi.InvokeOption) (*GetAlarmStatusesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAlarmStatusesResult

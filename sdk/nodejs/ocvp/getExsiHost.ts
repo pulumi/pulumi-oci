@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     esxiHostId: testEsxiHostOciOcvpEsxiHost.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExsiHost(args: GetExsiHostArgs, opts?: pulumi.InvokeOptions): Promise<GetExsiHostResult> {
 
@@ -189,7 +187,6 @@ export interface GetExsiHostResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -198,7 +195,6 @@ export interface GetExsiHostResult {
  *     esxiHostId: testEsxiHostOciOcvpEsxiHost.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExsiHostOutput(args: GetExsiHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExsiHostResult> {
     return pulumi.output(args).apply((a: any) => getExsiHost(a, opts))

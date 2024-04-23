@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     object: objectObject,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getObjectHead(args: GetObjectHeadArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectHeadResult> {
 
@@ -93,7 +91,6 @@ export interface GetObjectHeadResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,7 +101,6 @@ export interface GetObjectHeadResult {
  *     object: objectObject,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getObjectHeadOutput(args: GetObjectHeadOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectHeadResult> {
     return pulumi.output(args).apply((a: any) => getObjectHead(a, opts))

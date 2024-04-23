@@ -142,7 +142,6 @@ def get_certificate_authorities(certificate_authority_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -153,7 +152,6 @@ def get_certificate_authorities(certificate_authority_id: Optional[str] = None,
         name=certificate_authority_name,
         state=certificate_authority_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_authority_id: The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -199,7 +197,6 @@ def get_certificate_authorities_output(certificate_authority_id: Optional[pulumi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -210,7 +207,6 @@ def get_certificate_authorities_output(certificate_authority_id: Optional[pulumi
         name=certificate_authority_name,
         state=certificate_authority_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_authority_id: The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.

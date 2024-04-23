@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     channelId: testChannelOciMysqlChannel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getChannel(args: GetChannelArgs, opts?: pulumi.InvokeOptions): Promise<GetChannelResult> {
 
@@ -108,7 +106,6 @@ export interface GetChannelResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,7 +114,6 @@ export interface GetChannelResult {
  *     channelId: testChannelOciMysqlChannel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getChannelOutput(args: GetChannelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetChannelResult> {
     return pulumi.output(args).apply((a: any) => getChannel(a, opts))

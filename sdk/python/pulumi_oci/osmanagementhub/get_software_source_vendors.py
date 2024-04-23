@@ -100,7 +100,6 @@ def get_software_source_vendors(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -108,7 +107,6 @@ def get_software_source_vendors(compartment_id: Optional[str] = None,
     test_software_source_vendors = oci.OsManagementHub.get_software_source_vendors(compartment_id=compartment_id,
         name=software_source_vendor_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list. This parameter is required.
@@ -142,7 +140,6 @@ def get_software_source_vendors_output(compartment_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -150,7 +147,6 @@ def get_software_source_vendors_output(compartment_id: Optional[pulumi.Input[str
     test_software_source_vendors = oci.OsManagementHub.get_software_source_vendors(compartment_id=compartment_id,
         name=software_source_vendor_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment that contains the resources to list. This parameter is required.

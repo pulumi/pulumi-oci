@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsAccountRecoverySettingsResult> InvokeAsync(GetDomainsAccountRecoverySettingsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsAccountRecoverySettingsResult>("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", args ?? new GetDomainsAccountRecoverySettingsArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsAccountRecoverySettingsResult> Invoke(GetDomainsAccountRecoverySettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAccountRecoverySettingsResult>("oci:Identity/getDomainsAccountRecoverySettings:getDomainsAccountRecoverySettings", args ?? new GetDomainsAccountRecoverySettingsInvokeArgs(), options.WithDefaults());

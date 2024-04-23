@@ -319,7 +319,6 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -336,7 +335,6 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
             },
             type=on_premise_vantage_point_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -372,7 +370,6 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -389,7 +386,6 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
             },
             type=on_premise_vantage_point_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

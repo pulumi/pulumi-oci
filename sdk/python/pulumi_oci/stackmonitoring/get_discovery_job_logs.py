@@ -99,7 +99,6 @@ def get_discovery_job_logs(discovery_job_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -107,7 +106,6 @@ def get_discovery_job_logs(discovery_job_id: Optional[str] = None,
     test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
         log_type=discovery_job_log_log_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str discovery_job_id: The Discovery Job ID
@@ -140,7 +138,6 @@ def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,7 +145,6 @@ def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[str]] 
     test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
         log_type=discovery_job_log_log_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str discovery_job_id: The Discovery Job ID

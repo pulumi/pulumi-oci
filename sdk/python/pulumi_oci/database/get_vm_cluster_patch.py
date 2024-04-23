@@ -156,7 +156,6 @@ def get_vm_cluster_patch(patch_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +163,6 @@ def get_vm_cluster_patch(patch_id: Optional[str] = None,
     test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=test_patch["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
@@ -200,7 +198,6 @@ def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,7 +205,6 @@ def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[str]] = None,
     test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=test_patch["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.

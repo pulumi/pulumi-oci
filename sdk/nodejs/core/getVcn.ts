@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     vcnId: testVcnOciCoreVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVcn(args: GetVcnArgs, opts?: pulumi.InvokeOptions): Promise<GetVcnResult> {
 
@@ -126,7 +124,6 @@ export interface GetVcnResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -135,7 +132,6 @@ export interface GetVcnResult {
  *     vcnId: testVcnOciCoreVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVcnOutput(args: GetVcnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVcnResult> {
     return pulumi.output(args).apply((a: any) => getVcn(a, opts))

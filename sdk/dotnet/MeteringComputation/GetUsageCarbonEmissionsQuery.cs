@@ -19,7 +19,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUsageCarbonEmissionsQueryResult> InvokeAsync(GetUsageCarbonEmissionsQueryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsageCarbonEmissionsQueryResult>("oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery", args ?? new GetUsageCarbonEmissionsQueryArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUsageCarbonEmissionsQueryResult> Invoke(GetUsageCarbonEmissionsQueryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsageCarbonEmissionsQueryResult>("oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery", args ?? new GetUsageCarbonEmissionsQueryInvokeArgs(), options.WithDefaults());

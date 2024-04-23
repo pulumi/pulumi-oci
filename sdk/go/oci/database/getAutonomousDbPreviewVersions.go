@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAutonomousDbPreviewVersions(ctx *pulumi.Context, args *GetAutonomousDbPreviewVersionsArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDbPreviewVersionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousDbPreviewVersionsResult

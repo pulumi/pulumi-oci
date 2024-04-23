@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedPreferredCredentials(args: GetManagedPreferredCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedPreferredCredentialsResult> {
 
@@ -66,7 +64,6 @@ export interface GetManagedPreferredCredentialsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetManagedPreferredCredentialsResult {
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedPreferredCredentialsOutput(args: GetManagedPreferredCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedPreferredCredentialsResult> {
     return pulumi.output(args).apply((a: any) => getManagedPreferredCredentials(a, opts))

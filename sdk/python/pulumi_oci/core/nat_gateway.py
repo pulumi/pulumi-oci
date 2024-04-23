@@ -375,7 +375,6 @@ class NatGateway(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -394,7 +393,6 @@ class NatGateway(pulumi.CustomResource):
             public_ip_id=test_public_ip["id"],
             route_table_id=test_route_table["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -435,7 +433,6 @@ class NatGateway(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -454,7 +451,6 @@ class NatGateway(pulumi.CustomResource):
             public_ip_id=test_public_ip["id"],
             route_table_id=test_route_table["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -156,9 +156,9 @@ func (o BucketRetentionRuleArrayOutput) Index(i pulumi.IntInput) BucketRetention
 }
 
 type BucketRetentionRuleDuration struct {
-	// (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+	// The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
 	TimeAmount string `pulumi:"timeAmount"`
-	// (Updatable) The unit that should be used to interpret timeAmount.
+	// The unit that should be used to interpret timeAmount.
 	TimeUnit string `pulumi:"timeUnit"`
 }
 
@@ -174,9 +174,9 @@ type BucketRetentionRuleDurationInput interface {
 }
 
 type BucketRetentionRuleDurationArgs struct {
-	// (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+	// The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
 	TimeAmount pulumi.StringInput `pulumi:"timeAmount"`
-	// (Updatable) The unit that should be used to interpret timeAmount.
+	// The unit that should be used to interpret timeAmount.
 	TimeUnit pulumi.StringInput `pulumi:"timeUnit"`
 }
 
@@ -257,12 +257,12 @@ func (o BucketRetentionRuleDurationOutput) ToBucketRetentionRuleDurationPtrOutpu
 	}).(BucketRetentionRuleDurationPtrOutput)
 }
 
-// (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+// The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
 func (o BucketRetentionRuleDurationOutput) TimeAmount() pulumi.StringOutput {
 	return o.ApplyT(func(v BucketRetentionRuleDuration) string { return v.TimeAmount }).(pulumi.StringOutput)
 }
 
-// (Updatable) The unit that should be used to interpret timeAmount.
+// The unit that should be used to interpret timeAmount.
 func (o BucketRetentionRuleDurationOutput) TimeUnit() pulumi.StringOutput {
 	return o.ApplyT(func(v BucketRetentionRuleDuration) string { return v.TimeUnit }).(pulumi.StringOutput)
 }
@@ -291,7 +291,7 @@ func (o BucketRetentionRuleDurationPtrOutput) Elem() BucketRetentionRuleDuration
 	}).(BucketRetentionRuleDurationOutput)
 }
 
-// (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+// The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
 func (o BucketRetentionRuleDurationPtrOutput) TimeAmount() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BucketRetentionRuleDuration) *string {
 		if v == nil {
@@ -301,7 +301,7 @@ func (o BucketRetentionRuleDurationPtrOutput) TimeAmount() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The unit that should be used to interpret timeAmount.
+// The unit that should be used to interpret timeAmount.
 func (o BucketRetentionRuleDurationPtrOutput) TimeUnit() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BucketRetentionRuleDuration) *string {
 		if v == nil {

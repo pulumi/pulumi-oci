@@ -414,7 +414,6 @@ class DeployArtifact(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -449,7 +448,6 @@ class DeployArtifact(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -487,7 +485,6 @@ class DeployArtifact(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -522,7 +519,6 @@ class DeployArtifact(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

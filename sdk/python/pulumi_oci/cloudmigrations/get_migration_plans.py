@@ -138,7 +138,6 @@ def get_migration_plans(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -149,7 +148,6 @@ def get_migration_plans(compartment_id: Optional[str] = None,
         migration_plan_id=test_migration_plan["id"],
         state=migration_plan_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -194,7 +192,6 @@ def get_migration_plans_output(compartment_id: Optional[pulumi.Input[Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -205,7 +202,6 @@ def get_migration_plans_output(compartment_id: Optional[pulumi.Input[Optional[st
         migration_plan_id=test_migration_plan["id"],
         state=migration_plan_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

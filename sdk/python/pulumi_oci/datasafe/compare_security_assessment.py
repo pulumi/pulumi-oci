@@ -121,7 +121,6 @@ class CompareSecurityAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -130,7 +129,6 @@ class CompareSecurityAssessment(pulumi.CustomResource):
             comparison_security_assessment_id=test_security_assessment["id"],
             security_assessment_id=test_security_assessment["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -163,7 +161,6 @@ class CompareSecurityAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -172,7 +169,6 @@ class CompareSecurityAssessment(pulumi.CustomResource):
             comparison_security_assessment_id=test_security_assessment["id"],
             security_assessment_id=test_security_assessment["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -125,7 +125,6 @@ def get_opensearch_clusters(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_opensearch_clusters(compartment_id: Optional[str] = None,
         id=opensearch_cluster_id,
         state=opensearch_cluster_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -184,7 +182,6 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -194,7 +191,6 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[str]] =
         id=opensearch_cluster_id,
         state=opensearch_cluster_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

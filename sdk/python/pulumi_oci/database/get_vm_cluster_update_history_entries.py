@@ -112,7 +112,6 @@ def get_vm_cluster_update_history_entries(filters: Optional[Sequence[pulumi.Inpu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_vm_cluster_update_history_entries(filters: Optional[Sequence[pulumi.Inpu
         state=vm_cluster_update_history_entry_state,
         update_type=vm_cluster_update_history_entry_update_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -158,7 +156,6 @@ def get_vm_cluster_update_history_entries_output(filters: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +164,6 @@ def get_vm_cluster_update_history_entries_output(filters: Optional[pulumi.Input[
         state=vm_cluster_update_history_entry_state,
         update_type=vm_cluster_update_history_entry_update_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str state: A filter to return only resources that match the given lifecycle state exactly.

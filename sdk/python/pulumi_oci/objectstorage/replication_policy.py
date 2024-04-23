@@ -318,7 +318,6 @@ class ReplicationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -330,7 +329,6 @@ class ReplicationPolicy(pulumi.CustomResource):
             name=replication_policy_name,
             namespace=replication_policy_namespace)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -365,7 +363,6 @@ class ReplicationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -377,7 +374,6 @@ class ReplicationPolicy(pulumi.CustomResource):
             name=replication_policy_name,
             namespace=replication_policy_namespace)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

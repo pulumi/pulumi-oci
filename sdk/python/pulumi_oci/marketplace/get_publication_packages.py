@@ -109,7 +109,6 @@ def get_publication_packages(filters: Optional[Sequence[pulumi.InputType['GetPub
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,7 +117,6 @@ def get_publication_packages(filters: Optional[Sequence[pulumi.InputType['GetPub
         package_type=publication_package_package_type,
         package_version=publication_package_package_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str package_type: A filter to return only packages that match the given package type exactly.
@@ -155,7 +153,6 @@ def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequ
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +161,6 @@ def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequ
         package_type=publication_package_package_type,
         package_version=publication_package_package_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str package_type: A filter to return only packages that match the given package type exactly.

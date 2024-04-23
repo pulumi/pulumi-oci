@@ -16,7 +16,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDhcpOptions(args: GetDhcpOptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDhcpOptionsResult> {
 
@@ -105,7 +103,6 @@ export interface GetDhcpOptionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,7 +114,6 @@ export interface GetDhcpOptionsResult {
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDhcpOptionsOutput(args: GetDhcpOptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDhcpOptionsResult> {
     return pulumi.output(args).apply((a: any) => getDhcpOptions(a, opts))

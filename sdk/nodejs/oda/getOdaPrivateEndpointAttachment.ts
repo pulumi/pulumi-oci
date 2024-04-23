@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     odaPrivateEndpointAttachmentId: testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOdaPrivateEndpointAttachment(args: GetOdaPrivateEndpointAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetOdaPrivateEndpointAttachmentResult> {
 
@@ -81,7 +79,6 @@ export interface GetOdaPrivateEndpointAttachmentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,7 +87,6 @@ export interface GetOdaPrivateEndpointAttachmentResult {
  *     odaPrivateEndpointAttachmentId: testOdaPrivateEndpointAttachmentOciOdaOdaPrivateEndpointAttachment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOdaPrivateEndpointAttachmentOutput(args: GetOdaPrivateEndpointAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaPrivateEndpointAttachmentResult> {
     return pulumi.output(args).apply((a: any) => getOdaPrivateEndpointAttachment(a, opts))

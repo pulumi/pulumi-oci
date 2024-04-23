@@ -251,14 +251,14 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Indicates whether or not MACsec is enabled.
+     * The cross-connect&#39;s current state.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) Indicates whether or not MACsec is enabled.
+     * @return The cross-connect&#39;s current state.
      * 
      */
     public Optional<Output<String>> state() {
@@ -642,7 +642,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state (Updatable) Indicates whether or not MACsec is enabled.
+         * @param state The cross-connect&#39;s current state.
          * 
          * @return builder
          * 
@@ -653,7 +653,7 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state (Updatable) Indicates whether or not MACsec is enabled.
+         * @param state The cross-connect&#39;s current state.
          * 
          * @return builder
          * 

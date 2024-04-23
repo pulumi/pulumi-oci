@@ -811,7 +811,6 @@ class Database(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -857,7 +856,6 @@ class Database(pulumi.CustomResource):
             kms_key_id=test_key["id"],
             kms_key_version_id=test_key_version["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -903,7 +901,6 @@ class Database(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -949,7 +946,6 @@ class Database(pulumi.CustomResource):
             kms_key_id=test_key["id"],
             kms_key_version_id=test_key_version["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -178,7 +178,6 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +185,6 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
     test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=test_analytics_instance["id"],
         private_access_channel_key=analytics_instance_private_access_channel_private_access_channel_key)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str analytics_instance_id: The OCID of the AnalyticsInstance.
@@ -224,7 +222,6 @@ def get_analytics_instance_private_access_channel_output(analytics_instance_id: 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -232,7 +229,6 @@ def get_analytics_instance_private_access_channel_output(analytics_instance_id: 
     test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=test_analytics_instance["id"],
         private_access_channel_key=analytics_instance_private_access_channel_private_access_channel_key)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str analytics_instance_id: The OCID of the AnalyticsInstance.

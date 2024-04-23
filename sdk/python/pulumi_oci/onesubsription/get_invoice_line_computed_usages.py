@@ -106,7 +106,6 @@ def get_invoice_line_computed_usages(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -115,7 +114,6 @@ def get_invoice_line_computed_usages(compartment_id: Optional[str] = None,
         invoice_line_id=test_invoice_line["id"],
         fields=invoice_line_computed_usage_fields)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.
@@ -152,7 +150,6 @@ def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Inpu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,7 +158,6 @@ def get_invoice_line_computed_usages_output(compartment_id: Optional[pulumi.Inpu
         invoice_line_id=test_invoice_line["id"],
         fields=invoice_line_computed_usage_fields)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.

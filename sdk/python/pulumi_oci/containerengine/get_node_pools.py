@@ -128,7 +128,6 @@ def get_node_pools(cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_node_pools(cluster_id: Optional[str] = None,
         name=node_pool_name,
         states=node_pool_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.
@@ -179,7 +177,6 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
         name=node_pool_name,
         states=node_pool_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.

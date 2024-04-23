@@ -15,7 +15,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -40,7 +39,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetRetrievePassword(ctx *pulumi.Context, args *GetRetrievePasswordArgs, opts ...pulumi.InvokeOption) (*GetRetrievePasswordResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRetrievePasswordResult

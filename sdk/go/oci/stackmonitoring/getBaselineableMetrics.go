@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetBaselineableMetrics(ctx *pulumi.Context, args *GetBaselineableMetricsArgs, opts ...pulumi.InvokeOption) (*GetBaselineableMetricsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBaselineableMetricsResult

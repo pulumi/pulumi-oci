@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHealth(args: GetHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetHealthResult> {
 
@@ -85,7 +83,6 @@ export interface GetHealthResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetHealthResult {
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHealthOutput(args: GetHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHealthResult> {
     return pulumi.output(args).apply((a: any) => getHealth(a, opts))

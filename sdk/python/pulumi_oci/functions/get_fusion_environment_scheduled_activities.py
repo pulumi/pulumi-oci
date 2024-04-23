@@ -148,7 +148,6 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[str] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -160,7 +159,6 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[str] = No
         time_expected_finish_less_than_or_equal_to=fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to,
         time_scheduled_start_greater_than_or_equal_to=fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
@@ -209,7 +207,6 @@ def get_fusion_environment_scheduled_activities_output(display_name: Optional[pu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -221,7 +218,6 @@ def get_fusion_environment_scheduled_activities_output(display_name: Optional[pu
         time_expected_finish_less_than_or_equal_to=fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to,
         time_scheduled_start_greater_than_or_equal_to=fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.

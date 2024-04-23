@@ -135,7 +135,6 @@ def get_limit_values(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -146,7 +145,6 @@ def get_limit_values(availability_domain: Optional[str] = None,
         name=limit_value_name,
         scope_type=limit_value_scope_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: Filter entries by availability domain. This implies that only AD-specific values are returned.
@@ -191,7 +189,6 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,7 +199,6 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
         name=limit_value_name,
         scope_type=limit_value_scope_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: Filter entries by availability domain. This implies that only AD-specific values are returned.

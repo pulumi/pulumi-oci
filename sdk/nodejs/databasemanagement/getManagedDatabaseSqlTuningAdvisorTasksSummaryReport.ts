@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     timeLessThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(args: GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> {
 
@@ -124,7 +122,6 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,7 +137,6 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
  *     timeLessThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(a, opts))

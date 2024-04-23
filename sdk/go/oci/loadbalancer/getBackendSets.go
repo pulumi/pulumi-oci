@@ -21,7 +21,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetBackendSets(ctx *pulumi.Context, args *GetBackendSetsArgs, opts ...pulumi.InvokeOption) (*GetBackendSetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBackendSetsResult

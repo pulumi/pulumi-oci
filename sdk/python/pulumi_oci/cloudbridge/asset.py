@@ -530,7 +530,6 @@ class Asset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -639,7 +638,6 @@ class Asset(pulumi.CustomResource):
                 vmware_tools_status=asset_vmware_vm_vmware_tools_status,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -678,7 +676,6 @@ class Asset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -787,7 +784,6 @@ class Asset(pulumi.CustomResource):
                 vmware_tools_status=asset_vmware_vm_vmware_tools_status,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

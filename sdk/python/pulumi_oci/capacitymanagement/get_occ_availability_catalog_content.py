@@ -62,14 +62,12 @@ def get_occ_availability_catalog_content(occ_availability_catalog_id: Optional[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_occ_availability_catalog_content = oci.CapacityManagement.get_occ_availability_catalog_content(occ_availability_catalog_id=test_occ_availability_catalog["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str occ_availability_catalog_id: The OCID of the availability catalog.
@@ -94,14 +92,12 @@ def get_occ_availability_catalog_content_output(occ_availability_catalog_id: Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_occ_availability_catalog_content = oci.CapacityManagement.get_occ_availability_catalog_content(occ_availability_catalog_id=test_occ_availability_catalog["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str occ_availability_catalog_id: The OCID of the availability catalog.

@@ -122,7 +122,6 @@ def get_bastions(bastion_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -132,7 +131,6 @@ def get_bastions(bastion_id: Optional[str] = None,
         bastion_lifecycle_state=bastion_bastion_lifecycle_state,
         name=bastion_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bastion_id: The unique identifier (OCID) of the bastion in which to list resources.
@@ -173,7 +171,6 @@ def get_bastions_output(bastion_id: Optional[pulumi.Input[Optional[str]]] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,7 +180,6 @@ def get_bastions_output(bastion_id: Optional[pulumi.Input[Optional[str]]] = None
         bastion_lifecycle_state=bastion_bastion_lifecycle_state,
         name=bastion_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bastion_id: The unique identifier (OCID) of the bastion in which to list resources.

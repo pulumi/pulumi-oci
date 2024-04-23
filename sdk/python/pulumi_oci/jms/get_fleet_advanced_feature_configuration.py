@@ -171,14 +171,12 @@ def get_fleet_advanced_feature_configuration(fleet_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fleet_advanced_feature_configuration = oci.Jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -212,14 +210,12 @@ def get_fleet_advanced_feature_configuration_output(fleet_id: Optional[pulumi.In
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fleet_advanced_feature_configuration = oci.Jms.get_fleet_advanced_feature_configuration(fleet_id=test_fleet["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.

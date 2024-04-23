@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetContainerInstanceShapes(ctx *pulumi.Context, args *GetContainerInstanceShapesArgs, opts ...pulumi.InvokeOption) (*GetContainerInstanceShapesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetContainerInstanceShapesResult

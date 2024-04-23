@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     inventoryId: testInventoryOciCloudBridgeInventory.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInventory(args: GetInventoryArgs, opts?: pulumi.InvokeOptions): Promise<GetInventoryResult> {
 
@@ -93,7 +91,6 @@ export interface GetInventoryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetInventoryResult {
  *     inventoryId: testInventoryOciCloudBridgeInventory.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInventoryOutput(args: GetInventoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInventoryResult> {
     return pulumi.output(args).apply((a: any) => getInventory(a, opts))

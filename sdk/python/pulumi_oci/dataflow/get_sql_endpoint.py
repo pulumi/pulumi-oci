@@ -351,14 +351,12 @@ def get_sql_endpoint(sql_endpoint_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sql_endpoint = oci.DataFlow.get_sql_endpoint(sql_endpoint_id=test_sql_endpoint_oci_dataflow_sql_endpoint["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sql_endpoint_id: The unique id of the SQL Endpoint.
@@ -407,14 +405,12 @@ def get_sql_endpoint_output(sql_endpoint_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sql_endpoint = oci.DataFlow.get_sql_endpoint(sql_endpoint_id=test_sql_endpoint_oci_dataflow_sql_endpoint["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sql_endpoint_id: The unique id of the SQL Endpoint.

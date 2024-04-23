@@ -3218,8 +3218,6 @@ type BdsInstanceCloudSqlDetail struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 	// Shape of the node
 	Shape string `pulumi:"shape"`
@@ -3250,8 +3248,6 @@ type BdsInstanceCloudSqlDetailArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
@@ -3339,8 +3335,6 @@ func (o BdsInstanceCloudSqlDetailOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -3920,8 +3914,6 @@ type BdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 }
 
@@ -3942,8 +3934,6 @@ type BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
 
@@ -4035,8 +4025,6 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntPtr
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -4086,8 +4074,6 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Nvmes() pulumi.Int
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int {
 		if v == nil {
@@ -4316,8 +4302,6 @@ type BdsInstanceEdgeNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 }
 
@@ -4338,8 +4322,6 @@ type BdsInstanceEdgeNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
 
@@ -4431,8 +4413,6 @@ func (o BdsInstanceEdgeNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceEdgeNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceEdgeNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -4482,8 +4462,6 @@ func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceEdgeNodeShapeConfig) *int {
 		if v == nil {
@@ -4708,8 +4686,6 @@ type BdsInstanceKafkaBrokerNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 }
 
@@ -4730,8 +4706,6 @@ type BdsInstanceKafkaBrokerNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
 
@@ -4823,8 +4797,6 @@ func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceKafkaBrokerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceKafkaBrokerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -4874,8 +4846,6 @@ func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOut
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceKafkaBrokerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceKafkaBrokerNodeShapeConfig) *int {
 		if v == nil {
@@ -5104,8 +5074,6 @@ type BdsInstanceMasterNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 }
 
@@ -5126,8 +5094,6 @@ type BdsInstanceMasterNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
 
@@ -5219,8 +5185,6 @@ func (o BdsInstanceMasterNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceMasterNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceMasterNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -5270,8 +5234,6 @@ func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceMasterNodeShapeConfig) *int {
 		if v == nil {
@@ -5461,8 +5423,6 @@ type BdsInstanceNode struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 	// Shape of the node
 	Shape *string `pulumi:"shape"`
@@ -5513,8 +5473,6 @@ type BdsInstanceNodeArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 	// Shape of the node
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
@@ -5637,8 +5595,6 @@ func (o BdsInstanceNodeOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceNodeOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -6137,8 +6093,6 @@ type BdsInstanceUtilNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 }
 
@@ -6159,8 +6113,6 @@ type BdsInstanceUtilNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
 
@@ -6252,8 +6204,6 @@ func (o BdsInstanceUtilNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceUtilNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceUtilNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -6303,8 +6253,6 @@ func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceUtilNodeShapeConfig) *int {
 		if v == nil {
@@ -6533,8 +6481,6 @@ type BdsInstanceWorkerNodeShapeConfig struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus *int `pulumi:"ocpus"`
 }
 
@@ -6555,8 +6501,6 @@ type BdsInstanceWorkerNodeShapeConfigArgs struct {
 	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
 
@@ -6648,8 +6592,6 @@ func (o BdsInstanceWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
@@ -6699,8 +6641,6 @@ func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
 }
 
 // The total number of OCPUs available to the node.
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceWorkerNodeShapeConfig) *int {
 		if v == nil {

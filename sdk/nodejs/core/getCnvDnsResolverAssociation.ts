@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCnvDnsResolverAssociation(args: GetCnvDnsResolverAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetCnvDnsResolverAssociationResult> {
 
@@ -66,7 +64,6 @@ export interface GetCnvDnsResolverAssociationResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetCnvDnsResolverAssociationResult {
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCnvDnsResolverAssociationOutput(args: GetCnvDnsResolverAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCnvDnsResolverAssociationResult> {
     return pulumi.output(args).apply((a: any) => getCnvDnsResolverAssociation(a, opts))

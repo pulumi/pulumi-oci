@@ -186,7 +186,6 @@ def get_managed_database_optimizer_statistics_advisor_execution(execution_name: 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +194,6 @@ def get_managed_database_optimizer_statistics_advisor_execution(execution_name: 
         managed_database_id=test_managed_database["id"],
         task_name=managed_database_optimizer_statistics_advisor_execution_task_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str execution_name: The name of the Optimizer Statistics Advisor execution.
@@ -237,7 +235,6 @@ def get_managed_database_optimizer_statistics_advisor_execution_output(execution
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -246,7 +243,6 @@ def get_managed_database_optimizer_statistics_advisor_execution_output(execution
         managed_database_id=test_managed_database["id"],
         task_name=managed_database_optimizer_statistics_advisor_execution_task_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str execution_name: The name of the Optimizer Statistics Advisor execution.

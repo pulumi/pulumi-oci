@@ -219,14 +219,12 @@ def get_mysql_configuration(configuration_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_mysql_configuration = oci.Mysql.get_mysql_configuration(configuration_id=mysql_configuration_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str configuration_id: The OCID of the Configuration.
@@ -264,14 +262,12 @@ def get_mysql_configuration_output(configuration_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_mysql_configuration = oci.Mysql.get_mysql_configuration(configuration_id=mysql_configuration_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str configuration_id: The OCID of the Configuration.

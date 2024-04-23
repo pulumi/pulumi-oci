@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     osPatchVersion: bdsInstanceGetOsPatchOsPatchVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBdsInstanceGetOsPatch(args: GetBdsInstanceGetOsPatchArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstanceGetOsPatchResult> {
 
@@ -92,7 +90,6 @@ export interface GetBdsInstanceGetOsPatchResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetBdsInstanceGetOsPatchResult {
  *     osPatchVersion: bdsInstanceGetOsPatchOsPatchVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBdsInstanceGetOsPatchOutput(args: GetBdsInstanceGetOsPatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceGetOsPatchResult> {
     return pulumi.output(args).apply((a: any) => getBdsInstanceGetOsPatch(a, opts))

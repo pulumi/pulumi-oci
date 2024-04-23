@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabaseOciDatabaseAutonomousContainerDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousContainerDatabase(args: GetAutonomousContainerDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabaseResult> {
 
@@ -261,7 +259,6 @@ export interface GetAutonomousContainerDatabaseResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -270,7 +267,6 @@ export interface GetAutonomousContainerDatabaseResult {
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabaseOciDatabaseAutonomousContainerDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousContainerDatabaseOutput(args: GetAutonomousContainerDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabase(a, opts))

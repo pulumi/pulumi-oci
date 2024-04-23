@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     resourceUnitType: topUtilizedResourceResourceUnitType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTopUtilizedResources(args: GetTopUtilizedResourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetTopUtilizedResourcesResult> {
 
@@ -77,7 +75,6 @@ export interface GetTopUtilizedResourcesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -88,7 +85,6 @@ export interface GetTopUtilizedResourcesResult {
  *     resourceUnitType: topUtilizedResourceResourceUnitType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTopUtilizedResourcesOutput(args: GetTopUtilizedResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTopUtilizedResourcesResult> {
     return pulumi.output(args).apply((a: any) => getTopUtilizedResources(a, opts))

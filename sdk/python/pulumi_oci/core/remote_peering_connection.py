@@ -365,7 +365,6 @@ class RemotePeeringConnection(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -383,7 +382,6 @@ class RemotePeeringConnection(pulumi.CustomResource):
             peer_id=test_remote_peering_connection2["id"],
             peer_region_name=remote_peering_connection_peer_region_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -420,7 +418,6 @@ class RemotePeeringConnection(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -438,7 +435,6 @@ class RemotePeeringConnection(pulumi.CustomResource):
             peer_id=test_remote_peering_connection2["id"],
             peer_region_name=remote_peering_connection_peer_region_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

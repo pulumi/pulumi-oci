@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentRefreshActivityResult> InvokeAsync(GetFusionEnvironmentRefreshActivityArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentRefreshActivityResult>("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args ?? new GetFusionEnvironmentRefreshActivityArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentRefreshActivityResult> Invoke(GetFusionEnvironmentRefreshActivityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivityResult>("oci:Functions/getFusionEnvironmentRefreshActivity:getFusionEnvironmentRefreshActivity", args ?? new GetFusionEnvironmentRefreshActivityInvokeArgs(), options.WithDefaults());

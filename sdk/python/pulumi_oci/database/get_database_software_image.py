@@ -263,14 +263,12 @@ def get_database_software_image(database_software_image_id: Optional[str] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=test_database_software_image_oci_database_database_software_image["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_software_image_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -312,14 +310,12 @@ def get_database_software_image_output(database_software_image_id: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=test_database_software_image_oci_database_database_software_image["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_software_image_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

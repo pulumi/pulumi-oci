@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetJavaRelease(ctx *pulumi.Context, args *GetJavaReleaseArgs, opts ...pulumi.InvokeOption) (*GetJavaReleaseResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJavaReleaseResult

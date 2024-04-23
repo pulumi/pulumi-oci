@@ -208,7 +208,6 @@ def get_namespace_ingest_time_rule(ingest_time_rule_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -216,7 +215,6 @@ def get_namespace_ingest_time_rule(ingest_time_rule_id: Optional[str] = None,
     test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=test_rule["id"],
         namespace=namespace_ingest_time_rule_namespace)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ingest_time_rule_id: Unique ocid of the ingest time rule.
@@ -256,7 +254,6 @@ def get_namespace_ingest_time_rule_output(ingest_time_rule_id: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -264,7 +261,6 @@ def get_namespace_ingest_time_rule_output(ingest_time_rule_id: Optional[pulumi.I
     test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=test_rule["id"],
         namespace=namespace_ingest_time_rule_namespace)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ingest_time_rule_id: Unique ocid of the ingest time rule.

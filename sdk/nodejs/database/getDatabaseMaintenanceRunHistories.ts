@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     targetResourceType: maintenanceRunHistoryTargetResourceType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseMaintenanceRunHistories(args: GetDatabaseMaintenanceRunHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseMaintenanceRunHistoriesResult> {
 
@@ -116,7 +114,6 @@ export interface GetDatabaseMaintenanceRunHistoriesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -130,7 +127,6 @@ export interface GetDatabaseMaintenanceRunHistoriesResult {
  *     targetResourceType: maintenanceRunHistoryTargetResourceType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseMaintenanceRunHistoriesOutput(args: GetDatabaseMaintenanceRunHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseMaintenanceRunHistoriesResult> {
     return pulumi.output(args).apply((a: any) => getDatabaseMaintenanceRunHistories(a, opts))

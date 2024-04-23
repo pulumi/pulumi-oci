@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetJobAdvisorReportResult> InvokeAsync(GetJobAdvisorReportArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJobAdvisorReportResult>("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args ?? new GetJobAdvisorReportArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetJobAdvisorReportResult> Invoke(GetJobAdvisorReportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJobAdvisorReportResult>("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args ?? new GetJobAdvisorReportInvokeArgs(), options.WithDefaults());

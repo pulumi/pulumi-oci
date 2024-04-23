@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: emailDomainState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEmailDomains(args: GetEmailDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetEmailDomainsResult> {
 
@@ -95,7 +93,6 @@ export interface GetEmailDomainsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,7 +104,6 @@ export interface GetEmailDomainsResult {
  *     state: emailDomainState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEmailDomainsOutput(args: GetEmailDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmailDomainsResult> {
     return pulumi.output(args).apply((a: any) => getEmailDomains(a, opts))

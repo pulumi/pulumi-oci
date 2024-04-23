@@ -383,7 +383,6 @@ class ExternalDbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -406,7 +405,6 @@ class ExternalDbSystem(pulumi.CustomResource):
                 metadata=external_db_system_stack_monitoring_config_metadata,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -439,7 +437,6 @@ class ExternalDbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -462,7 +459,6 @@ class ExternalDbSystem(pulumi.CustomResource):
                 metadata=external_db_system_stack_monitoring_config_metadata,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

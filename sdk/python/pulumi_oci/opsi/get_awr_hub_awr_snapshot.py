@@ -106,7 +106,6 @@ def get_awr_hub_awr_snapshot(awr_hub_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -116,7 +115,6 @@ def get_awr_hub_awr_snapshot(awr_hub_id: Optional[str] = None,
         time_greater_than_or_equal_to=awr_hub_awr_snapshot_time_greater_than_or_equal_to,
         time_less_than_or_equal_to=awr_hub_awr_snapshot_time_less_than_or_equal_to)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str awr_hub_id: Unique Awr Hub identifier
@@ -155,7 +153,6 @@ def get_awr_hub_awr_snapshot_output(awr_hub_id: Optional[pulumi.Input[str]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -165,7 +162,6 @@ def get_awr_hub_awr_snapshot_output(awr_hub_id: Optional[pulumi.Input[str]] = No
         time_greater_than_or_equal_to=awr_hub_awr_snapshot_time_greater_than_or_equal_to,
         time_less_than_or_equal_to=awr_hub_awr_snapshot_time_less_than_or_equal_to)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str awr_hub_id: Unique Awr Hub identifier

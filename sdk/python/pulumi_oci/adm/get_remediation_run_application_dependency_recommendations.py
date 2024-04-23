@@ -112,7 +112,6 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
         gav=remediation_run_application_dependency_recommendation_gav,
         purl=remediation_run_application_dependency_recommendation_purl)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
@@ -158,7 +156,6 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +164,6 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
         gav=remediation_run_application_dependency_recommendation_gav,
         purl=remediation_run_application_dependency_recommendation_purl)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.

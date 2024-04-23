@@ -151,7 +151,6 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,7 +162,6 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
         role=dr_protection_group_role,
         state=dr_protection_group_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
@@ -212,7 +210,6 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -224,7 +221,6 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
         role=dr_protection_group_role,
         state=dr_protection_group_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`

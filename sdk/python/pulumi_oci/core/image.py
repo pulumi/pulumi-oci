@@ -479,7 +479,6 @@ class Image(pulumi.CustomResource):
         ## Example Usage
 
         ### Create image from instance in tenancy
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -496,10 +495,8 @@ class Image(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ### Create image from exported image via direct access to object store
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -518,10 +515,8 @@ class Image(pulumi.CustomResource):
                 source_image_type=source_image_type,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ### Create image from exported image at publicly accessible uri
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -538,7 +533,6 @@ class Image(pulumi.CustomResource):
                 source_image_type=source_image_type,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -597,7 +591,6 @@ class Image(pulumi.CustomResource):
         ## Example Usage
 
         ### Create image from instance in tenancy
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -614,10 +607,8 @@ class Image(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ### Create image from exported image via direct access to object store
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -636,10 +627,8 @@ class Image(pulumi.CustomResource):
                 source_image_type=source_image_type,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ### Create image from exported image at publicly accessible uri
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -656,7 +645,6 @@ class Image(pulumi.CustomResource):
                 source_image_type=source_image_type,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

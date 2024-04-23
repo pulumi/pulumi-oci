@@ -539,7 +539,6 @@ class Function(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -570,7 +569,6 @@ class Function(pulumi.CustomResource):
                 is_enabled=function_trace_config_is_enabled,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -610,7 +608,6 @@ class Function(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -641,7 +638,6 @@ class Function(pulumi.CustomResource):
                 is_enabled=function_trace_config_is_enabled,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

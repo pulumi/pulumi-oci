@@ -207,14 +207,12 @@ def get_detection_data_asset(data_asset_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_asset = oci.AiAnomalyDetection.get_detection_data_asset(data_asset_id=test_data_asset_oci_ai_anomaly_detection_data_asset["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str data_asset_id: The OCID of the Data Asset.
@@ -251,14 +249,12 @@ def get_detection_data_asset_output(data_asset_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_asset = oci.AiAnomalyDetection.get_detection_data_asset(data_asset_id=test_data_asset_oci_ai_anomaly_detection_data_asset["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str data_asset_id: The OCID of the Data Asset.

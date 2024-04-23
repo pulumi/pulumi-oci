@@ -316,7 +316,6 @@ class ApmDomain(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -333,7 +332,6 @@ class ApmDomain(pulumi.CustomResource):
             },
             is_free_tier=apm_domain_is_free_tier)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -369,7 +367,6 @@ class ApmDomain(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -386,7 +383,6 @@ class ApmDomain(pulumi.CustomResource):
             },
             is_free_tier=apm_domain_is_free_tier)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

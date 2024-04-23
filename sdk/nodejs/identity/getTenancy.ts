@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     tenancyId: tenancyOcid,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTenancy(args: GetTenancyArgs, opts?: pulumi.InvokeOptions): Promise<GetTenancyResult> {
 
@@ -81,7 +79,6 @@ export interface GetTenancyResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,7 +87,6 @@ export interface GetTenancyResult {
  *     tenancyId: tenancyOcid,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTenancyOutput(args: GetTenancyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTenancyResult> {
     return pulumi.output(args).apply((a: any) => getTenancy(a, opts))

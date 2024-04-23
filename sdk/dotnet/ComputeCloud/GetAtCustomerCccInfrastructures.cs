@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAtCustomerCccInfrastructuresResult> InvokeAsync(GetAtCustomerCccInfrastructuresArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAtCustomerCccInfrastructuresResult>("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", args ?? new GetAtCustomerCccInfrastructuresArgs(), options.WithDefaults());
@@ -54,7 +52,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAtCustomerCccInfrastructuresResult> Invoke(GetAtCustomerCccInfrastructuresInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccInfrastructuresResult>("oci:ComputeCloud/getAtCustomerCccInfrastructures:getAtCustomerCccInfrastructures", args ?? new GetAtCustomerCccInfrastructuresInvokeArgs(), options.WithDefaults());

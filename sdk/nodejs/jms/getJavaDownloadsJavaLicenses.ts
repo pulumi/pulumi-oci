@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     licenseType: javaLicenseLicenseType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJavaDownloadsJavaLicenses(args?: GetJavaDownloadsJavaLicensesArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaDownloadsJavaLicensesResult> {
     args = args || {};
@@ -80,7 +78,6 @@ export interface GetJavaDownloadsJavaLicensesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,7 +87,6 @@ export interface GetJavaDownloadsJavaLicensesResult {
  *     licenseType: javaLicenseLicenseType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJavaDownloadsJavaLicensesOutput(args?: GetJavaDownloadsJavaLicensesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaDownloadsJavaLicensesResult> {
     return pulumi.output(args).apply((a: any) => getJavaDownloadsJavaLicenses(a, opts))

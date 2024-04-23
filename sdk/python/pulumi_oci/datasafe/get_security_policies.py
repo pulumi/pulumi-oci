@@ -158,7 +158,6 @@ def get_security_policies(access_level: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +169,6 @@ def get_security_policies(access_level: Optional[str] = None,
         security_policy_id=test_security_policy["id"],
         state=security_policy_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -232,7 +230,6 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -244,7 +241,6 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[st
         security_policy_id=test_security_policy["id"],
         state=security_policy_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.

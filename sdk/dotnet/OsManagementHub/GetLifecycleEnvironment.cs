@@ -18,7 +18,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLifecycleEnvironmentResult> InvokeAsync(GetLifecycleEnvironmentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLifecycleEnvironmentResult>("oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment", args ?? new GetLifecycleEnvironmentArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLifecycleEnvironmentResult> Invoke(GetLifecycleEnvironmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLifecycleEnvironmentResult>("oci:OsManagementHub/getLifecycleEnvironment:getLifecycleEnvironment", args ?? new GetLifecycleEnvironmentInvokeArgs(), options.WithDefaults());

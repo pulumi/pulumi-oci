@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetExternalExadataStorageServers(ctx *pulumi.Context, args *GetExternalExadataStorageServersArgs, opts ...pulumi.InvokeOption) (*GetExternalExadataStorageServersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalExadataStorageServersResult

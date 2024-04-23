@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  * ## Example Usage
  *
  * ### Get a public ip by public ip id
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,10 +30,8 @@ import * as utilities from "../utilities";
  *     id: testPublicIpId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ### Get a public ip by private ip id
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -43,10 +40,8 @@ import * as utilities from "../utilities";
  *     privateIpId: testPublicIpPrivateIpId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ### Get a public ip by public ip address
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -55,7 +50,6 @@ import * as utilities from "../utilities";
  *     ipAddress: testPublicIpIpAddress,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPublicIp(args?: GetPublicIpArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicIpResult> {
     args = args || {};
@@ -169,7 +163,6 @@ export interface GetPublicIpResult {
  * ## Example Usage
  *
  * ### Get a public ip by public ip id
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -178,10 +171,8 @@ export interface GetPublicIpResult {
  *     id: testPublicIpId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ### Get a public ip by private ip id
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -190,10 +181,8 @@ export interface GetPublicIpResult {
  *     privateIpId: testPublicIpPrivateIpId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ### Get a public ip by public ip address
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -202,7 +191,6 @@ export interface GetPublicIpResult {
  *     ipAddress: testPublicIpIpAddress,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPublicIpOutput(args?: GetPublicIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpResult> {
     return pulumi.output(args).apply((a: any) => getPublicIp(a, opts))

@@ -365,7 +365,6 @@ class Session(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -387,7 +386,6 @@ class Session(pulumi.CustomResource):
             key_type=session_key_type,
             session_ttl_in_seconds=session_session_ttl_in_seconds)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -419,7 +417,6 @@ class Session(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -441,7 +438,6 @@ class Session(pulumi.CustomResource):
             key_type=session_key_type,
             session_ttl_in_seconds=session_session_ttl_in_seconds)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

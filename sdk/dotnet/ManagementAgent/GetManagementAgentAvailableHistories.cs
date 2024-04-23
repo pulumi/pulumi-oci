@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentAvailableHistoriesResult> InvokeAsync(GetManagementAgentAvailableHistoriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentAvailableHistoriesResult>("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", args ?? new GetManagementAgentAvailableHistoriesArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentAvailableHistoriesResult> Invoke(GetManagementAgentAvailableHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentAvailableHistoriesResult>("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", args ?? new GetManagementAgentAvailableHistoriesInvokeArgs(), options.WithDefaults());

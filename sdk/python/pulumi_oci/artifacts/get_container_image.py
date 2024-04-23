@@ -279,14 +279,12 @@ def get_container_image(image_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_container_image = oci.Artifacts.get_container_image(image_id=container_image_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
@@ -329,14 +327,12 @@ def get_container_image_output(image_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_container_image = oci.Artifacts.get_container_image(image_id=container_image_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`

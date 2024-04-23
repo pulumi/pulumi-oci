@@ -649,7 +649,6 @@ class Job(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -706,7 +705,6 @@ class Job(pulumi.CustomResource):
                 prefix=job_job_storage_mount_configuration_details_list_prefix,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -751,7 +749,6 @@ class Job(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -808,7 +805,6 @@ class Job(pulumi.CustomResource):
                 prefix=job_job_storage_mount_configuration_details_list_prefix,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

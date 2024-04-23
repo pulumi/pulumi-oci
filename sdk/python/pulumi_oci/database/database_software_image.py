@@ -513,7 +513,6 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -533,7 +532,6 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
             patch_set=database_software_image_patch_set,
             source_db_home_id=test_db_home["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -574,7 +572,6 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -594,7 +591,6 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
             patch_set=database_software_image_patch_set,
             source_db_home_id=test_db_home["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -234,14 +234,12 @@ def get_lifecycle_environment(lifecycle_environment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_lifecycle_environment = oci.OsManagementHub.get_lifecycle_environment(lifecycle_environment_id=test_lifecycle_environment_oci_os_management_hub_lifecycle_environment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str lifecycle_environment_id: The OCID of the lifecycle environment.
@@ -280,14 +278,12 @@ def get_lifecycle_environment_output(lifecycle_environment_id: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_lifecycle_environment = oci.OsManagementHub.get_lifecycle_environment(lifecycle_environment_id=test_lifecycle_environment_oci_os_management_hub_lifecycle_environment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str lifecycle_environment_id: The OCID of the lifecycle environment.

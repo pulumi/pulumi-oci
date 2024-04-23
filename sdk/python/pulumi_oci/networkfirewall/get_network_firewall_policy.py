@@ -182,14 +182,12 @@ def get_network_firewall_policy(network_firewall_policy_id: Optional[str] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -224,14 +222,12 @@ def get_network_firewall_policy_output(network_firewall_policy_id: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_firewall_policy = oci.NetworkFirewall.get_network_firewall_policy(network_firewall_policy_id=test_network_firewall_policy_oci_network_firewall_network_firewall_policy["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_firewall_policy_id: Unique Network Firewall Policy identifier

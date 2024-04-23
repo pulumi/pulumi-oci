@@ -5112,8 +5112,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
         /**
@@ -5230,8 +5228,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -5270,8 +5266,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -5307,8 +5301,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -5347,8 +5339,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -5411,8 +5401,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
         /**
@@ -5501,8 +5489,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -5541,8 +5527,6 @@ export namespace BigDataService {
         nvmes?: pulumi.Input<number>;
         /**
          * The total number of OCPUs available to the node.
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         ocpus?: pulumi.Input<number>;
     }
@@ -12238,9 +12222,7 @@ export namespace Core {
 
     export interface CrossConnectMacsecPropertiesPrimaryKey {
         /**
-         * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-         *
-         * NOTE: Only the latest secret version will be used.
+         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
          */
         connectivityAssociationKeySecretId: pulumi.Input<string>;
         /**
@@ -12248,9 +12230,7 @@ export namespace Core {
          */
         connectivityAssociationKeySecretVersion?: pulumi.Input<string>;
         /**
-         * (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-         *
-         * NOTE: Only the latest secret version will be used.
+         * Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
          */
         connectivityAssociationNameSecretId: pulumi.Input<string>;
         /**
@@ -12390,11 +12370,11 @@ export namespace Core {
          */
         ipsecConnectionId?: pulumi.Input<string>;
         /**
-         * The OCID of the route table the DRG attachment is using.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
          *
          * For information about why you would associate a route table with a DRG attachment, see:
          * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-         * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+         * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
          */
         routeTableId?: pulumi.Input<string>;
         /**
@@ -13891,7 +13871,7 @@ export namespace Core {
          */
         autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy>[]>;
         /**
-         * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
@@ -13903,7 +13883,7 @@ export namespace Core {
          */
         blockVolumeReplicas?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas>;
         /**
-         * (Updatable) The OCID of the compartment containing images to search
+         * The OCID of the compartment that contains the volume.
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -14496,7 +14476,7 @@ export namespace Core {
          */
         autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicy>[]>;
         /**
-         * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
@@ -14508,7 +14488,7 @@ export namespace Core {
          */
         blockVolumeReplicas?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicas>;
         /**
-         * (Updatable) The OCID of the compartment containing images to search
+         * The OCID of the compartment that contains the volume.
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -15783,7 +15763,7 @@ export namespace Core {
 
     export interface IpsecConnectionTunnelManagementPhaseOneDetail {
         /**
-         * The authentication algorithm proposed during phase two tunnel negotiation.
+         * The custom authentication algorithm proposed during phase one tunnel negotiation.
          */
         customAuthenticationAlgorithm?: pulumi.Input<string>;
         /**
@@ -15791,7 +15771,7 @@ export namespace Core {
          */
         customDhGroup?: pulumi.Input<string>;
         /**
-         * The encryption algorithm proposed during phase two tunnel negotiation.
+         * The custom encryption algorithm proposed during phase one tunnel negotiation.
          */
         customEncryptionAlgorithm?: pulumi.Input<string>;
         /**
@@ -15803,7 +15783,7 @@ export namespace Core {
          */
         isIkeEstablished?: pulumi.Input<boolean>;
         /**
-         * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+         * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
          */
         lifetime?: pulumi.Input<number>;
         /**
@@ -24023,38 +24003,36 @@ export namespace Database {
 
     export interface CloudAutonomousVmClusterMaintenanceWindow {
         /**
-         * (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+         * Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
          */
         customActionTimeoutInMins?: pulumi.Input<number>;
         /**
-         * (Updatable) Days during the week when maintenance should be performed.
+         * Days during the week when maintenance should be performed.
          */
         daysOfWeeks?: pulumi.Input<pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek>[]>;
         /**
-         * (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+         * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
         /**
-         * (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+         * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
          */
         isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
         /**
-         * (Updatable) If true, enables the monthly patching option.
+         * If true, enables the monthly patching option.
          */
         isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+         * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          */
         leadTimeInWeeks?: pulumi.Input<number>;
         /**
-         * (Updatable) Months during the year when maintenance should be performed.
+         * Months during the year when maintenance should be performed.
          */
         months?: pulumi.Input<pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowMonth>[]>;
         /**
-         * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-         *
-         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
          */
         patchingMode?: pulumi.Input<string>;
         /**
@@ -24070,7 +24048,7 @@ export namespace Database {
 
     export interface CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek {
         /**
-         * (Updatable) Name of the month of the year.
+         * Name of the month of the year.
          */
         name?: pulumi.Input<string>;
     }
@@ -24124,33 +24102,27 @@ export namespace Database {
 
     export interface CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek {
         /**
-         * (Updatable) Name of the month of the year.
+         * Name of the month of the year.
          */
         name: pulumi.Input<string>;
     }
 
     export interface CloudAutonomousVmClusterMaintenanceWindowDetailsMonth {
         /**
-         * (Updatable) Name of the month of the year.
+         * Name of the month of the year.
          */
         name: pulumi.Input<string>;
     }
 
     export interface CloudAutonomousVmClusterMaintenanceWindowMonth {
         /**
-         * (Updatable) Name of the month of the year.
+         * Name of the month of the year.
          */
         name?: pulumi.Input<string>;
     }
 
     export interface CloudDatabaseManagementCredentialdetails {
-        /**
-         * Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
         passwordSecretId: pulumi.Input<string>;
-        /**
-         * Database username
-         */
         userName: pulumi.Input<string>;
     }
 
@@ -24232,7 +24204,7 @@ export namespace Database {
          */
         isHealthMonitoringEnabled?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         * Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
          */
         isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
@@ -33210,7 +33182,7 @@ export namespace Functions {
 
     export interface ApplicationImagePolicyConfigKeyDetail {
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
          */
         kmsKeyId: pulumi.Input<string>;
     }
@@ -50082,17 +50054,17 @@ export namespace Identity {
          */
         approverId?: pulumi.Input<string>;
         /**
-         * justification
+         * (Updatable) Approval Justification
+         *
+         * **Added In:** 2307071836
          *
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * idcsSearchable: false
          * * returned: default
          * * type: string
          * * uniqueness: none
+         * * mutability: readOnly
          */
         justification?: pulumi.Input<string>;
         /**
@@ -50110,17 +50082,17 @@ export namespace Identity {
          */
         order?: pulumi.Input<number>;
         /**
-         * (Updatable) status.
+         * (Updatable) Approval Status
+         *
+         * **Added In:** 2307071836
          *
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
+         * * mutability: readOnly
          */
         status?: pulumi.Input<string>;
         /**
@@ -50141,9 +50113,10 @@ export namespace Identity {
 
     export interface DomainsMyRequestIdcsCreatedBy {
         /**
-         * User display name
+         * The displayName of the User or App who created this Resource
          *
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -50154,23 +50127,23 @@ export namespace Identity {
          */
         display?: pulumi.Input<string>;
         /**
-         * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * The OCID of the SCIM resource that represents the User or App who created this Resource
          *
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
-         * (Updatable) User URI
+         * (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          *
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -50181,29 +50154,27 @@ export namespace Identity {
          */
         ref?: pulumi.Input<string>;
         /**
-         * Requestable type. Allowed values are Group and App.
+         * The type of resource, User or App, that created this Resource
          *
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsCsvAttributeName: Requestable Type
-         * * idcsDefaultValue: Group
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
-         * Value of the tag.
+         * The ID of the SCIM resource that represents the User or App who created this Resource
          *
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -50214,9 +50185,10 @@ export namespace Identity {
 
     export interface DomainsMyRequestIdcsLastModifiedBy {
         /**
-         * User display name
+         * The displayName of the User or App who modified this Resource
          *
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -50227,23 +50199,23 @@ export namespace Identity {
          */
         display?: pulumi.Input<string>;
         /**
-         * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * The OCID of the SCIM resource that represents the User or App who modified this Resource
          *
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          */
         ocid?: pulumi.Input<string>;
         /**
-         * (Updatable) User URI
+         * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          *
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -50254,29 +50226,27 @@ export namespace Identity {
          */
         ref?: pulumi.Input<string>;
         /**
-         * Requestable type. Allowed values are Group and App.
+         * The type of resource, User or App, that modified this Resource
          *
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsCsvAttributeName: Requestable Type
-         * * idcsDefaultValue: Group
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
          */
         type?: pulumi.Input<string>;
         /**
-         * Value of the tag.
+         * The ID of the SCIM resource that represents the User or App who modified this Resource
          *
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -50375,10 +50345,10 @@ export namespace Identity {
          */
         description?: pulumi.Input<string>;
         /**
-         * User display name
+         * Resource display name
          *
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -50388,7 +50358,7 @@ export namespace Identity {
          */
         display?: pulumi.Input<string>;
         /**
-         * (Updatable) User URI
+         * (Updatable) Resource URI
          *
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -50417,13 +50387,14 @@ export namespace Identity {
          */
         type: pulumi.Input<string>;
         /**
-         * Value of the tag.
+         * Resource identifier
          *
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: requestingId
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -50460,13 +50431,14 @@ export namespace Identity {
          */
         ref?: pulumi.Input<string>;
         /**
-         * Value of the tag.
+         * User identifier
          *
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: requestorId
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -68744,14 +68716,6 @@ export namespace NetworkLoadBalancer {
     export interface NetworkLoadBalancerIpAddressReservedIp {
         /**
          * OCID of the reserved public IP address created with the virtual cloud network.
-         *
-         * Reserved public IP addresses are IP addresses that are registered using the virtual cloud network API.
-         *
-         * Create a reserved public IP address. When you create the network load balancer, enter the OCID of the reserved public IP address in the reservedIp field to attach the IP address to the network load balancer. This task configures the network load balancer to listen to traffic on this IP address.
-         *
-         * Reserved public IP addresses are not deleted when the network load balancer is deleted. The IP addresses become unattached from the network load balancer.
-         *
-         * Example: "ocid1.publicip.oc1.phx.unique_ID"
          */
         id?: pulumi.Input<string>;
     }
@@ -69083,11 +69047,11 @@ export namespace ObjectStorage {
 
     export interface BucketRetentionRuleDuration {
         /**
-         * (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+         * The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
          */
         timeAmount: pulumi.Input<string>;
         /**
-         * (Updatable) The unit that should be used to interpret timeAmount.
+         * The unit that should be used to interpret timeAmount.
          */
         timeUnit: pulumi.Input<string>;
     }

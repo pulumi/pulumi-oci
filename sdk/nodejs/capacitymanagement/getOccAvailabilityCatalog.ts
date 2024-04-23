@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     occAvailabilityCatalogId: testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOccAvailabilityCatalog(args: GetOccAvailabilityCatalogArgs, opts?: pulumi.InvokeOptions): Promise<GetOccAvailabilityCatalogResult> {
 
@@ -120,7 +118,6 @@ export interface GetOccAvailabilityCatalogResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -129,7 +126,6 @@ export interface GetOccAvailabilityCatalogResult {
  *     occAvailabilityCatalogId: testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOccAvailabilityCatalogOutput(args: GetOccAvailabilityCatalogOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccAvailabilityCatalogResult> {
     return pulumi.output(args).apply((a: any) => getOccAvailabilityCatalog(a, opts))

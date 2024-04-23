@@ -20,7 +20,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetVolumeBackupPolicies(ctx *pulumi.Context, args *GetVolumeBackupPoliciesArgs, opts ...pulumi.InvokeOption) (*GetVolumeBackupPoliciesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVolumeBackupPoliciesResult

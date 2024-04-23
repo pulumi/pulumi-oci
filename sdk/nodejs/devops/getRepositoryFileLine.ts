@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     startLineNumber: repositoryFileLineStartLineNumber,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryFileLine(args: GetRepositoryFileLineArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryFileLineResult> {
 
@@ -84,7 +82,6 @@ export interface GetRepositoryFileLineResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -96,7 +93,6 @@ export interface GetRepositoryFileLineResult {
  *     startLineNumber: repositoryFileLineStartLineNumber,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryFileLineOutput(args: GetRepositoryFileLineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryFileLineResult> {
     return pulumi.output(args).apply((a: any) => getRepositoryFileLine(a, opts))

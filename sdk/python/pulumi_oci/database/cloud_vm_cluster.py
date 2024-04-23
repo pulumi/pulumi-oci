@@ -1384,7 +1384,6 @@ class CloudVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1427,7 +1426,6 @@ class CloudVmCluster(pulumi.CustomResource):
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1499,7 +1497,6 @@ class CloudVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1542,7 +1539,6 @@ class CloudVmCluster(pulumi.CustomResource):
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

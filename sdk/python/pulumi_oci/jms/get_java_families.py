@@ -116,7 +116,6 @@ def get_java_families(display_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,7 +124,6 @@ def get_java_families(display_name: Optional[str] = None,
         family_version=java_family_family_version,
         is_supported_version=java_family_is_supported_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: The display name for the Java family.
@@ -163,7 +161,6 @@ def get_java_families_output(display_name: Optional[pulumi.Input[Optional[str]]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -172,7 +169,6 @@ def get_java_families_output(display_name: Optional[pulumi.Input[Optional[str]]]
         family_version=java_family_family_version,
         is_supported_version=java_family_is_supported_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: The display name for the Java family.

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetHttpMonitorResult> InvokeAsync(GetHttpMonitorArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHttpMonitorResult>("oci:HealthChecks/getHttpMonitor:getHttpMonitor", args ?? new GetHttpMonitorArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetHttpMonitorResult> Invoke(GetHttpMonitorInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHttpMonitorResult>("oci:HealthChecks/getHttpMonitor:getHttpMonitor", args ?? new GetHttpMonitorInvokeArgs(), options.WithDefaults());

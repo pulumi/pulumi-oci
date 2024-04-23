@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: ingressGatewayState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIngressGateways(args: GetIngressGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetIngressGatewaysResult> {
 
@@ -105,7 +103,6 @@ export interface GetIngressGatewaysResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,7 +115,6 @@ export interface GetIngressGatewaysResult {
  *     state: ingressGatewayState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIngressGatewaysOutput(args: GetIngressGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIngressGatewaysResult> {
     return pulumi.output(args).apply((a: any) => getIngressGateways(a, opts))

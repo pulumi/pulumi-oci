@@ -381,7 +381,6 @@ class Endpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -399,7 +398,6 @@ class Endpoint(pulumi.CustomResource):
             },
             inference_units=endpoint_inference_units)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -436,7 +434,6 @@ class Endpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -454,7 +451,6 @@ class Endpoint(pulumi.CustomResource):
             },
             inference_units=endpoint_inference_units)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

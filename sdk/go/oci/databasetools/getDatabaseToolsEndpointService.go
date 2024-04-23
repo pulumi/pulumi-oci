@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDatabaseToolsEndpointService(ctx *pulumi.Context, args *GetDatabaseToolsEndpointServiceArgs, opts ...pulumi.InvokeOption) (*GetDatabaseToolsEndpointServiceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatabaseToolsEndpointServiceResult

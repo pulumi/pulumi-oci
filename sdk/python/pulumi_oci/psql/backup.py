@@ -446,7 +446,6 @@ class Backup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -464,7 +463,6 @@ class Backup(pulumi.CustomResource):
             },
             retention_period=backup_retention_period)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -501,7 +499,6 @@ class Backup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -519,7 +516,6 @@ class Backup(pulumi.CustomResource):
             },
             retention_period=backup_retention_period)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

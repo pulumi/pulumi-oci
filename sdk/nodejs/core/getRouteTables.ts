@@ -16,7 +16,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRouteTables(args: GetRouteTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetRouteTablesResult> {
 
@@ -105,7 +103,6 @@ export interface GetRouteTablesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,7 +114,6 @@ export interface GetRouteTablesResult {
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRouteTablesOutput(args: GetRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRouteTablesResult> {
     return pulumi.output(args).apply((a: any) => getRouteTables(a, opts))

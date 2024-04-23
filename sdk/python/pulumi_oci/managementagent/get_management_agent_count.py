@@ -112,7 +112,6 @@ def get_management_agent_count(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -122,7 +121,6 @@ def get_management_agent_count(compartment_id: Optional[str] = None,
         has_plugins=management_agent_count_has_plugins,
         install_type=management_agent_count_install_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
@@ -161,7 +159,6 @@ def get_management_agent_count_output(compartment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -171,7 +168,6 @@ def get_management_agent_count_output(compartment_id: Optional[pulumi.Input[str]
         has_plugins=management_agent_count_has_plugins,
         install_type=management_agent_count_install_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.

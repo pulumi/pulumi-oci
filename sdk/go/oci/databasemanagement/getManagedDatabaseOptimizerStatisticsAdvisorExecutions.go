@@ -19,7 +19,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseOptimizerStatisticsAdvisorExecutions(ctx *pulumi.Context, args *GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult

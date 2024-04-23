@@ -86,14 +86,12 @@ def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequenc
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fusion_environment_time_available_for_refreshs = oci.Functions.get_fusion_environment_time_available_for_refreshs(fusion_environment_id=test_fusion_environment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier
@@ -122,14 +120,12 @@ def get_fusion_environment_time_available_for_refreshs_output(filters: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fusion_environment_time_available_for_refreshs = oci.Functions.get_fusion_environment_time_available_for_refreshs(fusion_environment_id=test_fusion_environment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier

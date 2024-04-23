@@ -13,9 +13,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsMyRequestIdcsLastModifiedBy {
     /**
-     * @return User display name
+     * @return The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -27,24 +28,24 @@ public final class DomainsMyRequestIdcsLastModifiedBy {
      */
     private @Nullable String display;
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) User URI
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -56,16 +57,14 @@ public final class DomainsMyRequestIdcsLastModifiedBy {
      */
     private @Nullable String ref;
     /**
-     * @return Requestable type. Allowed values are Group and App.
+     * @return The type of resource, User or App, that modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsCsvAttributeName: Requestable Type
-     * * idcsDefaultValue: Group
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -73,13 +72,13 @@ public final class DomainsMyRequestIdcsLastModifiedBy {
      */
     private @Nullable String type;
     /**
-     * @return Value of the tag.
+     * @return The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -90,9 +89,10 @@ public final class DomainsMyRequestIdcsLastModifiedBy {
 
     private DomainsMyRequestIdcsLastModifiedBy() {}
     /**
-     * @return User display name
+     * @return The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -106,26 +106,26 @@ public final class DomainsMyRequestIdcsLastModifiedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) User URI
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -139,16 +139,14 @@ public final class DomainsMyRequestIdcsLastModifiedBy {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return Requestable type. Allowed values are Group and App.
+     * @return The type of resource, User or App, that modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsCsvAttributeName: Requestable Type
-     * * idcsDefaultValue: Group
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -158,13 +156,13 @@ public final class DomainsMyRequestIdcsLastModifiedBy {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return Value of the tag.
+     * @return The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string

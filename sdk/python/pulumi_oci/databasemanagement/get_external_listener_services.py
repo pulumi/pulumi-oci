@@ -110,7 +110,6 @@ def get_external_listener_services(external_listener_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -119,7 +118,6 @@ def get_external_listener_services(external_listener_id: Optional[str] = None,
         managed_database_id=test_managed_database["id"],
         opc_named_credential_id=external_listener_service_opc_named_credential_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
@@ -157,7 +155,6 @@ def get_external_listener_services_output(external_listener_id: Optional[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -166,7 +163,6 @@ def get_external_listener_services_output(external_listener_id: Optional[pulumi.
         managed_database_id=test_managed_database["id"],
         opc_named_credential_id=external_listener_service_opc_named_credential_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.

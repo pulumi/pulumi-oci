@@ -514,7 +514,6 @@ class Queue(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -535,7 +534,6 @@ class Queue(pulumi.CustomResource):
             timeout_in_seconds=queue_timeout_in_seconds,
             visibility_in_seconds=queue_visibility_in_seconds)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -571,7 +569,6 @@ class Queue(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -592,7 +589,6 @@ class Queue(pulumi.CustomResource):
             timeout_in_seconds=queue_timeout_in_seconds,
             visibility_in_seconds=queue_visibility_in_seconds)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

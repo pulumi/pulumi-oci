@@ -193,7 +193,6 @@ def get_dedicated_vantage_point(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -201,7 +200,6 @@ def get_dedicated_vantage_point(apm_domain_id: Optional[str] = None,
     test_dedicated_vantage_point = oci.ApmSynthetics.get_dedicated_vantage_point(apm_domain_id=test_apm_domain["id"],
         dedicated_vantage_point_id=test_dedicated_vantage_point_oci_apm_synthetics_dedicated_vantage_point["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
@@ -240,7 +238,6 @@ def get_dedicated_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -248,7 +245,6 @@ def get_dedicated_vantage_point_output(apm_domain_id: Optional[pulumi.Input[str]
     test_dedicated_vantage_point = oci.ApmSynthetics.get_dedicated_vantage_point(apm_domain_id=test_apm_domain["id"],
         dedicated_vantage_point_id=test_dedicated_vantage_point_oci_apm_synthetics_dedicated_vantage_point["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.

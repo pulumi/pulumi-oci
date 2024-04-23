@@ -115,7 +115,6 @@ def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[str] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,7 +123,6 @@ def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[str] = No
         compartment_id=compartment_id,
         state=autonomous_virtual_machine_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_vm_cluster_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -161,7 +159,6 @@ def get_autonomous_virtual_machines_output(autonomous_vm_cluster_id: Optional[pu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_autonomous_virtual_machines_output(autonomous_vm_cluster_id: Optional[pu
         compartment_id=compartment_id,
         state=autonomous_virtual_machine_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_vm_cluster_id: The Autonomous Virtual machine [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

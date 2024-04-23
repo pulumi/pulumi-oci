@@ -125,7 +125,6 @@ def get_masking_policy_masking_objects(filters: Optional[Sequence[pulumi.InputTy
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_masking_policy_masking_objects(filters: Optional[Sequence[pulumi.InputTy
         object_types=masking_policy_masking_object_object_type,
         schema_names=masking_policy_masking_object_schema_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str masking_policy_id: The OCID of the masking policy.
@@ -176,7 +174,6 @@ def get_masking_policy_masking_objects_output(filters: Optional[pulumi.Input[Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +183,6 @@ def get_masking_policy_masking_objects_output(filters: Optional[pulumi.Input[Opt
         object_types=masking_policy_masking_object_object_type,
         schema_names=masking_policy_masking_object_schema_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str masking_policy_id: The OCID of the masking policy.

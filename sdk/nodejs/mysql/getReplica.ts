@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     replicaId: testReplicaOciMysqlReplica.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getReplica(args: GetReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicaResult> {
 
@@ -143,7 +141,6 @@ export interface GetReplicaResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -152,7 +149,6 @@ export interface GetReplicaResult {
  *     replicaId: testReplicaOciMysqlReplica.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getReplicaOutput(args: GetReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicaResult> {
     return pulumi.output(args).apply((a: any) => getReplica(a, opts))

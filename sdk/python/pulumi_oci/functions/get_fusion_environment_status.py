@@ -74,14 +74,12 @@ def get_fusion_environment_status(fusion_environment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fusion_environment_status = oci.Functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier
@@ -107,14 +105,12 @@ def get_fusion_environment_status_output(fusion_environment_id: Optional[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_fusion_environment_status = oci.Functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier

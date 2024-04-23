@@ -210,14 +210,12 @@ def get_occ_customer_group(occ_customer_group_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_occ_customer_group = oci.CapacityManagement.get_occ_customer_group(occ_customer_group_id=test_occ_customer_group_oci_capacity_management_occ_customer_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str occ_customer_group_id: The OCID of the customer group.
@@ -254,14 +252,12 @@ def get_occ_customer_group_output(occ_customer_group_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_occ_customer_group = oci.CapacityManagement.get_occ_customer_group(occ_customer_group_id=test_occ_customer_group_oci_capacity_management_occ_customer_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str occ_customer_group_id: The OCID of the customer group.

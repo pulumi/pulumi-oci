@@ -219,7 +219,6 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -231,7 +230,6 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
             certificate_authority_id=test_certificate_authority["id"],
             certificate_id=test_certificate["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -262,7 +260,6 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -274,7 +271,6 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
             certificate_authority_id=test_certificate_authority["id"],
             certificate_id=test_certificate["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

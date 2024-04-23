@@ -154,7 +154,6 @@ class CustomTable(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -175,7 +174,6 @@ class CustomTable(pulumi.CustomResource):
             ),
             saved_report_id=test_saved_report["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -208,7 +206,6 @@ class CustomTable(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -229,7 +226,6 @@ class CustomTable(pulumi.CustomResource):
             ),
             saved_report_id=test_saved_report["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

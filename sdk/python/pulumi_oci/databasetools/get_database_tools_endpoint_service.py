@@ -194,14 +194,12 @@ def get_database_tools_endpoint_service(database_tools_endpoint_service_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_tools_endpoint_service = oci.DatabaseTools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=test_database_tools_endpoint_service_oci_database_tools_database_tools_endpoint_service["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_tools_endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.
@@ -237,14 +235,12 @@ def get_database_tools_endpoint_service_output(database_tools_endpoint_service_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_tools_endpoint_service = oci.DatabaseTools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=test_database_tools_endpoint_service_oci_database_tools_database_tools_endpoint_service["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_tools_endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools Endpoint Service.

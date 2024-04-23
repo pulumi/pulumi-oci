@@ -22,7 +22,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseOptimizerStatisticsCollectionAggregations(ctx *pulumi.Context, args *GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult

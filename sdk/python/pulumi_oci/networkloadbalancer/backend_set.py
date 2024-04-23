@@ -318,7 +318,6 @@ class BackendSet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -350,7 +349,6 @@ class BackendSet(pulumi.CustomResource):
             is_fail_open=backend_set_is_fail_open,
             is_preserve_source=backend_set_is_preserve_source)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -391,7 +389,6 @@ class BackendSet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -423,7 +420,6 @@ class BackendSet(pulumi.CustomResource):
             is_fail_open=backend_set_is_fail_open,
             is_preserve_source=backend_set_is_preserve_source)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

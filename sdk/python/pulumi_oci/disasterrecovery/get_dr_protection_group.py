@@ -261,14 +261,12 @@ def get_dr_protection_group(dr_protection_group_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=test_dr_protection_group_oci_disaster_recovery_dr_protection_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str dr_protection_group_id: The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -310,14 +308,12 @@ def get_dr_protection_group_output(dr_protection_group_id: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dr_protection_group = oci.DisasterRecovery.get_dr_protection_group(dr_protection_group_id=test_dr_protection_group_oci_disaster_recovery_dr_protection_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str dr_protection_group_id: The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`

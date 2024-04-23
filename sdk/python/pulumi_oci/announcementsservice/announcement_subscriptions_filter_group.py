@@ -157,7 +157,6 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -170,7 +169,6 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
             )],
             name=announcement_subscriptions_filter_group_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -205,7 +203,6 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -218,7 +215,6 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
             )],
             name=announcement_subscriptions_filter_group_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

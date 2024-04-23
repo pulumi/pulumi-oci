@@ -164,7 +164,6 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,7 +176,6 @@ def get_namespace_ingest_time_rules(compartment_id: Optional[str] = None,
         field_value=namespace_ingest_time_rule_field_value,
         state=namespace_ingest_time_rule_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -230,7 +228,6 @@ def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -243,7 +240,6 @@ def get_namespace_ingest_time_rules_output(compartment_id: Optional[pulumi.Input
         field_value=namespace_ingest_time_rule_field_value,
         state=namespace_ingest_time_rule_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

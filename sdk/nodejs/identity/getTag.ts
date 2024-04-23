@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     tagNamespaceId: testTagNamespace.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTag(args: GetTagArgs, opts?: pulumi.InvokeOptions): Promise<GetTagResult> {
 
@@ -105,7 +103,6 @@ export interface GetTagResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,7 +112,6 @@ export interface GetTagResult {
  *     tagNamespaceId: testTagNamespace.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTagOutput(args: GetTagOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagResult> {
     return pulumi.output(args).apply((a: any) => getTag(a, opts))

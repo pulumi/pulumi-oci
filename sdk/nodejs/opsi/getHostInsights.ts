@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,7 +29,6 @@ import * as utilities from "../utilities";
  *     statuses: hostInsightStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHostInsights(args?: GetHostInsightsArgs, opts?: pulumi.InvokeOptions): Promise<GetHostInsightsResult> {
     args = args || {};
@@ -135,7 +133,6 @@ export interface GetHostInsightsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -151,7 +148,6 @@ export interface GetHostInsightsResult {
  *     statuses: hostInsightStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHostInsightsOutput(args?: GetHostInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostInsightsResult> {
     return pulumi.output(args).apply((a: any) => getHostInsights(a, opts))

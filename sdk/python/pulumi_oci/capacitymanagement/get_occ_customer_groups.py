@@ -116,7 +116,6 @@ def get_occ_customer_groups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_occ_customer_groups(compartment_id: Optional[str] = None,
         id=occ_customer_group_id,
         status=occ_customer_group_status)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
@@ -166,7 +164,6 @@ def get_occ_customer_groups_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,7 +173,6 @@ def get_occ_customer_groups_output(compartment_id: Optional[pulumi.Input[str]] =
         id=occ_customer_group_id,
         status=occ_customer_group_status)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.

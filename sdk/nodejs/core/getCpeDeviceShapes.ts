@@ -25,14 +25,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testCpeDeviceShapes = oci.Core.getCpeDeviceShapes({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCpeDeviceShapes(args?: GetCpeDeviceShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetCpeDeviceShapesResult> {
     args = args || {};
@@ -83,14 +81,12 @@ export interface GetCpeDeviceShapesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testCpeDeviceShapes = oci.Core.getCpeDeviceShapes({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCpeDeviceShapesOutput(args?: GetCpeDeviceShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpeDeviceShapesResult> {
     return pulumi.output(args).apply((a: any) => getCpeDeviceShapes(a, opts))

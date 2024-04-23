@@ -413,7 +413,6 @@ def get_domains_app_role(app_role_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -425,7 +424,6 @@ def get_domains_app_role(app_role_id: Optional[str] = None,
         authorization=app_role_authorization,
         resource_type_schema_version=app_role_resource_type_schema_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str app_role_id: ID of the resource
@@ -495,7 +493,6 @@ def get_domains_app_role_output(app_role_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -507,7 +504,6 @@ def get_domains_app_role_output(app_role_id: Optional[pulumi.Input[str]] = None,
         authorization=app_role_authorization,
         resource_type_schema_version=app_role_resource_type_schema_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str app_role_id: ID of the resource

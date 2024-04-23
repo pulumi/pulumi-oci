@@ -220,7 +220,6 @@ def get_log(log_group_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -228,7 +227,6 @@ def get_log(log_group_id: Optional[str] = None,
     test_log = oci.Logging.get_log(log_group_id=test_log_group["id"],
         log_id=test_log_oci_logging_log["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str log_group_id: OCID of a log group to work with.
@@ -269,7 +267,6 @@ def get_log_output(log_group_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -277,7 +274,6 @@ def get_log_output(log_group_id: Optional[pulumi.Input[str]] = None,
     test_log = oci.Logging.get_log(log_group_id=test_log_group["id"],
         log_id=test_log_oci_logging_log["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str log_group_id: OCID of a log group to work with.

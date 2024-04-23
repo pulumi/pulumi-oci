@@ -74,14 +74,12 @@ def get_db_system_primary_db_instance(db_system_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_system_primary_db_instance = oci.Psql.get_db_system_primary_db_instance(db_system_id=test_db_system["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: A unique identifier for the database system.
@@ -107,14 +105,12 @@ def get_db_system_primary_db_instance_output(db_system_id: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_system_primary_db_instance = oci.Psql.get_db_system_primary_db_instance(db_system_id=test_db_system["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: A unique identifier for the database system.

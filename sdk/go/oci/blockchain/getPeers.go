@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetPeers(ctx *pulumi.Context, args *GetPeersArgs, opts ...pulumi.InvokeOption) (*GetPeersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPeersResult

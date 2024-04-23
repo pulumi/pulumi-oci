@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseRefreshableClones(args: GetAutonomousDatabaseRefreshableClonesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseRefreshableClonesResult> {
 
@@ -66,7 +64,6 @@ export interface GetAutonomousDatabaseRefreshableClonesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetAutonomousDatabaseRefreshableClonesResult {
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseRefreshableClonesOutput(args: GetAutonomousDatabaseRefreshableClonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseRefreshableClonesResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDatabaseRefreshableClones(a, opts))

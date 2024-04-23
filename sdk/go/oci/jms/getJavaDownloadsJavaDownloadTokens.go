@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetJavaDownloadsJavaDownloadTokens(ctx *pulumi.Context, args *GetJavaDownloadsJavaDownloadTokensArgs, opts ...pulumi.InvokeOption) (*GetJavaDownloadsJavaDownloadTokensResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJavaDownloadsJavaDownloadTokensResult

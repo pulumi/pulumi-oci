@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     productLicenseId: testProductLicense.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLicenseRecords(args: GetLicenseRecordsArgs, opts?: pulumi.InvokeOptions): Promise<GetLicenseRecordsResult> {
 
@@ -69,7 +67,6 @@ export interface GetLicenseRecordsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -78,7 +75,6 @@ export interface GetLicenseRecordsResult {
  *     productLicenseId: testProductLicense.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLicenseRecordsOutput(args: GetLicenseRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLicenseRecordsResult> {
     return pulumi.output(args).apply((a: any) => getLicenseRecords(a, opts))

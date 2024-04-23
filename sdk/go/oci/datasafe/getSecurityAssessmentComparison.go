@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetSecurityAssessmentComparison(ctx *pulumi.Context, args *GetSecurityAssessmentComparisonArgs, opts ...pulumi.InvokeOption) (*GetSecurityAssessmentComparisonResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityAssessmentComparisonResult

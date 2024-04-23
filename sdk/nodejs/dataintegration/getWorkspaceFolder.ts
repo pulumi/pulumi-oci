@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     workspaceId: testWorkspace.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceFolder(args: GetWorkspaceFolderArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceFolderResult> {
 
@@ -112,7 +110,6 @@ export interface GetWorkspaceFolderResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -122,7 +119,6 @@ export interface GetWorkspaceFolderResult {
  *     workspaceId: testWorkspace.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceFolderOutput(args: GetWorkspaceFolderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceFolderResult> {
     return pulumi.output(args).apply((a: any) => getWorkspaceFolder(a, opts))

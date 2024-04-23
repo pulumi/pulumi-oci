@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetPbfListing(ctx *pulumi.Context, args *GetPbfListingArgs, opts ...pulumi.InvokeOption) (*GetPbfListingResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPbfListingResult

@@ -613,7 +613,6 @@ class AuditTrailManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -631,7 +630,6 @@ class AuditTrailManagement(pulumi.CustomResource):
             },
             is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -670,7 +668,6 @@ class AuditTrailManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -688,7 +685,6 @@ class AuditTrailManagement(pulumi.CustomResource):
             },
             is_auto_purge_enabled=audit_trail_management_is_auto_purge_enabled)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

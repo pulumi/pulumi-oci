@@ -267,14 +267,12 @@ def get_asset(asset_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_asset = oci.CloudBridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str asset_id: Unique asset identifier.
@@ -316,14 +314,12 @@ def get_asset_output(asset_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_asset = oci.CloudBridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str asset_id: Unique asset identifier.

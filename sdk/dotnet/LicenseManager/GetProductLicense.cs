@@ -18,7 +18,6 @@ namespace Pulumi.Oci.LicenseManager
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.LicenseManager
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProductLicenseResult> InvokeAsync(GetProductLicenseArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProductLicenseResult>("oci:LicenseManager/getProductLicense:getProductLicense", args ?? new GetProductLicenseArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.LicenseManager
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.LicenseManager
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProductLicenseResult> Invoke(GetProductLicenseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProductLicenseResult>("oci:LicenseManager/getProductLicense:getProductLicense", args ?? new GetProductLicenseInvokeArgs(), options.WithDefaults());

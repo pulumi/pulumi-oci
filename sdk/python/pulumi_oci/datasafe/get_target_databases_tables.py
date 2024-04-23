@@ -132,7 +132,6 @@ def get_target_databases_tables(filters: Optional[Sequence[pulumi.InputType['Get
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -143,7 +142,6 @@ def get_target_databases_tables(filters: Optional[Sequence[pulumi.InputType['Get
         table_names=test_table["name"],
         table_name_contains=target_databases_table_table_name_contains)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str schema_name_contains: A filter to return only items if schema name contains a specific string.
@@ -188,7 +186,6 @@ def get_target_databases_tables_output(filters: Optional[pulumi.Input[Optional[S
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,7 +196,6 @@ def get_target_databases_tables_output(filters: Optional[pulumi.Input[Optional[S
         table_names=test_table["name"],
         table_name_contains=target_databases_table_table_name_contains)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str schema_name_contains: A filter to return only items if schema name contains a specific string.

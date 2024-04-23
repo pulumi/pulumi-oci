@@ -132,7 +132,6 @@ def get_ipsec_connection_tunnel_error(ipsec_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_ipsec_connection_tunnel_error(ipsec_id: Optional[str] = None,
     test_ipsec_connection_tunnel_error = oci.Core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
@@ -174,7 +172,6 @@ def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -182,7 +179,6 @@ def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[str
     test_ipsec_connection_tunnel_error = oci.Core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.

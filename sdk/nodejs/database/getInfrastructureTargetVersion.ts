@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     targetResourceType: infrastructureTargetVersionTargetResourceType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInfrastructureTargetVersion(args: GetInfrastructureTargetVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetInfrastructureTargetVersionResult> {
 
@@ -87,7 +85,6 @@ export interface GetInfrastructureTargetVersionResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,7 +95,6 @@ export interface GetInfrastructureTargetVersionResult {
  *     targetResourceType: infrastructureTargetVersionTargetResourceType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInfrastructureTargetVersionOutput(args: GetInfrastructureTargetVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInfrastructureTargetVersionResult> {
     return pulumi.output(args).apply((a: any) => getInfrastructureTargetVersion(a, opts))

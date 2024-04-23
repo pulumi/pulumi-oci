@@ -101,14 +101,12 @@ def get_ipsec_algorithm(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ipsec_algorithm = oci.Core.get_ipsec_algorithm()
     ```
-    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -131,13 +129,11 @@ def get_ipsec_algorithm_output(opts: Optional[pulumi.InvokeOptions] = None) -> p
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ipsec_algorithm = oci.Core.get_ipsec_algorithm()
     ```
-    <!--End PulumiCodeChooser -->
     """
     ...

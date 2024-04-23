@@ -98,7 +98,6 @@ def get_managed_database_user_consumer_group_privilege(managed_database_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -107,7 +106,6 @@ def get_managed_database_user_consumer_group_privilege(managed_database_id: Opti
         user_name=test_user["name"],
         name=managed_database_user_consumer_group_privilege_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -141,7 +139,6 @@ def get_managed_database_user_consumer_group_privilege_output(managed_database_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -150,7 +147,6 @@ def get_managed_database_user_consumer_group_privilege_output(managed_database_i
         user_name=test_user["name"],
         name=managed_database_user_consumer_group_privilege_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

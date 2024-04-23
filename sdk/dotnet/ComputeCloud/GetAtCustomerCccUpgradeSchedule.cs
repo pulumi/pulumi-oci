@@ -20,7 +20,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAtCustomerCccUpgradeScheduleResult> InvokeAsync(GetAtCustomerCccUpgradeScheduleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAtCustomerCccUpgradeScheduleResult>("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", args ?? new GetAtCustomerCccUpgradeScheduleArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAtCustomerCccUpgradeScheduleResult> Invoke(GetAtCustomerCccUpgradeScheduleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAtCustomerCccUpgradeScheduleResult>("oci:ComputeCloud/getAtCustomerCccUpgradeSchedule:getAtCustomerCccUpgradeSchedule", args ?? new GetAtCustomerCccUpgradeScheduleInvokeArgs(), options.WithDefaults());

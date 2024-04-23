@@ -123,7 +123,6 @@ def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -134,7 +133,6 @@ def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[
         search_by_user=java_license_acceptance_record_search_by_user,
         status=java_license_acceptance_record_status)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
@@ -178,7 +176,6 @@ def get_java_downloads_java_license_acceptance_records_output(compartment_id: Op
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_java_downloads_java_license_acceptance_records_output(compartment_id: Op
         search_by_user=java_license_acceptance_record_search_by_user,
         status=java_license_acceptance_record_status)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.

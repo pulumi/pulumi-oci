@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     apiId: testApi.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApiContent(args: GetApiContentArgs, opts?: pulumi.InvokeOptions): Promise<GetApiContentResult> {
 
@@ -58,7 +56,6 @@ export interface GetApiContentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -67,7 +64,6 @@ export interface GetApiContentResult {
  *     apiId: testApi.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApiContentOutput(args: GetApiContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiContentResult> {
     return pulumi.output(args).apply((a: any) => getApiContent(a, opts))

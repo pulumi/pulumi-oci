@@ -108,7 +108,6 @@ def get_audit_profile_collected_audit_volume(audit_profile_id: Optional[str] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,7 +117,6 @@ def get_audit_profile_collected_audit_volume(audit_profile_id: Optional[str] = N
         month_in_consideration_greater_than=audit_profile_collected_audit_volume_month_in_consideration_greater_than,
         month_in_consideration_less_than=audit_profile_collected_audit_volume_month_in_consideration_less_than)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str audit_profile_id: The OCID of the audit.
@@ -160,7 +158,6 @@ def get_audit_profile_collected_audit_volume_output(audit_profile_id: Optional[p
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_audit_profile_collected_audit_volume_output(audit_profile_id: Optional[p
         month_in_consideration_greater_than=audit_profile_collected_audit_volume_month_in_consideration_greater_than,
         month_in_consideration_less_than=audit_profile_collected_audit_volume_month_in_consideration_less_than)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str audit_profile_id: The OCID of the audit.

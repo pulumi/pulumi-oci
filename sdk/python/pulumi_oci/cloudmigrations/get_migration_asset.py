@@ -296,14 +296,12 @@ def get_migration_asset(migration_asset_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_migration_asset = oci.CloudMigrations.get_migration_asset(migration_asset_id=test_migration_asset_oci_cloud_migrations_migration_asset["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str migration_asset_id: Unique migration asset identifier
@@ -348,14 +346,12 @@ def get_migration_asset_output(migration_asset_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_migration_asset = oci.CloudMigrations.get_migration_asset(migration_asset_id=test_migration_asset_oci_cloud_migrations_migration_asset["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str migration_asset_id: Unique migration asset identifier

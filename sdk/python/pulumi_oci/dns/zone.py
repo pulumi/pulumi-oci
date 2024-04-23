@@ -505,7 +505,6 @@ class Zone(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -529,7 +528,6 @@ class Zone(pulumi.CustomResource):
             scope=zone_scope,
             view_id=test_view["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -577,7 +575,6 @@ class Zone(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -601,7 +598,6 @@ class Zone(pulumi.CustomResource):
             scope=zone_scope,
             view_id=test_view["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

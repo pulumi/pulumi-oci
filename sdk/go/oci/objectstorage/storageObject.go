@@ -25,7 +25,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -61,7 +60,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
@@ -73,7 +71,7 @@ import (
 type StorageObject struct {
 	pulumi.CustomResourceState
 
-	// The name of the bucket for the source object.
+	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 	Bucket pulumi.StringOutput `pulumi:"bucket"`
 	// The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
 	CacheControl pulumi.StringPtrOutput `pulumi:"cacheControl"`
@@ -98,9 +96,9 @@ type StorageObject struct {
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
 	Metadata pulumi.MapOutput `pulumi:"metadata"`
-	// The top-level namespace of the source object.
+	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
-	// The name of the source object.
+	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
 	Object pulumi.StringOutput `pulumi:"object"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 	OpcSseKmsKeyId pulumi.StringOutput `pulumi:"opcSseKmsKeyId"`
@@ -155,7 +153,7 @@ func GetStorageObject(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering StorageObject resources.
 type storageObjectState struct {
-	// The name of the bucket for the source object.
+	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 	Bucket *string `pulumi:"bucket"`
 	// The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
 	CacheControl *string `pulumi:"cacheControl"`
@@ -180,9 +178,9 @@ type storageObjectState struct {
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
 	Metadata map[string]interface{} `pulumi:"metadata"`
-	// The top-level namespace of the source object.
+	// The Object Storage namespace used for the request.
 	Namespace *string `pulumi:"namespace"`
-	// The name of the source object.
+	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
 	Object *string `pulumi:"object"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 	OpcSseKmsKeyId *string `pulumi:"opcSseKmsKeyId"`
@@ -199,7 +197,7 @@ type storageObjectState struct {
 }
 
 type StorageObjectState struct {
-	// The name of the bucket for the source object.
+	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 	Bucket pulumi.StringPtrInput
 	// The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
 	CacheControl pulumi.StringPtrInput
@@ -224,9 +222,9 @@ type StorageObjectState struct {
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
 	Metadata pulumi.MapInput
-	// The top-level namespace of the source object.
+	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringPtrInput
-	// The name of the source object.
+	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
 	Object pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 	OpcSseKmsKeyId pulumi.StringPtrInput
@@ -247,7 +245,7 @@ func (StorageObjectState) ElementType() reflect.Type {
 }
 
 type storageObjectArgs struct {
-	// The name of the bucket for the source object.
+	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 	Bucket string `pulumi:"bucket"`
 	// The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
 	CacheControl *string `pulumi:"cacheControl"`
@@ -270,9 +268,9 @@ type storageObjectArgs struct {
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
 	Metadata map[string]interface{} `pulumi:"metadata"`
-	// The top-level namespace of the source object.
+	// The Object Storage namespace used for the request.
 	Namespace string `pulumi:"namespace"`
-	// The name of the source object.
+	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
 	Object string `pulumi:"object"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 	OpcSseKmsKeyId *string `pulumi:"opcSseKmsKeyId"`
@@ -287,7 +285,7 @@ type storageObjectArgs struct {
 
 // The set of arguments for constructing a StorageObject resource.
 type StorageObjectArgs struct {
-	// The name of the bucket for the source object.
+	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 	Bucket pulumi.StringInput
 	// The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
 	CacheControl pulumi.StringPtrInput
@@ -310,9 +308,9 @@ type StorageObjectArgs struct {
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
 	Metadata pulumi.MapInput
-	// The top-level namespace of the source object.
+	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringInput
-	// The name of the source object.
+	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
 	Object pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 	OpcSseKmsKeyId pulumi.StringPtrInput
@@ -412,7 +410,7 @@ func (o StorageObjectOutput) ToStorageObjectOutputWithContext(ctx context.Contex
 	return o
 }
 
-// The name of the bucket for the source object.
+// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 func (o StorageObjectOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -470,12 +468,12 @@ func (o StorageObjectOutput) Metadata() pulumi.MapOutput {
 	return o.ApplyT(func(v *StorageObject) pulumi.MapOutput { return v.Metadata }).(pulumi.MapOutput)
 }
 
-// The top-level namespace of the source object.
+// The Object Storage namespace used for the request.
 func (o StorageObjectOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The name of the source object.
+// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
 func (o StorageObjectOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v *StorageObject) pulumi.StringOutput { return v.Object }).(pulumi.StringOutput)
 }

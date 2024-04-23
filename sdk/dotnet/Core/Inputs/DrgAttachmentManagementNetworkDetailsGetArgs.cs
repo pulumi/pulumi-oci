@@ -25,11 +25,11 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? IpsecConnectionId { get; set; }
 
         /// <summary>
-        /// The OCID of the route table the DRG attachment is using.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
         /// 
         /// For information about why you would associate a route table with a DRG attachment, see:
         /// * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-        /// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+        /// * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }

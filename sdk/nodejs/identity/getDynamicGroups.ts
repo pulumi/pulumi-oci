@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: dynamicGroupState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDynamicGroups(args: GetDynamicGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetDynamicGroupsResult> {
 
@@ -93,7 +91,6 @@ export interface GetDynamicGroupsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,7 +101,6 @@ export interface GetDynamicGroupsResult {
  *     state: dynamicGroupState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDynamicGroupsOutput(args: GetDynamicGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDynamicGroupsResult> {
     return pulumi.output(args).apply((a: any) => getDynamicGroups(a, opts))

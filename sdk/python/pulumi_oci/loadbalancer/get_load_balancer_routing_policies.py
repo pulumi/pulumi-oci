@@ -86,14 +86,12 @@ def get_load_balancer_routing_policies(filters: Optional[Sequence[pulumi.InputTy
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_load_balancer_routing_policies = oci.LoadBalancer.get_load_balancer_routing_policies(load_balancer_id=test_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the routing policies.
@@ -122,14 +120,12 @@ def get_load_balancer_routing_policies_output(filters: Optional[pulumi.Input[Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_load_balancer_routing_policies = oci.LoadBalancer.get_load_balancer_routing_policies(load_balancer_id=test_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the routing policies.

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     exportDashboardId: testExportDashboard.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementDashboardsExport(args: GetManagementDashboardsExportArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementDashboardsExportResult> {
 
@@ -65,7 +63,6 @@ export interface GetManagementDashboardsExportResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -74,7 +71,6 @@ export interface GetManagementDashboardsExportResult {
  *     exportDashboardId: testExportDashboard.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementDashboardsExportOutput(args: GetManagementDashboardsExportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementDashboardsExportResult> {
     return pulumi.output(args).apply((a: any) => getManagementDashboardsExport(a, opts))

@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     vlanId: testVlan.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkSecurityGroups(args?: GetNetworkSecurityGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityGroupsResult> {
     args = args || {};
@@ -109,7 +107,6 @@ export interface GetNetworkSecurityGroupsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -122,7 +119,6 @@ export interface GetNetworkSecurityGroupsResult {
  *     vlanId: testVlan.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkSecurityGroupsOutput(args?: GetNetworkSecurityGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupsResult> {
     return pulumi.output(args).apply((a: any) => getNetworkSecurityGroups(a, opts))

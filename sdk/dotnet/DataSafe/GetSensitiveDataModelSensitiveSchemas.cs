@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSensitiveDataModelSensitiveSchemasResult> InvokeAsync(GetSensitiveDataModelSensitiveSchemasArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveDataModelSensitiveSchemasResult>("oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas", args ?? new GetSensitiveDataModelSensitiveSchemasArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSensitiveDataModelSensitiveSchemasResult> Invoke(GetSensitiveDataModelSensitiveSchemasInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelSensitiveSchemasResult>("oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas", args ?? new GetSensitiveDataModelSensitiveSchemasInvokeArgs(), options.WithDefaults());

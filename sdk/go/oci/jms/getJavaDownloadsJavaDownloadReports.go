@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetJavaDownloadsJavaDownloadReports(ctx *pulumi.Context, args *GetJavaDownloadsJavaDownloadReportsArgs, opts ...pulumi.InvokeOption) (*GetJavaDownloadsJavaDownloadReportsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJavaDownloadsJavaDownloadReportsResult

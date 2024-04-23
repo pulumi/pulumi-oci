@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetOccAvailabilityCatalogContent(ctx *pulumi.Context, args *GetOccAvailabilityCatalogContentArgs, opts ...pulumi.InvokeOption) (*GetOccAvailabilityCatalogContentResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOccAvailabilityCatalogContentResult

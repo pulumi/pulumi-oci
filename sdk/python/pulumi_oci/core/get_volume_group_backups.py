@@ -116,7 +116,6 @@ def get_volume_group_backups(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,7 +124,6 @@ def get_volume_group_backups(compartment_id: Optional[str] = None,
         display_name=volume_group_backup_display_name,
         volume_group_id=test_volume_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -163,7 +161,6 @@ def get_volume_group_backups_output(compartment_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -172,7 +169,6 @@ def get_volume_group_backups_output(compartment_id: Optional[pulumi.Input[str]] 
         display_name=volume_group_backup_display_name,
         volume_group_id=test_volume_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

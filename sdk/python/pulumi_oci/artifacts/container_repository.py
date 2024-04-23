@@ -431,7 +431,6 @@ class ContainerRepository(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -452,7 +451,6 @@ class ContainerRepository(pulumi.CustomResource):
                 format=container_repository_readme_format,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -485,7 +483,6 @@ class ContainerRepository(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -506,7 +503,6 @@ class ContainerRepository(pulumi.CustomResource):
                 format=container_repository_readme_format,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

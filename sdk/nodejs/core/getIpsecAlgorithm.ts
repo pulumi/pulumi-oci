@@ -13,14 +13,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpsecAlgorithm = oci.Core.getIpsecAlgorithm({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIpsecAlgorithm(opts?: pulumi.InvokeOptions): Promise<GetIpsecAlgorithmResult> {
 
@@ -61,14 +59,12 @@ export interface GetIpsecAlgorithmResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpsecAlgorithm = oci.Core.getIpsecAlgorithm({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIpsecAlgorithmOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecAlgorithmResult> {
     return pulumi.output(getIpsecAlgorithm(opts))

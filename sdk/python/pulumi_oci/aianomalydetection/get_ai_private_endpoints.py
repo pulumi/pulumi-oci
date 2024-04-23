@@ -116,7 +116,6 @@ def get_ai_private_endpoints(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_ai_private_endpoints(compartment_id: Optional[str] = None,
         id=ai_private_endpoint_id,
         state=ai_private_endpoint_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -166,7 +164,6 @@ def get_ai_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,7 +173,6 @@ def get_ai_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] 
         id=ai_private_endpoint_id,
         state=ai_private_endpoint_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

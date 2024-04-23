@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetPrivateApplicationPackages(ctx *pulumi.Context, args *GetPrivateApplicationPackagesArgs, opts ...pulumi.InvokeOption) (*GetPrivateApplicationPackagesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPrivateApplicationPackagesResult

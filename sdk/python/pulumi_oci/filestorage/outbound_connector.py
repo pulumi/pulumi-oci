@@ -434,7 +434,6 @@ class OutboundConnector(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -458,7 +457,6 @@ class OutboundConnector(pulumi.CustomResource):
             password_secret_id=test_secret["id"],
             password_secret_version=outbound_connector_password_secret_version)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -517,7 +515,6 @@ class OutboundConnector(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -541,7 +538,6 @@ class OutboundConnector(pulumi.CustomResource):
             password_secret_id=test_secret["id"],
             password_secret_version=outbound_connector_password_secret_version)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -17,45 +17,43 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CloudAutonomousVmClusterMaintenanceWindow {
     /**
-     * @return (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+     * @return Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
      * 
      */
     private @Nullable Integer customActionTimeoutInMins;
     /**
-     * @return (Updatable) Days during the week when maintenance should be performed.
+     * @return Days during the week when maintenance should be performed.
      * 
      */
     private @Nullable List<CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek> daysOfWeeks;
     /**
-     * @return (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+     * @return The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
     private @Nullable List<Integer> hoursOfDays;
     /**
-     * @return (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+     * @return If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
      * 
      */
     private @Nullable Boolean isCustomActionTimeoutEnabled;
     /**
-     * @return (Updatable) If true, enables the monthly patching option.
+     * @return If true, enables the monthly patching option.
      * 
      */
     private @Nullable Boolean isMonthlyPatchingEnabled;
     /**
-     * @return (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+     * @return Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
     private @Nullable Integer leadTimeInWeeks;
     /**
-     * @return (Updatable) Months during the year when maintenance should be performed.
+     * @return Months during the year when maintenance should be performed.
      * 
      */
     private @Nullable List<CloudAutonomousVmClusterMaintenanceWindowMonth> months;
     /**
-     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-     * 
-     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     * @return Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
      */
     private @Nullable String patchingMode;
@@ -73,21 +71,21 @@ public final class CloudAutonomousVmClusterMaintenanceWindow {
 
     private CloudAutonomousVmClusterMaintenanceWindow() {}
     /**
-     * @return (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+     * @return Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
      * 
      */
     public Optional<Integer> customActionTimeoutInMins() {
         return Optional.ofNullable(this.customActionTimeoutInMins);
     }
     /**
-     * @return (Updatable) Days during the week when maintenance should be performed.
+     * @return Days during the week when maintenance should be performed.
      * 
      */
     public List<CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek> daysOfWeeks() {
         return this.daysOfWeeks == null ? List.of() : this.daysOfWeeks;
     }
     /**
-     * @return (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+     * @return The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
@@ -95,37 +93,35 @@ public final class CloudAutonomousVmClusterMaintenanceWindow {
         return this.hoursOfDays == null ? List.of() : this.hoursOfDays;
     }
     /**
-     * @return (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+     * @return If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
      * 
      */
     public Optional<Boolean> isCustomActionTimeoutEnabled() {
         return Optional.ofNullable(this.isCustomActionTimeoutEnabled);
     }
     /**
-     * @return (Updatable) If true, enables the monthly patching option.
+     * @return If true, enables the monthly patching option.
      * 
      */
     public Optional<Boolean> isMonthlyPatchingEnabled() {
         return Optional.ofNullable(this.isMonthlyPatchingEnabled);
     }
     /**
-     * @return (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+     * @return Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
     public Optional<Integer> leadTimeInWeeks() {
         return Optional.ofNullable(this.leadTimeInWeeks);
     }
     /**
-     * @return (Updatable) Months during the year when maintenance should be performed.
+     * @return Months during the year when maintenance should be performed.
      * 
      */
     public List<CloudAutonomousVmClusterMaintenanceWindowMonth> months() {
         return this.months == null ? List.of() : this.months;
     }
     /**
-     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-     * 
-     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     * @return Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
      * 
      */
     public Optional<String> patchingMode() {

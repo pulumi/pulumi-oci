@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetObjectLifecyclePolicyResult> InvokeAsync(GetObjectLifecyclePolicyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectLifecyclePolicyResult>("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args ?? new GetObjectLifecyclePolicyArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetObjectLifecyclePolicyResult> Invoke(GetObjectLifecyclePolicyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectLifecyclePolicyResult>("oci:ObjectStorage/getObjectLifecyclePolicy:getObjectLifecyclePolicy", args ?? new GetObjectLifecyclePolicyInvokeArgs(), options.WithDefaults());

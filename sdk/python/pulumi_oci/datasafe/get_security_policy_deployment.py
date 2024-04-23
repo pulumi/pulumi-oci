@@ -206,14 +206,12 @@ def get_security_policy_deployment(security_policy_deployment_id: Optional[str] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_policy_deployment = oci.DataSafe.get_security_policy_deployment(security_policy_deployment_id=test_security_policy_deployment_oci_data_safe_security_policy_deployment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str security_policy_deployment_id: The OCID of the security policy deployment resource.
@@ -250,14 +248,12 @@ def get_security_policy_deployment_output(security_policy_deployment_id: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_policy_deployment = oci.DataSafe.get_security_policy_deployment(security_policy_deployment_id=test_security_policy_deployment_oci_data_safe_security_policy_deployment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str security_policy_deployment_id: The OCID of the security policy deployment resource.

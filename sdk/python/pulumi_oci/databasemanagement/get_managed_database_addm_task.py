@@ -99,7 +99,6 @@ def get_managed_database_addm_task(managed_database_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -108,7 +107,6 @@ def get_managed_database_addm_task(managed_database_id: Optional[str] = None,
         time_end=managed_database_addm_task_time_end,
         time_start=managed_database_addm_task_time_start)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -143,7 +141,6 @@ def get_managed_database_addm_task_output(managed_database_id: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,7 +149,6 @@ def get_managed_database_addm_task_output(managed_database_id: Optional[pulumi.I
         time_end=managed_database_addm_task_time_end,
         time_start=managed_database_addm_task_time_start)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

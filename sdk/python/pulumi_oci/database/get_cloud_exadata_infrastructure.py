@@ -459,14 +459,12 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -524,14 +522,12 @@ def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cloud_exadata_infrastructure = oci.Database.get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure_oci_database_cloud_exadata_infrastructure["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

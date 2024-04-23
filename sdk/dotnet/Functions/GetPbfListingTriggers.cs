@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPbfListingTriggersResult> InvokeAsync(GetPbfListingTriggersArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPbfListingTriggersResult>("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", args ?? new GetPbfListingTriggersArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPbfListingTriggersResult> Invoke(GetPbfListingTriggersInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbfListingTriggersResult>("oci:Functions/getPbfListingTriggers:getPbfListingTriggers", args ?? new GetPbfListingTriggersInvokeArgs(), options.WithDefaults());

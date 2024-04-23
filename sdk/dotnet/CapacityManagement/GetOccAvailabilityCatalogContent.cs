@@ -19,7 +19,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOccAvailabilityCatalogContentResult> InvokeAsync(GetOccAvailabilityCatalogContentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOccAvailabilityCatalogContentResult>("oci:CapacityManagement/getOccAvailabilityCatalogContent:getOccAvailabilityCatalogContent", args ?? new GetOccAvailabilityCatalogContentArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOccAvailabilityCatalogContentResult> Invoke(GetOccAvailabilityCatalogContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccAvailabilityCatalogContentResult>("oci:CapacityManagement/getOccAvailabilityCatalogContent:getOccAvailabilityCatalogContent", args ?? new GetOccAvailabilityCatalogContentInvokeArgs(), options.WithDefaults());

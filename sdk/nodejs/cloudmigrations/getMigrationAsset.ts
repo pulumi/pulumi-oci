@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     migrationAssetId: testMigrationAssetOciCloudMigrationsMigrationAsset.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMigrationAsset(args: GetMigrationAssetArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationAssetResult> {
 
@@ -131,7 +129,6 @@ export interface GetMigrationAssetResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,7 +137,6 @@ export interface GetMigrationAssetResult {
  *     migrationAssetId: testMigrationAssetOciCloudMigrationsMigrationAsset.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMigrationAssetOutput(args: GetMigrationAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationAssetResult> {
     return pulumi.output(args).apply((a: any) => getMigrationAsset(a, opts))

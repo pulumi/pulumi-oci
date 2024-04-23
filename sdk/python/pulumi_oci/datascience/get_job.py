@@ -306,14 +306,12 @@ def get_job(job_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_job = oci.DataScience.get_job(job_id=test_job_oci_datascience_job["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
@@ -360,14 +358,12 @@ def get_job_output(job_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_job = oci.DataScience.get_job(job_id=test_job_oci_datascience_job["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.

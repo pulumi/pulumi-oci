@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetTunnelSecurityAssociations(ctx *pulumi.Context, args *GetTunnelSecurityAssociationsArgs, opts ...pulumi.InvokeOption) (*GetTunnelSecurityAssociationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTunnelSecurityAssociationsResult

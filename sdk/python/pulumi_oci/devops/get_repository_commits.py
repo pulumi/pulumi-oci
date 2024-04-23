@@ -162,7 +162,6 @@ def get_repository_commits(author_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,7 +175,6 @@ def get_repository_commits(author_name: Optional[str] = None,
         timestamp_greater_than_or_equal_to=repository_commit_timestamp_greater_than_or_equal_to,
         timestamp_less_than_or_equal_to=repository_commit_timestamp_less_than_or_equal_to)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str author_name: A filter to return any commits that are pushed by the requested author.
@@ -233,7 +231,6 @@ def get_repository_commits_output(author_name: Optional[pulumi.Input[Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -247,7 +244,6 @@ def get_repository_commits_output(author_name: Optional[pulumi.Input[Optional[st
         timestamp_greater_than_or_equal_to=repository_commit_timestamp_greater_than_or_equal_to,
         timestamp_less_than_or_equal_to=repository_commit_timestamp_less_than_or_equal_to)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str author_name: A filter to return any commits that are pushed by the requested author.

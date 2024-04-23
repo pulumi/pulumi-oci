@@ -476,7 +476,6 @@ class TargetAsset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -555,7 +554,6 @@ class TargetAsset(pulumi.CustomResource):
             block_volumes_performance=target_asset_block_volumes_performance,
             ms_license=target_asset_ms_license)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -588,7 +586,6 @@ class TargetAsset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -667,7 +664,6 @@ class TargetAsset(pulumi.CustomResource):
             block_volumes_performance=target_asset_block_volumes_performance,
             ms_license=target_asset_ms_license)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

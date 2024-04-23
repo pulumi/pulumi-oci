@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetCrossConnectLocations(ctx *pulumi.Context, args *GetCrossConnectLocationsArgs, opts ...pulumi.InvokeOption) (*GetCrossConnectLocationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCrossConnectLocationsResult

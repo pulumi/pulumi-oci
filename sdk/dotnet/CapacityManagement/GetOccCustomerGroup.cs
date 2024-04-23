@@ -19,7 +19,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOccCustomerGroupResult> InvokeAsync(GetOccCustomerGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOccCustomerGroupResult>("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", args ?? new GetOccCustomerGroupArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOccCustomerGroupResult> Invoke(GetOccCustomerGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccCustomerGroupResult>("oci:CapacityManagement/getOccCustomerGroup:getOccCustomerGroup", args ?? new GetOccCustomerGroupInvokeArgs(), options.WithDefaults());

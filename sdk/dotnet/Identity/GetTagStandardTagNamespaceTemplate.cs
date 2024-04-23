@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetTagStandardTagNamespaceTemplateResult> InvokeAsync(GetTagStandardTagNamespaceTemplateArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTagStandardTagNamespaceTemplateResult>("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", args ?? new GetTagStandardTagNamespaceTemplateArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetTagStandardTagNamespaceTemplateResult> Invoke(GetTagStandardTagNamespaceTemplateInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTagStandardTagNamespaceTemplateResult>("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", args ?? new GetTagStandardTagNamespaceTemplateInvokeArgs(), options.WithDefaults());

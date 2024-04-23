@@ -142,7 +142,6 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -151,7 +150,6 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
             external_database_connector_id=test_external_database_connector["id"],
             external_pluggable_database_id=test_external_pluggable_database["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -180,7 +178,6 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -189,7 +186,6 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
             external_database_connector_id=test_external_database_connector["id"],
             external_pluggable_database_id=test_external_pluggable_database["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

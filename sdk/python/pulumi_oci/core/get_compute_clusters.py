@@ -116,7 +116,6 @@ def get_compute_clusters(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -125,7 +124,6 @@ def get_compute_clusters(availability_domain: Optional[str] = None,
         availability_domain=compute_cluster_availability_domain,
         display_name=compute_cluster_display_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -163,7 +161,6 @@ def get_compute_clusters_output(availability_domain: Optional[pulumi.Input[Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -172,7 +169,6 @@ def get_compute_clusters_output(availability_domain: Optional[pulumi.Input[Optio
         availability_domain=compute_cluster_availability_domain,
         display_name=compute_cluster_display_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

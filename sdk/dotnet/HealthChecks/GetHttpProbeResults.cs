@@ -21,7 +21,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetHttpProbeResultsResult> InvokeAsync(GetHttpProbeResultsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHttpProbeResultsResult>("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", args ?? new GetHttpProbeResultsArgs(), options.WithDefaults());
@@ -55,7 +53,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetHttpProbeResultsResult> Invoke(GetHttpProbeResultsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHttpProbeResultsResult>("oci:HealthChecks/getHttpProbeResults:getHttpProbeResults", args ?? new GetHttpProbeResultsInvokeArgs(), options.WithDefaults());

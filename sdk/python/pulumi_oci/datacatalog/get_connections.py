@@ -236,7 +236,6 @@ def get_connections(catalog_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -255,7 +254,6 @@ def get_connections(catalog_id: Optional[str] = None,
         time_updated=connection_time_updated,
         updated_by_id=test_updated_by["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_id: Unique catalog identifier.
@@ -332,7 +330,6 @@ def get_connections_output(catalog_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -351,7 +348,6 @@ def get_connections_output(catalog_id: Optional[pulumi.Input[str]] = None,
         time_updated=connection_time_updated,
         updated_by_id=test_updated_by["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_id: Unique catalog identifier.

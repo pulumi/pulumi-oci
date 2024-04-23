@@ -476,7 +476,6 @@ class BackupDestination(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -499,7 +498,6 @@ class BackupDestination(pulumi.CustomResource):
             ),
             vpc_users=backup_destination_vpc_users)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -538,7 +536,6 @@ class BackupDestination(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -561,7 +558,6 @@ class BackupDestination(pulumi.CustomResource):
             ),
             vpc_users=backup_destination_vpc_users)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

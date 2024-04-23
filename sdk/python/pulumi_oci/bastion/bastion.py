@@ -544,7 +544,6 @@ class Bastion(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -566,7 +565,6 @@ class Bastion(pulumi.CustomResource):
             phone_book_entry=bastion_phone_book_entry,
             static_jump_host_ip_addresses=bastion_static_jump_host_ip_addresses)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -607,7 +605,6 @@ class Bastion(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -629,7 +626,6 @@ class Bastion(pulumi.CustomResource):
             phone_book_entry=bastion_phone_book_entry,
             static_jump_host_ip_addresses=bastion_static_jump_host_ip_addresses)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

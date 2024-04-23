@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDataGuardAssociation(ctx *pulumi.Context, args *LookupDataGuardAssociationArgs, opts ...pulumi.InvokeOption) (*LookupDataGuardAssociationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDataGuardAssociationResult

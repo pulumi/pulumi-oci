@@ -270,7 +270,6 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -281,7 +280,6 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
             zone_id=test_zone["id"],
             display_name=steering_policy_attachment_display_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -320,7 +318,6 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -331,7 +328,6 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
             zone_id=test_zone["id"],
             display_name=steering_policy_attachment_display_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

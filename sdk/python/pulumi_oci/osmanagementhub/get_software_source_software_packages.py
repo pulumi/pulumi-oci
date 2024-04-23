@@ -123,7 +123,6 @@ def get_software_source_software_packages(display_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -133,7 +132,6 @@ def get_software_source_software_packages(display_name: Optional[str] = None,
         display_name_contains=software_source_software_package_display_name_contains,
         is_latest=software_source_software_package_is_latest)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
@@ -175,7 +173,6 @@ def get_software_source_software_packages_output(display_name: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -185,7 +182,6 @@ def get_software_source_software_packages_output(display_name: Optional[pulumi.I
         display_name_contains=software_source_software_package_display_name_contains,
         is_latest=software_source_software_package_is_latest)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`

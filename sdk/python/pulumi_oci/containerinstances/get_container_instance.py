@@ -327,14 +327,12 @@ def get_container_instance(container_instance_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_container_instance = oci.ContainerInstances.get_container_instance(container_instance_id=test_container_instance_oci_container_instances_container_instance["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str container_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
@@ -381,14 +379,12 @@ def get_container_instance_output(container_instance_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_container_instance = oci.ContainerInstances.get_container_instance(container_instance_id=test_container_instance_oci_container_instances_container_instance["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str container_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.

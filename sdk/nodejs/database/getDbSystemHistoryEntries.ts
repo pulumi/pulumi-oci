@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemHistoryEntries(args: GetDbSystemHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemHistoryEntriesResult> {
 
@@ -66,7 +64,6 @@ export interface GetDbSystemHistoryEntriesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetDbSystemHistoryEntriesResult {
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemHistoryEntriesOutput(args: GetDbSystemHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemHistoryEntriesResult> {
     return pulumi.output(args).apply((a: any) => getDbSystemHistoryEntries(a, opts))

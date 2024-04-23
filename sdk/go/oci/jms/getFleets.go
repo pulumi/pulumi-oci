@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetFleets(ctx *pulumi.Context, args *GetFleetsArgs, opts ...pulumi.InvokeOption) (*GetFleetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetsResult

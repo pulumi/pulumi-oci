@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     computeNetworkBlockId: testComputeNetworkBlock.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getComputeCapacityTopologyComputeBareMetalHosts(args: GetComputeCapacityTopologyComputeBareMetalHostsArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityTopologyComputeBareMetalHostsResult> {
 
@@ -113,7 +111,6 @@ export interface GetComputeCapacityTopologyComputeBareMetalHostsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetComputeCapacityTopologyComputeBareMetalHostsResult {
  *     computeNetworkBlockId: testComputeNetworkBlock.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getComputeCapacityTopologyComputeBareMetalHostsOutput(args: GetComputeCapacityTopologyComputeBareMetalHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> {
     return pulumi.output(args).apply((a: any) => getComputeCapacityTopologyComputeBareMetalHosts(a, opts))

@@ -255,14 +255,12 @@ def get_detect_anomaly_job(detect_anomaly_job_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_detect_anomaly_job = oci.AiAnomalyDetection.get_detect_anomaly_job(detect_anomaly_job_id=test_detect_anomaly_job_oci_ai_anomaly_detection_detect_anomaly_job["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str detect_anomaly_job_id: Unique asynchronous job identifier.
@@ -303,14 +301,12 @@ def get_detect_anomaly_job_output(detect_anomaly_job_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_detect_anomaly_job = oci.AiAnomalyDetection.get_detect_anomaly_job(detect_anomaly_job_id=test_detect_anomaly_job_oci_ai_anomaly_detection_detect_anomaly_job["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str detect_anomaly_job_id: Unique asynchronous job identifier.

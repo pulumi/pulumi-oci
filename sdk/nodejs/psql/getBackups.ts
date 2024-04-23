@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     timeStarted: backupTimeStarted,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBackups(args?: GetBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetBackupsResult> {
     args = args || {};
@@ -117,7 +115,6 @@ export interface GetBackupsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -132,7 +129,6 @@ export interface GetBackupsResult {
  *     timeStarted: backupTimeStarted,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBackupsOutput(args?: GetBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackupsResult> {
     return pulumi.output(args).apply((a: any) => getBackups(a, opts))

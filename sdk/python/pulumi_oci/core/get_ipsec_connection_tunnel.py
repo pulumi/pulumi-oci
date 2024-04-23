@@ -316,7 +316,6 @@ def get_ipsec_connection_tunnel(ipsec_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -324,7 +323,6 @@ def get_ipsec_connection_tunnel(ipsec_id: Optional[str] = None,
     test_ip_sec_connection_tunnel = oci.Core.get_ipsec_connection_tunnel(ipsec_id=test_ipsec["id"],
         tunnel_id=test_ip_sec_connection_tunnels["ipSecConnectionTunnels"][0]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ipsec_id: The OCID of the IPSec connection.
@@ -374,7 +372,6 @@ def get_ipsec_connection_tunnel_output(ipsec_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -382,7 +379,6 @@ def get_ipsec_connection_tunnel_output(ipsec_id: Optional[pulumi.Input[str]] = N
     test_ip_sec_connection_tunnel = oci.Core.get_ipsec_connection_tunnel(ipsec_id=test_ipsec["id"],
         tunnel_id=test_ip_sec_connection_tunnels["ipSecConnectionTunnels"][0]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ipsec_id: The OCID of the IPSec connection.

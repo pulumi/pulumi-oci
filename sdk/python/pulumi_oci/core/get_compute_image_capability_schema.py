@@ -180,7 +180,6 @@ def get_compute_image_capability_schema(compute_image_capability_schema_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -188,7 +187,6 @@ def get_compute_image_capability_schema(compute_image_capability_schema_id: Opti
     test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=test_compute_image_capability_schema_oci_core_compute_image_capability_schema["id"],
         is_merge_enabled=compute_image_capability_schema_is_merge_enabled)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_image_capability_schema_id: The id of the compute image capability schema or the image ocid
@@ -226,7 +224,6 @@ def get_compute_image_capability_schema_output(compute_image_capability_schema_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -234,7 +231,6 @@ def get_compute_image_capability_schema_output(compute_image_capability_schema_i
     test_compute_image_capability_schema = oci.Core.get_compute_image_capability_schema(compute_image_capability_schema_id=test_compute_image_capability_schema_oci_core_compute_image_capability_schema["id"],
         is_merge_enabled=compute_image_capability_schema_is_merge_enabled)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_image_capability_schema_id: The id of the compute image capability schema or the image ocid

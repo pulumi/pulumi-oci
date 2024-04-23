@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCloudExadataInfrastructure(args: GetCloudExadataInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudExadataInfrastructureResult> {
 
@@ -191,7 +189,6 @@ export interface GetCloudExadataInfrastructureResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -200,7 +197,6 @@ export interface GetCloudExadataInfrastructureResult {
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCloudExadataInfrastructureOutput(args: GetCloudExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudExadataInfrastructureResult> {
     return pulumi.output(args).apply((a: any) => getCloudExadataInfrastructure(a, opts))

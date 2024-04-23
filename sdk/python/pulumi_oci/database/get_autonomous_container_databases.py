@@ -193,7 +193,6 @@ def get_autonomous_container_databases(autonomous_exadata_infrastructure_id: Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,7 +207,6 @@ def get_autonomous_container_databases(autonomous_exadata_infrastructure_id: Opt
         service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
         state=autonomous_container_database_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -269,7 +267,6 @@ def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -284,7 +281,6 @@ def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_
         service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
         state=autonomous_container_database_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

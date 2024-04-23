@@ -96,7 +96,6 @@ def get_tunnel_security_associations(filters: Optional[Sequence[pulumi.InputType
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,7 +103,6 @@ def get_tunnel_security_associations(filters: Optional[Sequence[pulumi.InputType
     test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
@@ -137,7 +135,6 @@ def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,7 +142,6 @@ def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optio
     test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ipsec_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.

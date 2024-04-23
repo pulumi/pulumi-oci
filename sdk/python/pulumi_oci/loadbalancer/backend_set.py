@@ -426,7 +426,6 @@ class BackendSet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -470,7 +469,6 @@ class BackendSet(pulumi.CustomResource):
                 verify_peer_certificate=backend_set_ssl_configuration_verify_peer_certificate,
             ))
         ```
-        <!--End PulumiCodeChooser -->
         **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
               (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
               attributes per backend set.
@@ -542,7 +540,6 @@ class BackendSet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -586,7 +583,6 @@ class BackendSet(pulumi.CustomResource):
                 verify_peer_certificate=backend_set_ssl_configuration_verify_peer_certificate,
             ))
         ```
-        <!--End PulumiCodeChooser -->
         **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
               (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
               attributes per backend set.

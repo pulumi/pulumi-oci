@@ -128,7 +128,6 @@ def get_autonomous_database_software_images(compartment_id: Optional[str] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_autonomous_database_software_images(compartment_id: Optional[str] = None
         display_name=autonomous_database_software_image_display_name,
         state=autonomous_database_software_image_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -179,7 +177,6 @@ def get_autonomous_database_software_images_output(compartment_id: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_autonomous_database_software_images_output(compartment_id: Optional[pulu
         display_name=autonomous_database_software_image_display_name,
         state=autonomous_database_software_image_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

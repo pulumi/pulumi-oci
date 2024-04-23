@@ -119,7 +119,6 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,7 +127,6 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
         opc_named_credential_id=managed_database_cursor_cache_statement_opc_named_credential_id,
         sql_text=managed_database_cursor_cache_statement_sql_text)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -168,7 +166,6 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,7 +174,6 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
         opc_named_credential_id=managed_database_cursor_cache_statement_opc_named_credential_id,
         sql_text=managed_database_cursor_cache_statement_sql_text)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

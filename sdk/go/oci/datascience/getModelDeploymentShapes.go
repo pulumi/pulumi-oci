@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetModelDeploymentShapes(ctx *pulumi.Context, args *GetModelDeploymentShapesArgs, opts ...pulumi.InvokeOption) (*GetModelDeploymentShapesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetModelDeploymentShapesResult

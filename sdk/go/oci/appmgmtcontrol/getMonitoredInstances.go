@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetMonitoredInstances(ctx *pulumi.Context, args *GetMonitoredInstancesArgs, opts ...pulumi.InvokeOption) (*GetMonitoredInstancesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMonitoredInstancesResult

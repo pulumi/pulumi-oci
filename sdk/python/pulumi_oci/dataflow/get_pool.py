@@ -243,14 +243,12 @@ def get_pool(pool_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pool = oci.DataFlow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str pool_id: The unique ID for a pool.
@@ -290,14 +288,12 @@ def get_pool_output(pool_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pool = oci.DataFlow.get_pool(pool_id=test_pool_oci_dataflow_pool["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str pool_id: The unique ID for a pool.

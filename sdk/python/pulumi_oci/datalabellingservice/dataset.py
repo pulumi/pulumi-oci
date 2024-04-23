@@ -545,7 +545,6 @@ class Dataset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -594,7 +593,6 @@ class Dataset(pulumi.CustomResource):
             initial_record_generation_configuration=oci.data_labelling_service.DatasetInitialRecordGenerationConfigurationArgs(),
             labeling_instructions=dataset_labeling_instructions)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -636,7 +634,6 @@ class Dataset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -685,7 +682,6 @@ class Dataset(pulumi.CustomResource):
             initial_record_generation_configuration=oci.data_labelling_service.DatasetInitialRecordGenerationConfigurationArgs(),
             labeling_instructions=dataset_labeling_instructions)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -89,14 +89,12 @@ def get_java_downloads_java_license(license_type: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_java_license = oci.Jms.get_java_downloads_java_license(license_type=java_license_license_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str license_type: Unique Java license type.
@@ -123,14 +121,12 @@ def get_java_downloads_java_license_output(license_type: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_java_license = oci.Jms.get_java_downloads_java_license(license_type=java_license_license_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str license_type: Unique Java license type.

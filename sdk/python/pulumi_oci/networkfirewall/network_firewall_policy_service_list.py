@@ -185,7 +185,6 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -195,7 +194,6 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
             network_firewall_policy_id=test_network_firewall_policy["id"],
             services=network_firewall_policy_service_list_services)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -228,7 +226,6 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -238,7 +235,6 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
             network_firewall_policy_id=test_network_firewall_policy["id"],
             services=network_firewall_policy_service_list_services)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

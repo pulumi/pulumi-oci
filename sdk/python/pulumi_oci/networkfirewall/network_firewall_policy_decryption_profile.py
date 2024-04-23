@@ -466,7 +466,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -485,7 +484,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             is_unsupported_version_blocked=network_firewall_policy_decryption_profile_is_unsupported_version_blocked,
             is_untrusted_issuer_blocked=network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -527,7 +525,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -546,7 +543,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             is_unsupported_version_blocked=network_firewall_policy_decryption_profile_is_unsupported_version_blocked,
             is_untrusted_issuer_blocked=network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

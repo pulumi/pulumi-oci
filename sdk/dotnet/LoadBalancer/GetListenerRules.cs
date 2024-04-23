@@ -25,7 +25,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetListenerRulesResult> InvokeAsync(GetListenerRulesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetListenerRulesResult>("oci:LoadBalancer/getListenerRules:getListenerRules", args ?? new GetListenerRulesArgs(), options.WithDefaults());
@@ -61,7 +59,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +75,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetListenerRulesResult> Invoke(GetListenerRulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListenerRulesResult>("oci:LoadBalancer/getListenerRules:getListenerRules", args ?? new GetListenerRulesInvokeArgs(), options.WithDefaults());

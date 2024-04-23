@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemPatches(args: GetDbSystemPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemPatchesResult> {
 
@@ -66,7 +64,6 @@ export interface GetDbSystemPatchesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetDbSystemPatchesResult {
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemPatchesOutput(args: GetDbSystemPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemPatchesResult> {
     return pulumi.output(args).apply((a: any) => getDbSystemPatches(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: smtpCredentialResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsSmtpCredential(args: GetDomainsSmtpCredentialArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSmtpCredentialResult> {
 
@@ -166,7 +164,6 @@ export interface GetDomainsSmtpCredentialResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -180,7 +177,6 @@ export interface GetDomainsSmtpCredentialResult {
  *     resourceTypeSchemaVersion: smtpCredentialResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsSmtpCredentialOutput(args: GetDomainsSmtpCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSmtpCredentialResult> {
     return pulumi.output(args).apply((a: any) => getDomainsSmtpCredential(a, opts))

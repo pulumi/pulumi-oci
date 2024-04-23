@@ -22,7 +22,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetReplicationStatusResult> InvokeAsync(GetReplicationStatusArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetReplicationStatusResult>("oci:Kms/getReplicationStatus:getReplicationStatus", args ?? new GetReplicationStatusArgs(), options.WithDefaults());
@@ -55,7 +53,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetReplicationStatusResult> Invoke(GetReplicationStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicationStatusResult>("oci:Kms/getReplicationStatus:getReplicationStatus", args ?? new GetReplicationStatusInvokeArgs(), options.WithDefaults());

@@ -181,7 +181,6 @@ def get_list_user_grants(depth_level: Optional[int] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,7 +195,6 @@ def get_list_user_grants(depth_level: Optional[int] = None,
         privilege_category=list_user_grant_privilege_category,
         privilege_type=list_user_grant_privilege_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int depth_level: A filter to return only items that match the specified user grant depth level.
@@ -260,7 +258,6 @@ def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[int]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -275,7 +272,6 @@ def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[int]
         privilege_category=list_user_grant_privilege_category,
         privilege_type=list_user_grant_privilege_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int depth_level: A filter to return only items that match the specified user grant depth level.

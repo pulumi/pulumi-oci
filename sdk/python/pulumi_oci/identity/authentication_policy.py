@@ -140,7 +140,6 @@ class AuthenticationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -159,7 +158,6 @@ class AuthenticationPolicy(pulumi.CustomResource):
                 minimum_password_length=authentication_policy_password_policy_minimum_password_length,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -188,7 +186,6 @@ class AuthenticationPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -207,7 +204,6 @@ class AuthenticationPolicy(pulumi.CustomResource):
                 minimum_password_length=authentication_policy_password_policy_minimum_password_length,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

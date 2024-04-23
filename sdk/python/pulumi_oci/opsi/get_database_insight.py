@@ -465,14 +465,12 @@ def get_database_insight(database_insight_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_insight = oci.Opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_insight_id: Unique database insight identifier
@@ -531,14 +529,12 @@ def get_database_insight_output(database_insight_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_insight = oci.Opsi.get_database_insight(database_insight_id=test_database_insight_oci_opsi_database_insight["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_insight_id: Unique database insight identifier

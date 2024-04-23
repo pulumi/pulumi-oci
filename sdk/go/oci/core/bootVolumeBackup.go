@@ -22,7 +22,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -55,7 +54,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
@@ -81,7 +79,7 @@ type BootVolumeBackup struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The image OCID used to create the boot volume the backup is taken from.
 	ImageId pulumi.StringOutput `pulumi:"imageId"`
-	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+	// (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// The size of the boot volume, in GBs.
 	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
@@ -149,7 +147,7 @@ type bootVolumeBackupState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The image OCID used to create the boot volume the backup is taken from.
 	ImageId *string `pulumi:"imageId"`
-	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+	// (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The size of the boot volume, in GBs.
 	SizeInGbs *string `pulumi:"sizeInGbs"`
@@ -188,7 +186,7 @@ type BootVolumeBackupState struct {
 	FreeformTags pulumi.MapInput
 	// The image OCID used to create the boot volume the backup is taken from.
 	ImageId pulumi.StringPtrInput
-	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+	// (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId pulumi.StringPtrInput
 	// The size of the boot volume, in GBs.
 	SizeInGbs pulumi.StringPtrInput
@@ -227,7 +225,7 @@ type bootVolumeBackupArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+	// (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
 	SourceDetails *BootVolumeBackupSourceDetails `pulumi:"sourceDetails"`
@@ -247,7 +245,7 @@ type BootVolumeBackupArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+	// (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId pulumi.StringPtrInput
 	// Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
 	SourceDetails BootVolumeBackupSourceDetailsPtrInput
@@ -377,7 +375,7 @@ func (o BootVolumeBackupOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+// (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 func (o BootVolumeBackupOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *BootVolumeBackup) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }

@@ -280,7 +280,6 @@ class Drg(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -295,7 +294,6 @@ class Drg(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -340,7 +338,6 @@ class Drg(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -355,7 +352,6 @@ class Drg(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

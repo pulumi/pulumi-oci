@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     identityProviderId: testIdentityProvider.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIdpGroupMappings(args: GetIdpGroupMappingsArgs, opts?: pulumi.InvokeOptions): Promise<GetIdpGroupMappingsResult> {
 
@@ -73,7 +71,6 @@ export interface GetIdpGroupMappingsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -82,7 +79,6 @@ export interface GetIdpGroupMappingsResult {
  *     identityProviderId: testIdentityProvider.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIdpGroupMappingsOutput(args: GetIdpGroupMappingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIdpGroupMappingsResult> {
     return pulumi.output(args).apply((a: any) => getIdpGroupMappings(a, opts))

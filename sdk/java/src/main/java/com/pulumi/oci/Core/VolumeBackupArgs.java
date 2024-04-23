@@ -79,14 +79,14 @@ public final class VolumeBackupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+     * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+     * @return (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -254,7 +254,7 @@ public final class VolumeBackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kmsKeyId The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class VolumeBackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kmsKeyId The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          * 
          * @return builder
          * 

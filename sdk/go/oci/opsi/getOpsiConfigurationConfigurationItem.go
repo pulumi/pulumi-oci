@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetOpsiConfigurationConfigurationItem(ctx *pulumi.Context, args *GetOpsiConfigurationConfigurationItemArgs, opts ...pulumi.InvokeOption) (*GetOpsiConfigurationConfigurationItemResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOpsiConfigurationConfigurationItemResult

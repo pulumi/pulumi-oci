@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// User display name
+        /// Resource display name
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) User URI
+        /// (Updatable) Resource URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -71,13 +71,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Value of the tag.
+        /// Resource identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
+        /// * idcsCsvAttributeName: requesting_id
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string

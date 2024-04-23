@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: pluggableDatabaseState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPluggableDatabases(args?: GetPluggableDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetPluggableDatabasesResult> {
     args = args || {};
@@ -97,7 +95,6 @@ export interface GetPluggableDatabasesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -109,7 +106,6 @@ export interface GetPluggableDatabasesResult {
  *     state: pluggableDatabaseState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPluggableDatabasesOutput(args?: GetPluggableDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPluggableDatabasesResult> {
     return pulumi.output(args).apply((a: any) => getPluggableDatabases(a, opts))

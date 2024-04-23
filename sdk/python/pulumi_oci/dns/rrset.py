@@ -295,7 +295,6 @@ class Rrset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -314,7 +313,6 @@ class Rrset(pulumi.CustomResource):
             scope=rrset_scope,
             view_id=test_view["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -360,7 +358,6 @@ class Rrset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -379,7 +376,6 @@ class Rrset(pulumi.CustomResource):
             scope=rrset_scope,
             view_id=test_view["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

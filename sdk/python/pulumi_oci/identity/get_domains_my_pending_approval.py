@@ -357,7 +357,6 @@ def get_domains_my_pending_approval(authorization: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -367,7 +366,6 @@ def get_domains_my_pending_approval(authorization: Optional[str] = None,
         authorization=my_pending_approval_authorization,
         resource_type_schema_version=my_pending_approval_resource_type_schema_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -426,7 +424,6 @@ def get_domains_my_pending_approval_output(authorization: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -436,7 +433,6 @@ def get_domains_my_pending_approval_output(authorization: Optional[pulumi.Input[
         authorization=my_pending_approval_authorization,
         resource_type_schema_version=my_pending_approval_resource_type_schema_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.

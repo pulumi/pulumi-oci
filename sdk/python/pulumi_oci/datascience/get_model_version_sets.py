@@ -142,7 +142,6 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -154,7 +153,6 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
         project_id=test_project["id"],
         state=model_version_set_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -202,7 +200,6 @@ def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -214,7 +211,6 @@ def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = 
         project_id=test_project["id"],
         state=model_version_set_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

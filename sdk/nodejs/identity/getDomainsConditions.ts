@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     startIndex: conditionStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsConditions(args: GetDomainsConditionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsConditionsResult> {
 
@@ -127,7 +125,6 @@ export interface GetDomainsConditionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -143,7 +140,6 @@ export interface GetDomainsConditionsResult {
  *     startIndex: conditionStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsConditionsOutput(args: GetDomainsConditionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsConditionsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsConditions(a, opts))

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     autonomousPatchId: testAutonomousPatchOciDatabaseAutonomousPatch.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousPatch(args: GetAutonomousPatchArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousPatchResult> {
 
@@ -97,7 +95,6 @@ export interface GetAutonomousPatchResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -106,7 +103,6 @@ export interface GetAutonomousPatchResult {
  *     autonomousPatchId: testAutonomousPatchOciDatabaseAutonomousPatch.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousPatchOutput(args: GetAutonomousPatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousPatchResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousPatch(a, opts))

@@ -195,7 +195,6 @@ class ApiKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -204,7 +203,6 @@ class ApiKey(pulumi.CustomResource):
             key_value=api_key_key_value,
             user_id=test_user["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -247,7 +245,6 @@ class ApiKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -256,7 +253,6 @@ class ApiKey(pulumi.CustomResource):
             key_value=api_key_key_value,
             user_id=test_user["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

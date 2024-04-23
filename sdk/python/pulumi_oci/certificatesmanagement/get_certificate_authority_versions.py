@@ -103,7 +103,6 @@ def get_certificate_authority_versions(certificate_authority_id: Optional[str] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -111,7 +110,6 @@ def get_certificate_authority_versions(certificate_authority_id: Optional[str] =
     test_certificate_authority_versions = oci.CertificatesManagement.get_certificate_authority_versions(certificate_authority_id=test_certificate_authority["id"],
         version_number=certificate_authority_version_version_number)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_authority_id: The OCID of the certificate authority (CA).
@@ -145,7 +143,6 @@ def get_certificate_authority_versions_output(certificate_authority_id: Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -153,7 +150,6 @@ def get_certificate_authority_versions_output(certificate_authority_id: Optional
     test_certificate_authority_versions = oci.CertificatesManagement.get_certificate_authority_versions(certificate_authority_id=test_certificate_authority["id"],
         version_number=certificate_authority_version_version_number)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_authority_id: The OCID of the certificate authority (CA).

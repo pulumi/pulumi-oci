@@ -302,7 +302,6 @@ class RouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -325,7 +324,6 @@ class RouteTable(pulumi.CustomResource):
                 destination_type=route_table_route_rules_destination_type,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -377,7 +375,6 @@ class RouteTable(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -400,7 +397,6 @@ class RouteTable(pulumi.CustomResource):
                 destination_type=route_table_route_rules_destination_type,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

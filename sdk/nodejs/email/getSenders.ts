@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: senderState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSenders(args: GetSendersArgs, opts?: pulumi.InvokeOptions): Promise<GetSendersResult> {
 
@@ -96,7 +94,6 @@ export interface GetSendersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetSendersResult {
  *     state: senderState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSendersOutput(args: GetSendersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSendersResult> {
     return pulumi.output(args).apply((a: any) => getSenders(a, opts))

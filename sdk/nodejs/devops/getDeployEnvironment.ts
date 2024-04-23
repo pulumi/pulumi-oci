@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     deployEnvironmentId: testDeployEnvironmentOciDevopsDeployEnvironment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeployEnvironment(args: GetDeployEnvironmentArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployEnvironmentResult> {
 
@@ -123,7 +121,6 @@ export interface GetDeployEnvironmentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -132,7 +129,6 @@ export interface GetDeployEnvironmentResult {
  *     deployEnvironmentId: testDeployEnvironmentOciDevopsDeployEnvironment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeployEnvironmentOutput(args: GetDeployEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployEnvironmentResult> {
     return pulumi.output(args).apply((a: any) => getDeployEnvironment(a, opts))

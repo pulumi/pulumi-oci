@@ -329,7 +329,6 @@ class NotificationTopic(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -345,7 +344,6 @@ class NotificationTopic(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -393,7 +391,6 @@ class NotificationTopic(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -409,7 +406,6 @@ class NotificationTopic(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

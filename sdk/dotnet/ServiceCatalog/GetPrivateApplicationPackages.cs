@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPrivateApplicationPackagesResult> InvokeAsync(GetPrivateApplicationPackagesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateApplicationPackagesResult>("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", args ?? new GetPrivateApplicationPackagesArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPrivateApplicationPackagesResult> Invoke(GetPrivateApplicationPackagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateApplicationPackagesResult>("oci:ServiceCatalog/getPrivateApplicationPackages:getPrivateApplicationPackages", args ?? new GetPrivateApplicationPackagesInvokeArgs(), options.WithDefaults());

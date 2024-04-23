@@ -515,7 +515,6 @@ class Connection(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -540,7 +539,6 @@ class Connection(pulumi.CustomResource):
             ),
             username=connection_username)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -581,7 +579,6 @@ class Connection(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -606,7 +603,6 @@ class Connection(pulumi.CustomResource):
             ),
             username=connection_username)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

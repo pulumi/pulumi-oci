@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     timeScheduledStartGreaterThanOrEqualTo: fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentScheduledActivities(args: GetFusionEnvironmentScheduledActivitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentScheduledActivitiesResult> {
 
@@ -113,7 +111,6 @@ export interface GetFusionEnvironmentScheduledActivitiesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetFusionEnvironmentScheduledActivitiesResult {
  *     timeScheduledStartGreaterThanOrEqualTo: fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentScheduledActivitiesOutput(args: GetFusionEnvironmentScheduledActivitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentScheduledActivitiesResult> {
     return pulumi.output(args).apply((a: any) => getFusionEnvironmentScheduledActivities(a, opts))

@@ -38,14 +38,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
     }
 
     /**
-     * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -83,14 +83,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
     }
 
     /**
-     * (Updatable) The OCID of the compartment containing images to search
+     * The OCID of the compartment that contains the volume.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return The OCID of the compartment that contains the volume.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -281,7 +281,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
+         * @param compartmentId The OCID of the compartment that contains the volume.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsA
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
+         * @param compartmentId The OCID of the compartment that contains the volume.
          * 
          * @return builder
          * 

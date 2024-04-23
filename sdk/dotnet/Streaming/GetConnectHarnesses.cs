@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Streaming
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Streaming
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetConnectHarnessesResult> InvokeAsync(GetConnectHarnessesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetConnectHarnessesResult>("oci:Streaming/getConnectHarnesses:getConnectHarnesses", args ?? new GetConnectHarnessesArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.Streaming
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Streaming
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetConnectHarnessesResult> Invoke(GetConnectHarnessesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectHarnessesResult>("oci:Streaming/getConnectHarnesses:getConnectHarnesses", args ?? new GetConnectHarnessesInvokeArgs(), options.WithDefaults());

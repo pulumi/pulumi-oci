@@ -454,7 +454,6 @@ class Replication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -472,7 +471,6 @@ class Replication(pulumi.CustomResource):
             },
             replication_interval=replication_replication_interval)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -535,7 +533,6 @@ class Replication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -553,7 +550,6 @@ class Replication(pulumi.CustomResource):
             },
             replication_interval=replication_replication_interval)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

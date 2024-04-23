@@ -171,7 +171,6 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -184,7 +183,6 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                 type=network_firewall_policy_url_list_urls_type,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -213,7 +211,6 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -226,7 +223,6 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
                 type=network_firewall_policy_url_list_urls_type,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

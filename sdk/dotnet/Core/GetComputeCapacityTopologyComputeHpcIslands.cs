@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetComputeCapacityTopologyComputeHpcIslandsResult> InvokeAsync(GetComputeCapacityTopologyComputeHpcIslandsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeCapacityTopologyComputeHpcIslandsResult>("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", args ?? new GetComputeCapacityTopologyComputeHpcIslandsArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetComputeCapacityTopologyComputeHpcIslandsResult> Invoke(GetComputeCapacityTopologyComputeHpcIslandsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityTopologyComputeHpcIslandsResult>("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", args ?? new GetComputeCapacityTopologyComputeHpcIslandsInvokeArgs(), options.WithDefaults());

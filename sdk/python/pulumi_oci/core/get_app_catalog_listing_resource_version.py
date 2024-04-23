@@ -159,7 +159,6 @@ def get_app_catalog_listing_resource_version(listing_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +166,6 @@ def get_app_catalog_listing_resource_version(listing_id: Optional[str] = None,
     test_app_catalog_listing_resource_version = oci.Core.get_app_catalog_listing_resource_version(listing_id=test_listing["id"],
         resource_version=app_catalog_listing_resource_version_resource_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str listing_id: The OCID of the listing.
@@ -203,7 +201,6 @@ def get_app_catalog_listing_resource_version_output(listing_id: Optional[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -211,7 +208,6 @@ def get_app_catalog_listing_resource_version_output(listing_id: Optional[pulumi.
     test_app_catalog_listing_resource_version = oci.Core.get_app_catalog_listing_resource_version(listing_id=test_listing["id"],
         resource_version=app_catalog_listing_resource_version_resource_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str listing_id: The OCID of the listing.

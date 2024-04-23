@@ -348,7 +348,6 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -376,7 +375,6 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                 time_schedule_start=filesystem_snapshot_policy_schedules_time_schedule_start,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -420,7 +418,6 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -448,7 +445,6 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                 time_schedule_start=filesystem_snapshot_policy_schedules_time_schedule_start,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

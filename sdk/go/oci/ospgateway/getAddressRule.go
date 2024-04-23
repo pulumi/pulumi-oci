@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAddressRule(ctx *pulumi.Context, args *GetAddressRuleArgs, opts ...pulumi.InvokeOption) (*GetAddressRuleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAddressRuleResult

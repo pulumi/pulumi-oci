@@ -285,7 +285,6 @@ class Index(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -301,7 +300,6 @@ class Index(pulumi.CustomResource):
             compartment_id=compartment_id,
             is_if_not_exists=index_is_if_not_exists)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -336,7 +334,6 @@ class Index(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -352,7 +349,6 @@ class Index(pulumi.CustomResource):
             compartment_id=compartment_id,
             is_if_not_exists=index_is_if_not_exists)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

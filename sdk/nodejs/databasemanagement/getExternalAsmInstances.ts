@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     externalAsmId: testExternalAsm.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsmInstances(args?: GetExternalAsmInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmInstancesResult> {
     args = args || {};
@@ -90,7 +88,6 @@ export interface GetExternalAsmInstancesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -101,7 +98,6 @@ export interface GetExternalAsmInstancesResult {
  *     externalAsmId: testExternalAsm.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsmInstancesOutput(args?: GetExternalAsmInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmInstancesResult> {
     return pulumi.output(args).apply((a: any) => getExternalAsmInstances(a, opts))

@@ -824,7 +824,6 @@ class DbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -893,7 +892,6 @@ class DbSystem(pulumi.CustomResource):
                 value=db_system_patch_operations_value,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -943,7 +941,6 @@ class DbSystem(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1012,7 +1009,6 @@ class DbSystem(pulumi.CustomResource):
                 value=db_system_patch_operations_value,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

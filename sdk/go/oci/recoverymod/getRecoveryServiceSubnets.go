@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetRecoveryServiceSubnets(ctx *pulumi.Context, args *GetRecoveryServiceSubnetsArgs, opts ...pulumi.InvokeOption) (*GetRecoveryServiceSubnetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRecoveryServiceSubnetsResult

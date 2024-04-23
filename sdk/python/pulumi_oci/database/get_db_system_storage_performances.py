@@ -99,7 +99,6 @@ def get_db_system_storage_performances(filters: Optional[Sequence[pulumi.InputTy
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -107,7 +106,6 @@ def get_db_system_storage_performances(filters: Optional[Sequence[pulumi.InputTy
     test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
         shape_type=db_system_storage_performance_shape_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str shape_type: Optional. Filters the performance results by shape type.
@@ -142,7 +140,6 @@ def get_db_system_storage_performances_output(filters: Optional[pulumi.Input[Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -150,7 +147,6 @@ def get_db_system_storage_performances_output(filters: Optional[pulumi.Input[Opt
     test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
         shape_type=db_system_storage_performance_shape_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str shape_type: Optional. Filters the performance results by shape type.

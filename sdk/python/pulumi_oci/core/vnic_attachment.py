@@ -326,7 +326,6 @@ class VnicAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -351,7 +350,6 @@ class VnicAttachment(pulumi.CustomResource):
             display_name=vnic_attachment_display_name,
             nic_index=vnic_attachment_nic_index)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -387,7 +385,6 @@ class VnicAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -412,7 +409,6 @@ class VnicAttachment(pulumi.CustomResource):
             display_name=vnic_attachment_display_name,
             nic_index=vnic_attachment_nic_index)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -168,7 +168,6 @@ def get_monitors(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -182,7 +181,6 @@ def get_monitors(apm_domain_id: Optional[str] = None,
         status=monitor_status,
         vantage_point=monitor_vantage_point)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
@@ -239,7 +237,6 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -253,7 +250,6 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
         status=monitor_status,
         vantage_point=monitor_vantage_point)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.

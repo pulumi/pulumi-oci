@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlPlanBaselineJobs(args: GetManagedDatabaseSqlPlanBaselineJobsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlPlanBaselineJobsResult> {
 
@@ -83,7 +81,6 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlPlanBaselineJobsOutput(args: GetManagedDatabaseSqlPlanBaselineJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselineJobsResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlPlanBaselineJobs(a, opts))

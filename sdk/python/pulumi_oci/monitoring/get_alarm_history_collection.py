@@ -128,7 +128,6 @@ def get_alarm_history_collection(alarm_historytype: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_alarm_history_collection(alarm_historytype: Optional[str] = None,
         timestamp_greater_than_or_equal_to=alarm_history_collection_timestamp_greater_than_or_equal_to,
         timestamp_less_than=alarm_history_collection_timestamp_less_than)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str alarm_historytype: The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
@@ -185,7 +183,6 @@ def get_alarm_history_collection_output(alarm_historytype: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +192,6 @@ def get_alarm_history_collection_output(alarm_historytype: Optional[pulumi.Input
         timestamp_greater_than_or_equal_to=alarm_history_collection_timestamp_greater_than_or_equal_to,
         timestamp_less_than=alarm_history_collection_timestamp_less_than)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str alarm_historytype: The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`

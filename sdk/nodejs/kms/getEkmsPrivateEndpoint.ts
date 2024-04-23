@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     ekmsPrivateEndpointId: testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEkmsPrivateEndpoint(args: GetEkmsPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetEkmsPrivateEndpointResult> {
 
@@ -109,7 +107,6 @@ export interface GetEkmsPrivateEndpointResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,7 +115,6 @@ export interface GetEkmsPrivateEndpointResult {
  *     ekmsPrivateEndpointId: testEkmsPrivateEndpointOciKmsEkmsPrivateEndpoint.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEkmsPrivateEndpointOutput(args: GetEkmsPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEkmsPrivateEndpointResult> {
     return pulumi.output(args).apply((a: any) => getEkmsPrivateEndpoint(a, opts))

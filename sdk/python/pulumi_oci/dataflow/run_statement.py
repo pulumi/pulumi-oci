@@ -202,7 +202,6 @@ class RunStatement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -211,7 +210,6 @@ class RunStatement(pulumi.CustomResource):
             code=run_statement_code,
             run_id=test_run["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -243,7 +241,6 @@ class RunStatement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -252,7 +249,6 @@ class RunStatement(pulumi.CustomResource):
             code=run_statement_code,
             run_id=test_run["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

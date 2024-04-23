@@ -19,7 +19,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDetectAnomalyJobsResult> InvokeAsync(GetDetectAnomalyJobsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDetectAnomalyJobsResult>("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", args ?? new GetDetectAnomalyJobsArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDetectAnomalyJobsResult> Invoke(GetDetectAnomalyJobsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDetectAnomalyJobsResult>("oci:AiAnomalyDetection/getDetectAnomalyJobs:getDetectAnomalyJobs", args ?? new GetDetectAnomalyJobsInvokeArgs(), options.WithDefaults());

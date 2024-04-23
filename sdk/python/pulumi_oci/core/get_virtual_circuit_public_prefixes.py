@@ -100,7 +100,6 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[pulumi.InputT
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -108,7 +107,6 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[pulumi.InputT
     test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
         verification_state=virtual_circuit_public_prefix_verification_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str verification_state: A filter to only return resources that match the given verification state.
@@ -144,7 +142,6 @@ def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Op
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,7 +149,6 @@ def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Op
     test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
         verification_state=virtual_circuit_public_prefix_verification_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str verification_state: A filter to only return resources that match the given verification state.

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     publicationId: testPublication.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPublicationPackage(args: GetPublicationPackageArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicationPackageResult> {
 
@@ -114,7 +112,6 @@ export interface GetPublicationPackageResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,7 +121,6 @@ export interface GetPublicationPackageResult {
  *     publicationId: testPublication.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPublicationPackageOutput(args: GetPublicationPackageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicationPackageResult> {
     return pulumi.output(args).apply((a: any) => getPublicationPackage(a, opts))

@@ -693,7 +693,6 @@ class WorkspaceApplication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -728,7 +727,6 @@ class WorkspaceApplication(pulumi.CustomResource):
             ),
             state=workspace_application_state)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -772,7 +770,6 @@ class WorkspaceApplication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -807,7 +804,6 @@ class WorkspaceApplication(pulumi.CustomResource):
             ),
             state=workspace_application_state)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

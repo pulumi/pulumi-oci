@@ -570,7 +570,6 @@ class PipelineRun(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -608,7 +607,6 @@ class PipelineRun(pulumi.CustomResource):
             )],
             system_tags=pipeline_run_system_tags)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -648,7 +646,6 @@ class PipelineRun(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -686,7 +683,6 @@ class PipelineRun(pulumi.CustomResource):
             )],
             system_tags=pipeline_run_system_tags)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -645,7 +645,6 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -676,7 +675,6 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             time_last_discovered=log_analytics_entity_time_last_discovered,
             timezone_region=log_analytics_entity_timezone_region)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -720,7 +718,6 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -751,7 +748,6 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             time_last_discovered=log_analytics_entity_time_last_discovered,
             timezone_region=log_analytics_entity_timezone_region)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

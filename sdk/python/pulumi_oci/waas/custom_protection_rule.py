@@ -365,7 +365,6 @@ class CustomProtectionRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -382,7 +381,6 @@ class CustomProtectionRule(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -436,7 +434,6 @@ class CustomProtectionRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -453,7 +450,6 @@ class CustomProtectionRule(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

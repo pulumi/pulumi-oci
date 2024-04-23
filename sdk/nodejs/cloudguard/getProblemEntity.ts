@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     problemId: testProblem.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProblemEntity(args: GetProblemEntityArgs, opts?: pulumi.InvokeOptions): Promise<GetProblemEntityResult> {
 
@@ -66,7 +64,6 @@ export interface GetProblemEntityResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetProblemEntityResult {
  *     problemId: testProblem.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProblemEntityOutput(args: GetProblemEntityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProblemEntityResult> {
     return pulumi.output(args).apply((a: any) => getProblemEntity(a, opts))

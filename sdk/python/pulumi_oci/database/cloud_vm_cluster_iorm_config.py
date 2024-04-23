@@ -173,7 +173,6 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -186,7 +185,6 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
             cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -217,7 +215,6 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -230,7 +227,6 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
             cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

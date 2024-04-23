@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     sddcId: testSddcOciOcvpSddc.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSddc(args: GetSddcArgs, opts?: pulumi.InvokeOptions): Promise<GetSddcResult> {
 
@@ -360,7 +358,6 @@ export interface GetSddcResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -369,7 +366,6 @@ export interface GetSddcResult {
  *     sddcId: testSddcOciOcvpSddc.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSddcOutput(args: GetSddcOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSddcResult> {
     return pulumi.output(args).apply((a: any) => getSddc(a, opts))

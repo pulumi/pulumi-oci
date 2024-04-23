@@ -19,7 +19,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAccessRequestsResult> InvokeAsync(GetAccessRequestsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessRequestsResult>("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", args ?? new GetAccessRequestsArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAccessRequestsResult> Invoke(GetAccessRequestsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestsResult>("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", args ?? new GetAccessRequestsInvokeArgs(), options.WithDefaults());

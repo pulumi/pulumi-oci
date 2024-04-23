@@ -278,14 +278,12 @@ def get_masking_report(masking_report_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=test_masking_report_oci_data_safe_masking_report["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str masking_report_id: The OCID of the masking report.
@@ -328,14 +326,12 @@ def get_masking_report_output(masking_report_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_masking_report = oci.DataSafe.get_masking_report(masking_report_id=test_masking_report_oci_data_safe_masking_report["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str masking_report_id: The OCID of the masking report.

@@ -249,14 +249,12 @@ def get_publication(publication_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_publication = oci.Marketplace.get_publication(publication_id=test_publication_oci_marketplace_publication["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str publication_id: The unique identifier for the publication.
@@ -297,14 +295,12 @@ def get_publication_output(publication_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_publication = oci.Marketplace.get_publication(publication_id=test_publication_oci_marketplace_publication["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str publication_id: The unique identifier for the publication.

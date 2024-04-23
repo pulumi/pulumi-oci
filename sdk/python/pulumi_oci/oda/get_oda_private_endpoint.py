@@ -182,14 +182,12 @@ def get_oda_private_endpoint(oda_private_endpoint_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oda_private_endpoint = oci.Oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -224,14 +222,12 @@ def get_oda_private_endpoint_output(oda_private_endpoint_id: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oda_private_endpoint = oci.Oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

@@ -506,7 +506,6 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -517,7 +516,6 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
             )],
             vm_cluster_id=test_vm_cluster["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -549,7 +547,6 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -560,7 +557,6 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
             )],
             vm_cluster_id=test_vm_cluster["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

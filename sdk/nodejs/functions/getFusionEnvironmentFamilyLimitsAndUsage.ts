@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentFamilyLimitsAndUsage(args: GetFusionEnvironmentFamilyLimitsAndUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentFamilyLimitsAndUsageResult> {
 
@@ -71,7 +69,6 @@ export interface GetFusionEnvironmentFamilyLimitsAndUsageResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,7 +77,6 @@ export interface GetFusionEnvironmentFamilyLimitsAndUsageResult {
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentFamilyLimitsAndUsageOutput(args: GetFusionEnvironmentFamilyLimitsAndUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamilyLimitsAndUsageResult> {
     return pulumi.output(args).apply((a: any) => getFusionEnvironmentFamilyLimitsAndUsage(a, opts))

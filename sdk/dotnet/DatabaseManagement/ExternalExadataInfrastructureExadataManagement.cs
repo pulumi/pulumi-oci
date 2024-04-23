@@ -21,7 +21,6 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// });
     /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement")]
     public partial class ExternalExadataInfrastructureExadataManagement : global::Pulumi.CustomResource

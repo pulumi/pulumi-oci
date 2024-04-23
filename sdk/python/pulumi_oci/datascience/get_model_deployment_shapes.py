@@ -86,14 +86,12 @@ def get_model_deployment_shapes(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model_deployment_shapes = oci.DataScience.get_model_deployment_shapes(compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -122,14 +120,12 @@ def get_model_deployment_shapes_output(compartment_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model_deployment_shapes = oci.DataScience.get_model_deployment_shapes(compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetSupportedHostShapes(ctx *pulumi.Context, args *GetSupportedHostShapesArgs, opts ...pulumi.InvokeOption) (*GetSupportedHostShapesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSupportedHostShapesResult

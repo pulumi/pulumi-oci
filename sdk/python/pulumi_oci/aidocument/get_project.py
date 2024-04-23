@@ -182,14 +182,12 @@ def get_project(project_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_project = oci.AiDocument.get_project(project_id=test_project_oci_ai_document_project["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str project_id: A unique project identifier.
@@ -224,14 +222,12 @@ def get_project_output(project_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_project = oci.AiDocument.get_project(project_id=test_project_oci_ai_document_project["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str project_id: A unique project identifier.

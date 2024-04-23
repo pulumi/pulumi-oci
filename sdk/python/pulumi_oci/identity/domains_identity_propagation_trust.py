@@ -2046,7 +2046,6 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -2089,7 +2088,6 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                 value=identity_propagation_trust_tags_value,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -2350,7 +2348,6 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -2393,7 +2390,6 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                 value=identity_propagation_trust_tags_value,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

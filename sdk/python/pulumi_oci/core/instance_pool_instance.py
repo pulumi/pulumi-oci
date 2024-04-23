@@ -336,7 +336,6 @@ class InstancePoolInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -345,7 +344,6 @@ class InstancePoolInstance(pulumi.CustomResource):
             instance_id=test_instance["id"],
             instance_pool_id=test_instance_pool["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -381,7 +379,6 @@ class InstancePoolInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -390,7 +387,6 @@ class InstancePoolInstance(pulumi.CustomResource):
             instance_id=test_instance["id"],
             instance_pool_id=test_instance_pool["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

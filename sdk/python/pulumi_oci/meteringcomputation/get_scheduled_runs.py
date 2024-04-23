@@ -89,14 +89,12 @@ def get_scheduled_runs(filters: Optional[Sequence[pulumi.InputType['GetScheduled
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_scheduled_runs = oci.MeteringComputation.get_scheduled_runs(schedule_id=test_schedule["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str schedule_id: The unique ID of a schedule.
@@ -125,14 +123,12 @@ def get_scheduled_runs_output(filters: Optional[pulumi.Input[Optional[Sequence[p
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_scheduled_runs = oci.MeteringComputation.get_scheduled_runs(schedule_id=test_schedule["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str schedule_id: The unique ID of a schedule.

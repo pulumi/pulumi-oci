@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Waas
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -31,7 +30,6 @@ namespace Pulumi.Oci.Waas
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetEdgeSubnetsResult> InvokeAsync(GetEdgeSubnetsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEdgeSubnetsResult>("oci:Waas/getEdgeSubnets:getEdgeSubnets", args ?? new GetEdgeSubnetsArgs(), options.WithDefaults());
@@ -43,7 +41,6 @@ namespace Pulumi.Oci.Waas
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -56,7 +53,6 @@ namespace Pulumi.Oci.Waas
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetEdgeSubnetsResult> Invoke(GetEdgeSubnetsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEdgeSubnetsResult>("oci:Waas/getEdgeSubnets:getEdgeSubnets", args ?? new GetEdgeSubnetsInvokeArgs(), options.WithDefaults());

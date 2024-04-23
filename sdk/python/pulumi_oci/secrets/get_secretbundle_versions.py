@@ -89,14 +89,12 @@ def get_secretbundle_versions(filters: Optional[Sequence[pulumi.InputType['GetSe
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=test_secret["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str secret_id: The OCID of the secret.
@@ -125,14 +123,12 @@ def get_secretbundle_versions_output(filters: Optional[pulumi.Input[Optional[Seq
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_secretbundle_versions = oci.Secrets.get_secretbundle_versions(secret_id=test_secret["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str secret_id: The OCID of the secret.

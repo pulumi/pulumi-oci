@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     fields: dataAssetFields,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDataAsset(args: GetDataAssetArgs, opts?: pulumi.InvokeOptions): Promise<GetDataAssetResult> {
 
@@ -127,7 +125,6 @@ export interface GetDataAssetResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -138,7 +135,6 @@ export interface GetDataAssetResult {
  *     fields: dataAssetFields,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDataAssetOutput(args: GetDataAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataAssetResult> {
     return pulumi.output(args).apply((a: any) => getDataAsset(a, opts))

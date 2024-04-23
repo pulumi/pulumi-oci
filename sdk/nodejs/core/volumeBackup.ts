@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,7 +35,6 @@ import * as utilities from "../utilities";
  *     type: volumeBackupType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
@@ -95,7 +93,7 @@ export class VolumeBackup extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+     * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     public readonly kmsKeyId!: pulumi.Output<string>;
     /**
@@ -239,7 +237,7 @@ export interface VolumeBackupState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+     * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
@@ -321,7 +319,7 @@ export interface VolumeBackupArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+     * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     kmsKeyId?: pulumi.Input<string>;
     /**

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -39,7 +38,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupAutonomousDatabaseRegionalWalletManagement(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*LookupAutonomousDatabaseRegionalWalletManagementResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAutonomousDatabaseRegionalWalletManagementResult

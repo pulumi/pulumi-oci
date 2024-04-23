@@ -1370,7 +1370,6 @@ class DomainsCloudGate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1393,7 +1392,6 @@ class DomainsCloudGate(pulumi.CustomResource):
             )],
             type=cloud_gate_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1520,7 +1518,6 @@ class DomainsCloudGate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1543,7 +1540,6 @@ class DomainsCloudGate(pulumi.CustomResource):
             )],
             type=cloud_gate_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     privateIpId: testPrivateIpOciCorePrivateIp.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPrivateIp(args: GetPrivateIpArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateIpResult> {
 
@@ -115,7 +113,6 @@ export interface GetPrivateIpResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,7 +121,6 @@ export interface GetPrivateIpResult {
  *     privateIpId: testPrivateIpOciCorePrivateIp.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPrivateIpOutput(args: GetPrivateIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateIpResult> {
     return pulumi.output(args).apply((a: any) => getPrivateIp(a, opts))

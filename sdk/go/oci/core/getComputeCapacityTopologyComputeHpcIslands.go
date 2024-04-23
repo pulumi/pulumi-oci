@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetComputeCapacityTopologyComputeHpcIslands(ctx *pulumi.Context, args *GetComputeCapacityTopologyComputeHpcIslandsArgs, opts ...pulumi.InvokeOption) (*GetComputeCapacityTopologyComputeHpcIslandsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputeCapacityTopologyComputeHpcIslandsResult

@@ -36,7 +36,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -82,7 +81,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
@@ -127,7 +125,7 @@ type CrossConnect struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PortSpeedShapeName pulumi.StringOutput `pulumi:"portSpeedShapeName"`
-	// (Updatable) Indicates whether or not MACsec is enabled.
+	// The cross-connect's current state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -205,7 +203,7 @@ type crossConnectState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PortSpeedShapeName *string `pulumi:"portSpeedShapeName"`
-	// (Updatable) Indicates whether or not MACsec is enabled.
+	// The cross-connect's current state.
 	State *string `pulumi:"state"`
 	// The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -245,7 +243,7 @@ type CrossConnectState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PortSpeedShapeName pulumi.StringPtrInput
-	// (Updatable) Indicates whether or not MACsec is enabled.
+	// The cross-connect's current state.
 	State pulumi.StringPtrInput
 	// The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
@@ -481,7 +479,7 @@ func (o CrossConnectOutput) PortSpeedShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.PortSpeedShapeName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Indicates whether or not MACsec is enabled.
+// The cross-connect's current state.
 func (o CrossConnectOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

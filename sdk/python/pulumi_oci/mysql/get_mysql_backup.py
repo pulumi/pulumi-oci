@@ -279,14 +279,12 @@ def get_mysql_backup(backup_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=test_backup["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backup_id: The OCID of the Backup
@@ -329,14 +327,12 @@ def get_mysql_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=test_backup["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backup_id: The OCID of the Backup

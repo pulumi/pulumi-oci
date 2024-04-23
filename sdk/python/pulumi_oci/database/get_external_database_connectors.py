@@ -128,7 +128,6 @@ def get_external_database_connectors(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_external_database_connectors(compartment_id: Optional[str] = None,
         display_name=external_database_connector_display_name,
         state=external_database_connector_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -179,7 +177,6 @@ def get_external_database_connectors_output(compartment_id: Optional[pulumi.Inpu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_external_database_connectors_output(compartment_id: Optional[pulumi.Inpu
         display_name=external_database_connector_display_name,
         state=external_database_connector_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

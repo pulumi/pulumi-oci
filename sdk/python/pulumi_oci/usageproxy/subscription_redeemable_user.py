@@ -187,7 +187,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -202,7 +201,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
             )],
             user_id=test_user["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -236,7 +234,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -251,7 +248,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
             )],
             user_id=test_user["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

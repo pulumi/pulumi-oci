@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetClusterKubeConfigResult> InvokeAsync(GetClusterKubeConfigArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetClusterKubeConfigResult>("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args ?? new GetClusterKubeConfigArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetClusterKubeConfigResult> Invoke(GetClusterKubeConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClusterKubeConfigResult>("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", args ?? new GetClusterKubeConfigInvokeArgs(), options.WithDefaults());

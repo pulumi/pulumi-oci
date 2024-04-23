@@ -134,14 +134,12 @@ def get_enrollment_status(enrollment_status_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_enrollment_status = oci.Optimizer.get_enrollment_status(enrollment_status_id=test_enrollment_status_oci_optimizer_enrollment_status["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str enrollment_status_id: The unique OCID associated with the enrollment status.
@@ -172,14 +170,12 @@ def get_enrollment_status_output(enrollment_status_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_enrollment_status = oci.Optimizer.get_enrollment_status(enrollment_status_id=test_enrollment_status_oci_optimizer_enrollment_status["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str enrollment_status_id: The unique OCID associated with the enrollment status.

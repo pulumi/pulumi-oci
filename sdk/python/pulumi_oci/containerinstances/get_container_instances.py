@@ -128,7 +128,6 @@ def get_container_instances(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_container_instances(availability_domain: Optional[str] = None,
         display_name=container_instance_display_name,
         state=container_instance_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -179,7 +177,6 @@ def get_container_instances_output(availability_domain: Optional[pulumi.Input[Op
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_container_instances_output(availability_domain: Optional[pulumi.Input[Op
         display_name=container_instance_display_name,
         state=container_instance_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

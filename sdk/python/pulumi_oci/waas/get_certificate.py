@@ -285,14 +285,12 @@ def get_certificate(certificate_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_certificate = oci.Waas.get_certificate(certificate_id=test_certificate_oci_waas_certificate["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
@@ -336,14 +334,12 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_certificate = oci.Waas.get_certificate(certificate_id=test_certificate_oci_waas_certificate["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.

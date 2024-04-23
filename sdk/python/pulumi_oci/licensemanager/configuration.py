@@ -152,7 +152,6 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -161,7 +160,6 @@ class Configuration(pulumi.CustomResource):
             compartment_id=compartment_id,
             email_ids=configuration_email_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -193,7 +191,6 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -202,7 +199,6 @@ class Configuration(pulumi.CustomResource):
             compartment_id=compartment_id,
             email_ids=configuration_email_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

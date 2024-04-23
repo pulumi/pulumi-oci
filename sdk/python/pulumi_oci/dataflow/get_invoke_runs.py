@@ -174,7 +174,6 @@ def get_invoke_runs(application_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -188,7 +187,6 @@ def get_invoke_runs(application_id: Optional[str] = None,
         state=invoke_run_state,
         time_created_greater_than=invoke_run_time_created_greater_than)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The ID of the application.
@@ -245,7 +243,6 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -259,7 +256,6 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
         state=invoke_run_state,
         time_created_greater_than=invoke_run_time_created_greater_than)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The ID of the application.

@@ -110,7 +110,6 @@ def get_events(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -119,7 +118,6 @@ def get_events(compartment_id: Optional[str] = None,
         end_time=audit_event_end_time,
         start_time=audit_event_start_time)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -161,7 +159,6 @@ def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_events_output(compartment_id: Optional[pulumi.Input[str]] = None,
         end_time=audit_event_end_time,
         start_time=audit_event_start_time)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     startIndex: resourceTypeSchemaAttributeStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsResourceTypeSchemaAttributes(args: GetDomainsResourceTypeSchemaAttributesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsResourceTypeSchemaAttributesResult> {
 
@@ -136,7 +134,6 @@ export interface GetDomainsResourceTypeSchemaAttributesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -152,7 +149,6 @@ export interface GetDomainsResourceTypeSchemaAttributesResult {
  *     startIndex: resourceTypeSchemaAttributeStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsResourceTypeSchemaAttributesOutput(args: GetDomainsResourceTypeSchemaAttributesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsResourceTypeSchemaAttributesResult> {
     return pulumi.output(args).apply((a: any) => getDomainsResourceTypeSchemaAttributes(a, opts))

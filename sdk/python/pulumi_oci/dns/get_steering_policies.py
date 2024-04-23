@@ -172,7 +172,6 @@ def get_steering_policies(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -187,7 +186,6 @@ def get_steering_policies(compartment_id: Optional[str] = None,
         time_created_greater_than_or_equal_to=steering_policy_time_created_greater_than_or_equal_to,
         time_created_less_than=steering_policy_time_created_less_than)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
@@ -247,7 +245,6 @@ def get_steering_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -262,7 +259,6 @@ def get_steering_policies_output(compartment_id: Optional[pulumi.Input[str]] = N
         time_created_greater_than_or_equal_to=steering_policy_time_created_greater_than_or_equal_to,
         time_created_less_than=steering_policy_time_created_less_than)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.

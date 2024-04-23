@@ -147,7 +147,6 @@ def get_repository_ref(ref_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -155,7 +154,6 @@ def get_repository_ref(ref_name: Optional[str] = None,
     test_repository_ref = oci.DevOps.get_repository_ref(ref_name=repository_ref_ref_name,
         repository_id=test_repository["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ref_name: A filter to return only resources that match the given reference name.
@@ -190,7 +188,6 @@ def get_repository_ref_output(ref_name: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -198,7 +195,6 @@ def get_repository_ref_output(ref_name: Optional[pulumi.Input[str]] = None,
     test_repository_ref = oci.DevOps.get_repository_ref(ref_name=repository_ref_ref_name,
         repository_id=test_repository["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ref_name: A filter to return only resources that match the given reference name.

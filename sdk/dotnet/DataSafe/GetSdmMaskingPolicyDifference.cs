@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSdmMaskingPolicyDifferenceResult> InvokeAsync(GetSdmMaskingPolicyDifferenceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSdmMaskingPolicyDifferenceResult>("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", args ?? new GetSdmMaskingPolicyDifferenceArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSdmMaskingPolicyDifferenceResult> Invoke(GetSdmMaskingPolicyDifferenceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferenceResult>("oci:DataSafe/getSdmMaskingPolicyDifference:getSdmMaskingPolicyDifference", args ?? new GetSdmMaskingPolicyDifferenceInvokeArgs(), options.WithDefaults());

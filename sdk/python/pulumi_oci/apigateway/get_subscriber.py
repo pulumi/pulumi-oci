@@ -183,14 +183,12 @@ def get_subscriber(subscriber_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_subscriber = oci.ApiGateway.get_subscriber(subscriber_id=test_subscriber_oci_apigateway_subscriber["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str subscriber_id: The ocid of the subscriber.
@@ -225,14 +223,12 @@ def get_subscriber_output(subscriber_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_subscriber = oci.ApiGateway.get_subscriber(subscriber_id=test_subscriber_oci_apigateway_subscriber["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str subscriber_id: The ocid of the subscriber.

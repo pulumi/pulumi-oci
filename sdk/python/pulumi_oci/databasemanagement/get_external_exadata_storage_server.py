@@ -339,14 +339,12 @@ def get_external_exadata_storage_server(external_exadata_storage_server_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_exadata_storage_server = oci.DatabaseManagement.get_external_exadata_storage_server(external_exadata_storage_server_id=test_external_exadata_storage_server_oci_database_management_external_exadata_storage_server["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
@@ -394,14 +392,12 @@ def get_external_exadata_storage_server_output(external_exadata_storage_server_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_exadata_storage_server = oci.DatabaseManagement.get_external_exadata_storage_server(external_exadata_storage_server_id=test_external_exadata_storage_server_oci_database_management_external_exadata_storage_server["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.

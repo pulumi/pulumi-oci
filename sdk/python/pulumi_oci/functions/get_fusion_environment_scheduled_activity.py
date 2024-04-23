@@ -220,7 +220,6 @@ def get_fusion_environment_scheduled_activity(fusion_environment_id: Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -228,7 +227,6 @@ def get_fusion_environment_scheduled_activity(fusion_environment_id: Optional[st
     test_fusion_environment_scheduled_activity = oci.Functions.get_fusion_environment_scheduled_activity(fusion_environment_id=test_fusion_environment["id"],
         scheduled_activity_id=test_scheduled_activity["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier
@@ -269,7 +267,6 @@ def get_fusion_environment_scheduled_activity_output(fusion_environment_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -277,7 +274,6 @@ def get_fusion_environment_scheduled_activity_output(fusion_environment_id: Opti
     test_fusion_environment_scheduled_activity = oci.Functions.get_fusion_environment_scheduled_activity(fusion_environment_id=test_fusion_environment["id"],
         scheduled_activity_id=test_scheduled_activity["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier

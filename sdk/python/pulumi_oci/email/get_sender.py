@@ -170,14 +170,12 @@ def get_sender(sender_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sender = oci.Email.get_sender(sender_id=test_sender_oci_email_sender["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sender_id: The unique OCID of the sender.
@@ -211,14 +209,12 @@ def get_sender_output(sender_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sender = oci.Email.get_sender(sender_id=test_sender_oci_email_sender["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sender_id: The unique OCID of the sender.

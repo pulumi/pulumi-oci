@@ -482,7 +482,6 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -527,7 +526,6 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
             object_type=masking_policies_masking_column_object_type,
             sensitive_type_id=test_sensitive_type["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -585,7 +583,6 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -630,7 +627,6 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
             object_type=masking_policies_masking_column_object_type,
             sensitive_type_id=test_sensitive_type["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

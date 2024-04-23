@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     instanceId: testInstance.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  * For more detailed implementation refer the instance example
  */
 export function getBootVolumeAttachments(args: GetBootVolumeAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeAttachmentsResult> {
@@ -102,7 +100,6 @@ export interface GetBootVolumeAttachmentsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetBootVolumeAttachmentsResult {
  *     instanceId: testInstance.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  * For more detailed implementation refer the instance example
  */
 export function getBootVolumeAttachmentsOutput(args: GetBootVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeAttachmentsResult> {

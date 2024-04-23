@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetFleetExportSetting(ctx *pulumi.Context, args *GetFleetExportSettingArgs, opts ...pulumi.InvokeOption) (*GetFleetExportSettingResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetExportSettingResult

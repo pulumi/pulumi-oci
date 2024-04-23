@@ -171,7 +171,6 @@ def get_repository_commit(commit_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -179,7 +178,6 @@ def get_repository_commit(commit_id: Optional[str] = None,
     test_repository_commit = oci.DevOps.get_repository_commit(commit_id=test_commit["id"],
         repository_id=test_repository["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str commit_id: A filter to return only resources that match the given commit ID.
@@ -216,7 +214,6 @@ def get_repository_commit_output(commit_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -224,7 +221,6 @@ def get_repository_commit_output(commit_id: Optional[pulumi.Input[str]] = None,
     test_repository_commit = oci.DevOps.get_repository_commit(commit_id=test_commit["id"],
         repository_id=test_repository["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str commit_id: A filter to return only resources that match the given commit ID.

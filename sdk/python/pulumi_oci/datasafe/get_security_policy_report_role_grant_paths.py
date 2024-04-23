@@ -114,7 +114,6 @@ def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[pulum
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,7 +122,6 @@ def get_security_policy_report_role_grant_paths(filters: Optional[Sequence[pulum
         grantee=security_policy_report_role_grant_path_grantee,
         security_policy_report_id=test_security_policy_report["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str granted_role: A filter to return only items that match the specified role.
@@ -162,7 +160,6 @@ def get_security_policy_report_role_grant_paths_output(filters: Optional[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -171,7 +168,6 @@ def get_security_policy_report_role_grant_paths_output(filters: Optional[pulumi.
         grantee=security_policy_report_role_grant_path_grantee,
         security_policy_report_id=test_security_policy_report["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str granted_role: A filter to return only items that match the specified role.

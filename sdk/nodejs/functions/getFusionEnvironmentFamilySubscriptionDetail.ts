@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentFamilySubscriptionDetail(args: GetFusionEnvironmentFamilySubscriptionDetailArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentFamilySubscriptionDetailResult> {
 
@@ -63,7 +61,6 @@ export interface GetFusionEnvironmentFamilySubscriptionDetailResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,7 +69,6 @@ export interface GetFusionEnvironmentFamilySubscriptionDetailResult {
  *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentFamilySubscriptionDetailOutput(args: GetFusionEnvironmentFamilySubscriptionDetailOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamilySubscriptionDetailResult> {
     return pulumi.output(args).apply((a: any) => getFusionEnvironmentFamilySubscriptionDetail(a, opts))

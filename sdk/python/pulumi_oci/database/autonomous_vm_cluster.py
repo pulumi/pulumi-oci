@@ -1157,7 +1157,6 @@ class AutonomousVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1197,7 +1196,6 @@ class AutonomousVmCluster(pulumi.CustomResource):
             time_zone=autonomous_vm_cluster_time_zone,
             total_container_databases=autonomous_vm_cluster_total_container_databases)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1246,7 +1244,6 @@ class AutonomousVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1286,7 +1283,6 @@ class AutonomousVmCluster(pulumi.CustomResource):
             time_zone=autonomous_vm_cluster_time_zone,
             total_container_databases=autonomous_vm_cluster_total_container_databases)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

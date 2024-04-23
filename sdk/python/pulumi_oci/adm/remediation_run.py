@@ -366,7 +366,6 @@ class RemediationRun(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -381,7 +380,6 @@ class RemediationRun(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -416,7 +414,6 @@ class RemediationRun(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -431,7 +428,6 @@ class RemediationRun(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

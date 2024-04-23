@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAuditProfileAvailableAuditVolumesResult> InvokeAsync(GetAuditProfileAvailableAuditVolumesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfileAvailableAuditVolumesResult>("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args ?? new GetAuditProfileAvailableAuditVolumesArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAuditProfileAvailableAuditVolumesResult> Invoke(GetAuditProfileAvailableAuditVolumesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileAvailableAuditVolumesResult>("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args ?? new GetAuditProfileAvailableAuditVolumesInvokeArgs(), options.WithDefaults());

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetComputeCapacityReservationInstances(ctx *pulumi.Context, args *GetComputeCapacityReservationInstancesArgs, opts ...pulumi.InvokeOption) (*GetComputeCapacityReservationInstancesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputeCapacityReservationInstancesResult

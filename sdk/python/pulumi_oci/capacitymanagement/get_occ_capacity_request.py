@@ -288,14 +288,12 @@ def get_occ_capacity_request(occ_capacity_request_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_occ_capacity_request = oci.CapacityManagement.get_occ_capacity_request(occ_capacity_request_id=test_occ_capacity_request_oci_capacity_management_occ_capacity_request["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str occ_capacity_request_id: The OCID of the capacity request.
@@ -339,14 +337,12 @@ def get_occ_capacity_request_output(occ_capacity_request_id: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_occ_capacity_request = oci.CapacityManagement.get_occ_capacity_request(occ_capacity_request_id=test_occ_capacity_request_oci_capacity_management_occ_capacity_request["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str occ_capacity_request_id: The OCID of the capacity request.

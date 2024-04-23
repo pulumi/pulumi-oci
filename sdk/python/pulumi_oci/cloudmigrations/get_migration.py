@@ -194,14 +194,12 @@ def get_migration(migration_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_migration = oci.CloudMigrations.get_migration(migration_id=test_migration_oci_cloud_migrations_migration["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str migration_id: Unique migration identifier
@@ -237,14 +235,12 @@ def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_migration = oci.CloudMigrations.get_migration(migration_id=test_migration_oci_cloud_migrations_migration["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str migration_id: Unique migration identifier

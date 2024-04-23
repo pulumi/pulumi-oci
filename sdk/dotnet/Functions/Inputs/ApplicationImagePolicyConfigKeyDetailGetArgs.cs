@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Functions.Inputs
     public sealed class ApplicationImagePolicyConfigKeyDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
         /// </summary>
         [Input("kmsKeyId", required: true)]
         public Input<string> KmsKeyId { get; set; } = null!;

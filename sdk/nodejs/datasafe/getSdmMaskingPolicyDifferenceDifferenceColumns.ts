@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     syncStatus: sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSdmMaskingPolicyDifferenceDifferenceColumns(args: GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> {
 
@@ -126,7 +124,6 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -141,7 +138,6 @@ export interface GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
  *     syncStatus: sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSdmMaskingPolicyDifferenceDifferenceColumnsOutput(args: GetSdmMaskingPolicyDifferenceDifferenceColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> {
     return pulumi.output(args).apply((a: any) => getSdmMaskingPolicyDifferenceDifferenceColumns(a, opts))

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsMyDevice(ctx *pulumi.Context, args *GetDomainsMyDeviceArgs, opts ...pulumi.InvokeOption) (*GetDomainsMyDeviceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsMyDeviceResult

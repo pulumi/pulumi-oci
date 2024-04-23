@@ -43,13 +43,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// Value of the tag.
+        /// User identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
+        /// * idcsCsvAttributeName: requestor_id
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string

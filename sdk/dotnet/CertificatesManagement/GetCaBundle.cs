@@ -18,7 +18,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCaBundleResult> InvokeAsync(GetCaBundleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCaBundleResult>("oci:CertificatesManagement/getCaBundle:getCaBundle", args ?? new GetCaBundleArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCaBundleResult> Invoke(GetCaBundleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCaBundleResult>("oci:CertificatesManagement/getCaBundle:getCaBundle", args ?? new GetCaBundleInvokeArgs(), options.WithDefaults());

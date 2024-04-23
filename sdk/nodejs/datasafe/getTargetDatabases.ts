@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,7 +29,6 @@ import * as utilities from "../utilities";
  *     targetDatabaseId: testTargetDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTargetDatabases(args: GetTargetDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesResult> {
 
@@ -137,7 +135,6 @@ export interface GetTargetDatabasesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -154,7 +151,6 @@ export interface GetTargetDatabasesResult {
  *     targetDatabaseId: testTargetDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTargetDatabasesOutput(args: GetTargetDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesResult> {
     return pulumi.output(args).apply((a: any) => getTargetDatabases(a, opts))

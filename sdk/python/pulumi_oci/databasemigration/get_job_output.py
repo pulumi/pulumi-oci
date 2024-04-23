@@ -75,14 +75,12 @@ def get_job_output(job_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_job_output = oci.DatabaseMigration.get_job_output(job_id=test_job["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str job_id: The OCID of the job
@@ -108,14 +106,12 @@ def get_job_output_output(job_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_job_output = oci.DatabaseMigration.get_job_output(job_id=test_job["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str job_id: The OCID of the job

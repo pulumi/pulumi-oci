@@ -22,7 +22,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPingMonitorsResult> InvokeAsync(GetPingMonitorsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPingMonitorsResult>("oci:HealthChecks/getPingMonitors:getPingMonitors", args ?? new GetPingMonitorsArgs(), options.WithDefaults());
@@ -56,7 +54,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPingMonitorsResult> Invoke(GetPingMonitorsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPingMonitorsResult>("oci:HealthChecks/getPingMonitors:getPingMonitors", args ?? new GetPingMonitorsInvokeArgs(), options.WithDefaults());

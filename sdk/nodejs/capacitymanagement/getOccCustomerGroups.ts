@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     status: occCustomerGroupStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOccCustomerGroups(args: GetOccCustomerGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetOccCustomerGroupsResult> {
 
@@ -95,7 +93,6 @@ export interface GetOccCustomerGroupsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,7 +104,6 @@ export interface GetOccCustomerGroupsResult {
  *     status: occCustomerGroupStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOccCustomerGroupsOutput(args: GetOccCustomerGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccCustomerGroupsResult> {
     return pulumi.output(args).apply((a: any) => getOccCustomerGroups(a, opts))

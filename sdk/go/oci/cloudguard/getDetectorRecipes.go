@@ -31,7 +31,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -60,7 +59,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDetectorRecipes(ctx *pulumi.Context, args *GetDetectorRecipesArgs, opts ...pulumi.InvokeOption) (*GetDetectorRecipesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDetectorRecipesResult

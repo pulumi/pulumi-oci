@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,7 +47,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDomainsSecurityQuestionSetting(ctx *pulumi.Context, args *LookupDomainsSecurityQuestionSettingArgs, opts ...pulumi.InvokeOption) (*LookupDomainsSecurityQuestionSettingResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsSecurityQuestionSettingResult

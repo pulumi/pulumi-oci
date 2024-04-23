@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: cloudAutonomousVmClusterState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCloudAutonomousVmClusters(args: GetCloudAutonomousVmClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudAutonomousVmClustersResult> {
 
@@ -109,7 +107,6 @@ export interface GetCloudAutonomousVmClustersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -122,7 +119,6 @@ export interface GetCloudAutonomousVmClustersResult {
  *     state: cloudAutonomousVmClusterState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCloudAutonomousVmClustersOutput(args: GetCloudAutonomousVmClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudAutonomousVmClustersResult> {
     return pulumi.output(args).apply((a: any) => getCloudAutonomousVmClusters(a, opts))

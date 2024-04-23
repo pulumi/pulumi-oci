@@ -413,7 +413,6 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -442,7 +441,6 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -480,7 +478,6 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -509,7 +506,6 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

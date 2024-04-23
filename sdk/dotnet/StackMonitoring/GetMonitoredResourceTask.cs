@@ -18,7 +18,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMonitoredResourceTaskResult> InvokeAsync(GetMonitoredResourceTaskArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitoredResourceTaskResult>("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", args ?? new GetMonitoredResourceTaskArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMonitoredResourceTaskResult> Invoke(GetMonitoredResourceTaskInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredResourceTaskResult>("oci:StackMonitoring/getMonitoredResourceTask:getMonitoredResourceTask", args ?? new GetMonitoredResourceTaskInvokeArgs(), options.WithDefaults());

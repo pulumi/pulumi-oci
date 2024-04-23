@@ -171,14 +171,12 @@ def get_managed_database_group(managed_database_group_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=test_managed_database_group_oci_database_management_managed_database_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -212,14 +210,12 @@ def get_managed_database_group_output(managed_database_group_id: Optional[pulumi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=test_managed_database_group_oci_database_management_managed_database_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.

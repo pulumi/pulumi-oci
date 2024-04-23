@@ -18,7 +18,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetGuardTargetResult> InvokeAsync(GetGuardTargetArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetGuardTargetResult>("oci:CloudGuard/getGuardTarget:getGuardTarget", args ?? new GetGuardTargetArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetGuardTargetResult> Invoke(GetGuardTargetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetGuardTargetResult>("oci:CloudGuard/getGuardTarget:getGuardTarget", args ?? new GetGuardTargetInvokeArgs(), options.WithDefaults());

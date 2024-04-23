@@ -632,7 +632,6 @@ class MaintenanceRun(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -645,7 +644,6 @@ class MaintenanceRun(pulumi.CustomResource):
             is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
             patching_mode=maintenance_run_patching_mode)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -686,7 +684,6 @@ class MaintenanceRun(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -699,7 +696,6 @@ class MaintenanceRun(pulumi.CustomResource):
             is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
             patching_mode=maintenance_run_patching_mode)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

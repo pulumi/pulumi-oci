@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetTrailSequence(ctx *pulumi.Context, args *GetTrailSequenceArgs, opts ...pulumi.InvokeOption) (*GetTrailSequenceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTrailSequenceResult

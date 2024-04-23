@@ -333,7 +333,6 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -354,7 +353,6 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                 description=analytics_instance_private_access_channel_private_source_scan_hosts_description,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -392,7 +390,6 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -413,7 +410,6 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
                 description=analytics_instance_private_access_channel_private_source_scan_hosts_description,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

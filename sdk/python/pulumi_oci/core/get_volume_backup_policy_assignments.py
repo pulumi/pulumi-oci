@@ -91,14 +91,12 @@ def get_volume_backup_policy_assignments(asset_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_volume_backup_policy_assignments = oci.Core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str asset_id: The OCID of an asset (e.g. a volume).
@@ -129,14 +127,12 @@ def get_volume_backup_policy_assignments_output(asset_id: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_volume_backup_policy_assignments = oci.Core.get_volume_backup_policy_assignments(asset_id=test_volume["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str asset_id: The OCID of an asset (e.g. a volume).

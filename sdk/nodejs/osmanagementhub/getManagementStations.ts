@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: managementStationState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementStations(args?: GetManagementStationsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementStationsResult> {
     args = args || {};
@@ -113,7 +111,6 @@ export interface GetManagementStationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetManagementStationsResult {
  *     state: managementStationState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementStationsOutput(args?: GetManagementStationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementStationsResult> {
     return pulumi.output(args).apply((a: any) => getManagementStations(a, opts))

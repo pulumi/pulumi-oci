@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: accountRecoverySettingResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAccountRecoverySettings(args: GetDomainsAccountRecoverySettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAccountRecoverySettingsResult> {
 
@@ -101,7 +99,6 @@ export interface GetDomainsAccountRecoverySettingsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetDomainsAccountRecoverySettingsResult {
  *     resourceTypeSchemaVersion: accountRecoverySettingResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAccountRecoverySettingsOutput(args: GetDomainsAccountRecoverySettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAccountRecoverySettingsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsAccountRecoverySettings(a, opts))

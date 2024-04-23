@@ -75,14 +75,12 @@ def get_configuration(tenant_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_configuration = oci.MeteringComputation.get_configuration(tenant_id=test_tenant["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str tenant_id: tenant id
@@ -108,14 +106,12 @@ def get_configuration_output(tenant_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_configuration = oci.MeteringComputation.get_configuration(tenant_id=test_tenant["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str tenant_id: tenant id

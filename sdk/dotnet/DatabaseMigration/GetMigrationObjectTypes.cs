@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -32,7 +31,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMigrationObjectTypesResult> InvokeAsync(GetMigrationObjectTypesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesArgs(), options.WithDefaults());
@@ -45,7 +43,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -58,7 +55,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMigrationObjectTypesResult> Invoke(GetMigrationObjectTypesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesInvokeArgs(), options.WithDefaults());

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     id: dbNodeConsoleConnectionId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbNodeConsoleConnection(args: GetDbNodeConsoleConnectionArgs, opts?: pulumi.InvokeOptions): Promise<GetDbNodeConsoleConnectionResult> {
 
@@ -99,7 +97,6 @@ export interface GetDbNodeConsoleConnectionResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -109,7 +106,6 @@ export interface GetDbNodeConsoleConnectionResult {
  *     id: dbNodeConsoleConnectionId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbNodeConsoleConnectionOutput(args: GetDbNodeConsoleConnectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeConsoleConnectionResult> {
     return pulumi.output(args).apply((a: any) => getDbNodeConsoleConnection(a, opts))

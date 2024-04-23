@@ -86,14 +86,12 @@ def get_db_system_patches(db_system_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=test_db_system["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -122,14 +120,12 @@ def get_db_system_patches_output(db_system_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_system_patches = oci.Database.get_db_system_patches(db_system_id=test_db_system["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

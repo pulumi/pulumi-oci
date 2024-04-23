@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,7 +35,6 @@ import * as utilities from "../utilities";
  *     startAfter: objectVersionStartAfter,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getObjectVersions(args: GetObjectVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectVersionsResult> {
 
@@ -133,7 +131,6 @@ export interface GetObjectVersionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -149,7 +146,6 @@ export interface GetObjectVersionsResult {
  *     startAfter: objectVersionStartAfter,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getObjectVersionsOutput(args: GetObjectVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectVersionsResult> {
     return pulumi.output(args).apply((a: any) => getObjectVersions(a, opts))

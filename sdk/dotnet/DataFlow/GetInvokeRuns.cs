@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetInvokeRunsResult> InvokeAsync(GetInvokeRunsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetInvokeRunsResult>("oci:DataFlow/getInvokeRuns:getInvokeRuns", args ?? new GetInvokeRunsArgs(), options.WithDefaults());
@@ -55,7 +53,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +75,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetInvokeRunsResult> Invoke(GetInvokeRunsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvokeRunsResult>("oci:DataFlow/getInvokeRuns:getInvokeRuns", args ?? new GetInvokeRunsInvokeArgs(), options.WithDefaults());

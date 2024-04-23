@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     namespace: logAnalyticsPreferenceNamespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsPreference(args: GetLogAnalyticsPreferenceArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsPreferenceResult> {
 
@@ -63,7 +61,6 @@ export interface GetLogAnalyticsPreferenceResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,7 +69,6 @@ export interface GetLogAnalyticsPreferenceResult {
  *     namespace: logAnalyticsPreferenceNamespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsPreferenceOutput(args: GetLogAnalyticsPreferenceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsPreferenceResult> {
     return pulumi.output(args).apply((a: any) => getLogAnalyticsPreference(a, opts))

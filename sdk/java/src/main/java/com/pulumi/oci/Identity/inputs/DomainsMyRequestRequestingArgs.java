@@ -54,10 +54,10 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
     }
 
     /**
-     * User display name
+     * Resource display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -70,10 +70,10 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
     private @Nullable Output<String> display;
 
     /**
-     * @return User display name
+     * @return Resource display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -87,7 +87,7 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) User URI
+     * (Updatable) Resource URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -103,7 +103,7 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User URI
+     * @return (Updatable) Resource URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -159,13 +159,14 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Value of the tag.
+     * Resource identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: requesting_id
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -176,13 +177,14 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return Resource identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: requesting_id
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -265,10 +267,10 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param display User display name
+         * @param display Resource display name
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -285,10 +287,10 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param display User display name
+         * @param display Resource display name
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -304,7 +306,7 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param ref (Updatable) User URI
+         * @param ref (Updatable) Resource URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -324,7 +326,7 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param ref (Updatable) User URI
+         * @param ref (Updatable) Resource URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -388,13 +390,14 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Resource identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: requesting_id
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -409,13 +412,14 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Resource identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: requesting_id
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string

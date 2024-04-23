@@ -19,7 +19,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDataSourceEventResult> InvokeAsync(GetDataSourceEventArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataSourceEventResult>("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", args ?? new GetDataSourceEventArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDataSourceEventResult> Invoke(GetDataSourceEventInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataSourceEventResult>("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", args ?? new GetDataSourceEventInvokeArgs(), options.WithDefaults());

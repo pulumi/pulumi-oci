@@ -99,14 +99,12 @@ def get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_exadata_infrastructure_ocpu = oci.Database.get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -134,14 +132,12 @@ def get_autonomous_exadata_infrastructure_ocpu_output(autonomous_exadata_infrast
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_exadata_infrastructure_ocpu = oci.Database.get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

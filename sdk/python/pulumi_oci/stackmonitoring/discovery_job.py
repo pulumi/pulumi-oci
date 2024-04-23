@@ -399,7 +399,6 @@ class DiscoveryJob(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -437,7 +436,6 @@ class DiscoveryJob(pulumi.CustomResource):
             },
             should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -474,7 +472,6 @@ class DiscoveryJob(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -512,7 +509,6 @@ class DiscoveryJob(pulumi.CustomResource):
             },
             should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

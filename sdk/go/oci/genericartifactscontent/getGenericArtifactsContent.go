@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetGenericArtifactsContent(ctx *pulumi.Context, args *GetGenericArtifactsContentArgs, opts ...pulumi.InvokeOption) (*GetGenericArtifactsContentResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetGenericArtifactsContentResult

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAutoScalingConfigurations(ctx *pulumi.Context, args *GetAutoScalingConfigurationsArgs, opts ...pulumi.InvokeOption) (*GetAutoScalingConfigurationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutoScalingConfigurationsResult

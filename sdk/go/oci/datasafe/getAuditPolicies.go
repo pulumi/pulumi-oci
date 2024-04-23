@@ -31,7 +31,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -61,7 +60,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAuditPolicies(ctx *pulumi.Context, args *GetAuditPoliciesArgs, opts ...pulumi.InvokeOption) (*GetAuditPoliciesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuditPoliciesResult

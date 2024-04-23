@@ -517,7 +517,6 @@ class OpsiConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -544,7 +543,6 @@ class OpsiConfiguration(pulumi.CustomResource):
             opsi_config_fields=opsi_configuration_opsi_config_field,
             system_tags=opsi_configuration_system_tags)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -586,7 +584,6 @@ class OpsiConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -613,7 +610,6 @@ class OpsiConfiguration(pulumi.CustomResource):
             opsi_config_fields=opsi_configuration_opsi_config_field,
             system_tags=opsi_configuration_system_tags)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

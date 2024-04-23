@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     reservedCapacityId: testReservedCapacity.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMigrationPlanAvailableShape(args: GetMigrationPlanAvailableShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationPlanAvailableShapeResult> {
 
@@ -94,7 +92,6 @@ export interface GetMigrationPlanAvailableShapeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,7 +104,6 @@ export interface GetMigrationPlanAvailableShapeResult {
  *     reservedCapacityId: testReservedCapacity.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMigrationPlanAvailableShapeOutput(args: GetMigrationPlanAvailableShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationPlanAvailableShapeResult> {
     return pulumi.output(args).apply((a: any) => getMigrationPlanAvailableShape(a, opts))

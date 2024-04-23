@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -53,7 +52,6 @@ import * as utilities from "../utilities";
  *     userCountLessThan: userAssessmentProfileUserCountLessThan,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUserAssessmentProfiles(args: GetUserAssessmentProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentProfilesResult> {
 
@@ -231,7 +229,6 @@ export interface GetUserAssessmentProfilesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -257,7 +254,6 @@ export interface GetUserAssessmentProfilesResult {
  *     userCountLessThan: userAssessmentProfileUserCountLessThan,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUserAssessmentProfilesOutput(args: GetUserAssessmentProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentProfilesResult> {
     return pulumi.output(args).apply((a: any) => getUserAssessmentProfiles(a, opts))

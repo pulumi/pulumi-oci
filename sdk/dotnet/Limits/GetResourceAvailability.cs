@@ -22,7 +22,6 @@ namespace Pulumi.Oci.Limits
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.Limits
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetResourceAvailabilityResult> InvokeAsync(GetResourceAvailabilityArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetResourceAvailabilityResult>("oci:Limits/getResourceAvailability:getResourceAvailability", args ?? new GetResourceAvailabilityArgs(), options.WithDefaults());
@@ -57,7 +55,6 @@ namespace Pulumi.Oci.Limits
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.Limits
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetResourceAvailabilityResult> Invoke(GetResourceAvailabilityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResourceAvailabilityResult>("oci:Limits/getResourceAvailability:getResourceAvailability", args ?? new GetResourceAvailabilityInvokeArgs(), options.WithDefaults());

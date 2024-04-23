@@ -1129,7 +1129,6 @@ class Cluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1167,7 +1166,6 @@ class Cluster(pulumi.CustomResource):
             security_mode=opensearch_cluster_security_mode,
             system_tags=opensearch_cluster_system_tags)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1233,7 +1231,6 @@ class Cluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1271,7 +1268,6 @@ class Cluster(pulumi.CustomResource):
             security_mode=opensearch_cluster_security_mode,
             system_tags=opensearch_cluster_system_tags)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

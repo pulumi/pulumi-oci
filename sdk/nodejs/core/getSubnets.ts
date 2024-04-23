@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSubnets(args: GetSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetsResult> {
 
@@ -101,7 +99,6 @@ export interface GetSubnetsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,7 +110,6 @@ export interface GetSubnetsResult {
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSubnetsOutput(args: GetSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetsResult> {
     return pulumi.output(args).apply((a: any) => getSubnets(a, opts))

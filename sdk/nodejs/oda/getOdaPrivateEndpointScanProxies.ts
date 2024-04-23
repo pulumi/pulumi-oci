@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     state: odaPrivateEndpointScanProxyState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOdaPrivateEndpointScanProxies(args: GetOdaPrivateEndpointScanProxiesArgs, opts?: pulumi.InvokeOptions): Promise<GetOdaPrivateEndpointScanProxiesResult> {
 
@@ -86,7 +84,6 @@ export interface GetOdaPrivateEndpointScanProxiesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -96,7 +93,6 @@ export interface GetOdaPrivateEndpointScanProxiesResult {
  *     state: odaPrivateEndpointScanProxyState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOdaPrivateEndpointScanProxiesOutput(args: GetOdaPrivateEndpointScanProxiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOdaPrivateEndpointScanProxiesResult> {
     return pulumi.output(args).apply((a: any) => getOdaPrivateEndpointScanProxies(a, opts))

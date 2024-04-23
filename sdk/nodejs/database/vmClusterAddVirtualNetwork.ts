@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     vmClusterId: testVmCluster.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ##### Note: You may also need to add `dbServers` and `cpuCoreCount` to the ignoreChanges for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
  *

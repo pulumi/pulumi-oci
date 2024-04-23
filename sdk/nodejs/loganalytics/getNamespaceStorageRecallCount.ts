@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     namespace: namespaceStorageRecallCountNamespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceStorageRecallCount(args: GetNamespaceStorageRecallCountArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceStorageRecallCountResult> {
 
@@ -77,7 +75,6 @@ export interface GetNamespaceStorageRecallCountResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetNamespaceStorageRecallCountResult {
  *     namespace: namespaceStorageRecallCountNamespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceStorageRecallCountOutput(args: GetNamespaceStorageRecallCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageRecallCountResult> {
     return pulumi.output(args).apply((a: any) => getNamespaceStorageRecallCount(a, opts))

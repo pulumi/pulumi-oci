@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalExadataInfrastructuresResult> InvokeAsync(GetExternalExadataInfrastructuresArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalExadataInfrastructuresResult>("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args ?? new GetExternalExadataInfrastructuresArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalExadataInfrastructuresResult> Invoke(GetExternalExadataInfrastructuresInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataInfrastructuresResult>("oci:DatabaseManagement/getExternalExadataInfrastructures:getExternalExadataInfrastructures", args ?? new GetExternalExadataInfrastructuresInvokeArgs(), options.WithDefaults());

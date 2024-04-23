@@ -1055,7 +1055,6 @@ class Application(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1106,7 +1105,6 @@ class Application(pulumi.CustomResource):
             type=application_type,
             warehouse_bucket_uri=application_warehouse_bucket_uri)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1164,7 +1162,6 @@ class Application(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1215,7 +1212,6 @@ class Application(pulumi.CustomResource):
             type=application_type,
             warehouse_bucket_uri=application_warehouse_bucket_uri)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

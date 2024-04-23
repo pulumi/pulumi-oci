@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     operatorControlAssignmentId: testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getControlAssignment(args: GetControlAssignmentArgs, opts?: pulumi.InvokeOptions): Promise<GetControlAssignmentResult> {
 
@@ -174,7 +172,6 @@ export interface GetControlAssignmentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -183,7 +180,6 @@ export interface GetControlAssignmentResult {
  *     operatorControlAssignmentId: testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getControlAssignmentOutput(args: GetControlAssignmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlAssignmentResult> {
     return pulumi.output(args).apply((a: any) => getControlAssignment(a, opts))

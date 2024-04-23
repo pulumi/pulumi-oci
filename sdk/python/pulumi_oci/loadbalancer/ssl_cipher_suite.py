@@ -217,7 +217,6 @@ class SslCipherSuite(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -227,7 +226,6 @@ class SslCipherSuite(pulumi.CustomResource):
             load_balancer_id=test_load_balancer["id"],
             name=ssl_cipher_suite_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -274,7 +272,6 @@ class SslCipherSuite(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -284,7 +281,6 @@ class SslCipherSuite(pulumi.CustomResource):
             load_balancer_id=test_load_balancer["id"],
             name=ssl_cipher_suite_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsMyRequestableGroups(ctx *pulumi.Context, args *GetDomainsMyRequestableGroupsArgs, opts ...pulumi.InvokeOption) (*GetDomainsMyRequestableGroupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsMyRequestableGroupsResult

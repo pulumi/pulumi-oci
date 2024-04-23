@@ -255,7 +255,6 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -263,7 +262,6 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
     test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=test_result["id"],
         fleet_id=test_fleet["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str crypto_analysis_result_id: The OCID of the analysis result.
@@ -307,7 +305,6 @@ def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -315,7 +312,6 @@ def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[
     test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=test_result["id"],
         fleet_id=test_fleet["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str crypto_analysis_result_id: The OCID of the analysis result.

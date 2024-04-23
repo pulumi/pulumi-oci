@@ -158,14 +158,12 @@ def get_drg_route_distribution(drg_route_distribution_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_drg_route_distribution = oci.Core.get_drg_route_distribution(drg_route_distribution_id=test_drg_route_distribution_oci_core_drg_route_distribution["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
@@ -198,14 +196,12 @@ def get_drg_route_distribution_output(drg_route_distribution_id: Optional[pulumi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_drg_route_distribution = oci.Core.get_drg_route_distribution(drg_route_distribution_id=test_drg_route_distribution_oci_core_drg_route_distribution["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.

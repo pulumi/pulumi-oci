@@ -19,7 +19,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUsagelimitsResult> InvokeAsync(GetUsagelimitsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsagelimitsResult>("oci:UsageProxy/getUsagelimits:getUsagelimits", args ?? new GetUsagelimitsArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUsagelimitsResult> Invoke(GetUsagelimitsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsagelimitsResult>("oci:UsageProxy/getUsagelimits:getUsagelimits", args ?? new GetUsagelimitsInvokeArgs(), options.WithDefaults());

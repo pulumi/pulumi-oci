@@ -88,7 +88,6 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -96,7 +95,6 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
         test_cluster_complete_credential_rotation_management = oci.container_engine.ClusterCompleteCredentialRotationManagement("test_cluster_complete_credential_rotation_management", cluster_id=test_cluster["id"],
         opts=pulumi.ResourceOptions(depends_on=[test_cluster_start_credential_rotation_management]))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -123,7 +121,6 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -131,7 +128,6 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
         test_cluster_complete_credential_rotation_management = oci.container_engine.ClusterCompleteCredentialRotationManagement("test_cluster_complete_credential_rotation_management", cluster_id=test_cluster["id"],
         opts=pulumi.ResourceOptions(depends_on=[test_cluster_start_credential_rotation_management]))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

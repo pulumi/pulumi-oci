@@ -87,14 +87,12 @@ def get_services(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_services = oci.Limits.get_services(compartment_id=tenancy_ocid)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
@@ -124,14 +122,12 @@ def get_services_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_services = oci.Limits.get_services(compartment_id=tenancy_ocid)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).

@@ -120,7 +120,6 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -129,7 +128,6 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
             awr_hub_source_id=test_awr_hub_source["id"],
             enable_awrhubsource=enable_awrhubsource)
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -153,7 +151,6 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -162,7 +159,6 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
             awr_hub_source_id=test_awr_hub_source["id"],
             enable_awrhubsource=enable_awrhubsource)
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param AwrHubSourceAwrhubsourcesManagementArgs args: The arguments to use to populate this resource's properties.

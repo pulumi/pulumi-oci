@@ -86,14 +86,12 @@ def get_managed_my_sql_database_configuration_data(filters: Optional[Sequence[pu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_my_sql_database_configuration_data = oci.DatabaseManagement.get_managed_my_sql_database_configuration_data(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.
@@ -122,14 +120,12 @@ def get_managed_my_sql_database_configuration_data_output(filters: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_my_sql_database_configuration_data = oci.DatabaseManagement.get_managed_my_sql_database_configuration_data(managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_my_sql_database_id: The OCID of ManagedMySqlDatabase.

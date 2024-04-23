@@ -95,7 +95,6 @@ def get_product_license_consumers(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,7 +103,6 @@ def get_product_license_consumers(compartment_id: Optional[str] = None,
         product_license_id=test_product_license["id"],
         is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -138,7 +136,6 @@ def get_product_license_consumers_output(compartment_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -147,7 +144,6 @@ def get_product_license_consumers_output(compartment_id: Optional[pulumi.Input[s
         product_license_id=test_product_license["id"],
         is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.

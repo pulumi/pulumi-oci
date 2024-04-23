@@ -264,14 +264,12 @@ def get_target_database(target_database_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target_database = oci.DataSafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str target_database_id: The OCID of the Data Safe target database.
@@ -313,14 +311,12 @@ def get_target_database_output(target_database_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target_database = oci.DataSafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str target_database_id: The OCID of the Data Safe target database.

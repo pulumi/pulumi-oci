@@ -434,7 +434,6 @@ class AnnouncementSubscription(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -459,7 +458,6 @@ class AnnouncementSubscription(pulumi.CustomResource):
             preferred_language=announcement_subscription_preferred_language,
             preferred_time_zone=announcement_subscription_preferred_time_zone)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -500,7 +498,6 @@ class AnnouncementSubscription(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -525,7 +522,6 @@ class AnnouncementSubscription(pulumi.CustomResource):
             preferred_language=announcement_subscription_preferred_language,
             preferred_time_zone=announcement_subscription_preferred_time_zone)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -130,7 +130,6 @@ def get_vnic_attachments(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_vnic_attachments(availability_domain: Optional[str] = None,
         instance_id=test_instance["id"],
         vnic_id=test_vnic["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -183,7 +181,6 @@ def get_vnic_attachments_output(availability_domain: Optional[pulumi.Input[Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -193,7 +190,6 @@ def get_vnic_attachments_output(availability_domain: Optional[pulumi.Input[Optio
         instance_id=test_instance["id"],
         vnic_id=test_vnic["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

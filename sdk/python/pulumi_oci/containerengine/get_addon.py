@@ -154,7 +154,6 @@ def get_addon(addon_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -162,7 +161,6 @@ def get_addon(addon_name: Optional[str] = None,
     test_addon = oci.ContainerEngine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
         cluster_id=test_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str addon_name: The name of the addon.
@@ -198,7 +196,6 @@ def get_addon_output(addon_name: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -206,7 +203,6 @@ def get_addon_output(addon_name: Optional[pulumi.Input[str]] = None,
     test_addon = oci.ContainerEngine.get_addon(addon_name=test_addon_oci_containerengine_addon["name"],
         cluster_id=test_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str addon_name: The name of the addon.

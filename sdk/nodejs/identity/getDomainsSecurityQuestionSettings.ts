@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: securityQuestionSettingResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsSecurityQuestionSettings(args: GetDomainsSecurityQuestionSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSecurityQuestionSettingsResult> {
 
@@ -101,7 +99,6 @@ export interface GetDomainsSecurityQuestionSettingsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetDomainsSecurityQuestionSettingsResult {
  *     resourceTypeSchemaVersion: securityQuestionSettingResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsSecurityQuestionSettingsOutput(args: GetDomainsSecurityQuestionSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSecurityQuestionSettingsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsSecurityQuestionSettings(a, opts))

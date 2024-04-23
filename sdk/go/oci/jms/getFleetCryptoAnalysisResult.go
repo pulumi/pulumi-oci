@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetFleetCryptoAnalysisResult(ctx *pulumi.Context, args *GetFleetCryptoAnalysisResultArgs, opts ...pulumi.InvokeOption) (*GetFleetCryptoAnalysisResultResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetCryptoAnalysisResultResult

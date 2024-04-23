@@ -115,7 +115,6 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,7 +122,6 @@ def get_load_balancer_routing_policy(load_balancer_id: Optional[str] = None,
     test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
         routing_policy_name=test_routing_policy["name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
@@ -156,7 +154,6 @@ def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.In
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +161,6 @@ def get_load_balancer_routing_policy_output(load_balancer_id: Optional[pulumi.In
     test_load_balancer_routing_policy = oci.LoadBalancer.get_load_balancer_routing_policy(load_balancer_id=test_load_balancer["id"],
         routing_policy_name=test_routing_policy["name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.

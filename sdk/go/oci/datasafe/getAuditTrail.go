@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupAuditTrail(ctx *pulumi.Context, args *LookupAuditTrailArgs, opts ...pulumi.InvokeOption) (*LookupAuditTrailResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAuditTrailResult

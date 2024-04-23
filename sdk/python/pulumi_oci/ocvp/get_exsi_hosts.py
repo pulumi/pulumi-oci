@@ -182,7 +182,6 @@ def get_exsi_hosts(cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,7 +195,6 @@ def get_exsi_hosts(cluster_id: Optional[str] = None,
         sddc_id=test_sddc["id"],
         state=esxi_host_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
@@ -261,7 +259,6 @@ def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -275,7 +272,6 @@ def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
         sddc_id=test_sddc["id"],
         state=esxi_host_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.

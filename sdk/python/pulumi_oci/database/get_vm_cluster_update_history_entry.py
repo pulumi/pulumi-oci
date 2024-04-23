@@ -156,7 +156,6 @@ def get_vm_cluster_update_history_entry(update_history_entry_id: Optional[str] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +163,6 @@ def get_vm_cluster_update_history_entry(update_history_entry_id: Optional[str] =
     test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
@@ -200,7 +198,6 @@ def get_vm_cluster_update_history_entry_output(update_history_entry_id: Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,7 +205,6 @@ def get_vm_cluster_update_history_entry_output(update_history_entry_id: Optional
     test_vm_cluster_update_history_entry = oci.Database.get_vm_cluster_update_history_entry(update_history_entry_id=test_update_history_entry["id"],
         vm_cluster_id=test_vm_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.

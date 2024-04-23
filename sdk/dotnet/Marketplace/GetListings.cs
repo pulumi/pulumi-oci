@@ -33,7 +33,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -59,7 +58,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetListingsResult> InvokeAsync(GetListingsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetListingsResult>("oci:Marketplace/getListings:getListings", args ?? new GetListingsArgs(), options.WithDefaults());
@@ -86,7 +84,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -112,7 +109,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetListingsResult> Invoke(GetListingsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListingsResult>("oci:Marketplace/getListings:getListings", args ?? new GetListingsInvokeArgs(), options.WithDefaults());

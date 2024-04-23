@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     dbWorkload: autonomousDbVersionDbWorkload,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDbVersions(args: GetAutonomousDbVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDbVersionsResult> {
 
@@ -80,7 +78,6 @@ export interface GetAutonomousDbVersionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,7 +87,6 @@ export interface GetAutonomousDbVersionsResult {
  *     dbWorkload: autonomousDbVersionDbWorkload,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDbVersionsOutput(args: GetAutonomousDbVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDbVersionsResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDbVersions(a, opts))

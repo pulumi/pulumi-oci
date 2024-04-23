@@ -147,14 +147,12 @@ def get_compute_cluster(compute_cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compute_cluster = oci.Core.get_compute_cluster(compute_cluster_id=test_compute_cluster_oci_core_compute_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
@@ -187,14 +185,12 @@ def get_compute_cluster_output(compute_cluster_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compute_cluster = oci.Core.get_compute_cluster(compute_cluster_id=test_compute_cluster_oci_core_compute_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.

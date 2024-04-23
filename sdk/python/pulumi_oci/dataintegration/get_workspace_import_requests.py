@@ -145,7 +145,6 @@ def get_workspace_import_requests(filters: Optional[Sequence[pulumi.InputType['G
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -157,7 +156,6 @@ def get_workspace_import_requests(filters: Optional[Sequence[pulumi.InputType['G
         time_ended_in_millis=workspace_import_request_time_ended_in_millis,
         time_started_in_millis=workspace_import_request_time_started_in_millis)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str import_status: Specifies import status to use, either -  ALL, SUCCESSFUL, IN_PROGRESS, QUEUED, FAILED .
@@ -206,7 +204,6 @@ def get_workspace_import_requests_output(filters: Optional[pulumi.Input[Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,7 +215,6 @@ def get_workspace_import_requests_output(filters: Optional[pulumi.Input[Optional
         time_ended_in_millis=workspace_import_request_time_ended_in_millis,
         time_started_in_millis=workspace_import_request_time_started_in_millis)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str import_status: Specifies import status to use, either -  ALL, SUCCESSFUL, IN_PROGRESS, QUEUED, FAILED .

@@ -159,7 +159,6 @@ def get_managed_database_attention_log_counts(filters: Optional[Sequence[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,7 +172,6 @@ def get_managed_database_attention_log_counts(filters: Optional[Sequence[pulumi.
         type_filter=managed_database_attention_log_count_type_filter,
         urgency_filter=managed_database_attention_log_count_urgency_filter)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str group_by: The optional parameter used to group different attention logs.
@@ -230,7 +228,6 @@ def get_managed_database_attention_log_counts_output(filters: Optional[pulumi.In
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -244,7 +241,6 @@ def get_managed_database_attention_log_counts_output(filters: Optional[pulumi.In
         type_filter=managed_database_attention_log_count_type_filter,
         urgency_filter=managed_database_attention_log_count_urgency_filter)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str group_by: The optional parameter used to group different attention logs.

@@ -286,7 +286,6 @@ class InstanceConsoleConnection(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -301,7 +300,6 @@ class InstanceConsoleConnection(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -339,7 +337,6 @@ class InstanceConsoleConnection(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -354,7 +351,6 @@ class InstanceConsoleConnection(pulumi.CustomResource):
                 "Department": "Finance",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

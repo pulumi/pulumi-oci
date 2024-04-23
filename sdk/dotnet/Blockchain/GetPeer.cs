@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPeerResult> InvokeAsync(GetPeerArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPeerResult>("oci:Blockchain/getPeer:getPeer", args ?? new GetPeerArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Blockchain
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPeerResult> Invoke(GetPeerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPeerResult>("oci:Blockchain/getPeer:getPeer", args ?? new GetPeerInvokeArgs(), options.WithDefaults());

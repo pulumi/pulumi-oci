@@ -19,7 +19,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAccessRequestHistoryResult> InvokeAsync(GetAccessRequestHistoryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessRequestHistoryResult>("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", args ?? new GetAccessRequestHistoryArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAccessRequestHistoryResult> Invoke(GetAccessRequestHistoryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestHistoryResult>("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", args ?? new GetAccessRequestHistoryInvokeArgs(), options.WithDefaults());

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCloudAutonomousVmClusterResourceUsageResult> InvokeAsync(GetCloudAutonomousVmClusterResourceUsageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudAutonomousVmClusterResourceUsageResult>("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", args ?? new GetCloudAutonomousVmClusterResourceUsageArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCloudAutonomousVmClusterResourceUsageResult> Invoke(GetCloudAutonomousVmClusterResourceUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudAutonomousVmClusterResourceUsageResult>("oci:Database/getCloudAutonomousVmClusterResourceUsage:getCloudAutonomousVmClusterResourceUsage", args ?? new GetCloudAutonomousVmClusterResourceUsageInvokeArgs(), options.WithDefaults());

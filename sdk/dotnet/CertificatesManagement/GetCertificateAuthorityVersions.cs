@@ -20,7 +20,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCertificateAuthorityVersionsResult> InvokeAsync(GetCertificateAuthorityVersionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificateAuthorityVersionsResult>("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", args ?? new GetCertificateAuthorityVersionsArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCertificateAuthorityVersionsResult> Invoke(GetCertificateAuthorityVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionsResult>("oci:CertificatesManagement/getCertificateAuthorityVersions:getCertificateAuthorityVersions", args ?? new GetCertificateAuthorityVersionsInvokeArgs(), options.WithDefaults());

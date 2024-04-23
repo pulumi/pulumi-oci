@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDbSystemPrimaryDbInstance(ctx *pulumi.Context, args *GetDbSystemPrimaryDbInstanceArgs, opts ...pulumi.InvokeOption) (*GetDbSystemPrimaryDbInstanceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbSystemPrimaryDbInstanceResult

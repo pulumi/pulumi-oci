@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     groupBy: managementAgentPluginCountGroupBy,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentPluginCount(args: GetManagementAgentPluginCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentPluginCountResult> {
 
@@ -72,7 +70,6 @@ export interface GetManagementAgentPluginCountResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -82,7 +79,6 @@ export interface GetManagementAgentPluginCountResult {
  *     groupBy: managementAgentPluginCountGroupBy,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentPluginCountOutput(args: GetManagementAgentPluginCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentPluginCountResult> {
     return pulumi.output(args).apply((a: any) => getManagementAgentPluginCount(a, opts))

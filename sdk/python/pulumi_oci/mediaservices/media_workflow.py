@@ -433,7 +433,6 @@ class MediaWorkflow(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -466,7 +465,6 @@ class MediaWorkflow(pulumi.CustomResource):
                 prerequisites=media_workflow_tasks_prerequisites,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -500,7 +498,6 @@ class MediaWorkflow(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -533,7 +530,6 @@ class MediaWorkflow(pulumi.CustomResource):
                 prerequisites=media_workflow_tasks_prerequisites,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

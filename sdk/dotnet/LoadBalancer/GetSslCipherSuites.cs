@@ -18,7 +18,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSslCipherSuitesResult> InvokeAsync(GetSslCipherSuitesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSslCipherSuitesResult>("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", args ?? new GetSslCipherSuitesArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSslCipherSuitesResult> Invoke(GetSslCipherSuitesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSslCipherSuitesResult>("oci:LoadBalancer/getSslCipherSuites:getSslCipherSuites", args ?? new GetSslCipherSuitesInvokeArgs(), options.WithDefaults());

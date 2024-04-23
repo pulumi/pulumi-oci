@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -48,7 +47,6 @@ import * as utilities from "../utilities";
  *     type: securityAssessmentType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessments(args: GetSecurityAssessmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentsResult> {
 
@@ -200,7 +198,6 @@ export interface GetSecurityAssessmentsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -221,7 +218,6 @@ export interface GetSecurityAssessmentsResult {
  *     type: securityAssessmentType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessmentsOutput(args: GetSecurityAssessmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentsResult> {
     return pulumi.output(args).apply((a: any) => getSecurityAssessments(a, opts))

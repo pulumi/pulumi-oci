@@ -462,7 +462,6 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -484,7 +483,6 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
                 format_version=occ_availability_catalog_metadata_details_format_version,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -523,7 +521,6 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -545,7 +542,6 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
                 format_version=occ_availability_catalog_metadata_details_format_version,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetLicenseMetric(ctx *pulumi.Context, args *GetLicenseMetricArgs, opts ...pulumi.InvokeOption) (*GetLicenseMetricResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLicenseMetricResult

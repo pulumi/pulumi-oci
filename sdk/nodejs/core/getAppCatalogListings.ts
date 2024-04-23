@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     publisherType: appCatalogListingPublisherType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAppCatalogListings(args?: GetAppCatalogListingsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogListingsResult> {
     args = args || {};
@@ -87,7 +85,6 @@ export interface GetAppCatalogListingsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,7 +95,6 @@ export interface GetAppCatalogListingsResult {
  *     publisherType: appCatalogListingPublisherType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAppCatalogListingsOutput(args?: GetAppCatalogListingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingsResult> {
     return pulumi.output(args).apply((a: any) => getAppCatalogListings(a, opts))

@@ -110,14 +110,12 @@ def get_vault_usage(vault_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vault_usage = oci.Kms.get_vault_usage(vault_id=test_vault["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str vault_id: The OCID of the vault.
@@ -146,14 +144,12 @@ def get_vault_usage_output(vault_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vault_usage = oci.Kms.get_vault_usage(vault_id=test_vault["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str vault_id: The OCID of the vault.

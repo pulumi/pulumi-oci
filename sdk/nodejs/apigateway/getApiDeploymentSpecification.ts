@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     apiId: testApi.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApiDeploymentSpecification(args: GetApiDeploymentSpecificationArgs, opts?: pulumi.InvokeOptions): Promise<GetApiDeploymentSpecificationResult> {
 
@@ -71,7 +69,6 @@ export interface GetApiDeploymentSpecificationResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,7 +77,6 @@ export interface GetApiDeploymentSpecificationResult {
  *     apiId: testApi.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApiDeploymentSpecificationOutput(args: GetApiDeploymentSpecificationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiDeploymentSpecificationResult> {
     return pulumi.output(args).apply((a: any) => getApiDeploymentSpecification(a, opts))

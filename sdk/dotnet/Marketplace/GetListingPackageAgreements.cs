@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetListingPackageAgreementsResult> InvokeAsync(GetListingPackageAgreementsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetListingPackageAgreementsResult> Invoke(GetListingPackageAgreementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsInvokeArgs(), options.WithDefaults());

@@ -87,14 +87,12 @@ def get_query(query_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_query = oci.MeteringComputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str query_id: The query unique OCID.
@@ -121,14 +119,12 @@ def get_query_output(query_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_query = oci.MeteringComputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str query_id: The query unique OCID.

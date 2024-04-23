@@ -118,7 +118,6 @@ def get_ping_monitors(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -127,7 +126,6 @@ def get_ping_monitors(compartment_id: Optional[str] = None,
         display_name=ping_monitor_display_name,
         home_region=ping_monitor_home_region)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: Filters results by compartment.
@@ -167,7 +165,6 @@ def get_ping_monitors_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,7 +173,6 @@ def get_ping_monitors_output(compartment_id: Optional[pulumi.Input[str]] = None,
         display_name=ping_monitor_display_name,
         home_region=ping_monitor_home_region)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: Filters results by compartment.

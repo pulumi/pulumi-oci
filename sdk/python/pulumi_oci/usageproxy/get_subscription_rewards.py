@@ -102,7 +102,6 @@ def get_subscription_rewards(filters: Optional[Sequence[pulumi.InputType['GetSub
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_subscription_rewards(filters: Optional[Sequence[pulumi.InputType['GetSub
     test_subscription_rewards = oci.UsageProxy.get_subscription_rewards(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str subscription_id: The subscription ID for which rewards information is requested for.
@@ -143,7 +141,6 @@ def get_subscription_rewards_output(filters: Optional[pulumi.Input[Optional[Sequ
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +148,6 @@ def get_subscription_rewards_output(filters: Optional[pulumi.Input[Optional[Sequ
     test_subscription_rewards = oci.UsageProxy.get_subscription_rewards(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str subscription_id: The subscription ID for which rewards information is requested for.

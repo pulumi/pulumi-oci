@@ -279,14 +279,12 @@ def get_certificate_authority(certificate_authority_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_certificate_authority = oci.CertificatesManagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_authority_id: The OCID of the certificate authority (CA).
@@ -329,14 +327,12 @@ def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_certificate_authority = oci.CertificatesManagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_authority_id: The OCID of the certificate authority (CA).

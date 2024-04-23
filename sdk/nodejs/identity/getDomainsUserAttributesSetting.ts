@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: userAttributesSettingResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsUserAttributesSetting(args: GetDomainsUserAttributesSettingArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsUserAttributesSettingResult> {
 
@@ -146,7 +144,6 @@ export interface GetDomainsUserAttributesSettingResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -160,7 +157,6 @@ export interface GetDomainsUserAttributesSettingResult {
  *     resourceTypeSchemaVersion: userAttributesSettingResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsUserAttributesSettingOutput(args: GetDomainsUserAttributesSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsUserAttributesSettingResult> {
     return pulumi.output(args).apply((a: any) => getDomainsUserAttributesSetting(a, opts))

@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: vmClusterState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVmClusters(args: GetVmClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClustersResult> {
 
@@ -101,7 +99,6 @@ export interface GetVmClustersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,7 +110,6 @@ export interface GetVmClustersResult {
  *     state: vmClusterState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVmClustersOutput(args: GetVmClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClustersResult> {
     return pulumi.output(args).apply((a: any) => getVmClusters(a, opts))

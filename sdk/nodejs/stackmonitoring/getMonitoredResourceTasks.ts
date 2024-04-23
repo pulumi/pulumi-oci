@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     status: monitoredResourceTaskStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMonitoredResourceTasks(args: GetMonitoredResourceTasksArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitoredResourceTasksResult> {
 
@@ -76,7 +74,6 @@ export interface GetMonitoredResourceTasksResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetMonitoredResourceTasksResult {
  *     status: monitoredResourceTaskStatus,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMonitoredResourceTasksOutput(args: GetMonitoredResourceTasksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredResourceTasksResult> {
     return pulumi.output(args).apply((a: any) => getMonitoredResourceTasks(a, opts))

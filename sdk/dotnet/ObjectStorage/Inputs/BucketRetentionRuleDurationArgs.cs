@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
     public sealed class BucketRetentionRuleDurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+        /// The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
         /// </summary>
         [Input("timeAmount", required: true)]
         public Input<string> TimeAmount { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The unit that should be used to interpret timeAmount.
+        /// The unit that should be used to interpret timeAmount.
         /// </summary>
         [Input("timeUnit", required: true)]
         public Input<string> TimeUnit { get; set; } = null!;

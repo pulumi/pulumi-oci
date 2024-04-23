@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     dbServers: exadataInfrastructureUnAllocatedResourceDbServers,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExadataInfrastructureUnAllocatedResource(args: GetExadataInfrastructureUnAllocatedResourceArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructureUnAllocatedResourceResult> {
 
@@ -90,7 +88,6 @@ export interface GetExadataInfrastructureUnAllocatedResourceResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetExadataInfrastructureUnAllocatedResourceResult {
  *     dbServers: exadataInfrastructureUnAllocatedResourceDbServers,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExadataInfrastructureUnAllocatedResourceOutput(args: GetExadataInfrastructureUnAllocatedResourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureUnAllocatedResourceResult> {
     return pulumi.output(args).apply((a: any) => getExadataInfrastructureUnAllocatedResource(a, opts))

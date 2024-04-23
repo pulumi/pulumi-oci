@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDrPlanExecutions(ctx *pulumi.Context, args *GetDrPlanExecutionsArgs, opts ...pulumi.InvokeOption) (*GetDrPlanExecutionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDrPlanExecutionsResult

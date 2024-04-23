@@ -564,7 +564,6 @@ class OdaInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -583,7 +582,6 @@ class OdaInstance(pulumi.CustomResource):
             identity_domain=oda_instance_identity_domain,
             is_role_based_access=oda_instance_is_role_based_access)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -625,7 +623,6 @@ class OdaInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -644,7 +641,6 @@ class OdaInstance(pulumi.CustomResource):
             identity_domain=oda_instance_identity_domain,
             is_role_based_access=oda_instance_is_role_based_access)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

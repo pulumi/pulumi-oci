@@ -88,14 +88,12 @@ def get_cpe_device_shapes(filters: Optional[Sequence[pulumi.InputType['GetCpeDev
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cpe_device_shapes = oci.Core.get_cpe_device_shapes()
     ```
-    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -130,13 +128,11 @@ def get_cpe_device_shapes_output(filters: Optional[pulumi.Input[Optional[Sequenc
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cpe_device_shapes = oci.Core.get_cpe_device_shapes()
     ```
-    <!--End PulumiCodeChooser -->
     """
     ...

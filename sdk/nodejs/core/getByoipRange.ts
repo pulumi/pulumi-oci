@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     byoipRangeId: testByoipRangeOciCoreByoipRange.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getByoipRange(args: GetByoipRangeArgs, opts?: pulumi.InvokeOptions): Promise<GetByoipRangeResult> {
 
@@ -118,7 +116,6 @@ export interface GetByoipRangeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetByoipRangeResult {
  *     byoipRangeId: testByoipRangeOciCoreByoipRange.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getByoipRangeOutput(args: GetByoipRangeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetByoipRangeResult> {
     return pulumi.output(args).apply((a: any) => getByoipRange(a, opts))

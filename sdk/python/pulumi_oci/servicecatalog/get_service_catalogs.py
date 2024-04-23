@@ -112,7 +112,6 @@ def get_service_catalogs(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_service_catalogs(compartment_id: Optional[str] = None,
         display_name=service_catalog_display_name,
         service_catalog_id=test_service_catalog["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.
@@ -158,7 +156,6 @@ def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[str]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +164,6 @@ def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[str]] = No
         display_name=service_catalog_display_name,
         service_catalog_id=test_service_catalog["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.

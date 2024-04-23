@@ -242,14 +242,12 @@ def get_network_firewall(network_firewall_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_firewall = oci.NetworkFirewall.get_network_firewall(network_firewall_id=test_network_firewall_oci_network_firewall_network_firewall["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_firewall_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
@@ -289,14 +287,12 @@ def get_network_firewall_output(network_firewall_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_firewall = oci.NetworkFirewall.get_network_firewall(network_firewall_id=test_network_firewall_oci_network_firewall_network_firewall["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_firewall_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.

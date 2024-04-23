@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class IpsecConnectionTunnelManagementPhaseOneDetail
     {
         /// <summary>
-        /// The authentication algorithm proposed during phase two tunnel negotiation.
+        /// The custom authentication algorithm proposed during phase one tunnel negotiation.
         /// </summary>
         public readonly string? CustomAuthenticationAlgorithm;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? CustomDhGroup;
         /// <summary>
-        /// The encryption algorithm proposed during phase two tunnel negotiation.
+        /// The custom encryption algorithm proposed during phase one tunnel negotiation.
         /// </summary>
         public readonly string? CustomEncryptionAlgorithm;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool? IsIkeEstablished;
         /// <summary>
-        /// Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+        /// Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
         /// </summary>
         public readonly int? Lifetime;
         /// <summary>

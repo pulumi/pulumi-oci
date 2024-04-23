@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetEkmsPrivateEndpointResult> InvokeAsync(GetEkmsPrivateEndpointArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEkmsPrivateEndpointResult>("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", args ?? new GetEkmsPrivateEndpointArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetEkmsPrivateEndpointResult> Invoke(GetEkmsPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEkmsPrivateEndpointResult>("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", args ?? new GetEkmsPrivateEndpointInvokeArgs(), options.WithDefaults());

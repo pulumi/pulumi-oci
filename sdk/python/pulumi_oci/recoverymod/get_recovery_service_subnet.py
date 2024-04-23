@@ -200,14 +200,12 @@ def get_recovery_service_subnet(recovery_service_subnet_id: Optional[str] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_recovery_service_subnet = oci.RecoveryMod.get_recovery_service_subnet(recovery_service_subnet_id=test_recovery_service_subnet_oci_recovery_recovery_service_subnet["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str recovery_service_subnet_id: The recovery service subnet OCID.
@@ -243,14 +241,12 @@ def get_recovery_service_subnet_output(recovery_service_subnet_id: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_recovery_service_subnet = oci.RecoveryMod.get_recovery_service_subnet(recovery_service_subnet_id=test_recovery_service_subnet_oci_recovery_recovery_service_subnet["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str recovery_service_subnet_id: The recovery service subnet OCID.

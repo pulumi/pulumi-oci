@@ -259,7 +259,6 @@ class ExportSet(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -270,7 +269,6 @@ class ExportSet(pulumi.CustomResource):
             max_fs_stat_bytes="23843202333",
             max_fs_stat_files="223442")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -299,7 +297,6 @@ class ExportSet(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -310,7 +307,6 @@ class ExportSet(pulumi.CustomResource):
             max_fs_stat_bytes="23843202333",
             max_fs_stat_files="223442")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

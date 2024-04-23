@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDetectAnomalyJob(ctx *pulumi.Context, args *LookupDetectAnomalyJobArgs, opts ...pulumi.InvokeOption) (*LookupDetectAnomalyJobResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDetectAnomalyJobResult

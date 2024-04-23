@@ -115,7 +115,6 @@ def get_boot_volumes(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,7 +123,6 @@ def get_boot_volumes(availability_domain: Optional[str] = None,
         compartment_id=compartment_id,
         volume_group_id=test_volume_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -161,7 +159,6 @@ def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[
         compartment_id=compartment_id,
         volume_group_id=test_volume_group["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

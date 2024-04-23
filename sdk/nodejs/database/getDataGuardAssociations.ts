@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     databaseId: testDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDataGuardAssociations(args: GetDataGuardAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetDataGuardAssociationsResult> {
 
@@ -69,7 +67,6 @@ export interface GetDataGuardAssociationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -78,7 +75,6 @@ export interface GetDataGuardAssociationsResult {
  *     databaseId: testDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDataGuardAssociationsOutput(args: GetDataGuardAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataGuardAssociationsResult> {
     return pulumi.output(args).apply((a: any) => getDataGuardAssociations(a, opts))

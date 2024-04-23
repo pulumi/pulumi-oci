@@ -401,7 +401,6 @@ class MysqlConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -503,7 +502,6 @@ class MysqlConfiguration(pulumi.CustomResource):
                 wait_timeout=mysql_configuration_variables_wait_timeout,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -538,7 +536,6 @@ class MysqlConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -640,7 +637,6 @@ class MysqlConfiguration(pulumi.CustomResource):
                 wait_timeout=mysql_configuration_variables_wait_timeout,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

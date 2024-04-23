@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     familyVersion: javaFamilyFamilyVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJavaFamily(args: GetJavaFamilyArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaFamilyResult> {
 
@@ -90,7 +88,6 @@ export interface GetJavaFamilyResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,7 +96,6 @@ export interface GetJavaFamilyResult {
  *     familyVersion: javaFamilyFamilyVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJavaFamilyOutput(args: GetJavaFamilyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaFamilyResult> {
     return pulumi.output(args).apply((a: any) => getJavaFamily(a, opts))

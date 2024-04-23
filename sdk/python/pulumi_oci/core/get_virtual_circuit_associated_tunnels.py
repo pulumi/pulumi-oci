@@ -86,14 +86,12 @@ def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=test_virtual_circuit["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
@@ -122,14 +120,12 @@ def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=test_virtual_circuit["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str virtual_circuit_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.

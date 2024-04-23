@@ -150,14 +150,12 @@ class MonitorPluginManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_monitor_plugin_management = oci.app_mgmt_control.MonitorPluginManagement("test_monitor_plugin_management", monitored_instance_id=test_monitored_instance["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -186,14 +184,12 @@ class MonitorPluginManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_monitor_plugin_management = oci.app_mgmt_control.MonitorPluginManagement("test_monitor_plugin_management", monitored_instance_id=test_monitored_instance["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

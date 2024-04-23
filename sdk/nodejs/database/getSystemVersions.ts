@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     shape: systemVersionShape,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSystemVersions(args: GetSystemVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSystemVersionsResult> {
 
@@ -86,7 +84,6 @@ export interface GetSystemVersionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetSystemVersionsResult {
  *     shape: systemVersionShape,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSystemVersionsOutput(args: GetSystemVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSystemVersionsResult> {
     return pulumi.output(args).apply((a: any) => getSystemVersions(a, opts))

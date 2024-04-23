@@ -170,7 +170,7 @@ func (o ApplicationImagePolicyConfigPtrOutput) KeyDetails() ApplicationImagePoli
 }
 
 type ApplicationImagePolicyConfigKeyDetail struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 }
 
@@ -186,7 +186,7 @@ type ApplicationImagePolicyConfigKeyDetailInput interface {
 }
 
 type ApplicationImagePolicyConfigKeyDetailArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 }
 
@@ -241,7 +241,7 @@ func (o ApplicationImagePolicyConfigKeyDetailOutput) ToApplicationImagePolicyCon
 	return o
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
 func (o ApplicationImagePolicyConfigKeyDetailOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v ApplicationImagePolicyConfigKeyDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }

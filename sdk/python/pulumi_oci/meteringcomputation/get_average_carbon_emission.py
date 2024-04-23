@@ -77,14 +77,12 @@ def get_average_carbon_emission(sku_part_number: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_average_carbon_emission = oci.MeteringComputation.get_average_carbon_emission(sku_part_number=average_carbon_emission_sku_part_number)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sku_part_number: The SKU part number.
@@ -110,14 +108,12 @@ def get_average_carbon_emission_output(sku_part_number: Optional[pulumi.Input[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_average_carbon_emission = oci.MeteringComputation.get_average_carbon_emission(sku_part_number=average_carbon_emission_sku_part_number)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sku_part_number: The SKU part number.

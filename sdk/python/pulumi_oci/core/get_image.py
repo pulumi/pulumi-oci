@@ -273,14 +273,12 @@ def get_image(image_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_image = oci.Core.get_image(image_id=test_image_oci_core_image["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
@@ -323,14 +321,12 @@ def get_image_output(image_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_image = oci.Core.get_image(image_id=test_image_oci_core_image["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.

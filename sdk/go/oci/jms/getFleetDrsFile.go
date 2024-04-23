@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetFleetDrsFile(ctx *pulumi.Context, args *GetFleetDrsFileArgs, opts ...pulumi.InvokeOption) (*GetFleetDrsFileResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetDrsFileResult

@@ -336,14 +336,12 @@ def get_user_assessment(user_assessment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_user_assessment = oci.DataSafe.get_user_assessment(user_assessment_id=test_user_assessment_oci_data_safe_user_assessment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str user_assessment_id: The OCID of the user assessment.
@@ -391,14 +389,12 @@ def get_user_assessment_output(user_assessment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_user_assessment = oci.DataSafe.get_user_assessment(user_assessment_id=test_user_assessment_oci_data_safe_user_assessment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str user_assessment_id: The OCID of the user assessment.

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetArtifactByPathResult> InvokeAsync(GetArtifactByPathArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetArtifactByPathResult>("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", args ?? new GetArtifactByPathArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetArtifactByPathResult> Invoke(GetArtifactByPathInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetArtifactByPathResult>("oci:GenericArtifactsContent/getArtifactByPath:getArtifactByPath", args ?? new GetArtifactByPathInvokeArgs(), options.WithDefaults());

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     deploymentUpgradeId: testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentUpgrade(args: GetDeploymentUpgradeArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentUpgradeResult> {
 
@@ -171,7 +169,6 @@ export interface GetDeploymentUpgradeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -180,7 +177,6 @@ export interface GetDeploymentUpgradeResult {
  *     deploymentUpgradeId: testDeploymentUpgradeOciGoldenGateDeploymentUpgrade.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentUpgradeOutput(args: GetDeploymentUpgradeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentUpgradeResult> {
     return pulumi.output(args).apply((a: any) => getDeploymentUpgrade(a, opts))

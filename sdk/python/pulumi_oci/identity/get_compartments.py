@@ -152,7 +152,6 @@ def get_compartments(access_level: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,7 +162,6 @@ def get_compartments(access_level: Optional[str] = None,
         name=compartment_name,
         state=compartment_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
@@ -227,7 +225,6 @@ def get_compartments_output(access_level: Optional[pulumi.Input[Optional[str]]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -238,7 +235,6 @@ def get_compartments_output(access_level: Optional[pulumi.Input[Optional[str]]] 
         name=compartment_name,
         state=compartment_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.

@@ -123,7 +123,6 @@ def get_log_analytics_category(name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -131,7 +130,6 @@ def get_log_analytics_category(name: Optional[str] = None,
     test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=log_analytics_category_name,
         namespace=log_analytics_category_namespace)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str name: The category name.
@@ -164,7 +162,6 @@ def get_log_analytics_category_output(name: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -172,7 +169,6 @@ def get_log_analytics_category_output(name: Optional[pulumi.Input[str]] = None,
     test_log_analytics_category = oci.LogAnalytics.get_log_analytics_category(name=log_analytics_category_name,
         namespace=log_analytics_category_namespace)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str name: The category name.

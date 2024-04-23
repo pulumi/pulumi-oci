@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetResourceActionsResult> InvokeAsync(GetResourceActionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetResourceActionsResult>("oci:Optimizer/getResourceActions:getResourceActions", args ?? new GetResourceActionsArgs(), options.WithDefaults());
@@ -58,7 +56,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -84,7 +81,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetResourceActionsResult> Invoke(GetResourceActionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetResourceActionsResult>("oci:Optimizer/getResourceActions:getResourceActions", args ?? new GetResourceActionsInvokeArgs(), options.WithDefaults());

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     timeStart: fleetPerformanceTuningAnalysisResultTimeStart,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetPerformanceTuningAnalysisResults(args: GetFleetPerformanceTuningAnalysisResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetPerformanceTuningAnalysisResultsResult> {
 
@@ -103,7 +101,6 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,7 +113,6 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
  *     timeStart: fleetPerformanceTuningAnalysisResultTimeStart,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetPerformanceTuningAnalysisResultsOutput(args: GetFleetPerformanceTuningAnalysisResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetPerformanceTuningAnalysisResultsResult> {
     return pulumi.output(args).apply((a: any) => getFleetPerformanceTuningAnalysisResults(a, opts))

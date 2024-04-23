@@ -255,14 +255,12 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
@@ -304,14 +302,12 @@ def get_operations_insights_warehouse_output(operations_insights_warehouse_id: O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operations_insights_warehouse = oci.Opsi.get_operations_insights_warehouse(operations_insights_warehouse_id=test_operations_insights_warehouse_oci_opsi_operations_insights_warehouse["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier

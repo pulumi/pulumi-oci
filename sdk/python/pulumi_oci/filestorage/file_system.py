@@ -500,7 +500,6 @@ class FileSystem(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -519,7 +518,6 @@ class FileSystem(pulumi.CustomResource):
             kms_key_id=test_key["id"],
             source_snapshot_id=test_snapshot["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -587,7 +585,6 @@ class FileSystem(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -606,7 +603,6 @@ class FileSystem(pulumi.CustomResource):
             kms_key_id=test_key["id"],
             source_snapshot_id=test_snapshot["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     configurationType: protectedDatabaseFetchConfigurationConfigurationType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProtectedDatabaseFetchConfiguration(args: GetProtectedDatabaseFetchConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectedDatabaseFetchConfigurationResult> {
 
@@ -72,7 +70,6 @@ export interface GetProtectedDatabaseFetchConfigurationResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,7 +80,6 @@ export interface GetProtectedDatabaseFetchConfigurationResult {
  *     configurationType: protectedDatabaseFetchConfigurationConfigurationType,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProtectedDatabaseFetchConfigurationOutput(args: GetProtectedDatabaseFetchConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectedDatabaseFetchConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getProtectedDatabaseFetchConfiguration(a, opts))

@@ -19,7 +19,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetReportDefinitions(ctx *pulumi.Context, args *GetReportDefinitionsArgs, opts ...pulumi.InvokeOption) (*GetReportDefinitionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetReportDefinitionsResult

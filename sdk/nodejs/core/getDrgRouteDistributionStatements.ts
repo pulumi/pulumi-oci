@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     drgRouteDistributionId: testDrgRouteDistribution.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrgRouteDistributionStatements(args: GetDrgRouteDistributionStatementsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteDistributionStatementsResult> {
 
@@ -66,7 +64,6 @@ export interface GetDrgRouteDistributionStatementsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetDrgRouteDistributionStatementsResult {
  *     drgRouteDistributionId: testDrgRouteDistribution.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrgRouteDistributionStatementsOutput(args: GetDrgRouteDistributionStatementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteDistributionStatementsResult> {
     return pulumi.output(args).apply((a: any) => getDrgRouteDistributionStatements(a, opts))

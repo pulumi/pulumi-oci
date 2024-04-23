@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDedicatedVantagePointResult> InvokeAsync(GetDedicatedVantagePointArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDedicatedVantagePointResult>("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", args ?? new GetDedicatedVantagePointArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDedicatedVantagePointResult> Invoke(GetDedicatedVantagePointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVantagePointResult>("oci:ApmSynthetics/getDedicatedVantagePoint:getDedicatedVantagePoint", args ?? new GetDedicatedVantagePointInvokeArgs(), options.WithDefaults());

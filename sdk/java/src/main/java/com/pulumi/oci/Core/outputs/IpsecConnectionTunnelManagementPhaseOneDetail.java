@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class IpsecConnectionTunnelManagementPhaseOneDetail {
     /**
-     * @return The authentication algorithm proposed during phase two tunnel negotiation.
+     * @return The custom authentication algorithm proposed during phase one tunnel negotiation.
      * 
      */
     private @Nullable String customAuthenticationAlgorithm;
@@ -24,7 +24,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
      */
     private @Nullable String customDhGroup;
     /**
-     * @return The encryption algorithm proposed during phase two tunnel negotiation.
+     * @return The custom encryption algorithm proposed during phase one tunnel negotiation.
      * 
      */
     private @Nullable String customEncryptionAlgorithm;
@@ -39,7 +39,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
      */
     private @Nullable Boolean isIkeEstablished;
     /**
-     * @return Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     * @return Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
      * 
      */
     private @Nullable Integer lifetime;
@@ -78,7 +78,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
 
     private IpsecConnectionTunnelManagementPhaseOneDetail() {}
     /**
-     * @return The authentication algorithm proposed during phase two tunnel negotiation.
+     * @return The custom authentication algorithm proposed during phase one tunnel negotiation.
      * 
      */
     public Optional<String> customAuthenticationAlgorithm() {
@@ -92,7 +92,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
         return Optional.ofNullable(this.customDhGroup);
     }
     /**
-     * @return The encryption algorithm proposed during phase two tunnel negotiation.
+     * @return The custom encryption algorithm proposed during phase one tunnel negotiation.
      * 
      */
     public Optional<String> customEncryptionAlgorithm() {
@@ -113,7 +113,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetail {
         return Optional.ofNullable(this.isIkeEstablished);
     }
     /**
-     * @return Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     * @return Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
      * 
      */
     public Optional<Integer> lifetime() {

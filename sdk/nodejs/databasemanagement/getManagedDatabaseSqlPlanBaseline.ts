@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlPlanBaseline(args: GetManagedDatabaseSqlPlanBaselineArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlPlanBaselineResult> {
 
@@ -134,7 +132,6 @@ export interface GetManagedDatabaseSqlPlanBaselineResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -145,7 +142,6 @@ export interface GetManagedDatabaseSqlPlanBaselineResult {
  *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlPlanBaselineOutput(args: GetManagedDatabaseSqlPlanBaselineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselineResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlPlanBaseline(a, opts))

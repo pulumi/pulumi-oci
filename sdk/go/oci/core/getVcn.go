@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupVcn(ctx *pulumi.Context, args *LookupVcnArgs, opts ...pulumi.InvokeOption) (*LookupVcnResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVcnResult

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: notebookSessionState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNotebookSessions(args: GetNotebookSessionsArgs, opts?: pulumi.InvokeOptions): Promise<GetNotebookSessionsResult> {
 
@@ -115,7 +113,6 @@ export interface GetNotebookSessionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -129,7 +126,6 @@ export interface GetNotebookSessionsResult {
  *     state: notebookSessionState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNotebookSessionsOutput(args: GetNotebookSessionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotebookSessionsResult> {
     return pulumi.output(args).apply((a: any) => getNotebookSessions(a, opts))

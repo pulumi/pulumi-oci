@@ -92,14 +92,12 @@ def get_volume_backup_policies(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
@@ -131,14 +129,12 @@ def get_volume_backup_policies_output(compartment_id: Optional[pulumi.Input[Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_volume_backup_policies = oci.Core.get_volume_backup_policies(compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.

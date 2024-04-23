@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDeployEnvironments(ctx *pulumi.Context, args *GetDeployEnvironmentsArgs, opts ...pulumi.InvokeOption) (*GetDeployEnvironmentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDeployEnvironmentsResult

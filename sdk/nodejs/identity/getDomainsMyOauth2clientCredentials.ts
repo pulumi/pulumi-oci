@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     startIndex: myOauth2clientCredentialStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyOauth2clientCredentials(args: GetDomainsMyOauth2clientCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyOauth2clientCredentialsResult> {
 
@@ -113,7 +111,6 @@ export interface GetDomainsMyOauth2clientCredentialsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetDomainsMyOauth2clientCredentialsResult {
  *     startIndex: myOauth2clientCredentialStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyOauth2clientCredentialsOutput(args: GetDomainsMyOauth2clientCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyOauth2clientCredentialsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsMyOauth2clientCredentials(a, opts))

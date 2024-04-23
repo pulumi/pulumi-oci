@@ -18,14 +18,14 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailArgs extends com
     public static final IpsecConnectionTunnelManagementPhaseOneDetailArgs Empty = new IpsecConnectionTunnelManagementPhaseOneDetailArgs();
 
     /**
-     * The authentication algorithm proposed during phase two tunnel negotiation.
+     * The custom authentication algorithm proposed during phase one tunnel negotiation.
      * 
      */
     @Import(name="customAuthenticationAlgorithm")
     private @Nullable Output<String> customAuthenticationAlgorithm;
 
     /**
-     * @return The authentication algorithm proposed during phase two tunnel negotiation.
+     * @return The custom authentication algorithm proposed during phase one tunnel negotiation.
      * 
      */
     public Optional<Output<String>> customAuthenticationAlgorithm() {
@@ -48,14 +48,14 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailArgs extends com
     }
 
     /**
-     * The encryption algorithm proposed during phase two tunnel negotiation.
+     * The custom encryption algorithm proposed during phase one tunnel negotiation.
      * 
      */
     @Import(name="customEncryptionAlgorithm")
     private @Nullable Output<String> customEncryptionAlgorithm;
 
     /**
-     * @return The encryption algorithm proposed during phase two tunnel negotiation.
+     * @return The custom encryption algorithm proposed during phase one tunnel negotiation.
      * 
      */
     public Optional<Output<String>> customEncryptionAlgorithm() {
@@ -93,14 +93,14 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailArgs extends com
     }
 
     /**
-     * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
      * 
      */
     @Import(name="lifetime")
     private @Nullable Output<Integer> lifetime;
 
     /**
-     * @return Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     * @return Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
      * 
      */
     public Optional<Output<Integer>> lifetime() {
@@ -237,7 +237,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailArgs extends com
         }
 
         /**
-         * @param customAuthenticationAlgorithm The authentication algorithm proposed during phase two tunnel negotiation.
+         * @param customAuthenticationAlgorithm The custom authentication algorithm proposed during phase one tunnel negotiation.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailArgs extends com
         }
 
         /**
-         * @param customAuthenticationAlgorithm The authentication algorithm proposed during phase two tunnel negotiation.
+         * @param customAuthenticationAlgorithm The custom authentication algorithm proposed during phase one tunnel negotiation.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailArgs extends com
         }
 
         /**
-         * @param customEncryptionAlgorithm The encryption algorithm proposed during phase two tunnel negotiation.
+         * @param customEncryptionAlgorithm The custom encryption algorithm proposed during phase one tunnel negotiation.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailArgs extends com
         }
 
         /**
-         * @param customEncryptionAlgorithm The encryption algorithm proposed during phase two tunnel negotiation.
+         * @param customEncryptionAlgorithm The custom encryption algorithm proposed during phase one tunnel negotiation.
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailArgs extends com
         }
 
         /**
-         * @param lifetime Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+         * @param lifetime Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailArgs extends com
         }
 
         /**
-         * @param lifetime Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+         * @param lifetime Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
          * 
          * @return builder
          * 

@@ -40694,17 +40694,17 @@ class DomainsMyRequestApprovalDetailArgs:
                * type: string
                * uniqueness: none
                * mutability: readOnly
-        :param pulumi.Input[str] justification: justification
+        :param pulumi.Input[str] justification: (Updatable) Approval Justification
+               
+               **Added In:** 2307071836
                
                **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
                * multiValued: false
-               * mutability: immutable
-               * required: true
+               * idcsSearchable: false
                * returned: default
                * type: string
                * uniqueness: none
+               * mutability: readOnly
         :param pulumi.Input[int] order: (Updatable) Approval Order
                
                **Added In:** 2307071836
@@ -40716,17 +40716,17 @@ class DomainsMyRequestApprovalDetailArgs:
                * type: integer
                * uniqueness: none
                * mutability: readOnly
-        :param pulumi.Input[str] status: (Updatable) status.
+        :param pulumi.Input[str] status: (Updatable) Approval Status
+               
+               **Added In:** 2307071836
                
                **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
+               * idcsSearchable: false
                * multiValued: false
-               * mutability: readOnly
-               * required: false
                * returned: default
                * type: string
                * uniqueness: none
+               * mutability: readOnly
         :param pulumi.Input[str] time_updated: (Updatable) Approval Update Time
                
                **Added In:** 2307071836
@@ -40824,17 +40824,17 @@ class DomainsMyRequestApprovalDetailArgs:
     @pulumi.getter
     def justification(self) -> Optional[pulumi.Input[str]]:
         """
-        justification
+        (Updatable) Approval Justification
+
+        **Added In:** 2307071836
 
         **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
         * multiValued: false
-        * mutability: immutable
-        * required: true
+        * idcsSearchable: false
         * returned: default
         * type: string
         * uniqueness: none
+        * mutability: readOnly
         """
         return pulumi.get(self, "justification")
 
@@ -40868,17 +40868,17 @@ class DomainsMyRequestApprovalDetailArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) status.
+        (Updatable) Approval Status
+
+        **Added In:** 2307071836
 
         **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
+        * idcsSearchable: false
         * multiValued: false
-        * mutability: readOnly
-        * required: false
         * returned: default
         * type: string
         * uniqueness: none
+        * mutability: readOnly
         """
         return pulumi.get(self, "status")
 
@@ -40918,20 +40918,21 @@ class DomainsMyRequestIdcsCreatedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: Value of the tag.
+        :param pulumi.Input[str] value: The ID of the SCIM resource that represents the User or App who created this Resource
                
                **SCIM++ Properties:**
-               * caseExact: false
+               * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readWrite
+               * mutability: readOnly
                * required: true
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display: User display name
+        :param pulumi.Input[str] display: The displayName of the User or App who created this Resource
                
                **SCIM++ Properties:**
+               * caseExact: true
                * idcsSearchable: false
                * multiValued: false
                * mutability: readOnly
@@ -40939,20 +40940,20 @@ class DomainsMyRequestIdcsCreatedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ocid: The OCID of the SCIM resource that represents the User or App who created this Resource
                
                **SCIM++ Properties:**
                * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: immutable
-               * required: false
+               * mutability: readOnly
                * returned: default
                * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] ref: (Updatable) User URI
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
                
                **SCIM++ Properties:**
+               * caseExact: true
                * idcsSearchable: false
                * multiValued: false
                * mutability: readOnly
@@ -40960,16 +40961,14 @@ class DomainsMyRequestIdcsCreatedByArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] type: Requestable type. Allowed values are Group and App.
+        :param pulumi.Input[str] type: The type of resource, User or App, that created this Resource
                
                **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCsvAttributeName: Requestable Type
-               * idcsDefaultValue: Group
-               * idcsSearchable: true
+               * caseExact: false
+               * idcsSearchable: false
                * multiValued: false
-               * mutability: immutable
-               * required: true
+               * mutability: readOnly
+               * required: false
                * returned: default
                * type: string
                * uniqueness: none
@@ -40988,13 +40987,13 @@ class DomainsMyRequestIdcsCreatedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        Value of the tag.
+        The ID of the SCIM resource that represents the User or App who created this Resource
 
         **SCIM++ Properties:**
-        * caseExact: false
+        * caseExact: true
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readWrite
+        * mutability: readOnly
         * required: true
         * returned: default
         * type: string
@@ -41010,9 +41009,10 @@ class DomainsMyRequestIdcsCreatedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        User display name
+        The displayName of the User or App who created this Resource
 
         **SCIM++ Properties:**
+        * caseExact: true
         * idcsSearchable: false
         * multiValued: false
         * mutability: readOnly
@@ -41031,17 +41031,16 @@ class DomainsMyRequestIdcsCreatedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        The OCID of the SCIM resource that represents the User or App who created this Resource
 
         **SCIM++ Properties:**
         * caseExact: true
         * idcsSearchable: true
         * multiValued: false
-        * mutability: immutable
-        * required: false
+        * mutability: readOnly
         * returned: default
         * type: string
-        * uniqueness: global
+        * uniqueness: none
         """
         return pulumi.get(self, "ocid")
 
@@ -41053,9 +41052,10 @@ class DomainsMyRequestIdcsCreatedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User URI
+        (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
 
         **SCIM++ Properties:**
+        * caseExact: true
         * idcsSearchable: false
         * multiValued: false
         * mutability: readOnly
@@ -41074,16 +41074,14 @@ class DomainsMyRequestIdcsCreatedByArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Requestable type. Allowed values are Group and App.
+        The type of resource, User or App, that created this Resource
 
         **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCsvAttributeName: Requestable Type
-        * idcsDefaultValue: Group
-        * idcsSearchable: true
+        * caseExact: false
+        * idcsSearchable: false
         * multiValued: false
-        * mutability: immutable
-        * required: true
+        * mutability: readOnly
+        * required: false
         * returned: default
         * type: string
         * uniqueness: none
@@ -41104,20 +41102,21 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
                  ref: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: Value of the tag.
+        :param pulumi.Input[str] value: The ID of the SCIM resource that represents the User or App who modified this Resource
                
                **SCIM++ Properties:**
-               * caseExact: false
+               * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readWrite
+               * mutability: readOnly
                * required: true
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display: User display name
+        :param pulumi.Input[str] display: The displayName of the User or App who modified this Resource
                
                **SCIM++ Properties:**
+               * caseExact: true
                * idcsSearchable: false
                * multiValued: false
                * mutability: readOnly
@@ -41125,20 +41124,20 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        :param pulumi.Input[str] ocid: The OCID of the SCIM resource that represents the User or App who modified this Resource
                
                **SCIM++ Properties:**
                * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: immutable
-               * required: false
+               * mutability: readOnly
                * returned: default
                * type: string
-               * uniqueness: global
-        :param pulumi.Input[str] ref: (Updatable) User URI
+               * uniqueness: none
+        :param pulumi.Input[str] ref: (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
                
                **SCIM++ Properties:**
+               * caseExact: true
                * idcsSearchable: false
                * multiValued: false
                * mutability: readOnly
@@ -41146,16 +41145,14 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
                * returned: default
                * type: reference
                * uniqueness: none
-        :param pulumi.Input[str] type: Requestable type. Allowed values are Group and App.
+        :param pulumi.Input[str] type: The type of resource, User or App, that modified this Resource
                
                **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCsvAttributeName: Requestable Type
-               * idcsDefaultValue: Group
-               * idcsSearchable: true
+               * caseExact: false
+               * idcsSearchable: false
                * multiValued: false
-               * mutability: immutable
-               * required: true
+               * mutability: readOnly
+               * required: false
                * returned: default
                * type: string
                * uniqueness: none
@@ -41174,13 +41171,13 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        Value of the tag.
+        The ID of the SCIM resource that represents the User or App who modified this Resource
 
         **SCIM++ Properties:**
-        * caseExact: false
+        * caseExact: true
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readWrite
+        * mutability: readOnly
         * required: true
         * returned: default
         * type: string
@@ -41196,9 +41193,10 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        User display name
+        The displayName of the User or App who modified this Resource
 
         **SCIM++ Properties:**
+        * caseExact: true
         * idcsSearchable: false
         * multiValued: false
         * mutability: readOnly
@@ -41217,17 +41215,16 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        The OCID of the SCIM resource that represents the User or App who modified this Resource
 
         **SCIM++ Properties:**
         * caseExact: true
         * idcsSearchable: true
         * multiValued: false
-        * mutability: immutable
-        * required: false
+        * mutability: readOnly
         * returned: default
         * type: string
-        * uniqueness: global
+        * uniqueness: none
         """
         return pulumi.get(self, "ocid")
 
@@ -41239,9 +41236,10 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User URI
+        (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
 
         **SCIM++ Properties:**
+        * caseExact: true
         * idcsSearchable: false
         * multiValued: false
         * mutability: readOnly
@@ -41260,16 +41258,14 @@ class DomainsMyRequestIdcsLastModifiedByArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        Requestable type. Allowed values are Group and App.
+        The type of resource, User or App, that modified this Resource
 
         **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCsvAttributeName: Requestable Type
-        * idcsDefaultValue: Group
-        * idcsSearchable: true
+        * caseExact: false
+        * idcsSearchable: false
         * multiValued: false
-        * mutability: immutable
-        * required: true
+        * mutability: readOnly
+        * required: false
         * returned: default
         * type: string
         * uniqueness: none
@@ -41490,13 +41486,14 @@ class DomainsMyRequestRequestingArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] value: Value of the tag.
+        :param pulumi.Input[str] value: Resource identifier
                
                **SCIM++ Properties:**
-               * caseExact: false
+               * caseExact: true
+               * idcsCsvAttributeName: requesting_id
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readWrite
+               * mutability: immutable
                * required: true
                * returned: default
                * type: string
@@ -41513,17 +41510,17 @@ class DomainsMyRequestRequestingArgs:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] display: User display name
+        :param pulumi.Input[str] display: Resource display name
                
                **SCIM++ Properties:**
-               * idcsSearchable: false
+               * idcsSearchable: true
                * multiValued: false
                * mutability: readOnly
                * required: false
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] ref: (Updatable) User URI
+        :param pulumi.Input[str] ref: (Updatable) Resource URI
                
                **SCIM++ Properties:**
                * idcsSearchable: false
@@ -41571,13 +41568,14 @@ class DomainsMyRequestRequestingArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        Value of the tag.
+        Resource identifier
 
         **SCIM++ Properties:**
-        * caseExact: false
+        * caseExact: true
+        * idcsCsvAttributeName: requesting_id
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readWrite
+        * mutability: immutable
         * required: true
         * returned: default
         * type: string
@@ -41616,10 +41614,10 @@ class DomainsMyRequestRequestingArgs:
     @pulumi.getter
     def display(self) -> Optional[pulumi.Input[str]]:
         """
-        User display name
+        Resource display name
 
         **SCIM++ Properties:**
-        * idcsSearchable: false
+        * idcsSearchable: true
         * multiValued: false
         * mutability: readOnly
         * required: false
@@ -41637,7 +41635,7 @@ class DomainsMyRequestRequestingArgs:
     @pulumi.getter
     def ref(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User URI
+        (Updatable) Resource URI
 
         **SCIM++ Properties:**
         * idcsSearchable: false
@@ -41662,13 +41660,14 @@ class DomainsMyRequestRequestorArgs:
                  display: Optional[pulumi.Input[str]] = None,
                  ref: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] value: Value of the tag.
+        :param pulumi.Input[str] value: User identifier
                
                **SCIM++ Properties:**
-               * caseExact: false
+               * caseExact: true
+               * idcsCsvAttributeName: requestor_id
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readWrite
+               * mutability: immutable
                * required: true
                * returned: default
                * type: string
@@ -41704,13 +41703,14 @@ class DomainsMyRequestRequestorArgs:
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
         """
-        Value of the tag.
+        User identifier
 
         **SCIM++ Properties:**
-        * caseExact: false
+        * caseExact: true
+        * idcsCsvAttributeName: requestor_id
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readWrite
+        * mutability: immutable
         * required: true
         * returned: default
         * type: string

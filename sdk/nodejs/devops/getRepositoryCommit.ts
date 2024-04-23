@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     repositoryId: testRepository.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryCommit(args: GetRepositoryCommitArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryCommitResult> {
 
@@ -99,7 +97,6 @@ export interface GetRepositoryCommitResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -109,7 +106,6 @@ export interface GetRepositoryCommitResult {
  *     repositoryId: testRepository.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryCommitOutput(args: GetRepositoryCommitOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryCommitResult> {
     return pulumi.output(args).apply((a: any) => getRepositoryCommit(a, opts))

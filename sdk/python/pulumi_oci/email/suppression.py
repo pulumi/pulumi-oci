@@ -219,7 +219,6 @@ class Suppression(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -228,7 +227,6 @@ class Suppression(pulumi.CustomResource):
             compartment_id=tenancy_ocid,
             email_address=suppression_email_address)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -263,7 +261,6 @@ class Suppression(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -272,7 +269,6 @@ class Suppression(pulumi.CustomResource):
             compartment_id=tenancy_ocid,
             email_address=suppression_email_address)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

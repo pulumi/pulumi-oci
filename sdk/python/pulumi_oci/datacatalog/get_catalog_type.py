@@ -217,7 +217,6 @@ def get_catalog_type(catalog_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -226,7 +225,6 @@ def get_catalog_type(catalog_id: Optional[str] = None,
         type_key=catalog_type_type_key,
         fields=catalog_type_fields)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_id: Unique catalog identifier.
@@ -270,7 +268,6 @@ def get_catalog_type_output(catalog_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -279,7 +276,6 @@ def get_catalog_type_output(catalog_id: Optional[pulumi.Input[str]] = None,
         type_key=catalog_type_type_key,
         fields=catalog_type_fields)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_id: Unique catalog identifier.

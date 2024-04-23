@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -45,7 +44,6 @@ import * as utilities from "../utilities";
  *     state: autonomousDatabaseState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabases(args: GetAutonomousDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabasesResult> {
 
@@ -204,7 +202,6 @@ export interface GetAutonomousDatabasesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -224,7 +221,6 @@ export interface GetAutonomousDatabasesResult {
  *     state: autonomousDatabaseState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabasesOutput(args: GetAutonomousDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabasesResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDatabases(a, opts))

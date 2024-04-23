@@ -18,7 +18,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNetworkLoadBalancerResult> InvokeAsync(GetNetworkLoadBalancerArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkLoadBalancerResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", args ?? new GetNetworkLoadBalancerArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNetworkLoadBalancerResult> Invoke(GetNetworkLoadBalancerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancerResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancer:getNetworkLoadBalancer", args ?? new GetNetworkLoadBalancerInvokeArgs(), options.WithDefaults());

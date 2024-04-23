@@ -87,14 +87,12 @@ def get_usage_carbon_emissions_query(usage_carbon_emissions_query_id: Optional[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_usage_carbon_emissions_query = oci.MeteringComputation.get_usage_carbon_emissions_query(usage_carbon_emissions_query_id=test_usage_carbon_emissions_query_oci_metering_computation_usage_carbon_emissions_query["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str usage_carbon_emissions_query_id: The query unique OCID.
@@ -121,14 +119,12 @@ def get_usage_carbon_emissions_query_output(usage_carbon_emissions_query_id: Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_usage_carbon_emissions_query = oci.MeteringComputation.get_usage_carbon_emissions_query(usage_carbon_emissions_query_id=test_usage_carbon_emissions_query_oci_metering_computation_usage_carbon_emissions_query["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str usage_carbon_emissions_query_id: The query unique OCID.

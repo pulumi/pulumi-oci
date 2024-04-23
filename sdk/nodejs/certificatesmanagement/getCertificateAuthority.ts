@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     certificateAuthorityId: testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCertificateAuthority(args: GetCertificateAuthorityArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityResult> {
 
@@ -131,7 +129,6 @@ export interface GetCertificateAuthorityResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,7 +137,6 @@ export interface GetCertificateAuthorityResult {
  *     certificateAuthorityId: testCertificateAuthorityOciCertificatesManagementCertificateAuthority.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCertificateAuthorityOutput(args: GetCertificateAuthorityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthorityResult> {
     return pulumi.output(args).apply((a: any) => getCertificateAuthority(a, opts))

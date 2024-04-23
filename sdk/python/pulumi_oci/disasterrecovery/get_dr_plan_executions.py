@@ -135,7 +135,6 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -146,7 +145,6 @@ def get_dr_plan_executions(display_name: Optional[str] = None,
         dr_plan_execution_type=dr_plan_execution_dr_plan_execution_type,
         state=dr_plan_execution_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
@@ -191,7 +189,6 @@ def get_dr_plan_executions_output(display_name: Optional[pulumi.Input[Optional[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,7 +199,6 @@ def get_dr_plan_executions_output(display_name: Optional[pulumi.Input[Optional[s
         dr_plan_execution_type=dr_plan_execution_dr_plan_execution_type,
         state=dr_plan_execution_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`

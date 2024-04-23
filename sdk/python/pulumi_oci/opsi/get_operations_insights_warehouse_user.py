@@ -230,14 +230,12 @@ def get_operations_insights_warehouse_user(operations_insights_warehouse_user_id
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operations_insights_warehouse_user = oci.Opsi.get_operations_insights_warehouse_user(operations_insights_warehouse_user_id=test_operations_insights_warehouse_user_oci_opsi_operations_insights_warehouse_user["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operations_insights_warehouse_user_id: Unique Operations Insights Warehouse User identifier
@@ -276,14 +274,12 @@ def get_operations_insights_warehouse_user_output(operations_insights_warehouse_
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operations_insights_warehouse_user = oci.Opsi.get_operations_insights_warehouse_user(operations_insights_warehouse_user_id=test_operations_insights_warehouse_user_oci_opsi_operations_insights_warehouse_user["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operations_insights_warehouse_user_id: Unique Operations Insights Warehouse User identifier

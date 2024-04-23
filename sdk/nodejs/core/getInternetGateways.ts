@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInternetGateways(args: GetInternetGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetInternetGatewaysResult> {
 
@@ -101,7 +99,6 @@ export interface GetInternetGatewaysResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,7 +110,6 @@ export interface GetInternetGatewaysResult {
  *     vcnId: testVcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInternetGatewaysOutput(args: GetInternetGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInternetGatewaysResult> {
     return pulumi.output(args).apply((a: any) => getInternetGateways(a, opts))

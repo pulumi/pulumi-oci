@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     displayName: computeCapacityReservationInstanceShapeDisplayName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getComputeCapacityReservationInstanceShapes(args: GetComputeCapacityReservationInstanceShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityReservationInstanceShapesResult> {
 
@@ -83,7 +81,6 @@ export interface GetComputeCapacityReservationInstanceShapesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetComputeCapacityReservationInstanceShapesResult {
  *     displayName: computeCapacityReservationInstanceShapeDisplayName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getComputeCapacityReservationInstanceShapesOutput(args: GetComputeCapacityReservationInstanceShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityReservationInstanceShapesResult> {
     return pulumi.output(args).apply((a: any) => getComputeCapacityReservationInstanceShapes(a, opts))

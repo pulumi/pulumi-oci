@@ -99,7 +99,6 @@ def get_usage_statement_email_recipients_groups(compartment_id: Optional[str] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -107,7 +106,6 @@ def get_usage_statement_email_recipients_groups(compartment_id: Optional[str] = 
     test_usage_statement_email_recipients_groups = oci.MeteringComputation.get_usage_statement_email_recipients_groups(compartment_id=compartment_id,
         subscription_id=test_subscription["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment ID in which to list resources.
@@ -140,7 +138,6 @@ def get_usage_statement_email_recipients_groups_output(compartment_id: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,7 +145,6 @@ def get_usage_statement_email_recipients_groups_output(compartment_id: Optional[
     test_usage_statement_email_recipients_groups = oci.MeteringComputation.get_usage_statement_email_recipients_groups(compartment_id=compartment_id,
         subscription_id=test_subscription["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment ID in which to list resources.

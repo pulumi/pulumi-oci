@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDomainsOauth2clientCredential(ctx *pulumi.Context, args *LookupDomainsOauth2clientCredentialArgs, opts ...pulumi.InvokeOption) (*LookupDomainsOauth2clientCredentialResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsOauth2clientCredentialResult

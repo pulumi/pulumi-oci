@@ -129,7 +129,6 @@ def get_replication_targets(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_replication_targets(availability_domain: Optional[str] = None,
         id=replication_target_id,
         state=replication_target_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -184,7 +182,6 @@ def get_replication_targets_output(availability_domain: Optional[pulumi.Input[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +192,6 @@ def get_replication_targets_output(availability_domain: Optional[pulumi.Input[st
         id=replication_target_id,
         state=replication_target_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

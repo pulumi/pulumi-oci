@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousDbPreviewVersionsResult> InvokeAsync(GetAutonomousDbPreviewVersionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDbPreviewVersionsResult>("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args ?? new GetAutonomousDbPreviewVersionsArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousDbPreviewVersionsResult> Invoke(GetAutonomousDbPreviewVersionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDbPreviewVersionsResult>("oci:Database/getAutonomousDbPreviewVersions:getAutonomousDbPreviewVersions", args ?? new GetAutonomousDbPreviewVersionsInvokeArgs(), options.WithDefaults());

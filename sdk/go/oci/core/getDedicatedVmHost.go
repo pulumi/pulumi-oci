@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDedicatedVmHost(ctx *pulumi.Context, args *LookupDedicatedVmHostArgs, opts ...pulumi.InvokeOption) (*LookupDedicatedVmHostResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDedicatedVmHostResult

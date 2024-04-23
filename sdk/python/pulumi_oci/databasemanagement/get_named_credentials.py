@@ -141,7 +141,6 @@ def get_named_credentials(associated_resource: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,7 +151,6 @@ def get_named_credentials(associated_resource: Optional[str] = None,
         scope=named_credential_scope,
         type=named_credential_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str associated_resource: The resource associated to the named credential.
@@ -197,7 +195,6 @@ def get_named_credentials_output(associated_resource: Optional[pulumi.Input[Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,7 +205,6 @@ def get_named_credentials_output(associated_resource: Optional[pulumi.Input[Opti
         scope=named_credential_scope,
         type=named_credential_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str associated_resource: The resource associated to the named credential.

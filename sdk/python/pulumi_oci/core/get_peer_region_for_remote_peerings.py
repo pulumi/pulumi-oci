@@ -77,14 +77,12 @@ def get_peer_region_for_remote_peerings(filters: Optional[Sequence[pulumi.InputT
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_peer_region_for_remote_peerings = oci.Core.get_peer_region_for_remote_peerings()
     ```
-    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -108,13 +106,11 @@ def get_peer_region_for_remote_peerings_output(filters: Optional[pulumi.Input[Op
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_peer_region_for_remote_peerings = oci.Core.get_peer_region_for_remote_peerings()
     ```
-    <!--End PulumiCodeChooser -->
     """
     ...

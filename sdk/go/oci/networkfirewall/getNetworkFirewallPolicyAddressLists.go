@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetNetworkFirewallPolicyAddressLists(ctx *pulumi.Context, args *GetNetworkFirewallPolicyAddressListsArgs, opts ...pulumi.InvokeOption) (*GetNetworkFirewallPolicyAddressListsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNetworkFirewallPolicyAddressListsResult

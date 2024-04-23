@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     refName: repositoryAuthorRefName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryAuthor(args: GetRepositoryAuthorArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryAuthorResult> {
 
@@ -70,7 +68,6 @@ export interface GetRepositoryAuthorResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,7 +77,6 @@ export interface GetRepositoryAuthorResult {
  *     refName: repositoryAuthorRefName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryAuthorOutput(args: GetRepositoryAuthorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryAuthorResult> {
     return pulumi.output(args).apply((a: any) => getRepositoryAuthor(a, opts))

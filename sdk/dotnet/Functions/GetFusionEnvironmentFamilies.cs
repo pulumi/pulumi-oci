@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentFamiliesResult> InvokeAsync(GetFusionEnvironmentFamiliesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentFamiliesResult>("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", args ?? new GetFusionEnvironmentFamiliesArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentFamiliesResult> Invoke(GetFusionEnvironmentFamiliesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentFamiliesResult>("oci:Functions/getFusionEnvironmentFamilies:getFusionEnvironmentFamilies", args ?? new GetFusionEnvironmentFamiliesInvokeArgs(), options.WithDefaults());

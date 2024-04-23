@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: securityRecipeState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityRecipes(args: GetSecurityRecipesArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityRecipesResult> {
 
@@ -95,7 +93,6 @@ export interface GetSecurityRecipesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,7 +104,6 @@ export interface GetSecurityRecipesResult {
  *     state: securityRecipeState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityRecipesOutput(args: GetSecurityRecipesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityRecipesResult> {
     return pulumi.output(args).apply((a: any) => getSecurityRecipes(a, opts))

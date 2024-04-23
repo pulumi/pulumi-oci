@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek {
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return Name of the month of the year.
      * 
      */
     private String name;
 
     private CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek() {}
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return Name of the month of the year.
      * 
      */
     public String name() {

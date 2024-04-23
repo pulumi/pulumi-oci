@@ -291,14 +291,12 @@ def get_external_non_container_database(external_non_container_database_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_non_container_database = oci.Database.get_external_non_container_database(external_non_container_database_id=test_external_non_container_database_oci_database_external_non_container_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_non_container_database_id: The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -342,14 +340,12 @@ def get_external_non_container_database_output(external_non_container_database_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_non_container_database = oci.Database.get_external_non_container_database(external_non_container_database_id=test_external_non_container_database_oci_database_external_non_container_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_non_container_database_id: The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

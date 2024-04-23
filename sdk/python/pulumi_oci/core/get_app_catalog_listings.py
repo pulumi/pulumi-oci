@@ -112,7 +112,6 @@ def get_app_catalog_listings(display_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_app_catalog_listings(display_name: Optional[str] = None,
         publisher_name=app_catalog_listing_publisher_name,
         publisher_type=app_catalog_listing_publisher_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the given display name exactly.
@@ -158,7 +156,6 @@ def get_app_catalog_listings_output(display_name: Optional[pulumi.Input[Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +164,6 @@ def get_app_catalog_listings_output(display_name: Optional[pulumi.Input[Optional
         publisher_name=app_catalog_listing_publisher_name,
         publisher_type=app_catalog_listing_publisher_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the given display name exactly.

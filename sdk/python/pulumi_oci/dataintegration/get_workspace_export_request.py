@@ -286,7 +286,6 @@ def get_workspace_export_request(export_request_key: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -294,7 +293,6 @@ def get_workspace_export_request(export_request_key: Optional[str] = None,
     test_workspace_export_request = oci.DataIntegration.get_workspace_export_request(export_request_key=workspace_export_request_export_request_key,
         workspace_id=test_workspace["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str export_request_key: The key of the object export object request
@@ -341,7 +339,6 @@ def get_workspace_export_request_output(export_request_key: Optional[pulumi.Inpu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -349,7 +346,6 @@ def get_workspace_export_request_output(export_request_key: Optional[pulumi.Inpu
     test_workspace_export_request = oci.DataIntegration.get_workspace_export_request(export_request_key=workspace_export_request_export_request_key,
         workspace_id=test_workspace["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str export_request_key: The key of the object export object request

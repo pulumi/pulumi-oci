@@ -124,7 +124,6 @@ def get_http_probe_results(filters: Optional[Sequence[pulumi.InputType['GetHttpP
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -134,7 +133,6 @@ def get_http_probe_results(filters: Optional[Sequence[pulumi.InputType['GetHttpP
         start_time_less_than_or_equal_to=http_probe_result_start_time_less_than_or_equal_to,
         target=http_probe_result_target)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str probe_configuration_id: The OCID of a monitor or on-demand probe.
@@ -177,7 +175,6 @@ def get_http_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -187,7 +184,6 @@ def get_http_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
         start_time_less_than_or_equal_to=http_probe_result_start_time_less_than_or_equal_to,
         target=http_probe_result_target)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str probe_configuration_id: The OCID of a monitor or on-demand probe.

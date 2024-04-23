@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsPasswordPolicy(args: GetDomainsPasswordPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsPasswordPolicyResult> {
 
@@ -294,7 +292,6 @@ export interface GetDomainsPasswordPolicyResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -308,7 +305,6 @@ export interface GetDomainsPasswordPolicyResult {
  *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsPasswordPolicyOutput(args: GetDomainsPasswordPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsPasswordPolicyResult> {
     return pulumi.output(args).apply((a: any) => getDomainsPasswordPolicy(a, opts))

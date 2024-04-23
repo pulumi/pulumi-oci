@@ -19,7 +19,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUsageStatementEmailRecipientsGroupsResult> InvokeAsync(GetUsageStatementEmailRecipientsGroupsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsageStatementEmailRecipientsGroupsResult>("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", args ?? new GetUsageStatementEmailRecipientsGroupsArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUsageStatementEmailRecipientsGroupsResult> Invoke(GetUsageStatementEmailRecipientsGroupsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsageStatementEmailRecipientsGroupsResult>("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", args ?? new GetUsageStatementEmailRecipientsGroupsInvokeArgs(), options.WithDefaults());

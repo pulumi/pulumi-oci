@@ -106,7 +106,6 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -137,7 +136,6 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                 version=usage_carbon_emissions_query_query_definition_version,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -165,7 +163,6 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -196,7 +193,6 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                 version=usage_carbon_emissions_query_query_definition_version,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

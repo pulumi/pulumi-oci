@@ -152,7 +152,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -162,7 +161,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
             resource_ids=metric_extension_metric_extension_on_given_resources_management_resource_ids[0],
             enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -187,7 +185,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -197,7 +194,6 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
             resource_ids=metric_extension_metric_extension_on_given_resources_management_resource_ids[0],
             enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param MetricExtensionMetricExtensionOnGivenResourcesManagementArgs args: The arguments to use to populate this resource's properties.

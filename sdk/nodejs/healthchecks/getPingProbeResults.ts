@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,7 +30,6 @@ import * as utilities from "../utilities";
  *     target: pingProbeResultTarget,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPingProbeResults(args: GetPingProbeResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetPingProbeResultsResult> {
 
@@ -105,7 +103,6 @@ export interface GetPingProbeResultsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,7 +114,6 @@ export interface GetPingProbeResultsResult {
  *     target: pingProbeResultTarget,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPingProbeResultsOutput(args: GetPingProbeResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPingProbeResultsResult> {
     return pulumi.output(args).apply((a: any) => getPingProbeResults(a, opts))

@@ -11,14 +11,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryMirror = new oci.devops.RepositoryMirror("test_repository_mirror", {repositoryId: testRepository.id});
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

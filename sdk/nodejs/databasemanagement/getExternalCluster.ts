@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     externalClusterId: testExternalClusterOciDatabaseManagementExternalCluster.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalCluster(args: GetExternalClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalClusterResult> {
 
@@ -135,7 +133,6 @@ export interface GetExternalClusterResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -144,7 +141,6 @@ export interface GetExternalClusterResult {
  *     externalClusterId: testExternalClusterOciDatabaseManagementExternalCluster.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalClusterOutput(args: GetExternalClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalClusterResult> {
     return pulumi.output(args).apply((a: any) => getExternalCluster(a, opts))

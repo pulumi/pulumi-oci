@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     tenancyId: testTenancy.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRegionSubscriptions(args: GetRegionSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetRegionSubscriptionsResult> {
 
@@ -66,7 +64,6 @@ export interface GetRegionSubscriptionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetRegionSubscriptionsResult {
  *     tenancyId: testTenancy.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRegionSubscriptionsOutput(args: GetRegionSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegionSubscriptionsResult> {
     return pulumi.output(args).apply((a: any) => getRegionSubscriptions(a, opts))

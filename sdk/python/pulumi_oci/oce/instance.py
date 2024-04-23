@@ -755,7 +755,6 @@ class Instance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -783,7 +782,6 @@ class Instance(pulumi.CustomResource):
             upgrade_schedule=oce_instance_upgrade_schedule,
             waf_primary_domain=oce_instance_waf_primary_domain)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -830,7 +828,6 @@ class Instance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -858,7 +855,6 @@ class Instance(pulumi.CustomResource):
             upgrade_schedule=oce_instance_upgrade_schedule,
             waf_primary_domain=oce_instance_waf_primary_domain)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -148,7 +148,6 @@ def get_managed_database_sql_tuning_advisor_tasks_finding(begin_exec_id: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -162,7 +161,6 @@ def get_managed_database_sql_tuning_advisor_tasks_finding(begin_exec_id: Optiona
         search_period=managed_database_sql_tuning_advisor_tasks_finding_search_period,
         stats_hash_filter=managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str begin_exec_id: The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.
@@ -216,7 +214,6 @@ def get_managed_database_sql_tuning_advisor_tasks_finding_output(begin_exec_id: 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -230,7 +227,6 @@ def get_managed_database_sql_tuning_advisor_tasks_finding_output(begin_exec_id: 
         search_period=managed_database_sql_tuning_advisor_tasks_finding_search_period,
         stats_hash_filter=managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str begin_exec_id: The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task.

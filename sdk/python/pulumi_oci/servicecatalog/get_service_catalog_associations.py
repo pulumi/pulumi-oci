@@ -125,7 +125,6 @@ def get_service_catalog_associations(entity_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_service_catalog_associations(entity_id: Optional[str] = None,
         service_catalog_association_id=test_service_catalog_association["id"],
         service_catalog_id=test_service_catalog["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str entity_id: The unique identifier of the entity associated with service catalog.
@@ -176,7 +174,6 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +183,6 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
         service_catalog_association_id=test_service_catalog_association["id"],
         service_catalog_id=test_service_catalog["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str entity_id: The unique identifier of the entity associated with service catalog.

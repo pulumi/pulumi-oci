@@ -125,7 +125,6 @@ def get_asset_sources(asset_source_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_asset_sources(asset_source_id: Optional[str] = None,
         display_name=asset_source_display_name,
         state=asset_source_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str asset_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
@@ -176,7 +174,6 @@ def get_asset_sources_output(asset_source_id: Optional[pulumi.Input[Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +183,6 @@ def get_asset_sources_output(asset_source_id: Optional[pulumi.Input[Optional[str
         display_name=asset_source_display_name,
         state=asset_source_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str asset_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.

@@ -86,14 +86,12 @@ def get_repository_mirror_records(filters: Optional[Sequence[pulumi.InputType['G
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=test_repository["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str repository_id: Unique repository identifier.
@@ -122,14 +120,12 @@ def get_repository_mirror_records_output(filters: Optional[pulumi.Input[Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_repository_mirror_records = oci.DevOps.get_repository_mirror_records(repository_id=test_repository["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str repository_id: Unique repository identifier.

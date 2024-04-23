@@ -231,14 +231,12 @@ def get_application(application_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_application = oci.Functions.get_application(application_id=test_application_oci_functions_application["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
@@ -277,14 +275,12 @@ def get_application_output(application_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_application = oci.Functions.get_application(application_id=test_application_oci_functions_application["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.

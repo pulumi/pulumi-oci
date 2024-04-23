@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     dedicatedAiClusterId: testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDedicatedAiCluster(args: GetDedicatedAiClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedAiClusterResult> {
 
@@ -115,7 +113,6 @@ export interface GetDedicatedAiClusterResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,7 +121,6 @@ export interface GetDedicatedAiClusterResult {
  *     dedicatedAiClusterId: testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDedicatedAiClusterOutput(args: GetDedicatedAiClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedAiClusterResult> {
     return pulumi.output(args).apply((a: any) => getDedicatedAiCluster(a, opts))

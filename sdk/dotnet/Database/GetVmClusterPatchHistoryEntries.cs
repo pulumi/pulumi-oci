@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVmClusterPatchHistoryEntriesResult> InvokeAsync(GetVmClusterPatchHistoryEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterPatchHistoryEntriesResult>("oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries", args ?? new GetVmClusterPatchHistoryEntriesArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVmClusterPatchHistoryEntriesResult> Invoke(GetVmClusterPatchHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchHistoryEntriesResult>("oci:Database/getVmClusterPatchHistoryEntries:getVmClusterPatchHistoryEntries", args ?? new GetVmClusterPatchHistoryEntriesInvokeArgs(), options.WithDefaults());

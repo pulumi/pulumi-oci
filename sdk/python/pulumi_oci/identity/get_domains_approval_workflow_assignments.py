@@ -205,7 +205,6 @@ def get_domains_approval_workflow_assignments(approval_workflow_assignment_count
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -219,7 +218,6 @@ def get_domains_approval_workflow_assignments(approval_workflow_assignment_count
         resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version,
         start_index=approval_workflow_assignment_start_index)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int approval_workflow_assignment_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
@@ -285,7 +283,6 @@ def get_domains_approval_workflow_assignments_output(approval_workflow_assignmen
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -299,7 +296,6 @@ def get_domains_approval_workflow_assignments_output(approval_workflow_assignmen
         resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version,
         start_index=approval_workflow_assignment_start_index)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int approval_workflow_assignment_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).

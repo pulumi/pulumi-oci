@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDataGuardAssociationsResult> InvokeAsync(GetDataGuardAssociationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataGuardAssociationsResult>("oci:Database/getDataGuardAssociations:getDataGuardAssociations", args ?? new GetDataGuardAssociationsArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDataGuardAssociationsResult> Invoke(GetDataGuardAssociationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataGuardAssociationsResult>("oci:Database/getDataGuardAssociations:getDataGuardAssociations", args ?? new GetDataGuardAssociationsInvokeArgs(), options.WithDefaults());

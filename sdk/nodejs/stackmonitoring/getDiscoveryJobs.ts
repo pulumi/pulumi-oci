@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     name: discoveryJobName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDiscoveryJobs(args: GetDiscoveryJobsArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobsResult> {
 
@@ -76,7 +74,6 @@ export interface GetDiscoveryJobsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetDiscoveryJobsResult {
  *     name: discoveryJobName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDiscoveryJobsOutput(args: GetDiscoveryJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobsResult> {
     return pulumi.output(args).apply((a: any) => getDiscoveryJobs(a, opts))

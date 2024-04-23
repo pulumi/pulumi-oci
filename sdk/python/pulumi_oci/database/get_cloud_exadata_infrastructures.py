@@ -128,7 +128,6 @@ def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[str] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[str] 
         display_name=cloud_exadata_infrastructure_display_name,
         state=cloud_exadata_infrastructure_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
@@ -179,7 +177,6 @@ def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optiona
         display_name=cloud_exadata_infrastructure_display_name,
         state=cloud_exadata_infrastructure_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.

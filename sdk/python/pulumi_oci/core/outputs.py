@@ -3503,12 +3503,8 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
                  connectivity_association_key_secret_version: Optional[str] = None,
                  connectivity_association_name_secret_version: Optional[str] = None):
         """
-        :param str connectivity_association_key_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-               
-               NOTE: Only the latest secret version will be used.
-        :param str connectivity_association_name_secret_id: (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-               
-               NOTE: Only the latest secret version will be used.
+        :param str connectivity_association_key_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
+        :param str connectivity_association_name_secret_id: Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
         :param str connectivity_association_key_secret_version: The secret version of the `connectivityAssociationKey` secret in Vault.
         :param str connectivity_association_name_secret_version: The secret version of the connectivity association name secret in Vault.
         """
@@ -3523,9 +3519,7 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
     @pulumi.getter(name="connectivityAssociationKeySecretId")
     def connectivity_association_key_secret_id(self) -> str:
         """
-        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
+        Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
         """
         return pulumi.get(self, "connectivity_association_key_secret_id")
 
@@ -3533,9 +3527,7 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
     @pulumi.getter(name="connectivityAssociationNameSecretId")
     def connectivity_association_name_secret_id(self) -> str:
         """
-        (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-
-        NOTE: Only the latest secret version will be used.
+        Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
         """
         return pulumi.get(self, "connectivity_association_name_secret_id")
 
@@ -4290,11 +4282,11 @@ class DrgAttachmentManagementNetworkDetails(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
         :param str type: The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
         :param str ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
-        :param str route_table_id: The OCID of the route table the DRG attachment is using.
+        :param str route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
                
                For information about why you would associate a route table with a DRG attachment, see:
                * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+               * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
@@ -4331,11 +4323,11 @@ class DrgAttachmentManagementNetworkDetails(dict):
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[str]:
         """
-        The OCID of the route table the DRG attachment is using.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
 
         For information about why you would associate a route table with a DRG attachment, see:
         * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+        * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
         """
         return pulumi.get(self, "route_table_id")
 
@@ -5460,10 +5452,10 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
                  vpus_per_gb: Optional[str] = None):
         """
         :param Sequence['InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
-        :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param str availability_domain: The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         :param 'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs' block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param str compartment_id: The OCID of the compartment that contains the volume.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -5513,7 +5505,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -5537,7 +5529,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        The OCID of the compartment that contains the volume.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -7656,10 +7648,10 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
                  vpus_per_gb: Optional[str] = None):
         """
         :param Sequence['InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs'] autotune_policies: The list of autotune policies enabled for this volume.
-        :param str availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        :param str availability_domain: The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         :param str backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
         :param 'InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs' block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
-        :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
+        :param str compartment_id: The OCID of the compartment that contains the volume.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -7709,7 +7701,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
         """
-        The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
@@ -7733,7 +7725,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment containing images to search
+        The OCID of the compartment that contains the volume.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -12387,12 +12379,12 @@ class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
                  remaining_lifetime_int: Optional[int] = None,
                  remaining_lifetime_last_retrieved: Optional[str] = None):
         """
-        :param str custom_authentication_algorithm: The authentication algorithm proposed during phase two tunnel negotiation.
+        :param str custom_authentication_algorithm: The custom authentication algorithm proposed during phase one tunnel negotiation.
         :param str custom_dh_group: The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
-        :param str custom_encryption_algorithm: The encryption algorithm proposed during phase two tunnel negotiation.
+        :param str custom_encryption_algorithm: The custom encryption algorithm proposed during phase one tunnel negotiation.
         :param bool is_custom_phase_one_config: Indicates whether custom configuration is enabled for phase one options.
         :param bool is_ike_established: Indicates whether IKE phase one is established.
-        :param int lifetime: Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+        :param int lifetime: Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
         :param str negotiated_authentication_algorithm: The negotiated phase two authentication algorithm.
         :param str negotiated_dh_group: The negotiated Diffie-Hellman group.
         :param str negotiated_encryption_algorithm: The negotiated encryption algorithm.
@@ -12428,7 +12420,7 @@ class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
     @pulumi.getter(name="customAuthenticationAlgorithm")
     def custom_authentication_algorithm(self) -> Optional[str]:
         """
-        The authentication algorithm proposed during phase two tunnel negotiation.
+        The custom authentication algorithm proposed during phase one tunnel negotiation.
         """
         return pulumi.get(self, "custom_authentication_algorithm")
 
@@ -12444,7 +12436,7 @@ class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
     @pulumi.getter(name="customEncryptionAlgorithm")
     def custom_encryption_algorithm(self) -> Optional[str]:
         """
-        The encryption algorithm proposed during phase two tunnel negotiation.
+        The custom encryption algorithm proposed during phase one tunnel negotiation.
         """
         return pulumi.get(self, "custom_encryption_algorithm")
 
@@ -12468,7 +12460,7 @@ class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
     @pulumi.getter
     def lifetime(self) -> Optional[int]:
         """
-        Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+        Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
         """
         return pulumi.get(self, "lifetime")
 

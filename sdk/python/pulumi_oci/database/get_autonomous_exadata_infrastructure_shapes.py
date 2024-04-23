@@ -96,7 +96,6 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,7 +103,6 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[s
     test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
         compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the Availability Domain.
@@ -137,7 +135,6 @@ def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,7 +142,6 @@ def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Opt
     test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
         compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the Availability Domain.

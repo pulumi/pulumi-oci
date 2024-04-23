@@ -143,7 +143,6 @@ def get_pbf_listings(filters: Optional[Sequence[pulumi.InputType['GetPbfListings
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -155,7 +154,6 @@ def get_pbf_listings(filters: Optional[Sequence[pulumi.InputType['GetPbfListings
         state=pbf_listing_state,
         triggers=pbf_listing_trigger)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str name: A filter to return only resources that match the entire PBF name given.
@@ -205,7 +203,6 @@ def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -217,7 +214,6 @@ def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
         state=pbf_listing_state,
         triggers=pbf_listing_trigger)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str name: A filter to return only resources that match the entire PBF name given.

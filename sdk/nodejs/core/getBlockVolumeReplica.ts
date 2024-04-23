@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     blockVolumeReplicaId: testBlockVolumeReplicaOciCoreBlockVolumeReplica.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBlockVolumeReplica(args: GetBlockVolumeReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockVolumeReplicaResult> {
 
@@ -98,7 +96,6 @@ export interface GetBlockVolumeReplicaResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,7 +104,6 @@ export interface GetBlockVolumeReplicaResult {
  *     blockVolumeReplicaId: testBlockVolumeReplicaOciCoreBlockVolumeReplica.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBlockVolumeReplicaOutput(args: GetBlockVolumeReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockVolumeReplicaResult> {
     return pulumi.output(args).apply((a: any) => getBlockVolumeReplica(a, opts))

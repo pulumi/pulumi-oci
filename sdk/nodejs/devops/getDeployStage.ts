@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     deployStageId: testDeployStageOciDevopsDeployStage.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeployStage(args: GetDeployStageArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployStageResult> {
 
@@ -339,7 +337,6 @@ export interface GetDeployStageResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -348,7 +345,6 @@ export interface GetDeployStageResult {
  *     deployStageId: testDeployStageOciDevopsDeployStage.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeployStageOutput(args: GetDeployStageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployStageResult> {
     return pulumi.output(args).apply((a: any) => getDeployStage(a, opts))

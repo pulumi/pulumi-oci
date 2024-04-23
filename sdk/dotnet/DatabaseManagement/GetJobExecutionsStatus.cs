@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetJobExecutionsStatusResult> InvokeAsync(GetJobExecutionsStatusArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJobExecutionsStatusResult>("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", args ?? new GetJobExecutionsStatusArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetJobExecutionsStatusResult> Invoke(GetJobExecutionsStatusInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJobExecutionsStatusResult>("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", args ?? new GetJobExecutionsStatusInvokeArgs(), options.WithDefaults());

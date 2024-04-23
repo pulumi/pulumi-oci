@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDbSystemComputePerformances(ctx *pulumi.Context, args *GetDbSystemComputePerformancesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemComputePerformancesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbSystemComputePerformancesResult

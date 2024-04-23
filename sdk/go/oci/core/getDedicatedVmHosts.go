@@ -20,7 +20,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDedicatedVmHosts(ctx *pulumi.Context, args *GetDedicatedVmHostsArgs, opts ...pulumi.InvokeOption) (*GetDedicatedVmHostsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDedicatedVmHostsResult

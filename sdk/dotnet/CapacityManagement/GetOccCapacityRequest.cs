@@ -18,7 +18,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOccCapacityRequestResult> InvokeAsync(GetOccCapacityRequestArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOccCapacityRequestResult>("oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest", args ?? new GetOccCapacityRequestArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOccCapacityRequestResult> Invoke(GetOccCapacityRequestInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOccCapacityRequestResult>("oci:CapacityManagement/getOccCapacityRequest:getOccCapacityRequest", args ?? new GetOccCapacityRequestInvokeArgs(), options.WithDefaults());

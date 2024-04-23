@@ -159,7 +159,6 @@ class ComputeCapacityReport(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -177,7 +176,6 @@ class ComputeCapacityReport(pulumi.CustomResource):
                 ),
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -211,7 +209,6 @@ class ComputeCapacityReport(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -229,7 +226,6 @@ class ComputeCapacityReport(pulumi.CustomResource):
                 ),
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

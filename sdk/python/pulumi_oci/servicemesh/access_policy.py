@@ -350,7 +350,6 @@ class AccessPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -388,7 +387,6 @@ class AccessPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -421,7 +419,6 @@ class AccessPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -459,7 +456,6 @@ class AccessPolicy(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

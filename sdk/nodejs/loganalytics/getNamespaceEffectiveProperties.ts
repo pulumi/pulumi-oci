@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     sourceName: namespaceEffectivePropertySourceName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceEffectiveProperties(args: GetNamespaceEffectivePropertiesArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceEffectivePropertiesResult> {
 
@@ -111,7 +109,6 @@ export interface GetNamespaceEffectivePropertiesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -126,7 +123,6 @@ export interface GetNamespaceEffectivePropertiesResult {
  *     sourceName: namespaceEffectivePropertySourceName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceEffectivePropertiesOutput(args: GetNamespaceEffectivePropertiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceEffectivePropertiesResult> {
     return pulumi.output(args).apply((a: any) => getNamespaceEffectiveProperties(a, opts))

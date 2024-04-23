@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRepositoryDiffResult> InvokeAsync(GetRepositoryDiffArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryDiffResult>("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args ?? new GetRepositoryDiffArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRepositoryDiffResult> Invoke(GetRepositoryDiffInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryDiffResult>("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args ?? new GetRepositoryDiffInvokeArgs(), options.WithDefaults());

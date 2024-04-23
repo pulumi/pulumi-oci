@@ -377,7 +377,6 @@ class BaselineableMetric(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -389,7 +388,6 @@ class BaselineableMetric(pulumi.CustomResource):
             namespace=baselineable_metric_namespace,
             resource_group=baselineable_metric_resource_group)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -424,7 +422,6 @@ class BaselineableMetric(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -436,7 +433,6 @@ class BaselineableMetric(pulumi.CustomResource):
             namespace=baselineable_metric_namespace,
             resource_group=baselineable_metric_resource_group)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

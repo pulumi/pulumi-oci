@@ -18,7 +18,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBdsInstanceMetastoreConfigResult> InvokeAsync(GetBdsInstanceMetastoreConfigArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceMetastoreConfigResult>("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args ?? new GetBdsInstanceMetastoreConfigArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBdsInstanceMetastoreConfigResult> Invoke(GetBdsInstanceMetastoreConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceMetastoreConfigResult>("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", args ?? new GetBdsInstanceMetastoreConfigInvokeArgs(), options.WithDefaults());

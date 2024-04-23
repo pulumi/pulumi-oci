@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     startIndex: mySupportAccountStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMySupportAccounts(args: GetDomainsMySupportAccountsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMySupportAccountsResult> {
 
@@ -113,7 +111,6 @@ export interface GetDomainsMySupportAccountsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetDomainsMySupportAccountsResult {
  *     startIndex: mySupportAccountStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMySupportAccountsOutput(args: GetDomainsMySupportAccountsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMySupportAccountsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsMySupportAccounts(a, opts))

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbSystemsUpgradeHistoryEntriesResult> InvokeAsync(GetDbSystemsUpgradeHistoryEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemsUpgradeHistoryEntriesResult>("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", args ?? new GetDbSystemsUpgradeHistoryEntriesArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbSystemsUpgradeHistoryEntriesResult> Invoke(GetDbSystemsUpgradeHistoryEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemsUpgradeHistoryEntriesResult>("oci:Database/getDbSystemsUpgradeHistoryEntries:getDbSystemsUpgradeHistoryEntries", args ?? new GetDbSystemsUpgradeHistoryEntriesInvokeArgs(), options.WithDefaults());

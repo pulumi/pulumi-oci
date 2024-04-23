@@ -331,7 +331,6 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -339,7 +338,6 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
     test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=test_autonomous_container_database_dataguard_association_oci_database_autonomous_container_database_dataguard_association["id"],
         autonomous_container_database_id=test_autonomous_container_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_container_database_dataguard_association_id: The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -391,7 +389,6 @@ def get_autonomous_container_database_dataguard_association_output(autonomous_co
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -399,7 +396,6 @@ def get_autonomous_container_database_dataguard_association_output(autonomous_co
     test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=test_autonomous_container_database_dataguard_association_oci_database_autonomous_container_database_dataguard_association["id"],
         autonomous_container_database_id=test_autonomous_container_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_container_database_dataguard_association_id: The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

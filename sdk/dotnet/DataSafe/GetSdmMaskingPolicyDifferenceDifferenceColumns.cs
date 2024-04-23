@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> InvokeAsync(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult>("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", args ?? new GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult> Invoke(GetSdmMaskingPolicyDifferenceDifferenceColumnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSdmMaskingPolicyDifferenceDifferenceColumnsResult>("oci:DataSafe/getSdmMaskingPolicyDifferenceDifferenceColumns:getSdmMaskingPolicyDifferenceDifferenceColumns", args ?? new GetSdmMaskingPolicyDifferenceDifferenceColumnsInvokeArgs(), options.WithDefaults());

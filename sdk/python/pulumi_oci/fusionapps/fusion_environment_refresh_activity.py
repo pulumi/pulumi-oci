@@ -294,7 +294,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -303,7 +302,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             fusion_environment_id=test_fusion_environment["id"],
             source_fusion_environment_id=test_fusion_environment["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -335,7 +333,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -344,7 +341,6 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
             fusion_environment_id=test_fusion_environment["id"],
             source_fusion_environment_id=test_fusion_environment["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

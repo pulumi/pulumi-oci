@@ -22,7 +22,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVirtualCircuitBandwidthShapesResult> InvokeAsync(GetVirtualCircuitBandwidthShapesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesArgs(), options.WithDefaults());
@@ -54,7 +52,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVirtualCircuitBandwidthShapesResult> Invoke(GetVirtualCircuitBandwidthShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesInvokeArgs(), options.WithDefaults());

@@ -132,7 +132,6 @@ def get_snapshots(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -143,7 +142,6 @@ def get_snapshots(compartment_id: Optional[str] = None,
         id=snapshot_id,
         state=snapshot_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -193,7 +191,6 @@ def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -204,7 +201,6 @@ def get_snapshots_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
         id=snapshot_id,
         state=snapshot_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

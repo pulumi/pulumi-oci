@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetApiValidationResult> InvokeAsync(GetApiValidationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApiValidationResult>("oci:ApiGateway/getApiValidation:getApiValidation", args ?? new GetApiValidationArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetApiValidationResult> Invoke(GetApiValidationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApiValidationResult>("oci:ApiGateway/getApiValidation:getApiValidation", args ?? new GetApiValidationInvokeArgs(), options.WithDefaults());

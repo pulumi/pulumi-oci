@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBuildPipelineResult> InvokeAsync(GetBuildPipelineArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBuildPipelineResult>("oci:DevOps/getBuildPipeline:getBuildPipeline", args ?? new GetBuildPipelineArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBuildPipelineResult> Invoke(GetBuildPipelineInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBuildPipelineResult>("oci:DevOps/getBuildPipeline:getBuildPipeline", args ?? new GetBuildPipelineInvokeArgs(), options.WithDefaults());

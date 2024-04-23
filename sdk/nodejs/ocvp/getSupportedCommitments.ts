@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     hostShapeName: testShape.name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSupportedCommitments(args: GetSupportedCommitmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedCommitmentsResult> {
 
@@ -73,7 +71,6 @@ export interface GetSupportedCommitmentsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,7 +80,6 @@ export interface GetSupportedCommitmentsResult {
  *     hostShapeName: testShape.name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSupportedCommitmentsOutput(args: GetSupportedCommitmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedCommitmentsResult> {
     return pulumi.output(args).apply((a: any) => getSupportedCommitments(a, opts))

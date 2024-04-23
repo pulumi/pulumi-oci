@@ -19,7 +19,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSoftwareSourceResult> InvokeAsync(GetSoftwareSourceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourceResult>("oci:OsManagement/getSoftwareSource:getSoftwareSource", args ?? new GetSoftwareSourceArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSoftwareSourceResult> Invoke(GetSoftwareSourceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceResult>("oci:OsManagement/getSoftwareSource:getSoftwareSource", args ?? new GetSoftwareSourceInvokeArgs(), options.WithDefaults());

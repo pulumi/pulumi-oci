@@ -19,7 +19,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityRecipesResult> InvokeAsync(GetSecurityRecipesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityRecipesResult>("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", args ?? new GetSecurityRecipesArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityRecipesResult> Invoke(GetSecurityRecipesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityRecipesResult>("oci:CloudGuard/getSecurityRecipes:getSecurityRecipes", args ?? new GetSecurityRecipesInvokeArgs(), options.WithDefaults());

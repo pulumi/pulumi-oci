@@ -464,7 +464,6 @@ class Trigger(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -495,7 +494,6 @@ class Trigger(pulumi.CustomResource):
             },
             repository_id=test_repository_oci_artifacts_repository["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -534,7 +532,6 @@ class Trigger(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -565,7 +562,6 @@ class Trigger(pulumi.CustomResource):
             },
             repository_id=test_repository_oci_artifacts_repository["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

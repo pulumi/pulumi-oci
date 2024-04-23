@@ -25,7 +25,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetBucketSummaries(ctx *pulumi.Context, args *GetBucketSummariesArgs, opts ...pulumi.InvokeOption) (*GetBucketSummariesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBucketSummariesResult

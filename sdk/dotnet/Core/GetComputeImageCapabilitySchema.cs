@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetComputeImageCapabilitySchemaResult> InvokeAsync(GetComputeImageCapabilitySchemaArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeImageCapabilitySchemaResult>("oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema", args ?? new GetComputeImageCapabilitySchemaArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetComputeImageCapabilitySchemaResult> Invoke(GetComputeImageCapabilitySchemaInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetComputeImageCapabilitySchemaResult>("oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema", args ?? new GetComputeImageCapabilitySchemaInvokeArgs(), options.WithDefaults());

@@ -109,7 +109,6 @@ def get_pod_shapes(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,7 +117,6 @@ def get_pod_shapes(availability_domain: Optional[str] = None,
         availability_domain=pod_shape_availability_domain,
         name=pod_shape_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The availability domain of the pod shape.
@@ -155,7 +153,6 @@ def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +161,6 @@ def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[st
         availability_domain=pod_shape_availability_domain,
         name=pod_shape_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The availability domain of the pod shape.

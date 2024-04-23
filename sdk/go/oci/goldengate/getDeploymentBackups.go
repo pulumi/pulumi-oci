@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDeploymentBackups(ctx *pulumi.Context, args *GetDeploymentBackupsArgs, opts ...pulumi.InvokeOption) (*GetDeploymentBackupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDeploymentBackupsResult

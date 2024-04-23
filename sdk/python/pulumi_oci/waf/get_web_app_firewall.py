@@ -206,14 +206,12 @@ def get_web_app_firewall(web_app_firewall_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=test_web_app_firewall_oci_waf_web_app_firewall["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str web_app_firewall_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewall.
@@ -250,14 +248,12 @@ def get_web_app_firewall_output(web_app_firewall_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=test_web_app_firewall_oci_waf_web_app_firewall["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str web_app_firewall_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebAppFirewall.

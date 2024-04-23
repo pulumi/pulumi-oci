@@ -14,38 +14,36 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class CloudAutonomousVmClusterMaintenanceWindow
     {
         /// <summary>
-        /// (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        /// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         /// </summary>
         public readonly int? CustomActionTimeoutInMins;
         /// <summary>
-        /// (Updatable) Days during the week when maintenance should be performed.
+        /// Days during the week when maintenance should be performed.
         /// </summary>
         public readonly ImmutableArray<Outputs.CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek> DaysOfWeeks;
         /// <summary>
-        /// (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        /// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
         /// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         /// </summary>
         public readonly ImmutableArray<int> HoursOfDays;
         /// <summary>
-        /// (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        /// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         /// </summary>
         public readonly bool? IsCustomActionTimeoutEnabled;
         /// <summary>
-        /// (Updatable) If true, enables the monthly patching option.
+        /// If true, enables the monthly patching option.
         /// </summary>
         public readonly bool? IsMonthlyPatchingEnabled;
         /// <summary>
-        /// (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        /// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         /// </summary>
         public readonly int? LeadTimeInWeeks;
         /// <summary>
-        /// (Updatable) Months during the year when maintenance should be performed.
+        /// Months during the year when maintenance should be performed.
         /// </summary>
         public readonly ImmutableArray<Outputs.CloudAutonomousVmClusterMaintenanceWindowMonth> Months;
         /// <summary>
-        /// (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-        /// 
-        /// *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+        /// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         /// </summary>
         public readonly string? PatchingMode;
         /// <summary>

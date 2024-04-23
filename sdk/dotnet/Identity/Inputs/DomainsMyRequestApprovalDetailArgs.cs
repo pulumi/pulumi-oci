@@ -61,17 +61,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? ApproverId { get; set; }
 
         /// <summary>
-        /// justification
+        /// (Updatable) Approval Justification
+        /// 
+        /// **Added In:** 2307071836
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: true
+        /// * idcsSearchable: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
+        /// * mutability: readOnly
         /// </summary>
         [Input("justification")]
         public Input<string>? Justification { get; set; }
@@ -93,17 +93,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? Order { get; set; }
 
         /// <summary>
-        /// (Updatable) status.
+        /// (Updatable) Approval Status
+        /// 
+        /// **Added In:** 2307071836
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
+        /// * mutability: readOnly
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

@@ -75,14 +75,12 @@ def get_management_agent_get_auto_upgradable_config(compartment_id: Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.
@@ -109,14 +107,12 @@ def get_management_agent_get_auto_upgradable_config_output(compartment_id: Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_management_agent_get_auto_upgradable_config = oci.ManagementAgent.get_management_agent_get_auto_upgradable_config(compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment to which a request will be scoped.

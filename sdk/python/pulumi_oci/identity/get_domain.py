@@ -300,14 +300,12 @@ def get_domain(domain_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_domain = oci.Identity.get_domain(domain_id=test_domain_oci_identity_domain["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str domain_id: The OCID of the domain
@@ -356,14 +354,12 @@ def get_domain_output(domain_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_domain = oci.Identity.get_domain(domain_id=test_domain_oci_identity_domain["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str domain_id: The OCID of the domain

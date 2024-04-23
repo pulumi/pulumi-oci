@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     virtualServiceRouteTableId: testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualServiceRouteTable(args: GetVirtualServiceRouteTableArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualServiceRouteTableResult> {
 
@@ -111,7 +109,6 @@ export interface GetVirtualServiceRouteTableResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -120,7 +117,6 @@ export interface GetVirtualServiceRouteTableResult {
  *     virtualServiceRouteTableId: testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualServiceRouteTableOutput(args: GetVirtualServiceRouteTableOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServiceRouteTableResult> {
     return pulumi.output(args).apply((a: any) => getVirtualServiceRouteTable(a, opts))

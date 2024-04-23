@@ -19,7 +19,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogSetsCountResult> InvokeAsync(GetLogSetsCountArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogSetsCountResult> Invoke(GetLogSetsCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogSetsCountResult>("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", args ?? new GetLogSetsCountInvokeArgs(), options.WithDefaults());

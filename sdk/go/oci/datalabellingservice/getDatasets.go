@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDatasets(ctx *pulumi.Context, args *GetDatasetsArgs, opts ...pulumi.InvokeOption) (*GetDatasetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatasetsResult

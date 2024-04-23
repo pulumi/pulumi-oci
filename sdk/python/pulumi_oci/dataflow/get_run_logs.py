@@ -86,14 +86,12 @@ def get_run_logs(filters: Optional[Sequence[pulumi.InputType['GetRunLogsFilterAr
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_run_logs = oci.DataFlow.get_run_logs(run_id=test_run["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str run_id: The unique ID for the run
@@ -122,14 +120,12 @@ def get_run_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_run_logs = oci.DataFlow.get_run_logs(run_id=test_run["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str run_id: The unique ID for the run

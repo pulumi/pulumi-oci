@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     fleetId: testFleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetDrsFile(args: GetFleetDrsFileArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetDrsFileResult> {
 
@@ -91,7 +89,6 @@ export interface GetFleetDrsFileResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -101,7 +98,6 @@ export interface GetFleetDrsFileResult {
  *     fleetId: testFleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetDrsFileOutput(args: GetFleetDrsFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetDrsFileResult> {
     return pulumi.output(args).apply((a: any) => getFleetDrsFile(a, opts))

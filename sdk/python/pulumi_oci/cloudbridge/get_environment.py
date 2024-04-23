@@ -170,14 +170,12 @@ def get_environment(environment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_environment = oci.CloudBridge.get_environment(environment_id=test_environment_oci_cloud_bridge_environment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str environment_id: Unique environment identifier.
@@ -211,14 +209,12 @@ def get_environment_output(environment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_environment = oci.CloudBridge.get_environment(environment_id=test_environment_oci_cloud_bridge_environment["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str environment_id: Unique environment identifier.

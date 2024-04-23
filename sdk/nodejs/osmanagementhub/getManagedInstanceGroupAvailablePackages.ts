@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     isLatest: managedInstanceGroupAvailablePackageIsLatest,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceGroupAvailablePackages(args: GetManagedInstanceGroupAvailablePackagesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceGroupAvailablePackagesResult> {
 
@@ -102,7 +100,6 @@ export interface GetManagedInstanceGroupAvailablePackagesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,7 +112,6 @@ export interface GetManagedInstanceGroupAvailablePackagesResult {
  *     isLatest: managedInstanceGroupAvailablePackageIsLatest,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceGroupAvailablePackagesOutput(args: GetManagedInstanceGroupAvailablePackagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupAvailablePackagesResult> {
     return pulumi.output(args).apply((a: any) => getManagedInstanceGroupAvailablePackages(a, opts))

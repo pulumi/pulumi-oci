@@ -159,7 +159,6 @@ def get_cluster_workload_mapping(cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +166,6 @@ def get_cluster_workload_mapping(cluster_id: Optional[str] = None,
     test_cluster_workload_mapping = oci.ContainerEngine.get_cluster_workload_mapping(cluster_id=test_cluster["id"],
         workload_mapping_id=test_workload_mapping["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.
@@ -203,7 +201,6 @@ def get_cluster_workload_mapping_output(cluster_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -211,7 +208,6 @@ def get_cluster_workload_mapping_output(cluster_id: Optional[pulumi.Input[str]] 
     test_cluster_workload_mapping = oci.ContainerEngine.get_cluster_workload_mapping(cluster_id=test_cluster["id"],
         workload_mapping_id=test_workload_mapping["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.

@@ -413,7 +413,6 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -430,7 +429,6 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
             },
             storage_allocated_in_gbs=operations_insights_warehouse_storage_allocated_in_gbs)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -468,7 +466,6 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -485,7 +482,6 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
             },
             storage_allocated_in_gbs=operations_insights_warehouse_storage_allocated_in_gbs)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

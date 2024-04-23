@@ -19,7 +19,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOrganizationSubscriptionsResult> InvokeAsync(GetOrganizationSubscriptionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOrganizationSubscriptionsResult>("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOrganizationSubscriptionsResult> Invoke(GetOrganizationSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOrganizationSubscriptionsResult>("oci:OneSubsription/getOrganizationSubscriptions:getOrganizationSubscriptions", args ?? new GetOrganizationSubscriptionsInvokeArgs(), options.WithDefaults());

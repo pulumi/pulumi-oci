@@ -516,7 +516,6 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -535,7 +534,6 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
             license_model=external_exadata_infrastructure_license_model,
             storage_server_names=external_exadata_infrastructure_storage_server_names)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -578,7 +576,6 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -597,7 +594,6 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
             license_model=external_exadata_infrastructure_license_model,
             storage_server_names=external_exadata_infrastructure_storage_server_names)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

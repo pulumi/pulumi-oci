@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsUserAttributesSettingResult> InvokeAsync(GetDomainsUserAttributesSettingArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsUserAttributesSettingResult>("oci:Identity/getDomainsUserAttributesSetting:getDomainsUserAttributesSetting", args ?? new GetDomainsUserAttributesSettingArgs(), options.WithDefaults());
@@ -54,7 +52,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +75,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsUserAttributesSettingResult> Invoke(GetDomainsUserAttributesSettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserAttributesSettingResult>("oci:Identity/getDomainsUserAttributesSetting:getDomainsUserAttributesSetting", args ?? new GetDomainsUserAttributesSettingInvokeArgs(), options.WithDefaults());

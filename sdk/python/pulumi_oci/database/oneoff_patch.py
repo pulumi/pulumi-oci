@@ -428,7 +428,6 @@ class OneoffPatch(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -444,7 +443,6 @@ class OneoffPatch(pulumi.CustomResource):
             },
             one_off_patches=oneoff_patch_one_off_patches)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -482,7 +480,6 @@ class OneoffPatch(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -498,7 +495,6 @@ class OneoffPatch(pulumi.CustomResource):
             },
             one_off_patches=oneoff_patch_one_off_patches)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

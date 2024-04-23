@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     externalDbSystemId: testExternalDbSystem.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalDatabases(args?: GetExternalDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDatabasesResult> {
     args = args || {};
@@ -87,7 +85,6 @@ export interface GetExternalDatabasesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,7 +95,6 @@ export interface GetExternalDatabasesResult {
  *     externalDbSystemId: testExternalDbSystem.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalDatabasesOutput(args?: GetExternalDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDatabasesResult> {
     return pulumi.output(args).apply((a: any) => getExternalDatabases(a, opts))

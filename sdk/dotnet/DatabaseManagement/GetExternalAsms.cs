@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalAsmsResult> InvokeAsync(GetExternalAsmsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalAsmsResult>("oci:DatabaseManagement/getExternalAsms:getExternalAsms", args ?? new GetExternalAsmsArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalAsmsResult> Invoke(GetExternalAsmsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalAsmsResult>("oci:DatabaseManagement/getExternalAsms:getExternalAsms", args ?? new GetExternalAsmsInvokeArgs(), options.WithDefaults());

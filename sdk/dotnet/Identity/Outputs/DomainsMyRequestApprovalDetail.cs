@@ -56,17 +56,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? ApproverId;
         /// <summary>
-        /// justification
+        /// (Updatable) Approval Justification
+        /// 
+        /// **Added In:** 2307071836
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: true
+        /// * idcsSearchable: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
+        /// * mutability: readOnly
         /// </summary>
         public readonly string? Justification;
         /// <summary>
@@ -84,17 +84,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int? Order;
         /// <summary>
-        /// (Updatable) status.
+        /// (Updatable) Approval Status
+        /// 
+        /// **Added In:** 2307071836
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
+        /// * mutability: readOnly
         /// </summary>
         public readonly string? Status;
         /// <summary>

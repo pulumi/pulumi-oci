@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsRuleResult> InvokeAsync(GetDomainsRuleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsRuleResult>("oci:Identity/getDomainsRule:getDomainsRule", args ?? new GetDomainsRuleArgs(), options.WithDefaults());
@@ -54,7 +52,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +75,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsRuleResult> Invoke(GetDomainsRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsRuleResult>("oci:Identity/getDomainsRule:getDomainsRule", args ?? new GetDomainsRuleInvokeArgs(), options.WithDefaults());

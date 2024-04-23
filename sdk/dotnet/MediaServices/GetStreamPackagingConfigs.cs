@@ -18,7 +18,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetStreamPackagingConfigsResult> InvokeAsync(GetStreamPackagingConfigsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStreamPackagingConfigsResult>("oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs", args ?? new GetStreamPackagingConfigsArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.MediaServices
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetStreamPackagingConfigsResult> Invoke(GetStreamPackagingConfigsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStreamPackagingConfigsResult>("oci:MediaServices/getStreamPackagingConfigs:getStreamPackagingConfigs", args ?? new GetStreamPackagingConfigsInvokeArgs(), options.WithDefaults());

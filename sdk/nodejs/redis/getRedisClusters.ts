@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: redisClusterState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRedisClusters(args?: GetRedisClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetRedisClustersResult> {
     args = args || {};
@@ -96,7 +94,6 @@ export interface GetRedisClustersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetRedisClustersResult {
  *     state: redisClusterState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRedisClustersOutput(args?: GetRedisClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRedisClustersResult> {
     return pulumi.output(args).apply((a: any) => getRedisClusters(a, opts))

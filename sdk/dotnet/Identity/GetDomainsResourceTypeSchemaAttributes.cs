@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsResourceTypeSchemaAttributesResult> InvokeAsync(GetDomainsResourceTypeSchemaAttributesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsResourceTypeSchemaAttributesResult>("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", args ?? new GetDomainsResourceTypeSchemaAttributesArgs(), options.WithDefaults());
@@ -56,7 +54,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -82,7 +79,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsResourceTypeSchemaAttributesResult> Invoke(GetDomainsResourceTypeSchemaAttributesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsResourceTypeSchemaAttributesResult>("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", args ?? new GetDomainsResourceTypeSchemaAttributesInvokeArgs(), options.WithDefaults());

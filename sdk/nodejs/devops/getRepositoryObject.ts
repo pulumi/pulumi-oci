@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     refName: repositoryObjectRefName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryObject(args: GetRepositoryObjectArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryObjectResult> {
 
@@ -87,7 +85,6 @@ export interface GetRepositoryObjectResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,7 +95,6 @@ export interface GetRepositoryObjectResult {
  *     refName: repositoryObjectRefName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryObjectOutput(args: GetRepositoryObjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryObjectResult> {
     return pulumi.output(args).apply((a: any) => getRepositoryObject(a, opts))

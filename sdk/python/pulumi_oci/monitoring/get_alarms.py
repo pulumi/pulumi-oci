@@ -133,7 +133,6 @@ def get_alarms(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -143,7 +142,6 @@ def get_alarms(compartment_id: Optional[str] = None,
         display_name=alarm_display_name,
         state=alarm_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
@@ -192,7 +190,6 @@ def get_alarms_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,7 +199,6 @@ def get_alarms_output(compartment_id: Optional[pulumi.Input[str]] = None,
         display_name=alarm_display_name,
         state=alarm_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMigrationsResult> InvokeAsync(GetMigrationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());

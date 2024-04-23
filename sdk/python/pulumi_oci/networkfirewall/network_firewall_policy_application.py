@@ -234,7 +234,6 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -246,7 +245,6 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
             type=network_firewall_policy_application_type,
             icmp_code=network_firewall_policy_application_icmp_code)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -281,7 +279,6 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -293,7 +290,6 @@ class NetworkFirewallPolicyApplication(pulumi.CustomResource):
             type=network_firewall_policy_application_type,
             icmp_code=network_firewall_policy_application_icmp_code)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

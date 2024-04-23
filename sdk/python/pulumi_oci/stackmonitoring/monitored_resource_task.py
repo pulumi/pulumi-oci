@@ -301,7 +301,6 @@ class MonitoredResourceTask(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -333,7 +332,6 @@ class MonitoredResourceTask(pulumi.CustomResource):
             },
             name=monitored_resource_task_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -364,7 +362,6 @@ class MonitoredResourceTask(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -396,7 +393,6 @@ class MonitoredResourceTask(pulumi.CustomResource):
             },
             name=monitored_resource_task_name)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

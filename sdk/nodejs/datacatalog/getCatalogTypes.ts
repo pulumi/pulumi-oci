@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,7 +29,6 @@ import * as utilities from "../utilities";
  *     typeCategory: catalogTypeTypeCategory,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCatalogTypes(args: GetCatalogTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogTypesResult> {
 
@@ -146,7 +144,6 @@ export interface GetCatalogTypesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -163,7 +160,6 @@ export interface GetCatalogTypesResult {
  *     typeCategory: catalogTypeTypeCategory,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCatalogTypesOutput(args: GetCatalogTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogTypesResult> {
     return pulumi.output(args).apply((a: any) => getCatalogTypes(a, opts))

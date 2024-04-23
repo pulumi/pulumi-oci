@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDefaultConfigurationsResult> InvokeAsync(GetDefaultConfigurationsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDefaultConfigurationsResult>("oci:Psql/getDefaultConfigurations:getDefaultConfigurations", args ?? new GetDefaultConfigurationsArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDefaultConfigurationsResult> Invoke(GetDefaultConfigurationsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDefaultConfigurationsResult>("oci:Psql/getDefaultConfigurations:getDefaultConfigurations", args ?? new GetDefaultConfigurationsInvokeArgs(), options.WithDefaults());

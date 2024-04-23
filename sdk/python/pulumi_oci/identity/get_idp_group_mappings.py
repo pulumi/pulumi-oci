@@ -91,14 +91,12 @@ def get_idp_group_mappings(filters: Optional[Sequence[pulumi.InputType['GetIdpGr
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_idp_group_mappings = oci.Identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str identity_provider_id: The OCID of the identity provider.
@@ -129,14 +127,12 @@ def get_idp_group_mappings_output(filters: Optional[pulumi.Input[Optional[Sequen
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_idp_group_mappings = oci.Identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str identity_provider_id: The OCID of the identity provider.

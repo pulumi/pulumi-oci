@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -42,7 +41,6 @@ import * as utilities from "../utilities";
  *     state: dataSourceState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDataSources(args: GetDataSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSourcesResult> {
 
@@ -151,7 +149,6 @@ export interface GetDataSourcesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -166,7 +163,6 @@ export interface GetDataSourcesResult {
  *     state: dataSourceState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDataSourcesOutput(args: GetDataSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSourcesResult> {
     return pulumi.output(args).apply((a: any) => getDataSources(a, opts))

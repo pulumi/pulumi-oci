@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetByoipRangeResult> InvokeAsync(GetByoipRangeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetByoipRangeResult>("oci:Core/getByoipRange:getByoipRange", args ?? new GetByoipRangeArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetByoipRangeResult> Invoke(GetByoipRangeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetByoipRangeResult>("oci:Core/getByoipRange:getByoipRange", args ?? new GetByoipRangeInvokeArgs(), options.WithDefaults());

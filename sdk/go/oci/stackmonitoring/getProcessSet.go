@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupProcessSet(ctx *pulumi.Context, args *LookupProcessSetArgs, opts ...pulumi.InvokeOption) (*LookupProcessSetResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupProcessSetResult

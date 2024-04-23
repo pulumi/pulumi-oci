@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAnalyticsInstanceResult> InvokeAsync(GetAnalyticsInstanceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnalyticsInstanceResult>("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args ?? new GetAnalyticsInstanceArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAnalyticsInstanceResult> Invoke(GetAnalyticsInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstanceResult>("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args ?? new GetAnalyticsInstanceInvokeArgs(), options.WithDefaults());

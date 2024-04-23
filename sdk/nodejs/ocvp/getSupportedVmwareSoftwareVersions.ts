@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     version: supportedVmwareSoftwareVersionVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSupportedVmwareSoftwareVersions(args: GetSupportedVmwareSoftwareVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedVmwareSoftwareVersionsResult> {
 
@@ -85,7 +83,6 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -96,7 +93,6 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
  *     version: supportedVmwareSoftwareVersionVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSupportedVmwareSoftwareVersionsOutput(args: GetSupportedVmwareSoftwareVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedVmwareSoftwareVersionsResult> {
     return pulumi.output(args).apply((a: any) => getSupportedVmwareSoftwareVersions(a, opts))

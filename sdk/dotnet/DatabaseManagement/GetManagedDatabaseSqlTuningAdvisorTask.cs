@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningAdvisorTaskResult> InvokeAsync(GetManagedDatabaseSqlTuningAdvisorTaskArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTaskResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTask:getManagedDatabaseSqlTuningAdvisorTask", args ?? new GetManagedDatabaseSqlTuningAdvisorTaskArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTaskResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTask:getManagedDatabaseSqlTuningAdvisorTask", args ?? new GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs(), options.WithDefaults());

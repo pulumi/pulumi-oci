@@ -511,7 +511,6 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -525,7 +524,6 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
             should_pdb_admin_account_be_locked=pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
             target_tde_wallet_password=pluggable_databases_remote_clone_target_tde_wallet_password)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -560,7 +558,6 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -574,7 +571,6 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
             should_pdb_admin_account_be_locked=pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
             target_tde_wallet_password=pluggable_databases_remote_clone_target_tde_wallet_password)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

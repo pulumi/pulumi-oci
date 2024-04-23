@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSummarizeResourceInventoryResult> InvokeAsync(GetSummarizeResourceInventoryArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSummarizeResourceInventoryResult>("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args ?? new GetSummarizeResourceInventoryArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSummarizeResourceInventoryResult> Invoke(GetSummarizeResourceInventoryInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSummarizeResourceInventoryResult>("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", args ?? new GetSummarizeResourceInventoryInvokeArgs(), options.WithDefaults());

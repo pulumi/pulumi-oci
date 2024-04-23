@@ -34,9 +34,9 @@ class StorageObjectArgs:
                  storage_tier: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a StorageObject resource.
-        :param pulumi.Input[str] bucket: The name of the bucket for the source object.
-        :param pulumi.Input[str] namespace: The top-level namespace of the source object.
-        :param pulumi.Input[str] object: The name of the source object.
+        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
+        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
+        :param pulumi.Input[str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         :param pulumi.Input[str] cache_control: The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
         :param pulumi.Input[str] content: The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
         :param pulumi.Input[str] content_disposition: The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
@@ -89,7 +89,7 @@ class StorageObjectArgs:
     @pulumi.getter
     def bucket(self) -> pulumi.Input[str]:
         """
-        The name of the bucket for the source object.
+        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         """
         return pulumi.get(self, "bucket")
 
@@ -101,7 +101,7 @@ class StorageObjectArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        The top-level namespace of the source object.
+        The Object Storage namespace used for the request.
         """
         return pulumi.get(self, "namespace")
 
@@ -113,7 +113,7 @@ class StorageObjectArgs:
     @pulumi.getter
     def object(self) -> pulumi.Input[str]:
         """
-        The name of the source object.
+        (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         """
         return pulumi.get(self, "object")
 
@@ -307,7 +307,7 @@ class _StorageObjectState:
                  work_request_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering StorageObject resources.
-        :param pulumi.Input[str] bucket: The name of the bucket for the source object.
+        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[str] cache_control: The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
         :param pulumi.Input[str] content: The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
         :param pulumi.Input[str] content_disposition: The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
@@ -321,8 +321,8 @@ class _StorageObjectState:
         :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
         :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
                Note: All specified keys must be in lower case.
-        :param pulumi.Input[str] namespace: The top-level namespace of the source object.
-        :param pulumi.Input[str] object: The name of the source object.
+        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
+        :param pulumi.Input[str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         :param pulumi.Input[str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
         :param pulumi.Input['StorageObjectSourceUriDetailsArgs'] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
@@ -374,7 +374,7 @@ class _StorageObjectState:
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the bucket for the source object.
+        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         """
         return pulumi.get(self, "bucket")
 
@@ -509,7 +509,7 @@ class _StorageObjectState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        The top-level namespace of the source object.
+        The Object Storage namespace used for the request.
         """
         return pulumi.get(self, "namespace")
 
@@ -521,7 +521,7 @@ class _StorageObjectState:
     @pulumi.getter
     def object(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the source object.
+        (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         """
         return pulumi.get(self, "object")
 
@@ -642,7 +642,6 @@ class StorageObject(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -662,7 +661,6 @@ class StorageObject(pulumi.CustomResource):
             storage_tier=object_storage_tier,
             opc_sse_kms_key_id=object_opc_sse_kms_key_id)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -674,7 +672,7 @@ class StorageObject(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: The name of the bucket for the source object.
+        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[str] cache_control: The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
         :param pulumi.Input[str] content: The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
         :param pulumi.Input[str] content_disposition: The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
@@ -687,8 +685,8 @@ class StorageObject(pulumi.CustomResource):
         :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
         :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
                Note: All specified keys must be in lower case.
-        :param pulumi.Input[str] namespace: The top-level namespace of the source object.
-        :param pulumi.Input[str] object: The name of the source object.
+        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
+        :param pulumi.Input[str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         :param pulumi.Input[str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
         :param pulumi.Input[pulumi.InputType['StorageObjectSourceUriDetailsArgs']] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
@@ -715,7 +713,6 @@ class StorageObject(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -735,7 +732,6 @@ class StorageObject(pulumi.CustomResource):
             storage_tier=object_storage_tier,
             opc_sse_kms_key_id=object_opc_sse_kms_key_id)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -848,7 +844,7 @@ class StorageObject(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] bucket: The name of the bucket for the source object.
+        :param pulumi.Input[str] bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         :param pulumi.Input[str] cache_control: The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify objects that require caching restrictions.
         :param pulumi.Input[str] content: The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
         :param pulumi.Input[str] content_disposition: The optional Content-Disposition header that defines presentational information for the object to be returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to let users download objects with custom filenames in a browser.
@@ -862,8 +858,8 @@ class StorageObject(pulumi.CustomResource):
         :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
         :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
                Note: All specified keys must be in lower case.
-        :param pulumi.Input[str] namespace: The top-level namespace of the source object.
-        :param pulumi.Input[str] object: The name of the source object.
+        :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
+        :param pulumi.Input[str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         :param pulumi.Input[str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
         :param pulumi.Input[pulumi.InputType['StorageObjectSourceUriDetailsArgs']] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
@@ -900,7 +896,7 @@ class StorageObject(pulumi.CustomResource):
     @pulumi.getter
     def bucket(self) -> pulumi.Output[str]:
         """
-        The name of the bucket for the source object.
+        The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         """
         return pulumi.get(self, "bucket")
 
@@ -991,7 +987,7 @@ class StorageObject(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[str]:
         """
-        The top-level namespace of the source object.
+        The Object Storage namespace used for the request.
         """
         return pulumi.get(self, "namespace")
 
@@ -999,7 +995,7 @@ class StorageObject(pulumi.CustomResource):
     @pulumi.getter
     def object(self) -> pulumi.Output[str]:
         """
-        The name of the source object.
+        (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         """
         return pulumi.get(self, "object")
 

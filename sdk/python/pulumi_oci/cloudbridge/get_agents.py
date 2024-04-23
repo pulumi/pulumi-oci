@@ -141,7 +141,6 @@ def get_agents(agent_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,7 +151,6 @@ def get_agents(agent_id: Optional[str] = None,
         environment_id=test_environment["id"],
         state=agent_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: A filter to return only resources that match the given Agent ID.
@@ -197,7 +195,6 @@ def get_agents_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,7 +205,6 @@ def get_agents_output(agent_id: Optional[pulumi.Input[Optional[str]]] = None,
         environment_id=test_environment["id"],
         state=agent_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: A filter to return only resources that match the given Agent ID.

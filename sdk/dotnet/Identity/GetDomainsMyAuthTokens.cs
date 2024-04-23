@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsMyAuthTokensResult> InvokeAsync(GetDomainsMyAuthTokensArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsMyAuthTokensResult>("oci:Identity/getDomainsMyAuthTokens:getDomainsMyAuthTokens", args ?? new GetDomainsMyAuthTokensArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsMyAuthTokensResult> Invoke(GetDomainsMyAuthTokensInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyAuthTokensResult>("oci:Identity/getDomainsMyAuthTokens:getDomainsMyAuthTokens", args ?? new GetDomainsMyAuthTokensInvokeArgs(), options.WithDefaults());

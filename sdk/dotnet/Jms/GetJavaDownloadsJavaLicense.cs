@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetJavaDownloadsJavaLicenseResult> InvokeAsync(GetJavaDownloadsJavaLicenseArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaDownloadsJavaLicenseResult>("oci:Jms/getJavaDownloadsJavaLicense:getJavaDownloadsJavaLicense", args ?? new GetJavaDownloadsJavaLicenseArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetJavaDownloadsJavaLicenseResult> Invoke(GetJavaDownloadsJavaLicenseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaLicenseResult>("oci:Jms/getJavaDownloadsJavaLicense:getJavaDownloadsJavaLicense", args ?? new GetJavaDownloadsJavaLicenseInvokeArgs(), options.WithDefaults());

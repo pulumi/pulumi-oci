@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetIngressGatewayRouteTablesResult> InvokeAsync(GetIngressGatewayRouteTablesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIngressGatewayRouteTablesResult>("oci:ServiceMesh/getIngressGatewayRouteTables:getIngressGatewayRouteTables", args ?? new GetIngressGatewayRouteTablesArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.ServiceMesh
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetIngressGatewayRouteTablesResult> Invoke(GetIngressGatewayRouteTablesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIngressGatewayRouteTablesResult>("oci:ServiceMesh/getIngressGatewayRouteTables:getIngressGatewayRouteTables", args ?? new GetIngressGatewayRouteTablesInvokeArgs(), options.WithDefaults());

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetWorkspaceProjectResult> InvokeAsync(GetWorkspaceProjectArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceProjectResult>("oci:DataIntegration/getWorkspaceProject:getWorkspaceProject", args ?? new GetWorkspaceProjectArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetWorkspaceProjectResult> Invoke(GetWorkspaceProjectInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceProjectResult>("oci:DataIntegration/getWorkspaceProject:getWorkspaceProject", args ?? new GetWorkspaceProjectInvokeArgs(), options.WithDefaults());

@@ -71,14 +71,12 @@ def get_compatible_formats_for_data_type(opts: Optional[pulumi.InvokeOptions] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compatible_formats_for_data_type = oci.DataSafe.get_compatible_formats_for_data_type()
     ```
-    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -104,13 +102,11 @@ def get_compatible_formats_for_data_type_output(opts: Optional[pulumi.InvokeOpti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compatible_formats_for_data_type = oci.DataSafe.get_compatible_formats_for_data_type()
     ```
-    <!--End PulumiCodeChooser -->
     """
     ...

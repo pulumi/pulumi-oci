@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousPatchResult> InvokeAsync(GetAutonomousPatchArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousPatchResult>("oci:Database/getAutonomousPatch:getAutonomousPatch", args ?? new GetAutonomousPatchArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousPatchResult> Invoke(GetAutonomousPatchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousPatchResult>("oci:Database/getAutonomousPatch:getAutonomousPatch", args ?? new GetAutonomousPatchInvokeArgs(), options.WithDefaults());

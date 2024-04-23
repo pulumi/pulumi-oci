@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRuleSets(args: GetRuleSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetRuleSetsResult> {
 
@@ -66,7 +64,6 @@ export interface GetRuleSetsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetRuleSetsResult {
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRuleSetsOutput(args: GetRuleSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRuleSetsResult> {
     return pulumi.output(args).apply((a: any) => getRuleSets(a, opts))

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetCustomTables(ctx *pulumi.Context, args *GetCustomTablesArgs, opts ...pulumi.InvokeOption) (*GetCustomTablesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCustomTablesResult

@@ -304,7 +304,6 @@ def get_db_server(db_server_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -312,7 +311,6 @@ def get_db_server(db_server_id: Optional[str] = None,
     test_db_server = oci.Database.get_db_server(db_server_id=test_db_server_oci_database_db_server["id"],
         exadata_infrastructure_id=test_exadata_infrastructure["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_server_id: The DB server [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -360,7 +358,6 @@ def get_db_server_output(db_server_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -368,7 +365,6 @@ def get_db_server_output(db_server_id: Optional[pulumi.Input[str]] = None,
     test_db_server = oci.Database.get_db_server(db_server_id=test_db_server_oci_database_db_server["id"],
         exadata_infrastructure_id=test_exadata_infrastructure["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_server_id: The DB server [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Audit
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.Audit
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetEventsResult> InvokeAsync(GetEventsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEventsResult>("oci:Audit/getEvents:getEvents", args ?? new GetEventsArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.Audit
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.Audit
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetEventsResult> Invoke(GetEventsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEventsResult>("oci:Audit/getEvents:getEvents", args ?? new GetEventsInvokeArgs(), options.WithDefaults());

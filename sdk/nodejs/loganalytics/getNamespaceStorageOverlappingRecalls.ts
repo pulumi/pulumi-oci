@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     timeDataStarted: namespaceStorageOverlappingRecallTimeDataStarted,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceStorageOverlappingRecalls(args: GetNamespaceStorageOverlappingRecallsArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceStorageOverlappingRecallsResult> {
 
@@ -86,7 +84,6 @@ export interface GetNamespaceStorageOverlappingRecallsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetNamespaceStorageOverlappingRecallsResult {
  *     timeDataStarted: namespaceStorageOverlappingRecallTimeDataStarted,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceStorageOverlappingRecallsOutput(args: GetNamespaceStorageOverlappingRecallsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceStorageOverlappingRecallsResult> {
     return pulumi.output(args).apply((a: any) => getNamespaceStorageOverlappingRecalls(a, opts))

@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCloudAutonomousVmClusterAcdResourceUsages(args: GetCloudAutonomousVmClusterAcdResourceUsagesArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudAutonomousVmClusterAcdResourceUsagesResult> {
 
@@ -75,7 +73,6 @@ export interface GetCloudAutonomousVmClusterAcdResourceUsagesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -85,7 +82,6 @@ export interface GetCloudAutonomousVmClusterAcdResourceUsagesResult {
  *     compartmentId: compartmentId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCloudAutonomousVmClusterAcdResourceUsagesOutput(args: GetCloudAutonomousVmClusterAcdResourceUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudAutonomousVmClusterAcdResourceUsagesResult> {
     return pulumi.output(args).apply((a: any) => getCloudAutonomousVmClusterAcdResourceUsages(a, opts))

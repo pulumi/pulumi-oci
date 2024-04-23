@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPluggableDatabasesResult> InvokeAsync(GetPluggableDatabasesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPluggableDatabasesResult> Invoke(GetPluggableDatabasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesInvokeArgs(), options.WithDefaults());

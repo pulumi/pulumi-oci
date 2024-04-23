@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDbNodeConsoleConnection(ctx *pulumi.Context, args *LookupDbNodeConsoleConnectionArgs, opts ...pulumi.InvokeOption) (*LookupDbNodeConsoleConnectionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDbNodeConsoleConnectionResult

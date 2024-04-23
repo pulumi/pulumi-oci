@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     name: logSavedSearchName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogSavedSearches(args: GetLogSavedSearchesArgs, opts?: pulumi.InvokeOptions): Promise<GetLogSavedSearchesResult> {
 
@@ -86,7 +84,6 @@ export interface GetLogSavedSearchesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetLogSavedSearchesResult {
  *     name: logSavedSearchName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogSavedSearchesOutput(args: GetLogSavedSearchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogSavedSearchesResult> {
     return pulumi.output(args).apply((a: any) => getLogSavedSearches(a, opts))

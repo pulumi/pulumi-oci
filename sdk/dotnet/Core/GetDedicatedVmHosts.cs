@@ -22,7 +22,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDedicatedVmHostsResult> InvokeAsync(GetDedicatedVmHostsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDedicatedVmHostsResult>("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", args ?? new GetDedicatedVmHostsArgs(), options.WithDefaults());
@@ -60,7 +58,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -82,7 +79,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDedicatedVmHostsResult> Invoke(GetDedicatedVmHostsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostsResult>("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", args ?? new GetDedicatedVmHostsInvokeArgs(), options.WithDefaults());

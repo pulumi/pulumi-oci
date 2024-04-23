@@ -27,7 +27,6 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMetricsResult> InvokeAsync(GetMetricsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMetricsResult>("oci:Monitoring/getMetrics:getMetrics", args ?? new GetMetricsArgs(), options.WithDefaults());
@@ -70,7 +68,6 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -92,7 +89,6 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMetricsResult> Invoke(GetMetricsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMetricsResult>("oci:Monitoring/getMetrics:getMetrics", args ?? new GetMetricsInvokeArgs(), options.WithDefaults());

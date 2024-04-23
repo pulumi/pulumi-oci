@@ -266,7 +266,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -279,7 +278,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             password=fusion_environment_admin_user_password,
             username=fusion_environment_admin_user_username)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -315,7 +313,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -328,7 +325,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             password=fusion_environment_admin_user_password,
             username=fusion_environment_admin_user_username)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

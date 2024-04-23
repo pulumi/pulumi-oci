@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDecryptedDataResult> InvokeAsync(GetDecryptedDataArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDecryptedDataResult>("oci:Kms/getDecryptedData:getDecryptedData", args ?? new GetDecryptedDataArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDecryptedDataResult> Invoke(GetDecryptedDataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDecryptedDataResult>("oci:Kms/getDecryptedData:getDecryptedData", args ?? new GetDecryptedDataInvokeArgs(), options.WithDefaults());

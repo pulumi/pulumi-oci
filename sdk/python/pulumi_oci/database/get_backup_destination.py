@@ -255,14 +255,12 @@ def get_backup_destination(backup_destination_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=test_backup_destination_oci_database_backup_destination["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backup_destination_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
@@ -303,14 +301,12 @@ def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=test_backup_destination_oci_database_backup_destination["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backup_destination_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.

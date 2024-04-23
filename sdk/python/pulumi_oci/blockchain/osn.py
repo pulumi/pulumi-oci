@@ -171,7 +171,6 @@ class Osn(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -183,7 +182,6 @@ class Osn(pulumi.CustomResource):
                 ocpu_allocation_number=osn_ocpu_allocation_param_ocpu_allocation_number,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -212,7 +210,6 @@ class Osn(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -224,7 +221,6 @@ class Osn(pulumi.CustomResource):
                 ocpu_allocation_number=osn_ocpu_allocation_param_ocpu_allocation_number,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

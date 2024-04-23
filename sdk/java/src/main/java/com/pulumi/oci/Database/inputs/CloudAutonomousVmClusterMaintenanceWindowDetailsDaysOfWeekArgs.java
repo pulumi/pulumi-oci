@@ -15,14 +15,14 @@ public final class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArg
     public static final CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs Empty = new CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs();
 
     /**
-     * (Updatable) Name of the month of the year.
+     * Name of the month of the year.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return Name of the month of the year.
      * 
      */
     public Output<String> name() {
@@ -54,7 +54,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArg
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name Name of the month of the year.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArg
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name Name of the month of the year.
          * 
          * @return builder
          * 

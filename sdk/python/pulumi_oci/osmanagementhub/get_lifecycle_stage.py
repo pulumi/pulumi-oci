@@ -243,14 +243,12 @@ def get_lifecycle_stage(lifecycle_stage_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_lifecycle_stage = oci.OsManagementHub.get_lifecycle_stage(lifecycle_stage_id=test_lifecycle_stage_oci_os_management_hub_lifecycle_stage["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str lifecycle_stage_id: The OCID of the lifecycle stage.
@@ -290,14 +288,12 @@ def get_lifecycle_stage_output(lifecycle_stage_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_lifecycle_stage = oci.OsManagementHub.get_lifecycle_stage(lifecycle_stage_id=test_lifecycle_stage_oci_os_management_hub_lifecycle_stage["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str lifecycle_stage_id: The OCID of the lifecycle stage.

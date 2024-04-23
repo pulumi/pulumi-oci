@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: remediationRecipeState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRemediationRecipes(args?: GetRemediationRecipesArgs, opts?: pulumi.InvokeOptions): Promise<GetRemediationRecipesResult> {
     args = args || {};
@@ -98,7 +96,6 @@ export interface GetRemediationRecipesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,7 +107,6 @@ export interface GetRemediationRecipesResult {
  *     state: remediationRecipeState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRemediationRecipesOutput(args?: GetRemediationRecipesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRecipesResult> {
     return pulumi.output(args).apply((a: any) => getRemediationRecipes(a, opts))

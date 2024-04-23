@@ -19,7 +19,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProtectionPoliciesResult> InvokeAsync(GetProtectionPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionPoliciesResult>("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args ?? new GetProtectionPoliciesArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectionPoliciesResult> Invoke(GetProtectionPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPoliciesResult>("oci:RecoveryMod/getProtectionPolicies:getProtectionPolicies", args ?? new GetProtectionPoliciesInvokeArgs(), options.WithDefaults());

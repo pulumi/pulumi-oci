@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentImagesResult> InvokeAsync(GetManagementAgentImagesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentImagesResult>("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args ?? new GetManagementAgentImagesArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentImagesResult> Invoke(GetManagementAgentImagesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentImagesResult>("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", args ?? new GetManagementAgentImagesInvokeArgs(), options.WithDefaults());

@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -41,7 +40,6 @@ import * as utilities from "../utilities";
  *     opcSseKmsKeyId: objectOpcSseKmsKeyId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
@@ -80,7 +78,7 @@ export class StorageObject extends pulumi.CustomResource {
     }
 
     /**
-     * The name of the bucket for the source object.
+     * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
     public readonly bucket!: pulumi.Output<string>;
     /**
@@ -127,11 +125,11 @@ export class StorageObject extends pulumi.CustomResource {
      */
     public readonly metadata!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
-     * The top-level namespace of the source object.
+     * The Object Storage namespace used for the request.
      */
     public readonly namespace!: pulumi.Output<string>;
     /**
-     * The name of the source object.
+     * (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      */
     public readonly object!: pulumi.Output<string>;
     /**
@@ -230,7 +228,7 @@ export class StorageObject extends pulumi.CustomResource {
  */
 export interface StorageObjectState {
     /**
-     * The name of the bucket for the source object.
+     * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
     bucket?: pulumi.Input<string>;
     /**
@@ -277,11 +275,11 @@ export interface StorageObjectState {
      */
     metadata?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The top-level namespace of the source object.
+     * The Object Storage namespace used for the request.
      */
     namespace?: pulumi.Input<string>;
     /**
-     * The name of the source object.
+     * (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      */
     object?: pulumi.Input<string>;
     /**
@@ -311,7 +309,7 @@ export interface StorageObjectState {
  */
 export interface StorageObjectArgs {
     /**
-     * The name of the bucket for the source object.
+     * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
     bucket: pulumi.Input<string>;
     /**
@@ -354,11 +352,11 @@ export interface StorageObjectArgs {
      */
     metadata?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The top-level namespace of the source object.
+     * The Object Storage namespace used for the request.
      */
     namespace: pulumi.Input<string>;
     /**
-     * The name of the source object.
+     * (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      */
     object: pulumi.Input<string>;
     /**

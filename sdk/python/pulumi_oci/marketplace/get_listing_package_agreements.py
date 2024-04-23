@@ -109,7 +109,6 @@ def get_listing_package_agreements(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,7 +117,6 @@ def get_listing_package_agreements(compartment_id: Optional[str] = None,
         package_version=listing_package_agreement_package_version,
         compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.
@@ -155,7 +153,6 @@ def get_listing_package_agreements_output(compartment_id: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +161,6 @@ def get_listing_package_agreements_output(compartment_id: Optional[pulumi.Input[
         package_version=listing_package_agreement_package_version,
         compartment_id=compartment_id)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The unique identifier for the compartment.

@@ -200,7 +200,6 @@ class ConnectionAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -209,7 +208,6 @@ class ConnectionAssignment(pulumi.CustomResource):
             connection_id=test_connection["id"],
             deployment_id=test_deployment["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -241,7 +239,6 @@ class ConnectionAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -250,7 +247,6 @@ class ConnectionAssignment(pulumi.CustomResource):
             connection_id=test_connection["id"],
             deployment_id=test_deployment["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

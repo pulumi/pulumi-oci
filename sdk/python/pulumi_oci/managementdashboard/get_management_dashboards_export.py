@@ -76,14 +76,12 @@ def get_management_dashboards_export(export_dashboard_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_management_dashboards_export = oci.ManagementDashboard.get_management_dashboards_export(export_dashboard_id=test_export_dashboard["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str export_dashboard_id: List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .
@@ -111,14 +109,12 @@ def get_management_dashboards_export_output(export_dashboard_id: Optional[pulumi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_management_dashboards_export = oci.ManagementDashboard.get_management_dashboards_export(export_dashboard_id=test_export_dashboard["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str export_dashboard_id: List of dashboardIds in plain text. The syntax is '{"dashboardIds":["dashboardId1", "dashboardId2", ...]}'. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, "{\\"dashboardIds\\":[\\"ocid1.managementdashboard.oc1..dashboardId1\\"]}" .

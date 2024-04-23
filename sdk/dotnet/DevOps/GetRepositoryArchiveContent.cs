@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRepositoryArchiveContentResult> InvokeAsync(GetRepositoryArchiveContentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryArchiveContentResult>("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", args ?? new GetRepositoryArchiveContentArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRepositoryArchiveContentResult> Invoke(GetRepositoryArchiveContentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryArchiveContentResult>("oci:DevOps/getRepositoryArchiveContent:getRepositoryArchiveContent", args ?? new GetRepositoryArchiveContentInvokeArgs(), options.WithDefaults());

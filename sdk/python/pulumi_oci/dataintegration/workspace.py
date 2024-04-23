@@ -696,7 +696,6 @@ class Workspace(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -723,7 +722,6 @@ class Workspace(pulumi.CustomResource):
             subnet_id=test_subnet["id"],
             vcn_id=test_vcn["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -769,7 +767,6 @@ class Workspace(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -796,7 +793,6 @@ class Workspace(pulumi.CustomResource):
             subnet_id=test_subnet["id"],
             vcn_id=test_vcn["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

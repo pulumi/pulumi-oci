@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     managedDatabaseGroupId: testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseGroup(args: GetManagedDatabaseGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseGroupResult> {
 
@@ -95,7 +93,6 @@ export interface GetManagedDatabaseGroupResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,7 +101,6 @@ export interface GetManagedDatabaseGroupResult {
  *     managedDatabaseGroupId: testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseGroupOutput(args: GetManagedDatabaseGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseGroupResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseGroup(a, opts))

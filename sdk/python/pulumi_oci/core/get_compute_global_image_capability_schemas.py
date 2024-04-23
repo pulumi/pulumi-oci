@@ -102,7 +102,6 @@ def get_compute_global_image_capability_schemas(compartment_id: Optional[str] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_compute_global_image_capability_schemas(compartment_id: Optional[str] = 
     test_compute_global_image_capability_schemas = oci.Core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
         display_name=compute_global_image_capability_schema_display_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.
@@ -143,7 +141,6 @@ def get_compute_global_image_capability_schemas_output(compartment_id: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +148,6 @@ def get_compute_global_image_capability_schemas_output(compartment_id: Optional[
     test_compute_global_image_capability_schemas = oci.Core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
         display_name=compute_global_image_capability_schema_display_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.

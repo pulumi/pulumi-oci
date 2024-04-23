@@ -232,7 +232,6 @@ def get_security_assessment_security_features(access_level: Optional[str] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -253,7 +252,6 @@ def get_security_assessment_security_features(access_level: Optional[str] = None
         targets_with_traditional_audit=security_assessment_security_feature_targets_with_traditional_audit,
         targets_with_unified_audit=security_assessment_security_feature_targets_with_unified_audit)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -338,7 +336,6 @@ def get_security_assessment_security_features_output(access_level: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -359,7 +356,6 @@ def get_security_assessment_security_features_output(access_level: Optional[pulu
         targets_with_traditional_audit=security_assessment_security_feature_targets_with_traditional_audit,
         targets_with_unified_audit=security_assessment_security_feature_targets_with_unified_audit)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.

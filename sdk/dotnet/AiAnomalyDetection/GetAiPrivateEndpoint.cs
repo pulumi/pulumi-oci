@@ -18,7 +18,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAiPrivateEndpointResult> InvokeAsync(GetAiPrivateEndpointArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAiPrivateEndpointResult>("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", args ?? new GetAiPrivateEndpointArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAiPrivateEndpointResult> Invoke(GetAiPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAiPrivateEndpointResult>("oci:AiAnomalyDetection/getAiPrivateEndpoint:getAiPrivateEndpoint", args ?? new GetAiPrivateEndpointInvokeArgs(), options.WithDefaults());

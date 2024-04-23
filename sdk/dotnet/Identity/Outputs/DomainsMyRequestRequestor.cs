@@ -40,13 +40,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// Value of the tag.
+        /// User identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
+        /// * idcsCsvAttributeName: requestor_id
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string

@@ -313,7 +313,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -323,7 +322,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
             service_instance_id=test_instance["id"],
             service_instance_type=fusion_environment_service_attachment_service_instance_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -357,7 +355,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -367,7 +364,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
             service_instance_id=test_instance["id"],
             service_instance_type=fusion_environment_service_attachment_service_instance_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -115,7 +115,6 @@ def get_alert_rules(budget_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,7 +123,6 @@ def get_alert_rules(budget_id: Optional[str] = None,
         display_name=alert_rule_display_name,
         state=alert_rule_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str budget_id: The unique budget OCID.
@@ -161,7 +159,6 @@ def get_alert_rules_output(budget_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_alert_rules_output(budget_id: Optional[pulumi.Input[str]] = None,
         display_name=alert_rule_display_name,
         state=alert_rule_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str budget_id: The unique budget OCID.

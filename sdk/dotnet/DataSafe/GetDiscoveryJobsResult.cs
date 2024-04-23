@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDiscoveryJobsResultResult> InvokeAsync(GetDiscoveryJobsResultArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryJobsResultResult>("oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult", args ?? new GetDiscoveryJobsResultArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDiscoveryJobsResultResult> Invoke(GetDiscoveryJobsResultInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobsResultResult>("oci:DataSafe/getDiscoveryJobsResult:getDiscoveryJobsResult", args ?? new GetDiscoveryJobsResultInvokeArgs(), options.WithDefaults());

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,7 +47,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsApiKeys(ctx *pulumi.Context, args *GetDomainsApiKeysArgs, opts ...pulumi.InvokeOption) (*GetDomainsApiKeysResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsApiKeysResult

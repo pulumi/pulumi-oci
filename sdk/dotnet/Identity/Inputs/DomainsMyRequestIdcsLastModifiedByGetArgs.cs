@@ -13,9 +13,10 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsMyRequestIdcsLastModifiedByGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// User display name
+        /// The displayName of the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -28,25 +29,25 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// The OCID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) User URI
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -59,16 +60,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// Requestable type. Allowed values are Group and App.
+        /// The type of resource, User or App, that modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsCsvAttributeName: Requestable Type
-        /// * idcsDefaultValue: Group
-        /// * idcsSearchable: true
+        /// * caseExact: false
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: true
+        /// * mutability: readOnly
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -77,13 +76,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// Value of the tag.
+        /// The ID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string

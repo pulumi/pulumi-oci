@@ -494,7 +494,6 @@ class LicenseRecord(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -515,7 +514,6 @@ class LicenseRecord(pulumi.CustomResource):
             product_id=test_product["id"],
             support_end_date=license_record_support_end_date)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -555,7 +553,6 @@ class LicenseRecord(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -576,7 +573,6 @@ class LicenseRecord(pulumi.CustomResource):
             product_id=test_product["id"],
             support_end_date=license_record_support_end_date)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

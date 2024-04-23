@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     displayName: applianceImageDisplayName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApplianceImages(args: GetApplianceImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetApplianceImagesResult> {
 
@@ -76,7 +74,6 @@ export interface GetApplianceImagesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetApplianceImagesResult {
  *     displayName: applianceImageDisplayName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApplianceImagesOutput(args: GetApplianceImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplianceImagesResult> {
     return pulumi.output(args).apply((a: any) => getApplianceImages(a, opts))

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNamespacePropertiesMetadataResult> InvokeAsync(GetNamespacePropertiesMetadataArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespacePropertiesMetadataResult>("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", args ?? new GetNamespacePropertiesMetadataArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNamespacePropertiesMetadataResult> Invoke(GetNamespacePropertiesMetadataInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespacePropertiesMetadataResult>("oci:LogAnalytics/getNamespacePropertiesMetadata:getNamespacePropertiesMetadata", args ?? new GetNamespacePropertiesMetadataInvokeArgs(), options.WithDefaults());

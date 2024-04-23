@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalDbNodesResult> InvokeAsync(GetExternalDbNodesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalDbNodesResult>("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", args ?? new GetExternalDbNodesArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalDbNodesResult> Invoke(GetExternalDbNodesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalDbNodesResult>("oci:DatabaseManagement/getExternalDbNodes:getExternalDbNodes", args ?? new GetExternalDbNodesInvokeArgs(), options.WithDefaults());

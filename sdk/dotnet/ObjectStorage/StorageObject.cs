@@ -23,7 +23,6 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// });
     /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
@@ -65,7 +63,7 @@ namespace Pulumi.Oci.ObjectStorage
     public partial class StorageObject : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The name of the bucket for the source object.
+        /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         /// </summary>
         [Output("bucket")]
         public Output<string> Bucket { get; private set; } = null!;
@@ -134,13 +132,13 @@ namespace Pulumi.Oci.ObjectStorage
         public Output<ImmutableDictionary<string, object>?> Metadata { get; private set; } = null!;
 
         /// <summary>
-        /// The top-level namespace of the source object.
+        /// The Object Storage namespace used for the request.
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the source object.
+        /// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         /// </summary>
         [Output("object")]
         public Output<string> Object { get; private set; } = null!;
@@ -226,7 +224,7 @@ namespace Pulumi.Oci.ObjectStorage
     public sealed class StorageObjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the bucket for the source object.
+        /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
@@ -295,13 +293,13 @@ namespace Pulumi.Oci.ObjectStorage
         }
 
         /// <summary>
-        /// The top-level namespace of the source object.
+        /// The Object Storage namespace used for the request.
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// The name of the source object.
+        /// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         /// </summary>
         [Input("object", required: true)]
         public Input<string> Object { get; set; } = null!;
@@ -340,7 +338,7 @@ namespace Pulumi.Oci.ObjectStorage
     public sealed class StorageObjectState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the bucket for the source object.
+        /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         /// </summary>
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
@@ -415,13 +413,13 @@ namespace Pulumi.Oci.ObjectStorage
         }
 
         /// <summary>
-        /// The top-level namespace of the source object.
+        /// The Object Storage namespace used for the request.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// The name of the source object.
+        /// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         /// </summary>
         [Input("object")]
         public Input<string>? Object { get; set; }

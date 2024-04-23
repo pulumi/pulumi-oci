@@ -643,7 +643,6 @@ class Vcn(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -668,7 +667,6 @@ class Vcn(pulumi.CustomResource):
             is_ipv6enabled=vcn_is_ipv6enabled,
             is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -762,7 +760,6 @@ class Vcn(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -787,7 +784,6 @@ class Vcn(pulumi.CustomResource):
             is_ipv6enabled=vcn_is_ipv6enabled,
             is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

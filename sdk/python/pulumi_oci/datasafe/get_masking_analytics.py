@@ -131,7 +131,6 @@ def get_masking_analytics(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,7 +141,6 @@ def get_masking_analytics(compartment_id: Optional[str] = None,
         masking_policy_id=test_masking_policy["id"],
         target_id=test_target["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
@@ -189,7 +187,6 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -200,7 +197,6 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[str]] = N
         masking_policy_id=test_masking_policy["id"],
         target_id=test_target["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.

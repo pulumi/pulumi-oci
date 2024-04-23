@@ -382,7 +382,6 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -401,7 +400,6 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             is_cluster=db_management_private_endpoint_is_cluster,
             nsg_ids=db_management_private_endpoint_nsg_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -439,7 +437,6 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -458,7 +455,6 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             is_cluster=db_management_private_endpoint_is_cluster,
             nsg_ids=db_management_private_endpoint_nsg_ids)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

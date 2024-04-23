@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsPasswordPoliciesResult> InvokeAsync(GetDomainsPasswordPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsPasswordPoliciesResult>("oci:Identity/getDomainsPasswordPolicies:getDomainsPasswordPolicies", args ?? new GetDomainsPasswordPoliciesArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsPasswordPoliciesResult> Invoke(GetDomainsPasswordPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsPasswordPoliciesResult>("oci:Identity/getDomainsPasswordPolicies:getDomainsPasswordPolicies", args ?? new GetDomainsPasswordPoliciesInvokeArgs(), options.WithDefaults());

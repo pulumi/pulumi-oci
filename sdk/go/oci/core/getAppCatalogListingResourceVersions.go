@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAppCatalogListingResourceVersions(ctx *pulumi.Context, args *GetAppCatalogListingResourceVersionsArgs, opts ...pulumi.InvokeOption) (*GetAppCatalogListingResourceVersionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppCatalogListingResourceVersionsResult

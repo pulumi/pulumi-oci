@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     startIndex: selfRegistrationProfileStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsSelfRegistrationProfiles(args: GetDomainsSelfRegistrationProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsSelfRegistrationProfilesResult> {
 
@@ -127,7 +125,6 @@ export interface GetDomainsSelfRegistrationProfilesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -143,7 +140,6 @@ export interface GetDomainsSelfRegistrationProfilesResult {
  *     startIndex: selfRegistrationProfileStartIndex,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsSelfRegistrationProfilesOutput(args: GetDomainsSelfRegistrationProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsSelfRegistrationProfilesResult> {
     return pulumi.output(args).apply((a: any) => getDomainsSelfRegistrationProfiles(a, opts))

@@ -22,7 +22,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCloudVmClusterIormConfigResult> InvokeAsync(GetCloudVmClusterIormConfigArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigArgs(), options.WithDefaults());
@@ -54,7 +52,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCloudVmClusterIormConfigResult> Invoke(GetCloudVmClusterIormConfigInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCloudVmClusterIormConfigResult>("oci:Database/getCloudVmClusterIormConfig:getCloudVmClusterIormConfig", args ?? new GetCloudVmClusterIormConfigInvokeArgs(), options.WithDefaults());

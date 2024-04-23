@@ -757,7 +757,6 @@ class BlockchainPlatform(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -780,7 +779,6 @@ class BlockchainPlatform(pulumi.CustomResource):
             is_byol=blockchain_platform_is_byol,
             platform_version=blockchain_platform_platform_version)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -826,7 +824,6 @@ class BlockchainPlatform(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -849,7 +846,6 @@ class BlockchainPlatform(pulumi.CustomResource):
             is_byol=blockchain_platform_is_byol,
             platform_version=blockchain_platform_platform_version)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

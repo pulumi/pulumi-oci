@@ -116,7 +116,6 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_managed_my_sql_database_sql_data(end_time: Optional[str] = None,
         start_time=managed_my_sql_database_sql_data_start_time,
         filter_column=managed_my_sql_database_sql_data_filter_column)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str end_time: The end time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
@@ -181,7 +179,6 @@ def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -191,7 +188,6 @@ def get_managed_my_sql_database_sql_data_output(end_time: Optional[pulumi.Input[
         start_time=managed_my_sql_database_sql_data_start_time,
         filter_column=managed_my_sql_database_sql_data_filter_column)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str end_time: The end time of the time range to retrieve the health metrics of a Managed Database in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".

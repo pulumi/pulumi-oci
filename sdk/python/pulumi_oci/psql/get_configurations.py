@@ -151,7 +151,6 @@ def get_configurations(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,7 +162,6 @@ def get_configurations(compartment_id: Optional[str] = None,
         shape=configuration_shape,
         state=configuration_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -212,7 +210,6 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -224,7 +221,6 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
         shape=configuration_shape,
         state=configuration_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

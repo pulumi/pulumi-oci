@@ -24,7 +24,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetKeyVersionResult> InvokeAsync(GetKeyVersionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetKeyVersionResult>("oci:Kms/getKeyVersion:getKeyVersion", args ?? new GetKeyVersionArgs(), options.WithDefaults());
@@ -60,7 +58,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +75,6 @@ namespace Pulumi.Oci.Kms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetKeyVersionResult> Invoke(GetKeyVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKeyVersionResult>("oci:Kms/getKeyVersion:getKeyVersion", args ?? new GetKeyVersionInvokeArgs(), options.WithDefaults());

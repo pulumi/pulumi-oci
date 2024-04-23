@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityAssessmentSecurityFeaturesResult> InvokeAsync(GetSecurityAssessmentSecurityFeaturesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentSecurityFeaturesResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", args ?? new GetSecurityAssessmentSecurityFeaturesArgs(), options.WithDefaults());
@@ -62,7 +60,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -92,7 +89,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityAssessmentSecurityFeaturesResult> Invoke(GetSecurityAssessmentSecurityFeaturesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentSecurityFeaturesResult>("oci:DataSafe/getSecurityAssessmentSecurityFeatures:getSecurityAssessmentSecurityFeatures", args ?? new GetSecurityAssessmentSecurityFeaturesInvokeArgs(), options.WithDefaults());

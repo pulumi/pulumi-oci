@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetIpsecConnectionTunnelsResult> InvokeAsync(GetIpsecConnectionTunnelsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpsecConnectionTunnelsResult>("oci:Core/getIpsecConnectionTunnels:getIpsecConnectionTunnels", args ?? new GetIpsecConnectionTunnelsArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetIpsecConnectionTunnelsResult> Invoke(GetIpsecConnectionTunnelsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelsResult>("oci:Core/getIpsecConnectionTunnels:getIpsecConnectionTunnels", args ?? new GetIpsecConnectionTunnelsInvokeArgs(), options.WithDefaults());

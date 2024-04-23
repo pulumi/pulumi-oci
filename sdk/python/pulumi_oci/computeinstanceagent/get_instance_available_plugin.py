@@ -119,7 +119,6 @@ def get_instance_available_plugin(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,7 +127,6 @@ def get_instance_available_plugin(compartment_id: Optional[str] = None,
         os_version=instance_available_plugin_os_version,
         name=instance_available_plugin_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str name: The plugin name
@@ -168,7 +166,6 @@ def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,7 +174,6 @@ def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[s
         os_version=instance_available_plugin_os_version,
         name=instance_available_plugin_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str name: The plugin name

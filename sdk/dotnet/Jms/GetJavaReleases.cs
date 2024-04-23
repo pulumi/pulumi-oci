@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetJavaReleasesResult> InvokeAsync(GetJavaReleasesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaReleasesResult>("oci:Jms/getJavaReleases:getJavaReleases", args ?? new GetJavaReleasesArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetJavaReleasesResult> Invoke(GetJavaReleasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaReleasesResult>("oci:Jms/getJavaReleases:getJavaReleases", args ?? new GetJavaReleasesInvokeArgs(), options.WithDefaults());

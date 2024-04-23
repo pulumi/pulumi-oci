@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsMyTrustedUserAgentsResult> InvokeAsync(GetDomainsMyTrustedUserAgentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsMyTrustedUserAgentsResult>("oci:Identity/getDomainsMyTrustedUserAgents:getDomainsMyTrustedUserAgents", args ?? new GetDomainsMyTrustedUserAgentsArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsMyTrustedUserAgentsResult> Invoke(GetDomainsMyTrustedUserAgentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyTrustedUserAgentsResult>("oci:Identity/getDomainsMyTrustedUserAgents:getDomainsMyTrustedUserAgents", args ?? new GetDomainsMyTrustedUserAgentsInvokeArgs(), options.WithDefaults());

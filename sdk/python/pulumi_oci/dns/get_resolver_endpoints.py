@@ -125,7 +125,6 @@ def get_resolver_endpoints(filters: Optional[Sequence[pulumi.InputType['GetResol
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_resolver_endpoints(filters: Optional[Sequence[pulumi.InputType['GetResol
         name=resolver_endpoint_name,
         state=resolver_endpoint_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str name: The name of a resource.
@@ -179,7 +177,6 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
         name=resolver_endpoint_name,
         state=resolver_endpoint_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str name: The name of a resource.

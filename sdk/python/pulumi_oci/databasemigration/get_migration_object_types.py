@@ -76,14 +76,12 @@ def get_migration_object_types(filters: Optional[Sequence[pulumi.InputType['GetM
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_migration_object_types = oci.DatabaseMigration.get_migration_object_types()
     ```
-    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -106,13 +104,11 @@ def get_migration_object_types_output(filters: Optional[pulumi.Input[Optional[Se
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_migration_object_types = oci.DatabaseMigration.get_migration_object_types()
     ```
-    <!--End PulumiCodeChooser -->
     """
     ...

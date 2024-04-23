@@ -128,7 +128,6 @@ def get_deployments(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_deployments(compartment_id: Optional[str] = None,
         gateway_id=test_gateway["id"],
         state=deployment_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ocid of the compartment in which to list resources.
@@ -179,7 +177,6 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[str]] = None,
         gateway_id=test_gateway["id"],
         state=deployment_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ocid of the compartment in which to list resources.

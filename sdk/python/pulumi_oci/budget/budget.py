@@ -655,7 +655,6 @@ class Budget(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -680,7 +679,6 @@ class Budget(pulumi.CustomResource):
             target_type=budget_target_type,
             targets=budget_targets)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -724,7 +722,6 @@ class Budget(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -749,7 +746,6 @@ class Budget(pulumi.CustomResource):
             target_type=budget_target_type,
             targets=budget_targets)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

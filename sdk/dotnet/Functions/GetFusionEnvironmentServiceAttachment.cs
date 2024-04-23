@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFusionEnvironmentServiceAttachmentResult> InvokeAsync(GetFusionEnvironmentServiceAttachmentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentServiceAttachmentResult>("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args ?? new GetFusionEnvironmentServiceAttachmentArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFusionEnvironmentServiceAttachmentResult> Invoke(GetFusionEnvironmentServiceAttachmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentServiceAttachmentResult>("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args ?? new GetFusionEnvironmentServiceAttachmentInvokeArgs(), options.WithDefaults());

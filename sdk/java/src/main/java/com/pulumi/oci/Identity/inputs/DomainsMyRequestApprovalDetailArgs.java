@@ -122,34 +122,34 @@ public final class DomainsMyRequestApprovalDetailArgs extends com.pulumi.resourc
     }
 
     /**
-     * justification
+     * (Updatable) Approval Justification
+     * 
+     * **Added In:** 2307071836
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * idcsSearchable: false
      * * returned: default
      * * type: string
      * * uniqueness: none
+     * * mutability: readOnly
      * 
      */
     @Import(name="justification")
     private @Nullable Output<String> justification;
 
     /**
-     * @return justification
+     * @return (Updatable) Approval Justification
+     * 
+     * **Added In:** 2307071836
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * idcsSearchable: false
      * * returned: default
      * * type: string
      * * uniqueness: none
+     * * mutability: readOnly
      * 
      */
     public Optional<Output<String>> justification() {
@@ -192,34 +192,34 @@ public final class DomainsMyRequestApprovalDetailArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) status.
+     * (Updatable) Approval Status
+     * 
+     * **Added In:** 2307071836
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
+     * * mutability: readOnly
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return (Updatable) status.
+     * @return (Updatable) Approval Status
+     * 
+     * **Added In:** 2307071836
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
+     * * mutability: readOnly
      * 
      */
     public Optional<Output<String>> status() {
@@ -415,17 +415,17 @@ public final class DomainsMyRequestApprovalDetailArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param justification justification
+         * @param justification (Updatable) Approval Justification
+         * 
+         * **Added In:** 2307071836
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * idcsSearchable: false
          * * returned: default
          * * type: string
          * * uniqueness: none
+         * * mutability: readOnly
          * 
          * @return builder
          * 
@@ -436,17 +436,17 @@ public final class DomainsMyRequestApprovalDetailArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param justification justification
+         * @param justification (Updatable) Approval Justification
+         * 
+         * **Added In:** 2307071836
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * idcsSearchable: false
          * * returned: default
          * * type: string
          * * uniqueness: none
+         * * mutability: readOnly
          * 
          * @return builder
          * 
@@ -497,17 +497,17 @@ public final class DomainsMyRequestApprovalDetailArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param status (Updatable) status.
+         * @param status (Updatable) Approval Status
+         * 
+         * **Added In:** 2307071836
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
+         * * mutability: readOnly
          * 
          * @return builder
          * 
@@ -518,17 +518,17 @@ public final class DomainsMyRequestApprovalDetailArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param status (Updatable) status.
+         * @param status (Updatable) Approval Status
+         * 
+         * **Added In:** 2307071836
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
+         * * mutability: readOnly
          * 
          * @return builder
          * 

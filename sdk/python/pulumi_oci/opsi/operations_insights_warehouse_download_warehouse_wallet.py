@@ -120,7 +120,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -129,7 +128,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
             operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             operations_insights_warehouse_wallet_password=operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -161,7 +159,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -170,7 +167,6 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
             operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             operations_insights_warehouse_wallet_password=operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -221,14 +221,12 @@ def get_snapshot(snapshot_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
@@ -266,14 +264,12 @@ def get_snapshot_output(snapshot_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_snapshot = oci.FileStorage.get_snapshot(snapshot_id=test_snapshot_oci_file_storage_snapshot["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.

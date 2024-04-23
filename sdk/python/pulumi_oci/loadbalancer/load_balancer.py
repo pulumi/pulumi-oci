@@ -618,7 +618,6 @@ class LoadBalancer(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -645,7 +644,6 @@ class LoadBalancer(pulumi.CustomResource):
                 minimum_bandwidth_in_mbps=load_balancer_shape_details_minimum_bandwidth_in_mbps,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -735,7 +733,6 @@ class LoadBalancer(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -762,7 +759,6 @@ class LoadBalancer(pulumi.CustomResource):
                 minimum_bandwidth_in_mbps=load_balancer_shape_details_minimum_bandwidth_in_mbps,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

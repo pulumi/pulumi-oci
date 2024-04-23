@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     autonomousDatabaseSoftwareImageId: testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseSoftwareImage(args: GetAutonomousDatabaseSoftwareImageArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseSoftwareImageResult> {
 
@@ -102,7 +100,6 @@ export interface GetAutonomousDatabaseSoftwareImageResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,7 +108,6 @@ export interface GetAutonomousDatabaseSoftwareImageResult {
  *     autonomousDatabaseSoftwareImageId: testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseSoftwareImageOutput(args: GetAutonomousDatabaseSoftwareImageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseSoftwareImageResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDatabaseSoftwareImage(a, opts))

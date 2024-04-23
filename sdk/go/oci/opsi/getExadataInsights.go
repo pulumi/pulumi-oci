@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,7 +47,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetExadataInsights(ctx *pulumi.Context, args *GetExadataInsightsArgs, opts ...pulumi.InvokeOption) (*GetExadataInsightsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExadataInsightsResult

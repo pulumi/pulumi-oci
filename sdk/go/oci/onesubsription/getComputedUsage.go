@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetComputedUsage(ctx *pulumi.Context, args *GetComputedUsageArgs, opts ...pulumi.InvokeOption) (*GetComputedUsageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputedUsageResult

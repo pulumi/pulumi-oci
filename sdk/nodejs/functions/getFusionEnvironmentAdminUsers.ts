@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentAdminUsers(args: GetFusionEnvironmentAdminUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentAdminUsersResult> {
 
@@ -66,7 +64,6 @@ export interface GetFusionEnvironmentAdminUsersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetFusionEnvironmentAdminUsersResult {
  *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentAdminUsersOutput(args: GetFusionEnvironmentAdminUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentAdminUsersResult> {
     return pulumi.output(args).apply((a: any) => getFusionEnvironmentAdminUsers(a, opts))

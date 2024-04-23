@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     managedDatabaseId: testManagedDatabaseOciDatabaseManagementManagedDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabase(args: GetManagedDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseResult> {
 
@@ -131,7 +129,6 @@ export interface GetManagedDatabaseResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,7 +137,6 @@ export interface GetManagedDatabaseResult {
  *     managedDatabaseId: testManagedDatabaseOciDatabaseManagementManagedDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseOutput(args: GetManagedDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabase(a, opts))

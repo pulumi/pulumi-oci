@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     ospHomeRegion: invoicesInvoiceLineOspHomeRegion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInvoicesInvoiceLines(args: GetInvoicesInvoiceLinesArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoicesInvoiceLinesResult> {
 
@@ -80,7 +78,6 @@ export interface GetInvoicesInvoiceLinesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,7 +88,6 @@ export interface GetInvoicesInvoiceLinesResult {
  *     ospHomeRegion: invoicesInvoiceLineOspHomeRegion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInvoicesInvoiceLinesOutput(args: GetInvoicesInvoiceLinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoicesInvoiceLinesResult> {
     return pulumi.output(args).apply((a: any) => getInvoicesInvoiceLines(a, opts))

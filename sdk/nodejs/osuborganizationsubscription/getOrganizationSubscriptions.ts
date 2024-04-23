@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     xOneOriginRegion: organizationSubscriptionXOneOriginRegion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOrganizationSubscriptions(args: GetOrganizationSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetOrganizationSubscriptionsResult> {
 
@@ -80,7 +78,6 @@ export interface GetOrganizationSubscriptionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,7 +88,6 @@ export interface GetOrganizationSubscriptionsResult {
  *     xOneOriginRegion: organizationSubscriptionXOneOriginRegion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOrganizationSubscriptionsOutput(args: GetOrganizationSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOrganizationSubscriptionsResult> {
     return pulumi.output(args).apply((a: any) => getOrganizationSubscriptions(a, opts))

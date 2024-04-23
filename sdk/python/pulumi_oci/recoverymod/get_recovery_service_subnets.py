@@ -135,7 +135,6 @@ def get_recovery_service_subnets(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -146,7 +145,6 @@ def get_recovery_service_subnets(compartment_id: Optional[str] = None,
         state=recovery_service_subnet_state,
         vcn_id=test_vcn["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment OCID.
@@ -196,7 +194,6 @@ def get_recovery_service_subnets_output(compartment_id: Optional[pulumi.Input[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -207,7 +204,6 @@ def get_recovery_service_subnets_output(compartment_id: Optional[pulumi.Input[st
         state=recovery_service_subnet_state,
         vcn_id=test_vcn["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment OCID.

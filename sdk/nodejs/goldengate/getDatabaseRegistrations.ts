@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: databaseRegistrationState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseRegistrations(args: GetDatabaseRegistrationsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseRegistrationsResult> {
 
@@ -91,7 +89,6 @@ export interface GetDatabaseRegistrationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetDatabaseRegistrationsResult {
  *     state: databaseRegistrationState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseRegistrationsOutput(args: GetDatabaseRegistrationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseRegistrationsResult> {
     return pulumi.output(args).apply((a: any) => getDatabaseRegistrations(a, opts))

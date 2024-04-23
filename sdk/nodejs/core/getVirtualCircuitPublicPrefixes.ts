@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     verificationState: virtualCircuitPublicPrefixVerificationState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualCircuitPublicPrefixes(args: GetVirtualCircuitPublicPrefixesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualCircuitPublicPrefixesResult> {
 
@@ -80,7 +78,6 @@ export interface GetVirtualCircuitPublicPrefixesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,7 +87,6 @@ export interface GetVirtualCircuitPublicPrefixesResult {
  *     verificationState: virtualCircuitPublicPrefixVerificationState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualCircuitPublicPrefixesOutput(args: GetVirtualCircuitPublicPrefixesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitPublicPrefixesResult> {
     return pulumi.output(args).apply((a: any) => getVirtualCircuitPublicPrefixes(a, opts))

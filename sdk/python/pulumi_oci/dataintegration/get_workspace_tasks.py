@@ -161,7 +161,6 @@ def get_workspace_tasks(fields: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -174,7 +173,6 @@ def get_workspace_tasks(fields: Optional[Sequence[str]] = None,
         name=workspace_task_name,
         types=workspace_task_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] fields: Specifies the fields to get for an object.
@@ -227,7 +225,6 @@ def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -240,7 +237,6 @@ def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[s
         name=workspace_task_name,
         types=workspace_task_type)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] fields: Specifies the fields to get for an object.

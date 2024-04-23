@@ -19,7 +19,6 @@ namespace Pulumi.Oci.VisualBuilder
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.VisualBuilder
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVbInstanceApplicationsResult> InvokeAsync(GetVbInstanceApplicationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.VisualBuilder
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.VisualBuilder
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVbInstanceApplicationsResult> Invoke(GetVbInstanceApplicationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsInvokeArgs(), options.WithDefaults());

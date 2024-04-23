@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAutonomousPatch(ctx *pulumi.Context, args *GetAutonomousPatchArgs, opts ...pulumi.InvokeOption) (*GetAutonomousPatchResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousPatchResult

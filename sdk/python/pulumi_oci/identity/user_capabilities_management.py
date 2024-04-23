@@ -255,7 +255,6 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -268,7 +267,6 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
             can_use_customer_secret_keys=True,
             can_use_smtp_credentials=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -306,7 +304,6 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -319,7 +316,6 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
             can_use_customer_secret_keys=True,
             can_use_smtp_credentials=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

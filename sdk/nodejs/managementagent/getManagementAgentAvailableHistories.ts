@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     timeAvailabilityStatusStartedLessThan: managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentAvailableHistories(args: GetManagementAgentAvailableHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentAvailableHistoriesResult> {
 
@@ -83,7 +81,6 @@ export interface GetManagementAgentAvailableHistoriesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetManagementAgentAvailableHistoriesResult {
  *     timeAvailabilityStatusStartedLessThan: managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentAvailableHistoriesOutput(args: GetManagementAgentAvailableHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentAvailableHistoriesResult> {
     return pulumi.output(args).apply((a: any) => getManagementAgentAvailableHistories(a, opts))

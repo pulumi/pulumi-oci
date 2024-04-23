@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     detectAnomalyJobId: testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDetectAnomalyJob(args: GetDetectAnomalyJobArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectAnomalyJobResult> {
 
@@ -123,7 +121,6 @@ export interface GetDetectAnomalyJobResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -132,7 +129,6 @@ export interface GetDetectAnomalyJobResult {
  *     detectAnomalyJobId: testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDetectAnomalyJobOutput(args: GetDetectAnomalyJobOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectAnomalyJobResult> {
     return pulumi.output(args).apply((a: any) => getDetectAnomalyJob(a, opts))

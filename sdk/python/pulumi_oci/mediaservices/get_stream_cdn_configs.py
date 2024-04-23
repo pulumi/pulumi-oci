@@ -116,7 +116,6 @@ def get_stream_cdn_configs(display_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_stream_cdn_configs(display_name: Optional[str] = None,
         id=stream_cdn_config_id,
         state=stream_cdn_config_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only the resources that match the entire display name given.
@@ -166,7 +164,6 @@ def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,7 +173,6 @@ def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[s
         id=stream_cdn_config_id,
         state=stream_cdn_config_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only the resources that match the entire display name given.

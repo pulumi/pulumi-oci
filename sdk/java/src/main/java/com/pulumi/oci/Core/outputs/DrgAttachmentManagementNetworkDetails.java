@@ -23,11 +23,11 @@ public final class DrgAttachmentManagementNetworkDetails {
      */
     private @Nullable String ipsecConnectionId;
     /**
-     * @return The OCID of the route table the DRG attachment is using.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
      * 
      * For information about why you would associate a route table with a DRG attachment, see:
      * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      * 
      */
     private @Nullable String routeTableId;
@@ -53,11 +53,11 @@ public final class DrgAttachmentManagementNetworkDetails {
         return Optional.ofNullable(this.ipsecConnectionId);
     }
     /**
-     * @return The OCID of the route table the DRG attachment is using.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
      * 
      * For information about why you would associate a route table with a DRG attachment, see:
      * * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm)
-     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm) This field is deprecated. Instead, use the `networkDetails` field to view the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
+     * * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm)
      * 
      */
     public Optional<String> routeTableId() {

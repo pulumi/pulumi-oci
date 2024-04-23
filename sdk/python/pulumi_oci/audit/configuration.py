@@ -118,7 +118,6 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -127,7 +126,6 @@ class Configuration(pulumi.CustomResource):
             compartment_id=tenancy_ocid,
             retention_period_days=configuration_retention_period_days)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -153,7 +151,6 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -162,7 +159,6 @@ class Configuration(pulumi.CustomResource):
             compartment_id=tenancy_ocid,
             retention_period_days=configuration_retention_period_days)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

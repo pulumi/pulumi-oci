@@ -19,7 +19,6 @@ namespace Pulumi.Oci.AiDocument
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.AiDocument
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProcessorJobResult> InvokeAsync(GetProcessorJobArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProcessorJobResult>("oci:AiDocument/getProcessorJob:getProcessorJob", args ?? new GetProcessorJobArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.AiDocument
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.AiDocument
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProcessorJobResult> Invoke(GetProcessorJobInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProcessorJobResult>("oci:AiDocument/getProcessorJob:getProcessorJob", args ?? new GetProcessorJobInvokeArgs(), options.WithDefaults());

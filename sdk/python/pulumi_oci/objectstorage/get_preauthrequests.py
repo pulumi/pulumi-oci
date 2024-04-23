@@ -112,7 +112,6 @@ def get_preauthrequests(bucket: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_preauthrequests(bucket: Optional[str] = None,
         namespace=preauthenticated_request_namespace,
         object_name_prefix=preauthenticated_request_object_name_prefix)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -158,7 +156,6 @@ def get_preauthrequests_output(bucket: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +164,6 @@ def get_preauthrequests_output(bucket: Optional[pulumi.Input[str]] = None,
         namespace=preauthenticated_request_namespace,
         object_name_prefix=preauthenticated_request_object_name_prefix)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

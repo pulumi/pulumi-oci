@@ -182,14 +182,12 @@ def get_tsig_key(tsig_key_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=test_tsig_key_oci_dns_tsig_key["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str tsig_key_id: The OCID of the target TSIG key.
@@ -224,14 +222,12 @@ def get_tsig_key_output(tsig_key_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=test_tsig_key_oci_dns_tsig_key["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str tsig_key_id: The OCID of the target TSIG key.

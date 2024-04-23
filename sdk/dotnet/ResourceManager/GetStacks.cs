@@ -21,7 +21,6 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetStacksResult> InvokeAsync(GetStacksArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStacksResult>("oci:ResourceManager/getStacks:getStacks", args ?? new GetStacksArgs(), options.WithDefaults());
@@ -55,7 +53,6 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetStacksResult> Invoke(GetStacksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStacksResult>("oci:ResourceManager/getStacks:getStacks", args ?? new GetStacksInvokeArgs(), options.WithDefaults());

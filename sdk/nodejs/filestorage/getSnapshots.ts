@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,7 +31,6 @@ import * as utilities from "../utilities";
  *     state: snapshotState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSnapshots(args?: GetSnapshotsArgs, opts?: pulumi.InvokeOptions): Promise<GetSnapshotsResult> {
     args = args || {};
@@ -115,7 +113,6 @@ export interface GetSnapshotsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -128,7 +125,6 @@ export interface GetSnapshotsResult {
  *     state: snapshotState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSnapshotsOutput(args?: GetSnapshotsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSnapshotsResult> {
     return pulumi.output(args).apply((a: any) => getSnapshots(a, opts))

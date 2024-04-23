@@ -141,7 +141,6 @@ def get_boot_volume_backups(boot_volume_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,7 +151,6 @@ def get_boot_volume_backups(boot_volume_id: Optional[str] = None,
         source_boot_volume_backup_id=test_boot_volume_backup["id"],
         state=boot_volume_backup_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str boot_volume_id: The OCID of the boot volume.
@@ -197,7 +195,6 @@ def get_boot_volume_backups_output(boot_volume_id: Optional[pulumi.Input[Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,7 +205,6 @@ def get_boot_volume_backups_output(boot_volume_id: Optional[pulumi.Input[Optiona
         source_boot_volume_backup_id=test_boot_volume_backup["id"],
         state=boot_volume_backup_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str boot_volume_id: The OCID of the boot volume.

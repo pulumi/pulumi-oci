@@ -261,14 +261,12 @@ def get_external_exadata_storage_connector(external_exadata_storage_connector_id
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_exadata_storage_connector = oci.DatabaseManagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_exadata_storage_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector to the Exadata storage server.
@@ -310,14 +308,12 @@ def get_external_exadata_storage_connector_output(external_exadata_storage_conne
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_exadata_storage_connector = oci.DatabaseManagement.get_external_exadata_storage_connector(external_exadata_storage_connector_id=test_external_exadata_storage_connector_oci_database_management_external_exadata_storage_connector["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_exadata_storage_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector to the Exadata storage server.

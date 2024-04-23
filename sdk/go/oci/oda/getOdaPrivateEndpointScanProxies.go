@@ -22,7 +22,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetOdaPrivateEndpointScanProxies(ctx *pulumi.Context, args *GetOdaPrivateEndpointScanProxiesArgs, opts ...pulumi.InvokeOption) (*GetOdaPrivateEndpointScanProxiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOdaPrivateEndpointScanProxiesResult

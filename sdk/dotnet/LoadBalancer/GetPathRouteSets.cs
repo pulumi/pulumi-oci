@@ -18,7 +18,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPathRouteSetsResult> InvokeAsync(GetPathRouteSetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPathRouteSetsResult>("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args ?? new GetPathRouteSetsArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPathRouteSetsResult> Invoke(GetPathRouteSetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPathRouteSetsResult>("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", args ?? new GetPathRouteSetsInvokeArgs(), options.WithDefaults());

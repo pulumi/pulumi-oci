@@ -375,14 +375,12 @@ def get_model(model_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model = oci.AiVision.get_model(model_id=test_model_oci_ai_vision_model["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str model_id: unique Model identifier
@@ -433,14 +431,12 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model = oci.AiVision.get_model(model_id=test_model_oci_ai_vision_model["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str model_id: unique Model identifier

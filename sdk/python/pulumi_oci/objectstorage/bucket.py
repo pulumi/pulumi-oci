@@ -630,7 +630,6 @@ class Bucket(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -661,7 +660,6 @@ class Bucket(pulumi.CustomResource):
             )],
             versioning=bucket_versioning)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -705,7 +703,6 @@ class Bucket(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -736,7 +733,6 @@ class Bucket(pulumi.CustomResource):
             )],
             versioning=bucket_versioning)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

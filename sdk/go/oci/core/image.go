@@ -41,7 +41,6 @@ import (
 // ## Example Usage
 //
 // ### Create image from instance in tenancy
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -74,10 +73,8 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ### Create image from exported image via direct access to object store
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -112,10 +109,8 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ### Create image from exported image at publicly accessible uri
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -148,7 +143,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //

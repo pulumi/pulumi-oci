@@ -414,7 +414,6 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -425,7 +424,6 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
             scope=action_create_zone_from_zone_file_scope,
             view_id=test_view["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -461,7 +459,6 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -472,7 +469,6 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
             scope=action_create_zone_from_zone_file_scope,
             view_id=test_view["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

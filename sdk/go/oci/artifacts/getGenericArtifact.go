@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupGenericArtifact(ctx *pulumi.Context, args *LookupGenericArtifactArgs, opts ...pulumi.InvokeOption) (*LookupGenericArtifactResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupGenericArtifactResult

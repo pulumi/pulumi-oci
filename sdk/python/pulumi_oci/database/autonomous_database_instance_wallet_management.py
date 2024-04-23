@@ -186,7 +186,6 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -196,7 +195,6 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
             grace_period=autonomous_database_instance_wallet_management_grace_period,
             should_rotate=autonomous_database_instance_wallet_management_should_rotate)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -225,7 +223,6 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -235,7 +232,6 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
             grace_period=autonomous_database_instance_wallet_management_grace_period,
             should_rotate=autonomous_database_instance_wallet_management_should_rotate)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

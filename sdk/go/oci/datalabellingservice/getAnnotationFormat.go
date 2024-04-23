@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAnnotationFormat(ctx *pulumi.Context, args *GetAnnotationFormatArgs, opts ...pulumi.InvokeOption) (*GetAnnotationFormatResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAnnotationFormatResult

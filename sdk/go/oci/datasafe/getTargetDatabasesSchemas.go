@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetTargetDatabasesSchemas(ctx *pulumi.Context, args *GetTargetDatabasesSchemasArgs, opts ...pulumi.InvokeOption) (*GetTargetDatabasesSchemasResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTargetDatabasesSchemasResult

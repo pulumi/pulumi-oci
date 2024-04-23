@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAddonOptionsResult> InvokeAsync(GetAddonOptionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAddonOptionsResult>("oci:ContainerEngine/getAddonOptions:getAddonOptions", args ?? new GetAddonOptionsArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAddonOptionsResult> Invoke(GetAddonOptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddonOptionsResult>("oci:ContainerEngine/getAddonOptions:getAddonOptions", args ?? new GetAddonOptionsInvokeArgs(), options.WithDefaults());

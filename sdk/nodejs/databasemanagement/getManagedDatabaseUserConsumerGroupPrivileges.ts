@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserConsumerGroupPrivileges(args: GetManagedDatabaseUserConsumerGroupPrivilegesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserConsumerGroupPrivilegesResult> {
 
@@ -90,7 +88,6 @@ export interface GetManagedDatabaseUserConsumerGroupPrivilegesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetManagedDatabaseUserConsumerGroupPrivilegesResult {
  *     opcNamedCredentialId: managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserConsumerGroupPrivilegesOutput(args: GetManagedDatabaseUserConsumerGroupPrivilegesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserConsumerGroupPrivilegesResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseUserConsumerGroupPrivileges(a, opts))

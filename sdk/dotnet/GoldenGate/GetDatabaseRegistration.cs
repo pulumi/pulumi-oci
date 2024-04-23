@@ -20,7 +20,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseRegistrationResult> InvokeAsync(GetDatabaseRegistrationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseRegistrationResult>("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args ?? new GetDatabaseRegistrationArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseRegistrationResult> Invoke(GetDatabaseRegistrationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseRegistrationResult>("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", args ?? new GetDatabaseRegistrationInvokeArgs(), options.WithDefaults());

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     state: cccUpgradeScheduleState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAtCustomerCccUpgradeSchedules(args?: GetAtCustomerCccUpgradeSchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetAtCustomerCccUpgradeSchedulesResult> {
     args = args || {};
@@ -118,7 +116,6 @@ export interface GetAtCustomerCccUpgradeSchedulesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -133,7 +130,6 @@ export interface GetAtCustomerCccUpgradeSchedulesResult {
  *     state: cccUpgradeScheduleState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAtCustomerCccUpgradeSchedulesOutput(args?: GetAtCustomerCccUpgradeSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAtCustomerCccUpgradeSchedulesResult> {
     return pulumi.output(args).apply((a: any) => getAtCustomerCccUpgradeSchedules(a, opts))

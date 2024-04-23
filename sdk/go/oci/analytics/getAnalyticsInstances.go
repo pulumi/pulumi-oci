@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAnalyticsInstances(ctx *pulumi.Context, args *GetAnalyticsInstancesArgs, opts ...pulumi.InvokeOption) (*GetAnalyticsInstancesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAnalyticsInstancesResult

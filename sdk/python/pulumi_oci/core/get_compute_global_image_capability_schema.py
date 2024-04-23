@@ -134,14 +134,12 @@ def get_compute_global_image_capability_schema(compute_global_image_capability_s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compute_global_image_capability_schema = oci.Core.get_compute_global_image_capability_schema(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema_oci_core_compute_global_image_capability_schema["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
@@ -172,14 +170,12 @@ def get_compute_global_image_capability_schema_output(compute_global_image_capab
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compute_global_image_capability_schema = oci.Core.get_compute_global_image_capability_schema(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema_oci_core_compute_global_image_capability_schema["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema

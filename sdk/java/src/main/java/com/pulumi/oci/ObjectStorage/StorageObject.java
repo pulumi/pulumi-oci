@@ -87,14 +87,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:ObjectStorage/storageObject:StorageObject")
 public class StorageObject extends com.pulumi.resources.CustomResource {
     /**
-     * The name of the bucket for the source object.
+     * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
     @Export(name="bucket", refs={String.class}, tree="[0]")
     private Output<String> bucket;
 
     /**
-     * @return The name of the bucket for the source object.
+     * @return The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      * 
      */
     public Output<String> bucket() {
@@ -247,28 +247,28 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.metadata);
     }
     /**
-     * The top-level namespace of the source object.
+     * The Object Storage namespace used for the request.
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
-     * @return The top-level namespace of the source object.
+     * @return The Object Storage namespace used for the request.
      * 
      */
     public Output<String> namespace() {
         return this.namespace;
     }
     /**
-     * The name of the source object.
+     * (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      * 
      */
     @Export(name="object", refs={String.class}, tree="[0]")
     private Output<String> object;
 
     /**
-     * @return The name of the source object.
+     * @return (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
      * 
      */
     public Output<String> object() {

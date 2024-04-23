@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     stackId: testStackOciResourcemanagerStack.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getStack(args: GetStackArgs, opts?: pulumi.InvokeOptions): Promise<GetStackResult> {
 
@@ -89,7 +87,6 @@ export interface GetStackResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,7 +95,6 @@ export interface GetStackResult {
  *     stackId: testStackOciResourcemanagerStack.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getStackOutput(args: GetStackOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStackResult> {
     return pulumi.output(args).apply((a: any) => getStack(a, opts))

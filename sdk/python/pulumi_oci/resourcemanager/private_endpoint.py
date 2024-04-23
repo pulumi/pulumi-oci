@@ -430,7 +430,6 @@ class PrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -451,7 +450,6 @@ class PrivateEndpoint(pulumi.CustomResource):
             is_used_with_configuration_source_provider=private_endpoint_is_used_with_configuration_source_provider,
             nsg_id_lists=private_endpoint_nsg_id_list)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -491,7 +489,6 @@ class PrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -512,7 +509,6 @@ class PrivateEndpoint(pulumi.CustomResource):
             is_used_with_configuration_source_provider=private_endpoint_is_used_with_configuration_source_provider,
             nsg_id_lists=private_endpoint_nsg_id_list)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

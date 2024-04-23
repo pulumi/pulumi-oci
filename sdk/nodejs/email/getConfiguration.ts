@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConfiguration(args: GetConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigurationResult> {
 
@@ -68,7 +66,6 @@ export interface GetConfigurationResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,7 +74,6 @@ export interface GetConfigurationResult {
  *     compartmentId: compartmentId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConfigurationOutput(args: GetConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getConfiguration(a, opts))

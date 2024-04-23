@@ -28,7 +28,6 @@ import * as utilities from "../utilities";
  *
  * ### VCN Local with Internet
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -49,11 +48,9 @@ import * as utilities from "../utilities";
  *     displayName: dhcpOptionsDisplayName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ### Custom DNS Server
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ import * as utilities from "../utilities";
  *     },
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

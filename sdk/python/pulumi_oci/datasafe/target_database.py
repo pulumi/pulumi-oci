@@ -482,7 +482,6 @@ class TargetDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -548,7 +547,6 @@ class TargetDatabase(pulumi.CustomResource):
                 trust_store_content=target_database_tls_config_trust_store_content,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -584,7 +582,6 @@ class TargetDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -650,7 +647,6 @@ class TargetDatabase(pulumi.CustomResource):
                 trust_store_content=target_database_tls_config_trust_store_content,
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

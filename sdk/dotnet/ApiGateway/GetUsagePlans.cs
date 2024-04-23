@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUsagePlansResult> InvokeAsync(GetUsagePlansArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsagePlansResult>("oci:ApiGateway/getUsagePlans:getUsagePlans", args ?? new GetUsagePlansArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.ApiGateway
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUsagePlansResult> Invoke(GetUsagePlansInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsagePlansResult>("oci:ApiGateway/getUsagePlans:getUsagePlans", args ?? new GetUsagePlansInvokeArgs(), options.WithDefaults());

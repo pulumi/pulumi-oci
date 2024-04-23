@@ -315,14 +315,12 @@ def get_replica(replica_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_replica = oci.Mysql.get_replica(replica_id=test_replica_oci_mysql_replica["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str replica_id: The Replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -368,14 +366,12 @@ def get_replica_output(replica_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_replica = oci.Mysql.get_replica(replica_id=test_replica_oci_mysql_replica["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str replica_id: The Replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

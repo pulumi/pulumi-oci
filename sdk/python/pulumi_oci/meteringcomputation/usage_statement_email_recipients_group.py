@@ -195,7 +195,6 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -210,7 +209,6 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
             )],
             subscription_id=test_subscription["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -243,7 +241,6 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -258,7 +255,6 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
             )],
             subscription_id=test_subscription["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

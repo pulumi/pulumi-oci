@@ -335,7 +335,6 @@ class UsageCarbonEmission(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -354,7 +353,6 @@ class UsageCarbonEmission(pulumi.CustomResource):
             is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
             usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -392,7 +390,6 @@ class UsageCarbonEmission(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -411,7 +408,6 @@ class UsageCarbonEmission(pulumi.CustomResource):
             is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
             usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

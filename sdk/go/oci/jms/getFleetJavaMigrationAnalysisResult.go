@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetFleetJavaMigrationAnalysisResult(ctx *pulumi.Context, args *GetFleetJavaMigrationAnalysisResultArgs, opts ...pulumi.InvokeOption) (*GetFleetJavaMigrationAnalysisResultResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFleetJavaMigrationAnalysisResultResult

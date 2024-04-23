@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetManagementAgentInstallKeys(ctx *pulumi.Context, args *GetManagementAgentInstallKeysArgs, opts ...pulumi.InvokeOption) (*GetManagementAgentInstallKeysResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementAgentInstallKeysResult

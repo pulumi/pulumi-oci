@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: myUserDbCredentialResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyUserDbCredential(args: GetDomainsMyUserDbCredentialArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyUserDbCredentialResult> {
 
@@ -172,7 +170,6 @@ export interface GetDomainsMyUserDbCredentialResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -184,7 +181,6 @@ export interface GetDomainsMyUserDbCredentialResult {
  *     resourceTypeSchemaVersion: myUserDbCredentialResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyUserDbCredentialOutput(args: GetDomainsMyUserDbCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyUserDbCredentialResult> {
     return pulumi.output(args).apply((a: any) => getDomainsMyUserDbCredential(a, opts))

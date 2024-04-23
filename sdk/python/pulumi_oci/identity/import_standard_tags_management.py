@@ -133,7 +133,6 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -142,7 +141,6 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
             compartment_id=compartment_id,
             standard_tag_namespace_name=test_tag_namespace["name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -175,7 +173,6 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -184,7 +181,6 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
             compartment_id=compartment_id,
             standard_tag_namespace_name=test_tag_namespace["name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

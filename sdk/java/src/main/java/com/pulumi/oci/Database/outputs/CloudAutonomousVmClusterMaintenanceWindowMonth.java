@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CloudAutonomousVmClusterMaintenanceWindowMonth {
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return Name of the month of the year.
      * 
      */
     private @Nullable String name;
 
     private CloudAutonomousVmClusterMaintenanceWindowMonth() {}
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return Name of the month of the year.
      * 
      */
     public Optional<String> name() {

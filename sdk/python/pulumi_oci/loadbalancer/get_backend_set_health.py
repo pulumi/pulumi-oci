@@ -136,7 +136,6 @@ def get_backend_set_health(backend_set_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -144,7 +143,6 @@ def get_backend_set_health(backend_set_name: Optional[str] = None,
     test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=test_backend_set["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backend_set_name: The name of the backend set to retrieve the health status for.  Example: `example_backend_set`
@@ -178,7 +176,6 @@ def get_backend_set_health_output(backend_set_name: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +183,6 @@ def get_backend_set_health_output(backend_set_name: Optional[pulumi.Input[str]] 
     test_backend_set_health = oci.LoadBalancer.get_backend_set_health(backend_set_name=test_backend_set["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backend_set_name: The name of the backend set to retrieve the health status for.  Example: `example_backend_set`

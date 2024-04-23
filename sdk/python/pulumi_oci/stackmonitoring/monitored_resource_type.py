@@ -451,7 +451,6 @@ class MonitoredResourceType(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -482,7 +481,6 @@ class MonitoredResourceType(pulumi.CustomResource):
             resource_category=monitored_resource_type_resource_category,
             source_type=monitored_resource_type_source_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -522,7 +520,6 @@ class MonitoredResourceType(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -553,7 +550,6 @@ class MonitoredResourceType(pulumi.CustomResource):
             resource_category=monitored_resource_type_resource_category,
             source_type=monitored_resource_type_source_type)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

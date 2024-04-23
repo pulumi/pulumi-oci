@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     emWarehouseId: testEmWarehouseOciEmWarehouseEmWarehouse.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEmWarehouse(args: GetEmWarehouseArgs, opts?: pulumi.InvokeOptions): Promise<GetEmWarehouseResult> {
 
@@ -117,7 +115,6 @@ export interface GetEmWarehouseResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -126,7 +123,6 @@ export interface GetEmWarehouseResult {
  *     emWarehouseId: testEmWarehouseOciEmWarehouseEmWarehouse.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEmWarehouseOutput(args: GetEmWarehouseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmWarehouseResult> {
     return pulumi.output(args).apply((a: any) => getEmWarehouse(a, opts))

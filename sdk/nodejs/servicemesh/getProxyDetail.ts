@@ -11,14 +11,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testProxyDetail = oci.ServiceMesh.getProxyDetail({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProxyDetail(opts?: pulumi.InvokeOptions): Promise<GetProxyDetailResult> {
 
@@ -47,14 +45,12 @@ export interface GetProxyDetailResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testProxyDetail = oci.ServiceMesh.getProxyDetail({});
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProxyDetailOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetProxyDetailResult> {
     return pulumi.output(getProxyDetail(opts))

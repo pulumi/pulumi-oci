@@ -13,9 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CrossConnectMacsecPropertiesPrimaryKey {
     /**
-     * @return (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-     * 
-     * NOTE: Only the latest secret version will be used.
+     * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
      * 
      */
     private String connectivityAssociationKeySecretId;
@@ -25,9 +23,7 @@ public final class CrossConnectMacsecPropertiesPrimaryKey {
      */
     private @Nullable String connectivityAssociationKeySecretVersion;
     /**
-     * @return (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-     * 
-     * NOTE: Only the latest secret version will be used.
+     * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
      * 
      */
     private String connectivityAssociationNameSecretId;
@@ -39,9 +35,7 @@ public final class CrossConnectMacsecPropertiesPrimaryKey {
 
     private CrossConnectMacsecPropertiesPrimaryKey() {}
     /**
-     * @return (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
-     * 
-     * NOTE: Only the latest secret version will be used.
+     * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity Association Key (CAK) of this MACsec key.
      * 
      */
     public String connectivityAssociationKeySecretId() {
@@ -55,9 +49,7 @@ public final class CrossConnectMacsecPropertiesPrimaryKey {
         return Optional.ofNullable(this.connectivityAssociationKeySecretVersion);
     }
     /**
-     * @return (Updatable) Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
-     * 
-     * NOTE: Only the latest secret version will be used.
+     * @return Secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) containing the Connectivity association Key Name (CKN) of this MACsec key.
      * 
      */
     public String connectivityAssociationNameSecretId() {

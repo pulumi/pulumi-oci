@@ -86,14 +86,12 @@ def get_ssl_cipher_suites(filters: Optional[Sequence[pulumi.InputType['GetSslCip
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=test_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
@@ -122,14 +120,12 @@ def get_ssl_cipher_suites_output(filters: Optional[pulumi.Input[Optional[Sequenc
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=test_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.

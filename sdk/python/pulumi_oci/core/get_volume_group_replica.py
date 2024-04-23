@@ -195,14 +195,12 @@ def get_volume_group_replica(volume_group_replica_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=test_volume_group_replica_oci_core_volume_group_replica["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str volume_group_replica_id: The OCID of the volume replica group.
@@ -238,14 +236,12 @@ def get_volume_group_replica_output(volume_group_replica_id: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_volume_group_replica = oci.Core.get_volume_group_replica(volume_group_replica_id=test_volume_group_replica_oci_core_volume_group_replica["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str volume_group_replica_id: The OCID of the volume replica group.

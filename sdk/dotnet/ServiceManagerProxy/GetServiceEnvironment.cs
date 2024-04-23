@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetServiceEnvironmentResult> InvokeAsync(GetServiceEnvironmentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceEnvironmentResult>("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", args ?? new GetServiceEnvironmentArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetServiceEnvironmentResult> Invoke(GetServiceEnvironmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceEnvironmentResult>("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", args ?? new GetServiceEnvironmentInvokeArgs(), options.WithDefaults());

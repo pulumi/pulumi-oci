@@ -99,14 +99,12 @@ def get_operations_insights_warehouse_resource_usage_summary(operations_insights
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
@@ -135,14 +133,12 @@ def get_operations_insights_warehouse_resource_usage_summary_output(operations_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier

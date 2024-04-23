@@ -297,7 +297,6 @@ class BdsInstanceApiKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -309,7 +308,6 @@ class BdsInstanceApiKey(pulumi.CustomResource):
             user_id=test_user["id"],
             default_region=bds_instance_api_key_default_region)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -344,7 +342,6 @@ class BdsInstanceApiKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -356,7 +353,6 @@ class BdsInstanceApiKey(pulumi.CustomResource):
             user_id=test_user["id"],
             default_region=bds_instance_api_key_default_region)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

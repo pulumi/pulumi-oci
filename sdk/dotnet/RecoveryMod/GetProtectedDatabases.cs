@@ -19,7 +19,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProtectedDatabasesResult> InvokeAsync(GetProtectedDatabasesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectedDatabasesResult> Invoke(GetProtectedDatabasesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesInvokeArgs(), options.WithDefaults());

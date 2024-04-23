@@ -11,14 +11,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsWarehouseRotateWarehouseWallet = new oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("test_operations_insights_warehouse_rotate_warehouse_wallet", {operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id});
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

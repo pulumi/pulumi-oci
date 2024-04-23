@@ -171,14 +171,12 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[str] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=test_filesystem_snapshot_policy_oci_file_storage_filesystem_snapshot_policy["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.
@@ -212,14 +210,12 @@ def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=test_filesystem_snapshot_policy_oci_file_storage_filesystem_snapshot_policy["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy.

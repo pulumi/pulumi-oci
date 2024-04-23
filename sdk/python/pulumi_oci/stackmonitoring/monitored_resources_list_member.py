@@ -172,7 +172,6 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -182,7 +181,6 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
             destination_resource_id=test_destination_resource["id"],
             limit_level=monitored_resources_list_member_limit_level)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -215,7 +213,6 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -225,7 +222,6 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
             destination_resource_id=test_destination_resource["id"],
             limit_level=monitored_resources_list_member_limit_level)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

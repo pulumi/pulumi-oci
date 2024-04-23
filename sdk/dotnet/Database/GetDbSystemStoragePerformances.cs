@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbSystemStoragePerformancesResult> InvokeAsync(GetDbSystemStoragePerformancesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbSystemStoragePerformancesResult> Invoke(GetDbSystemStoragePerformancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesInvokeArgs(), options.WithDefaults());

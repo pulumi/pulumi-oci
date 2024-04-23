@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetFusionEnvironmentTimeAvailableForRefreshs(ctx *pulumi.Context, args *GetFusionEnvironmentTimeAvailableForRefreshsArgs, opts ...pulumi.InvokeOption) (*GetFusionEnvironmentTimeAvailableForRefreshsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFusionEnvironmentTimeAvailableForRefreshsResult

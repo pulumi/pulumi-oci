@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     name: systemMediaWorkflowName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSystemMediaWorkflow(args?: GetSystemMediaWorkflowArgs, opts?: pulumi.InvokeOptions): Promise<GetSystemMediaWorkflowResult> {
     args = args || {};
@@ -74,7 +72,6 @@ export interface GetSystemMediaWorkflowResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -84,7 +81,6 @@ export interface GetSystemMediaWorkflowResult {
  *     name: systemMediaWorkflowName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSystemMediaWorkflowOutput(args?: GetSystemMediaWorkflowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSystemMediaWorkflowResult> {
     return pulumi.output(args).apply((a: any) => getSystemMediaWorkflow(a, opts))

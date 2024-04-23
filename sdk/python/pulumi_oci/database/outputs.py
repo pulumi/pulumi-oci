@@ -3678,17 +3678,15 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
                  skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
-        :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
-        :param Sequence['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param Sequence[int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
-        :param bool is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
-        :param bool is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
-        :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
-        :param Sequence['CloudAutonomousVmClusterMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
-        :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-               
-               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['CloudAutonomousVmClusterMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: (Updatable) The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -3719,7 +3717,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     @pulumi.getter(name="customActionTimeoutInMins")
     def custom_action_timeout_in_mins(self) -> Optional[int]:
         """
-        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
@@ -3727,7 +3725,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     @pulumi.getter(name="daysOfWeeks")
     def days_of_weeks(self) -> Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek']]:
         """
-        (Updatable) Days during the week when maintenance should be performed.
+        Days during the week when maintenance should be performed.
         """
         return pulumi.get(self, "days_of_weeks")
 
@@ -3735,7 +3733,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[Sequence[int]]:
         """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
         * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
@@ -3744,7 +3742,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
     def is_custom_action_timeout_enabled(self) -> Optional[bool]:
         """
-        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
@@ -3752,7 +3750,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     @pulumi.getter(name="isMonthlyPatchingEnabled")
     def is_monthly_patching_enabled(self) -> Optional[bool]:
         """
-        (Updatable) If true, enables the monthly patching option.
+        If true, enables the monthly patching option.
         """
         return pulumi.get(self, "is_monthly_patching_enabled")
 
@@ -3760,7 +3758,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     @pulumi.getter(name="leadTimeInWeeks")
     def lead_time_in_weeks(self) -> Optional[int]:
         """
-        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         """
         return pulumi.get(self, "lead_time_in_weeks")
 
@@ -3768,7 +3766,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     @pulumi.getter
     def months(self) -> Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowMonth']]:
         """
-        (Updatable) Months during the year when maintenance should be performed.
+        Months during the year when maintenance should be performed.
         """
         return pulumi.get(self, "months")
 
@@ -3776,9 +3774,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[str]:
         """
-        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
-
-        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         """
         return pulumi.get(self, "patching_mode")
 
@@ -3809,7 +3805,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None):
         """
-        :param str name: (Updatable) Name of the month of the year.
+        :param str name: Name of the month of the year.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -3818,7 +3814,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Name of the month of the year.
+        Name of the month of the year.
         """
         return pulumi.get(self, "name")
 
@@ -4002,7 +3998,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek(dict):
     def __init__(__self__, *,
                  name: str):
         """
-        :param str name: (Updatable) Name of the month of the year.
+        :param str name: Name of the month of the year.
         """
         pulumi.set(__self__, "name", name)
 
@@ -4010,7 +4006,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Name of the month of the year.
+        Name of the month of the year.
         """
         return pulumi.get(self, "name")
 
@@ -4020,7 +4016,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsMonth(dict):
     def __init__(__self__, *,
                  name: str):
         """
-        :param str name: (Updatable) Name of the month of the year.
+        :param str name: Name of the month of the year.
         """
         pulumi.set(__self__, "name", name)
 
@@ -4028,7 +4024,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetailsMonth(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Name of the month of the year.
+        Name of the month of the year.
         """
         return pulumi.get(self, "name")
 
@@ -4038,7 +4034,7 @@ class CloudAutonomousVmClusterMaintenanceWindowMonth(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None):
         """
-        :param str name: (Updatable) Name of the month of the year.
+        :param str name: Name of the month of the year.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -4047,7 +4043,7 @@ class CloudAutonomousVmClusterMaintenanceWindowMonth(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Name of the month of the year.
+        Name of the month of the year.
         """
         return pulumi.get(self, "name")
 
@@ -4076,27 +4072,17 @@ class CloudDatabaseManagementCredentialdetails(dict):
     def __init__(__self__, *,
                  password_secret_id: str,
                  user_name: str):
-        """
-        :param str password_secret_id: Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param str user_name: Database username
-        """
         pulumi.set(__self__, "password_secret_id", password_secret_id)
         pulumi.set(__self__, "user_name", user_name)
 
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> str:
-        """
-        Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> str:
-        """
-        Database username
-        """
         return pulumi.get(self, "user_name")
 
 
@@ -4359,7 +4345,7 @@ class CloudVmClusterDataCollectionOptions(dict):
         """
         :param bool is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
         :param bool is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
-        :param bool is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        :param bool is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         if is_diagnostics_events_enabled is not None:
             pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
@@ -4388,7 +4374,7 @@ class CloudVmClusterDataCollectionOptions(dict):
     @pulumi.getter(name="isIncidentLogsEnabled")
     def is_incident_logs_enabled(self) -> Optional[bool]:
         """
-        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
         """
         return pulumi.get(self, "is_incident_logs_enabled")
 

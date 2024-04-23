@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetPodShapes(ctx *pulumi.Context, args *GetPodShapesArgs, opts ...pulumi.InvokeOption) (*GetPodShapesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPodShapesResult

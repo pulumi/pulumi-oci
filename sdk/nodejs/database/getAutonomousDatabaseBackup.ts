@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     autonomousDatabaseBackupId: testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseBackup(args: GetAutonomousDatabaseBackupArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseBackupResult> {
 
@@ -144,7 +142,6 @@ export interface GetAutonomousDatabaseBackupResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -153,7 +150,6 @@ export interface GetAutonomousDatabaseBackupResult {
  *     autonomousDatabaseBackupId: testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousDatabaseBackupOutput(args: GetAutonomousDatabaseBackupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseBackupResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDatabaseBackup(a, opts))

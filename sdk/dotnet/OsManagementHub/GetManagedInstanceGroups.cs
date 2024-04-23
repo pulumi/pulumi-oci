@@ -20,7 +20,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedInstanceGroupsResult> InvokeAsync(GetManagedInstanceGroupsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceGroupsResult>("oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups", args ?? new GetManagedInstanceGroupsArgs(), options.WithDefaults());
@@ -57,7 +55,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -80,7 +77,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedInstanceGroupsResult> Invoke(GetManagedInstanceGroupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupsResult>("oci:OsManagementHub/getManagedInstanceGroups:getManagedInstanceGroups", args ?? new GetManagedInstanceGroupsInvokeArgs(), options.WithDefaults());

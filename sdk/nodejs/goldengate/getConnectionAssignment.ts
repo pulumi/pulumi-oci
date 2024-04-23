@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     connectionAssignmentId: testConnectionAssignmentOciGoldenGateConnectionAssignment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConnectionAssignment(args: GetConnectionAssignmentArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionAssignmentResult> {
 
@@ -85,7 +83,6 @@ export interface GetConnectionAssignmentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetConnectionAssignmentResult {
  *     connectionAssignmentId: testConnectionAssignmentOciGoldenGateConnectionAssignment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConnectionAssignmentOutput(args: GetConnectionAssignmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionAssignmentResult> {
     return pulumi.output(args).apply((a: any) => getConnectionAssignment(a, opts))

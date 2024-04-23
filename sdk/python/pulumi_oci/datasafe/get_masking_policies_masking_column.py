@@ -253,7 +253,6 @@ def get_masking_policies_masking_column(masking_column_key: Optional[str] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -261,7 +260,6 @@ def get_masking_policies_masking_column(masking_column_key: Optional[str] = None
     test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
         masking_policy_id=test_masking_policy["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str masking_column_key: The unique key that identifies the masking column. It's numeric and unique within a masking policy.
@@ -305,7 +303,6 @@ def get_masking_policies_masking_column_output(masking_column_key: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -313,7 +310,6 @@ def get_masking_policies_masking_column_output(masking_column_key: Optional[pulu
     test_masking_policies_masking_column = oci.DataSafe.get_masking_policies_masking_column(masking_column_key=masking_policies_masking_column_masking_column_key,
         masking_policy_id=test_masking_policy["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str masking_column_key: The unique key that identifies the masking column. It's numeric and unique within a masking policy.

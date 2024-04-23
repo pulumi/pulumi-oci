@@ -182,14 +182,12 @@ def get_autonomous_patch(autonomous_patch_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=test_autonomous_patch_oci_database_autonomous_patch["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_patch_id: The autonomous patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -224,14 +222,12 @@ def get_autonomous_patch_output(autonomous_patch_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=test_autonomous_patch_oci_database_autonomous_patch["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_patch_id: The autonomous patch [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

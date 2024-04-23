@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetReplicationPoliciesResult> InvokeAsync(GetReplicationPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetReplicationPoliciesResult>("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args ?? new GetReplicationPoliciesArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetReplicationPoliciesResult> Invoke(GetReplicationPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetReplicationPoliciesResult>("oci:ObjectStorage/getReplicationPolicies:getReplicationPolicies", args ?? new GetReplicationPoliciesInvokeArgs(), options.WithDefaults());

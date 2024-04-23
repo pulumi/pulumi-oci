@@ -529,7 +529,6 @@ class JobRun(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -567,7 +566,6 @@ class JobRun(pulumi.CustomResource):
                 log_id=test_log["id"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -607,7 +605,6 @@ class JobRun(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -645,7 +642,6 @@ class JobRun(pulumi.CustomResource):
                 log_id=test_log["id"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

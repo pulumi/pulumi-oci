@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksRecommendations(args: GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> {
 
@@ -99,7 +97,6 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -112,7 +109,6 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult {
  *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksRecommendations(a, opts))

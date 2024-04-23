@@ -19,7 +19,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMigrationsResult> InvokeAsync(GetMigrationsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationsResult>("oci:CloudMigrations/getMigrations:getMigrations", args ?? new GetMigrationsArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:CloudMigrations/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());

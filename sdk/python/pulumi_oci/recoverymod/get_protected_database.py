@@ -315,14 +315,12 @@ def get_protected_database(protected_database_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_protected_database = oci.RecoveryMod.get_protected_database(protected_database_id=test_protected_database_oci_recovery_protected_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str protected_database_id: The protected database OCID.
@@ -368,14 +366,12 @@ def get_protected_database_output(protected_database_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_protected_database = oci.RecoveryMod.get_protected_database(protected_database_id=test_protected_database_oci_recovery_protected_database["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str protected_database_id: The protected database OCID.

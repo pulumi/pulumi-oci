@@ -266,14 +266,12 @@ def get_sensitive_data_model(sensitive_data_model_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sensitive_data_model = oci.DataSafe.get_sensitive_data_model(sensitive_data_model_id=test_sensitive_data_model_oci_data_safe_sensitive_data_model["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sensitive_data_model_id: The OCID of the sensitive data model.
@@ -315,14 +313,12 @@ def get_sensitive_data_model_output(sensitive_data_model_id: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sensitive_data_model = oci.DataSafe.get_sensitive_data_model(sensitive_data_model_id=test_sensitive_data_model_oci_data_safe_sensitive_data_model["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sensitive_data_model_id: The OCID of the sensitive data model.

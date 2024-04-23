@@ -525,7 +525,6 @@ class MetricExtension(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -577,7 +576,6 @@ class MetricExtension(pulumi.CustomResource):
             resource_type=metric_extension_resource_type,
             description=metric_extension_description)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -616,7 +614,6 @@ class MetricExtension(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -668,7 +665,6 @@ class MetricExtension(pulumi.CustomResource):
             resource_type=metric_extension_resource_type,
             description=metric_extension_description)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

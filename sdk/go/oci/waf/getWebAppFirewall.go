@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetWebAppFirewall(ctx *pulumi.Context, args *GetWebAppFirewallArgs, opts ...pulumi.InvokeOption) (*GetWebAppFirewallResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetWebAppFirewallResult

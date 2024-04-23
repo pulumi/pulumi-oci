@@ -18,7 +18,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMetricExtensionResult> InvokeAsync(GetMetricExtensionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMetricExtensionResult>("oci:StackMonitoring/getMetricExtension:getMetricExtension", args ?? new GetMetricExtensionArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMetricExtensionResult> Invoke(GetMetricExtensionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMetricExtensionResult>("oci:StackMonitoring/getMetricExtension:getMetricExtension", args ?? new GetMetricExtensionInvokeArgs(), options.WithDefaults());

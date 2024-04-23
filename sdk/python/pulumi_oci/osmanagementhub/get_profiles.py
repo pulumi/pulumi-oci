@@ -188,7 +188,6 @@ def get_profiles(arch_type: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -203,7 +202,6 @@ def get_profiles(arch_type: Optional[str] = None,
         state=profile_state,
         vendor_name=profile_vendor_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.
@@ -265,7 +263,6 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -280,7 +277,6 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
         state=profile_state,
         vendor_name=profile_vendor_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str arch_type: A filter to return only profiles that match the given archType.

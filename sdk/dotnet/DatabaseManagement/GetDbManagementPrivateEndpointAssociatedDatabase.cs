@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbManagementPrivateEndpointAssociatedDatabaseResult> InvokeAsync(GetDbManagementPrivateEndpointAssociatedDatabaseArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbManagementPrivateEndpointAssociatedDatabaseResult>("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", args ?? new GetDbManagementPrivateEndpointAssociatedDatabaseArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbManagementPrivateEndpointAssociatedDatabaseResult> Invoke(GetDbManagementPrivateEndpointAssociatedDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbManagementPrivateEndpointAssociatedDatabaseResult>("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", args ?? new GetDbManagementPrivateEndpointAssociatedDatabaseInvokeArgs(), options.WithDefaults());

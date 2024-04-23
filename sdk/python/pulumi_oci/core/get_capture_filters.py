@@ -128,7 +128,6 @@ def get_capture_filters(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_capture_filters(compartment_id: Optional[str] = None,
         filter_type=capture_filter_filter_type,
         state=capture_filter_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -179,7 +177,6 @@ def get_capture_filters_output(compartment_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_capture_filters_output(compartment_id: Optional[pulumi.Input[str]] = Non
         filter_type=capture_filter_filter_type,
         state=capture_filter_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

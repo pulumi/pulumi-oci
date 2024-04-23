@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsCustomerSecretKeysResult> InvokeAsync(GetDomainsCustomerSecretKeysArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsCustomerSecretKeysResult>("oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys", args ?? new GetDomainsCustomerSecretKeysArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsCustomerSecretKeysResult> Invoke(GetDomainsCustomerSecretKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsCustomerSecretKeysResult>("oci:Identity/getDomainsCustomerSecretKeys:getDomainsCustomerSecretKeys", args ?? new GetDomainsCustomerSecretKeysInvokeArgs(), options.WithDefaults());

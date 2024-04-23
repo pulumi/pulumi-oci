@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLibraryMaskingFormatResult> InvokeAsync(GetLibraryMaskingFormatArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLibraryMaskingFormatResult>("oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat", args ?? new GetLibraryMaskingFormatArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLibraryMaskingFormatResult> Invoke(GetLibraryMaskingFormatInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLibraryMaskingFormatResult>("oci:DataSafe/getLibraryMaskingFormat:getLibraryMaskingFormat", args ?? new GetLibraryMaskingFormatInvokeArgs(), options.WithDefaults());

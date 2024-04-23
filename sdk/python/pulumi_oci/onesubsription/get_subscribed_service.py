@@ -1396,7 +1396,6 @@ def get_subscribed_service(fields: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -1404,7 +1403,6 @@ def get_subscribed_service(fields: Optional[Sequence[str]] = None,
     test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=test_subscribed_service_oci_onesubscription_subscribed_service["id"],
         fields=subscribed_service_fields)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter used to control what fields to return should be a query string parameter called "fields" of type array, and usecollectionFormat
@@ -1543,7 +1541,6 @@ def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequenc
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -1551,7 +1548,6 @@ def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequenc
     test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=test_subscribed_service_oci_onesubscription_subscribed_service["id"],
         fields=subscribed_service_fields)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] fields: Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter used to control what fields to return should be a query string parameter called "fields" of type array, and usecollectionFormat

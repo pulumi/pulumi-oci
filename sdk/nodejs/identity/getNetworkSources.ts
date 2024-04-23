@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: networkSourceState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkSources(args: GetNetworkSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSourcesResult> {
 
@@ -93,7 +91,6 @@ export interface GetNetworkSourcesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,7 +101,6 @@ export interface GetNetworkSourcesResult {
  *     state: networkSourceState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkSourcesOutput(args: GetNetworkSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSourcesResult> {
     return pulumi.output(args).apply((a: any) => getNetworkSources(a, opts))

@@ -219,7 +219,6 @@ class TableReplica(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -231,7 +230,6 @@ class TableReplica(pulumi.CustomResource):
             max_read_units=table_replica_max_read_units,
             max_write_units=table_replica_max_write_units)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -266,7 +264,6 @@ class TableReplica(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -278,7 +275,6 @@ class TableReplica(pulumi.CustomResource):
             max_read_units=table_replica_max_read_units,
             max_write_units=table_replica_max_write_units)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

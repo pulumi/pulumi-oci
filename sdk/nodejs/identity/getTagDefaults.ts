@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     tagDefinitionId: testTagDefinition.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTagDefaults(args?: GetTagDefaultsArgs, opts?: pulumi.InvokeOptions): Promise<GetTagDefaultsResult> {
     args = args || {};
@@ -96,7 +94,6 @@ export interface GetTagDefaultsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetTagDefaultsResult {
  *     tagDefinitionId: testTagDefinition.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTagDefaultsOutput(args?: GetTagDefaultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagDefaultsResult> {
     return pulumi.output(args).apply((a: any) => getTagDefaults(a, opts))

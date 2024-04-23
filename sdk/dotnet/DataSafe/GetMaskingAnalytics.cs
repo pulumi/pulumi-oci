@@ -21,7 +21,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMaskingAnalyticsResult> InvokeAsync(GetMaskingAnalyticsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMaskingAnalyticsResult>("oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics", args ?? new GetMaskingAnalyticsArgs(), options.WithDefaults());
@@ -56,7 +54,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMaskingAnalyticsResult> Invoke(GetMaskingAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMaskingAnalyticsResult>("oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics", args ?? new GetMaskingAnalyticsInvokeArgs(), options.WithDefaults());

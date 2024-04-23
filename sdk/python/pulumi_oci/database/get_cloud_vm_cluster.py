@@ -634,14 +634,12 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cloud_vm_cluster = oci.Database.get_cloud_vm_cluster(cloud_vm_cluster_id=test_cloud_vm_cluster_oci_database_cloud_vm_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_vm_cluster_id: The cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -714,14 +712,12 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cloud_vm_cluster = oci.Database.get_cloud_vm_cluster(cloud_vm_cluster_id=test_cloud_vm_cluster_oci_database_cloud_vm_cluster["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_vm_cluster_id: The cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

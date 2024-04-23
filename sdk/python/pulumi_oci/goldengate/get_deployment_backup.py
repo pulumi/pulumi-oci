@@ -290,14 +290,12 @@ def get_deployment_backup(deployment_backup_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deployment_backup = oci.GoldenGate.get_deployment_backup(deployment_backup_id=test_deployment_backup_oci_golden_gate_deployment_backup["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_backup_id: A unique DeploymentBackup identifier.
@@ -341,14 +339,12 @@ def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deployment_backup = oci.GoldenGate.get_deployment_backup(deployment_backup_id=test_deployment_backup_oci_golden_gate_deployment_backup["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_backup_id: A unique DeploymentBackup identifier.

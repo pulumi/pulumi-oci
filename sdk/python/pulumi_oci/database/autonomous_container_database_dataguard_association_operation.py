@@ -136,7 +136,6 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -146,7 +145,6 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
             autonomous_container_database_id=dataguard_associations["autonomousContainerDatabaseDataguardAssociations"][0]["autonomous_container_database_id"],
             autonomous_container_database_dataguard_association_id=dataguard_associations["autonomousContainerDatabaseDataguardAssociations"][0]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -171,7 +169,6 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -181,7 +178,6 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
             autonomous_container_database_id=dataguard_associations["autonomousContainerDatabaseDataguardAssociations"][0]["autonomous_container_database_id"],
             autonomous_container_database_dataguard_association_id=dataguard_associations["autonomousContainerDatabaseDataguardAssociations"][0]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

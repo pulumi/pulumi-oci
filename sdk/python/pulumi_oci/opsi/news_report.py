@@ -528,7 +528,6 @@ class NewsReport(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -559,7 +558,6 @@ class NewsReport(pulumi.CustomResource):
             },
             status=news_report_status)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -601,7 +599,6 @@ class NewsReport(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -632,7 +629,6 @@ class NewsReport(pulumi.CustomResource):
             },
             status=news_report_status)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

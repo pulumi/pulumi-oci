@@ -16,7 +16,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualCircuitBandwidthShapes(args: GetVirtualCircuitBandwidthShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualCircuitBandwidthShapesResult> {
 
@@ -72,7 +70,6 @@ export interface GetVirtualCircuitBandwidthShapesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -81,7 +78,6 @@ export interface GetVirtualCircuitBandwidthShapesResult {
  *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualCircuitBandwidthShapesOutput(args: GetVirtualCircuitBandwidthShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitBandwidthShapesResult> {
     return pulumi.output(args).apply((a: any) => getVirtualCircuitBandwidthShapes(a, opts))

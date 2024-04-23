@@ -294,7 +294,6 @@ class InvokeFunction(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -306,7 +305,6 @@ class InvokeFunction(pulumi.CustomResource):
             fn_invoke_type=invoke_function_fn_invoke_type,
             base64_encode_content=False)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -336,7 +334,6 @@ class InvokeFunction(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -348,7 +345,6 @@ class InvokeFunction(pulumi.CustomResource):
             fn_invoke_type=invoke_function_fn_invoke_type,
             base64_encode_content=False)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

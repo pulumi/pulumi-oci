@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     namespace: namespaceRulesSummaryNamespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceRulesSummary(args: GetNamespaceRulesSummaryArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceRulesSummaryResult> {
 
@@ -76,7 +74,6 @@ export interface GetNamespaceRulesSummaryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetNamespaceRulesSummaryResult {
  *     namespace: namespaceRulesSummaryNamespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespaceRulesSummaryOutput(args: GetNamespaceRulesSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceRulesSummaryResult> {
     return pulumi.output(args).apply((a: any) => getNamespaceRulesSummary(a, opts))

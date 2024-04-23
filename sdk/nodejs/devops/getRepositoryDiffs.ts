@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryDiffs(args: GetRepositoryDiffsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryDiffsResult> {
 
@@ -87,7 +85,6 @@ export interface GetRepositoryDiffsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,7 +96,6 @@ export interface GetRepositoryDiffsResult {
  *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryDiffsOutput(args: GetRepositoryDiffsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryDiffsResult> {
     return pulumi.output(args).apply((a: any) => getRepositoryDiffs(a, opts))

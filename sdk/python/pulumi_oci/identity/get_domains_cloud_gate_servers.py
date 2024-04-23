@@ -205,7 +205,6 @@ def get_domains_cloud_gate_servers(attribute_sets: Optional[Sequence[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -219,7 +218,6 @@ def get_domains_cloud_gate_servers(attribute_sets: Optional[Sequence[str]] = Non
         resource_type_schema_version=cloud_gate_server_resource_type_schema_version,
         start_index=cloud_gate_server_start_index)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -284,7 +282,6 @@ def get_domains_cloud_gate_servers_output(attribute_sets: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -298,7 +295,6 @@ def get_domains_cloud_gate_servers_output(attribute_sets: Optional[pulumi.Input[
         resource_type_schema_version=cloud_gate_server_resource_type_schema_version,
         start_index=cloud_gate_server_start_index)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.

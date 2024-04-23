@@ -553,7 +553,6 @@ class UserAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -571,7 +570,6 @@ class UserAssessment(pulumi.CustomResource):
             },
             schedule=user_assessment_schedule)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -612,7 +610,6 @@ class UserAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -630,7 +627,6 @@ class UserAssessment(pulumi.CustomResource):
             },
             schedule=user_assessment_schedule)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

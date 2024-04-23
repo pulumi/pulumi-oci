@@ -129,7 +129,6 @@ def get_volume_groups(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,7 +138,6 @@ def get_volume_groups(availability_domain: Optional[str] = None,
         display_name=volume_group_display_name,
         state=volume_group_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -181,7 +179,6 @@ def get_volume_groups_output(availability_domain: Optional[pulumi.Input[Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -191,7 +188,6 @@ def get_volume_groups_output(availability_domain: Optional[pulumi.Input[Optional
         display_name=volume_group_display_name,
         state=volume_group_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

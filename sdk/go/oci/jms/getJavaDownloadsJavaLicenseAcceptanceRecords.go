@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetJavaDownloadsJavaLicenseAcceptanceRecords(ctx *pulumi.Context, args *GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs, opts ...pulumi.InvokeOption) (*GetJavaDownloadsJavaLicenseAcceptanceRecordsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJavaDownloadsJavaLicenseAcceptanceRecordsResult

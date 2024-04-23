@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataCatalog
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.DataCatalog
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCatalogPrivateEndpointResult> InvokeAsync(GetCatalogPrivateEndpointArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCatalogPrivateEndpointResult>("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args ?? new GetCatalogPrivateEndpointArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.DataCatalog
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.DataCatalog
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCatalogPrivateEndpointResult> Invoke(GetCatalogPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCatalogPrivateEndpointResult>("oci:DataCatalog/getCatalogPrivateEndpoint:getCatalogPrivateEndpoint", args ?? new GetCatalogPrivateEndpointInvokeArgs(), options.WithDefaults());

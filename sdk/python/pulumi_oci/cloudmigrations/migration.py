@@ -332,7 +332,6 @@ class Migration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -349,7 +348,6 @@ class Migration(pulumi.CustomResource):
             is_completed=migration_is_completed,
             replication_schedule_id=test_replication_schedule["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -385,7 +383,6 @@ class Migration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -402,7 +399,6 @@ class Migration(pulumi.CustomResource):
             is_completed=migration_is_completed,
             replication_schedule_id=test_replication_schedule["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseMaintenanceRunHistoriesResult> InvokeAsync(GetDatabaseMaintenanceRunHistoriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseMaintenanceRunHistoriesResult>("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", args ?? new GetDatabaseMaintenanceRunHistoriesArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseMaintenanceRunHistoriesResult> Invoke(GetDatabaseMaintenanceRunHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseMaintenanceRunHistoriesResult>("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", args ?? new GetDatabaseMaintenanceRunHistoriesInvokeArgs(), options.WithDefaults());

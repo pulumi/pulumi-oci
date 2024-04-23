@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseCursorCacheStatements(ctx *pulumi.Context, args *GetManagedDatabaseCursorCacheStatementsArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseCursorCacheStatementsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseCursorCacheStatementsResult

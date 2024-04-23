@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetEnrollmentStatusesResult> InvokeAsync(GetEnrollmentStatusesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEnrollmentStatusesResult>("oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses", args ?? new GetEnrollmentStatusesArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetEnrollmentStatusesResult> Invoke(GetEnrollmentStatusesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEnrollmentStatusesResult>("oci:Optimizer/getEnrollmentStatuses:getEnrollmentStatuses", args ?? new GetEnrollmentStatusesInvokeArgs(), options.WithDefaults());

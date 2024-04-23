@@ -150,7 +150,6 @@ def get_user_assessment_profile_analytics(access_level: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -162,7 +161,6 @@ def get_user_assessment_profile_analytics(access_level: Optional[str] = None,
         profile_name=test_profile["name"],
         target_id=test_target["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -225,7 +223,6 @@ def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -237,7 +234,6 @@ def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.I
         profile_name=test_profile["name"],
         target_id=test_target["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.

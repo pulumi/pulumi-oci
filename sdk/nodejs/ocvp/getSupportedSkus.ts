@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     hostShapeName: testShape.name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSupportedSkus(args: GetSupportedSkusArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedSkusResult> {
 
@@ -75,7 +73,6 @@ export interface GetSupportedSkusResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -85,7 +82,6 @@ export interface GetSupportedSkusResult {
  *     hostShapeName: testShape.name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSupportedSkusOutput(args: GetSupportedSkusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedSkusResult> {
     return pulumi.output(args).apply((a: any) => getSupportedSkus(a, opts))

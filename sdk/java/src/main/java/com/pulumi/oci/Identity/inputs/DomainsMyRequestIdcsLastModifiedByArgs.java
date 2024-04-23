@@ -17,9 +17,10 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
     public static final DomainsMyRequestIdcsLastModifiedByArgs Empty = new DomainsMyRequestIdcsLastModifiedByArgs();
 
     /**
-     * User display name
+     * The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -33,9 +34,10 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
     private @Nullable Output<String> display;
 
     /**
-     * @return User display name
+     * @return The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -50,34 +52,32 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
     }
 
     /**
-     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -85,9 +85,10 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) User URI
+     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -101,9 +102,10 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User URI
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -118,16 +120,14 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
     }
 
     /**
-     * Requestable type. Allowed values are Group and App.
+     * The type of resource, User or App, that modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsCsvAttributeName: Requestable Type
-     * * idcsDefaultValue: Group
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -137,16 +137,14 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
     private @Nullable Output<String> type;
 
     /**
-     * @return Requestable type. Allowed values are Group and App.
+     * @return The type of resource, User or App, that modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsCsvAttributeName: Requestable Type
-     * * idcsDefaultValue: Group
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -157,13 +155,13 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
     }
 
     /**
-     * Value of the tag.
+     * The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -174,13 +172,13 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -220,9 +218,10 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param display User display name
+         * @param display The displayName of the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -240,9 +239,10 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param display User display name
+         * @param display The displayName of the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -259,17 +259,16 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -280,17 +279,16 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -300,9 +298,10 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param ref (Updatable) User URI
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -320,9 +319,10 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param ref (Updatable) User URI
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -339,16 +339,14 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param type Requestable type. Allowed values are Group and App.
+         * @param type The type of resource, User or App, that modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsCsvAttributeName: Requestable Type
-         * * idcsDefaultValue: Group
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -362,16 +360,14 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param type Requestable type. Allowed values are Group and App.
+         * @param type The type of resource, User or App, that modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsCsvAttributeName: Requestable Type
-         * * idcsDefaultValue: Group
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -384,13 +380,13 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -405,13 +401,13 @@ public final class DomainsMyRequestIdcsLastModifiedByArgs extends com.pulumi.res
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string

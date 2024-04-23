@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     tunnelId: testTunnel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTunnelSecurityAssociations(args: GetTunnelSecurityAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetTunnelSecurityAssociationsResult> {
 
@@ -73,7 +71,6 @@ export interface GetTunnelSecurityAssociationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,7 +80,6 @@ export interface GetTunnelSecurityAssociationsResult {
  *     tunnelId: testTunnel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTunnelSecurityAssociationsOutput(args: GetTunnelSecurityAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTunnelSecurityAssociationsResult> {
     return pulumi.output(args).apply((a: any) => getTunnelSecurityAssociations(a, opts))

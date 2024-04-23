@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     subscriptionId: testSubscription.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsageStatementEmailRecipientsGroup(args: GetUsageStatementEmailRecipientsGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetUsageStatementEmailRecipientsGroupResult> {
 
@@ -84,7 +82,6 @@ export interface GetUsageStatementEmailRecipientsGroupResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,7 +92,6 @@ export interface GetUsageStatementEmailRecipientsGroupResult {
  *     subscriptionId: testSubscription.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsageStatementEmailRecipientsGroupOutput(args: GetUsageStatementEmailRecipientsGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsageStatementEmailRecipientsGroupResult> {
     return pulumi.output(args).apply((a: any) => getUsageStatementEmailRecipientsGroup(a, opts))

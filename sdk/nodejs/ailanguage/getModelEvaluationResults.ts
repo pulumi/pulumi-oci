@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     modelId: testModel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getModelEvaluationResults(args: GetModelEvaluationResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelEvaluationResultsResult> {
 
@@ -66,7 +64,6 @@ export interface GetModelEvaluationResultsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetModelEvaluationResultsResult {
  *     modelId: testModel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getModelEvaluationResultsOutput(args: GetModelEvaluationResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelEvaluationResultsResult> {
     return pulumi.output(args).apply((a: any) => getModelEvaluationResults(a, opts))

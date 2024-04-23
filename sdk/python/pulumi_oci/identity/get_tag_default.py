@@ -160,14 +160,12 @@ def get_tag_default(tag_default_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_tag_default = oci.Identity.get_tag_default(tag_default_id=test_tag_default_oci_identity_tag_default["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str tag_default_id: The OCID of the tag default.
@@ -200,14 +198,12 @@ def get_tag_default_output(tag_default_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_tag_default = oci.Identity.get_tag_default(tag_default_id=test_tag_default_oci_identity_tag_default["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str tag_default_id: The OCID of the tag default.

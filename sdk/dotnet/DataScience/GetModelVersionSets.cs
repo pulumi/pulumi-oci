@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetModelVersionSetsResult> InvokeAsync(GetModelVersionSetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelVersionSetsResult>("oci:DataScience/getModelVersionSets:getModelVersionSets", args ?? new GetModelVersionSetsArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetModelVersionSetsResult> Invoke(GetModelVersionSetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelVersionSetsResult>("oci:DataScience/getModelVersionSets:getModelVersionSets", args ?? new GetModelVersionSetsInvokeArgs(), options.WithDefaults());

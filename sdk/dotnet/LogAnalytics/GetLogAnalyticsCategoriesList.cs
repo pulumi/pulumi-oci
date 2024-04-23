@@ -19,7 +19,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogAnalyticsCategoriesListResult> InvokeAsync(GetLogAnalyticsCategoriesListArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogAnalyticsCategoriesListResult> Invoke(GetLogAnalyticsCategoriesListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsCategoriesListResult>("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", args ?? new GetLogAnalyticsCategoriesListInvokeArgs(), options.WithDefaults());

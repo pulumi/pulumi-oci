@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     drProtectionGroupId: testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrProtectionGroup(args: GetDrProtectionGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetDrProtectionGroupResult> {
 
@@ -121,7 +119,6 @@ export interface GetDrProtectionGroupResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -130,7 +127,6 @@ export interface GetDrProtectionGroupResult {
  *     drProtectionGroupId: testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrProtectionGroupOutput(args: GetDrProtectionGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrProtectionGroupResult> {
     return pulumi.output(args).apply((a: any) => getDrProtectionGroup(a, opts))

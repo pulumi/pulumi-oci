@@ -351,7 +351,6 @@ class BuildPipeline(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -374,7 +373,6 @@ class BuildPipeline(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -410,7 +408,6 @@ class BuildPipeline(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -433,7 +430,6 @@ class BuildPipeline(pulumi.CustomResource):
                 "bar-key": "value",
             })
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

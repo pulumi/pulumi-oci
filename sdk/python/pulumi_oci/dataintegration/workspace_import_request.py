@@ -463,7 +463,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -482,7 +481,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             object_storage_region=workspace_import_request_object_storage_region,
             object_storage_tenancy_id=test_tenancy["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -520,7 +518,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -539,7 +536,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             object_storage_region=workspace_import_request_object_storage_region,
             object_storage_tenancy_id=test_tenancy["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

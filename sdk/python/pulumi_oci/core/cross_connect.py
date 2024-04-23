@@ -259,7 +259,7 @@ class _CrossConnectState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
+        :param pulumi.Input[str] state: The cross-connect's current state.
         :param pulumi.Input[str] time_created: The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
@@ -485,7 +485,7 @@ class _CrossConnectState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Indicates whether or not MACsec is enabled.
+        The cross-connect's current state.
         """
         return pulumi.get(self, "state")
 
@@ -549,7 +549,6 @@ class CrossConnect(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -579,7 +578,6 @@ class CrossConnect(pulumi.CustomResource):
             ),
             near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -639,7 +637,6 @@ class CrossConnect(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -669,7 +666,6 @@ class CrossConnect(pulumi.CustomResource):
             ),
             near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -791,7 +787,7 @@ class CrossConnect(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
+        :param pulumi.Input[str] state: The cross-connect's current state.
         :param pulumi.Input[str] time_created: The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -945,7 +941,7 @@ class CrossConnect(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) Indicates whether or not MACsec is enabled.
+        The cross-connect's current state.
         """
         return pulumi.get(self, "state")
 

@@ -310,7 +310,6 @@ class StreamDistributionChannel(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -332,7 +331,6 @@ class StreamDistributionChannel(pulumi.CustomResource):
                 time_created=stream_distribution_channel_locks_time_created,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -363,7 +361,6 @@ class StreamDistributionChannel(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -385,7 +382,6 @@ class StreamDistributionChannel(pulumi.CustomResource):
                 time_created=stream_distribution_channel_locks_time_created,
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: externalAsmUserOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsmUsers(args: GetExternalAsmUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalAsmUsersResult> {
 
@@ -73,7 +71,6 @@ export interface GetExternalAsmUsersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,7 +80,6 @@ export interface GetExternalAsmUsersResult {
  *     opcNamedCredentialId: externalAsmUserOpcNamedCredentialId,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalAsmUsersOutput(args: GetExternalAsmUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalAsmUsersResult> {
     return pulumi.output(args).apply((a: any) => getExternalAsmUsers(a, opts))

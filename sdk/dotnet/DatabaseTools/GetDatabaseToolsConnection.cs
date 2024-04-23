@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDatabaseToolsConnectionResult> InvokeAsync(GetDatabaseToolsConnectionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseToolsConnectionResult>("oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection", args ?? new GetDatabaseToolsConnectionArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.DatabaseTools
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDatabaseToolsConnectionResult> Invoke(GetDatabaseToolsConnectionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsConnectionResult>("oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection", args ?? new GetDatabaseToolsConnectionInvokeArgs(), options.WithDefaults());

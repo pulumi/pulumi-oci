@@ -279,14 +279,12 @@ def get_dataset(dataset_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dataset = oci.DataLabellingService.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str dataset_id: Unique Dataset OCID
@@ -329,14 +327,12 @@ def get_dataset_output(dataset_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_dataset = oci.DataLabellingService.get_dataset(dataset_id=test_dataset_oci_data_labeling_service_dataset["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str dataset_id: Unique Dataset OCID

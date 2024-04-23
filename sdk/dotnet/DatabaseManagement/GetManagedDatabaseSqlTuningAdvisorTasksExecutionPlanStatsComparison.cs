@@ -21,7 +21,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> InvokeAsync(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs(), options.WithDefaults());
@@ -56,7 +54,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs(), options.WithDefaults());

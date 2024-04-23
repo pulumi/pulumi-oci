@@ -21,7 +21,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> InvokeAsync(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityPolicyReportDatabaseTableAccessEntriesResult>("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntries:getSecurityPolicyReportDatabaseTableAccessEntries", args ?? new GetSecurityPolicyReportDatabaseTableAccessEntriesArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSecurityPolicyReportDatabaseTableAccessEntriesResult> Invoke(GetSecurityPolicyReportDatabaseTableAccessEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityPolicyReportDatabaseTableAccessEntriesResult>("oci:DataSafe/getSecurityPolicyReportDatabaseTableAccessEntries:getSecurityPolicyReportDatabaseTableAccessEntries", args ?? new GetSecurityPolicyReportDatabaseTableAccessEntriesInvokeArgs(), options.WithDefaults());

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -141,7 +140,6 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// });
     /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Create
     /// 

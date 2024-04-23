@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: managementAgentImageState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentImages(args: GetManagementAgentImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentImagesResult> {
 
@@ -90,7 +88,6 @@ export interface GetManagementAgentImagesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetManagementAgentImagesResult {
  *     state: managementAgentImageState,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentImagesOutput(args: GetManagementAgentImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentImagesResult> {
     return pulumi.output(args).apply((a: any) => getManagementAgentImages(a, opts))

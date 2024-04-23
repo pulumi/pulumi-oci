@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSddcsResult> InvokeAsync(GetSddcsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSddcsResult>("oci:Ocvp/getSddcs:getSddcs", args ?? new GetSddcsArgs(), options.WithDefaults());
@@ -53,7 +51,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSddcsResult> Invoke(GetSddcsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSddcsResult>("oci:Ocvp/getSddcs:getSddcs", args ?? new GetSddcsInvokeArgs(), options.WithDefaults());

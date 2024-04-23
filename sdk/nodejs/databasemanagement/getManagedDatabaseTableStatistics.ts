@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseTableStatistics(args: GetManagedDatabaseTableStatisticsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseTableStatisticsResult> {
 
@@ -68,7 +66,6 @@ export interface GetManagedDatabaseTableStatisticsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,7 +74,6 @@ export interface GetManagedDatabaseTableStatisticsResult {
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseTableStatisticsOutput(args: GetManagedDatabaseTableStatisticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseTableStatisticsResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseTableStatistics(a, opts))

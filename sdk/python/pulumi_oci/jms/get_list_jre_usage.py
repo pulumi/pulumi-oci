@@ -131,7 +131,6 @@ def get_list_jre_usage(application_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -143,7 +142,6 @@ def get_list_jre_usage(application_id: Optional[str] = None,
         time_end=list_jre_usage_time_end,
         time_start=list_jre_usage_time_start)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The Fleet-unique identifier of the application.
@@ -189,7 +187,6 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -201,7 +198,6 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[str
         time_end=list_jre_usage_time_end,
         time_start=list_jre_usage_time_start)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The Fleet-unique identifier of the application.

@@ -116,7 +116,6 @@ def get_network_firewall_policies(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_network_firewall_policies(compartment_id: Optional[str] = None,
         id=network_firewall_policy_id,
         state=network_firewall_policy_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -166,7 +164,6 @@ def get_network_firewall_policies_output(compartment_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,7 +173,6 @@ def get_network_firewall_policies_output(compartment_id: Optional[pulumi.Input[s
         id=network_firewall_policy_id,
         state=network_firewall_policy_state)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

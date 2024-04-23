@@ -96,7 +96,6 @@ def get_backends(backendset_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,7 +103,6 @@ def get_backends(backendset_name: Optional[str] = None,
     test_backends = oci.LoadBalancer.get_backends(backendset_name=test_backend_set["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backendset_name: The name of the backend set associated with the backend servers.  Example: `example_backend_set`
@@ -137,7 +135,6 @@ def get_backends_output(backendset_name: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,7 +142,6 @@ def get_backends_output(backendset_name: Optional[pulumi.Input[str]] = None,
     test_backends = oci.LoadBalancer.get_backends(backendset_name=test_backend_set["name"],
         load_balancer_id=test_load_balancer["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backendset_name: The name of the backend set associated with the backend servers.  Example: `example_backend_set`

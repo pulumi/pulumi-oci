@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     reportId: testReport.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getReportContent(args: GetReportContentArgs, opts?: pulumi.InvokeOptions): Promise<GetReportContentResult> {
 
@@ -57,7 +55,6 @@ export interface GetReportContentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -66,7 +63,6 @@ export interface GetReportContentResult {
  *     reportId: testReport.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getReportContentOutput(args: GetReportContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportContentResult> {
     return pulumi.output(args).apply((a: any) => getReportContent(a, opts))

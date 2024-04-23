@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     streamName: softwareSourceModuleStreamName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSoftwareSourceModuleStreamProfile(args: GetSoftwareSourceModuleStreamProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourceModuleStreamProfileResult> {
 
@@ -99,7 +97,6 @@ export interface GetSoftwareSourceModuleStreamProfileResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,7 +108,6 @@ export interface GetSoftwareSourceModuleStreamProfileResult {
  *     streamName: softwareSourceModuleStreamName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSoftwareSourceModuleStreamProfileOutput(args: GetSoftwareSourceModuleStreamProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceModuleStreamProfileResult> {
     return pulumi.output(args).apply((a: any) => getSoftwareSourceModuleStreamProfile(a, opts))

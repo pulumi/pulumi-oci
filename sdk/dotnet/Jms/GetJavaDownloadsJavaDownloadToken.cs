@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetJavaDownloadsJavaDownloadTokenResult> InvokeAsync(GetJavaDownloadsJavaDownloadTokenArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaDownloadsJavaDownloadTokenResult>("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", args ?? new GetJavaDownloadsJavaDownloadTokenArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetJavaDownloadsJavaDownloadTokenResult> Invoke(GetJavaDownloadsJavaDownloadTokenInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetJavaDownloadsJavaDownloadTokenResult>("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", args ?? new GetJavaDownloadsJavaDownloadTokenInvokeArgs(), options.WithDefaults());

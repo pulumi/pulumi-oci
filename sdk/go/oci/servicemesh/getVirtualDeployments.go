@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetVirtualDeployments(ctx *pulumi.Context, args *GetVirtualDeploymentsArgs, opts ...pulumi.InvokeOption) (*GetVirtualDeploymentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualDeploymentsResult

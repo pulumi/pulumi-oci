@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: authenticationFactorSettingResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAuthenticationFactorSetting(args: GetDomainsAuthenticationFactorSettingArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAuthenticationFactorSettingResult> {
 
@@ -242,7 +240,6 @@ export interface GetDomainsAuthenticationFactorSettingResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -256,7 +253,6 @@ export interface GetDomainsAuthenticationFactorSettingResult {
  *     resourceTypeSchemaVersion: authenticationFactorSettingResourceTypeSchemaVersion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAuthenticationFactorSettingOutput(args: GetDomainsAuthenticationFactorSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAuthenticationFactorSettingResult> {
     return pulumi.output(args).apply((a: any) => getDomainsAuthenticationFactorSetting(a, opts))

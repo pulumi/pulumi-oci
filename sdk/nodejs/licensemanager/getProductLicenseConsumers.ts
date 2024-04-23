@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProductLicenseConsumers(args: GetProductLicenseConsumersArgs, opts?: pulumi.InvokeOptions): Promise<GetProductLicenseConsumersResult> {
 
@@ -77,7 +75,6 @@ export interface GetProductLicenseConsumersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -88,7 +85,6 @@ export interface GetProductLicenseConsumersResult {
  *     isCompartmentIdInSubtree: productLicenseConsumerIsCompartmentIdInSubtree,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getProductLicenseConsumersOutput(args: GetProductLicenseConsumersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProductLicenseConsumersResult> {
     return pulumi.output(args).apply((a: any) => getProductLicenseConsumers(a, opts))

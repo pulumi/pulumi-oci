@@ -170,14 +170,12 @@ def get_repository(repository_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_repository = oci.Artifacts.get_repository(repository_id=test_repository_oci_artifacts_repository["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str repository_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
@@ -211,14 +209,12 @@ def get_repository_output(repository_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_repository = oci.Artifacts.get_repository(repository_id=test_repository_oci_artifacts_repository["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str repository_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`

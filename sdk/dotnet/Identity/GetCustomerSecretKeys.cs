@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCustomerSecretKeysResult> InvokeAsync(GetCustomerSecretKeysArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCustomerSecretKeysResult>("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args ?? new GetCustomerSecretKeysArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCustomerSecretKeysResult> Invoke(GetCustomerSecretKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCustomerSecretKeysResult>("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args ?? new GetCustomerSecretKeysInvokeArgs(), options.WithDefaults());

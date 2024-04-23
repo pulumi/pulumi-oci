@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAcceptedAgreementsResult> InvokeAsync(GetAcceptedAgreementsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAcceptedAgreementsResult>("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", args ?? new GetAcceptedAgreementsArgs(), options.WithDefaults());
@@ -54,7 +52,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAcceptedAgreementsResult> Invoke(GetAcceptedAgreementsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAcceptedAgreementsResult>("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", args ?? new GetAcceptedAgreementsInvokeArgs(), options.WithDefaults());

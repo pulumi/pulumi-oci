@@ -402,14 +402,12 @@ class DiscoveryJobsResult(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_discovery_jobs_result = oci.data_safe.DiscoveryJobsResult("test_discovery_jobs_result")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -436,14 +434,12 @@ class DiscoveryJobsResult(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_discovery_jobs_result = oci.data_safe.DiscoveryJobsResult("test_discovery_jobs_result")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

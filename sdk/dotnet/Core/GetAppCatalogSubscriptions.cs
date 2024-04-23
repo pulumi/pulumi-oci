@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAppCatalogSubscriptionsResult> InvokeAsync(GetAppCatalogSubscriptionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppCatalogSubscriptionsResult>("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args ?? new GetAppCatalogSubscriptionsArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAppCatalogSubscriptionsResult> Invoke(GetAppCatalogSubscriptionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAppCatalogSubscriptionsResult>("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args ?? new GetAppCatalogSubscriptionsInvokeArgs(), options.WithDefaults());

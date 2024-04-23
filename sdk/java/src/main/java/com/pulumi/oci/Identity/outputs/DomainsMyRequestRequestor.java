@@ -41,13 +41,14 @@ public final class DomainsMyRequestRequestor {
      */
     private @Nullable String ref;
     /**
-     * @return Value of the tag.
+     * @return User identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: requestor_id
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -90,13 +91,14 @@ public final class DomainsMyRequestRequestor {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return Value of the tag.
+     * @return User identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: requestor_id
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string

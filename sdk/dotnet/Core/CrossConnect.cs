@@ -34,7 +34,6 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -76,7 +75,6 @@ namespace Pulumi.Oci.Core
     /// 
     /// });
     /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
@@ -184,7 +182,7 @@ namespace Pulumi.Oci.Core
         public Output<string> PortSpeedShapeName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates whether or not MACsec is enabled.
+        /// The cross-connect's current state.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -444,7 +442,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? PortSpeedShapeName { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether or not MACsec is enabled.
+        /// The cross-connect's current state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDomainsMySupportAccount(ctx *pulumi.Context, args *LookupDomainsMySupportAccountArgs, opts ...pulumi.InvokeOption) (*LookupDomainsMySupportAccountResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsMySupportAccountResult

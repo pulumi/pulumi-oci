@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     namedCredentialId: testNamedCredentialOciDatabaseManagementNamedCredential.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamedCredential(args: GetNamedCredentialArgs, opts?: pulumi.InvokeOptions): Promise<GetNamedCredentialResult> {
 
@@ -111,7 +109,6 @@ export interface GetNamedCredentialResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -120,7 +117,6 @@ export interface GetNamedCredentialResult {
  *     namedCredentialId: testNamedCredentialOciDatabaseManagementNamedCredential.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamedCredentialOutput(args: GetNamedCredentialOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamedCredentialResult> {
     return pulumi.output(args).apply((a: any) => getNamedCredential(a, opts))

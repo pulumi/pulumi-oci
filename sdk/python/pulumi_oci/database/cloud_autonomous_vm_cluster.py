@@ -1303,7 +1303,6 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1347,7 +1346,6 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             scan_listener_port_tls=cloud_autonomous_vm_cluster_scan_listener_port_tls,
             total_container_databases=cloud_autonomous_vm_cluster_total_container_databases)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1400,7 +1398,6 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1444,7 +1441,6 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             scan_listener_port_tls=cloud_autonomous_vm_cluster_scan_listener_port_tls,
             total_container_databases=cloud_autonomous_vm_cluster_total_container_databases)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

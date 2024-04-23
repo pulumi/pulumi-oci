@@ -464,7 +464,6 @@ class PingMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -486,7 +485,6 @@ class PingMonitor(pulumi.CustomResource):
             timeout_in_seconds=ping_monitor_timeout_in_seconds,
             vantage_point_names=ping_monitor_vantage_point_names)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -529,7 +527,6 @@ class PingMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -551,7 +548,6 @@ class PingMonitor(pulumi.CustomResource):
             timeout_in_seconds=ping_monitor_timeout_in_seconds,
             vantage_point_names=ping_monitor_vantage_point_names)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

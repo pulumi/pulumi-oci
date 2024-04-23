@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetEnterpriseManagerBridgeResult> InvokeAsync(GetEnterpriseManagerBridgeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEnterpriseManagerBridgeResult>("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", args ?? new GetEnterpriseManagerBridgeArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetEnterpriseManagerBridgeResult> Invoke(GetEnterpriseManagerBridgeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEnterpriseManagerBridgeResult>("oci:Opsi/getEnterpriseManagerBridge:getEnterpriseManagerBridge", args ?? new GetEnterpriseManagerBridgeInvokeArgs(), options.WithDefaults());

@@ -71,14 +71,12 @@ def get_configuration(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_configuration = oci.Audit.get_configuration(compartment_id=tenancy_ocid)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: ID of the root compartment (tenancy)
@@ -104,14 +102,12 @@ def get_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_configuration = oci.Audit.get_configuration(compartment_id=tenancy_ocid)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: ID of the root compartment (tenancy)

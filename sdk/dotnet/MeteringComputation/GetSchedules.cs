@@ -19,7 +19,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSchedulesResult> InvokeAsync(GetSchedulesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSchedulesResult>("oci:MeteringComputation/getSchedules:getSchedules", args ?? new GetSchedulesArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSchedulesResult> Invoke(GetSchedulesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSchedulesResult>("oci:MeteringComputation/getSchedules:getSchedules", args ?? new GetSchedulesInvokeArgs(), options.WithDefaults());

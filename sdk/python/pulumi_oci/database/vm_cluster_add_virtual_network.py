@@ -534,7 +534,6 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -545,7 +544,6 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
             )],
             vm_cluster_id=test_vm_cluster["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `Database.VmCluster` list if you see a diff on a subsequent apply
 
@@ -579,7 +577,6 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -590,7 +587,6 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
             )],
             vm_cluster_id=test_vm_cluster["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `Database.VmCluster` list if you see a diff on a subsequent apply
 

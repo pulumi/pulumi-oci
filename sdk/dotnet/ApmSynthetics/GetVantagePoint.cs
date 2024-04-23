@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVantagePointResult> InvokeAsync(GetVantagePointArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVantagePointResult>("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args ?? new GetVantagePointArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.ApmSynthetics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVantagePointResult> Invoke(GetVantagePointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVantagePointResult>("oci:ApmSynthetics/getVantagePoint:getVantagePoint", args ?? new GetVantagePointInvokeArgs(), options.WithDefaults());

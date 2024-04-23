@@ -86,14 +86,12 @@ def get_model_evaluation_results(filters: Optional[Sequence[pulumi.InputType['Ge
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model_evaluation_results = oci.AiLanguage.get_model_evaluation_results(model_id=test_model["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str model_id: unique model OCID.
@@ -122,14 +120,12 @@ def get_model_evaluation_results_output(filters: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model_evaluation_results = oci.AiLanguage.get_model_evaluation_results(model_id=test_model["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str model_id: unique model OCID.

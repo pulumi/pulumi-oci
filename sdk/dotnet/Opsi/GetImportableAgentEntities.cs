@@ -23,7 +23,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetImportableAgentEntitiesResult> InvokeAsync(GetImportableAgentEntitiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetImportableAgentEntitiesResult>("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", args ?? new GetImportableAgentEntitiesArgs(), options.WithDefaults());
@@ -56,7 +54,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetImportableAgentEntitiesResult> Invoke(GetImportableAgentEntitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImportableAgentEntitiesResult>("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", args ?? new GetImportableAgentEntitiesInvokeArgs(), options.WithDefaults());

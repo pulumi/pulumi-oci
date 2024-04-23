@@ -322,14 +322,14 @@ public class CrossConnect extends com.pulumi.resources.CustomResource {
         return this.portSpeedShapeName;
     }
     /**
-     * (Updatable) Indicates whether or not MACsec is enabled.
+     * The cross-connect&#39;s current state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return (Updatable) Indicates whether or not MACsec is enabled.
+     * @return The cross-connect&#39;s current state.
      * 
      */
     public Output<String> state() {

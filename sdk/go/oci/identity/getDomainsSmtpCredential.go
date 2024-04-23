@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDomainsSmtpCredential(ctx *pulumi.Context, args *LookupDomainsSmtpCredentialArgs, opts ...pulumi.InvokeOption) (*LookupDomainsSmtpCredentialResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDomainsSmtpCredentialResult

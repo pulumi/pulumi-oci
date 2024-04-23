@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     purl: remediationRunApplicationDependencyRecommendationPurl,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRemediationRunApplicationDependencyRecommendations(args: GetRemediationRunApplicationDependencyRecommendationsArgs, opts?: pulumi.InvokeOptions): Promise<GetRemediationRunApplicationDependencyRecommendationsResult> {
 
@@ -86,7 +84,6 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetRemediationRunApplicationDependencyRecommendationsResult {
  *     purl: remediationRunApplicationDependencyRecommendationPurl,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRemediationRunApplicationDependencyRecommendationsOutput(args: GetRemediationRunApplicationDependencyRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemediationRunApplicationDependencyRecommendationsResult> {
     return pulumi.output(args).apply((a: any) => getRemediationRunApplicationDependencyRecommendations(a, opts))

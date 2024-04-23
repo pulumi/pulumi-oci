@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     volumeId: testVolume.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVolumeBackups(args: GetVolumeBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeBackupsResult> {
 
@@ -109,7 +107,6 @@ export interface GetVolumeBackupsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -122,7 +119,6 @@ export interface GetVolumeBackupsResult {
  *     volumeId: testVolume.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVolumeBackupsOutput(args: GetVolumeBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeBackupsResult> {
     return pulumi.output(args).apply((a: any) => getVolumeBackups(a, opts))

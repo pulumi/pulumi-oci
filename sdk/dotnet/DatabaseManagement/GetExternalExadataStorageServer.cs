@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExternalExadataStorageServerResult> InvokeAsync(GetExternalExadataStorageServerArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalExadataStorageServerResult>("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", args ?? new GetExternalExadataStorageServerArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExternalExadataStorageServerResult> Invoke(GetExternalExadataStorageServerInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExternalExadataStorageServerResult>("oci:DatabaseManagement/getExternalExadataStorageServer:getExternalExadataStorageServer", args ?? new GetExternalExadataStorageServerInvokeArgs(), options.WithDefaults());

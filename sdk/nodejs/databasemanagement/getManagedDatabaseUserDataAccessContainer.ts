@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     name: managedDatabaseUserDataAccessContainerName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserDataAccessContainer(args: GetManagedDatabaseUserDataAccessContainerArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserDataAccessContainerResult> {
 
@@ -80,7 +78,6 @@ export interface GetManagedDatabaseUserDataAccessContainerResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,7 +88,6 @@ export interface GetManagedDatabaseUserDataAccessContainerResult {
  *     name: managedDatabaseUserDataAccessContainerName,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserDataAccessContainerOutput(args: GetManagedDatabaseUserDataAccessContainerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserDataAccessContainerResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseUserDataAccessContainer(a, opts))

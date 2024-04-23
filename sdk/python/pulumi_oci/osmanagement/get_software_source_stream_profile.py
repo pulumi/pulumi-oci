@@ -147,7 +147,6 @@ def get_software_source_stream_profile(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -158,7 +157,6 @@ def get_software_source_stream_profile(compartment_id: Optional[str] = None,
         profile_name=software_source_module_stream_profile_name,
         stream_name=software_source_module_stream_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
@@ -215,7 +213,6 @@ def get_software_source_stream_profile_output(compartment_id: Optional[pulumi.In
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -226,7 +223,6 @@ def get_software_source_stream_profile_output(compartment_id: Optional[pulumi.In
         profile_name=software_source_module_stream_profile_name,
         stream_name=software_source_module_stream_name)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.

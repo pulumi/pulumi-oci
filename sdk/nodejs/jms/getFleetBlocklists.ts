@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     operation: fleetBlocklistOperation,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetBlocklists(args: GetFleetBlocklistsArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetBlocklistsResult> {
 
@@ -89,7 +87,6 @@ export interface GetFleetBlocklistsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetFleetBlocklistsResult {
  *     operation: fleetBlocklistOperation,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetBlocklistsOutput(args: GetFleetBlocklistsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetBlocklistsResult> {
     return pulumi.output(args).apply((a: any) => getFleetBlocklists(a, opts))

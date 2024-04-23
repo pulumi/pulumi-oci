@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsNetworkPerimeters(ctx *pulumi.Context, args *GetDomainsNetworkPerimetersArgs, opts ...pulumi.InvokeOption) (*GetDomainsNetworkPerimetersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsNetworkPerimetersResult

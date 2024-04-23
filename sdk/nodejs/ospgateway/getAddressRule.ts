@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     ospHomeRegion: addressRuleOspHomeRegion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAddressRule(args: GetAddressRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressRuleResult> {
 
@@ -88,7 +86,6 @@ export interface GetAddressRuleResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -99,7 +96,6 @@ export interface GetAddressRuleResult {
  *     ospHomeRegion: addressRuleOspHomeRegion,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAddressRuleOutput(args: GetAddressRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressRuleResult> {
     return pulumi.output(args).apply((a: any) => getAddressRule(a, opts))

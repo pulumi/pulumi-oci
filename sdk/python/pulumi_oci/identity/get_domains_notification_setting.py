@@ -353,7 +353,6 @@ def get_domains_notification_setting(attribute_sets: Optional[Sequence[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -365,7 +364,6 @@ def get_domains_notification_setting(attribute_sets: Optional[Sequence[str]] = N
         authorization=notification_setting_authorization,
         resource_type_schema_version=notification_setting_resource_type_schema_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -430,7 +428,6 @@ def get_domains_notification_setting_output(attribute_sets: Optional[pulumi.Inpu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -442,7 +439,6 @@ def get_domains_notification_setting_output(attribute_sets: Optional[pulumi.Inpu
         authorization=notification_setting_authorization,
         resource_type_schema_version=notification_setting_resource_type_schema_version)
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.

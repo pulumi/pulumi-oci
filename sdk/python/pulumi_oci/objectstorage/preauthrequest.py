@@ -392,7 +392,6 @@ class Preauthrequest(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -406,7 +405,6 @@ class Preauthrequest(pulumi.CustomResource):
             bucket_listing_action=preauthenticated_request_bucket_listing_action,
             object=preauthenticated_request_object)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -444,7 +442,6 @@ class Preauthrequest(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -458,7 +455,6 @@ class Preauthrequest(pulumi.CustomResource):
             bucket_listing_action=preauthenticated_request_bucket_listing_action,
             object=preauthenticated_request_object)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

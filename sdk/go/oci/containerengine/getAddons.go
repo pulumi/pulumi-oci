@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAddons(ctx *pulumi.Context, args *GetAddonsArgs, opts ...pulumi.InvokeOption) (*GetAddonsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAddonsResult

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNamespaceRulesSummaryResult> InvokeAsync(GetNamespaceRulesSummaryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceRulesSummaryResult>("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", args ?? new GetNamespaceRulesSummaryArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNamespaceRulesSummaryResult> Invoke(GetNamespaceRulesSummaryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceRulesSummaryResult>("oci:LogAnalytics/getNamespaceRulesSummary:getNamespaceRulesSummary", args ?? new GetNamespaceRulesSummaryInvokeArgs(), options.WithDefaults());

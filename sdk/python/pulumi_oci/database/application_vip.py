@@ -314,7 +314,6 @@ class ApplicationVip(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -326,7 +325,6 @@ class ApplicationVip(pulumi.CustomResource):
             db_node_id=test_db_node["id"],
             ip_address=application_vip_ip_address)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -361,7 +359,6 @@ class ApplicationVip(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -373,7 +370,6 @@ class ApplicationVip(pulumi.CustomResource):
             db_node_id=test_db_node["id"],
             ip_address=application_vip_ip_address)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

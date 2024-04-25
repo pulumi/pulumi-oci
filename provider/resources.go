@@ -63,6 +63,7 @@ const (
 	cloudBridgeMod                  = "CloudBridge"                  // Cloud Bridge
 	cloudGuardMod                   = "CloudGuard"                   // Cloud Guard
 	cloudMigrationsMod              = "CloudMigrations"              // Cloud Migrations
+	clusterPlacementGroups          = "ClusterPlacementGroups"       // Cluster Placement Groups
 	computeCloudMod                 = "ComputeCloud"                 // Compute Cloud
 	computeInstanceAgent            = "ComputeInstanceAgent"         // Compute Instance Agent
 	containerEngineMod              = "ContainerEngine"              // Container Engine
@@ -179,6 +180,7 @@ var mappedMods = map[string]string{
 	"cloud_bridge":                   cloudBridgeMod,
 	"cloud_guard":                    cloudGuardMod,
 	"cloud_migrations":               cloudMigrationsMod,
+	"cluster_placement_groups":       clusterPlacementGroups,
 	"compute_cloud":                  computeCloudMod,
 	"computeinstanceagent":           computeInstanceAgent,
 	"container_instances":            containerInstancesMod,

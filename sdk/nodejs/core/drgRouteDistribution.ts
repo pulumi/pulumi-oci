@@ -80,7 +80,7 @@ export class DrgRouteDistribution extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      */
     public readonly distributionType!: pulumi.Output<string>;
     /**
@@ -164,7 +164,7 @@ export interface DrgRouteDistributionState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      */
     distributionType?: pulumi.Input<string>;
     /**
@@ -202,7 +202,7 @@ export interface DrgRouteDistributionArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      */
     distributionType: pulumi.Input<string>;
     /**

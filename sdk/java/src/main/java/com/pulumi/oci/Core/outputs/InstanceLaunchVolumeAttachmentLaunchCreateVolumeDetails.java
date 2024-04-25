@@ -23,7 +23,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails {
      */
     private @Nullable String displayName;
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     private @Nullable String kmsKeyId;
@@ -61,7 +61,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<String> kmsKeyId() {

@@ -118,6 +118,9 @@ namespace Pulumi.Oci.DatabaseMigration
         /// Data Transfer Medium details for the Migration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMigrationDataTransferMediumDetailResult> DataTransferMediumDetails;
+        /// <summary>
+        /// Optional additional properties for dump transfer in source or target host.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetMigrationDataTransferMediumDetailsV2Result> DataTransferMediumDetailsV2s;
         /// <summary>
         /// Optional settings for Data Pump Export and Import jobs

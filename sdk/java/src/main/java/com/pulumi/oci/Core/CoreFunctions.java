@@ -27859,6 +27859,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .clusterPlacementGroupId(testGroup.id())
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
@@ -27905,6 +27906,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .clusterPlacementGroupId(testGroup.id())
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
@@ -27951,6 +27953,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .clusterPlacementGroupId(testGroup.id())
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
@@ -27997,6 +28000,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .clusterPlacementGroupId(testGroup.id())
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
@@ -28043,6 +28047,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .clusterPlacementGroupId(testGroup.id())
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)
@@ -28089,6 +28094,7 @@ public final class CoreFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
      *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .clusterPlacementGroupId(testGroup.id())
      *             .compartmentId(compartmentId)
      *             .displayName(volumeDisplayName)
      *             .state(volumeState)

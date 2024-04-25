@@ -47,14 +47,14 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs e
     }
 
     /**
-     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -182,7 +182,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs e
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailsArgs e
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 

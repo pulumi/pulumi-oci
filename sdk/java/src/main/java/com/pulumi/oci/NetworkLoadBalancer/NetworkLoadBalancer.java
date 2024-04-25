@@ -54,7 +54,9 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .displayName(networkLoadBalancerDisplayName)
  *             .subnetId(testSubnet.id())
- *             .backendSets(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+ *             .backendSets(            
+ *                 %!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference),
+ *                 %!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
  *             .assignedIpv6(networkLoadBalancerAssignedIpv6)
  *             .assignedPrivateIpv4(networkLoadBalancerAssignedPrivateIpv4)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))

@@ -63,14 +63,14 @@ public final class DrgRouteDistributionState extends com.pulumi.resources.Resour
     }
 
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      * 
      */
     @Import(name="distributionType")
     private @Nullable Output<String> distributionType;
 
     /**
-     * @return Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * @return Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      * 
      */
     public Optional<Output<String>> distributionType() {
@@ -238,7 +238,7 @@ public final class DrgRouteDistributionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param distributionType Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+         * @param distributionType Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
          * 
          * @return builder
          * 
@@ -249,7 +249,7 @@ public final class DrgRouteDistributionState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param distributionType Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+         * @param distributionType Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
          * 
          * @return builder
          * 

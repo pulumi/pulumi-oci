@@ -38,6 +38,11 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
      */
     private List<GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica> blockVolumeReplicas;
     /**
+     * @return The OCID of the cluster placement group of the instance.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The OCID of the compartment containing images to search
      * 
      */
@@ -107,6 +112,13 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
      */
     public List<GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica> blockVolumeReplicas() {
         return this.blockVolumeReplicas;
+    }
+    /**
+     * @return The OCID of the cluster placement group of the instance.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The OCID of the compartment containing images to search
@@ -181,6 +193,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
         private String availabilityDomain;
         private String backupPolicyId;
         private List<GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica> blockVolumeReplicas;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -197,6 +210,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupPolicyId = defaults.backupPolicyId;
     	      this.blockVolumeReplicas = defaults.blockVolumeReplicas;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -245,6 +259,14 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
         }
         public Builder blockVolumeReplicas(GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica... blockVolumeReplicas) {
             return blockVolumeReplicas(List.of(blockVolumeReplicas));
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -327,6 +349,7 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreate
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.backupPolicyId = backupPolicyId;
             _resultValue.blockVolumeReplicas = blockVolumeReplicas;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

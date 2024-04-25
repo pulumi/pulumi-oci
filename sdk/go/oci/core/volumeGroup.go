@@ -35,7 +35,8 @@ import (
 //						volumeGroupSourceId,
 //					},
 //				},
-//				BackupPolicyId: pulumi.Any(testVolumeBackupPolicies.VolumeBackupPolicies[0].Id),
+//				BackupPolicyId:          pulumi.Any(testVolumeBackupPolicies.VolumeBackupPolicies[0].Id),
+//				ClusterPlacementGroupId: pulumi.Any(testGroup.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -78,6 +79,8 @@ type VolumeGroup struct {
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId pulumi.StringOutput `pulumi:"backupPolicyId"`
+	// The clusterPlacementGroup Id of the volume group for volume group placement.
+	ClusterPlacementGroupId pulumi.StringOutput `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -154,6 +157,8 @@ type volumeGroupState struct {
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId *string `pulumi:"backupPolicyId"`
+	// The clusterPlacementGroup Id of the volume group for volume group placement.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -192,6 +197,8 @@ type VolumeGroupState struct {
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId pulumi.StringPtrInput
+	// The clusterPlacementGroup Id of the volume group for volume group placement.
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -234,6 +241,8 @@ type volumeGroupArgs struct {
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId *string `pulumi:"backupPolicyId"`
+	// The clusterPlacementGroup Id of the volume group for volume group placement.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -263,6 +272,8 @@ type VolumeGroupArgs struct {
 	//
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 	BackupPolicyId pulumi.StringPtrInput
+	// The clusterPlacementGroup Id of the volume group for volume group placement.
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -381,6 +392,11 @@ func (o VolumeGroupOutput) AvailabilityDomain() pulumi.StringOutput {
 // Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 func (o VolumeGroupOutput) BackupPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.BackupPolicyId }).(pulumi.StringOutput)
+}
+
+// The clusterPlacementGroup Id of the volume group for volume group placement.
+func (o VolumeGroupOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The OCID of the compartment that contains the volume group.

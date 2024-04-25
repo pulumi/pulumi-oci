@@ -38,6 +38,7 @@ import * as utilities from "../utilities";
  *             hpcIslandId: testHpcIsland.id,
  *             networkBlockIds: computeCapacityReservationInstanceReservationConfigsClusterConfigNetworkBlockIds,
  *         },
+ *         clusterPlacementGroupId: testGroup.id,
  *         faultDomain: computeCapacityReservationInstanceReservationConfigsFaultDomain,
  *         instanceShapeConfig: {
  *             memoryInGbs: computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigMemoryInGbs,

@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        /// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         /// </summary>
         [Output("distributionType")]
         public Output<string> DistributionType { get; private set; } = null!;
@@ -173,7 +173,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        /// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         /// </summary>
         [Input("distributionType", required: true)]
         public Input<string> DistributionType { get; set; } = null!;
@@ -233,7 +233,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        /// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         /// </summary>
         [Input("distributionType")]
         public Input<string>? DistributionType { get; set; }

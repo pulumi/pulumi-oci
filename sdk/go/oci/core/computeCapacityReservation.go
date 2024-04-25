@@ -52,7 +52,8 @@ import (
 //							HpcIslandId:     pulumi.Any(testHpcIsland.Id),
 //							NetworkBlockIds: pulumi.Any(computeCapacityReservationInstanceReservationConfigsClusterConfigNetworkBlockIds),
 //						},
-//						FaultDomain: pulumi.Any(computeCapacityReservationInstanceReservationConfigsFaultDomain),
+//						ClusterPlacementGroupId: pulumi.Any(testGroup.Id),
+//						FaultDomain:             pulumi.Any(computeCapacityReservationInstanceReservationConfigsFaultDomain),
 //						InstanceShapeConfig: &core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs{
 //							MemoryInGbs: pulumi.Any(computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigMemoryInGbs),
 //							Ocpus:       pulumi.Any(computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigOcpus),

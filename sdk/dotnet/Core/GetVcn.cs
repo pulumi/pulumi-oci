@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Core
     public sealed class GetVcnArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+        /// Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         /// </summary>
         [Input("vcnId", required: true)]
         public string VcnId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Core
     public sealed class GetVcnInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+        /// Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         /// </summary>
         [Input("vcnId", required: true)]
         public Input<string> VcnId { get; set; } = null!;

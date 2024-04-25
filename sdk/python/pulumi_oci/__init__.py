@@ -59,6 +59,8 @@ if typing.TYPE_CHECKING:
     cloudguard = __cloudguard
     import pulumi_oci.cloudmigrations as __cloudmigrations
     cloudmigrations = __cloudmigrations
+    import pulumi_oci.clusterplacementgroups as __clusterplacementgroups
+    clusterplacementgroups = __clusterplacementgroups
     import pulumi_oci.computecloud as __computecloud
     computecloud = __computecloud
     import pulumi_oci.computeinstanceagent as __computeinstanceagent
@@ -261,6 +263,7 @@ else:
     cloudbridge = _utilities.lazy_import('pulumi_oci.cloudbridge')
     cloudguard = _utilities.lazy_import('pulumi_oci.cloudguard')
     cloudmigrations = _utilities.lazy_import('pulumi_oci.cloudmigrations')
+    clusterplacementgroups = _utilities.lazy_import('pulumi_oci.clusterplacementgroups')
     computecloud = _utilities.lazy_import('pulumi_oci.computecloud')
     computeinstanceagent = _utilities.lazy_import('pulumi_oci.computeinstanceagent')
     config = _utilities.lazy_import('pulumi_oci.config')
@@ -1023,6 +1026,14 @@ _utilities.register(
   "fqn": "pulumi_oci.cloudmigrations",
   "classes": {
    "oci:CloudMigrations/targetAsset:TargetAsset": "TargetAsset"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ClusterPlacementGroups/clusterPlacementGroup",
+  "fqn": "pulumi_oci.clusterplacementgroups",
+  "classes": {
+   "oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup": "ClusterPlacementGroup"
   }
  },
  {

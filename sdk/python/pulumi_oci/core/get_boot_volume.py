@@ -22,7 +22,7 @@ class GetBootVolumeResult:
     """
     A collection of values returned by getBootVolume.
     """
-    def __init__(__self__, auto_tuned_vpus_per_gb=None, autotune_policies=None, availability_domain=None, backup_policy_id=None, boot_volume_id=None, boot_volume_replicas=None, boot_volume_replicas_deletion=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_id=None, is_auto_tune_enabled=None, is_hydrated=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_group_id=None, vpus_per_gb=None):
+    def __init__(__self__, auto_tuned_vpus_per_gb=None, autotune_policies=None, availability_domain=None, backup_policy_id=None, boot_volume_id=None, boot_volume_replicas=None, boot_volume_replicas_deletion=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_id=None, is_auto_tune_enabled=None, is_hydrated=None, kms_key_id=None, size_in_gbs=None, size_in_mbs=None, source_details=None, state=None, system_tags=None, time_created=None, volume_group_id=None, vpus_per_gb=None):
         if auto_tuned_vpus_per_gb and not isinstance(auto_tuned_vpus_per_gb, str):
             raise TypeError("Expected argument 'auto_tuned_vpus_per_gb' to be a str")
         pulumi.set(__self__, "auto_tuned_vpus_per_gb", auto_tuned_vpus_per_gb)
@@ -44,6 +44,9 @@ class GetBootVolumeResult:
         if boot_volume_replicas_deletion and not isinstance(boot_volume_replicas_deletion, bool):
             raise TypeError("Expected argument 'boot_volume_replicas_deletion' to be a bool")
         pulumi.set(__self__, "boot_volume_replicas_deletion", boot_volume_replicas_deletion)
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -145,6 +148,14 @@ class GetBootVolumeResult:
     @pulumi.getter(name="bootVolumeReplicasDeletion")
     def boot_volume_replicas_deletion(self) -> bool:
         return pulumi.get(self, "boot_volume_replicas_deletion")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        The clusterPlacementGroup Id of the volume for volume placement.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -293,6 +304,7 @@ class AwaitableGetBootVolumeResult(GetBootVolumeResult):
             boot_volume_id=self.boot_volume_id,
             boot_volume_replicas=self.boot_volume_replicas,
             boot_volume_replicas_deletion=self.boot_volume_replicas_deletion,
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -344,6 +356,7 @@ def get_boot_volume(boot_volume_id: Optional[str] = None,
         boot_volume_id=pulumi.get(__ret__, 'boot_volume_id'),
         boot_volume_replicas=pulumi.get(__ret__, 'boot_volume_replicas'),
         boot_volume_replicas_deletion=pulumi.get(__ret__, 'boot_volume_replicas_deletion'),
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),

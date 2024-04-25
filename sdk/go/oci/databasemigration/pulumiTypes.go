@@ -2501,12 +2501,16 @@ func (o MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput) Namespa
 }
 
 type MigrationDataTransferMediumDetailsV2 struct {
+	// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	AccessKeyId *string `pulumi:"accessKeyId"`
 	// (Updatable) Name of directory object in database
-	Name                *string                                                  `pulumi:"name"`
+	Name *string `pulumi:"name"`
+	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBucket *MigrationDataTransferMediumDetailsV2ObjectStorageBucket `pulumi:"objectStorageBucket"`
-	Region              *string                                                  `pulumi:"region"`
-	SecretAccessKey     *string                                                  `pulumi:"secretAccessKey"`
+	// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region *string `pulumi:"region"`
+	// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey *string `pulumi:"secretAccessKey"`
 	// (Updatable) Migration type.
 	Type string `pulumi:"type"`
 }
@@ -2523,12 +2527,16 @@ type MigrationDataTransferMediumDetailsV2Input interface {
 }
 
 type MigrationDataTransferMediumDetailsV2Args struct {
+	// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	AccessKeyId pulumi.StringPtrInput `pulumi:"accessKeyId"`
 	// (Updatable) Name of directory object in database
-	Name                pulumi.StringPtrInput                                           `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBucket MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrInput `pulumi:"objectStorageBucket"`
-	Region              pulumi.StringPtrInput                                           `pulumi:"region"`
-	SecretAccessKey     pulumi.StringPtrInput                                           `pulumi:"secretAccessKey"`
+	// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey pulumi.StringPtrInput `pulumi:"secretAccessKey"`
 	// (Updatable) Migration type.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -2610,6 +2618,7 @@ func (o MigrationDataTransferMediumDetailsV2Output) ToMigrationDataTransferMediu
 	}).(MigrationDataTransferMediumDetailsV2PtrOutput)
 }
 
+// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 func (o MigrationDataTransferMediumDetailsV2Output) AccessKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.AccessKeyId }).(pulumi.StringPtrOutput)
 }
@@ -2619,16 +2628,19 @@ func (o MigrationDataTransferMediumDetailsV2Output) Name() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 func (o MigrationDataTransferMediumDetailsV2Output) ObjectStorageBucket() MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *MigrationDataTransferMediumDetailsV2ObjectStorageBucket {
 		return v.ObjectStorageBucket
 	}).(MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput)
 }
 
+// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
 func (o MigrationDataTransferMediumDetailsV2Output) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.Region }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 func (o MigrationDataTransferMediumDetailsV2Output) SecretAccessKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.SecretAccessKey }).(pulumi.StringPtrOutput)
 }
@@ -2662,6 +2674,7 @@ func (o MigrationDataTransferMediumDetailsV2PtrOutput) Elem() MigrationDataTrans
 	}).(MigrationDataTransferMediumDetailsV2Output)
 }
 
+// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 func (o MigrationDataTransferMediumDetailsV2PtrOutput) AccessKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
 		if v == nil {
@@ -2681,6 +2694,7 @@ func (o MigrationDataTransferMediumDetailsV2PtrOutput) Name() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 func (o MigrationDataTransferMediumDetailsV2PtrOutput) ObjectStorageBucket() MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *MigrationDataTransferMediumDetailsV2ObjectStorageBucket {
 		if v == nil {
@@ -2690,6 +2704,7 @@ func (o MigrationDataTransferMediumDetailsV2PtrOutput) ObjectStorageBucket() Mig
 	}).(MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput)
 }
 
+// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
 func (o MigrationDataTransferMediumDetailsV2PtrOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
 		if v == nil {
@@ -2699,6 +2714,7 @@ func (o MigrationDataTransferMediumDetailsV2PtrOutput) Region() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 func (o MigrationDataTransferMediumDetailsV2PtrOutput) SecretAccessKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
 		if v == nil {
@@ -3753,6 +3769,7 @@ func (o MigrationDatapumpSettingsMetadataRemapArrayOutput) Index(i pulumi.IntInp
 }
 
 type MigrationDumpTransferDetails struct {
+	// Optional OCID of the shared storage mount target.
 	SharedStorageMountTargetId *string `pulumi:"sharedStorageMountTargetId"`
 	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Source *MigrationDumpTransferDetailsSource `pulumi:"source"`
@@ -3772,6 +3789,7 @@ type MigrationDumpTransferDetailsInput interface {
 }
 
 type MigrationDumpTransferDetailsArgs struct {
+	// Optional OCID of the shared storage mount target.
 	SharedStorageMountTargetId pulumi.StringPtrInput `pulumi:"sharedStorageMountTargetId"`
 	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Source MigrationDumpTransferDetailsSourcePtrInput `pulumi:"source"`
@@ -3856,6 +3874,7 @@ func (o MigrationDumpTransferDetailsOutput) ToMigrationDumpTransferDetailsPtrOut
 	}).(MigrationDumpTransferDetailsPtrOutput)
 }
 
+// Optional OCID of the shared storage mount target.
 func (o MigrationDumpTransferDetailsOutput) SharedStorageMountTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MigrationDumpTransferDetails) *string { return v.SharedStorageMountTargetId }).(pulumi.StringPtrOutput)
 }
@@ -3894,6 +3913,7 @@ func (o MigrationDumpTransferDetailsPtrOutput) Elem() MigrationDumpTransferDetai
 	}).(MigrationDumpTransferDetailsOutput)
 }
 
+// Optional OCID of the shared storage mount target.
 func (o MigrationDumpTransferDetailsPtrOutput) SharedStorageMountTargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MigrationDumpTransferDetails) *string {
 		if v == nil {
@@ -8410,7 +8430,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails      string `pulumi:"lifecycleDetails"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Database manual connection subtype. This value can only be specified for manual connections.
 	ManualDatabaseSubType string `pulumi:"manualDatabaseSubType"`
 	// An array of Network Security Group OCIDs used to define network access for Connections.
 	NsgIds []string `pulumi:"nsgIds"`
@@ -8469,7 +8490,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails      pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Database manual connection subtype. This value can only be specified for manual connections.
 	ManualDatabaseSubType pulumi.StringInput `pulumi:"manualDatabaseSubType"`
 	// An array of Network Security Group OCIDs used to define network access for Connections.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
@@ -8608,6 +8630,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) LifecycleDetails() pulumi.
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Database manual connection subtype. This value can only be specified for manual connections.
 func (o GetConnectionsConnectionCollectionItemOutput) ManualDatabaseSubType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ManualDatabaseSubType }).(pulumi.StringOutput)
 }
@@ -10346,12 +10369,16 @@ func (o GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput) Inde
 }
 
 type GetMigrationDataTransferMediumDetailsV2 struct {
+	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// Name of directory object in database
-	Name                 string                                                       `pulumi:"name"`
+	Name string `pulumi:"name"`
+	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBuckets []GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket `pulumi:"objectStorageBuckets"`
-	Region               string                                                       `pulumi:"region"`
-	SecretAccessKey      string                                                       `pulumi:"secretAccessKey"`
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region string `pulumi:"region"`
+	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey string `pulumi:"secretAccessKey"`
 	// Migration type.
 	Type string `pulumi:"type"`
 }
@@ -10368,12 +10395,16 @@ type GetMigrationDataTransferMediumDetailsV2Input interface {
 }
 
 type GetMigrationDataTransferMediumDetailsV2Args struct {
+	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
 	// Name of directory object in database
-	Name                 pulumi.StringInput                                                   `pulumi:"name"`
+	Name pulumi.StringInput `pulumi:"name"`
+	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBuckets GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayInput `pulumi:"objectStorageBuckets"`
-	Region               pulumi.StringInput                                                   `pulumi:"region"`
-	SecretAccessKey      pulumi.StringInput                                                   `pulumi:"secretAccessKey"`
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region pulumi.StringInput `pulumi:"region"`
+	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
 	// Migration type.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -10429,6 +10460,7 @@ func (o GetMigrationDataTransferMediumDetailsV2Output) ToGetMigrationDataTransfe
 	return o
 }
 
+// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 func (o GetMigrationDataTransferMediumDetailsV2Output) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -10438,16 +10470,19 @@ func (o GetMigrationDataTransferMediumDetailsV2Output) Name() pulumi.StringOutpu
 	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 func (o GetMigrationDataTransferMediumDetailsV2Output) ObjectStorageBuckets() GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
 	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) []GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket {
 		return v.ObjectStorageBuckets
 	}).(GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput)
 }
 
+// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
 func (o GetMigrationDataTransferMediumDetailsV2Output) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) string { return v.Region }).(pulumi.StringOutput)
 }
 
+// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 func (o GetMigrationDataTransferMediumDetailsV2Output) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
@@ -11194,6 +11229,7 @@ func (o GetMigrationDatapumpSettingMetadataRemapArrayOutput) Index(i pulumi.IntI
 }
 
 type GetMigrationDumpTransferDetail struct {
+	// Optional OCID of the shared storage mount target.
 	SharedStorageMountTargetId string `pulumi:"sharedStorageMountTargetId"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Sources []GetMigrationDumpTransferDetailSource `pulumi:"sources"`
@@ -11213,6 +11249,7 @@ type GetMigrationDumpTransferDetailInput interface {
 }
 
 type GetMigrationDumpTransferDetailArgs struct {
+	// Optional OCID of the shared storage mount target.
 	SharedStorageMountTargetId pulumi.StringInput `pulumi:"sharedStorageMountTargetId"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Sources GetMigrationDumpTransferDetailSourceArrayInput `pulumi:"sources"`
@@ -11271,6 +11308,7 @@ func (o GetMigrationDumpTransferDetailOutput) ToGetMigrationDumpTransferDetailOu
 	return o
 }
 
+// Optional OCID of the shared storage mount target.
 func (o GetMigrationDumpTransferDetailOutput) SharedStorageMountTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationDumpTransferDetail) string { return v.SharedStorageMountTargetId }).(pulumi.StringOutput)
 }
@@ -14341,7 +14379,8 @@ type GetMigrationsMigrationCollectionItem struct {
 	CredentialsSecretId string `pulumi:"credentialsSecretId"`
 	CsvText             string `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
-	DataTransferMediumDetails    []GetMigrationsMigrationCollectionItemDataTransferMediumDetail    `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails []GetMigrationsMigrationCollectionItemDataTransferMediumDetail `pulumi:"dataTransferMediumDetails"`
+	// Optional additional properties for dump transfer in source or target host.
 	DataTransferMediumDetailsV2s []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 `pulumi:"dataTransferMediumDetailsV2s"`
 	// Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings []GetMigrationsMigrationCollectionItemDatapumpSetting `pulumi:"datapumpSettings"`
@@ -14413,7 +14452,8 @@ type GetMigrationsMigrationCollectionItemArgs struct {
 	CredentialsSecretId pulumi.StringInput `pulumi:"credentialsSecretId"`
 	CsvText             pulumi.StringInput `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
-	DataTransferMediumDetails    GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput    `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput `pulumi:"dataTransferMediumDetails"`
+	// Optional additional properties for dump transfer in source or target host.
 	DataTransferMediumDetailsV2s GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayInput `pulumi:"dataTransferMediumDetailsV2s"`
 	// Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings GetMigrationsMigrationCollectionItemDatapumpSettingArrayInput `pulumi:"datapumpSettings"`
@@ -14547,6 +14587,7 @@ func (o GetMigrationsMigrationCollectionItemOutput) DataTransferMediumDetails() 
 	}).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput)
 }
 
+// Optional additional properties for dump transfer in source or target host.
 func (o GetMigrationsMigrationCollectionItemOutput) DataTransferMediumDetailsV2s() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput {
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 {
 		return v.DataTransferMediumDetailsV2s
@@ -15249,12 +15290,16 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorag
 }
 
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 struct {
+	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// Name of directory object in database
-	Name                 string                                                                               `pulumi:"name"`
+	Name string `pulumi:"name"`
+	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBuckets []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket `pulumi:"objectStorageBuckets"`
-	Region               string                                                                               `pulumi:"region"`
-	SecretAccessKey      string                                                                               `pulumi:"secretAccessKey"`
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region string `pulumi:"region"`
+	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey string `pulumi:"secretAccessKey"`
 	// Migration type.
 	Type string `pulumi:"type"`
 }
@@ -15271,12 +15316,16 @@ type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Input interf
 }
 
 type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args struct {
+	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
 	// Name of directory object in database
-	Name                 pulumi.StringInput                                                                           `pulumi:"name"`
+	Name pulumi.StringInput `pulumi:"name"`
+	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 	ObjectStorageBuckets GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayInput `pulumi:"objectStorageBuckets"`
-	Region               pulumi.StringInput                                                                           `pulumi:"region"`
-	SecretAccessKey      pulumi.StringInput                                                                           `pulumi:"secretAccessKey"`
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region pulumi.StringInput `pulumi:"region"`
+	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
 	// Migration type.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -15332,6 +15381,7 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) T
 	return o
 }
 
+// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -15341,16 +15391,19 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) N
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) ObjectStorageBuckets() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket {
 		return v.ObjectStorageBuckets
 	}).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput)
 }
 
+// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) string { return v.Region }).(pulumi.StringOutput)
 }
 
+// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
 func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) string {
 		return v.SecretAccessKey
@@ -16111,6 +16164,7 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOut
 }
 
 type GetMigrationsMigrationCollectionItemDumpTransferDetail struct {
+	// Optional OCID of the shared storage mount target.
 	SharedStorageMountTargetId string `pulumi:"sharedStorageMountTargetId"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Sources []GetMigrationsMigrationCollectionItemDumpTransferDetailSource `pulumi:"sources"`
@@ -16130,6 +16184,7 @@ type GetMigrationsMigrationCollectionItemDumpTransferDetailInput interface {
 }
 
 type GetMigrationsMigrationCollectionItemDumpTransferDetailArgs struct {
+	// Optional OCID of the shared storage mount target.
 	SharedStorageMountTargetId pulumi.StringInput `pulumi:"sharedStorageMountTargetId"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Sources GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayInput `pulumi:"sources"`
@@ -16188,6 +16243,7 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailOutput) ToGetMigra
 	return o
 }
 
+// Optional OCID of the shared storage mount target.
 func (o GetMigrationsMigrationCollectionItemDumpTransferDetailOutput) SharedStorageMountTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDumpTransferDetail) string {
 		return v.SharedStorageMountTargetId

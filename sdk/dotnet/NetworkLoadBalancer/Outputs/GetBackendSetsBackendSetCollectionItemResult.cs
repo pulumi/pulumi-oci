@@ -31,6 +31,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// </summary>
         public readonly bool IsFailOpen;
         /// <summary>
+        /// If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+        /// </summary>
+        public readonly bool IsInstantFailoverEnabled;
+        /// <summary>
         /// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         /// </summary>
         public readonly bool IsPreserveSource;
@@ -59,6 +63,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
 
             bool isFailOpen,
 
+            bool isInstantFailoverEnabled,
+
             bool isPreserveSource,
 
             string name,
@@ -72,6 +78,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
             Id = id;
             IpVersion = ipVersion;
             IsFailOpen = isFailOpen;
+            IsInstantFailoverEnabled = isInstantFailoverEnabled;
             IsPreserveSource = isPreserveSource;
             Name = name;
             NetworkLoadBalancerId = networkLoadBalancerId;

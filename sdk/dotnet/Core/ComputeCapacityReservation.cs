@@ -52,6 +52,7 @@ namespace Pulumi.Oci.Core
     ///                     HpcIslandId = testHpcIsland.Id,
     ///                     NetworkBlockIds = computeCapacityReservationInstanceReservationConfigsClusterConfigNetworkBlockIds,
     ///                 },
+    ///                 ClusterPlacementGroupId = testGroup.Id,
     ///                 FaultDomain = computeCapacityReservationInstanceReservationConfigsFaultDomain,
     ///                 InstanceShapeConfig = new Oci.Core.Inputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     ///                 {

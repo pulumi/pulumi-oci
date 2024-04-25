@@ -46,6 +46,11 @@ public final class GetBootVolumesBootVolume {
     private List<GetBootVolumesBootVolumeBootVolumeReplica> bootVolumeReplicas;
     private Boolean bootVolumeReplicasDeletion;
     /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -167,6 +172,13 @@ public final class GetBootVolumesBootVolume {
     }
     public Boolean bootVolumeReplicasDeletion() {
         return this.bootVolumeReplicasDeletion;
+    }
+    /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -299,6 +311,7 @@ public final class GetBootVolumesBootVolume {
         private String backupPolicyId;
         private List<GetBootVolumesBootVolumeBootVolumeReplica> bootVolumeReplicas;
         private Boolean bootVolumeReplicasDeletion;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -325,6 +338,7 @@ public final class GetBootVolumesBootVolume {
     	      this.backupPolicyId = defaults.backupPolicyId;
     	      this.bootVolumeReplicas = defaults.bootVolumeReplicas;
     	      this.bootVolumeReplicasDeletion = defaults.bootVolumeReplicasDeletion;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -396,6 +410,14 @@ public final class GetBootVolumesBootVolume {
               throw new MissingRequiredPropertyException("GetBootVolumesBootVolume", "bootVolumeReplicasDeletion");
             }
             this.bootVolumeReplicasDeletion = bootVolumeReplicasDeletion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumesBootVolume", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -545,6 +567,7 @@ public final class GetBootVolumesBootVolume {
             _resultValue.backupPolicyId = backupPolicyId;
             _resultValue.bootVolumeReplicas = bootVolumeReplicas;
             _resultValue.bootVolumeReplicasDeletion = bootVolumeReplicasDeletion;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

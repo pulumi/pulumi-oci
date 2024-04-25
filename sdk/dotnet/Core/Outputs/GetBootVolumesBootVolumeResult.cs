@@ -32,6 +32,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetBootVolumesBootVolumeBootVolumeReplicaResult> BootVolumeReplicas;
         public readonly bool BootVolumeReplicasDeletion;
         /// <summary>
+        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -111,6 +115,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool bootVolumeReplicasDeletion,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -151,6 +157,7 @@ namespace Pulumi.Oci.Core.Outputs
             BackupPolicyId = backupPolicyId;
             BootVolumeReplicas = bootVolumeReplicas;
             BootVolumeReplicasDeletion = bootVolumeReplicasDeletion;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

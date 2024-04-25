@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testVolumes = oci.Core.getVolumes({
  *     availabilityDomain: volumeAvailabilityDomain,
+ *     clusterPlacementGroupId: testGroup.id,
  *     compartmentId: compartmentId,
  *     displayName: volumeDisplayName,
  *     state: volumeState,
@@ -32,6 +33,7 @@ export function getVolumes(args?: GetVolumesArgs, opts?: pulumi.InvokeOptions): 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumes:getVolumes", {
         "availabilityDomain": args.availabilityDomain,
+        "clusterPlacementGroupId": args.clusterPlacementGroupId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -48,6 +50,10 @@ export interface GetVolumesArgs {
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
     availabilityDomain?: string;
+    /**
+     * A filter to return only resources that match the given cluster placement group Id exactly.
+     */
+    clusterPlacementGroupId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -75,6 +81,10 @@ export interface GetVolumesResult {
      * The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      */
     readonly availabilityDomain?: string;
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     */
+    readonly clusterPlacementGroupId?: string;
     /**
      * The OCID of the compartment that contains the volume.
      */
@@ -114,6 +124,7 @@ export interface GetVolumesResult {
  *
  * const testVolumes = oci.Core.getVolumes({
  *     availabilityDomain: volumeAvailabilityDomain,
+ *     clusterPlacementGroupId: testGroup.id,
  *     compartmentId: compartmentId,
  *     displayName: volumeDisplayName,
  *     state: volumeState,
@@ -133,6 +144,10 @@ export interface GetVolumesOutputArgs {
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
     availabilityDomain?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources that match the given cluster placement group Id exactly.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

@@ -15,14 +15,14 @@ public final class GetSubnetArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetSubnetArgs Empty = new GetSubnetArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     * @return Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      * 
      */
     public Output<String> subnetId() {
@@ -54,7 +54,7 @@ public final class GetSubnetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         * @param subnetId Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetSubnetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         * @param subnetId Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
          * 
          * @return builder
          * 

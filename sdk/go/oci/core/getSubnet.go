@@ -52,7 +52,7 @@ func LookupSubnet(ctx *pulumi.Context, args *LookupSubnetArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getSubnet.
 type LookupSubnetArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+	// Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -120,7 +120,7 @@ func LookupSubnetOutput(ctx *pulumi.Context, args LookupSubnetOutputArgs, opts .
 
 // A collection of arguments for invoking getSubnet.
 type LookupSubnetOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+	// Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 

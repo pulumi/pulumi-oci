@@ -52,7 +52,7 @@ func LookupVcn(ctx *pulumi.Context, args *LookupVcnArgs, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getVcn.
 type LookupVcnArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	// Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -113,7 +113,7 @@ func LookupVcnOutput(ctx *pulumi.Context, args LookupVcnOutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getVcn.
 type LookupVcnOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	// Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
 }
 

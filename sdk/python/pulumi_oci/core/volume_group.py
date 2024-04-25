@@ -20,6 +20,7 @@ class VolumeGroupArgs:
                  compartment_id: pulumi.Input[str],
                  source_details: pulumi.Input['VolumeGroupSourceDetailsArgs'],
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -33,6 +34,7 @@ class VolumeGroupArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume group.
         :param pulumi.Input['VolumeGroupSourceDetailsArgs'] source_details: Specifies the source for a volume group.
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume group.
+        :param pulumi.Input[str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume group for volume group placement.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -50,6 +52,8 @@ class VolumeGroupArgs:
             pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
         if backup_policy_id is not None:
             pulumi.set(__self__, "backup_policy_id", backup_policy_id)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -115,6 +119,18 @@ class VolumeGroupArgs:
     @backup_policy_id.setter
     def backup_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "backup_policy_id", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The clusterPlacementGroup Id of the volume group for volume group placement.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -203,6 +219,7 @@ class _VolumeGroupState:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -221,6 +238,7 @@ class _VolumeGroupState:
         Input properties used for looking up and filtering VolumeGroup resources.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume group.
+        :param pulumi.Input[str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume group for volume group placement.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -244,6 +262,8 @@ class _VolumeGroupState:
             pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
         if backup_policy_id is not None:
             pulumi.set(__self__, "backup_policy_id", backup_policy_id)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -299,6 +319,18 @@ class _VolumeGroupState:
     @backup_policy_id.setter
     def backup_policy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "backup_policy_id", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The clusterPlacementGroup Id of the volume group for volume group placement.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -473,6 +505,7 @@ class VolumeGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -498,6 +531,7 @@ class VolumeGroup(pulumi.CustomResource):
                 volume_ids=[volume_group_source_id],
             ),
             backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
+            cluster_placement_group_id=test_group["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -524,6 +558,7 @@ class VolumeGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume group.
+        :param pulumi.Input[str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume group for volume group placement.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -556,6 +591,7 @@ class VolumeGroup(pulumi.CustomResource):
                 volume_ids=[volume_group_source_id],
             ),
             backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
+            cluster_placement_group_id=test_group["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -595,6 +631,7 @@ class VolumeGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -617,6 +654,7 @@ class VolumeGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
             __props__.__dict__["backup_policy_id"] = backup_policy_id
+            __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -647,6 +685,7 @@ class VolumeGroup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             backup_policy_id: Optional[pulumi.Input[str]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -670,6 +709,7 @@ class VolumeGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume group.
+        :param pulumi.Input[str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume group for volume group placement.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the volume group.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -692,6 +732,7 @@ class VolumeGroup(pulumi.CustomResource):
 
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["backup_policy_id"] = backup_policy_id
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -726,6 +767,14 @@ class VolumeGroup(pulumi.CustomResource):
         pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
 
         return pulumi.get(self, "backup_policy_id")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[str]:
+        """
+        The clusterPlacementGroup Id of the volume group for volume group placement.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")

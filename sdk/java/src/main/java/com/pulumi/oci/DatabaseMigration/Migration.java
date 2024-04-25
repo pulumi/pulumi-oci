@@ -333,9 +333,17 @@ public class Migration extends com.pulumi.resources.CustomResource {
     public Output<MigrationDataTransferMediumDetails> dataTransferMediumDetails() {
         return this.dataTransferMediumDetails;
     }
+    /**
+     * (Updatable) Optional additional properties for dump transfer in source or target host.
+     * 
+     */
     @Export(name="dataTransferMediumDetailsV2", refs={MigrationDataTransferMediumDetailsV2.class}, tree="[0]")
     private Output<MigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2;
 
+    /**
+     * @return (Updatable) Optional additional properties for dump transfer in source or target host.
+     * 
+     */
     public Output<MigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2() {
         return this.dataTransferMediumDetailsV2;
     }

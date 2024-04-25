@@ -243,6 +243,7 @@ class _VolumeAttachmentState:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  is_read_only: Optional[pulumi.Input[bool]] = None,
                  is_shareable: Optional[pulumi.Input[bool]] = None,
+                 is_volume_created_during_launch: Optional[pulumi.Input[bool]] = None,
                  iscsi_login_state: Optional[pulumi.Input[str]] = None,
                  multipath_devices: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -268,6 +269,7 @@ class _VolumeAttachmentState:
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
         :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+        :param pulumi.Input[bool] is_volume_created_during_launch: Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
         :param pulumi.Input[str] iscsi_login_state: The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]] multipath_devices: A list of secondary multipath devices
         :param pulumi.Input[int] port: The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
@@ -315,6 +317,8 @@ class _VolumeAttachmentState:
             pulumi.set(__self__, "is_read_only", is_read_only)
         if is_shareable is not None:
             pulumi.set(__self__, "is_shareable", is_shareable)
+        if is_volume_created_during_launch is not None:
+            pulumi.set(__self__, "is_volume_created_during_launch", is_volume_created_during_launch)
         if iscsi_login_state is not None:
             pulumi.set(__self__, "iscsi_login_state", iscsi_login_state)
         if multipath_devices is not None:
@@ -524,6 +528,18 @@ class _VolumeAttachmentState:
     @is_shareable.setter
     def is_shareable(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_shareable", value)
+
+    @property
+    @pulumi.getter(name="isVolumeCreatedDuringLaunch")
+    def is_volume_created_during_launch(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+        """
+        return pulumi.get(self, "is_volume_created_during_launch")
+
+    @is_volume_created_during_launch.setter
+    def is_volume_created_during_launch(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_volume_created_during_launch", value)
 
     @property
     @pulumi.getter(name="iscsiLoginState")
@@ -783,6 +799,7 @@ class VolumeAttachment(pulumi.CustomResource):
             __props__.__dict__["ipv4"] = None
             __props__.__dict__["iqn"] = None
             __props__.__dict__["is_multipath"] = None
+            __props__.__dict__["is_volume_created_during_launch"] = None
             __props__.__dict__["iscsi_login_state"] = None
             __props__.__dict__["multipath_devices"] = None
             __props__.__dict__["port"] = None
@@ -814,6 +831,7 @@ class VolumeAttachment(pulumi.CustomResource):
             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
             is_read_only: Optional[pulumi.Input[bool]] = None,
             is_shareable: Optional[pulumi.Input[bool]] = None,
+            is_volume_created_during_launch: Optional[pulumi.Input[bool]] = None,
             iscsi_login_state: Optional[pulumi.Input[str]] = None,
             multipath_devices: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeAttachmentMultipathDeviceArgs']]]]] = None,
             port: Optional[pulumi.Input[int]] = None,
@@ -844,6 +862,7 @@ class VolumeAttachment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param pulumi.Input[bool] is_read_only: Whether the attachment was created in read-only mode.
         :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+        :param pulumi.Input[bool] is_volume_created_during_launch: Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
         :param pulumi.Input[str] iscsi_login_state: The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VolumeAttachmentMultipathDeviceArgs']]]] multipath_devices: A list of secondary multipath devices
         :param pulumi.Input[int] port: The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
@@ -876,6 +895,7 @@ class VolumeAttachment(pulumi.CustomResource):
         __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
         __props__.__dict__["is_read_only"] = is_read_only
         __props__.__dict__["is_shareable"] = is_shareable
+        __props__.__dict__["is_volume_created_during_launch"] = is_volume_created_during_launch
         __props__.__dict__["iscsi_login_state"] = iscsi_login_state
         __props__.__dict__["multipath_devices"] = multipath_devices
         __props__.__dict__["port"] = port
@@ -1015,6 +1035,14 @@ class VolumeAttachment(pulumi.CustomResource):
         Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         """
         return pulumi.get(self, "is_shareable")
+
+    @property
+    @pulumi.getter(name="isVolumeCreatedDuringLaunch")
+    def is_volume_created_during_launch(self) -> pulumi.Output[bool]:
+        """
+        Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+        """
+        return pulumi.get(self, "is_volume_created_during_launch")
 
     @property
     @pulumi.getter(name="iscsiLoginState")

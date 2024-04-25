@@ -82,7 +82,8 @@ type LookupConnectionResult struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails      string `pulumi:"lifecycleDetails"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Database manual connection subtype. This value can only be specified for manual connections.
 	ManualDatabaseSubType string `pulumi:"manualDatabaseSubType"`
 	// An array of Network Security Group OCIDs used to define network access for Connections.
 	NsgIds []string `pulumi:"nsgIds"`
@@ -208,6 +209,7 @@ func (o LookupConnectionResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Database manual connection subtype. This value can only be specified for manual connections.
 func (o LookupConnectionResultOutput) ManualDatabaseSubType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ManualDatabaseSubType }).(pulumi.StringOutput)
 }

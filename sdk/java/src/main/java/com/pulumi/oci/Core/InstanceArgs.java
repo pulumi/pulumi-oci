@@ -98,6 +98,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of the cluster placement group of the instance.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The OCID of the cluster placement group of the instance.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The OCID of the compartment containing images to search
      * 
      */
@@ -647,6 +662,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.availabilityConfig = $.availabilityConfig;
         this.availabilityDomain = $.availabilityDomain;
         this.capacityReservationId = $.capacityReservationId;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.computeClusterId = $.computeClusterId;
         this.createVnicDetails = $.createVnicDetails;
@@ -786,6 +802,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder capacityReservationId(String capacityReservationId) {
             return capacityReservationId(Output.of(capacityReservationId));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The OCID of the cluster placement group of the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The OCID of the cluster placement group of the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**

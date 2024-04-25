@@ -104,9 +104,17 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.dataTransferMediumDetails);
     }
 
+    /**
+     * (Updatable) Optional additional properties for dump transfer in source or target host.
+     * 
+     */
     @Import(name="dataTransferMediumDetailsV2")
     private @Nullable Output<MigrationDataTransferMediumDetailsV2Args> dataTransferMediumDetailsV2;
 
+    /**
+     * @return (Updatable) Optional additional properties for dump transfer in source or target host.
+     * 
+     */
     public Optional<Output<MigrationDataTransferMediumDetailsV2Args>> dataTransferMediumDetailsV2() {
         return Optional.ofNullable(this.dataTransferMediumDetailsV2);
     }
@@ -469,11 +477,23 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
             return dataTransferMediumDetails(Output.of(dataTransferMediumDetails));
         }
 
+        /**
+         * @param dataTransferMediumDetailsV2 (Updatable) Optional additional properties for dump transfer in source or target host.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataTransferMediumDetailsV2(@Nullable Output<MigrationDataTransferMediumDetailsV2Args> dataTransferMediumDetailsV2) {
             $.dataTransferMediumDetailsV2 = dataTransferMediumDetailsV2;
             return this;
         }
 
+        /**
+         * @param dataTransferMediumDetailsV2 (Updatable) Optional additional properties for dump transfer in source or target host.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataTransferMediumDetailsV2(MigrationDataTransferMediumDetailsV2Args dataTransferMediumDetailsV2) {
             return dataTransferMediumDetailsV2(Output.of(dataTransferMediumDetailsV2));
         }

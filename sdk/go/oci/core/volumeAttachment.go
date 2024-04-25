@@ -96,6 +96,8 @@ type VolumeAttachment struct {
 	IsReadOnly pulumi.BoolOutput `pulumi:"isReadOnly"`
 	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
 	IsShareable pulumi.BoolOutput `pulumi:"isShareable"`
+	// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+	IsVolumeCreatedDuringLaunch pulumi.BoolOutput `pulumi:"isVolumeCreatedDuringLaunch"`
 	// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
 	IscsiLoginState pulumi.StringOutput `pulumi:"iscsiLoginState"`
 	// A list of secondary multipath devices
@@ -188,6 +190,8 @@ type volumeAttachmentState struct {
 	IsReadOnly *bool `pulumi:"isReadOnly"`
 	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
 	IsShareable *bool `pulumi:"isShareable"`
+	// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+	IsVolumeCreatedDuringLaunch *bool `pulumi:"isVolumeCreatedDuringLaunch"`
 	// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
 	IscsiLoginState *string `pulumi:"iscsiLoginState"`
 	// A list of secondary multipath devices
@@ -242,6 +246,8 @@ type VolumeAttachmentState struct {
 	IsReadOnly pulumi.BoolPtrInput
 	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
 	IsShareable pulumi.BoolPtrInput
+	// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+	IsVolumeCreatedDuringLaunch pulumi.BoolPtrInput
 	// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
 	IscsiLoginState pulumi.StringPtrInput
 	// A list of secondary multipath devices
@@ -497,6 +503,11 @@ func (o VolumeAttachmentOutput) IsReadOnly() pulumi.BoolOutput {
 // Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
 func (o VolumeAttachmentOutput) IsShareable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.IsShareable }).(pulumi.BoolOutput)
+}
+
+// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+func (o VolumeAttachmentOutput) IsVolumeCreatedDuringLaunch() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VolumeAttachment) pulumi.BoolOutput { return v.IsVolumeCreatedDuringLaunch }).(pulumi.BoolOutput)
 }
 
 // The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.

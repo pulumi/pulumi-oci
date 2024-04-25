@@ -78,6 +78,7 @@ import javax.annotation.Nullable;
  *                 .availabilityDomain(volumeBlockVolumeReplicasAvailabilityDomain)
  *                 .displayName(volumeBlockVolumeReplicasDisplayName)
  *                 .build())
+ *             .clusterPlacementGroupId(testGroup.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(volumeDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
@@ -188,6 +189,20 @@ public class Volume extends com.pulumi.resources.CustomResource {
 
     public Output<Optional<Boolean>> blockVolumeReplicasDeletion() {
         return Codegen.optional(this.blockVolumeReplicasDeletion);
+    }
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * (Updatable) The OCID of the compartment that contains the volume.

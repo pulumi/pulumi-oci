@@ -17,9 +17,17 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
 
     public static final MigrationDataTransferMediumDetailsV2Args Empty = new MigrationDataTransferMediumDetailsV2Args();
 
+    /**
+     * (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * 
+     */
     @Import(name="accessKeyId")
     private @Nullable Output<String> accessKeyId;
 
+    /**
+     * @return (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * 
+     */
     public Optional<Output<String>> accessKeyId() {
         return Optional.ofNullable(this.accessKeyId);
     }
@@ -39,23 +47,47 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+     * 
+     */
     @Import(name="objectStorageBucket")
     private @Nullable Output<MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs> objectStorageBucket;
 
+    /**
+     * @return (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+     * 
+     */
     public Optional<Output<MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs>> objectStorageBucket() {
         return Optional.ofNullable(this.objectStorageBucket);
     }
 
+    /**
+     * (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     * 
+     */
     @Import(name="region")
     private @Nullable Output<String> region;
 
+    /**
+     * @return (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     * 
+     */
     public Optional<Output<String>> region() {
         return Optional.ofNullable(this.region);
     }
 
+    /**
+     * (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * 
+     */
     @Import(name="secretAccessKey")
     private @Nullable Output<String> secretAccessKey;
 
+    /**
+     * @return (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * 
+     */
     public Optional<Output<String>> secretAccessKey() {
         return Optional.ofNullable(this.secretAccessKey);
     }
@@ -104,11 +136,23 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
             $ = new MigrationDataTransferMediumDetailsV2Args(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param accessKeyId (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessKeyId(@Nullable Output<String> accessKeyId) {
             $.accessKeyId = accessKeyId;
             return this;
         }
 
+        /**
+         * @param accessKeyId (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessKeyId(String accessKeyId) {
             return accessKeyId(Output.of(accessKeyId));
         }
@@ -134,29 +178,65 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
             return name(Output.of(name));
         }
 
+        /**
+         * @param objectStorageBucket (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectStorageBucket(@Nullable Output<MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs> objectStorageBucket) {
             $.objectStorageBucket = objectStorageBucket;
             return this;
         }
 
+        /**
+         * @param objectStorageBucket (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+         * 
+         * @return builder
+         * 
+         */
         public Builder objectStorageBucket(MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs objectStorageBucket) {
             return objectStorageBucket(Output.of(objectStorageBucket));
         }
 
+        /**
+         * @param region (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         * 
+         * @return builder
+         * 
+         */
         public Builder region(@Nullable Output<String> region) {
             $.region = region;
             return this;
         }
 
+        /**
+         * @param region (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         * 
+         * @return builder
+         * 
+         */
         public Builder region(String region) {
             return region(Output.of(region));
         }
 
+        /**
+         * @param secretAccessKey (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretAccessKey(@Nullable Output<String> secretAccessKey) {
             $.secretAccessKey = secretAccessKey;
             return this;
         }
 
+        /**
+         * @param secretAccessKey (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretAccessKey(String secretAccessKey) {
             return secretAccessKey(Output.of(secretAccessKey));
         }

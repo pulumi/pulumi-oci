@@ -32,20 +32,23 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("instanceSourceImageFilterDetails")]
         public Input<Inputs.InstanceSourceDetailsInstanceSourceImageFilterDetailsGetArgs>? InstanceSourceImageFilterDetails { get; set; }
 
+        [Input("isPreserveBootVolumeEnabled")]
+        public Input<bool>? IsPreserveBootVolumeEnabled { get; set; }
+
         /// <summary>
-        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+        /// (Updatable) The OCID of the boot volume used to boot the instance.
         /// </summary>
         [Input("sourceId")]
         public Input<string>? SourceId { get; set; }
 
         /// <summary>
-        /// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        /// (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

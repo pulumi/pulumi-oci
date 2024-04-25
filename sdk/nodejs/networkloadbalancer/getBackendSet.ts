@@ -57,6 +57,10 @@ export interface GetBackendSetResult {
      */
     readonly isFailOpen: boolean;
     /**
+     * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     */
+    readonly isInstantFailoverEnabled: boolean;
+    /**
      * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
     readonly isPreserveSource: boolean;

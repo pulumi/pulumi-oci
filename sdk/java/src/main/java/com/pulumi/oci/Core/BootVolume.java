@@ -72,6 +72,7 @@ import javax.annotation.Nullable;
  *                 .availabilityDomain(bootVolumeBootVolumeReplicasAvailabilityDomain)
  *                 .displayName(bootVolumeBootVolumeReplicasDisplayName)
  *                 .build())
+ *             .clusterPlacementGroupId(testGroup.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(bootVolumeDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
@@ -177,6 +178,20 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
 
     public Output<Optional<Boolean>> bootVolumeReplicasDeletion() {
         return Codegen.optional(this.bootVolumeReplicasDeletion);
+    }
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * (Updatable) The OCID of the compartment that contains the boot volume.

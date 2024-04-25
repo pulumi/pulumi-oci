@@ -13,6 +13,9 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     [OutputType]
     public sealed class GetMigrationsMigrationCollectionItemDumpTransferDetailResult
     {
+        /// <summary>
+        /// Optional OCID of the shared storage mount target.
+        /// </summary>
         public readonly string SharedStorageMountTargetId;
         /// <summary>
         /// Optional additional properties for dump transfer in source or target host. Default kind is CURL

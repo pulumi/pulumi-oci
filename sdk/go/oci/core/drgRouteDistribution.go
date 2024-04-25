@@ -69,7 +69,7 @@ type DrgRouteDistribution struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+	// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
 	DistributionType pulumi.StringOutput `pulumi:"distributionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
 	DrgId pulumi.StringOutput `pulumi:"drgId"`
@@ -126,7 +126,7 @@ type drgRouteDistributionState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+	// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
 	DistributionType *string `pulumi:"distributionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
 	DrgId *string `pulumi:"drgId"`
@@ -148,7 +148,7 @@ type DrgRouteDistributionState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+	// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
 	DistributionType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
 	DrgId pulumi.StringPtrInput
@@ -172,7 +172,7 @@ type drgRouteDistributionArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+	// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
 	DistributionType string `pulumi:"distributionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
 	DrgId string `pulumi:"drgId"`
@@ -189,7 +189,7 @@ type DrgRouteDistributionArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+	// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
 	DistributionType pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
 	DrgId pulumi.StringInput
@@ -302,7 +302,7 @@ func (o DrgRouteDistributionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
 func (o DrgRouteDistributionOutput) DistributionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrgRouteDistribution) pulumi.StringOutput { return v.DistributionType }).(pulumi.StringOutput)
 }

@@ -22,6 +22,7 @@ class InstanceArgs:
                  async_: Optional[pulumi.Input[bool]] = None,
                  availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
@@ -56,6 +57,7 @@ class InstanceArgs:
         :param pulumi.Input['InstanceAgentConfigArgs'] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
         :param pulumi.Input['InstanceAvailabilityConfigArgs'] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+        :param pulumi.Input[str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
@@ -162,6 +164,8 @@ class InstanceArgs:
             pulumi.set(__self__, "availability_config", availability_config)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compute_cluster_id is not None:
             pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
@@ -294,6 +298,18 @@ class InstanceArgs:
     @capacity_reservation_id.setter
     def capacity_reservation_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "capacity_reservation_id", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the cluster placement group of the instance.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="computeClusterId")
@@ -700,6 +716,7 @@ class _InstanceState:
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  boot_volume_id: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
@@ -743,6 +760,7 @@ class _InstanceState:
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+        :param pulumi.Input[str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -827,7 +845,7 @@ class _InstanceState:
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input['InstancePreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
                
                If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
@@ -864,6 +882,8 @@ class _InstanceState:
             pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_cluster_id is not None:
@@ -1014,6 +1034,18 @@ class _InstanceState:
     @capacity_reservation_id.setter
     def capacity_reservation_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "capacity_reservation_id", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the cluster placement group of the instance.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1369,7 +1401,7 @@ class _InstanceState:
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
         """
-        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
 
         If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
 
@@ -1533,6 +1565,7 @@ class Instance(pulumi.CustomResource):
                  availability_config: Optional[pulumi.Input[pulumi.InputType['InstanceAvailabilityConfigArgs']]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']]] = None,
@@ -1623,6 +1656,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['InstanceAvailabilityConfigArgs']] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+        :param pulumi.Input[str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -1801,6 +1835,7 @@ class Instance(pulumi.CustomResource):
                  availability_config: Optional[pulumi.Input[pulumi.InputType['InstanceAvailabilityConfigArgs']]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']]] = None,
@@ -1845,6 +1880,7 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
             __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
+            __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1900,6 +1936,7 @@ class Instance(pulumi.CustomResource):
             availability_domain: Optional[pulumi.Input[str]] = None,
             boot_volume_id: Optional[pulumi.Input[str]] = None,
             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_cluster_id: Optional[pulumi.Input[str]] = None,
             create_vnic_details: Optional[pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']]] = None,
@@ -1948,6 +1985,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
         :param pulumi.Input[str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+        :param pulumi.Input[str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment containing images to search
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[pulumi.InputType['InstanceCreateVnicDetailsArgs']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -2032,7 +2070,7 @@ class Instance(pulumi.CustomResource):
                For more information about BIOS settings for bare metal instances, see [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
         :param pulumi.Input[pulumi.InputType['InstancePreemptibleInstanceConfigArgs']] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[bool] preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+        :param pulumi.Input[str] private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
                
                If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
@@ -2067,6 +2105,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["boot_volume_id"] = boot_volume_id
         __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_cluster_id"] = compute_cluster_id
         __props__.__dict__["create_vnic_details"] = create_vnic_details
@@ -2149,6 +2188,14 @@ class Instance(pulumi.CustomResource):
         (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        The OCID of the cluster placement group of the instance.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2408,7 +2455,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> pulumi.Output[str]:
         """
-        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+        A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
 
         If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
 

@@ -17,10 +17,12 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
     /**
      * @return (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
      * 
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
      * 
      */
     private @Nullable ComputeCapacityReservationInstanceReservationConfigClusterConfig clusterConfig;
+    private @Nullable String clusterPlacementGroupId;
     /**
      * @return (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
      * 
@@ -61,11 +63,15 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
     /**
      * @return (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
      * 
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
      * 
      */
     public Optional<ComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfig() {
         return Optional.ofNullable(this.clusterConfig);
+    }
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
     }
     /**
      * @return (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
@@ -123,6 +129,7 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable ComputeCapacityReservationInstanceReservationConfigClusterConfig clusterConfig;
+        private @Nullable String clusterPlacementGroupId;
         private @Nullable String faultDomain;
         private String instanceShape;
         private @Nullable ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig instanceShapeConfig;
@@ -132,6 +139,7 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
         public Builder(ComputeCapacityReservationInstanceReservationConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterConfig = defaults.clusterConfig;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.faultDomain = defaults.faultDomain;
     	      this.instanceShape = defaults.instanceShape;
     	      this.instanceShapeConfig = defaults.instanceShapeConfig;
@@ -143,6 +151,12 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
         public Builder clusterConfig(@Nullable ComputeCapacityReservationInstanceReservationConfigClusterConfig clusterConfig) {
 
             this.clusterConfig = clusterConfig;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -182,6 +196,7 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
         public ComputeCapacityReservationInstanceReservationConfig build() {
             final var _resultValue = new ComputeCapacityReservationInstanceReservationConfig();
             _resultValue.clusterConfig = clusterConfig;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.faultDomain = faultDomain;
             _resultValue.instanceShape = instanceShape;
             _resultValue.instanceShapeConfig = instanceShapeConfig;

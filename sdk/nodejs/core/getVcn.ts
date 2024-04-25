@@ -35,7 +35,7 @@ export function getVcn(args: GetVcnArgs, opts?: pulumi.InvokeOptions): Promise<G
  */
 export interface GetVcnArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     vcnId: string;
 }
@@ -142,7 +142,7 @@ export function getVcnOutput(args: GetVcnOutputArgs, opts?: pulumi.InvokeOptions
  */
 export interface GetVcnOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     vcnId: pulumi.Input<string>;
 }

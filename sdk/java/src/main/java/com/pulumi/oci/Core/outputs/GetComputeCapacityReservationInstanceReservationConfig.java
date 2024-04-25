@@ -18,6 +18,7 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
      * 
      */
     private List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs;
+    private String clusterPlacementGroupId;
     /**
      * @return The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      * 
@@ -51,6 +52,9 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
      */
     public List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs() {
         return this.clusterConfigs;
+    }
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
@@ -98,6 +102,7 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
     @CustomType.Builder
     public static final class Builder {
         private List<GetComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs;
+        private String clusterPlacementGroupId;
         private String faultDomain;
         private String instanceShape;
         private List<GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs;
@@ -107,6 +112,7 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
         public Builder(GetComputeCapacityReservationInstanceReservationConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterConfigs = defaults.clusterConfigs;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.faultDomain = defaults.faultDomain;
     	      this.instanceShape = defaults.instanceShape;
     	      this.instanceShapeConfigs = defaults.instanceShapeConfigs;
@@ -124,6 +130,14 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
         }
         public Builder clusterConfigs(GetComputeCapacityReservationInstanceReservationConfigClusterConfig... clusterConfigs) {
             return clusterConfigs(List.of(clusterConfigs));
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstanceReservationConfig", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
@@ -171,6 +185,7 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
         public GetComputeCapacityReservationInstanceReservationConfig build() {
             final var _resultValue = new GetComputeCapacityReservationInstanceReservationConfig();
             _resultValue.clusterConfigs = clusterConfigs;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.faultDomain = faultDomain;
             _resultValue.instanceShape = instanceShape;
             _resultValue.instanceShapeConfigs = instanceShapeConfigs;

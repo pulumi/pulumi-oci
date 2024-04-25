@@ -15,14 +15,14 @@ public final class GetCnvDnsResolverAssociationArgs extends com.pulumi.resources
     public static final GetCnvDnsResolverAssociationArgs Empty = new GetCnvDnsResolverAssociationArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
     @Import(name="vcnId", required=true)
     private Output<String> vcnId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * @return Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
     public Output<String> vcnId() {
@@ -54,7 +54,7 @@ public final class GetCnvDnsResolverAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param vcnId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         * @param vcnId Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetCnvDnsResolverAssociationArgs extends com.pulumi.resources
         }
 
         /**
-         * @param vcnId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         * @param vcnId Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          * 
          * @return builder
          * 

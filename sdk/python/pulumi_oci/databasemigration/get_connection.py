@@ -203,6 +203,9 @@ class GetConnectionResult:
     @property
     @pulumi.getter(name="manualDatabaseSubType")
     def manual_database_sub_type(self) -> str:
+        """
+        Database manual connection subtype. This value can only be specified for manual connections.
+        """
         return pulumi.get(self, "manual_database_sub_type")
 
     @property

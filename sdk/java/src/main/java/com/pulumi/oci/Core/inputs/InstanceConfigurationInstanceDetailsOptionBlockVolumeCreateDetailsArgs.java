@@ -38,14 +38,14 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
     }
 
     /**
-     * The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -83,14 +83,29 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
     }
 
     /**
-     * The OCID of the compartment that contains the volume.
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
+     * (Updatable) The OCID of the compartment containing images to search
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The OCID of the compartment that contains the volume.
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -220,6 +235,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         this.availabilityDomain = $.availabilityDomain;
         this.backupPolicyId = $.backupPolicyId;
         this.blockVolumeReplicas = $.blockVolumeReplicas;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -281,7 +297,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         }
 
         /**
-         * @param availabilityDomain The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -292,7 +308,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         }
 
         /**
-         * @param availabilityDomain The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          * 
          * @return builder
          * 
@@ -344,7 +360,28 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the volume.
+         * @param clusterPlacementGroupId The clusterPlacementGroup Id of the volume for volume placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The clusterPlacementGroup Id of the volume for volume placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 
@@ -355,7 +392,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         }
 
         /**
-         * @param compartmentId The OCID of the compartment that contains the volume.
+         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
          * 
          * @return builder
          * 

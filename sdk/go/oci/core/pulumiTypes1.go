@@ -588,9 +588,8 @@ type GetInstancePoolsInstancePoolPlacementConfiguration struct {
 	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The fault domains to place instances.
-	FaultDomains []string `pulumi:"faultDomains"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-	PrimarySubnetId string `pulumi:"primarySubnetId"`
+	FaultDomains    []string `pulumi:"faultDomains"`
+	PrimarySubnetId string   `pulumi:"primarySubnetId"`
 	// Details about the IPv6 primary subnet.
 	PrimaryVnicSubnets []GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet `pulumi:"primaryVnicSubnets"`
 	// The set of secondary VNIC data for instances in the pool.
@@ -612,9 +611,8 @@ type GetInstancePoolsInstancePoolPlacementConfigurationArgs struct {
 	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The fault domains to place instances.
-	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-	PrimarySubnetId pulumi.StringInput `pulumi:"primarySubnetId"`
+	FaultDomains    pulumi.StringArrayInput `pulumi:"faultDomains"`
+	PrimarySubnetId pulumi.StringInput      `pulumi:"primarySubnetId"`
 	// Details about the IPv6 primary subnet.
 	PrimaryVnicSubnets GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayInput `pulumi:"primaryVnicSubnets"`
 	// The set of secondary VNIC data for instances in the pool.
@@ -682,7 +680,6 @@ func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) FaultDomains()
 	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) PrimarySubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) string { return v.PrimarySubnetId }).(pulumi.StringOutput)
 }
@@ -1584,6 +1581,7 @@ type GetInstanceSourceDetail struct {
 	BootVolumeVpusPerGb string `pulumi:"bootVolumeVpusPerGb"`
 	// These are the criteria for selecting an image. This is required if imageId is not specified.
 	InstanceSourceImageFilterDetails []GetInstanceSourceDetailInstanceSourceImageFilterDetail `pulumi:"instanceSourceImageFilterDetails"`
+	IsPreserveBootVolumeEnabled      bool                                                     `pulumi:"isPreserveBootVolumeEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The OCID of the boot volume used to boot the instance.
@@ -1610,6 +1608,7 @@ type GetInstanceSourceDetailArgs struct {
 	BootVolumeVpusPerGb pulumi.StringInput `pulumi:"bootVolumeVpusPerGb"`
 	// These are the criteria for selecting an image. This is required if imageId is not specified.
 	InstanceSourceImageFilterDetails GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayInput `pulumi:"instanceSourceImageFilterDetails"`
+	IsPreserveBootVolumeEnabled      pulumi.BoolInput                                                 `pulumi:"isPreserveBootVolumeEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The OCID of the boot volume used to boot the instance.
@@ -1684,6 +1683,10 @@ func (o GetInstanceSourceDetailOutput) InstanceSourceImageFilterDetails() GetIns
 	return o.ApplyT(func(v GetInstanceSourceDetail) []GetInstanceSourceDetailInstanceSourceImageFilterDetail {
 		return v.InstanceSourceImageFilterDetails
 	}).(GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput)
+}
+
+func (o GetInstanceSourceDetailOutput) IsPreserveBootVolumeEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetail) bool { return v.IsPreserveBootVolumeEnabled }).(pulumi.BoolOutput)
 }
 
 // The OCID of the Vault service key to assign as the master encryption key for the boot volume.
@@ -1968,6 +1971,8 @@ type GetInstancesInstance struct {
 	BootVolumeId string `pulumi:"bootVolumeId"`
 	// The OCID of the compute capacity reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The OCID of the cluster placement group of the instance.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
@@ -2062,6 +2067,8 @@ type GetInstancesInstanceArgs struct {
 	BootVolumeId pulumi.StringInput `pulumi:"bootVolumeId"`
 	// The OCID of the compute capacity reservation.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The OCID of the cluster placement group of the instance.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
@@ -2211,6 +2218,11 @@ func (o GetInstancesInstanceOutput) BootVolumeId() pulumi.StringOutput {
 // The OCID of the compute capacity reservation.
 func (o GetInstancesInstanceOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstance) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
+// The OCID of the cluster placement group of the instance.
+func (o GetInstancesInstanceOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -4182,6 +4194,7 @@ type GetInstancesInstanceSourceDetail struct {
 	BootVolumeVpusPerGb string `pulumi:"bootVolumeVpusPerGb"`
 	// These are the criteria for selecting an image. This is required if imageId is not specified.
 	InstanceSourceImageFilterDetails []GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetail `pulumi:"instanceSourceImageFilterDetails"`
+	IsPreserveBootVolumeEnabled      bool                                                              `pulumi:"isPreserveBootVolumeEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The OCID of an image or a boot volume to use, depending on the value of `sourceType`.
@@ -4208,6 +4221,7 @@ type GetInstancesInstanceSourceDetailArgs struct {
 	BootVolumeVpusPerGb pulumi.StringInput `pulumi:"bootVolumeVpusPerGb"`
 	// These are the criteria for selecting an image. This is required if imageId is not specified.
 	InstanceSourceImageFilterDetails GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetailArrayInput `pulumi:"instanceSourceImageFilterDetails"`
+	IsPreserveBootVolumeEnabled      pulumi.BoolInput                                                          `pulumi:"isPreserveBootVolumeEnabled"`
 	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The OCID of an image or a boot volume to use, depending on the value of `sourceType`.
@@ -4282,6 +4296,10 @@ func (o GetInstancesInstanceSourceDetailOutput) InstanceSourceImageFilterDetails
 	return o.ApplyT(func(v GetInstancesInstanceSourceDetail) []GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetail {
 		return v.InstanceSourceImageFilterDetails
 	}).(GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput)
+}
+
+func (o GetInstancesInstanceSourceDetailOutput) IsPreserveBootVolumeEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceSourceDetail) bool { return v.IsPreserveBootVolumeEnabled }).(pulumi.BoolOutput)
 }
 
 // The OCID of the Vault service key to assign as the master encryption key for the boot volume.
@@ -23975,6 +23993,8 @@ type GetVolumeAttachmentsVolumeAttachment struct {
 	// Whether the attachment was created in read-only mode.
 	IsReadOnly  bool `pulumi:"isReadOnly"`
 	IsShareable bool `pulumi:"isShareable"`
+	// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+	IsVolumeCreatedDuringLaunch bool `pulumi:"isVolumeCreatedDuringLaunch"`
 	// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
 	IscsiLoginState string `pulumi:"iscsiLoginState"`
 	// A list of secondary multipath devices
@@ -24037,6 +24057,8 @@ type GetVolumeAttachmentsVolumeAttachmentArgs struct {
 	// Whether the attachment was created in read-only mode.
 	IsReadOnly  pulumi.BoolInput `pulumi:"isReadOnly"`
 	IsShareable pulumi.BoolInput `pulumi:"isShareable"`
+	// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+	IsVolumeCreatedDuringLaunch pulumi.BoolInput `pulumi:"isVolumeCreatedDuringLaunch"`
 	// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
 	IscsiLoginState pulumi.StringInput `pulumi:"iscsiLoginState"`
 	// A list of secondary multipath devices
@@ -24187,6 +24209,11 @@ func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsReadOnly() pulumi.BoolOutp
 
 func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsShareable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsShareable }).(pulumi.BoolOutput)
+}
+
+// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+func (o GetVolumeAttachmentsVolumeAttachmentOutput) IsVolumeCreatedDuringLaunch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVolumeAttachmentsVolumeAttachment) bool { return v.IsVolumeCreatedDuringLaunch }).(pulumi.BoolOutput)
 }
 
 // The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
@@ -26847,7 +26874,8 @@ type GetVolumeGroupsVolumeGroup struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
-	BackupPolicyId string `pulumi:"backupPolicyId"`
+	BackupPolicyId          string `pulumi:"backupPolicyId"`
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -26893,7 +26921,8 @@ type GetVolumeGroupsVolumeGroupArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
-	BackupPolicyId pulumi.StringInput `pulumi:"backupPolicyId"`
+	BackupPolicyId          pulumi.StringInput `pulumi:"backupPolicyId"`
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -26983,6 +27012,10 @@ func (o GetVolumeGroupsVolumeGroupOutput) AvailabilityDomain() pulumi.StringOutp
 // Deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
 func (o GetVolumeGroupsVolumeGroupOutput) BackupPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVolumeGroupsVolumeGroup) string { return v.BackupPolicyId }).(pulumi.StringOutput)
+}
+
+func (o GetVolumeGroupsVolumeGroupOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumeGroupsVolumeGroup) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -27552,6 +27585,8 @@ type GetVolumesVolume struct {
 	// The list of block volume replicas of this volume.
 	BlockVolumeReplicas         []GetVolumesVolumeBlockVolumeReplica `pulumi:"blockVolumeReplicas"`
 	BlockVolumeReplicasDeletion bool                                 `pulumi:"blockVolumeReplicasDeletion"`
+	// A filter to return only resources that match the given cluster placement group Id exactly.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -27611,6 +27646,8 @@ type GetVolumesVolumeArgs struct {
 	// The list of block volume replicas of this volume.
 	BlockVolumeReplicas         GetVolumesVolumeBlockVolumeReplicaArrayInput `pulumi:"blockVolumeReplicas"`
 	BlockVolumeReplicasDeletion pulumi.BoolInput                             `pulumi:"blockVolumeReplicasDeletion"`
+	// A filter to return only resources that match the given cluster placement group Id exactly.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -27725,6 +27762,11 @@ func (o GetVolumesVolumeOutput) BlockVolumeReplicas() GetVolumesVolumeBlockVolum
 
 func (o GetVolumesVolumeOutput) BlockVolumeReplicasDeletion() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVolumesVolume) bool { return v.BlockVolumeReplicasDeletion }).(pulumi.BoolOutput)
+}
+
+// A filter to return only resources that match the given cluster placement group Id exactly.
+func (o GetVolumesVolumeOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVolumesVolume) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

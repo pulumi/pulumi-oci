@@ -116,6 +116,10 @@ namespace Pulumi.Oci.Core
         public readonly ImmutableArray<Outputs.GetVolumeBlockVolumeReplicaResult> BlockVolumeReplicas;
         public readonly bool BlockVolumeReplicasDeletion;
         /// <summary>
+        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The OCID of the compartment that contains the volume.
         /// </summary>
         public readonly string CompartmentId;
@@ -193,6 +197,8 @@ namespace Pulumi.Oci.Core
 
             bool blockVolumeReplicasDeletion,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -235,6 +241,7 @@ namespace Pulumi.Oci.Core
             BackupPolicyId = backupPolicyId;
             BlockVolumeReplicas = blockVolumeReplicas;
             BlockVolumeReplicasDeletion = blockVolumeReplicasDeletion;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

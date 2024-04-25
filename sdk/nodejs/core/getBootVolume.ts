@@ -67,6 +67,10 @@ export interface GetBootVolumeResult {
     readonly bootVolumeReplicas: outputs.Core.GetBootVolumeBootVolumeReplica[];
     readonly bootVolumeReplicasDeletion: boolean;
     /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     */
+    readonly clusterPlacementGroupId: string;
+    /**
      * The OCID of the compartment that contains the boot volume.
      */
     readonly compartmentId: string;

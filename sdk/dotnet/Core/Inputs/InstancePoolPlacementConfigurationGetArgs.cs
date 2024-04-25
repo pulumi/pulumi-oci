@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Core.Inputs
         /// 
         /// To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
         /// 
+        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
         /// Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         /// </summary>
         public InputList<string> FaultDomains
@@ -38,9 +39,6 @@ namespace Pulumi.Oci.Core.Inputs
             set => _faultDomains = value;
         }
 
-        /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-        /// </summary>
         [Input("primarySubnetId")]
         public Input<string>? PrimarySubnetId { get; set; }
 

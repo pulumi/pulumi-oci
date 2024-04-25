@@ -53,6 +53,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The date and time the boot volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        public readonly string TimeUpdated;
 
         [OutputConstructor]
         private GetBootVolumeAttachmentsBootVolumeAttachmentResult(
@@ -74,7 +78,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             string state,
 
-            string timeCreated)
+            string timeCreated,
+
+            string timeUpdated)
         {
             AvailabilityDomain = availabilityDomain;
             BootVolumeId = bootVolumeId;
@@ -86,6 +92,7 @@ namespace Pulumi.Oci.Core.Outputs
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             State = state;
             TimeCreated = timeCreated;
+            TimeUpdated = timeUpdated;
         }
     }
 }

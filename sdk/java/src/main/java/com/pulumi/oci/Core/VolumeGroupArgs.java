@@ -61,6 +61,21 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The clusterPlacementGroup Id of the volume group for volume group placement.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The clusterPlacementGroup Id of the volume group for volume group placement.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The OCID of the compartment that contains the volume group.
      * 
      */
@@ -190,6 +205,7 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
     private VolumeGroupArgs(VolumeGroupArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.backupPolicyId = $.backupPolicyId;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -267,6 +283,27 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
         @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
         public Builder backupPolicyId(String backupPolicyId) {
             return backupPolicyId(Output.of(backupPolicyId));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The clusterPlacementGroup Id of the volume group for volume group placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The clusterPlacementGroup Id of the volume group for volume group placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**

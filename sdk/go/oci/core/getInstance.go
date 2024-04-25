@@ -72,6 +72,8 @@ type LookupInstanceResult struct {
 	BootVolumeId string `pulumi:"bootVolumeId"`
 	// The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The OCID of the cluster placement group of the instance.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The OCID of the compartment containing images to search
 	CompartmentId     string                        `pulumi:"compartmentId"`
 	ComputeClusterId  string                        `pulumi:"computeClusterId"`
@@ -212,6 +214,11 @@ func (o LookupInstanceResultOutput) BootVolumeId() pulumi.StringOutput {
 // The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
 func (o LookupInstanceResultOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
+// The OCID of the cluster placement group of the instance.
+func (o LookupInstanceResultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstanceResult) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment containing images to search

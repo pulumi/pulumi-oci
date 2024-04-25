@@ -46,6 +46,11 @@ public final class GetVolumesVolume {
     private List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas;
     private Boolean blockVolumeReplicasDeletion;
     /**
+     * @return A filter to return only resources that match the given cluster placement group Id exactly.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -167,6 +172,13 @@ public final class GetVolumesVolume {
     }
     public Boolean blockVolumeReplicasDeletion() {
         return this.blockVolumeReplicasDeletion;
+    }
+    /**
+     * @return A filter to return only resources that match the given cluster placement group Id exactly.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -299,6 +311,7 @@ public final class GetVolumesVolume {
         private String backupPolicyId;
         private List<GetVolumesVolumeBlockVolumeReplica> blockVolumeReplicas;
         private Boolean blockVolumeReplicasDeletion;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -325,6 +338,7 @@ public final class GetVolumesVolume {
     	      this.backupPolicyId = defaults.backupPolicyId;
     	      this.blockVolumeReplicas = defaults.blockVolumeReplicas;
     	      this.blockVolumeReplicasDeletion = defaults.blockVolumeReplicasDeletion;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -396,6 +410,14 @@ public final class GetVolumesVolume {
               throw new MissingRequiredPropertyException("GetVolumesVolume", "blockVolumeReplicasDeletion");
             }
             this.blockVolumeReplicasDeletion = blockVolumeReplicasDeletion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumesVolume", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -545,6 +567,7 @@ public final class GetVolumesVolume {
             _resultValue.backupPolicyId = backupPolicyId;
             _resultValue.blockVolumeReplicas = blockVolumeReplicas;
             _resultValue.blockVolumeReplicasDeletion = blockVolumeReplicasDeletion;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

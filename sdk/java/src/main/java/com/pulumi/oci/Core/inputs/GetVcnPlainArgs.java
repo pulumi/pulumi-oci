@@ -14,14 +14,14 @@ public final class GetVcnPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetVcnPlainArgs Empty = new GetVcnPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
     @Import(name="vcnId", required=true)
     private String vcnId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * @return Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
     public String vcnId() {
@@ -53,7 +53,7 @@ public final class GetVcnPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param vcnId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         * @param vcnId Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          * 
          * @return builder
          * 

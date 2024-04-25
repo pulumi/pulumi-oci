@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string CapacityReservationId;
         /// <summary>
+        /// The OCID of the cluster placement group of the instance.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -117,6 +121,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string capacityReservationId,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailResult> createVnicDetails,
@@ -161,6 +167,7 @@ namespace Pulumi.Oci.Core.Outputs
             AvailabilityConfigs = availabilityConfigs;
             AvailabilityDomain = availabilityDomain;
             CapacityReservationId = capacityReservationId;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             CreateVnicDetails = createVnicDetails;
             DedicatedVmHostId = dedicatedVmHostId;

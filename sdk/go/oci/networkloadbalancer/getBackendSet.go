@@ -44,6 +44,8 @@ type LookupBackendSetResult struct {
 	IpVersion string `pulumi:"ipVersion"`
 	// If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
 	IsFailOpen bool `pulumi:"isFailOpen"`
+	// If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+	IsInstantFailoverEnabled bool `pulumi:"isInstantFailoverEnabled"`
 	// If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
 	IsPreserveSource bool `pulumi:"isPreserveSource"`
 	// A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -119,6 +121,11 @@ func (o LookupBackendSetResultOutput) IpVersion() pulumi.StringOutput {
 // If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
 func (o LookupBackendSetResultOutput) IsFailOpen() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBackendSetResult) bool { return v.IsFailOpen }).(pulumi.BoolOutput)
+}
+
+// If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+func (o LookupBackendSetResultOutput) IsInstantFailoverEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBackendSetResult) bool { return v.IsInstantFailoverEnabled }).(pulumi.BoolOutput)
 }
 
 // If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.

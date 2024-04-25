@@ -229,6 +229,9 @@ export class Migration extends pulumi.CustomResource {
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */
     public readonly dataTransferMediumDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
+    /**
+     * (Updatable) Optional additional properties for dump transfer in source or target host.
+     */
     public readonly dataTransferMediumDetailsV2!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
@@ -438,6 +441,9 @@ export interface MigrationState {
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */
     dataTransferMediumDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
+    /**
+     * (Updatable) Optional additional properties for dump transfer in source or target host.
+     */
     dataTransferMediumDetailsV2?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
@@ -553,6 +559,9 @@ export interface MigrationArgs {
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */
     dataTransferMediumDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
+    /**
+     * (Updatable) Optional additional properties for dump transfer in source or target host.
+     */
     dataTransferMediumDetailsV2?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs

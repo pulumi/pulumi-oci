@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy> AutotunePolicies;
         /// <summary>
-        /// The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
@@ -30,7 +30,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly Outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas? BlockVolumeReplicas;
         /// <summary>
-        /// The OCID of the compartment that contains the volume.
+        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// </summary>
+        public readonly string? ClusterPlacementGroupId;
+        /// <summary>
+        /// (Updatable) The OCID of the compartment containing images to search
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -75,6 +79,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             Outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas? blockVolumeReplicas,
 
+            string? clusterPlacementGroupId,
+
             string? compartmentId,
 
             ImmutableDictionary<string, object>? definedTags,
@@ -97,6 +103,7 @@ namespace Pulumi.Oci.Core.Outputs
             AvailabilityDomain = availabilityDomain;
             BackupPolicyId = backupPolicyId;
             BlockVolumeReplicas = blockVolumeReplicas;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -66,15 +67,22 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.instanceSourceImageFilterDetails);
     }
 
+    @Import(name="isPreserveBootVolumeEnabled")
+    private @Nullable Output<Boolean> isPreserveBootVolumeEnabled;
+
+    public Optional<Output<Boolean>> isPreserveBootVolumeEnabled() {
+        return Optional.ofNullable(this.isPreserveBootVolumeEnabled);
+    }
+
     /**
-     * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -82,14 +90,14 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * (Updatable) The OCID of the boot volume used to boot the instance.
      * 
      */
     @Import(name="sourceId")
     private @Nullable Output<String> sourceId;
 
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return (Updatable) The OCID of the boot volume used to boot the instance.
      * 
      */
     public Optional<Output<String>> sourceId() {
@@ -97,14 +105,14 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+     * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
-     * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+     * @return (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
     public Output<String> sourceType() {
@@ -117,6 +125,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         this.bootVolumeSizeInGbs = $.bootVolumeSizeInGbs;
         this.bootVolumeVpusPerGb = $.bootVolumeVpusPerGb;
         this.instanceSourceImageFilterDetails = $.instanceSourceImageFilterDetails;
+        this.isPreserveBootVolumeEnabled = $.isPreserveBootVolumeEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.sourceId = $.sourceId;
         this.sourceType = $.sourceType;
@@ -207,8 +216,17 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
             return instanceSourceImageFilterDetails(Output.of(instanceSourceImageFilterDetails));
         }
 
+        public Builder isPreserveBootVolumeEnabled(@Nullable Output<Boolean> isPreserveBootVolumeEnabled) {
+            $.isPreserveBootVolumeEnabled = isPreserveBootVolumeEnabled;
+            return this;
+        }
+
+        public Builder isPreserveBootVolumeEnabled(Boolean isPreserveBootVolumeEnabled) {
+            return isPreserveBootVolumeEnabled(Output.of(isPreserveBootVolumeEnabled));
+        }
+
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -219,7 +237,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param kmsKeyId The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -229,7 +247,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceId The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+         * @param sourceId (Updatable) The OCID of the boot volume used to boot the instance.
          * 
          * @return builder
          * 
@@ -240,7 +258,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceId The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+         * @param sourceId (Updatable) The OCID of the boot volume used to boot the instance.
          * 
          * @return builder
          * 
@@ -250,7 +268,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceType The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+         * @param sourceType (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          * 
          * @return builder
          * 
@@ -261,7 +279,7 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceType The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+         * @param sourceType (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          * 
          * @return builder
          * 

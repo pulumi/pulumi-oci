@@ -42,6 +42,7 @@ import * as utilities from "../utilities";
  *         availabilityDomain: volumeBlockVolumeReplicasAvailabilityDomain,
  *         displayName: volumeBlockVolumeReplicasDisplayName,
  *     }],
+ *     clusterPlacementGroupId: testGroup.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -121,6 +122,10 @@ export class Volume extends pulumi.CustomResource {
      */
     public readonly blockVolumeReplicas!: pulumi.Output<outputs.Core.VolumeBlockVolumeReplica[]>;
     public readonly blockVolumeReplicasDeletion!: pulumi.Output<boolean | undefined>;
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     */
+    public readonly clusterPlacementGroupId!: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume.
      */
@@ -206,6 +211,7 @@ export class Volume extends pulumi.CustomResource {
             resourceInputs["backupPolicyId"] = state ? state.backupPolicyId : undefined;
             resourceInputs["blockVolumeReplicas"] = state ? state.blockVolumeReplicas : undefined;
             resourceInputs["blockVolumeReplicasDeletion"] = state ? state.blockVolumeReplicasDeletion : undefined;
+            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -235,6 +241,7 @@ export class Volume extends pulumi.CustomResource {
             resourceInputs["backupPolicyId"] = args ? args.backupPolicyId : undefined;
             resourceInputs["blockVolumeReplicas"] = args ? args.blockVolumeReplicas : undefined;
             resourceInputs["blockVolumeReplicasDeletion"] = args ? args.blockVolumeReplicasDeletion : undefined;
+            resourceInputs["clusterPlacementGroupId"] = args ? args.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -285,6 +292,10 @@ export interface VolumeState {
      */
     blockVolumeReplicas?: pulumi.Input<pulumi.Input<inputs.Core.VolumeBlockVolumeReplica>[]>;
     blockVolumeReplicasDeletion?: pulumi.Input<boolean>;
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume.
      */
@@ -375,6 +386,10 @@ export interface VolumeArgs {
      */
     blockVolumeReplicas?: pulumi.Input<pulumi.Input<inputs.Core.VolumeBlockVolumeReplica>[]>;
     blockVolumeReplicasDeletion?: pulumi.Input<boolean>;
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume.
      */

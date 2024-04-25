@@ -32,6 +32,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetVolumesVolumeBlockVolumeReplicaResult> BlockVolumeReplicas;
         public readonly bool BlockVolumeReplicasDeletion;
         /// <summary>
+        /// A filter to return only resources that match the given cluster placement group Id exactly.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -108,6 +112,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool blockVolumeReplicasDeletion,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -148,6 +154,7 @@ namespace Pulumi.Oci.Core.Outputs
             BackupPolicyId = backupPolicyId;
             BlockVolumeReplicas = blockVolumeReplicas;
             BlockVolumeReplicasDeletion = blockVolumeReplicasDeletion;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

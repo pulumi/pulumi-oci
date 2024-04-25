@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *         volumeIds: [volumeGroupSourceId],
  *     },
  *     backupPolicyId: testVolumeBackupPolicies.volumeBackupPolicies[0].id,
+ *     clusterPlacementGroupId: testGroup.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -82,6 +83,10 @@ export class VolumeGroup extends pulumi.CustomResource {
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
     public readonly backupPolicyId!: pulumi.Output<string>;
+    /**
+     * The clusterPlacementGroup Id of the volume group for volume group placement.
+     */
+    public readonly clusterPlacementGroupId!: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume group.
      */
@@ -151,6 +156,7 @@ export class VolumeGroup extends pulumi.CustomResource {
             const state = argsOrState as VolumeGroupState | undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["backupPolicyId"] = state ? state.backupPolicyId : undefined;
+            resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -178,6 +184,7 @@ export class VolumeGroup extends pulumi.CustomResource {
             }
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["backupPolicyId"] = args ? args.backupPolicyId : undefined;
+            resourceInputs["clusterPlacementGroupId"] = args ? args.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -212,6 +219,10 @@ export interface VolumeGroupState {
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
     backupPolicyId?: pulumi.Input<string>;
+    /**
+     * The clusterPlacementGroup Id of the volume group for volume group placement.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume group.
      */
@@ -281,6 +292,10 @@ export interface VolumeGroupArgs {
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
     backupPolicyId?: pulumi.Input<string>;
+    /**
+     * The clusterPlacementGroup Id of the volume group for volume group placement.
+     */
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume group.
      */

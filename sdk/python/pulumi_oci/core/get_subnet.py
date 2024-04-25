@@ -322,7 +322,7 @@ def get_subnet(subnet_id: Optional[str] = None,
     ```
 
 
-    :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+    :param str subnet_id: Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
     """
     __args__ = dict()
     __args__['subnetId'] = subnet_id
@@ -373,6 +373,6 @@ def get_subnet_output(subnet_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+    :param str subnet_id: Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
     """
     ...

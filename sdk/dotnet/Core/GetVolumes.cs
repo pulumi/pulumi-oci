@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Core
         ///     var testVolumes = Oci.Core.GetVolumes.Invoke(new()
         ///     {
         ///         AvailabilityDomain = volumeAvailabilityDomain,
+        ///         ClusterPlacementGroupId = testGroup.Id,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = volumeDisplayName,
         ///         State = volumeState,
@@ -61,6 +62,7 @@ namespace Pulumi.Oci.Core
         ///     var testVolumes = Oci.Core.GetVolumes.Invoke(new()
         ///     {
         ///         AvailabilityDomain = volumeAvailabilityDomain,
+        ///         ClusterPlacementGroupId = testGroup.Id,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = volumeDisplayName,
         ///         State = volumeState,
@@ -82,6 +84,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("availabilityDomain")]
         public string? AvailabilityDomain { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given cluster placement group Id exactly.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public string? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -130,6 +138,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that match the given cluster placement group Id exactly.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Input("compartmentId")]
@@ -176,6 +190,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
+        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// </summary>
+        public readonly string? ClusterPlacementGroupId;
+        /// <summary>
         /// The OCID of the compartment that contains the volume.
         /// </summary>
         public readonly string? CompartmentId;
@@ -205,6 +223,8 @@ namespace Pulumi.Oci.Core
         private GetVolumesResult(
             string? availabilityDomain,
 
+            string? clusterPlacementGroupId,
+
             string? compartmentId,
 
             string? displayName,
@@ -220,6 +240,7 @@ namespace Pulumi.Oci.Core
             ImmutableArray<Outputs.GetVolumesVolumeResult> volumes)
         {
             AvailabilityDomain = availabilityDomain;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DisplayName = displayName;
             Filters = filters;

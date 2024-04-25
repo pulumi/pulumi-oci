@@ -51,6 +51,7 @@ import * as utilities from "../utilities";
  *         weight: networkLoadBalancersBackendSetsUnifiedBackendsWeight,
  *     }],
  *     ipVersion: networkLoadBalancersBackendSetsUnifiedIpVersion,
+ *     isInstantFailoverEnabled: networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled,
  *     isFailOpen: networkLoadBalancersBackendSetsUnifiedIsFailOpen,
  *     isPreserveSource: networkLoadBalancersBackendSetsUnifiedIsPreserveSource,
  * });
@@ -109,6 +110,10 @@ export class NetworkLoadBalancersBackendSetsUnified extends pulumi.CustomResourc
      */
     public readonly isFailOpen!: pulumi.Output<boolean>;
     /**
+     * (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     */
+    public readonly isInstantFailoverEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
     public readonly isPreserveSource!: pulumi.Output<boolean>;
@@ -150,6 +155,7 @@ export class NetworkLoadBalancersBackendSetsUnified extends pulumi.CustomResourc
             resourceInputs["healthChecker"] = state ? state.healthChecker : undefined;
             resourceInputs["ipVersion"] = state ? state.ipVersion : undefined;
             resourceInputs["isFailOpen"] = state ? state.isFailOpen : undefined;
+            resourceInputs["isInstantFailoverEnabled"] = state ? state.isInstantFailoverEnabled : undefined;
             resourceInputs["isPreserveSource"] = state ? state.isPreserveSource : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["networkLoadBalancerId"] = state ? state.networkLoadBalancerId : undefined;
@@ -169,6 +175,7 @@ export class NetworkLoadBalancersBackendSetsUnified extends pulumi.CustomResourc
             resourceInputs["healthChecker"] = args ? args.healthChecker : undefined;
             resourceInputs["ipVersion"] = args ? args.ipVersion : undefined;
             resourceInputs["isFailOpen"] = args ? args.isFailOpen : undefined;
+            resourceInputs["isInstantFailoverEnabled"] = args ? args.isInstantFailoverEnabled : undefined;
             resourceInputs["isPreserveSource"] = args ? args.isPreserveSource : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["networkLoadBalancerId"] = args ? args.networkLoadBalancerId : undefined;
@@ -199,6 +206,10 @@ export interface NetworkLoadBalancersBackendSetsUnifiedState {
      * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
      */
     isFailOpen?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     */
+    isInstantFailoverEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
@@ -245,6 +256,10 @@ export interface NetworkLoadBalancersBackendSetsUnifiedArgs {
      * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
      */
     isFailOpen?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     */
+    isInstantFailoverEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */

@@ -65,6 +65,9 @@ export interface GetMigrationResult {
      * Data Transfer Medium details for the Migration.
      */
     readonly dataTransferMediumDetails: outputs.DatabaseMigration.GetMigrationDataTransferMediumDetail[];
+    /**
+     * Optional additional properties for dump transfer in source or target host.
+     */
     readonly dataTransferMediumDetailsV2s: outputs.DatabaseMigration.GetMigrationDataTransferMediumDetailsV2[];
     /**
      * Optional settings for Data Pump Export and Import jobs

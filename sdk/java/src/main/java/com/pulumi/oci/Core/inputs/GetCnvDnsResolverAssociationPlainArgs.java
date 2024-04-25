@@ -14,14 +14,14 @@ public final class GetCnvDnsResolverAssociationPlainArgs extends com.pulumi.reso
     public static final GetCnvDnsResolverAssociationPlainArgs Empty = new GetCnvDnsResolverAssociationPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
     @Import(name="vcnId", required=true)
     private String vcnId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * @return Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      * 
      */
     public String vcnId() {
@@ -53,7 +53,7 @@ public final class GetCnvDnsResolverAssociationPlainArgs extends com.pulumi.reso
         }
 
         /**
-         * @param vcnId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         * @param vcnId Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          * 
          * @return builder
          * 

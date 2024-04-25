@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetComputeCapacityReservationInstanceReservationConfigClusterConfigResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
         /// </summary>
         public readonly string HpcIslandId;
         /// <summary>
-        /// The list of OCID of the network blocks.
+        /// The list of OCIDs of the network blocks.
         /// </summary>
         public readonly ImmutableArray<string> NetworkBlockIds;
 

@@ -66,6 +66,10 @@ export interface GetVolumeResult {
     readonly blockVolumeReplicas: outputs.Core.GetVolumeBlockVolumeReplica[];
     readonly blockVolumeReplicasDeletion: boolean;
     /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     */
+    readonly clusterPlacementGroupId: string;
+    /**
      * The OCID of the compartment that contains the volume.
      */
     readonly compartmentId: string;

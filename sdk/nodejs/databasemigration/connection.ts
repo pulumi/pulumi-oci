@@ -146,6 +146,9 @@ export class Connection extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Database manual connection subtype. This value can only be specified for manual connections.
+     */
     public readonly manualDatabaseSubType!: pulumi.Output<string>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
@@ -319,6 +322,9 @@ export interface ConnectionState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Database manual connection subtype. This value can only be specified for manual connections.
+     */
     manualDatabaseSubType?: pulumi.Input<string>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
@@ -406,6 +412,9 @@ export interface ConnectionArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Database manual connection subtype. This value can only be specified for manual connections.
+     */
     manualDatabaseSubType?: pulumi.Input<string>;
     /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.

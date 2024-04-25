@@ -61,6 +61,9 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Database manual connection subtype. This value can only be specified for manual connections.
+        /// </summary>
         public readonly string ManualDatabaseSubType;
         /// <summary>
         /// An array of Network Security Group OCIDs used to define network access for Connections.

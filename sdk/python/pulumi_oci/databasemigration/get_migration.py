@@ -165,6 +165,9 @@ class GetMigrationResult:
     @property
     @pulumi.getter(name="dataTransferMediumDetailsV2s")
     def data_transfer_medium_details_v2s(self) -> Sequence['outputs.GetMigrationDataTransferMediumDetailsV2Result']:
+        """
+        Optional additional properties for dump transfer in source or target host.
+        """
         return pulumi.get(self, "data_transfer_medium_details_v2s")
 
     @property

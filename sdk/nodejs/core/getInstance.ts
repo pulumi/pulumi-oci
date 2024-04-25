@@ -69,6 +69,10 @@ export interface GetInstanceResult {
      */
     readonly capacityReservationId: string;
     /**
+     * The OCID of the cluster placement group of the instance.
+     */
+    readonly clusterPlacementGroupId: string;
+    /**
      * The OCID of the compartment containing images to search
      */
     readonly compartmentId: string;

@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.InstanceSourceDetailsInstanceSourceImageFilterDetails;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -30,18 +31,19 @@ public final class InstanceSourceDetails {
      * 
      */
     private @Nullable InstanceSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails;
+    private @Nullable Boolean isPreserveBootVolumeEnabled;
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     private @Nullable String kmsKeyId;
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return (Updatable) The OCID of the boot volume used to boot the instance.
      * 
      */
     private @Nullable String sourceId;
     /**
-     * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+     * @return (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
     private String sourceType;
@@ -70,22 +72,25 @@ public final class InstanceSourceDetails {
     public Optional<InstanceSourceDetailsInstanceSourceImageFilterDetails> instanceSourceImageFilterDetails() {
         return Optional.ofNullable(this.instanceSourceImageFilterDetails);
     }
+    public Optional<Boolean> isPreserveBootVolumeEnabled() {
+        return Optional.ofNullable(this.isPreserveBootVolumeEnabled);
+    }
     /**
-     * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<String> kmsKeyId() {
         return Optional.ofNullable(this.kmsKeyId);
     }
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return (Updatable) The OCID of the boot volume used to boot the instance.
      * 
      */
     public Optional<String> sourceId() {
         return Optional.ofNullable(this.sourceId);
     }
     /**
-     * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+     * @return (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
     public String sourceType() {
@@ -104,6 +109,7 @@ public final class InstanceSourceDetails {
         private @Nullable String bootVolumeSizeInGbs;
         private @Nullable String bootVolumeVpusPerGb;
         private @Nullable InstanceSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails;
+        private @Nullable Boolean isPreserveBootVolumeEnabled;
         private @Nullable String kmsKeyId;
         private @Nullable String sourceId;
         private String sourceType;
@@ -113,6 +119,7 @@ public final class InstanceSourceDetails {
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
     	      this.bootVolumeVpusPerGb = defaults.bootVolumeVpusPerGb;
     	      this.instanceSourceImageFilterDetails = defaults.instanceSourceImageFilterDetails;
+    	      this.isPreserveBootVolumeEnabled = defaults.isPreserveBootVolumeEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sourceId = defaults.sourceId;
     	      this.sourceType = defaults.sourceType;
@@ -134,6 +141,12 @@ public final class InstanceSourceDetails {
         public Builder instanceSourceImageFilterDetails(@Nullable InstanceSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails) {
 
             this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isPreserveBootVolumeEnabled(@Nullable Boolean isPreserveBootVolumeEnabled) {
+
+            this.isPreserveBootVolumeEnabled = isPreserveBootVolumeEnabled;
             return this;
         }
         @CustomType.Setter
@@ -161,6 +174,7 @@ public final class InstanceSourceDetails {
             _resultValue.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             _resultValue.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             _resultValue.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            _resultValue.isPreserveBootVolumeEnabled = isPreserveBootVolumeEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.sourceId = sourceId;
             _resultValue.sourceType = sourceType;

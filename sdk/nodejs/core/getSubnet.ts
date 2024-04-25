@@ -33,7 +33,7 @@ export function getSubnet(args: GetSubnetArgs, opts?: pulumi.InvokeOptions): Pro
  */
 export interface GetSubnetArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     subnetId: string;
 }
@@ -157,7 +157,7 @@ export function getSubnetOutput(args: GetSubnetOutputArgs, opts?: pulumi.InvokeO
  */
 export interface GetSubnetOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     subnetId: pulumi.Input<string>;
 }

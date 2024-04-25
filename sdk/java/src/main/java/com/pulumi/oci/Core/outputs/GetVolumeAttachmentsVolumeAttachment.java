@@ -100,6 +100,11 @@ public final class GetVolumeAttachmentsVolumeAttachment {
     private Boolean isReadOnly;
     private Boolean isShareable;
     /**
+     * @return Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+     * 
+     */
+    private Boolean isVolumeCreatedDuringLaunch;
+    /**
      * @return The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      * 
      */
@@ -252,6 +257,13 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         return this.isShareable;
     }
     /**
+     * @return Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+     * 
+     */
+    public Boolean isVolumeCreatedDuringLaunch() {
+        return this.isVolumeCreatedDuringLaunch;
+    }
+    /**
      * @return The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      * 
      */
@@ -323,6 +335,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
         private Boolean isPvEncryptionInTransitEnabled;
         private Boolean isReadOnly;
         private Boolean isShareable;
+        private Boolean isVolumeCreatedDuringLaunch;
         private String iscsiLoginState;
         private List<GetVolumeAttachmentsVolumeAttachmentMultipathDevice> multipathDevices;
         private Integer port;
@@ -350,6 +363,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.isReadOnly = defaults.isReadOnly;
     	      this.isShareable = defaults.isShareable;
+    	      this.isVolumeCreatedDuringLaunch = defaults.isVolumeCreatedDuringLaunch;
     	      this.iscsiLoginState = defaults.iscsiLoginState;
     	      this.multipathDevices = defaults.multipathDevices;
     	      this.port = defaults.port;
@@ -496,6 +510,14 @@ public final class GetVolumeAttachmentsVolumeAttachment {
             return this;
         }
         @CustomType.Setter
+        public Builder isVolumeCreatedDuringLaunch(Boolean isVolumeCreatedDuringLaunch) {
+            if (isVolumeCreatedDuringLaunch == null) {
+              throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "isVolumeCreatedDuringLaunch");
+            }
+            this.isVolumeCreatedDuringLaunch = isVolumeCreatedDuringLaunch;
+            return this;
+        }
+        @CustomType.Setter
         public Builder iscsiLoginState(String iscsiLoginState) {
             if (iscsiLoginState == null) {
               throw new MissingRequiredPropertyException("GetVolumeAttachmentsVolumeAttachment", "iscsiLoginState");
@@ -573,6 +595,7 @@ public final class GetVolumeAttachmentsVolumeAttachment {
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.isReadOnly = isReadOnly;
             _resultValue.isShareable = isShareable;
+            _resultValue.isVolumeCreatedDuringLaunch = isVolumeCreatedDuringLaunch;
             _resultValue.iscsiLoginState = iscsiLoginState;
             _resultValue.multipathDevices = multipathDevices;
             _resultValue.port = port;

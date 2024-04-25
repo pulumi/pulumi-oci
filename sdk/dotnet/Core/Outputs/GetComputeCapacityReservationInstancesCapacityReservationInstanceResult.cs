@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// The OCID of the cluster placement group of the instance.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -42,6 +46,8 @@ namespace Pulumi.Oci.Core.Outputs
         private GetComputeCapacityReservationInstancesCapacityReservationInstanceResult(
             string availabilityDomain,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             string faultDomain,
@@ -53,6 +59,7 @@ namespace Pulumi.Oci.Core.Outputs
             ImmutableArray<Outputs.GetComputeCapacityReservationInstancesCapacityReservationInstanceShapeConfigResult> shapeConfigs)
         {
             AvailabilityDomain = availabilityDomain;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             FaultDomain = faultDomain;
             Id = id;

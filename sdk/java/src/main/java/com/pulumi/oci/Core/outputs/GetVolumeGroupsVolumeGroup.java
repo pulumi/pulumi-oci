@@ -28,6 +28,7 @@ public final class GetVolumeGroupsVolumeGroup {
      */
     @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
     private String backupPolicyId;
+    private String clusterPlacementGroupId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -112,6 +113,9 @@ public final class GetVolumeGroupsVolumeGroup {
     @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
     public String backupPolicyId() {
         return this.backupPolicyId;
+    }
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -222,6 +226,7 @@ public final class GetVolumeGroupsVolumeGroup {
     public static final class Builder {
         private String availabilityDomain;
         private String backupPolicyId;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -242,6 +247,7 @@ public final class GetVolumeGroupsVolumeGroup {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupPolicyId = defaults.backupPolicyId;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -273,6 +279,14 @@ public final class GetVolumeGroupsVolumeGroup {
               throw new MissingRequiredPropertyException("GetVolumeGroupsVolumeGroup", "backupPolicyId");
             }
             this.backupPolicyId = backupPolicyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupsVolumeGroup", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -408,6 +422,7 @@ public final class GetVolumeGroupsVolumeGroup {
             final var _resultValue = new GetVolumeGroupsVolumeGroup();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.backupPolicyId = backupPolicyId;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

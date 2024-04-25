@@ -55,6 +55,7 @@ import javax.annotation.Nullable;
  *                 .volumeIds(volumeGroupSourceId)
  *                 .build())
  *             .backupPolicyId(testVolumeBackupPolicies.volumeBackupPolicies()[0].id())
+ *             .clusterPlacementGroupId(testGroup.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .displayName(volumeGroupDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
@@ -112,6 +113,20 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> backupPolicyId() {
         return this.backupPolicyId;
+    }
+    /**
+     * The clusterPlacementGroup Id of the volume group for volume group placement.
+     * 
+     */
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The clusterPlacementGroup Id of the volume group for volume group placement.
+     * 
+     */
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * (Updatable) The OCID of the compartment that contains the volume group.

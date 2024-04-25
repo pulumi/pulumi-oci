@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaResult> BlockVolumeReplicas;
         /// <summary>
+        /// The OCID of the cluster placement group of the instance.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -73,6 +77,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaResult> blockVolumeReplicas,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -95,6 +101,7 @@ namespace Pulumi.Oci.Core.Outputs
             AvailabilityDomain = availabilityDomain;
             BackupPolicyId = backupPolicyId;
             BlockVolumeReplicas = blockVolumeReplicas;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

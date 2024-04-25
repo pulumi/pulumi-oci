@@ -37,6 +37,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? CapacityReservationId { get; set; }
 
         /// <summary>
+        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment containing images to search
         /// </summary>
         [Input("compartmentId")]

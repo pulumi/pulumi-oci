@@ -95,7 +95,7 @@ def get_cnv_dns_resolver_association(vcn_id: Optional[str] = None,
     ```
 
 
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    :param str vcn_id: Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     """
     __args__ = dict()
     __args__['vcnId'] = vcn_id
@@ -127,6 +127,6 @@ def get_cnv_dns_resolver_association_output(vcn_id: Optional[pulumi.Input[str]] 
     ```
 
 
-    :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+    :param str vcn_id: Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
     """
     ...

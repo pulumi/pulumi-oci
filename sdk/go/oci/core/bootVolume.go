@@ -53,6 +53,7 @@ import (
 //						DisplayName:        pulumi.Any(bootVolumeBootVolumeReplicasDisplayName),
 //					},
 //				},
+//				ClusterPlacementGroupId: pulumi.Any(testGroup.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -98,6 +99,8 @@ type BootVolume struct {
 	// (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
 	BootVolumeReplicas         BootVolumeBootVolumeReplicaArrayOutput `pulumi:"bootVolumeReplicas"`
 	BootVolumeReplicasDeletion pulumi.BoolPtrOutput                   `pulumi:"bootVolumeReplicasDeletion"`
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId pulumi.StringOutput `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The OCID of the compartment that contains the boot volume.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -185,6 +188,8 @@ type bootVolumeState struct {
 	// (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
 	BootVolumeReplicas         []BootVolumeBootVolumeReplica `pulumi:"bootVolumeReplicas"`
 	BootVolumeReplicasDeletion *bool                         `pulumi:"bootVolumeReplicasDeletion"`
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The OCID of the compartment that contains the boot volume.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -234,6 +239,8 @@ type BootVolumeState struct {
 	// (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
 	BootVolumeReplicas         BootVolumeBootVolumeReplicaArrayInput
 	BootVolumeReplicasDeletion pulumi.BoolPtrInput
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the boot volume.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -285,6 +292,8 @@ type bootVolumeArgs struct {
 	// (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
 	BootVolumeReplicas         []BootVolumeBootVolumeReplica `pulumi:"bootVolumeReplicas"`
 	BootVolumeReplicasDeletion *bool                         `pulumi:"bootVolumeReplicasDeletion"`
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The OCID of the compartment that contains the boot volume.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -319,6 +328,8 @@ type BootVolumeArgs struct {
 	// (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
 	BootVolumeReplicas         BootVolumeBootVolumeReplicaArrayInput
 	BootVolumeReplicasDeletion pulumi.BoolPtrInput
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the boot volume.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -456,6 +467,11 @@ func (o BootVolumeOutput) BootVolumeReplicas() BootVolumeBootVolumeReplicaArrayO
 
 func (o BootVolumeOutput) BootVolumeReplicasDeletion() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BootVolume) pulumi.BoolPtrOutput { return v.BootVolumeReplicasDeletion }).(pulumi.BoolPtrOutput)
+}
+
+// The clusterPlacementGroup Id of the volume for volume placement.
+func (o BootVolumeOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *BootVolume) pulumi.StringOutput { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The OCID of the compartment that contains the boot volume.

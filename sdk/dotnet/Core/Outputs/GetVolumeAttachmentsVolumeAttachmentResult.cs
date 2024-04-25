@@ -79,6 +79,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly bool IsReadOnly;
         public readonly bool IsShareable;
         /// <summary>
+        /// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+        /// </summary>
+        public readonly bool IsVolumeCreatedDuringLaunch;
+        /// <summary>
         /// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
         /// </summary>
         public readonly string IscsiLoginState;
@@ -140,6 +144,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool isShareable,
 
+            bool isVolumeCreatedDuringLaunch,
+
             string iscsiLoginState,
 
             ImmutableArray<Outputs.GetVolumeAttachmentsVolumeAttachmentMultipathDeviceResult> multipathDevices,
@@ -171,6 +177,7 @@ namespace Pulumi.Oci.Core.Outputs
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             IsReadOnly = isReadOnly;
             IsShareable = isShareable;
+            IsVolumeCreatedDuringLaunch = isVolumeCreatedDuringLaunch;
             IscsiLoginState = iscsiLoginState;
             MultipathDevices = multipathDevices;
             Port = port;

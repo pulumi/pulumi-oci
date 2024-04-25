@@ -18,6 +18,11 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
      */
     private String availabilityDomain;
     /**
+     * @return The OCID of the cluster placement group of the instance.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -50,6 +55,13 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return The OCID of the cluster placement group of the instance.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -97,6 +109,7 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private String faultDomain;
         private String id;
@@ -106,6 +119,7 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
         public Builder(GetComputeCapacityReservationInstancesCapacityReservationInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.faultDomain = defaults.faultDomain;
     	      this.id = defaults.id;
@@ -119,6 +133,14 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
               throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstancesCapacityReservationInstance", "availabilityDomain");
             }
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstancesCapacityReservationInstance", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -167,6 +189,7 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
         public GetComputeCapacityReservationInstancesCapacityReservationInstance build() {
             final var _resultValue = new GetComputeCapacityReservationInstancesCapacityReservationInstance();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.faultDomain = faultDomain;
             _resultValue.id = id;

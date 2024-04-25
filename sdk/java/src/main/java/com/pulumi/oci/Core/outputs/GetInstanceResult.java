@@ -51,6 +51,11 @@ public final class GetInstanceResult {
      */
     private String capacityReservationId;
     /**
+     * @return The OCID of the cluster placement group of the instance.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The OCID of the compartment containing images to search
      * 
      */
@@ -261,6 +266,13 @@ public final class GetInstanceResult {
      */
     public String capacityReservationId() {
         return this.capacityReservationId;
+    }
+    /**
+     * @return The OCID of the cluster placement group of the instance.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The OCID of the compartment containing images to search
@@ -526,6 +538,7 @@ public final class GetInstanceResult {
         private String availabilityDomain;
         private String bootVolumeId;
         private String capacityReservationId;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private String computeClusterId;
         private List<GetInstanceCreateVnicDetail> createVnicDetails;
@@ -573,6 +586,7 @@ public final class GetInstanceResult {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.bootVolumeId = defaults.bootVolumeId;
     	      this.capacityReservationId = defaults.capacityReservationId;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeClusterId = defaults.computeClusterId;
     	      this.createVnicDetails = defaults.createVnicDetails;
@@ -665,6 +679,14 @@ public final class GetInstanceResult {
               throw new MissingRequiredPropertyException("GetInstanceResult", "capacityReservationId");
             }
             this.capacityReservationId = capacityReservationId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -1003,6 +1025,7 @@ public final class GetInstanceResult {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.bootVolumeId = bootVolumeId;
             _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeClusterId = computeClusterId;
             _resultValue.createVnicDetails = createVnicDetails;

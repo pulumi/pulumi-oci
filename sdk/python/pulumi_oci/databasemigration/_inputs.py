@@ -959,7 +959,11 @@ class MigrationDataTransferMediumDetailsV2Args:
                  secret_access_key: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) Migration type.
+        :param pulumi.Input[str] access_key_id: (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         :param pulumi.Input[str] name: (Updatable) Name of directory object in database
+        :param pulumi.Input['MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs'] object_storage_bucket: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        :param pulumi.Input[str] region: (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        :param pulumi.Input[str] secret_access_key: (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         """
         pulumi.set(__self__, "type", type)
         if access_key_id is not None:
@@ -988,6 +992,9 @@ class MigrationDataTransferMediumDetailsV2Args:
     @property
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
         return pulumi.get(self, "access_key_id")
 
     @access_key_id.setter
@@ -1009,6 +1016,9 @@ class MigrationDataTransferMediumDetailsV2Args:
     @property
     @pulumi.getter(name="objectStorageBucket")
     def object_storage_bucket(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs']]:
+        """
+        (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        """
         return pulumi.get(self, "object_storage_bucket")
 
     @object_storage_bucket.setter
@@ -1018,6 +1028,9 @@ class MigrationDataTransferMediumDetailsV2Args:
     @property
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        """
         return pulumi.get(self, "region")
 
     @region.setter
@@ -1027,6 +1040,9 @@ class MigrationDataTransferMediumDetailsV2Args:
     @property
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
         return pulumi.get(self, "secret_access_key")
 
     @secret_access_key.setter
@@ -1398,6 +1414,7 @@ class MigrationDumpTransferDetailsArgs:
                  source: Optional[pulumi.Input['MigrationDumpTransferDetailsSourceArgs']] = None,
                  target: Optional[pulumi.Input['MigrationDumpTransferDetailsTargetArgs']] = None):
         """
+        :param pulumi.Input[str] shared_storage_mount_target_id: Optional OCID of the shared storage mount target.
         :param pulumi.Input['MigrationDumpTransferDetailsSourceArgs'] source: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
         :param pulumi.Input['MigrationDumpTransferDetailsTargetArgs'] target: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
         """
@@ -1411,6 +1428,9 @@ class MigrationDumpTransferDetailsArgs:
     @property
     @pulumi.getter(name="sharedStorageMountTargetId")
     def shared_storage_mount_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Optional OCID of the shared storage mount target.
+        """
         return pulumi.get(self, "shared_storage_mount_target_id")
 
     @shared_storage_mount_target_id.setter

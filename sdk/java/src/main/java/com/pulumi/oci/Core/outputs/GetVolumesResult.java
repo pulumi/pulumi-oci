@@ -21,6 +21,11 @@ public final class GetVolumesResult {
      */
     private @Nullable String availabilityDomain;
     /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    private @Nullable String clusterPlacementGroupId;
+    /**
      * @return The OCID of the compartment that contains the volume.
      * 
      */
@@ -59,6 +64,13 @@ public final class GetVolumesResult {
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
+    }
+    /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
     }
     /**
      * @return The OCID of the compartment that contains the volume.
@@ -116,6 +128,7 @@ public final class GetVolumesResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
+        private @Nullable String clusterPlacementGroupId;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVolumesFilter> filters;
@@ -127,6 +140,7 @@ public final class GetVolumesResult {
         public Builder(GetVolumesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
@@ -140,6 +154,12 @@ public final class GetVolumesResult {
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
 
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -197,6 +217,7 @@ public final class GetVolumesResult {
         public GetVolumesResult build() {
             final var _resultValue = new GetVolumesResult();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;

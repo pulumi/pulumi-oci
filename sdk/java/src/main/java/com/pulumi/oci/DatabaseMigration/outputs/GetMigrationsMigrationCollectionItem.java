@@ -49,6 +49,10 @@ public final class GetMigrationsMigrationCollectionItem {
      * 
      */
     private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetail> dataTransferMediumDetails;
+    /**
+     * @return Optional additional properties for dump transfer in source or target host.
+     * 
+     */
     private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s;
     /**
      * @return Optional settings for Data Pump Export and Import jobs
@@ -205,6 +209,10 @@ public final class GetMigrationsMigrationCollectionItem {
     public List<GetMigrationsMigrationCollectionItemDataTransferMediumDetail> dataTransferMediumDetails() {
         return this.dataTransferMediumDetails;
     }
+    /**
+     * @return Optional additional properties for dump transfer in source or target host.
+     * 
+     */
     public List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s() {
         return this.dataTransferMediumDetailsV2s;
     }

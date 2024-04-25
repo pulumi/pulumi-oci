@@ -50,6 +50,7 @@ import * as utilities from "../utilities";
  *                     availabilityDomain: instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasAvailabilityDomain,
  *                     displayName: instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasDisplayName,
  *                 },
+ *                 clusterPlacementGroupId: clusterPlacementGroupId,
  *                 compartmentId: compartmentId,
  *                 definedTags: {
  *                     "Operations.CostCenter": "42",
@@ -85,6 +86,7 @@ import * as utilities from "../utilities";
  *             },
  *             availabilityDomain: instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityDomain,
  *             capacityReservationId: testCapacityReservation.id,
+ *             clusterPlacementGroupId: testGroup.id,
  *             compartmentId: compartmentId,
  *             createVnicDetails: {
  *                 assignIpv6ip: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip,
@@ -194,6 +196,7 @@ import * as utilities from "../utilities";
  *                     }],
  *                     availabilityDomain: instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAvailabilityDomain,
  *                     backupPolicyId: testVolumeBackupPolicies.volumeBackupPolicies[0].id,
+ *                     clusterPlacementGroupId: clusterPlacementGroupId,
  *                     compartmentId: compartmentId,
  *                     definedTags: {
  *                         "Operations.CostCenter": "42",
@@ -227,6 +230,7 @@ import * as utilities from "../utilities";
  *                 },
  *                 availabilityDomain: instanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityDomain,
  *                 capacityReservationId: testCapacityReservation.id,
+ *                 clusterPlacementGroupId: testGroup.id,
  *                 compartmentId: compartmentId,
  *                 createVnicDetails: {
  *                     assignIpv6ip: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip,

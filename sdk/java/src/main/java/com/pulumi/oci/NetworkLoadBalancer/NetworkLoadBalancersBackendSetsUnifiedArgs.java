@@ -81,6 +81,21 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
     }
 
     /**
+     * (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     * 
+     */
+    @Import(name="isInstantFailoverEnabled")
+    private @Nullable Output<Boolean> isInstantFailoverEnabled;
+
+    /**
+     * @return (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     * 
+     */
+    public Optional<Output<Boolean>> isInstantFailoverEnabled() {
+        return Optional.ofNullable(this.isInstantFailoverEnabled);
+    }
+
+    /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
@@ -161,6 +176,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
         this.healthChecker = $.healthChecker;
         this.ipVersion = $.ipVersion;
         this.isFailOpen = $.isFailOpen;
+        this.isInstantFailoverEnabled = $.isInstantFailoverEnabled;
         this.isPreserveSource = $.isPreserveSource;
         this.name = $.name;
         this.networkLoadBalancerId = $.networkLoadBalancerId;
@@ -277,6 +293,27 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
          */
         public Builder isFailOpen(Boolean isFailOpen) {
             return isFailOpen(Output.of(isFailOpen));
+        }
+
+        /**
+         * @param isInstantFailoverEnabled (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInstantFailoverEnabled(@Nullable Output<Boolean> isInstantFailoverEnabled) {
+            $.isInstantFailoverEnabled = isInstantFailoverEnabled;
+            return this;
+        }
+
+        /**
+         * @param isInstantFailoverEnabled (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInstantFailoverEnabled(Boolean isInstantFailoverEnabled) {
+            return isInstantFailoverEnabled(Output.of(isInstantFailoverEnabled));
         }
 
         /**

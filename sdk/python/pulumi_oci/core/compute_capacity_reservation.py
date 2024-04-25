@@ -399,6 +399,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                     hpc_island_id=test_hpc_island["id"],
                     network_block_ids=compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids,
                 ),
+                cluster_placement_group_id=test_group["id"],
                 fault_domain=compute_capacity_reservation_instance_reservation_configs_fault_domain,
                 instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
                     memory_in_gbs=compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs,
@@ -470,6 +471,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                     hpc_island_id=test_hpc_island["id"],
                     network_block_ids=compute_capacity_reservation_instance_reservation_configs_cluster_config_network_block_ids,
                 ),
+                cluster_placement_group_id=test_group["id"],
                 fault_domain=compute_capacity_reservation_instance_reservation_configs_fault_domain,
                 instance_shape_config=oci.core.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs(
                     memory_in_gbs=compute_capacity_reservation_instance_reservation_configs_instance_shape_config_memory_in_gbs,

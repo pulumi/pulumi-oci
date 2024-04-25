@@ -6,6 +6,7 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetail;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -27,6 +28,7 @@ public final class GetInstancesInstanceSourceDetail {
      * 
      */
     private List<GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
+    private Boolean isPreserveBootVolumeEnabled;
     /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
@@ -65,6 +67,9 @@ public final class GetInstancesInstanceSourceDetail {
     public List<GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails() {
         return this.instanceSourceImageFilterDetails;
     }
+    public Boolean isPreserveBootVolumeEnabled() {
+        return this.isPreserveBootVolumeEnabled;
+    }
     /**
      * @return The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      * 
@@ -99,6 +104,7 @@ public final class GetInstancesInstanceSourceDetail {
         private String bootVolumeSizeInGbs;
         private String bootVolumeVpusPerGb;
         private List<GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails;
+        private Boolean isPreserveBootVolumeEnabled;
         private String kmsKeyId;
         private String sourceId;
         private String sourceType;
@@ -108,6 +114,7 @@ public final class GetInstancesInstanceSourceDetail {
     	      this.bootVolumeSizeInGbs = defaults.bootVolumeSizeInGbs;
     	      this.bootVolumeVpusPerGb = defaults.bootVolumeVpusPerGb;
     	      this.instanceSourceImageFilterDetails = defaults.instanceSourceImageFilterDetails;
+    	      this.isPreserveBootVolumeEnabled = defaults.isPreserveBootVolumeEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.sourceId = defaults.sourceId;
     	      this.sourceType = defaults.sourceType;
@@ -141,6 +148,14 @@ public final class GetInstancesInstanceSourceDetail {
             return instanceSourceImageFilterDetails(List.of(instanceSourceImageFilterDetails));
         }
         @CustomType.Setter
+        public Builder isPreserveBootVolumeEnabled(Boolean isPreserveBootVolumeEnabled) {
+            if (isPreserveBootVolumeEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceSourceDetail", "isPreserveBootVolumeEnabled");
+            }
+            this.isPreserveBootVolumeEnabled = isPreserveBootVolumeEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetInstancesInstanceSourceDetail", "kmsKeyId");
@@ -169,6 +184,7 @@ public final class GetInstancesInstanceSourceDetail {
             _resultValue.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             _resultValue.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             _resultValue.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            _resultValue.isPreserveBootVolumeEnabled = isPreserveBootVolumeEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.sourceId = sourceId;
             _resultValue.sourceType = sourceType;

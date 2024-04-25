@@ -21,7 +21,7 @@ class DrgRouteDistributionArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a DrgRouteDistribution resource.
-        :param pulumi.Input[str] distribution_type: Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        :param pulumi.Input[str] distribution_type: Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -44,7 +44,7 @@ class DrgRouteDistributionArgs:
     @pulumi.getter(name="distributionType")
     def distribution_type(self) -> pulumi.Input[str]:
         """
-        Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         """
         return pulumi.get(self, "distribution_type")
 
@@ -121,7 +121,7 @@ class _DrgRouteDistributionState:
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] distribution_type: Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        :param pulumi.Input[str] distribution_type: Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
                
@@ -188,7 +188,7 @@ class _DrgRouteDistributionState:
     @pulumi.getter(name="distributionType")
     def distribution_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         """
         return pulumi.get(self, "distribution_type")
 
@@ -298,7 +298,7 @@ class DrgRouteDistribution(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] distribution_type: Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        :param pulumi.Input[str] distribution_type: Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
                
@@ -415,7 +415,7 @@ class DrgRouteDistribution(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] distribution_type: Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        :param pulumi.Input[str] distribution_type: Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
                
@@ -467,7 +467,7 @@ class DrgRouteDistribution(pulumi.CustomResource):
     @pulumi.getter(name="distributionType")
     def distribution_type(self) -> pulumi.Output[str]:
         """
-        Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         """
         return pulumi.get(self, "distribution_type")
 

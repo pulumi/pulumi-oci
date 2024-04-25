@@ -71,6 +71,7 @@ namespace Pulumi.Oci.Core
     ///                             AvailabilityDomain = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasAvailabilityDomain,
     ///                             DisplayName = instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasDisplayName,
     ///                         },
+    ///                         ClusterPlacementGroupId = clusterPlacementGroupId,
     ///                         CompartmentId = compartmentId,
     ///                         DefinedTags = 
     ///                         {
@@ -117,6 +118,7 @@ namespace Pulumi.Oci.Core
     ///                 },
     ///                 AvailabilityDomain = instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityDomain,
     ///                 CapacityReservationId = testCapacityReservation.Id,
+    ///                 ClusterPlacementGroupId = testGroup.Id,
     ///                 CompartmentId = compartmentId,
     ///                 CreateVnicDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs
     ///                 {
@@ -255,6 +257,7 @@ namespace Pulumi.Oci.Core
     ///                                 },
     ///                                 AvailabilityDomain = instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAvailabilityDomain,
     ///                                 BackupPolicyId = testVolumeBackupPolicies.VolumeBackupPolicies[0].Id,
+    ///                                 ClusterPlacementGroupId = clusterPlacementGroupId,
     ///                                 CompartmentId = compartmentId,
     ///                                 DefinedTags = 
     ///                                 {
@@ -299,6 +302,7 @@ namespace Pulumi.Oci.Core
     ///                         },
     ///                         AvailabilityDomain = instanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityDomain,
     ///                         CapacityReservationId = testCapacityReservation.Id,
+    ///                         ClusterPlacementGroupId = testGroup.Id,
     ///                         CompartmentId = compartmentId,
     ///                         CreateVnicDetails = new Oci.Core.Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs
     ///                         {

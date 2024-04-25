@@ -99,6 +99,21 @@ public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The OCID of the compartment that contains the boot volume.
      * 
      */
@@ -237,6 +252,7 @@ public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
         this.backupPolicyId = $.backupPolicyId;
         this.bootVolumeReplicas = $.bootVolumeReplicas;
         this.bootVolumeReplicasDeletion = $.bootVolumeReplicasDeletion;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -385,6 +401,27 @@ public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder bootVolumeReplicasDeletion(Boolean bootVolumeReplicasDeletion) {
             return bootVolumeReplicasDeletion(Output.of(bootVolumeReplicasDeletion));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The clusterPlacementGroup Id of the volume for volume placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The clusterPlacementGroup Id of the volume for volume placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**

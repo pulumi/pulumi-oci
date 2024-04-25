@@ -59,6 +59,7 @@ import (
 //						DisplayName:        pulumi.Any(volumeBlockVolumeReplicasDisplayName),
 //					},
 //				},
+//				ClusterPlacementGroupId: pulumi.Any(testGroup.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -109,6 +110,8 @@ type Volume struct {
 	// (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
 	BlockVolumeReplicas         VolumeBlockVolumeReplicaArrayOutput `pulumi:"blockVolumeReplicas"`
 	BlockVolumeReplicasDeletion pulumi.BoolPtrOutput                `pulumi:"blockVolumeReplicasDeletion"`
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId pulumi.StringOutput `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The OCID of the compartment that contains the volume.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -195,6 +198,8 @@ type volumeState struct {
 	// (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
 	BlockVolumeReplicas         []VolumeBlockVolumeReplica `pulumi:"blockVolumeReplicas"`
 	BlockVolumeReplicasDeletion *bool                      `pulumi:"blockVolumeReplicasDeletion"`
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The OCID of the compartment that contains the volume.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -246,6 +251,8 @@ type VolumeState struct {
 	// (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
 	BlockVolumeReplicas         VolumeBlockVolumeReplicaArrayInput
 	BlockVolumeReplicasDeletion pulumi.BoolPtrInput
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the volume.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -299,6 +306,8 @@ type volumeArgs struct {
 	// (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
 	BlockVolumeReplicas         []VolumeBlockVolumeReplica `pulumi:"blockVolumeReplicas"`
 	BlockVolumeReplicasDeletion *bool                      `pulumi:"blockVolumeReplicasDeletion"`
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The OCID of the compartment that contains the volume.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -339,6 +348,8 @@ type VolumeArgs struct {
 	// (Updatable) The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
 	BlockVolumeReplicas         VolumeBlockVolumeReplicaArrayInput
 	BlockVolumeReplicasDeletion pulumi.BoolPtrInput
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment that contains the volume.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -482,6 +493,11 @@ func (o VolumeOutput) BlockVolumeReplicas() VolumeBlockVolumeReplicaArrayOutput 
 
 func (o VolumeOutput) BlockVolumeReplicasDeletion() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Volume) pulumi.BoolPtrOutput { return v.BlockVolumeReplicasDeletion }).(pulumi.BoolPtrOutput)
+}
+
+// The clusterPlacementGroup Id of the volume for volume placement.
+func (o VolumeOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Volume) pulumi.StringOutput { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The OCID of the compartment that contains the volume.

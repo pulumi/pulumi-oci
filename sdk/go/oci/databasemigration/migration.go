@@ -216,7 +216,8 @@ type Migration struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText pulumi.StringOutput `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails   MigrationDataTransferMediumDetailsOutput   `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails MigrationDataTransferMediumDetailsOutput `pulumi:"dataTransferMediumDetails"`
+	// (Updatable) Optional additional properties for dump transfer in source or target host.
 	DataTransferMediumDetailsV2 MigrationDataTransferMediumDetailsV2Output `pulumi:"dataTransferMediumDetailsV2"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings MigrationDatapumpSettingsOutput `pulumi:"datapumpSettings"`
@@ -317,7 +318,8 @@ type migrationState struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText *string `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails   *MigrationDataTransferMediumDetails   `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails *MigrationDataTransferMediumDetails `pulumi:"dataTransferMediumDetails"`
+	// (Updatable) Optional additional properties for dump transfer in source or target host.
 	DataTransferMediumDetailsV2 *MigrationDataTransferMediumDetailsV2 `pulumi:"dataTransferMediumDetailsV2"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings *MigrationDatapumpSettings `pulumi:"datapumpSettings"`
@@ -377,7 +379,8 @@ type MigrationState struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText pulumi.StringPtrInput
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails   MigrationDataTransferMediumDetailsPtrInput
+	DataTransferMediumDetails MigrationDataTransferMediumDetailsPtrInput
+	// (Updatable) Optional additional properties for dump transfer in source or target host.
 	DataTransferMediumDetailsV2 MigrationDataTransferMediumDetailsV2PtrInput
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings MigrationDatapumpSettingsPtrInput
@@ -439,7 +442,8 @@ type migrationArgs struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText *string `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails   *MigrationDataTransferMediumDetails   `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails *MigrationDataTransferMediumDetails `pulumi:"dataTransferMediumDetails"`
+	// (Updatable) Optional additional properties for dump transfer in source or target host.
 	DataTransferMediumDetailsV2 *MigrationDataTransferMediumDetailsV2 `pulumi:"dataTransferMediumDetailsV2"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings *MigrationDatapumpSettings `pulumi:"datapumpSettings"`
@@ -482,7 +486,8 @@ type MigrationArgs struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText pulumi.StringPtrInput
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails   MigrationDataTransferMediumDetailsPtrInput
+	DataTransferMediumDetails MigrationDataTransferMediumDetailsPtrInput
+	// (Updatable) Optional additional properties for dump transfer in source or target host.
 	DataTransferMediumDetailsV2 MigrationDataTransferMediumDetailsV2PtrInput
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings MigrationDatapumpSettingsPtrInput
@@ -631,6 +636,7 @@ func (o MigrationOutput) DataTransferMediumDetails() MigrationDataTransferMedium
 	return o.ApplyT(func(v *Migration) MigrationDataTransferMediumDetailsOutput { return v.DataTransferMediumDetails }).(MigrationDataTransferMediumDetailsOutput)
 }
 
+// (Updatable) Optional additional properties for dump transfer in source or target host.
 func (o MigrationOutput) DataTransferMediumDetailsV2() MigrationDataTransferMediumDetailsV2Output {
 	return o.ApplyT(func(v *Migration) MigrationDataTransferMediumDetailsV2Output { return v.DataTransferMediumDetailsV2 }).(MigrationDataTransferMediumDetailsV2Output)
 }

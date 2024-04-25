@@ -45,6 +45,7 @@ class ConnectionArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] manual_database_sub_type: Database manual connection subtype. This value can only be specified for manual connections.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input['ConnectionPrivateEndpointArgs'] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         :param pulumi.Input['ConnectionReplicationCredentialsArgs'] replication_credentials: (Updatable) Database Administrator Credentials details.
@@ -206,6 +207,9 @@ class ConnectionArgs:
     @property
     @pulumi.getter(name="manualDatabaseSubType")
     def manual_database_sub_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Database manual connection subtype. This value can only be specified for manual connections.
+        """
         return pulumi.get(self, "manual_database_sub_type")
 
     @manual_database_sub_type.setter
@@ -324,6 +328,7 @@ class _ConnectionState:
         :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] manual_database_sub_type: Database manual connection subtype. This value can only be specified for manual connections.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input['ConnectionPrivateEndpointArgs'] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         :param pulumi.Input['ConnectionReplicationCredentialsArgs'] replication_credentials: (Updatable) Database Administrator Credentials details.
@@ -518,6 +523,9 @@ class _ConnectionState:
     @property
     @pulumi.getter(name="manualDatabaseSubType")
     def manual_database_sub_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Database manual connection subtype. This value can only be specified for manual connections.
+        """
         return pulumi.get(self, "manual_database_sub_type")
 
     @manual_database_sub_type.setter
@@ -758,6 +766,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] manual_database_sub_type: Database manual connection subtype. This value can only be specified for manual connections.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         :param pulumi.Input[pulumi.InputType['ConnectionReplicationCredentialsArgs']] replication_credentials: (Updatable) Database Administrator Credentials details.
@@ -962,6 +971,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Database Connection display name identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] manual_database_sub_type: Database manual connection subtype. This value can only be specified for manual connections.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
         :param pulumi.Input[pulumi.InputType['ConnectionPrivateEndpointArgs']] private_endpoint: (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
         :param pulumi.Input[pulumi.InputType['ConnectionReplicationCredentialsArgs']] replication_credentials: (Updatable) Database Administrator Credentials details.
@@ -1094,6 +1104,9 @@ class Connection(pulumi.CustomResource):
     @property
     @pulumi.getter(name="manualDatabaseSubType")
     def manual_database_sub_type(self) -> pulumi.Output[str]:
+        """
+        Database manual connection subtype. This value can only be specified for manual connections.
+        """
         return pulumi.get(self, "manual_database_sub_type")
 
     @property

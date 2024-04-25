@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }

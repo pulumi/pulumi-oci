@@ -58,6 +58,7 @@ namespace Pulumi.Oci.Core
     ///                 DisplayName = volumeBlockVolumeReplicasDisplayName,
     ///             },
     ///         },
+    ///         ClusterPlacementGroupId = testGroup.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -126,6 +127,12 @@ namespace Pulumi.Oci.Core
 
         [Output("blockVolumeReplicasDeletion")]
         public Output<bool?> BlockVolumeReplicasDeletion { get; private set; } = null!;
+
+        /// <summary>
+        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// </summary>
+        [Output("clusterPlacementGroupId")]
+        public Output<string> ClusterPlacementGroupId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the volume.
@@ -308,6 +315,12 @@ namespace Pulumi.Oci.Core
         public Input<bool>? BlockVolumeReplicasDeletion { get; set; }
 
         /// <summary>
+        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment that contains the volume.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -436,6 +449,12 @@ namespace Pulumi.Oci.Core
 
         [Input("blockVolumeReplicasDeletion")]
         public Input<bool>? BlockVolumeReplicasDeletion { get; set; }
+
+        /// <summary>
+        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// </summary>
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the volume.

@@ -13,6 +13,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMigrationsMigrationCollectionItemDumpTransferDetail {
+    /**
+     * @return Optional OCID of the shared storage mount target.
+     * 
+     */
     private String sharedStorageMountTargetId;
     /**
      * @return Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -26,6 +30,10 @@ public final class GetMigrationsMigrationCollectionItemDumpTransferDetail {
     private List<GetMigrationsMigrationCollectionItemDumpTransferDetailTarget> targets;
 
     private GetMigrationsMigrationCollectionItemDumpTransferDetail() {}
+    /**
+     * @return Optional OCID of the shared storage mount target.
+     * 
+     */
     public String sharedStorageMountTargetId() {
         return this.sharedStorageMountTargetId;
     }

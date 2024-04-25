@@ -46,6 +46,7 @@ class MigrationArgs:
         :param pulumi.Input[str] agent_id: (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
         :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
+        :param pulumi.Input['MigrationDataTransferMediumDetailsV2Args'] data_transfer_medium_details_v2: (Updatable) Optional additional properties for dump transfer in source or target host.
         :param pulumi.Input['MigrationDatapumpSettingsArgs'] datapump_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Migration Display Name
@@ -194,6 +195,9 @@ class MigrationArgs:
     @property
     @pulumi.getter(name="dataTransferMediumDetailsV2")
     def data_transfer_medium_details_v2(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']]:
+        """
+        (Updatable) Optional additional properties for dump transfer in source or target host.
+        """
         return pulumi.get(self, "data_transfer_medium_details_v2")
 
     @data_transfer_medium_details_v2.setter
@@ -373,6 +377,7 @@ class _MigrationState:
         :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
+        :param pulumi.Input['MigrationDataTransferMediumDetailsV2Args'] data_transfer_medium_details_v2: (Updatable) Optional additional properties for dump transfer in source or target host.
         :param pulumi.Input['MigrationDatapumpSettingsArgs'] datapump_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Migration Display Name
@@ -530,6 +535,9 @@ class _MigrationState:
     @property
     @pulumi.getter(name="dataTransferMediumDetailsV2")
     def data_transfer_medium_details_v2(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']]:
+        """
+        (Updatable) Optional additional properties for dump transfer in source or target host.
+        """
         return pulumi.get(self, "data_transfer_medium_details_v2")
 
     @data_transfer_medium_details_v2.setter
@@ -1004,6 +1012,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
         :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
+        :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsV2Args']] data_transfer_medium_details_v2: (Updatable) Optional additional properties for dump transfer in source or target host.
         :param pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']] datapump_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Migration Display Name
@@ -1328,6 +1337,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
+        :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsV2Args']] data_transfer_medium_details_v2: (Updatable) Optional additional properties for dump transfer in source or target host.
         :param pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']] datapump_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Migration Display Name
@@ -1437,6 +1447,9 @@ class Migration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="dataTransferMediumDetailsV2")
     def data_transfer_medium_details_v2(self) -> pulumi.Output['outputs.MigrationDataTransferMediumDetailsV2']:
+        """
+        (Updatable) Optional additional properties for dump transfer in source or target host.
+        """
         return pulumi.get(self, "data_transfer_medium_details_v2")
 
     @property

@@ -52,7 +52,7 @@ func GetCnvDnsResolverAssociation(ctx *pulumi.Context, args *GetCnvDnsResolverAs
 
 // A collection of arguments for invoking getCnvDnsResolverAssociation.
 type GetCnvDnsResolverAssociationArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	// Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 	VcnId string `pulumi:"vcnId"`
 }
 
@@ -83,7 +83,7 @@ func GetCnvDnsResolverAssociationOutput(ctx *pulumi.Context, args GetCnvDnsResol
 
 // A collection of arguments for invoking getCnvDnsResolverAssociation.
 type GetCnvDnsResolverAssociationOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+	// Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
 }
 

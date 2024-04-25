@@ -44,6 +44,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     private String capacityReservationId;
     /**
+     * @return The OCID of the cluster placement group of the instance.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -168,6 +173,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     public String capacityReservationId() {
         return this.capacityReservationId;
+    }
+    /**
+     * @return The OCID of the cluster placement group of the instance.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -319,6 +331,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAvailabilityConfig> availabilityConfigs;
         private String availabilityDomain;
         private String capacityReservationId;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail> createVnicDetails;
         private String dedicatedVmHostId;
@@ -346,6 +359,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     	      this.availabilityConfigs = defaults.availabilityConfigs;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.capacityReservationId = defaults.capacityReservationId;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createVnicDetails = defaults.createVnicDetails;
     	      this.dedicatedVmHostId = defaults.dedicatedVmHostId;
@@ -404,6 +418,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "capacityReservationId");
             }
             this.capacityReservationId = capacityReservationId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -593,6 +615,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             _resultValue.availabilityConfigs = availabilityConfigs;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.createVnicDetails = createVnicDetails;
             _resultValue.dedicatedVmHostId = dedicatedVmHostId;

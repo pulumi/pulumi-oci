@@ -69,6 +69,8 @@ type LookupVolumeResult struct {
 	// The list of block volume replicas of this volume.
 	BlockVolumeReplicas         []GetVolumeBlockVolumeReplica `pulumi:"blockVolumeReplicas"`
 	BlockVolumeReplicasDeletion bool                          `pulumi:"blockVolumeReplicasDeletion"`
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The OCID of the compartment that contains the volume.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -171,6 +173,11 @@ func (o LookupVolumeResultOutput) BlockVolumeReplicas() GetVolumeBlockVolumeRepl
 
 func (o LookupVolumeResultOutput) BlockVolumeReplicasDeletion() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVolumeResult) bool { return v.BlockVolumeReplicasDeletion }).(pulumi.BoolOutput)
+}
+
+// The clusterPlacementGroup Id of the volume for volume placement.
+func (o LookupVolumeResultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVolumeResult) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment that contains the volume.

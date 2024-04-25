@@ -30,11 +30,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVolumes(ctx, &core.GetVolumesArgs{
-//				AvailabilityDomain: pulumi.StringRef(volumeAvailabilityDomain),
-//				CompartmentId:      pulumi.StringRef(compartmentId),
-//				DisplayName:        pulumi.StringRef(volumeDisplayName),
-//				State:              pulumi.StringRef(volumeState),
-//				VolumeGroupId:      pulumi.StringRef(testVolumeGroup.Id),
+//				AvailabilityDomain:      pulumi.StringRef(volumeAvailabilityDomain),
+//				ClusterPlacementGroupId: pulumi.StringRef(testGroup.Id),
+//				CompartmentId:           pulumi.StringRef(compartmentId),
+//				DisplayName:             pulumi.StringRef(volumeDisplayName),
+//				State:                   pulumi.StringRef(volumeState),
+//				VolumeGroupId:           pulumi.StringRef(testVolumeGroup.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -58,6 +59,8 @@ func GetVolumes(ctx *pulumi.Context, args *GetVolumesArgs, opts ...pulumi.Invoke
 type GetVolumesArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// A filter to return only resources that match the given cluster placement group Id exactly.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
@@ -73,6 +76,8 @@ type GetVolumesArgs struct {
 type GetVolumesResult struct {
 	// The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The OCID of the compartment that contains the volume.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -105,6 +110,8 @@ func GetVolumesOutput(ctx *pulumi.Context, args GetVolumesOutputArgs, opts ...pu
 type GetVolumesOutputArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
+	// A filter to return only resources that match the given cluster placement group Id exactly.
+	ClusterPlacementGroupId pulumi.StringPtrInput `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
@@ -138,6 +145,11 @@ func (o GetVolumesResultOutput) ToGetVolumesResultOutputWithContext(ctx context.
 // The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
 func (o GetVolumesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetVolumesResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
+}
+
+// The clusterPlacementGroup Id of the volume for volume placement.
+func (o GetVolumesResultOutput) ClusterPlacementGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVolumesResult) *string { return v.ClusterPlacementGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the compartment that contains the volume.

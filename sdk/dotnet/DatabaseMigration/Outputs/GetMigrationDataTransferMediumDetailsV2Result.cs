@@ -13,13 +13,25 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     [OutputType]
     public sealed class GetMigrationDataTransferMediumDetailsV2Result
     {
+        /// <summary>
+        /// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        /// </summary>
         public readonly string AccessKeyId;
         /// <summary>
         /// Name of directory object in database
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult> ObjectStorageBuckets;
+        /// <summary>
+        /// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        /// </summary>
         public readonly string Region;
+        /// <summary>
+        /// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        /// </summary>
         public readonly string SecretAccessKey;
         /// <summary>
         /// Migration type.

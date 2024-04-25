@@ -29,14 +29,11 @@ public final class InstancePoolPlacementConfiguration {
      * 
      * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
      * 
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
      * 
      */
     private @Nullable List<String> faultDomains;
-    /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-     * 
-     */
     private @Nullable String primarySubnetId;
     /**
      * @return (Updatable) Details about the IPv6 primary subnet.
@@ -66,16 +63,13 @@ public final class InstancePoolPlacementConfiguration {
      * 
      * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
      * 
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
      * 
      */
     public List<String> faultDomains() {
         return this.faultDomains == null ? List.of() : this.faultDomains;
     }
-    /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-     * 
-     */
     public Optional<String> primarySubnetId() {
         return Optional.ofNullable(this.primarySubnetId);
     }

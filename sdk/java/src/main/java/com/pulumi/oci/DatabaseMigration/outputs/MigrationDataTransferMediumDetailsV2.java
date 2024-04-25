@@ -13,14 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class MigrationDataTransferMediumDetailsV2 {
+    /**
+     * @return (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * 
+     */
     private @Nullable String accessKeyId;
     /**
      * @return (Updatable) Name of directory object in database
      * 
      */
     private @Nullable String name;
+    /**
+     * @return (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+     * 
+     */
     private @Nullable MigrationDataTransferMediumDetailsV2ObjectStorageBucket objectStorageBucket;
+    /**
+     * @return (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     * 
+     */
     private @Nullable String region;
+    /**
+     * @return (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * 
+     */
     private @Nullable String secretAccessKey;
     /**
      * @return (Updatable) Migration type.
@@ -29,6 +45,10 @@ public final class MigrationDataTransferMediumDetailsV2 {
     private String type;
 
     private MigrationDataTransferMediumDetailsV2() {}
+    /**
+     * @return (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * 
+     */
     public Optional<String> accessKeyId() {
         return Optional.ofNullable(this.accessKeyId);
     }
@@ -39,12 +59,24 @@ public final class MigrationDataTransferMediumDetailsV2 {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+     * 
+     */
     public Optional<MigrationDataTransferMediumDetailsV2ObjectStorageBucket> objectStorageBucket() {
         return Optional.ofNullable(this.objectStorageBucket);
     }
+    /**
+     * @return (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+     * 
+     */
     public Optional<String> region() {
         return Optional.ofNullable(this.region);
     }
+    /**
+     * @return (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * 
+     */
     public Optional<String> secretAccessKey() {
         return Optional.ofNullable(this.secretAccessKey);
     }

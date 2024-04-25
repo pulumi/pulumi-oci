@@ -135,6 +135,10 @@ export class VolumeAttachment extends pulumi.CustomResource {
      */
     public readonly isShareable!: pulumi.Output<boolean>;
     /**
+     * Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+     */
+    public /*out*/ readonly isVolumeCreatedDuringLaunch!: pulumi.Output<boolean>;
+    /**
      * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      */
     public /*out*/ readonly iscsiLoginState!: pulumi.Output<string>;
@@ -196,6 +200,7 @@ export class VolumeAttachment extends pulumi.CustomResource {
             resourceInputs["isPvEncryptionInTransitEnabled"] = state ? state.isPvEncryptionInTransitEnabled : undefined;
             resourceInputs["isReadOnly"] = state ? state.isReadOnly : undefined;
             resourceInputs["isShareable"] = state ? state.isShareable : undefined;
+            resourceInputs["isVolumeCreatedDuringLaunch"] = state ? state.isVolumeCreatedDuringLaunch : undefined;
             resourceInputs["iscsiLoginState"] = state ? state.iscsiLoginState : undefined;
             resourceInputs["multipathDevices"] = state ? state.multipathDevices : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
@@ -232,6 +237,7 @@ export class VolumeAttachment extends pulumi.CustomResource {
             resourceInputs["ipv4"] = undefined /*out*/;
             resourceInputs["iqn"] = undefined /*out*/;
             resourceInputs["isMultipath"] = undefined /*out*/;
+            resourceInputs["isVolumeCreatedDuringLaunch"] = undefined /*out*/;
             resourceInputs["iscsiLoginState"] = undefined /*out*/;
             resourceInputs["multipathDevices"] = undefined /*out*/;
             resourceInputs["port"] = undefined /*out*/;
@@ -313,6 +319,10 @@ export interface VolumeAttachmentState {
      * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      */
     isShareable?: pulumi.Input<boolean>;
+    /**
+     * Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+     */
+    isVolumeCreatedDuringLaunch?: pulumi.Input<boolean>;
     /**
      * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      */

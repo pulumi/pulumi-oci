@@ -271,9 +271,17 @@ public class Connection extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * Database manual connection subtype. This value can only be specified for manual connections.
+     * 
+     */
     @Export(name="manualDatabaseSubType", refs={String.class}, tree="[0]")
     private Output<String> manualDatabaseSubType;
 
+    /**
+     * @return Database manual connection subtype. This value can only be specified for manual connections.
+     * 
+     */
     public Output<String> manualDatabaseSubType() {
         return this.manualDatabaseSubType;
     }

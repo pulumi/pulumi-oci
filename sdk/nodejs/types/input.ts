@@ -10111,6 +10111,55 @@ export namespace CloudMigrations {
     }
 }
 
+export namespace ClusterPlacementGroups {
+    export interface ClusterPlacementGroupCapabilities {
+        /**
+         * The supported resources.
+         */
+        items: pulumi.Input<pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupCapabilitiesItem>[]>;
+    }
+
+    export interface ClusterPlacementGroupCapabilitiesItem {
+        /**
+         * The friendly name of the cluster placement group.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * The service that the resource is part of.
+         */
+        service: pulumi.Input<string>;
+    }
+
+    export interface ClusterPlacementGroupPlacementInstruction {
+        /**
+         * The type of placement instruction.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * The value of the token designated for placement of the cluster placement group upon creation.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface GetClusterPlacementGroupsFilter {
+        /**
+         * A filter to return only the resources that match the entire display name specified.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetClusterPlacementGroupsFilterArgs {
+        /**
+         * A filter to return only the resources that match the entire display name specified.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+}
+
 export namespace ComputeCloud {
     export interface AtCustomerCccInfrastructureInfrastructureInventory {
         /**
@@ -12087,9 +12136,11 @@ export namespace Core {
         /**
          * (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
          *
+         * <<<<<<< HEAD
          * If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
          */
         clusterConfig?: pulumi.Input<inputs.Core.ComputeCapacityReservationInstanceReservationConfigClusterConfig>;
+        clusterPlacementGroupId?: pulumi.Input<string>;
         /**
          * (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
          *
@@ -13871,7 +13922,7 @@ export namespace Core {
          */
         autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy>[]>;
         /**
-         * The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+         * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
@@ -13883,7 +13934,11 @@ export namespace Core {
          */
         blockVolumeReplicas?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas>;
         /**
-         * The OCID of the compartment that contains the volume.
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         */
+        clusterPlacementGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the compartment containing images to search
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -13969,6 +14024,10 @@ export namespace Core {
          * The OCID of the compute capacity reservation this instance is launched under.
          */
         capacityReservationId?: pulumi.Input<string>;
+        /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         */
+        clusterPlacementGroupId?: pulumi.Input<string>;
         /**
          * (Updatable) The OCID of the compartment containing images to search
          */
@@ -14476,7 +14535,7 @@ export namespace Core {
          */
         autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicy>[]>;
         /**
-         * The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+         * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
@@ -14488,7 +14547,11 @@ export namespace Core {
          */
         blockVolumeReplicas?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicas>;
         /**
-         * The OCID of the compartment that contains the volume.
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         */
+        clusterPlacementGroupId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the compartment containing images to search
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -14574,6 +14637,10 @@ export namespace Core {
          * The OCID of the compute capacity reservation this instance is launched under.
          */
         capacityReservationId?: pulumi.Input<string>;
+        /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         */
+        clusterPlacementGroupId?: pulumi.Input<string>;
         /**
          * (Updatable) The OCID of the compartment containing images to search
          */
@@ -15211,7 +15278,7 @@ export namespace Core {
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
          *
          * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          *
@@ -15330,7 +15397,7 @@ export namespace Core {
          */
         displayName?: pulumi.Input<string>;
         /**
-         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
@@ -15476,12 +15543,10 @@ export namespace Core {
          *
          * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
          *
+         * <<<<<<< HEAD
          * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
          */
         faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
-         */
         primarySubnetId?: pulumi.Input<string>;
         /**
          * (Updatable) Details about the IPv6 primary subnet.
@@ -15631,16 +15696,17 @@ export namespace Core {
          * These are the criteria for selecting an image. This is required if imageId is not specified.
          */
         instanceSourceImageFilterDetails?: pulumi.Input<inputs.Core.InstanceSourceDetailsInstanceSourceImageFilterDetails>;
+        isPreserveBootVolumeEnabled?: pulumi.Input<boolean>;
         /**
-         * The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+         * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of an image or a boot volume to use, depending on the value of `sourceType`.
+         * (Updatable) The OCID of the boot volume used to boot the instance.
          */
         sourceId?: pulumi.Input<string>;
         /**
-         * The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+         * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          */
         sourceType: pulumi.Input<string>;
     }
@@ -16322,11 +16388,11 @@ export namespace Core {
          */
         freeformTags?: pulumi.Input<{[key: string]: any}>;
         /**
-         * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
          *
          * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
-         * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). If you provide both, the values must match.
+         * When launching an instance, use this `hostnameLabel` instead of the deprecated `hostnameLabel` in `[LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails)`. If you provide both, the values must match.
          *
          * Example: `bminstance1`
          *
@@ -16344,7 +16410,7 @@ export namespace Core {
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
+         * A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
          *
          * If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
          *
@@ -29575,13 +29641,25 @@ export namespace DatabaseMigration {
     }
 
     export interface MigrationDataTransferMediumDetailsV2 {
+        /**
+         * (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         */
         accessKeyId?: pulumi.Input<string>;
         /**
          * (Updatable) Name of directory object in database
          */
         name?: pulumi.Input<string>;
+        /**
+         * (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+         */
         objectStorageBucket?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2ObjectStorageBucket>;
+        /**
+         * (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         */
         region?: pulumi.Input<string>;
+        /**
+         * (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         */
         secretAccessKey?: pulumi.Input<string>;
         /**
          * (Updatable) Migration type.
@@ -29688,6 +29766,9 @@ export namespace DatabaseMigration {
     }
 
     export interface MigrationDumpTransferDetails {
+        /**
+         * Optional OCID of the shared storage mount target.
+         */
         sharedStorageMountTargetId?: pulumi.Input<string>;
         /**
          * (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL

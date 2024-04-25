@@ -68,7 +68,8 @@ type LookupMigrationResult struct {
 	CredentialsSecretId string `pulumi:"credentialsSecretId"`
 	CsvText             string `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
-	DataTransferMediumDetails    []GetMigrationDataTransferMediumDetail    `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails []GetMigrationDataTransferMediumDetail `pulumi:"dataTransferMediumDetails"`
+	// Optional additional properties for dump transfer in source or target host.
 	DataTransferMediumDetailsV2s []GetMigrationDataTransferMediumDetailsV2 `pulumi:"dataTransferMediumDetailsV2s"`
 	// Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings []GetMigrationDatapumpSetting `pulumi:"datapumpSettings"`
@@ -188,6 +189,7 @@ func (o LookupMigrationResultOutput) DataTransferMediumDetails() GetMigrationDat
 	}).(GetMigrationDataTransferMediumDetailArrayOutput)
 }
 
+// Optional additional properties for dump transfer in source or target host.
 func (o LookupMigrationResultOutput) DataTransferMediumDetailsV2s() GetMigrationDataTransferMediumDetailsV2ArrayOutput {
 	return o.ApplyT(func(v LookupMigrationResult) []GetMigrationDataTransferMediumDetailsV2 {
 		return v.DataTransferMediumDetailsV2s

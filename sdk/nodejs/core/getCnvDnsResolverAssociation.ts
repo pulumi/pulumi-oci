@@ -33,7 +33,7 @@ export function getCnvDnsResolverAssociation(args: GetCnvDnsResolverAssociationA
  */
 export interface GetCnvDnsResolverAssociationArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     vcnId: string;
 }
@@ -82,7 +82,7 @@ export function getCnvDnsResolverAssociationOutput(args: GetCnvDnsResolverAssoci
  */
 export interface GetCnvDnsResolverAssociationOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     vcnId: pulumi.Input<string>;
 }

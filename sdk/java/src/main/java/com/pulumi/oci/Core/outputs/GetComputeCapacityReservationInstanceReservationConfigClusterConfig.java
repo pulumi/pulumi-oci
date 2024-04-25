@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetComputeCapacityReservationInstanceReservationConfigClusterConfig {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     private String hpcIslandId;
     /**
-     * @return The list of OCID of the network blocks.
+     * @return The list of OCIDs of the network blocks.
      * 
      */
     private List<String> networkBlockIds;
 
     private GetComputeCapacityReservationInstanceReservationConfigClusterConfig() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      * 
      */
     public String hpcIslandId() {
         return this.hpcIslandId;
     }
     /**
-     * @return The list of OCID of the network blocks.
+     * @return The list of OCIDs of the network blocks.
      * 
      */
     public List<String> networkBlockIds() {

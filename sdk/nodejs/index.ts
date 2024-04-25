@@ -37,6 +37,7 @@ import * as certificatesmanagement from "./certificatesmanagement";
 import * as cloudbridge from "./cloudbridge";
 import * as cloudguard from "./cloudguard";
 import * as cloudmigrations from "./cloudmigrations";
+import * as clusterplacementgroups from "./clusterplacementgroups";
 import * as computecloud from "./computecloud";
 import * as computeinstanceagent from "./computeinstanceagent";
 import * as config from "./config";
@@ -153,6 +154,7 @@ export {
     cloudbridge,
     cloudguard,
     cloudmigrations,
+    clusterplacementgroups,
     computecloud,
     computeinstanceagent,
     config,

@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? CapacityReservationId;
         /// <summary>
+        /// The clusterPlacementGroup Id of the volume for volume placement.
+        /// </summary>
+        public readonly string? ClusterPlacementGroupId;
+        /// <summary>
         /// (Updatable) The OCID of the compartment containing images to search
         /// </summary>
         public readonly string? CompartmentId;
@@ -173,6 +177,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? capacityReservationId,
 
+            string? clusterPlacementGroupId,
+
             string? compartmentId,
 
             Outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails? createVnicDetails,
@@ -217,6 +223,7 @@ namespace Pulumi.Oci.Core.Outputs
             AvailabilityConfig = availabilityConfig;
             AvailabilityDomain = availabilityDomain;
             CapacityReservationId = capacityReservationId;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             CreateVnicDetails = createVnicDetails;
             DedicatedVmHostId = dedicatedVmHostId;

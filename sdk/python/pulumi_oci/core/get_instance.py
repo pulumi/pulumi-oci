@@ -22,7 +22,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, launch_volume_attachments=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, preserve_data_volumes_created_at_launch=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
+    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, cluster_placement_group_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, launch_volume_attachments=None, metadata=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, preserve_data_volumes_created_at_launch=None, private_ip=None, public_ip=None, region=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
         if agent_configs and not isinstance(agent_configs, list):
             raise TypeError("Expected argument 'agent_configs' to be a list")
         pulumi.set(__self__, "agent_configs", agent_configs)
@@ -41,6 +41,9 @@ class GetInstanceResult:
         if capacity_reservation_id and not isinstance(capacity_reservation_id, str):
             raise TypeError("Expected argument 'capacity_reservation_id' to be a str")
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -200,6 +203,14 @@ class GetInstanceResult:
         The OCID of the compute capacity reservation this instance is launched under. When this field contains an empty string or is null, the instance is not currently in a capacity reservation. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         """
         return pulumi.get(self, "capacity_reservation_id")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> str:
+        """
+        The OCID of the cluster placement group of the instance.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -503,6 +514,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             availability_domain=self.availability_domain,
             boot_volume_id=self.boot_volume_id,
             capacity_reservation_id=self.capacity_reservation_id,
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             compute_cluster_id=self.compute_cluster_id,
             create_vnic_details=self.create_vnic_details,
@@ -577,6 +589,7 @@ def get_instance(instance_id: Optional[str] = None,
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         boot_volume_id=pulumi.get(__ret__, 'boot_volume_id'),
         capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_cluster_id=pulumi.get(__ret__, 'compute_cluster_id'),
         create_vnic_details=pulumi.get(__ret__, 'create_vnic_details'),

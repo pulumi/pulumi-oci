@@ -32,6 +32,21 @@ public final class GetVolumesPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * A filter to return only resources that match the given cluster placement group Id exactly.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable String clusterPlacementGroupId;
+
+    /**
+     * @return A filter to return only resources that match the given cluster placement group Id exactly.
+     * 
+     */
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -102,6 +117,7 @@ public final class GetVolumesPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     private GetVolumesPlainArgs(GetVolumesPlainArgs $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -135,6 +151,17 @@ public final class GetVolumesPlainArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
             $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId A filter to return only resources that match the given cluster placement group Id exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
 

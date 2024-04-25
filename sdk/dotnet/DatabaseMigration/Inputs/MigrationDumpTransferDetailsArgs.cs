@@ -12,6 +12,9 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
 
     public sealed class MigrationDumpTransferDetailsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Optional OCID of the shared storage mount target.
+        /// </summary>
         [Input("sharedStorageMountTargetId")]
         public Input<string>? SharedStorageMountTargetId { get; set; }
 

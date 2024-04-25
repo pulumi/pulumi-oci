@@ -305,6 +305,20 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
         return this.isShareable;
     }
     /**
+     * Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+     * 
+     */
+    @Export(name="isVolumeCreatedDuringLaunch", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isVolumeCreatedDuringLaunch;
+
+    /**
+     * @return Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+     * 
+     */
+    public Output<Boolean> isVolumeCreatedDuringLaunch() {
+        return this.isVolumeCreatedDuringLaunch;
+    }
+    /**
      * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      * 
      */

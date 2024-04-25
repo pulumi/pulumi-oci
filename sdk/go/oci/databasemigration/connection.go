@@ -117,7 +117,8 @@ type Connection struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails      pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Database manual connection subtype. This value can only be specified for manual connections.
 	ManualDatabaseSubType pulumi.StringOutput `pulumi:"manualDatabaseSubType"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
@@ -206,7 +207,8 @@ type connectionState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails      *string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Database manual connection subtype. This value can only be specified for manual connections.
 	ManualDatabaseSubType *string `pulumi:"manualDatabaseSubType"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
 	NsgIds []string `pulumi:"nsgIds"`
@@ -254,7 +256,8 @@ type ConnectionState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails      pulumi.StringPtrInput
+	LifecycleDetails pulumi.StringPtrInput
+	// Database manual connection subtype. This value can only be specified for manual connections.
 	ManualDatabaseSubType pulumi.StringPtrInput
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
 	NsgIds pulumi.StringArrayInput
@@ -302,8 +305,9 @@ type connectionArgs struct {
 	// (Updatable) Database Connection display name identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags          map[string]interface{} `pulumi:"freeformTags"`
-	ManualDatabaseSubType *string                `pulumi:"manualDatabaseSubType"`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Database manual connection subtype. This value can only be specified for manual connections.
+	ManualDatabaseSubType *string `pulumi:"manualDatabaseSubType"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Oracle Cloud Infrastructure Private Endpoint configuration details. Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
@@ -339,7 +343,8 @@ type ConnectionArgs struct {
 	// (Updatable) Database Connection display name identifier.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags          pulumi.MapInput
+	FreeformTags pulumi.MapInput
+	// Database manual connection subtype. This value can only be specified for manual connections.
 	ManualDatabaseSubType pulumi.StringPtrInput
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for Connections.
 	NsgIds pulumi.StringArrayInput
@@ -499,6 +504,7 @@ func (o ConnectionOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Database manual connection subtype. This value can only be specified for manual connections.
 func (o ConnectionOutput) ManualDatabaseSubType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.ManualDatabaseSubType }).(pulumi.StringOutput)
 }

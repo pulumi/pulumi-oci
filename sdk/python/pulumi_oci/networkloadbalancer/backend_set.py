@@ -21,6 +21,7 @@ class BackendSetArgs:
                  policy: pulumi.Input[str],
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
+                 is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
@@ -34,6 +35,7 @@ class BackendSetArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -48,6 +50,8 @@ class BackendSetArgs:
             pulumi.set(__self__, "ip_version", ip_version)
         if is_fail_open is not None:
             pulumi.set(__self__, "is_fail_open", is_fail_open)
+        if is_instant_failover_enabled is not None:
+            pulumi.set(__self__, "is_instant_failover_enabled", is_instant_failover_enabled)
         if is_preserve_source is not None:
             pulumi.set(__self__, "is_preserve_source", is_preserve_source)
         if name is not None:
@@ -118,6 +122,18 @@ class BackendSetArgs:
         pulumi.set(self, "is_fail_open", value)
 
     @property
+    @pulumi.getter(name="isInstantFailoverEnabled")
+    def is_instant_failover_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+        """
+        return pulumi.get(self, "is_instant_failover_enabled")
+
+    @is_instant_failover_enabled.setter
+    def is_instant_failover_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_instant_failover_enabled", value)
+
+    @property
     @pulumi.getter(name="isPreserveSource")
     def is_preserve_source(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -153,6 +169,7 @@ class _BackendSetState:
                  health_checker: Optional[pulumi.Input['BackendSetHealthCheckerArgs']] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
+                 is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -163,6 +180,7 @@ class _BackendSetState:
         :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -184,6 +202,8 @@ class _BackendSetState:
             pulumi.set(__self__, "ip_version", ip_version)
         if is_fail_open is not None:
             pulumi.set(__self__, "is_fail_open", is_fail_open)
+        if is_instant_failover_enabled is not None:
+            pulumi.set(__self__, "is_instant_failover_enabled", is_instant_failover_enabled)
         if is_preserve_source is not None:
             pulumi.set(__self__, "is_preserve_source", is_preserve_source)
         if name is not None:
@@ -240,6 +260,18 @@ class _BackendSetState:
     @is_fail_open.setter
     def is_fail_open(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_fail_open", value)
+
+    @property
+    @pulumi.getter(name="isInstantFailoverEnabled")
+    def is_instant_failover_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+        """
+        return pulumi.get(self, "is_instant_failover_enabled")
+
+    @is_instant_failover_enabled.setter
+    def is_instant_failover_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_instant_failover_enabled", value)
 
     @property
     @pulumi.getter(name="isPreserveSource")
@@ -306,6 +338,7 @@ class BackendSet(pulumi.CustomResource):
                  health_checker: Optional[pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
+                 is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -346,6 +379,7 @@ class BackendSet(pulumi.CustomResource):
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=backend_set_policy,
             ip_version=backend_set_ip_version,
+            is_instant_failover_enabled=backend_set_is_instant_failover_enabled,
             is_fail_open=backend_set_is_fail_open,
             is_preserve_source=backend_set_is_preserve_source)
         ```
@@ -363,6 +397,7 @@ class BackendSet(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -417,6 +452,7 @@ class BackendSet(pulumi.CustomResource):
             network_load_balancer_id=test_network_load_balancer["id"],
             policy=backend_set_policy,
             ip_version=backend_set_ip_version,
+            is_instant_failover_enabled=backend_set_is_instant_failover_enabled,
             is_fail_open=backend_set_is_fail_open,
             is_preserve_source=backend_set_is_preserve_source)
         ```
@@ -447,6 +483,7 @@ class BackendSet(pulumi.CustomResource):
                  health_checker: Optional[pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']]] = None,
                  ip_version: Optional[pulumi.Input[str]] = None,
                  is_fail_open: Optional[pulumi.Input[bool]] = None,
+                 is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
                  is_preserve_source: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -465,6 +502,7 @@ class BackendSet(pulumi.CustomResource):
             __props__.__dict__["health_checker"] = health_checker
             __props__.__dict__["ip_version"] = ip_version
             __props__.__dict__["is_fail_open"] = is_fail_open
+            __props__.__dict__["is_instant_failover_enabled"] = is_instant_failover_enabled
             __props__.__dict__["is_preserve_source"] = is_preserve_source
             __props__.__dict__["name"] = name
             if network_load_balancer_id is None and not opts.urn:
@@ -488,6 +526,7 @@ class BackendSet(pulumi.CustomResource):
             health_checker: Optional[pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']]] = None,
             ip_version: Optional[pulumi.Input[str]] = None,
             is_fail_open: Optional[pulumi.Input[bool]] = None,
+            is_instant_failover_enabled: Optional[pulumi.Input[bool]] = None,
             is_preserve_source: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
@@ -503,6 +542,7 @@ class BackendSet(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['BackendSetHealthCheckerArgs']] health_checker: (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the backend set.
         :param pulumi.Input[bool] is_fail_open: (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
+        :param pulumi.Input[bool] is_instant_failover_enabled: (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
         :param pulumi.Input[bool] is_preserve_source: (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
         :param pulumi.Input[str] name: A user-friendly name for the backend set that must be unique and cannot be changed.
                
@@ -524,6 +564,7 @@ class BackendSet(pulumi.CustomResource):
         __props__.__dict__["health_checker"] = health_checker
         __props__.__dict__["ip_version"] = ip_version
         __props__.__dict__["is_fail_open"] = is_fail_open
+        __props__.__dict__["is_instant_failover_enabled"] = is_instant_failover_enabled
         __props__.__dict__["is_preserve_source"] = is_preserve_source
         __props__.__dict__["name"] = name
         __props__.__dict__["network_load_balancer_id"] = network_load_balancer_id
@@ -561,6 +602,14 @@ class BackendSet(pulumi.CustomResource):
         (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
         """
         return pulumi.get(self, "is_fail_open")
+
+    @property
+    @pulumi.getter(name="isInstantFailoverEnabled")
+    def is_instant_failover_enabled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+        """
+        return pulumi.get(self, "is_instant_failover_enabled")
 
     @property
     @pulumi.getter(name="isPreserveSource")

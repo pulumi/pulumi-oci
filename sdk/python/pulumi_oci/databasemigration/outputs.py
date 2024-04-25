@@ -1049,7 +1049,11 @@ class MigrationDataTransferMediumDetailsV2(dict):
                  secret_access_key: Optional[str] = None):
         """
         :param str type: (Updatable) Migration type.
+        :param str access_key_id: (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         :param str name: (Updatable) Name of directory object in database
+        :param 'MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs' object_storage_bucket: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        :param str region: (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        :param str secret_access_key: (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         """
         pulumi.set(__self__, "type", type)
         if access_key_id is not None:
@@ -1074,6 +1078,9 @@ class MigrationDataTransferMediumDetailsV2(dict):
     @property
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> Optional[str]:
+        """
+        (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
         return pulumi.get(self, "access_key_id")
 
     @property
@@ -1087,16 +1094,25 @@ class MigrationDataTransferMediumDetailsV2(dict):
     @property
     @pulumi.getter(name="objectStorageBucket")
     def object_storage_bucket(self) -> Optional['outputs.MigrationDataTransferMediumDetailsV2ObjectStorageBucket']:
+        """
+        (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        """
         return pulumi.get(self, "object_storage_bucket")
 
     @property
     @pulumi.getter
     def region(self) -> Optional[str]:
+        """
+        (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        """
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> Optional[str]:
+        """
+        (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
         return pulumi.get(self, "secret_access_key")
 
 
@@ -1470,6 +1486,7 @@ class MigrationDumpTransferDetails(dict):
                  source: Optional['outputs.MigrationDumpTransferDetailsSource'] = None,
                  target: Optional['outputs.MigrationDumpTransferDetailsTarget'] = None):
         """
+        :param str shared_storage_mount_target_id: Optional OCID of the shared storage mount target.
         :param 'MigrationDumpTransferDetailsSourceArgs' source: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
         :param 'MigrationDumpTransferDetailsTargetArgs' target: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
         """
@@ -1483,6 +1500,9 @@ class MigrationDumpTransferDetails(dict):
     @property
     @pulumi.getter(name="sharedStorageMountTargetId")
     def shared_storage_mount_target_id(self) -> Optional[str]:
+        """
+        Optional OCID of the shared storage mount target.
+        """
         return pulumi.get(self, "shared_storage_mount_target_id")
 
     @property
@@ -2989,6 +3009,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param str manual_database_sub_type: Database manual connection subtype. This value can only be specified for manual connections.
         :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for Connections.
         :param Sequence['GetConnectionsConnectionCollectionItemPrivateEndpointArgs'] private_endpoints: Oracle Cloud Infrastructure Private Endpoint configuration details.
         :param Sequence['GetConnectionsConnectionCollectionItemReplicationCredentialArgs'] replication_credentials: Database Administrator Credentials details.
@@ -3123,6 +3144,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @property
     @pulumi.getter(name="manualDatabaseSubType")
     def manual_database_sub_type(self) -> str:
+        """
+        Database manual connection subtype. This value can only be specified for manual connections.
+        """
         return pulumi.get(self, "manual_database_sub_type")
 
     @property
@@ -3716,7 +3740,11 @@ class GetMigrationDataTransferMediumDetailsV2Result(dict):
                  secret_access_key: str,
                  type: str):
         """
+        :param str access_key_id: AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         :param str name: Name of directory object in database
+        :param Sequence['GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs'] object_storage_buckets: In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        :param str region: AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        :param str secret_access_key: AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         :param str type: Migration type.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
@@ -3729,6 +3757,9 @@ class GetMigrationDataTransferMediumDetailsV2Result(dict):
     @property
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> str:
+        """
+        AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
         return pulumi.get(self, "access_key_id")
 
     @property
@@ -3742,16 +3773,25 @@ class GetMigrationDataTransferMediumDetailsV2Result(dict):
     @property
     @pulumi.getter(name="objectStorageBuckets")
     def object_storage_buckets(self) -> Sequence['outputs.GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult']:
+        """
+        In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        """
         return pulumi.get(self, "object_storage_buckets")
 
     @property
     @pulumi.getter
     def region(self) -> str:
+        """
+        AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        """
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> str:
+        """
+        AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
         return pulumi.get(self, "secret_access_key")
 
     @property
@@ -4032,6 +4072,7 @@ class GetMigrationDumpTransferDetailResult(dict):
                  sources: Sequence['outputs.GetMigrationDumpTransferDetailSourceResult'],
                  targets: Sequence['outputs.GetMigrationDumpTransferDetailTargetResult']):
         """
+        :param str shared_storage_mount_target_id: Optional OCID of the shared storage mount target.
         :param Sequence['GetMigrationDumpTransferDetailSourceArgs'] sources: Optional additional properties for dump transfer in source or target host. Default kind is CURL
         :param Sequence['GetMigrationDumpTransferDetailTargetArgs'] targets: Optional additional properties for dump transfer in source or target host. Default kind is CURL
         """
@@ -4042,6 +4083,9 @@ class GetMigrationDumpTransferDetailResult(dict):
     @property
     @pulumi.getter(name="sharedStorageMountTargetId")
     def shared_storage_mount_target_id(self) -> str:
+        """
+        Optional OCID of the shared storage mount target.
+        """
         return pulumi.get(self, "shared_storage_mount_target_id")
 
     @property
@@ -5043,6 +5087,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         :param Sequence['GetMigrationsMigrationCollectionItemDataTransferMediumDetailArgs'] data_transfer_medium_details: Data Transfer Medium details for the Migration.
+        :param Sequence['GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args'] data_transfer_medium_details_v2s: Optional additional properties for dump transfer in source or target host.
         :param Sequence['GetMigrationsMigrationCollectionItemDatapumpSettingArgs'] datapump_settings: Optional settings for Data Pump Export and Import jobs
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
@@ -5146,6 +5191,9 @@ class GetMigrationsMigrationCollectionItemResult(dict):
     @property
     @pulumi.getter(name="dataTransferMediumDetailsV2s")
     def data_transfer_medium_details_v2s(self) -> Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result']:
+        """
+        Optional additional properties for dump transfer in source or target host.
+        """
         return pulumi.get(self, "data_transfer_medium_details_v2s")
 
     @property
@@ -5488,7 +5536,11 @@ class GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result(dict
                  secret_access_key: str,
                  type: str):
         """
+        :param str access_key_id: AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         :param str name: Name of directory object in database
+        :param Sequence['GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs'] object_storage_buckets: In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        :param str region: AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        :param str secret_access_key: AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         :param str type: Migration type.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
@@ -5501,6 +5553,9 @@ class GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result(dict
     @property
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> str:
+        """
+        AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
         return pulumi.get(self, "access_key_id")
 
     @property
@@ -5514,16 +5569,25 @@ class GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result(dict
     @property
     @pulumi.getter(name="objectStorageBuckets")
     def object_storage_buckets(self) -> Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketResult']:
+        """
+        In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+        """
         return pulumi.get(self, "object_storage_buckets")
 
     @property
     @pulumi.getter
     def region(self) -> str:
+        """
+        AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+        """
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> str:
+        """
+        AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+        """
         return pulumi.get(self, "secret_access_key")
 
     @property
@@ -5804,6 +5868,7 @@ class GetMigrationsMigrationCollectionItemDumpTransferDetailResult(dict):
                  sources: Sequence['outputs.GetMigrationsMigrationCollectionItemDumpTransferDetailSourceResult'],
                  targets: Sequence['outputs.GetMigrationsMigrationCollectionItemDumpTransferDetailTargetResult']):
         """
+        :param str shared_storage_mount_target_id: Optional OCID of the shared storage mount target.
         :param Sequence['GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs'] sources: Optional additional properties for dump transfer in source or target host. Default kind is CURL
         :param Sequence['GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs'] targets: Optional additional properties for dump transfer in source or target host. Default kind is CURL
         """
@@ -5814,6 +5879,9 @@ class GetMigrationsMigrationCollectionItemDumpTransferDetailResult(dict):
     @property
     @pulumi.getter(name="sharedStorageMountTargetId")
     def shared_storage_mount_target_id(self) -> str:
+        """
+        Optional OCID of the shared storage mount target.
+        """
         return pulumi.get(self, "shared_storage_mount_target_id")
 
     @property

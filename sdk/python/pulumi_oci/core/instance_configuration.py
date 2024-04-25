@@ -365,6 +365,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                             availability_domain=instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain,
                             display_name=instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name,
                         ),
+                        cluster_placement_group_id=cluster_placement_group_id,
                         compartment_id=compartment_id,
                         defined_tags={
                             "Operations.CostCenter": "42",
@@ -400,6 +401,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     ),
                     availability_domain=instance_configuration_instance_details_launch_details_availability_domain,
                     capacity_reservation_id=test_capacity_reservation["id"],
+                    cluster_placement_group_id=test_group["id"],
                     compartment_id=compartment_id,
                     create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs(
                         assign_ipv6ip=instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
@@ -509,6 +511,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                             )],
                             availability_domain=instance_configuration_instance_details_options_block_volumes_create_details_availability_domain,
                             backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
+                            cluster_placement_group_id=cluster_placement_group_id,
                             compartment_id=compartment_id,
                             defined_tags={
                                 "Operations.CostCenter": "42",
@@ -542,6 +545,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         ),
                         availability_domain=instance_configuration_instance_details_options_launch_details_availability_domain,
                         capacity_reservation_id=test_capacity_reservation["id"],
+                        cluster_placement_group_id=test_group["id"],
                         compartment_id=compartment_id,
                         create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs(
                             assign_ipv6ip=instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
@@ -757,6 +761,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                             availability_domain=instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain,
                             display_name=instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name,
                         ),
+                        cluster_placement_group_id=cluster_placement_group_id,
                         compartment_id=compartment_id,
                         defined_tags={
                             "Operations.CostCenter": "42",
@@ -792,6 +797,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                     ),
                     availability_domain=instance_configuration_instance_details_launch_details_availability_domain,
                     capacity_reservation_id=test_capacity_reservation["id"],
+                    cluster_placement_group_id=test_group["id"],
                     compartment_id=compartment_id,
                     create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs(
                         assign_ipv6ip=instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,
@@ -901,6 +907,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                             )],
                             availability_domain=instance_configuration_instance_details_options_block_volumes_create_details_availability_domain,
                             backup_policy_id=test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
+                            cluster_placement_group_id=cluster_placement_group_id,
                             compartment_id=compartment_id,
                             defined_tags={
                                 "Operations.CostCenter": "42",
@@ -934,6 +941,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                         ),
                         availability_domain=instance_configuration_instance_details_options_launch_details_availability_domain,
                         capacity_reservation_id=test_capacity_reservation["id"],
+                        cluster_placement_group_id=test_group["id"],
                         compartment_id=compartment_id,
                         create_vnic_details=oci.core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs(
                             assign_ipv6ip=instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip,

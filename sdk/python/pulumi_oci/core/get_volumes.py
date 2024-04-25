@@ -23,10 +23,13 @@ class GetVolumesResult:
     """
     A collection of values returned by getVolumes.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, display_name=None, filters=None, id=None, state=None, volume_group_id=None, volumes=None):
+    def __init__(__self__, availability_domain=None, cluster_placement_group_id=None, compartment_id=None, display_name=None, filters=None, id=None, state=None, volume_group_id=None, volumes=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -56,6 +59,14 @@ class GetVolumesResult:
         The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[str]:
+        """
+        The clusterPlacementGroup Id of the volume for volume placement.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -118,6 +129,7 @@ class AwaitableGetVolumesResult(GetVolumesResult):
             yield self
         return GetVolumesResult(
             availability_domain=self.availability_domain,
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             display_name=self.display_name,
             filters=self.filters,
@@ -128,6 +140,7 @@ class AwaitableGetVolumesResult(GetVolumesResult):
 
 
 def get_volumes(availability_domain: Optional[str] = None,
+                cluster_placement_group_id: Optional[str] = None,
                 compartment_id: Optional[str] = None,
                 display_name: Optional[str] = None,
                 filters: Optional[Sequence[pulumi.InputType['GetVolumesFilterArgs']]] = None,
@@ -146,6 +159,7 @@ def get_volumes(availability_domain: Optional[str] = None,
     import pulumi_oci as oci
 
     test_volumes = oci.Core.get_volumes(availability_domain=volume_availability_domain,
+        cluster_placement_group_id=test_group["id"],
         compartment_id=compartment_id,
         display_name=volume_display_name,
         state=volume_state,
@@ -154,6 +168,7 @@ def get_volumes(availability_domain: Optional[str] = None,
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+    :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group Id exactly.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
@@ -161,6 +176,7 @@ def get_volumes(availability_domain: Optional[str] = None,
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
+    __args__['clusterPlacementGroupId'] = cluster_placement_group_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -171,6 +187,7 @@ def get_volumes(availability_domain: Optional[str] = None,
 
     return AwaitableGetVolumesResult(
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
@@ -182,6 +199,7 @@ def get_volumes(availability_domain: Optional[str] = None,
 
 @_utilities.lift_output_func(get_volumes)
 def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
+                       cluster_placement_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                        compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        display_name: Optional[pulumi.Input[Optional[str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVolumesFilterArgs']]]]] = None,
@@ -200,6 +218,7 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]
     import pulumi_oci as oci
 
     test_volumes = oci.Core.get_volumes(availability_domain=volume_availability_domain,
+        cluster_placement_group_id=test_group["id"],
         compartment_id=compartment_id,
         display_name=volume_display_name,
         state=volume_state,
@@ -208,6 +227,7 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+    :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group Id exactly.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the given display name exactly.
     :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.

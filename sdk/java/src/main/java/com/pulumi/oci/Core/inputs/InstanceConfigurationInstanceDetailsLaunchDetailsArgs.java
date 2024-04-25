@@ -88,6 +88,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
     }
 
     /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The OCID of the compartment containing images to search
      * 
      */
@@ -498,6 +513,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
         this.availabilityConfig = $.availabilityConfig;
         this.availabilityDomain = $.availabilityDomain;
         this.capacityReservationId = $.capacityReservationId;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.createVnicDetails = $.createVnicDetails;
         this.dedicatedVmHostId = $.dedicatedVmHostId;
@@ -620,6 +636,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
          */
         public Builder capacityReservationId(String capacityReservationId) {
             return capacityReservationId(Output.of(capacityReservationId));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The clusterPlacementGroup Id of the volume for volume placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The clusterPlacementGroup Id of the volume for volume placement.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**

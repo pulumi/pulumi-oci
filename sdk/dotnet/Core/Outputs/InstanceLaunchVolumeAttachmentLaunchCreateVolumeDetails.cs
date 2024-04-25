@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>

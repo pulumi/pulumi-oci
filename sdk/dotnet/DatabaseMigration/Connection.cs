@@ -161,6 +161,9 @@ namespace Pulumi.Oci.DatabaseMigration
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        /// <summary>
+        /// Database manual connection subtype. This value can only be specified for manual connections.
+        /// </summary>
         [Output("manualDatabaseSubType")]
         public Output<string> ManualDatabaseSubType { get; private set; } = null!;
 
@@ -342,6 +345,9 @@ namespace Pulumi.Oci.DatabaseMigration
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// Database manual connection subtype. This value can only be specified for manual connections.
+        /// </summary>
         [Input("manualDatabaseSubType")]
         public Input<string>? ManualDatabaseSubType { get; set; }
 
@@ -479,6 +485,9 @@ namespace Pulumi.Oci.DatabaseMigration
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        /// <summary>
+        /// Database manual connection subtype. This value can only be specified for manual connections.
+        /// </summary>
         [Input("manualDatabaseSubType")]
         public Input<string>? ManualDatabaseSubType { get; set; }
 

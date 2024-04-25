@@ -114,14 +114,14 @@ public class DrgRouteDistribution extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      * 
      */
     @Export(name="distributionType", refs={String.class}, tree="[0]")
     private Output<String> distributionType;
 
     /**
-     * @return Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * @return Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      * 
      */
     public Output<String> distributionType() {

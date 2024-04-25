@@ -83,6 +83,7 @@ import javax.annotation.Nullable;
  *                 .weight(networkLoadBalancersBackendSetsUnifiedBackendsWeight)
  *                 .build())
  *             .ipVersion(networkLoadBalancersBackendSetsUnifiedIpVersion)
+ *             .isInstantFailoverEnabled(networkLoadBalancersBackendSetsUnifiedIsInstantFailoverEnabled)
  *             .isFailOpen(networkLoadBalancersBackendSetsUnifiedIsFailOpen)
  *             .isPreserveSource(networkLoadBalancersBackendSetsUnifiedIsPreserveSource)
  *             .build());
@@ -158,6 +159,20 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      */
     public Output<Boolean> isFailOpen() {
         return this.isFailOpen;
+    }
+    /**
+     * (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     * 
+     */
+    @Export(name="isInstantFailoverEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isInstantFailoverEnabled;
+
+    /**
+     * @return (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     * 
+     */
+    public Output<Boolean> isInstantFailoverEnabled() {
+        return this.isInstantFailoverEnabled;
     }
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.

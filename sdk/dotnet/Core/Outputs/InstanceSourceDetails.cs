@@ -27,16 +27,17 @@ namespace Pulumi.Oci.Core.Outputs
         /// These are the criteria for selecting an image. This is required if imageId is not specified.
         /// </summary>
         public readonly Outputs.InstanceSourceDetailsInstanceSourceImageFilterDetails? InstanceSourceImageFilterDetails;
+        public readonly bool? IsPreserveBootVolumeEnabled;
         /// <summary>
-        /// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+        /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>
-        /// The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+        /// (Updatable) The OCID of the boot volume used to boot the instance.
         /// </summary>
         public readonly string? SourceId;
         /// <summary>
-        /// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        /// (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         /// </summary>
         public readonly string SourceType;
 
@@ -48,6 +49,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             Outputs.InstanceSourceDetailsInstanceSourceImageFilterDetails? instanceSourceImageFilterDetails,
 
+            bool? isPreserveBootVolumeEnabled,
+
             string? kmsKeyId,
 
             string? sourceId,
@@ -57,6 +60,7 @@ namespace Pulumi.Oci.Core.Outputs
             BootVolumeSizeInGbs = bootVolumeSizeInGbs;
             BootVolumeVpusPerGb = bootVolumeVpusPerGb;
             InstanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            IsPreserveBootVolumeEnabled = isPreserveBootVolumeEnabled;
             KmsKeyId = kmsKeyId;
             SourceId = sourceId;
             SourceType = sourceType;

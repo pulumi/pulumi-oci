@@ -160,9 +160,17 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    /**
+     * Database manual connection subtype. This value can only be specified for manual connections.
+     * 
+     */
     @Import(name="manualDatabaseSubType")
     private @Nullable Output<String> manualDatabaseSubType;
 
+    /**
+     * @return Database manual connection subtype. This value can only be specified for manual connections.
+     * 
+     */
     public Optional<Output<String>> manualDatabaseSubType() {
         return Optional.ofNullable(this.manualDatabaseSubType);
     }
@@ -501,11 +509,23 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
             return freeformTags(Output.of(freeformTags));
         }
 
+        /**
+         * @param manualDatabaseSubType Database manual connection subtype. This value can only be specified for manual connections.
+         * 
+         * @return builder
+         * 
+         */
         public Builder manualDatabaseSubType(@Nullable Output<String> manualDatabaseSubType) {
             $.manualDatabaseSubType = manualDatabaseSubType;
             return this;
         }
 
+        /**
+         * @param manualDatabaseSubType Database manual connection subtype. This value can only be specified for manual connections.
+         * 
+         * @return builder
+         * 
+         */
         public Builder manualDatabaseSubType(String manualDatabaseSubType) {
             return manualDatabaseSubType(Output.of(manualDatabaseSubType));
         }

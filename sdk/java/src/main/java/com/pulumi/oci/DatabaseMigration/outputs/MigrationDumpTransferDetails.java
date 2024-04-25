@@ -13,6 +13,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class MigrationDumpTransferDetails {
+    /**
+     * @return Optional OCID of the shared storage mount target.
+     * 
+     */
     private @Nullable String sharedStorageMountTargetId;
     /**
      * @return (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -26,6 +30,10 @@ public final class MigrationDumpTransferDetails {
     private @Nullable MigrationDumpTransferDetailsTarget target;
 
     private MigrationDumpTransferDetails() {}
+    /**
+     * @return Optional OCID of the shared storage mount target.
+     * 
+     */
     public Optional<String> sharedStorageMountTargetId() {
         return Optional.ofNullable(this.sharedStorageMountTargetId);
     }

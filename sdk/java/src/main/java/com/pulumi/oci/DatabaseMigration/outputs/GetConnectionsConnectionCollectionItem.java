@@ -79,6 +79,10 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Database manual connection subtype. This value can only be specified for manual connections.
+     * 
+     */
     private String manualDatabaseSubType;
     /**
      * @return An array of Network Security Group OCIDs used to define network access for Connections.
@@ -213,6 +217,10 @@ public final class GetConnectionsConnectionCollectionItem {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * @return Database manual connection subtype. This value can only be specified for manual connections.
+     * 
+     */
     public String manualDatabaseSubType() {
         return this.manualDatabaseSubType;
     }

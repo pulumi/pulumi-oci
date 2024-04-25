@@ -269,6 +269,9 @@ namespace Pulumi.Oci.DatabaseMigration
         [Output("dataTransferMediumDetails")]
         public Output<Outputs.MigrationDataTransferMediumDetails> DataTransferMediumDetails { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Optional additional properties for dump transfer in source or target host.
+        /// </summary>
         [Output("dataTransferMediumDetailsV2")]
         public Output<Outputs.MigrationDataTransferMediumDetailsV2> DataTransferMediumDetailsV2 { get; private set; } = null!;
 
@@ -480,6 +483,9 @@ namespace Pulumi.Oci.DatabaseMigration
         [Input("dataTransferMediumDetails")]
         public Input<Inputs.MigrationDataTransferMediumDetailsArgs>? DataTransferMediumDetails { get; set; }
 
+        /// <summary>
+        /// (Updatable) Optional additional properties for dump transfer in source or target host.
+        /// </summary>
         [Input("dataTransferMediumDetailsV2")]
         public Input<Inputs.MigrationDataTransferMediumDetailsV2Args>? DataTransferMediumDetailsV2 { get; set; }
 
@@ -635,6 +641,9 @@ namespace Pulumi.Oci.DatabaseMigration
         [Input("dataTransferMediumDetails")]
         public Input<Inputs.MigrationDataTransferMediumDetailsGetArgs>? DataTransferMediumDetails { get; set; }
 
+        /// <summary>
+        /// (Updatable) Optional additional properties for dump transfer in source or target host.
+        /// </summary>
         [Input("dataTransferMediumDetailsV2")]
         public Input<Inputs.MigrationDataTransferMediumDetailsV2GetArgs>? DataTransferMediumDetailsV2 { get; set; }
 

@@ -17,9 +17,17 @@ public final class MigrationDumpTransferDetailsArgs extends com.pulumi.resources
 
     public static final MigrationDumpTransferDetailsArgs Empty = new MigrationDumpTransferDetailsArgs();
 
+    /**
+     * Optional OCID of the shared storage mount target.
+     * 
+     */
     @Import(name="sharedStorageMountTargetId")
     private @Nullable Output<String> sharedStorageMountTargetId;
 
+    /**
+     * @return Optional OCID of the shared storage mount target.
+     * 
+     */
     public Optional<Output<String>> sharedStorageMountTargetId() {
         return Optional.ofNullable(this.sharedStorageMountTargetId);
     }
@@ -80,11 +88,23 @@ public final class MigrationDumpTransferDetailsArgs extends com.pulumi.resources
             $ = new MigrationDumpTransferDetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param sharedStorageMountTargetId Optional OCID of the shared storage mount target.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sharedStorageMountTargetId(@Nullable Output<String> sharedStorageMountTargetId) {
             $.sharedStorageMountTargetId = sharedStorageMountTargetId;
             return this;
         }
 
+        /**
+         * @param sharedStorageMountTargetId Optional OCID of the shared storage mount target.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sharedStorageMountTargetId(String sharedStorageMountTargetId) {
             return sharedStorageMountTargetId(Output.of(sharedStorageMountTargetId));
         }

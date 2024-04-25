@@ -70,6 +70,8 @@ type LookupBootVolumeResult struct {
 	// The list of boot volume replicas of this boot volume
 	BootVolumeReplicas         []GetBootVolumeBootVolumeReplica `pulumi:"bootVolumeReplicas"`
 	BootVolumeReplicasDeletion bool                             `pulumi:"bootVolumeReplicasDeletion"`
+	// The clusterPlacementGroup Id of the volume for volume placement.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The OCID of the compartment that contains the boot volume.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -174,6 +176,11 @@ func (o LookupBootVolumeResultOutput) BootVolumeReplicas() GetBootVolumeBootVolu
 
 func (o LookupBootVolumeResultOutput) BootVolumeReplicasDeletion() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupBootVolumeResult) bool { return v.BootVolumeReplicasDeletion }).(pulumi.BoolOutput)
+}
+
+// The clusterPlacementGroup Id of the volume for volume placement.
+func (o LookupBootVolumeResultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBootVolumeResult) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment that contains the boot volume.

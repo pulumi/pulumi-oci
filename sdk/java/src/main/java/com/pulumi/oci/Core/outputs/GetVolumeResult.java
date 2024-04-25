@@ -46,6 +46,11 @@ public final class GetVolumeResult {
     private List<GetVolumeBlockVolumeReplica> blockVolumeReplicas;
     private Boolean blockVolumeReplicasDeletion;
     /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The OCID of the compartment that contains the volume.
      * 
      */
@@ -168,6 +173,13 @@ public final class GetVolumeResult {
     }
     public Boolean blockVolumeReplicasDeletion() {
         return this.blockVolumeReplicasDeletion;
+    }
+    /**
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The OCID of the compartment that contains the volume.
@@ -303,6 +315,7 @@ public final class GetVolumeResult {
         private String backupPolicyId;
         private List<GetVolumeBlockVolumeReplica> blockVolumeReplicas;
         private Boolean blockVolumeReplicasDeletion;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -330,6 +343,7 @@ public final class GetVolumeResult {
     	      this.backupPolicyId = defaults.backupPolicyId;
     	      this.blockVolumeReplicas = defaults.blockVolumeReplicas;
     	      this.blockVolumeReplicasDeletion = defaults.blockVolumeReplicasDeletion;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -402,6 +416,14 @@ public final class GetVolumeResult {
               throw new MissingRequiredPropertyException("GetVolumeResult", "blockVolumeReplicasDeletion");
             }
             this.blockVolumeReplicasDeletion = blockVolumeReplicasDeletion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeResult", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -559,6 +581,7 @@ public final class GetVolumeResult {
             _resultValue.backupPolicyId = backupPolicyId;
             _resultValue.blockVolumeReplicas = blockVolumeReplicas;
             _resultValue.blockVolumeReplicasDeletion = blockVolumeReplicasDeletion;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

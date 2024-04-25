@@ -268,6 +268,21 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+     * 
+     */
+    @Import(name="isVolumeCreatedDuringLaunch")
+    private @Nullable Output<Boolean> isVolumeCreatedDuringLaunch;
+
+    /**
+     * @return Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+     * 
+     */
+    public Optional<Output<Boolean>> isVolumeCreatedDuringLaunch() {
+        return Optional.ofNullable(this.isVolumeCreatedDuringLaunch);
+    }
+
+    /**
      * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      * 
      */
@@ -397,6 +412,7 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.isReadOnly = $.isReadOnly;
         this.isShareable = $.isShareable;
+        this.isVolumeCreatedDuringLaunch = $.isVolumeCreatedDuringLaunch;
         this.iscsiLoginState = $.iscsiLoginState;
         this.multipathDevices = $.multipathDevices;
         this.port = $.port;
@@ -766,6 +782,27 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
          */
         public Builder isShareable(Boolean isShareable) {
             return isShareable(Output.of(isShareable));
+        }
+
+        /**
+         * @param isVolumeCreatedDuringLaunch Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVolumeCreatedDuringLaunch(@Nullable Output<Boolean> isVolumeCreatedDuringLaunch) {
+            $.isVolumeCreatedDuringLaunch = isVolumeCreatedDuringLaunch;
+            return this;
+        }
+
+        /**
+         * @param isVolumeCreatedDuringLaunch Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isVolumeCreatedDuringLaunch(Boolean isVolumeCreatedDuringLaunch) {
+            return isVolumeCreatedDuringLaunch(Output.of(isVolumeCreatedDuringLaunch));
         }
 
         /**

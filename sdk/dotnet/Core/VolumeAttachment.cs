@@ -150,6 +150,12 @@ namespace Pulumi.Oci.Core
         public Output<bool> IsShareable { get; private set; } = null!;
 
         /// <summary>
+        /// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+        /// </summary>
+        [Output("isVolumeCreatedDuringLaunch")]
+        public Output<bool> IsVolumeCreatedDuringLaunch { get; private set; } = null!;
+
+        /// <summary>
         /// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
         /// </summary>
         [Output("iscsiLoginState")]
@@ -420,6 +426,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("isShareable")]
         public Input<bool>? IsShareable { get; set; }
+
+        /// <summary>
+        /// Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
+        /// </summary>
+        [Input("isVolumeCreatedDuringLaunch")]
+        public Input<bool>? IsVolumeCreatedDuringLaunch { get; set; }
 
         /// <summary>
         /// The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.

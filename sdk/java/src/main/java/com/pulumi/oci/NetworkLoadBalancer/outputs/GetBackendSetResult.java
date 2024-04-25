@@ -37,6 +37,11 @@ public final class GetBackendSetResult {
      */
     private Boolean isFailOpen;
     /**
+     * @return If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     * 
+     */
+    private Boolean isInstantFailoverEnabled;
+    /**
      * @return If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
@@ -89,6 +94,13 @@ public final class GetBackendSetResult {
         return this.isFailOpen;
     }
     /**
+     * @return If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     * 
+     */
+    public Boolean isInstantFailoverEnabled() {
+        return this.isInstantFailoverEnabled;
+    }
+    /**
      * @return If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      * 
      */
@@ -128,6 +140,7 @@ public final class GetBackendSetResult {
         private String id;
         private String ipVersion;
         private Boolean isFailOpen;
+        private Boolean isInstantFailoverEnabled;
         private Boolean isPreserveSource;
         private String name;
         private String networkLoadBalancerId;
@@ -141,6 +154,7 @@ public final class GetBackendSetResult {
     	      this.id = defaults.id;
     	      this.ipVersion = defaults.ipVersion;
     	      this.isFailOpen = defaults.isFailOpen;
+    	      this.isInstantFailoverEnabled = defaults.isInstantFailoverEnabled;
     	      this.isPreserveSource = defaults.isPreserveSource;
     	      this.name = defaults.name;
     	      this.networkLoadBalancerId = defaults.networkLoadBalancerId;
@@ -202,6 +216,14 @@ public final class GetBackendSetResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isInstantFailoverEnabled(Boolean isInstantFailoverEnabled) {
+            if (isInstantFailoverEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetResult", "isInstantFailoverEnabled");
+            }
+            this.isInstantFailoverEnabled = isInstantFailoverEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPreserveSource(Boolean isPreserveSource) {
             if (isPreserveSource == null) {
               throw new MissingRequiredPropertyException("GetBackendSetResult", "isPreserveSource");
@@ -241,6 +263,7 @@ public final class GetBackendSetResult {
             _resultValue.id = id;
             _resultValue.ipVersion = ipVersion;
             _resultValue.isFailOpen = isFailOpen;
+            _resultValue.isInstantFailoverEnabled = isInstantFailoverEnabled;
             _resultValue.isPreserveSource = isPreserveSource;
             _resultValue.name = name;
             _resultValue.networkLoadBalancerId = networkLoadBalancerId;

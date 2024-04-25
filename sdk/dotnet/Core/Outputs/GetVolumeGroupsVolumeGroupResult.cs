@@ -18,6 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         public readonly string BackupPolicyId;
+        public readonly string ClusterPlacementGroupId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -79,6 +80,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string backupPolicyId,
 
+            string clusterPlacementGroupId,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
@@ -111,6 +114,7 @@ namespace Pulumi.Oci.Core.Outputs
         {
             AvailabilityDomain = availabilityDomain;
             BackupPolicyId = backupPolicyId;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;

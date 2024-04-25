@@ -61,6 +61,11 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    private String timeUpdated;
 
     private GetBootVolumeAttachmentsBootVolumeAttachment() {}
     /**
@@ -133,6 +138,13 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public String timeUpdated() {
+        return this.timeUpdated;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -153,6 +165,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
         private Boolean isPvEncryptionInTransitEnabled;
         private String state;
         private String timeCreated;
+        private String timeUpdated;
         public Builder() {}
         public Builder(GetBootVolumeAttachmentsBootVolumeAttachment defaults) {
     	      Objects.requireNonNull(defaults);
@@ -166,6 +179,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeUpdated = defaults.timeUpdated;
         }
 
         @CustomType.Setter
@@ -248,6 +262,14 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeUpdated(String timeUpdated) {
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBootVolumeAttachmentsBootVolumeAttachment", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
+            return this;
+        }
         public GetBootVolumeAttachmentsBootVolumeAttachment build() {
             final var _resultValue = new GetBootVolumeAttachmentsBootVolumeAttachment();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -260,6 +282,7 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
             return _resultValue;
         }
     }

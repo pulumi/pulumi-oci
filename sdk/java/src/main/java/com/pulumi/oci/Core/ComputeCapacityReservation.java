@@ -67,6 +67,7 @@ import javax.annotation.Nullable;
  *                     .hpcIslandId(testHpcIsland.id())
  *                     .networkBlockIds(computeCapacityReservationInstanceReservationConfigsClusterConfigNetworkBlockIds)
  *                     .build())
+ *                 .clusterPlacementGroupId(testGroup.id())
  *                 .faultDomain(computeCapacityReservationInstanceReservationConfigsFaultDomain)
  *                 .instanceShapeConfig(ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs.builder()
  *                     .memoryInGbs(computeCapacityReservationInstanceReservationConfigsInstanceShapeConfigMemoryInGbs)

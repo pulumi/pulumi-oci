@@ -24,7 +24,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      */
     private @Nullable List<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy> autotunePolicies;
     /**
-     * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     private @Nullable String availabilityDomain;
@@ -39,7 +39,12 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      */
     private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas blockVolumeReplicas;
     /**
-     * @return The OCID of the compartment that contains the volume.
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    private @Nullable String clusterPlacementGroupId;
+    /**
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     private @Nullable String compartmentId;
@@ -91,7 +96,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         return this.autotunePolicies == null ? List.of() : this.autotunePolicies;
     }
     /**
-     * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<String> availabilityDomain() {
@@ -112,7 +117,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         return Optional.ofNullable(this.blockVolumeReplicas);
     }
     /**
-     * @return The OCID of the compartment that contains the volume.
+     * @return The clusterPlacementGroup Id of the volume for volume placement.
+     * 
+     */
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+    /**
+     * @return (Updatable) The OCID of the compartment containing images to search
      * 
      */
     public Optional<String> compartmentId() {
@@ -186,6 +198,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         private @Nullable String availabilityDomain;
         private @Nullable String backupPolicyId;
         private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas blockVolumeReplicas;
+        private @Nullable String clusterPlacementGroupId;
         private @Nullable String compartmentId;
         private @Nullable Map<String,Object> definedTags;
         private @Nullable String displayName;
@@ -202,6 +215,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupPolicyId = defaults.backupPolicyId;
     	      this.blockVolumeReplicas = defaults.blockVolumeReplicas;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -238,6 +252,12 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         public Builder blockVolumeReplicas(@Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas blockVolumeReplicas) {
 
             this.blockVolumeReplicas = blockVolumeReplicas;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -300,6 +320,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.backupPolicyId = backupPolicyId;
             _resultValue.blockVolumeReplicas = blockVolumeReplicas;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;

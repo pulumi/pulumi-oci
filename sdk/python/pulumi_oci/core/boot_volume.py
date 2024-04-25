@@ -23,6 +23,7 @@ class BootVolumeArgs:
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
                  boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]]] = None,
                  boot_volume_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -37,6 +38,7 @@ class BootVolumeArgs:
         :param pulumi.Input[Sequence[pulumi.Input['BootVolumeAutotunePolicyArgs']]] autotune_policies: (Updatable) The list of autotune policies to be enabled for this volume.
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a boot volume.
         :param pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
+        :param pulumi.Input[str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -61,6 +63,8 @@ class BootVolumeArgs:
             pulumi.set(__self__, "boot_volume_replicas", boot_volume_replicas)
         if boot_volume_replicas_deletion is not None:
             pulumi.set(__self__, "boot_volume_replicas_deletion", boot_volume_replicas_deletion)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -158,6 +162,18 @@ class BootVolumeArgs:
         pulumi.set(self, "boot_volume_replicas_deletion", value)
 
     @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The clusterPlacementGroup Id of the volume for volume placement.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -253,6 +269,7 @@ class _BootVolumeState:
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
                  boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]]] = None,
                  boot_volume_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -276,6 +293,7 @@ class _BootVolumeState:
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a boot volume.
         :param pulumi.Input[Sequence[pulumi.Input['BootVolumeBootVolumeReplicaArgs']]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
+        :param pulumi.Input[str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -309,6 +327,8 @@ class _BootVolumeState:
             pulumi.set(__self__, "boot_volume_replicas", boot_volume_replicas)
         if boot_volume_replicas_deletion is not None:
             pulumi.set(__self__, "boot_volume_replicas_deletion", boot_volume_replicas_deletion)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -413,6 +433,18 @@ class _BootVolumeState:
     @boot_volume_replicas_deletion.setter
     def boot_volume_replicas_deletion(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "boot_volume_replicas_deletion", value)
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The clusterPlacementGroup Id of the volume for volume placement.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -616,6 +648,7 @@ class BootVolume(pulumi.CustomResource):
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
                  boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]]] = None,
                  boot_volume_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -656,6 +689,7 @@ class BootVolume(pulumi.CustomResource):
                 availability_domain=boot_volume_boot_volume_replicas_availability_domain,
                 display_name=boot_volume_boot_volume_replicas_display_name,
             )],
+            cluster_placement_group_id=test_group["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -684,6 +718,7 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a boot volume.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
+        :param pulumi.Input[str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -731,6 +766,7 @@ class BootVolume(pulumi.CustomResource):
                 availability_domain=boot_volume_boot_volume_replicas_availability_domain,
                 display_name=boot_volume_boot_volume_replicas_display_name,
             )],
+            cluster_placement_group_id=test_group["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -773,6 +809,7 @@ class BootVolume(pulumi.CustomResource):
                  backup_policy_id: Optional[pulumi.Input[str]] = None,
                  boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]]] = None,
                  boot_volume_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -798,6 +835,7 @@ class BootVolume(pulumi.CustomResource):
             __props__.__dict__["backup_policy_id"] = backup_policy_id
             __props__.__dict__["boot_volume_replicas"] = boot_volume_replicas
             __props__.__dict__["boot_volume_replicas_deletion"] = boot_volume_replicas_deletion
+            __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -835,6 +873,7 @@ class BootVolume(pulumi.CustomResource):
             backup_policy_id: Optional[pulumi.Input[str]] = None,
             boot_volume_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]]] = None,
             boot_volume_replicas_deletion: Optional[pulumi.Input[bool]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -863,6 +902,7 @@ class BootVolume(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[str] backup_policy_id: If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a boot volume.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BootVolumeBootVolumeReplicaArgs']]]] boot_volume_replicas: (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
+        :param pulumi.Input[str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the boot volume.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -891,6 +931,7 @@ class BootVolume(pulumi.CustomResource):
         __props__.__dict__["backup_policy_id"] = backup_policy_id
         __props__.__dict__["boot_volume_replicas"] = boot_volume_replicas
         __props__.__dict__["boot_volume_replicas_deletion"] = boot_volume_replicas_deletion
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -956,6 +997,14 @@ class BootVolume(pulumi.CustomResource):
     @pulumi.getter(name="bootVolumeReplicasDeletion")
     def boot_volume_replicas_deletion(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "boot_volume_replicas_deletion")
+
+    @property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[str]:
+        """
+        The clusterPlacementGroup Id of the volume for volume placement.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @property
     @pulumi.getter(name="compartmentId")

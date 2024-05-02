@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DataSafe
         /// Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
         /// Date - Includes DATE and TIMESTAMP
         /// LOB - Includes BLOB, CLOB, and NCLOB
-        /// All - Includes all the supported data types 
+        /// All - Includes all the supported data types
         /// 
         /// 
         /// ## Example Usage
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DataSafe
         /// Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
         /// Date - Includes DATE and TIMESTAMP
         /// LOB - Includes BLOB, CLOB, and NCLOB
-        /// All - Includes all the supported data types 
+        /// All - Includes all the supported data types
         /// 
         /// 
         /// ## Example Usage

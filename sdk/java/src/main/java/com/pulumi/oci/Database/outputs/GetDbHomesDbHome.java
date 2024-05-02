@@ -65,6 +65,11 @@ public final class GetDbHomesDbHome {
     private String id;
     private Boolean isDesupportedVersion;
     /**
+     * @return Indicates whether unified autiding is enabled or not.
+     * 
+     */
+    private Boolean isUnifiedAuditingEnabled;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -174,6 +179,13 @@ public final class GetDbHomesDbHome {
         return this.isDesupportedVersion;
     }
     /**
+     * @return Indicates whether unified autiding is enabled or not.
+     * 
+     */
+    public Boolean isUnifiedAuditingEnabled() {
+        return this.isUnifiedAuditingEnabled;
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -244,6 +256,7 @@ public final class GetDbHomesDbHome {
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isDesupportedVersion;
+        private Boolean isUnifiedAuditingEnabled;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lastPatchHistoryEntryId;
@@ -268,6 +281,7 @@ public final class GetDbHomesDbHome {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isDesupportedVersion = defaults.isDesupportedVersion;
+    	      this.isUnifiedAuditingEnabled = defaults.isUnifiedAuditingEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lastPatchHistoryEntryId = defaults.lastPatchHistoryEntryId;
@@ -386,6 +400,14 @@ public final class GetDbHomesDbHome {
             return this;
         }
         @CustomType.Setter
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            if (isUnifiedAuditingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHome", "isUnifiedAuditingEnabled");
+            }
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetDbHomesDbHome", "kmsKeyId");
@@ -464,6 +486,7 @@ public final class GetDbHomesDbHome {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isDesupportedVersion = isDesupportedVersion;
+            _resultValue.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lastPatchHistoryEntryId = lastPatchHistoryEntryId;

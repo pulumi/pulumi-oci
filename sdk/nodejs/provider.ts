@@ -26,8 +26,8 @@ export class Provider extends pulumi.ProviderResource {
     }
 
     /**
-     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-     * 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+     * 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
      */
     public readonly auth!: pulumi.Output<string | undefined>;
     /**
@@ -105,8 +105,8 @@ export class Provider extends pulumi.ProviderResource {
  */
 export interface ProviderArgs {
     /**
-     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-     * 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+     * 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
      */
     auth?: pulumi.Input<string>;
     /**

@@ -71,26 +71,14 @@ public final class GetRecoveryServiceSubnetsArgs extends com.pulumi.resources.In
     }
 
     /**
-     * A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * A filter to return only the resources that match the specified lifecycle state.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return A filter to return only the resources that match the specified lifecycle state.
      * 
      */
     public Optional<Output<String>> state() {
@@ -218,13 +206,7 @@ public final class GetRecoveryServiceSubnetsArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param state A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-         * * CREATING
-         * * UPDATING
-         * * ACTIVE
-         * * DELETING
-         * * DELETED
-         * * FAILED
+         * @param state A filter to return only the resources that match the specified lifecycle state.
          * 
          * @return builder
          * 
@@ -235,13 +217,7 @@ public final class GetRecoveryServiceSubnetsArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param state A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-         * * CREATING
-         * * UPDATING
-         * * ACTIVE
-         * * DELETING
-         * * DELETED
-         * * FAILED
+         * @param state A filter to return only the resources that match the specified lifecycle state.
          * 
          * @return builder
          * 

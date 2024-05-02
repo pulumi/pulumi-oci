@@ -46,6 +46,10 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        /// </summary>
+        public readonly string PolicyLockedDateTime;
+        /// <summary>
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
@@ -80,6 +84,8 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
 
             string lifecycleDetails,
 
+            string policyLockedDateTime,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -96,6 +102,7 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
             Id = id;
             IsPredefinedPolicy = isPredefinedPolicy;
             LifecycleDetails = lifecycleDetails;
+            PolicyLockedDateTime = policyLockedDateTime;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

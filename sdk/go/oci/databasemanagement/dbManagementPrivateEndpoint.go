@@ -86,6 +86,8 @@ type DbManagementPrivateEndpoint struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -151,6 +153,8 @@ type dbManagementPrivateEndpointState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -181,6 +185,8 @@ type DbManagementPrivateEndpointState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput
 	// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -374,6 +380,11 @@ func (o DbManagementPrivateEndpointOutput) State() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbManagementPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o DbManagementPrivateEndpointOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *DbManagementPrivateEndpoint) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

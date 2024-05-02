@@ -70,6 +70,11 @@ public final class GetNamedCredentialsNamedCredentialCollectionItem {
      */
     private String state;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The date and time the named credential was created.
      * 
      */
@@ -164,6 +169,13 @@ public final class GetNamedCredentialsNamedCredentialCollectionItem {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the named credential was created.
      * 
      */
@@ -205,6 +217,7 @@ public final class GetNamedCredentialsNamedCredentialCollectionItem {
         private String name;
         private String scope;
         private String state;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String type;
@@ -222,6 +235,7 @@ public final class GetNamedCredentialsNamedCredentialCollectionItem {
     	      this.name = defaults.name;
     	      this.scope = defaults.scope;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
@@ -319,6 +333,14 @@ public final class GetNamedCredentialsNamedCredentialCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetNamedCredentialsNamedCredentialCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetNamedCredentialsNamedCredentialCollectionItem", "timeCreated");
@@ -355,6 +377,7 @@ public final class GetNamedCredentialsNamedCredentialCollectionItem {
             _resultValue.name = name;
             _resultValue.scope = scope;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;

@@ -37,13 +37,7 @@ public final class GetRecoveryServiceSubnetsResult {
      */
     private List<GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection> recoveryServiceSubnetCollections;
     /**
-     * @return The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return The current state of the recovery service subnet.
      * 
      */
     private @Nullable String state;
@@ -86,13 +80,7 @@ public final class GetRecoveryServiceSubnetsResult {
         return this.recoveryServiceSubnetCollections;
     }
     /**
-     * @return The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return The current state of the recovery service subnet.
      * 
      */
     public Optional<String> state() {

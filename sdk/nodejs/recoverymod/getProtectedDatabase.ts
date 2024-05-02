@@ -64,6 +64,7 @@ export interface GetProtectedDatabaseResult {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
     readonly definedTags: {[key: string]: any};
+    readonly deletionSchedule: string;
     /**
      * The protected database name. You can change the displayName. Avoid entering confidential information.
      */
@@ -73,10 +74,7 @@ export interface GetProtectedDatabaseResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Indicates the protection status of the database. Allowed values are:
-     * * HEALTHY
-     * * WARNING
-     * * ALERT
+     * Indicates the protection status of the database.
      */
     readonly health: string;
     /**
@@ -104,6 +102,10 @@ export interface GetProtectedDatabaseResult {
      */
     readonly metrics: outputs.RecoveryMod.GetProtectedDatabaseMetric[];
     readonly password: string;
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     */
+    readonly policyLockedDateTime: string;
     readonly protectedDatabaseId: string;
     /**
      * The OCID of the protection policy associated with the protected database.

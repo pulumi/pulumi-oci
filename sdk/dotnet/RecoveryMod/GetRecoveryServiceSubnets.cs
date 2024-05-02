@@ -104,13 +104,7 @@ namespace Pulumi.Oci.RecoveryMod
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// A filter to return only the resources that match the specified lifecycle state.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -156,13 +150,7 @@ namespace Pulumi.Oci.RecoveryMod
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// A filter to return only the resources that match the specified lifecycle state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -201,13 +189,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionResult> RecoveryServiceSubnetCollections;
         /// <summary>
-        /// The current state of the recovery service subnet. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// The current state of the recovery service subnet.
         /// </summary>
         public readonly string? State;
         /// <summary>

@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
+ *     deletionSchedule: "DELETE_AFTER_72_HOURS",
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
@@ -95,6 +96,12 @@ export class ProtectedDatabase extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+     * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+     */
+    public readonly deletionSchedule!: pulumi.Output<string>;
+    /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
@@ -103,10 +110,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Indicates the protection status of the database. Allowed values are:
-     * * HEALTHY
-     * * WARNING
-     * * ALERT
+     * Indicates the protection status of the database.
      */
     public /*out*/ readonly health!: pulumi.Output<string>;
     /**
@@ -133,6 +137,10 @@ export class ProtectedDatabase extends pulumi.CustomResource {
      * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
      */
     public readonly password!: pulumi.Output<string>;
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     */
+    public /*out*/ readonly policyLockedDateTime!: pulumi.Output<string>;
     /**
      * (Updatable) The OCID of the protection policy associated with the protected database.
      */
@@ -180,6 +188,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
             resourceInputs["databaseSize"] = state ? state.databaseSize : undefined;
             resourceInputs["dbUniqueName"] = state ? state.dbUniqueName : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["deletionSchedule"] = state ? state.deletionSchedule : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["health"] = state ? state.health : undefined;
@@ -189,6 +198,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["metrics"] = state ? state.metrics : undefined;
             resourceInputs["password"] = state ? state.password : undefined;
+            resourceInputs["policyLockedDateTime"] = state ? state.policyLockedDateTime : undefined;
             resourceInputs["protectionPolicyId"] = state ? state.protectionPolicyId : undefined;
             resourceInputs["recoveryServiceSubnets"] = state ? state.recoveryServiceSubnets : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -221,6 +231,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
             resourceInputs["databaseSize"] = args ? args.databaseSize : undefined;
             resourceInputs["dbUniqueName"] = args ? args.dbUniqueName : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["deletionSchedule"] = args ? args.deletionSchedule : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isRedoLogsShipped"] = args ? args.isRedoLogsShipped : undefined;
@@ -232,6 +243,7 @@ export class ProtectedDatabase extends pulumi.CustomResource {
             resourceInputs["isReadOnlyResource"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["metrics"] = undefined /*out*/;
+            resourceInputs["policyLockedDateTime"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -270,6 +282,12 @@ export interface ProtectedDatabaseState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+     * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+     */
+    deletionSchedule?: pulumi.Input<string>;
+    /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
@@ -278,10 +296,7 @@ export interface ProtectedDatabaseState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Indicates the protection status of the database. Allowed values are:
-     * * HEALTHY
-     * * WARNING
-     * * ALERT
+     * Indicates the protection status of the database.
      */
     health?: pulumi.Input<string>;
     /**
@@ -308,6 +323,10 @@ export interface ProtectedDatabaseState {
      * (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
      */
     password?: pulumi.Input<string>;
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     */
+    policyLockedDateTime?: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of the protection policy associated with the protected database.
      */
@@ -362,6 +381,12 @@ export interface ProtectedDatabaseArgs {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+     * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+     */
+    deletionSchedule?: pulumi.Input<string>;
     /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      */

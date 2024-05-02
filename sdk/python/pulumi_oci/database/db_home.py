@@ -25,6 +25,7 @@ class DbHomeArgs:
                  enable_database_delete: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_desupported_version: Optional[pulumi.Input[bool]] = None,
+                 is_unified_auditing_enabled: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None,
@@ -44,6 +45,7 @@ class DbHomeArgs:
         :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
+        :param pulumi.Input[bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] source: The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
@@ -71,6 +73,8 @@ class DbHomeArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_desupported_version is not None:
             pulumi.set(__self__, "is_desupported_version", is_desupported_version)
+        if is_unified_auditing_enabled is not None:
+            pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -193,6 +197,18 @@ class DbHomeArgs:
         pulumi.set(self, "is_desupported_version", value)
 
     @property
+    @pulumi.getter(name="isUnifiedAuditingEnabled")
+    def is_unified_auditing_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+        """
+        return pulumi.get(self, "is_unified_auditing_enabled")
+
+    @is_unified_auditing_enabled.setter
+    def is_unified_auditing_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_unified_auditing_enabled", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -259,6 +275,7 @@ class _DbHomeState:
                  enable_database_delete: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_desupported_version: Optional[pulumi.Input[bool]] = None,
+                 is_unified_auditing_enabled: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  last_patch_history_entry_id: Optional[pulumi.Input[str]] = None,
@@ -284,6 +301,7 @@ class _DbHomeState:
         :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
+        :param pulumi.Input[bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
@@ -319,6 +337,8 @@ class _DbHomeState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_desupported_version is not None:
             pulumi.set(__self__, "is_desupported_version", is_desupported_version)
+        if is_unified_auditing_enabled is not None:
+            pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -473,6 +493,18 @@ class _DbHomeState:
         pulumi.set(self, "is_desupported_version", value)
 
     @property
+    @pulumi.getter(name="isUnifiedAuditingEnabled")
+    def is_unified_auditing_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+        """
+        return pulumi.get(self, "is_unified_auditing_enabled")
+
+    @is_unified_auditing_enabled.setter
+    def is_unified_auditing_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_unified_auditing_enabled", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -587,6 +619,7 @@ class DbHome(pulumi.CustomResource):
                  enable_database_delete: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_desupported_version: Optional[pulumi.Input[bool]] = None,
+                 is_unified_auditing_enabled: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None,
@@ -630,6 +663,7 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
+        :param pulumi.Input[bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] source: The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
@@ -692,6 +726,7 @@ class DbHome(pulumi.CustomResource):
                  enable_database_delete: Optional[pulumi.Input[bool]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_desupported_version: Optional[pulumi.Input[bool]] = None,
+                 is_unified_auditing_enabled: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None,
@@ -714,6 +749,7 @@ class DbHome(pulumi.CustomResource):
             __props__.__dict__["enable_database_delete"] = enable_database_delete
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_desupported_version"] = is_desupported_version
+            __props__.__dict__["is_unified_auditing_enabled"] = is_unified_auditing_enabled
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["kms_key_version_id"] = kms_key_version_id
             __props__.__dict__["source"] = source
@@ -745,6 +781,7 @@ class DbHome(pulumi.CustomResource):
             enable_database_delete: Optional[pulumi.Input[bool]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_desupported_version: Optional[pulumi.Input[bool]] = None,
+            is_unified_auditing_enabled: Optional[pulumi.Input[bool]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             kms_key_version_id: Optional[pulumi.Input[str]] = None,
             last_patch_history_entry_id: Optional[pulumi.Input[str]] = None,
@@ -775,6 +812,7 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
+        :param pulumi.Input[bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
@@ -803,6 +841,7 @@ class DbHome(pulumi.CustomResource):
         __props__.__dict__["enable_database_delete"] = enable_database_delete
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_desupported_version"] = is_desupported_version
+        __props__.__dict__["is_unified_auditing_enabled"] = is_unified_auditing_enabled
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["last_patch_history_entry_id"] = last_patch_history_entry_id
@@ -904,6 +943,14 @@ class DbHome(pulumi.CustomResource):
         If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         """
         return pulumi.get(self, "is_desupported_version")
+
+    @property
+    @pulumi.getter(name="isUnifiedAuditingEnabled")
+    def is_unified_auditing_enabled(self) -> pulumi.Output[bool]:
+        """
+        Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+        """
+        return pulumi.get(self, "is_unified_auditing_enabled")
 
     @property
     @pulumi.getter(name="kmsKeyId")

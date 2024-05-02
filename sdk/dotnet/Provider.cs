@@ -19,8 +19,8 @@ namespace Pulumi.Oci
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
-        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-        /// 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+        /// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         /// </summary>
         [Output("auth")]
         public Output<string?> Auth { get; private set; } = null!;
@@ -112,8 +112,8 @@ namespace Pulumi.Oci
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-        /// 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+        /// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         /// </summary>
         [Input("auth")]
         public Input<string>? Auth { get; set; }

@@ -38,6 +38,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly int GenerateHealthReportTrigger;
         /// <summary>
         /// The OCID of the masking policy.
         /// </summary>
@@ -99,6 +100,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableDictionary<string, object> freeformTags,
 
+            int generateHealthReportTrigger,
+
             string id,
 
             bool isDropTempTablesEnabled,
@@ -128,6 +131,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            GenerateHealthReportTrigger = generateHealthReportTrigger;
             Id = id;
             IsDropTempTablesEnabled = isDropTempTablesEnabled;
             IsRedoLoggingEnabled = isRedoLoggingEnabled;

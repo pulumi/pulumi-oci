@@ -57,6 +57,11 @@ public final class ManagedDatabaseGroupManagedDatabase {
      */
     private @Nullable String name;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private @Nullable Map<String,Object> systemTags;
+    /**
      * @return The date and time the Managed Database was added to the group.
      * 
      */
@@ -128,6 +133,13 @@ public final class ManagedDatabaseGroupManagedDatabase {
         return Optional.ofNullable(this.name);
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags == null ? Map.of() : this.systemTags;
+    }
+    /**
      * @return The date and time the Managed Database was added to the group.
      * 
      */
@@ -159,6 +171,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable String id;
         private @Nullable String name;
+        private @Nullable Map<String,Object> systemTags;
         private @Nullable String timeAdded;
         private @Nullable String workloadType;
         public Builder() {}
@@ -172,6 +185,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeAdded = defaults.timeAdded;
     	      this.workloadType = defaults.workloadType;
         }
@@ -225,6 +239,12 @@ public final class ManagedDatabaseGroupManagedDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeAdded(@Nullable String timeAdded) {
 
             this.timeAdded = timeAdded;
@@ -246,6 +266,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.name = name;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeAdded = timeAdded;
             _resultValue.workloadType = workloadType;
             return _resultValue;

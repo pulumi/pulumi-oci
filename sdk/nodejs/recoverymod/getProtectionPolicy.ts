@@ -74,15 +74,13 @@ export interface GetProtectionPolicyResult {
      * Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     */
+    readonly policyLockedDateTime: string;
     readonly protectionPolicyId: string;
     /**
-     * The current state of the protection policy. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * The current state of the protection policy.
      */
     readonly state: string;
     /**

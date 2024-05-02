@@ -24,16 +24,16 @@ import javax.annotation.Nullable;
 @ResourceType(type="pulumi:providers:oci")
 public class Provider extends com.pulumi.resources.ProviderResource {
     /**
-     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39; and &#39;InstancePrincipal&#39; and
-     * &#39;ResourcePrincipal&#39;. By default, &#39;ApiKey&#39; will be used.
+     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
+     * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     @Export(name="auth", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> auth;
 
     /**
-     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39; and &#39;InstancePrincipal&#39; and
-     * &#39;ResourcePrincipal&#39;. By default, &#39;ApiKey&#39; will be used.
+     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
+     * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     public Output<Optional<String>> auth() {

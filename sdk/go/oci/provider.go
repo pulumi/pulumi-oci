@@ -18,8 +18,8 @@ import (
 type Provider struct {
 	pulumi.ProviderResourceState
 
-	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-	// 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+	// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 	Auth pulumi.StringPtrOutput `pulumi:"auth"`
 	// (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
 	ConfigFileProfile pulumi.StringPtrOutput `pulumi:"configFileProfile"`
@@ -72,8 +72,8 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
-	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-	// 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+	// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 	Auth *string `pulumi:"auth"`
 	// (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
 	ConfigFileProfile *string `pulumi:"configFileProfile"`
@@ -112,8 +112,8 @@ type providerArgs struct {
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
-	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-	// 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+	// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 	Auth pulumi.StringPtrInput
 	// (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
 	ConfigFileProfile pulumi.StringPtrInput
@@ -187,8 +187,8 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
-// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-// 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 func (o ProviderOutput) Auth() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Auth }).(pulumi.StringPtrOutput)
 }

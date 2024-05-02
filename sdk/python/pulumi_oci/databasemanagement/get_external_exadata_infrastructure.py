@@ -22,7 +22,7 @@ class GetExternalExadataInfrastructureResult:
     """
     A collection of values returned by getExternalExadataInfrastructure.
     """
-    def __init__(__self__, additional_details=None, compartment_id=None, database_compartments=None, database_systems=None, db_system_ids=None, defined_tags=None, discovery_key=None, display_name=None, external_exadata_infrastructure_id=None, freeform_tags=None, id=None, internal_id=None, license_model=None, lifecycle_details=None, rack_size=None, state=None, status=None, storage_grids=None, storage_server_names=None, time_created=None, time_updated=None, version=None):
+    def __init__(__self__, additional_details=None, compartment_id=None, database_compartments=None, database_systems=None, db_system_ids=None, defined_tags=None, discovery_key=None, display_name=None, external_exadata_infrastructure_id=None, freeform_tags=None, id=None, internal_id=None, license_model=None, lifecycle_details=None, rack_size=None, state=None, status=None, storage_grids=None, storage_server_names=None, system_tags=None, time_created=None, time_updated=None, version=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -80,6 +80,9 @@ class GetExternalExadataInfrastructureResult:
         if storage_server_names and not isinstance(storage_server_names, list):
             raise TypeError("Expected argument 'storage_server_names' to be a list")
         pulumi.set(__self__, "storage_server_names", storage_server_names)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -231,6 +234,14 @@ class GetExternalExadataInfrastructureResult:
         return pulumi.get(self, "storage_server_names")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -280,6 +291,7 @@ class AwaitableGetExternalExadataInfrastructureResult(GetExternalExadataInfrastr
             status=self.status,
             storage_grids=self.storage_grids,
             storage_server_names=self.storage_server_names,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
             version=self.version)
@@ -330,6 +342,7 @@ def get_external_exadata_infrastructure(external_exadata_infrastructure_id: Opti
         status=pulumi.get(__ret__, 'status'),
         storage_grids=pulumi.get(__ret__, 'storage_grids'),
         storage_server_names=pulumi.get(__ret__, 'storage_server_names'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))

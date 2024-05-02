@@ -2790,6 +2790,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseManagement/databaseDbmFeaturesManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement": "DatabaseDbmFeaturesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseManagement/dbManagementPrivateEndpoint",
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
@@ -2934,6 +2942,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement": "ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement": "ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement:ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement": "ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseManagement/managedDatabase",
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
@@ -2970,6 +3002,14 @@ _utilities.register(
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
    "oci:DatabaseManagement/namedCredential:NamedCredential": "NamedCredential"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement": "PluggabledatabasePluggableDatabaseDbmFeaturesManagement"
   }
  },
  {

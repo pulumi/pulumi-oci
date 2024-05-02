@@ -191,13 +191,7 @@ namespace Pulumi.Oci.RecoveryMod
         public readonly ImmutableArray<Outputs.GetProtectionPoliciesProtectionPolicyCollectionResult> ProtectionPolicyCollections;
         public readonly string? ProtectionPolicyId;
         /// <summary>
-        /// The current state of the protection policy. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// The current state of the protection policy.
         /// </summary>
         public readonly string? State;
 

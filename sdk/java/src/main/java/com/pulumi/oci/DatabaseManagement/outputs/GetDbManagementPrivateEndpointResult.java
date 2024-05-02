@@ -71,6 +71,11 @@ public final class GetDbManagementPrivateEndpointResult {
      */
     private String subnetId;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -163,6 +168,13 @@ public final class GetDbManagementPrivateEndpointResult {
         return this.subnetId;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -198,6 +210,7 @@ public final class GetDbManagementPrivateEndpointResult {
         private String privateIp;
         private String state;
         private String subnetId;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String vcnId;
         public Builder() {}
@@ -215,6 +228,7 @@ public final class GetDbManagementPrivateEndpointResult {
     	      this.privateIp = defaults.privateIp;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vcnId = defaults.vcnId;
         }
@@ -319,6 +333,14 @@ public final class GetDbManagementPrivateEndpointResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointResult", "timeCreated");
@@ -348,6 +370,7 @@ public final class GetDbManagementPrivateEndpointResult {
             _resultValue.privateIp = privateIp;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.vcnId = vcnId;
             return _resultValue;

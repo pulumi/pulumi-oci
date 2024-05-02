@@ -54,6 +54,10 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string Id;
         public readonly bool IsDesupportedVersion;
         /// <summary>
+        /// Indicates whether unified autiding is enabled or not.
+        /// </summary>
+        public readonly bool IsUnifiedAuditingEnabled;
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         public readonly string KmsKeyId;
@@ -108,6 +112,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isDesupportedVersion,
 
+            bool isUnifiedAuditingEnabled,
+
             string kmsKeyId,
 
             string kmsKeyVersionId,
@@ -137,6 +143,7 @@ namespace Pulumi.Oci.Database.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsDesupportedVersion = isDesupportedVersion;
+            IsUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             LastPatchHistoryEntryId = lastPatchHistoryEntryId;

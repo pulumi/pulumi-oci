@@ -132,6 +132,12 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> StorageSystemId { get; private set; } = null!;
 
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time the Managed Database was created.
         /// </summary>
         [Output("timeCreated")]
@@ -360,6 +366,18 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("storageSystemId")]
         public Input<string>? StorageSystemId { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<object>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<object> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The date and time the Managed Database was created.

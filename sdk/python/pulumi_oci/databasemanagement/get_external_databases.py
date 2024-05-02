@@ -23,7 +23,7 @@ class GetExternalDatabasesResult:
     """
     A collection of values returned by getExternalDatabases.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, external_database_collections=None, external_db_system_id=None, filters=None, id=None):
+    def __init__(__self__, compartment_id=None, display_name=None, external_database_collections=None, external_database_id=None, external_db_system_id=None, filters=None, id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -33,6 +33,9 @@ class GetExternalDatabasesResult:
         if external_database_collections and not isinstance(external_database_collections, list):
             raise TypeError("Expected argument 'external_database_collections' to be a list")
         pulumi.set(__self__, "external_database_collections", external_database_collections)
+        if external_database_id and not isinstance(external_database_id, str):
+            raise TypeError("Expected argument 'external_database_id' to be a str")
+        pulumi.set(__self__, "external_database_id", external_database_id)
         if external_db_system_id and not isinstance(external_db_system_id, str):
             raise TypeError("Expected argument 'external_db_system_id' to be a str")
         pulumi.set(__self__, "external_db_system_id", external_db_system_id)
@@ -68,6 +71,11 @@ class GetExternalDatabasesResult:
         return pulumi.get(self, "external_database_collections")
 
     @property
+    @pulumi.getter(name="externalDatabaseId")
+    def external_database_id(self) -> Optional[str]:
+        return pulumi.get(self, "external_database_id")
+
+    @property
     @pulumi.getter(name="externalDbSystemId")
     def external_db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "external_db_system_id")
@@ -95,6 +103,7 @@ class AwaitableGetExternalDatabasesResult(GetExternalDatabasesResult):
             compartment_id=self.compartment_id,
             display_name=self.display_name,
             external_database_collections=self.external_database_collections,
+            external_database_id=self.external_database_id,
             external_db_system_id=self.external_db_system_id,
             filters=self.filters,
             id=self.id)
@@ -102,6 +111,7 @@ class AwaitableGetExternalDatabasesResult(GetExternalDatabasesResult):
 
 def get_external_databases(compartment_id: Optional[str] = None,
                            display_name: Optional[str] = None,
+                           external_database_id: Optional[str] = None,
                            external_db_system_id: Optional[str] = None,
                            filters: Optional[Sequence[pulumi.InputType['GetExternalDatabasesFilterArgs']]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalDatabasesResult:
@@ -118,17 +128,20 @@ def get_external_databases(compartment_id: Optional[str] = None,
 
     test_external_databases = oci.DatabaseManagement.get_external_databases(compartment_id=compartment_id,
         display_name=external_database_display_name,
+        external_database_id=test_external_database["id"],
         external_db_system_id=test_external_db_system["id"])
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to only return the resources that match the entire display name.
+    :param str external_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
     :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
+    __args__['externalDatabaseId'] = external_database_id
     __args__['externalDbSystemId'] = external_db_system_id
     __args__['filters'] = filters
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -138,6 +151,7 @@ def get_external_databases(compartment_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         external_database_collections=pulumi.get(__ret__, 'external_database_collections'),
+        external_database_id=pulumi.get(__ret__, 'external_database_id'),
         external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
@@ -146,6 +160,7 @@ def get_external_databases(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_external_databases)
 def get_external_databases_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   display_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                  external_database_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   external_db_system_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExternalDatabasesFilterArgs']]]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalDatabasesResult]:
@@ -162,12 +177,14 @@ def get_external_databases_output(compartment_id: Optional[pulumi.Input[Optional
 
     test_external_databases = oci.DatabaseManagement.get_external_databases(compartment_id=compartment_id,
         display_name=external_database_display_name,
+        external_database_id=test_external_database["id"],
         external_db_system_id=test_external_db_system["id"])
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to only return the resources that match the entire display name.
+    :param str external_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
     :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
     """
     ...

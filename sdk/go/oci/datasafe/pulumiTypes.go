@@ -20527,7 +20527,8 @@ type GetMaskingPoliciesMaskingPolicyCollectionItem struct {
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags                map[string]interface{} `pulumi:"freeformTags"`
+	GenerateHealthReportTrigger int                    `pulumi:"generateHealthReportTrigger"`
 	// The OCID of the masking policy.
 	Id string `pulumi:"id"`
 	// Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
@@ -20576,7 +20577,8 @@ type GetMaskingPoliciesMaskingPolicyCollectionItemArgs struct {
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags                pulumi.MapInput `pulumi:"freeformTags"`
+	GenerateHealthReportTrigger pulumi.IntInput `pulumi:"generateHealthReportTrigger"`
 	// The OCID of the masking policy.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
@@ -20686,6 +20688,10 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) DisplayName() pulum
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) GenerateHealthReportTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) int { return v.GenerateHealthReportTrigger }).(pulumi.IntOutput)
 }
 
 // The OCID of the masking policy.
@@ -20993,6 +20999,759 @@ func (o GetMaskingPolicyColumnSourceArrayOutput) Index(i pulumi.IntInput) GetMas
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyColumnSource {
 		return vs[0].([]GetMaskingPolicyColumnSource)[vs[1].(int)]
 	}).(GetMaskingPolicyColumnSourceOutput)
+}
+
+type GetMaskingPolicyHealthReportLogsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMaskingPolicyHealthReportLogsFilterInput is an input type that accepts GetMaskingPolicyHealthReportLogsFilterArgs and GetMaskingPolicyHealthReportLogsFilterOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportLogsFilterInput` via:
+//
+//	GetMaskingPolicyHealthReportLogsFilterArgs{...}
+type GetMaskingPolicyHealthReportLogsFilterInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportLogsFilterOutput() GetMaskingPolicyHealthReportLogsFilterOutput
+	ToGetMaskingPolicyHealthReportLogsFilterOutputWithContext(context.Context) GetMaskingPolicyHealthReportLogsFilterOutput
+}
+
+type GetMaskingPolicyHealthReportLogsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMaskingPolicyHealthReportLogsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportLogsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportLogsFilterArgs) ToGetMaskingPolicyHealthReportLogsFilterOutput() GetMaskingPolicyHealthReportLogsFilterOutput {
+	return i.ToGetMaskingPolicyHealthReportLogsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportLogsFilterArgs) ToGetMaskingPolicyHealthReportLogsFilterOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportLogsFilterOutput)
+}
+
+// GetMaskingPolicyHealthReportLogsFilterArrayInput is an input type that accepts GetMaskingPolicyHealthReportLogsFilterArray and GetMaskingPolicyHealthReportLogsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportLogsFilterArrayInput` via:
+//
+//	GetMaskingPolicyHealthReportLogsFilterArray{ GetMaskingPolicyHealthReportLogsFilterArgs{...} }
+type GetMaskingPolicyHealthReportLogsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportLogsFilterArrayOutput() GetMaskingPolicyHealthReportLogsFilterArrayOutput
+	ToGetMaskingPolicyHealthReportLogsFilterArrayOutputWithContext(context.Context) GetMaskingPolicyHealthReportLogsFilterArrayOutput
+}
+
+type GetMaskingPolicyHealthReportLogsFilterArray []GetMaskingPolicyHealthReportLogsFilterInput
+
+func (GetMaskingPolicyHealthReportLogsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportLogsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportLogsFilterArray) ToGetMaskingPolicyHealthReportLogsFilterArrayOutput() GetMaskingPolicyHealthReportLogsFilterArrayOutput {
+	return i.ToGetMaskingPolicyHealthReportLogsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportLogsFilterArray) ToGetMaskingPolicyHealthReportLogsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportLogsFilterArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportLogsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportLogsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportLogsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportLogsFilterOutput) ToGetMaskingPolicyHealthReportLogsFilterOutput() GetMaskingPolicyHealthReportLogsFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsFilterOutput) ToGetMaskingPolicyHealthReportLogsFilterOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMaskingPolicyHealthReportLogsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMaskingPolicyHealthReportLogsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportLogsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportLogsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportLogsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportLogsFilterArrayOutput) ToGetMaskingPolicyHealthReportLogsFilterArrayOutput() GetMaskingPolicyHealthReportLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsFilterArrayOutput) ToGetMaskingPolicyHealthReportLogsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyHealthReportLogsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyHealthReportLogsFilter {
+		return vs[0].([]GetMaskingPolicyHealthReportLogsFilter)[vs[1].(int)]
+	}).(GetMaskingPolicyHealthReportLogsFilterOutput)
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollection struct {
+	// An array of masking policy health report objects.
+	Items []GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem `pulumi:"items"`
+}
+
+// GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionInput is an input type that accepts GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArgs and GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionInput` via:
+//
+//	GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArgs{...}
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput
+	ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutputWithContext(context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArgs struct {
+	// An array of masking policy health report objects.
+	Items GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArgs) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput {
+	return i.ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArgs) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput)
+}
+
+// GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayInput is an input type that accepts GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArray and GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayInput` via:
+//
+//	GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArray{ GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArgs{...} }
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput
+	ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutputWithContext(context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArray []GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionInput
+
+func (GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArray) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput {
+	return i.ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArray) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput {
+	return o
+}
+
+// An array of masking policy health report objects.
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput) Items() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollection) []GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem {
+		return v.Items
+	}).(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollection {
+		return vs[0].([]GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollection)[vs[1].(int)]
+	}).(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput)
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem struct {
+	// A human-readable description for the log entry.
+	Description string `pulumi:"description"`
+	// A human-readable log entry.
+	Message string `pulumi:"message"`
+	// A filter to return only the resources that match the specified log message type.
+	MessageType string `pulumi:"messageType"`
+	// A human-readable log entry to remedy any error or warnings in the masking policy.
+	Remediation string `pulumi:"remediation"`
+	// The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemInput is an input type that accepts GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs and GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemInput` via:
+//
+//	GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs{...}
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput
+	ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutputWithContext(context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs struct {
+	// A human-readable description for the log entry.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A human-readable log entry.
+	Message pulumi.StringInput `pulumi:"message"`
+	// A filter to return only the resources that match the specified log message type.
+	MessageType pulumi.StringInput `pulumi:"messageType"`
+	// A human-readable log entry to remedy any error or warnings in the masking policy.
+	Remediation pulumi.StringInput `pulumi:"remediation"`
+	// The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput {
+	return i.ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput)
+}
+
+// GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayInput is an input type that accepts GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArray and GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayInput` via:
+//
+//	GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArray{ GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs{...} }
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput
+	ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutputWithContext(context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArray []GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemInput
+
+func (GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArray) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput {
+	return i.ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArray) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput {
+	return o
+}
+
+// A human-readable description for the log entry.
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A human-readable log entry.
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified log message type.
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) MessageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem) string {
+		return v.MessageType
+	}).(pulumi.StringOutput)
+}
+
+// A human-readable log entry to remedy any error or warnings in the masking policy.
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) Remediation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem) string {
+		return v.Remediation
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem) string {
+		return v.Timestamp
+	}).(pulumi.StringOutput)
+}
+
+type GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput() GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput) ToGetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem {
+		return vs[0].([]GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem)[vs[1].(int)]
+	}).(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput)
+}
+
+type GetMaskingPolicyHealthReportsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMaskingPolicyHealthReportsFilterInput is an input type that accepts GetMaskingPolicyHealthReportsFilterArgs and GetMaskingPolicyHealthReportsFilterOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportsFilterInput` via:
+//
+//	GetMaskingPolicyHealthReportsFilterArgs{...}
+type GetMaskingPolicyHealthReportsFilterInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportsFilterOutput() GetMaskingPolicyHealthReportsFilterOutput
+	ToGetMaskingPolicyHealthReportsFilterOutputWithContext(context.Context) GetMaskingPolicyHealthReportsFilterOutput
+}
+
+type GetMaskingPolicyHealthReportsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMaskingPolicyHealthReportsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportsFilterArgs) ToGetMaskingPolicyHealthReportsFilterOutput() GetMaskingPolicyHealthReportsFilterOutput {
+	return i.ToGetMaskingPolicyHealthReportsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportsFilterArgs) ToGetMaskingPolicyHealthReportsFilterOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportsFilterOutput)
+}
+
+// GetMaskingPolicyHealthReportsFilterArrayInput is an input type that accepts GetMaskingPolicyHealthReportsFilterArray and GetMaskingPolicyHealthReportsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportsFilterArrayInput` via:
+//
+//	GetMaskingPolicyHealthReportsFilterArray{ GetMaskingPolicyHealthReportsFilterArgs{...} }
+type GetMaskingPolicyHealthReportsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportsFilterArrayOutput() GetMaskingPolicyHealthReportsFilterArrayOutput
+	ToGetMaskingPolicyHealthReportsFilterArrayOutputWithContext(context.Context) GetMaskingPolicyHealthReportsFilterArrayOutput
+}
+
+type GetMaskingPolicyHealthReportsFilterArray []GetMaskingPolicyHealthReportsFilterInput
+
+func (GetMaskingPolicyHealthReportsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportsFilter)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportsFilterArray) ToGetMaskingPolicyHealthReportsFilterArrayOutput() GetMaskingPolicyHealthReportsFilterArrayOutput {
+	return i.ToGetMaskingPolicyHealthReportsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportsFilterArray) ToGetMaskingPolicyHealthReportsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportsFilterArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportsFilterOutput) ToGetMaskingPolicyHealthReportsFilterOutput() GetMaskingPolicyHealthReportsFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsFilterOutput) ToGetMaskingPolicyHealthReportsFilterOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsFilterOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMaskingPolicyHealthReportsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMaskingPolicyHealthReportsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportsFilter)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportsFilterArrayOutput) ToGetMaskingPolicyHealthReportsFilterArrayOutput() GetMaskingPolicyHealthReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsFilterArrayOutput) ToGetMaskingPolicyHealthReportsFilterArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsFilterArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyHealthReportsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyHealthReportsFilter {
+		return vs[0].([]GetMaskingPolicyHealthReportsFilter)[vs[1].(int)]
+	}).(GetMaskingPolicyHealthReportsFilterOutput)
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollection struct {
+	Items []GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem `pulumi:"items"`
+}
+
+// GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionInput is an input type that accepts GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArgs and GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionInput` via:
+//
+//	GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArgs{...}
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput
+	ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutputWithContext(context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArgs struct {
+	Items GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArgs) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput {
+	return i.ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArgs) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput)
+}
+
+// GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayInput is an input type that accepts GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArray and GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayInput` via:
+//
+//	GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArray{ GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArgs{...} }
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput
+	ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutputWithContext(context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArray []GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionInput
+
+func (GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollection)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArray) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput {
+	return i.ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArray) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput) Items() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollection) []GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem {
+		return v.Items
+	}).(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollection)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollection {
+		return vs[0].([]GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollection)[vs[1].(int)]
+	}).(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput)
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The description of the masking health report.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the health report.
+	Id string `pulumi:"id"`
+	// A filter to return only the resources that match the specified masking policy OCID.
+	MaskingPolicyId string `pulumi:"maskingPolicyId"`
+	// A filter to return only the resources that match the specified lifecycle states.
+	State string `pulumi:"state"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemInput is an input type that accepts GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs and GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemInput` via:
+//
+//	GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs{...}
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput
+	ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutputWithContext(context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The description of the masking health report.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the health report.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only the resources that match the specified masking policy OCID.
+	MaskingPolicyId pulumi.StringInput `pulumi:"maskingPolicyId"`
+	// A filter to return only the resources that match the specified lifecycle states.
+	State pulumi.StringInput `pulumi:"state"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput {
+	return i.ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput)
+}
+
+// GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayInput is an input type that accepts GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArray and GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayInput` via:
+//
+//	GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArray{ GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs{...} }
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput
+	ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutputWithContext(context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArray []GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemInput
+
+func (GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArray) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput {
+	return i.ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArray) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput)
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// The description of the masking health report.
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The OCID of the health report.
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified masking policy OCID.
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) MaskingPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
+		return v.MaskingPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the specified lifecycle states.
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific target OCID.
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput() GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput) ToGetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutputWithContext(ctx context.Context) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem {
+		return vs[0].([]GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem)[vs[1].(int)]
+	}).(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput)
 }
 
 type GetMaskingPolicyMaskingObjectsFilter struct {
@@ -51683,6 +52442,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayInput)(nil)).Elem(), GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyColumnSourceInput)(nil)).Elem(), GetMaskingPolicyColumnSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyColumnSourceArrayInput)(nil)).Elem(), GetMaskingPolicyColumnSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportLogsFilterInput)(nil)).Elem(), GetMaskingPolicyHealthReportLogsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportLogsFilterArrayInput)(nil)).Elem(), GetMaskingPolicyHealthReportLogsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionInput)(nil)).Elem(), GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayInput)(nil)).Elem(), GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemInput)(nil)).Elem(), GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayInput)(nil)).Elem(), GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportsFilterInput)(nil)).Elem(), GetMaskingPolicyHealthReportsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportsFilterArrayInput)(nil)).Elem(), GetMaskingPolicyHealthReportsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionInput)(nil)).Elem(), GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayInput)(nil)).Elem(), GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemInput)(nil)).Elem(), GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayInput)(nil)).Elem(), GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingObjectsFilterInput)(nil)).Elem(), GetMaskingPolicyMaskingObjectsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingObjectsFilterArrayInput)(nil)).Elem(), GetMaskingPolicyMaskingObjectsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMaskingPolicyMaskingObjectsMaskingObjectCollectionInput)(nil)).Elem(), GetMaskingPolicyMaskingObjectsMaskingObjectCollectionArgs{})
@@ -52363,6 +53134,18 @@ func init() {
 	pulumi.RegisterOutputType(GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingPolicyColumnSourceOutput{})
 	pulumi.RegisterOutputType(GetMaskingPolicyColumnSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportLogsFilterOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportLogsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportsFilterOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingPolicyMaskingObjectsFilterOutput{})
 	pulumi.RegisterOutputType(GetMaskingPolicyMaskingObjectsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMaskingPolicyMaskingObjectsMaskingObjectCollectionOutput{})

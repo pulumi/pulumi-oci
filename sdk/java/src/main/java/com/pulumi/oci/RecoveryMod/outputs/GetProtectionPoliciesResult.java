@@ -39,13 +39,7 @@ public final class GetProtectionPoliciesResult {
     private List<GetProtectionPoliciesProtectionPolicyCollection> protectionPolicyCollections;
     private @Nullable String protectionPolicyId;
     /**
-     * @return The current state of the protection policy. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return The current state of the protection policy.
      * 
      */
     private @Nullable String state;
@@ -89,13 +83,7 @@ public final class GetProtectionPoliciesResult {
         return Optional.ofNullable(this.protectionPolicyId);
     }
     /**
-     * @return The current state of the protection policy. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return The current state of the protection policy.
      * 
      */
     public Optional<String> state() {

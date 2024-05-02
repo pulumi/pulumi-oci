@@ -83,6 +83,11 @@ public final class GetExternalDbSystemResult {
      */
     private String state;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The date and time the external DB system was created.
      * 
      */
@@ -189,6 +194,13 @@ public final class GetExternalDbSystemResult {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the external DB system was created.
      * 
      */
@@ -226,6 +238,7 @@ public final class GetExternalDbSystemResult {
         private String lifecycleDetails;
         private List<GetExternalDbSystemStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -245,6 +258,7 @@ public final class GetExternalDbSystemResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -368,6 +382,14 @@ public final class GetExternalDbSystemResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetExternalDbSystemResult", "timeCreated");
@@ -399,6 +421,7 @@ public final class GetExternalDbSystemResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.stackMonitoringConfigs = stackMonitoringConfigs;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

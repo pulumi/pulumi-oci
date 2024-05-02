@@ -155,6 +155,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string StorageServerId;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// The timestamp of the creation of the Exadata resource.
         /// </summary>
         public readonly string TimeCreated;
@@ -201,6 +205,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string storageServerId,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated,
 
             string timeUpdated,
@@ -223,6 +229,7 @@ namespace Pulumi.Oci.DatabaseManagement
             State = state;
             Status = status;
             StorageServerId = storageServerId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Version = version;

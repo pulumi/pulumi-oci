@@ -87,10 +87,6 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("addMaskingColumnsFromSdmTrigger")]
         public Output<int?> AddMaskingColumnsFromSdmTrigger { get; private set; } = null!;
@@ -130,6 +126,16 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("generateHealthReportTrigger")]
+        public Output<int?> GenerateHealthReportTrigger { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
@@ -239,10 +245,6 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("addMaskingColumnsFromSdmTrigger")]
         public Input<int>? AddMaskingColumnsFromSdmTrigger { get; set; }
@@ -302,6 +304,16 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("generateHealthReportTrigger")]
+        public Input<int>? GenerateHealthReportTrigger { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
         /// </summary>
         [Input("isDropTempTablesEnabled")]
@@ -353,10 +365,6 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("addMaskingColumnsFromSdmTrigger")]
         public Input<int>? AddMaskingColumnsFromSdmTrigger { get; set; }
@@ -414,6 +422,16 @@ namespace Pulumi.Oci.DataSafe
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("generateHealthReportTrigger")]
+        public Input<int>? GenerateHealthReportTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.

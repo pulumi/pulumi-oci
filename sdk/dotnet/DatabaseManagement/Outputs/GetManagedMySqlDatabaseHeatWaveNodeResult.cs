@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// The date and time the node was created.
+        /// The date and time the HeatWave node was created.
         /// </summary>
         public readonly string TimeCreated;
 

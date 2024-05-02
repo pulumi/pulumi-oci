@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement":
+		r = &DatabaseDbmFeaturesManagement{}
 	case "oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint":
 		r = &DbManagementPrivateEndpoint{}
 	case "oci:DatabaseManagement/externalAsm:ExternalAsm":
@@ -57,6 +59,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExternalExadataStorageServer{}
 	case "oci:DatabaseManagement/externalListener:ExternalListener":
 		r = &ExternalListener{}
+	case "oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement":
+		r = &ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement{}
+	case "oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement":
+		r = &ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement{}
+	case "oci:DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement:ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement":
+		r = &ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement{}
 	case "oci:DatabaseManagement/managedDatabase:ManagedDatabase":
 		r = &ManagedDatabase{}
 	case "oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup":
@@ -67,6 +75,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagedDatabasesResetDatabaseParameter{}
 	case "oci:DatabaseManagement/namedCredential:NamedCredential":
 		r = &NamedCredential{}
+	case "oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement":
+		r = &PluggabledatabasePluggableDatabaseDbmFeaturesManagement{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -80,6 +90,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/databaseDbmFeaturesManagement",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/dbManagementPrivateEndpoint",
@@ -172,6 +187,21 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DatabaseManagement/managedDatabase",
 		&module{version},
 	)
@@ -193,6 +223,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/namedCredential",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement",
 		&module{version},
 	)
 }

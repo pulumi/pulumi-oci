@@ -22,7 +22,7 @@ class GetDbHomeResult:
     """
     A collection of values returned by getDbHome.
     """
-    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, enable_database_delete=None, freeform_tags=None, id=None, is_desupported_version=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, source=None, state=None, time_created=None, vm_cluster_id=None):
+    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, enable_database_delete=None, freeform_tags=None, id=None, is_desupported_version=None, is_unified_auditing_enabled=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, source=None, state=None, time_created=None, vm_cluster_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -62,6 +62,9 @@ class GetDbHomeResult:
         if is_desupported_version and not isinstance(is_desupported_version, bool):
             raise TypeError("Expected argument 'is_desupported_version' to be a bool")
         pulumi.set(__self__, "is_desupported_version", is_desupported_version)
+        if is_unified_auditing_enabled and not isinstance(is_unified_auditing_enabled, bool):
+            raise TypeError("Expected argument 'is_unified_auditing_enabled' to be a bool")
+        pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
         if kms_key_id and not isinstance(kms_key_id, str):
             raise TypeError("Expected argument 'kms_key_id' to be a str")
         pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -180,6 +183,14 @@ class GetDbHomeResult:
         return pulumi.get(self, "is_desupported_version")
 
     @property
+    @pulumi.getter(name="isUnifiedAuditingEnabled")
+    def is_unified_auditing_enabled(self) -> bool:
+        """
+        Indicates whether unified autiding is enabled or not.
+        """
+        return pulumi.get(self, "is_unified_auditing_enabled")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> str:
         """
@@ -257,6 +268,7 @@ class AwaitableGetDbHomeResult(GetDbHomeResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_desupported_version=self.is_desupported_version,
+            is_unified_auditing_enabled=self.is_unified_auditing_enabled,
             kms_key_id=self.kms_key_id,
             kms_key_version_id=self.kms_key_version_id,
             last_patch_history_entry_id=self.last_patch_history_entry_id,
@@ -305,6 +317,7 @@ def get_db_home(db_home_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_desupported_version=pulumi.get(__ret__, 'is_desupported_version'),
+        is_unified_auditing_enabled=pulumi.get(__ret__, 'is_unified_auditing_enabled'),
         kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
         kms_key_version_id=pulumi.get(__ret__, 'kms_key_version_id'),
         last_patch_history_entry_id=pulumi.get(__ret__, 'last_patch_history_entry_id'),

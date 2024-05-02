@@ -34,8 +34,8 @@ namespace Pulumi.Oci
 
         private static readonly __Value<string?> _auth = new __Value<string?>(() => __config.Get("auth"));
         /// <summary>
-        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-        /// 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+        /// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         /// </summary>
         public static string? Auth
         {

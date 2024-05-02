@@ -59,6 +59,8 @@ type ExternalAsm struct {
 	ServicedDatabases ExternalAsmServicedDatabaseArrayOutput `pulumi:"servicedDatabases"`
 	// The current lifecycle state of the external ASM.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the external ASM was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the external ASM was last updated.
@@ -133,6 +135,8 @@ type externalAsmState struct {
 	ServicedDatabases []ExternalAsmServicedDatabase `pulumi:"servicedDatabases"`
 	// The current lifecycle state of the external ASM.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the external ASM was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external ASM was last updated.
@@ -175,6 +179,8 @@ type ExternalAsmState struct {
 	ServicedDatabases ExternalAsmServicedDatabaseArrayInput
 	// The current lifecycle state of the external ASM.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput
 	// The date and time the external ASM was created.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the external ASM was last updated.
@@ -379,6 +385,11 @@ func (o ExternalAsmOutput) ServicedDatabases() ExternalAsmServicedDatabaseArrayO
 // The current lifecycle state of the external ASM.
 func (o ExternalAsmOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalAsm) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ExternalAsmOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalAsm) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time the external ASM was created.

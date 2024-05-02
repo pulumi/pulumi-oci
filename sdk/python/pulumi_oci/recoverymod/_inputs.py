@@ -25,6 +25,7 @@ class ProtectedDatabaseMetricArgs:
                  current_retention_period_in_seconds: Optional[pulumi.Input[float]] = None,
                  db_size_in_gbs: Optional[pulumi.Input[float]] = None,
                  is_redo_logs_enabled: Optional[pulumi.Input[bool]] = None,
+                 minimum_recovery_needed_in_days: Optional[pulumi.Input[float]] = None,
                  retention_period_in_days: Optional[pulumi.Input[float]] = None,
                  unprotected_window_in_seconds: Optional[pulumi.Input[float]] = None):
         """
@@ -33,6 +34,7 @@ class ProtectedDatabaseMetricArgs:
         :param pulumi.Input[float] current_retention_period_in_seconds: Number of seconds backups are currently retained for this database.
         :param pulumi.Input[float] db_size_in_gbs: The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
         :param pulumi.Input[bool] is_redo_logs_enabled: The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
+        :param pulumi.Input[float] minimum_recovery_needed_in_days: Number of days of redo/archive to be applied to recover database.
         :param pulumi.Input[float] retention_period_in_days: The maximum number of days to retain backups for a protected database.
         :param pulumi.Input[float] unprotected_window_in_seconds: This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
         """
@@ -46,6 +48,8 @@ class ProtectedDatabaseMetricArgs:
             pulumi.set(__self__, "db_size_in_gbs", db_size_in_gbs)
         if is_redo_logs_enabled is not None:
             pulumi.set(__self__, "is_redo_logs_enabled", is_redo_logs_enabled)
+        if minimum_recovery_needed_in_days is not None:
+            pulumi.set(__self__, "minimum_recovery_needed_in_days", minimum_recovery_needed_in_days)
         if retention_period_in_days is not None:
             pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
         if unprotected_window_in_seconds is not None:
@@ -110,6 +114,18 @@ class ProtectedDatabaseMetricArgs:
     @is_redo_logs_enabled.setter
     def is_redo_logs_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_redo_logs_enabled", value)
+
+    @property
+    @pulumi.getter(name="minimumRecoveryNeededInDays")
+    def minimum_recovery_needed_in_days(self) -> Optional[pulumi.Input[float]]:
+        """
+        Number of days of redo/archive to be applied to recover database.
+        """
+        return pulumi.get(self, "minimum_recovery_needed_in_days")
+
+    @minimum_recovery_needed_in_days.setter
+    def minimum_recovery_needed_in_days(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "minimum_recovery_needed_in_days", value)
 
     @property
     @pulumi.getter(name="retentionPeriodInDays")

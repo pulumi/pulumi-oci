@@ -90,6 +90,12 @@ import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesMaskingColumnsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingPoliciesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
+import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingObjectsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingObjectsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyMaskingSchemasArgs;
@@ -265,6 +271,9 @@ import com.pulumi.oci.DataSafe.outputs.GetMaskingAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingColumnResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingColumnsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesResult;
+import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyHealthReportLogsResult;
+import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyHealthReportResult;
+import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyHealthReportsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingObjectsResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyMaskingSchemasResult;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPolicyResult;
@@ -8734,6 +8743,542 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetMaskingPolicyResult> getMaskingPolicyPlain(GetMaskingPolicyPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", TypeShape.of(GetMaskingPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Masking Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified masking policy health report.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReport = DataSafeFunctions.getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs.builder()
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingPolicyHealthReportResult> getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs args) {
+        return getMaskingPolicyHealthReport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Masking Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified masking policy health report.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReport = DataSafeFunctions.getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs.builder()
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingPolicyHealthReportResult> getMaskingPolicyHealthReportPlain(GetMaskingPolicyHealthReportPlainArgs args) {
+        return getMaskingPolicyHealthReportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Masking Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified masking policy health report.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReport = DataSafeFunctions.getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs.builder()
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingPolicyHealthReportResult> getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getMaskingPolicyHealthReport:getMaskingPolicyHealthReport", TypeShape.of(GetMaskingPolicyHealthReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Masking Policy Health Report resource in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of the specified masking policy health report.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReport = DataSafeFunctions.getMaskingPolicyHealthReport(GetMaskingPolicyHealthReportArgs.builder()
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingPolicyHealthReportResult> getMaskingPolicyHealthReportPlain(GetMaskingPolicyHealthReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getMaskingPolicyHealthReport:getMaskingPolicyHealthReport", TypeShape.of(GetMaskingPolicyHealthReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Masking Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of errors and warnings from a masking policy health check.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReportLogs = DataSafeFunctions.getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs.builder()
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .messageType(maskingPolicyHealthReportLogMessageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingPolicyHealthReportLogsResult> getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs args) {
+        return getMaskingPolicyHealthReportLogs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Masking Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of errors and warnings from a masking policy health check.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReportLogs = DataSafeFunctions.getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs.builder()
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .messageType(maskingPolicyHealthReportLogMessageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingPolicyHealthReportLogsResult> getMaskingPolicyHealthReportLogsPlain(GetMaskingPolicyHealthReportLogsPlainArgs args) {
+        return getMaskingPolicyHealthReportLogsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Masking Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of errors and warnings from a masking policy health check.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReportLogs = DataSafeFunctions.getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs.builder()
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .messageType(maskingPolicyHealthReportLogMessageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingPolicyHealthReportLogsResult> getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getMaskingPolicyHealthReportLogs:getMaskingPolicyHealthReportLogs", TypeShape.of(GetMaskingPolicyHealthReportLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Masking Policy Health Report Logs in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of errors and warnings from a masking policy health check.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReportLogs = DataSafeFunctions.getMaskingPolicyHealthReportLogs(GetMaskingPolicyHealthReportLogsArgs.builder()
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .messageType(maskingPolicyHealthReportLogMessageType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingPolicyHealthReportLogsResult> getMaskingPolicyHealthReportLogsPlain(GetMaskingPolicyHealthReportLogsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getMaskingPolicyHealthReportLogs:getMaskingPolicyHealthReportLogs", TypeShape.of(GetMaskingPolicyHealthReportLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Masking Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of masking policy health reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReports = DataSafeFunctions.getMaskingPolicyHealthReports(GetMaskingPolicyHealthReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingPolicyHealthReportAccessLevel)
+     *             .compartmentIdInSubtree(maskingPolicyHealthReportCompartmentIdInSubtree)
+     *             .displayName(maskingPolicyHealthReportDisplayName)
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .state(maskingPolicyHealthReportState)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingPolicyHealthReportsResult> getMaskingPolicyHealthReports(GetMaskingPolicyHealthReportsArgs args) {
+        return getMaskingPolicyHealthReports(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Masking Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of masking policy health reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReports = DataSafeFunctions.getMaskingPolicyHealthReports(GetMaskingPolicyHealthReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingPolicyHealthReportAccessLevel)
+     *             .compartmentIdInSubtree(maskingPolicyHealthReportCompartmentIdInSubtree)
+     *             .displayName(maskingPolicyHealthReportDisplayName)
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .state(maskingPolicyHealthReportState)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingPolicyHealthReportsResult> getMaskingPolicyHealthReportsPlain(GetMaskingPolicyHealthReportsPlainArgs args) {
+        return getMaskingPolicyHealthReportsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Masking Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of masking policy health reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReports = DataSafeFunctions.getMaskingPolicyHealthReports(GetMaskingPolicyHealthReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingPolicyHealthReportAccessLevel)
+     *             .compartmentIdInSubtree(maskingPolicyHealthReportCompartmentIdInSubtree)
+     *             .displayName(maskingPolicyHealthReportDisplayName)
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .state(maskingPolicyHealthReportState)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetMaskingPolicyHealthReportsResult> getMaskingPolicyHealthReports(GetMaskingPolicyHealthReportsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getMaskingPolicyHealthReports:getMaskingPolicyHealthReports", TypeShape.of(GetMaskingPolicyHealthReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Masking Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of masking policy health reports based on the specified query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetMaskingPolicyHealthReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaskingPolicyHealthReports = DataSafeFunctions.getMaskingPolicyHealthReports(GetMaskingPolicyHealthReportsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingPolicyHealthReportAccessLevel)
+     *             .compartmentIdInSubtree(maskingPolicyHealthReportCompartmentIdInSubtree)
+     *             .displayName(maskingPolicyHealthReportDisplayName)
+     *             .maskingPolicyHealthReportId(testMaskingPolicyHealthReport.id())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .state(maskingPolicyHealthReportState)
+     *             .targetId(testTarget.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetMaskingPolicyHealthReportsResult> getMaskingPolicyHealthReportsPlain(GetMaskingPolicyHealthReportsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getMaskingPolicyHealthReports:getMaskingPolicyHealthReports", TypeShape.of(GetMaskingPolicyHealthReportsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Masking Policy Masking Objects in Oracle Cloud Infrastructure Data Safe service.

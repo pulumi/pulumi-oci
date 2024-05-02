@@ -22,7 +22,7 @@ class GetExternalDbSystemDiscoveryResult:
     """
     A collection of values returned by getExternalDbSystemDiscovery.
     """
-    def __init__(__self__, agent_id=None, compartment_id=None, defined_tags=None, discovered_components=None, display_name=None, external_db_system_discovery_id=None, freeform_tags=None, grid_home=None, id=None, lifecycle_details=None, patch_operations=None, resource_id=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, agent_id=None, compartment_id=None, defined_tags=None, discovered_components=None, display_name=None, external_db_system_discovery_id=None, freeform_tags=None, grid_home=None, id=None, lifecycle_details=None, patch_operations=None, resource_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if agent_id and not isinstance(agent_id, str):
             raise TypeError("Expected argument 'agent_id' to be a str")
         pulumi.set(__self__, "agent_id", agent_id)
@@ -62,6 +62,9 @@ class GetExternalDbSystemDiscoveryResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -168,6 +171,14 @@ class GetExternalDbSystemDiscoveryResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -203,6 +214,7 @@ class AwaitableGetExternalDbSystemDiscoveryResult(GetExternalDbSystemDiscoveryRe
             patch_operations=self.patch_operations,
             resource_id=self.resource_id,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -245,6 +257,7 @@ def get_external_db_system_discovery(external_db_system_discovery_id: Optional[s
         patch_operations=pulumi.get(__ret__, 'patch_operations'),
         resource_id=pulumi.get(__ret__, 'resource_id'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 

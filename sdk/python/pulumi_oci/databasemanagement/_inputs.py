@@ -10,6 +10,11 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'DatabaseDbmFeaturesManagementFeatureDetailsArgs',
+    'DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs',
+    'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs',
+    'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs',
+    'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs',
     'ExternalAsmServicedDatabaseArgs',
     'ExternalClusterNetworkConfigurationArgs',
     'ExternalClusterScanConfigurationArgs',
@@ -58,6 +63,12 @@ __all__ = [
     'ExternalListenerEndpointArgs',
     'ExternalListenerServicedAsmArgs',
     'ExternalListenerServicedDatabaseArgs',
+    'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs',
+    'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs',
+    'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs',
+    'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs',
+    'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs',
+    'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs',
     'ManagedDatabaseGroupManagedDatabaseArgs',
     'ManagedDatabaseManagedDatabaseGroupArgs',
     'ManagedDatabasesChangeDatabaseParameterCredentialsArgs',
@@ -66,6 +77,11 @@ __all__ = [
     'ManagedDatabasesResetDatabaseParameterCredentialsArgs',
     'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs',
     'NamedCredentialContentArgs',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs',
     'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs',
     'GetDbManagementPrivateEndpointsFilterArgs',
     'GetExternalAsmDiskGroupsFilterArgs',
@@ -117,6 +133,388 @@ __all__ = [
     'GetManagedMySqlDatabasesFilterArgs',
     'GetNamedCredentialsFilterArgs',
 ]
+
+@pulumi.input_type
+class DatabaseDbmFeaturesManagementFeatureDetailsArgs:
+    def __init__(__self__, *,
+                 feature: pulumi.Input[str],
+                 connector_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 database_connection_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None,
+                 is_auto_enable_pluggable_database: Optional[pulumi.Input[bool]] = None,
+                 management_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] feature: The name of the Database Management feature.
+        :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
+        :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs'] database_connection_details: The connection details required to connect to the database.
+        :param pulumi.Input[bool] is_auto_enable_pluggable_database: Indicates whether the pluggable database can be enabled automatically.
+        :param pulumi.Input[str] management_type: The management type for the database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+        if database_connection_details is not None:
+            pulumi.set(__self__, "database_connection_details", database_connection_details)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
+        if management_type is not None:
+            pulumi.set(__self__, "management_type", management_type)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> pulumi.Input[str]:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: pulumi.Input[str]):
+        pulumi.set(self, "feature", value)
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @connector_details.setter
+    def connector_details(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+        pulumi.set(self, "connector_details", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectionDetails")
+    def database_connection_details(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]:
+        """
+        The connection details required to connect to the database.
+        """
+        return pulumi.get(self, "database_connection_details")
+
+    @database_connection_details.setter
+    def database_connection_details(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]):
+        pulumi.set(self, "database_connection_details", value)
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the pluggable database can be enabled automatically.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @is_auto_enable_pluggable_database.setter
+    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_auto_enable_pluggable_database", value)
+
+    @property
+    @pulumi.getter(name="managementType")
+    def management_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The management type for the database.
+        """
+        return pulumi.get(self, "management_type")
+
+    @management_type.setter
+    def management_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_type", value)
+
+
+@pulumi.input_type
+class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
+    def __init__(__self__, *,
+                 connector_type: Optional[pulumi.Input[str]] = None,
+                 database_connector_id: Optional[pulumi.Input[str]] = None,
+                 management_agent_id: Optional[pulumi.Input[str]] = None,
+                 private_end_point_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param pulumi.Input[str] database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @connector_type.setter
+    def connector_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connector_type", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @database_connector_id.setter
+    def database_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_connector_id", value)
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @management_agent_id.setter
+    def management_agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_agent_id", value)
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+    @private_end_point_id.setter
+    def private_end_point_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_end_point_id", value)
+
+
+@pulumi.input_type
+class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
+    def __init__(__self__, *,
+                 connection_credentials: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']] = None,
+                 connection_string: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']] = None):
+        """
+        :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs'] connection_string: The details of the Oracle Database connection string.
+        """
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+
+    @property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]:
+        """
+        The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @connection_credentials.setter
+    def connection_credentials(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]):
+        pulumi.set(self, "connection_credentials", value)
+
+    @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]:
+        """
+        The details of the Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+    @connection_string.setter
+    def connection_string(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]):
+        pulumi.set(self, "connection_string", value)
+
+
+@pulumi.input_type
+class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs:
+    def __init__(__self__, *,
+                 credential_name: Optional[pulumi.Input[str]] = None,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+               
+               For example: inventorydb.abc112233445566778899
+        :param pulumi.Input[str] credential_type: The type of credential used to connect to the database.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] role: The role of the user connecting to the database.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param pulumi.Input[str] user_name: The user name used to connect to the database.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+
+        For example: inventorydb.abc112233445566778899
+        """
+        return pulumi.get(self, "credential_name")
+
+    @credential_name.setter
+    def credential_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_name", value)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of credential used to connect to the database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the user connecting to the database.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user name used to connect to the database.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs:
+    def __init__(__self__, *,
+                 connection_type: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] connection_type: The list of supported connection types:
+               * BASIC: Basic connection details
+        :param pulumi.Input[int] port: The port number used to connect to the database.
+        :param pulumi.Input[str] protocol: The protocol used to connect to the database.
+        :param pulumi.Input[str] service: The service name of the database.
+        """
+        if connection_type is not None:
+            pulumi.set(__self__, "connection_type", connection_type)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The list of supported connection types:
+        * BASIC: Basic connection details
+        """
+        return pulumi.get(self, "connection_type")
+
+    @connection_type.setter
+    def connection_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_type", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port number used to connect to the database.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol used to connect to the database.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the database.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
+
 
 @pulumi.input_type
 class ExternalAsmServicedDatabaseArgs:
@@ -4550,6 +4948,7 @@ class ExternalExadataStorageGridStorageServerArgs:
                  resource_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None):
@@ -4577,6 +4976,7 @@ class ExternalExadataStorageGridStorageServerArgs:
         :param pulumi.Input[str] resource_type: The type of Exadata resource.
         :param pulumi.Input[str] state: The current lifecycle state of the database resource.
         :param pulumi.Input[str] status: The status of the Exadata resource.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
         :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[str] version: The version of the Exadata resource.
@@ -4619,6 +5019,8 @@ class ExternalExadataStorageGridStorageServerArgs:
             pulumi.set(__self__, "state", state)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -4859,6 +5261,18 @@ class ExternalExadataStorageGridStorageServerArgs:
         pulumi.set(self, "status", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -4911,6 +5325,7 @@ class ExternalExadataStorageServerConnectorArgs:
                  state: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  storage_server_id: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None):
@@ -4932,6 +5347,7 @@ class ExternalExadataStorageServerConnectorArgs:
         :param pulumi.Input[str] state: The current lifecycle state of the database resource.
         :param pulumi.Input[str] status: The status of the Exadata resource.
         :param pulumi.Input[str] storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
         :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[str] version: The version of the Exadata resource.
@@ -4962,6 +5378,8 @@ class ExternalExadataStorageServerConnectorArgs:
             pulumi.set(__self__, "status", status)
         if storage_server_id is not None:
             pulumi.set(__self__, "storage_server_id", storage_server_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -5128,6 +5546,18 @@ class ExternalExadataStorageServerConnectorArgs:
     @storage_server_id.setter
     def storage_server_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "storage_server_id", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -5428,6 +5858,383 @@ class ExternalListenerServicedDatabaseArgs:
 
 
 @pulumi.input_type
+class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs:
+    def __init__(__self__, *,
+                 feature: pulumi.Input[str],
+                 connector_details: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 license_model: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] feature: The name of the Database Management feature.
+        :param pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> pulumi.Input[str]:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: pulumi.Input[str]):
+        pulumi.set(self, "feature", value)
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @connector_details.setter
+    def connector_details(self, value: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+        pulumi.set(self, "connector_details", value)
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle license model that applies to the external database.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license_model", value)
+
+
+@pulumi.input_type
+class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
+    def __init__(__self__, *,
+                 connector_type: Optional[pulumi.Input[str]] = None,
+                 database_connector_id: Optional[pulumi.Input[str]] = None,
+                 management_agent_id: Optional[pulumi.Input[str]] = None,
+                 private_end_point_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param pulumi.Input[str] database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @connector_type.setter
+    def connector_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connector_type", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @database_connector_id.setter
+    def database_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_connector_id", value)
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @management_agent_id.setter
+    def management_agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_agent_id", value)
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+    @private_end_point_id.setter
+    def private_end_point_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_end_point_id", value)
+
+
+@pulumi.input_type
+class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs:
+    def __init__(__self__, *,
+                 feature: pulumi.Input[str],
+                 connector_details: Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 license_model: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] feature: The name of the Database Management feature.
+        :param pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
+        :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> pulumi.Input[str]:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: pulumi.Input[str]):
+        pulumi.set(self, "feature", value)
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @connector_details.setter
+    def connector_details(self, value: Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+        pulumi.set(self, "connector_details", value)
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle license model that applies to the external database.
+        """
+        return pulumi.get(self, "license_model")
+
+    @license_model.setter
+    def license_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "license_model", value)
+
+
+@pulumi.input_type
+class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
+    def __init__(__self__, *,
+                 connector_type: Optional[pulumi.Input[str]] = None,
+                 database_connector_id: Optional[pulumi.Input[str]] = None,
+                 management_agent_id: Optional[pulumi.Input[str]] = None,
+                 private_end_point_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param pulumi.Input[str] database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @connector_type.setter
+    def connector_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connector_type", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @database_connector_id.setter
+    def database_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_connector_id", value)
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @management_agent_id.setter
+    def management_agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_agent_id", value)
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+    @private_end_point_id.setter
+    def private_end_point_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_end_point_id", value)
+
+
+@pulumi.input_type
+class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs:
+    def __init__(__self__, *,
+                 feature: pulumi.Input[str],
+                 connector_details: Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None):
+        """
+        :param pulumi.Input[str] feature: The name of the Database Management feature.
+        :param pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> pulumi.Input[str]:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: pulumi.Input[str]):
+        pulumi.set(self, "feature", value)
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @connector_details.setter
+    def connector_details(self, value: Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+        pulumi.set(self, "connector_details", value)
+
+
+@pulumi.input_type
+class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
+    def __init__(__self__, *,
+                 connector_type: Optional[pulumi.Input[str]] = None,
+                 database_connector_id: Optional[pulumi.Input[str]] = None,
+                 management_agent_id: Optional[pulumi.Input[str]] = None,
+                 private_end_point_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param pulumi.Input[str] database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @connector_type.setter
+    def connector_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connector_type", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @database_connector_id.setter
+    def database_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_connector_id", value)
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @management_agent_id.setter
+    def management_agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_agent_id", value)
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+    @private_end_point_id.setter
+    def private_end_point_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_end_point_id", value)
+
+
+@pulumi.input_type
 class ManagedDatabaseGroupManagedDatabaseArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -5438,6 +6245,7 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_added: Optional[pulumi.Input[str]] = None,
                  workload_type: Optional[pulumi.Input[str]] = None):
         """
@@ -5453,6 +6261,7 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_added: The date and time the Managed Database was added to the group.
         :param pulumi.Input[str] workload_type: The workload type of the Autonomous Database.
         """
@@ -5472,6 +6281,8 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
             pulumi.set(__self__, "id", id)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_added is not None:
             pulumi.set(__self__, "time_added", time_added)
         if workload_type is not None:
@@ -5576,6 +6387,18 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeAdded")
@@ -6136,6 +6959,388 @@ class NamedCredentialContentArgs:
     @user_name.setter
     def user_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs:
+    def __init__(__self__, *,
+                 feature: pulumi.Input[str],
+                 connector_details: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 database_connection_details: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None,
+                 is_auto_enable_pluggable_database: Optional[pulumi.Input[bool]] = None,
+                 management_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] feature: The name of the Database Management feature.
+        :param pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
+        :param pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs'] database_connection_details: The connection details required to connect to the database.
+        :param pulumi.Input[bool] is_auto_enable_pluggable_database: Indicates whether the pluggable database can be enabled automatically.
+        :param pulumi.Input[str] management_type: The management type for the database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+        if database_connection_details is not None:
+            pulumi.set(__self__, "database_connection_details", database_connection_details)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
+        if management_type is not None:
+            pulumi.set(__self__, "management_type", management_type)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> pulumi.Input[str]:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @feature.setter
+    def feature(self, value: pulumi.Input[str]):
+        pulumi.set(self, "feature", value)
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @connector_details.setter
+    def connector_details(self, value: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+        pulumi.set(self, "connector_details", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectionDetails")
+    def database_connection_details(self) -> Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]:
+        """
+        The connection details required to connect to the database.
+        """
+        return pulumi.get(self, "database_connection_details")
+
+    @database_connection_details.setter
+    def database_connection_details(self, value: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]):
+        pulumi.set(self, "database_connection_details", value)
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the pluggable database can be enabled automatically.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @is_auto_enable_pluggable_database.setter
+    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_auto_enable_pluggable_database", value)
+
+    @property
+    @pulumi.getter(name="managementType")
+    def management_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The management type for the database.
+        """
+        return pulumi.get(self, "management_type")
+
+    @management_type.setter
+    def management_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_type", value)
+
+
+@pulumi.input_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
+    def __init__(__self__, *,
+                 connector_type: Optional[pulumi.Input[str]] = None,
+                 database_connector_id: Optional[pulumi.Input[str]] = None,
+                 management_agent_id: Optional[pulumi.Input[str]] = None,
+                 private_end_point_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param pulumi.Input[str] database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param pulumi.Input[str] private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @connector_type.setter
+    def connector_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connector_type", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @database_connector_id.setter
+    def database_connector_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_connector_id", value)
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @management_agent_id.setter
+    def management_agent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_agent_id", value)
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+    @private_end_point_id.setter
+    def private_end_point_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_end_point_id", value)
+
+
+@pulumi.input_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
+    def __init__(__self__, *,
+                 connection_credentials: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']] = None,
+                 connection_string: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']] = None):
+        """
+        :param pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs'] connection_string: The details of the Oracle Database connection string.
+        """
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+
+    @property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]:
+        """
+        The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @connection_credentials.setter
+    def connection_credentials(self, value: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]):
+        pulumi.set(self, "connection_credentials", value)
+
+    @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]:
+        """
+        The details of the Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+    @connection_string.setter
+    def connection_string(self, value: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]):
+        pulumi.set(self, "connection_string", value)
+
+
+@pulumi.input_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs:
+    def __init__(__self__, *,
+                 credential_name: Optional[pulumi.Input[str]] = None,
+                 credential_type: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 ssl_secret_id: Optional[pulumi.Input[str]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+               
+               For example: inventorydb.abc112233445566778899
+        :param pulumi.Input[str] credential_type: The type of credential used to connect to the database.
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] role: The role of the user connecting to the database.
+        :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param pulumi.Input[str] user_name: The user name used to connect to the database.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+
+        For example: inventorydb.abc112233445566778899
+        """
+        return pulumi.get(self, "credential_name")
+
+    @credential_name.setter
+    def credential_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_name", value)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of credential used to connect to the database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        """
+        The role of the user connecting to the database.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_secret_id", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The user name used to connect to the database.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs:
+    def __init__(__self__, *,
+                 connection_type: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 protocol: Optional[pulumi.Input[str]] = None,
+                 service: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] connection_type: The list of supported connection types:
+               * BASIC: Basic connection details
+        :param pulumi.Input[int] port: The port number used to connect to the database.
+        :param pulumi.Input[str] protocol: The protocol used to connect to the database.
+        :param pulumi.Input[str] service: The service name of the database.
+        """
+        if connection_type is not None:
+            pulumi.set(__self__, "connection_type", connection_type)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The list of supported connection types:
+        * BASIC: Basic connection details
+        """
+        return pulumi.get(self, "connection_type")
+
+    @connection_type.setter
+    def connection_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_type", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        The port number used to connect to the database.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        The protocol used to connect to the database.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "protocol", value)
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[pulumi.Input[str]]:
+        """
+        The service name of the database.
+        """
+        return pulumi.get(self, "service")
+
+    @service.setter
+    def service(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service", value)
 
 
 @pulumi.input_type

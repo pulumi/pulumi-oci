@@ -41,6 +41,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
      * 
      */
     private Map<String,Object> definedTags;
+    private String deletionSchedule;
     /**
      * @return A filter to return only resources that match the entire &#39;displayname&#39; given.
      * 
@@ -52,10 +53,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Indicates the protection status of the database. Allowed values are:
-     * * HEALTHY
-     * * WARNING
-     * * ALERT
+     * @return Indicates the protection status of the database.
      * 
      */
     private String health;
@@ -90,6 +88,11 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
      */
     private List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics;
     private String password;
+    /**
+     * @return An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * 
+     */
+    private String policyLockedDateTime;
     /**
      * @return The protection policy OCID.
      * 
@@ -162,6 +165,9 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
+    public String deletionSchedule() {
+        return this.deletionSchedule;
+    }
     /**
      * @return A filter to return only resources that match the entire &#39;displayname&#39; given.
      * 
@@ -177,10 +183,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return Indicates the protection status of the database. Allowed values are:
-     * * HEALTHY
-     * * WARNING
-     * * ALERT
+     * @return Indicates the protection status of the database.
      * 
      */
     public String health() {
@@ -230,6 +233,13 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
     }
     public String password() {
         return this.password;
+    }
+    /**
+     * @return An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * 
+     */
+    public String policyLockedDateTime() {
+        return this.policyLockedDateTime;
     }
     /**
      * @return The protection policy OCID.
@@ -295,6 +305,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
         private String databaseSize;
         private String dbUniqueName;
         private Map<String,Object> definedTags;
+        private String deletionSchedule;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String health;
@@ -305,6 +316,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
         private String lifecycleDetails;
         private List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics;
         private String password;
+        private String policyLockedDateTime;
         private String protectionPolicyId;
         private List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets;
         private String state;
@@ -320,6 +332,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
     	      this.databaseSize = defaults.databaseSize;
     	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.definedTags = defaults.definedTags;
+    	      this.deletionSchedule = defaults.deletionSchedule;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.health = defaults.health;
@@ -330,6 +343,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.metrics = defaults.metrics;
     	      this.password = defaults.password;
+    	      this.policyLockedDateTime = defaults.policyLockedDateTime;
     	      this.protectionPolicyId = defaults.protectionPolicyId;
     	      this.recoveryServiceSubnets = defaults.recoveryServiceSubnets;
     	      this.state = defaults.state;
@@ -377,6 +391,14 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
               throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder deletionSchedule(String deletionSchedule) {
+            if (deletionSchedule == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "deletionSchedule");
+            }
+            this.deletionSchedule = deletionSchedule;
             return this;
         }
         @CustomType.Setter
@@ -463,6 +485,14 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            if (policyLockedDateTime == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "policyLockedDateTime");
+            }
+            this.policyLockedDateTime = policyLockedDateTime;
+            return this;
+        }
+        @CustomType.Setter
         public Builder protectionPolicyId(String protectionPolicyId) {
             if (protectionPolicyId == null) {
               throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "protectionPolicyId");
@@ -528,6 +558,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
             _resultValue.databaseSize = databaseSize;
             _resultValue.dbUniqueName = dbUniqueName;
             _resultValue.definedTags = definedTags;
+            _resultValue.deletionSchedule = deletionSchedule;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.health = health;
@@ -538,6 +569,7 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.metrics = metrics;
             _resultValue.password = password;
+            _resultValue.policyLockedDateTime = policyLockedDateTime;
             _resultValue.protectionPolicyId = protectionPolicyId;
             _resultValue.recoveryServiceSubnets = recoveryServiceSubnets;
             _resultValue.state = state;

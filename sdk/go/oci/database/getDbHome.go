@@ -80,6 +80,8 @@ type LookupDbHomeResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	Id                   string `pulumi:"id"`
 	IsDesupportedVersion bool   `pulumi:"isDesupportedVersion"`
+	// Indicates whether unified autiding is enabled or not.
+	IsUnifiedAuditingEnabled bool `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
@@ -193,6 +195,11 @@ func (o LookupDbHomeResultOutput) Id() pulumi.StringOutput {
 
 func (o LookupDbHomeResultOutput) IsDesupportedVersion() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDbHomeResult) bool { return v.IsDesupportedVersion }).(pulumi.BoolOutput)
+}
+
+// Indicates whether unified autiding is enabled or not.
+func (o LookupDbHomeResultOutput) IsUnifiedAuditingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDbHomeResult) bool { return v.IsUnifiedAuditingEnabled }).(pulumi.BoolOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

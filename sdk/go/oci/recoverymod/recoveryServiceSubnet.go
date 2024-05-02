@@ -33,7 +33,6 @@ import (
 //			_, err := RecoveryMod.NewRecoveryServiceSubnet(ctx, "test_recovery_service_subnet", &RecoveryMod.RecoveryServiceSubnetArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(recoveryServiceSubnetDisplayName),
-//				SubnetId:      pulumi.Any(testSubnet.Id),
 //				VcnId:         pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
@@ -41,6 +40,9 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				NsgIds:   pulumi.Any(recoveryServiceSubnetNsgIds),
+//				SubnetId: pulumi.Any(testSubnet.Id),
+//				Subnets:  pulumi.Any(recoveryServiceSubnetSubnets),
 //			})
 //			if err != nil {
 //				return err
@@ -71,16 +73,16 @@ type RecoveryServiceSubnet struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The current state of the recovery service subnet. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	// The current state of the recovery service subnet.
 	State pulumi.StringOutput `pulumi:"state"`
-	// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+	// Deprecated. One of the subnets associated with the Recovery Service subnet.
+	//
+	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+	Subnets pulumi.StringArrayOutput `pulumi:"subnets"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
@@ -106,9 +108,6 @@ func NewRecoveryServiceSubnet(ctx *pulumi.Context,
 	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
-	}
-	if args.SubnetId == nil {
-		return nil, errors.New("invalid value for required argument 'SubnetId'")
 	}
 	if args.VcnId == nil {
 		return nil, errors.New("invalid value for required argument 'VcnId'")
@@ -146,16 +145,16 @@ type recoveryServiceSubnetState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The current state of the recovery service subnet. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The current state of the recovery service subnet.
 	State *string `pulumi:"state"`
-	// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+	// Deprecated. One of the subnets associated with the Recovery Service subnet.
+	//
+	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
 	SubnetId *string `pulumi:"subnetId"`
+	// (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+	Subnets []string `pulumi:"subnets"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
@@ -180,16 +179,16 @@ type RecoveryServiceSubnetState struct {
 	FreeformTags pulumi.MapInput
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
 	LifecycleDetails pulumi.StringPtrInput
-	// The current state of the recovery service subnet. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+	NsgIds pulumi.StringArrayInput
+	// The current state of the recovery service subnet.
 	State pulumi.StringPtrInput
-	// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+	// Deprecated. One of the subnets associated with the Recovery Service subnet.
+	//
+	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
 	SubnetId pulumi.StringPtrInput
+	// (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+	Subnets pulumi.StringArrayInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapInput
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
@@ -216,8 +215,14 @@ type recoveryServiceSubnetArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
-	SubnetId string `pulumi:"subnetId"`
+	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+	NsgIds []string `pulumi:"nsgIds"`
+	// Deprecated. One of the subnets associated with the Recovery Service subnet.
+	//
+	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
+	SubnetId *string `pulumi:"subnetId"`
+	// (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+	Subnets []string `pulumi:"subnets"`
 	// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
 	//
 	// ** IMPORTANT **
@@ -235,8 +240,14 @@ type RecoveryServiceSubnetArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
-	SubnetId pulumi.StringInput
+	// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+	NsgIds pulumi.StringArrayInput
+	// Deprecated. One of the subnets associated with the Recovery Service subnet.
+	//
+	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
+	SubnetId pulumi.StringPtrInput
+	// (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+	Subnets pulumi.StringArrayInput
 	// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
 	//
 	// ** IMPORTANT **
@@ -356,20 +367,26 @@ func (o RecoveryServiceSubnetOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The current state of the recovery service subnet. Allowed values are:
-// * CREATING
-// * UPDATING
-// * ACTIVE
-// * DELETING
-// * DELETED
-// * FAILED
+// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+func (o RecoveryServiceSubnetOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The current state of the recovery service subnet.
 func (o RecoveryServiceSubnetOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+// Deprecated. One of the subnets associated with the Recovery Service subnet.
+//
+// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
 func (o RecoveryServiceSubnetOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+func (o RecoveryServiceSubnetOutput) Subnets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RecoveryServiceSubnet) pulumi.StringArrayOutput { return v.Subnets }).(pulumi.StringArrayOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)

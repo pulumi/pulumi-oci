@@ -91,6 +91,8 @@ type LookupExternalClusterInstanceResult struct {
 	NodeRole string `pulumi:"nodeRole"`
 	// The current lifecycle state of the external cluster instance.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the external cluster instance was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the external cluster instance was last updated.
@@ -217,6 +219,11 @@ func (o LookupExternalClusterInstanceResultOutput) NodeRole() pulumi.StringOutpu
 // The current lifecycle state of the external cluster instance.
 func (o LookupExternalClusterInstanceResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalClusterInstanceResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupExternalClusterInstanceResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time the external cluster instance was created.

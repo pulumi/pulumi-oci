@@ -47,6 +47,21 @@ public final class GetExternalDatabasesPlainArgs extends com.pulumi.resources.In
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+     * 
+     */
+    @Import(name="externalDatabaseId")
+    private @Nullable String externalDatabaseId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+     * 
+     */
+    public Optional<String> externalDatabaseId() {
+        return Optional.ofNullable(this.externalDatabaseId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
@@ -73,6 +88,7 @@ public final class GetExternalDatabasesPlainArgs extends com.pulumi.resources.In
     private GetExternalDatabasesPlainArgs(GetExternalDatabasesPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
+        this.externalDatabaseId = $.externalDatabaseId;
         this.externalDbSystemId = $.externalDbSystemId;
         this.filters = $.filters;
     }
@@ -114,6 +130,17 @@ public final class GetExternalDatabasesPlainArgs extends com.pulumi.resources.In
          */
         public Builder displayName(@Nullable String displayName) {
             $.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * @param externalDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalDatabaseId(@Nullable String externalDatabaseId) {
+            $.externalDatabaseId = externalDatabaseId;
             return this;
         }
 

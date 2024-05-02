@@ -63,13 +63,7 @@ type GetRecoveryServiceSubnetsArgs struct {
 	Filters     []GetRecoveryServiceSubnetsFilter `pulumi:"filters"`
 	// The recovery service subnet OCID.
 	Id *string `pulumi:"id"`
-	// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// A filter to return only the resources that match the specified lifecycle state.
 	State *string `pulumi:"state"`
 	// The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
 	VcnId *string `pulumi:"vcnId"`
@@ -86,13 +80,7 @@ type GetRecoveryServiceSubnetsResult struct {
 	Id *string `pulumi:"id"`
 	// The list of recovery_service_subnet_collection.
 	RecoveryServiceSubnetCollections []GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection `pulumi:"recoveryServiceSubnetCollections"`
-	// The current state of the recovery service subnet. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// The current state of the recovery service subnet.
 	State *string `pulumi:"state"`
 	// VCN Identifier.
 	VcnId *string `pulumi:"vcnId"`
@@ -120,13 +108,7 @@ type GetRecoveryServiceSubnetsOutputArgs struct {
 	Filters     GetRecoveryServiceSubnetsFilterArrayInput `pulumi:"filters"`
 	// The recovery service subnet OCID.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// A filter to return only the resources that match the specified lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
 	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
@@ -177,13 +159,7 @@ func (o GetRecoveryServiceSubnetsResultOutput) RecoveryServiceSubnetCollections(
 	}).(GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionArrayOutput)
 }
 
-// The current state of the recovery service subnet. Allowed values are:
-// * CREATING
-// * UPDATING
-// * ACTIVE
-// * DELETING
-// * DELETED
-// * FAILED
+// The current state of the recovery service subnet.
 func (o GetRecoveryServiceSubnetsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetRecoveryServiceSubnetsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

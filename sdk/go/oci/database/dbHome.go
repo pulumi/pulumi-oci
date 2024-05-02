@@ -61,6 +61,8 @@ type DbHome struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion pulumi.BoolOutput `pulumi:"isDesupportedVersion"`
+	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+	IsUnifiedAuditingEnabled pulumi.BoolOutput `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -138,6 +140,8 @@ type dbHomeState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion *bool `pulumi:"isDesupportedVersion"`
+	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+	IsUnifiedAuditingEnabled *bool `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -186,6 +190,8 @@ type DbHomeState struct {
 	FreeformTags pulumi.MapInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion pulumi.BoolPtrInput
+	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+	IsUnifiedAuditingEnabled pulumi.BoolPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -234,6 +240,8 @@ type dbHomeArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion *bool `pulumi:"isDesupportedVersion"`
+	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+	IsUnifiedAuditingEnabled *bool `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -271,6 +279,8 @@ type DbHomeArgs struct {
 	FreeformTags pulumi.MapInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion pulumi.BoolPtrInput
+	// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+	IsUnifiedAuditingEnabled pulumi.BoolPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -428,6 +438,11 @@ func (o DbHomeOutput) FreeformTags() pulumi.MapOutput {
 // If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 func (o DbHomeOutput) IsDesupportedVersion() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.BoolOutput { return v.IsDesupportedVersion }).(pulumi.BoolOutput)
+}
+
+// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+func (o DbHomeOutput) IsUnifiedAuditingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DbHome) pulumi.BoolOutput { return v.IsUnifiedAuditingEnabled }).(pulumi.BoolOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

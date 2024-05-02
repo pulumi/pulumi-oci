@@ -100,13 +100,7 @@ class GetProtectionPoliciesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the protection policy. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
+        The current state of the protection policy.
         """
         return pulumi.get(self, "state")
 

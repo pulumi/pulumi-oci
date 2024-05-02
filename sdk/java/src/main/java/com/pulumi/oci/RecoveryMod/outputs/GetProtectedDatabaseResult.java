@@ -41,6 +41,7 @@ public final class GetProtectedDatabaseResult {
      * 
      */
     private Map<String,Object> definedTags;
+    private String deletionSchedule;
     /**
      * @return The protected database name. You can change the displayName. Avoid entering confidential information.
      * 
@@ -52,10 +53,7 @@ public final class GetProtectedDatabaseResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Indicates the protection status of the database. Allowed values are:
-     * * HEALTHY
-     * * WARNING
-     * * ALERT
+     * @return Indicates the protection status of the database.
      * 
      */
     private String health;
@@ -90,6 +88,11 @@ public final class GetProtectedDatabaseResult {
      */
     private List<GetProtectedDatabaseMetric> metrics;
     private String password;
+    /**
+     * @return An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * 
+     */
+    private String policyLockedDateTime;
     private String protectedDatabaseId;
     /**
      * @return The OCID of the protection policy associated with the protected database.
@@ -163,6 +166,9 @@ public final class GetProtectedDatabaseResult {
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
+    public String deletionSchedule() {
+        return this.deletionSchedule;
+    }
     /**
      * @return The protected database name. You can change the displayName. Avoid entering confidential information.
      * 
@@ -178,10 +184,7 @@ public final class GetProtectedDatabaseResult {
         return this.freeformTags;
     }
     /**
-     * @return Indicates the protection status of the database. Allowed values are:
-     * * HEALTHY
-     * * WARNING
-     * * ALERT
+     * @return Indicates the protection status of the database.
      * 
      */
     public String health() {
@@ -231,6 +234,13 @@ public final class GetProtectedDatabaseResult {
     }
     public String password() {
         return this.password;
+    }
+    /**
+     * @return An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * 
+     */
+    public String policyLockedDateTime() {
+        return this.policyLockedDateTime;
     }
     public String protectedDatabaseId() {
         return this.protectedDatabaseId;
@@ -299,6 +309,7 @@ public final class GetProtectedDatabaseResult {
         private String databaseSize;
         private String dbUniqueName;
         private Map<String,Object> definedTags;
+        private String deletionSchedule;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String health;
@@ -309,6 +320,7 @@ public final class GetProtectedDatabaseResult {
         private String lifecycleDetails;
         private List<GetProtectedDatabaseMetric> metrics;
         private String password;
+        private String policyLockedDateTime;
         private String protectedDatabaseId;
         private String protectionPolicyId;
         private List<GetProtectedDatabaseRecoveryServiceSubnet> recoveryServiceSubnets;
@@ -325,6 +337,7 @@ public final class GetProtectedDatabaseResult {
     	      this.databaseSize = defaults.databaseSize;
     	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.definedTags = defaults.definedTags;
+    	      this.deletionSchedule = defaults.deletionSchedule;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.health = defaults.health;
@@ -335,6 +348,7 @@ public final class GetProtectedDatabaseResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.metrics = defaults.metrics;
     	      this.password = defaults.password;
+    	      this.policyLockedDateTime = defaults.policyLockedDateTime;
     	      this.protectedDatabaseId = defaults.protectedDatabaseId;
     	      this.protectionPolicyId = defaults.protectionPolicyId;
     	      this.recoveryServiceSubnets = defaults.recoveryServiceSubnets;
@@ -383,6 +397,14 @@ public final class GetProtectedDatabaseResult {
               throw new MissingRequiredPropertyException("GetProtectedDatabaseResult", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder deletionSchedule(String deletionSchedule) {
+            if (deletionSchedule == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseResult", "deletionSchedule");
+            }
+            this.deletionSchedule = deletionSchedule;
             return this;
         }
         @CustomType.Setter
@@ -469,6 +491,14 @@ public final class GetProtectedDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            if (policyLockedDateTime == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseResult", "policyLockedDateTime");
+            }
+            this.policyLockedDateTime = policyLockedDateTime;
+            return this;
+        }
+        @CustomType.Setter
         public Builder protectedDatabaseId(String protectedDatabaseId) {
             if (protectedDatabaseId == null) {
               throw new MissingRequiredPropertyException("GetProtectedDatabaseResult", "protectedDatabaseId");
@@ -542,6 +572,7 @@ public final class GetProtectedDatabaseResult {
             _resultValue.databaseSize = databaseSize;
             _resultValue.dbUniqueName = dbUniqueName;
             _resultValue.definedTags = definedTags;
+            _resultValue.deletionSchedule = deletionSchedule;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.health = health;
@@ -552,6 +583,7 @@ public final class GetProtectedDatabaseResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.metrics = metrics;
             _resultValue.password = password;
+            _resultValue.policyLockedDateTime = policyLockedDateTime;
             _resultValue.protectedDatabaseId = protectedDatabaseId;
             _resultValue.protectionPolicyId = protectionPolicyId;
             _resultValue.recoveryServiceSubnets = recoveryServiceSubnets;

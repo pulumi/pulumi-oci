@@ -43,6 +43,12 @@ namespace Pulumi.Oci.RecoveryMod.Inputs
         public Input<bool>? IsRedoLogsEnabled { get; set; }
 
         /// <summary>
+        /// Number of days of redo/archive to be applied to recover database.
+        /// </summary>
+        [Input("minimumRecoveryNeededInDays")]
+        public Input<double>? MinimumRecoveryNeededInDays { get; set; }
+
+        /// <summary>
         /// The maximum number of days to retain backups for a protected database.
         /// </summary>
         [Input("retentionPeriodInDays")]

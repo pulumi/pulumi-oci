@@ -91,9 +91,6 @@ type MaskingPolicy struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger pulumi.IntPtrOutput `pulumi:"addMaskingColumnsFromSdmTrigger"`
 	// (Updatable) The source of masking columns.
 	ColumnSources MaskingPolicyColumnSourceArrayOutput `pulumi:"columnSources"`
@@ -107,6 +104,11 @@ type MaskingPolicy struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	GenerateHealthReportTrigger pulumi.IntPtrOutput `pulumi:"generateHealthReportTrigger"`
 	// (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
 	IsDropTempTablesEnabled pulumi.BoolOutput `pulumi:"isDropTempTablesEnabled"`
 	// (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
@@ -166,9 +168,6 @@ func GetMaskingPolicy(ctx *pulumi.Context,
 // Input properties used for looking up and filtering MaskingPolicy resources.
 type maskingPolicyState struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger *int `pulumi:"addMaskingColumnsFromSdmTrigger"`
 	// (Updatable) The source of masking columns.
 	ColumnSources []MaskingPolicyColumnSource `pulumi:"columnSources"`
@@ -182,6 +181,11 @@ type maskingPolicyState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	GenerateHealthReportTrigger *int `pulumi:"generateHealthReportTrigger"`
 	// (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
 	IsDropTempTablesEnabled *bool `pulumi:"isDropTempTablesEnabled"`
 	// (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
@@ -206,9 +210,6 @@ type maskingPolicyState struct {
 
 type MaskingPolicyState struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger pulumi.IntPtrInput
 	// (Updatable) The source of masking columns.
 	ColumnSources MaskingPolicyColumnSourceArrayInput
@@ -222,6 +223,11 @@ type MaskingPolicyState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	GenerateHealthReportTrigger pulumi.IntPtrInput
 	// (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
 	IsDropTempTablesEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
@@ -250,9 +256,6 @@ func (MaskingPolicyState) ElementType() reflect.Type {
 
 type maskingPolicyArgs struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger *int `pulumi:"addMaskingColumnsFromSdmTrigger"`
 	// (Updatable) The source of masking columns.
 	ColumnSources []MaskingPolicyColumnSource `pulumi:"columnSources"`
@@ -266,6 +269,11 @@ type maskingPolicyArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	GenerateHealthReportTrigger *int `pulumi:"generateHealthReportTrigger"`
 	// (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
 	IsDropTempTablesEnabled *bool `pulumi:"isDropTempTablesEnabled"`
 	// (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
@@ -285,9 +293,6 @@ type maskingPolicyArgs struct {
 // The set of arguments for constructing a MaskingPolicy resource.
 type MaskingPolicyArgs struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	AddMaskingColumnsFromSdmTrigger pulumi.IntPtrInput
 	// (Updatable) The source of masking columns.
 	ColumnSources MaskingPolicyColumnSourceArrayInput
@@ -301,6 +306,11 @@ type MaskingPolicyArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	GenerateHealthReportTrigger pulumi.IntPtrInput
 	// (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
 	IsDropTempTablesEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
@@ -405,9 +415,6 @@ func (o MaskingPolicyOutput) ToMaskingPolicyOutputWithContext(ctx context.Contex
 }
 
 // (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MaskingPolicyOutput) AddMaskingColumnsFromSdmTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MaskingPolicy) pulumi.IntPtrOutput { return v.AddMaskingColumnsFromSdmTrigger }).(pulumi.IntPtrOutput)
 }
@@ -440,6 +447,14 @@ func (o MaskingPolicyOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o MaskingPolicyOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MaskingPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o MaskingPolicyOutput) GenerateHealthReportTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.IntPtrOutput { return v.GenerateHealthReportTrigger }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.

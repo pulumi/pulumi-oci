@@ -53,6 +53,11 @@ public final class GetManagedDatabaseGroupManagedDatabase {
      */
     private String name;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The date and time the Managed Database was added to the group.
      * 
      */
@@ -121,6 +126,13 @@ public final class GetManagedDatabaseGroupManagedDatabase {
         return this.name;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the Managed Database was added to the group.
      * 
      */
@@ -152,6 +164,7 @@ public final class GetManagedDatabaseGroupManagedDatabase {
         private Map<String,Object> freeformTags;
         private String id;
         private String name;
+        private Map<String,Object> systemTags;
         private String timeAdded;
         private String workloadType;
         public Builder() {}
@@ -165,6 +178,7 @@ public final class GetManagedDatabaseGroupManagedDatabase {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeAdded = defaults.timeAdded;
     	      this.workloadType = defaults.workloadType;
         }
@@ -234,6 +248,14 @@ public final class GetManagedDatabaseGroupManagedDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeAdded(String timeAdded) {
             if (timeAdded == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseGroupManagedDatabase", "timeAdded");
@@ -259,6 +281,7 @@ public final class GetManagedDatabaseGroupManagedDatabase {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.name = name;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeAdded = timeAdded;
             _resultValue.workloadType = workloadType;
             return _resultValue;

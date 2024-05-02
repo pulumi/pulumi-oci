@@ -21,7 +21,7 @@ public final class GetManagedMySqlDatabaseHeatWaveNode {
      */
     private String status;
     /**
-     * @return The date and time the node was created.
+     * @return The date and time the HeatWave node was created.
      * 
      */
     private String timeCreated;
@@ -42,7 +42,7 @@ public final class GetManagedMySqlDatabaseHeatWaveNode {
         return this.status;
     }
     /**
-     * @return The date and time the node was created.
+     * @return The date and time the HeatWave node was created.
      * 
      */
     public String timeCreated() {

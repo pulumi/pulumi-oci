@@ -95,6 +95,11 @@ public final class GetExternalExadataInfrastructureResult {
     private List<GetExternalExadataInfrastructureStorageGrid> storageGrids;
     private List<String> storageServerNames;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
+    /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
@@ -229,6 +234,13 @@ public final class GetExternalExadataInfrastructureResult {
         return this.storageServerNames;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
@@ -278,6 +290,7 @@ public final class GetExternalExadataInfrastructureResult {
         private String status;
         private List<GetExternalExadataInfrastructureStorageGrid> storageGrids;
         private List<String> storageServerNames;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String version;
@@ -303,6 +316,7 @@ public final class GetExternalExadataInfrastructureResult {
     	      this.status = defaults.status;
     	      this.storageGrids = defaults.storageGrids;
     	      this.storageServerNames = defaults.storageServerNames;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.version = defaults.version;
@@ -476,6 +490,14 @@ public final class GetExternalExadataInfrastructureResult {
             return storageServerNames(List.of(storageServerNames));
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataInfrastructureResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataInfrastructureResult", "timeCreated");
@@ -520,6 +542,7 @@ public final class GetExternalExadataInfrastructureResult {
             _resultValue.status = status;
             _resultValue.storageGrids = storageGrids;
             _resultValue.storageServerNames = storageServerNames;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.version = version;

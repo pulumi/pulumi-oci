@@ -81,6 +81,8 @@ type LookupDbManagementPrivateEndpointResult struct {
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -182,6 +184,11 @@ func (o LookupDbManagementPrivateEndpointResultOutput) State() pulumi.StringOutp
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 func (o LookupDbManagementPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupDbManagementPrivateEndpointResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupDbManagementPrivateEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

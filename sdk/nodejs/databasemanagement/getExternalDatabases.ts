@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testExternalDatabases = oci.DatabaseManagement.getExternalDatabases({
  *     compartmentId: compartmentId,
  *     displayName: externalDatabaseDisplayName,
+ *     externalDatabaseId: testExternalDatabase.id,
  *     externalDbSystemId: testExternalDbSystem.id,
  * });
  * ```
@@ -31,6 +32,7 @@ export function getExternalDatabases(args?: GetExternalDatabasesArgs, opts?: pul
     return pulumi.runtime.invoke("oci:DatabaseManagement/getExternalDatabases:getExternalDatabases", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
+        "externalDatabaseId": args.externalDatabaseId,
         "externalDbSystemId": args.externalDbSystemId,
         "filters": args.filters,
     }, opts);
@@ -48,6 +50,10 @@ export interface GetExternalDatabasesArgs {
      * A filter to only return the resources that match the entire display name.
      */
     displayName?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+     */
+    externalDatabaseId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
@@ -71,6 +77,7 @@ export interface GetExternalDatabasesResult {
      * The list of external_database_collection.
      */
     readonly externalDatabaseCollections: outputs.DatabaseManagement.GetExternalDatabasesExternalDatabaseCollection[];
+    readonly externalDatabaseId?: string;
     readonly externalDbSystemId?: string;
     readonly filters?: outputs.DatabaseManagement.GetExternalDatabasesFilter[];
     /**
@@ -92,6 +99,7 @@ export interface GetExternalDatabasesResult {
  * const testExternalDatabases = oci.DatabaseManagement.getExternalDatabases({
  *     compartmentId: compartmentId,
  *     displayName: externalDatabaseDisplayName,
+ *     externalDatabaseId: testExternalDatabase.id,
  *     externalDbSystemId: testExternalDbSystem.id,
  * });
  * ```
@@ -112,6 +120,10 @@ export interface GetExternalDatabasesOutputArgs {
      * A filter to only return the resources that match the entire display name.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+     */
+    externalDatabaseId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */

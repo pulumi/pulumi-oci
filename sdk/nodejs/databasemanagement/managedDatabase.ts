@@ -120,6 +120,10 @@ export class ManagedDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly storageSystemId!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The date and time the Managed Database was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -158,6 +162,7 @@ export class ManagedDatabase extends pulumi.CustomResource {
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["parentContainerId"] = state ? state.parentContainerId : undefined;
             resourceInputs["storageSystemId"] = state ? state.storageSystemId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["workloadType"] = state ? state.workloadType : undefined;
         } else {
@@ -182,6 +187,7 @@ export class ManagedDatabase extends pulumi.CustomResource {
             resourceInputs["name"] = undefined /*out*/;
             resourceInputs["parentContainerId"] = undefined /*out*/;
             resourceInputs["storageSystemId"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["workloadType"] = undefined /*out*/;
         }
@@ -266,6 +272,10 @@ export interface ManagedDatabaseState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
      */
     storageSystemId?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The date and time the Managed Database was created.
      */

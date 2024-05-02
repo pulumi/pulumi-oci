@@ -19,16 +19,16 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     public static final ProviderArgs Empty = new ProviderArgs();
 
     /**
-     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39; and &#39;InstancePrincipal&#39; and
-     * &#39;ResourcePrincipal&#39;. By default, &#39;ApiKey&#39; will be used.
+     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
+     * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     @Import(name="auth")
     private @Nullable Output<String> auth;
 
     /**
-     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39; and &#39;InstancePrincipal&#39; and
-     * &#39;ResourcePrincipal&#39;. By default, &#39;ApiKey&#39; will be used.
+     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
+     * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     public Optional<Output<String>> auth() {
@@ -270,8 +270,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39; and &#39;InstancePrincipal&#39; and
-         * &#39;ResourcePrincipal&#39;. By default, &#39;ApiKey&#39; will be used.
+         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
+         * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
          * 
          * @return builder
          * 
@@ -282,8 +282,8 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39; and &#39;InstancePrincipal&#39; and
-         * &#39;ResourcePrincipal&#39;. By default, &#39;ApiKey&#39; will be used.
+         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and
+         * &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
          * 
          * @return builder
          * 

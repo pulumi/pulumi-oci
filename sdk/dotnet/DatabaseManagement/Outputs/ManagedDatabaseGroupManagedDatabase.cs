@@ -50,6 +50,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object>? SystemTags;
+        /// <summary>
         /// The date and time the Managed Database was added to the group.
         /// </summary>
         public readonly string? TimeAdded;
@@ -76,6 +80,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string? name,
 
+            ImmutableDictionary<string, object>? systemTags,
+
             string? timeAdded,
 
             string? workloadType)
@@ -88,6 +94,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             FreeformTags = freeformTags;
             Id = id;
             Name = name;
+            SystemTags = systemTags;
             TimeAdded = timeAdded;
             WorkloadType = workloadType;
         }

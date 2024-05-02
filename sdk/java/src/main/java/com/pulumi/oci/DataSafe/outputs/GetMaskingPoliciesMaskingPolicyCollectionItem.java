@@ -47,6 +47,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
      * 
      */
     private Map<String,Object> freeformTags;
+    private Integer generateHealthReportTrigger;
     /**
      * @return The OCID of the masking policy.
      * 
@@ -149,6 +150,9 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
+    public Integer generateHealthReportTrigger() {
+        return this.generateHealthReportTrigger;
+    }
     /**
      * @return The OCID of the masking policy.
      * 
@@ -243,6 +247,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
         private String description;
         private String displayName;
         private Map<String,Object> freeformTags;
+        private Integer generateHealthReportTrigger;
         private String id;
         private Boolean isDropTempTablesEnabled;
         private Boolean isRedoLoggingEnabled;
@@ -264,6 +269,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.generateHealthReportTrigger = defaults.generateHealthReportTrigger;
     	      this.id = defaults.id;
     	      this.isDropTempTablesEnabled = defaults.isDropTempTablesEnabled;
     	      this.isRedoLoggingEnabled = defaults.isRedoLoggingEnabled;
@@ -334,6 +340,14 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
               throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "freeformTags");
             }
             this.freeformTags = freeformTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder generateHealthReportTrigger(Integer generateHealthReportTrigger) {
+            if (generateHealthReportTrigger == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "generateHealthReportTrigger");
+            }
+            this.generateHealthReportTrigger = generateHealthReportTrigger;
             return this;
         }
         @CustomType.Setter
@@ -433,6 +447,7 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.generateHealthReportTrigger = generateHealthReportTrigger;
             _resultValue.id = id;
             _resultValue.isDropTempTablesEnabled = isDropTempTablesEnabled;
             _resultValue.isRedoLoggingEnabled = isRedoLoggingEnabled;

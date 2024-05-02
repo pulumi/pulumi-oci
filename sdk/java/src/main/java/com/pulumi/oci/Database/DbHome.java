@@ -89,6 +89,7 @@ import javax.annotation.Nullable;
  *             .enableDatabaseDelete(false)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isDesupportedVersion(dbHomeIsDesupportedVersion)
+ *             .isUnifiedAuditingEnabled(dbHomeIsUnifiedAuditingEnabled)
  *             .kmsKeyId(testKey.id())
  *             .kmsKeyVersionId(testKeyVersion.id())
  *             .source(dbHomeSource)
@@ -284,6 +285,20 @@ public class DbHome extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isDesupportedVersion() {
         return this.isDesupportedVersion;
+    }
+    /**
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+     * 
+     */
+    @Export(name="isUnifiedAuditingEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isUnifiedAuditingEnabled;
+
+    /**
+     * @return Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+     * 
+     */
+    public Output<Boolean> isUnifiedAuditingEnabled() {
+        return this.isUnifiedAuditingEnabled;
     }
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

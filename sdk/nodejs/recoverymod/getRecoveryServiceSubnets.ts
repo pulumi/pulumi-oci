@@ -57,13 +57,7 @@ export interface GetRecoveryServiceSubnetsArgs {
      */
     id?: string;
     /**
-     * A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * A filter to return only the resources that match the specified lifecycle state.
      */
     state?: string;
     /**
@@ -94,13 +88,7 @@ export interface GetRecoveryServiceSubnetsResult {
      */
     readonly recoveryServiceSubnetCollections: outputs.RecoveryMod.GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection[];
     /**
-     * The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * The current state of the recovery service subnet.
      */
     readonly state?: string;
     /**
@@ -150,13 +138,7 @@ export interface GetRecoveryServiceSubnetsOutputArgs {
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * A filter to return only the resources that match the specified lifecycle state.
      */
     state?: pulumi.Input<string>;
     /**

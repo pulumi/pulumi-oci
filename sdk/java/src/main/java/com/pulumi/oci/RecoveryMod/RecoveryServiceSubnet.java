@@ -12,6 +12,7 @@ import com.pulumi.oci.RecoveryMod.inputs.RecoveryServiceSubnetState;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -47,10 +48,12 @@ import javax.annotation.Nullable;
  *         var testRecoveryServiceSubnet = new RecoveryServiceSubnet(&#34;testRecoveryServiceSubnet&#34;, RecoveryServiceSubnetArgs.builder()        
  *             .compartmentId(compartmentId)
  *             .displayName(recoveryServiceSubnetDisplayName)
- *             .subnetId(testSubnet.id())
  *             .vcnId(testVcn.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .nsgIds(recoveryServiceSubnetNsgIds)
+ *             .subnetId(testSubnet.id())
+ *             .subnets(recoveryServiceSubnetSubnets)
  *             .build());
  * 
  *     }
@@ -140,44 +143,64 @@ public class RecoveryServiceSubnet extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+     * 
+     */
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> nsgIds;
+
+    /**
+     * @return (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+     * 
+     */
+    public Output<List<String>> nsgIds() {
+        return this.nsgIds;
+    }
+    /**
+     * The current state of the recovery service subnet.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return The current state of the recovery service subnet.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+     * Deprecated. One of the subnets associated with the Recovery Service subnet.
+     * 
+     * @deprecated
+     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
+    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+     * @return Deprecated. One of the subnets associated with the Recovery Service subnet.
      * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+     * 
+     */
+    @Export(name="subnets", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> subnets;
+
+    /**
+     * @return (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+     * 
+     */
+    public Output<List<String>> subnets() {
+        return this.subnets;
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)

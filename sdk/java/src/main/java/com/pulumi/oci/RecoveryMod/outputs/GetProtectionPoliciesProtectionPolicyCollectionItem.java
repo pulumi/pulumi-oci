@@ -55,6 +55,11 @@ public final class GetProtectionPoliciesProtectionPolicyCollectionItem {
      */
     private String lifecycleDetails;
     /**
+     * @return An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * 
+     */
+    private String policyLockedDateTime;
+    /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
@@ -133,6 +138,13 @@ public final class GetProtectionPoliciesProtectionPolicyCollectionItem {
         return this.lifecycleDetails;
     }
     /**
+     * @return An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * 
+     */
+    public String policyLockedDateTime() {
+        return this.policyLockedDateTime;
+    }
+    /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
@@ -178,6 +190,7 @@ public final class GetProtectionPoliciesProtectionPolicyCollectionItem {
         private String id;
         private Boolean isPredefinedPolicy;
         private String lifecycleDetails;
+        private String policyLockedDateTime;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
@@ -193,6 +206,7 @@ public final class GetProtectionPoliciesProtectionPolicyCollectionItem {
     	      this.id = defaults.id;
     	      this.isPredefinedPolicy = defaults.isPredefinedPolicy;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.policyLockedDateTime = defaults.policyLockedDateTime;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -264,6 +278,14 @@ public final class GetProtectionPoliciesProtectionPolicyCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            if (policyLockedDateTime == null) {
+              throw new MissingRequiredPropertyException("GetProtectionPoliciesProtectionPolicyCollectionItem", "policyLockedDateTime");
+            }
+            this.policyLockedDateTime = policyLockedDateTime;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetProtectionPoliciesProtectionPolicyCollectionItem", "state");
@@ -305,6 +327,7 @@ public final class GetProtectionPoliciesProtectionPolicyCollectionItem {
             _resultValue.id = id;
             _resultValue.isPredefinedPolicy = isPredefinedPolicy;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.policyLockedDateTime = policyLockedDateTime;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

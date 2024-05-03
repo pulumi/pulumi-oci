@@ -93,6 +93,8 @@ type LookupExternalExadataInfrastructureResult struct {
 	// The Exadata storage server grid of the Exadata infrastructure.
 	StorageGrids       []GetExternalExadataInfrastructureStorageGrid `pulumi:"storageGrids"`
 	StorageServerNames []string                                      `pulumi:"storageServerNames"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The timestamp of the creation of the Exadata resource.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The timestamp of the last update of the Exadata resource.
@@ -232,6 +234,11 @@ func (o LookupExternalExadataInfrastructureResultOutput) StorageGrids() GetExter
 
 func (o LookupExternalExadataInfrastructureResultOutput) StorageServerNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupExternalExadataInfrastructureResult) []string { return v.StorageServerNames }).(pulumi.StringArrayOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupExternalExadataInfrastructureResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalExadataInfrastructureResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The timestamp of the creation of the Exadata resource.

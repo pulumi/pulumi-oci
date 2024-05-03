@@ -33,6 +33,7 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly string DeletionSchedule;
         /// <summary>
         /// A filter to return only resources that match the entire 'displayname' given.
         /// </summary>
@@ -42,10 +43,7 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Indicates the protection status of the database. Allowed values are:
-        /// * HEALTHY
-        /// * WARNING
-        /// * ALERT
+        /// Indicates the protection status of the database.
         /// </summary>
         public readonly string Health;
         /// <summary>
@@ -73,6 +71,10 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemMetricResult> Metrics;
         public readonly string Password;
+        /// <summary>
+        /// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        /// </summary>
+        public readonly string PolicyLockedDateTime;
         /// <summary>
         /// The protection policy OCID.
         /// </summary>
@@ -114,6 +116,8 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
 
             ImmutableDictionary<string, object> definedTags,
 
+            string deletionSchedule,
+
             string displayName,
 
             ImmutableDictionary<string, object> freeformTags,
@@ -134,6 +138,8 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
 
             string password,
 
+            string policyLockedDateTime,
+
             string protectionPolicyId,
 
             ImmutableArray<Outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnetResult> recoveryServiceSubnets,
@@ -153,6 +159,7 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
             DatabaseSize = databaseSize;
             DbUniqueName = dbUniqueName;
             DefinedTags = definedTags;
+            DeletionSchedule = deletionSchedule;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Health = health;
@@ -163,6 +170,7 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
             LifecycleDetails = lifecycleDetails;
             Metrics = metrics;
             Password = password;
+            PolicyLockedDateTime = policyLockedDateTime;
             ProtectionPolicyId = protectionPolicyId;
             RecoveryServiceSubnets = recoveryServiceSubnets;
             State = state;

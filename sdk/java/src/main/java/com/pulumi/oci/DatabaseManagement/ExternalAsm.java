@@ -251,6 +251,20 @@ public class ExternalAsm extends com.pulumi.resources.CustomResource {
         return this.state;
     }
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * The date and time the external ASM was created.
      * 
      */

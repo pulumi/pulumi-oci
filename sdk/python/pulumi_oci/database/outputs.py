@@ -31258,6 +31258,7 @@ class GetDbHomesDbHomeResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_desupported_version: bool,
+                 is_unified_auditing_enabled: bool,
                  kms_key_id: str,
                  kms_key_version_id: str,
                  last_patch_history_entry_id: str,
@@ -31276,6 +31277,7 @@ class GetDbHomesDbHomeResult(dict):
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        :param bool is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -31296,6 +31298,7 @@ class GetDbHomesDbHomeResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_desupported_version", is_desupported_version)
+        pulumi.set(__self__, "is_unified_auditing_enabled", is_unified_auditing_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "last_patch_history_entry_id", last_patch_history_entry_id)
@@ -31396,6 +31399,14 @@ class GetDbHomesDbHomeResult(dict):
     @pulumi.getter(name="isDesupportedVersion")
     def is_desupported_version(self) -> bool:
         return pulumi.get(self, "is_desupported_version")
+
+    @property
+    @pulumi.getter(name="isUnifiedAuditingEnabled")
+    def is_unified_auditing_enabled(self) -> bool:
+        """
+        Indicates whether unified autiding is enabled or not.
+        """
+        return pulumi.get(self, "is_unified_auditing_enabled")
 
     @property
     @pulumi.getter(name="kmsKeyId")

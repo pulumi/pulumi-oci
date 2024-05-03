@@ -136,6 +136,10 @@ export class ExternalExadataStorageServer extends pulumi.CustomResource {
      */
     public /*out*/ readonly storageGridId!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The timestamp of the creation of the Exadata resource.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -182,6 +186,7 @@ export class ExternalExadataStorageServer extends pulumi.CustomResource {
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
             resourceInputs["storageGridId"] = state ? state.storageGridId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
@@ -211,6 +216,7 @@ export class ExternalExadataStorageServer extends pulumi.CustomResource {
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["storageGridId"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
@@ -312,6 +318,10 @@ export interface ExternalExadataStorageServerState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
      */
     storageGridId?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The timestamp of the creation of the Exadata resource.
      */

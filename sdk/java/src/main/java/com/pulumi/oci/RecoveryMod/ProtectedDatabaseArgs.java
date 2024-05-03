@@ -97,6 +97,25 @@ public final class ProtectedDatabaseArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+     * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+     * 
+     */
+    @Import(name="deletionSchedule")
+    private @Nullable Output<String> deletionSchedule;
+
+    /**
+     * @return (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+     * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+     * 
+     */
+    public Optional<Output<String>> deletionSchedule() {
+        return Optional.ofNullable(this.deletionSchedule);
+    }
+
+    /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      * 
      */
@@ -194,6 +213,7 @@ public final class ProtectedDatabaseArgs extends com.pulumi.resources.ResourceAr
         this.databaseSize = $.databaseSize;
         this.dbUniqueName = $.dbUniqueName;
         this.definedTags = $.definedTags;
+        this.deletionSchedule = $.deletionSchedule;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isRedoLogsShipped = $.isRedoLogsShipped;
@@ -323,6 +343,31 @@ public final class ProtectedDatabaseArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder definedTags(Map<String,Object> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param deletionSchedule (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+         * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+         * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deletionSchedule(@Nullable Output<String> deletionSchedule) {
+            $.deletionSchedule = deletionSchedule;
+            return this;
+        }
+
+        /**
+         * @param deletionSchedule (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+         * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+         * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deletionSchedule(String deletionSchedule) {
+            return deletionSchedule(Output.of(deletionSchedule));
         }
 
         /**

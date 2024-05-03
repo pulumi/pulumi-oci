@@ -65,11 +65,11 @@ export interface GetManagedMySqlDatabaseResult {
      */
     readonly heatWaveMemorySize: number;
     /**
-     * Shape of the nodes in the HeatWave cluster.
+     * The shape of the nodes in the HeatWave cluster.
      */
     readonly heatWaveNodeShape: string;
     /**
-     * The information about an individual HeatWave nodes in the cluster.
+     * The information about individual HeatWave nodes in the cluster.
      */
     readonly heatWaveNodes: outputs.DatabaseManagement.GetManagedMySqlDatabaseHeatWaveNode[];
     /**
@@ -77,15 +77,15 @@ export interface GetManagedMySqlDatabaseResult {
      */
     readonly id: string;
     /**
-     * If the HeatWave cluster is active or not.
+     * Indicates whether the HeatWave cluster is active or not.
      */
     readonly isHeatWaveActive: boolean;
     /**
-     * If HeatWave is enabled for this db system or not.
+     * Indicates whether HeatWave is enabled for the MySQL Database System or not.
      */
     readonly isHeatWaveEnabled: boolean;
     /**
-     * If HeatWave Lakehouse is enabled for the db system or not.
+     * Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
      */
     readonly isLakehouseEnabled: boolean;
     readonly managedMySqlDatabaseId: string;
@@ -94,7 +94,7 @@ export interface GetManagedMySqlDatabaseResult {
      */
     readonly name: string;
     /**
-     * The date and time the node was created.
+     * The date and time the HeatWave node was created.
      */
     readonly timeCreated: string;
     /**

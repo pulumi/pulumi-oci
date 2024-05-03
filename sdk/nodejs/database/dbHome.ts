@@ -106,6 +106,10 @@ export class DbHome extends pulumi.CustomResource {
      */
     public readonly isDesupportedVersion!: pulumi.Output<boolean>;
     /**
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+     */
+    public readonly isUnifiedAuditingEnabled!: pulumi.Output<boolean>;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     public readonly kmsKeyId!: pulumi.Output<string>;
@@ -166,6 +170,7 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["enableDatabaseDelete"] = state ? state.enableDatabaseDelete : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isDesupportedVersion"] = state ? state.isDesupportedVersion : undefined;
+            resourceInputs["isUnifiedAuditingEnabled"] = state ? state.isUnifiedAuditingEnabled : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["lastPatchHistoryEntryId"] = state ? state.lastPatchHistoryEntryId : undefined;
@@ -185,6 +190,7 @@ export class DbHome extends pulumi.CustomResource {
             resourceInputs["enableDatabaseDelete"] = args ? args.enableDatabaseDelete : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isDesupportedVersion"] = args ? args.isDesupportedVersion : undefined;
+            resourceInputs["isUnifiedAuditingEnabled"] = args ? args.isUnifiedAuditingEnabled : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["kmsKeyVersionId"] = args ? args.kmsKeyVersionId : undefined;
             resourceInputs["source"] = args ? args.source : undefined;
@@ -253,6 +259,10 @@ export interface DbHomeState {
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */
     isDesupportedVersion?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+     */
+    isUnifiedAuditingEnabled?: pulumi.Input<boolean>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
@@ -335,6 +345,10 @@ export interface DbHomeArgs {
      * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      */
     isDesupportedVersion?: pulumi.Input<boolean>;
+    /**
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+     */
+    isUnifiedAuditingEnabled?: pulumi.Input<boolean>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */

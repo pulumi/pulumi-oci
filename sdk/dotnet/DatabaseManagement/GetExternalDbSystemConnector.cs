@@ -153,6 +153,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// The date and time the connectionStatus of the external DB system connector was last updated.
         /// </summary>
         public readonly string TimeConnectionStatusLastUpdated;
@@ -195,6 +199,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string state,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeConnectionStatusLastUpdated,
 
             string timeCreated,
@@ -215,6 +221,7 @@ namespace Pulumi.Oci.DatabaseManagement
             Id = id;
             LifecycleDetails = lifecycleDetails;
             State = state;
+            SystemTags = systemTags;
             TimeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

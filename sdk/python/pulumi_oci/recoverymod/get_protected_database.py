@@ -22,7 +22,7 @@ class GetProtectedDatabaseResult:
     """
     A collection of values returned by getProtectedDatabase.
     """
-    def __init__(__self__, compartment_id=None, database_id=None, database_size=None, db_unique_name=None, defined_tags=None, display_name=None, freeform_tags=None, health=None, health_details=None, id=None, is_read_only_resource=None, is_redo_logs_shipped=None, lifecycle_details=None, metrics=None, password=None, protected_database_id=None, protection_policy_id=None, recovery_service_subnets=None, state=None, system_tags=None, time_created=None, time_updated=None, vpc_user_name=None):
+    def __init__(__self__, compartment_id=None, database_id=None, database_size=None, db_unique_name=None, defined_tags=None, deletion_schedule=None, display_name=None, freeform_tags=None, health=None, health_details=None, id=None, is_read_only_resource=None, is_redo_logs_shipped=None, lifecycle_details=None, metrics=None, password=None, policy_locked_date_time=None, protected_database_id=None, protection_policy_id=None, recovery_service_subnets=None, state=None, system_tags=None, time_created=None, time_updated=None, vpc_user_name=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,6 +38,9 @@ class GetProtectedDatabaseResult:
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if deletion_schedule and not isinstance(deletion_schedule, str):
+            raise TypeError("Expected argument 'deletion_schedule' to be a str")
+        pulumi.set(__self__, "deletion_schedule", deletion_schedule)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -68,6 +71,9 @@ class GetProtectedDatabaseResult:
         if password and not isinstance(password, str):
             raise TypeError("Expected argument 'password' to be a str")
         pulumi.set(__self__, "password", password)
+        if policy_locked_date_time and not isinstance(policy_locked_date_time, str):
+            raise TypeError("Expected argument 'policy_locked_date_time' to be a str")
+        pulumi.set(__self__, "policy_locked_date_time", policy_locked_date_time)
         if protected_database_id and not isinstance(protected_database_id, str):
             raise TypeError("Expected argument 'protected_database_id' to be a str")
         pulumi.set(__self__, "protected_database_id", protected_database_id)
@@ -134,6 +140,11 @@ class GetProtectedDatabaseResult:
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="deletionSchedule")
+    def deletion_schedule(self) -> str:
+        return pulumi.get(self, "deletion_schedule")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -153,10 +164,7 @@ class GetProtectedDatabaseResult:
     @pulumi.getter
     def health(self) -> str:
         """
-        Indicates the protection status of the database. Allowed values are:
-        * HEALTHY
-        * WARNING
-        * ALERT
+        Indicates the protection status of the database.
         """
         return pulumi.get(self, "health")
 
@@ -212,6 +220,14 @@ class GetProtectedDatabaseResult:
     @pulumi.getter
     def password(self) -> str:
         return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="policyLockedDateTime")
+    def policy_locked_date_time(self) -> str:
+        """
+        An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        """
+        return pulumi.get(self, "policy_locked_date_time")
 
     @property
     @pulumi.getter(name="protectedDatabaseId")
@@ -286,6 +302,7 @@ class AwaitableGetProtectedDatabaseResult(GetProtectedDatabaseResult):
             database_size=self.database_size,
             db_unique_name=self.db_unique_name,
             defined_tags=self.defined_tags,
+            deletion_schedule=self.deletion_schedule,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             health=self.health,
@@ -296,6 +313,7 @@ class AwaitableGetProtectedDatabaseResult(GetProtectedDatabaseResult):
             lifecycle_details=self.lifecycle_details,
             metrics=self.metrics,
             password=self.password,
+            policy_locked_date_time=self.policy_locked_date_time,
             protected_database_id=self.protected_database_id,
             protection_policy_id=self.protection_policy_id,
             recovery_service_subnets=self.recovery_service_subnets,
@@ -336,6 +354,7 @@ def get_protected_database(protected_database_id: Optional[str] = None,
         database_size=pulumi.get(__ret__, 'database_size'),
         db_unique_name=pulumi.get(__ret__, 'db_unique_name'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        deletion_schedule=pulumi.get(__ret__, 'deletion_schedule'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         health=pulumi.get(__ret__, 'health'),
@@ -346,6 +365,7 @@ def get_protected_database(protected_database_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         metrics=pulumi.get(__ret__, 'metrics'),
         password=pulumi.get(__ret__, 'password'),
+        policy_locked_date_time=pulumi.get(__ret__, 'policy_locked_date_time'),
         protected_database_id=pulumi.get(__ret__, 'protected_database_id'),
         protection_policy_id=pulumi.get(__ret__, 'protection_policy_id'),
         recovery_service_subnets=pulumi.get(__ret__, 'recovery_service_subnets'),

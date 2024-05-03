@@ -82,9 +82,6 @@ public final class ProtectionPolicyArgs extends com.pulumi.resources.ResourceArg
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
@@ -92,12 +89,42 @@ public final class ProtectionPolicyArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
+     */
+    public Optional<Output<Map<String,Object>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+     * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to &#39;2023-08-15T21:00:00.600Z&#39; (Aug 15, 2023, 9:00 pm), or greater.
+     * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+     * * However, you are only allowed to increase the retention period on or after the retention lock date.
+     * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
-        return Optional.ofNullable(this.freeformTags);
+    @Import(name="policyLockedDateTime")
+    private @Nullable Output<String> policyLockedDateTime;
+
+    /**
+     * @return (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+     * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to &#39;2023-08-15T21:00:00.600Z&#39; (Aug 15, 2023, 9:00 pm), or greater.
+     * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+     * * However, you are only allowed to increase the retention period on or after the retention lock date.
+     * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> policyLockedDateTime() {
+        return Optional.ofNullable(this.policyLockedDateTime);
     }
 
     private ProtectionPolicyArgs() {}
@@ -108,6 +135,7 @@ public final class ProtectionPolicyArgs extends com.pulumi.resources.ResourceArg
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.policyLockedDateTime = $.policyLockedDateTime;
     }
 
     public static Builder builder() {
@@ -215,9 +243,6 @@ public final class ProtectionPolicyArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -229,14 +254,50 @@ public final class ProtectionPolicyArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param policyLockedDateTime (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         * * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+         * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+         * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to &#39;2023-08-15T21:00:00.600Z&#39; (Aug 15, 2023, 9:00 pm), or greater.
+         * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+         * * However, you are only allowed to increase the retention period on or after the retention lock date.
+         * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            return freeformTags(Output.of(freeformTags));
+        public Builder policyLockedDateTime(@Nullable Output<String> policyLockedDateTime) {
+            $.policyLockedDateTime = policyLockedDateTime;
+            return this;
+        }
+
+        /**
+         * @param policyLockedDateTime (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         * * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+         * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+         * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to &#39;2023-08-15T21:00:00.600Z&#39; (Aug 15, 2023, 9:00 pm), or greater.
+         * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+         * * However, you are only allowed to increase the retention period on or after the retention lock date.
+         * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            return policyLockedDateTime(Output.of(policyLockedDateTime));
         }
 
         public ProtectionPolicyArgs build() {

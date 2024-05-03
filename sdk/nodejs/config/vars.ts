@@ -8,8 +8,8 @@ declare var exports: any;
 const __config = new pulumi.Config("oci");
 
 /**
- * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
- * 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+ * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+ * 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
  */
 export declare const auth: string | undefined;
 Object.defineProperty(exports, "auth", {

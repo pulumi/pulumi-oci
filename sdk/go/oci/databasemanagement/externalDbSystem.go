@@ -91,6 +91,8 @@ type ExternalDbSystem struct {
 	StackMonitoringConfig ExternalDbSystemStackMonitoringConfigOutput `pulumi:"stackMonitoringConfig"`
 	// The current lifecycle state of the external DB system resource.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the external DB system was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the external DB system was last updated.
@@ -157,6 +159,8 @@ type externalDbSystemState struct {
 	StackMonitoringConfig *ExternalDbSystemStackMonitoringConfig `pulumi:"stackMonitoringConfig"`
 	// The current lifecycle state of the external DB system resource.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the external DB system was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external DB system was last updated.
@@ -188,6 +192,8 @@ type ExternalDbSystemState struct {
 	StackMonitoringConfig ExternalDbSystemStackMonitoringConfigPtrInput
 	// The current lifecycle state of the external DB system resource.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput
 	// The date and time the external DB system was created.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the external DB system was last updated.
@@ -380,6 +386,11 @@ func (o ExternalDbSystemOutput) StackMonitoringConfig() ExternalDbSystemStackMon
 // The current lifecycle state of the external DB system resource.
 func (o ExternalDbSystemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDbSystem) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ExternalDbSystemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *ExternalDbSystem) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time the external DB system was created.

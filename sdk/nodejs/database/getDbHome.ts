@@ -85,6 +85,10 @@ export interface GetDbHomeResult {
     readonly id: string;
     readonly isDesupportedVersion: boolean;
     /**
+     * Indicates whether unified autiding is enabled or not.
+     */
+    readonly isUnifiedAuditingEnabled: boolean;
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
     readonly kmsKeyId: string;

@@ -23,6 +23,7 @@ class MaskingPolicyArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
                  is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
                  is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
                  is_refresh_stats_enabled: Optional[pulumi.Input[bool]] = None,
@@ -35,14 +36,15 @@ class MaskingPolicyArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) The source of masking columns.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] generate_health_report_trigger: (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] is_drop_temp_tables_enabled: (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
         :param pulumi.Input[bool] is_redo_logging_enabled: (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
         :param pulumi.Input[bool] is_refresh_stats_enabled: (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
@@ -63,6 +65,8 @@ class MaskingPolicyArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if generate_health_report_trigger is not None:
+            pulumi.set(__self__, "generate_health_report_trigger", generate_health_report_trigger)
         if is_drop_temp_tables_enabled is not None:
             pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
         if is_redo_logging_enabled is not None:
@@ -107,10 +111,6 @@ class MaskingPolicyArgs:
     def add_masking_columns_from_sdm_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
@@ -165,6 +165,22 @@ class MaskingPolicyArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="generateHealthReportTrigger")
+    def generate_health_report_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "generate_health_report_trigger")
+
+    @generate_health_report_trigger.setter
+    def generate_health_report_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "generate_health_report_trigger", value)
 
     @property
     @pulumi.getter(name="isDropTempTablesEnabled")
@@ -261,6 +277,7 @@ class _MaskingPolicyState:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
                  is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
                  is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
                  is_refresh_stats_enabled: Optional[pulumi.Input[bool]] = None,
@@ -274,16 +291,17 @@ class _MaskingPolicyState:
         """
         Input properties used for looking up and filtering MaskingPolicy resources.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) The source of masking columns.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] generate_health_report_trigger: (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] is_drop_temp_tables_enabled: (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
         :param pulumi.Input[bool] is_redo_logging_enabled: (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
         :param pulumi.Input[bool] is_refresh_stats_enabled: (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
@@ -309,6 +327,8 @@ class _MaskingPolicyState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if generate_health_report_trigger is not None:
+            pulumi.set(__self__, "generate_health_report_trigger", generate_health_report_trigger)
         if is_drop_temp_tables_enabled is not None:
             pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
         if is_redo_logging_enabled is not None:
@@ -335,10 +355,6 @@ class _MaskingPolicyState:
     def add_masking_columns_from_sdm_trigger(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
@@ -417,6 +433,22 @@ class _MaskingPolicyState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="generateHealthReportTrigger")
+    def generate_health_report_trigger(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "generate_health_report_trigger")
+
+    @generate_health_report_trigger.setter
+    def generate_health_report_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "generate_health_report_trigger", value)
 
     @property
     @pulumi.getter(name="isDropTempTablesEnabled")
@@ -551,6 +583,7 @@ class MaskingPolicy(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
                  is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
                  is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
                  is_refresh_stats_enabled: Optional[pulumi.Input[bool]] = None,
@@ -621,16 +654,17 @@ class MaskingPolicy(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]] column_sources: (Updatable) The source of masking columns.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] generate_health_report_trigger: (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] is_drop_temp_tables_enabled: (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
         :param pulumi.Input[bool] is_redo_logging_enabled: (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
         :param pulumi.Input[bool] is_refresh_stats_enabled: (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
@@ -726,6 +760,7 @@ class MaskingPolicy(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
                  is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
                  is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
                  is_refresh_stats_enabled: Optional[pulumi.Input[bool]] = None,
@@ -753,6 +788,7 @@ class MaskingPolicy(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["generate_health_report_trigger"] = generate_health_report_trigger
             __props__.__dict__["is_drop_temp_tables_enabled"] = is_drop_temp_tables_enabled
             __props__.__dict__["is_redo_logging_enabled"] = is_redo_logging_enabled
             __props__.__dict__["is_refresh_stats_enabled"] = is_refresh_stats_enabled
@@ -780,6 +816,7 @@ class MaskingPolicy(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
             is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
             is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
             is_refresh_stats_enabled: Optional[pulumi.Input[bool]] = None,
@@ -798,16 +835,17 @@ class MaskingPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaskingPolicyColumnSourceArgs']]]] column_sources: (Updatable) The source of masking columns.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[int] generate_health_report_trigger: (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[bool] is_drop_temp_tables_enabled: (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
         :param pulumi.Input[bool] is_redo_logging_enabled: (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
         :param pulumi.Input[bool] is_refresh_stats_enabled: (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
@@ -830,6 +868,7 @@ class MaskingPolicy(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["generate_health_report_trigger"] = generate_health_report_trigger
         __props__.__dict__["is_drop_temp_tables_enabled"] = is_drop_temp_tables_enabled
         __props__.__dict__["is_redo_logging_enabled"] = is_redo_logging_enabled
         __props__.__dict__["is_refresh_stats_enabled"] = is_refresh_stats_enabled
@@ -847,10 +886,6 @@ class MaskingPolicy(pulumi.CustomResource):
     def add_masking_columns_from_sdm_trigger(self) -> pulumi.Output[Optional[int]]:
         """
         (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
@@ -901,6 +936,18 @@ class MaskingPolicy(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="generateHealthReportTrigger")
+    def generate_health_report_trigger(self) -> pulumi.Output[Optional[int]]:
+        """
+        (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "generate_health_report_trigger")
 
     @property
     @pulumi.getter(name="isDropTempTablesEnabled")

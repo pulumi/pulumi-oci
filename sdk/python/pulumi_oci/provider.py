@@ -29,8 +29,8 @@ class ProviderArgs:
                  user_ocid: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Provider resource.
-        :param pulumi.Input[str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-               'ResourcePrincipal'. By default, 'ApiKey' will be used.
+        :param pulumi.Input[str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+               'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         :param pulumi.Input[str] config_file_profile: (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
         :param pulumi.Input[bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
                consistency problems but it also introduced performance issues on destroy operations.
@@ -84,8 +84,8 @@ class ProviderArgs:
     @pulumi.getter
     def auth(self) -> Optional[pulumi.Input[str]]:
         """
-        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-        'ResourcePrincipal'. By default, 'ApiKey' will be used.
+        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+        'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         """
         return pulumi.get(self, "auth")
 
@@ -274,8 +274,8 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-               'ResourcePrincipal'. By default, 'ApiKey' will be used.
+        :param pulumi.Input[str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+               'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         :param pulumi.Input[str] config_file_profile: (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
         :param pulumi.Input[bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors. Automatic retries were introduced to solve some eventual
                consistency problems but it also introduced performance issues on destroy operations.
@@ -372,8 +372,8 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter
     def auth(self) -> pulumi.Output[Optional[str]]:
         """
-        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-        'ResourcePrincipal'. By default, 'ApiKey' will be used.
+        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+        'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
         """
         return pulumi.get(self, "auth")
 

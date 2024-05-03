@@ -37,6 +37,7 @@ namespace Pulumi.Oci.RecoveryMod
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         PolicyLockedDateTime = protectionPolicyPolicyLockedDateTime,
     ///     });
     /// 
     /// });
@@ -78,11 +79,7 @@ namespace Pulumi.Oci.RecoveryMod
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
@@ -100,13 +97,23 @@ namespace Pulumi.Oci.RecoveryMod
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the protection policy. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        /// * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+        /// * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+        /// * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+        /// * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+        /// * However, you are only allowed to increase the retention period on or after the retention lock date.
+        /// * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("policyLockedDateTime")]
+        public Output<string> PolicyLockedDateTime { get; private set; } = null!;
+
+        /// <summary>
+        /// The current state of the protection policy.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -209,17 +216,29 @@ namespace Pulumi.Oci.RecoveryMod
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        /// * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+        /// * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+        /// * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+        /// * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+        /// * However, you are only allowed to increase the retention period on or after the retention lock date.
+        /// * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("policyLockedDateTime")]
+        public Input<string>? PolicyLockedDateTime { get; set; }
 
         public ProtectionPolicyArgs()
         {
@@ -263,11 +282,7 @@ namespace Pulumi.Oci.RecoveryMod
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -288,13 +303,23 @@ namespace Pulumi.Oci.RecoveryMod
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The current state of the protection policy. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        /// * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+        /// * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+        /// * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+        /// * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+        /// * However, you are only allowed to increase the retention period on or after the retention lock date.
+        /// * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("policyLockedDateTime")]
+        public Input<string>? PolicyLockedDateTime { get; set; }
+
+        /// <summary>
+        /// The current state of the protection policy.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

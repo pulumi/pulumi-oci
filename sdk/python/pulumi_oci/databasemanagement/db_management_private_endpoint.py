@@ -166,6 +166,7 @@ class _DbManagementPrivateEndpointState:
                  private_ip: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None):
         """
@@ -184,6 +185,7 @@ class _DbManagementPrivateEndpointState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
@@ -207,6 +209,8 @@ class _DbManagementPrivateEndpointState:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if vcn_id is not None:
@@ -335,6 +339,18 @@ class _DbManagementPrivateEndpointState:
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -510,6 +526,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["private_ip"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["vcn_id"] = None
         super(DbManagementPrivateEndpoint, __self__).__init__(
@@ -532,6 +549,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
             private_ip: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             vcn_id: Optional[pulumi.Input[str]] = None) -> 'DbManagementPrivateEndpoint':
         """
@@ -555,6 +573,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
@@ -572,6 +591,7 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         __props__.__dict__["private_ip"] = private_ip
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["vcn_id"] = vcn_id
         return DbManagementPrivateEndpoint(resource_name, opts=opts, __props__=__props__)
@@ -659,6 +679,14 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

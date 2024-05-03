@@ -11,8 +11,8 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
-// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken' and 'InstancePrincipal' and
-// 'ResourcePrincipal'. By default, 'ApiKey' will be used.
+// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and
+// 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
 func GetAuth(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:auth")
 }

@@ -25,6 +25,7 @@ class ProtectedDatabaseArgs:
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_size: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 deletion_schedule: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_redo_logs_shipped: Optional[pulumi.Input[bool]] = None):
         """
@@ -38,6 +39,9 @@ class ProtectedDatabaseArgs:
         :param pulumi.Input[str] database_id: The OCID of the protected database.
         :param pulumi.Input[str] database_size: (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+        :param pulumi.Input[str] deletion_schedule: (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+               * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+               * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         """
@@ -53,6 +57,8 @@ class ProtectedDatabaseArgs:
             pulumi.set(__self__, "database_size", database_size)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if deletion_schedule is not None:
+            pulumi.set(__self__, "deletion_schedule", deletion_schedule)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_redo_logs_shipped is not None:
@@ -167,6 +173,20 @@ class ProtectedDatabaseArgs:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="deletionSchedule")
+    def deletion_schedule(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+        * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+        * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+        """
+        return pulumi.get(self, "deletion_schedule")
+
+    @deletion_schedule.setter
+    def deletion_schedule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deletion_schedule", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -199,6 +219,7 @@ class _ProtectedDatabaseState:
                  database_size: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 deletion_schedule: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  health: Optional[pulumi.Input[str]] = None,
@@ -208,6 +229,7 @@ class _ProtectedDatabaseState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]]] = None,
                  password: Optional[pulumi.Input[str]] = None,
+                 policy_locked_date_time: Optional[pulumi.Input[str]] = None,
                  protection_policy_id: Optional[pulumi.Input[str]] = None,
                  recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -222,18 +244,19 @@ class _ProtectedDatabaseState:
         :param pulumi.Input[str] database_size: (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
         :param pulumi.Input[str] db_unique_name: The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+        :param pulumi.Input[str] deletion_schedule: (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+               * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+               * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
         :param pulumi.Input[str] display_name: (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] health: Indicates the protection status of the database. Allowed values are:
-               * HEALTHY
-               * WARNING
-               * ALERT
+        :param pulumi.Input[str] health: Indicates the protection status of the database.
         :param pulumi.Input[str] health_details: A message describing the current health of the protected database.
         :param pulumi.Input[bool] is_read_only_resource: Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
         :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         :param pulumi.Input[str] lifecycle_details: Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]] metrics: Backup performance and storage utilization metrics for the protected database.
         :param pulumi.Input[str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+        :param pulumi.Input[str] policy_locked_date_time: An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
         :param pulumi.Input[str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
         :param pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
         :param pulumi.Input[str] state: The current state of the Protected Database.
@@ -252,6 +275,8 @@ class _ProtectedDatabaseState:
             pulumi.set(__self__, "db_unique_name", db_unique_name)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if deletion_schedule is not None:
+            pulumi.set(__self__, "deletion_schedule", deletion_schedule)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
@@ -270,6 +295,8 @@ class _ProtectedDatabaseState:
             pulumi.set(__self__, "metrics", metrics)
         if password is not None:
             pulumi.set(__self__, "password", password)
+        if policy_locked_date_time is not None:
+            pulumi.set(__self__, "policy_locked_date_time", policy_locked_date_time)
         if protection_policy_id is not None:
             pulumi.set(__self__, "protection_policy_id", protection_policy_id)
         if recovery_service_subnets is not None:
@@ -346,6 +373,20 @@ class _ProtectedDatabaseState:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="deletionSchedule")
+    def deletion_schedule(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+        * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+        * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+        """
+        return pulumi.get(self, "deletion_schedule")
+
+    @deletion_schedule.setter
+    def deletion_schedule(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deletion_schedule", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -373,10 +414,7 @@ class _ProtectedDatabaseState:
     @pulumi.getter
     def health(self) -> Optional[pulumi.Input[str]]:
         """
-        Indicates the protection status of the database. Allowed values are:
-        * HEALTHY
-        * WARNING
-        * ALERT
+        Indicates the protection status of the database.
         """
         return pulumi.get(self, "health")
 
@@ -455,6 +493,18 @@ class _ProtectedDatabaseState:
     @password.setter
     def password(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter(name="policyLockedDateTime")
+    def policy_locked_date_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        """
+        return pulumi.get(self, "policy_locked_date_time")
+
+    @policy_locked_date_time.setter
+    def policy_locked_date_time(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "policy_locked_date_time", value)
 
     @property
     @pulumi.getter(name="protectionPolicyId")
@@ -551,6 +601,7 @@ class ProtectedDatabase(pulumi.CustomResource):
                  database_size: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 deletion_schedule: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_redo_logs_shipped: Optional[pulumi.Input[bool]] = None,
@@ -583,6 +634,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
+            deletion_schedule="DELETE_AFTER_72_HOURS",
             freeform_tags={
                 "bar-key": "value",
             },
@@ -604,6 +656,9 @@ class ProtectedDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] database_size: (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
         :param pulumi.Input[str] db_unique_name: The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+        :param pulumi.Input[str] deletion_schedule: (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+               * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+               * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
         :param pulumi.Input[str] display_name: (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
@@ -642,6 +697,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
+            deletion_schedule="DELETE_AFTER_72_HOURS",
             freeform_tags={
                 "bar-key": "value",
             },
@@ -676,6 +732,7 @@ class ProtectedDatabase(pulumi.CustomResource):
                  database_size: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 deletion_schedule: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_redo_logs_shipped: Optional[pulumi.Input[bool]] = None,
@@ -700,6 +757,7 @@ class ProtectedDatabase(pulumi.CustomResource):
                 raise TypeError("Missing required property 'db_unique_name'")
             __props__.__dict__["db_unique_name"] = db_unique_name
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["deletion_schedule"] = deletion_schedule
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
@@ -719,6 +777,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             __props__.__dict__["is_read_only_resource"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["metrics"] = None
+            __props__.__dict__["policy_locked_date_time"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -741,6 +800,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             database_size: Optional[pulumi.Input[str]] = None,
             db_unique_name: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            deletion_schedule: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             health: Optional[pulumi.Input[str]] = None,
@@ -750,6 +810,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             metrics: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectedDatabaseMetricArgs']]]]] = None,
             password: Optional[pulumi.Input[str]] = None,
+            policy_locked_date_time: Optional[pulumi.Input[str]] = None,
             protection_policy_id: Optional[pulumi.Input[str]] = None,
             recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectedDatabaseRecoveryServiceSubnetArgs']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -769,18 +830,19 @@ class ProtectedDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] database_size: (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
         :param pulumi.Input[str] db_unique_name: The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+        :param pulumi.Input[str] deletion_schedule: (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+               * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+               * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
         :param pulumi.Input[str] display_name: (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] health: Indicates the protection status of the database. Allowed values are:
-               * HEALTHY
-               * WARNING
-               * ALERT
+        :param pulumi.Input[str] health: Indicates the protection status of the database.
         :param pulumi.Input[str] health_details: A message describing the current health of the protected database.
         :param pulumi.Input[bool] is_read_only_resource: Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
         :param pulumi.Input[bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         :param pulumi.Input[str] lifecycle_details: Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectedDatabaseMetricArgs']]]] metrics: Backup performance and storage utilization metrics for the protected database.
         :param pulumi.Input[str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+        :param pulumi.Input[str] policy_locked_date_time: An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
         :param pulumi.Input[str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
         :param pulumi.Input[str] state: The current state of the Protected Database.
@@ -798,6 +860,7 @@ class ProtectedDatabase(pulumi.CustomResource):
         __props__.__dict__["database_size"] = database_size
         __props__.__dict__["db_unique_name"] = db_unique_name
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["deletion_schedule"] = deletion_schedule
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["health"] = health
@@ -807,6 +870,7 @@ class ProtectedDatabase(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["metrics"] = metrics
         __props__.__dict__["password"] = password
+        __props__.__dict__["policy_locked_date_time"] = policy_locked_date_time
         __props__.__dict__["protection_policy_id"] = protection_policy_id
         __props__.__dict__["recovery_service_subnets"] = recovery_service_subnets
         __props__.__dict__["state"] = state
@@ -857,6 +921,16 @@ class ProtectedDatabase(pulumi.CustomResource):
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter(name="deletionSchedule")
+    def deletion_schedule(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+        * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+        * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+        """
+        return pulumi.get(self, "deletion_schedule")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
@@ -876,10 +950,7 @@ class ProtectedDatabase(pulumi.CustomResource):
     @pulumi.getter
     def health(self) -> pulumi.Output[str]:
         """
-        Indicates the protection status of the database. Allowed values are:
-        * HEALTHY
-        * WARNING
-        * ALERT
+        Indicates the protection status of the database.
         """
         return pulumi.get(self, "health")
 
@@ -930,6 +1001,14 @@ class ProtectedDatabase(pulumi.CustomResource):
         (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
         """
         return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="policyLockedDateTime")
+    def policy_locked_date_time(self) -> pulumi.Output[str]:
+        """
+        An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        """
+        return pulumi.get(self, "policy_locked_date_time")
 
     @property
     @pulumi.getter(name="protectionPolicyId")

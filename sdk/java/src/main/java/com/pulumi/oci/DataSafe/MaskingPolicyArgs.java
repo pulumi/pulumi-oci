@@ -25,18 +25,12 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="addMaskingColumnsFromSdmTrigger")
     private @Nullable Output<Integer> addMaskingColumnsFromSdmTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> addMaskingColumnsFromSdmTrigger() {
@@ -131,6 +125,27 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="generateHealthReportTrigger")
+    private @Nullable Output<Integer> generateHealthReportTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> generateHealthReportTrigger() {
+        return Optional.ofNullable(this.generateHealthReportTrigger);
     }
 
     /**
@@ -248,6 +263,7 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.generateHealthReportTrigger = $.generateHealthReportTrigger;
         this.isDropTempTablesEnabled = $.isDropTempTablesEnabled;
         this.isRedoLoggingEnabled = $.isRedoLoggingEnabled;
         this.isRefreshStatsEnabled = $.isRefreshStatsEnabled;
@@ -278,9 +294,6 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param addMaskingColumnsFromSdmTrigger (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -291,9 +304,6 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addMaskingColumnsFromSdmTrigger (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -436,6 +446,33 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param generateHealthReportTrigger (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generateHealthReportTrigger(@Nullable Output<Integer> generateHealthReportTrigger) {
+            $.generateHealthReportTrigger = generateHealthReportTrigger;
+            return this;
+        }
+
+        /**
+         * @param generateHealthReportTrigger (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generateHealthReportTrigger(Integer generateHealthReportTrigger) {
+            return generateHealthReportTrigger(Output.of(generateHealthReportTrigger));
         }
 
         /**

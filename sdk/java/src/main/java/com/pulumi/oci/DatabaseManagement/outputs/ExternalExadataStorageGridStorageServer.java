@@ -114,6 +114,11 @@ public final class ExternalExadataStorageGridStorageServer {
      */
     private @Nullable String status;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private @Nullable Map<String,Object> systemTags;
+    /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
@@ -267,6 +272,13 @@ public final class ExternalExadataStorageGridStorageServer {
         return Optional.ofNullable(this.status);
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags == null ? Map.of() : this.systemTags;
+    }
+    /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
      */
@@ -316,6 +328,7 @@ public final class ExternalExadataStorageGridStorageServer {
         private @Nullable String resourceType;
         private @Nullable String state;
         private @Nullable String status;
+        private @Nullable Map<String,Object> systemTags;
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
         private @Nullable String version;
@@ -341,6 +354,7 @@ public final class ExternalExadataStorageGridStorageServer {
     	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.version = defaults.version;
@@ -461,6 +475,12 @@ public final class ExternalExadataStorageGridStorageServer {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
 
             this.timeCreated = timeCreated;
@@ -499,6 +519,7 @@ public final class ExternalExadataStorageGridStorageServer {
             _resultValue.resourceType = resourceType;
             _resultValue.state = state;
             _resultValue.status = status;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.version = version;

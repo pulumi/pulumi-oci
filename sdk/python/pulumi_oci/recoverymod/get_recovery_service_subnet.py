@@ -21,7 +21,7 @@ class GetRecoveryServiceSubnetResult:
     """
     A collection of values returned by getRecoveryServiceSubnet.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, recovery_service_subnet_id=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, vcn_id=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, recovery_service_subnet_id=None, state=None, subnet_id=None, subnets=None, system_tags=None, time_created=None, time_updated=None, vcn_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -40,6 +40,9 @@ class GetRecoveryServiceSubnetResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nsg_ids and not isinstance(nsg_ids, list):
+            raise TypeError("Expected argument 'nsg_ids' to be a list")
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
         if recovery_service_subnet_id and not isinstance(recovery_service_subnet_id, str):
             raise TypeError("Expected argument 'recovery_service_subnet_id' to be a str")
         pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
@@ -49,6 +52,9 @@ class GetRecoveryServiceSubnetResult:
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if subnets and not isinstance(subnets, list):
+            raise TypeError("Expected argument 'subnets' to be a list")
+        pulumi.set(__self__, "subnets", subnets)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -111,6 +117,14 @@ class GetRecoveryServiceSubnetResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
     @pulumi.getter(name="recoveryServiceSubnetId")
     def recovery_service_subnet_id(self) -> str:
         return pulumi.get(self, "recovery_service_subnet_id")
@@ -119,13 +133,7 @@ class GetRecoveryServiceSubnetResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the recovery service subnet. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
+        The current state of the recovery service subnet.
         """
         return pulumi.get(self, "state")
 
@@ -133,9 +141,20 @@ class GetRecoveryServiceSubnetResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The OCID of the subnet used as the recovery service subnet.
+        Deprecated. One of the subnets associated with the Recovery Service subnet.
         """
+        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
+
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter
+    def subnets(self) -> Sequence[str]:
+        """
+        A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+        """
+        return pulumi.get(self, "subnets")
 
     @property
     @pulumi.getter(name="systemTags")
@@ -182,9 +201,11 @@ class AwaitableGetRecoveryServiceSubnetResult(GetRecoveryServiceSubnetResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            nsg_ids=self.nsg_ids,
             recovery_service_subnet_id=self.recovery_service_subnet_id,
             state=self.state,
             subnet_id=self.subnet_id,
+            subnets=self.subnets,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
@@ -222,9 +243,11 @@ def get_recovery_service_subnet(recovery_service_subnet_id: Optional[str] = None
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         recovery_service_subnet_id=pulumi.get(__ret__, 'recovery_service_subnet_id'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        subnets=pulumi.get(__ret__, 'subnets'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),

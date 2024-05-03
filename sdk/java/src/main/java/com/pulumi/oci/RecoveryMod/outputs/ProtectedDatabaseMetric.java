@@ -38,6 +38,11 @@ public final class ProtectedDatabaseMetric {
      */
     private @Nullable Boolean isRedoLogsEnabled;
     /**
+     * @return Number of days of redo/archive to be applied to recover database.
+     * 
+     */
+    private @Nullable Double minimumRecoveryNeededInDays;
+    /**
      * @return The maximum number of days to retain backups for a protected database.
      * 
      */
@@ -85,6 +90,13 @@ public final class ProtectedDatabaseMetric {
         return Optional.ofNullable(this.isRedoLogsEnabled);
     }
     /**
+     * @return Number of days of redo/archive to be applied to recover database.
+     * 
+     */
+    public Optional<Double> minimumRecoveryNeededInDays() {
+        return Optional.ofNullable(this.minimumRecoveryNeededInDays);
+    }
+    /**
      * @return The maximum number of days to retain backups for a protected database.
      * 
      */
@@ -113,6 +125,7 @@ public final class ProtectedDatabaseMetric {
         private @Nullable Double currentRetentionPeriodInSeconds;
         private @Nullable Double dbSizeInGbs;
         private @Nullable Boolean isRedoLogsEnabled;
+        private @Nullable Double minimumRecoveryNeededInDays;
         private @Nullable Double retentionPeriodInDays;
         private @Nullable Double unprotectedWindowInSeconds;
         public Builder() {}
@@ -123,6 +136,7 @@ public final class ProtectedDatabaseMetric {
     	      this.currentRetentionPeriodInSeconds = defaults.currentRetentionPeriodInSeconds;
     	      this.dbSizeInGbs = defaults.dbSizeInGbs;
     	      this.isRedoLogsEnabled = defaults.isRedoLogsEnabled;
+    	      this.minimumRecoveryNeededInDays = defaults.minimumRecoveryNeededInDays;
     	      this.retentionPeriodInDays = defaults.retentionPeriodInDays;
     	      this.unprotectedWindowInSeconds = defaults.unprotectedWindowInSeconds;
         }
@@ -158,6 +172,12 @@ public final class ProtectedDatabaseMetric {
             return this;
         }
         @CustomType.Setter
+        public Builder minimumRecoveryNeededInDays(@Nullable Double minimumRecoveryNeededInDays) {
+
+            this.minimumRecoveryNeededInDays = minimumRecoveryNeededInDays;
+            return this;
+        }
+        @CustomType.Setter
         public Builder retentionPeriodInDays(@Nullable Double retentionPeriodInDays) {
 
             this.retentionPeriodInDays = retentionPeriodInDays;
@@ -176,6 +196,7 @@ public final class ProtectedDatabaseMetric {
             _resultValue.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
             _resultValue.dbSizeInGbs = dbSizeInGbs;
             _resultValue.isRedoLogsEnabled = isRedoLogsEnabled;
+            _resultValue.minimumRecoveryNeededInDays = minimumRecoveryNeededInDays;
             _resultValue.retentionPeriodInDays = retentionPeriodInDays;
             _resultValue.unprotectedWindowInSeconds = unprotectedWindowInSeconds;
             return _resultValue;

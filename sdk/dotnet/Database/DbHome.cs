@@ -106,6 +106,12 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsDesupportedVersion { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+        /// </summary>
+        [Output("isUnifiedAuditingEnabled")]
+        public Output<bool> IsUnifiedAuditingEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Output("kmsKeyId")]
@@ -274,6 +280,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsDesupportedVersion { get; set; }
 
         /// <summary>
+        /// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+        /// </summary>
+        [Input("isUnifiedAuditingEnabled")]
+        public Input<bool>? IsUnifiedAuditingEnabled { get; set; }
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Input("kmsKeyId")]
@@ -390,6 +402,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("isDesupportedVersion")]
         public Input<bool>? IsDesupportedVersion { get; set; }
+
+        /// <summary>
+        /// Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+        /// </summary>
+        [Input("isUnifiedAuditingEnabled")]
+        public Input<bool>? IsUnifiedAuditingEnabled { get; set; }
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

@@ -22,7 +22,7 @@ class GetMaskingPolicyResult:
     """
     A collection of values returned by getMaskingPolicy.
     """
-    def __init__(__self__, add_masking_columns_from_sdm_trigger=None, column_sources=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_drop_temp_tables_enabled=None, is_redo_logging_enabled=None, is_refresh_stats_enabled=None, masking_policy_id=None, parallel_degree=None, post_masking_script=None, pre_masking_script=None, recompile=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, add_masking_columns_from_sdm_trigger=None, column_sources=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, generate_health_report_trigger=None, id=None, is_drop_temp_tables_enabled=None, is_redo_logging_enabled=None, is_refresh_stats_enabled=None, masking_policy_id=None, parallel_degree=None, post_masking_script=None, pre_masking_script=None, recompile=None, state=None, time_created=None, time_updated=None):
         if add_masking_columns_from_sdm_trigger and not isinstance(add_masking_columns_from_sdm_trigger, int):
             raise TypeError("Expected argument 'add_masking_columns_from_sdm_trigger' to be a int")
         pulumi.set(__self__, "add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
@@ -44,6 +44,9 @@ class GetMaskingPolicyResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if generate_health_report_trigger and not isinstance(generate_health_report_trigger, int):
+            raise TypeError("Expected argument 'generate_health_report_trigger' to be a int")
+        pulumi.set(__self__, "generate_health_report_trigger", generate_health_report_trigger)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -133,6 +136,11 @@ class GetMaskingPolicyResult:
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="generateHealthReportTrigger")
+    def generate_health_report_trigger(self) -> int:
+        return pulumi.get(self, "generate_health_report_trigger")
 
     @property
     @pulumi.getter
@@ -241,6 +249,7 @@ class AwaitableGetMaskingPolicyResult(GetMaskingPolicyResult):
             description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
+            generate_health_report_trigger=self.generate_health_report_trigger,
             id=self.id,
             is_drop_temp_tables_enabled=self.is_drop_temp_tables_enabled,
             is_redo_logging_enabled=self.is_redo_logging_enabled,
@@ -287,6 +296,7 @@ def get_masking_policy(masking_policy_id: Optional[str] = None,
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        generate_health_report_trigger=pulumi.get(__ret__, 'generate_health_report_trigger'),
         id=pulumi.get(__ret__, 'id'),
         is_drop_temp_tables_enabled=pulumi.get(__ret__, 'is_drop_temp_tables_enabled'),
         is_redo_logging_enabled=pulumi.get(__ret__, 'is_redo_logging_enabled'),

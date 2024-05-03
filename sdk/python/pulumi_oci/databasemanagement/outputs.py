@@ -11,6 +11,11 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'DatabaseDbmFeaturesManagementFeatureDetails',
+    'DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails',
+    'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails',
+    'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials',
+    'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString',
     'ExternalAsmServicedDatabase',
     'ExternalClusterNetworkConfiguration',
     'ExternalClusterScanConfiguration',
@@ -59,6 +64,12 @@ __all__ = [
     'ExternalListenerEndpoint',
     'ExternalListenerServicedAsm',
     'ExternalListenerServicedDatabase',
+    'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails',
+    'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails',
+    'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails',
+    'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails',
+    'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails',
+    'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetails',
     'ManagedDatabaseGroupManagedDatabase',
     'ManagedDatabaseManagedDatabaseGroup',
     'ManagedDatabasesChangeDatabaseParameterCredentials',
@@ -67,6 +78,11 @@ __all__ = [
     'ManagedDatabasesResetDatabaseParameterCredentials',
     'ManagedDatabasesResetDatabaseParameterDatabaseCredential',
     'NamedCredentialContent',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials',
+    'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString',
     'GetDbManagementPrivateEndpointAssociatedDatabaseItemResult',
     'GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionResult',
     'GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemResult',
@@ -385,6 +401,411 @@ __all__ = [
     'GetNamedCredentialsNamedCredentialCollectionItemResult',
     'GetNamedCredentialsNamedCredentialCollectionItemContentResult',
 ]
+
+@pulumi.output_type
+class DatabaseDbmFeaturesManagementFeatureDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorDetails":
+            suggest = "connector_details"
+        elif key == "databaseConnectionDetails":
+            suggest = "database_connection_details"
+        elif key == "isAutoEnablePluggableDatabase":
+            suggest = "is_auto_enable_pluggable_database"
+        elif key == "managementType":
+            suggest = "management_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDbmFeaturesManagementFeatureDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 feature: str,
+                 connector_details: Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails'] = None,
+                 database_connection_details: Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails'] = None,
+                 is_auto_enable_pluggable_database: Optional[bool] = None,
+                 management_type: Optional[str] = None):
+        """
+        :param str feature: The name of the Database Management feature.
+        :param 'DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
+        :param 'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs' database_connection_details: The connection details required to connect to the database.
+        :param bool is_auto_enable_pluggable_database: Indicates whether the pluggable database can be enabled automatically.
+        :param str management_type: The management type for the database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+        if database_connection_details is not None:
+            pulumi.set(__self__, "database_connection_details", database_connection_details)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
+        if management_type is not None:
+            pulumi.set(__self__, "management_type", management_type)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> str:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails']:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @property
+    @pulumi.getter(name="databaseConnectionDetails")
+    def database_connection_details(self) -> Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails']:
+        """
+        The connection details required to connect to the database.
+        """
+        return pulumi.get(self, "database_connection_details")
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[bool]:
+        """
+        Indicates whether the pluggable database can be enabled automatically.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @property
+    @pulumi.getter(name="managementType")
+    def management_type(self) -> Optional[str]:
+        """
+        The management type for the database.
+        """
+        return pulumi.get(self, "management_type")
+
+
+@pulumi.output_type
+class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorType":
+            suggest = "connector_type"
+        elif key == "databaseConnectorId":
+            suggest = "database_connector_id"
+        elif key == "managementAgentId":
+            suggest = "management_agent_id"
+        elif key == "privateEndPointId":
+            suggest = "private_end_point_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connector_type: Optional[str] = None,
+                 database_connector_id: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 private_end_point_id: Optional[str] = None):
+        """
+        :param str connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param str database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param str private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[str]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+
+@pulumi.output_type
+class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionCredentials":
+            suggest = "connection_credentials"
+        elif key == "connectionString":
+            suggest = "connection_string"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_credentials: Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials'] = None,
+                 connection_string: Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString'] = None):
+        """
+        :param 'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs' connection_credentials: The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param 'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs' connection_string: The details of the Oracle Database connection string.
+        """
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+
+    @property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials']:
+        """
+        The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> Optional['outputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString']:
+        """
+        The details of the Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+
+@pulumi.output_type
+class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialName":
+            suggest = "credential_name"
+        elif key == "credentialType":
+            suggest = "credential_type"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_name: Optional[str] = None,
+                 credential_type: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 role: Optional[str] = None,
+                 ssl_secret_id: Optional[str] = None,
+                 user_name: Optional[str] = None):
+        """
+        :param str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+               
+               For example: inventorydb.abc112233445566778899
+        :param str credential_type: The type of credential used to connect to the database.
+        :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param str role: The role of the user connecting to the database.
+        :param str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param str user_name: The user name used to connect to the database.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[str]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+
+        For example: inventorydb.abc112233445566778899
+        """
+        return pulumi.get(self, "credential_name")
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[str]:
+        """
+        The type of credential used to connect to the database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        The role of the user connecting to the database.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[str]:
+        """
+        The user name used to connect to the database.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionType":
+            suggest = "connection_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_type: Optional[str] = None,
+                 port: Optional[int] = None,
+                 protocol: Optional[str] = None,
+                 service: Optional[str] = None):
+        """
+        :param str connection_type: The list of supported connection types:
+               * BASIC: Basic connection details
+        :param int port: The port number used to connect to the database.
+        :param str protocol: The protocol used to connect to the database.
+        :param str service: The service name of the database.
+        """
+        if connection_type is not None:
+            pulumi.set(__self__, "connection_type", connection_type)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> Optional[str]:
+        """
+        The list of supported connection types:
+        * BASIC: Basic connection details
+        """
+        return pulumi.get(self, "connection_type")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        The port number used to connect to the database.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[str]:
+        """
+        The protocol used to connect to the database.
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[str]:
+        """
+        The service name of the database.
+        """
+        return pulumi.get(self, "service")
+
 
 @pulumi.output_type
 class ExternalAsmServicedDatabase(dict):
@@ -4794,6 +5215,8 @@ class ExternalExadataStorageGridStorageServer(dict):
             suggest = "memory_gb"
         elif key == "resourceType":
             suggest = "resource_type"
+        elif key == "systemTags":
+            suggest = "system_tags"
         elif key == "timeCreated":
             suggest = "time_created"
         elif key == "timeUpdated":
@@ -4830,6 +5253,7 @@ class ExternalExadataStorageGridStorageServer(dict):
                  resource_type: Optional[str] = None,
                  state: Optional[str] = None,
                  status: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
                  time_created: Optional[str] = None,
                  time_updated: Optional[str] = None,
                  version: Optional[str] = None):
@@ -4857,6 +5281,7 @@ class ExternalExadataStorageGridStorageServer(dict):
         :param str resource_type: The type of Exadata resource.
         :param str state: The current lifecycle state of the database resource.
         :param str status: The status of the Exadata resource.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The timestamp of the creation of the Exadata resource.
         :param str time_updated: The timestamp of the last update of the Exadata resource.
         :param str version: The version of the Exadata resource.
@@ -4899,6 +5324,8 @@ class ExternalExadataStorageGridStorageServer(dict):
             pulumi.set(__self__, "state", state)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -5063,6 +5490,14 @@ class ExternalExadataStorageGridStorageServer(dict):
         return pulumi.get(self, "status")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[str]:
         """
@@ -5112,6 +5547,8 @@ class ExternalExadataStorageServerConnector(dict):
             suggest = "resource_type"
         elif key == "storageServerId":
             suggest = "storage_server_id"
+        elif key == "systemTags":
+            suggest = "system_tags"
         elif key == "timeCreated":
             suggest = "time_created"
         elif key == "timeUpdated":
@@ -5142,6 +5579,7 @@ class ExternalExadataStorageServerConnector(dict):
                  state: Optional[str] = None,
                  status: Optional[str] = None,
                  storage_server_id: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
                  time_created: Optional[str] = None,
                  time_updated: Optional[str] = None,
                  version: Optional[str] = None):
@@ -5163,6 +5601,7 @@ class ExternalExadataStorageServerConnector(dict):
         :param str state: The current lifecycle state of the database resource.
         :param str status: The status of the Exadata resource.
         :param str storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The timestamp of the creation of the Exadata resource.
         :param str time_updated: The timestamp of the last update of the Exadata resource.
         :param str version: The version of the Exadata resource.
@@ -5193,6 +5632,8 @@ class ExternalExadataStorageServerConnector(dict):
             pulumi.set(__self__, "status", status)
         if storage_server_id is not None:
             pulumi.set(__self__, "storage_server_id", storage_server_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -5307,6 +5748,14 @@ class ExternalExadataStorageServerConnector(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
         """
         return pulumi.get(self, "storage_server_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -5581,6 +6030,427 @@ class ExternalListenerServicedDatabase(dict):
 
 
 @pulumi.output_type
+class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorDetails":
+            suggest = "connector_details"
+        elif key == "licenseModel":
+            suggest = "license_model"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 feature: str,
+                 connector_details: Optional['outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails'] = None,
+                 license_model: Optional[str] = None):
+        """
+        :param str feature: The name of the Database Management feature.
+        :param 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
+        :param str license_model: The Oracle license model that applies to the external database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> str:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional['outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails']:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[str]:
+        """
+        The Oracle license model that applies to the external database.
+        """
+        return pulumi.get(self, "license_model")
+
+
+@pulumi.output_type
+class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorType":
+            suggest = "connector_type"
+        elif key == "databaseConnectorId":
+            suggest = "database_connector_id"
+        elif key == "managementAgentId":
+            suggest = "management_agent_id"
+        elif key == "privateEndPointId":
+            suggest = "private_end_point_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connector_type: Optional[str] = None,
+                 database_connector_id: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 private_end_point_id: Optional[str] = None):
+        """
+        :param str connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param str database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param str private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[str]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+
+@pulumi.output_type
+class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorDetails":
+            suggest = "connector_details"
+        elif key == "licenseModel":
+            suggest = "license_model"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 feature: str,
+                 connector_details: Optional['outputs.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails'] = None,
+                 license_model: Optional[str] = None):
+        """
+        :param str feature: The name of the Database Management feature.
+        :param 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
+        :param str license_model: The Oracle license model that applies to the external database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> str:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional['outputs.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails']:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[str]:
+        """
+        The Oracle license model that applies to the external database.
+        """
+        return pulumi.get(self, "license_model")
+
+
+@pulumi.output_type
+class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorType":
+            suggest = "connector_type"
+        elif key == "databaseConnectorId":
+            suggest = "database_connector_id"
+        elif key == "managementAgentId":
+            suggest = "management_agent_id"
+        elif key == "privateEndPointId":
+            suggest = "private_end_point_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connector_type: Optional[str] = None,
+                 database_connector_id: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 private_end_point_id: Optional[str] = None):
+        """
+        :param str connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param str database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param str private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[str]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+
+@pulumi.output_type
+class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorDetails":
+            suggest = "connector_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 feature: str,
+                 connector_details: Optional['outputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetails'] = None):
+        """
+        :param str feature: The name of the Database Management feature.
+        :param 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> str:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional['outputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetails']:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+
+@pulumi.output_type
+class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorType":
+            suggest = "connector_type"
+        elif key == "databaseConnectorId":
+            suggest = "database_connector_id"
+        elif key == "managementAgentId":
+            suggest = "management_agent_id"
+        elif key == "privateEndPointId":
+            suggest = "private_end_point_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connector_type: Optional[str] = None,
+                 database_connector_id: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 private_end_point_id: Optional[str] = None):
+        """
+        :param str connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param str database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param str private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[str]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+
+@pulumi.output_type
 class ManagedDatabaseGroupManagedDatabase(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -5597,6 +6467,8 @@ class ManagedDatabaseGroupManagedDatabase(dict):
             suggest = "deployment_type"
         elif key == "freeformTags":
             suggest = "freeform_tags"
+        elif key == "systemTags":
+            suggest = "system_tags"
         elif key == "timeAdded":
             suggest = "time_added"
         elif key == "workloadType":
@@ -5622,6 +6494,7 @@ class ManagedDatabaseGroupManagedDatabase(dict):
                  freeform_tags: Optional[Mapping[str, Any]] = None,
                  id: Optional[str] = None,
                  name: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
                  time_added: Optional[str] = None,
                  workload_type: Optional[str] = None):
         """
@@ -5637,6 +6510,7 @@ class ManagedDatabaseGroupManagedDatabase(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str name: The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_added: The date and time the Managed Database was added to the group.
         :param str workload_type: The workload type of the Autonomous Database.
         """
@@ -5656,6 +6530,8 @@ class ManagedDatabaseGroupManagedDatabase(dict):
             pulumi.set(__self__, "id", id)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_added is not None:
             pulumi.set(__self__, "time_added", time_added)
         if workload_type is not None:
@@ -5728,6 +6604,14 @@ class ManagedDatabaseGroupManagedDatabase(dict):
         The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeAdded")
@@ -6296,6 +7180,411 @@ class NamedCredentialContent(dict):
 
 
 @pulumi.output_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorDetails":
+            suggest = "connector_details"
+        elif key == "databaseConnectionDetails":
+            suggest = "database_connection_details"
+        elif key == "isAutoEnablePluggableDatabase":
+            suggest = "is_auto_enable_pluggable_database"
+        elif key == "managementType":
+            suggest = "management_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 feature: str,
+                 connector_details: Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails'] = None,
+                 database_connection_details: Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails'] = None,
+                 is_auto_enable_pluggable_database: Optional[bool] = None,
+                 management_type: Optional[str] = None):
+        """
+        :param str feature: The name of the Database Management feature.
+        :param 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
+        :param 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs' database_connection_details: The connection details required to connect to the database.
+        :param bool is_auto_enable_pluggable_database: Indicates whether the pluggable database can be enabled automatically.
+        :param str management_type: The management type for the database.
+        """
+        pulumi.set(__self__, "feature", feature)
+        if connector_details is not None:
+            pulumi.set(__self__, "connector_details", connector_details)
+        if database_connection_details is not None:
+            pulumi.set(__self__, "database_connection_details", database_connection_details)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
+        if management_type is not None:
+            pulumi.set(__self__, "management_type", management_type)
+
+    @property
+    @pulumi.getter
+    def feature(self) -> str:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails']:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @property
+    @pulumi.getter(name="databaseConnectionDetails")
+    def database_connection_details(self) -> Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails']:
+        """
+        The connection details required to connect to the database.
+        """
+        return pulumi.get(self, "database_connection_details")
+
+    @property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[bool]:
+        """
+        Indicates whether the pluggable database can be enabled automatically.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @property
+    @pulumi.getter(name="managementType")
+    def management_type(self) -> Optional[str]:
+        """
+        The management type for the database.
+        """
+        return pulumi.get(self, "management_type")
+
+
+@pulumi.output_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorType":
+            suggest = "connector_type"
+        elif key == "databaseConnectorId":
+            suggest = "database_connector_id"
+        elif key == "managementAgentId":
+            suggest = "management_agent_id"
+        elif key == "privateEndPointId":
+            suggest = "private_end_point_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connector_type: Optional[str] = None,
+                 database_connector_id: Optional[str] = None,
+                 management_agent_id: Optional[str] = None,
+                 private_end_point_id: Optional[str] = None):
+        """
+        :param str connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+        :param str database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param str private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if database_connector_id is not None:
+            pulumi.set(__self__, "database_connector_id", database_connector_id)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if private_end_point_id is not None:
+            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[str]:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        """
+        return pulumi.get(self, "connector_type")
+
+    @property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+
+@pulumi.output_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionCredentials":
+            suggest = "connection_credentials"
+        elif key == "connectionString":
+            suggest = "connection_string"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_credentials: Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials'] = None,
+                 connection_string: Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString'] = None):
+        """
+        :param 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs' connection_credentials: The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs' connection_string: The details of the Oracle Database connection string.
+        """
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+
+    @property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials']:
+        """
+        The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> Optional['outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString']:
+        """
+        The details of the Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+
+@pulumi.output_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialName":
+            suggest = "credential_name"
+        elif key == "credentialType":
+            suggest = "credential_type"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_name: Optional[str] = None,
+                 credential_type: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 role: Optional[str] = None,
+                 ssl_secret_id: Optional[str] = None,
+                 user_name: Optional[str] = None):
+        """
+        :param str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+               
+               For example: inventorydb.abc112233445566778899
+        :param str credential_type: The type of credential used to connect to the database.
+        :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param str role: The role of the user connecting to the database.
+        :param str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param str user_name: The user name used to connect to the database.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[str]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+
+        For example: inventorydb.abc112233445566778899
+        """
+        return pulumi.get(self, "credential_name")
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[str]:
+        """
+        The type of credential used to connect to the database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        """
+        The role of the user connecting to the database.
+        """
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[str]:
+        """
+        The user name used to connect to the database.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionType":
+            suggest = "connection_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_type: Optional[str] = None,
+                 port: Optional[int] = None,
+                 protocol: Optional[str] = None,
+                 service: Optional[str] = None):
+        """
+        :param str connection_type: The list of supported connection types:
+               * BASIC: Basic connection details
+        :param int port: The port number used to connect to the database.
+        :param str protocol: The protocol used to connect to the database.
+        :param str service: The service name of the database.
+        """
+        if connection_type is not None:
+            pulumi.set(__self__, "connection_type", connection_type)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> Optional[str]:
+        """
+        The list of supported connection types:
+        * BASIC: Basic connection details
+        """
+        return pulumi.get(self, "connection_type")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        The port number used to connect to the database.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter
+    def protocol(self) -> Optional[str]:
+        """
+        The protocol used to connect to the database.
+        """
+        return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[str]:
+        """
+        The service name of the database.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
 class GetDbManagementPrivateEndpointAssociatedDatabaseItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
@@ -6474,6 +7763,7 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
                  private_ip: str,
                  state: str,
                  subnet_id: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  vcn_id: str):
         """
@@ -6488,6 +7778,7 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
         :param str private_ip: The IP addresses assigned to the Database Management private endpoint.
         :param str state: The lifecycle state of a resource.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
@@ -6502,6 +7793,7 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
         pulumi.set(__self__, "private_ip", private_ip)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vcn_id", vcn_id)
 
@@ -6592,6 +7884,14 @@ class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItemRe
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -6902,6 +8202,7 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
                  id: str,
                  lifecycle_details: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -6918,6 +8219,7 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current lifecycle state of the external ASM instance.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external ASM instance was created.
         :param str time_updated: The date and time the external ASM instance was last updated.
         """
@@ -6935,6 +8237,7 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -7046,6 +8349,14 @@ class GetExternalAsmInstancesExternalAsmInstanceCollectionItemResult(dict):
         The current lifecycle state of the external ASM instance.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -7308,6 +8619,7 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
                  lifecycle_details: str,
                  serviced_databases: Sequence['outputs.GetExternalAsmsExternalAsmCollectionItemServicedDatabaseResult'],
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
                  version: str):
@@ -7327,6 +8639,7 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetExternalAsmsExternalAsmCollectionItemServicedDatabaseArgs'] serviced_databases: The list of databases that are serviced by the ASM.
         :param str state: The current lifecycle state of the external ASM.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external ASM was created.
         :param str time_updated: The date and time the external ASM was last updated.
         :param str version: The ASM version.
@@ -7347,6 +8660,7 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "serviced_databases", serviced_databases)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "version", version)
@@ -7475,6 +8789,14 @@ class GetExternalAsmsExternalAsmCollectionItemResult(dict):
         The current lifecycle state of the external ASM.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -7655,6 +8977,7 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
                  lifecycle_details: str,
                  node_role: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -7674,6 +8997,7 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str node_role: The role of the cluster node.
         :param str state: The current lifecycle state of the external cluster instance.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external cluster instance was created.
         :param str time_updated: The date and time the external cluster instance was last updated.
         """
@@ -7694,6 +9018,7 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "node_role", node_role)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -7829,6 +9154,14 @@ class GetExternalClusterInstancesExternalClusterInstanceCollectionItemResult(dic
         The current lifecycle state of the external cluster instance.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -8037,6 +9370,7 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
                  ocr_file_location: str,
                  scan_configurations: Sequence['outputs.GetExternalClustersExternalClusterCollectionItemScanConfigurationResult'],
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
                  version: str,
@@ -8058,6 +9392,7 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
         :param str ocr_file_location: The location of the Oracle Cluster Registry (OCR).
         :param Sequence['GetExternalClustersExternalClusterCollectionItemScanConfigurationArgs'] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the external cluster.
         :param str state: The current lifecycle state of the external cluster.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external cluster was created.
         :param str time_updated: The date and time the external cluster was last updated.
         :param str version: The cluster version.
@@ -8080,6 +9415,7 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
         pulumi.set(__self__, "ocr_file_location", ocr_file_location)
         pulumi.set(__self__, "scan_configurations", scan_configurations)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "version", version)
@@ -8217,6 +9553,14 @@ class GetExternalClustersExternalClusterCollectionItemResult(dict):
         The current lifecycle state of the external cluster.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -8444,6 +9788,7 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
                  id: str,
                  instance_details: Sequence['outputs.GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailResult'],
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -8460,6 +9805,7 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         :param Sequence['GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetailArgs'] instance_details: The list of database instances if the database is a RAC database.
         :param str state: The current lifecycle state of the external database resource.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external DB system was created.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -8476,6 +9822,7 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_details", instance_details)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
 
     @property
@@ -8589,6 +9936,14 @@ class GetExternalDatabasesExternalDatabaseCollectionItemResult(dict):
         The current lifecycle state of the external database resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -8824,6 +10179,7 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
                  id: str,
                  lifecycle_details: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -8838,6 +10194,7 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current lifecycle state of the external DB home.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external DB home was created.
         :param str time_updated: The date and time the external DB home was last updated.
         """
@@ -8853,6 +10210,7 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -8950,6 +10308,14 @@ class GetExternalDbHomesExternalDbHomeCollectionItemResult(dict):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -9024,6 +10390,7 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
                  lifecycle_details: str,
                  memory_size_in_gbs: float,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -9042,6 +10409,7 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param float memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
         :param str state: The current lifecycle state of the external DB node.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external DB node was created.
         :param str time_updated: The date and time the external DB node was last updated.
         """
@@ -9061,6 +10429,7 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -9188,6 +10557,14 @@ class GetExternalDbNodesExternalDbNodeCollectionItemResult(dict):
         The current lifecycle state of the external DB node.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -9520,6 +10897,7 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
                  id: str,
                  lifecycle_details: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_connection_status_last_updated: str,
                  time_created: str,
                  time_updated: str):
@@ -9537,6 +10915,7 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system connector.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current lifecycle state of the external DB system connector.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
         :param str time_created: The date and time the external DB system connector was created.
         :param str time_updated: The date and time the external DB system connector was last updated.
@@ -9554,6 +10933,7 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -9661,6 +11041,14 @@ class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemResult
         The current lifecycle state of the external DB system connector.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
@@ -10019,6 +11407,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
                  patch_operations: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationResult'],
                  resource_id: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -10033,6 +11422,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         :param str state: The current lifecycle state of the external DB system discovery resource.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external DB system discovery was created.
         :param str time_updated: The date and time the external DB system discovery was last updated.
         """
@@ -10049,6 +11439,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
         pulumi.set(__self__, "patch_operations", patch_operations)
         pulumi.set(__self__, "resource_id", resource_id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -10149,6 +11540,14 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemResul
         The current lifecycle state of the external DB system discovery resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -14741,6 +16140,7 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
                  lifecycle_details: str,
                  stack_monitoring_configs: Sequence['outputs.GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigResult'],
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -14757,6 +16157,7 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfigArgs'] stack_monitoring_configs: The configuration details of Stack Monitoring for an external DB system.
         :param str state: The current lifecycle state of the external DB system resource.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external DB system was created.
         :param str time_updated: The date and time the external DB system was last updated.
         """
@@ -14773,6 +16174,7 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -14879,6 +16281,14 @@ class GetExternalDbSystemsExternalDbSystemCollectionItemResult(dict):
         The current lifecycle state of the external DB system resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -15271,6 +16681,7 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
                  status: str,
                  storage_grids: Sequence['outputs.GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridResult'],
                  storage_server_names: Sequence[str],
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
                  version: str):
@@ -15290,6 +16701,7 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
         :param str state: The current lifecycle state of the database resource.
         :param str status: The status of the Exadata resource.
         :param Sequence['GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridArgs'] storage_grids: The Exadata storage server grid of the Exadata infrastructure.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The timestamp of the creation of the Exadata resource.
         :param str time_updated: The timestamp of the last update of the Exadata resource.
         :param str version: The version of the Exadata resource.
@@ -15312,6 +16724,7 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "storage_grids", storage_grids)
         pulumi.set(__self__, "storage_server_names", storage_server_names)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "version", version)
@@ -15450,6 +16863,14 @@ class GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionIt
     @pulumi.getter(name="storageServerNames")
     def storage_server_names(self) -> Sequence[str]:
         return pulumi.get(self, "storage_server_names")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -15840,6 +17261,7 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
                  state: str,
                  status: str,
                  storage_server_id: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
                  version: str):
@@ -15857,6 +17279,7 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
         :param str state: The current lifecycle state of the database resource.
         :param str status: The status of the Exadata resource.
         :param str storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The timestamp of the creation of the Exadata resource.
         :param str time_updated: The timestamp of the last update of the Exadata resource.
         :param str version: The version of the Exadata resource.
@@ -15876,6 +17299,7 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "storage_server_id", storage_server_id)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "version", version)
@@ -15995,6 +17419,14 @@ class GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollecti
         return pulumi.get(self, "storage_server_id")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -16108,6 +17540,7 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
                  resource_type: str,
                  state: str,
                  status: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
                  version: str):
@@ -16131,6 +17564,7 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
         :param str resource_type: The type of Exadata resource.
         :param str state: The current lifecycle state of the database resource.
         :param str status: The status of the Exadata resource.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The timestamp of the creation of the Exadata resource.
         :param str time_updated: The timestamp of the last update of the Exadata resource.
         :param str version: The version of the Exadata resource.
@@ -16154,6 +17588,7 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
         pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "version", version)
@@ -16311,6 +17746,14 @@ class GetExternalExadataStorageGridStorageServerResult(dict):
         return pulumi.get(self, "status")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -16351,6 +17794,7 @@ class GetExternalExadataStorageServerConnectorResult(dict):
                  state: str,
                  status: str,
                  storage_server_id: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
                  version: str):
@@ -16368,6 +17812,7 @@ class GetExternalExadataStorageServerConnectorResult(dict):
         :param str state: The current lifecycle state of the database resource.
         :param str status: The status of the Exadata resource.
         :param str storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The timestamp of the creation of the Exadata resource.
         :param str time_updated: The timestamp of the last update of the Exadata resource.
         :param str version: The version of the Exadata resource.
@@ -16385,6 +17830,7 @@ class GetExternalExadataStorageServerConnectorResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "storage_server_id", storage_server_id)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "version", version)
@@ -16492,6 +17938,14 @@ class GetExternalExadataStorageServerConnectorResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
         """
         return pulumi.get(self, "storage_server_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -17454,6 +18908,7 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
                  serviced_asms: Sequence['outputs.GetExternalListenersExternalListenerCollectionItemServicedAsmResult'],
                  serviced_databases: Sequence['outputs.GetExternalListenersExternalListenerCollectionItemServicedDatabaseResult'],
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
                  trace_directory: str,
@@ -17482,6 +18937,7 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
         :param Sequence['GetExternalListenersExternalListenerCollectionItemServicedAsmArgs'] serviced_asms: The list of ASMs that are serviced by the listener.
         :param Sequence['GetExternalListenersExternalListenerCollectionItemServicedDatabaseArgs'] serviced_databases: The list of databases that are serviced by the listener.
         :param str state: The current lifecycle state of the external listener.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the external listener was created.
         :param str time_updated: The date and time the external listener was last updated.
         :param str trace_directory: The destination directory of the listener trace file.
@@ -17511,6 +18967,7 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
         pulumi.set(__self__, "serviced_asms", serviced_asms)
         pulumi.set(__self__, "serviced_databases", serviced_databases)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "trace_directory", trace_directory)
@@ -17704,6 +19161,14 @@ class GetExternalListenersExternalListenerCollectionItemResult(dict):
         The current lifecycle state of the external listener.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -18685,6 +20150,7 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  name: str,
+                 system_tags: Mapping[str, Any],
                  time_added: str,
                  workload_type: str):
         """
@@ -18696,6 +20162,7 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         :param str name: The name of the Managed Database Group.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_added: The date and time the Managed Database was added to the group.
         :param str workload_type: The workload type of the Autonomous Database.
         """
@@ -18707,6 +20174,7 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_added", time_added)
         pulumi.set(__self__, "workload_type", workload_type)
 
@@ -18773,6 +20241,14 @@ class GetManagedDatabaseGroupManagedDatabaseResult(dict):
         The name of the Managed Database Group.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeAdded")
@@ -18847,6 +20323,7 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
                  managed_databases: Sequence['outputs.GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseResult'],
                  name: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str):
         """
@@ -18858,6 +20335,7 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
         :param Sequence['GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseArgs'] managed_databases: A list of Managed Databases in the Managed Database Group.
         :param str name: A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
         :param str state: The lifecycle state of a resource.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the Managed Database Group was created.
         :param str time_updated: The date and time the Managed Database Group was last updated.
         """
@@ -18869,6 +20347,7 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
         pulumi.set(__self__, "managed_databases", managed_databases)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -18937,6 +20416,14 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemResult(dict):
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -18964,6 +20451,7 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  name: str,
+                 system_tags: Mapping[str, Any],
                  time_added: str,
                  workload_type: str):
         """
@@ -18975,6 +20463,7 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The identifier of the resource. Only one of the parameters, id or name should be provided.
         :param str name: A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_added: The date and time the Managed Database was added to the group.
         :param str workload_type: The workload type of the Autonomous Database.
         """
@@ -18986,6 +20475,7 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_added", time_added)
         pulumi.set(__self__, "workload_type", workload_type)
 
@@ -19052,6 +20542,14 @@ class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItemManagedDatabaseR
         A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeAdded")
@@ -26087,7 +27585,7 @@ class GetManagedMySqlDatabaseHeatWaveNodeResult(dict):
         """
         :param str id: The ID associated with the HeatWave node.
         :param str status: The status of the HeatWave node. Indicates whether the status of the node is UP, DOWN, or UNKNOWN at the current time.
-        :param str time_created: The date and time the node was created.
+        :param str time_created: The date and time the HeatWave node was created.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "status", status)
@@ -26113,7 +27611,7 @@ class GetManagedMySqlDatabaseHeatWaveNodeResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the node was created.
+        The date and time the HeatWave node was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -26911,6 +28409,7 @@ class GetNamedCredentialsNamedCredentialCollectionItemResult(dict):
                  name: str,
                  scope: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
                  type: str):
@@ -26926,6 +28425,7 @@ class GetNamedCredentialsNamedCredentialCollectionItemResult(dict):
         :param str name: The name of the named credential.
         :param str scope: The scope of named credential.
         :param str state: The current lifecycle state of the named credential.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the named credential was created.
         :param str time_updated: The date and time the named credential was last updated.
         :param str type: The type of database that is associated to the named credential.
@@ -26941,6 +28441,7 @@ class GetNamedCredentialsNamedCredentialCollectionItemResult(dict):
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "scope", scope)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "type", type)
@@ -27032,6 +28533,14 @@ class GetNamedCredentialsNamedCredentialCollectionItemResult(dict):
         The current lifecycle state of the named credential.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

@@ -92,6 +92,21 @@ public final class ProtectedDatabaseMetricArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * Number of days of redo/archive to be applied to recover database.
+     * 
+     */
+    @Import(name="minimumRecoveryNeededInDays")
+    private @Nullable Output<Double> minimumRecoveryNeededInDays;
+
+    /**
+     * @return Number of days of redo/archive to be applied to recover database.
+     * 
+     */
+    public Optional<Output<Double>> minimumRecoveryNeededInDays() {
+        return Optional.ofNullable(this.minimumRecoveryNeededInDays);
+    }
+
+    /**
      * The maximum number of days to retain backups for a protected database.
      * 
      */
@@ -129,6 +144,7 @@ public final class ProtectedDatabaseMetricArgs extends com.pulumi.resources.Reso
         this.currentRetentionPeriodInSeconds = $.currentRetentionPeriodInSeconds;
         this.dbSizeInGbs = $.dbSizeInGbs;
         this.isRedoLogsEnabled = $.isRedoLogsEnabled;
+        this.minimumRecoveryNeededInDays = $.minimumRecoveryNeededInDays;
         this.retentionPeriodInDays = $.retentionPeriodInDays;
         this.unprotectedWindowInSeconds = $.unprotectedWindowInSeconds;
     }
@@ -254,6 +270,27 @@ public final class ProtectedDatabaseMetricArgs extends com.pulumi.resources.Reso
          */
         public Builder isRedoLogsEnabled(Boolean isRedoLogsEnabled) {
             return isRedoLogsEnabled(Output.of(isRedoLogsEnabled));
+        }
+
+        /**
+         * @param minimumRecoveryNeededInDays Number of days of redo/archive to be applied to recover database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder minimumRecoveryNeededInDays(@Nullable Output<Double> minimumRecoveryNeededInDays) {
+            $.minimumRecoveryNeededInDays = minimumRecoveryNeededInDays;
+            return this;
+        }
+
+        /**
+         * @param minimumRecoveryNeededInDays Number of days of redo/archive to be applied to recover database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder minimumRecoveryNeededInDays(Double minimumRecoveryNeededInDays) {
+            return minimumRecoveryNeededInDays(Output.of(minimumRecoveryNeededInDays));
         }
 
         /**

@@ -105,6 +105,8 @@ type LookupExternalListenerResult struct {
 	ServicedDatabases []GetExternalListenerServicedDatabase `pulumi:"servicedDatabases"`
 	// The current lifecycle state of the external listener.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the external listener was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the external listener was last updated.
@@ -270,6 +272,11 @@ func (o LookupExternalListenerResultOutput) ServicedDatabases() GetExternalListe
 // The current lifecycle state of the external listener.
 func (o LookupExternalListenerResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalListenerResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupExternalListenerResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalListenerResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time the external listener was created.

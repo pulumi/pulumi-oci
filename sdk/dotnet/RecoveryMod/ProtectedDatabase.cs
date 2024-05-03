@@ -44,6 +44,7 @@ namespace Pulumi.Oci.RecoveryMod
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
+    ///         DeletionSchedule = "DELETE_AFTER_72_HOURS",
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
@@ -96,6 +97,14 @@ namespace Pulumi.Oci.RecoveryMod
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+        /// * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+        /// * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+        /// </summary>
+        [Output("deletionSchedule")]
+        public Output<string> DeletionSchedule { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
@@ -108,10 +117,7 @@ namespace Pulumi.Oci.RecoveryMod
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates the protection status of the database. Allowed values are:
-        /// * HEALTHY
-        /// * WARNING
-        /// * ALERT
+        /// Indicates the protection status of the database.
         /// </summary>
         [Output("health")]
         public Output<string> Health { get; private set; } = null!;
@@ -151,6 +157,12 @@ namespace Pulumi.Oci.RecoveryMod
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
+
+        /// <summary>
+        /// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        /// </summary>
+        [Output("policyLockedDateTime")]
+        public Output<string> PolicyLockedDateTime { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the protection policy associated with the protected database.
@@ -281,6 +293,14 @@ namespace Pulumi.Oci.RecoveryMod
         }
 
         /// <summary>
+        /// (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+        /// * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+        /// * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+        /// </summary>
+        [Input("deletionSchedule")]
+        public Input<string>? DeletionSchedule { get; set; }
+
+        /// <summary>
         /// (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
@@ -383,6 +403,14 @@ namespace Pulumi.Oci.RecoveryMod
         }
 
         /// <summary>
+        /// (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+        /// * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+        /// * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+        /// </summary>
+        [Input("deletionSchedule")]
+        public Input<string>? DeletionSchedule { get; set; }
+
+        /// <summary>
         /// (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
@@ -401,10 +429,7 @@ namespace Pulumi.Oci.RecoveryMod
         }
 
         /// <summary>
-        /// Indicates the protection status of the database. Allowed values are:
-        /// * HEALTHY
-        /// * WARNING
-        /// * ALERT
+        /// Indicates the protection status of the database.
         /// </summary>
         [Input("health")]
         public Input<string>? Health { get; set; }
@@ -460,6 +485,12 @@ namespace Pulumi.Oci.RecoveryMod
                 _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
             }
         }
+
+        /// <summary>
+        /// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        /// </summary>
+        [Input("policyLockedDateTime")]
+        public Input<string>? PolicyLockedDateTime { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of the protection policy associated with the protected database.

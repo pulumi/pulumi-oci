@@ -40,6 +40,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				PolicyLockedDateTime: pulumi.Any(protectionPolicyPolicyLockedDateTime),
 //			})
 //			if err != nil {
 //				return err
@@ -69,21 +70,23 @@ type ProtectionPolicy struct {
 	// (Updatable) A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
 	IsPredefinedPolicy pulumi.BoolOutput `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The current state of the protection policy. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	// * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+	// * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+	// * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+	// * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+	// * However, you are only allowed to increase the retention period on or after the retention lock date.
+	// * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	PolicyLockedDateTime pulumi.StringOutput `pulumi:"policyLockedDateTime"`
+	// The current state of the protection policy.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -141,21 +144,23 @@ type protectionPolicyState struct {
 	// (Updatable) A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
 	IsPredefinedPolicy *bool `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The current state of the protection policy. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	// * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+	// * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+	// * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+	// * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+	// * However, you are only allowed to increase the retention period on or after the retention lock date.
+	// * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	PolicyLockedDateTime *string `pulumi:"policyLockedDateTime"`
+	// The current state of the protection policy.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -175,21 +180,23 @@ type ProtectionPolicyState struct {
 	// (Updatable) A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
 	IsPredefinedPolicy pulumi.BoolPtrInput
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// The current state of the protection policy. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	// * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+	// * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+	// * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+	// * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+	// * However, you are only allowed to increase the retention period on or after the retention lock date.
+	// * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	PolicyLockedDateTime pulumi.StringPtrInput
+	// The current state of the protection policy.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapInput
@@ -213,10 +220,18 @@ type protectionPolicyArgs struct {
 	// (Updatable) A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	// * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+	// * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+	// * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+	// * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+	// * However, you are only allowed to increase the retention period on or after the retention lock date.
+	// * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	PolicyLockedDateTime *string `pulumi:"policyLockedDateTime"`
 }
 
 // The set of arguments for constructing a ProtectionPolicy resource.
@@ -230,10 +245,18 @@ type ProtectionPolicyArgs struct {
 	// (Updatable) A user provided name for the protection policy. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput
+	// (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	// * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+	// * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+	// * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+	// * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+	// * However, you are only allowed to increase the retention period on or after the retention lock date.
+	// * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	PolicyLockedDateTime pulumi.StringPtrInput
 }
 
 func (ProtectionPolicyArgs) ElementType() reflect.Type {
@@ -344,9 +367,6 @@ func (o ProtectionPolicyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ProtectionPolicyOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ProtectionPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -361,13 +381,21 @@ func (o ProtectionPolicyOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The current state of the protection policy. Allowed values are:
-// * CREATING
-// * UPDATING
-// * ACTIVE
-// * DELETING
-// * DELETED
-// * FAILED
+// (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+// * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+// * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+// * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+// * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+// * However, you are only allowed to increase the retention period on or after the retention lock date.
+// * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ProtectionPolicyOutput) PolicyLockedDateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringOutput { return v.PolicyLockedDateTime }).(pulumi.StringOutput)
+}
+
+// The current state of the protection policy.
 func (o ProtectionPolicyOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProtectionPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

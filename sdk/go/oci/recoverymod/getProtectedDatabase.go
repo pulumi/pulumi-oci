@@ -67,15 +67,13 @@ type LookupProtectedDatabaseResult struct {
 	// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName string `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
+	DeletionSchedule string                 `pulumi:"deletionSchedule"`
 	// The protected database name. You can change the displayName. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Indicates the protection status of the database. Allowed values are:
-	// * HEALTHY
-	// * WARNING
-	// * ALERT
+	// Indicates the protection status of the database.
 	Health string `pulumi:"health"`
 	// A message describing the current health of the protected database.
 	HealthDetails string `pulumi:"healthDetails"`
@@ -88,9 +86,11 @@ type LookupProtectedDatabaseResult struct {
 	// Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Backup performance and storage utilization metrics for the protected database.
-	Metrics             []GetProtectedDatabaseMetric `pulumi:"metrics"`
-	Password            string                       `pulumi:"password"`
-	ProtectedDatabaseId string                       `pulumi:"protectedDatabaseId"`
+	Metrics  []GetProtectedDatabaseMetric `pulumi:"metrics"`
+	Password string                       `pulumi:"password"`
+	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	PolicyLockedDateTime string `pulumi:"policyLockedDateTime"`
+	ProtectedDatabaseId  string `pulumi:"protectedDatabaseId"`
 	// The OCID of the protection policy associated with the protected database.
 	ProtectionPolicyId string `pulumi:"protectionPolicyId"`
 	// List of recovery service subnet resources associated with the protected database.
@@ -170,6 +170,10 @@ func (o LookupProtectedDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupProtectedDatabaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
+func (o LookupProtectedDatabaseResultOutput) DeletionSchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.DeletionSchedule }).(pulumi.StringOutput)
+}
+
 // The protected database name. You can change the displayName. Avoid entering confidential information.
 func (o LookupProtectedDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -180,10 +184,7 @@ func (o LookupProtectedDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupProtectedDatabaseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Indicates the protection status of the database. Allowed values are:
-// * HEALTHY
-// * WARNING
-// * ALERT
+// Indicates the protection status of the database.
 func (o LookupProtectedDatabaseResultOutput) Health() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.Health }).(pulumi.StringOutput)
 }
@@ -220,6 +221,11 @@ func (o LookupProtectedDatabaseResultOutput) Metrics() GetProtectedDatabaseMetri
 
 func (o LookupProtectedDatabaseResultOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+func (o LookupProtectedDatabaseResultOutput) PolicyLockedDateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) string { return v.PolicyLockedDateTime }).(pulumi.StringOutput)
 }
 
 func (o LookupProtectedDatabaseResultOutput) ProtectedDatabaseId() pulumi.StringOutput {

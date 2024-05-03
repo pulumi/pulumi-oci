@@ -40,12 +40,12 @@ public final class GetManagedMySqlDatabaseResult {
      */
     private Integer heatWaveMemorySize;
     /**
-     * @return Shape of the nodes in the HeatWave cluster.
+     * @return The shape of the nodes in the HeatWave cluster.
      * 
      */
     private String heatWaveNodeShape;
     /**
-     * @return The information about an individual HeatWave nodes in the cluster.
+     * @return The information about individual HeatWave nodes in the cluster.
      * 
      */
     private List<GetManagedMySqlDatabaseHeatWaveNode> heatWaveNodes;
@@ -55,17 +55,17 @@ public final class GetManagedMySqlDatabaseResult {
      */
     private String id;
     /**
-     * @return If the HeatWave cluster is active or not.
+     * @return Indicates whether the HeatWave cluster is active or not.
      * 
      */
     private Boolean isHeatWaveActive;
     /**
-     * @return If HeatWave is enabled for this db system or not.
+     * @return Indicates whether HeatWave is enabled for the MySQL Database System or not.
      * 
      */
     private Boolean isHeatWaveEnabled;
     /**
-     * @return If HeatWave Lakehouse is enabled for the db system or not.
+     * @return Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
      * 
      */
     private Boolean isLakehouseEnabled;
@@ -76,7 +76,7 @@ public final class GetManagedMySqlDatabaseResult {
      */
     private String name;
     /**
-     * @return The date and time the node was created.
+     * @return The date and time the HeatWave node was created.
      * 
      */
     private String timeCreated;
@@ -123,14 +123,14 @@ public final class GetManagedMySqlDatabaseResult {
         return this.heatWaveMemorySize;
     }
     /**
-     * @return Shape of the nodes in the HeatWave cluster.
+     * @return The shape of the nodes in the HeatWave cluster.
      * 
      */
     public String heatWaveNodeShape() {
         return this.heatWaveNodeShape;
     }
     /**
-     * @return The information about an individual HeatWave nodes in the cluster.
+     * @return The information about individual HeatWave nodes in the cluster.
      * 
      */
     public List<GetManagedMySqlDatabaseHeatWaveNode> heatWaveNodes() {
@@ -144,21 +144,21 @@ public final class GetManagedMySqlDatabaseResult {
         return this.id;
     }
     /**
-     * @return If the HeatWave cluster is active or not.
+     * @return Indicates whether the HeatWave cluster is active or not.
      * 
      */
     public Boolean isHeatWaveActive() {
         return this.isHeatWaveActive;
     }
     /**
-     * @return If HeatWave is enabled for this db system or not.
+     * @return Indicates whether HeatWave is enabled for the MySQL Database System or not.
      * 
      */
     public Boolean isHeatWaveEnabled() {
         return this.isHeatWaveEnabled;
     }
     /**
-     * @return If HeatWave Lakehouse is enabled for the db system or not.
+     * @return Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
      * 
      */
     public Boolean isLakehouseEnabled() {
@@ -175,7 +175,7 @@ public final class GetManagedMySqlDatabaseResult {
         return this.name;
     }
     /**
-     * @return The date and time the node was created.
+     * @return The date and time the HeatWave node was created.
      * 
      */
     public String timeCreated() {

@@ -73,15 +73,11 @@ type LookupProtectionPolicyResult struct {
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
 	IsPredefinedPolicy bool `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails   string `pulumi:"lifecycleDetails"`
-	ProtectionPolicyId string `pulumi:"protectionPolicyId"`
-	// The current state of the protection policy. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	PolicyLockedDateTime string `pulumi:"policyLockedDateTime"`
+	ProtectionPolicyId   string `pulumi:"protectionPolicyId"`
+	// The current state of the protection policy.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -169,17 +165,16 @@ func (o LookupProtectionPolicyResultOutput) LifecycleDetails() pulumi.StringOutp
 	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+func (o LookupProtectionPolicyResultOutput) PolicyLockedDateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.PolicyLockedDateTime }).(pulumi.StringOutput)
+}
+
 func (o LookupProtectionPolicyResultOutput) ProtectionPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.ProtectionPolicyId }).(pulumi.StringOutput)
 }
 
-// The current state of the protection policy. Allowed values are:
-// * CREATING
-// * UPDATING
-// * ACTIVE
-// * DELETING
-// * DELETED
-// * FAILED
+// The current state of the protection policy.
 func (o LookupProtectionPolicyResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProtectionPolicyResult) string { return v.State }).(pulumi.StringOutput)
 }

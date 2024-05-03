@@ -96,10 +96,6 @@ export class MaskingPolicy extends pulumi.CustomResource {
 
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly addMaskingColumnsFromSdmTrigger!: pulumi.Output<number | undefined>;
     /**
@@ -126,6 +122,14 @@ export class MaskingPolicy extends pulumi.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly generateHealthReportTrigger!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      */
@@ -187,6 +191,7 @@ export class MaskingPolicy extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["generateHealthReportTrigger"] = state ? state.generateHealthReportTrigger : undefined;
             resourceInputs["isDropTempTablesEnabled"] = state ? state.isDropTempTablesEnabled : undefined;
             resourceInputs["isRedoLoggingEnabled"] = state ? state.isRedoLoggingEnabled : undefined;
             resourceInputs["isRefreshStatsEnabled"] = state ? state.isRefreshStatsEnabled : undefined;
@@ -212,6 +217,7 @@ export class MaskingPolicy extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["generateHealthReportTrigger"] = args ? args.generateHealthReportTrigger : undefined;
             resourceInputs["isDropTempTablesEnabled"] = args ? args.isDropTempTablesEnabled : undefined;
             resourceInputs["isRedoLoggingEnabled"] = args ? args.isRedoLoggingEnabled : undefined;
             resourceInputs["isRefreshStatsEnabled"] = args ? args.isRefreshStatsEnabled : undefined;
@@ -234,10 +240,6 @@ export class MaskingPolicy extends pulumi.CustomResource {
 export interface MaskingPolicyState {
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     addMaskingColumnsFromSdmTrigger?: pulumi.Input<number>;
     /**
@@ -264,6 +266,14 @@ export interface MaskingPolicyState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    generateHealthReportTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      */
@@ -312,10 +322,6 @@ export interface MaskingPolicyState {
 export interface MaskingPolicyArgs {
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     addMaskingColumnsFromSdmTrigger?: pulumi.Input<number>;
     /**
@@ -342,6 +348,14 @@ export interface MaskingPolicyArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    generateHealthReportTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      */

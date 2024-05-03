@@ -82,6 +82,8 @@ type LookupExternalDbSystemDiscoveryResult struct {
 	ResourceId string `pulumi:"resourceId"`
 	// The current lifecycle state of the external DB system discovery resource.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the external DB system discovery was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the external DB system discovery was last updated.
@@ -191,6 +193,11 @@ func (o LookupExternalDbSystemDiscoveryResultOutput) ResourceId() pulumi.StringO
 // The current lifecycle state of the external DB system discovery resource.
 func (o LookupExternalDbSystemDiscoveryResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupExternalDbSystemDiscoveryResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupExternalDbSystemDiscoveryResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The date and time the external DB system discovery was created.

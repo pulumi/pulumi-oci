@@ -153,6 +153,7 @@ class _ExternalExadataStorageConnectorState:
                  state: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  storage_server_id: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None):
@@ -176,6 +177,7 @@ class _ExternalExadataStorageConnectorState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
         :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[str] version: The version of the Exadata resource.
@@ -208,6 +210,8 @@ class _ExternalExadataStorageConnectorState:
             pulumi.set(__self__, "status", status)
         if storage_server_id is not None:
             pulumi.set(__self__, "storage_server_id", storage_server_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -386,6 +390,18 @@ class _ExternalExadataStorageConnectorState:
     @storage_server_id.setter
     def storage_server_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "storage_server_id", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -590,6 +606,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["status"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["version"] = None
@@ -617,6 +634,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
             storage_server_id: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[str]] = None) -> 'ExternalExadataStorageConnector':
@@ -645,6 +663,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The timestamp of the creation of the Exadata resource.
         :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[str] version: The version of the Exadata resource.
@@ -667,6 +686,7 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["status"] = status
         __props__.__dict__["storage_server_id"] = storage_server_id
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["version"] = version
@@ -787,6 +807,14 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "storage_server_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

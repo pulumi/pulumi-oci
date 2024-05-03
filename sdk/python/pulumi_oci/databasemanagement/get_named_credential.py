@@ -22,7 +22,7 @@ class GetNamedCredentialResult:
     """
     A collection of values returned by getNamedCredential.
     """
-    def __init__(__self__, associated_resource=None, compartment_id=None, contents=None, defined_tags=None, description=None, freeform_tags=None, id=None, lifecycle_details=None, name=None, named_credential_id=None, scope=None, state=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, associated_resource=None, compartment_id=None, contents=None, defined_tags=None, description=None, freeform_tags=None, id=None, lifecycle_details=None, name=None, named_credential_id=None, scope=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None):
         if associated_resource and not isinstance(associated_resource, str):
             raise TypeError("Expected argument 'associated_resource' to be a str")
         pulumi.set(__self__, "associated_resource", associated_resource)
@@ -59,6 +59,9 @@ class GetNamedCredentialResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -163,6 +166,14 @@ class GetNamedCredentialResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -205,6 +216,7 @@ class AwaitableGetNamedCredentialResult(GetNamedCredentialResult):
             named_credential_id=self.named_credential_id,
             scope=self.scope,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
             type=self.type)
@@ -247,6 +259,7 @@ def get_named_credential(named_credential_id: Optional[str] = None,
         named_credential_id=pulumi.get(__ret__, 'named_credential_id'),
         scope=pulumi.get(__ret__, 'scope'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))

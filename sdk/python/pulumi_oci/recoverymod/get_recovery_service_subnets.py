@@ -87,13 +87,7 @@ class GetRecoveryServiceSubnetsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the recovery service subnet. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
+        The current state of the recovery service subnet.
         """
         return pulumi.get(self, "state")
 
@@ -150,13 +144,7 @@ def get_recovery_service_subnets(compartment_id: Optional[str] = None,
     :param str compartment_id: The compartment OCID.
     :param str display_name: A filter to return only resources that match the entire 'displayname' given.
     :param str id: The recovery service subnet OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-           * CREATING
-           * UPDATING
-           * ACTIVE
-           * DELETING
-           * DELETED
-           * FAILED
+    :param str state: A filter to return only the resources that match the specified lifecycle state.
     :param str vcn_id: The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
     """
     __args__ = dict()
@@ -209,13 +197,7 @@ def get_recovery_service_subnets_output(compartment_id: Optional[pulumi.Input[st
     :param str compartment_id: The compartment OCID.
     :param str display_name: A filter to return only resources that match the entire 'displayname' given.
     :param str id: The recovery service subnet OCID.
-    :param str state: A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-           * CREATING
-           * UPDATING
-           * ACTIVE
-           * DELETING
-           * DELETED
-           * FAILED
+    :param str state: A filter to return only the resources that match the specified lifecycle state.
     :param str vcn_id: The OCID of the virtual cloud network (VCN) associated with the recovery service subnet.
     """
     ...

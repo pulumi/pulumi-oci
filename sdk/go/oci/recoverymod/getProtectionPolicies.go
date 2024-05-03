@@ -82,13 +82,7 @@ type GetProtectionPoliciesResult struct {
 	// The list of protection_policy_collection.
 	ProtectionPolicyCollections []GetProtectionPoliciesProtectionPolicyCollection `pulumi:"protectionPolicyCollections"`
 	ProtectionPolicyId          *string                                           `pulumi:"protectionPolicyId"`
-	// The current state of the protection policy. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// The current state of the protection policy.
 	State *string `pulumi:"state"`
 }
 
@@ -173,13 +167,7 @@ func (o GetProtectionPoliciesResultOutput) ProtectionPolicyId() pulumi.StringPtr
 	return o.ApplyT(func(v GetProtectionPoliciesResult) *string { return v.ProtectionPolicyId }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the protection policy. Allowed values are:
-// * CREATING
-// * UPDATING
-// * ACTIVE
-// * DELETING
-// * DELETED
-// * FAILED
+// The current state of the protection policy.
 func (o GetProtectionPoliciesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetProtectionPoliciesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

@@ -30,6 +30,7 @@ public final class GetExternalDatabasesResult {
      * 
      */
     private List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections;
+    private @Nullable String externalDatabaseId;
     private @Nullable String externalDbSystemId;
     private @Nullable List<GetExternalDatabasesFilter> filters;
     /**
@@ -60,6 +61,9 @@ public final class GetExternalDatabasesResult {
     public List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections() {
         return this.externalDatabaseCollections;
     }
+    public Optional<String> externalDatabaseId() {
+        return Optional.ofNullable(this.externalDatabaseId);
+    }
     public Optional<String> externalDbSystemId() {
         return Optional.ofNullable(this.externalDbSystemId);
     }
@@ -86,6 +90,7 @@ public final class GetExternalDatabasesResult {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections;
+        private @Nullable String externalDatabaseId;
         private @Nullable String externalDbSystemId;
         private @Nullable List<GetExternalDatabasesFilter> filters;
         private String id;
@@ -95,6 +100,7 @@ public final class GetExternalDatabasesResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.externalDatabaseCollections = defaults.externalDatabaseCollections;
+    	      this.externalDatabaseId = defaults.externalDatabaseId;
     	      this.externalDbSystemId = defaults.externalDbSystemId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -124,6 +130,12 @@ public final class GetExternalDatabasesResult {
             return externalDatabaseCollections(List.of(externalDatabaseCollections));
         }
         @CustomType.Setter
+        public Builder externalDatabaseId(@Nullable String externalDatabaseId) {
+
+            this.externalDatabaseId = externalDatabaseId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder externalDbSystemId(@Nullable String externalDbSystemId) {
 
             this.externalDbSystemId = externalDbSystemId;
@@ -151,6 +163,7 @@ public final class GetExternalDatabasesResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
             _resultValue.externalDatabaseCollections = externalDatabaseCollections;
+            _resultValue.externalDatabaseId = externalDatabaseId;
             _resultValue.externalDbSystemId = externalDbSystemId;
             _resultValue.filters = filters;
             _resultValue.id = id;

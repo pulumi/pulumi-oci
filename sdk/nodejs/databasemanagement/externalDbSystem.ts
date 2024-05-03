@@ -122,6 +122,10 @@ export class ExternalDbSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The date and time the external DB system was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -155,6 +159,7 @@ export class ExternalDbSystem extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["stackMonitoringConfig"] = state ? state.stackMonitoringConfig : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -177,6 +182,7 @@ export class ExternalDbSystem extends pulumi.CustomResource {
             resourceInputs["isCluster"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -237,6 +243,10 @@ export interface ExternalDbSystemState {
      * The current lifecycle state of the external DB system resource.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The date and time the external DB system was created.
      */

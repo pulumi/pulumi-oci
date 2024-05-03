@@ -146,6 +146,7 @@ class _ExternalDbSystemState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  stack_monitoring_config: Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
@@ -162,6 +163,7 @@ class _ExternalDbSystemState:
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs'] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
         :param pulumi.Input[str] state: The current lifecycle state of the external DB system resource.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the external DB system was created.
         :param pulumi.Input[str] time_updated: The date and time the external DB system was last updated.
         """
@@ -189,6 +191,8 @@ class _ExternalDbSystemState:
             pulumi.set(__self__, "stack_monitoring_config", stack_monitoring_config)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -337,6 +341,18 @@ class _ExternalDbSystemState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -515,6 +531,7 @@ class ExternalDbSystem(pulumi.CustomResource):
             __props__.__dict__["is_cluster"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(ExternalDbSystem, __self__).__init__(
@@ -539,6 +556,7 @@ class ExternalDbSystem(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             stack_monitoring_config: Optional[pulumi.Input[pulumi.InputType['ExternalDbSystemStackMonitoringConfigArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'ExternalDbSystem':
         """
@@ -560,6 +578,7 @@ class ExternalDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[pulumi.InputType['ExternalDbSystemStackMonitoringConfigArgs']] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
         :param pulumi.Input[str] state: The current lifecycle state of the external DB system resource.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the external DB system was created.
         :param pulumi.Input[str] time_updated: The date and time the external DB system was last updated.
         """
@@ -579,6 +598,7 @@ class ExternalDbSystem(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["stack_monitoring_config"] = stack_monitoring_config
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return ExternalDbSystem(resource_name, opts=opts, __props__=__props__)
@@ -678,6 +698,14 @@ class ExternalDbSystem(pulumi.CustomResource):
         The current lifecycle state of the external DB system resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

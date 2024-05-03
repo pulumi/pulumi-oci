@@ -96,6 +96,7 @@ class _ManagedDatabaseState:
                  name: Optional[pulumi.Input[str]] = None,
                  parent_container_id: Optional[pulumi.Input[str]] = None,
                  storage_system_id: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  workload_type: Optional[pulumi.Input[str]] = None):
         """
@@ -121,6 +122,7 @@ class _ManagedDatabaseState:
         :param pulumi.Input[str] name: The name of the Managed Database.
         :param pulumi.Input[str] parent_container_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
         :param pulumi.Input[str] storage_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Managed Database was created.
         :param pulumi.Input[str] workload_type: The workload type of the Autonomous Database.
         """
@@ -158,6 +160,8 @@ class _ManagedDatabaseState:
             pulumi.set(__self__, "parent_container_id", parent_container_id)
         if storage_system_id is not None:
             pulumi.set(__self__, "storage_system_id", storage_system_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if workload_type is not None:
@@ -372,6 +376,18 @@ class _ManagedDatabaseState:
         pulumi.set(self, "storage_system_id", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
@@ -493,6 +509,7 @@ class ManagedDatabase(pulumi.CustomResource):
             __props__.__dict__["name"] = None
             __props__.__dict__["parent_container_id"] = None
             __props__.__dict__["storage_system_id"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["workload_type"] = None
         super(ManagedDatabase, __self__).__init__(
@@ -522,6 +539,7 @@ class ManagedDatabase(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             parent_container_id: Optional[pulumi.Input[str]] = None,
             storage_system_id: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             workload_type: Optional[pulumi.Input[str]] = None) -> 'ManagedDatabase':
         """
@@ -552,6 +570,7 @@ class ManagedDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the Managed Database.
         :param pulumi.Input[str] parent_container_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
         :param pulumi.Input[str] storage_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the Managed Database was created.
         :param pulumi.Input[str] workload_type: The workload type of the Autonomous Database.
         """
@@ -576,6 +595,7 @@ class ManagedDatabase(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["parent_container_id"] = parent_container_id
         __props__.__dict__["storage_system_id"] = storage_system_id
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["workload_type"] = workload_type
         return ManagedDatabase(resource_name, opts=opts, __props__=__props__)
@@ -719,6 +739,14 @@ class ManagedDatabase(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
         """
         return pulumi.get(self, "storage_system_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

@@ -30,6 +30,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DisplayName = externalDatabaseDisplayName,
+        ///         ExternalDatabaseId = testExternalDatabase.Id,
         ///         ExternalDbSystemId = testExternalDbSystem.Id,
         ///     });
         /// 
@@ -58,6 +59,7 @@ namespace Pulumi.Oci.DatabaseManagement
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DisplayName = externalDatabaseDisplayName,
+        ///         ExternalDatabaseId = testExternalDatabase.Id,
         ///         ExternalDbSystemId = testExternalDbSystem.Id,
         ///     });
         /// 
@@ -82,6 +84,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+        /// </summary>
+        [Input("externalDatabaseId")]
+        public string? ExternalDatabaseId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -116,6 +124,12 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+        /// </summary>
+        [Input("externalDatabaseId")]
+        public Input<string>? ExternalDatabaseId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -153,6 +167,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// The list of external_database_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionResult> ExternalDatabaseCollections;
+        public readonly string? ExternalDatabaseId;
         public readonly string? ExternalDbSystemId;
         public readonly ImmutableArray<Outputs.GetExternalDatabasesFilterResult> Filters;
         /// <summary>
@@ -168,6 +183,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<Outputs.GetExternalDatabasesExternalDatabaseCollectionResult> externalDatabaseCollections,
 
+            string? externalDatabaseId,
+
             string? externalDbSystemId,
 
             ImmutableArray<Outputs.GetExternalDatabasesFilterResult> filters,
@@ -177,6 +194,7 @@ namespace Pulumi.Oci.DatabaseManagement
             CompartmentId = compartmentId;
             DisplayName = displayName;
             ExternalDatabaseCollections = externalDatabaseCollections;
+            ExternalDatabaseId = externalDatabaseId;
             ExternalDbSystemId = externalDbSystemId;
             Filters = filters;
             Id = id;

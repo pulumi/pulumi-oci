@@ -38,19 +38,21 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        /// </summary>
+        public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
+        /// A filter to return only the resources that match the specified lifecycle state.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The OCID of the subnet used as the recovery service subnet.
+        /// Deprecated. One of the subnets associated with the Recovery Service subnet.
         /// </summary>
         public readonly string SubnetId;
+        /// <summary>
+        /// A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+        /// </summary>
+        public readonly ImmutableArray<string> Subnets;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         /// </summary>
@@ -82,9 +84,13 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<string> nsgIds,
+
             string state,
 
             string subnetId,
+
+            ImmutableArray<string> subnets,
 
             ImmutableDictionary<string, object> systemTags,
 
@@ -100,8 +106,10 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            NsgIds = nsgIds;
             State = state;
             SubnetId = subnetId;
+            Subnets = subnets;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

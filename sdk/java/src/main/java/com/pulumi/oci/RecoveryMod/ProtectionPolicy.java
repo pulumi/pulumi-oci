@@ -52,6 +52,7 @@ import javax.annotation.Nullable;
  *             .displayName(protectionPolicyDisplayName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .policyLockedDateTime(protectionPolicyPolicyLockedDateTime)
  *             .build());
  * 
  *     }
@@ -129,18 +130,12 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
@@ -175,26 +170,46 @@ public class ProtectionPolicy extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The current state of the protection policy. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+     * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to &#39;2023-08-15T21:00:00.600Z&#39; (Aug 15, 2023, 9:00 pm), or greater.
+     * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+     * * However, you are only allowed to increase the retention period on or after the retention lock date.
+     * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="policyLockedDateTime", refs={String.class}, tree="[0]")
+    private Output<String> policyLockedDateTime;
+
+    /**
+     * @return (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+     * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to &#39;2023-08-15T21:00:00.600Z&#39; (Aug 15, 2023, 9:00 pm), or greater.
+     * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+     * * However, you are only allowed to increase the retention period on or after the retention lock date.
+     * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> policyLockedDateTime() {
+        return this.policyLockedDateTime;
+    }
+    /**
+     * The current state of the protection policy.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the protection policy. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return The current state of the protection policy.
      * 
      */
     public Output<String> state() {

@@ -16,15 +16,16 @@ class RecoveryServiceSubnetArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
-                 subnet_id: pulumi.Input[str],
                  vcn_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 subnet_id: Optional[pulumi.Input[str]] = None,
+                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a RecoveryServiceSubnet resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
         :param pulumi.Input[str] display_name: (Updatable) A user-provided name for the recovery service subnet. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
         :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
                
                
@@ -32,15 +33,26 @@ class RecoveryServiceSubnetArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        :param pulumi.Input[str] subnet_id: Deprecated. One of the subnets associated with the Recovery Service subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnets: (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if subnet_id is not None:
+            warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""", DeprecationWarning)
+            pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if subnets is not None:
+            pulumi.set(__self__, "subnets", subnets)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -65,18 +77,6 @@ class RecoveryServiceSubnetArgs:
     @display_name.setter
     def display_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "display_name", value)
-
-    @property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
-        """
-        return pulumi.get(self, "subnet_id")
-
-    @subnet_id.setter
-    def subnet_id(self, value: pulumi.Input[str]):
-        pulumi.set(self, "subnet_id", value)
 
     @property
     @pulumi.getter(name="vcnId")
@@ -118,6 +118,45 @@ class RecoveryServiceSubnetArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Deprecated. One of the subnets associated with the Recovery Service subnet.
+        """
+        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
+
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter
+    def subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+        """
+        return pulumi.get(self, "subnets")
+
+    @subnets.setter
+    def subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "subnets", value)
+
 
 @pulumi.input_type
 class _RecoveryServiceSubnetState:
@@ -127,8 +166,10 @@ class _RecoveryServiceSubnetState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -140,14 +181,10 @@ class _RecoveryServiceSubnetState:
         :param pulumi.Input[str] display_name: (Updatable) A user-provided name for the recovery service subnet. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-        :param pulumi.Input[str] state: The current state of the recovery service subnet. Allowed values are:
-               * CREATING
-               * UPDATING
-               * ACTIVE
-               * DELETING
-               * DELETED
-               * FAILED
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        :param pulumi.Input[str] state: The current state of the recovery service subnet.
+        :param pulumi.Input[str] subnet_id: Deprecated. One of the subnets associated with the Recovery Service subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnets: (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         :param pulumi.Input[str] time_created: An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
         :param pulumi.Input[str] time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
@@ -167,10 +204,17 @@ class _RecoveryServiceSubnetState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
+            warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""", DeprecationWarning)
+            pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
+        if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subnets is not None:
+            pulumi.set(__self__, "subnets", subnets)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
@@ -241,16 +285,22 @@ class _RecoveryServiceSubnetState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the recovery service subnet. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
+        The current state of the recovery service subnet.
         """
         return pulumi.get(self, "state")
 
@@ -262,13 +312,28 @@ class _RecoveryServiceSubnetState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        Deprecated. One of the subnets associated with the Recovery Service subnet.
         """
+        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
+
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter
+    def subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+        """
+        return pulumi.get(self, "subnets")
+
+    @subnets.setter
+    def subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "subnets", value)
 
     @property
     @pulumi.getter(name="systemTags")
@@ -332,7 +397,9 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -349,14 +416,16 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         test_recovery_service_subnet = oci.recovery_mod.RecoveryServiceSubnet("test_recovery_service_subnet",
             compartment_id=compartment_id,
             display_name=recovery_service_subnet_display_name,
-            subnet_id=test_subnet["id"],
             vcn_id=test_vcn["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            nsg_ids=recovery_service_subnet_nsg_ids,
+            subnet_id=test_subnet["id"],
+            subnets=recovery_service_subnet_subnets)
         ```
 
         ## Import
@@ -373,7 +442,9 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         :param pulumi.Input[str] display_name: (Updatable) A user-provided name for the recovery service subnet. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        :param pulumi.Input[str] subnet_id: Deprecated. One of the subnets associated with the Recovery Service subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnets: (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
         :param pulumi.Input[str] vcn_id: The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
                
                
@@ -400,14 +471,16 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         test_recovery_service_subnet = oci.recovery_mod.RecoveryServiceSubnet("test_recovery_service_subnet",
             compartment_id=compartment_id,
             display_name=recovery_service_subnet_display_name,
-            subnet_id=test_subnet["id"],
             vcn_id=test_vcn["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            nsg_ids=recovery_service_subnet_nsg_ids,
+            subnet_id=test_subnet["id"],
+            subnets=recovery_service_subnet_subnets)
         ```
 
         ## Import
@@ -437,7 +510,9 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subnets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -456,9 +531,9 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if subnet_id is None and not opts.urn:
-                raise TypeError("Missing required property 'subnet_id'")
+            __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subnets"] = subnets
             if vcn_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vcn_id'")
             __props__.__dict__["vcn_id"] = vcn_id
@@ -482,8 +557,10 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
+            subnets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -500,14 +577,10 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-provided name for the recovery service subnet. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
-        :param pulumi.Input[str] state: The current state of the recovery service subnet. Allowed values are:
-               * CREATING
-               * UPDATING
-               * ACTIVE
-               * DELETING
-               * DELETED
-               * FAILED
-        :param pulumi.Input[str] subnet_id: The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        :param pulumi.Input[str] state: The current state of the recovery service subnet.
+        :param pulumi.Input[str] subnet_id: Deprecated. One of the subnets associated with the Recovery Service subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] subnets: (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         :param pulumi.Input[str] time_created: An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
         :param pulumi.Input[str] time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
@@ -526,8 +599,10 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subnets"] = subnets
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -575,16 +650,18 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the recovery service subnet. Allowed values are:
-        * CREATING
-        * UPDATING
-        * ACTIVE
-        * DELETING
-        * DELETED
-        * FAILED
+        The current state of the recovery service subnet.
         """
         return pulumi.get(self, "state")
 
@@ -592,9 +669,20 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        Deprecated. One of the subnets associated with the Recovery Service subnet.
         """
+        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""", DeprecationWarning)
+        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
+
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter
+    def subnets(self) -> pulumi.Output[Sequence[str]]:
+        """
+        (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+        """
+        return pulumi.get(self, "subnets")
 
     @property
     @pulumi.getter(name="systemTags")

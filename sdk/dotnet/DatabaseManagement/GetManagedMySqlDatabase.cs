@@ -120,11 +120,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly int HeatWaveMemorySize;
         /// <summary>
-        /// Shape of the nodes in the HeatWave cluster.
+        /// The shape of the nodes in the HeatWave cluster.
         /// </summary>
         public readonly string HeatWaveNodeShape;
         /// <summary>
-        /// The information about an individual HeatWave nodes in the cluster.
+        /// The information about individual HeatWave nodes in the cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseHeatWaveNodeResult> HeatWaveNodes;
         /// <summary>
@@ -132,15 +132,15 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// If the HeatWave cluster is active or not.
+        /// Indicates whether the HeatWave cluster is active or not.
         /// </summary>
         public readonly bool IsHeatWaveActive;
         /// <summary>
-        /// If HeatWave is enabled for this db system or not.
+        /// Indicates whether HeatWave is enabled for the MySQL Database System or not.
         /// </summary>
         public readonly bool IsHeatWaveEnabled;
         /// <summary>
-        /// If HeatWave Lakehouse is enabled for the db system or not.
+        /// Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
         /// </summary>
         public readonly bool IsLakehouseEnabled;
         public readonly string ManagedMySqlDatabaseId;
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The date and time the node was created.
+        /// The date and time the HeatWave node was created.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>

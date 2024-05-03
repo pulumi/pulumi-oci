@@ -20560,6 +20560,30 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetMaskingPolicyHealthReportLogsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMaskingPolicyHealthReportLogsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMaskingPolicyHealthReportsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMaskingPolicyHealthReportsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMaskingPolicyMaskingObjectsFilter {
         name: string;
         regex?: boolean;
@@ -27000,6 +27024,111 @@ export namespace Database {
 }
 
 export namespace DatabaseManagement {
+    export interface DatabaseDbmFeaturesManagementFeatureDetails {
+        /**
+         * The connector details required to connect to an Oracle cloud database.
+         */
+        connectorDetails?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails>;
+        /**
+         * The connection details required to connect to the database.
+         */
+        databaseConnectionDetails?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails>;
+        /**
+         * The name of the Database Management feature.
+         */
+        feature: pulumi.Input<string>;
+        /**
+         * Indicates whether the pluggable database can be enabled automatically.
+         */
+        isAutoEnablePluggableDatabase?: pulumi.Input<boolean>;
+        /**
+         * The management type for the database.
+         */
+        managementType?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails {
+        /**
+         * The list of supported connection types:
+         * * PE: Private endpoint
+         * * MACS: Management agent
+         * * EXTERNAL: External database connector
+         */
+        connectorType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+         */
+        databaseConnectorId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+         */
+        managementAgentId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
+        privateEndPointId?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails {
+        /**
+         * The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+         */
+        connectionCredentials?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials>;
+        /**
+         * The details of the Oracle Database connection string.
+         */
+        connectionString?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString>;
+    }
+
+    export interface DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials {
+        /**
+         * The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+         *
+         * For example: inventorydb.abc112233445566778899
+         */
+        credentialName?: pulumi.Input<string>;
+        /**
+         * The type of credential used to connect to the database.
+         */
+        credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the user connecting to the database.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+         */
+        sslSecretId?: pulumi.Input<string>;
+        /**
+         * The user name used to connect to the database.
+         */
+        userName?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString {
+        /**
+         * The list of supported connection types:
+         * * BASIC: Basic connection details
+         */
+        connectionType?: pulumi.Input<string>;
+        /**
+         * The port number used to connect to the database.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * The protocol used to connect to the database.
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * The service name of the database.
+         */
+        service?: pulumi.Input<string>;
+    }
+
     export interface ExternalAsmServicedDatabase {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
@@ -28241,6 +28370,10 @@ export namespace DatabaseManagement {
          */
         status?: pulumi.Input<string>;
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: any}>;
+        /**
          * The timestamp of the creation of the Exadata resource.
          */
         timeCreated?: pulumi.Input<string>;
@@ -28311,6 +28444,10 @@ export namespace DatabaseManagement {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
          */
         storageServerId?: pulumi.Input<string>;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: any}>;
         /**
          * The timestamp of the creation of the Exadata resource.
          */
@@ -28392,6 +28529,113 @@ export namespace DatabaseManagement {
          * Indicates whether the database is a Managed Database or not.
          */
         isManaged?: pulumi.Input<boolean>;
+    }
+
+    export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails {
+        /**
+         * The connector details required to connect to an Oracle cloud database.
+         */
+        connectorDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails>;
+        /**
+         * The name of the Database Management feature.
+         */
+        feature: pulumi.Input<string>;
+        /**
+         * The Oracle license model that applies to the external database.
+         */
+        licenseModel?: pulumi.Input<string>;
+    }
+
+    export interface ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetails {
+        /**
+         * The list of supported connection types:
+         * * PE: Private endpoint
+         * * MACS: Management agent
+         * * EXTERNAL: External database connector
+         */
+        connectorType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+         */
+        databaseConnectorId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+         */
+        managementAgentId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
+        privateEndPointId?: pulumi.Input<string>;
+    }
+
+    export interface ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails {
+        /**
+         * The connector details required to connect to an Oracle cloud database.
+         */
+        connectorDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails>;
+        /**
+         * The name of the Database Management feature.
+         */
+        feature: pulumi.Input<string>;
+        /**
+         * The Oracle license model that applies to the external database.
+         */
+        licenseModel?: pulumi.Input<string>;
+    }
+
+    export interface ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetails {
+        /**
+         * The list of supported connection types:
+         * * PE: Private endpoint
+         * * MACS: Management agent
+         * * EXTERNAL: External database connector
+         */
+        connectorType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+         */
+        databaseConnectorId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+         */
+        managementAgentId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
+        privateEndPointId?: pulumi.Input<string>;
+    }
+
+    export interface ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails {
+        /**
+         * The connector details required to connect to an Oracle cloud database.
+         */
+        connectorDetails?: pulumi.Input<inputs.DatabaseManagement.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetails>;
+        /**
+         * The name of the Database Management feature.
+         */
+        feature: pulumi.Input<string>;
+    }
+
+    export interface ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetails {
+        /**
+         * The list of supported connection types:
+         * * PE: Private endpoint
+         * * MACS: Management agent
+         * * EXTERNAL: External database connector
+         */
+        connectorType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+         */
+        databaseConnectorId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+         */
+        managementAgentId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
+        privateEndPointId?: pulumi.Input<string>;
     }
 
     export interface GetDbManagementPrivateEndpointAssociatedDatabasesFilter {
@@ -29188,6 +29432,10 @@ export namespace DatabaseManagement {
          */
         name?: pulumi.Input<string>;
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: any}>;
+        /**
          * The date and time the Managed Database was added to the group.
          */
         timeAdded?: pulumi.Input<string>;
@@ -29340,6 +29588,111 @@ export namespace DatabaseManagement {
          * (Updatable) The user name used to connect to the database.
          */
         userName: pulumi.Input<string>;
+    }
+
+    export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails {
+        /**
+         * The connector details required to connect to an Oracle cloud database.
+         */
+        connectorDetails?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails>;
+        /**
+         * The connection details required to connect to the database.
+         */
+        databaseConnectionDetails?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails>;
+        /**
+         * The name of the Database Management feature.
+         */
+        feature: pulumi.Input<string>;
+        /**
+         * Indicates whether the pluggable database can be enabled automatically.
+         */
+        isAutoEnablePluggableDatabase?: pulumi.Input<boolean>;
+        /**
+         * The management type for the database.
+         */
+        managementType?: pulumi.Input<string>;
+    }
+
+    export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails {
+        /**
+         * The list of supported connection types:
+         * * PE: Private endpoint
+         * * MACS: Management agent
+         * * EXTERNAL: External database connector
+         */
+        connectorType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+         */
+        databaseConnectorId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+         */
+        managementAgentId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         */
+        privateEndPointId?: pulumi.Input<string>;
+    }
+
+    export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails {
+        /**
+         * The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+         */
+        connectionCredentials?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials>;
+        /**
+         * The details of the Oracle Database connection string.
+         */
+        connectionString?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString>;
+    }
+
+    export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials {
+        /**
+         * The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+         *
+         * For example: inventorydb.abc112233445566778899
+         */
+        credentialName?: pulumi.Input<string>;
+        /**
+         * The type of credential used to connect to the database.
+         */
+        credentialType?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         */
+        passwordSecretId?: pulumi.Input<string>;
+        /**
+         * The role of the user connecting to the database.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+         */
+        sslSecretId?: pulumi.Input<string>;
+        /**
+         * The user name used to connect to the database.
+         */
+        userName?: pulumi.Input<string>;
+    }
+
+    export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString {
+        /**
+         * The list of supported connection types:
+         * * BASIC: Basic connection details
+         */
+        connectionType?: pulumi.Input<string>;
+        /**
+         * The port number used to connect to the database.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * The protocol used to connect to the database.
+         */
+        protocol?: pulumi.Input<string>;
+        /**
+         * The service name of the database.
+         */
+        service?: pulumi.Input<string>;
     }
 }
 
@@ -72823,6 +73176,10 @@ export namespace RecoveryMod {
          * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
          */
         isRedoLogsEnabled?: pulumi.Input<boolean>;
+        /**
+         * Number of days of redo/archive to be applied to recover database.
+         */
+        minimumRecoveryNeededInDays?: pulumi.Input<number>;
         /**
          * The maximum number of days to retain backups for a protected database.
          */

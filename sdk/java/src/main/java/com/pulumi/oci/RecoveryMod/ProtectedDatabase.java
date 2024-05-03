@@ -61,6 +61,7 @@ import javax.annotation.Nullable;
  *             .databaseId(testDatabase.id())
  *             .databaseSize(protectedDatabaseDatabaseSize)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .deletionSchedule(&#34;DELETE_AFTER_72_HOURS&#34;)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .isRedoLogsShipped(protectedDatabaseIsRedoLogsShipped)
  *             .build());
@@ -152,6 +153,24 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
+     * (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+     * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+     * 
+     */
+    @Export(name="deletionSchedule", refs={String.class}, tree="[0]")
+    private Output<String> deletionSchedule;
+
+    /**
+     * @return (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
+     * * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+     * * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+     * 
+     */
+    public Output<String> deletionSchedule() {
+        return this.deletionSchedule;
+    }
+    /**
      * (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
      * 
      */
@@ -180,20 +199,14 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Indicates the protection status of the database. Allowed values are:
-     * * HEALTHY
-     * * WARNING
-     * * ALERT
+     * Indicates the protection status of the database.
      * 
      */
     @Export(name="health", refs={String.class}, tree="[0]")
     private Output<String> health;
 
     /**
-     * @return Indicates the protection status of the database. Allowed values are:
-     * * HEALTHY
-     * * WARNING
-     * * ALERT
+     * @return Indicates the protection status of the database.
      * 
      */
     public Output<String> health() {
@@ -282,6 +295,20 @@ public class ProtectedDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> password() {
         return this.password;
+    }
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * 
+     */
+    @Export(name="policyLockedDateTime", refs={String.class}, tree="[0]")
+    private Output<String> policyLockedDateTime;
+
+    /**
+     * @return An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * 
+     */
+    public Output<String> policyLockedDateTime() {
+        return this.policyLockedDateTime;
     }
     /**
      * (Updatable) The OCID of the protection policy associated with the protected database.

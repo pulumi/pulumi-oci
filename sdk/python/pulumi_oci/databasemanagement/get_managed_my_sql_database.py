@@ -113,7 +113,7 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="heatWaveNodeShape")
     def heat_wave_node_shape(self) -> str:
         """
-        Shape of the nodes in the HeatWave cluster.
+        The shape of the nodes in the HeatWave cluster.
         """
         return pulumi.get(self, "heat_wave_node_shape")
 
@@ -121,7 +121,7 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="heatWaveNodes")
     def heat_wave_nodes(self) -> Sequence['outputs.GetManagedMySqlDatabaseHeatWaveNodeResult']:
         """
-        The information about an individual HeatWave nodes in the cluster.
+        The information about individual HeatWave nodes in the cluster.
         """
         return pulumi.get(self, "heat_wave_nodes")
 
@@ -137,7 +137,7 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="isHeatWaveActive")
     def is_heat_wave_active(self) -> bool:
         """
-        If the HeatWave cluster is active or not.
+        Indicates whether the HeatWave cluster is active or not.
         """
         return pulumi.get(self, "is_heat_wave_active")
 
@@ -145,7 +145,7 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="isHeatWaveEnabled")
     def is_heat_wave_enabled(self) -> bool:
         """
-        If HeatWave is enabled for this db system or not.
+        Indicates whether HeatWave is enabled for the MySQL Database System or not.
         """
         return pulumi.get(self, "is_heat_wave_enabled")
 
@@ -153,7 +153,7 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="isLakehouseEnabled")
     def is_lakehouse_enabled(self) -> bool:
         """
-        If HeatWave Lakehouse is enabled for the db system or not.
+        Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
         """
         return pulumi.get(self, "is_lakehouse_enabled")
 
@@ -174,7 +174,7 @@ class GetManagedMySqlDatabaseResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the node was created.
+        The date and time the HeatWave node was created.
         """
         return pulumi.get(self, "time_created")
 

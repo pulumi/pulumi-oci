@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -93,26 +94,29 @@ public final class RecoveryServiceSubnetState extends com.pulumi.resources.Resou
     }
 
     /**
-     * The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+     * 
+     */
+    @Import(name="nsgIds")
+    private @Nullable Output<List<String>> nsgIds;
+
+    /**
+     * @return (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+     * 
+     */
+    public Optional<Output<List<String>>> nsgIds() {
+        return Optional.ofNullable(this.nsgIds);
+    }
+
+    /**
+     * The current state of the recovery service subnet.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return The current state of the recovery service subnet.
      * 
      */
     public Optional<Output<String>> state() {
@@ -120,18 +124,41 @@ public final class RecoveryServiceSubnetState extends com.pulumi.resources.Resou
     }
 
     /**
-     * The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+     * Deprecated. One of the subnets associated with the Recovery Service subnet.
+     * 
+     * @deprecated
+     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
+    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+     * @return Deprecated. One of the subnets associated with the Recovery Service subnet.
+     * 
+     * @deprecated
+     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
+    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
+    }
+
+    /**
+     * (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+     * 
+     */
+    @Import(name="subnets")
+    private @Nullable Output<List<String>> subnets;
+
+    /**
+     * @return (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+     * 
+     */
+    public Optional<Output<List<String>>> subnets() {
+        return Optional.ofNullable(this.subnets);
     }
 
     /**
@@ -208,8 +235,10 @@ public final class RecoveryServiceSubnetState extends com.pulumi.resources.Resou
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.nsgIds = $.nsgIds;
         this.state = $.state;
         this.subnetId = $.subnetId;
+        this.subnets = $.subnets;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -340,13 +369,38 @@ public final class RecoveryServiceSubnetState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param state The current state of the recovery service subnet. Allowed values are:
-         * * CREATING
-         * * UPDATING
-         * * ACTIVE
-         * * DELETING
-         * * DELETED
-         * * FAILED
+         * @param nsgIds (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
+            $.nsgIds = nsgIds;
+            return this;
+        }
+
+        /**
+         * @param nsgIds (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(List<String> nsgIds) {
+            return nsgIds(Output.of(nsgIds));
+        }
+
+        /**
+         * @param nsgIds (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+
+        /**
+         * @param state The current state of the recovery service subnet.
          * 
          * @return builder
          * 
@@ -357,13 +411,7 @@ public final class RecoveryServiceSubnetState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param state The current state of the recovery service subnet. Allowed values are:
-         * * CREATING
-         * * UPDATING
-         * * ACTIVE
-         * * DELETING
-         * * DELETED
-         * * FAILED
+         * @param state The current state of the recovery service subnet.
          * 
          * @return builder
          * 
@@ -373,24 +421,63 @@ public final class RecoveryServiceSubnetState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param subnetId The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+         * @param subnetId Deprecated. One of the subnets associated with the Recovery Service subnet.
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
+         * 
          */
+        @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
             return this;
         }
 
         /**
-         * @param subnetId The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+         * @param subnetId Deprecated. One of the subnets associated with the Recovery Service subnet.
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
+         * 
+         */
+        @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
+        public Builder subnetId(String subnetId) {
+            return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param subnets (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
          * 
          * @return builder
          * 
          */
-        public Builder subnetId(String subnetId) {
-            return subnetId(Output.of(subnetId));
+        public Builder subnets(@Nullable Output<List<String>> subnets) {
+            $.subnets = subnets;
+            return this;
+        }
+
+        /**
+         * @param subnets (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnets(List<String> subnets) {
+            return subnets(Output.of(subnets));
+        }
+
+        /**
+         * @param subnets (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnets(String... subnets) {
+            return subnets(List.of(subnets));
         }
 
         /**

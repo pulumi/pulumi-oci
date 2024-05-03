@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -42,23 +43,31 @@ public final class GetRecoveryServiceSubnetResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+     * 
+     */
+    private List<String> nsgIds;
     private String recoveryServiceSubnetId;
     /**
-     * @return The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return The current state of the recovery service subnet.
      * 
      */
     private String state;
     /**
-     * @return The OCID of the subnet used as the recovery service subnet.
+     * @return Deprecated. One of the subnets associated with the Recovery Service subnet.
+     * 
+     * @deprecated
+     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
+    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
     private String subnetId;
+    /**
+     * @return A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+     * 
+     */
+    private List<String> subnets;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      * 
@@ -123,28 +132,40 @@ public final class GetRecoveryServiceSubnetResult {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * @return A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+     * 
+     */
+    public List<String> nsgIds() {
+        return this.nsgIds;
+    }
     public String recoveryServiceSubnetId() {
         return this.recoveryServiceSubnetId;
     }
     /**
-     * @return The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * @return The current state of the recovery service subnet.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The OCID of the subnet used as the recovery service subnet.
+     * @return Deprecated. One of the subnets associated with the Recovery Service subnet.
+     * 
+     * @deprecated
+     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
+    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
     public String subnetId() {
         return this.subnetId;
+    }
+    /**
+     * @return A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+     * 
+     */
+    public List<String> subnets() {
+        return this.subnets;
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -190,9 +211,11 @@ public final class GetRecoveryServiceSubnetResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private List<String> nsgIds;
         private String recoveryServiceSubnetId;
         private String state;
         private String subnetId;
+        private List<String> subnets;
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
@@ -206,9 +229,11 @@ public final class GetRecoveryServiceSubnetResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.nsgIds = defaults.nsgIds;
     	      this.recoveryServiceSubnetId = defaults.recoveryServiceSubnetId;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.subnets = defaults.subnets;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -264,6 +289,17 @@ public final class GetRecoveryServiceSubnetResult {
             return this;
         }
         @CustomType.Setter
+        public Builder nsgIds(List<String> nsgIds) {
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetRecoveryServiceSubnetResult", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
+            return this;
+        }
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
         public Builder recoveryServiceSubnetId(String recoveryServiceSubnetId) {
             if (recoveryServiceSubnetId == null) {
               throw new MissingRequiredPropertyException("GetRecoveryServiceSubnetResult", "recoveryServiceSubnetId");
@@ -286,6 +322,17 @@ public final class GetRecoveryServiceSubnetResult {
             }
             this.subnetId = subnetId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder subnets(List<String> subnets) {
+            if (subnets == null) {
+              throw new MissingRequiredPropertyException("GetRecoveryServiceSubnetResult", "subnets");
+            }
+            this.subnets = subnets;
+            return this;
+        }
+        public Builder subnets(String... subnets) {
+            return subnets(List.of(subnets));
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
@@ -327,9 +374,11 @@ public final class GetRecoveryServiceSubnetResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.nsgIds = nsgIds;
             _resultValue.recoveryServiceSubnetId = recoveryServiceSubnetId;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.subnets = subnets;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

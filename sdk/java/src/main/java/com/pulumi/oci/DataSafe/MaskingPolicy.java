@@ -105,18 +105,12 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="addMaskingColumnsFromSdmTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> addMaskingColumnsFromSdmTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<Integer>> addMaskingColumnsFromSdmTrigger() {
@@ -205,6 +199,26 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="generateHealthReportTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> generateHealthReportTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> generateHealthReportTrigger() {
+        return Codegen.optional(this.generateHealthReportTrigger);
     }
     /**
      * (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It&#39;s enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.

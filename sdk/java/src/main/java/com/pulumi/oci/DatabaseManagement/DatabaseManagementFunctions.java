@@ -3283,6 +3283,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
+     *             .externalDatabaseId(testExternalDatabase.id())
      *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
@@ -3327,6 +3328,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
+     *             .externalDatabaseId(testExternalDatabase.id())
      *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
@@ -3371,6 +3373,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
+     *             .externalDatabaseId(testExternalDatabase.id())
      *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
@@ -3415,6 +3418,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
+     *             .externalDatabaseId(testExternalDatabase.id())
      *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
@@ -3459,6 +3463,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
+     *             .externalDatabaseId(testExternalDatabase.id())
      *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
@@ -3503,6 +3508,7 @@ public final class DatabaseManagementFunctions {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(externalDatabaseDisplayName)
+     *             .externalDatabaseId(testExternalDatabase.id())
      *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 

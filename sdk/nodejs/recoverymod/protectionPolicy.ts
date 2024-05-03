@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     policyLockedDateTime: protectionPolicyPolicyLockedDateTime,
  * });
  * ```
  *
@@ -81,11 +82,7 @@ export class ProtectionPolicy extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -97,13 +94,21 @@ export class ProtectionPolicy extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * The current state of the protection policy. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+     * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+     * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+     * * However, you are only allowed to increase the retention period on or after the retention lock date.
+     * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly policyLockedDateTime!: pulumi.Output<string>;
+    /**
+     * The current state of the protection policy.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -139,6 +144,7 @@ export class ProtectionPolicy extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isPredefinedPolicy"] = state ? state.isPredefinedPolicy : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["policyLockedDateTime"] = state ? state.policyLockedDateTime : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -159,6 +165,7 @@ export class ProtectionPolicy extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["policyLockedDateTime"] = args ? args.policyLockedDateTime : undefined;
             resourceInputs["isPredefinedPolicy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -192,11 +199,7 @@ export interface ProtectionPolicyState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -208,13 +211,21 @@ export interface ProtectionPolicyState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The current state of the protection policy. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+     * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+     * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+     * * However, you are only allowed to increase the retention period on or after the retention lock date.
+     * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    policyLockedDateTime?: pulumi.Input<string>;
+    /**
+     * The current state of the protection policy.
      */
     state?: pulumi.Input<string>;
     /**
@@ -252,11 +263,21 @@ export interface ProtectionPolicyArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+     * * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+     * * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+     * * However, you are only allowed to increase the retention period on or after the retention lock date.
+     * * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    policyLockedDateTime?: pulumi.Input<string>;
 }

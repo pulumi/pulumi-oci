@@ -129,15 +129,13 @@ namespace Pulumi.Oci.RecoveryMod
         /// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+        /// </summary>
+        public readonly string PolicyLockedDateTime;
         public readonly string ProtectionPolicyId;
         /// <summary>
-        /// The current state of the protection policy. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// The current state of the protection policy.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -171,6 +169,8 @@ namespace Pulumi.Oci.RecoveryMod
 
             string lifecycleDetails,
 
+            string policyLockedDateTime,
+
             string protectionPolicyId,
 
             string state,
@@ -189,6 +189,7 @@ namespace Pulumi.Oci.RecoveryMod
             Id = id;
             IsPredefinedPolicy = isPredefinedPolicy;
             LifecycleDetails = lifecycleDetails;
+            PolicyLockedDateTime = policyLockedDateTime;
             ProtectionPolicyId = protectionPolicyId;
             State = state;
             SystemTags = systemTags;

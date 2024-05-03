@@ -21,7 +21,7 @@ class GetExternalDbHomeResult:
     """
     A collection of values returned by getExternalDbHome.
     """
-    def __init__(__self__, additional_details=None, compartment_id=None, component_name=None, defined_tags=None, display_name=None, external_db_home_id=None, external_db_system_id=None, freeform_tags=None, home_directory=None, id=None, lifecycle_details=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, additional_details=None, compartment_id=None, component_name=None, defined_tags=None, display_name=None, external_db_home_id=None, external_db_system_id=None, freeform_tags=None, home_directory=None, id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -58,6 +58,9 @@ class GetExternalDbHomeResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -159,6 +162,14 @@ class GetExternalDbHomeResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -193,6 +204,7 @@ class AwaitableGetExternalDbHomeResult(GetExternalDbHomeResult):
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -234,6 +246,7 @@ def get_external_db_home(external_db_home_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 

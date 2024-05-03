@@ -24,6 +24,8 @@ type ProtectedDatabaseMetric struct {
 	DbSizeInGbs *float64 `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsEnabled *bool `pulumi:"isRedoLogsEnabled"`
+	// Number of days of redo/archive to be applied to recover database.
+	MinimumRecoveryNeededInDays *float64 `pulumi:"minimumRecoveryNeededInDays"`
 	// The maximum number of days to retain backups for a protected database.
 	RetentionPeriodInDays *float64 `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
@@ -52,6 +54,8 @@ type ProtectedDatabaseMetricArgs struct {
 	DbSizeInGbs pulumi.Float64PtrInput `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsEnabled pulumi.BoolPtrInput `pulumi:"isRedoLogsEnabled"`
+	// Number of days of redo/archive to be applied to recover database.
+	MinimumRecoveryNeededInDays pulumi.Float64PtrInput `pulumi:"minimumRecoveryNeededInDays"`
 	// The maximum number of days to retain backups for a protected database.
 	RetentionPeriodInDays pulumi.Float64PtrInput `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
@@ -132,6 +136,11 @@ func (o ProtectedDatabaseMetricOutput) DbSizeInGbs() pulumi.Float64PtrOutput {
 // The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 func (o ProtectedDatabaseMetricOutput) IsRedoLogsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ProtectedDatabaseMetric) *bool { return v.IsRedoLogsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// Number of days of redo/archive to be applied to recover database.
+func (o ProtectedDatabaseMetricOutput) MinimumRecoveryNeededInDays() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ProtectedDatabaseMetric) *float64 { return v.MinimumRecoveryNeededInDays }).(pulumi.Float64PtrOutput)
 }
 
 // The maximum number of days to retain backups for a protected database.
@@ -290,6 +299,8 @@ type GetProtectedDatabaseMetric struct {
 	DbSizeInGbs float64 `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsEnabled bool `pulumi:"isRedoLogsEnabled"`
+	// Number of days of redo/archive to be applied to recover database.
+	MinimumRecoveryNeededInDays float64 `pulumi:"minimumRecoveryNeededInDays"`
 	// The maximum number of days to retain backups for a protected database.
 	RetentionPeriodInDays float64 `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
@@ -318,6 +329,8 @@ type GetProtectedDatabaseMetricArgs struct {
 	DbSizeInGbs pulumi.Float64Input `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsEnabled pulumi.BoolInput `pulumi:"isRedoLogsEnabled"`
+	// Number of days of redo/archive to be applied to recover database.
+	MinimumRecoveryNeededInDays pulumi.Float64Input `pulumi:"minimumRecoveryNeededInDays"`
 	// The maximum number of days to retain backups for a protected database.
 	RetentionPeriodInDays pulumi.Float64Input `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
@@ -398,6 +411,11 @@ func (o GetProtectedDatabaseMetricOutput) DbSizeInGbs() pulumi.Float64Output {
 // The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 func (o GetProtectedDatabaseMetricOutput) IsRedoLogsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetProtectedDatabaseMetric) bool { return v.IsRedoLogsEnabled }).(pulumi.BoolOutput)
+}
+
+// Number of days of redo/archive to be applied to recover database.
+func (o GetProtectedDatabaseMetricOutput) MinimumRecoveryNeededInDays() pulumi.Float64Output {
+	return o.ApplyT(func(v GetProtectedDatabaseMetric) float64 { return v.MinimumRecoveryNeededInDays }).(pulumi.Float64Output)
 }
 
 // The maximum number of days to retain backups for a protected database.
@@ -748,15 +766,13 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItem struct {
 	// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName string `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
+	DeletionSchedule string                 `pulumi:"deletionSchedule"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Indicates the protection status of the database. Allowed values are:
-	// * HEALTHY
-	// * WARNING
-	// * ALERT
+	// Indicates the protection status of the database.
 	Health string `pulumi:"health"`
 	// A message describing the current health of the protected database.
 	HealthDetails string `pulumi:"healthDetails"`
@@ -771,6 +787,8 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItem struct {
 	// Backup performance and storage utilization metrics for the protected database.
 	Metrics  []GetProtectedDatabasesProtectedDatabaseCollectionItemMetric `pulumi:"metrics"`
 	Password string                                                       `pulumi:"password"`
+	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	PolicyLockedDateTime string `pulumi:"policyLockedDateTime"`
 	// The protection policy OCID.
 	ProtectionPolicyId string `pulumi:"protectionPolicyId"`
 	// List of recovery service subnet resources associated with the protected database.
@@ -808,15 +826,13 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemArgs struct {
 	// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags      pulumi.MapInput    `pulumi:"definedTags"`
+	DeletionSchedule pulumi.StringInput `pulumi:"deletionSchedule"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// Indicates the protection status of the database. Allowed values are:
-	// * HEALTHY
-	// * WARNING
-	// * ALERT
+	// Indicates the protection status of the database.
 	Health pulumi.StringInput `pulumi:"health"`
 	// A message describing the current health of the protected database.
 	HealthDetails pulumi.StringInput `pulumi:"healthDetails"`
@@ -831,6 +847,8 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemArgs struct {
 	// Backup performance and storage utilization metrics for the protected database.
 	Metrics  GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArrayInput `pulumi:"metrics"`
 	Password pulumi.StringInput                                                   `pulumi:"password"`
+	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	PolicyLockedDateTime pulumi.StringInput `pulumi:"policyLockedDateTime"`
 	// The protection policy OCID.
 	ProtectionPolicyId pulumi.StringInput `pulumi:"protectionPolicyId"`
 	// List of recovery service subnet resources associated with the protected database.
@@ -925,6 +943,10 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DefinedTags(
 	}).(pulumi.MapOutput)
 }
 
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DeletionSchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.DeletionSchedule }).(pulumi.StringOutput)
+}
+
 // A filter to return only resources that match the entire 'displayname' given.
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -937,10 +959,7 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) FreeformTags
 	}).(pulumi.MapOutput)
 }
 
-// Indicates the protection status of the database. Allowed values are:
-// * HEALTHY
-// * WARNING
-// * ALERT
+// Indicates the protection status of the database.
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Health() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.Health }).(pulumi.StringOutput)
 }
@@ -979,6 +998,11 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Metrics() Ge
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) PolicyLockedDateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) string { return v.PolicyLockedDateTime }).(pulumi.StringOutput)
 }
 
 // The protection policy OCID.
@@ -1051,6 +1075,8 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemMetric struct {
 	DbSizeInGbs float64 `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsEnabled bool `pulumi:"isRedoLogsEnabled"`
+	// Number of days of redo/archive to be applied to recover database.
+	MinimumRecoveryNeededInDays float64 `pulumi:"minimumRecoveryNeededInDays"`
 	// The maximum number of days to retain backups for a protected database.
 	RetentionPeriodInDays float64 `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
@@ -1079,6 +1105,8 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemMetricArgs struct {
 	DbSizeInGbs pulumi.Float64Input `pulumi:"dbSizeInGbs"`
 	// The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsEnabled pulumi.BoolInput `pulumi:"isRedoLogsEnabled"`
+	// Number of days of redo/archive to be applied to recover database.
+	MinimumRecoveryNeededInDays pulumi.Float64Input `pulumi:"minimumRecoveryNeededInDays"`
 	// The maximum number of days to retain backups for a protected database.
 	RetentionPeriodInDays pulumi.Float64Input `pulumi:"retentionPeriodInDays"`
 	// This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
@@ -1165,6 +1193,13 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) DbSize
 // The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) IsRedoLogsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) bool { return v.IsRedoLogsEnabled }).(pulumi.BoolOutput)
+}
+
+// Number of days of redo/archive to be applied to recover database.
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemMetricOutput) MinimumRecoveryNeededInDays() pulumi.Float64Output {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItemMetric) float64 {
+		return v.MinimumRecoveryNeededInDays
+	}).(pulumi.Float64Output)
 }
 
 // The maximum number of days to retain backups for a protected database.
@@ -1530,6 +1565,8 @@ type GetProtectionPoliciesProtectionPolicyCollectionItem struct {
 	IsPredefinedPolicy bool `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	PolicyLockedDateTime string `pulumi:"policyLockedDateTime"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -1568,6 +1605,8 @@ type GetProtectionPoliciesProtectionPolicyCollectionItemArgs struct {
 	IsPredefinedPolicy pulumi.BoolInput `pulumi:"isPredefinedPolicy"`
 	// Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+	PolicyLockedDateTime pulumi.StringInput `pulumi:"policyLockedDateTime"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -1671,6 +1710,11 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) IsPredefinedP
 // Detailed description about the current lifecycle state of the protection policy. For example, it can be used to provide actionable information for a resource in a Failed state.
 func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) PolicyLockedDateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) string { return v.PolicyLockedDateTime }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -1930,16 +1974,16 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+	NsgIds []string `pulumi:"nsgIds"`
+	// A filter to return only the resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
-	// The OCID of the subnet used as the recovery service subnet.
+	// Deprecated. One of the subnets associated with the Recovery Service subnet.
+	//
+	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
 	SubnetId string `pulumi:"subnetId"`
+	// A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+	Subnets []string `pulumi:"subnets"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
@@ -1974,16 +2018,16 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-	// * CREATING
-	// * UPDATING
-	// * ACTIVE
-	// * DELETING
-	// * DELETED
-	// * FAILED
+	// A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// A filter to return only the resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
-	// The OCID of the subnet used as the recovery service subnet.
+	// Deprecated. One of the subnets associated with the Recovery Service subnet.
+	//
+	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+	Subnets pulumi.StringArrayInput `pulumi:"subnets"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
@@ -2079,20 +2123,26 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Life
 	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// A filter to return only the resources that match the specified lifecycle state. Allowed values are:
-// * CREATING
-// * UPDATING
-// * ACTIVE
-// * DELETING
-// * DELETED
-// * FAILED
+// A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only the resources that match the specified lifecycle state.
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The OCID of the subnet used as the recovery service subnet.
+// Deprecated. One of the subnets associated with the Recovery Service subnet.
+//
+// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
 func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Subnets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) []string { return v.Subnets }).(pulumi.StringArrayOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)

@@ -65,6 +65,9 @@ from .get_masking_policies import *
 from .get_masking_policies_masking_column import *
 from .get_masking_policies_masking_columns import *
 from .get_masking_policy import *
+from .get_masking_policy_health_report import *
+from .get_masking_policy_health_report_logs import *
+from .get_masking_policy_health_reports import *
 from .get_masking_policy_masking_objects import *
 from .get_masking_policy_masking_schemas import *
 from .get_masking_report import *

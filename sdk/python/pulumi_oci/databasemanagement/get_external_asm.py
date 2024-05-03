@@ -22,7 +22,7 @@ class GetExternalAsmResult:
     """
     A collection of values returned by getExternalAsm.
     """
-    def __init__(__self__, additional_details=None, compartment_id=None, component_name=None, defined_tags=None, display_name=None, external_asm_id=None, external_connector_id=None, external_db_system_id=None, freeform_tags=None, grid_home=None, id=None, is_cluster=None, is_flex_enabled=None, lifecycle_details=None, serviced_databases=None, state=None, time_created=None, time_updated=None, version=None):
+    def __init__(__self__, additional_details=None, compartment_id=None, component_name=None, defined_tags=None, display_name=None, external_asm_id=None, external_connector_id=None, external_db_system_id=None, freeform_tags=None, grid_home=None, id=None, is_cluster=None, is_flex_enabled=None, lifecycle_details=None, serviced_databases=None, state=None, system_tags=None, time_created=None, time_updated=None, version=None):
         if additional_details and not isinstance(additional_details, dict):
             raise TypeError("Expected argument 'additional_details' to be a dict")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -71,6 +71,9 @@ class GetExternalAsmResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -207,6 +210,14 @@ class GetExternalAsmResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -253,6 +264,7 @@ class AwaitableGetExternalAsmResult(GetExternalAsmResult):
             lifecycle_details=self.lifecycle_details,
             serviced_databases=self.serviced_databases,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
             version=self.version)
@@ -299,6 +311,7 @@ def get_external_asm(external_asm_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         serviced_databases=pulumi.get(__ret__, 'serviced_databases'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))

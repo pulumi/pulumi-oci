@@ -163,6 +163,21 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+     * 
+     */
+    @Import(name="isUnifiedAuditingEnabled")
+    private @Nullable Output<Boolean> isUnifiedAuditingEnabled;
+
+    /**
+     * @return Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+     * 
+     */
+    public Optional<Output<Boolean>> isUnifiedAuditingEnabled() {
+        return Optional.ofNullable(this.isUnifiedAuditingEnabled);
+    }
+
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -240,6 +255,7 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
         this.enableDatabaseDelete = $.enableDatabaseDelete;
         this.freeformTags = $.freeformTags;
         this.isDesupportedVersion = $.isDesupportedVersion;
+        this.isUnifiedAuditingEnabled = $.isUnifiedAuditingEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.source = $.source;
@@ -459,6 +475,27 @@ public final class DbHomeArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isDesupportedVersion(Boolean isDesupportedVersion) {
             return isDesupportedVersion(Output.of(isDesupportedVersion));
+        }
+
+        /**
+         * @param isUnifiedAuditingEnabled Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUnifiedAuditingEnabled(@Nullable Output<Boolean> isUnifiedAuditingEnabled) {
+            $.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            return this;
+        }
+
+        /**
+         * @param isUnifiedAuditingEnabled Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            return isUnifiedAuditingEnabled(Output.of(isUnifiedAuditingEnabled));
         }
 
         /**

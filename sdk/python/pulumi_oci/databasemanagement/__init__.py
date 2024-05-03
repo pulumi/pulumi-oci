@@ -5,6 +5,7 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .database_dbm_features_management import *
 from .db_management_private_endpoint import *
 from .external_asm import *
 from .external_asm_instance import *
@@ -23,6 +24,9 @@ from .external_exadata_storage_connector import *
 from .external_exadata_storage_grid import *
 from .external_exadata_storage_server import *
 from .external_listener import *
+from .externalcontainerdatabase_external_container_dbm_features_management import *
+from .externalnoncontainerdatabase_external_non_container_dbm_features_management import *
+from .externalpluggabledatabase_external_pluggable_dbm_features_management import *
 from .get_db_management_private_endpoint import *
 from .get_db_management_private_endpoint_associated_database import *
 from .get_db_management_private_endpoint_associated_databases import *
@@ -128,5 +132,6 @@ from .managed_database_group import *
 from .managed_databases_change_database_parameter import *
 from .managed_databases_reset_database_parameter import *
 from .named_credential import *
+from .pluggabledatabase_pluggable_database_dbm_features_management import *
 from ._inputs import *
 from . import outputs

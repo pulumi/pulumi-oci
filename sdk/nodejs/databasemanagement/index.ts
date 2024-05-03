@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { DatabaseDbmFeaturesManagementArgs, DatabaseDbmFeaturesManagementState } from "./databaseDbmFeaturesManagement";
+export type DatabaseDbmFeaturesManagement = import("./databaseDbmFeaturesManagement").DatabaseDbmFeaturesManagement;
+export const DatabaseDbmFeaturesManagement: typeof import("./databaseDbmFeaturesManagement").DatabaseDbmFeaturesManagement = null as any;
+utilities.lazyLoad(exports, ["DatabaseDbmFeaturesManagement"], () => require("./databaseDbmFeaturesManagement"));
+
 export { DbManagementPrivateEndpointArgs, DbManagementPrivateEndpointState } from "./dbManagementPrivateEndpoint";
 export type DbManagementPrivateEndpoint = import("./dbManagementPrivateEndpoint").DbManagementPrivateEndpoint;
 export const DbManagementPrivateEndpoint: typeof import("./dbManagementPrivateEndpoint").DbManagementPrivateEndpoint = null as any;
@@ -94,6 +99,21 @@ export { ExternalListenerArgs, ExternalListenerState } from "./externalListener"
 export type ExternalListener = import("./externalListener").ExternalListener;
 export const ExternalListener: typeof import("./externalListener").ExternalListener = null as any;
 utilities.lazyLoad(exports, ["ExternalListener"], () => require("./externalListener"));
+
+export { ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs, ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState } from "./externalcontainerdatabaseExternalContainerDbmFeaturesManagement";
+export type ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement = import("./externalcontainerdatabaseExternalContainerDbmFeaturesManagement").ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement;
+export const ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement: typeof import("./externalcontainerdatabaseExternalContainerDbmFeaturesManagement").ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement"], () => require("./externalcontainerdatabaseExternalContainerDbmFeaturesManagement"));
+
+export { ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs, ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementState } from "./externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement";
+export type ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement = import("./externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement").ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement;
+export const ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement: typeof import("./externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement").ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement"], () => require("./externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement"));
+
+export { ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs, ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementState } from "./externalpluggabledatabaseExternalPluggableDbmFeaturesManagement";
+export type ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement = import("./externalpluggabledatabaseExternalPluggableDbmFeaturesManagement").ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement;
+export const ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement: typeof import("./externalpluggabledatabaseExternalPluggableDbmFeaturesManagement").ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement"], () => require("./externalpluggabledatabaseExternalPluggableDbmFeaturesManagement"));
 
 export { GetDbManagementPrivateEndpointArgs, GetDbManagementPrivateEndpointResult, GetDbManagementPrivateEndpointOutputArgs } from "./getDbManagementPrivateEndpoint";
 export const getDbManagementPrivateEndpoint: typeof import("./getDbManagementPrivateEndpoint").getDbManagementPrivateEndpoint = null as any;
@@ -620,11 +640,18 @@ export type NamedCredential = import("./namedCredential").NamedCredential;
 export const NamedCredential: typeof import("./namedCredential").NamedCredential = null as any;
 utilities.lazyLoad(exports, ["NamedCredential"], () => require("./namedCredential"));
 
+export { PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs, PluggabledatabasePluggableDatabaseDbmFeaturesManagementState } from "./pluggabledatabasePluggableDatabaseDbmFeaturesManagement";
+export type PluggabledatabasePluggableDatabaseDbmFeaturesManagement = import("./pluggabledatabasePluggableDatabaseDbmFeaturesManagement").PluggabledatabasePluggableDatabaseDbmFeaturesManagement;
+export const PluggabledatabasePluggableDatabaseDbmFeaturesManagement: typeof import("./pluggabledatabasePluggableDatabaseDbmFeaturesManagement").PluggabledatabasePluggableDatabaseDbmFeaturesManagement = null as any;
+utilities.lazyLoad(exports, ["PluggabledatabasePluggableDatabaseDbmFeaturesManagement"], () => require("./pluggabledatabasePluggableDatabaseDbmFeaturesManagement"));
+
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement":
+                return new DatabaseDbmFeaturesManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint":
                 return new DbManagementPrivateEndpoint(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalAsm:ExternalAsm":
@@ -661,6 +688,12 @@ const _module = {
                 return new ExternalExadataStorageServer(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/externalListener:ExternalListener":
                 return new ExternalListener(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement":
+                return new ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement":
+                return new ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement:ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement":
+                return new ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/managedDatabase:ManagedDatabase":
                 return new ManagedDatabase(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup":
@@ -671,11 +704,14 @@ const _module = {
                 return new ManagedDatabasesResetDatabaseParameter(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/namedCredential:NamedCredential":
                 return new NamedCredential(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement":
+                return new PluggabledatabasePluggableDatabaseDbmFeaturesManagement(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/databaseDbmFeaturesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/dbManagementPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalAsm", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalAsmInstance", _module)
@@ -694,8 +730,12 @@ pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadata
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataStorageGrid", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalExadataStorageServer", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalListener", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabaseGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabasesChangeDatabaseParameter", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/managedDatabasesResetDatabaseParameter", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/namedCredential", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement", _module)

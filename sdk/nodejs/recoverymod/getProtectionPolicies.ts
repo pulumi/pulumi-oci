@@ -90,13 +90,7 @@ export interface GetProtectionPoliciesResult {
     readonly protectionPolicyCollections: outputs.RecoveryMod.GetProtectionPoliciesProtectionPolicyCollection[];
     readonly protectionPolicyId?: string;
     /**
-     * The current state of the protection policy. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * The current state of the protection policy.
      */
     readonly state?: string;
 }

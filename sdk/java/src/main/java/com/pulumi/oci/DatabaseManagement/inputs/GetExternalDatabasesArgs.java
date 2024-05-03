@@ -48,6 +48,21 @@ public final class GetExternalDatabasesArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+     * 
+     */
+    @Import(name="externalDatabaseId")
+    private @Nullable Output<String> externalDatabaseId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+     * 
+     */
+    public Optional<Output<String>> externalDatabaseId() {
+        return Optional.ofNullable(this.externalDatabaseId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
@@ -74,6 +89,7 @@ public final class GetExternalDatabasesArgs extends com.pulumi.resources.InvokeA
     private GetExternalDatabasesArgs(GetExternalDatabasesArgs $) {
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
+        this.externalDatabaseId = $.externalDatabaseId;
         this.externalDbSystemId = $.externalDbSystemId;
         this.filters = $.filters;
     }
@@ -136,6 +152,27 @@ public final class GetExternalDatabasesArgs extends com.pulumi.resources.InvokeA
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param externalDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalDatabaseId(@Nullable Output<String> externalDatabaseId) {
+            $.externalDatabaseId = externalDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param externalDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalDatabaseId(String externalDatabaseId) {
+            return externalDatabaseId(Output.of(externalDatabaseId));
         }
 
         /**

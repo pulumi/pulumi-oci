@@ -28,7 +28,6 @@ namespace Pulumi.Oci.RecoveryMod
     ///     {
     ///         CompartmentId = compartmentId,
     ///         DisplayName = recoveryServiceSubnetDisplayName,
-    ///         SubnetId = testSubnet.Id,
     ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
@@ -38,6 +37,9 @@ namespace Pulumi.Oci.RecoveryMod
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         NsgIds = recoveryServiceSubnetNsgIds,
+    ///         SubnetId = testSubnet.Id,
+    ///         Subnets = recoveryServiceSubnetSubnets,
     ///     });
     /// 
     /// });
@@ -85,22 +87,28 @@ namespace Pulumi.Oci.RecoveryMod
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the recovery service subnet. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        /// </summary>
+        [Output("nsgIds")]
+        public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
+
+        /// <summary>
+        /// The current state of the recovery service subnet.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        /// Deprecated. One of the subnets associated with the Recovery Service subnet.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+        /// </summary>
+        [Output("subnets")]
+        public Output<ImmutableArray<string>> Subnets { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -212,11 +220,35 @@ namespace Pulumi.Oci.RecoveryMod
             set => _freeformTags = value;
         }
 
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
         /// <summary>
-        /// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        /// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
         /// </summary>
-        [Input("subnetId", required: true)]
-        public Input<string> SubnetId { get; set; } = null!;
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
+
+        /// <summary>
+        /// Deprecated. One of the subnets associated with the Recovery Service subnet.
+        /// </summary>
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
+
+        [Input("subnets")]
+        private InputList<string>? _subnets;
+
+        /// <summary>
+        /// (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+        /// </summary>
+        public InputList<string> Subnets
+        {
+            get => _subnets ?? (_subnets = new InputList<string>());
+            set => _subnets = value;
+        }
 
         /// <summary>
         /// The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
@@ -278,23 +310,41 @@ namespace Pulumi.Oci.RecoveryMod
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
         /// <summary>
-        /// The current state of the recovery service subnet. Allowed values are:
-        /// * CREATING
-        /// * UPDATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
-        /// * FAILED
+        /// (Updatable) A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
+
+        /// <summary>
+        /// The current state of the recovery service subnet.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        /// Deprecated. One of the subnets associated with the Recovery Service subnet.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        [Input("subnets")]
+        private InputList<string>? _subnets;
+
+        /// <summary>
+        /// (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
+        /// </summary>
+        public InputList<string> Subnets
+        {
+            get => _subnets ?? (_subnets = new InputList<string>());
+            set => _subnets = value;
+        }
 
         [Input("systemTags")]
         private InputMap<object>? _systemTags;

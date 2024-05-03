@@ -66,21 +66,25 @@ export interface GetRecoveryServiceSubnetResult {
      * Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
      */
     readonly lifecycleDetails: string;
+    /**
+     * A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet. See [Network Security Groups](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/) for more information.
+     */
+    readonly nsgIds: string[];
     readonly recoveryServiceSubnetId: string;
     /**
-     * The current state of the recovery service subnet. Allowed values are:
-     * * CREATING
-     * * UPDATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
-     * * FAILED
+     * The current state of the recovery service subnet.
      */
     readonly state: string;
     /**
-     * The OCID of the subnet used as the recovery service subnet.
+     * Deprecated. One of the subnets associated with the Recovery Service subnet.
+     *
+     * @deprecated The 'subnet_id' field has been deprecated. Please use 'subnets' instead.
      */
     readonly subnetId: string;
+    /**
+     * A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+     */
+    readonly subnets: string[];
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      */

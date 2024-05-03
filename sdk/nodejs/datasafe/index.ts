@@ -305,6 +305,21 @@ export const getMaskingPolicy: typeof import("./getMaskingPolicy").getMaskingPol
 export const getMaskingPolicyOutput: typeof import("./getMaskingPolicy").getMaskingPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getMaskingPolicy","getMaskingPolicyOutput"], () => require("./getMaskingPolicy"));
 
+export { GetMaskingPolicyHealthReportArgs, GetMaskingPolicyHealthReportResult, GetMaskingPolicyHealthReportOutputArgs } from "./getMaskingPolicyHealthReport";
+export const getMaskingPolicyHealthReport: typeof import("./getMaskingPolicyHealthReport").getMaskingPolicyHealthReport = null as any;
+export const getMaskingPolicyHealthReportOutput: typeof import("./getMaskingPolicyHealthReport").getMaskingPolicyHealthReportOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPolicyHealthReport","getMaskingPolicyHealthReportOutput"], () => require("./getMaskingPolicyHealthReport"));
+
+export { GetMaskingPolicyHealthReportLogsArgs, GetMaskingPolicyHealthReportLogsResult, GetMaskingPolicyHealthReportLogsOutputArgs } from "./getMaskingPolicyHealthReportLogs";
+export const getMaskingPolicyHealthReportLogs: typeof import("./getMaskingPolicyHealthReportLogs").getMaskingPolicyHealthReportLogs = null as any;
+export const getMaskingPolicyHealthReportLogsOutput: typeof import("./getMaskingPolicyHealthReportLogs").getMaskingPolicyHealthReportLogsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPolicyHealthReportLogs","getMaskingPolicyHealthReportLogsOutput"], () => require("./getMaskingPolicyHealthReportLogs"));
+
+export { GetMaskingPolicyHealthReportsArgs, GetMaskingPolicyHealthReportsResult, GetMaskingPolicyHealthReportsOutputArgs } from "./getMaskingPolicyHealthReports";
+export const getMaskingPolicyHealthReports: typeof import("./getMaskingPolicyHealthReports").getMaskingPolicyHealthReports = null as any;
+export const getMaskingPolicyHealthReportsOutput: typeof import("./getMaskingPolicyHealthReports").getMaskingPolicyHealthReportsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPolicyHealthReports","getMaskingPolicyHealthReportsOutput"], () => require("./getMaskingPolicyHealthReports"));
+
 export { GetMaskingPolicyMaskingObjectsArgs, GetMaskingPolicyMaskingObjectsResult, GetMaskingPolicyMaskingObjectsOutputArgs } from "./getMaskingPolicyMaskingObjects";
 export const getMaskingPolicyMaskingObjects: typeof import("./getMaskingPolicyMaskingObjects").getMaskingPolicyMaskingObjects = null as any;
 export const getMaskingPolicyMaskingObjectsOutput: typeof import("./getMaskingPolicyMaskingObjects").getMaskingPolicyMaskingObjectsOutput = null as any;

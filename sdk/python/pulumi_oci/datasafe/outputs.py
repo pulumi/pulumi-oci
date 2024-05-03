@@ -145,6 +145,12 @@ __all__ = [
     'GetMaskingPoliciesMaskingPolicyCollectionItemResult',
     'GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult',
     'GetMaskingPolicyColumnSourceResult',
+    'GetMaskingPolicyHealthReportLogsFilterResult',
+    'GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionResult',
+    'GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemResult',
+    'GetMaskingPolicyHealthReportsFilterResult',
+    'GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionResult',
+    'GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult',
     'GetMaskingPolicyMaskingObjectsFilterResult',
     'GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult',
     'GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult',
@@ -12280,6 +12286,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
                  description: str,
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
+                 generate_health_report_trigger: int,
                  id: str,
                  is_drop_temp_tables_enabled: bool,
                  is_redo_logging_enabled: bool,
@@ -12317,6 +12324,7 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "generate_health_report_trigger", generate_health_report_trigger)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
         pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
@@ -12381,6 +12389,11 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="generateHealthReportTrigger")
+    def generate_health_report_trigger(self) -> int:
+        return pulumi.get(self, "generate_health_report_trigger")
 
     @property
     @pulumi.getter
@@ -12549,6 +12562,280 @@ class GetMaskingPolicyColumnSourceResult(dict):
         The OCID of the target database that's used as the source of masking columns.
         """
         return pulumi.get(self, "target_id")
+
+
+@pulumi.output_type
+class GetMaskingPolicyHealthReportLogsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemResult']):
+        """
+        :param Sequence['GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemArgs'] items: An array of masking policy health report objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemResult']:
+        """
+        An array of masking policy health report objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 message: str,
+                 message_type: str,
+                 remediation: str,
+                 timestamp: str):
+        """
+        :param str description: A human-readable description for the log entry.
+        :param str message: A human-readable log entry.
+        :param str message_type: A filter to return only the resources that match the specified log message type.
+        :param str remediation: A human-readable log entry to remedy any error or warnings in the masking policy.
+        :param str timestamp: The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "message_type", message_type)
+        pulumi.set(__self__, "remediation", remediation)
+        pulumi.set(__self__, "timestamp", timestamp)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A human-readable description for the log entry.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A human-readable log entry.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="messageType")
+    def message_type(self) -> str:
+        """
+        A filter to return only the resources that match the specified log message type.
+        """
+        return pulumi.get(self, "message_type")
+
+    @property
+    @pulumi.getter
+    def remediation(self) -> str:
+        """
+        A human-readable log entry to remedy any error or warnings in the masking policy.
+        """
+        return pulumi.get(self, "remediation")
+
+    @property
+    @pulumi.getter
+    def timestamp(self) -> str:
+        """
+        The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "timestamp")
+
+
+@pulumi.output_type
+class GetMaskingPolicyHealthReportsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 masking_policy_id: str,
+                 state: str,
+                 target_id: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param str description: The description of the masking health report.
+        :param str display_name: A filter to return only resources that match the specified display name.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param str id: The OCID of the health report.
+        :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
+        :param str state: A filter to return only the resources that match the specified lifecycle states.
+        :param str target_id: A filter to return only items related to a specific target OCID.
+        :param str time_created: The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param str time_updated: The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        A filter to return only resources that match the specified compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the masking health report.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the health report.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="maskingPolicyId")
+    def masking_policy_id(self) -> str:
+        """
+        A filter to return only the resources that match the specified masking policy OCID.
+        """
+        return pulumi.get(self, "masking_policy_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only the resources that match the specified lifecycle states.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        A filter to return only items related to a specific target OCID.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time the report was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type

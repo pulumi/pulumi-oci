@@ -32,6 +32,7 @@ import (
 //			_, err := DatabaseManagement.GetExternalDatabases(ctx, &databasemanagement.GetExternalDatabasesArgs{
 //				CompartmentId:      pulumi.StringRef(compartmentId),
 //				DisplayName:        pulumi.StringRef(externalDatabaseDisplayName),
+//				ExternalDatabaseId: pulumi.StringRef(testExternalDatabase.Id),
 //				ExternalDbSystemId: pulumi.StringRef(testExternalDbSystem.Id),
 //			}, nil)
 //			if err != nil {
@@ -58,6 +59,8 @@ type GetExternalDatabasesArgs struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName *string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+	ExternalDatabaseId *string `pulumi:"externalDatabaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId *string                      `pulumi:"externalDbSystemId"`
 	Filters            []GetExternalDatabasesFilter `pulumi:"filters"`
@@ -71,6 +74,7 @@ type GetExternalDatabasesResult struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The list of external_database_collection.
 	ExternalDatabaseCollections []GetExternalDatabasesExternalDatabaseCollection `pulumi:"externalDatabaseCollections"`
+	ExternalDatabaseId          *string                                          `pulumi:"externalDatabaseId"`
 	ExternalDbSystemId          *string                                          `pulumi:"externalDbSystemId"`
 	Filters                     []GetExternalDatabasesFilter                     `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -96,6 +100,8 @@ type GetExternalDatabasesOutputArgs struct {
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to only return the resources that match the entire display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+	ExternalDatabaseId pulumi.StringPtrInput `pulumi:"externalDatabaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
 	ExternalDbSystemId pulumi.StringPtrInput                `pulumi:"externalDbSystemId"`
 	Filters            GetExternalDatabasesFilterArrayInput `pulumi:"filters"`
@@ -135,6 +141,10 @@ func (o GetExternalDatabasesResultOutput) ExternalDatabaseCollections() GetExter
 	return o.ApplyT(func(v GetExternalDatabasesResult) []GetExternalDatabasesExternalDatabaseCollection {
 		return v.ExternalDatabaseCollections
 	}).(GetExternalDatabasesExternalDatabaseCollectionArrayOutput)
+}
+
+func (o GetExternalDatabasesResultOutput) ExternalDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExternalDatabasesResult) *string { return v.ExternalDatabaseId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetExternalDatabasesResultOutput) ExternalDbSystemId() pulumi.StringPtrOutput {

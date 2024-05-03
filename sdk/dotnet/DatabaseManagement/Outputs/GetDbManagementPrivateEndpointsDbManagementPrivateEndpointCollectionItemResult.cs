@@ -58,6 +58,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
+        /// <summary>
         /// The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeCreated;
@@ -90,6 +94,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string subnetId,
 
+            ImmutableDictionary<string, object> systemTags,
+
             string timeCreated,
 
             string vcnId)
@@ -105,6 +111,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             PrivateIp = privateIp;
             State = state;
             SubnetId = subnetId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             VcnId = vcnId;
         }

@@ -34,6 +34,10 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
         /// </summary>
         public readonly bool? IsRedoLogsEnabled;
         /// <summary>
+        /// Number of days of redo/archive to be applied to recover database.
+        /// </summary>
+        public readonly double? MinimumRecoveryNeededInDays;
+        /// <summary>
         /// The maximum number of days to retain backups for a protected database.
         /// </summary>
         public readonly double? RetentionPeriodInDays;
@@ -54,6 +58,8 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
 
             bool? isRedoLogsEnabled,
 
+            double? minimumRecoveryNeededInDays,
+
             double? retentionPeriodInDays,
 
             double? unprotectedWindowInSeconds)
@@ -63,6 +69,7 @@ namespace Pulumi.Oci.RecoveryMod.Outputs
             CurrentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
             DbSizeInGbs = dbSizeInGbs;
             IsRedoLogsEnabled = isRedoLogsEnabled;
+            MinimumRecoveryNeededInDays = minimumRecoveryNeededInDays;
             RetentionPeriodInDays = retentionPeriodInDays;
             UnprotectedWindowInSeconds = unprotectedWindowInSeconds;
         }

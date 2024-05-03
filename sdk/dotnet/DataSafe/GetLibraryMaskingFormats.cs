@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets a list of library masking formats based on the specified query parameters. 
+        /// Gets a list of library masking formats based on the specified query parameters.
         /// 
         /// 
         /// ## Example Usage
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets a list of library masking formats based on the specified query parameters. 
+        /// Gets a list of library masking formats based on the specified query parameters.
         /// 
         /// 
         /// ## Example Usage

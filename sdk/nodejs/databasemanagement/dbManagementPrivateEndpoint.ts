@@ -112,6 +112,10 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
      * The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -143,6 +147,7 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["privateIp"] = state ? state.privateIp : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["vcnId"] = state ? state.vcnId : undefined;
         } else {
@@ -163,6 +168,7 @@ export class DbManagementPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["privateIp"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["vcnId"] = undefined /*out*/;
         }
@@ -219,6 +225,10 @@ export interface DbManagementPrivateEndpointState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */

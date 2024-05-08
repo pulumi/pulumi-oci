@@ -26,13 +26,13 @@ type Provider struct {
 	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
 	// console. Required if auth is set to 'ApiKey', ignored otherwise.
 	Fingerprint pulumi.StringPtrOutput `pulumi:"fingerprint"`
-	// (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
+	// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
 	// set to 'ApiKey', ignored otherwise.
 	PrivateKey pulumi.StringPtrOutput `pulumi:"privateKey"`
 	// (Optional) The password used to secure the private key.
 	PrivateKeyPassword pulumi.StringPtrOutput `pulumi:"privateKeyPassword"`
-	// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-	// auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
+	// is set to 'ApiKey', ignored otherwise.
 	PrivateKeyPath pulumi.StringPtrOutput `pulumi:"privateKeyPath"`
 	// (Required) The region for API connections (e.g. us-ashburn-1).
 	Region pulumi.StringPtrOutput `pulumi:"region"`
@@ -82,25 +82,23 @@ type providerArgs struct {
 	DisableAutoRetries *bool `pulumi:"disableAutoRetries"`
 	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
 	// console. Required if auth is set to 'ApiKey', ignored otherwise.
-	Fingerprint *string `pulumi:"fingerprint"`
-	// (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated
-	// remote object
+	Fingerprint       *string  `pulumi:"fingerprint"`
 	IgnoreDefinedTags []string `pulumi:"ignoreDefinedTags"`
-	// (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
+	// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
 	// set to 'ApiKey', ignored otherwise.
 	PrivateKey *string `pulumi:"privateKey"`
 	// (Optional) The password used to secure the private key.
 	PrivateKeyPassword *string `pulumi:"privateKeyPassword"`
-	// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-	// auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
+	// is set to 'ApiKey', ignored otherwise.
 	PrivateKeyPath *string `pulumi:"privateKeyPath"`
 	// (Optional) flags to enable realm specific service endpoint.
 	RealmSpecificServiceEndpointTemplateEnabled *bool `pulumi:"realmSpecificServiceEndpointTemplateEnabled"`
 	// (Required) The region for API connections (e.g. us-ashburn-1).
 	Region *string `pulumi:"region"`
 	// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-	// duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-	// is set to true.
+	// duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is
+	// set to true.
 	RetryDurationSeconds *int `pulumi:"retryDurationSeconds"`
 	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
 	// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
@@ -122,25 +120,23 @@ type ProviderArgs struct {
 	DisableAutoRetries pulumi.BoolPtrInput
 	// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure
 	// console. Required if auth is set to 'ApiKey', ignored otherwise.
-	Fingerprint pulumi.StringPtrInput
-	// (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated
-	// remote object
+	Fingerprint       pulumi.StringPtrInput
 	IgnoreDefinedTags pulumi.StringArrayInput
-	// (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
+	// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
 	// set to 'ApiKey', ignored otherwise.
 	PrivateKey pulumi.StringPtrInput
 	// (Optional) The password used to secure the private key.
 	PrivateKeyPassword pulumi.StringPtrInput
-	// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-	// auth is set to 'ApiKey', ignored otherwise.
+	// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
+	// is set to 'ApiKey', ignored otherwise.
 	PrivateKeyPath pulumi.StringPtrInput
 	// (Optional) flags to enable realm specific service endpoint.
 	RealmSpecificServiceEndpointTemplateEnabled pulumi.BoolPtrInput
 	// (Required) The region for API connections (e.g. us-ashburn-1).
 	Region pulumi.StringPtrInput
 	// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error. The actual retry
-	// duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field
-	// is set to true.
+	// duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is
+	// set to true.
 	RetryDurationSeconds pulumi.IntPtrInput
 	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud
 	// Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
@@ -204,7 +200,7 @@ func (o ProviderOutput) Fingerprint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Fingerprint }).(pulumi.StringPtrOutput)
 }
 
-// (Optional) A PEM formatted RSA private key for the user. A private_key or a private_key_path must be provided if auth is
+// (Optional) A PEM formatted RSA private key for the user. A privateKey or a privateKeyPath must be provided if auth is
 // set to 'ApiKey', ignored otherwise.
 func (o ProviderOutput) PrivateKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PrivateKey }).(pulumi.StringPtrOutput)
@@ -215,8 +211,8 @@ func (o ProviderOutput) PrivateKeyPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PrivateKeyPassword }).(pulumi.StringPtrOutput)
 }
 
-// (Optional) The path to the user's PEM formatted private key. A private_key or a private_key_path must be provided if
-// auth is set to 'ApiKey', ignored otherwise.
+// (Optional) The path to the user's PEM formatted private key. A privateKey or a privateKeyPath must be provided if auth
+// is set to 'ApiKey', ignored otherwise.
 func (o ProviderOutput) PrivateKeyPath() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.PrivateKeyPath }).(pulumi.StringPtrOutput)
 }

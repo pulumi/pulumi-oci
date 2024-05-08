@@ -92,6 +92,8 @@ type LookupCloudVmClusterResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// The domain name for the cloud VM cluster.
 	Domain string `pulumi:"domain"`
+	// Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails []GetCloudVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
@@ -284,6 +286,13 @@ func (o LookupCloudVmClusterResultOutput) DisplayName() pulumi.StringOutput {
 // The domain name for the cloud VM cluster.
 func (o LookupCloudVmClusterResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// Details of the file system configuration of the VM cluster.
+func (o LookupCloudVmClusterResultOutput) FileSystemConfigurationDetails() GetCloudVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) []GetCloudVmClusterFileSystemConfigurationDetail {
+		return v.FileSystemConfigurationDetails
+	}).(GetCloudVmClusterFileSystemConfigurationDetailArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

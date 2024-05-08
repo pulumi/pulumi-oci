@@ -26,14 +26,14 @@ public final class GetListenerRulesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The name of the listener the rules are associated with.
+     * The name of the listener the rules are associated with. Example: `example_listener`
      * 
      */
     @Import(name="listenerName", required=true)
     private Output<String> listenerName;
 
     /**
-     * @return The name of the listener the rules are associated with.
+     * @return The name of the listener the rules are associated with. Example: `example_listener`
      * 
      */
     public Output<String> listenerName() {
@@ -95,7 +95,7 @@ public final class GetListenerRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param listenerName The name of the listener the rules are associated with.
+         * @param listenerName The name of the listener the rules are associated with. Example: `example_listener`
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class GetListenerRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param listenerName The name of the listener the rules are associated with.
+         * @param listenerName The name of the listener the rules are associated with. Example: `example_listener`
          * 
          * @return builder
          * 

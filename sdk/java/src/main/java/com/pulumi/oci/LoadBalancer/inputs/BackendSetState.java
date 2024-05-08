@@ -10,6 +10,7 @@ import com.pulumi.oci.LoadBalancer.inputs.BackendSetHealthCheckerArgs;
 import com.pulumi.oci.LoadBalancer.inputs.BackendSetLbCookieSessionPersistenceConfigurationArgs;
 import com.pulumi.oci.LoadBalancer.inputs.BackendSetSessionPersistenceConfigurationArgs;
 import com.pulumi.oci.LoadBalancer.inputs.BackendSetSslConfigurationArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -21,9 +22,32 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
 
     public static final BackendSetState Empty = new BackendSetState();
 
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * 
+     */
+    @Import(name="backendMaxConnections")
+    private @Nullable Output<Integer> backendMaxConnections;
+
+    /**
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * 
+     */
+    public Optional<Output<Integer>> backendMaxConnections() {
+        return Optional.ofNullable(this.backendMaxConnections);
+    }
+
+    /**
+     * (Updatable)
+     * 
+     */
     @Import(name="backends")
     private @Nullable Output<List<BackendSetBackendArgs>> backends;
 
+    /**
+     * @return (Updatable)
+     * 
+     */
     public Optional<Output<List<BackendSetBackendArgs>>> backends() {
         return Optional.ofNullable(this.backends);
     }
@@ -207,6 +231,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
     private BackendSetState() {}
 
     private BackendSetState(BackendSetState $) {
+        this.backendMaxConnections = $.backendMaxConnections;
         this.backends = $.backends;
         this.healthChecker = $.healthChecker;
         this.lbCookieSessionPersistenceConfiguration = $.lbCookieSessionPersistenceConfiguration;
@@ -236,15 +261,54 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
             $ = new BackendSetState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param backendMaxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendMaxConnections(@Nullable Output<Integer> backendMaxConnections) {
+            $.backendMaxConnections = backendMaxConnections;
+            return this;
+        }
+
+        /**
+         * @param backendMaxConnections (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendMaxConnections(Integer backendMaxConnections) {
+            return backendMaxConnections(Output.of(backendMaxConnections));
+        }
+
+        /**
+         * @param backends (Updatable)
+         * 
+         * @return builder
+         * 
+         */
         public Builder backends(@Nullable Output<List<BackendSetBackendArgs>> backends) {
             $.backends = backends;
             return this;
         }
 
+        /**
+         * @param backends (Updatable)
+         * 
+         * @return builder
+         * 
+         */
         public Builder backends(List<BackendSetBackendArgs> backends) {
             return backends(Output.of(backends));
         }
 
+        /**
+         * @param backends (Updatable)
+         * 
+         * @return builder
+         * 
+         */
         public Builder backends(BackendSetBackendArgs... backends) {
             return backends(List.of(backends));
         }

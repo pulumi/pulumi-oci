@@ -35,6 +35,7 @@ class CloudVmClusterArgs:
                  db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
                  is_sparse_diskgroup_enabled: Optional[pulumi.Input[bool]] = None,
@@ -78,6 +79,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of DB servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
         :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
@@ -125,6 +127,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
+        if file_system_configuration_details is not None:
+            pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_local_backup_enabled is not None:
@@ -387,6 +391,18 @@ class CloudVmClusterArgs:
         pulumi.set(self, "domain", value)
 
     @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]]:
+        """
+        (Updatable) Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
+
+    @file_system_configuration_details.setter
+    def file_system_configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]]):
+        pulumi.set(self, "file_system_configuration_details", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -556,6 +572,7 @@ class _CloudVmClusterState:
                  disk_redundancy: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
@@ -612,6 +629,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[str] hostname: The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -687,6 +705,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "display_name", display_name)
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
+        if file_system_configuration_details is not None:
+            pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if gi_version is not None:
@@ -957,6 +977,18 @@ class _CloudVmClusterState:
     @domain.setter
     def domain(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]]:
+        """
+        (Updatable) Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
+
+    @file_system_configuration_details.setter
+    def file_system_configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]]):
+        pulumi.set(self, "file_system_configuration_details", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -1360,6 +1392,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
@@ -1411,6 +1444,10 @@ class CloudVmCluster(pulumi.CustomResource):
             db_servers=cloud_vm_cluster_db_servers,
             defined_tags=cloud_vm_cluster_defined_tags,
             domain=cloud_vm_cluster_domain,
+            file_system_configuration_details=[oci.database.CloudVmClusterFileSystemConfigurationDetailArgs(
+                file_system_size_gb=cloud_vm_cluster_file_system_configuration_details_file_system_size_gb,
+                mount_point=cloud_vm_cluster_file_system_configuration_details_mount_point,
+            )],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1458,6 +1495,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[str] hostname: The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -1524,6 +1562,10 @@ class CloudVmCluster(pulumi.CustomResource):
             db_servers=cloud_vm_cluster_db_servers,
             defined_tags=cloud_vm_cluster_defined_tags,
             domain=cloud_vm_cluster_domain,
+            file_system_configuration_details=[oci.database.CloudVmClusterFileSystemConfigurationDetailArgs(
+                file_system_size_gb=cloud_vm_cluster_file_system_configuration_details_file_system_size_gb,
+                mount_point=cloud_vm_cluster_file_system_configuration_details_mount_point,
+            )],
             freeform_tags={
                 "Department": "Finance",
             },
@@ -1578,6 +1620,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
+                 file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  gi_version: Optional[pulumi.Input[str]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
@@ -1628,6 +1671,7 @@ class CloudVmCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["domain"] = domain
+            __props__.__dict__["file_system_configuration_details"] = file_system_configuration_details
             __props__.__dict__["freeform_tags"] = freeform_tags
             if gi_version is None and not opts.urn:
                 raise TypeError("Missing required property 'gi_version'")
@@ -1696,6 +1740,7 @@ class CloudVmCluster(pulumi.CustomResource):
             disk_redundancy: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             domain: Optional[pulumi.Input[str]] = None,
+            file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             gi_version: Optional[pulumi.Input[str]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
@@ -1757,6 +1802,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterFileSystemConfigurationDetailArgs']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param pulumi.Input[str] hostname: The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -1819,6 +1865,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["disk_redundancy"] = disk_redundancy
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["domain"] = domain
+        __props__.__dict__["file_system_configuration_details"] = file_system_configuration_details
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["gi_version"] = gi_version
         __props__.__dict__["hostname"] = hostname
@@ -1991,6 +2038,14 @@ class CloudVmCluster(pulumi.CustomResource):
         A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
         """
         return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="fileSystemConfigurationDetails")
+    def file_system_configuration_details(self) -> pulumi.Output[Sequence['outputs.CloudVmClusterFileSystemConfigurationDetail']]:
+        """
+        (Updatable) Details of the file system configuration of the VM cluster.
+        """
+        return pulumi.get(self, "file_system_configuration_details")
 
     @property
     @pulumi.getter(name="freeformTags")

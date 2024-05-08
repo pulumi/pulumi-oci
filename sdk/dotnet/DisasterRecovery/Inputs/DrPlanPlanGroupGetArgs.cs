@@ -24,6 +24,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        /// <summary>
+        /// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        /// </summary>
+        [Input("isPauseEnabled")]
+        public Input<bool>? IsPauseEnabled { get; set; }
+
         [Input("steps")]
         private InputList<Inputs.DrPlanPlanGroupStepGetArgs>? _steps;
 

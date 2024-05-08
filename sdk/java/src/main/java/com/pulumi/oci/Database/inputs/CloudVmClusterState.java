@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
+import com.pulumi.oci.Database.inputs.CloudVmClusterFileSystemConfigurationDetailArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterIormConfigCachArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -282,6 +283,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
+    }
+
+    /**
+     * (Updatable) Details of the file system configuration of the VM cluster.
+     * 
+     */
+    @Import(name="fileSystemConfigurationDetails")
+    private @Nullable Output<List<CloudVmClusterFileSystemConfigurationDetailArgs>> fileSystemConfigurationDetails;
+
+    /**
+     * @return (Updatable) Details of the file system configuration of the VM cluster.
+     * 
+     */
+    public Optional<Output<List<CloudVmClusterFileSystemConfigurationDetailArgs>>> fileSystemConfigurationDetails() {
+        return Optional.ofNullable(this.fileSystemConfigurationDetails);
     }
 
     /**
@@ -785,6 +801,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.diskRedundancy = $.diskRedundancy;
         this.displayName = $.displayName;
         this.domain = $.domain;
+        this.fileSystemConfigurationDetails = $.fileSystemConfigurationDetails;
         this.freeformTags = $.freeformTags;
         this.giVersion = $.giVersion;
         this.hostname = $.hostname;
@@ -1213,6 +1230,37 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
+        }
+
+        /**
+         * @param fileSystemConfigurationDetails (Updatable) Details of the file system configuration of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileSystemConfigurationDetails(@Nullable Output<List<CloudVmClusterFileSystemConfigurationDetailArgs>> fileSystemConfigurationDetails) {
+            $.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param fileSystemConfigurationDetails (Updatable) Details of the file system configuration of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileSystemConfigurationDetails(List<CloudVmClusterFileSystemConfigurationDetailArgs> fileSystemConfigurationDetails) {
+            return fileSystemConfigurationDetails(Output.of(fileSystemConfigurationDetails));
+        }
+
+        /**
+         * @param fileSystemConfigurationDetails (Updatable) Details of the file system configuration of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fileSystemConfigurationDetails(CloudVmClusterFileSystemConfigurationDetailArgs... fileSystemConfigurationDetails) {
+            return fileSystemConfigurationDetails(List.of(fileSystemConfigurationDetails));
         }
 
         /**

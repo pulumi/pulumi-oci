@@ -149,6 +149,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string DbServerVersion;
         /// <summary>
+        /// Details of the file system configuration of the Exadata infrastructure.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudExadataInfrastructureDefinedFileSystemConfigurationResult> DefinedFileSystemConfigurations;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -265,6 +269,8 @@ namespace Pulumi.Oci.Database
 
             string dbServerVersion,
 
+            ImmutableArray<Outputs.GetCloudExadataInfrastructureDefinedFileSystemConfigurationResult> definedFileSystemConfigurations,
+
             ImmutableDictionary<string, object> definedTags,
 
             string displayName,
@@ -322,6 +328,7 @@ namespace Pulumi.Oci.Database
             DataStorageSizeInTbs = dataStorageSizeInTbs;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             DbServerVersion = dbServerVersion;
+            DefinedFileSystemConfigurations = definedFileSystemConfigurations;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;

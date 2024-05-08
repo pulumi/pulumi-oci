@@ -111,7 +111,7 @@ def get_listener_rules(filters: Optional[Sequence[pulumi.InputType['GetListenerR
     ```
 
 
-    :param str listener_name: The name of the listener the rules are associated with.
+    :param str listener_name: The name of the listener the rules are associated with. Example: `example_listener`
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the listener.
     """
     __args__ = dict()
@@ -156,7 +156,7 @@ def get_listener_rules_output(filters: Optional[pulumi.Input[Optional[Sequence[p
     ```
 
 
-    :param str listener_name: The name of the listener the rules are associated with.
+    :param str listener_name: The name of the listener the rules are associated with. Example: `example_listener`
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the listener.
     """
     ...

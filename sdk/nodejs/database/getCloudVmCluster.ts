@@ -111,6 +111,10 @@ export interface GetCloudVmClusterResult {
      */
     readonly domain: string;
     /**
+     * Details of the file system configuration of the VM cluster.
+     */
+    readonly fileSystemConfigurationDetails: outputs.Database.GetCloudVmClusterFileSystemConfigurationDetail[];
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: any};

@@ -53,6 +53,12 @@ import (
 //				DbServers:              pulumi.Any(cloudVmClusterDbServers),
 //				DefinedTags:            pulumi.Any(cloudVmClusterDefinedTags),
 //				Domain:                 pulumi.Any(cloudVmClusterDomain),
+//				FileSystemConfigurationDetails: database.CloudVmClusterFileSystemConfigurationDetailArray{
+//					&database.CloudVmClusterFileSystemConfigurationDetailArgs{
+//						FileSystemSizeGb: pulumi.Any(cloudVmClusterFileSystemConfigurationDetailsFileSystemSizeGb),
+//						MountPoint:       pulumi.Any(cloudVmClusterFileSystemConfigurationDetailsMountPoint),
+//					},
+//				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
@@ -127,6 +133,8 @@ type CloudVmCluster struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain pulumi.StringOutput `pulumi:"domain"`
+	// (Updatable) Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails CloudVmClusterFileSystemConfigurationDetailArrayOutput `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
@@ -296,6 +304,8 @@ type cloudVmClusterState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain *string `pulumi:"domain"`
+	// (Updatable) Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails []CloudVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
@@ -409,6 +419,8 @@ type CloudVmClusterState struct {
 	DisplayName pulumi.StringPtrInput
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain pulumi.StringPtrInput
+	// (Updatable) Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails CloudVmClusterFileSystemConfigurationDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// A valid Oracle Grid Infrastructure (GI) software version.
@@ -522,6 +534,8 @@ type cloudVmClusterArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain *string `pulumi:"domain"`
+	// (Updatable) Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails []CloudVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
@@ -602,6 +616,8 @@ type CloudVmClusterArgs struct {
 	DisplayName pulumi.StringInput
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain pulumi.StringPtrInput
+	// (Updatable) Details of the file system configuration of the VM cluster.
+	FileSystemConfigurationDetails CloudVmClusterFileSystemConfigurationDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// A valid Oracle Grid Infrastructure (GI) software version.
@@ -820,6 +836,13 @@ func (o CloudVmClusterOutput) DisplayName() pulumi.StringOutput {
 // A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 func (o CloudVmClusterOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+}
+
+// (Updatable) Details of the file system configuration of the VM cluster.
+func (o CloudVmClusterOutput) FileSystemConfigurationDetails() CloudVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterFileSystemConfigurationDetailArrayOutput {
+		return v.FileSystemConfigurationDetails
+	}).(CloudVmClusterFileSystemConfigurationDetailArrayOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

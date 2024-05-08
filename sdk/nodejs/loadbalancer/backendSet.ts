@@ -36,6 +36,7 @@ import * as utilities from "../utilities";
  *     loadBalancerId: testLoadBalancer.id,
  *     name: backendSetName,
  *     policy: backendSetPolicy,
+ *     backendMaxConnections: backendSetBackendMaxConnections,
  *     lbCookieSessionPersistenceConfiguration: {
  *         cookieName: backendSetLbCookieSessionPersistenceConfigurationCookieName,
  *         disableFallback: backendSetLbCookieSessionPersistenceConfigurationDisableFallback,
@@ -101,6 +102,13 @@ export class BackendSet extends pulumi.CustomResource {
         return obj['__pulumiType'] === BackendSet.__pulumiType;
     }
 
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     */
+    public readonly backendMaxConnections!: pulumi.Output<number>;
+    /**
+     * (Updatable)
+     */
     public /*out*/ readonly backends!: pulumi.Output<outputs.LoadBalancer.BackendSetBackend[]>;
     /**
      * (Updatable) The health check policy's configuration details.
@@ -177,6 +185,7 @@ export class BackendSet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as BackendSetState | undefined;
+            resourceInputs["backendMaxConnections"] = state ? state.backendMaxConnections : undefined;
             resourceInputs["backends"] = state ? state.backends : undefined;
             resourceInputs["healthChecker"] = state ? state.healthChecker : undefined;
             resourceInputs["lbCookieSessionPersistenceConfiguration"] = state ? state.lbCookieSessionPersistenceConfiguration : undefined;
@@ -197,6 +206,7 @@ export class BackendSet extends pulumi.CustomResource {
             if ((!args || args.policy === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'policy'");
             }
+            resourceInputs["backendMaxConnections"] = args ? args.backendMaxConnections : undefined;
             resourceInputs["healthChecker"] = args ? args.healthChecker : undefined;
             resourceInputs["lbCookieSessionPersistenceConfiguration"] = args ? args.lbCookieSessionPersistenceConfiguration : undefined;
             resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
@@ -216,6 +226,13 @@ export class BackendSet extends pulumi.CustomResource {
  * Input properties used for looking up and filtering BackendSet resources.
  */
 export interface BackendSetState {
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     */
+    backendMaxConnections?: pulumi.Input<number>;
+    /**
+     * (Updatable)
+     */
     backends?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.BackendSetBackend>[]>;
     /**
      * (Updatable) The health check policy's configuration details.
@@ -284,6 +301,10 @@ export interface BackendSetState {
  * The set of arguments for constructing a BackendSet resource.
  */
 export interface BackendSetArgs {
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     */
+    backendMaxConnections?: pulumi.Input<number>;
     /**
      * (Updatable) The health check policy's configuration details.
      */

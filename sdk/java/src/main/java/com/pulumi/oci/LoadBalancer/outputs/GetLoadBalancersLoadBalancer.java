@@ -38,7 +38,7 @@ public final class GetLoadBalancersLoadBalancer {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
+     * @return Ocid of the Reserved IP/Public Ip created with VCN.
      * 
      */
     private String id;
@@ -57,6 +57,11 @@ public final class GetLoadBalancersLoadBalancer {
     @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
     private List<String> ipAddresses;
     private String ipMode;
+    /**
+     * @return Whether or not the load balancer has delete protection enabled.
+     * 
+     */
+    private Boolean isDeleteProtectionEnabled;
     /**
      * @return Whether the load balancer has a VCN-local (private) IP address.
      * 
@@ -129,7 +134,7 @@ public final class GetLoadBalancersLoadBalancer {
         return this.freeformTags;
     }
     /**
-     * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
+     * @return Ocid of the Reserved IP/Public Ip created with VCN.
      * 
      */
     public String id() {
@@ -155,6 +160,13 @@ public final class GetLoadBalancersLoadBalancer {
     }
     public String ipMode() {
         return this.ipMode;
+    }
+    /**
+     * @return Whether or not the load balancer has delete protection enabled.
+     * 
+     */
+    public Boolean isDeleteProtectionEnabled() {
+        return this.isDeleteProtectionEnabled;
     }
     /**
      * @return Whether the load balancer has a VCN-local (private) IP address.
@@ -233,6 +245,7 @@ public final class GetLoadBalancersLoadBalancer {
         private List<GetLoadBalancersLoadBalancerIpAddressDetail> ipAddressDetails;
         private List<String> ipAddresses;
         private String ipMode;
+        private Boolean isDeleteProtectionEnabled;
         private Boolean isPrivate;
         private List<String> networkSecurityGroupIds;
         private List<GetLoadBalancersLoadBalancerReservedIp> reservedIps;
@@ -253,6 +266,7 @@ public final class GetLoadBalancersLoadBalancer {
     	      this.ipAddressDetails = defaults.ipAddressDetails;
     	      this.ipAddresses = defaults.ipAddresses;
     	      this.ipMode = defaults.ipMode;
+    	      this.isDeleteProtectionEnabled = defaults.isDeleteProtectionEnabled;
     	      this.isPrivate = defaults.isPrivate;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.reservedIps = defaults.reservedIps;
@@ -332,6 +346,14 @@ public final class GetLoadBalancersLoadBalancer {
               throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "ipMode");
             }
             this.ipMode = ipMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isDeleteProtectionEnabled(Boolean isDeleteProtectionEnabled) {
+            if (isDeleteProtectionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "isDeleteProtectionEnabled");
+            }
+            this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
             return this;
         }
         @CustomType.Setter
@@ -428,6 +450,7 @@ public final class GetLoadBalancersLoadBalancer {
             _resultValue.ipAddressDetails = ipAddressDetails;
             _resultValue.ipAddresses = ipAddresses;
             _resultValue.ipMode = ipMode;
+            _resultValue.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
             _resultValue.isPrivate = isPrivate;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
             _resultValue.reservedIps = reservedIps;

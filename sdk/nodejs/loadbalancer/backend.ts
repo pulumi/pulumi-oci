@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     port: backendPort,
  *     backup: backendBackup,
  *     drain: backendDrain,
+ *     maxConnections: backendMaxConnections,
  *     offline: backendOffline,
  *     weight: backendWeight,
  * });
@@ -88,6 +89,10 @@ export class Backend extends pulumi.CustomResource {
      */
     public readonly loadBalancerId!: pulumi.Output<string>;
     /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     */
+    public readonly maxConnections!: pulumi.Output<number>;
+    /**
      * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      */
     public /*out*/ readonly name!: pulumi.Output<string>;
@@ -127,6 +132,7 @@ export class Backend extends pulumi.CustomResource {
             resourceInputs["drain"] = state ? state.drain : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
             resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
+            resourceInputs["maxConnections"] = state ? state.maxConnections : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["offline"] = state ? state.offline : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
@@ -151,6 +157,7 @@ export class Backend extends pulumi.CustomResource {
             resourceInputs["drain"] = args ? args.drain : undefined;
             resourceInputs["ipAddress"] = args ? args.ipAddress : undefined;
             resourceInputs["loadBalancerId"] = args ? args.loadBalancerId : undefined;
+            resourceInputs["maxConnections"] = args ? args.maxConnections : undefined;
             resourceInputs["offline"] = args ? args.offline : undefined;
             resourceInputs["port"] = args ? args.port : undefined;
             resourceInputs["weight"] = args ? args.weight : undefined;
@@ -190,6 +197,10 @@ export interface BackendState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
      */
     loadBalancerId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     */
+    maxConnections?: pulumi.Input<number>;
     /**
      * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
      */
@@ -241,6 +252,10 @@ export interface BackendArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
      */
     loadBalancerId: pulumi.Input<string>;
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     */
+    maxConnections?: pulumi.Input<number>;
     /**
      * (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      */

@@ -159,6 +159,12 @@ namespace Pulumi.Oci.Database
         public Output<string> DbServerVersion { get; private set; } = null!;
 
         /// <summary>
+        /// Details of the file system configuration of the Exadata infrastructure.
+        /// </summary>
+        [Output("definedFileSystemConfigurations")]
+        public Output<ImmutableArray<Outputs.CloudExadataInfrastructureDefinedFileSystemConfiguration>> DefinedFileSystemConfigurations { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("definedTags")]
@@ -507,6 +513,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("dbServerVersion")]
         public Input<string>? DbServerVersion { get; set; }
+
+        [Input("definedFileSystemConfigurations")]
+        private InputList<Inputs.CloudExadataInfrastructureDefinedFileSystemConfigurationGetArgs>? _definedFileSystemConfigurations;
+
+        /// <summary>
+        /// Details of the file system configuration of the Exadata infrastructure.
+        /// </summary>
+        public InputList<Inputs.CloudExadataInfrastructureDefinedFileSystemConfigurationGetArgs> DefinedFileSystemConfigurations
+        {
+            get => _definedFileSystemConfigurations ?? (_definedFileSystemConfigurations = new InputList<Inputs.CloudExadataInfrastructureDefinedFileSystemConfigurationGetArgs>());
+            set => _definedFileSystemConfigurations = value;
+        }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;

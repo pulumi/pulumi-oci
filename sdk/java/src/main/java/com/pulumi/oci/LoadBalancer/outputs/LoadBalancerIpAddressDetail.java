@@ -24,10 +24,6 @@ public final class LoadBalancerIpAddressDetail {
      * 
      */
     private @Nullable Boolean isPublic;
-    /**
-     * @return Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-     * 
-     */
     private @Nullable List<LoadBalancerIpAddressDetailReservedIp> reservedIps;
 
     private LoadBalancerIpAddressDetail() {}
@@ -45,10 +41,6 @@ public final class LoadBalancerIpAddressDetail {
     public Optional<Boolean> isPublic() {
         return Optional.ofNullable(this.isPublic);
     }
-    /**
-     * @return Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
-     * 
-     */
     public List<LoadBalancerIpAddressDetailReservedIp> reservedIps() {
         return this.reservedIps == null ? List.of() : this.reservedIps;
     }

@@ -168,14 +168,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
     /**
      * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
     /**
      * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
-     * ===
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; 22609d6059 (Added - Support for Oracle Home Version Control - Phase 2 | ADB-D and ADB-C@C)
      * 
      */
     private String netServicesArchitecture;
@@ -493,7 +490,6 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     }
     /**
      * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -501,8 +497,6 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     }
     /**
      * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
-     * ===
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; 22609d6059 (Added - Support for Oracle Home Version Control - Phase 2 | ADB-D and ADB-C@C)
      * 
      */
     public String netServicesArchitecture() {

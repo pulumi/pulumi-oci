@@ -15,20 +15,29 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BackendSetBackend {
     /**
-     * @return Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+     * @return (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+     * 
+     * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+     * 
+     * Example: `false`
      * 
      */
     private @Nullable Boolean backup;
     /**
-     * @return Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
      * 
      */
     private @Nullable Boolean drain;
     /**
-     * @return The IP address of the backend server.  Example: `10.0.0.3`
+     * @return (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
      * 
      */
     private String ipAddress;
+    /**
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    private @Nullable Integer maxConnections;
     /**
      * @return A friendly name for the backend set. It must be unique and it cannot be changed.
      * 
@@ -39,7 +48,7 @@ public final class BackendSetBackend {
      */
     private @Nullable String name;
     /**
-     * @return Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
     private @Nullable Boolean offline;
@@ -49,32 +58,43 @@ public final class BackendSetBackend {
      */
     private Integer port;
     /**
-     * @return The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+     * @return (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
     private @Nullable Integer weight;
 
     private BackendSetBackend() {}
     /**
-     * @return Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+     * @return (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as &#34;backup&#34; fail the health check policy.
+     * 
+     * **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+     * 
+     * Example: `false`
      * 
      */
     public Optional<Boolean> backup() {
         return Optional.ofNullable(this.backup);
     }
     /**
-     * @return Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the load balancer should drain this server. Servers marked &#34;drain&#34; receive no new incoming traffic.  Example: `false`
      * 
      */
     public Optional<Boolean> drain() {
         return Optional.ofNullable(this.drain);
     }
     /**
-     * @return The IP address of the backend server.  Example: `10.0.0.3`
+     * @return (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
+    }
+    /**
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+     * 
+     */
+    public Optional<Integer> maxConnections() {
+        return Optional.ofNullable(this.maxConnections);
     }
     /**
      * @return A friendly name for the backend set. It must be unique and it cannot be changed.
@@ -88,7 +108,7 @@ public final class BackendSetBackend {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+     * @return (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
      * 
      */
     public Optional<Boolean> offline() {
@@ -102,7 +122,7 @@ public final class BackendSetBackend {
         return this.port;
     }
     /**
-     * @return The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
+     * @return (Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted &#39;3&#39; receives 3 times the number of new connections as a server weighted &#39;1&#39;. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
      * 
      */
     public Optional<Integer> weight() {
@@ -121,6 +141,7 @@ public final class BackendSetBackend {
         private @Nullable Boolean backup;
         private @Nullable Boolean drain;
         private String ipAddress;
+        private @Nullable Integer maxConnections;
         private @Nullable String name;
         private @Nullable Boolean offline;
         private Integer port;
@@ -131,6 +152,7 @@ public final class BackendSetBackend {
     	      this.backup = defaults.backup;
     	      this.drain = defaults.drain;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.maxConnections = defaults.maxConnections;
     	      this.name = defaults.name;
     	      this.offline = defaults.offline;
     	      this.port = defaults.port;
@@ -155,6 +177,12 @@ public final class BackendSetBackend {
               throw new MissingRequiredPropertyException("BackendSetBackend", "ipAddress");
             }
             this.ipAddress = ipAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder maxConnections(@Nullable Integer maxConnections) {
+
+            this.maxConnections = maxConnections;
             return this;
         }
         @CustomType.Setter
@@ -188,6 +216,7 @@ public final class BackendSetBackend {
             _resultValue.backup = backup;
             _resultValue.drain = drain;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.maxConnections = maxConnections;
             _resultValue.name = name;
             _resultValue.offline = offline;
             _resultValue.port = port;

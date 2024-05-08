@@ -15,6 +15,7 @@ import com.pulumi.oci.LoadBalancer.outputs.BackendSetLbCookieSessionPersistenceC
 import com.pulumi.oci.LoadBalancer.outputs.BackendSetSessionPersistenceConfiguration;
 import com.pulumi.oci.LoadBalancer.outputs.BackendSetSslConfiguration;
 import com.pulumi.oci.Utilities;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Optional;
@@ -72,6 +73,7 @@ import javax.annotation.Nullable;
  *             .loadBalancerId(testLoadBalancer.id())
  *             .name(backendSetName)
  *             .policy(backendSetPolicy)
+ *             .backendMaxConnections(backendSetBackendMaxConnections)
  *             .lbCookieSessionPersistenceConfiguration(BackendSetLbCookieSessionPersistenceConfigurationArgs.builder()
  *                 .cookieName(backendSetLbCookieSessionPersistenceConfigurationCookieName)
  *                 .disableFallback(backendSetLbCookieSessionPersistenceConfigurationDisableFallback)
@@ -116,9 +118,31 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:LoadBalancer/backendSet:BackendSet")
 public class BackendSet extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * 
+     */
+    @Export(name="backendMaxConnections", refs={Integer.class}, tree="[0]")
+    private Output<Integer> backendMaxConnections;
+
+    /**
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * 
+     */
+    public Output<Integer> backendMaxConnections() {
+        return this.backendMaxConnections;
+    }
+    /**
+     * (Updatable)
+     * 
+     */
     @Export(name="backends", refs={List.class,BackendSetBackend.class}, tree="[0,1]")
     private Output<List<BackendSetBackend>> backends;
 
+    /**
+     * @return (Updatable)
+     * 
+     */
     public Output<List<BackendSetBackend>> backends() {
         return this.backends;
     }

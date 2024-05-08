@@ -56,6 +56,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     ipMode: loadBalancerIpMode,
+ *     isDeleteProtectionEnabled: loadBalancerIsDeleteProtectionEnabled,
  *     isPrivate: loadBalancerIsPrivate,
  *     networkSecurityGroupIds: loadBalancerNetworkSecurityGroupIds,
  *     reservedIps: [{
@@ -141,6 +142,16 @@ export class LoadBalancer extends pulumi.CustomResource {
      */
     public readonly ipMode!: pulumi.Output<string>;
     /**
+     * (Updatable) Whether or not the load balancer has delete protection enabled.
+     *
+     * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+     *
+     * If "false", the loadbalancer will not be protected against deletion.
+     *
+     * Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
+     */
+    public readonly isDeleteProtectionEnabled!: pulumi.Output<boolean>;
+    /**
      * Whether the load balancer has a VCN-local (private) IP address.
      *
      * If "true", the service assigns a private IP address to the load balancer.
@@ -169,7 +180,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      */
     public readonly reservedIps!: pulumi.Output<outputs.LoadBalancer.LoadBalancerReservedIp[] | undefined>;
     /**
-     * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+     * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      */
     public readonly shape!: pulumi.Output<string>;
     /**
@@ -217,6 +228,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["ipAddressDetails"] = state ? state.ipAddressDetails : undefined;
             resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
             resourceInputs["ipMode"] = state ? state.ipMode : undefined;
+            resourceInputs["isDeleteProtectionEnabled"] = state ? state.isDeleteProtectionEnabled : undefined;
             resourceInputs["isPrivate"] = state ? state.isPrivate : undefined;
             resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
             resourceInputs["reservedIps"] = state ? state.reservedIps : undefined;
@@ -245,6 +257,7 @@ export class LoadBalancer extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["ipMode"] = args ? args.ipMode : undefined;
+            resourceInputs["isDeleteProtectionEnabled"] = args ? args.isDeleteProtectionEnabled : undefined;
             resourceInputs["isPrivate"] = args ? args.isPrivate : undefined;
             resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
             resourceInputs["reservedIps"] = args ? args.reservedIps : undefined;
@@ -303,6 +316,16 @@ export interface LoadBalancerState {
      */
     ipMode?: pulumi.Input<string>;
     /**
+     * (Updatable) Whether or not the load balancer has delete protection enabled.
+     *
+     * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+     *
+     * If "false", the loadbalancer will not be protected against deletion.
+     *
+     * Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
+     */
+    isDeleteProtectionEnabled?: pulumi.Input<boolean>;
+    /**
      * Whether the load balancer has a VCN-local (private) IP address.
      *
      * If "true", the service assigns a private IP address to the load balancer.
@@ -331,7 +354,7 @@ export interface LoadBalancerState {
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[]>;
     /**
-     * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+     * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      */
     shape?: pulumi.Input<string>;
     /**
@@ -391,6 +414,16 @@ export interface LoadBalancerArgs {
      */
     ipMode?: pulumi.Input<string>;
     /**
+     * (Updatable) Whether or not the load balancer has delete protection enabled.
+     *
+     * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+     *
+     * If "false", the loadbalancer will not be protected against deletion.
+     *
+     * Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
+     */
+    isDeleteProtectionEnabled?: pulumi.Input<boolean>;
+    /**
      * Whether the load balancer has a VCN-local (private) IP address.
      *
      * If "true", the service assigns a private IP address to the load balancer.
@@ -419,7 +452,7 @@ export interface LoadBalancerArgs {
      */
     reservedIps?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.LoadBalancerReservedIp>[]>;
     /**
-     * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+     * (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
      */
     shape: pulumi.Input<string>;
     /**
